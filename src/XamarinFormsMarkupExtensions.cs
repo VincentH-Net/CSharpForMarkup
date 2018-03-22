@@ -66,26 +66,26 @@ namespace CSharpForMarkup
             return defaultProperty;
         }
 
-        public static TView Bind<TView>(this TView self, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : Element
+        public static TView Bind<TView>(this TView view, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : Element
         {
             if (source != null || converterParameter != null)
-                self.SetBinding(targetProperty, new Binding(
-                    path: sourcePropertyName,
-                    mode: mode,
-                    converter: converter,
-                    converterParameter: converterParameter,
-                    stringFormat: stringFormat,
+                view.SetBinding(targetProperty, new Binding(
+                    path: sourcePropertyName, 
+                    mode: mode, 
+                    converter: converter, 
+                    converterParameter: converterParameter, 
+                    stringFormat: stringFormat, 
                     source: source
                 ));
             else
-                self.SetBinding(targetProperty, sourcePropertyName, mode, converter, stringFormat);
-            return self;
+                view.SetBinding(targetProperty, sourcePropertyName, mode, converter, stringFormat);
+            return view;
         }
 
-        public static TView Bind<TView>(this TView self, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : Element
+        public static TView Bind<TView>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : Element
         {
-            self.Bind(
-                targetProperty: GetDefaultProperty(self),
+            view.Bind(
+                targetProperty: GetDefaultProperty(view),
                 sourcePropertyName: sourcePropertyName,
                 mode: mode,
                 converter: converter,
@@ -93,58 +93,100 @@ namespace CSharpForMarkup
                 stringFormat: stringFormat,
                 source: source
             );
-            return self;
+            return view;
         }
 
-        public static TView Assign<TView, TAssignView>(this TView self, out TAssignView variable) where TView : class, TAssignView
+        public static TView Assign<TView, TAssignView>(this TView view, out TAssignView variable) where TView : class, TAssignView
         {
-            variable = self;
-            return self;
+            variable = view;
+            return view;
         }
 
-        public static TView Invoke<TView>(this TView self, Action<TView> action) where TView : Element
+        public static TView Invoke<TView>(this TView view, Action<TView> action) where TView : Element
         {
-            action?.Invoke(self);
-            return self;
+            action?.Invoke(view);
+            return view;
         }
 
-        public static TView Row<TView>(this TView self, int row, int span = 1) where TView : View
+        public static TView Row<TView>(this TView view, int row, int span = 1) where TView : View
         {
-            self.SetValue(Grid.RowProperty, row);
-            if (span != 1) self.SetValue(Grid.RowSpanProperty, span);
-            return self;
+            view.SetValue(Grid.RowProperty, row);
+            if (span != 1) view.SetValue(Grid.RowSpanProperty, span);
+            return view;
         }
 
-        public static TView RowSpan<TView>(this TView self, int span) where TView : View
+        public static TView RowSpan<TView>(this TView view, int span) where TView : View
         {
-            self.SetValue(Grid.RowSpanProperty, span);
-            return self;
+            view.SetValue(Grid.RowSpanProperty, span);
+            return view;
         }
 
-        public static TView Col<TView>(this TView self, int col, int span = 1) where TView : View
+        public static TView Col<TView>(this TView view, int col, int span = 1) where TView : View
         {
-            self.SetValue(Grid.ColumnProperty, col);
-            if (span != 1) self.SetValue(Grid.ColumnSpanProperty, span);
-            return self;
+            view.SetValue(Grid.ColumnProperty, col);
+            if (span != 1) view.SetValue(Grid.ColumnSpanProperty, span);
+            return view;
         }
 
-        public static TView ColSpan<TView>(this TView self, int span) where TView : View
+        public static TView ColSpan<TView>(this TView view, int span) where TView : View
         {
-            if (span != 1) self.SetValue(Grid.ColumnSpanProperty, span);
-            return self;
+            if (span != 1) view.SetValue(Grid.ColumnSpanProperty, span);
+            return view;
         }
 
-        public static TView RowCol<TView>(this TView self, int row, int col, int rowSpan = 1, int colSpan = 1) where TView : View
+        public static TView RowCol<TView>(this TView view, int row, int col, int rowSpan = 1, int colSpan = 1) where TView : View
         {
-            self.SetValue(Grid.RowProperty, row);
-            self.SetValue(Grid.ColumnProperty, col);
-            if (rowSpan != 1) self.SetValue(Grid.RowSpanProperty, rowSpan);
-            if (colSpan != 1) self.SetValue(Grid.ColumnSpanProperty, colSpan);
-            return self;
+            view.SetValue(Grid.RowProperty, row);
+            view.SetValue(Grid.ColumnProperty, col);
+            if (rowSpan != 1) view.SetValue(Grid.RowSpanProperty, rowSpan);
+            if (colSpan != 1) view.SetValue(Grid.ColumnSpanProperty, colSpan);
+            return view;
         }
 
-        public static int UiSize(this int size) { return Device.RuntimePlatform == Device.WinPhone ? size + size / 2 : size; } // iOS = Android = 160 units / inch, Windows Phone = 240 units / inch
-        public static double UiSize(this double size) { return Device.RuntimePlatform == Device.WinPhone ? size + size / 2 : size; } // iOS = Android = 160 units / inch, Windows Phone = 240 units / inch
+        public static TView Left<TView>(this TView view) where TView : View { view.HorizontalOptions = LayoutOptions.Start; return view; }
+        public static TView CenterH<TView>(this TView view) where TView : View { view.HorizontalOptions = LayoutOptions.Center; return view; }
+        public static TView FillH<TView>(this TView view) where TView : View { view.HorizontalOptions = LayoutOptions.Fill; return view; }
+        public static TView Right<TView>(this TView view) where TView : View { view.HorizontalOptions = LayoutOptions.End; return view; }
+
+        public static TView LeftExpand<TView>(this TView view) where TView : View { view.HorizontalOptions = LayoutOptions.StartAndExpand; return view; }
+        public static TView CenterExpandH<TView>(this TView view) where TView : View { view.HorizontalOptions = LayoutOptions.CenterAndExpand; return view; }
+        public static TView FillExpandH<TView>(this TView view) where TView : View { view.HorizontalOptions = LayoutOptions.FillAndExpand; return view; }
+        public static TView RightExpand<TView>(this TView view) where TView : View { view.HorizontalOptions = LayoutOptions.EndAndExpand; return view; }
+
+        public static TView Top<TView>(this TView view) where TView : View { view.VerticalOptions = LayoutOptions.Start; return view; }
+        public static TView Bottom<TView>(this TView view) where TView : View { view.VerticalOptions = LayoutOptions.End; return view; }
+        public static TView CenterV<TView>(this TView view) where TView : View { view.VerticalOptions = LayoutOptions.Center; return view; }
+        public static TView FillV<TView>(this TView view) where TView : View { view.VerticalOptions = LayoutOptions.Fill; return view; }
+
+        public static TView TopExpand<TView>(this TView view) where TView : View { view.VerticalOptions = LayoutOptions.StartAndExpand; return view; }
+        public static TView BottomExpand<TView>(this TView view) where TView : View { view.VerticalOptions = LayoutOptions.EndAndExpand; return view; }
+        public static TView CenterExpandV<TView>(this TView view) where TView : View { view.VerticalOptions = LayoutOptions.CenterAndExpand; return view; }
+        public static TView FillExpandV<TView>(this TView view) where TView : View { view.VerticalOptions = LayoutOptions.FillAndExpand; return view; }
+
+        public static TView Center<TView>(this TView view) where TView : View => view.CenterH().CenterV();
+        public static TView Fill<TView>(this TView view) where TView : View => view.FillH().FillV();
+        public static TView CenterExpand<TView>(this TView view) where TView : View => view.CenterExpandH().CenterExpandV();
+        public static TView FillExpand<TView>(this TView view) where TView : View => view.FillExpandH().FillExpandV();
+
+        public static TView Margin<TView>(this TView view, Thickness margin) where TView : View { view.Margin = margin; return view; }
+
+        public static TLabel TextLeft<TLabel>(this TLabel label) where TLabel: Label { label.HorizontalTextAlignment = TextAlignment.Start;  return label; }
+        public static TLabel TextCenterH<TLabel>(this TLabel label) where TLabel : Label { label.HorizontalTextAlignment = TextAlignment.Center; return label; }
+        public static TLabel TextRight<TLabel>(this TLabel label) where TLabel : Label { label.HorizontalTextAlignment = TextAlignment.End;    return label; }
+
+        public static TLabel TextTop<TLabel>(this TLabel label) where TLabel : Label { label.VerticalTextAlignment = TextAlignment.Start;  return label; }
+        public static TLabel TextCenterV<TLabel>(this TLabel label) where TLabel : Label { label.VerticalTextAlignment = TextAlignment.Center; return label; }
+        public static TLabel TextBottom<TLabel>(this TLabel label) where TLabel : Label { label.VerticalTextAlignment = TextAlignment.End;    return label; }
+
+        public static TLabel TextCenter<TLabel>(this TLabel label) where TLabel : Label => label.CenterH().CenterV();
+
+        public static TElement Height<TElement>(this TElement element, double request) where TElement : VisualElement { element.HeightRequest = request; return element; }
+        public static TElement Width<TElement>(this TElement element, double request) where TElement : VisualElement { element.WidthRequest = request; return element; }
+        public static TElement MinHeight<TElement>(this TElement element, double request) where TElement : VisualElement { element.MinimumHeightRequest = request; return element; }
+        public static TElement MinWidth<TElement>(this TElement element, double request) where TElement : VisualElement { element.MinimumWidthRequest = request; return element; }
+
+        public static TElement Size<TElement>(this TElement element, double widthRequest, double heightRequest) where TElement : VisualElement => element.Width(widthRequest).Height(heightRequest);
+        public static TElement MinSize<TElement>(this TElement element, double widthRequest, double heightRequest) where TElement : VisualElement => element.MinWidth(widthRequest).MinHeight(heightRequest);
     }
 
     public class FuncConverter : IValueConverter
@@ -153,15 +195,9 @@ namespace CSharpForMarkup
 
         public FuncConverter(Func<object> func) { this.func = func; }
 
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            return (func == null) ? null : func();
-        }
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) => func?.Invoke();
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) { throw new NotImplementedException(); }
     }
 
     public class FuncConverter<TSource> : IValueConverter
@@ -170,23 +206,16 @@ namespace CSharpForMarkup
 
         public FuncConverter(Func<TSource, object> func) { this.func = func; }
 
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            return (func == null) ? null : func((TSource)value);
-        }
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) => func?.Invoke((TSource)value);
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) { throw new NotImplementedException(); }
     }
 
     public class ToStringConverter : FuncConverter<object> { public ToStringConverter(string format = "{0}") : base(o => string.Format(format, o)) { } }
     public class ShortTimeConverter : FuncConverter<DateTimeOffset> { public ShortTimeConverter() : base(t => t.ToString("t")) { } }
-    public class BoolNotConverter : FuncConverter<bool>
-    {
+    public class BoolNotConverter : FuncConverter<bool> {
         private static readonly Lazy<BoolNotConverter> instance = new Lazy<BoolNotConverter>(() => new BoolNotConverter());
-        public static BoolNotConverter Instance { get { return instance.Value; } }
+        public static BoolNotConverter Instance => instance.Value;
         public BoolNotConverter() : base(t => !t) { }
     }
 }
