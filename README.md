@@ -8,8 +8,12 @@ The helpers offer a fluent API with **Bind**, **Invoke**, **Assign**, **Row**, *
 ## Why?
 Because **declarative style** C# has a much better developer experience and reads virtually the same as XAML.
 
+If you already know XAML, you can keep using your knowledge in declarative C#, and gain productivity (because of the better IDE support for C#).
+
+The syntax is very close to XAML; you should be familiar within a couple of hours.
+
 ## Declarative C# versus XAML
-Compare this Entry markup (taken from a production app):
+Compare this Entry markup:
 
 ![Entry X A M L](img/EntryXAML.png) XAML
 
