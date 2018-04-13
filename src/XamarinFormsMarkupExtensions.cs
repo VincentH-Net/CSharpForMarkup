@@ -40,7 +40,7 @@ namespace CSharpForMarkup
             { "Xamarin.Forms.TimePicker", TimePicker.TimeProperty },
             { "Xamarin.Forms.WebView", WebView.SourceProperty },
             { "Xamarin.Forms.TextCell", TextCell.TextProperty },
-            { "Xamarin.Forms.ToolbarItem", ToolbarItem.CommandProperty },
+            { "Xamarin.Forms.ToolbarItem", ToolbarItem.CommandProperty }
         };
 
         static BindableProperty GetDefaultProperty(Element view) // Note that we use Element type for the view variable in bind functions because we want to bind to Cell types as well as View types
@@ -53,7 +53,7 @@ namespace CSharpForMarkup
             {
                 viewTypeName = viewType.FullName;
                 if (viewTypeDefaultProperty.TryGetValue(viewTypeName, out defaultProperty)) break;
-                if (viewTypeName.StartsWith("Xamarin.Forms."))
+                if (viewTypeName.StartsWith("Xamarin.Forms.", StringComparison.Ordinal))
                     throw new NotImplementedException("No default bindable property is defined for view type." + viewTypeName + "\r\nEither specify a property when calling Bind() or add a default property for this type to the viewTypeDefaultProperty dictionary.");
 #if WINDOWS_UWP
                 viewType = viewType.GetTypeInfo().BaseType;
@@ -70,11 +70,11 @@ namespace CSharpForMarkup
         {
             if (source != null || converterParameter != null)
                 view.SetBinding(targetProperty, new Binding(
-                    path: sourcePropertyName, 
-                    mode: mode, 
-                    converter: converter, 
-                    converterParameter: converterParameter, 
-                    stringFormat: stringFormat, 
+                    path: sourcePropertyName,
+                    mode: mode,
+                    converter: converter,
+                    converterParameter: converterParameter,
+                    stringFormat: stringFormat,
                     source: source
                 ));
             else
@@ -169,14 +169,20 @@ namespace CSharpForMarkup
         public static TView FillExpand<TView>(this TView view) where TView : View => view.FillExpandH().FillExpandV();
 
         public static TView Margin<TView>(this TView view, Thickness margin) where TView : View { view.Margin = margin; return view; }
+        public static TView Margin<TView>(this TView view, double horizontalSize, double verticalSize) where TView : View { view.Margin = new Thickness(horizontalSize, verticalSize); return view; }
+        public static TView Margin<TView>(this TView view, double left, double top, double right, double bottom) where TView : View { view.Margin = new Thickness(left, top, right, bottom); return view; }
 
-        public static TLabel TextLeft<TLabel>(this TLabel label) where TLabel: Label { label.HorizontalTextAlignment = TextAlignment.Start;  return label; }
+        public static TLayout Padding<TLayout>(this TLayout layout, Thickness padding) where TLayout : Layout { layout.Padding = padding; return layout; }
+        public static TLayout Padding<TLayout>(this TLayout layout, double horizontalSize, double verticalSize) where TLayout : Layout { layout.Padding = new Thickness(horizontalSize, verticalSize); return layout; }
+        public static TLayout Padding<TLayout>(this TLayout layout, double left, double top, double right, double bottom) where TLayout : Layout { layout.Padding = new Thickness(left, top, right, bottom); return layout; }
+
+        public static TLabel TextLeft<TLabel>(this TLabel label) where TLabel : Label { label.HorizontalTextAlignment = TextAlignment.Start; return label; }
         public static TLabel TextCenterH<TLabel>(this TLabel label) where TLabel : Label { label.HorizontalTextAlignment = TextAlignment.Center; return label; }
-        public static TLabel TextRight<TLabel>(this TLabel label) where TLabel : Label { label.HorizontalTextAlignment = TextAlignment.End;    return label; }
+        public static TLabel TextRight<TLabel>(this TLabel label) where TLabel : Label { label.HorizontalTextAlignment = TextAlignment.End; return label; }
 
-        public static TLabel TextTop<TLabel>(this TLabel label) where TLabel : Label { label.VerticalTextAlignment = TextAlignment.Start;  return label; }
+        public static TLabel TextTop<TLabel>(this TLabel label) where TLabel : Label { label.VerticalTextAlignment = TextAlignment.Start; return label; }
         public static TLabel TextCenterV<TLabel>(this TLabel label) where TLabel : Label { label.VerticalTextAlignment = TextAlignment.Center; return label; }
-        public static TLabel TextBottom<TLabel>(this TLabel label) where TLabel : Label { label.VerticalTextAlignment = TextAlignment.End;    return label; }
+        public static TLabel TextBottom<TLabel>(this TLabel label) where TLabel : Label { label.VerticalTextAlignment = TextAlignment.End; return label; }
 
         public static TLabel TextCenter<TLabel>(this TLabel label) where TLabel : Label => label.CenterH().CenterV();
 
@@ -186,7 +192,9 @@ namespace CSharpForMarkup
         public static TElement MinWidth<TElement>(this TElement element, double request) where TElement : VisualElement { element.MinimumWidthRequest = request; return element; }
 
         public static TElement Size<TElement>(this TElement element, double widthRequest, double heightRequest) where TElement : VisualElement => element.Width(widthRequest).Height(heightRequest);
+        public static TElement Size<TElement>(this TElement element, double sizeRequest) where TElement : VisualElement => element.Width(sizeRequest).Height(sizeRequest);
         public static TElement MinSize<TElement>(this TElement element, double widthRequest, double heightRequest) where TElement : VisualElement => element.MinWidth(widthRequest).MinHeight(heightRequest);
+        public static TElement MinSize<TElement>(this TElement element, double sizeRequest) where TElement : VisualElement => element.MinWidth(sizeRequest).MinHeight(sizeRequest);
     }
 
     public class FuncConverter : IValueConverter
@@ -213,7 +221,8 @@ namespace CSharpForMarkup
 
     public class ToStringConverter : FuncConverter<object> { public ToStringConverter(string format = "{0}") : base(o => string.Format(format, o)) { } }
     public class ShortTimeConverter : FuncConverter<DateTimeOffset> { public ShortTimeConverter() : base(t => t.ToString("t")) { } }
-    public class BoolNotConverter : FuncConverter<bool> {
+    public class BoolNotConverter : FuncConverter<bool>
+    {
         private static readonly Lazy<BoolNotConverter> instance = new Lazy<BoolNotConverter>(() => new BoolNotConverter());
         public static BoolNotConverter Instance => instance.Value;
         public BoolNotConverter() : base(t => !t) { }

@@ -29,6 +29,12 @@ Use **Assign** if you need to access a control from outside the markup:
 ```CSharp
 new ListView { }.Assign(out MyListView),
 ```
+Use **FuncConverter** for converter with inline code:
+```CSharp
+new Label { Text = "Tree" }
+.Bind(Label.MarginProperty, nameof(TreeNode.TreeDepth), 
+      converter: new FuncConverter<int>(depth => new Thickness(depth * 20, 0, 0, 0))),
+```
 
 How about a real-world page? Here is a simple registration code page (taken from a production app):
 
