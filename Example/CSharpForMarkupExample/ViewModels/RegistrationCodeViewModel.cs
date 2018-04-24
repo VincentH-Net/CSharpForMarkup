@@ -7,9 +7,12 @@ namespace CSharpForMarkupExample.ViewModels
 {
     public class RegistrationCodeViewModel : BaseViewModel
     {
+        readonly App app;
         string registrationCode;
-        ICommand verifyRegistrationCodeCommand;
+        ICommand verifyRegistrationCodeCommand, returnToPreviousViewCommand;
         
+        public RegistrationCodeViewModel(App app) { this.app = app; }
+
         public string RegistrationTitle => "Registration";
 
         public string RegistrationSubTitle => "LiveXAML coded UI test page";
@@ -38,9 +41,10 @@ namespace CSharpForMarkupExample.ViewModels
 
         public ICommand VerifyRegistrationCodeCommand { get { return verifyRegistrationCodeCommand ?? (verifyRegistrationCodeCommand = new RelayCommandAsync(SaveRegistrationCode)); } }
 
-        async Task SaveRegistrationCode()
-        {
-            await App.Current.MainPage.DisplayAlert("Registration", $"Registered code { RegistrationCode }", "OK");
-        }
+        public ICommand ReturnToPreviousViewCommand => returnToPreviousViewCommand ?? (returnToPreviousViewCommand = new RelayCommandAsync(ReturnToPreviousView));
+
+        Task SaveRegistrationCode() => app.DisplayAlert("Registration", $"Registered code { RegistrationCode }");
+        
+        Task ReturnToPreviousView() => app.ReturnToPreviousView();
     }
 }

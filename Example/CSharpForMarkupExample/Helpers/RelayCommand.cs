@@ -56,6 +56,8 @@ namespace QuickCross
         public async void Execute(object parameter = null)
         {
             bool couldExecuteBeforeExecute = CanExecute();
+            if (!couldExecuteBeforeExecute) return;
+            
             Interlocked.Increment(ref executingCount);
             bool couldExecuteDuringExecute = CanExecute();
             if (couldExecuteDuringExecute != couldExecuteBeforeExecute) RaiseCanExecuteChanged(); // TODO: test if always raising canexecutechanged does not disturb normal UI element update during a short synchronous command. If so, keep preventing multiple execution but only raise CanExecuteChanged for asynchrounous commands

@@ -9,7 +9,7 @@
     <Import_RootNamespace>CSharpForMarkupExample</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)CSharpForMarkupExample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\XamarinFormsMarkupExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RelayCommand.cs" />
@@ -23,6 +23,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Controls\ImageButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\SingleSubscriptionEnsurer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\XLog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\NestedListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NestedListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\MainPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Styles.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />

@@ -17,7 +17,6 @@ namespace CSharpForMarkupExample.Views.Pages
             
             NavigationPage.SetHasNavigationBar(this, false);
 
-            Title = "Registration";
             BackgroundColor = ThemeColors.BgGray3.ToColor();
 
             Content = new Grid 
@@ -28,7 +27,7 @@ namespace CSharpForMarkupExample.Views.Pages
                     PageHeader.Create(
                         PageMarginSize, 
                         nameof(vm.RegistrationTitle), nameof(vm.RegistrationSubTitle),
-                        returnToPreviousViewCommandPropertyName: null, 
+                        returnToPreviousViewCommandPropertyName: nameof(vm.ReturnToPreviousViewCommand), 
                         centerTitle:true),
 
                     new ScrollView { Content = new Grid {
@@ -47,14 +46,14 @@ namespace CSharpForMarkupExample.Views.Pages
                         },
 
                         Children = {
-                            new Label { TextColor = ThemeColors.BgBlue1.ToColor(), FontAttributes = FontAttributes.Bold, LineBreakMode = LineBreakMode.WordWrap }.SetFontSize(ThemeFontSizes.Size15)
+                            new Label { FontAttributes = FontAttributes.Bold, LineBreakMode = LineBreakMode.WordWrap }.SetFontSize(ThemeFontSizes.Size15)
                                        .ColSpan(2) .FillExpandH() .CenterV() .Margin(fieldNameMargin) .TextCenterH()
                                        .Bind(nameof(vm.RegistrationPrompt)),
 
-                            new Label { Text = "Registration code", TextColor = ThemeColors.BgBlue1.ToColor(), FontAttributes = FontAttributes.Bold }.SetFontSize(ThemeFontSizes.Size13)
+                            new Label { Text = "Registration code", FontAttributes = FontAttributes.Bold }.SetFontSize(ThemeFontSizes.Size13)
                                        .Row(1) .Bottom() .Margin(fieldNameMargin),
 
-                            new Label { TextColor = ThemeColors.BgBlue1.ToColor(), FontAttributes = FontAttributes.Italic }.SetFontSize(ThemeFontSizes.Size13)
+                            new Label { FontAttributes = FontAttributes.Italic }.SetFontSize(ThemeFontSizes.Size13)
                                        .RowCol(1, 1) .Right() .Bottom() .Margin(fieldNameMargin)
                                        .Bind(nameof(vm.RegistrationCodeValidationMessage)),
 

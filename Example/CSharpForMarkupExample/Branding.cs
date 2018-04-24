@@ -22,11 +22,12 @@
 
     public enum ThemeFontSizes
     {
-        Size9 = 9,
-        Size11 = 11,
+        //Size9 = 9,
+        //Size11 = 11,
         Size13 = 13,
         Size14 = 14,
         Size15 = 15,
-        Size18 = 18,
+        //Size18 = 18,
+        Size24 = 24,
     }
 }

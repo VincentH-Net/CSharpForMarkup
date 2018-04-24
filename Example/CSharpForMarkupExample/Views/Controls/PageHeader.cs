@@ -26,7 +26,7 @@ namespace CSharpForMarkupExample.Views.Controls
 
                 ColumnSpacing = 0,
                 ColumnDefinitions = {
-                    new ColumnDefinition { Width = 40 },
+                    new ColumnDefinition { Width = 60 },
                     new ColumnDefinition { },
                     new ColumnDefinition { Width = GridLength.Auto },
                     new ColumnDefinition { Width = GridLength.Auto },
@@ -41,9 +41,9 @@ namespace CSharpForMarkupExample.Views.Controls
                 Children = {
                     new ContentView { Content =
                         (returnToPreviousViewCommandPropertyName != null) ?
-                        new ImageButton { Source = "arrow_back.png", TapOnParent = true }
+                        new Button { Text = "<", TextColor = ThemeColors.White.ToColor(), BackgroundColor = backgroundColor.ToColor(), FontAttributes = FontAttributes.Bold }.SetFontSize(ThemeFontSizes.Size24)
                         .Left() .CenterV()
-                        .Bind(ImageButton.CommandProperty, returnToPreviousViewCommandPropertyName)
+                        .Bind(Button.CommandProperty, returnToPreviousViewCommandPropertyName)
                         : null
                     }.Row(1, 2) .Padding(pageMarginSize, 0)
                      .Invoke(b => { if (allowBackNavigationPropertyName != null) b.Bind(ContentView.IsVisibleProperty, allowBackNavigationPropertyName); }),
