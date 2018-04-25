@@ -15,7 +15,7 @@ namespace CSharpForMarkupExample.Views.Pages
             
             NavigationPage.SetHasNavigationBar(this, false);
 
-            BackgroundColor = ThemeColors.BgGray3.ToColor();
+            BackgroundColor = Colors.BgGray3.ToColor();
 
             Content = new Grid 
             {
@@ -28,11 +28,11 @@ namespace CSharpForMarkupExample.Views.Pages
                     ),
 
                     new ScrollView { Content = new StackLayout { Children = {
-                        new Button { Text = nameof(RegistrationCodePage), TextColor = ThemeColors.White.ToColor(), BackgroundColor = ThemeColors.ColorValueAccent.ToColor() }.SetFontSize(ThemeFontSizes.Size13)
+                        new Button { Text = nameof(RegistrationCodePage), Style = Styles.ButtonFilled }
                             .FillExpandH() .Margin(PageMarginSize) .Height(44)
                             .Bind(nameof(vm.ContinueToRegistrationCommand)),
 
-                        new Button { Text = nameof(NestedListPage), TextColor = ThemeColors.White.ToColor(), BackgroundColor = ThemeColors.ColorValueAccent.ToColor() }.SetFontSize(ThemeFontSizes.Size13)
+                        new Button { Text = nameof(NestedListPage), Style = Styles.ButtonFilled }
                             .FillExpandH() .Margin(PageMarginSize) .Height(44)
                             .Bind(nameof(vm.ContinueToNestedListCommand)),
                     }}} .Row(1)

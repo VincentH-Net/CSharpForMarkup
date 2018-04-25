@@ -17,7 +17,7 @@ namespace CSharpForMarkupExample.Views.Controls
             string subTitlePropertyName = null, 
             string returnToPreviousViewCommandPropertyName = null, 
             string allowBackNavigationPropertyName = null, 
-            ThemeColors backgroundColor = ThemeColors.ColorValuePrimary,
+            Colors backgroundColor = Colors.ColorValuePrimary,
             bool centerTitle = false)
         {
             var grid = new Grid
@@ -39,36 +39,31 @@ namespace CSharpForMarkupExample.Views.Controls
                 },
 
                 Children = {
-                    new ContentView { Content =
-                        (returnToPreviousViewCommandPropertyName != null) ?
-                        new Button { Text = "<", TextColor = ThemeColors.White.ToColor(), BackgroundColor = backgroundColor.ToColor(), FontAttributes = FontAttributes.Bold }.SetFontSize(ThemeFontSizes.Size24)
+                    new ContentView { Content = (returnToPreviousViewCommandPropertyName != null) ?
+                        new Button { Text = "<" } .Font (FontSizes._24, FontAttributes.Bold) .TextColor (Colors.White) .BackgroundColor (backgroundColor)
                         .Left() .CenterV()
                         .Bind(Button.CommandProperty, returnToPreviousViewCommandPropertyName)
                         : null
-                    }.Row(1, 2) .Padding(pageMarginSize, 0)
+                    }.Row (1, 2) .Padding (pageMarginSize, 0)
                      .Invoke(b => { if (allowBackNavigationPropertyName != null) b.Bind(ContentView.IsVisibleProperty, allowBackNavigationPropertyName); }),
 
                     new Label { 
-                        TextColor = ThemeColors.White.ToColor(), 
-                        FontAttributes = FontAttributes.Bold,
                         LineBreakMode = LineBreakMode.TailTruncation, 
                         HorizontalOptions = centerTitle ? LayoutOptions.Center : LayoutOptions.Start,
                         VerticalOptions = subTitlePropertyName != null ? LayoutOptions.End : LayoutOptions.Center 
-                    }.SetFontSize(ThemeFontSizes.Size13)
-                     .Row(1, subTitlePropertyName != null ? 1 : 2) .Col(centerTitle ? 0 : 1, centerTitle ? 4 : 1)
+                    }.Font (FontAttributes.Bold) .TextColor (Colors.White)
+                     .Row (1, subTitlePropertyName != null ? 1 : 2) .Col (centerTitle ? 0 : 1, centerTitle ? 4 : 1)
                      .Invoke(l => { if (titlePropertyName != null) l.Bind(titlePropertyName); })
                 }
             };
 
             if (subTitlePropertyName != null) grid.Children.Add(
                 new Label { 
-                    TextColor = ThemeColors.White.ToColor(), 
-                    FontAttributes = FontAttributes.Bold, 
                     LineBreakMode = LineBreakMode.TailTruncation, 
                     HorizontalOptions = centerTitle ? LayoutOptions.Center : LayoutOptions.Start,
                     VerticalOptions = LayoutOptions.Start 
-                }.SetFontSize(ThemeFontSizes.Size13)
-                 .Row(2) .Col(centerTitle ? 0 : 1, centerTitle ? 4 : 1)
+                }.Font (FontAttributes.Bold) .TextColor (Colors.White)
+                 .Row (2) .Col (centerTitle ? 0 : 1, centerTitle ? 4 : 1)
                  .Bind(subTitlePropertyName)
             );
             return grid;

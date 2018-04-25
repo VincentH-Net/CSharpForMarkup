@@ -1,6 +1,6 @@
 ﻿namespace CSharpForMarkupExample
 {
-    public enum ThemeColors : uint
+    public enum Colors : uint
     {
         BgBlue1 = 0xff0f344au,
         BgBlue2 = 0xff1c588bu,
@@ -20,14 +20,11 @@
         ColorValueAccent = 0xffec681cu,  // Orange 1. Accent is used for dark backgrounds in accented system elements, e.g. button, accented status, text entry underline (on android)
     }
 
-    public enum ThemeFontSizes
+    public enum FontSizes
     {
-        //Size9 = 9,
-        //Size11 = 11,
-        Size13 = 13,
-        Size14 = 14,
-        Size15 = 15,
-        //Size18 = 18,
-        Size24 = 24,
+        _13 = 13,
+        _14 = 14,
+        _15 = 15,
+        _24 = 24,
     }
 }

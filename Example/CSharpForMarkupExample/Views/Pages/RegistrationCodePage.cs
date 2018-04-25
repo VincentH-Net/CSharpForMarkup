@@ -17,7 +17,7 @@ namespace CSharpForMarkupExample.Views.Pages
             
             NavigationPage.SetHasNavigationBar(this, false);
 
-            BackgroundColor = ThemeColors.BgGray3.ToColor();
+            BackgroundColor = Colors.BgGray3.ToColor();
 
             Content = new Grid 
             {
@@ -46,23 +46,23 @@ namespace CSharpForMarkupExample.Views.Pages
                         },
 
                         Children = {
-                            new Label { FontAttributes = FontAttributes.Bold, LineBreakMode = LineBreakMode.WordWrap }.SetFontSize(ThemeFontSizes.Size15)
-                                       .ColSpan(2) .FillExpandH() .CenterV() .Margin(fieldNameMargin) .TextCenterH()
+                            new Label { LineBreakMode = LineBreakMode.WordWrap } .Font (FontSizes._15, FontAttributes.Bold)
+                                       .ColSpan (2) .FillExpandH() .CenterV() .Margin (fieldNameMargin) .TextCenterH()
                                        .Bind(nameof(vm.RegistrationPrompt)),
 
-                            new Label { Text = "Registration code", FontAttributes = FontAttributes.Bold }.SetFontSize(ThemeFontSizes.Size13)
-                                       .Row(1) .Bottom() .Margin(fieldNameMargin),
+                            new Label { Text = "Registration code" } .Font(FontAttributes.Bold)
+                                       .Row (1) .Bottom() .Margin(fieldNameMargin),
 
-                            new Label { FontAttributes = FontAttributes.Italic }.SetFontSize(ThemeFontSizes.Size13)
-                                       .RowCol(1, 1) .Right() .Bottom() .Margin(fieldNameMargin)
+                            new Label { } .Font (FontAttributes.Italic)
+                                       .RowCol (1, 1) .Right() .Bottom() .Margin (fieldNameMargin)
                                        .Bind(nameof(vm.RegistrationCodeValidationMessage)),
 
-                            new Entry { Placeholder = "E.g. 123456", Keyboard = Keyboard.Numeric, BackgroundColor = ThemeColors.White.ToColor(), TextColor = ThemeColors.Gray1.ToColor() }.SetFontSize(ThemeFontSizes.Size15)
-                                       .Row(2) .ColSpan(2) .Margin(fieldMargin) .Height(44)
+                            new Entry { Placeholder = "E.g. 123456", Keyboard = Keyboard.Numeric } .Font (FontSizes._15) .BackgroundColor (Colors.White) .TextColor (Colors.Gray1)
+                                       .Row (2) .ColSpan (2) .Margin (fieldMargin) .Height (44)
                                        .Bind(nameof(vm.RegistrationCode), BindingMode.TwoWay),
 
-                            new Button { Text = "Verify", TextColor = ThemeColors.White.ToColor(), BackgroundColor = ThemeColors.ColorValueAccent.ToColor() }.SetFontSize(ThemeFontSizes.Size13)
-                                        .Row(3) .ColSpan(2) .FillExpandH() .Margin(PageMarginSize) .Height(44)
+                            new Button { Text = "Verify", Style = Styles.ButtonFilled }
+                                        .Row (3) .ColSpan (2) .FillExpandH() .Margin (PageMarginSize) .Height (44)
                                         .Bind(Button.IsVisibleProperty, nameof(vm.CanVerifyRegistrationCode))
                                         .Bind(nameof(vm.VerifyRegistrationCodeCommand)),
                         }
