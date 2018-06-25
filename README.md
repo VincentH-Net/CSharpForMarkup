@@ -76,12 +76,12 @@ C#
 - Simpler markup reuse (control builder method with parameters)
 - Simple extensibility (i.e. don't need to write XAML extensions; customize your markup syntax with extension methods, creating your own DSL if you like)
 - Better Diff & Merge
-- Live view in Live Player (very limited - no renderers etc)
-- Live view coming in [Live XAML](https://www.livexaml.com/) (few limitations) 
+- Live view in [Live Reload "in a future release"](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/live-reload#what-changes-does-live-reload-redeploy)
+- Live view in [LiveSharp](https://marketplace.visualstudio.com/items?itemName=ionoy.LiveSharp)
 
 XAML
-- Live view in Live Player; visual preview in IDE (very limited - no renderers etc)
-- Live view in [Live XAML](https://www.livexaml.com/) (few limitations) 
+- Live view in [Live Reload](); visual preview in IDE (very limited - no renderers etc)
+- Live view in [Live XAML](https://www.livexaml.com/)
 
 ## Summary
 The question of C# versus XAML is not so much "Why use C# for markup?" as it is "**Why use XAML for markup?**"
