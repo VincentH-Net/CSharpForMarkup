@@ -184,7 +184,7 @@ namespace CSharpForMarkup
         public static TLabel TextCenterV<TLabel>(this TLabel label) where TLabel : Label { label.VerticalTextAlignment = TextAlignment.Center; return label; }
         public static TLabel TextBottom<TLabel>(this TLabel label) where TLabel : Label { label.VerticalTextAlignment = TextAlignment.End; return label; }
 
-        public static TLabel TextCenter<TLabel>(this TLabel label) where TLabel : Label => label.CenterH().CenterV();
+        public static TLabel TextCenter<TLabel>(this TLabel label) where TLabel : Label => label.TextCenterH().TextCenterV();
 
         public static TElement Height<TElement>(this TElement element, double request) where TElement : VisualElement { element.HeightRequest = request; return element; }
         public static TElement Width<TElement>(this TElement element, double request) where TElement : VisualElement { element.WidthRequest = request; return element; }
@@ -214,7 +214,7 @@ namespace CSharpForMarkup
 
         public FuncConverter(Func<TSource, object> func) { this.func = func; }
 
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) => func?.Invoke((TSource)value);
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) => func?.Invoke(value != null ? (TSource)value : default(TSource));
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) { throw new NotImplementedException(); }
     }
