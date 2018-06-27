@@ -143,6 +143,63 @@ namespace CSharpForMarkup
             return view;
         }
 
+        #region Use enum for Row / Col for better readability + avoid manual renumbering
+
+        public static TView Row<TView>(this TView view, IConvertible row) where TView : View
+        {
+            view.SetValue(Grid.RowProperty, row.ToInt32(System.Globalization.CultureInfo.InvariantCulture));
+            return view;
+        }
+
+        public static TView Row<TView>(this TView view, IConvertible first, IConvertible last) where TView : View
+        {
+            int row = first.ToInt32(System.Globalization.CultureInfo.InvariantCulture);
+            int span = last.ToInt32(System.Globalization.CultureInfo.InvariantCulture) - row + 1;
+            view.SetValue(Grid.RowProperty, row);
+            if (span != 1) view.SetValue(Grid.RowSpanProperty, span);
+            return view;
+        }
+
+        public static TView Col<TView>(this TView view, IConvertible col) where TView : View
+        {
+            view.SetValue(Grid.ColumnProperty, col.ToInt32(System.Globalization.CultureInfo.InvariantCulture));
+            return view;
+        }
+
+        public static TView Col<TView>(this TView view, IConvertible first, IConvertible last) where TView : View
+        {
+            int col = first.ToInt32(System.Globalization.CultureInfo.InvariantCulture);
+            view.SetValue(Grid.ColumnProperty, col);
+            int span = last.ToInt32(System.Globalization.CultureInfo.InvariantCulture) - col + 1;
+            if (span != 1) view.SetValue(Grid.ColumnSpanProperty, span);
+            return view;
+        }
+
+        public static TView RowCol<TView>(this TView view, IConvertible firstRow, IConvertible firstCol, IConvertible lastRow = null, IConvertible lastCol = null) where TView : View
+        {
+            int row = firstRow.ToInt32(System.Globalization.CultureInfo.InvariantCulture);
+            view.SetValue(Grid.RowProperty, row);
+
+            int col = firstCol.ToInt32(System.Globalization.CultureInfo.InvariantCulture);
+            view.SetValue(Grid.ColumnProperty, col);
+
+            if (lastRow != null)
+            {
+                int rowSpan = lastRow.ToInt32(System.Globalization.CultureInfo.InvariantCulture) - row + 1;
+                if (rowSpan != 1) view.SetValue(Grid.RowSpanProperty, rowSpan);
+            }
+
+            if (lastCol != null)
+            {
+                int colSpan = lastCol.ToInt32(System.Globalization.CultureInfo.InvariantCulture) - col + 1;
+                if (colSpan != 1) view.SetValue(Grid.ColumnSpanProperty, colSpan);
+            }
+
+            return view;
+        }
+
+        #endregion Use enum for Row / Col for better readability + avoid manual renumbering
+
         public static TView Left<TView>(this TView view) where TView : View { view.HorizontalOptions = LayoutOptions.Start; return view; }
         public static TView CenterH<TView>(this TView view) where TView : View { view.HorizontalOptions = LayoutOptions.Center; return view; }
         public static TView FillH<TView>(this TView view) where TView : View { view.HorizontalOptions = LayoutOptions.Fill; return view; }
@@ -196,6 +253,38 @@ namespace CSharpForMarkup
         public static TElement MinSize<TElement>(this TElement element, double widthRequest, double heightRequest) where TElement : VisualElement => element.MinWidth(widthRequest).MinHeight(heightRequest);
         public static TElement MinSize<TElement>(this TElement element, double sizeRequest) where TElement : VisualElement => element.MinWidth(sizeRequest).MinHeight(sizeRequest);
     }
+
+    #region Use enum for Row / Col for better readability + avoid manual renumbering
+
+    public static class Columns
+    {
+        public static ColumnDefinitionCollection Define<TEnum>(params (TEnum name, GridLength width)[] cols) where TEnum : IConvertible
+        {
+            var columnDefinitions = new ColumnDefinitionCollection();
+            for (int i = 0; i < cols.Length; i++)
+            {
+                if (i != cols[i].name.ToInt32(System.Globalization.CultureInfo.InvariantCulture)) throw new ArgumentException($"Value of column name { cols[i].name } is not { i }");
+                columnDefinitions.Add(new ColumnDefinition { Width = cols[i].width });
+            }
+            return columnDefinitions;
+        }
+    }
+
+    public static class Rows
+    {
+        public static RowDefinitionCollection Define<TEnum>(params (TEnum name, GridLength height)[] rows) where TEnum : IConvertible
+        {
+            var rowDefinitions = new RowDefinitionCollection();
+            for (int i = 0; i < rows.Length; i++)
+            {
+                if (i != rows[i].name.ToInt32(System.Globalization.CultureInfo.InvariantCulture)) throw new ArgumentException($"Value of column name { rows[i].name } is not { i }");
+                rowDefinitions.Add(new RowDefinition { Height = rows[i].height });
+            }
+            return rowDefinitions;
+        }
+    }
+
+    #endregion Use enum for Row / Col for better readability + avoid manual renumbering
 
     public class FuncConverter : IValueConverter
     {
