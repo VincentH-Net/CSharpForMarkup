@@ -3,7 +3,7 @@ Use declarative style C# instead of XAML for Xamarin Forms UI.
 
 All you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
 
-The helpers offer a fluent API with **Bind**, **Invoke**, **Assign**, **Row**, **Col**, inline converters and more. Simple to change/extend.
+The helpers offer a fluent API with **Bind**, **Invoke**, **Assign**, **Row**, **Col**, inline converters, using enums for Grid rows + columns and more. Simple to change/extend.
 
 ## Why?
 Because **declarative style** C# has a much better developer experience and reads virtually the same as XAML.
@@ -54,6 +54,20 @@ This markup follows some conventions. For each control:
 - Bound properties are last, one per line
 - The line before the bound properties is about layout, ordered inward: rows / cols, layout options, margin, size, padding, content alignment
 - Before that are the other properties; any property that identifies the control's purpose comes first (e.g. Text or Placeholder)
+
+You can also **use enums for Grid rows and columns** instead of numbers, so you don't have to renumber manually when you add or remove rows or columns. Readability and intent of the layout is also improved:
+
+![Enums For Rows And Columns](img/EnumsForRowsAndColumns.png)
+
+The row and column defititions then change from:
+
+![Xaml For Rows And Column Definitions](img/XamlForRowsAndColumnDefinitions.png)
+
+to:
+
+![Enums](img/Enums.png)
+
+![Enums For Rows And Column Definitions](img/EnumsForRowsAndColumnDefinitions.png) 
 
 ### Reading Pro's:
 C#
