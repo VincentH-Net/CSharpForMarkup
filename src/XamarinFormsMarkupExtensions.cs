@@ -110,20 +110,20 @@ namespace CSharpForMarkup
 
         public static TView Row<TView>(this TView view, int row, int span = 1) where TView : View
         {
-            view.SetValue(Grid.RowProperty, row);
+            if (row != 0) view.SetValue(Grid.RowProperty, row);
             if (span != 1) view.SetValue(Grid.RowSpanProperty, span);
             return view;
         }
 
         public static TView RowSpan<TView>(this TView view, int span) where TView : View
         {
-            view.SetValue(Grid.RowSpanProperty, span);
+            if (span != 1) view.SetValue(Grid.RowSpanProperty, span);
             return view;
         }
 
         public static TView Col<TView>(this TView view, int col, int span = 1) where TView : View
         {
-            view.SetValue(Grid.ColumnProperty, col);
+            if (col != 0) view.SetValue(Grid.ColumnProperty, col);
             if (span != 1) view.SetValue(Grid.ColumnSpanProperty, span);
             return view;
         }
@@ -136,8 +136,8 @@ namespace CSharpForMarkup
 
         public static TView RowCol<TView>(this TView view, int row, int col, int rowSpan = 1, int colSpan = 1) where TView : View
         {
-            view.SetValue(Grid.RowProperty, row);
-            view.SetValue(Grid.ColumnProperty, col);
+            if (row != 0) view.SetValue(Grid.RowProperty, row);
+            if (col != 0) view.SetValue(Grid.ColumnProperty, col);
             if (rowSpan != 1) view.SetValue(Grid.RowSpanProperty, rowSpan);
             if (colSpan != 1) view.SetValue(Grid.ColumnSpanProperty, colSpan);
             return view;
@@ -147,56 +147,80 @@ namespace CSharpForMarkup
 
         public static TView Row<TView>(this TView view, IConvertible row) where TView : View
         {
-            view.SetValue(Grid.RowProperty, row.ToInt32(System.Globalization.CultureInfo.InvariantCulture));
+            int rowIndex = row.ToInt();
+            if (rowIndex != 0) view.SetValue(Grid.RowProperty, rowIndex);
             return view;
         }
 
         public static TView Row<TView>(this TView view, IConvertible first, IConvertible last) where TView : View
         {
-            int row = first.ToInt32(System.Globalization.CultureInfo.InvariantCulture);
-            int span = last.ToInt32(System.Globalization.CultureInfo.InvariantCulture) - row + 1;
-            view.SetValue(Grid.RowProperty, row);
+            int rowIndex = first.ToInt();
+            int span = last.ToInt() - rowIndex + 1;
+            if (rowIndex != 0) view.SetValue(Grid.RowProperty, rowIndex);
+            if (span != 1) view.SetValue(Grid.RowSpanProperty, span);
+            return view;
+        }
+
+        public static TView RowSpanAll<TView>(this TView view, Type enumType) where TView : View
+        {
+            var values = Enum.GetValues(enumType);
+            int span = (int)values.GetValue(values.Length - 1) + 1;
             if (span != 1) view.SetValue(Grid.RowSpanProperty, span);
             return view;
         }
 
         public static TView Col<TView>(this TView view, IConvertible col) where TView : View
         {
-            view.SetValue(Grid.ColumnProperty, col.ToInt32(System.Globalization.CultureInfo.InvariantCulture));
+            int colIndex = col.ToInt();
+            if (colIndex != 0) view.SetValue(Grid.ColumnProperty, colIndex);
             return view;
         }
 
         public static TView Col<TView>(this TView view, IConvertible first, IConvertible last) where TView : View
         {
-            int col = first.ToInt32(System.Globalization.CultureInfo.InvariantCulture);
-            view.SetValue(Grid.ColumnProperty, col);
-            int span = last.ToInt32(System.Globalization.CultureInfo.InvariantCulture) - col + 1;
+            int colIndex = first.ToInt();
+            if (colIndex != 0) view.SetValue(Grid.ColumnProperty, colIndex);
+
+            int span = last.ToInt() + 1 - colIndex;
+            if (span != 1) view.SetValue(Grid.ColumnSpanProperty, span);
+
+            return view;
+        }
+
+        public static TView ColSpanAll<TView>(this TView view, Type enumType) where TView : View
+        {
+            var values = Enum.GetValues(enumType);
+            int span = (int)values.GetValue(values.Length - 1) + 1;
             if (span != 1) view.SetValue(Grid.ColumnSpanProperty, span);
             return view;
         }
 
-        public static TView RowCol<TView>(this TView view, IConvertible firstRow, IConvertible firstCol, IConvertible lastRow = null, IConvertible lastCol = null) where TView : View
+        public static TView RowCol<TView>(this TView view, IConvertible firstRow = null, IConvertible firstCol = null, IConvertible lastRow = null, IConvertible lastCol = null) where TView : View
         {
-            int row = firstRow.ToInt32(System.Globalization.CultureInfo.InvariantCulture);
-            view.SetValue(Grid.RowProperty, row);
+            int firstRowIndex = firstRow.ToInt();
+            if (firstRowIndex != 0) view.SetValue(Grid.RowProperty, firstRowIndex);
 
-            int col = firstCol.ToInt32(System.Globalization.CultureInfo.InvariantCulture);
-            view.SetValue(Grid.ColumnProperty, col);
+            int firstColIndex = firstCol.ToInt();
+            if (firstColIndex != 0) view.SetValue(Grid.ColumnProperty, firstColIndex);
 
             if (lastRow != null)
             {
-                int rowSpan = lastRow.ToInt32(System.Globalization.CultureInfo.InvariantCulture) - row + 1;
+                int lastRowIndex = lastRow.ToInt();
+                int rowSpan = lastRowIndex + 1 - firstRowIndex;
                 if (rowSpan != 1) view.SetValue(Grid.RowSpanProperty, rowSpan);
             }
 
             if (lastCol != null)
             {
-                int colSpan = lastCol.ToInt32(System.Globalization.CultureInfo.InvariantCulture) - col + 1;
+                int lastColIndex = lastCol.ToInt();
+                int colSpan = lastColIndex + 1 - firstColIndex;
                 if (colSpan != 1) view.SetValue(Grid.ColumnSpanProperty, colSpan);
             }
 
             return view;
         }
+
+        static int ToInt(this IConvertible convertible) => convertible?.ToInt32(System.Globalization.CultureInfo.InvariantCulture) ?? 0;
 
         #endregion Use enum for Row / Col for better readability + avoid manual renumbering
 
@@ -263,7 +287,7 @@ namespace CSharpForMarkup
             var columnDefinitions = new ColumnDefinitionCollection();
             for (int i = 0; i < cols.Length; i++)
             {
-                if (i != cols[i].name.ToInt32(System.Globalization.CultureInfo.InvariantCulture)) throw new ArgumentException($"Value of column name { cols[i].name } is not { i }");
+                if (i != cols[i].name.ToInt32(System.Globalization.CultureInfo.InvariantCulture)) throw new ArgumentException($"Value of column name { cols[i].name } is not { i }. Columns must be defined with enum names whose values form the sequence 0,1,2,...");
                 columnDefinitions.Add(new ColumnDefinition { Width = cols[i].width });
             }
             return columnDefinitions;
@@ -277,7 +301,7 @@ namespace CSharpForMarkup
             var rowDefinitions = new RowDefinitionCollection();
             for (int i = 0; i < rows.Length; i++)
             {
-                if (i != rows[i].name.ToInt32(System.Globalization.CultureInfo.InvariantCulture)) throw new ArgumentException($"Value of column name { rows[i].name } is not { i }");
+                if (i != rows[i].name.ToInt32(System.Globalization.CultureInfo.InvariantCulture)) throw new ArgumentException($"Value of row name { rows[i].name } is not { i }. Rows must be defined with enum names whose values form the sequence 0,1,2,...");
                 rowDefinitions.Add(new RowDefinition { Height = rows[i].height });
             }
             return rowDefinitions;

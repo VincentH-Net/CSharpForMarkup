@@ -7,6 +7,10 @@ namespace CSharpForMarkupExample.Views.Pages
 {
     public class RegistrationCodePage : BaseContentPage<RegistrationCodeViewModel>
     {
+        enum PageRow { Header, Body }
+        enum BodyRow { Prompt, CodeHeader, CodeEntry, Button }
+        enum BodyCol { FieldLabel, FieldValidation }
+
         public RegistrationCodePage()
         {
             var app = App.Current;
@@ -17,56 +21,63 @@ namespace CSharpForMarkupExample.Views.Pages
             
             NavigationPage.SetHasNavigationBar(this, false);
 
+            var x = System.Enum.GetValues(typeof(BodyCol)).Length;
+
             BackgroundColor = Colors.BgGray3.ToColor();
 
             Content = new Grid 
             {
                 RowSpacing = 0,
-                RowDefinitions = { new RowDefinition { Height = GridLength.Auto }, new RowDefinition { } },
+
+                RowDefinitions = Rows.Define(
+                    (PageRow.Header, GridLength.Auto),
+                    (PageRow.Body  , GridLength.Star)
+                ),
+
                 Children = {
                     PageHeader.Create(
                         PageMarginSize, 
                         nameof(vm.RegistrationTitle), nameof(vm.RegistrationSubTitle),
                         returnToPreviousViewCommandPropertyName: nameof(vm.ReturnToPreviousViewCommand), 
-                        centerTitle:true),
+                        centerTitle:true
+                    ).Row (PageRow.Header),
 
                     new ScrollView { Content = new Grid {
                         RowSpacing = 0,
-                        RowDefinitions = {
-                            new RowDefinition { Height = 170 },
+                        RowDefinitions = Rows.Define(
+                            (BodyRow.Prompt    , 170),
+                            (BodyRow.CodeHeader, 75),
+                            (BodyRow.CodeEntry , GridLength.Auto ),
+                            (BodyRow.Button    , GridLength.Auto )
+                        ),
 
-                            new RowDefinition { Height = 75 },
-                            new RowDefinition { Height = GridLength.Auto },
-                            new RowDefinition { Height = GridLength.Auto }
-                        },
-
-                        ColumnDefinitions = {
-                            new ColumnDefinition { Width = 160 },
-                            new ColumnDefinition { }
-                        },
+                        ColumnDefinitions = Columns.Define (
+                            (BodyCol.FieldLabel, 160 ),
+                            (BodyCol.FieldValidation, GridLength.Star )
+                        ),
 
                         Children = {
                             new Label { LineBreakMode = LineBreakMode.WordWrap } .Font (FontSizes._15, FontAttributes.Bold)
-                                       .ColSpan (2) .FillExpandH() .CenterV() .Margin (fieldNameMargin) .TextCenterH()
+                                       .Row (BodyRow.Prompt)  .ColSpanAll (typeof(BodyCol)) .FillExpandH() .CenterV() .Margin (fieldNameMargin) .TextCenterH()
                                        .Bind(nameof(vm.RegistrationPrompt)),
 
                             new Label { Text = "Registration code" } .Font(FontAttributes.Bold)
-                                       .Row (1) .Bottom() .Margin(fieldNameMargin),
+                                       .Row (BodyRow.CodeHeader) .Col(BodyCol.FieldLabel) .Bottom() .Margin(fieldNameMargin),
 
                             new Label { } .Font (FontAttributes.Italic)
-                                       .RowCol (1, 1) .Right() .Bottom() .Margin (fieldNameMargin)
+                                       .Row (BodyRow.CodeHeader) .Col(BodyCol.FieldValidation) .Right() .Bottom() .Margin (fieldNameMargin)
                                        .Bind(nameof(vm.RegistrationCodeValidationMessage)),
 
                             new Entry { Placeholder = "E.g. 123456", Keyboard = Keyboard.Numeric } .Font (FontSizes._15) .BackgroundColor (Colors.White) .TextColor (Colors.Gray1)
-                                       .Row (2) .ColSpan (2) .Margin (fieldMargin) .Height (44)
+                                       .Row (BodyRow.CodeEntry) .ColSpanAll (typeof(BodyCol)) .Margin (fieldMargin) .Height (44)
                                        .Bind(nameof(vm.RegistrationCode), BindingMode.TwoWay),
 
                             new Button { Text = "Verify", Style = Styles.ButtonFilled }
-                                        .Row (3) .ColSpan (2) .FillExpandH() .Margin (PageMarginSize) .Height (44)
+                                        .Row (BodyRow.Button) .ColSpanAll (typeof(BodyCol)) .FillExpandH() .Margin (PageMarginSize) .Height (44)
                                         .Bind(Button.IsVisibleProperty, nameof(vm.CanVerifyRegistrationCode))
                                         .Bind(nameof(vm.VerifyRegistrationCodeCommand)),
                         }
-                    }} .Row(1)
+                    }} .Row (PageRow.Body)
                  }
             };
         }

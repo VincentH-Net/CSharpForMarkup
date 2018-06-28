@@ -8,6 +8,8 @@ namespace CSharpForMarkupExample.Views.Pages
 {
     public class MainPage : BaseContentPage<MainViewModel>
     {
+        enum PageRow { Header, Body }
+
         public MainPage()
         {
             var app = App.Current;
@@ -20,12 +22,17 @@ namespace CSharpForMarkupExample.Views.Pages
             Content = new Grid 
             {
                 RowSpacing = 0,
-                RowDefinitions = { new RowDefinition { Height = GridLength.Auto }, new RowDefinition { } },
+
+                RowDefinitions = Rows.Define(
+                    (PageRow.Header, GridLength.Auto),
+                    (PageRow.Body  , GridLength.Star)
+                ),
+
                 Children = {
                     PageHeader.Create(
                         PageMarginSize, 
                         nameof(vm.Title), nameof(vm.SubTitle)
-                    ),
+                    ) .Row (PageRow.Header),
 
                     new ScrollView { Content = new StackLayout { Children = {
                         new Button { Text = nameof(RegistrationCodePage), Style = Styles.ButtonFilled }
@@ -35,7 +42,7 @@ namespace CSharpForMarkupExample.Views.Pages
                         new Button { Text = nameof(NestedListPage), Style = Styles.ButtonFilled }
                             .FillExpandH() .Margin(PageMarginSize) .Height(44)
                             .Bind(nameof(vm.ContinueToNestedListCommand)),
-                    }}} .Row(1)
+                    }}} .Row(PageRow.Body)
                  }
             };
         }

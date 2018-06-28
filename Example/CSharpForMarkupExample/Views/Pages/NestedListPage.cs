@@ -8,6 +8,9 @@ namespace CSharpForMarkupExample.Views.Pages
 {
     public class NestedListPage : BaseContentPage<NestedListViewModel>
     {
+        enum PageRow { Header, Body }
+        enum GroupRow { Body, Separator }
+
         public NestedListPage()
         {
             var app = App.Current;
@@ -21,15 +24,16 @@ namespace CSharpForMarkupExample.Views.Pages
             Content = new Grid
             {
                 RowSpacing = 0,
-                RowDefinitions = {
-                    new RowDefinition { Height = GridLength.Auto },
-                    new RowDefinition { },
-                },
+
+                RowDefinitions = Rows.Define(
+                    (PageRow.Header, GridLength.Auto),
+                    (PageRow.Body  , GridLength.Star)
+                ),
 
                 Children =
                 {
-                    // Header
-                    PageHeader.Create(PageMarginSize, nameof(vm.Title), nameof(vm.Subtitle), nameof(vm.ReturnToPreviousViewCommand)),
+                    PageHeader.Create(PageMarginSize, nameof(vm.Title), nameof(vm.Subtitle), nameof(vm.ReturnToPreviousViewCommand))
+                    .Row(PageRow.Header),
 
                     new ListView(ListViewCachingStrategy.RecycleElement)
                     {
@@ -42,7 +46,11 @@ namespace CSharpForMarkupExample.Views.Pages
                         GroupHeaderTemplate = new DataTemplate(() => new ViewCell { Height = 40, View = new Grid {
                             BackgroundColor = Colors.BgGray3.ToColor(),
                             RowSpacing = 0,
-                            RowDefinitions = { new RowDefinition { }, new RowDefinition { Height = 2 } },
+                            RowDefinitions = Rows.Define(
+                                (GroupRow.Body     , GridLength.Star),
+                                (GroupRow.Separator, 2)
+                            ),
+
                             Children = {
                                 new StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 5, Children = {
                                     new Label { } .Font(FontSizes._15, FontAttributes.Bold) .TextColor(Colors.ColorValuePrimary)
@@ -62,10 +70,11 @@ namespace CSharpForMarkupExample.Views.Pages
                                     .CenterV() .Margin (0, 0, PageMarginSize, 0)
                                     .Bind(Button.CommandProperty, nameof(vm.RemoveGroupCommand), source: vm)
                                     .Bind(Button.CommandParameterProperty)
-                                }},
+                                }}
+                                .Row (GroupRow.Body),
 
                                 new BoxView { } .Color (Colors.Gray2)
-                                .Row (1)
+                                .Row (GroupRow.Separator)
                             }
                         }}),
 
@@ -73,7 +82,7 @@ namespace CSharpForMarkupExample.Views.Pages
 
                         Footer = new Button { Text = " Add Group " }
                         .Bind(nameof(vm.AddGroupCommand)),
-                    }.Row(1)
+                    }.Row(PageRow.Body)
                      .Bind(nameof(vm.Groups))
                      .Invoke(l => l.ItemSelected += List_ItemSelected)
                 }
@@ -121,18 +130,18 @@ namespace CSharpForMarkupExample.Views.Pages
 
                         Children = {
                             new Label { Text = "\u2b50 " } .TextColor (Colors.Green)
-                            .Left() .CenterV(),
+                            .Row (Row.Header) .Col (Col.LeftPileIcon) .Left() .CenterV(),
 
                             new Label { Text = "Item", LineBreakMode = LineBreakMode.TailTruncation } .Font (FontSizes._15, FontAttributes.Bold)
-                            .Col (Col.LeftPile, Col.Last) .CenterV(),
+                            .Row (Row.Header) .Col (Col.LeftPile, Col.Last) .CenterV(),
 
                             new Label { } .Font (FontAttributes.Bold) .TextColor (Colors.Gray1)
-                            .Col (Col.Nr) .Center()
+                            .Row (Row.Header) .Col (Col.Nr) .Center()
                             .Bind(nameof(ListItem.Title)),
 
 
                             new Label { Text = "\U0001f60e " }
-                            .Row (Row.Piles) .Left() .CenterV(),
+                            .Row (Row.Piles) .Col (Col.LeftPileIcon) .Left() .CenterV(),
 
                             new Label { } .Font (FontSizes._14, FontAttributes.Bold)
                             .Row (Row.Piles) .Col (Col.LeftPile) .CenterV() .TextCenterH() .TextBottom()
@@ -145,7 +154,7 @@ namespace CSharpForMarkupExample.Views.Pages
                             .Row (Row.Piles) .Col (Col.RightPileIcon) .Left() .CenterV(),
 
                             new Label { } .Font (FontSizes._14, FontAttributes.Bold)
-                            .RowCol (Row.Piles, Col.RightPile) .CenterV() .TextCenterH() .TextBottom()
+                            .Row (Row.Piles) .Col (Col.RightPile) .CenterV() .TextCenterH() .TextBottom()
                             .Bind(nameof(ListItem.CountText)),
 
 

@@ -11,6 +11,9 @@ namespace CSharpForMarkupExample.Views.Controls
 
         public static double ButtonHeight => rowHeight;
 
+        enum Row { StatusBar, Title, Subtitle }
+        enum Col { First, BackButton = First, Title, Last = Title }
+
         public static Grid Create(
             double pageMarginSize, 
             string titlePropertyName = null, 
@@ -25,18 +28,16 @@ namespace CSharpForMarkupExample.Views.Controls
                 BackgroundColor = backgroundColor.ToColor(),
 
                 ColumnSpacing = 0,
-                ColumnDefinitions = {
-                    new ColumnDefinition { Width = 60 },
-                    new ColumnDefinition { },
-                    new ColumnDefinition { Width = GridLength.Auto },
-                    new ColumnDefinition { Width = GridLength.Auto },
-                },
+                ColumnDefinitions = Columns.Define (
+                    (Col.BackButton, 60 ),
+                    (Col.Title     , GridLength.Star )
+                ),
 
-                RowDefinitions = {
-                    new RowDefinition { Height = Device.RuntimePlatform == Device.iOS ? rowHeight : 0 },
-                    new RowDefinition { Height = rowHeight },
-                    new RowDefinition { Height = rowHeight },
-                },
+                RowDefinitions = Rows.Define (
+                    ( Row.StatusBar, Device.RuntimePlatform == Device.iOS ? rowHeight : 0 ),
+                    ( Row.Title    , rowHeight ),
+                    ( Row.Subtitle , rowHeight )
+                ),
 
                 Children = {
                     new ContentView { Content = (returnToPreviousViewCommandPropertyName != null) ?
@@ -44,16 +45,16 @@ namespace CSharpForMarkupExample.Views.Controls
                         .Left() .CenterV()
                         .Bind(Button.CommandProperty, returnToPreviousViewCommandPropertyName)
                         : null
-                    }.Row (1, 2) .Padding (pageMarginSize, 0)
-                     .Invoke(b => { if (allowBackNavigationPropertyName != null) b.Bind(ContentView.IsVisibleProperty, allowBackNavigationPropertyName); }),
+                    } .Row (Row.Title, Row.Subtitle) .Col (Col.BackButton) .Padding (pageMarginSize, 0)
+                      .Invoke(b => { if (allowBackNavigationPropertyName != null) b.Bind(ContentView.IsVisibleProperty, allowBackNavigationPropertyName); }),
 
                     new Label { 
                         LineBreakMode = LineBreakMode.TailTruncation, 
                         HorizontalOptions = centerTitle ? LayoutOptions.Center : LayoutOptions.Start,
                         VerticalOptions = subTitlePropertyName != null ? LayoutOptions.End : LayoutOptions.Center 
-                    }.Font (FontAttributes.Bold) .TextColor (Colors.White)
-                     .Row (1, subTitlePropertyName != null ? 1 : 2) .Col (centerTitle ? 0 : 1, centerTitle ? 4 : 1)
-                     .Invoke(l => { if (titlePropertyName != null) l.Bind(titlePropertyName); })
+                    } .Font (FontAttributes.Bold) .TextColor (Colors.White)
+                      .Row (Row.Title, subTitlePropertyName != null ? Row.Title : Row.Subtitle) .Col (centerTitle ? Col.First : Col.Title, centerTitle ? Col.Last : Col.Title)
+                      .Invoke(l => { if (titlePropertyName != null) l.Bind(titlePropertyName); })
                 }
             };
 
@@ -63,7 +64,7 @@ namespace CSharpForMarkupExample.Views.Controls
                     HorizontalOptions = centerTitle ? LayoutOptions.Center : LayoutOptions.Start,
                     VerticalOptions = LayoutOptions.Start 
                 }.Font (FontAttributes.Bold) .TextColor (Colors.White)
-                 .Row (2) .Col (centerTitle ? 0 : 1, centerTitle ? 4 : 1)
+                 .Row (Row.Subtitle) .Col (centerTitle ? Col.First : Col.Title, centerTitle ? Col.Last : Col.Title)
                  .Bind(subTitlePropertyName)
             );
             return grid;
