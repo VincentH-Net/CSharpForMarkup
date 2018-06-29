@@ -57,17 +57,7 @@ This markup follows some conventions. For each control:
 
 You can also **use enums for Grid rows and columns** instead of numbers, so you don't have to renumber manually when you add or remove rows or columns. Readability and intent of the layout is also improved:
 
-![Enums For Rows And Columns](img/EnumsForRowsAndColumns.png)
-
-The row and column defititions then change from:
-
-![Xaml For Rows And Column Definitions](img/XamlForRowsAndColumnDefinitions.png)
-
-to:
-
-![Enums](img/Enums.png)
-
-![Enums For Rows And Column Definitions](img/EnumsForRowsAndColumnDefinitions.png) 
+![Enums For Grid Rows And Columns](img/EnumsForGridRowsAndColumns.png)
 
 ### Reading Pro's:
 C#
