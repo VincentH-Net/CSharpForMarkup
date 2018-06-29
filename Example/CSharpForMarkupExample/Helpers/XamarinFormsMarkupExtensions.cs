@@ -161,14 +161,6 @@ namespace CSharpForMarkup
             return view;
         }
 
-        public static TView RowSpanAll<TView>(this TView view, Type enumType) where TView : View
-        {
-            var values = Enum.GetValues(enumType);
-            int span = (int)values.GetValue(values.Length - 1) + 1;
-            if (span != 1) view.SetValue(Grid.RowSpanProperty, span);
-            return view;
-        }
-
         public static TView Col<TView>(this TView view, IConvertible col) where TView : View
         {
             int colIndex = col.ToInt();
@@ -184,14 +176,6 @@ namespace CSharpForMarkup
             int span = last.ToInt() + 1 - colIndex;
             if (span != 1) view.SetValue(Grid.ColumnSpanProperty, span);
 
-            return view;
-        }
-
-        public static TView ColSpanAll<TView>(this TView view, Type enumType) where TView : View
-        {
-            var values = Enum.GetValues(enumType);
-            int span = (int)values.GetValue(values.Length - 1) + 1;
-            if (span != 1) view.SetValue(Grid.ColumnSpanProperty, span);
             return view;
         }
 
@@ -305,6 +289,16 @@ namespace CSharpForMarkup
                 rowDefinitions.Add(new RowDefinition { Height = rows[i].height });
             }
             return rowDefinitions;
+        }
+    }
+
+    public static class EnumsForGridRowsAndColumns
+    {
+        public static int All<TEnum>() where TEnum : IConvertible
+        {
+            var values = Enum.GetValues(typeof(TEnum));
+            int span = (int)values.GetValue(values.Length - 1) + 1;
+            return span;
         }
     }
 

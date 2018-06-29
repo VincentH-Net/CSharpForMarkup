@@ -3,7 +3,7 @@ Use declarative style C# instead of XAML for Xamarin Forms UI.
 
 All you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
 
-The helpers offer a fluent API with **Bind**, **Invoke**, **Assign**, **Row**, **Col**, inline converters, using enums for Grid rows + columns and more. Simple to change/extend.
+The helpers offer a fluent API with **Bind**, **Invoke**, **Assign**, **Row**, **Col**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend.
 
 ## Why?
 Because **declarative style** C# has a much better developer experience and reads virtually the same as XAML.

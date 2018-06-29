@@ -2,6 +2,7 @@
 using CSharpForMarkupExample.ViewModels;
 using CSharpForMarkupExample.Views.Controls;
 using Xamarin.Forms;
+using static CSharpForMarkup.EnumsForGridRowsAndColumns;
 
 namespace CSharpForMarkupExample.Views.Pages
 {
@@ -58,7 +59,7 @@ namespace CSharpForMarkupExample.Views.Pages
 
                         Children = {
                             new Label { LineBreakMode = LineBreakMode.WordWrap } .Font (FontSizes._15, FontAttributes.Bold)
-                                       .Row (BodyRow.Prompt)  .ColSpanAll (typeof(BodyCol)) .FillExpandH() .CenterV() .Margin (fieldNameMargin) .TextCenterH()
+                                       .Row (BodyRow.Prompt) .ColSpan (All<BodyCol>()) .FillExpandH() .CenterV() .Margin (fieldNameMargin) .TextCenterH()
                                        .Bind(nameof(vm.RegistrationPrompt)),
 
                             new Label { Text = "Registration code" } .Font(FontAttributes.Bold)
@@ -69,11 +70,11 @@ namespace CSharpForMarkupExample.Views.Pages
                                        .Bind(nameof(vm.RegistrationCodeValidationMessage)),
 
                             new Entry { Placeholder = "E.g. 123456", Keyboard = Keyboard.Numeric } .Font (FontSizes._15) .BackgroundColor (Colors.White) .TextColor (Colors.Gray1)
-                                       .Row (BodyRow.CodeEntry) .ColSpanAll (typeof(BodyCol)) .Margin (fieldMargin) .Height (44)
+                                       .Row (BodyRow.CodeEntry) .ColSpan (All<BodyCol>()) .Margin (fieldMargin) .Height (44)
                                        .Bind(nameof(vm.RegistrationCode), BindingMode.TwoWay),
 
                             new Button { Text = "Verify", Style = Styles.ButtonFilled }
-                                        .Row (BodyRow.Button) .ColSpanAll (typeof(BodyCol)) .FillExpandH() .Margin (PageMarginSize) .Height (44)
+                                        .Row (BodyRow.Button) .ColSpan (All<BodyCol>()) .FillExpandH() .Margin (PageMarginSize) .Height (44)
                                         .Bind(Button.IsVisibleProperty, nameof(vm.CanVerifyRegistrationCode))
                                         .Bind(nameof(vm.VerifyRegistrationCodeCommand)),
                         }
