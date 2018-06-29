@@ -3,6 +3,7 @@ using CSharpForMarkup;
 using CSharpForMarkupExample.ViewModels;
 using CSharpForMarkupExample.Views.Controls;
 using Xamarin.Forms;
+using static CSharpForMarkup.EnumsForGridRowsAndColumns;
 
 namespace CSharpForMarkupExample.Views.Pages
 {

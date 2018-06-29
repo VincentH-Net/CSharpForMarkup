@@ -264,36 +264,36 @@ namespace CSharpForMarkup
 
     #region Use enum for Row / Col for better readability + avoid manual renumbering
 
-    public static class Columns
-    {
-        public static ColumnDefinitionCollection Define<TEnum>(params (TEnum name, GridLength width)[] cols) where TEnum : IConvertible
-        {
-            var columnDefinitions = new ColumnDefinitionCollection();
-            for (int i = 0; i < cols.Length; i++)
-            {
-                if (i != cols[i].name.ToInt32(System.Globalization.CultureInfo.InvariantCulture)) throw new ArgumentException($"Value of column name { cols[i].name } is not { i }. Columns must be defined with enum names whose values form the sequence 0,1,2,...");
-                columnDefinitions.Add(new ColumnDefinition { Width = cols[i].width });
-            }
-            return columnDefinitions;
-        }
-    }
-
-    public static class Rows
-    {
-        public static RowDefinitionCollection Define<TEnum>(params (TEnum name, GridLength height)[] rows) where TEnum : IConvertible
-        {
-            var rowDefinitions = new RowDefinitionCollection();
-            for (int i = 0; i < rows.Length; i++)
-            {
-                if (i != rows[i].name.ToInt32(System.Globalization.CultureInfo.InvariantCulture)) throw new ArgumentException($"Value of row name { rows[i].name } is not { i }. Rows must be defined with enum names whose values form the sequence 0,1,2,...");
-                rowDefinitions.Add(new RowDefinition { Height = rows[i].height });
-            }
-            return rowDefinitions;
-        }
-    }
-
     public static class EnumsForGridRowsAndColumns
     {
+        public static class Columns
+        {
+            public static ColumnDefinitionCollection Define<TEnum>(params (TEnum name, GridLength width)[] cols) where TEnum : IConvertible
+            {
+                var columnDefinitions = new ColumnDefinitionCollection();
+                for (int i = 0; i < cols.Length; i++)
+                {
+                    if (i != cols[i].name.ToInt32(System.Globalization.CultureInfo.InvariantCulture)) throw new ArgumentException($"Value of column name { cols[i].name } is not { i }. Columns must be defined with enum names whose values form the sequence 0,1,2,...");
+                    columnDefinitions.Add(new ColumnDefinition { Width = cols[i].width });
+                }
+                return columnDefinitions;
+            }
+        }
+
+        public static class Rows
+        {
+            public static RowDefinitionCollection Define<TEnum>(params (TEnum name, GridLength height)[] rows) where TEnum : IConvertible
+            {
+                var rowDefinitions = new RowDefinitionCollection();
+                for (int i = 0; i < rows.Length; i++)
+                {
+                    if (i != rows[i].name.ToInt32(System.Globalization.CultureInfo.InvariantCulture)) throw new ArgumentException($"Value of row name { rows[i].name } is not { i }. Rows must be defined with enum names whose values form the sequence 0,1,2,...");
+                    rowDefinitions.Add(new RowDefinition { Height = rows[i].height });
+                }
+                return rowDefinitions;
+            }
+        }
+
         public static int All<TEnum>() where TEnum : IConvertible
         {
             var values = Enum.GetValues(typeof(TEnum));

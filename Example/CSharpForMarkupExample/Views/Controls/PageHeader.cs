@@ -1,5 +1,6 @@
 ﻿using CSharpForMarkup;
 using Xamarin.Forms;
+using static CSharpForMarkup.EnumsForGridRowsAndColumns;
 
 namespace CSharpForMarkupExample.Views.Controls
 {
