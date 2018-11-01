@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using Xamarin.Forms;
 #if WINDOWS_UWP
 using System.Reflection;
@@ -143,6 +144,43 @@ namespace CSharpForMarkup
             return view;
         }
 
+        public static TView AlignSelf<TView>(this TView view, FlexAlignSelf value) where TView : View
+        {
+            FlexLayout.SetAlignSelf(view, value);
+            return view;
+        }
+
+        public static TView Basis<TView>(this TView view, FlexBasis value) where TView : View
+        {
+            FlexLayout.SetBasis(view, value);
+            return view;
+        }
+
+        public static TView Grow<TView>(this TView view, float value) where TView : View
+        {
+            FlexLayout.SetGrow(view, value);
+            return view;
+        }
+
+        public static TView Menu<TView>(this TView view, Menu value) where TView : View
+        {
+            FlexLayout.SetMenu(view, value);
+            return view;
+        }
+
+        public static TView Order<TView>(this TView view, int value) where TView : View
+        {
+            FlexLayout.SetOrder(view, value);
+            return view;
+        }
+
+        public static TView Shrink<TView>(this TView view, float value) where TView : View
+        {
+            FlexLayout.SetShrink(view, value);
+            return view;
+        }
+
+
         #region Use enum for Row / Col for better readability + avoid manual renumbering
 
         public static TView Row<TView>(this TView view, IConvertible row) where TView : View
@@ -260,6 +298,29 @@ namespace CSharpForMarkup
         public static TElement Size<TElement>(this TElement element, double sizeRequest) where TElement : VisualElement => element.Width(sizeRequest).Height(sizeRequest);
         public static TElement MinSize<TElement>(this TElement element, double widthRequest, double heightRequest) where TElement : VisualElement => element.MinWidth(widthRequest).MinHeight(heightRequest);
         public static TElement MinSize<TElement>(this TElement element, double sizeRequest) where TElement : VisualElement => element.MinWidth(sizeRequest).MinHeight(sizeRequest);
+
+        public static Label FontSize(this Label label, double fontSize) { label.FontSize = fontSize; return label; }
+        public static Label Bold(this Label label) { label.FontAttributes = FontAttributes.Bold; return label; }
+        public static Label Italic(this Label label) { label.FontAttributes = FontAttributes.Italic; return label; }
+
+        public static TView Font<TView>(this TView view, double? fontSize = null, bool? bold = null, bool? italic = null, string family = null) where TView : View
+        {
+            var attributes = bold == true ? FontAttributes.Bold : 
+                             italic == true ? FontAttributes.Italic : 
+                             bold.HasValue || italic.HasValue ? FontAttributes.None : 
+                             (FontAttributes?)null;
+
+            switch (view)
+            {
+                case Button button: if (fontSize.HasValue) button.FontSize = fontSize.Value; if (attributes.HasValue) button.FontAttributes = attributes.Value; if (family != null) button.FontFamily = family; break;
+                case Label  label : if (fontSize.HasValue) label .FontSize = fontSize.Value; if (attributes.HasValue) label .FontAttributes = attributes.Value; if (family != null) label .FontFamily = family; break;
+                case Entry  entry : if (fontSize.HasValue) entry .FontSize = fontSize.Value; if (attributes.HasValue) entry .FontAttributes = attributes.Value; if (family != null) entry .FontFamily = family; break;
+                case Picker picker: if (fontSize.HasValue) picker.FontSize = fontSize.Value; if (attributes.HasValue) picker.FontAttributes = attributes.Value; if (family != null) picker.FontFamily = family; break;
+            }
+            return view;
+        }
+
+        static FontAttributes GetFontAttributes(bool bold = false, bool italic = false) => bold ? FontAttributes.Bold : italic ? FontAttributes.Italic : FontAttributes.None;
     }
 
     #region Use enum for Row / Col for better readability + avoid manual renumbering
@@ -304,33 +365,33 @@ namespace CSharpForMarkup
 
     #endregion Use enum for Row / Col for better readability + avoid manual renumbering
 
-    public class FuncConverter : IValueConverter
+    public class FuncConverter<TSource, TDest> : IValueConverter
     {
-        private readonly Func<object> func;
+        readonly Func<TSource, TDest> convert;
+        readonly Func<TDest, TSource> convertBack;
 
-        public FuncConverter(Func<object> func) { this.func = func; }
+        public FuncConverter(Func<TSource, TDest> convert = null, Func<TDest, TSource> convertBack = null) { this.convert = convert; this.convertBack = convertBack; }
 
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) => func?.Invoke();
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) => convert != null ? convert.Invoke(value != null ? (TSource)value : default(TSource)) : default(TDest);
 
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) { throw new NotImplementedException(); }
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) => convertBack != null ? convertBack.Invoke(value != null ? (TDest)value : default(TDest)) : default(TSource);
     }
 
-    public class FuncConverter<TSource> : IValueConverter
+    public class FuncConverter<TSource> : FuncConverter<TSource, object>
     {
-        private readonly Func<TSource, object> func;
-
-        public FuncConverter(Func<TSource, object> func) { this.func = func; }
-
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) => func?.Invoke(value != null ? (TSource)value : default(TSource));
-
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture) { throw new NotImplementedException(); }
+        public FuncConverter(Func<TSource, object> convert = null, Func<object, TSource> convertBack = null) : base(convert, convertBack) { }
     }
 
-    public class ToStringConverter : FuncConverter<object> { public ToStringConverter(string format = "{0}") : base(o => string.Format(format, o)) { } }
+    public class FuncConverter : FuncConverter<object, object>
+    {
+        public FuncConverter(Func<object, object> convert = null, Func<object, object> convertBack = null) : base(convert, convertBack) { }
+    }
+
+    public class ToStringConverter : FuncConverter { public ToStringConverter(string format = "{0}") : base(o => string.Format(CultureInfo.InvariantCulture, format, o)) { } }
     public class ShortTimeConverter : FuncConverter<DateTimeOffset> { public ShortTimeConverter() : base(t => t.ToString("t")) { } }
     public class BoolNotConverter : FuncConverter<bool>
     {
-        private static readonly Lazy<BoolNotConverter> instance = new Lazy<BoolNotConverter>(() => new BoolNotConverter());
+        static readonly Lazy<BoolNotConverter> instance = new Lazy<BoolNotConverter>(() => new BoolNotConverter());
         public static BoolNotConverter Instance => instance.Value;
         public BoolNotConverter() : base(t => !t) { }
     }
