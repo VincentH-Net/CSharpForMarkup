@@ -1,39 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>{B09D87FF-9828-40AD-A2D6-EF9D615F0880}</SharedGUID>
+    <SharedGUID>e6ecb041-759b-46dd-a3c2-9ebc098abc90</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>CSharpForMarkupExample</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\XamarinFormsMarkupExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\RelayCommand.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\TaskHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\BaseContentPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\RegistrationCodePage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegistrationCodeViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\Controls\PageHeader.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\BrandingExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Branding.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\Controls\ImageButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\BrandingExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\SingleSubscriptionEnsurer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\TaskHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\XamarinFormsMarkupExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\XLog.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\NestedListPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NestedListViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\MainPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Styles.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Views\Pages\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Views\Controls\" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NestedListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegistrationCodeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Controls\ImageButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Controls\PageHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\BaseContentPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\MainPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\NestedListPage.logic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\NestedListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\RegistrationCodePage.cs" />
   </ItemGroup>
 </Project>

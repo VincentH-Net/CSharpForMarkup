@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using Xamarin.Forms;
+using System.Linq;
 #if WINDOWS_UWP
 using System.Reflection;
 #endif
@@ -41,7 +42,8 @@ namespace CSharpForMarkup
             { "Xamarin.Forms.TimePicker", TimePicker.TimeProperty },
             { "Xamarin.Forms.WebView", WebView.SourceProperty },
             { "Xamarin.Forms.TextCell", TextCell.TextProperty },
-            { "Xamarin.Forms.ToolbarItem", ToolbarItem.CommandProperty }
+            { "Xamarin.Forms.ToolbarItem", ToolbarItem.CommandProperty },
+            { "Xamarin.Forms.TapGestureRecognizer", TapGestureRecognizer.CommandProperty }
         };
 
         static BindableProperty GetDefaultProperty(Element view) // Note that we use Element type for the view variable in bind functions because we want to bind to Cell types as well as View types
@@ -83,6 +85,23 @@ namespace CSharpForMarkup
             return view;
         }
 
+        public static TView Bind<TView, TSource, TDest>(this TView view, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, Func<TSource, TDest> convert = null, Func<TDest, TSource> convertBack = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : Element
+        {
+            var converter = new FuncConverter<TSource, TDest>(convert, convertBack);
+            if (source != null || converterParameter != null)
+                view.SetBinding(targetProperty, new Binding(
+                    path: sourcePropertyName,
+                    mode: mode,
+                    converter: converter,
+                    converterParameter: converterParameter,
+                    stringFormat: stringFormat,
+                    source: source
+                ));
+            else
+                view.SetBinding(targetProperty, sourcePropertyName, mode, converter, stringFormat);
+            return view;
+        }
+
         public static TView Bind<TView>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : Element
         {
             view.Bind(
@@ -94,6 +113,82 @@ namespace CSharpForMarkup
                 stringFormat: stringFormat,
                 source: source
             );
+            return view;
+        }
+
+        public static TView Bind<TView, TSource, TDest>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, Func<TSource, TDest> convert = null, Func<TDest, TSource> convertBack = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : Element
+        {
+            var converter = new FuncConverter<TSource, TDest>(convert, convertBack);
+            view.Bind(
+                targetProperty: GetDefaultProperty(view),
+                sourcePropertyName: sourcePropertyName,
+                mode: mode,
+                converter: converter,
+                converterParameter: converterParameter,
+                stringFormat: stringFormat,
+                source: source
+            );
+            return view;
+        }
+
+        public static TView Bind<TView, TGestureRecognizer>(this TView view, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : View where TGestureRecognizer : GestureRecognizer, new()
+        {
+            var gestureRecognizer = (TGestureRecognizer)view.GestureRecognizers?.FirstOrDefault(r => r is TGestureRecognizer);
+            if (gestureRecognizer == null) view.GestureRecognizers.Add(gestureRecognizer = new TGestureRecognizer());
+
+            if (targetProperty == null) targetProperty = GetDefaultProperty(gestureRecognizer);
+
+            if (source != null || converterParameter != null)
+                gestureRecognizer.SetBinding(targetProperty, new Binding(
+                    path: sourcePropertyName,
+                    mode: mode,
+                    converter: converter,
+                    converterParameter: converterParameter,
+                    stringFormat: stringFormat,
+                    source: source
+                ));
+            else
+                gestureRecognizer.SetBinding(targetProperty, sourcePropertyName, mode, converter, stringFormat);
+            return view;
+        }
+
+        public static TView Bind<TView, TGestureRecognizer>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : View where TGestureRecognizer : GestureRecognizer, new()
+        {
+            view.Bind<TView, TGestureRecognizer>(
+                targetProperty: null,
+                sourcePropertyName: sourcePropertyName,
+                mode: mode,
+                converter: converter,
+                converterParameter: converterParameter,
+                stringFormat: stringFormat,
+                source: source
+            );
+            return view;
+        }
+
+        public static TView BindTapGesture<TView>(this TView view, string sourcePropertyName = bindingContextPropertyName, string commandParameterPropertyName = null, object commandParameter = null, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object commandParameterSource = null) where TView : View
+        {
+            var gestureRecognizer = (TapGestureRecognizer)view.GestureRecognizers?.FirstOrDefault(r => r is TapGestureRecognizer);
+            if (gestureRecognizer == null) view.GestureRecognizers.Add(gestureRecognizer = new TapGestureRecognizer());
+
+            if (commandParameterPropertyName != null)
+                gestureRecognizer.SetBinding(TapGestureRecognizer.CommandParameterProperty, new Binding(path: commandParameterPropertyName, source: commandParameterSource));
+            else if (commandParameter != null)
+                gestureRecognizer.CommandParameter = commandParameter;
+
+            var targetProperty = TapGestureRecognizer.CommandProperty;
+
+            if (source != null || converterParameter != null)
+                gestureRecognizer.SetBinding(targetProperty, new Binding(
+                    path: sourcePropertyName,
+                    mode: mode,
+                    converter: converter,
+                    converterParameter: converterParameter,
+                    stringFormat: stringFormat,
+                    source: source
+                ));
+            else
+                gestureRecognizer.SetBinding(targetProperty, sourcePropertyName, mode, converter, stringFormat);
             return view;
         }
 
@@ -272,12 +367,12 @@ namespace CSharpForMarkup
         public static TView FillExpand<TView>(this TView view) where TView : View => view.FillExpandH().FillExpandV();
 
         public static TView Margin<TView>(this TView view, Thickness margin) where TView : View { view.Margin = margin; return view; }
-        public static TView Margin<TView>(this TView view, double horizontalSize, double verticalSize) where TView : View { view.Margin = new Thickness(horizontalSize, verticalSize); return view; }
-        public static TView Margin<TView>(this TView view, double left, double top, double right, double bottom) where TView : View { view.Margin = new Thickness(left, top, right, bottom); return view; }
+        public static TView Margin<TView>(this TView view, double horizontal, double vertical) where TView : View { view.Margin = new Thickness(horizontal, vertical); return view; }
+        public static TView Margins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : View { view.Margin = new Thickness(left, top, right, bottom); return view; }
 
         public static TLayout Padding<TLayout>(this TLayout layout, Thickness padding) where TLayout : Layout { layout.Padding = padding; return layout; }
         public static TLayout Padding<TLayout>(this TLayout layout, double horizontalSize, double verticalSize) where TLayout : Layout { layout.Padding = new Thickness(horizontalSize, verticalSize); return layout; }
-        public static TLayout Padding<TLayout>(this TLayout layout, double left, double top, double right, double bottom) where TLayout : Layout { layout.Padding = new Thickness(left, top, right, bottom); return layout; }
+        public static TLayout Paddings<TLayout>(this TLayout layout, double left = 0, double top = 0, double right = 0, double bottom = 0) where TLayout : Layout { layout.Padding = new Thickness(left, top, right, bottom); return layout; }
 
         public static TLabel TextLeft<TLabel>(this TLabel label) where TLabel : Label { label.HorizontalTextAlignment = TextAlignment.Start; return label; }
         public static TLabel TextCenterH<TLabel>(this TLabel label) where TLabel : Label { label.HorizontalTextAlignment = TextAlignment.Center; return label; }
@@ -305,9 +400,9 @@ namespace CSharpForMarkup
 
         public static TView Font<TView>(this TView view, double? fontSize = null, bool? bold = null, bool? italic = null, string family = null) where TView : View
         {
-            var attributes = bold == true ? FontAttributes.Bold : 
-                             italic == true ? FontAttributes.Italic : 
-                             bold.HasValue || italic.HasValue ? FontAttributes.None : 
+            var attributes = bold == true ? FontAttributes.Bold :
+                             italic == true ? FontAttributes.Italic :
+                             bold.HasValue || italic.HasValue ? FontAttributes.None :
                              (FontAttributes?)null;
 
             switch (view)
@@ -321,12 +416,37 @@ namespace CSharpForMarkup
         }
 
         static FontAttributes GetFontAttributes(bool bold = false, bool italic = false) => bold ? FontAttributes.Bold : italic ? FontAttributes.Italic : FontAttributes.None;
+
+        public static TElement Effects<TElement>(this TElement element, params Effect[] effects) where TElement : Element
+        {
+            for (int i = 0; i < effects.Length; i++) element.Effects.Add(effects[i]);
+            return element;
+        }
+
+        #region Platform-specifics
+
+        public static T iOSSetDefaultBackgroundColor<T>(this T cell, Color color) where T : Cell
+        {
+            Xamarin.Forms.PlatformConfiguration.iOSSpecific.Cell.SetDefaultBackgroundColor(cell, color);
+            return cell;
+        }
+
+        public static T iOSSetGroupHeaderStyleGrouped<T>(this T listView) where T : ListView
+        {
+            Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView.SetGroupHeaderStyle(listView, Xamarin.Forms.PlatformConfiguration.iOSSpecific.GroupHeaderStyle.Grouped);
+            return listView;
+        }
+
+        #endregion Platform-specifics
     }
 
     #region Use enum for Row / Col for better readability + avoid manual renumbering
 
     public static class EnumsForGridRowsAndColumns
     {
+        public static GridLength Auto => GridLength.Auto;
+        public static GridLength Star => GridLength.Star;
+
         public static class Columns
         {
             public static ColumnDefinitionCollection Define<TEnum>(params (TEnum name, GridLength width)[] cols) where TEnum : IConvertible
@@ -360,6 +480,13 @@ namespace CSharpForMarkup
             var values = Enum.GetValues(typeof(TEnum));
             int span = (int)values.GetValue(values.Length - 1) + 1;
             return span;
+        }
+
+        public static int Last<TEnum>() where TEnum : IConvertible
+        {
+            var values = Enum.GetValues(typeof(TEnum));
+            int last = (int)values.GetValue(values.Length - 1);
+            return last;
         }
     }
 

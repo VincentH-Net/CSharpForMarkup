@@ -8,28 +8,24 @@ namespace CSharpForMarkupExample.Views.Pages
 {
     public class RegistrationCodePage : BaseContentPage<RegistrationCodeViewModel>
     {
+        public RegistrationCodePage() => Build();
+
         enum PageRow { Header, Body }
         enum BodyRow { Prompt, CodeHeader, CodeEntry, Button }
         enum BodyCol { FieldLabel, FieldValidation }
 
-        public RegistrationCodePage()
+        void Build()
         {
             var app = App.Current;
-
             var vm = ViewModel = app.RegistrationCodeViewModel;
             var fieldNameMargin = new Thickness(20, 10);
             var fieldMargin = new Thickness(PageMarginSize, 0);
             
             NavigationPage.SetHasNavigationBar(this, false);
-
-            var x = System.Enum.GetValues(typeof(BodyCol)).Length;
-
             BackgroundColor = Colors.BgGray3.ToColor();
 
-            Content = new Grid 
-            {
+            Content = new Grid {
                 RowSpacing = 0,
-
                 RowDefinitions = Rows.Define(
                     (PageRow.Header, GridLength.Auto),
                     (PageRow.Body  , GridLength.Star)
@@ -41,7 +37,7 @@ namespace CSharpForMarkupExample.Views.Pages
                         nameof(vm.RegistrationTitle), nameof(vm.RegistrationSubTitle),
                         returnToPreviousViewCommandPropertyName: nameof(vm.ReturnToPreviousViewCommand), 
                         centerTitle:true
-                    ).Row (PageRow.Header),
+                    ) .Row (PageRow.Header),
 
                     new ScrollView { Content = new Grid {
                         RowSpacing = 0,
