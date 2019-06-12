@@ -3,7 +3,7 @@ Use declarative style C# instead of XAML for Xamarin Forms UI.
 
 All you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
 
-The helpers offer a fluent API with **Bind**, **Invoke**, **Assign**, **Row**, **Col**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend.
+The helpers offer a fluent API with **Bind**, **Effects**, **Invoke**, **Assign**, **Row**, **Col**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend.
 
 ## Why?
 Because **declarative UI** in C# has a much better developer experience than XAML, and reads virtually the same.
@@ -40,6 +40,12 @@ treeMarginConverter = new FuncConverter<int, Thickness>(depth => new Thickness(d
 //...
 new Label { Text = "Tree" }
 .Bind(Label.MarginProperty, nameof(TreeNode.TreeDepth), converter: treeMarginConverter),
+```
+
+Add **Effects** to a view:
+```CSharp
+new Button { Text = "Tap Me" }
+.Effects (new ButtonMixedCaps())
 ```
 
 
