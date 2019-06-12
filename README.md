@@ -6,11 +6,11 @@ All you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); in
 The helpers offer a fluent API with **Bind**, **Invoke**, **Assign**, **Row**, **Col**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend.
 
 ## Why?
-Because **declarative style** C# has a much better developer experience and reads virtually the same as XAML.
+Because **declarative UI** in C# has a much better developer experience than XAML, and reads virtually the same.
 
-If you already know XAML, you can keep using your knowledge in declarative C#, and gain productivity (because of the better IDE support for C#).
+Modern UI frameworks such as [Flutter](https://flutter.dev/) and [SwiftUI](https://developer.apple.com/xcode/swiftui/) offer declarative UI. These helpers offer the same for Xamarin Forms; no need to learn XAML.
 
-The syntax is very close to XAML; you should be familiar within a couple of hours.
+If you do know XAML, you can keep using your knowledge, and gain productivity (because of the better IDE support for C# and because you don't need language bridging mechanisms). The syntax is very close to XAML and the same MVVM pattern is used; you should be familiar within a couple of hours.
 
 ## Declarative C# versus XAML
 Compare this Entry markup:
@@ -21,19 +21,35 @@ Compare this Entry markup:
 
 ![Entry C Sharp Short](img/EntryCSharpShort.png) C#, shorter
 
+Note that **Bind** knows the default bindable property for each view type; you can omit it in most cases.
+
+Bind a command to any type of view using **gesture recognizers**:
+```CSharp
+new Label { Text = "Tap Me" }
+.BindTapGesture (nameof(vm.TapCommand)) // Or use any type of gesture with Bind<TView, TGestureRecognizer>(...)
+```
+
+Pass inline converter code with **convert** and **convertBack** (type-safe):
+```CSharp
+new Label { Text = "Tree" }
+.Bind (Label.MarginProperty, nameof(TreeNode.TreeDepth), convert: (int depth) => new Thickness(depth * 20, 0, 0, 0))
+```
+Re-use converter code with **FuncConverter**:
+```CSharp
+treeMarginConverter = new FuncConverter<int, Thickness>(depth => new Thickness(depth * 20, 0, 0, 0));
+//...
+new Label { Text = "Tree" }
+.Bind(Label.MarginProperty, nameof(TreeNode.TreeDepth), converter: treeMarginConverter),
+```
+
+
 Use **Invoke** to execute code inline in your declarative markup:
 ```CSharp
-new ListView { }.Invoke(l => l.ItemTapped += MyListView_ItemTapped)
+new ListView { } .Invoke (l => l.ItemTapped += MyListView_ItemTapped)
 ```
 Use **Assign** if you need to access a control from outside the markup:
 ```CSharp
-new ListView { }.Assign(out MyListView),
-```
-Use **FuncConverter** for converter with inline code:
-```CSharp
-new Label { Text = "Tree" }
-.Bind(Label.MarginProperty, nameof(TreeNode.TreeDepth), 
-      converter: new FuncConverter<int>(depth => new Thickness(depth * 20, 0, 0, 0))),
+new ListView { } .Assign (out MyListView),
 ```
 
 How about a real-world page? Here is a simple registration code page (taken from a production app):
@@ -59,6 +75,8 @@ You can also **use enums for Grid rows and columns** instead of numbers, so you 
 
 ![Enums For Grid Rows And Columns](img/EnumsForGridRowsAndColumns.png)
 
+Finally, these helpers also offer support for **Effects** and **Platform Specifics**.
+
 ### Reading Pro's:
 C#
 - Numbers and enums don't need quotes
@@ -80,18 +98,18 @@ C#
 - Simpler markup reuse (control builder method with parameters)
 - Simple extensibility (i.e. don't need to write XAML extensions; customize your markup syntax with extension methods, creating your own DSL if you like)
 - Better Diff & Merge
-- Live view in [Live Reload "in a future release"](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/live-reload#what-changes-does-live-reload-redeploy)
-- Live view in [LiveSharp](https://marketplace.visualstudio.com/items?itemName=ionoy.LiveSharp)
+- **HotReload** in [LiveSharp](https://marketplace.visualstudio.com/items?itemName=ionoy.LiveSharp)
 
 XAML
-- Live view in [Live Reload](); visual preview in IDE (very limited - no renderers etc)
-- Live view in [Live XAML](https://www.livexaml.com/)
+- Visual preview in IDE (very limited - no renderers etc)
+- **HotReload** in [LiveXAML](https://www.livexaml.com/)
 
 ## Summary
 The question of C# versus XAML is not so much "Why use C# for markup?" as it is "**Why use XAML for markup?**"
 
 - Why would you want to hand-code an object serialization format?
 - Why would you choose a different language for markup if it reads the same but has inferior IDE support?
+- Why would you scatter your UI markup with language bridging mechanisms? (converters etc)
 
 ## Background
 This repo resulted from this discussion on the Xamarin Forms forum:
