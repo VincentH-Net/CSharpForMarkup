@@ -6,7 +6,7 @@ All you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); in
 The helpers offer a fluent API with **Bind**, **Effects**, **Invoke**, **Assign**, **Row**, **Col**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend.
 
 ## Why?
-Because **declarative UI** in C# has a much better developer experience than XAML, and reads virtually the same.
+Because **declarative UI** in C# has a much better developer experience than XAML, and reads either very similar or with more clarity.
 
 Modern UI frameworks such as [Flutter](https://flutter.dev/) and [SwiftUI](https://developer.apple.com/xcode/swiftui/) offer declarative UI. These helpers offer the same for Xamarin Forms; no need to learn XAML.
 
@@ -81,7 +81,20 @@ You can also **use enums for Grid rows and columns** instead of numbers, so you 
 
 ![Enums For Grid Rows And Columns](img/EnumsForGridRowsAndColumns.png)
 
-Finally, these helpers also offer support for **Effects** and **Platform Specifics**.
+Finally, these helpers also offer support for some **Platform Specifics** e.g. `iOSSetGroupHeaderStyleGrouped`. Using these helpers avoids the name conflicts on view types that you get when using platform specifics from the Xamarin Forms namespaces.
+
+### Patterns and Tooling Pro's:
+C#
+- **Refactorings** like renaming a bindable property work reliably across loging and markup; zero chance of broken bindings.
+- Simply **compose markup top-down** with **named** methods or properties for better maintainability of complex UI. It can read like a story (just like logic):
+
+    ![Compose Markup In CSharp](img/ComposeMarkupInCSharp.png)
+
+- Cleanly separate your UI markup from your UI logic while encapsulating both in a single class with **partial class** files, e.g. `LoginPage.cs` + `LoginPage.logic.cs`.
+- No need for separate [Value Converter](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/converters) classes. Inlining simple value converter code in your markup improves UI maintainability.
+- No need for [XAML Triggers](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers)
+- No need for [XAML Compilation](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/xamlc)
+- No need for [XAML Compiled Bindings](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings). Bindings are fully compiled, including bindings that specify the `Source` property (which XAML can't compile).
 
 ### Reading Pro's:
 C#
