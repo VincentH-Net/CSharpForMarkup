@@ -89,8 +89,8 @@ C#
 ![Compose Markup In CSharp](img/ComposeMarkupInCSharp.png)
 
 - Simply **compose markup top-down** with **named** methods or properties for better maintainability of complex UI. It can read like a story (see example above)
-- **Refactorings** like renaming a bindable property work reliably across loging and markup; zero chance of broken bindings.
-- Cleanly separate your UI markup from your UI logic while encapsulating both in a single class with **partial class** files, e.g. `LoginPage.cs` + `LoginPage.logic.cs`.
+- **Refactorings** like renaming a bindable property work reliably across logic and markup; zero chance of broken bindings.
+- Cleanly separate UI markup from UI logic while encapsulating both in a single class with **partial class** files, e.g. `LoginPage.cs` + `LoginPage.logic.cs`.
 - No need for separate [Value Converter](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/converters) classes. Inlining simple value converter code in your markup improves UI maintainability.
 - No need for [XAML Triggers](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers)
 - No need for [XAML Compilation](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/xaml/xamlc)
