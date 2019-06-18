@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using CSharpForMarkupExample.ViewModels;
+﻿using CSharpForMarkupExample.ViewModels;
 using CSharpForMarkupExample.Views.Pages;
 using QuickCross;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace CSharpForMarkupExample
@@ -16,7 +14,7 @@ namespace CSharpForMarkupExample
         NestedListPage nestedListPage;
 
         public App() {
-            Resources = Styles.Create();
+            Resources = Styles.Implicit;
             MainViewModel = new MainViewModel(this);
             MainPage = new NavigationPage(new MainPage());
         }

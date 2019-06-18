@@ -43,18 +43,18 @@ namespace CSharpForMarkupExample.Views.Pages
                             RowSpacing = 0,
                             RowDefinitions = Rows.Define(
                                 (GroupRow.Body     , Star),
-                                (GroupRow.Separator, 2)
+                                (GroupRow.Separator, 2   )
                             ),
 
                             Children = {
                                 new StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 5, Children = {
-                                    new Label { } .Font (FontSizes._15, FontAttributes.Bold) .TextColor (Colors.ColorValuePrimary)
+                                    new Label { } .Font (15) .Bold () .TextColor (Colors.ColorValuePrimary)
                                     .Margins (left: PageMarginSize) .LeftExpand () .CenterV ()
                                     .Bind (nameof(ListGroup.Title)),
 
                                     new Frame { CornerRadius = 4, HasShadow = false, BackgroundColor = Colors.Green.ToColor(), Content =
                                         new Label { Text = "Odd" } .TextColor (Colors.White)
-                                    }.CenterV () .Margins (right: 10) .Padding (9, 3)
+                                    } .CenterV () .Margins (right: 10) .Padding (9, 3)
                                     .Bind (Frame.IsVisibleProperty, nameof(ListGroup.IsOdd)),
 
                                     new Button { Text = " Add Item " }
@@ -116,10 +116,10 @@ namespace CSharpForMarkupExample.Views.Pages
                             new Label { Text = "\u2b50 " } .TextColor (Colors.Green)
                             .Row (Row.Header) .Col (Col.LeftPileIcon) .Left () .CenterV (),
 
-                            new Label { Text = "Item", LineBreakMode = LineBreakMode.TailTruncation } .Font (FontSizes._15, FontAttributes.Bold)
+                            new Label { Text = "Item", LineBreakMode = LineBreakMode.TailTruncation } .Font (15) .Bold ()
                             .Row (Row.Header) .Col (Col.LeftPile, Col.Last) .CenterV (),
 
-                            new Label { } .Font (FontAttributes.Bold) .TextColor (Colors.Gray1)
+                            new Label { } .Bold () .TextColor (Colors.Gray1)
                             .Row (Row.Header) .Col (Col.Nr) .Center ()
                             .Bind (nameof(ListItem.Title)),
 
@@ -127,7 +127,7 @@ namespace CSharpForMarkupExample.Views.Pages
                             new Label { Text = "\U0001f60e " }
                             .Row (Row.Piles) .Col (Col.LeftPileIcon) .Left () .CenterV (),
 
-                            new Label { } .Font (FontSizes._14, FontAttributes.Bold)
+                            new Label { } .Font (14) .Bold ()
                             .Row (Row.Piles) .Col (Col.LeftPile) .CenterV () .TextCenterH () .TextBottom ()
                             .Bind (nameof(ListItem.CountText)),
 
@@ -137,16 +137,16 @@ namespace CSharpForMarkupExample.Views.Pages
                             new Label { Text = "\U0001f60e " }
                             .Row (Row.Piles) .Col (Col.RightPileIcon) .Left () .CenterV (),
 
-                            new Label { } .Font (FontSizes._14, FontAttributes.Bold)
+                            new Label { } .Font (14) .Bold ()
                             .Row (Row.Piles) .Col (Col.RightPile) .CenterV () .TextCenterH () .TextBottom ()
                             .Bind (nameof(ListItem.CountText)),
 
 
-                            new Button { Text = "-" } .Font (FontSizes._14) .TextColor (Colors.White) .BackgroundColor (Colors.ColorValueAccent)
+                            new Button { Text = "-" } .Font (14) .TextColor (Colors.White) .BackgroundColor (Colors.ColorValueAccent)
                             .Row (Row.Buttons) .Col (Col.LeftPileIcon, Col.LeftPile) .FillH () .CenterV ()
                             .Invoke (b => b.Clicked += DecreaseCount),
 
-                            new Button { Text = "+" } .Font (FontSizes._14) .TextColor (Colors.White) .BackgroundColor (Colors.ColorValueAccent)
+                            new Button { Text = "+" } .Font (14) .TextColor (Colors.White) .BackgroundColor (Colors.ColorValueAccent)
                             .Row (Row.Buttons) .Col (Col.RightPileIcon, Col.RightPile) .FillH () .CenterV ()
                             .Invoke (b => b.Clicked += IncreaseCount),
                         }

@@ -3,6 +3,7 @@ using CSharpForMarkupExample.ViewModels;
 using CSharpForMarkupExample.Views.Controls;
 using Xamarin.Forms;
 using static CSharpForMarkup.EnumsForGridRowsAndColumns;
+using static CSharpForMarkupExample.Styles;
 
 namespace CSharpForMarkupExample.Views.Pages
 {
@@ -32,12 +33,12 @@ namespace CSharpForMarkupExample.Views.Pages
                     .Row (PageRow.Header),
 
                     new ScrollView { Content = new StackLayout { Children = {
-                        new Button { Text = nameof(RegistrationCodePage), Style = Styles.ButtonFilled }
-                            .FillExpandH () .Margin (PageMarginSize) .Height (44)
+                        new Button { Text = nameof(RegistrationCodePage) } .Style (FilledButton)
+                            .FillExpandH () .Margin (PageMarginSize)
                             .Bind (nameof(vm.ContinueToRegistrationCommand)),
 
-                        new Button { Text = nameof(NestedListPage), Style = Styles.ButtonFilled }
-                            .FillExpandH () .Margin (PageMarginSize) .Height (44)
+                        new Button { Text = nameof(NestedListPage) } .Style (FilledButton)
+                            .FillExpandH () .Margin (PageMarginSize)
                             .Bind (nameof(vm.ContinueToNestedListCommand)),
                     }}} .Row (PageRow.Body)
                  }

@@ -42,7 +42,7 @@ namespace CSharpForMarkupExample.Views.Controls
 
                 Children = {
                     new ContentView { Content = (returnToPreviousViewCommandPropertyName != null) ?
-                        new Button { Text = "<" } .Font (FontSizes._24, FontAttributes.Bold) .TextColor (Colors.White) .BackgroundColor (backgroundColor)
+                        new Button { Text = "<" } .Font (24, bold: true) .TextColor (Colors.White) .BackgroundColor (backgroundColor)
                         .Left() .CenterV()
                         .Bind(Button.CommandProperty, returnToPreviousViewCommandPropertyName)
                         : null
@@ -53,7 +53,7 @@ namespace CSharpForMarkupExample.Views.Controls
                         LineBreakMode = LineBreakMode.TailTruncation, 
                         HorizontalOptions = centerTitle ? LayoutOptions.Center : LayoutOptions.Start,
                         VerticalOptions = subTitlePropertyName != null ? LayoutOptions.End : LayoutOptions.Center 
-                    } .Font (FontAttributes.Bold) .TextColor (Colors.White)
+                    } .Bold () .TextColor (Colors.White)
                       .Row (Row.Title, subTitlePropertyName != null ? Row.Title : Row.Subtitle) .Col (centerTitle ? Col.First : Col.Title, centerTitle ? Col.Last : Col.Title)
                       .Invoke(l => { if (titlePropertyName != null) l.Bind(titlePropertyName); })
                 }
@@ -64,7 +64,7 @@ namespace CSharpForMarkupExample.Views.Controls
                     LineBreakMode = LineBreakMode.TailTruncation, 
                     HorizontalOptions = centerTitle ? LayoutOptions.Center : LayoutOptions.Start,
                     VerticalOptions = LayoutOptions.Start 
-                }.Font (FontAttributes.Bold) .TextColor (Colors.White)
+                }.Bold () .TextColor (Colors.White)
                  .Row (Row.Subtitle) .Col (centerTitle ? Col.First : Col.Title, centerTitle ? Col.Last : Col.Title)
                  .Bind(subTitlePropertyName)
             );

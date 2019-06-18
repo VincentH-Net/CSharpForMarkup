@@ -1,38 +1,38 @@
-﻿using System;
+﻿using CSharpForMarkup;
 using Xamarin.Forms;
 
 namespace CSharpForMarkupExample
 {
     public static class Styles
     {
-        // Implicit styles
-        static Style label, button;
+        static Style<Button> buttons, filledButton;
+        static Style<Label> labels;
 
-        public static ResourceDictionary Create()
-        {
-            var resources = new ResourceDictionary();
+        #region Implicit styles
 
-            resources.Add(label = new Style(typeof(Label)) { Setters = {
-                new Setter { Property = Label.FontSizeProperty, Value = (int)FontSizes._13 },
-                new Setter { Property = Label.TextColorProperty, Value = Colors.BgBlue1.ToColor() },
-            }
-            });
+        public static ResourceDictionary Implicit => new ResourceDictionary { Buttons, Labels };
 
-            resources.Add(button = new Style(typeof(Button)) { Setters = {
-                new Setter { Property = Button.FontSizeProperty, Value = (int)FontSizes._13 },
-                new Setter { Property = Button.HorizontalOptionsProperty, Value = LayoutOptions.Center },
-                new Setter { Property = Button.VerticalOptionsProperty, Value = LayoutOptions.Center },
-            }});
+        public static Style<Button> Buttons => buttons ?? (buttons = new Style<Button>(
+            (Button.HeightRequestProperty    , 44),
+            (Button.FontSizeProperty         , 13),
+            (Button.HorizontalOptionsProperty, LayoutOptions.Center),
+            (Button.VerticalOptionsProperty  , LayoutOptions.Center)
+        ));
 
-            return resources;
-        }
+        public static Style<Label> Labels => labels ?? (labels = new Style<Label>(
+            (Label.FontSizeProperty , 13),
+            (Label.TextColorProperty, Colors.BgBlue1.ToColor())
+        ));
 
-        // Explicit styles
-        static Style buttonFilled;
+        #endregion Implicit styles
 
-        public static Style ButtonFilled => buttonFilled ?? (buttonFilled = new Style(typeof(Button)) { BasedOn = button, Setters = {
-            new Setter { Property = Button.TextColorProperty, Value = Colors.White.ToColor() },
-            new Setter { Property = Button.BackgroundColorProperty, Value = Colors.ColorValueAccent.ToColor() }
-        }});
+        #region Explicit styles
+
+        public static Style<Button> FilledButton => filledButton ?? (filledButton = new Style<Button>( 
+            (Button.TextColorProperty, Colors.White.ToColor()),
+            (Button.BackgroundColorProperty, Colors.ColorValueAccent.ToColor())
+        )) .BasedOn (Buttons);
+
+        #endregion Explicit styles
     }
 }

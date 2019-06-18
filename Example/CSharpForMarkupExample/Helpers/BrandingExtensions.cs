@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace CSharpForMarkupExample
 {
@@ -16,25 +15,5 @@ namespace CSharpForMarkupExample
         public static Button TextColor(this Button button, Colors color) { button.TextColor = color.ToColor(); return button; }
 
         public static Entry TextColor(this Entry entry, Colors color) { entry.TextColor = color.ToColor(); return entry; }
-
-
-        public static Label Font(this Label label, FontSizes size) { label.FontSize = (double)size; return label; }
-
-        public static Button Font(this Button button, FontSizes size) { button.FontSize = (double)size; return button; }
-
-        public static Entry Font(this Entry entry, FontSizes size) { entry.FontSize = (double)size; return entry; }
-
-
-        public static Label Font(this Label label, FontAttributes attributes) { label.FontAttributes = attributes; return label; }
-
-        public static Button Font(this Button button, FontAttributes attributes) { button.FontAttributes = attributes; return button; }
-
-        public static Entry Font(this Entry entry, FontAttributes attributes) { entry.FontAttributes = attributes; return entry; }
-
-        public static Label Font(this Label label, FontSizes size, FontAttributes attributes) => label.Font(size).Font(attributes);
-
-        public static Button Font(this Button button, FontSizes size, FontAttributes attributes) => button.Font(size).Font(attributes);
-
-        public static Entry Font(this Entry entry, FontSizes size, FontAttributes attributes) => entry.Font(size).Font(attributes);
     }
 }

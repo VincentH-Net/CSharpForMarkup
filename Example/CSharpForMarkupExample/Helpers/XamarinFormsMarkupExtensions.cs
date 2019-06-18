@@ -417,6 +417,8 @@ namespace CSharpForMarkup
 
         static FontAttributes GetFontAttributes(bool bold = false, bool italic = false) => bold ? FontAttributes.Bold : italic ? FontAttributes.Italic : FontAttributes.None;
 
+        public static T Style<T>(this T view, Style<T> style) where T : VisualElement { view.Style = style; return view; }
+
         public static TElement Effects<TElement>(this TElement element, params Effect[] effects) where TElement : Element
         {
             for (int i = 0; i < effects.Length; i++) element.Effects.Add(effects[i]);
@@ -521,5 +523,25 @@ namespace CSharpForMarkup
         static readonly Lazy<BoolNotConverter> instance = new Lazy<BoolNotConverter>(() => new BoolNotConverter());
         public static BoolNotConverter Instance => instance.Value;
         public BoolNotConverter() : base(t => !t) { }
+    }
+
+    public class Style<T> where T : VisualElement
+    {
+        public static implicit operator Style(Style<T> style) => style?.FormsStyle;
+
+        public Style FormsStyle { get; }
+
+        public Style(params (BindableProperty Property, object Value)[] setters)
+        {
+            FormsStyle = new Style(typeof(T)) { };
+            Add(setters);
+        }
+
+        public Style<T> ApplyToDerivedTypes(bool value) { FormsStyle.ApplyToDerivedTypes = value; return this; }
+        public Style<T> BasedOn(Style value) { FormsStyle.BasedOn = value; return this; }
+        public Style<T> Add(params (BindableProperty Property, object Value)[] setters) { foreach (var setter in setters) FormsStyle.Setters.Add(setter.Property, setter.Value); return this; }
+        public Style<T> Add(params Behavior[] behaviors) { foreach (var behavior in behaviors) FormsStyle.Behaviors.Add(behavior); return this; }
+        public Style<T> Add(params TriggerBase[] triggers) { foreach (var trigger in triggers) FormsStyle.Triggers.Add(trigger); return this; }
+        public Style<T> CanCascade(bool value) { FormsStyle.CanCascade = value; return this; }
     }
 }

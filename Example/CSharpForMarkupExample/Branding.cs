@@ -19,12 +19,4 @@
         ColorValuePrimary = 0xff2674b8u, // Blue 2. Primary is used for dark backgrounds in non-accented system elements, e.g. navigation bar, title bar, selected item
         ColorValueAccent = 0xffec681cu,  // Orange 1. Accent is used for dark backgrounds in accented system elements, e.g. button, accented status, text entry underline (on android)
     }
-
-    public enum FontSizes
-    {
-        _13 = 13,
-        _14 = 14,
-        _15 = 15,
-        _24 = 24,
-    }
 }

@@ -3,7 +3,9 @@ Use declarative style C# instead of XAML for Xamarin Forms UI.
 
 All you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
 
-The helpers offer a fluent API with **Bind**, **Effects**, **Invoke**, **Assign**, **Row**, **Col**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend.
+The helpers offer a fluent API with **Bind**, **Effects**, **Invoke**, **Assign**, **Row**, **Col**, **Style**, **Font**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend; you could easily create your own markup DSL.
+
+These helpers have been used to create production apps for years; see this [App video and source](#real-world-examples)
 
 ## Why?
 Because **declarative UI** in C# has a much better developer experience than XAML, and reads either very similar or with more clarity.
@@ -21,7 +23,10 @@ Compare this Entry markup:
 
 ![Entry C Sharp Short](img/EntryCSharpShort.png) C#, shorter
 
-Note that **Bind** knows the default bindable property for each view type; you can omit it in most cases.
+See [Pro's and Con's](#declarative-c-versus-xaml-considerations) for a detailed comparison.
+
+## How?
+Use **Bind** as in the above examples. Note that Bind knows the default bindable property for each view type; you can omit it in most cases.
 
 Bind a command to any type of view using **gesture recognizers**:
 ```CSharp
@@ -34,7 +39,7 @@ Pass inline converter code with **convert** and **convertBack** (type-safe):
 new Label { Text = "Tree" }
 .Bind (Label.MarginProperty, nameof(TreeNode.TreeDepth), convert: (int depth) => new Thickness(depth * 20, 0, 0, 0))
 ```
-Re-use converter code with **FuncConverter**:
+Re-use converter code and instances with **FuncConverter**:
 ```CSharp
 treeMarginConverter = new FuncConverter<int, Thickness>(depth => new Thickness(depth * 20, 0, 0, 0));
 //...
@@ -42,23 +47,59 @@ new Label { Text = "Tree" }
 .Bind(Label.MarginProperty, nameof(TreeNode.TreeDepth), converter: treeMarginConverter),
 ```
 
-Add **Effects** to a view:
+Add **Effects**:
 ```CSharp
 new Button { Text = "Tap Me" }
 .Effects (new ButtonMixedCaps())
 ```
 
-
 Use **Invoke** to execute code inline in your declarative markup:
 ```CSharp
 new ListView { } .Invoke (l => l.ItemTapped += MyListView_ItemTapped)
 ```
-Use **Assign** if you need to access a control from outside the markup:
+
+Use **Assign** if you need to access a control from outside the UI markup (in UI logic):
 ```CSharp
 new ListView { } .Assign (out MyListView),
 ```
+Note that you can cleanly **separate UI markup from UI logic** while encapsulating both by using partial class files, e.g. `LoginPage.cs` + `LoginPage.logic.cs`
 
-How about a real-world page? Here is a simple registration code page (taken from a production app):
+Use **Style** to create type-safe, declarative coded styles:
+```CSharp
+using static CSharpForMarkupExample.Styles;
+...
+new Button { Text = "Tap Me" } .Style (FilledButton)
+```
+
+![Styles In C Sharp](img/StylesInCSharp.png)
+
+Note that instead of using **Style**, you can simply create your own extension methods to set styling even more type-safe:
+```CSharp
+new Button { Text = "Tap Me" } .Filled ()
+```
+```CSharp
+public static TButton Filled<TButton>(this TButton button) where TButton : Button
+{
+    button.Buttons(); // Equivalent to Style .BasedOn (Buttons)
+    button.TextColor = Color.White;
+    button.BackgroundColor = Color.Red;
+    return button;
+}
+```
+
+You can also **use enums for Grid rows and columns** instead of numbers, so you don't have to renumber manually when you add or remove rows or columns. Readability and intent of the layout is also improved:
+
+![Enums For Grid Rows And Columns](img/EnumsForGridRowsAndColumns.png)
+
+Finally, these helpers also offer support for some **Platform Specifics** e.g. `iOSSetGroupHeaderStyleGrouped`. Using these helpers avoids the name conflicts on view types that you get when using platform specifics from the Xamarin Forms namespaces.
+
+## Real World Examples
+
+These helpers are battle tested for usability and stability. They have been used for years to build production apps, e.g. the app in this video:
+
+[![LiveSharp Production App](http://img.youtube.com/vi/50N1LL_Txe8/0.jpg)](http://www.youtube.com/watch?v=50N1LL_Txe8 "LiveSharp Production App")
+
+How about some real-world source? Here is a simple registration code page (taken from a production app):
 
 XAML:
 
@@ -77,11 +118,8 @@ This markup follows some conventions. For each control:
 - The line before the bound properties is about layout, ordered inward: rows / cols, layout options, margin, size, padding, content alignment
 - Before that are the other properties; any property that identifies the control's purpose comes first (e.g. Text or Placeholder)
 
-You can also **use enums for Grid rows and columns** instead of numbers, so you don't have to renumber manually when you add or remove rows or columns. Readability and intent of the layout is also improved:
-
-![Enums For Grid Rows And Columns](img/EnumsForGridRowsAndColumns.png)
-
-Finally, these helpers also offer support for some **Platform Specifics** e.g. `iOSSetGroupHeaderStyleGrouped`. Using these helpers avoids the name conflicts on view types that you get when using platform specifics from the Xamarin Forms namespaces.
+## Declarative C# versus XAML considerations 
+Some observations that may help you if you like XAML but wonder whether declarative C# would work for you:
 
 ### Patterns and Tooling Pro's:
 C#
