@@ -1,4 +1,4 @@
-# CSharpForMarkup
+# CSharpForMarkup [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/CSharpForMarkup/community)
 Use declarative style C# instead of XAML for Xamarin Forms UI.
 
 All you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
