@@ -43,7 +43,8 @@ namespace CSharpForMarkup
             { "Xamarin.Forms.WebView", WebView.SourceProperty },
             { "Xamarin.Forms.TextCell", TextCell.TextProperty },
             { "Xamarin.Forms.ToolbarItem", ToolbarItem.CommandProperty },
-            { "Xamarin.Forms.TapGestureRecognizer", TapGestureRecognizer.CommandProperty }
+            { "Xamarin.Forms.TapGestureRecognizer", TapGestureRecognizer.CommandProperty },
+            { "Xamarin.Forms.Span", Span.TextProperty }
         };
 
         static BindableProperty GetDefaultProperty(Element view) // Note that we use Element type for the view variable in bind functions because we want to bind to Cell types as well as View types
@@ -133,8 +134,32 @@ namespace CSharpForMarkup
 
         public static TView Bind<TView, TGestureRecognizer>(this TView view, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : View where TGestureRecognizer : GestureRecognizer, new()
         {
-            var gestureRecognizer = (TGestureRecognizer)view.GestureRecognizers?.FirstOrDefault(r => r is TGestureRecognizer);
-            if (gestureRecognizer == null) view.GestureRecognizers.Add(gestureRecognizer = new TGestureRecognizer());
+            Bind<TGestureRecognizer>(view.GestureRecognizers, targetProperty, sourcePropertyName, mode, converter, converterParameter, stringFormat, source);
+            return view;
+        }
+
+        public static TView Bind<TView, TGestureRecognizer>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : View where TGestureRecognizer : GestureRecognizer, new()
+        {
+            Bind<TGestureRecognizer>(view.GestureRecognizers, null, sourcePropertyName, mode, converter, converterParameter, stringFormat, source);
+            return view;
+        }
+
+        public static TGestureElement BindGesture<TGestureElement, TGestureRecognizer>(this TGestureElement gestureElement, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TGestureElement : GestureElement where TGestureRecognizer : GestureRecognizer, new()
+        {
+            Bind<TGestureRecognizer>(gestureElement.GestureRecognizers, targetProperty, sourcePropertyName, mode, converter, converterParameter, stringFormat, source);
+            return gestureElement;
+        }
+
+        public static TGestureElement BindGesture<TGestureElement, TGestureRecognizer>(this TGestureElement gestureElement, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TGestureElement : GestureElement where TGestureRecognizer : GestureRecognizer, new()
+        {
+            Bind<TGestureRecognizer>(gestureElement.GestureRecognizers, null, sourcePropertyName, mode, converter, converterParameter, stringFormat, source);
+            return gestureElement;
+        }
+
+        static void Bind<TGestureRecognizer>(IList<IGestureRecognizer> gestureRecognizers, BindableProperty targetProperty, string sourcePropertyName, BindingMode mode, IValueConverter converter, object converterParameter, string stringFormat, object source) where TGestureRecognizer : GestureRecognizer, new()
+        {
+            var gestureRecognizer = (TGestureRecognizer)gestureRecognizers.FirstOrDefault(r => r is TGestureRecognizer);
+            if (gestureRecognizer == null) gestureRecognizers.Add(gestureRecognizer = new TGestureRecognizer());
 
             if (targetProperty == null) targetProperty = GetDefaultProperty(gestureRecognizer);
 
@@ -149,27 +174,24 @@ namespace CSharpForMarkup
                 ));
             else
                 gestureRecognizer.SetBinding(targetProperty, sourcePropertyName, mode, converter, stringFormat);
-            return view;
-        }
-
-        public static TView Bind<TView, TGestureRecognizer>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : View where TGestureRecognizer : GestureRecognizer, new()
-        {
-            view.Bind<TView, TGestureRecognizer>(
-                targetProperty: null,
-                sourcePropertyName: sourcePropertyName,
-                mode: mode,
-                converter: converter,
-                converterParameter: converterParameter,
-                stringFormat: stringFormat,
-                source: source
-            );
-            return view;
         }
 
         public static TView BindTapGesture<TView>(this TView view, string sourcePropertyName = bindingContextPropertyName, string commandParameterPropertyName = null, object commandParameter = null, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object commandParameterSource = null) where TView : View
         {
-            var gestureRecognizer = (TapGestureRecognizer)view.GestureRecognizers?.FirstOrDefault(r => r is TapGestureRecognizer);
-            if (gestureRecognizer == null) view.GestureRecognizers.Add(gestureRecognizer = new TapGestureRecognizer());
+            BindTap(view.GestureRecognizers, sourcePropertyName, commandParameterPropertyName, commandParameter, mode, converter, converterParameter, stringFormat, source, commandParameterSource);
+            return view;
+        }
+
+        public static TGestureElement BindTap<TGestureElement>(this TGestureElement gestureElement, string sourcePropertyName = bindingContextPropertyName, string commandParameterPropertyName = null, object commandParameter = null, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object commandParameterSource = null) where TGestureElement : GestureElement
+        {
+            BindTap(gestureElement.GestureRecognizers, sourcePropertyName, commandParameterPropertyName, commandParameter, mode, converter, converterParameter, stringFormat, source, commandParameterSource);
+            return gestureElement;
+        }
+
+        static void BindTap(IList<IGestureRecognizer> gestureRecognizers, string sourcePropertyName, string commandParameterPropertyName, object commandParameter, BindingMode mode, IValueConverter converter, object converterParameter, string stringFormat, object source, object commandParameterSource)
+        {
+            var gestureRecognizer = (TapGestureRecognizer)gestureRecognizers.FirstOrDefault(r => r is TapGestureRecognizer);
+            if (gestureRecognizer == null) gestureRecognizers.Add(gestureRecognizer = new TapGestureRecognizer());
 
             if (commandParameterPropertyName != null)
                 gestureRecognizer.SetBinding(TapGestureRecognizer.CommandParameterProperty, new Binding(path: commandParameterPropertyName, source: commandParameterSource));
@@ -189,7 +211,6 @@ namespace CSharpForMarkup
                 ));
             else
                 gestureRecognizer.SetBinding(targetProperty, sourcePropertyName, mode, converter, stringFormat);
-            return view;
         }
 
         public static TView Assign<TView, TAssignView>(this TView view, out TAssignView variable) where TView : class, TAssignView
@@ -397,6 +418,8 @@ namespace CSharpForMarkup
         public static Label FontSize(this Label label, double fontSize) { label.FontSize = fontSize; return label; }
         public static Label Bold(this Label label) { label.FontAttributes = FontAttributes.Bold; return label; }
         public static Label Italic(this Label label) { label.FontAttributes = FontAttributes.Italic; return label; }
+
+        public static TLabel FormattedText<TLabel>(this TLabel label, params Span[] spans) where TLabel : Label { label.FormattedText = new FormattedString(); foreach (var span in spans) label.FormattedText.Spans.Add(span); return label; }
 
         public static TView Font<TView>(this TView view, double? fontSize = null, bool? bold = null, bool? italic = null, string family = null) where TView : View
         {

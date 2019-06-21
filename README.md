@@ -3,7 +3,7 @@ Use declarative style C# instead of XAML for Xamarin Forms UI.
 
 All you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
 
-The helpers offer a fluent API with **Bind**, **Effects**, **Invoke**, **Assign**, **Row**, **Col**, **Style**, **Font**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend; you could easily create your own markup DSL.
+The helpers offer a fluent API with **Bind**, **Effects**, **Invoke**, **Assign**, **Row**, **Col**, **FormattedText**, **Style**, **Font**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend; you could easily create your own markup DSL.
 
 These helpers have been used to create production apps for years; see this [App video and source](#real-world-examples)
 
@@ -26,7 +26,11 @@ Compare this Entry markup:
 See [Pro's and Con's](#declarative-c-versus-xaml-considerations) for a detailed comparison.
 
 ## How?
-Use **Bind** as in the above examples. Note that Bind knows the default bindable property for each view type; you can omit it in most cases.
+Use **Bind** as in the above examples. **Note** that Bind knows the default bindable property for each view type; you can omit it in most cases. If needed you can specify it like this:  
+```CSharp
+new Label { Text = "No data available" }
+.Bind (Label.IsVisibleProperty, nameof(vm.IsEmpty))
+```
 
 Bind a command to any type of view using **gesture recognizers**:
 ```CSharp
@@ -46,6 +50,17 @@ treeMarginConverter = new FuncConverter<int, Thickness>(depth => new Thickness(d
 new Label { Text = "Tree" }
 .Bind(Label.MarginProperty, nameof(TreeNode.TreeDepth), converter: treeMarginConverter),
 ```
+
+Use **FormattedText** together with binding to **Spans**:
+```CSharp
+new Label { } .FormattedText (
+    new Span { Text = "Built with " },
+    new Span { TextColor = Color.Blue, TextDecorations = TextDecorations.Underline }
+    .BindTap (nameof(vm.ContinueToCSharpForMarkupCommand))
+    .Bind (nameof(vm.Title))
+) .CenterH ()
+```
+Note that you can bind gestures to spans with **BindTap** and **BindGesture** *(due to C#'s inability to have generic overloads with different where clauses these have to be named different from the helpers for Views)*.
 
 Add **Effects**:
 ```CSharp

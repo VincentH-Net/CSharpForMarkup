@@ -40,6 +40,14 @@ namespace CSharpForMarkupExample.Views.Pages
                         new Button { Text = nameof(NestedListPage) } .Style (FilledButton)
                             .FillExpandH () .Margin (PageMarginSize)
                             .Bind (nameof(vm.ContinueToNestedListCommand)),
+
+                        new Label { } .FontSize (20) .FormattedText (
+                            new Span { Text = "Built with " },
+                            new Span { TextColor = Color.Blue, TextDecorations = TextDecorations.Underline }
+                            .BindTap (nameof(vm.ContinueToCSharpForMarkupCommand))
+                            .Bind (nameof(vm.Title)),
+                            new Span { Text = " \U0001f60e" }
+                        ) .CenterH ()
                     }}} .Row (PageRow.Body)
                  }
             };

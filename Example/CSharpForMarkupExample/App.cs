@@ -1,6 +1,7 @@
 ﻿using CSharpForMarkupExample.ViewModels;
 using CSharpForMarkupExample.Views.Pages;
 using QuickCross;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -38,7 +39,9 @@ namespace CSharpForMarkupExample
             if (nestedListPage == null) nestedListPage = new NestedListPage();
             return TaskHelper.RunOnUIThread(() => MainPage.Navigation.PushAsync(nestedListPage, true));
         }
-        
+
+        public void OpenUri(string uri) => Device.OpenUri(new Uri(uri));
+
         public Task DisplayAlert(string title, string message, string cancel = "OK") => MainPage.DisplayAlert(title, message, cancel);
         
         public Task ReturnToPreviousView() => MainPage.Navigation.PopAsync(true);

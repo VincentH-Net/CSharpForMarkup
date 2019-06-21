@@ -8,18 +8,20 @@ namespace CSharpForMarkupExample.ViewModels
     {
         readonly App app;
         
-        ICommand continueToRegistrationCommand, continueToNestedListCommand;
+        ICommand continueToRegistrationCommand, continueToNestedListCommand, continueToCSharpForMarkupCommand;
         
         public MainViewModel(App app) { this.app = app; }
 
-        public string Title => "C# for Markup";
+        public string Title => "CSharpForMarkup";
         
         public string SubTitle => "Example pages";
         
         public ICommand ContinueToRegistrationCommand => continueToRegistrationCommand ?? (continueToRegistrationCommand = new RelayCommandAsync(ContinueToRegistration));
         public ICommand ContinueToNestedListCommand => continueToNestedListCommand ?? (continueToNestedListCommand = new RelayCommandAsync(ContinueToNestedList));
-        
+        public ICommand ContinueToCSharpForMarkupCommand => continueToCSharpForMarkupCommand ?? (continueToCSharpForMarkupCommand = new RelayCommand(ContinueToCSharpForMarkup));
+
         Task ContinueToRegistration() => app.ContinueToRegistration();
         Task ContinueToNestedList() => app.ContinueToNestedList();
+        void ContinueToCSharpForMarkup() => app.OpenUri("https://github.com/VincentH-Net/CSharpForMarkup");
     }
 }
