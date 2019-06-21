@@ -58,7 +58,7 @@ new Label { } .FormattedText (
     new Span { TextColor = Color.Blue, TextDecorations = TextDecorations.Underline }
     .BindTap (nameof(vm.ContinueToCSharpForMarkupCommand))
     .Bind (nameof(vm.Title))
-) .CenterH ()
+)
 ```
 Note that you can bind gestures to spans with **BindTap** and **BindGesture** *(due to C#'s inability to have generic overloads with different where clauses these have to be named different from the helpers for Views)*.
 
