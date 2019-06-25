@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 #endif
 
-namespace CSharpForMarkup
+namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpForMarkup; version 20190625.1
 {
     public static class XamarinFormsMarkupExtensions
     {
