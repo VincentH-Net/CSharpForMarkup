@@ -87,7 +87,9 @@ Use **Style** to create type-safe, declarative coded styles:
 ```CSharp
 using static CSharpForMarkupExample.Styles;
 ...
-new Button { Text = "Tap Me" } .Style (FilledButton)
+new Button { Text = "Tap Me" } .Style (FilledButton), // Use .Style for VisualElement types
+...
+new Span { Style = Link }, // Use the implicit Style type converter for other Element types
 ```
 
 ![Styles In C Sharp](img/StylesInCSharp.png)

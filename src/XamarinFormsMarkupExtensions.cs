@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 #endif
 
-namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpForMarkup; version 20190625.1
+namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpForMarkup; version 20190627.1
 {
     public static class XamarinFormsMarkupExtensions
     {
@@ -548,7 +548,7 @@ namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpF
         public BoolNotConverter() : base(t => !t) { }
     }
 
-    public class Style<T> where T : VisualElement
+    public class Style<T> where T : Element // Should be IStyleElement but can't use that because it's internal
     {
         public static implicit operator Style(Style<T> style) => style?.FormsStyle;
 

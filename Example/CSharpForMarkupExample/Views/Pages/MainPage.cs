@@ -43,7 +43,7 @@ namespace CSharpForMarkupExample.Views.Pages
 
                         new Label { } .FontSize (20) .FormattedText (
                             new Span { Text = "Built with " },
-                            new Span { TextColor = Color.Blue, TextDecorations = TextDecorations.Underline }
+                            new Span { Style = Link }
                             .BindTap (nameof(vm.ContinueToCSharpForMarkupCommand))
                             .Bind (nameof(vm.Title)),
                             new Span { Text = " \U0001f60e" }

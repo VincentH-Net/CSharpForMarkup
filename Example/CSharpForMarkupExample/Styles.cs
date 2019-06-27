@@ -7,6 +7,7 @@ namespace CSharpForMarkupExample
     {
         static Style<Button> buttons, filledButton;
         static Style<Label> labels;
+        static Style<Span> link;
 
         #region Implicit styles
 
@@ -32,6 +33,11 @@ namespace CSharpForMarkupExample
             (Button.TextColorProperty, Colors.White.ToColor()),
             (Button.BackgroundColorProperty, Colors.ColorValueAccent.ToColor())
         )) .BasedOn (Buttons);
+
+        public static Style<Span> Link => link ?? (link = new Style<Span>(
+            (Span.TextColorProperty, Color.Blue),
+            (Span.TextDecorationsProperty, TextDecorations.Underline)
+        ));
 
         #endregion Explicit styles
     }
