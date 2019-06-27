@@ -89,7 +89,7 @@ using static CSharpForMarkupExample.Styles;
 ...
 new Button { Text = "Tap Me" } .Style (FilledButton), // Use .Style for VisualElement types
 ...
-new Span { Style = Link }, // Use the implicit Style type converter for other Element types
+new Span { Text = "delightful", Style = Quote }, // Use the implicit Style type converter for other Element types
 ```
 
 ![Styles In C Sharp](img/StylesInCSharp.png)
