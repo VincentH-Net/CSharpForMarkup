@@ -7,6 +7,10 @@ The helpers offer a fluent API with **Bind**, **Effects**, **Invoke**, **Assign*
 
 These helpers have been used to create production apps for years; see this [App video and source](#real-world-examples)
 
+See CSharpForMarkup in action with [LiveSharp](https://github.com/OYIon/LiveSharp) for hot reload:
+
+[![CSharpForMarkup with LiveSharp](img/CSharpForMarkupWithLiveSharp.png)](https://www.youtube.com/watch?v=HWxHTqzxT8Q "CSharpForMarkup with LiveSharp")
+
 Check out this awesome Twitch stream by [David Ortinau](https://github.com/davidortinau) where [Ryan Davis](https://github.com/rdavisau) demonstrates these helpers - using hot reload!
 
 [![CSharpForMarkup with Ryan Davis and David Ortinau](img/CSharpForMarkupOnTwitch.png)](https://www.twitch.tv/videos/441875218?t=00h18m36s "CSharpForMarkup with Ryan Davis and David Ortinau")
