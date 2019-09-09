@@ -13,7 +13,7 @@ See CSharpForMarkup in action with [LiveSharp](https://github.com/OYIon/LiveShar
 
 Check out this awesome Twitch stream by [David Ortinau](https://github.com/davidortinau) where [Ryan Davis](https://github.com/rdavisau) demonstrates these helpers - using hot reload!
 
-[![CSharpForMarkup with Ryan Davis and David Ortinau](img/CSharpForMarkupOnTwitch.png)](https://www.twitch.tv/videos/441875218?t=00h18m36s "CSharpForMarkup with Ryan Davis and David Ortinau")
+[![CSharpForMarkup with Ryan Davis and David Ortinau](img/CSharpForMarkupOnTwitch.png)](https://youtu.be/Mw2F1aHY0tQ?t=1116 "CSharpForMarkup with Ryan Davis and David Ortinau")
 
 ## Why?
 Because **declarative UI** in C# has a much better developer experience than XAML, and reads either very similar or with more clarity.
