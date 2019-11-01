@@ -2,7 +2,7 @@
 Use declarative style C# instead of XAML for Xamarin Forms UI.
 
 ># Newsflash : CSharpForMarkup to be incorporated in Xamarin Forms - vote now!
->Head on over to the [PR](https://github.com/xamarin/Xamarin.Forms/pull/8342) and like/thumbs/hurrah the PR:
+>Head on over to the [Spec CSharpForMarkup PR on the Xamarin Forms repo](https://github.com/xamarin/Xamarin.Forms/pull/8342) and like/thumbs/hurrah the PR:
 >
 >![Xfpr](img/xfpr.png)
 >
