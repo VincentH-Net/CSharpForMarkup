@@ -1,6 +1,15 @@
 # CSharpForMarkup [![Gitter](https://badges.gitter.im/CSharpForMarkup/community.svg)](https://gitter.im/CSharpForMarkup/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 Use declarative style C# instead of XAML for Xamarin Forms UI.
 
+># Newsflash : CSharpForMarkup to be incorporated in Xamarin Forms - vote now!
+>Head on over to the [PR](https://github.com/xamarin/Xamarin.Forms/pull/8342) and like/thumbs/hurrah the PR:
+>
+>![Xfpr](img/xfpr.png)
+>
+>This is what the Xamarin Forms team looks at when deciding if/when to accept the PR.
+>So if you want CSharpForMarkup to be supported by MS and to grow with Forms, make your vote count!
+>Also chime in in the PR comments if you have ideas. Thanks!
+
 All you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
 
 The helpers offer a fluent API with **Bind**, **Effects**, **Invoke**, **Assign**, **Row**, **Col**, **FormattedText**, **Style**, **Font**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend; you could easily create your own markup DSL as in [this example in David Ortinau's Xappy](https://github.com/davidortinau/Xappy/blob/master/Xappy/Xappy/Content/Scenarios/Login/LoginPage.cs).
