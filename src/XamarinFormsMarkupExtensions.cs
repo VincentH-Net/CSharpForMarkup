@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 #endif
 
-namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpForMarkup; version 20190627.1
+namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpForMarkup; version 20191106.1
 {
     public static class XamarinFormsMarkupExtensions
     {
@@ -70,9 +70,9 @@ namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpF
             return defaultProperty;
         }
 
-        public static TView Bind<TView>(this TView view, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : Element
+        public static TView Bind<TView>(this TView view, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object targetNullValue = null, object fallbackValue = null) where TView : Element
         {
-            if (source != null || converterParameter != null)
+            if (source != null || converterParameter != null || targetNullValue != null || fallbackValue != null)
                 view.SetBinding(targetProperty, new Binding(
                     path: sourcePropertyName,
                     mode: mode,
@@ -80,16 +80,18 @@ namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpF
                     converterParameter: converterParameter,
                     stringFormat: stringFormat,
                     source: source
-                ));
+                ) { TargetNullValue = targetNullValue,
+                    FallbackValue = fallbackValue
+                });
             else
                 view.SetBinding(targetProperty, sourcePropertyName, mode, converter, stringFormat);
             return view;
         }
 
-        public static TView Bind<TView, TSource, TDest>(this TView view, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, Func<TSource, TDest> convert = null, Func<TDest, TSource> convertBack = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : Element
+        public static TView Bind<TView, TSource, TDest>(this TView view, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, Func<TSource, TDest> convert = null, Func<TDest, TSource> convertBack = null, object converterParameter = null, string stringFormat = null, object source = null, object targetNullValue = null, object fallbackValue = null) where TView : Element
         {
             var converter = new FuncConverter<TSource, TDest>(convert, convertBack);
-            if (source != null || converterParameter != null)
+            if (source != null || converterParameter != null || targetNullValue != null || fallbackValue != null)
                 view.SetBinding(targetProperty, new Binding(
                     path: sourcePropertyName,
                     mode: mode,
@@ -97,13 +99,15 @@ namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpF
                     converterParameter: converterParameter,
                     stringFormat: stringFormat,
                     source: source
-                ));
+                ) { TargetNullValue = targetNullValue,
+                    FallbackValue = fallbackValue
+                });
             else
                 view.SetBinding(targetProperty, sourcePropertyName, mode, converter, stringFormat);
             return view;
         }
 
-        public static TView Bind<TView>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : Element
+        public static TView Bind<TView>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object targetNullValue = null, object fallbackValue = null) where TView : Element
         {
             view.Bind(
                 targetProperty: GetDefaultProperty(view),
@@ -112,12 +116,14 @@ namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpF
                 converter: converter,
                 converterParameter: converterParameter,
                 stringFormat: stringFormat,
-                source: source
+                source: source,
+                targetNullValue: targetNullValue,
+                fallbackValue: fallbackValue
             );
             return view;
         }
 
-        public static TView Bind<TView, TSource, TDest>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, Func<TSource, TDest> convert = null, Func<TDest, TSource> convertBack = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : Element
+        public static TView Bind<TView, TSource, TDest>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, Func<TSource, TDest> convert = null, Func<TDest, TSource> convertBack = null, object converterParameter = null, string stringFormat = null, object source = null, object targetNullValue = null, object fallbackValue = null) where TView : Element
         {
             var converter = new FuncConverter<TSource, TDest>(convert, convertBack);
             view.Bind(
@@ -127,43 +133,45 @@ namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpF
                 converter: converter,
                 converterParameter: converterParameter,
                 stringFormat: stringFormat,
-                source: source
+                source: source,
+                targetNullValue: targetNullValue,
+                fallbackValue: fallbackValue
             );
             return view;
         }
 
-        public static TView Bind<TView, TGestureRecognizer>(this TView view, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : View where TGestureRecognizer : GestureRecognizer, new()
+        public static TView Bind<TView, TGestureRecognizer>(this TView view, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object targetNullValue = null, object fallbackValue = null) where TView : View where TGestureRecognizer : GestureRecognizer, new()
         {
-            Bind<TGestureRecognizer>(view.GestureRecognizers, targetProperty, sourcePropertyName, mode, converter, converterParameter, stringFormat, source);
+            Bind<TGestureRecognizer>(view.GestureRecognizers, targetProperty, sourcePropertyName, mode, converter, converterParameter, stringFormat, source, targetNullValue, fallbackValue);
             return view;
         }
 
-        public static TView Bind<TView, TGestureRecognizer>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TView : View where TGestureRecognizer : GestureRecognizer, new()
+        public static TView Bind<TView, TGestureRecognizer>(this TView view, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object targetNullValue = null, object fallbackValue = null) where TView : View where TGestureRecognizer : GestureRecognizer, new()
         {
-            Bind<TGestureRecognizer>(view.GestureRecognizers, null, sourcePropertyName, mode, converter, converterParameter, stringFormat, source);
+            Bind<TGestureRecognizer>(view.GestureRecognizers, null, sourcePropertyName, mode, converter, converterParameter, stringFormat, source, targetNullValue, fallbackValue);
             return view;
         }
 
-        public static TGestureElement BindGesture<TGestureElement, TGestureRecognizer>(this TGestureElement gestureElement, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TGestureElement : GestureElement where TGestureRecognizer : GestureRecognizer, new()
+        public static TGestureElement BindGesture<TGestureElement, TGestureRecognizer>(this TGestureElement gestureElement, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object targetNullValue = null, object fallbackValue = null) where TGestureElement : GestureElement where TGestureRecognizer : GestureRecognizer, new()
         {
-            Bind<TGestureRecognizer>(gestureElement.GestureRecognizers, targetProperty, sourcePropertyName, mode, converter, converterParameter, stringFormat, source);
+            Bind<TGestureRecognizer>(gestureElement.GestureRecognizers, targetProperty, sourcePropertyName, mode, converter, converterParameter, stringFormat, source, targetNullValue, fallbackValue);
             return gestureElement;
         }
 
-        public static TGestureElement BindGesture<TGestureElement, TGestureRecognizer>(this TGestureElement gestureElement, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null) where TGestureElement : GestureElement where TGestureRecognizer : GestureRecognizer, new()
+        public static TGestureElement BindGesture<TGestureElement, TGestureRecognizer>(this TGestureElement gestureElement, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object targetNullValue = null, object fallbackValue = null) where TGestureElement : GestureElement where TGestureRecognizer : GestureRecognizer, new()
         {
-            Bind<TGestureRecognizer>(gestureElement.GestureRecognizers, null, sourcePropertyName, mode, converter, converterParameter, stringFormat, source);
+            Bind<TGestureRecognizer>(gestureElement.GestureRecognizers, null, sourcePropertyName, mode, converter, converterParameter, stringFormat, source, targetNullValue, fallbackValue);
             return gestureElement;
         }
 
-        static void Bind<TGestureRecognizer>(IList<IGestureRecognizer> gestureRecognizers, BindableProperty targetProperty, string sourcePropertyName, BindingMode mode, IValueConverter converter, object converterParameter, string stringFormat, object source) where TGestureRecognizer : GestureRecognizer, new()
+        static void Bind<TGestureRecognizer>(IList<IGestureRecognizer> gestureRecognizers, BindableProperty targetProperty, string sourcePropertyName, BindingMode mode, IValueConverter converter, object converterParameter, string stringFormat, object source, object targetNullValue = null, object fallbackValue = null) where TGestureRecognizer : GestureRecognizer, new()
         {
             var gestureRecognizer = (TGestureRecognizer)gestureRecognizers.FirstOrDefault(r => r is TGestureRecognizer);
             if (gestureRecognizer == null) gestureRecognizers.Add(gestureRecognizer = new TGestureRecognizer());
 
             if (targetProperty == null) targetProperty = GetDefaultProperty(gestureRecognizer);
 
-            if (source != null || converterParameter != null)
+            if (source != null || converterParameter != null || targetNullValue != null || fallbackValue != null)
                 gestureRecognizer.SetBinding(targetProperty, new Binding(
                     path: sourcePropertyName,
                     mode: mode,
@@ -171,24 +179,26 @@ namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpF
                     converterParameter: converterParameter,
                     stringFormat: stringFormat,
                     source: source
-                ));
+                ) { TargetNullValue = targetNullValue,
+                    FallbackValue = fallbackValue
+                });
             else
                 gestureRecognizer.SetBinding(targetProperty, sourcePropertyName, mode, converter, stringFormat);
         }
 
-        public static TView BindTapGesture<TView>(this TView view, string sourcePropertyName = bindingContextPropertyName, string commandParameterPropertyName = null, object commandParameter = null, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object commandParameterSource = null) where TView : View
+        public static TView BindTapGesture<TView>(this TView view, string sourcePropertyName = bindingContextPropertyName, string commandParameterPropertyName = null, object commandParameter = null, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object commandParameterSource = null, object targetNullValue = null, object fallbackValue = null) where TView : View
         {
-            BindTap(view.GestureRecognizers, sourcePropertyName, commandParameterPropertyName, commandParameter, mode, converter, converterParameter, stringFormat, source, commandParameterSource);
+            BindTap(view.GestureRecognizers, sourcePropertyName, commandParameterPropertyName, commandParameter, mode, converter, converterParameter, stringFormat, source, commandParameterSource, targetNullValue, fallbackValue);
             return view;
         }
 
-        public static TGestureElement BindTap<TGestureElement>(this TGestureElement gestureElement, string sourcePropertyName = bindingContextPropertyName, string commandParameterPropertyName = null, object commandParameter = null, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object commandParameterSource = null) where TGestureElement : GestureElement
+        public static TGestureElement BindTap<TGestureElement>(this TGestureElement gestureElement, string sourcePropertyName = bindingContextPropertyName, string commandParameterPropertyName = null, object commandParameter = null, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object commandParameterSource = null, object targetNullValue = null, object fallbackValue = null) where TGestureElement : GestureElement
         {
-            BindTap(gestureElement.GestureRecognizers, sourcePropertyName, commandParameterPropertyName, commandParameter, mode, converter, converterParameter, stringFormat, source, commandParameterSource);
+            BindTap(gestureElement.GestureRecognizers, sourcePropertyName, commandParameterPropertyName, commandParameter, mode, converter, converterParameter, stringFormat, source, commandParameterSource, targetNullValue, fallbackValue);
             return gestureElement;
         }
 
-        static void BindTap(IList<IGestureRecognizer> gestureRecognizers, string sourcePropertyName, string commandParameterPropertyName, object commandParameter, BindingMode mode, IValueConverter converter, object converterParameter, string stringFormat, object source, object commandParameterSource)
+        static void BindTap(IList<IGestureRecognizer> gestureRecognizers, string sourcePropertyName, string commandParameterPropertyName, object commandParameter, BindingMode mode, IValueConverter converter, object converterParameter, string stringFormat, object source, object commandParameterSource, object targetNullValue = null, object fallbackValue = null)
         {
             var gestureRecognizer = (TapGestureRecognizer)gestureRecognizers.FirstOrDefault(r => r is TapGestureRecognizer);
             if (gestureRecognizer == null) gestureRecognizers.Add(gestureRecognizer = new TapGestureRecognizer());
@@ -200,7 +210,7 @@ namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpF
 
             var targetProperty = TapGestureRecognizer.CommandProperty;
 
-            if (source != null || converterParameter != null)
+            if (source != null || converterParameter != null || targetNullValue != null || fallbackValue != null)
                 gestureRecognizer.SetBinding(targetProperty, new Binding(
                     path: sourcePropertyName,
                     mode: mode,
@@ -208,7 +218,9 @@ namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpF
                     converterParameter: converterParameter,
                     stringFormat: stringFormat,
                     source: source
-                ));
+                ) { TargetNullValue = targetNullValue,
+                    FallbackValue = fallbackValue
+                });
             else
                 gestureRecognizer.SetBinding(targetProperty, sourcePropertyName, mode, converter, stringFormat);
         }
