@@ -2,6 +2,7 @@
 using CSharpForMarkupExample.ViewModels;
 using CSharpForMarkupExample.Views.Controls;
 using Xamarin.Forms;
+using CSharpForMarkupExample.Views.IssuePages;
 using static CSharpForMarkup.EnumsForGridRowsAndColumns;
 using static CSharpForMarkupExample.Styles;
 
@@ -47,10 +48,22 @@ namespace CSharpForMarkupExample.Views.Pages
                             .BindTap (nameof(vm.ContinueToCSharpForMarkupCommand))
                             .Bind (nameof(vm.Title)),
                             new Span { Text = " \U0001f60e" }
-                        ) .CenterH ()
-                    }}} .Row (PageRow.Body)
+                        ) .CenterH (),
+
+                        BuildIssueButton(new IssuePages.AddConstantAndField()),
+
+                        BuildIssueButton(new IssuePages.BuildViewContentInSeparateMethod())
+                    } } } 
+                    .Row (PageRow.Body)
                  }
             };
+        }
+
+        Button BuildIssueButton(Page page)
+        {
+            string title = page.Title = $"Issue { page.GetType().Name }";
+            return new Button { Text = title }
+            .Invoke(b => b.Clicked += (s, e) => Navigation.PushAsync(page));
         }
     }
 }

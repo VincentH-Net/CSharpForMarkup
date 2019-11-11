@@ -12,7 +12,7 @@ namespace CSharpForMarkupExample.ViewModels
         
         public MainViewModel(App app) { this.app = app; }
 
-        public string Title => "CSharpForMarkup";
+        public string Title => "CSharpForMarkup and LiveSharp";
         
         public string SubTitle => "Example pages";
         
