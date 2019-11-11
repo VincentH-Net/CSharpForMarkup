@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegistrationCodeViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Controls\ImageButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Controls\PageHeader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\IssuePages\UseConstantForValue.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\IssuePages\BuildViewContentInSeparateMethod.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\BaseContentPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\IssuePages\AddConstantAndField.cs" />

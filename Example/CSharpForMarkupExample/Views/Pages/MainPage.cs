@@ -50,9 +50,11 @@ namespace CSharpForMarkupExample.Views.Pages
                             new Span { Text = " \U0001f60e" }
                         ) .CenterH (),
 
-                        BuildIssueButton(new IssuePages.AddConstantAndField()),
+                        BuildIssueButton(new AddConstantAndField()),
 
-                        BuildIssueButton(new IssuePages.BuildViewContentInSeparateMethod())
+                        BuildIssueButton(new BuildViewContentInSeparateMethod()),
+
+                        BuildIssueButton(new UseConstantForValue())
                     } } } 
                     .Row (PageRow.Body)
                  }
