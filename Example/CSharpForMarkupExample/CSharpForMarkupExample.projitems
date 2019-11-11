@@ -30,4 +30,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\NestedListPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\RegistrationCodePage.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Pages\Issues\" />
+  </ItemGroup>
 </Project>

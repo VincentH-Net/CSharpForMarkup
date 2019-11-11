@@ -1,0 +1,11 @@
+# For full documentation, see https://github.com/OYIon/LiveSharp
+
+# Methods to inject update code in, format: [NS].[Type] [Method] [Param0] [Param1] ...	
+# Nested types are separated with + e.g. MyNamespace.MyClass+MyNestedClass
+# You can end names with * to match on beginning of names; just * on a line will match any method of any type
+# Note that rules will also match on derived types, unless you specify ! at the end of the type name. Then it will only match the exact type in the rules file.
+# Note: generic types are not yet supported
+CSharpForMarkupExample.Views.* Build*
+
+# Forms app startup method (signified by @ at start of line); this initializes LiveSharp at the start of a debugging session
+@CSharpForMarkupExample.App .ctor
