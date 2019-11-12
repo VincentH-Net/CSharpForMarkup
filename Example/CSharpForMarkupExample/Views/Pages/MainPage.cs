@@ -54,7 +54,9 @@ namespace CSharpForMarkupExample.Views.Pages
 
                         BuildIssueButton(new BuildViewContentInSeparateMethod()),
 
-                        BuildIssueButton(new UseConstantForValue())
+                        BuildIssueButton(new UseConstantForValue()),
+
+                        BuildIssueButton(new VariableNotDefined()),
                     } } } 
                     .Row (PageRow.Body)
                  }
