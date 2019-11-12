@@ -15,7 +15,7 @@ namespace CSharpForMarkupExample.Views.IssuePages
             Content = new StackLayout
             {
                 Children = {
-                    new Label { Text = "LIVE Edit this text and save gives InvalidOperationException variable 'vm' of type '...' referenced from scope '', but it is not defined" },
+                    new Label { Text = "Edit this text and save gives InvalidOperationException variable 'vm' of type '...' referenced from scope '', but it is not defined" },
 
                     new Entry { BackgroundColor = Color.Green }
                     .Invoke(entry => { entry.TextChanged += (sender, e) => vm.RegistrationCode = entry.Text; })

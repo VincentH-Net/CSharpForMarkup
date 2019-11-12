@@ -58,7 +58,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="LiveSharp">
-      <Version>1.1.11</Version>
+      <Version>1.1.13</Version>
     </PackageReference>
     <PackageReference Include="PropertyChanged.Fody">
       <Version>3.0.1</Version>

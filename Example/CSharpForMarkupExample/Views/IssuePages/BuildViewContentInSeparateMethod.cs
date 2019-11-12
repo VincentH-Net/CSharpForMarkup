@@ -3,7 +3,7 @@ using CSharpForMarkup;
 
 namespace CSharpForMarkupExample.Views.IssuePages
 {
-    public class BuildViewContentInSeparateMethod : Pages.BaseContentPage
+    public class BuildViewContentInSeparateMethod : Pages.BaseContentPage // Verified fixed in LiveSharp server 0.9.10 and NuGet 1.1.13
     {
         public BuildViewContentInSeparateMethod() => Build();
 
