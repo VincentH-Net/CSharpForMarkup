@@ -50,13 +50,19 @@ namespace CSharpForMarkupExample.Views.Pages
                             new Span { Text = " \U0001f60e" }
                         ) .CenterH (),
 
+                        new Label { Text = "Open issues:", TextColor = Color.Red } .FontSize (18)
+                        .CenterH (),
+
+                        BuildIssueButton(new VariableNotDefined()),
+
+                        new Label { Text = "Fixed issues:", TextColor = Color.Green } .FontSize (18)
+                        .CenterH (),
+
                         BuildIssueButton(new AddConstantAndField()),
 
                         BuildIssueButton(new BuildViewContentInSeparateMethod()),
 
                         BuildIssueButton(new UseConstantForValue()),
-
-                        BuildIssueButton(new VariableNotDefined()),
 
                         BuildIssueButton(new PassIntFieldToDoubleParameter())
                     } } } 
@@ -68,8 +74,11 @@ namespace CSharpForMarkupExample.Views.Pages
         Button BuildIssueButton(Page page)
         {
             string title = page.Title = $"Issue { page.GetType().Name }";
-            return new Button { Text = title }
-            .Invoke(b => b.Clicked += (s, e) => Navigation.PushAsync(page));
+
+            return 
+                new Button { Text = title }
+                .FillExpandH () .Margin (PageMarginSize)
+                .Invoke (b => b.Clicked += (s, e) => Navigation.PushAsync(page));
         }
     }
 }
