@@ -3,17 +3,17 @@ using CSharpForMarkup;
 
 namespace CSharpForMarkupExample.Views.IssuePages
 {
-    public class UseConstantForValue : Pages.BaseContentPage
+    public class PassIntFieldToDoubleParameter : Pages.BaseContentPage
     {
-        const double aConstant = 8;
+        int marginRight = Device.RuntimePlatform == Device.iOS ? 3 : 12;
 
-        public UseConstantForValue() => Build();
+        public PassIntFieldToDoubleParameter() => Build();
 
         void Build()
         {
             Content = new StackLayout { Children = {
                 new Label { Text = "Edit this text and save gives InvalidCastException" }
-                .Margins (left: aConstant)
+                .Margins (right: marginRight)
             } };
         }
     }
