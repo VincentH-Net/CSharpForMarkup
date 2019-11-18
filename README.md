@@ -43,7 +43,19 @@ Compare this Entry markup:
 See [Pro's and Con's](#declarative-c-versus-xaml-considerations) for a detailed comparison.
 
 ## How?
-Use **Bind** as in the above examples. **Note** that Bind knows the default bindable property for each view type; you can omit it in most cases. If needed you can specify it like this:  
+Use the extension methods listed below to set select view properties. These helpers offer a fluent API, but they are not meant to replace all property setters; they are added when they improve readability. They are meant to be used in combination with normal property setters. It is recommended to always use a helper when one exists for a property, but developers can choose a balance they prefer (e.g. to keep the markup more or less similar to XAML).
+
+### Binding and converters
+Use `Bind` as in the above C# examples
+
+**Note** that `Bind` knows the default bindable property for most view types; you can omit it in most cases. You can also register the default bindable property for additional controls:
+```CSharp
+XamarinFormsMarkupExtensions.RegisterDefaultBindableProperties(
+    HoverButton.CommandProperty, 
+    RadialGauge.ValueProperty
+);
+```
+You can specify any bindable property like this:  
 ```CSharp
 new Label { Text = "No data available" }
 .Bind (Label.IsVisibleProperty, nameof(vm.IsEmpty))
@@ -55,12 +67,12 @@ new Label { Text = "Tap Me" }
 .BindTapGesture (nameof(vm.TapCommand)) // Or use any type of gesture with Bind<TView, TGestureRecognizer>(...)
 ```
 
-Pass inline converter code with **convert** and **convertBack** (type-safe):
+Pass inline converter code with `convert` and `convertBack` parameters (type-safe):
 ```CSharp
 new Label { Text = "Tree" }
 .Bind (Label.MarginProperty, nameof(TreeNode.TreeDepth), convert: (int depth) => new Thickness(depth * 20, 0, 0, 0))
 ```
-Re-use converter code and instances with **FuncConverter**:
+Re-use converter code and instances with `FuncConverter`:
 ```CSharp
 treeMarginConverter = new FuncConverter<int, Thickness>(depth => new Thickness(depth * 20, 0, 0, 0));
 //...
@@ -68,7 +80,7 @@ new Label { Text = "Tree" }
 .Bind(Label.MarginProperty, nameof(TreeNode.TreeDepth), converter: treeMarginConverter),
 ```
 
-Use **FormattedText** together with binding to **Spans**:
+Use `FormattedText` together with binding to `Spans`:
 ```CSharp
 new Label { } .FormattedText (
     new Span { Text = "Built with " },
@@ -77,26 +89,64 @@ new Label { } .FormattedText (
     .Bind (nameof(vm.Title))
 )
 ```
-Note that you can bind gestures to spans with **BindTap** and **BindGesture** *(due to C#'s inability to have generic overloads with different where clauses these have to be named different from the helpers for Views)*.
+Note that you can bind gestures to spans with `BindTap` and `BindGesture` *(due to C#'s inability to have generic overloads with different where clauses these have to be named different from the helpers for Views)*.
 
-Add **Effects**:
+### Layout
+Use layout helpers for positioning views in layouts and content in views:
+- In a `Grid`: `Row`, `Col`, `RowSpan`, `ColSpan`
+- In a `FlexLayout`: `AlignSelf`, `Basis`, `Grow`, `Menu`, `Order`, `Shrink`
+- Specify `LayoutOptions`:
+  - `Left`, `CenterH`, `FillH`, `Right`
+  - `LeftExpand`, `CenterExpandH`, `FillExpandH`, `RightExpand`
+  - `Top`, `Bottom`, `CenterV`, `FillV`
+  - `TopExpand`, `BottomExpand`, `CenterExpandV`, `FillExpandV`
+  - `Center`, `Fill`, `CenterExpand`, `FillExpand`
+- `Margin`, `Margins`
+- `Height`, `Width`, `MinHeight`, `MinWidth`, `Size`, `MinSize`
+- `Padding`, `Paddings`
+- In a `Label`:
+  - `TextLeft`, `TextCenterH`, `TextRight`
+  - `TextTop`, `TextCenterV`, `TextBottom`
+  - `TextCenter`
+
+The **recommended convention** is to put all helpers from above set for a view on a single line, in the order that they are listed above. This creates a layout line that visually zooms in on the view content:
+1. Row & col that contain the view
+2. Alignment within row & col
+3. Margin around view
+4. View size
+5. Padding within view
+6. Content alignment within padding
+
+Consistently applying this convention enables developers to quickly visually scan and zoom in on markup to build a mental map of where the view content is located.
+
+### Enums for Grid rows and columns
+By adding `using static Xamarin.Forms.Markup.EnumsForGridRowsAndColumns;` developers can use enums for Grid rows and columns instead of numbers, so they don't have to renumber manually when they add or remove rows or columns. Readability and intent of the layout is also improved:
+
+![Enums For Grid Rows And Columns](img/EnumsForGridRowsAndColumns.png)
+
+### Fonts
+- In a `Label`: `FontSize`, `Bold`, `Italic`
+- In `Button`, `Label`, `Entry`, `Picker`: `Font`
+
+### Effects
 ```CSharp
 new Button { Text = "Tap Me" }
 .Effects (new ButtonMixedCaps())
 ```
 
-Use **Invoke** to execute code inline in your declarative markup:
+### Logic integration 
+Use `Invoke` to execute code inline in your declarative markup:
 ```CSharp
 new ListView { } .Invoke (l => l.ItemTapped += MyListView_ItemTapped)
 ```
 
-Use **Assign** if you need to access a control from outside the UI markup (in UI logic):
+Use `Assign` if you need to access a control from outside the UI markup (in UI logic):
 ```CSharp
 new ListView { } .Assign (out MyListView),
 ```
-Note that you can cleanly **separate UI markup from UI logic** while encapsulating both by using partial class files, e.g. `LoginPage.cs` + `LoginPage.logic.cs`
 
-Use **Style** to create type-safe, declarative coded styles:
+### Styles
+Use `Style` to create type-safe, declarative coded styles:
 ```CSharp
 using static CSharpForMarkupExample.Styles;
 ...
@@ -107,7 +157,8 @@ new Span { Text = "delightful", Style = Quote }, // Use the implicit Style type 
 
 ![Styles In C Sharp](img/StylesInCSharp.png)
 
-Note that instead of using **Style**, you can simply create your own extension methods to set styling even more type-safe:
+
+Note that instead of using `Style`, you can simply create your own extension methods to set styling even more type-safe:
 ```CSharp
 new Button { Text = "Tap Me" } .Filled ()
 ```
@@ -121,11 +172,9 @@ public static TButton Filled<TButton>(this TButton button) where TButton : Butto
 }
 ```
 
-You can also **use enums for Grid rows and columns** instead of numbers, so you don't have to renumber manually when you add or remove rows or columns. Readability and intent of the layout is also improved:
-
-![Enums For Grid Rows And Columns](img/EnumsForGridRowsAndColumns.png)
-
-Finally, these helpers also offer support for some **Platform Specifics** e.g. `iOSSetGroupHeaderStyleGrouped`. Using these helpers avoids the name conflicts on view types that you get when using platform specifics from the Xamarin Forms namespaces.
+### Platform Specifics
+There is also support for some Platform Specifics e.g. `iOSSetGroupHeaderStyleGrouped`. 
+Using these helpers avoids the name conflicts on view types that you get when using platform specifics from the Xamarin Forms namespaces.
 
 ## Real World Examples
 
@@ -146,11 +195,15 @@ C#, close to XAML:
 By using more helper methods, you can further improve C# readability (but it will be less simular to the XAML):
 
 ![Page C Sharp Short](img/PageCSharpShort.png)
+This markup follows some conventions:
 
-This markup follows some conventions. For each control:
-- Bound properties are last, one per line
-- The line before the bound properties is about layout, ordered inward: rows / cols, layout options, margin, size, padding, content alignment
-- Before that are the other properties; any property that identifies the control's purpose comes first (e.g. Text or Placeholder)
+## Conventions
+Recommended markup formatting conventions for every control:
+- Bound properties are last, one per line. The default bindable property, if any, should be the very last line.
+- The line before the bound properties is about layout, ordered inward: rows / cols, layout options, margin, size, padding, content alignment.
+
+  Consistently applying these conventions allows to visually scan / zoom markup and build a mental map of the layout.
+- Before that are the other properties; any property that identifies the control's purpose should be on the very first line (e.g. Text or Placeholder)
 
 ## Declarative C# versus XAML considerations 
 Some observations that may help you if you like XAML but wonder whether declarative C# would work for you:
