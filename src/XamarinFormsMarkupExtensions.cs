@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using Xamarin.Forms;
 using System.Linq;
-#if WINDOWS_UWP
 using System.Reflection;
-#endif
 
-namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpForMarkup; version 20191106.1
+namespace CSharpForMarkup // Version 20191118.1; guidance at https://github.com/VincentH-Net/CSharpForMarkup; Xamarin Forms PR at https://github.com/xamarin/Xamarin.Forms/pull/8342
 {
     public static class XamarinFormsMarkupExtensions
     {
@@ -59,15 +57,19 @@ namespace CSharpForMarkup // Guidance at https://github.com/VincentH-Net/CSharpF
                 if (viewTypeDefaultProperty.TryGetValue(viewTypeName, out defaultProperty)) break;
                 if (viewTypeName.StartsWith("Xamarin.Forms.", StringComparison.Ordinal))
                     throw new NotImplementedException("No default bindable property is defined for view type." + viewTypeName + "\r\nEither specify a property when calling Bind() or add a default property for this type to the viewTypeDefaultProperty dictionary.");
-#if WINDOWS_UWP
+
                 viewType = viewType.GetTypeInfo().BaseType;
-#else
-                viewType = viewType.BaseType;
-#endif
+
                 if (viewType == null) return null;
             } while (true);
 
             return defaultProperty;
+        }
+
+        public static void RegisterDefaultBindableProperties(params BindableProperty[] properties)
+        {
+            foreach (var property in properties)
+                viewTypeDefaultProperty.Add(property.DeclaringType.FullName, property);
         }
 
         public static TView Bind<TView>(this TView view, BindableProperty targetProperty, string sourcePropertyName = bindingContextPropertyName, BindingMode mode = BindingMode.Default, IValueConverter converter = null, object converterParameter = null, string stringFormat = null, object source = null, object targetNullValue = null, object fallbackValue = null) where TView : Element
