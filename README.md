@@ -120,7 +120,7 @@ The **recommended convention** is to put all helpers from above set for a view o
 Consistently applying this convention enables developers to quickly visually scan and zoom in on markup to build a mental map of where the view content is located.
 
 ### Enums for Grid rows and columns
-By adding `using static Xamarin.Forms.Markup.EnumsForGridRowsAndColumns;` developers can use enums for Grid rows and columns instead of numbers, so they don't have to renumber manually when they add or remove rows or columns. Readability and intent of the layout is also improved:
+By adding `using static CSharpForMarkup.EnumsForGridRowsAndColumns;` developers can use enums for Grid rows and columns instead of numbers, so they don't have to renumber manually when they add or remove rows or columns. Readability and intent of the layout is also improved:
 
 ![Enums For Grid Rows And Columns](img/EnumsForGridRowsAndColumns.png)
 
@@ -195,6 +195,7 @@ C#, close to XAML:
 By using more helper methods, you can further improve C# readability (but it will be less simular to the XAML):
 
 ![Page C Sharp Short](img/PageCSharpShort.png)
+
 This markup follows some conventions:
 
 ## Conventions
