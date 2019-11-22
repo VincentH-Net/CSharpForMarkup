@@ -13,6 +13,7 @@ namespace CSharpForMarkupExample
         
         RegistrationCodePage registrationCodePage;
         NestedListPage nestedListPage;
+        AnimatedPage animatedPage;
 
         public App() {
             Resources = Styles.Implicit;
@@ -38,6 +39,12 @@ namespace CSharpForMarkupExample
             if (NestedListViewModel == null) NestedListViewModel = new NestedListViewModel(this);
             if (nestedListPage == null) nestedListPage = new NestedListPage();
             return TaskHelper.RunOnUIThread(() => MainPage.Navigation.PushAsync(nestedListPage, true));
+        }
+
+        public Task ContinueToAnimatedPage()
+        {
+            if (animatedPage == null) animatedPage = new AnimatedPage();
+            return TaskHelper.RunOnUIThread(() => MainPage.Navigation.PushAsync(animatedPage, true));
         }
 
         public void OpenUri(string uri) => Device.OpenUri(new Uri(uri));

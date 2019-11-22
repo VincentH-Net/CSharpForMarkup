@@ -8,7 +8,7 @@ namespace CSharpForMarkupExample.ViewModels
     {
         readonly App app;
         
-        ICommand continueToRegistrationCommand, continueToNestedListCommand, continueToCSharpForMarkupCommand;
+        ICommand continueToRegistrationCommand, continueToNestedListCommand, continueToCSharpForMarkupCommand, continueToAnimatedPageCommand;
         
         public MainViewModel(App app) { this.app = app; }
 
@@ -18,10 +18,12 @@ namespace CSharpForMarkupExample.ViewModels
         
         public ICommand ContinueToRegistrationCommand => continueToRegistrationCommand ?? (continueToRegistrationCommand = new RelayCommandAsync(ContinueToRegistration));
         public ICommand ContinueToNestedListCommand => continueToNestedListCommand ?? (continueToNestedListCommand = new RelayCommandAsync(ContinueToNestedList));
+        public ICommand ContinueToAnimatedPageCommand => continueToAnimatedPageCommand ?? (continueToAnimatedPageCommand = new RelayCommandAsync(ContinueToAnimatedPage));
         public ICommand ContinueToCSharpForMarkupCommand => continueToCSharpForMarkupCommand ?? (continueToCSharpForMarkupCommand = new RelayCommand(ContinueToCSharpForMarkup));
 
         Task ContinueToRegistration() => app.ContinueToRegistration();
         Task ContinueToNestedList() => app.ContinueToNestedList();
+        Task ContinueToAnimatedPage() => app.ContinueToAnimatedPage();
         void ContinueToCSharpForMarkup() => app.OpenUri("https://github.com/VincentH-Net/CSharpForMarkup");
     }
 }

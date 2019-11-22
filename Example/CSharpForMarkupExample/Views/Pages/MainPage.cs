@@ -41,6 +41,10 @@ namespace CSharpForMarkupExample.Views.Pages
                             .FillExpandH () .Margin (PageMarginSize)
                             .Bind (nameof(vm.ContinueToNestedListCommand)),
 
+                        new Button { Text = nameof(AnimatedPage) } .Style (FilledButton)
+                            .FillExpandH () .Margin (PageMarginSize)
+                            .Bind (nameof(vm.ContinueToAnimatedPageCommand)),
+
                         new Label { } .FontSize (20) .FormattedText (
                             new Span { Text = "Built with " },
                             new Span { Style = Link }
