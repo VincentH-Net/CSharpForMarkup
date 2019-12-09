@@ -53,6 +53,8 @@ namespace CSharpForMarkupExample.Views.Pages
                         new Label { Text = "Open issues:", TextColor = Color.Red } .FontSize (18)
                         .CenterH (),
 
+                        BuildIssueButton(new KeyboardAccessoryOniOS()),
+
                         BuildIssueButton(new VariableNotDefined()),
 
                         new Label { Text = "Fixed issues:", TextColor = Color.Green } .FontSize (18)
@@ -65,6 +67,7 @@ namespace CSharpForMarkupExample.Views.Pages
                         BuildIssueButton(new UseConstantForValue()),
 
                         BuildIssueButton(new PassIntFieldToDoubleParameter())
+
                     } } } 
                     .Row (PageRow.Body)
                  }

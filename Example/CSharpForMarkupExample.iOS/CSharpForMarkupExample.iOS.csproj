@@ -64,6 +64,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Views\Controls\KeyboardAccessoryLayout.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -130,7 +131,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="LiveSharp">
-      <Version>1.1.15</Version>
+      <Version>1.1.16</Version>
     </PackageReference>
     <PackageReference Include="PropertyChanged.Fody">
       <Version>3.0.1</Version>
