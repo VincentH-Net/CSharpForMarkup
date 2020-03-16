@@ -22,12 +22,11 @@ namespace CSharpForMarkupExample.Views.Controls
             string subTitlePropertyName = null, 
             string returnToPreviousViewCommandPropertyName = null, 
             string allowBackNavigationPropertyName = null, 
-            Colors backgroundColor = Colors.ColorValuePrimary,
             bool centerTitle = false)
         {
             var grid = new Grid
             {
-                BackgroundColor = backgroundColor.ToColor(),
+                BackgroundColor = Color.DarkRed,
 
                 ColumnSpacing = 0,
                 ColumnDefinitions = Columns.Define (
@@ -43,7 +42,7 @@ namespace CSharpForMarkupExample.Views.Controls
 
                 Children = {
                     new ContentView { Content = (returnToPreviousViewCommandPropertyName != null) ?
-                        new Button { Text = "<" } .Font (24, bold: true) .TextColor (Colors.White) .BackgroundColor (backgroundColor)
+                        new Button { Text = "<", TextColor = Color.White, BackgroundColor = Color.DarkRed } .Font (24, bold: true)
                         .Left() .CenterVertical()
                         .Bind(Button.CommandProperty, returnToPreviousViewCommandPropertyName)
                         : null
@@ -53,8 +52,9 @@ namespace CSharpForMarkupExample.Views.Controls
                     new Label { 
                         LineBreakMode = LineBreakMode.TailTruncation, 
                         HorizontalOptions = centerTitle ? LayoutOptions.Center : LayoutOptions.Start,
-                        VerticalOptions = subTitlePropertyName != null ? LayoutOptions.End : LayoutOptions.Center 
-                    } .Bold () .TextColor (Colors.White)
+                        VerticalOptions = subTitlePropertyName != null ? LayoutOptions.End : LayoutOptions.Center,
+                        TextColor = Color.White
+                    } .Bold ()
                       .Row (Row.Title, subTitlePropertyName != null ? Row.Title : Row.Subtitle) .Column (centerTitle ? Col.First : Col.Title, centerTitle ? Col.Last : Col.Title)
                       .Invoke(l => { if (titlePropertyName != null) l.Bind(titlePropertyName); })
                 }
@@ -64,8 +64,9 @@ namespace CSharpForMarkupExample.Views.Controls
                 new Label { 
                     LineBreakMode = LineBreakMode.TailTruncation, 
                     HorizontalOptions = centerTitle ? LayoutOptions.Center : LayoutOptions.Start,
-                    VerticalOptions = LayoutOptions.Start 
-                }.Bold () .TextColor (Colors.White)
+                    VerticalOptions = LayoutOptions.Start,
+                    TextColor = Color.White
+                }.Bold ()
                  .Row (Row.Subtitle) .Column (centerTitle ? Col.First : Col.Title, centerTitle ? Col.Last : Col.Title)
                  .Bind(subTitlePropertyName)
             );

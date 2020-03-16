@@ -3,20 +3,30 @@ using Xamarin.Forms.Markup;
 
 namespace CSharpForMarkupExample.Views.Pages
 {
-    public partial class AnimatedPage : BaseContentPage
+    partial class AnimatedPage : BaseContentPage
     {
         void Build() {
             Title = "AnimatedPage";
 
             Content = new StackLayout { Children = {
-                new Label { Text = "Animation example" } .FontSize (32) .CenterHorizontal (),
-                new Label { Text = "to illustrate"     } .FontSize (32) .CenterHorizontal (),
-                new Label { Text = "separation"        } .FontSize (32) .CenterHorizontal (),
-                new Label { Text = "of"                } .FontSize (32) .CenterHorizontal (),
-                new Label { Text = "UI Markup", TextColor = Colors.Green.ToColor() } .FontSize (32) .Bold () .CenterHorizontal (),
-                new Label { Text = "and"               } .FontSize (32) .CenterHorizontal (),
-                new Label { Text = "UI Logic" , TextColor = Colors.Red.ToColor()   } .FontSize (32) .Bold () .CenterHorizontal ()
+                new StyledLabel ("Animation example"),
+                new StyledLabel ("to illustrate"),
+                new StyledLabel ("separation"),
+                new StyledLabel ("of"),
+                new StyledLabel ("UI Markup") { TextColor = Color.Green } .Bold (),
+                new StyledLabel ("and"),
+                new StyledLabel ("UI Logic") { TextColor = Color.Red } .Bold ()
             } } .Assign (out animatedStackLayout);
+        }
+
+        class StyledLabel : Label
+        {
+            public StyledLabel(string text) 
+            {
+                Text = text;
+                this .FontSize (32) 
+                     .CenterHorizontal (); 
+            }
         }
     }
 }

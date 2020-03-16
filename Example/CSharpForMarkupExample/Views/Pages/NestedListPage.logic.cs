@@ -1,7 +1,6 @@
 ﻿using CSharpForMarkupExample.ViewModels;
 using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Markup;
 
 namespace CSharpForMarkupExample.Views.Pages
 {
@@ -14,7 +13,6 @@ namespace CSharpForMarkupExample.Views.Pages
         partial class ListItemSelector : DataTemplateSelector
         {
             readonly DataTemplate template, emptyTemplate;
-            readonly FuncConverter<int, Color> countToColorConverter = new FuncConverter<int, Color>(count => count % 2 == 1 ? Colors.Green.ToColor() : Colors.Red.ToColor());
 
             protected override DataTemplate OnSelectTemplate(object item, BindableObject container) => item is ListItem listItem && !listItem.IsDummy ? template : emptyTemplate;
 

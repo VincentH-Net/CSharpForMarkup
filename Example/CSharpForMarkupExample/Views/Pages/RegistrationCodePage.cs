@@ -25,7 +25,7 @@ namespace CSharpForMarkupExample.Views.Pages
             var fieldMargin = new Thickness(PageMarginSize, 0);
             
             NavigationPage.SetHasNavigationBar(this, false);
-            BackgroundColor = Colors.BgGray3.ToColor();
+            BackgroundColor = Color.White;
 
             Content = new Grid {
                 RowSpacing = 0,
@@ -44,6 +44,7 @@ namespace CSharpForMarkupExample.Views.Pages
 
                     new ScrollView { Content = new Grid {
                         RowSpacing = 0,
+
                         RowDefinitions = Rows.Define(
                             (BodyRow.Prompt    , 170 ),
                             (BodyRow.CodeHeader, 75  ),
@@ -68,7 +69,7 @@ namespace CSharpForMarkupExample.Views.Pages
                                        .Row (BodyRow.CodeHeader) .Column (BodyCol.FieldValidation) .Right () .Bottom () .Margin (fieldNameMargin)
                                        .Bind (nameof(vm.RegistrationCodeValidationMessage)),
 
-                            new Entry { Placeholder = "E.g. 123456", Keyboard = Keyboard.Numeric } .Font (15) .BackgroundColor (Colors.White) .TextColor (Colors.Gray1)
+                            new Entry { Placeholder = "E.g. 123456", Keyboard = Keyboard.Numeric, BackgroundColor = Color.White, TextColor = Color.Gray } .Font (15)
                                        .Row (BodyRow.CodeEntry) .ColumnSpan (All<BodyCol>()) .Margin (fieldMargin) .Height (44)
                                        .Bind (nameof(vm.RegistrationCode), BindingMode.TwoWay),
 

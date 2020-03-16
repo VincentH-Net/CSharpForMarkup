@@ -13,9 +13,9 @@ namespace CSharpForMarkupExample.ViewModels
         
         public RegistrationCodeViewModel(App app) { this.app = app; }
 
-        public string RegistrationTitle => "Registration";
+        public string RegistrationTitle => "Xamarin Forms C# Markup";
 
-        public string RegistrationSubTitle => "LiveXAML coded UI test page";
+        public string RegistrationSubTitle => "Registration Example";
 
         public string RegistrationPrompt { get; set; } = "Your test registration code is 123456.\n\nPlease enter it below";
 

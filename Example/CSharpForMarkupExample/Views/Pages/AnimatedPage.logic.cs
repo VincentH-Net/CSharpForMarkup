@@ -2,7 +2,7 @@
 
 namespace CSharpForMarkupExample.Views.Pages
 {
-    public partial class AnimatedPage
+    partial class AnimatedPage
     {
         StackLayout animatedStackLayout;
 

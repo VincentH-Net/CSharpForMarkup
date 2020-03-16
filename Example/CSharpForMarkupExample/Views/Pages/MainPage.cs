@@ -8,7 +8,7 @@ using static CSharpForMarkupExample.Styles;
 
 namespace CSharpForMarkupExample.Views.Pages
 {
-    public class MainPage : BaseContentPage<MainViewModel>
+    class MainPage : BaseContentPage<MainViewModel>
     {
         public MainPage() => Build();
 
@@ -20,7 +20,7 @@ namespace CSharpForMarkupExample.Views.Pages
             var vm = ViewModel = app.MainViewModel;
             
             NavigationPage.SetHasNavigationBar(this, false);
-            BackgroundColor = Colors.BgGray3.ToColor();
+            BackgroundColor = Color.White;
 
             Content = new Grid {
                 RowSpacing = 0,
@@ -30,21 +30,15 @@ namespace CSharpForMarkupExample.Views.Pages
                 ),
 
                 Children = {
-                    PageHeader.Create(PageMarginSize, nameof(vm.Title), nameof(vm.SubTitle))
+                    PageHeader.Create (PageMarginSize, nameof(vm.Title), nameof(vm.SubTitle))
                     .Row (PageRow.Header),
 
                     new ScrollView { Content = new StackLayout { Children = {
-                        new Button { Text = nameof(RegistrationCodePage) } .Style (FilledButton)
-                            .FillExpandHorizontal () .Margin (PageMarginSize)
-                            .Bind (nameof(vm.ContinueToRegistrationCommand)),
+                        new NavigateButton (nameof(RegistrationCodePage), nameof(vm.ContinueToRegistrationCommand)),
 
-                        new Button { Text = nameof(NestedListPage) } .Style (FilledButton)
-                            .FillExpandHorizontal () .Margin (PageMarginSize)
-                            .Bind (nameof(vm.ContinueToNestedListCommand)),
+                        new NavigateButton (nameof(NestedListPage), nameof(vm.ContinueToNestedListCommand)),
 
-                        new Button { Text = nameof(AnimatedPage) } .Style (FilledButton)
-                            .FillExpandHorizontal () .Margin (PageMarginSize)
-                            .Bind (nameof(vm.ContinueToAnimatedPageCommand)),
+                        new NavigateButton (nameof(AnimatedPage), nameof(vm.ContinueToAnimatedPageCommand)),
 
                         new Label { } .FontSize (20) .FormattedText (
                             new Span { Text = "Built with " },
@@ -56,6 +50,17 @@ namespace CSharpForMarkupExample.Views.Pages
                     }}} .Row (PageRow.Body)
                  }
             };
+        }
+
+        class NavigateButton : Button
+        {
+            public NavigateButton(string text, string command)
+            {
+                Text = text;
+                this .Style (FilledButton)
+                     .FillExpandHorizontal () .Margin (PageMarginSize)
+                     .Bind (command);
+            }
         }
     }
 }

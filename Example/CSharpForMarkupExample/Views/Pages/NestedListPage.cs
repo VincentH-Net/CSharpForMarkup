@@ -19,7 +19,7 @@ namespace CSharpForMarkupExample.Views.Pages
             var vm = ViewModel = app.NestedListViewModel;
 
             NavigationPage.SetHasNavigationBar(this, false);
-            BackgroundColor = Colors.BgGray3.ToColor();
+            BackgroundColor = Color.White;
 
             Content = new Grid {
                 RowSpacing = 0,
@@ -37,11 +37,11 @@ namespace CSharpForMarkupExample.Views.Pages
                         IsGroupingEnabled = true,
                         HasUnevenRows = true,
 
-                        BackgroundColor = Colors.BgGray3.ToColor(),
-                        SeparatorColor = Colors.BgGray3.ToColor(),
+                        BackgroundColor = Color.White,
+                        SeparatorColor = Color.White,
 
                         GroupHeaderTemplate = new DataTemplate(() => new ViewCell { Height = 40, View = new Grid {
-                            BackgroundColor = Colors.BgGray3.ToColor(),
+                            BackgroundColor = Color.White,
                             RowSpacing = 0,
                             RowDefinitions = Rows.Define(
                                 (GroupRow.Body     , Star),
@@ -50,12 +50,12 @@ namespace CSharpForMarkupExample.Views.Pages
 
                             Children = {
                                 new StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 5, Children = {
-                                    new Label { } .Font (15) .Bold () .TextColor (Colors.ColorValuePrimary)
+                                    new Label { TextColor = Color.Orange } .Font (15) .Bold ()
                                     .Margins (left: PageMarginSize) .LeftExpand () .CenterVertical ()
                                     .Bind (nameof(ListGroup.Title)),
 
-                                    new Frame { CornerRadius = 4, HasShadow = false, BackgroundColor = Colors.Green.ToColor(), Content =
-                                        new Label { Text = "Odd" } .TextColor (Colors.White)
+                                    new Frame { CornerRadius = 4, HasShadow = false, BackgroundColor = Color.Green, Content =
+                                        new Label { Text = "Odd", TextColor = Color.White } 
                                     } .CenterVertical () .Margins (right: 10) .Padding (9, 3)
                                     .Bind (Frame.IsVisibleProperty, nameof(ListGroup.IsOdd)),
 
@@ -65,12 +65,11 @@ namespace CSharpForMarkupExample.Views.Pages
 
                                     new Button { Text = " Remove Group " }
                                     .CenterVertical () .Margins (right: PageMarginSize)
-                                    .Bind (Button.CommandProperty, nameof(vm.RemoveGroupCommand), source: vm)
-                                    .Bind (Button.CommandParameterProperty)
+                                    .BindCommand (nameof(vm.RemoveGroupCommand), source: vm)
                                 }}
                                 .Row (GroupRow.Body),
 
-                                new BoxView { } .Color (Colors.Gray2)
+                                new BoxView { Color = Color.SlateGray }
                                 .Row (GroupRow.Separator)
                             }
                         }}),
@@ -96,7 +95,7 @@ namespace CSharpForMarkupExample.Views.Pages
                 template = new DataTemplate(() => new ViewCell { View = new StackLayout { Spacing = 0, Children = {
                     new Grid { // TODO: When Xamarin fixes Grid layout in ListView, use additional row instead of StackLayout
                         Margin = new Thickness(PageMarginSize, 6, PageMarginSize, 0),
-                        BackgroundColor = Colors.White.ToColor(),
+                        BackgroundColor = Color.White,
 
                         RowDefinitions = Rows.Define(
                             (Row.Header   , Auto),
@@ -115,13 +114,13 @@ namespace CSharpForMarkupExample.Views.Pages
                         ),
 
                         Children = {
-                            new Label { Text = "\u2b50 " } .TextColor (Colors.Green)
+                            new Label { Text = "\u2b50 ", TextColor = Color.Green }
                             .Row (Row.Header) .Column (Col.LeftPileIcon) .Left () .CenterVertical (),
 
                             new Label { Text = "Item", LineBreakMode = LineBreakMode.TailTruncation } .Font (15) .Bold ()
                             .Row (Row.Header) .Column (Col.LeftPile, Col.Last) .CenterVertical (),
 
-                            new Label { } .Bold () .TextColor (Colors.Gray1)
+                            new Label { TextColor = Color.LightGray } .Bold () 
                             .Row (Row.Header) .Column (Col.Nr) .Center ()
                             .Bind (nameof(ListItem.Title)),
 
@@ -133,7 +132,7 @@ namespace CSharpForMarkupExample.Views.Pages
                             .Row (Row.Piles) .Column (Col.LeftPile) .CenterVertical () .TextCenterHorizontal () .TextBottom ()
                             .Bind (nameof(ListItem.CountText)),
 
-                            new BoxView { } .Color (Colors.BgBlue1)
+                            new BoxView { Color = Color.DarkBlue }
                             .Row (Row.Piles, Row.Buttons) .Column (Col.PileSeparator) .CenterHorizontal () .Bottom () .Size (2, 30) .Margins (bottom: 3),
 
                             new Label { Text = "\U0001f60e " }
@@ -144,11 +143,11 @@ namespace CSharpForMarkupExample.Views.Pages
                             .Bind (nameof(ListItem.CountText)),
 
 
-                            new Button { Text = "-" } .Font (14) .TextColor (Colors.White) .BackgroundColor (Colors.ColorValueAccent)
+                            new Button { Text = "-", TextColor = Color.White, BackgroundColor = Color.Orange } .Font (14)
                             .Row (Row.Buttons) .Column (Col.LeftPileIcon, Col.LeftPile) .FillHorizontal () .CenterVertical ()
                             .Invoke (b => b.Clicked += DecreaseCount),
 
-                            new Button { Text = "+" } .Font (14) .TextColor (Colors.White) .BackgroundColor (Colors.ColorValueAccent)
+                            new Button { Text = "+", TextColor = Color.White, BackgroundColor = Color.Orange } .Font (14)
                             .Row (Row.Buttons) .Column (Col.RightPileIcon, Col.RightPile) .FillHorizontal () .CenterVertical ()
                             .Invoke (b => b.Clicked += IncreaseCount),
                         }
@@ -156,11 +155,10 @@ namespace CSharpForMarkupExample.Views.Pages
 
                     new BoxView { }
                     .FillExpandHorizontal () .Height (3) .Margins (PageMarginSize, 0, PageMarginSize, 6)
-                    .Bind (nameof(ListItem.Count), converter: countToColorConverter),
+                    .Bind (nameof(ListItem.Count), convert: (int count) => count % 2 == 1 ? Color.Green : Color.Red),
 
                     new Button { Text = " Remove item " }
-                    .Bind (nameof(vm.RemoveItemCommand), source: vm)
-                    .Bind (Button.CommandParameterProperty)
+                    .BindCommand (nameof(vm.RemoveItemCommand), source: vm)
                 }}});
 
                 emptyTemplate = new DataTemplate(() => new ViewCell { Height = 0.1, View = new ContentView { HeightRequest = 0.1, IsVisible = false } });

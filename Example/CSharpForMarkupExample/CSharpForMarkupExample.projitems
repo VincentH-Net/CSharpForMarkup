@@ -10,9 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Branding.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\AnimationExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\BrandingExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\SingleSubscriptionEnsurer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\TaskHelper.cs" />
@@ -22,7 +20,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\NestedListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegistrationCodeViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Views\Controls\ImageButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Controls\PageHeader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\AnimatedPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\AnimatedPage.logic.cs" />

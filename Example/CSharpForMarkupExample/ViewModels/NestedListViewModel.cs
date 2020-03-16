@@ -15,7 +15,7 @@ namespace CSharpForMarkupExample.ViewModels
         
         public NestedListViewModel(App app) { this.app = app; AddGroup(); }
         
-        public string Title { get; set; } = "C# for Markup";
+        public string Title { get; set; } = "Xamarin Forms C# Markup";
 
         public string Subtitle { get; set; } = "Nested List";
 

@@ -22,7 +22,7 @@ namespace CSharpForMarkupExample
 
         public static Style<Label> Labels => labels ?? (labels = new Style<Label>(
             (Label.FontSizeProperty , 13),
-            (Label.TextColorProperty, Colors.BgBlue1.ToColor())
+            (Label.TextColorProperty, Color.DarkBlue)
         ));
 
         #endregion Implicit styles
@@ -30,8 +30,8 @@ namespace CSharpForMarkupExample
         #region Explicit styles
 
         public static Style<Button> FilledButton => filledButton ?? (filledButton = new Style<Button>( 
-            (Button.TextColorProperty, Colors.White.ToColor()),
-            (Button.BackgroundColorProperty, Colors.ColorValueAccent.ToColor())
+            (Button.TextColorProperty, Color.White),
+            (Button.BackgroundColorProperty, Color.DarkOrange)
         )) .BasedOn (Buttons);
 
         public static Style<Span> Link => link ?? (link = new Style<Span>(
