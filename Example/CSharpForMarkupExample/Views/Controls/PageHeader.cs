@@ -1,6 +1,7 @@
-﻿using CSharpForMarkup;
-using Xamarin.Forms;
-using static CSharpForMarkup.EnumsForGridRowsAndColumns;
+﻿using Xamarin.Forms;
+using Xamarin.Forms.Markup;
+using Xamarin.Forms.Markup.LeftToRight;
+using static Xamarin.Forms.Markup.GridRowsColumns;
 
 namespace CSharpForMarkupExample.Views.Controls
 {
@@ -43,10 +44,10 @@ namespace CSharpForMarkupExample.Views.Controls
                 Children = {
                     new ContentView { Content = (returnToPreviousViewCommandPropertyName != null) ?
                         new Button { Text = "<" } .Font (24, bold: true) .TextColor (Colors.White) .BackgroundColor (backgroundColor)
-                        .Left() .CenterV()
+                        .Left() .CenterVertical()
                         .Bind(Button.CommandProperty, returnToPreviousViewCommandPropertyName)
                         : null
-                    } .Row (Row.Title, Row.Subtitle) .Col (Col.BackButton) .Padding (pageMarginSize, 0)
+                    } .Row (Row.Title, Row.Subtitle) .Column (Col.BackButton) .Padding (pageMarginSize, 0)
                       .Invoke(b => { if (allowBackNavigationPropertyName != null) b.Bind(ContentView.IsVisibleProperty, allowBackNavigationPropertyName); }),
 
                     new Label { 
@@ -54,7 +55,7 @@ namespace CSharpForMarkupExample.Views.Controls
                         HorizontalOptions = centerTitle ? LayoutOptions.Center : LayoutOptions.Start,
                         VerticalOptions = subTitlePropertyName != null ? LayoutOptions.End : LayoutOptions.Center 
                     } .Bold () .TextColor (Colors.White)
-                      .Row (Row.Title, subTitlePropertyName != null ? Row.Title : Row.Subtitle) .Col (centerTitle ? Col.First : Col.Title, centerTitle ? Col.Last : Col.Title)
+                      .Row (Row.Title, subTitlePropertyName != null ? Row.Title : Row.Subtitle) .Column (centerTitle ? Col.First : Col.Title, centerTitle ? Col.Last : Col.Title)
                       .Invoke(l => { if (titlePropertyName != null) l.Bind(titlePropertyName); })
                 }
             };
@@ -65,7 +66,7 @@ namespace CSharpForMarkupExample.Views.Controls
                     HorizontalOptions = centerTitle ? LayoutOptions.Center : LayoutOptions.Start,
                     VerticalOptions = LayoutOptions.Start 
                 }.Bold () .TextColor (Colors.White)
-                 .Row (Row.Subtitle) .Col (centerTitle ? Col.First : Col.Title, centerTitle ? Col.Last : Col.Title)
+                 .Row (Row.Subtitle) .Column (centerTitle ? Col.First : Col.Title, centerTitle ? Col.Last : Col.Title)
                  .Bind(subTitlePropertyName)
             );
             return grid;

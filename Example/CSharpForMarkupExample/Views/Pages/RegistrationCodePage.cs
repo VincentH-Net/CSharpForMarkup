@@ -1,8 +1,10 @@
-﻿using CSharpForMarkup;
+﻿using Xamarin.Forms;
+using Xamarin.Forms.Markup;
+using Xamarin.Forms.Markup.LeftToRight;
+using static Xamarin.Forms.Markup.GridRowsColumns;
+
 using CSharpForMarkupExample.ViewModels;
 using CSharpForMarkupExample.Views.Controls;
-using Xamarin.Forms;
-using static CSharpForMarkup.EnumsForGridRowsAndColumns;
 using static CSharpForMarkupExample.Styles;
 
 namespace CSharpForMarkupExample.Views.Pages
@@ -56,22 +58,22 @@ namespace CSharpForMarkupExample.Views.Pages
 
                         Children = {
                             new Label { LineBreakMode = LineBreakMode.WordWrap } .Font (15) .Bold ()
-                                       .Row (BodyRow.Prompt) .ColSpan (All<BodyCol>()) .FillExpandH () .CenterV () .Margin (fieldNameMargin) .TextCenterH ()
+                                       .Row (BodyRow.Prompt) .ColumnSpan (All<BodyCol>()) .FillExpandHorizontal () .CenterVertical () .Margin (fieldNameMargin) .TextCenterHorizontal ()
                                        .Bind (nameof(vm.RegistrationPrompt)),
 
                             new Label { Text = "Registration code" } .Bold ()
-                                       .Row (BodyRow.CodeHeader) .Col(BodyCol.FieldLabel) .Bottom () .Margin (fieldNameMargin),
+                                       .Row (BodyRow.CodeHeader) .Column(BodyCol.FieldLabel) .Bottom () .Margin (fieldNameMargin),
 
                             new Label { } .Italic ()
-                                       .Row (BodyRow.CodeHeader) .Col (BodyCol.FieldValidation) .Right () .Bottom () .Margin (fieldNameMargin)
+                                       .Row (BodyRow.CodeHeader) .Column (BodyCol.FieldValidation) .Right () .Bottom () .Margin (fieldNameMargin)
                                        .Bind (nameof(vm.RegistrationCodeValidationMessage)),
 
                             new Entry { Placeholder = "E.g. 123456", Keyboard = Keyboard.Numeric } .Font (15) .BackgroundColor (Colors.White) .TextColor (Colors.Gray1)
-                                       .Row (BodyRow.CodeEntry) .ColSpan (All<BodyCol>()) .Margin (fieldMargin) .Height (44)
+                                       .Row (BodyRow.CodeEntry) .ColumnSpan (All<BodyCol>()) .Margin (fieldMargin) .Height (44)
                                        .Bind (nameof(vm.RegistrationCode), BindingMode.TwoWay),
 
                             new Button { Text = "Verify" } .Style (FilledButton)
-                                        .Row (BodyRow.Button) .ColSpan (All<BodyCol>()) .FillExpandH () .Margin (PageMarginSize)
+                                        .Row (BodyRow.Button) .ColumnSpan (All<BodyCol>()) .FillExpandHorizontal () .Margin (PageMarginSize)
                                         .Bind (Button.IsVisibleProperty, nameof(vm.CanVerifyRegistrationCode))
                                         .Bind (nameof(vm.VerifyRegistrationCodeCommand)),
                         }

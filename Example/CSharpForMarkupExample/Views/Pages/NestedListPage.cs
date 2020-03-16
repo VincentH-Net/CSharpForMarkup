@@ -1,8 +1,10 @@
-﻿using CSharpForMarkup;
+﻿using Xamarin.Forms;
+using Xamarin.Forms.Markup;
+using Xamarin.Forms.Markup.LeftToRight;
+using static Xamarin.Forms.Markup.GridRowsColumns;
+
 using CSharpForMarkupExample.ViewModels;
 using CSharpForMarkupExample.Views.Controls;
-using Xamarin.Forms;
-using static CSharpForMarkup.EnumsForGridRowsAndColumns;
 
 namespace CSharpForMarkupExample.Views.Pages
 {
@@ -49,20 +51,20 @@ namespace CSharpForMarkupExample.Views.Pages
                             Children = {
                                 new StackLayout { Orientation = StackOrientation.Horizontal, Spacing = 5, Children = {
                                     new Label { } .Font (15) .Bold () .TextColor (Colors.ColorValuePrimary)
-                                    .Margins (left: PageMarginSize) .LeftExpand () .CenterV ()
+                                    .Margins (left: PageMarginSize) .LeftExpand () .CenterVertical ()
                                     .Bind (nameof(ListGroup.Title)),
 
                                     new Frame { CornerRadius = 4, HasShadow = false, BackgroundColor = Colors.Green.ToColor(), Content =
                                         new Label { Text = "Odd" } .TextColor (Colors.White)
-                                    } .CenterV () .Margins (right: 10) .Padding (9, 3)
+                                    } .CenterVertical () .Margins (right: 10) .Padding (9, 3)
                                     .Bind (Frame.IsVisibleProperty, nameof(ListGroup.IsOdd)),
 
                                     new Button { Text = " Add Item " }
-                                    .CenterV ()
+                                    .CenterVertical ()
                                     .Bind (nameof(ListGroup.AddItemCommand)),
 
                                     new Button { Text = " Remove Group " }
-                                    .CenterV () .Margins (right: PageMarginSize)
+                                    .CenterVertical () .Margins (right: PageMarginSize)
                                     .Bind (Button.CommandProperty, nameof(vm.RemoveGroupCommand), source: vm)
                                     .Bind (Button.CommandParameterProperty)
                                 }}
@@ -114,46 +116,46 @@ namespace CSharpForMarkupExample.Views.Pages
 
                         Children = {
                             new Label { Text = "\u2b50 " } .TextColor (Colors.Green)
-                            .Row (Row.Header) .Col (Col.LeftPileIcon) .Left () .CenterV (),
+                            .Row (Row.Header) .Column (Col.LeftPileIcon) .Left () .CenterVertical (),
 
                             new Label { Text = "Item", LineBreakMode = LineBreakMode.TailTruncation } .Font (15) .Bold ()
-                            .Row (Row.Header) .Col (Col.LeftPile, Col.Last) .CenterV (),
+                            .Row (Row.Header) .Column (Col.LeftPile, Col.Last) .CenterVertical (),
 
                             new Label { } .Bold () .TextColor (Colors.Gray1)
-                            .Row (Row.Header) .Col (Col.Nr) .Center ()
+                            .Row (Row.Header) .Column (Col.Nr) .Center ()
                             .Bind (nameof(ListItem.Title)),
 
 
                             new Label { Text = "\U0001f60e " }
-                            .Row (Row.Piles) .Col (Col.LeftPileIcon) .Left () .CenterV (),
+                            .Row (Row.Piles) .Column (Col.LeftPileIcon) .Left () .CenterVertical (),
 
                             new Label { } .Font (14) .Bold ()
-                            .Row (Row.Piles) .Col (Col.LeftPile) .CenterV () .TextCenterH () .TextBottom ()
+                            .Row (Row.Piles) .Column (Col.LeftPile) .CenterVertical () .TextCenterHorizontal () .TextBottom ()
                             .Bind (nameof(ListItem.CountText)),
 
                             new BoxView { } .Color (Colors.BgBlue1)
-                            .Row (Row.Piles, Row.Buttons) .Col (Col.PileSeparator) .CenterH () .Bottom () .Size (2, 30) .Margins (bottom: 3),
+                            .Row (Row.Piles, Row.Buttons) .Column (Col.PileSeparator) .CenterHorizontal () .Bottom () .Size (2, 30) .Margins (bottom: 3),
 
                             new Label { Text = "\U0001f60e " }
-                            .Row (Row.Piles) .Col (Col.RightPileIcon) .Left () .CenterV (),
+                            .Row (Row.Piles) .Column (Col.RightPileIcon) .Left () .CenterVertical (),
 
                             new Label { } .Font (14) .Bold ()
-                            .Row (Row.Piles) .Col (Col.RightPile) .CenterV () .TextCenterH () .TextBottom ()
+                            .Row (Row.Piles) .Column (Col.RightPile) .CenterVertical () .TextCenterHorizontal () .TextBottom ()
                             .Bind (nameof(ListItem.CountText)),
 
 
                             new Button { Text = "-" } .Font (14) .TextColor (Colors.White) .BackgroundColor (Colors.ColorValueAccent)
-                            .Row (Row.Buttons) .Col (Col.LeftPileIcon, Col.LeftPile) .FillH () .CenterV ()
+                            .Row (Row.Buttons) .Column (Col.LeftPileIcon, Col.LeftPile) .FillHorizontal () .CenterVertical ()
                             .Invoke (b => b.Clicked += DecreaseCount),
 
                             new Button { Text = "+" } .Font (14) .TextColor (Colors.White) .BackgroundColor (Colors.ColorValueAccent)
-                            .Row (Row.Buttons) .Col (Col.RightPileIcon, Col.RightPile) .FillH () .CenterV ()
+                            .Row (Row.Buttons) .Column (Col.RightPileIcon, Col.RightPile) .FillHorizontal () .CenterVertical ()
                             .Invoke (b => b.Clicked += IncreaseCount),
                         }
                     } .Padding (CellHorizontalMarginSize, CellVerticalMarginSize),
 
                     new BoxView { }
-                    .FillExpandH () .Height (3) .Margins (PageMarginSize, 0, PageMarginSize, 6)
+                    .FillExpandHorizontal () .Height (3) .Margins (PageMarginSize, 0, PageMarginSize, 6)
                     .Bind (nameof(ListItem.Count), converter: countToColorConverter),
 
                     new Button { Text = " Remove item " }

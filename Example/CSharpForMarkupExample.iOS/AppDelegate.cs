@@ -1,6 +1,7 @@
 ﻿using Foundation;
 using QuickCross;
 using UIKit;
+using Xamarin.Forms;
 
 namespace CSharpForMarkupExample.iOS
 {
@@ -20,7 +21,8 @@ namespace CSharpForMarkupExample.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             TaskHelper.InitializeFromUIThread();
-            global::Xamarin.Forms.Forms.Init();
+            Forms.SetFlags("Markup_Experimental");
+            Forms.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

@@ -3,6 +3,7 @@ using CSharpForMarkupExample.Views.Pages;
 using QuickCross;
 using System;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace CSharpForMarkupExample
@@ -47,7 +48,7 @@ namespace CSharpForMarkupExample
             return TaskHelper.RunOnUIThread(() => MainPage.Navigation.PushAsync(animatedPage, true));
         }
 
-        public void OpenUri(string uri) => Device.OpenUri(new Uri(uri));
+        public Task OpenUri(string uri) => Launcher.OpenAsync(new Uri(uri));
 
         public Task DisplayAlert(string title, string message, string cancel = "OK") => MainPage.DisplayAlert(title, message, cancel);
         

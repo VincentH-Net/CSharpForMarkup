@@ -1,7 +1,7 @@
-﻿using CSharpForMarkup;
-using CSharpForMarkupExample.ViewModels;
+﻿using CSharpForMarkupExample.ViewModels;
 using System;
 using Xamarin.Forms;
+using Xamarin.Forms.Markup;
 
 namespace CSharpForMarkupExample.Views.Pages
 {

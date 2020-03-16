@@ -16,7 +16,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\SingleSubscriptionEnsurer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\TaskHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\XamarinFormsMarkupExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\XLog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Styles.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />

@@ -1,4 +1,4 @@
-﻿using CSharpForMarkup;
+﻿using Xamarin.Forms.Markup;
 using Xamarin.Forms;
 
 namespace CSharpForMarkupExample

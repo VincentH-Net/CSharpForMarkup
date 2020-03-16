@@ -1,8 +1,9 @@
-﻿using CSharpForMarkup;
+﻿using Xamarin.Forms;
+using Xamarin.Forms.Markup;
+using static Xamarin.Forms.Markup.GridRowsColumns;
+
 using CSharpForMarkupExample.ViewModels;
 using CSharpForMarkupExample.Views.Controls;
-using Xamarin.Forms;
-using static CSharpForMarkup.EnumsForGridRowsAndColumns;
 using static CSharpForMarkupExample.Styles;
 
 namespace CSharpForMarkupExample.Views.Pages
@@ -34,24 +35,24 @@ namespace CSharpForMarkupExample.Views.Pages
 
                     new ScrollView { Content = new StackLayout { Children = {
                         new Button { Text = nameof(RegistrationCodePage) } .Style (FilledButton)
-                            .FillExpandH () .Margin (PageMarginSize)
+                            .FillExpandHorizontal () .Margin (PageMarginSize)
                             .Bind (nameof(vm.ContinueToRegistrationCommand)),
 
                         new Button { Text = nameof(NestedListPage) } .Style (FilledButton)
-                            .FillExpandH () .Margin (PageMarginSize)
+                            .FillExpandHorizontal () .Margin (PageMarginSize)
                             .Bind (nameof(vm.ContinueToNestedListCommand)),
 
                         new Button { Text = nameof(AnimatedPage) } .Style (FilledButton)
-                            .FillExpandH () .Margin (PageMarginSize)
+                            .FillExpandHorizontal () .Margin (PageMarginSize)
                             .Bind (nameof(vm.ContinueToAnimatedPageCommand)),
 
                         new Label { } .FontSize (20) .FormattedText (
                             new Span { Text = "Built with " },
                             new Span { Style = Link }
-                            .BindTap (nameof(vm.ContinueToCSharpForMarkupCommand))
+                            .BindTapGesture (nameof(vm.ContinueToCSharpForMarkupCommand))
                             .Bind (nameof(vm.Title)),
                             new Span { Text = " \U0001f60e" }
-                        ) .CenterH ()
+                        ) .CenterHorizontal ()
                     }}} .Row (PageRow.Body)
                  }
             };
