@@ -1,16 +1,24 @@
 # CSharpForMarkup [![Gitter](https://badges.gitter.im/CSharpForMarkup/community.svg)](https://gitter.im/CSharpForMarkup/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 Use declarative style C# instead of XAML for Xamarin Forms UI.
 
-># Newsflash : CSharpForMarkup to be incorporated in Xamarin Forms - vote now!
->Head on over to the [Spec CSharpForMarkup PR on the Xamarin Forms repo](https://github.com/xamarin/Xamarin.Forms/pull/8342) and like/thumbs/hurrah the PR:
+># CSharpForMarkup is incorporated in Xamarin Forms 4.6!
+>Thanks everyone for supporting the [Spec CSharpForMarkup PR on the Xamarin Forms repo](https://github.com/xamarin/Xamarin.Forms/pull/8342)!
 >
->![Xfpr](img/xfpr.png)
+>The PR received an unprecedented **200+** positive reactions (the nr 2 most popular Forms PR *ever* received 40) and was merged into the Xamarin.Forms.Core 4.6 package as the `Xamarin.Forms.Markup` namespace.
+>It is available in the current Xamarin Forms prerelease NuGet as an experimental feature. The documentation for the feature, which is called **"C# Markup"**, can be found in the PR description.
+> It be published under https://docs.microsoft.com/en-us/xamarin/xamarin-forms when 4.6 goes stable.
 >
->This is what the Xamarin Forms team looks at when deciding if/when to accept the PR.
->So if you want CSharpForMarkup to be supported by MS and to grow with Forms, make your vote count!
->Also chime in in the PR comments if you have ideas. Thanks!
+>
+>![CSharpForMarkupMergedInForms46](img/CSharpForMarkupMergedInForms46.png)
+>
+>**Note** some helpers were renamed in Xamarin.Forms.Markup, and quite a few helpers and improvements were added. CSharpForMarkup users are encouraged to migrate:
+>see [Migrate from CSharpForMarkup to Xamarin.Forms.Markup](#Migrate-from-CSharpForMarkup-to-Xamarin.Forms.Markup). Thanks!
+>
+>**To Be Continued**
+>
+>I plan to add more features to C# Markup in new Xamarin Forms PR's. If you have issues or ideas, please add them in the Forms repo, include a link to [the PR](https://github.com/xamarin/Xamarin.Forms/pull/8342) and add CSharpForMarkup in the title. I also wil be working on tooling to support C# Markup (e.g. autoformat, convert XAML to C# Markup).
 
-All you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
+To use CSharpForMarkup, all you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
 
 The helpers offer a fluent API with **Bind**, **Effects**, **Invoke**, **Assign**, **Row**, **Col**, **FormattedText**, **Style**, **Font**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend; you could easily create your own markup DSL as in [this example in David Ortinau's Xappy](https://github.com/davidortinau/Xappy/blob/master/Xappy/Xappy/Content/Scenarios/Login/LoginPage.cs).
 
@@ -261,5 +269,28 @@ This repo resulted from this discussion on the Xamarin Forms forum:
 [Using declarative style C# instead of XAML - should Xamarin redirect XAML efforts elsewhere?](https://forums.xamarin.com/discussion/123771/using-declarative-style-c-instead-of-xaml-should-xamarin-redirect-xaml-efforts-elsewhere?)
 
 Imo XAML in Xamarin Forms exists for historical reasons, to convince developers that are familiar with other Microsoft XAML dialects to onboard. However, if used as above, developers can use their existing XAML knowledge in C#. It should not take more than a day to become accustomed to the small syntax changes, to gain productivity every day.
+
+## Migrate from CSharpForMarkup to Xamarin.Forms.Markup
+Migrating involves renaming a number of helpers. You can do this quickly with a regex replace or by renaming the helpers in `XamarinFormsMarkupExtensions.cs` and letting Visual Studio update your markup.
+These are the renames:
+- Helpers ending on `H` / `V` -> end on `Horizontal` / `Vertical`
+- `Col` -> `Column` throughout
+- `BoolNotConverter` -> `NotConverter`
+- `EnumsForGridRowsAndColumns` -> `GridRowsColumns`
+- `sourcePropertyName` parameter of the binding helpers -> `path`
+- Namespace `CSharpForMarkup` -> `Xamarin.Forms.Markup`
+
+Other changes:
+- To use `Left`/`TextLeft` or `Right`/`TextRight`, add either `using Xamarin.Forms.Markup.LeftToRight` or
+`using Xamarin.Forms.Markup.RightToLeft`. For markup that is designed to support both left-to-right and right-to-left flow direction, it is recommended not to include either one of above namespaces, and instead use the `Start`/`TextStart` & `End`/`TextEnd` helpers
+- `Bind`, `Assign` and `Invoke` helpers now target `BindableObject` (was limited to `Element`)
+- Default bindable properties were added for most built-in Forms types
+- Font helpers now support any IFontElement (was limited to Button, Label, Entry and Picker)
+- Gesture recognizers: more built-in gesture recognizer types are supported, support to initialize gesture recognizers was added, support all possible binding parameters
+- Converters: support for typed converter parameters and culture
+- Add `BindCommand` helper to bind to default `Command` + `CommandParameter` parameters with a single method call
+- Add `Columns.Define(width, width ...)` and `Rows.Define(height, height...)` overloads for `Grid` to support concise row / column definitions without using enums
+- Remove PlatformSpecificsExtensions - replace with guidance in PR description on how to use any platform specific with .Invoke
+- Several bugfixes
 
 NJoy!
