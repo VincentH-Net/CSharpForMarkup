@@ -278,14 +278,14 @@ These are the renames:
 - `BoolNotConverter` -> `NotConverter`
 - `EnumsForGridRowsAndColumns` -> `GridRowsColumns`
 - `sourcePropertyName` parameter of the binding helpers -> `path`
-- Namespace `CSharpForMarkup` -> `Xamarin.Forms.Markup`. After switching to the new namespace (you will need to update to Xamarin.Forms 4.6 or later) you can delete XamarinFormsMarkupExtensions.cs.
+- Namespace `CSharpForMarkup` -> `Xamarin.Forms.Markup`. After switching to the new namespace (you will need to update to Xamarin.Forms 4.6 or later) you can delete `XamarinFormsMarkupExtensions.cs`.
 
 Other changes:
 - To use `Left`/`TextLeft` or `Right`/`TextRight`, add either `using Xamarin.Forms.Markup.LeftToRight` or
 `using Xamarin.Forms.Markup.RightToLeft`. For markup that is designed to support both left-to-right and right-to-left flow direction, it is recommended not to include either one of above namespaces, and instead use the new `Start`/`TextStart` & `End`/`TextEnd` helpers
 - `Bind`, `Assign` and `Invoke` helpers now target `BindableObject` (was limited to `Element`)
 - Default bindable properties were added for most built-in Forms types
-- Added DefaultBindableProperties.Register and DefaultBindableProperties.RegisterForCommand to register default bindable properties for custom/3rd party view types
+- Added `DefaultBindableProperties.Register` and `DefaultBindableProperties.RegisterForCommand` to register default bindable properties for custom/3rd party view types
 - Font helpers now support any IFontElement (was limited to Button, Label, Entry and Picker)
 - Gesture recognizers: more built-in gesture recognizer types are supported, support to initialize gesture recognizers was added, support all possible binding parameters
 - Converters: support for typed converter parameters and culture
