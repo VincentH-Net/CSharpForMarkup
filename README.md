@@ -4,7 +4,7 @@ Use declarative style C# instead of XAML for Xamarin Forms UI.
 ># CSharpForMarkup is incorporated in Xamarin Forms 4.6!
 >Thanks everyone for supporting the [Spec CSharpForMarkup PR on the Xamarin Forms repo](https://github.com/xamarin/Xamarin.Forms/pull/8342)!
 >
->The PR received an unprecedented **200+** positive reactions (the nr 2 most popular Forms PR *ever* received 40) and was merged into the Xamarin.Forms.Core 4.6 package as the `Xamarin.Forms.Markup` namespace.
+>The PR received an unprecedented **200+** positive reactions (the nr 2 most popular Forms PR *ever* received just 40) and was merged into the Xamarin.Forms.Core 4.6 package in the `Xamarin.Forms.Markup` namespace.
 >It is available in the current Xamarin Forms prerelease NuGet as an experimental feature. The documentation for the feature, which is called **"C# Markup"**, can be found in the PR description.
 > It be published under https://docs.microsoft.com/en-us/xamarin/xamarin-forms when 4.6 goes stable.
 >
@@ -12,11 +12,11 @@ Use declarative style C# instead of XAML for Xamarin Forms UI.
 >![CSharpForMarkupMergedInForms46](img/CSharpForMarkupMergedInForms46.png)
 >
 >**Note** some helpers were renamed in Xamarin.Forms.Markup, and quite a few helpers and improvements were added. CSharpForMarkup users are encouraged to migrate:
->see [Migrate from CSharpForMarkup to Xamarin.Forms.Markup](#Migrate-from-CSharpForMarkup-to-Xamarin.Forms.Markup). Thanks!
+>see [Migrate from CSharpForMarkup to Xamarin.Forms.Markup](#Migrate-from-CSharpForMarkup-to-XamarinFormsMarkup). Thanks!
 >
 >**To Be Continued**
 >
->I plan to add more features to C# Markup in new Xamarin Forms PR's. If you have issues or ideas, please add them in the Forms repo, include a link to [the PR](https://github.com/xamarin/Xamarin.Forms/pull/8342) and add CSharpForMarkup in the title. I also wil be working on tooling to support C# Markup (e.g. autoformat, convert XAML to C# Markup).
+>I plan to add more features to C# Markup in new Xamarin Forms PR's. If you have issues or ideas, please add them in the Forms repo, include a link to [the PR](https://github.com/xamarin/Xamarin.Forms/pull/8342) and add CSharpForMarkup in the title. I also wil be working on tooling to support C# Markup (e.g. autoformat, convert XAML to C# Markup). Thanks!
 
 To use CSharpForMarkup, all you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
 
@@ -282,15 +282,16 @@ These are the renames:
 
 Other changes:
 - To use `Left`/`TextLeft` or `Right`/`TextRight`, add either `using Xamarin.Forms.Markup.LeftToRight` or
-`using Xamarin.Forms.Markup.RightToLeft`. For markup that is designed to support both left-to-right and right-to-left flow direction, it is recommended not to include either one of above namespaces, and instead use the `Start`/`TextStart` & `End`/`TextEnd` helpers
+`using Xamarin.Forms.Markup.RightToLeft`. For markup that is designed to support both left-to-right and right-to-left flow direction, it is recommended not to include either one of above namespaces, and instead use the new `Start`/`TextStart` & `End`/`TextEnd` helpers
 - `Bind`, `Assign` and `Invoke` helpers now target `BindableObject` (was limited to `Element`)
 - Default bindable properties were added for most built-in Forms types
 - Font helpers now support any IFontElement (was limited to Button, Label, Entry and Picker)
 - Gesture recognizers: more built-in gesture recognizer types are supported, support to initialize gesture recognizers was added, support all possible binding parameters
 - Converters: support for typed converter parameters and culture
-- Add `BindCommand` helper to bind to default `Command` + `CommandParameter` parameters with a single method call
-- Add `Columns.Define(width, width ...)` and `Rows.Define(height, height...)` overloads for `Grid` to support concise row / column definitions without using enums
-- Remove PlatformSpecificsExtensions - replace with guidance in PR description on how to use any platform specific with .Invoke
+- Added `BindCommand` helper to bind to default `Command` + `CommandParameter` parameters with a single method call
+- Added `Columns.Define(width, width ...)` and `Rows.Define(height, height...)` overloads for `Grid` to support concise row / column definitions without using enums
+- Removed `RowCol`; use `Row` + `Column` instead.
+- Removed PlatformSpecificsExtensions - replace with guidance in PR description on how to use any platform specific with .Invoke
 - Several bugfixes
 
 NJoy!
