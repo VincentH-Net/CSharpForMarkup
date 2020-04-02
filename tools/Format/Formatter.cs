@@ -43,7 +43,9 @@ namespace CSharpMarkupTools
             Debug.WriteLine(sb);
 
             // TODO: Traverse tree and isolate new expressions, then reformat them to output string
-            // 
+            // - Scope content has indent if the first whitespace stretch contains a line end
+            //   new indent is stored in scope, so child scope reformat can format relative to new parent indent
+            // - Process scope content without child scopes - easyer to split comma-separated list of news.
 
 
             return source;
