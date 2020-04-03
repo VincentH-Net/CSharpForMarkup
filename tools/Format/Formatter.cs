@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System;
 using System.Text;
 
 namespace CSharpMarkupTools
@@ -18,12 +16,12 @@ namespace CSharpMarkupTools
         {
             if (source == null) return null;
 
-            var parser = new ScopesParser(source, settings);
-            var scopeTree = parser.Parse();
+            var parser = new ScopesParser(settings);
+            var scopeTree = parser.Parse(source);
 
             var sb = new StringBuilder();
             parser.Render(sb, scopeTree);
-            Debug.WriteLine(sb);
+            Console.WriteLine(sb);
 
             // TODO: Traverse tree and isolate new expressions, then reformat them to output string
             // - Scope content has indent if the first whitespace stretch contains a line end

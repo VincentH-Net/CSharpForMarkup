@@ -17,21 +17,20 @@ namespace CSharpMarkupTools
             { '\'', (ScopeKind.SingleQuote  , '\'') }
         };
 
-        readonly string source;
         readonly Settings settings;
-        readonly int endPos;
-        int pos;
+        string source;
+        int pos, endPos;
 
-        public ScopesParser(string source, Settings settings)
+        public ScopesParser(Settings settings)
         {
-            this.source = source;
             this.settings = settings;
-            endPos = source?.Length ?? 0;
         }
 
-        public Tree<Scope> Parse()
+        public Tree<Scope> Parse(string source)
         {
+            this.source = source;
             pos = 0;
+            endPos = source.Length;
             var scopeTree = new Tree<Scope>(new Scope { Kind = ScopeKind.File, Start = pos, End = endPos });
             AddChildScopes(scopeTree);
             return scopeTree;
@@ -50,12 +49,25 @@ namespace CSharpMarkupTools
                 PrintScopesWithoutSubscopes(childNode, indent + 4);
         }
 
+        public string ScopeTextWithoutSubscopes(Tree<Scope> scopeNode)
+        {
+            var scope = scopeNode.Value;
+            string text = source.Substring(scope.Start, scope.Length);
+            for (int i = scopeNode.Children.Count - 1; i >= 0; i--)
+            {
+                var childScope = scopeNode.Children[i].Value;
+                text = text.Remove(childScope.Start - scope.Start, childScope.Length);
+            }
+            return text;
+        }
+
         void AddChildScopes(Tree<Scope> scopeNode, char closingChar = '\0')
         {
             var scope = scopeNode.Value;
             var kind = scope.Kind;
             bool isInterpolatedString = kind == ScopeKind.DoubleQuote && FirstNonWhitespaceCharBefore(pos - 1) == '$';
             // TODO: support @"" strings including "" escape and no '\' escape; check C# grammar for strings
+            // TODO: support comments // and /*
 
             while (pos < scope.End)
             {
@@ -91,7 +103,7 @@ namespace CSharpMarkupTools
 
             RenderTo(sb, scope.Start);
             sb.Append("<").Append(scope.Kind).Append(">");
-            foreach (var childNode in scopeNode.Children) Render(sb, childNode);
+            foreach (var childNode in scopeNode.Children) RenderRecursive(sb, childNode);
             RenderTo(sb, scope.End);
             sb.Append("</").Append(scope.Kind).Append(">");
         }
@@ -112,18 +124,6 @@ namespace CSharpMarkupTools
             return '\0';
         }
 
-        void PrintScopeWithoutSubscopes(Tree<Scope> scopeNode, int indent) => Debug.WriteLine($"{scopeNode.Value.Kind,16}{new string(' ', indent)}{ScopeTextWithoutSubscopes(scopeNode)}");
-
-        string ScopeTextWithoutSubscopes(Tree<Scope> scopeNode)
-        {
-            var scope = scopeNode.Value;
-            string text = source.Substring(scope.Start, scope.Length);
-            for (int i = scopeNode.Children.Count - 1; i >= 0; i--)
-            {
-                var childScope = scopeNode.Children[i].Value;
-                text = text.Remove(childScope.Start - scope.Start, childScope.Length);
-            }
-            return text;
-        }
+        void PrintScopeWithoutSubscopes(Tree<Scope> scopeNode, int indent) => Console.WriteLine($"{scopeNode.Value.Kind,16}{new string(' ', indent)}{ScopeTextWithoutSubscopes(scopeNode)}");
     }
 }
