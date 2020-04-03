@@ -36,8 +36,8 @@ namespace CSharpForMarkupExample.Views.Pages
     }
 }
 ";
-            var formatter = new CSharpMarkupTools.Formatter(source, new CSharpMarkupTools.Formatter.Settings { FormatWhiteSpace = true, MaxLineLength = 80 });
-            Assert.That(source, Is.EqualTo(formatter.Format()));
+            var formatter = new CSharpMarkupTools.Formatter(new CSharpMarkupTools.Settings { FormatWhiteSpace = true, MaxLineLength = 80 });
+            Assert.That(source, Is.EqualTo(formatter.Format(source)));
         }
     }
 }

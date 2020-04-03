@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharpMarkupTools
 {
-    public class Tree<T> where T : class
+    internal class Tree<T> where T : class
     {
         Tree<T> parent;
         readonly List<Tree<T>> children = new List<Tree<T>>();
