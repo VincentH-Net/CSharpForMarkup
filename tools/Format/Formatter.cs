@@ -36,6 +36,11 @@ namespace CSharpMarkupTools
             //                       .LH1 () .LH2 () .LH3 ()  // Layout line
             //                       .Bind1 ()
             //                       .BindDefault ()
+            //     - Indentation: 
+            //       Only change indentation within new expressions. 
+            //       Preserve base indentation (before the new keyword) of outermost new expression.
+            //       Then calculate indentation of everything within the new expression.
+            //       Preserve multiline string literals
             parser.PrintScopesWithoutSubscopes(scopeTree);
 
             return source;

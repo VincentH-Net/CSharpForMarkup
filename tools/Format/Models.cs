@@ -25,6 +25,7 @@ namespace CSharpMarkupTools
         public string CtorParameters { get; set; }
         public List<PropertyAssignment> PropertiesSet { get; set; }
         public List<FluentHelper> FluentHelpers { get; set; }
+        public int HangingIndent { get; set; }
     }
 
     internal class PropertyAssignment
