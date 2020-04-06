@@ -24,19 +24,19 @@ namespace CSharpForMarkupExample.Views.Pages
             Title = ""AnimatedPage"";
 
             Content = new StackLayout { Children = {
-                new Label { Text = $""Animation example {1}"" } .FontSize (32) .CenterH (),
-                new Label { Text = ""to illustrate""     } .FontSize (32) .CenterH (),
-                new Label { Text = ""separation""        } .FontSize (32) .CenterH (),
-                new Label { Text = ""of""                } .FontSize (32) .CenterH (),
-                new Label { Text = ""UI Markup"", TextColor = Colors.Green.ToColor() } .FontSize (32) .Bold () .CenterH (),
+                new Label { Text = $""Animation example {1}"" } .FontSize (32) .CenterHorizontal (),
+                new Label { Text = ""to illustrate""     } .FontSize (32) .CenterHorizontal (),
+                new Label { Text = ""separation""        } .FontSize (32) .CenterHorizontal (),
+                new Label { Text = ""of""                } .FontSize (32) .CenterHorizontal (),
+                new Label { Text = ""UI Markup"", TextColor = Color.Green } .FontSize (32) .Bold () .CenterHorizontal (),
                 new Label { Text = ""and""               } .FontSize (32) .CenterH (),
-                new Label { Text = ""UI Logic"" , TextColor = Colors.Red.ToColor()   } .FontSize (32) .Bold () .CenterH ()
+                new Label { Text = ""UI Logic"" , TextColor = Color.Red   } .FontSize (32) .Bold () .CenterHorizontal ()
             } }.Assign(out animatedStackLayout);
         }
     }
 }
 ";
-            var formatter = new CSharpMarkupTools.Formatter(new CSharpMarkupTools.Settings { FormatWhiteSpace = true, MaxLineLength = 80 });
+            var formatter = new CSharpMarkupTools.Formatter(new Settings { });
             Assert.That(source, Is.EqualTo(formatter.Format(source)));
         }
     }

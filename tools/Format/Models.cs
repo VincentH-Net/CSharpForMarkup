@@ -4,8 +4,8 @@ namespace CSharpMarkupTools
 {
     public class Settings
     {
-        public int MaxLineLength { get; set; }
-        public bool FormatWhiteSpace { get; set; }
+        public int IndentSize { get; set; } = 4;
+        public int MaxLineLength { get; set; } = 80;
     }
 
     internal class Scope
@@ -22,21 +22,21 @@ namespace CSharpMarkupTools
     internal class NewViewExpression
     {
         public string ViewType { get; set; }
-        public string CtorParameters { get; set; }
-        public List<PropertyAssignment> PropertiesSet { get; set; }
-        public List<FluentHelper> FluentHelpers { get; set; }
-        public int HangingIndent { get; set; }
+        public Scope CtorParameters { get; set; }
+        public List<PropertyAssignment> PropertyAssignments { get; set; }
+        public List<HelperInvocation> HelperInvocations { get; set; }
     }
 
     internal class PropertyAssignment
     {
         public string Name { get; set; }
-        public string Value { get; set; }
+        public string Value { get; set; } // Note this could be a new expression, e.g. Content = new View { } .H1 or Children = { new View .H1, ... }
     }
 
-    internal class FluentHelper
+    internal class HelperInvocation
     {
         public string Name { get; set; }
+        public Scope Parameters { get; set; }
     }
 
     internal enum ScopeKind { File, CurlyBracket, SquareBracket, Parenthesis, DoubleQuote, SingleQuote }
