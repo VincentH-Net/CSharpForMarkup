@@ -49,14 +49,17 @@ namespace CSharpMarkupTools
                 PrintScopesWithoutSubscopes(childNode, indent + 4);
         }
 
-        public string ScopeTextWithoutSubscopes(Tree<Scope> scopeNode)
+        public string ScopeTextWithoutSubscopes(Tree<Scope> scopeNode, bool replaceWithSpaces)
         {
             var scope = scopeNode.Value;
             string text = source.Substring(scope.Start, scope.Length);
             for (int i = scopeNode.Children.Count - 1; i >= 0; i--)
             {
                 var childScope = scopeNode.Children[i].Value;
-                text = text.Remove(childScope.Start - scope.Start, childScope.Length);
+                int start = childScope.Start - scope.Start, length = childScope.Length;
+                text = replaceWithSpaces ? 
+                           text.Substring(0, start) + new string(' ', length) + text.Substring(start + length) :
+                           text.Remove(start, length);
             }
             return text;
         }
@@ -124,6 +127,6 @@ namespace CSharpMarkupTools
             return '\0';
         }
 
-        void PrintScopeWithoutSubscopes(Tree<Scope> scopeNode, int indent) => Console.WriteLine($"{scopeNode.Value.Kind,16}{new string(' ', indent)}{ScopeTextWithoutSubscopes(scopeNode)}");
+        void PrintScopeWithoutSubscopes(Tree<Scope> scopeNode, int indent) => Console.WriteLine($"{scopeNode.Value.Kind,16}{new string(' ', indent)}{ScopeTextWithoutSubscopes(scopeNode, replaceWithSpaces: false)}");
     }
 }

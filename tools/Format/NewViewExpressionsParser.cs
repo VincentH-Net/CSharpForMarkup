@@ -21,7 +21,7 @@ namespace CSharpMarkupTools
 
         void ParseRecursive(Tree<Scope> scopeNode)
         {
-            var scopeTexts = scopesParser.ScopeTextWithoutSubscopes(scopeNode).Split(',');
+            var scopeTexts = scopesParser.ScopeTextWithoutSubscopes(scopeNode, replaceWithSpaces: false).Split(',');
             foreach (var scopeText in scopeTexts)
             {
                 if (ContainsNew(scopeText))
