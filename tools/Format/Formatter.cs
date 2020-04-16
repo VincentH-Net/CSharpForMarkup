@@ -36,11 +36,47 @@ namespace CSharpMarkupTools
             //                       .LH1 () .LH2 () .LH3 ()  // Layout line
             //                       .Bind1 ()
             //                       .BindDefault ()
+            //
+            //     - new type(ctor) { p1 = v1, p2 = v2, Content =
+            //           new type(ctor) { p1 = v1, p2 = v2 } .H1 () .H2 () // Property equivalent helpers Style, Font, ...
+            //                           .H3 () // Non-property helpers: logic, gestures, ... 
+            //                           .LH1 () .LH2 () .LH3 ()  // Layout line
+            //                           .Bind1 ()
+            //                           .BindDefault ()
+            //       } .H1 () .H2 () // Property equivalent helpers Style, Font, ...
+            //         .H3 () // Non-property helpers: logic, gestures, ... 
+            //         .LH1 () .LH2 () .LH3 ()  // Layout line
+            //         .Bind1 ()
+            //         .BindDefault ()
+            //       
+            //     - new type(ctor) { p1 = v1, p2 = v2, Children = {
+            //           new type(ctor) { p1 = v1, p2 = v2 } .H1 () .H2 () // Property equivalent helpers Style, Font, ...
+            //                           .H3 () // Non-property helpers: logic, gestures, ... 
+            //                           .LH1 () .LH2 () .LH3 ()  // Layout line
+            //                           .Bind1 ()
+            //                           .BindDefault (),
+            //
+            //           new type(ctor) { p1 = v1, p2 = v2 } .H1 () .H2 () // Property equivalent helpers Style, Font, ...
+            //                           .H3 () // Non-property helpers: logic, gestures, ... 
+            //                           .LH1 () .LH2 () .LH3 ()  // Layout line
+            //                           .Bind1 ()
+            //                           .BindDefault ()
+            //       }}.H1 () .H2 () // Property equivalent helpers Style, Font, ...
+            //         .H3 () // Non-property helpers: logic, gestures, ... 
+            //         .LH1 () .LH2 () .LH3 ()  // Layout line
+            //         .Bind1 ()
+            //         .BindDefault ()
+            //       
             //     - Indentation: 
             //       Only change indentation within new expressions. 
             //       Preserve base indentation (before the new keyword) of outermost new expression.
             //       Then calculate indentation of everything within the new expression.
-            //       Preserve multiline string literals
+            //       ?If a new expression is nested within another new expression -> indent = parent indent + indentsize
+            //       ?If there is e.g. a multiline code block -> indent = parent scope indent + indentsize
+            //       Preserve multiline string literals (treat as single line)
+            //       Procedure: reformat new expressions from outside to inside (depth - first)
+            //
+            // 
             parser.PrintScopesWithoutSubscopes(scopeTree);
 
             return source;
