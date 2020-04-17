@@ -5,7 +5,7 @@ namespace CSharpMarkupTools
     public class Settings
     {
         public int IndentSize { get; set; } = 4;
-        public int MaxLineLength { get; set; } = 80;
+        public int MaxLineLength { get; set; } = 120;
     }
 
     internal class Scope
@@ -30,7 +30,8 @@ namespace CSharpMarkupTools
     internal class PropertyAssignment
     {
         public string Name { get; set; }
-        public string Value { get; set; } // Note this could be a new expression, e.g. Content = new View { } .H1 or Children = { new View .H1, ... }
+        public string Value { get; set; }
+        public NewViewExpression Content { get; set; }
     }
 
     internal class HelperInvocation
