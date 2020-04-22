@@ -5,7 +5,7 @@ using static Xamarin.Forms.Markup.GridRowsColumns;
 
 namespace CSharpMarkupIntro
 {
-    public partial class SearchPage : ContentPage
+    public partial class SearchPage
     {
         void Build()
         {
