@@ -12,6 +12,7 @@ namespace CSharpMarkupIntro
 
         void Build()
         {
+            BackgroundColor = Color.Black;
             Content = new StackLayout 
             { 
                 Children =
@@ -61,7 +62,7 @@ namespace CSharpMarkupIntro
                         }
                     }
                 }
-            };
+            } .Margins (top: 40) .Rainbow ();
         }
 
         View Header => new StackLayout 
@@ -76,6 +77,7 @@ namespace CSharpMarkupIntro
                             .FillExpandHorizontal (),
 
                 new Button { Text = "Cancel" }
+                            .Width (100)
             }
         };
     }
