@@ -21,14 +21,34 @@ namespace CSharpMarkupIntro
                 new Tweet
                 {
                     AuthorImage = "https://pbs.twimg.com/profile_images/1174080109399224322/Yc0k4Bqe_400x400.jpg",
-
-                    Header = "A Header",
-
+                    Header = "David Ortinau @davidortinau · 25/10/2020",
                     Body = new List<TextFragment>
                     {
-                        new TextFragment { Text = "Some " },
+                        new TextFragment { Text = "would it surprise you to know that the last project I personally shipped was Xamarin.Forms, C# w/ " },
                         new TextFragment { Text = "#CSharpForMarkup", IsMatch = true },
-                        new TextFragment { Text = " body" },
+                        new TextFragment { Text = ", & @ReactiveXUI?" }
+                    },
+                },
+                new Tweet
+                {
+                    AuthorImage = "https://pbs.twimg.com/profile_images/2159034926/MACAW_vincenth_LThumb_400x400.jpg",
+                    Header = "VincentH.NET @vincenth_net · 26/03/2020",
+                    Body = new List<TextFragment>
+                    {
+                        new TextFragment { Text = "Had an inspiring call with @matthewrdev about supporting #XamarinForms C# Markup in @mfractor\uD83D\uDE0E\n\nSo many great ideas. Autoformat, Convert XAML to C# Markup (all examples on internet!), auto split UI logic and markup...\n\nExcited " },
+                        new TextFragment { Text = "#CSharpForMarkup", IsMatch = true },
+                        new TextFragment { Text = "\uD83D\uDD25" }
+                    },
+                },
+                new Tweet
+                {
+                    AuthorImage = "https://pbs.twimg.com/profile_images/1175428143944847361/0kfeW53l_400x400.jpg",
+                    Header = "RK @rkonit · 05/02/2020",
+                    Body = new List<TextFragment>
+                    {
+                        new TextFragment { Text = "\"Never Say Never\" in Open-source space. It's happening and reminds me early days of winforms.\n\n" },
+                        new TextFragment { Text = "#CSharpForMarkup", IsMatch = true },
+                        new TextFragment { Text = " #Xamarin #XamarinForms" }
                     },
                 }
             };

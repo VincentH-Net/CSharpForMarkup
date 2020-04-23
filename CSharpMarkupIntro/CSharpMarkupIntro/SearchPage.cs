@@ -26,10 +26,9 @@ namespace CSharpMarkupIntro
         View Header() => new StackLayout
         {
             Orientation = StackOrientation.Horizontal,
-
             Children =
             {
-                new Button { Text = "\u1438", BackgroundColor = Color.Transparent, TextColor = Color.White } .FontSize (24)
+                new Button { Text = "\u1438", BackgroundColor = Color.Transparent, TextColor = Color.CornflowerBlue } .FontSize (24)
                             .Width (50)
                             .Bind (nameof(vm.BackCommand)),
 
@@ -44,40 +43,45 @@ namespace CSharpMarkupIntro
             }
         };
 
-        enum TweetRow { Title, Body, Actions }
+        enum TweetRow { Separator, Title, Body, Actions }
         enum TweetColumn { AuthorImage, Content }
 
         CollectionView SearchResults() => new CollectionView
         {
+            BackgroundColor = Color.FromHex("171F2A"),
             ItemTemplate = new DataTemplate(() => new Grid
             {
                 RowDefinitions = Rows.Define(
+                    (TweetRow.Separator, 2),
                     (TweetRow.Title, Auto),
                     (TweetRow.Body, Auto),
                     (TweetRow.Actions, 32)
                 ),
 
                 ColumnDefinitions = Columns.Define(
-                    (TweetColumn.AuthorImage, 80),
+                    (TweetColumn.AuthorImage, 70),
                     (TweetColumn.Content, Star)
                 ),
 
                 Children =
                 {
-                    RoundImage (60, nameof(Tweet.AuthorImage))
-                               .RowSpan (All<TweetRow>()) .Column (TweetColumn.AuthorImage) .CenterHorizontal () .Top () .Margins (top: 10),
+                    new BoxView { BackgroundColor = Color.Gray }
+                                 .Row (TweetRow.Separator) .ColumnSpan (All<TweetColumn>()) .Top() .Height (0.5),
 
-                    new Label { }
-                               .Row (TweetRow.Title) .Column (TweetColumn.Content)
+                    RoundImage (53, nameof(Tweet.AuthorImage))
+                               .Row (TweetRow.Title, TweetRow.Actions) .Column (TweetColumn.AuthorImage) .CenterHorizontal () .Top () .Margins (left: 10, top: 4),
+
+                    new Label { LineBreakMode = LineBreakMode.MiddleTruncation } .FontSize (16)
+                               .Row (TweetRow.Title) .Column (TweetColumn.Content) .Margins (right: 10)
                                .Bind (nameof(Tweet.Header)),
 
-                    new Label { }
-                               .Row (TweetRow.Body) .Column (TweetColumn.Content)
+                    new Label { } .FontSize (15)
+                               .Row (TweetRow.Body) .Column (TweetColumn.Content) .Margins (right: 10)
                                .Bind (Label.FormattedTextProperty, nameof(Tweet.Body), 
                                       convert: (List<TextFragment> fragments) => Format(fragments)),
 
                     LikeButton (nameof(Tweet.IsLikedByMe))
-                               .Row (TweetRow.Actions) .Column (TweetColumn.Content) .Left () .CenterVertical () .Size (32)
+                               .Row (TweetRow.Actions) .Column (TweetColumn.Content) .Left () .Top () .Size (24)
                                .BindCommand (nameof(vm.LikeCommand), source: vm)
                 }
             }
@@ -86,6 +90,7 @@ namespace CSharpMarkupIntro
         Frame RoundImage(float size, string path) => new Frame
         {
             IsClippedToBounds = true,
+            HasShadow = false,
             CornerRadius = size / 2,
             Content = new Image { } .Bind (path)
         }  .Size (size) .Padding (0);
@@ -94,7 +99,7 @@ namespace CSharpMarkupIntro
         {
             var s = new FormattedString();
             fragments?.ForEach(fragment => s.Spans.Add(fragment.IsMatch ?
-                new Span { Text = fragment.Text, TextColor = Color.CornflowerBlue, FontAttributes = FontAttributes.Bold } :
+                new Span { Text = fragment.Text, TextColor = Color.CornflowerBlue, FontAttributes = FontAttributes.Bold, FontSize =15 } :
                 new Span { Text = fragment.Text }
             ));
             return s;
