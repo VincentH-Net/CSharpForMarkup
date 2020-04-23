@@ -19,7 +19,8 @@ namespace CSharpMarkupIntro
             );
 
             public static Style<Entry> Entries => entries ??= new Style<Entry>(
-                (Entry.TextColorProperty, Color.White)
+                (Entry.TextColorProperty, Color.White),
+                (Entry.BackgroundColorProperty, Color.Transparent)
             );
         }
     }

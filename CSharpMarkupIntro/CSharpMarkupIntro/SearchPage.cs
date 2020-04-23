@@ -13,14 +13,14 @@ namespace CSharpMarkupIntro
         {
             BackgroundColor = Color.Black;
 
-            Content = new StackLayout 
+            Content = new StackLayout
             {
                 Children =
                 {
                     Header () .Assign (out header),
                     SearchResults ()
                 }
-            }  .Margins (top: 40); // TODO: Safe area 
+            };
         }
 
         View Header() => new StackLayout
@@ -93,16 +93,16 @@ namespace CSharpMarkupIntro
         FormattedString Format(List<TextFragment> fragments)
         {
             var s = new FormattedString();
-            fragments?.ForEach(fragment => s.Spans.Add(new Span { 
-                Text = fragment.Text,
-                FontAttributes = fragment.IsMatch ? FontAttributes.Bold : FontAttributes.None 
-            }));
+            fragments?.ForEach(fragment => s.Spans.Add(fragment.IsMatch ?
+                new Span { Text = fragment.Text, TextColor = Color.CornflowerBlue, FontAttributes = FontAttributes.Bold } :
+                new Span { Text = fragment.Text }
+            ));
             return s;
         }
 
         ImageButton LikeButton(string isLikedPath) => new ImageButton {
             BackgroundColor = Color.Transparent,
-            Source = new FontImageSource { }
+            Source = new FontImageSource { Color = Color.White }
                                           .Bind(FontImageSource.GlyphProperty, isLikedPath, 
                                                 convert: (bool like) => like ? "\u2764" : "\u2661")
         };

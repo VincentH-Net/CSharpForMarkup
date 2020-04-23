@@ -2,7 +2,7 @@
 
 namespace CSharpMarkupIntro
 {
-    public partial class SearchPage : ContentPage
+    public partial class SearchPage : BaseContentPage
     {
         readonly SearchViewModel vm;
         View header;
