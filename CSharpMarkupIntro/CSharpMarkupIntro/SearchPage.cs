@@ -17,7 +17,7 @@ namespace CSharpMarkupIntro
             {
                 Children =
                 {
-                    Header (),
+                    Header () .Assign (out header),
                     SearchResults ()
                 }
             }  .Margins(top: 40) .Rainbow ();
@@ -25,7 +25,6 @@ namespace CSharpMarkupIntro
 
         View Header() => new StackLayout
         {
-            // TODO: animate to TranslationX = -56, entry size += 56 : assign header and entry to fields. Do we want inline invoke -> no just mention that
             Orientation = StackOrientation.Horizontal,
             Children =
             {
@@ -35,6 +34,11 @@ namespace CSharpMarkupIntro
 
                 new Entry { Placeholder = "Search" }
                            .FillExpandHorizontal ()
+                           .Invoke (entry => 
+                           {
+                               entry.Focused +=Search_FocusChanged; 
+                               entry.Unfocused += Search_FocusChanged; 
+                           })
                            .Bind (nameof(vm.SearchText))
             }
         };
