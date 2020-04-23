@@ -1,12 +1,16 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using Xamarin.Forms;
 
 namespace CSharpMarkupIntro
 {
     public class App : Application
     {
+        readonly SearchViewModel searchViewModel = new SearchViewModel();
+
         public App()
         {
-            MainPage = new SearchPage();
+            searchViewModel.Initialize();
+            MainPage = new SearchPage(searchViewModel);
         }
     }
 }

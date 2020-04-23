@@ -2,83 +2,98 @@
 using Xamarin.Forms.Markup;
 using Xamarin.Forms.Markup.LeftToRight;
 using static Xamarin.Forms.Markup.GridRowsColumns;
+using static CSharpMarkupIntro.SearchViewModel;
+using System.Collections.Generic;
 
 namespace CSharpMarkupIntro
 {
     public partial class SearchPage
     {
-        enum ItemRow { Title, Body, Actions }
-        enum ItemColumn { AuthorImage, Content }
-
         void Build()
         {
             BackgroundColor = Color.Black;
-            Content = new StackLayout 
-            { 
+
+            Content = new StackLayout
+            {
                 Children =
                 {
-                    Header,
-                    //new StackLayout
-                    //{
-                    //    Orientation = StackOrientation.Horizontal,
-                    //    Children =
-                    //    {
-                    //        new Button { Text = "\u1438" }
-                    //                    .Width (50),
-
-                    //        new Entry { Placeholder = "Search" }
-                    //                   .FillExpandHorizontal (),
-
-                    //        new Button { Text = "Cancel" }
-                    //    }
-                    //},
-
-                    new Grid // TODO: Make this an item template in a collectionview
-                    {
-                        RowDefinitions = Rows.Define(
-                            (ItemRow.Title, Auto),
-                            (ItemRow.Body, Auto),
-                            (ItemRow.Actions, Auto)
-                        ),
-
-                        ColumnDefinitions = Columns.Define(
-                            (ItemColumn.AuthorImage, 100),
-                            (ItemColumn.Content, Star)
-                        ),
-
-                        Children =
-                        {
-                            new Image { Source = "icon.png" }
-                                        .RowSpan (All<ItemRow>()),
-
-                            new Label { Text = "Title" }
-                                        .Row (ItemRow.Title) .Column (ItemColumn.Content),
-
-                            new Label { Text = "Body" }  // TODO: Make this a collection of spans, with only a bool to say it is the search term style
-                                        .Row (ItemRow.Body) .Column (ItemColumn.Content),
-
-                            new Button { Text = "O" }
-                                        .Row (ItemRow.Actions) .Column (ItemColumn.Content) .Left ()
-                        }
-                    }
+                    Header (),
+                    SearchResults ()
                 }
-            } .Margins (top: 40) .Rainbow ();
+            }  .Margins(top: 40) .Rainbow ();
         }
 
-        View Header => new StackLayout 
+        View Header() => new StackLayout
         {
+            // TODO: animate to TranslationX = -56, entry size += 56 : assign header and entry to fields. Do we want inline invoke -> no just mention that
             Orientation = StackOrientation.Horizontal,
             Children =
             {
                 new Button { Text = "\u1438" }
-                            .Width (50),
+                            .Width (50)
+                            .Bind (nameof(vm.BackCommand)),
 
                 new Entry { Placeholder = "Search" }
-                            .FillExpandHorizontal (),
-
-                new Button { Text = "Cancel" }
-                            .Width (100)
+                           .FillExpandHorizontal ()
+                           .Bind (nameof(vm.SearchText))
             }
         };
+
+        enum ItemRow { Title, Body, Actions }
+        enum ItemColumn { AuthorImage, Content }
+
+        CollectionView SearchResults() => new CollectionView
+        {
+            ItemTemplate = new DataTemplate(() => new Grid
+            {
+                RowDefinitions = Rows.Define(
+                    (ItemRow.Title, Auto),
+                    (ItemRow.Body, Auto),
+                    (ItemRow.Actions, Auto)
+                ),
+
+                ColumnDefinitions = Columns.Define(
+                    (ItemColumn.AuthorImage, 100),
+                    (ItemColumn.Content, Star)
+                ),
+
+                Children =
+                {
+                    RoundImage (90, nameof(Tweet.AuthorImage))
+                               .RowSpan (All<ItemRow>()) .Column (ItemColumn.AuthorImage) .CenterHorizontal () .Top () .Margins (top: 10),
+
+
+                    new Label { }
+                               .Row (ItemRow.Title) .Column (ItemColumn.Content)
+                               .Bind (nameof(Tweet.Header)),
+
+                    new Label { }
+                               .Row (ItemRow.Body) .Column (ItemColumn.Content)
+                               .Bind (Label.FormattedTextProperty, nameof(Tweet.Body), convert: (List<TextFragment> fragments) => Format(fragments)),
+
+                    new Button { }
+                                .Row (ItemRow.Actions) .Column (ItemColumn.Content) .Left () .Margins (left: -5)
+                                .Bind (Button.TextProperty, nameof(Tweet.IsLikedByMe), convert: (bool like) => like ? "\u2764" : "\u2661")
+                                .BindCommand (nameof(vm.LikeCommand), source: vm)
+                }
+            }
+        )} .Bind (nameof(vm.SearchResults));
+
+        Frame RoundImage(float size, string path) => new Frame
+        {
+            IsClippedToBounds = true,
+            CornerRadius = size / 2,
+            Content = new Image { } .Bind (path)
+        }  .Size (size) .Padding (0);
+
+        FormattedString Format(List<TextFragment> fragments)
+        {
+            var s = new FormattedString();
+            fragments?.ForEach(fragment => s.Spans.Add(new Span { 
+                Text = fragment.Text,
+                FontAttributes = fragment.IsMatch ? FontAttributes.Bold : FontAttributes.None 
+            }));
+            return s;
+        }
     }
 }

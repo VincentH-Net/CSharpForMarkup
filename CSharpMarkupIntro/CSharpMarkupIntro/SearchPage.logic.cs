@@ -4,6 +4,12 @@ namespace CSharpMarkupIntro
 {
     public partial class SearchPage : ContentPage
     {
-        public SearchPage() => Build();
+        readonly SearchViewModel vm;
+
+        public SearchPage(SearchViewModel vm)
+        {
+            BindingContext = this.vm = vm;
+            Build();
+        }
     }
 }
