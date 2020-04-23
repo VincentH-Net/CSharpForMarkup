@@ -13,22 +13,23 @@ namespace CSharpMarkupIntro
         {
             BackgroundColor = Color.Black;
 
-            Content = new StackLayout
+            Content = new StackLayout 
             {
                 Children =
                 {
                     Header () .Assign (out header),
                     SearchResults ()
                 }
-            }  .Margins(top: 40) .Rainbow ();
+            }  .Margins (top: 40); // TODO: Safe area 
         }
 
         View Header() => new StackLayout
         {
             Orientation = StackOrientation.Horizontal,
+
             Children =
             {
-                new Button { Text = "\u1438" }
+                new Button { Text = "\u1438", BackgroundColor = Color.Transparent, TextColor = Color.White } .FontSize (24)
                             .Width (50)
                             .Bind (nameof(vm.BackCommand)),
 
@@ -43,42 +44,41 @@ namespace CSharpMarkupIntro
             }
         };
 
-        enum ItemRow { Title, Body, Actions }
-        enum ItemColumn { AuthorImage, Content }
+        enum TweetRow { Title, Body, Actions }
+        enum TweetColumn { AuthorImage, Content }
 
         CollectionView SearchResults() => new CollectionView
         {
             ItemTemplate = new DataTemplate(() => new Grid
             {
                 RowDefinitions = Rows.Define(
-                    (ItemRow.Title, Auto),
-                    (ItemRow.Body, Auto),
-                    (ItemRow.Actions, Auto)
+                    (TweetRow.Title, Auto),
+                    (TweetRow.Body, Auto),
+                    (TweetRow.Actions, 32)
                 ),
 
                 ColumnDefinitions = Columns.Define(
-                    (ItemColumn.AuthorImage, 100),
-                    (ItemColumn.Content, Star)
+                    (TweetColumn.AuthorImage, 80),
+                    (TweetColumn.Content, Star)
                 ),
 
                 Children =
                 {
-                    RoundImage (90, nameof(Tweet.AuthorImage))
-                               .RowSpan (All<ItemRow>()) .Column (ItemColumn.AuthorImage) .CenterHorizontal () .Top () .Margins (top: 10),
-
+                    RoundImage (60, nameof(Tweet.AuthorImage))
+                               .RowSpan (All<TweetRow>()) .Column (TweetColumn.AuthorImage) .CenterHorizontal () .Top () .Margins (top: 10),
 
                     new Label { }
-                               .Row (ItemRow.Title) .Column (ItemColumn.Content)
+                               .Row (TweetRow.Title) .Column (TweetColumn.Content)
                                .Bind (nameof(Tweet.Header)),
 
                     new Label { }
-                               .Row (ItemRow.Body) .Column (ItemColumn.Content)
-                               .Bind (Label.FormattedTextProperty, nameof(Tweet.Body), convert: (List<TextFragment> fragments) => Format(fragments)),
+                               .Row (TweetRow.Body) .Column (TweetColumn.Content)
+                               .Bind (Label.FormattedTextProperty, nameof(Tweet.Body), 
+                                      convert: (List<TextFragment> fragments) => Format(fragments)),
 
-                    new Button { }
-                                .Row (ItemRow.Actions) .Column (ItemColumn.Content) .Left () .Margins (left: -5)
-                                .Bind (Button.TextProperty, nameof(Tweet.IsLikedByMe), convert: (bool like) => like ? "\u2764" : "\u2661")
-                                .BindCommand (nameof(vm.LikeCommand), source: vm)
+                    LikeButton (nameof(Tweet.IsLikedByMe))
+                               .Row (TweetRow.Actions) .Column (TweetColumn.Content) .Left () .CenterVertical () .Size (32)
+                               .BindCommand (nameof(vm.LikeCommand), source: vm)
                 }
             }
         )} .Bind (nameof(vm.SearchResults));
@@ -99,5 +99,12 @@ namespace CSharpMarkupIntro
             }));
             return s;
         }
+
+        ImageButton LikeButton(string isLikedPath) => new ImageButton {
+            BackgroundColor = Color.Transparent,
+            Source = new FontImageSource { }
+                                          .Bind(FontImageSource.GlyphProperty, isLikedPath, 
+                                                convert: (bool like) => like ? "\u2764" : "\u2661")
+        };
     }
 }

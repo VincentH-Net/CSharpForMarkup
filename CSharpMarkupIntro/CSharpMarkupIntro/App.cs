@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace CSharpMarkupIntro
 {
@@ -10,6 +9,7 @@ namespace CSharpMarkupIntro
         public App()
         {
             searchViewModel.Initialize();
+            Resources = Styles.Implicit.Dictionary;
             MainPage = new SearchPage(searchViewModel);
         }
     }
