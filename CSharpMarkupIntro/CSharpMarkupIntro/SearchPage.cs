@@ -26,6 +26,7 @@ namespace CSharpMarkupIntro
         View Header() => new StackLayout
         {
             Orientation = StackOrientation.Horizontal,
+
             Children =
             {
                 new Button { Text = "\u1438", BackgroundColor = Color.Transparent, TextColor = Color.CornflowerBlue } .FontSize (24)
@@ -49,6 +50,7 @@ namespace CSharpMarkupIntro
         CollectionView SearchResults() => new CollectionView
         {
             BackgroundColor = Color.FromHex("171F2A"),
+
             ItemTemplate = new DataTemplate(() => new Grid
             {
                 RowDefinitions = Rows.Define(
@@ -105,11 +107,14 @@ namespace CSharpMarkupIntro
             return s;
         }
 
-        ImageButton LikeButton(string isLikedPath) => new ImageButton {
+        ImageButton LikeButton(string isLikedPath) => new ImageButton 
+        {
             BackgroundColor = Color.Transparent,
-            Source = new FontImageSource { Color = Color.White }
-                                          .Bind(FontImageSource.GlyphProperty, isLikedPath, 
-                                                convert: (bool like) => like ? "\u2764" : "\u2661")
+
+            Source = new FontImageSource
+            { Color = Color.White }
+             .Bind(FontImageSource.GlyphProperty, isLikedPath, 
+                   convert: (bool like) => like ? "\u2764" : "\u2661")
         };
     }
 }
