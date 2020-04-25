@@ -1,9 +1,10 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using Xamarin.Forms;
 using Xamarin.Forms.Markup;
 using Xamarin.Forms.Markup.LeftToRight;
 using static Xamarin.Forms.Markup.GridRowsColumns;
 using static CSharpMarkupIntro.SearchViewModel;
-using System.Collections.Generic;
+using static CSharpMarkupIntro.Styles;
 
 namespace CSharpMarkupIntro
 {
@@ -18,7 +19,8 @@ namespace CSharpMarkupIntro
                 Children =
                 {
                     Header () .Assign (out header),
-                    SearchResults ()
+                    SearchResults (),
+                    Footer ()
                 }
             };
         }
@@ -101,7 +103,8 @@ namespace CSharpMarkupIntro
         {
             var s = new FormattedString();
             fragments?.ForEach(fragment => s.Spans.Add(fragment.IsMatch ?
-                new Span { Text = fragment.Text, TextColor = Color.CornflowerBlue, FontAttributes = FontAttributes.Bold, FontSize =15 } :
+                new Span { Text = fragment.Text, TextColor = Color.CornflowerBlue, FontAttributes = FontAttributes.Bold, FontSize =15 }
+                          .BindTapGesture (nameof(vm.OpenTwitterSearchCommand), commandSource: vm) :
                 new Span { Text = fragment.Text }
             ));
             return s;
@@ -116,5 +119,14 @@ namespace CSharpMarkupIntro
              .Bind(FontImageSource.GlyphProperty, isLikedPath, 
                    convert: (bool like) => like ? "\u2764" : "\u2661")
         };
+
+        View Footer() => new Label { }
+            .FontSize(14)
+            .FormattedText(
+                new Span { Text = "See " },
+                new Span { Text = "C# Markup", Style = Link }
+                          .BindTapGesture(nameof(vm.OpenHelpCommand)),
+                new Span { Text = " for more information" })
+            .CenterHorizontal().Margins(bottom: 6);
     }
 }

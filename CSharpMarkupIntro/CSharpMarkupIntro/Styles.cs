@@ -5,6 +5,13 @@ namespace CSharpMarkupIntro
 {
     public static class Styles
     {
+        static Style<Span> link;
+
+        public static Style<Span> Link => link ??= new Style<Span>(
+            (Span.FontSizeProperty, 14),
+            (Span.TextColorProperty, Color.CornflowerBlue),
+            (Span.TextDecorationsProperty, TextDecorations.Underline)
+        );
 
         public static class Implicit
         {

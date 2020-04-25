@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 
 namespace CSharpMarkupIntro
 {
     public class SearchViewModel : BaseViewModel
     {
-        ICommand backCommand, cancelCommand, likeCommand;
+        ICommand backCommand, cancelCommand, likeCommand, openTwitterSearchCommand, openHelpCommand;
 
         public string SearchText { get; set; }
 
@@ -55,18 +57,19 @@ namespace CSharpMarkupIntro
         }
 
         public ICommand BackCommand => backCommand ??= new RelayCommand(Back);
-        public ICommand CancelCommand => cancelCommand ??= new RelayCommand(Cancel);
         public ICommand LikeCommand => likeCommand ??= new RelayCommand<Tweet>(Like);
+        public ICommand OpenTwitterSearchCommand => openTwitterSearchCommand ??= new RelayCommandAsync(OpenTwitterSearch);
+        public ICommand OpenHelpCommand => openHelpCommand ??= new RelayCommandAsync(OpenHelp);
 
         void Back() { }
-        
-        
-        void Cancel() { }
         
         void Like(Tweet tweet) 
         {
             tweet.IsLikedByMe = !tweet.IsLikedByMe;
         }
+
+        Task OpenHelp() => Launcher.OpenAsync(new Uri("https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/csharp-markup"));
+        Task OpenTwitterSearch() => Launcher.OpenAsync(new Uri($"https://twitter.com/search?q={ Uri.EscapeDataString(SearchText) }"));
 
         public class Tweet : BaseViewModel
         {
