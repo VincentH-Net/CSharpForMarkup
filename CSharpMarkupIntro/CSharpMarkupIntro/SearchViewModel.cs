@@ -8,7 +8,7 @@ namespace CSharpMarkupIntro
 {
     public class SearchViewModel : BaseViewModel
     {
-        ICommand backCommand, cancelCommand, likeCommand, openTwitterSearchCommand, openHelpCommand;
+        ICommand backCommand, likeCommand, openTwitterSearchCommand, openHelpCommand;
 
         public string SearchText { get; set; }
 
@@ -69,7 +69,7 @@ namespace CSharpMarkupIntro
         }
 
         Task OpenHelp() => Launcher.OpenAsync(new Uri("https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/csharp-markup"));
-        Task OpenTwitterSearch() => Launcher.OpenAsync(new Uri($"https://twitter.com/search?q={ Uri.EscapeDataString(SearchText) }"));
+        Task OpenTwitterSearch() => Launcher.OpenAsync(new Uri("https://twitter.com/search?q=%23CSharpForMarkup"));
 
         public class Tweet : BaseViewModel
         {

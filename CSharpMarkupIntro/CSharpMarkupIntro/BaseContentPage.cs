@@ -9,6 +9,7 @@ namespace CSharpMarkupIntro
         public BaseContentPage()
         {
             On<iOS>().SetUseSafeArea(true);
+            BackgroundColor = Color.Black;
         }
     }
 }
