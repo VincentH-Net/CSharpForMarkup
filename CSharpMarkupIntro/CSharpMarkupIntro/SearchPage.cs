@@ -17,11 +17,7 @@ namespace CSharpMarkupIntro
                 Footer
             }};
 
-        StackLayout Header => new StackLayout { Children = {
-            new Button { Text = "\u1438" } .Style (HeaderButton)
-                        .Width (50)
-                        .Bind (nameof(vm.BackCommand))
-        }} .Horizontal ();
+        StackLayout Header => new StackLayout { } .Horizontal () .Height (44);
 
         CollectionView SearchResults => new CollectionView { };
 
