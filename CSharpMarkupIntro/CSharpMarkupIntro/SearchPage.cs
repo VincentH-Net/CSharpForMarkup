@@ -17,7 +17,7 @@ namespace CSharpMarkupIntro
                 Footer
             }} .Rainbow ();
 
-        StackLayout Header => new StackLayout { } .Horizontal () .Height (44);
+        StackLayout Header => new StackLayout { } .Height (44);
 
         CollectionView SearchResults => new CollectionView { };
 
