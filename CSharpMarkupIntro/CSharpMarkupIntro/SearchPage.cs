@@ -92,6 +92,6 @@ namespace CSharpMarkupIntro
                                         convert: (bool like) => like ? "\u2764" : "\u2661")
         };
 
-        Label Footer => new Label { Text = "Footer" } .Rainbow ();
+        Label Footer => new Label { Text = "Footer" };
     }
 }
