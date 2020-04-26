@@ -51,9 +51,6 @@ namespace CSharpMarkupIntro
                     new Label { LineBreakMode = LineBreakMode.MiddleTruncation } .FontSize (16)
                                .Row (TweetRow.Title) .Column (TweetColumn.Content) .Margins (right: 10)
                                .Bind (nameof(Tweet.Header)),
-
-                    new Label { Text = "This\nis a\nTweet Body" } .FontSize (15)
-                               .Row (TweetRow.Body) .Column (TweetColumn.Content) .Margins (right: 10)
                 }
             } .Rainbow ())}.Background (Color.FromHex("171F2A")) 
                .Bind (nameof(vm.SearchResults));
