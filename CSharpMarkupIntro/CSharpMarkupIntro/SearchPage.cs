@@ -15,7 +15,7 @@ namespace CSharpMarkupIntro
                 Header,
                 SearchResults,
                 Footer
-            }} .Rainbow ();
+            }};
 
         StackLayout Header => new StackLayout { };
 
