@@ -92,10 +92,6 @@ namespace CSharpMarkupIntro
                                         convert: (bool like) => like ? "\u2764" : "\u2661")
         };
 
-        Label Footer => new Label { }
-             .FontSize (14)
-             .FormattedText (
-                 new Span { Text = "See " })
-             .CenterHorizontal () .Margins (bottom: 6);
+        Label Footer => new Label { Text = "Footer" } .Rainbow ();
     }
 }
