@@ -12,10 +12,10 @@ namespace CSharpMarkupIntro
     {
         void Build() => Content = 
             new StackLayout { Children = {
-                Header .Rainbow (),
+                Header,
                 SearchResults,
                 Footer
-            }};
+            }} .Rainbow ();
 
         StackLayout Header => new StackLayout { } .Horizontal () .Height (44);
 
