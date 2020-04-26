@@ -96,7 +96,7 @@ namespace CSharpMarkupIntro
              .FontSize (14)
              .FormattedText (
                  new Span { Text = "See " },
-                 new Span { Text = "C# Markup", Style = Link }
+                 new Span { Text = "C# Markup" }
                            .BindTapGesture (nameof(vm.OpenHelpCommand)))
              .CenterHorizontal () .Margins (bottom: 6);
     }
