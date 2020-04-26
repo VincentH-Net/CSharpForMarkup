@@ -48,9 +48,6 @@ namespace CSharpMarkupIntro
                     new BoxView { BackgroundColor = Color.Gray }
                                  .Row (TweetRow.Separator) .ColumnSpan (All<TweetColumn>()) .Top() .Height (0.5),
 
-                    RoundImage ( 53, nameof(Tweet.AuthorImage) )
-                                .Row (TweetRow.Title, TweetRow.Actions) .Column (TweetColumn.AuthorImage) .CenterHorizontal () .Top () .Margins (left: 10, top: 4),
-
                     new Label { LineBreakMode = LineBreakMode.MiddleTruncation } .FontSize (16)
                                .Row (TweetRow.Title) .Column (TweetColumn.Content) .Margins (right: 10)
                                .Bind (nameof(Tweet.Header)),
@@ -60,14 +57,6 @@ namespace CSharpMarkupIntro
                 }
             } .Rainbow ())}.Background (Color.FromHex("171F2A")) 
                .Bind (nameof(vm.SearchResults));
-
-        Frame RoundImage(float size, string path) => new Frame
-        {
-            IsClippedToBounds = true,
-            HasShadow = false,
-            CornerRadius = size / 2,
-            Content = new Image { }
-        }  .Size (size) .Padding (0);
 
         Label Footer => new Label { Text = "Footer" };
     }
