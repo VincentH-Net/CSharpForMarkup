@@ -97,8 +97,7 @@ namespace CSharpMarkupIntro
              .FormattedText (
                  new Span { Text = "See " },
                  new Span { Text = "C# Markup", Style = Link }
-                           .BindTapGesture (nameof(vm.OpenHelpCommand)),
-                 new Span { Text = " for more information" })
+                           .BindTapGesture (nameof(vm.OpenHelpCommand)))
              .CenterHorizontal () .Margins (bottom: 6);
     }
 }
