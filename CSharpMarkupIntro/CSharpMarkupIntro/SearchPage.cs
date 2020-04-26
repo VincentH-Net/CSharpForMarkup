@@ -78,9 +78,7 @@ namespace CSharpMarkupIntro
         FormattedString Format(List<TextFragment> fragments)
         {
             var s = new FormattedString();
-            fragments?.ForEach(fragment => s.Spans.Add(fragment.IsMatch ?
-                new Span { Text = fragment.Text, TextColor = Color.CornflowerBlue } .Font (15) .Bold ()
-                          .BindTapGesture (nameof(vm.OpenTwitterSearchCommand), commandSource: vm) :
+            fragments?.ForEach(fragment => s.Spans.Add(
                 new Span { Text = fragment.Text }
             ));
             return s;
