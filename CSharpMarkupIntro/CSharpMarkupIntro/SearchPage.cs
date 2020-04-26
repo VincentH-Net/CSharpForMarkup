@@ -64,7 +64,7 @@ namespace CSharpMarkupIntro
                                 .Row (TweetRow.Actions) .Column (TweetColumn.Content) .Left () .Top () .Size (24)
                                 .BindCommand (nameof(vm.LikeCommand), source: vm)
                 }
-            })}.Background (Color.FromHex("171F2A")) 
+            } .Rainbow ())}.Background (Color.FromHex("171F2A")) 
                .Bind (nameof(vm.SearchResults));
 
         Frame RoundImage(float size, string path) => new Frame
