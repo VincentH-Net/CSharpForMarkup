@@ -86,11 +86,7 @@ namespace CSharpMarkupIntro
             return s;
         }
 
-        ImageButton LikeButton(string isLikedPath) => new ImageButton { Source = 
-            new FontImageSource { Color = Color.White }
-                                 .Bind (FontImageSource.GlyphProperty, isLikedPath, 
-                                        convert: (bool like) => like ? "\u2764" : "\u2661")
-        };
+        ImageButton LikeButton(string isLikedPath) => new ImageButton { };
 
         Label Footer => new Label { Text = "Footer" };
     }
