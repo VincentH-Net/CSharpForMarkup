@@ -47,7 +47,7 @@ namespace CSharpMarkupIntro
                 Children = {
                     new Label { },
                 }
-            } .Rainbow ())}.Background (Color.FromHex("171F2A")) 
+            })}.Background (Color.FromHex("171F2A")) 
                .Bind (nameof(vm.SearchResults));
 
         Label Footer => new Label { Text = "Footer" };
