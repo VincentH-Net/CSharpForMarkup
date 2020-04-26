@@ -45,9 +45,6 @@ namespace CSharpMarkupIntro
                 ),
 
                 Children = {
-                    new BoxView { BackgroundColor = Color.Gray }
-                                 .Row (TweetRow.Separator) .ColumnSpan (All<TweetColumn>()) .Top() .Height (0.5),
-
                     new Label { LineBreakMode = LineBreakMode.MiddleTruncation } .FontSize (16)
                                .Row (TweetRow.Title) .Column (TweetColumn.Content) .Margins (right: 10)
                                .Bind (nameof(Tweet.Header)),
