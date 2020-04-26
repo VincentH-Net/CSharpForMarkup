@@ -45,9 +45,7 @@ namespace CSharpMarkupIntro
                 ),
 
                 Children = {
-                    new Label { LineBreakMode = LineBreakMode.MiddleTruncation } .FontSize (16)
-                               .Row (TweetRow.Title) .Column (TweetColumn.Content) .Margins (right: 10)
-                               .Bind (nameof(Tweet.Header)),
+                    new Label { },
                 }
             } .Rainbow ())}.Background (Color.FromHex("171F2A")) 
                .Bind (nameof(vm.SearchResults));
