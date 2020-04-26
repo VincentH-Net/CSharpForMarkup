@@ -27,28 +27,7 @@ namespace CSharpMarkupIntro
                        .Bind (nameof(vm.SearchText))
         }} .Horizontal ();
 
-        enum TweetRow { Separator, Title, Body, Actions }
-        enum TweetColumn { AuthorImage, Content }
-
-        CollectionView SearchResults => new CollectionView { ItemTemplate = new DataTemplate(() => 
-            new Grid {
-                RowDefinitions = Rows.Define (
-                    (TweetRow.Separator, 2   ),
-                    (TweetRow.Title    , Auto),
-                    (TweetRow.Body     , Auto),
-                    (TweetRow.Actions  , 32  )
-                ),
-
-                ColumnDefinitions = Columns.Define (
-                    (TweetColumn.AuthorImage, 70  ),
-                    (TweetColumn.Content    , Star)
-                ),
-
-                Children = {
-                    new Label { },
-                }
-            })}.Background (Color.FromHex("171F2A")) 
-               .Bind (nameof(vm.SearchResults));
+        CollectionView SearchResults => new CollectionView { } .Background (Color.FromHex("171F2A"));
 
         Label Footer => new Label { Text = "Footer" };
     }
