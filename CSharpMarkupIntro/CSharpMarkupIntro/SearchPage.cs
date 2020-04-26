@@ -12,7 +12,7 @@ namespace CSharpMarkupIntro
     {
         void Build() => Content = 
             new StackLayout { Children = {
-                Header .Assign (out header),
+                Header,
                 SearchResults,
                 Footer
             }};
@@ -24,11 +24,6 @@ namespace CSharpMarkupIntro
 
             new Entry { Placeholder = "Search" }
                        .FillExpandHorizontal ()
-                       .Invoke (entry => 
-                        {
-                            entry.Focused   += Search_FocusChanged; 
-                            entry.Unfocused += Search_FocusChanged; 
-                        })
                        .Bind (nameof(vm.SearchText))
         }} .Horizontal ();
 
