@@ -12,7 +12,7 @@ namespace CSharpMarkupIntro
     {
         void Build() => Content = 
             new StackLayout { Children = {
-                Header,
+                Header .Rainbow (),
                 SearchResults,
                 Footer
             }};
@@ -27,7 +27,7 @@ namespace CSharpMarkupIntro
                        .Bind (nameof(vm.SearchText))
         }} .Horizontal ();
 
-        CollectionView SearchResults => new CollectionView { } .Background (Color.FromHex("171F2A"));
+        CollectionView SearchResults => new CollectionView { };
 
         Label Footer => new Label { Text = "Footer" };
     }
