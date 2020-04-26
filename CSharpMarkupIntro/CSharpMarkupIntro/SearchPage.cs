@@ -20,11 +20,7 @@ namespace CSharpMarkupIntro
         StackLayout Header => new StackLayout { Children = {
             new Button { Text = "\u1438" } .Style (HeaderButton)
                         .Width (50)
-                        .Bind (nameof(vm.BackCommand)),
-
-            new Entry { Placeholder = "Search" }
-                       .FillExpandHorizontal ()
-                       .Bind (nameof(vm.SearchText))
+                        .Bind (nameof(vm.BackCommand))
         }} .Horizontal ();
 
         CollectionView SearchResults => new CollectionView { };
