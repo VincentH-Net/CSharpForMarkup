@@ -70,7 +70,7 @@ namespace CSharpMarkupIntro
             IsClippedToBounds = true,
             HasShadow = false,
             CornerRadius = size / 2,
-            Content = new Image { } .Bind (path)
+            Content = new Image { }
         }  .Size (size) .Padding (0);
 
         ImageButton LikeButton(string isLikedPath) => new ImageButton { };
