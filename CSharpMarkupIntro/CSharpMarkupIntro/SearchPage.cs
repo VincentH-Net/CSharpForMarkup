@@ -55,10 +55,8 @@ namespace CSharpMarkupIntro
                                .Row (TweetRow.Title) .Column (TweetColumn.Content) .Margins (right: 10)
                                .Bind (nameof(Tweet.Header)),
 
-                    new Label { } .FontSize (15)
-                               .Row (TweetRow.Body) .Column (TweetColumn.Content) .Margins (right: 10)
-                               .Bind (Label.FormattedTextProperty, nameof(Tweet.Body), 
-                                        convert: (List<TextFragment> fragments) => Format(fragments)),
+                    new Label { Text = "This\nis a\nTweet Body" } .FontSize (15)
+                               .Row (TweetRow.Body) .Column (TweetColumn.Content) .Margins (right: 10),
 
                     LikeButton ( nameof(Tweet.IsLikedByMe) )
                                 .Row (TweetRow.Actions) .Column (TweetColumn.Content) .Left () .Top () .Size (24)
@@ -74,15 +72,6 @@ namespace CSharpMarkupIntro
             CornerRadius = size / 2,
             Content = new Image { } .Bind (path)
         }  .Size (size) .Padding (0);
-
-        FormattedString Format(List<TextFragment> fragments)
-        {
-            var s = new FormattedString();
-            fragments?.ForEach(fragment => s.Spans.Add(
-                new Span { Text = fragment.Text }
-            ));
-            return s;
-        }
 
         ImageButton LikeButton(string isLikedPath) => new ImageButton { };
 
