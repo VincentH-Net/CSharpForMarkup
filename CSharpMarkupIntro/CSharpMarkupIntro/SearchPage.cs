@@ -95,9 +95,7 @@ namespace CSharpMarkupIntro
         Label Footer => new Label { }
              .FontSize (14)
              .FormattedText (
-                 new Span { Text = "See " },
-                 new Span { Text = "C# Markup" }
-                           .BindTapGesture (nameof(vm.OpenHelpCommand)))
+                 new Span { Text = "See " })
              .CenterHorizontal () .Margins (bottom: 6);
     }
 }
