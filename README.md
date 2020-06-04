@@ -5,8 +5,7 @@ Use declarative style C# instead of XAML for Xamarin Forms UI.
 >Thanks everyone for supporting the [Spec CSharpForMarkup PR on the Xamarin Forms repo](https://github.com/xamarin/Xamarin.Forms/pull/8342)!
 >
 >The PR received an unprecedented **200+** positive reactions (the nr 2 most popular Forms PR *ever* received just 40) and was merged into the Xamarin.Forms.Core 4.6 package in the `Xamarin.Forms.Markup` namespace.
->It is available in the current Xamarin Forms prerelease NuGet as an experimental feature. The documentation for the feature, which is called **"C# Markup"**, can be found in the PR description.
-> It be published under https://docs.microsoft.com/en-us/xamarin/xamarin-forms when 4.6 goes stable.
+>It is available in the current Xamarin Forms prerelease NuGet as an experimental feature. The documentation for the feature, which is called **"C# Markup"**, can be found in [docs.microsoft.com](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/csharp-markup).
 >
 >
 >![CSharpForMarkupMergedInForms46](img/CSharpForMarkupMergedInForms46.png)
@@ -16,7 +15,9 @@ Use declarative style C# instead of XAML for Xamarin Forms UI.
 >
 >**To Be Continued**
 >
->I plan to add more features to C# Markup in new Xamarin Forms PR's. If you have issues or ideas, please add them in the Forms repo, include a link to [the PR](https://github.com/xamarin/Xamarin.Forms/pull/8342) and add CSharpForMarkup in the title. I also wil be working on tooling to support C# Markup (e.g. autoformat, convert XAML to C# Markup). Thanks!
+>C# Markup is already included in **.NET MAUI**, the exciting next evolution of Forms, which amongst many other innovations adds support for MVU. See this [C# Markup for MVU and MVVM](https://github.com/dotnet/maui/issues/119) Spec PR for next-gen features.
+>
+>In the mean time, I plan to add more features to C# Markup in new Xamarin Forms PR's. If you have issues or ideas, please add them in the Forms repo, include a link to [the PR](https://github.com/xamarin/Xamarin.Forms/pull/8342) and add CSharpForMarkup in the title. I also wil be working on tooling to support C# Markup (e.g. autoformat, convert XAML to C# Markup). Thanks!
 
 To use CSharpForMarkup, all you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
 
