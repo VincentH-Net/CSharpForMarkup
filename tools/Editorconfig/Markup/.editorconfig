@@ -2,6 +2,10 @@
 # Markup Page files
 [*Page.cs]
 
+# Indentation and spacing
+indent_size = 4
+indent_style = space
+
 # New line preferences
 csharp_new_line_before_open_brace = anonymous_methods,anonymous_types,control_blocks,lambdas,methods,types
 csharp_new_line_before_members_in_object_initializers = false
