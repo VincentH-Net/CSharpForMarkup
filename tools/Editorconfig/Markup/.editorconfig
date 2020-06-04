@@ -1,0 +1,14 @@
+# Reference: https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-formatting-conventions?view=vs-2019
+# Markup Page files
+[*Page.cs]
+
+# New line preferences
+csharp_new_line_before_open_brace = anonymous_methods,anonymous_types,control_blocks,lambdas,methods,types
+csharp_new_line_before_members_in_object_initializers = false
+
+# Space preferences
+# csharp_space_before_dot = true
+  # Of limited use - currently does not work within initializers
+  # Commented out due to limited use and unwanted effect: spaces in namespace usings
+csharp_space_between_method_call_name_and_opening_parenthesis = true
+  # Of limited use - currently does not work with fluent API in initializers

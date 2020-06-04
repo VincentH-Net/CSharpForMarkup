@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>Layout</Keyword>
+        <Keyword>Component</Keyword>
+        <Keyword>CSharpForMarkup</Keyword>
+        <Keyword>Markup</Keyword>
+        <Keyword>CSharp</Keyword>
+        <Keyword>Xamarin Forms</Keyword>
+        <Keyword>Xamarin</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Layout Component</Title>
+      <Author>VincentH.NET</Author>
+      <Description>C# Markup Layout component for Xamarin Forms</Description>
+      <HelpUrl>https://vincenth.net/blog/archive/2020/06/04/csharp-markup-snippets.aspx</HelpUrl>
+      <Shortcut>cmLayout</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>Name</ID>
+          <ToolTip>Component name</ToolTip>
+          <Default>Name</Default>
+        </Literal>
+		    <Object Editable="true">
+          <ID>LayoutType</ID>
+          <Type>Xamarin.Forms.IViewContainer&lt;View&gt;</Type>
+          <Default>StackLayout</Default>
+          <ToolTip>Layout type</ToolTip>
+        </Object>
+		    <Object Editable="true">
+          <ID>ChildViewType</ID>
+          <Type>Xamarin.Forms.View</Type>
+		      <Default>Label</Default>
+          <ToolTip>Child view type</ToolTip>
+        </Object>
+      </Declarations>
+      <Code Language="csharp" Kind="method decl" Delimiter="$">
+  <![CDATA[$LayoutType$ $Name$ => new $LayoutType$ {
+            Children = {
+                new $ChildViewType$ { }
+            }
+        };
+]]></Code>
+      <Imports>
+        <Import>
+		  <Namespace>Xamarin.Forms</Namespace>
+		</Import>
+        <Import>
+		  <Namespace>Xamarin.Forms.Markup</Namespace>
+		</Import>
+        <Import>
+		  <Namespace>Xamarin.Forms.Markup.LeftToRight</Namespace>
+		</Import>
+        <Import>
+		  <Namespace>static Xamarin.Forms.Markup.GridRowsColumns</Namespace>
+		</Import>
+      </Imports>
+	</Snippet>
+  </CodeSnippet>
+</CodeSnippets>

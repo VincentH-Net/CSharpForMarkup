@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>View</Keyword>
+        <Keyword>Component</Keyword>
+        <Keyword>CSharpForMarkup</Keyword>
+        <Keyword>Markup</Keyword>
+        <Keyword>CSharp</Keyword>
+        <Keyword>Xamarin Forms</Keyword>
+        <Keyword>Xamarin</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Layout Component</Title>
+      <Author>VincentH.NET</Author>
+      <Description>C# Markup View component for Xamarin Forms</Description>
+      <HelpUrl>https://vincenth.net/blog/archive/2020/06/04/csharp-markup-snippets.aspx</HelpUrl>
+      <Shortcut>cmView</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>Name</ID>
+          <ToolTip>Component name</ToolTip>
+          <Default>Name</Default>
+        </Literal>
+		    <Object Editable="true">
+          <ID>ViewType</ID>
+          <Type>Xamarin.Forms.View</Type>
+		      <Default>Label</Default>
+          <ToolTip>View type</ToolTip>
+        </Object>
+      </Declarations>
+      <Code Language="csharp" Kind="method decl" Delimiter="$">
+  <![CDATA[$ViewType$ $Name$ => new $ViewType$ {
+        };
+]]></Code>
+      <Imports>
+        <Import>
+		  <Namespace>Xamarin.Forms</Namespace>
+		</Import>
+        <Import>
+		  <Namespace>Xamarin.Forms.Markup</Namespace>
+		</Import>
+        <Import>
+		  <Namespace>Xamarin.Forms.Markup.LeftToRight</Namespace>
+		</Import>
+        <Import>
+		  <Namespace>static Xamarin.Forms.Markup.GridRowsColumns</Namespace>
+		</Import>
+      </Imports>
+	</Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>Page</Keyword>
+        <Keyword>CSharpForMarkup</Keyword>
+        <Keyword>Markup</Keyword>
+        <Keyword>CSharp</Keyword>
+        <Keyword>Xamarin Forms</Keyword>
+        <Keyword>Xamarin</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Page</Title>
+      <Author>VincentH.NET</Author>
+      <Description>C# Markup Page for Xamarin Forms</Description>
+      <HelpUrl>https://vincenth.net/blog/archive/2020/06/04/csharp-markup-snippets.aspx</HelpUrl>
+      <Shortcut>cmPage</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>Name</ID>
+          <ToolTip>Page name</ToolTip>
+          <Default>Name</Default>
+        </Literal>
+		    <Object Editable="true">
+          <ID>BaseType</ID>
+          <Type>Xamarin.Forms.ContentPage</Type>
+		      <Default>ContentPage</Default>
+          <ToolTip>Page base type</ToolTip>
+        </Object>
+		    <Object Editable="true">
+          <ID>RootLayoutType</ID>
+          <Type>Xamarin.Forms.IViewContainer&lt;View&gt;</Type>
+		      <Default>StackLayout</Default>
+          <ToolTip>Root layout type</ToolTip>
+        </Object>
+		    <Object Editable="true">
+          <ID>ChildViewType</ID>
+          <Type>Xamarin.Forms.View</Type>
+		      <Default>Label</Default>
+          <ToolTip>Child view type</ToolTip>
+        </Object>
+      </Declarations>
+      <Code Language="csharp" Kind="file" Delimiter="$"><![CDATA[public partial class $Name$Page : $BaseType$
+    {
+        public $Name$Page() => Build();
+
+        void Build() => Content = new $RootLayoutType$ { 
+            Children = {
+                new $ChildViewType$ { }
+            }
+        };
+    }
+]]></Code>
+      <Imports>
+        <Import>
+		  <Namespace>Xamarin.Forms</Namespace>
+		</Import>
+        <Import>
+		  <Namespace>Xamarin.Forms.Markup</Namespace>
+		</Import>
+        <Import>
+		  <Namespace>Xamarin.Forms.Markup.LeftToRight</Namespace>
+		</Import>
+        <Import>
+		  <Namespace>static Xamarin.Forms.Markup.GridRowsColumns</Namespace>
+		</Import>
+      </Imports>
+	</Snippet>
+  </CodeSnippet>
+</CodeSnippets>
