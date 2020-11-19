@@ -1,14 +1,28 @@
 # CSharpForMarkup [![Gitter](https://badges.gitter.im/CSharpForMarkup/community.svg)](https://gitter.im/CSharpForMarkup/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 Use declarative style C# instead of XAML for Xamarin Forms UI.
 
-*Nov 19, 2020*
-># CSharpForMarkup for Forms 5 is now part of the Xamarin Community Toolkit
-> [Xamarin Community Toolkint C# Markup](https://github.com/MicrosoftDocs/xamarin-communitytoolkit/blob/68fe0de991a99b364ed61e19bc280e3da94ff02e/docs/markup.md) adds new functionality and targets Xamarin Forms 5. C# Markup is a separate XCT NuGet package without any dependencies on other XCT packages; nothing but Forms 5 is required. Check out the **new features** and NJoy!
-> 
-> Why this move? As [announced](https://github.com/xamarin/Xamarin.Forms/issues/11857), Xamarin.Forms 5.0 is the last major version of Xamarin.Forms; new major features and development will be in .NET MAUI and the Xamarin Community Toolkit. Because C# Markup in Forms 4.6 - 4.8 is an experimental feature which will evolve significantly, the team proposed to move C# Markup to the Xamarin Community Toolkit where there is less red tape to hinder rapid innovation. Microsoft owns and supports the Xamarin Community Toolkit just like other Xamarin libraries. C# Markup for MVU and MVVM will be kept aligned while MAUI is developed ([details](https://github.com/xamarin/Xamarin.Forms/issues/11857#issuecomment-687170063))
+*November 19th, 2020*
+>## CSharpForMarkup for Forms 5 is now part of the Xamarin Community Toolkit
+> [Xamarin Community Toolkint C# Markup](https://github.com/MicrosoftDocs/xamarin-communitytoolkit/blob/68fe0de991a99b364ed61e19bc280e3da94ff02e/docs/markup.md) targets Xamarin Forms 5 and includes all the new features from the [CSharpForMarkup Part 2 Forms PR](https://github.com/xamarin/Xamarin.Forms/pull/11428). C# Markup is a separate XCT NuGet package without any dependencies on other XCT packages; nothing but Forms 5 is required.
 
-*Mar 31, 2020*
-># CSharpForMarkup is incorporated in Xamarin Forms 4.6!
+Using Xamarin Forms 5? Check out [XCT C# Markup](https://github.com/MicrosoftDocs/xamarin-communitytoolkit/blob/68fe0de991a99b364ed61e19bc280e3da94ff02e/docs/markup.md)!
+
+Using Xamarin Forms 4.6 - 4.8? Use the [built-in C# Markup](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/csharp-markup).
+
+**Why move to the Toolkit?**
+ 
+As [announced](https://github.com/xamarin/Xamarin.Forms/issues/11857), Xamarin.Forms 5.0 is the last major version of Xamarin.Forms; new major features and development will be in .NET MAUI and the Xamarin Community Toolkit. Because C# Markup in Forms 4.6 - 4.8 is an experimental feature which will evolve significantly, the team proposed to move C# Markup to the Xamarin Community Toolkit where there is less red tape (than is added to Forms 5) to ensure rapid innovation can continue. Microsoft owns and supports the Xamarin Community Toolkit just like other Xamarin libraries. Also, C# Markup for MVU and MVVM will be kept aligned while MAUI is developed ([details](https://github.com/xamarin/Xamarin.Forms/issues/11857#issuecomment-687170063))
+
+*July 15th, 2020*
+>## C# Markup introduction post published on the Xamarin Blog
+>See my [Introducing C# Markup for Xamarin.Forms](https://devblogs.microsoft.com/xamarin/c-sharp-markup-for-xamarin-forms/) guest post on the Xamarin blog to learn many C# Markup features while building a simple example.
+>
+>Here is the **2.5 minute video** showing it from beginnig to end, using [LiveSharp](https://www.livesharp.net/) for hot-reload:
+>
+>[![Introducing Xamarin Forms C# Markup](https://img.youtube.com/vi/9YwWRvKqTpM/0.jpg)](https://www.youtube.com/watch?v=9YwWRvKqTpM "Introducing Xamarin Forms C# Markup")
+
+*March 31st, 2020*
+>## CSharpForMarkup is incorporated in Xamarin Forms 4.6!
 >Thanks everyone for supporting the [Spec CSharpForMarkup PR on the Xamarin Forms repo](https://github.com/xamarin/Xamarin.Forms/pull/8342)!
 >
 >The PR received an unprecedented **200+** positive reactions (the nr 2 most popular Forms PR *ever* received just 40) and was merged into the Xamarin.Forms.Core 4.6 package in the `Xamarin.Forms.Markup` namespace.
@@ -26,24 +40,10 @@ Use declarative style C# instead of XAML for Xamarin Forms UI.
 >
 >In the mean time, I plan to add more features to C# Markup in new Xamarin Forms PR's. If you have issues or ideas, please add them in the Forms repo, include a link to [the PR](https://github.com/xamarin/Xamarin.Forms/pull/8342) and add CSharpForMarkup in the title. I also wil be working on tooling to support C# Markup (e.g. autoformat, convert XAML to C# Markup). Thanks!
 
-To use CSharpForMarkup, all you need are [these simple helpers](src/XamarinFormsMarkupExtensions.cs); include the single .cs file in your project and off you go.
-
-The helpers offer a fluent API with **Bind**, **Effects**, **Invoke**, **Assign**, **Row**, **Col**, **FormattedText**, **Style**, **Font**, inline converters, support for **using enums for Grid rows + columns** and more. Simple to change/extend; you could easily create your own markup DSL as in [this example in David Ortinau's Xappy](https://github.com/davidortinau/Xappy/blob/master/Xappy/Xappy/Content/Scenarios/Login/LoginPage.cs).
-
-These helpers have been used to create production apps for years; see this [App video and source](#real-world-examples)
-
-See CSharpForMarkup in action with [LiveSharp](https://github.com/OYIon/LiveSharp) for hot reload:
-
-[![CSharpForMarkup with LiveSharp](img/CSharpForMarkupWithLiveSharp.png)](https://www.youtube.com/watch?v=HWxHTqzxT8Q "CSharpForMarkup with LiveSharp")
-
-Check out this awesome Twitch stream by [David Ortinau](https://github.com/davidortinau) where [Ryan Davis](https://github.com/rdavisau) demonstrates these helpers - using hot reload!
-
-[![CSharpForMarkup with Ryan Davis and David Ortinau](img/CSharpForMarkupOnTwitch.png)](https://youtu.be/Mw2F1aHY0tQ?t=1116 "CSharpForMarkup with Ryan Davis and David Ortinau")
-
-## Why?
+## Why use C# for Markup?
 Because **declarative UI** in C# has a much better developer experience than XAML, and reads either very similar or with more clarity.
 
-Modern UI frameworks such as [Flutter](https://flutter.dev/) and [SwiftUI](https://developer.apple.com/xcode/swiftui/) offer declarative UI. These helpers offer the same for Xamarin Forms; no need to learn XAML.
+Modern UI frameworks such as [Flutter](https://flutter.dev/) and [SwiftUI](https://developer.apple.com/xcode/swiftui/) offer declarative UI. Many developers really enjoy using a single powerful language for logic and markup. It makes things simpler and lets you use the same IDE features everywhere. CSharpForMarkup offers this for Xamarin Forms; no need to learn XAML.
 
 If you do know XAML, you can keep using your knowledge, and gain productivity (because of the better IDE support for C# and because you don't need language bridging mechanisms). The syntax is very close to XAML and the same MVVM pattern is used; you should be familiar within a couple of hours.
 
@@ -58,143 +58,17 @@ Compare this Entry markup:
 
 See [Pro's and Con's](#declarative-c-versus-xaml-considerations) for a detailed comparison.
 
-## How?
-Use the extension methods listed below to set select view properties. These helpers offer a fluent API, but they are not meant to replace all property setters; they are added when they improve readability. They are meant to be used in combination with normal property setters. It is recommended to always use a helper when one exists for a property, but developers can choose a balance they prefer (e.g. to keep the markup more or less similar to XAML).
-
-### Binding and converters
-Use `Bind` as in the above C# examples
-
-**Note** that `Bind` knows the default bindable property for most view types; you can omit it in most cases. You can also register the default bindable property for additional controls:
-```CSharp
-XamarinFormsMarkupExtensions.RegisterDefaultBindableProperties(
-    HoverButton.CommandProperty, 
-    RadialGauge.ValueProperty
-);
-```
-You can specify any bindable property like this:  
-```CSharp
-new Label { Text = "No data available" }
-.Bind (Label.IsVisibleProperty, nameof(vm.IsEmpty))
-```
-
-Bind a command to any type of view using **gesture recognizers**:
-```CSharp
-new Label { Text = "Tap Me" }
-.BindTapGesture (nameof(vm.TapCommand)) // Or use any type of gesture with Bind<TView, TGestureRecognizer>(...)
-```
-
-Pass inline converter code with `convert` and `convertBack` parameters (type-safe):
-```CSharp
-new Label { Text = "Tree" }
-.Bind (Label.MarginProperty, nameof(TreeNode.TreeDepth), convert: (int depth) => new Thickness(depth * 20, 0, 0, 0))
-```
-Re-use converter code and instances with `FuncConverter`:
-```CSharp
-treeMarginConverter = new FuncConverter<int, Thickness>(depth => new Thickness(depth * 20, 0, 0, 0));
-//...
-new Label { Text = "Tree" }
-.Bind(Label.MarginProperty, nameof(TreeNode.TreeDepth), converter: treeMarginConverter),
-```
-
-Use `FormattedText` together with binding to `Spans`:
-```CSharp
-new Label { } .FormattedText (
-    new Span { Text = "Built with " },
-    new Span { TextColor = Color.Blue, TextDecorations = TextDecorations.Underline }
-    .BindTap (nameof(vm.ContinueToCSharpForMarkupCommand))
-    .Bind (nameof(vm.Title))
-)
-```
-Note that you can bind gestures to spans with `BindTap` and `BindGesture` *(due to C#'s inability to have generic overloads with different where clauses these have to be named different from the helpers for Views)*.
-
-### Layout
-Use layout helpers for positioning views in layouts and content in views:
-- In a `Grid`: `Row`, `Col`, `RowSpan`, `ColSpan`
-- In a `FlexLayout`: `AlignSelf`, `Basis`, `Grow`, `Menu`, `Order`, `Shrink`
-- Specify `LayoutOptions`:
-  - `Left`, `CenterH`, `FillH`, `Right`
-  - `LeftExpand`, `CenterExpandH`, `FillExpandH`, `RightExpand`
-  - `Top`, `Bottom`, `CenterV`, `FillV`
-  - `TopExpand`, `BottomExpand`, `CenterExpandV`, `FillExpandV`
-  - `Center`, `Fill`, `CenterExpand`, `FillExpand`
-- `Margin`, `Margins`
-- `Height`, `Width`, `MinHeight`, `MinWidth`, `Size`, `MinSize`
-- `Padding`, `Paddings`
-- In a `Label`:
-  - `TextLeft`, `TextCenterH`, `TextRight`
-  - `TextTop`, `TextCenterV`, `TextBottom`
-  - `TextCenter`
-
-The **recommended convention** is to put all helpers from above set for a view on a single line, in the order that they are listed above. This creates a layout line that visually zooms in on the view content:
-1. Row & col that contain the view
-2. Alignment within row & col
-3. Margin around view
-4. View size
-5. Padding within view
-6. Content alignment within padding
-
-Consistently applying this convention enables developers to quickly visually scan and zoom in on markup to build a mental map of where the view content is located.
-
-### Enums for Grid rows and columns
-By adding `using static CSharpForMarkup.EnumsForGridRowsAndColumns;` developers can use enums for Grid rows and columns instead of numbers, so they don't have to renumber manually when they add or remove rows or columns. Readability and intent of the layout is also improved:
-
-![Enums For Grid Rows And Columns](img/EnumsForGridRowsAndColumns.png)
-
-### Fonts
-- In a `Label`: `FontSize`, `Bold`, `Italic`
-- In `Button`, `Label`, `Entry`, `Picker`: `Font`
-
-### Effects
-```CSharp
-new Button { Text = "Tap Me" }
-.Effects (new ButtonMixedCaps())
-```
-
-### Logic integration 
-Use `Invoke` to execute code inline in your declarative markup:
-```CSharp
-new ListView { } .Invoke (l => l.ItemTapped += MyListView_ItemTapped)
-```
-
-Use `Assign` if you need to access a control from outside the UI markup (in UI logic):
-```CSharp
-new ListView { } .Assign (out MyListView),
-```
-
-### Styles
-Use `Style` to create type-safe, declarative coded styles:
-```CSharp
-using static CSharpForMarkupExample.Styles;
-...
-new Button { Text = "Tap Me" } .Style (FilledButton), // Use .Style for VisualElement types
-...
-new Span { Text = "delightful", Style = Quote }, // Use the implicit Style type converter for other Element types
-```
-
-![Styles In C Sharp](img/StylesInCSharp.png)
-
-
-Note that instead of using `Style`, you can simply create your own extension methods to set styling even more type-safe:
-```CSharp
-new Button { Text = "Tap Me" } .Filled ()
-```
-```CSharp
-public static TButton Filled<TButton>(this TButton button) where TButton : Button
-{
-    button.Buttons(); // Equivalent to Style .BasedOn (Buttons)
-    button.TextColor = Color.White;
-    button.BackgroundColor = Color.Red;
-    return button;
-}
-```
-
-### Platform Specifics
-There is also support for some Platform Specifics e.g. `iOSSetGroupHeaderStyleGrouped`. 
-Using these helpers avoids the name conflicts on view types that you get when using platform specifics from the Xamarin Forms namespaces.
-
 ## Real World Examples
 
-These helpers are battle tested for usability and stability. They have been used for years to build production apps, e.g. the app in this video:
+See CSharpForMarkup in action with [LiveSharp](https://github.com/OYIon/LiveSharp) for hot reload:
+
+[![CSharpForMarkup with LiveSharp](img/CSharpForMarkupWithLiveSharp.png)](https://www.youtube.com/watch?v=HWxHTqzxT8Q "CSharpForMarkup with LiveSharp")
+
+Check out this awesome Twitch stream by [David Ortinau](https://github.com/davidortinau) where [Ryan Davis](https://github.com/rdavisau) demonstrates these helpers - using hot reload!
+
+[![CSharpForMarkup with Ryan Davis and David Ortinau](img/CSharpForMarkupOnTwitch.png)](https://youtu.be/Mw2F1aHY0tQ?t=1116 "CSharpForMarkup with Ryan Davis and David Ortinau")
+
+CSharpForMarkup has been battle tested for usability and stability. It has been used for years to build production apps, e.g. the app in this video:
 
 [![LiveSharp Production App](http://img.youtube.com/vi/50N1LL_Txe8/0.jpg)](http://www.youtube.com/watch?v=50N1LL_Txe8 "LiveSharp Production App")
 
@@ -211,16 +85,6 @@ C#, close to XAML:
 By using more helper methods, you can further improve C# readability (but it will be less simular to the XAML):
 
 ![Page C Sharp Short](img/PageCSharpShort.png)
-
-This markup follows some conventions:
-
-## Conventions
-Recommended markup formatting conventions for every control:
-- Bound properties are last, one per line. The default bindable property, if any, should be the very last line.
-- The line before the bound properties is about layout, ordered inward: rows / cols, layout options, margin, size, padding, content alignment.
-
-  Consistently applying these conventions allows to visually scan / zoom markup and build a mental map of the layout.
-- Before that are the other properties; any property that identifies the control's purpose should be on the very first line (e.g. Text or Placeholder)
 
 ## Declarative C# versus XAML considerations 
 Some observations that may help you if you like XAML but wonder whether declarative C# would work for you:
@@ -278,8 +142,12 @@ This repo resulted from this discussion on the Xamarin Forms forum:
 
 Imo XAML in Xamarin Forms exists for historical reasons, to convince developers that are familiar with other Microsoft XAML dialects to onboard. However, if used as above, developers can use their existing XAML knowledge in C#. It should not take more than a day to become accustomed to the small syntax changes, to gain productivity every day.
 
-## Migrate from CSharpForMarkup to Xamarin.Forms.Markup
-Migrating involves renaming a number of helpers. You can do this quickly with a regex replace or by renaming the helpers in `XamarinFormsMarkupExtensions.cs` and letting Visual Studio update your markup.
+## Migrate from CSharpForMarkup helpers file to Markup in Xamarin.Forms 4.6 - 4.8
+If you are using the original CSharpForMarkup helpers file from this repository, here is how you can migrate to markup Xamarin.Forms.
+
+If you want to migrate to XCT C# Markup, first performs below steps and then continue with the migration steps described in the [XCT C# Markup docs](https://github.com/MicrosoftDocs/xamarin-communitytoolkit/blob/68fe0de991a99b364ed61e19bc280e3da94ff02e/docs/markup.md).
+
+You can do these steps quickly with a regex replace or by renaming the helpers in `XamarinFormsMarkupExtensions.cs` and letting Visual Studio update your markup.
 These are the renames:
 - Helpers ending on `H` / `V` -> end on `Horizontal` / `Vertical`
 - `Col` -> `Column` throughout
