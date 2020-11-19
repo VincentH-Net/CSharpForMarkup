@@ -1,6 +1,13 @@
 # CSharpForMarkup [![Gitter](https://badges.gitter.im/CSharpForMarkup/community.svg)](https://gitter.im/CSharpForMarkup/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 Use declarative style C# instead of XAML for Xamarin Forms UI.
 
+*Nov 19, 2020*
+># CSharpForMarkup for Forms 5 is now part of the Xamarin Community Toolkit
+> [Xamarin Community Toolkint C# Markup](https://github.com/MicrosoftDocs/xamarin-communitytoolkit/blob/68fe0de991a99b364ed61e19bc280e3da94ff02e/docs/markup.md) adds new functionality and targets Xamarin Forms 5. C# Markup is a separate XCT NuGet package without any dependencies on other XCT packages; nothing but Forms 5 is required. Check out the new features and NJoy!
+> 
+> Why this move? As [announced](https://github.com/xamarin/Xamarin.Forms/issues/11857), Xamarin.Forms 5.0 is the last major version of Xamarin.Forms; new major features and development will be in .NET MAUI and the Xamarin Community Toolkit. Because C# Markup in Forms 4.6 - 4.8 is an experimental feature which will evolve significantly, the team proposed to move C# Markup to the Xamarin Community Toolkit where there is less red tape to hinder rapid innovation. Microsoft owns and supports the Xamarin Community Toolkit just like other Xamarin libraries. C# Markup for MVU and MVVM will be kept aligned while MAUI is developed ([details](https://github.com/xamarin/Xamarin.Forms/issues/11857#issuecomment-687170063))
+
+*Mar 31, 2020*
 ># CSharpForMarkup is incorporated in Xamarin Forms 4.6!
 >Thanks everyone for supporting the [Spec CSharpForMarkup PR on the Xamarin Forms repo](https://github.com/xamarin/Xamarin.Forms/pull/8342)!
 >
