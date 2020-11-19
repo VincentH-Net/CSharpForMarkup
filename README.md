@@ -17,7 +17,7 @@ As [announced](https://github.com/xamarin/Xamarin.Forms/issues/11857), Xamarin.F
 >## C# Markup introduction post published on the Xamarin Blog
 >See my [Introducing C# Markup for Xamarin.Forms](https://devblogs.microsoft.com/xamarin/c-sharp-markup-for-xamarin-forms/) guest post on the Xamarin blog to learn many C# Markup features while building a simple example.
 >
->Here is the **2.5 minute video** showing it from beginnig to end, using [LiveSharp](https://www.livesharp.net/) for hot-reload:
+>Here is the **2.5 minute video** showing it from beginning to end, using [LiveSharp](https://www.livesharp.net/) for hot-reload:
 >
 >[![Introducing Xamarin Forms C# Markup](https://img.youtube.com/vi/9YwWRvKqTpM/0.jpg)](https://www.youtube.com/watch?v=9YwWRvKqTpM "Introducing Xamarin Forms C# Markup")
 
