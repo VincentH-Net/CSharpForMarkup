@@ -2,7 +2,7 @@
 Use declarative style C# instead of XAML for Xamarin Forms UI.
 
 *November 18, 2021*
->## #CSharpForMarkup 2 is coming to WinUI 3 and Uno Platform ...
+>## #CSharpForMarkup 2 is coming to WinUI 3 and Uno Platform
 > I got the #webassembly target working today.
 >
 > Build web apps with just C#. No HTML or XAML needed. Flutterize .NET ([tweet](https://twitter.com/vincenth_net/status/1461421581574496260))
