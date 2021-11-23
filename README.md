@@ -1,6 +1,16 @@
 # CSharpForMarkup [![Gitter](https://badges.gitter.im/CSharpForMarkup/community.svg)](https://gitter.im/CSharpForMarkup/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 Use declarative style C# instead of XAML for Xamarin Forms UI.
 
+*November 18, 2021*
+>## #CSharpForMarkup 2 is coming to WinUI 3 and Uno Platform ...
+> I got the #webassembly target working today.
+>
+> Build web apps with just C#. No HTML or XAML needed. Flutterize .NET ([tweet](https://twitter.com/vincenth_net/status/1461421581574496260))
+
+*October 18th, 2021*
+>## CSharpForMarkup 1 is ported to .NET MAUI Community Toolkit
+> [Xamarin.CommunityToolkit.Markup](https://www.nuget.org/packages/Xamarin.CommunityToolkit.Markup/) is now ported to [CommunityToolkit.Maui.Markup](https://www.nuget.org/packages/CommunityToolkit.Maui.Markup)! Read all about it in [this blog post by Brandon Minnick](https://codetraveler.io/2021/10/18/using-net-maui-community-toolkit-2/)
+
 *November 19th, 2020*
 >## CSharpForMarkup for Forms 5 is now part of the Xamarin Community Toolkit
 > [Xamarin Community Toolkint C# Markup](https://github.com/MicrosoftDocs/xamarin-communitytoolkit/blob/68fe0de991a99b364ed61e19bc280e3da94ff02e/docs/markup.md) targets Xamarin Forms 5 and includes all the new features from the [CSharpForMarkup Part 2 Forms PR](https://github.com/xamarin/Xamarin.Forms/pull/11428). C# Markup is a separate XCT NuGet package without any dependencies on other XCT packages; nothing but Forms 5 is required.
