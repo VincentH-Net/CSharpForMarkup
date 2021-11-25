@@ -1,5 +1,10 @@
 # C# Markup
-Enjoy a Flutter-like UI development experience with .NET Hot Reload and the best .NET UI frameworks. Build .NET apps fully in C#, targeting browser and native desktop / mobile - no HTML or XAML required.
+Enjoy a Flutter-like UI development experience with .NET Hot Reload and the best .NET UI frameworks
+
+- Build .NET applications **fully in C#**<br />
+- Target browsers and native desktop / mobile<br />
+
+No XAML / HTML / JavaScript / CSS required
 
 ## News
 
