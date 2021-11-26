@@ -45,6 +45,7 @@ public class SearchViewModel : BaseViewModel
                     new TextFragment { Text = " " },
                     new TextFragment { Text = "#dotnet", IsMatch = true },
                 },
+                IsLikedByMe = true
             },
             new Tweet
             {
@@ -61,7 +62,6 @@ public class SearchViewModel : BaseViewModel
                     new TextFragment { Text = " today\n" },
                     new TextFragment { Text = "#CSharpForMarkup", IsMatch = true }
                 },
-                IsLikedByMe = true
             },
             new Tweet
             {
@@ -105,7 +105,6 @@ public class SearchViewModel : BaseViewModel
                     new TextFragment { Text = "\n" },
                     new TextFragment { Text = "#CSharpForMarkup", IsMatch = true },
                 },
-                IsLikedByMe = true
             },
             new Tweet
             {
