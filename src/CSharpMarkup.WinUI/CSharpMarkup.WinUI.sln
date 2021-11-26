@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpMarkup.WinUI", "CSharpMarkup.WinUI.csproj", "{27B1A0CA-6F64-4778-A663-55EF5F6E2022}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Generate|Any CPU = Generate|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27B1A0CA-6F64-4778-A663-55EF5F6E2022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B1A0CA-6F64-4778-A663-55EF5F6E2022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B1A0CA-6F64-4778-A663-55EF5F6E2022}.Generate|Any CPU.ActiveCfg = Generate|Any CPU
+		{27B1A0CA-6F64-4778-A663-55EF5F6E2022}.Generate|Any CPU.Build.0 = Generate|Any CPU
+		{27B1A0CA-6F64-4778-A663-55EF5F6E2022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B1A0CA-6F64-4778-A663-55EF5F6E2022}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54A6D6D9-D799-485B-A8DC-6DB648B045A6}
+	EndGlobalSection
+EndGlobal
