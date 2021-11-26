@@ -1,0 +1,10 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Threading;
+global using System.Threading.Tasks;
+global using static Microsoft.UI.Colors;
+global using static WinUICsMarkupExamples.Constants;
+global using static WinUICsMarkupExamples.Styles;
+global using UI = Microsoft.UI.Xaml;
+global using ICommand = System.Windows.Input.ICommand;
+global using Tweet = WinUICsMarkupExamples.SearchViewModel.Tweet;

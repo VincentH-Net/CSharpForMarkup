@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "environmentVariables": {},
+      "distributionName": ""
+    },
+    "Examples (Package)": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
+    },
+    "Examples (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
