@@ -60,11 +60,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\SourceGenerators\SourceGenerators.csproj" Condition=" '$(Configuration)' == 'Generate' ">
+	  <ProjectReference Include="..\..\..\CSharpMarkup.Generators\WinUI\SourceGenerators\SourceGenerators.csproj" Condition=" '$(Configuration)' == 'Generate' ">
 	    <OutputItemType>Analyzer</OutputItemType>
 	    <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
 	  </ProjectReference>
 	</ItemGroup>
 
-	<Import Project="..\CSharpMarkup.Generate.Attributes\CSharpMarkup.Generate.Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
+	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
 </Project>
