@@ -1,0 +1,70 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
+	<PropertyGroup>
+		<Configurations>Debug;Release;Generate</Configurations>
+		<IsUno>true</IsUno>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Generate'">
+		<DefineConstants>DEBUG;TRACE;GENERATE</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Company>VincentH.NET</Company>
+		<Copyright>Copyright © VincentH.NET</Copyright>
+		<!--<RepositoryUrl></RepositoryUrl>-->
+		<Authors>Vincent Hoogendoorn</Authors>
+		<Owners>Vincent Hoogendoorn</Owners>
+		<PackageReleaseNotes />
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<!--<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<RepositoryType>git</RepositoryType>-->
+		<Product>$(AssemblyName) ($(TargetFramework))</Product>
+		<Version>0.5.0-dev.23</Version>
+		<NeutralLanguage>en</NeutralLanguage>
+    
+		<NoWarn>CS1591;CS1573</NoWarn>
+
+		<GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
+    
+		<DebugType>portable</DebugType>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	</PropertyGroup>
+		
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-windows10.0.19041.0;net6.0</TargetFrameworks>
+		<RootNamespace>Microsoft.UI.Markup</RootNamespace>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('windows10.'))">
+		<IsUno>false</IsUno>
+		
+		<DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+		<UseWinUI>true</UseWinUI>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('MonoAndroid'))"> <!-- TODO : update TFM and test -->
+		<DefineConstants>$(DefineConstants);ANDROID</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup Condition="$(IsUno)==false">
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.194" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(IsUno)">
+		<PackageReference Include="Uno.WinUI" Version="3.11.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\SourceGenerators\SourceGenerators.csproj" Condition=" '$(Configuration)' == 'Generate' ">
+	    <OutputItemType>Analyzer</OutputItemType>
+	    <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+	  </ProjectReference>
+	</ItemGroup>
+
+	<Import Project="..\CSharpMarkup.Generate.Attributes\CSharpMarkup.Generate.Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
+</Project>
