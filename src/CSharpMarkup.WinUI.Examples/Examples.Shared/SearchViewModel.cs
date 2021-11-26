@@ -5,11 +5,17 @@ namespace WinUICsMarkupExamples;
 [Bindable]
 public class SearchViewModel : BaseViewModel
 {
-    ICommand backCommand, searchCommand, likeCommand, openTwitterSearchCommand, openHelpCommand, openHelp2Command;
+    ICommand backCommand, searchCommand, likeCommand;
 
     public string SearchText { get; set; }
 
     public List<Tweet> SearchResults { get; set; }
+
+    public ICommand BackCommand => backCommand ??= new RelayCommand(Back);
+    public ICommand SearchCommand => searchCommand ??= new RelayCommandAsync(Search);
+    public ICommand LikeCommand => likeCommand ??= new RelayCommand<Tweet>(Like);
+
+    public Uri LinkUri(string linkText) => new (linkText?.StartsWith("#") == true ? TwitterSearchUri(linkText) : linkText);
 
     public SearchViewModel Initialize()
     {
@@ -131,21 +137,11 @@ public class SearchViewModel : BaseViewModel
         return this;
     }
 
-    public ICommand BackCommand => backCommand ??= new RelayCommand(Back);
-    public ICommand SearchCommand => searchCommand ??= new RelayCommandAsync(Search);
-    public ICommand LikeCommand => likeCommand ??= new RelayCommand<Tweet>(Like);
-    public ICommand OpenTwitterSearchCommand => openTwitterSearchCommand ??= new RelayCommandAsync(OpenTwitterSearch);
-	public ICommand OpenHelpCommand => openHelpCommand ??= new RelayCommandAsync(OpenHelp);
-	public ICommand OpenHelp2Command => openHelp2Command ??= new RelayCommandAsync(OpenHelp2);
-
-	void Back() => App.Current.NavigateToFlutterPage();
-    Task Search() => LaunchUri($"https://twitter.com/search?q={Uri.EscapeDataString(SearchText)}");
+    void Back() => App.Current.NavigateToFlutterPage();
+    Task Search() => LaunchUri(TwitterSearchUri(SearchText));
     void Like(Tweet tweet) => tweet.IsLikedByMe = !tweet.IsLikedByMe;
 
-	Task OpenHelp()          => LaunchUri("https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/csharp-markup");
-	Task OpenHelp2()         => LaunchUri("https://github.com/xamarin/Xamarin.Forms/pull/11428");
-	Task OpenTwitterSearch() => LaunchUri("https://twitter.com/search?q=%23CSharpForMarkup");
-
+    string TwitterSearchUri(string text) => $"https://twitter.com/search?q={Uri.EscapeDataString(text)}&f=live";
     Task LaunchUri(string uriString) => (Task)Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
 
     public class Tweet : BaseViewModel

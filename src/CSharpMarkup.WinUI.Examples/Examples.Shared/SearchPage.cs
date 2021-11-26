@@ -21,7 +21,7 @@ public partial class SearchPage
 
         TextBox(PlaceholderText: "Search") .Foreground (White)
            .VCenter ()
-           .Bind (vm.SearchText),
+           .Bind (vm.SearchText, Microsoft.UI.Xaml.Data.BindingMode.TwoWay),
 
         Button("\U0001F50D").Style(HeaderButton)
            .Width(50)
@@ -74,7 +74,7 @@ public partial class SearchPage
         textBlock.Inlines.Clear();
 
         tweet?.Body?.ForEach(fragment => textBlock.Inlines.Add(fragment.IsMatch ?
-            Link (fragment.Text, TwitterSearchUri) .FontSize (15) .UI :
+            Link (fragment.Text, vm?.LinkUri(fragment.Text)) .FontSize (15) .UI :
             (UI.Documents.Inline) Run (fragment.Text)
         ));
     }
@@ -88,7 +88,7 @@ public partial class SearchPage
     
     TextBlock Footer => TextBlock (Inlines(
         Run  ("See "),
-        Link ("C# Markup ", CsMarkupUri),
+        Link ("C# Markup on GitHub", CsMarkupUri),
 		Run  (" for more information")
     )) .FontSize (14) .Foreground (White)
        .HCenter()
