@@ -43,6 +43,8 @@ public sealed partial class App : Application
     internal bool NavigateToFlutterPage() => rootFrame.Navigate(typeof(FlutterPage));
     internal void NavigateBack() => rootFrame.GoBack();
 
+    internal void BuildWindowContent() => ((_window.Content as Frame)?.Content as IBuild)?.Build();
+
     /// <summary>
     /// Invoked when the application is launched normally by the end user.  Other entry points
     /// will be used such as when the application is launched to open a specific file.
@@ -97,20 +99,8 @@ public sealed partial class App : Application
             }
             // Ensure the current window is active
             _window.Activate();
-
-#if WINDOWS && DEBUG // TODO: Replace with MetadataUpdateHandler attribute after that works for WinUI. For now, workaround is to rebuild active page UI on activate to support .NET hot reload.
-            _window.Activated += Window_Activated;
-#endif
         }
     }
-
-#if WINDOWS && DEBUG
-    void Window_Activated(object sender, WindowActivatedEventArgs args)
-    {
-        if (args.WindowActivationState == WindowActivationState.CodeActivated)
-            ((_window.Content as Frame)?.Content as IBuild)?.Build();
-    }
-#endif
 
     /// <summary>
     /// Invoked when Navigation to a certain page fails

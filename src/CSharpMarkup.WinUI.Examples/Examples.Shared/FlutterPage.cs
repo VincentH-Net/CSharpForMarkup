@@ -28,8 +28,7 @@ public partial class FlutterPage
 
         Spread (Pairs())
 
-    )  .Background (Black)
-    .UI;
+    )  .Background (Black) .WithHotReloadButton();
 
     IEnumerable<UI.UIElement> Pairs() {
         for (int i = 1; i <= 5; i++) {

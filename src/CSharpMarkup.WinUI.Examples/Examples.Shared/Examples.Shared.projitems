@@ -20,6 +20,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Core\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\MarkupExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\GlobalUsings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\XLog.cs" />

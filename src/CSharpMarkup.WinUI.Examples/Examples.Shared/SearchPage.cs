@@ -11,8 +11,7 @@ public partial class SearchPage
         Header .Assign (out header),
         SearchResults,
         Footer
-    )  .Background (Black)
-    .UI;
+    )  .Background (Black) .WithHotReloadButton();
 
     StackPanel Header => HStack (
         Button ("\u22EF") .Style (HeaderButton)
