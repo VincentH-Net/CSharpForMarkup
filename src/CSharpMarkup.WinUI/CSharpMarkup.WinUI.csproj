@@ -13,6 +13,7 @@
 		<Title>CSharpMarkup.WinUI</Title>
 		<Summary>Build .NET browser / native UI in declarative C#</Summary>
 		<Description>Enjoy a Flutter-like UI development experience with .NET Hot Reload and the best .NET UI frameworks. Build .NET applications fully in C#. Target browsers and native desktop / mobile. No XAML / HTML / JavaScript / CSS required</Description>
+		<PackageReadmeFile>Readme.md</PackageReadmeFile>
 		<PackageTags>csharpformarkup,csharpmarkup,markup,csharp,ui,winui,windowsappsdk,uno,webassembly,windows,desktop,flutter</PackageTags>
 		<Copyright>Copyright © VincentH.NET</Copyright>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -25,7 +26,7 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>0.5.0-dev.26</Version>
+		<Version>0.5.0-dev.27</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573</NoWarn>
@@ -71,6 +72,10 @@
 	    <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
 	  </ProjectReference>
 	</ItemGroup>
-
+	
+	<ItemGroup>
+		<None Include="Readme.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
+	
 	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
 </Project>
