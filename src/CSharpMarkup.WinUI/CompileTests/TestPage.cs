@@ -7,7 +7,6 @@ using static Microsoft.UI.Colors;
 using static Microsoft.UI.Markup.Helpers;
 using UI = Microsoft.UI.Xaml;
 using Color = Windows.UI.Color;
-using vm = CSharpMarkup.WinUI.CompileTests.TestViewModel;
 using TextBloek = Microsoft.UI.Xaml.Controls.TextBlock;
 
 namespace CSharpMarkup.WinUI.CompileTests
@@ -26,10 +25,10 @@ namespace CSharpMarkup.WinUI.CompileTests
             TextBlock (
                 Text: "Hi", 
                 LineHeight: 2.5
-            )  .Bind(nameof(vm.Title))
+            )  .Bind(vm.Title)
                .TextAlignment().Right()
                .Grid(Row: 1) .Margin(2)
-               .HorizontalAlignment().Bind(nameof(vm.Right), convert: (bool right) => right ? UI.HorizontalAlignment.Right : UI.HorizontalAlignment.Left),
+               .HorizontalAlignment().Bind(vm.Right, convert: (bool right) => right ? UI.HorizontalAlignment.Right : UI.HorizontalAlignment.Left),
 
             TextBlock(Inlines(
                 Run("A"),
@@ -37,25 +36,25 @@ namespace CSharpMarkup.WinUI.CompileTests
             )),
 
             CheckBox("Check Me")
-               .Bind(nameof(vm.IsOk)),
+               .Bind(vm.IsOk),
 
             Button(
                 HStack(
                     TextBlock("Hi Again!"),
 
                     Image()
-                       .Bind(nameof(vm.Avatar))
+                       .Bind(vm.Avatar)
                        .Stretch() .UniformToFill()
                        .Rotation(37.5f)
                 )
-            )  .Grid(Row: 1, Column: 2, RowSpan: 4) .Grid_ColumnSpan(5) .Bind(nameof(vm.Columns)) .Left()
+            )  .Grid(Row: 1, Column: 2, RowSpan: 4) .Grid_ColumnSpan(5) .Bind(vm.Columns) .Left()
                .BorderBrush(Blue)
                .Background(Blue)
                .Background(SolidColorBrush(Blue))
 
-               .Background().Bind(nameof(vm.IsOk), convert: (bool isOk) => OkBrush(isOk))
-               .Background(SolidColorBrush().Bind(nameof(vm.IsOk), converter: okBrushConverter))
-               .Background(SolidColorBrush().Color().Bind(nameof(vm.IsOk), convert: (bool isOk) => OkColor(isOk))) // Note that this is type-safe; e.g. try using OkBrush
+               .Background().Bind(vm.IsOk, convert: (bool isOk) => OkBrush(isOk))
+               .Background(SolidColorBrush().Bind(vm.IsOk, converter: okBrushConverter))
+               .Background(SolidColorBrush().Color().Bind(vm.IsOk, convert: (bool isOk) => OkColor(isOk))) // Note that this is type-safe; e.g. try using OkBrush
         );
 
 

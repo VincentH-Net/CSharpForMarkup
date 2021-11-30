@@ -9,6 +9,8 @@ namespace CSharpMarkup.WinUI.CompileTests
 {
     partial class TestPage : Page
     {
+        TestViewModel vm = new();
+
         Button button;
         readonly Markup.FuncConverter<bool, UI.Media.Brush> okBrushConverter;
 

@@ -49,6 +49,7 @@ namespace Microsoft.UI.Markup
         // TODO: Check how much overhead having all these generics introduces (app size binary bloat in eg wasm?)
 
         /// <summary>Bind to a specified property</summary>
+        /// <param name="pathExpression">viewModel.Property or viewModel.Property1.Property2 or (SomeExpression.viewModel).Property <br />?. can be used safely - viewmodel instance is not required</param>
         public static TDependencyObject Bind<TDependencyObject, TPropertyValue>(
             this DependencyProperty<TDependencyObject, TPropertyValue> property,
             object pathExpression = null,
@@ -102,6 +103,7 @@ namespace Microsoft.UI.Markup
         });
 
         /// <summary>Bind to a specified property with inline conversion</summary>
+        /// <param name="pathExpression">viewModel.Property or viewModel.Property1.Property2 or (SomeExpression.viewModel).Property <br />?. can be used safely - viewmodel instance is not required</param>
         public static TDependencyObject Bind<TDependencyObject, TPropertyValue, TSource>(
             this DependencyProperty<TDependencyObject, TPropertyValue> property,
             object pathExpression = null,
@@ -126,6 +128,7 @@ namespace Microsoft.UI.Markup
         );
 
         /// <summary>Bind to a specified property with inline conversion and conversion parameter</summary>
+        /// <param name="pathExpression">viewModel.Property or viewModel.Property1.Property2 or (SomeExpression.viewModel).Property <br />?. can be used safely - viewmodel instance is not required</param>
         public static TDependencyObject Bind<TDependencyObject, TPropertyValue, TSource, TParam>(
             this DependencyProperty<TDependencyObject, TPropertyValue> property,
             object pathExpression = null,
@@ -151,6 +154,7 @@ namespace Microsoft.UI.Markup
         );
 
         /// <summary>Bind to <typeparamref name="TDependencyObject"/>.DefaultBindProperty</summary>
+        /// <param name="pathExpression">viewModel.Property or viewModel.Property1.Property2 or (SomeExpression.viewModel).Property <br />?. can be used safely - viewmodel instance is not required</param>
         public static TDependencyObject Bind<TDependencyObject>(
             this TDependencyObject target,
             object pathExpression = null,
@@ -211,6 +215,7 @@ namespace Microsoft.UI.Markup
         }
 
         /// <summary>Bind to the default property with inline conversion</summary>
+        /// <param name="pathExpression">viewModel.Property or viewModel.Property1.Property2 or (SomeExpression.viewModel).Property <br />?. can be used safely - viewmodel instance is not required</param>
         public static TDependencyObject Bind<TDependencyObject, TPropertyValue, TSource>(
             this TDependencyObject target,
             object pathExpression = null,
@@ -235,6 +240,7 @@ namespace Microsoft.UI.Markup
         );
 
         /// <summary>Bind to the default property with inline conversion and conversion parameter</summary>
+        /// <param name="pathExpression">viewModel.Property or viewModel.Property1.Property2 or (SomeExpression.viewModel).Property <br />?. can be used safely - viewmodel instance is not required</param>
         public static TDependencyObject Bind<TDependencyObject, TPropertyValue, TSource, TParam>(
             this TDependencyObject target,
             object pathExpression = null,
@@ -260,7 +266,8 @@ namespace Microsoft.UI.Markup
         );
 
         /// <summary>Bind to the <typeparamref name="TDependencyObject"/>'s default Command and CommandParameter properties </summary>
-        /// <param name="parameterPathExpression">If omitted, the CommandParameter property is bound to the binding context</param>
+        /// <param name="pathExpression">viewModel.Property or viewModel.Property1.Property2 or (SomeExpression.viewModel).Property <br />?. can be used safely - viewmodel instance is not required</param>
+        /// <param name="parameterPathExpression">If omitted, the CommandParameter property is bound to the binding context. Supports the same syntax as <paramref name="pathExpression"/></param>
         public static TDependencyObject BindCommand<TDependencyObject>(
             this TDependencyObject target,
             object pathExpression = null,
@@ -338,15 +345,17 @@ namespace Microsoft.UI.Markup
 
         static string StripExpressionToPath(string pathExpressionString)
         {
-            if (string.IsNullOrWhiteSpace(pathExpressionString))
-                return bindingContextPath;
+            if (pathExpressionString == null) return bindingContextPath;
 
-            pathExpressionString = pathExpressionString.Replace("?", ""); // Allow .Bind(tweet?.Title) where tweet is a dummy null field used for binding only
+            // Allow to identify the viewmodel part of the expression with parenthesis
+            // <path expression> = <viewmodel>.<path> || (<viewmodel expression>).<path>, where <path> can contain dots
+            // e.g. .Bind ((vm.SelectedTweet).Title) => "Title", .Bind ((vm.SelectedTweet).Author.Name) => "Author.Name"
+            int endOfViewModelExpression = pathExpressionString.IndexOf('.', pathExpressionString.LastIndexOf(')') + 1) + 1;
 
-            if (pathExpressionString.Contains('('))
-                return pathExpressionString.Split(')')[0].Split('(')[^1]; // Allow .Bind(nameof(Person.Address.Zip)) to specify a path containing '.'
-
-            return pathExpressionString.Split('.')[^1]; // The part after the last '.', just like nameof() returns.
+            return pathExpressionString
+                .Substring(endOfViewModelExpression) // Remove the viewmodel part from the binding string
+                .Replace("?", "")                    // Allow .Bind (tweet?.Title) where tweet is a null instance field used for binding only
+                .Trim('"', '@', ' ', '\t');          // Allow .Bind ("ILikeStringLiterals") => "ILikeStringLiterals"
         }
     }
 }
