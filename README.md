@@ -26,6 +26,14 @@ The rich WinUI 3 framework that C# Markup 2 surfaces contains **500+ bindable ob
 
 See C# Markup features in action in the `CSharpMarkup.WinUI.Examples` solution in this repo.
 
+> **NOTE** - this is an early preview, intended mainly to gauge interest and to get feedback on the shape and features of the markup API. 
+> NJoy playing around with this and chime in with issues if you like / want things or if you have questions.
+> 
+> Twitter feedback is also welcome - use [#CSharpForMarkup](https://twitter.com/search?q=%23CSharpForMarkup&f=live) and [@vincenth_net](https://twitter.com/vincenth_net), thanks!
+> 
+> Only Windows Desktop and webassembly targets have been tested at this time, and there has been no webassembly performance optimization so far.
+> Expect frequent updates in the coming weeks!
+
 ## Basic markup anatomy
 Layouts, views, properties and property values look like this:<br />
 ![Markup Basic Anatomy](img/markup-basic-anatomy.png)<br />
