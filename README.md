@@ -6,6 +6,8 @@ Enjoy a Flutter-like UI development experience with .NET Hot Reload and the best
 
 No XAML / HTML / JavaScript / CSS required
 
+## [NuGet: CSharpMarkup.WinUI](https://www.nuget.org/packages/CSharpMarkup.WinUI)
+
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
