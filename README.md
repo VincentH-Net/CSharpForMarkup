@@ -18,7 +18,8 @@ No XAML / HTML / JavaScript / CSS required
 >## C# Markup 2 announced at UNOCONF 2021!
 > This first preview targets WinUI 3 and Uno Platform - including browser webassembly - with C# 10 and .NET 6. It supports .NET Hot Reload for a fast inner dev loop.
 >
-> See the [C# Markup 2 announcement at UNOCONF 2021](https://unoconf.com/)
+> See the [C# Markup 2 announcement at UNOCONF 2021](https://youtu.be/UJ7EzQeEQAg?t=2566):
+> [![UNOCONF Announces Csharp Markup 2](img/unoconf-announce-csharp-markup-2.png)](https://youtu.be/UJ7EzQeEQAg?t=2566)
 
 # Features
 C# Markup 2 contains a full declarative, fluent API for WinUI 3. It surfaces virtually every `DependencyObject` and `DependencyProperty` in WinUI 3, including attached properties, and includes **full inline documentation** that links each markup helper to the inline documentation for the underlying WinUI object / property.
@@ -132,6 +133,9 @@ public sealed partial class FlutterPage : Page, IBuild
         DataContext = vm = App.Current.FlutterViewModel;
         Build();
 ```
+
+> **Note** at the moment WinUI still requires that you have a XAML file for a page. It only needs to contain an empty `Page` element though, and you can move those files out of sight in a folder, e.g. `Xaml`:<br />
+> ![Markup Page Files](img/markup-page-files.png)
 
 ## Integrate UI markup with UI logic
 With `Assign` and `Invoke` you can integrate UI markup with UI logic:
