@@ -7,4 +7,6 @@ No XAML / HTML / JavaScript / CSS required
 
 This preview targets WinUI 3 (Windows App SDK) and Uno Platform - including browser webassembly - with C# 10 and .NET 6.
 
-Details [here](https://github.com/VincentH-Net/CSharpForMarkup/blob/master/README.md)
+[Docs](https://github.com/VincentH-Net/CSharpForMarkup/blob/master/README.md)
+
+[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-0-5-1)
