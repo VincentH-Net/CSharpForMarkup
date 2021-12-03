@@ -181,6 +181,7 @@ public sealed partial class App : Application
 
 #if HAS_UNO
         global::Uno.Extensions.LogExtensionPoint.AmbientLoggerFactory = factory;
+        global::Uno.UI.Adapter.Microsoft.Extensions.Logging.LoggingAdapter.Initialize();
 #endif
     }
 }
