@@ -8,9 +8,9 @@ No XAML / HTML / JavaScript / CSS required
 
 ![Markup Example Flutter Page](img/markup-example-flutter-page.png)
 
-## [NuGet: CSharpMarkup.WinUI](https://www.nuget.org/packages/CSharpMarkup.WinUI)
+![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI?color=gold&label=CSharpMarkup.WinUI%20nuget&style=plastic)
 
-*Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
+*Looking for C# Markup 1? Find it [here](/tree/csharpformarkup1-archive)*
 
 # News
 
@@ -20,6 +20,25 @@ No XAML / HTML / JavaScript / CSS required
 >
 > See the [C# Markup 2 announcement at UNOCONF 2021](https://youtu.be/UJ7EzQeEQAg?t=2566):
 > [![UNOCONF Announces Csharp Markup 2](img/unoconf-announce-csharp-markup-2.png)](https://youtu.be/UJ7EzQeEQAg?t=2566)
+
+## Getting started with C# Markup 2 for WinUI and Uno Platform
+First check if your development environment is ready for Uno Platform and WinUI 3:
+- [Using Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html)
+- [Using other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
+
+### Work with the example solution
+
+1. Clone this repo
+2. Open [CSharpMarkup.WinUI.Examples.sln](src/CSharpMarkup.WinUI.Examples/)
+3. Explore the example pages in the `Examples.Shared` project
+4. Debug the `Examples.Wasm` or the `Examples.Windows.Desktop` project
+5. To use hot reload in VS2022 Preview:
+   1. Debug the `Examples.Windows.Desktop` project
+   2. Edit the markup
+   3. Click ![Visual Studio Dotnet Hot Reload Button](img/visual-studio-dotnet-hot-reload-button.png) in Visual Studio
+   4. After the Visual Studio status bar says ![Visual Studio Dotnet Hot Reload Statusbar](img/visual-studio-dotnet-hot-reload-statusbar.png), click ![In App Hot Reload Button](img/in-app-hot-reload-button.png) in the app
+
+To learn how to use C# Markup 2, see the [features description](#features) below.
 
 # Features
 C# Markup 2 contains a full declarative, fluent API for WinUI 3. It surfaces virtually every `DependencyObject` and `DependencyProperty` in WinUI 3, including attached properties, and includes **full inline documentation** that links each markup helper to the inline documentation for the underlying WinUI object / property.
@@ -83,7 +102,7 @@ Shorthand helpers are included as an alternative to common combinations of marku
 
 ## Insert layout children: conditional and Spread
 
-All layouts ignore `null` values in their `children`; this makes it possible to have conditional views depending on the value of an expression value at page (re) build time.
+All layouts ignore `null` values in their `children`; this makes it possible to have conditional views depending on the value of an expression at page (re) build time.
 
 The `Spread` helper allows to insert a variable number of children at a specific position in the `children` list (similar to what Flutter offers).
 
