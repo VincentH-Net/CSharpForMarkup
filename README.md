@@ -8,9 +8,9 @@ No XAML / HTML / JavaScript / CSS required
 
 ![Markup Example Flutter Page](img/markup-example-flutter-page.png)
 
-![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI?color=gold&label=CSharpMarkup.WinUI%20nuget&style=plastic)
+[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI?color=gold&label=CSharpMarkup.WinUI%20nuget&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI)
 
-*Looking for C# Markup 1? Find it [here](/tree/csharpformarkup1-archive)*
+*Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
 
