@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Configurations>Debug;Release;Generate</Configurations>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Generate'">
+		<DefineConstants>DEBUG;TRACE;GENERATE</DefineConstants>
+	</PropertyGroup>
+
+</Project>
