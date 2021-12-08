@@ -1,14 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<Configurations>Debug;Release;Generate</Configurations>
 		<TargetFramework>net6.0-windows</TargetFramework>
-		<Nullable>enable</Nullable>
+		<!--<Nullable>enable</Nullable>-->
+		<DefineConstants>$(DefineConstants);WPF</DefineConstants>
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)'=='Generate'">
-		<DefineConstants>DEBUG;TRACE;GENERATE</DefineConstants>
-	</PropertyGroup>
+	<!--<PropertyGroup Condition="'$(Configuration)'=='Generate'">
+		<DefineConstants>$(DefineConstants);GENERATE</DefineConstants>
+	</PropertyGroup>-->
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\CSharpMarkup.Generators\WinUI\SourceGenerators\SourceGenerators.csproj" Condition=" '$(Configuration)' == 'Generate' ">
+			<OutputItemType>Analyzer</OutputItemType>
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+		</ProjectReference>
+	</ItemGroup>
+
+	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" />
 
 </Project>

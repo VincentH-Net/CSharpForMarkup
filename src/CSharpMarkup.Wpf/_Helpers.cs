@@ -1,73 +1,73 @@
 ﻿#if GENERATE
 using CSharpMarkup.Generate.WinUI;
-using Controls = Microsoft.UI.Xaml.Controls;
+using Controls = System.Windows.Controls;
 
 [assembly: MarkupHelpers(
-    markupHelpersType: typeof(Microsoft.UI.Markup.Helpers),
-    baseViewType: typeof(Microsoft.UI.Xaml.DependencyObject),
+    markupHelpersType: typeof(CSharpMarkup.Wpf.Helpers),
+    baseViewType: typeof(System.Windows.DependencyObject),
     contentPropertyName: "Content",
     contentControlBaseClass: typeof(Controls.ContentControl),
     childrenPropertyName: "Children",
     childrenPropertyType: typeof(Controls.UIElementCollection),
-    bindablePropertyType: typeof(Microsoft.UI.Xaml.DependencyProperty)
+    bindablePropertyType: typeof(System.Windows.DependencyProperty)
 )]
 #endif
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.Wpf
 {
     public static partial class Helpers
     {
         #if GENERATE
         /// <summary>Used by codegen to generate a <see cref="IDefaultBindProperty"/> implementation on markup types. Not used at runtime.</summary>
         /// <remarks>Types must be fully specified for codegen to work</remarks>
-        static Xaml.DependencyProperty[] DefaultBindProperties => new Xaml.DependencyProperty[]
+        static System.Windows.DependencyProperty[] DefaultBindProperties => new System.Windows.DependencyProperty[]
         {
-            Microsoft.UI.Xaml.Controls.AutoSuggestBox.TextProperty,
-            Microsoft.UI.Xaml.Controls.BitmapIcon.UriSourceProperty,
-            Microsoft.UI.Xaml.Controls.BitmapIconSource.UriSourceProperty,
-            Microsoft.UI.Xaml.Controls.CalendarDatePicker.DateProperty,
-            Microsoft.UI.Xaml.Controls.CalendarViewDayItem.DateProperty,
-            Microsoft.UI.Xaml.Controls.CaptureElement.SourceProperty,
-            Microsoft.UI.Xaml.Controls.ColorPicker.ColorProperty,
-            Microsoft.UI.Xaml.Controls.ColumnDefinition.WidthProperty,
-            Microsoft.UI.Xaml.Controls.ContentControl.ContentProperty,
-            Microsoft.UI.Xaml.Controls.ContentPresenter.ContentProperty,
-            Microsoft.UI.Xaml.Controls.DatePicker.DateProperty,
-            Microsoft.UI.Xaml.Controls.DatePickerFlyout.DateProperty,
-            Microsoft.UI.Xaml.Controls.FontIcon.GlyphProperty,
-            Microsoft.UI.Xaml.Controls.FontIconSource.GlyphProperty,
-            Microsoft.UI.Xaml.Controls.Image.SourceProperty,
-            Microsoft.UI.Xaml.Controls.ItemsControl.ItemsSourceProperty,
-            Microsoft.UI.Xaml.Controls.ListPickerFlyout.ItemsSourceProperty,
-            Microsoft.UI.Xaml.Controls.MediaElement.SourceProperty,
-            Microsoft.UI.Xaml.Controls.PasswordBox.PasswordProperty,
-            Microsoft.UI.Xaml.Controls.PathIcon.DataProperty,
-            Microsoft.UI.Xaml.Controls.PathIconSource.DataProperty,
-            Microsoft.UI.Xaml.Controls.Primitives.ButtonBase.CommandProperty,
-            Microsoft.UI.Xaml.Controls.Primitives.ColorSpectrum.ColorProperty,
-            Microsoft.UI.Xaml.Controls.Primitives.RangeBase.ValueProperty,
-            Microsoft.UI.Xaml.Controls.Primitives.SelectorItem.IsSelectedProperty,
-            Microsoft.UI.Xaml.Controls.Primitives.ToggleButton.IsCheckedProperty,
-            Microsoft.UI.Xaml.Controls.ProgressRing.IsActiveProperty,
-            Microsoft.UI.Xaml.Controls.RatingControl.ValueProperty,
-            Microsoft.UI.Xaml.Controls.RowDefinition.HeightProperty,
-            Microsoft.UI.Xaml.Controls.SplitButton.CommandProperty,
-            Microsoft.UI.Xaml.Controls.SwipeItem.CommandProperty,
-            Microsoft.UI.Xaml.Controls.SymbolIcon.SymbolProperty,
-            Microsoft.UI.Xaml.Controls.SymbolIconSource.SymbolProperty,
-            Microsoft.UI.Xaml.Controls.TextBlock.TextProperty,
-            Microsoft.UI.Xaml.Controls.TextBox.TextProperty,
-            Microsoft.UI.Xaml.Controls.TimePicker.TimeProperty,
-            Microsoft.UI.Xaml.Controls.TimePickerFlyout.TimeProperty,
-            Microsoft.UI.Xaml.Controls.ToggleMenuFlyoutItem.IsCheckedProperty,
-            Microsoft.UI.Xaml.Controls.ToggleSwitch.IsOnProperty,
-            Microsoft.UI.Xaml.Controls.TreeView.ItemsSourceProperty,
-            Microsoft.UI.Xaml.Controls.TreeViewItem.ItemsSourceProperty,
-            Microsoft.UI.Xaml.Controls.TreeViewNode.ContentProperty,
+            //Controls.AutoSuggestBox.TextProperty,
+            //Controls.BitmapIcon.UriSourceProperty,
+            //Controls.BitmapIconSource.UriSourceProperty,
+            //Controls.CalendarDatePicker.DateProperty,
+            //Controls.CalendarViewDayItem.DateProperty,
+            //Controls.CaptureElement.SourceProperty,
+            //Controls.ColorPicker.ColorProperty,
+            Controls.ColumnDefinition.WidthProperty,
+            Controls.ContentControl.ContentProperty,
+            Controls.ContentPresenter.ContentProperty,
+            //Controls.DatePicker.DateProperty,
+            //Controls.DatePickerFlyout.DateProperty,
+            //Controls.FontIcon.GlyphProperty,
+            //Controls.FontIconSource.GlyphProperty,
+            Controls.Image.SourceProperty,
+            Controls.ItemsControl.ItemsSourceProperty,
+            //Controls.ListPickerFlyout.ItemsSourceProperty,
+            Controls.MediaElement.SourceProperty,
+            //Controls.PasswordBox.PasswordProperty,
+            //Controls.PathIcon.DataProperty,
+            //Controls.PathIconSource.DataProperty,
+            Controls.Primitives.ButtonBase.CommandProperty,
+            //Controls.Primitives.ColorSpectrum.ColorProperty,
+            Controls.Primitives.RangeBase.ValueProperty,
+            //Controls.Primitives.SelectorItem.IsSelectedProperty,
+            Controls.Primitives.ToggleButton.IsCheckedProperty,
+            //Controls.ProgressRing.IsActiveProperty,
+            //Controls.RatingControl.ValueProperty,
+            Controls.RowDefinition.HeightProperty,
+            //Controls.SplitButton.CommandProperty,
+            //Controls.SwipeItem.CommandProperty,
+            //Controls.SymbolIcon.SymbolProperty,
+            //Controls.SymbolIconSource.SymbolProperty,
+            Controls.TextBlock.TextProperty,
+            Controls.TextBox.TextProperty,
+            //Controls.TimePicker.TimeProperty,
+            //Controls.TimePickerFlyout.TimeProperty,
+            //Controls.ToggleMenuFlyoutItem.IsCheckedProperty,
+            //Controls.ToggleSwitch.IsOnProperty,
+            Controls.TreeView.ItemsSourceProperty,
+            Controls.TreeViewItem.ItemsSourceProperty,
+            //Controls.TreeViewNode.ContentProperty,
 
             // TODO: Complete items after last one above + from subnamespaces Documents, Input, Media, Media.Animation, Shapes
 
-            Microsoft.UI.Xaml.Media.SolidColorBrush.ColorProperty
+            System.Windows.Media.SolidColorBrush.ColorProperty
         };
         #endif
 
@@ -76,6 +76,6 @@ namespace Microsoft.UI.Markup
 
         public static partial TextBlock TextBlock(string Text); // Specify parameter properties
 
-        public static partial Run Run(string Text);
+        // TODO: already defined? public static partial Run Run(string Text);
     }
 }

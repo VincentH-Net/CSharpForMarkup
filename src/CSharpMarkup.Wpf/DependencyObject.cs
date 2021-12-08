@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using BindingMode = Microsoft.UI.Xaml.Data.BindingMode;
-using IValueConverter = Microsoft.UI.Xaml.Data.IValueConverter;
-using UpdateSourceTrigger = Microsoft.UI.Xaml.Data.UpdateSourceTrigger;
+using BindingMode = System.Windows.Data.BindingMode;
+using IValueConverter = System.Windows.Data.IValueConverter;
+using UpdateSourceTrigger = System.Windows.Data.UpdateSourceTrigger;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.Wpf
 {
-    public interface IUI<TUI> where TUI : Xaml.DependencyObject
+    public interface IUI<TUI> where TUI : System.Windows.DependencyObject
     {
         TUI UI { get; }
     }
 
-#if !WINDOWS
-    public partial class DependencyObject : IUI<Xaml.DependencyObject>
+#if HAS_UNO
+    public partial class DependencyObject : IUI<System.Windows.DependencyObject>
     {
-        public Xaml.DependencyObject UI { get; protected set; }
+        public System.Windows.DependencyObject UI { get; protected set; }
 
         protected DependencyObject() { }
     }
@@ -88,9 +88,9 @@ namespace Microsoft.UI.Markup
             TPropertyValue targetNullValue = default,
             TPropertyValue fallbackValue = default
         ) where TDependencyObject : DependencyObject
-        => property.SetBinding(new Microsoft.UI.Xaml.Data.Binding
+        => property.SetBinding(new System.Windows.Data.Binding
         {
-            Path = new Xaml.PropertyPath(path),
+            Path = new System.Windows.PropertyPath(path),
             Mode = mode,
             Converter = converter,
             ConverterParameter = converterParameter,
@@ -194,12 +194,12 @@ namespace Microsoft.UI.Markup
             object fallbackValue = default
         ) where TDependencyObject : DependencyObject, IDefaultBindProperty
         {
-            Xaml.Data.BindingOperations.SetBinding(
+            System.Windows.Data.BindingOperations.SetBinding(
                 target.UI,
                 target.DefaultBindProperty,
-                new Microsoft.UI.Xaml.Data.Binding
+                new System.Windows.Data.Binding
                 {
-                    Path = new Xaml.PropertyPath(path),
+                    Path = new System.Windows.PropertyPath(path),
                     Mode = mode,
                     Converter = converter,
                     ConverterParameter = converterParameter,
@@ -294,12 +294,12 @@ namespace Microsoft.UI.Markup
             object parameterSource = null
         ) where TDependencyObject : DependencyObject, IDefaultBindCommandProperties
         {
-            Xaml.Data.BindingOperations.SetBinding(
+            System.Windows.Data.BindingOperations.SetBinding(
                 target.UI,
                 target.DefaultBindCommandProperty,
-                new Microsoft.UI.Xaml.Data.Binding
+                new System.Windows.Data.Binding
                 {
-                    Path = new Xaml.PropertyPath(path),
+                    Path = new System.Windows.PropertyPath(path),
                     Mode = BindingMode.OneWay,
                     Source = source
                     // TODO: RelativeSource
@@ -311,12 +311,12 @@ namespace Microsoft.UI.Markup
                 if (target.DefaultBindCommandParameterProperty == null)
                     throw new ArgumentException($"{typeof(TDependencyObject).Name} does not have a default CommandParameterProperty", nameof(parameterPath));
 
-                Xaml.Data.BindingOperations.SetBinding(
+                System.Windows.Data.BindingOperations.SetBinding(
                     target.UI,
                     target.DefaultBindCommandParameterProperty,
-                    new Microsoft.UI.Xaml.Data.Binding
+                    new System.Windows.Data.Binding
                     {
-                        Path = new Xaml.PropertyPath(parameterPath),
+                        Path = new System.Windows.PropertyPath(parameterPath),
                         Mode = BindingMode.OneWay,
                         Source = parameterSource
                         // TODO: RelativeSource
@@ -329,15 +329,22 @@ namespace Microsoft.UI.Markup
 
         public static TDependencyObject Assign<TDependencyObject, TUI>(this TDependencyObject bindable, out TUI ui)
             where TDependencyObject : DependencyObject, IUI<TUI>
-            where TUI : Xaml.DependencyObject
+            where TUI : System.Windows.DependencyObject
         {
             ui = (TUI)bindable.UI;
             return bindable;
         }
 
+        // TODO: Namespace causes ambiguity between System.Windows.DependencyObject and CSharpMarkup.Wpf.DependencyObject
+        // Consider: why did we choose Microsoft.UI.Markup instead of CSharpMarkup.WinUI namespace?
+        // Was it so we get all the non-bindable types for free - meaning property types. Would those not be limited?
+
+        // Let's try to change that in Wpf and if that works out OK, backport to WinUI
+
+
         public static TDependencyObject Invoke<TDependencyObject, TUI>(this TDependencyObject bindable, Action<TUI> action)
             where TDependencyObject : DependencyObject, IUI<TUI>
-            where TUI : Xaml.DependencyObject
+            where TUI : System.Windows.DependencyObject
         {
             action?.Invoke((TUI)bindable.UI);
             return bindable;

@@ -1,6 +1,6 @@
-﻿using BindingOperations = Microsoft.UI.Xaml.Data.BindingOperations;
+﻿using BindingOperations = System.Windows.Data.BindingOperations;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.Wpf
 {
     public class DependencyProperty<TDependencyObject, TPropertyValue> where TDependencyObject : DependencyObject
     {
@@ -27,7 +27,7 @@ namespace Microsoft.UI.Markup
         // Note that by definition, a chain cannot contain a suhchain with the same TParent, TChild combination; 
         // that would still be just a single TParent, TChild chain.
 
-        public static DependencyProperty<TDependencyObject, TPropertyValue> Get(TDependencyObject element, Xaml.DependencyProperty property)
+        public static DependencyProperty<TDependencyObject, TPropertyValue> Get(TDependencyObject element, System.Windows.DependencyProperty property)
         {
             if (instance == null) instance = new DependencyProperty<TDependencyObject, TPropertyValue>();
             instance.Target = element;
@@ -38,9 +38,9 @@ namespace Microsoft.UI.Markup
         protected DependencyProperty() { }
 
         public TDependencyObject Target { get; private set; }
-        public Xaml.DependencyProperty UI { get; private set; }
+        public System.Windows.DependencyProperty UI { get; private set; }
 
         internal TDependencyObject Set(TPropertyValue value) { Target.UI.SetValue(UI, value); return Target; }
-        internal TDependencyObject SetBinding(Xaml.Data.BindingBase binding) { BindingOperations.SetBinding(Target.UI, UI, binding); return Target; }
+        internal TDependencyObject SetBinding(System.Windows.Data.BindingBase binding) { BindingOperations.SetBinding(Target.UI, UI, binding); return Target; }
     }
 }

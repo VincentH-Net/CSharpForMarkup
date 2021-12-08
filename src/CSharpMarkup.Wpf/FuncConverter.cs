@@ -1,7 +1,8 @@
 ﻿using System;
-using IValueConverter = Microsoft.UI.Xaml.Data.IValueConverter;
+using System.Globalization;
+using IValueConverter = System.Windows.Data.IValueConverter;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.Wpf
 {
 	public class FuncConverter<TSource, TDest, TParam> : IValueConverter
 	{
@@ -11,10 +12,10 @@ namespace Microsoft.UI.Markup
 		readonly Func<TSource, TParam, TDest> convertWithParam;
 		readonly Func<TDest, TParam, TSource> convertBackWithParam;
 
-		readonly Func<TSource, TParam, string, TDest> convertWithParamAndLanguage;
-		readonly Func<TDest, TParam, string, TSource> convertBackWithParamAndLanguage;
+		readonly Func<TSource, TParam, CultureInfo, TDest> convertWithParamAndLanguage;
+		readonly Func<TDest, TParam, CultureInfo, TSource> convertBackWithParamAndLanguage;
 
-		public FuncConverter(Func<TSource, TParam, string, TDest> convertWithParamAndLanguage = null, Func<TDest, TParam, string, TSource> convertBackWithParamAndLanguage = null)
+		public FuncConverter(Func<TSource, TParam, CultureInfo, TDest> convertWithParamAndLanguage = null, Func<TDest, TParam, CultureInfo, TSource> convertBackWithParamAndLanguage = null)
 		{ this.convertWithParamAndLanguage = convertWithParamAndLanguage; this.convertBackWithParamAndLanguage = convertBackWithParamAndLanguage; }
 
 		public FuncConverter(Func<TSource, TParam, TDest> convertWithParam = null, Func<TDest, TParam, TSource> convertBackWithParam = null)
@@ -23,7 +24,7 @@ namespace Microsoft.UI.Markup
 		public FuncConverter(Func<TSource, TDest> convert = null, Func<TDest, TSource> convertBack = null)
 		{ this.convert = convert; this.convertBack = convertBack; }
 
-		public object Convert(object value, Type targetType, object parameter, string language)
+		public object Convert(object value, Type targetType, object parameter, CultureInfo language)
 		{
 			if (convert != null)
 				return convert.Invoke(
@@ -43,7 +44,7 @@ namespace Microsoft.UI.Markup
 			return default(TDest);
 		}
 
-		public object ConvertBack(object value, Type targetType, object parameter, string language)
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo language)
 		{
 			if (convertBack != null)
 				return convertBack.Invoke(
