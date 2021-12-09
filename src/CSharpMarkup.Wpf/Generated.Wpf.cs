@@ -6,7 +6,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Windows.Input;
 using Windows = System.Windows;
 using Stream = System.IO.Stream;
 using ListSortDirection = System.ComponentModel.ListSortDirection;
@@ -20146,7 +20145,7 @@ namespace CSharpMarkup.Wpf // FrameworkContentElement
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.FrameworkContentElement"/></summary>
-        public static FrameworkContentElement FrameworkContentElement(O<Windows.Data.BindingGroup> BindingGroup = default, O<Windows.Controls.ContextMenu> ContextMenu = default, O<Cursor> Cursor = default, O<object> DataContext = default, O<Windows.Style> FocusVisualStyle = default, O<bool> ForceCursor = default, O<InputScope> InputScope = default, O<Windows.Markup.XmlLanguage> Language = default, O<string> Name = default, O<bool> OverridesDefaultStyle = default, O<Windows.ResourceDictionary> Resources = default, O<Windows.Style> Style = default, O<object> Tag = default, O<object> ToolTip = default)
+        public static FrameworkContentElement FrameworkContentElement(O<Windows.Data.BindingGroup> BindingGroup = default, O<Windows.Controls.ContextMenu> ContextMenu = default, O<Windows.Input.Cursor> Cursor = default, O<object> DataContext = default, O<Windows.Style> FocusVisualStyle = default, O<bool> ForceCursor = default, O<Windows.Input.InputScope> InputScope = default, O<Windows.Markup.XmlLanguage> Language = default, O<string> Name = default, O<bool> OverridesDefaultStyle = default, O<Windows.ResourceDictionary> Resources = default, O<Windows.Style> Style = default, O<object> Tag = default, O<object> ToolTip = default)
         {
             var ui = new Windows.FrameworkContentElement();
             if (BindingGroup.HasValue) ui.BindingGroup = BindingGroup.Value;
@@ -20209,7 +20208,7 @@ namespace CSharpMarkup.Wpf // FrameworkContentElement
         public static TView ContextMenu<TView>(this TView view, Windows.Controls.ContextMenu value) where TView : FrameworkContentElement { view.UI.ContextMenu = value; return view; }
 
         /// <summary>Set <see cref="Windows.FrameworkContentElement.Cursor"/></summary>
-        public static TView Cursor<TView>(this TView view, Cursor value) where TView : FrameworkContentElement { view.UI.Cursor = value; return view; }
+        public static TView Cursor<TView>(this TView view, Windows.Input.Cursor value) where TView : FrameworkContentElement { view.UI.Cursor = value; return view; }
 
         /// <summary>Set <see cref="Windows.FrameworkContentElement.DataContext"/></summary>
         public static TView DataContext<TView>(this TView view, object value) where TView : FrameworkContentElement { view.UI.DataContext = value; return view; }
@@ -20221,7 +20220,7 @@ namespace CSharpMarkup.Wpf // FrameworkContentElement
         public static TView ForceCursor<TView>(this TView view, bool value) where TView : FrameworkContentElement { view.UI.ForceCursor = value; return view; }
 
         /// <summary>Set <see cref="Windows.FrameworkContentElement.InputScope"/></summary>
-        public static TView InputScope<TView>(this TView view, InputScope value) where TView : FrameworkContentElement { view.UI.InputScope = value; return view; }
+        public static TView InputScope<TView>(this TView view, Windows.Input.InputScope value) where TView : FrameworkContentElement { view.UI.InputScope = value; return view; }
 
         /// <summary>Set <see cref="Windows.FrameworkContentElement.Language"/></summary>
         public static TView Language<TView>(this TView view, Windows.Markup.XmlLanguage value) where TView : FrameworkContentElement { view.UI.Language = value; return view; }
@@ -20253,8 +20252,8 @@ namespace CSharpMarkup.Wpf // FrameworkContentElement
         => DependencyProperty<TTarget, Windows.Controls.ContextMenu>.Get(target, Windows.FrameworkContentElement.ContextMenuProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.FrameworkContentElement.Cursor"/></summary>
-        public static DependencyProperty<TTarget, Cursor> Cursor<TTarget>(this TTarget target) where TTarget : FrameworkContentElement
-        => DependencyProperty<TTarget, Cursor>.Get(target, Windows.FrameworkContentElement.CursorProperty);
+        public static DependencyProperty<TTarget, Windows.Input.Cursor> Cursor<TTarget>(this TTarget target) where TTarget : FrameworkContentElement
+        => DependencyProperty<TTarget, Windows.Input.Cursor>.Get(target, Windows.FrameworkContentElement.CursorProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.FrameworkContentElement.DataContext"/></summary>
         public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : FrameworkContentElement
@@ -20269,8 +20268,8 @@ namespace CSharpMarkup.Wpf // FrameworkContentElement
         => DependencyProperty<TTarget, bool>.Get(target, Windows.FrameworkContentElement.ForceCursorProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.FrameworkContentElement.InputScope"/></summary>
-        public static DependencyProperty<TTarget, InputScope> InputScope<TTarget>(this TTarget target) where TTarget : FrameworkContentElement
-        => DependencyProperty<TTarget, InputScope>.Get(target, Windows.FrameworkContentElement.InputScopeProperty);
+        public static DependencyProperty<TTarget, Windows.Input.InputScope> InputScope<TTarget>(this TTarget target) where TTarget : FrameworkContentElement
+        => DependencyProperty<TTarget, Windows.Input.InputScope>.Get(target, Windows.FrameworkContentElement.InputScopeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.FrameworkContentElement.Language"/></summary>
         public static DependencyProperty<TTarget, Windows.Markup.XmlLanguage> Language<TTarget>(this TTarget target) where TTarget : FrameworkContentElement
@@ -20303,7 +20302,7 @@ namespace CSharpMarkup.Wpf // FrameworkElement
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.FrameworkElement"/></summary>
-        public static FrameworkElement FrameworkElement(O<Windows.Data.BindingGroup> BindingGroup = default, O<Windows.Controls.ContextMenu> ContextMenu = default, O<Cursor> Cursor = default, O<object> DataContext = default, O<Windows.FlowDirection> FlowDirection = default, O<Windows.Style> FocusVisualStyle = default, O<bool> ForceCursor = default, O<double> Height = default, O<Windows.HorizontalAlignment> HorizontalAlignment = default, O<InputScope> InputScope = default, O<Windows.Markup.XmlLanguage> Language = default, O<Windows.Media.Transform> LayoutTransform = default, O<Windows.Thickness> Margin = default, O<double> MaxHeight = default, O<double> MaxWidth = default, O<double> MinHeight = default, O<double> MinWidth = default, O<string> Name = default, O<bool> OverridesDefaultStyle = default, O<Windows.ResourceDictionary> Resources = default, O<Windows.Style> Style = default, O<object> Tag = default, O<object> ToolTip = default, O<bool> UseLayoutRounding = default, O<Windows.VerticalAlignment> VerticalAlignment = default, O<double> Width = default)
+        public static FrameworkElement FrameworkElement(O<Windows.Data.BindingGroup> BindingGroup = default, O<Windows.Controls.ContextMenu> ContextMenu = default, O<Windows.Input.Cursor> Cursor = default, O<object> DataContext = default, O<Windows.FlowDirection> FlowDirection = default, O<Windows.Style> FocusVisualStyle = default, O<bool> ForceCursor = default, O<double> Height = default, O<Windows.HorizontalAlignment> HorizontalAlignment = default, O<Windows.Input.InputScope> InputScope = default, O<Windows.Markup.XmlLanguage> Language = default, O<Windows.Media.Transform> LayoutTransform = default, O<Windows.Thickness> Margin = default, O<double> MaxHeight = default, O<double> MaxWidth = default, O<double> MinHeight = default, O<double> MinWidth = default, O<string> Name = default, O<bool> OverridesDefaultStyle = default, O<Windows.ResourceDictionary> Resources = default, O<Windows.Style> Style = default, O<object> Tag = default, O<object> ToolTip = default, O<bool> UseLayoutRounding = default, O<Windows.VerticalAlignment> VerticalAlignment = default, O<double> Width = default)
         {
             var ui = new Windows.FrameworkElement();
             if (BindingGroup.HasValue) ui.BindingGroup = BindingGroup.Value;
@@ -20380,7 +20379,7 @@ namespace CSharpMarkup.Wpf // FrameworkElement
         public static TView ContextMenu<TView>(this TView view, Windows.Controls.ContextMenu value) where TView : FrameworkElement { view.UI.ContextMenu = value; return view; }
 
         /// <summary>Set <see cref="Windows.FrameworkElement.Cursor"/></summary>
-        public static TView Cursor<TView>(this TView view, Cursor value) where TView : FrameworkElement { view.UI.Cursor = value; return view; }
+        public static TView Cursor<TView>(this TView view, Windows.Input.Cursor value) where TView : FrameworkElement { view.UI.Cursor = value; return view; }
 
         /// <summary>Set <see cref="Windows.FrameworkElement.DataContext"/></summary>
         public static TView DataContext<TView>(this TView view, object value) where TView : FrameworkElement { view.UI.DataContext = value; return view; }
@@ -20401,7 +20400,7 @@ namespace CSharpMarkup.Wpf // FrameworkElement
         public static TView HorizontalAlignment<TView>(this TView view, Windows.HorizontalAlignment value) where TView : FrameworkElement { view.UI.HorizontalAlignment = value; return view; }
 
         /// <summary>Set <see cref="Windows.FrameworkElement.InputScope"/></summary>
-        public static TView InputScope<TView>(this TView view, InputScope value) where TView : FrameworkElement { view.UI.InputScope = value; return view; }
+        public static TView InputScope<TView>(this TView view, Windows.Input.InputScope value) where TView : FrameworkElement { view.UI.InputScope = value; return view; }
 
         /// <summary>Set <see cref="Windows.FrameworkElement.Language"/></summary>
         public static TView Language<TView>(this TView view, Windows.Markup.XmlLanguage value) where TView : FrameworkElement { view.UI.Language = value; return view; }
@@ -20480,8 +20479,8 @@ namespace CSharpMarkup.Wpf // FrameworkElement
         => DependencyProperty<TTarget, Windows.Controls.ContextMenu>.Get(target, Windows.FrameworkElement.ContextMenuProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.FrameworkElement.Cursor"/></summary>
-        public static DependencyProperty<TTarget, Cursor> Cursor<TTarget>(this TTarget target) where TTarget : FrameworkElement
-        => DependencyProperty<TTarget, Cursor>.Get(target, Windows.FrameworkElement.CursorProperty);
+        public static DependencyProperty<TTarget, Windows.Input.Cursor> Cursor<TTarget>(this TTarget target) where TTarget : FrameworkElement
+        => DependencyProperty<TTarget, Windows.Input.Cursor>.Get(target, Windows.FrameworkElement.CursorProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.FrameworkElement.DataContext"/></summary>
         public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : FrameworkElement
@@ -20508,8 +20507,8 @@ namespace CSharpMarkup.Wpf // FrameworkElement
         => DependencyProperty<TTarget, Windows.HorizontalAlignment>.Get(target, Windows.FrameworkElement.HorizontalAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.FrameworkElement.InputScope"/></summary>
-        public static DependencyProperty<TTarget, InputScope> InputScope<TTarget>(this TTarget target) where TTarget : FrameworkElement
-        => DependencyProperty<TTarget, InputScope>.Get(target, Windows.FrameworkElement.InputScopeProperty);
+        public static DependencyProperty<TTarget, Windows.Input.InputScope> InputScope<TTarget>(this TTarget target) where TTarget : FrameworkElement
+        => DependencyProperty<TTarget, Windows.Input.InputScope>.Get(target, Windows.FrameworkElement.InputScopeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.FrameworkElement.Language"/></summary>
         public static DependencyProperty<TTarget, Windows.Markup.XmlLanguage> Language<TTarget>(this TTarget target) where TTarget : FrameworkElement
@@ -26164,7 +26163,7 @@ namespace CSharpMarkup.Wpf // InkCanvas
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.InkCanvas"/></summary>
-        public static InkCanvas InkCanvas(O<Windows.Media.Brush> Background = default, O<Windows.Ink.DrawingAttributes> DefaultDrawingAttributes = default, O<StylusPointDescription> DefaultStylusPointDescription = default, O<Windows.Controls.InkCanvasEditingMode> EditingMode = default, O<Windows.Controls.InkCanvasEditingMode> EditingModeInverted = default, O<Windows.Ink.StylusShape> EraserShape = default, O<bool> MoveEnabled = default, O<IEnumerable<Windows.Controls.InkCanvasClipboardFormat>> PreferredPasteFormats = default, O<bool> ResizeEnabled = default, O<Windows.Ink.StrokeCollection> Strokes = default, O<bool> UseCustomCursor = default)
+        public static InkCanvas InkCanvas(O<Windows.Media.Brush> Background = default, O<Windows.Ink.DrawingAttributes> DefaultDrawingAttributes = default, O<Windows.Input.StylusPointDescription> DefaultStylusPointDescription = default, O<Windows.Controls.InkCanvasEditingMode> EditingMode = default, O<Windows.Controls.InkCanvasEditingMode> EditingModeInverted = default, O<Windows.Ink.StylusShape> EraserShape = default, O<bool> MoveEnabled = default, O<IEnumerable<Windows.Controls.InkCanvasClipboardFormat>> PreferredPasteFormats = default, O<bool> ResizeEnabled = default, O<Windows.Ink.StrokeCollection> Strokes = default, O<bool> UseCustomCursor = default)
         {
             var ui = new Windows.Controls.InkCanvas();
             if (Background.HasValue) ui.Background = Background.Value;
@@ -26232,7 +26231,7 @@ namespace CSharpMarkup.Wpf // InkCanvas
         public static TView DefaultDrawingAttributes<TView>(this TView view, Windows.Ink.DrawingAttributes value) where TView : InkCanvas { view.UI.DefaultDrawingAttributes = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.InkCanvas.DefaultStylusPointDescription"/></summary>
-        public static TView DefaultStylusPointDescription<TView>(this TView view, StylusPointDescription value) where TView : InkCanvas { view.UI.DefaultStylusPointDescription = value; return view; }
+        public static TView DefaultStylusPointDescription<TView>(this TView view, Windows.Input.StylusPointDescription value) where TView : InkCanvas { view.UI.DefaultStylusPointDescription = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.InkCanvas.EditingMode"/></summary>
         public static TView EditingMode<TView>(this TView view, Windows.Controls.InkCanvasEditingMode value) where TView : InkCanvas { view.UI.EditingMode = value; return view; }
@@ -27117,7 +27116,7 @@ namespace CSharpMarkup.Wpf // MenuItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.MenuItem"/></summary>
-        public static MenuItem MenuItem(O<ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<object> Icon = default, O<string> InputGestureText = default, O<bool> IsCheckable = default, O<bool> IsChecked = default, O<bool> IsSubmenuOpen = default, O<Windows.Controls.ItemContainerTemplateSelector> ItemContainerTemplateSelector = default, O<bool> StaysOpenOnClick = default, O<bool> UsesItemContainerTemplate = default)
+        public static MenuItem MenuItem(O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<object> Icon = default, O<string> InputGestureText = default, O<bool> IsCheckable = default, O<bool> IsChecked = default, O<bool> IsSubmenuOpen = default, O<Windows.Controls.ItemContainerTemplateSelector> ItemContainerTemplateSelector = default, O<bool> StaysOpenOnClick = default, O<bool> UsesItemContainerTemplate = default)
         {
             var ui = new Windows.Controls.MenuItem();
             if (Command.HasValue) ui.Command = Command.Value;
@@ -27173,7 +27172,7 @@ namespace CSharpMarkup.Wpf // MenuItem
     public static partial class MenuItemExtensions
     {
         /// <summary>Set <see cref="Windows.Controls.MenuItem.Command"/></summary>
-        public static TView Command<TView>(this TView view, ICommand value) where TView : MenuItem { view.UI.Command = value; return view; }
+        public static TView Command<TView>(this TView view, Windows.Input.ICommand value) where TView : MenuItem { view.UI.Command = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.MenuItem.CommandParameter"/></summary>
         public static TView CommandParameter<TView>(this TView view, object value) where TView : MenuItem { view.UI.CommandParameter = value; return view; }
@@ -27210,8 +27209,8 @@ namespace CSharpMarkup.Wpf // MenuItem
         => DependencyProperty<TTarget, object>.Get(target, Windows.Controls.MenuItem.CommandParameterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.MenuItem.Command"/></summary>
-        public static DependencyProperty<TTarget, ICommand> Command<TTarget>(this TTarget target) where TTarget : MenuItem
-        => DependencyProperty<TTarget, ICommand>.Get(target, Windows.Controls.MenuItem.CommandProperty);
+        public static DependencyProperty<TTarget, Windows.Input.ICommand> Command<TTarget>(this TTarget target) where TTarget : MenuItem
+        => DependencyProperty<TTarget, Windows.Input.ICommand>.Get(target, Windows.Controls.MenuItem.CommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.MenuItem.CommandTarget"/></summary>
         public static DependencyProperty<TTarget, Windows.IInputElement> CommandTarget<TTarget>(this TTarget target) where TTarget : MenuItem
@@ -30207,7 +30206,7 @@ namespace CSharpMarkup.Wpf // ButtonBase
         public static TView ClickMode<TView>(this TView view, Windows.Controls.ClickMode value) where TView : ButtonBase { view.UI.ClickMode = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.Primitives.ButtonBase.Command"/></summary>
-        public static TView Command<TView>(this TView view, ICommand value) where TView : ButtonBase { view.UI.Command = value; return view; }
+        public static TView Command<TView>(this TView view, Windows.Input.ICommand value) where TView : ButtonBase { view.UI.Command = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.Primitives.ButtonBase.CommandParameter"/></summary>
         public static TView CommandParameter<TView>(this TView view, object value) where TView : ButtonBase { view.UI.CommandParameter = value; return view; }
@@ -30224,8 +30223,8 @@ namespace CSharpMarkup.Wpf // ButtonBase
         => DependencyProperty<TTarget, object>.Get(target, Windows.Controls.Primitives.ButtonBase.CommandParameterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.Primitives.ButtonBase.Command"/></summary>
-        public static DependencyProperty<TTarget, ICommand> Command<TTarget>(this TTarget target) where TTarget : ButtonBase
-        => DependencyProperty<TTarget, ICommand>.Get(target, Windows.Controls.Primitives.ButtonBase.CommandProperty);
+        public static DependencyProperty<TTarget, Windows.Input.ICommand> Command<TTarget>(this TTarget target) where TTarget : ButtonBase
+        => DependencyProperty<TTarget, Windows.Input.ICommand>.Get(target, Windows.Controls.Primitives.ButtonBase.CommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.Primitives.ButtonBase.CommandTarget"/></summary>
         public static DependencyProperty<TTarget, Windows.IInputElement> CommandTarget<TTarget>(this TTarget target) where TTarget : ButtonBase
@@ -34089,7 +34088,7 @@ namespace CSharpMarkup.Wpf // Hyperlink
         }
 
         /// <summary>Create a <see cref="Windows.Documents.Hyperlink"/></summary>
-        public static Hyperlink Hyperlink(O<ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Uri> NavigateUri = default, O<string> TargetName = default)
+        public static Hyperlink Hyperlink(O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Uri> NavigateUri = default, O<string> TargetName = default)
         {
             var ui = new Windows.Documents.Hyperlink();
             if (Command.HasValue) ui.Command = Command.Value;
@@ -34160,7 +34159,7 @@ namespace CSharpMarkup.Wpf // Hyperlink
     public static partial class HyperlinkExtensions
     {
         /// <summary>Set <see cref="Windows.Documents.Hyperlink.Command"/></summary>
-        public static TView Command<TView>(this TView view, ICommand value) where TView : Hyperlink { view.UI.Command = value; return view; }
+        public static TView Command<TView>(this TView view, Windows.Input.ICommand value) where TView : Hyperlink { view.UI.Command = value; return view; }
 
         /// <summary>Set <see cref="Windows.Documents.Hyperlink.CommandParameter"/></summary>
         public static TView CommandParameter<TView>(this TView view, object value) where TView : Hyperlink { view.UI.CommandParameter = value; return view; }
@@ -34179,8 +34178,8 @@ namespace CSharpMarkup.Wpf // Hyperlink
         => DependencyProperty<TTarget, object>.Get(target, Windows.Documents.Hyperlink.CommandParameterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.Hyperlink.Command"/></summary>
-        public static DependencyProperty<TTarget, ICommand> Command<TTarget>(this TTarget target) where TTarget : Hyperlink
-        => DependencyProperty<TTarget, ICommand>.Get(target, Windows.Documents.Hyperlink.CommandProperty);
+        public static DependencyProperty<TTarget, Windows.Input.ICommand> Command<TTarget>(this TTarget target) where TTarget : Hyperlink
+        => DependencyProperty<TTarget, Windows.Input.ICommand>.Get(target, Windows.Documents.Hyperlink.CommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.Hyperlink.CommandTarget"/></summary>
         public static DependencyProperty<TTarget, Windows.IInputElement> CommandTarget<TTarget>(this TTarget target) where TTarget : Hyperlink
@@ -37382,7 +37381,7 @@ namespace CSharpMarkup.Wpf // ThumbButtonInfo
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Shell.ThumbButtonInfo"/></summary>
-        public static ThumbButtonInfo ThumbButtonInfo(O<ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<string> Description = default, O<bool> DismissWhenClicked = default, O<Windows.Media.ImageSource> ImageSource = default, O<bool> IsBackgroundVisible = default, O<bool> IsEnabled = default, O<bool> IsInteractive = default, O<Windows.Visibility> Visibility = default)
+        public static ThumbButtonInfo ThumbButtonInfo(O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<string> Description = default, O<bool> DismissWhenClicked = default, O<Windows.Media.ImageSource> ImageSource = default, O<bool> IsBackgroundVisible = default, O<bool> IsEnabled = default, O<bool> IsInteractive = default, O<Windows.Visibility> Visibility = default)
         {
             var ui = new Windows.Shell.ThumbButtonInfo();
             if (Command.HasValue) ui.Command = Command.Value;
@@ -37435,7 +37434,7 @@ namespace CSharpMarkup.Wpf // ThumbButtonInfo
     public static partial class ThumbButtonInfoExtensions
     {
         /// <summary>Set <see cref="Windows.Shell.ThumbButtonInfo.Command"/></summary>
-        public static TView Command<TView>(this TView view, ICommand value) where TView : ThumbButtonInfo { view.UI.Command = value; return view; }
+        public static TView Command<TView>(this TView view, Windows.Input.ICommand value) where TView : ThumbButtonInfo { view.UI.Command = value; return view; }
 
         /// <summary>Set <see cref="Windows.Shell.ThumbButtonInfo.CommandParameter"/></summary>
         public static TView CommandParameter<TView>(this TView view, object value) where TView : ThumbButtonInfo { view.UI.CommandParameter = value; return view; }
@@ -37469,8 +37468,8 @@ namespace CSharpMarkup.Wpf // ThumbButtonInfo
         => DependencyProperty<TTarget, object>.Get(target, Windows.Shell.ThumbButtonInfo.CommandParameterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Shell.ThumbButtonInfo.Command"/></summary>
-        public static DependencyProperty<TTarget, ICommand> Command<TTarget>(this TTarget target) where TTarget : ThumbButtonInfo
-        => DependencyProperty<TTarget, ICommand>.Get(target, Windows.Shell.ThumbButtonInfo.CommandProperty);
+        public static DependencyProperty<TTarget, Windows.Input.ICommand> Command<TTarget>(this TTarget target) where TTarget : ThumbButtonInfo
+        => DependencyProperty<TTarget, Windows.Input.ICommand>.Get(target, Windows.Shell.ThumbButtonInfo.CommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Shell.ThumbButtonInfo.CommandTarget"/></summary>
         public static DependencyProperty<TTarget, Windows.IInputElement> CommandTarget<TTarget>(this TTarget target) where TTarget : ThumbButtonInfo
@@ -39428,7 +39427,7 @@ namespace CSharpMarkup.Wpf // RibbonGallery
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGallery"/></summary>
-        public static RibbonGallery RibbonGallery(O<Windows.Style> AllFilterItemContainerStyle = default, O<Windows.DataTemplate> AllFilterItemTemplate = default, O<bool> CanAddToQuickAccessToolBarDirectly = default, O<bool> CanUserFilter = default, O<Windows.Style> CategoryStyle = default, O<Windows.DataTemplate> CategoryTemplate = default, O<bool> ColumnsStretchToFill = default, O<ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Windows.Style> FilterItemContainerStyle = default, O<Windows.Controls.StyleSelector> FilterItemContainerStyleSelector = default, O<Windows.DataTemplate> FilterItemTemplate = default, O<Windows.Controls.DataTemplateSelector> FilterItemTemplateSelector = default, O<Windows.Style> FilterMenuButtonStyle = default, O<object> FilterPaneContent = default, O<Windows.DataTemplate> FilterPaneContentTemplate = default, O<Windows.Style> GalleryItemStyle = default, O<Windows.DataTemplate> GalleryItemTemplate = default, O<bool> IsSharedColumnSizeScope = default, O<bool?> IsSynchronizedWithCurrentItem = default, O<int> MaxColumnCount = default, O<int> MinColumnCount = default, O<object> PreviewCommandParameter = default, O<object> QuickAccessToolBarId = default, O<object> SelectedItem = default, O<object> SelectedValue = default, O<string> SelectedValuePath = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonGallery RibbonGallery(O<Windows.Style> AllFilterItemContainerStyle = default, O<Windows.DataTemplate> AllFilterItemTemplate = default, O<bool> CanAddToQuickAccessToolBarDirectly = default, O<bool> CanUserFilter = default, O<Windows.Style> CategoryStyle = default, O<Windows.DataTemplate> CategoryTemplate = default, O<bool> ColumnsStretchToFill = default, O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Windows.Style> FilterItemContainerStyle = default, O<Windows.Controls.StyleSelector> FilterItemContainerStyleSelector = default, O<Windows.DataTemplate> FilterItemTemplate = default, O<Windows.Controls.DataTemplateSelector> FilterItemTemplateSelector = default, O<Windows.Style> FilterMenuButtonStyle = default, O<object> FilterPaneContent = default, O<Windows.DataTemplate> FilterPaneContentTemplate = default, O<Windows.Style> GalleryItemStyle = default, O<Windows.DataTemplate> GalleryItemTemplate = default, O<bool> IsSharedColumnSizeScope = default, O<bool?> IsSynchronizedWithCurrentItem = default, O<int> MaxColumnCount = default, O<int> MinColumnCount = default, O<object> PreviewCommandParameter = default, O<object> QuickAccessToolBarId = default, O<object> SelectedItem = default, O<object> SelectedValue = default, O<string> SelectedValuePath = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGallery();
             if (AllFilterItemContainerStyle.HasValue) ui.AllFilterItemContainerStyle = AllFilterItemContainerStyle.Value;
@@ -39529,7 +39528,7 @@ namespace CSharpMarkup.Wpf // RibbonGallery
         public static TView ColumnsStretchToFill<TView>(this TView view, bool value) where TView : RibbonGallery { view.UI.ColumnsStretchToFill = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.Ribbon.RibbonGallery.Command"/></summary>
-        public static TView Command<TView>(this TView view, ICommand value) where TView : RibbonGallery { view.UI.Command = value; return view; }
+        public static TView Command<TView>(this TView view, Windows.Input.ICommand value) where TView : RibbonGallery { view.UI.Command = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.Ribbon.RibbonGallery.CommandParameter"/></summary>
         public static TView CommandParameter<TView>(this TView view, object value) where TView : RibbonGallery { view.UI.CommandParameter = value; return view; }
@@ -39645,8 +39644,8 @@ namespace CSharpMarkup.Wpf // RibbonGallery
         => DependencyProperty<TTarget, object>.Get(target, Windows.Controls.Ribbon.RibbonGallery.CommandParameterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.Ribbon.RibbonGallery.Command"/></summary>
-        public static DependencyProperty<TTarget, ICommand> Command<TTarget>(this TTarget target) where TTarget : RibbonGallery
-        => DependencyProperty<TTarget, ICommand>.Get(target, Windows.Controls.Ribbon.RibbonGallery.CommandProperty);
+        public static DependencyProperty<TTarget, Windows.Input.ICommand> Command<TTarget>(this TTarget target) where TTarget : RibbonGallery
+        => DependencyProperty<TTarget, Windows.Input.ICommand>.Get(target, Windows.Controls.Ribbon.RibbonGallery.CommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.Ribbon.RibbonGallery.CommandTarget"/></summary>
         public static DependencyProperty<TTarget, Windows.IInputElement> CommandTarget<TTarget>(this TTarget target) where TTarget : RibbonGallery
@@ -41415,7 +41414,7 @@ namespace CSharpMarkup.Wpf // RibbonSplitButton
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonSplitButton"/></summary>
-        public static RibbonSplitButton RibbonSplitButton(O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<string> DropDownToolTipDescription = default, O<string> DropDownToolTipFooterDescription = default, O<Windows.Media.ImageSource> DropDownToolTipFooterImageSource = default, O<string> DropDownToolTipFooterTitle = default, O<Windows.Media.ImageSource> DropDownToolTipImageSource = default, O<string> DropDownToolTipTitle = default, O<string> HeaderKeyTip = default, O<object> HeaderQuickAccessToolBarId = default, O<bool> IsCheckable = default, O<bool> IsChecked = default, O<Windows.Controls.Ribbon.RibbonSplitButtonLabelPosition> LabelPosition = default)
+        public static RibbonSplitButton RibbonSplitButton(O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<string> DropDownToolTipDescription = default, O<string> DropDownToolTipFooterDescription = default, O<Windows.Media.ImageSource> DropDownToolTipFooterImageSource = default, O<string> DropDownToolTipFooterTitle = default, O<Windows.Media.ImageSource> DropDownToolTipImageSource = default, O<string> DropDownToolTipTitle = default, O<string> HeaderKeyTip = default, O<object> HeaderQuickAccessToolBarId = default, O<bool> IsCheckable = default, O<bool> IsChecked = default, O<Windows.Controls.Ribbon.RibbonSplitButtonLabelPosition> LabelPosition = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonSplitButton();
             if (CheckedBackground.HasValue) ui.CheckedBackground = CheckedBackground.Value;
@@ -41494,7 +41493,7 @@ namespace CSharpMarkup.Wpf // RibbonSplitButton
         public static TView CheckedBorderBrush<TView>(this TView view, string color) where TView : RibbonSplitButton { view.UI.CheckedBorderBrush = new Windows.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Windows.Controls.Ribbon.RibbonSplitButton.Command"/></summary>
-        public static TView Command<TView>(this TView view, ICommand value) where TView : RibbonSplitButton { view.UI.Command = value; return view; }
+        public static TView Command<TView>(this TView view, Windows.Input.ICommand value) where TView : RibbonSplitButton { view.UI.Command = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.Ribbon.RibbonSplitButton.CommandParameter"/></summary>
         public static TView CommandParameter<TView>(this TView view, object value) where TView : RibbonSplitButton { view.UI.CommandParameter = value; return view; }
@@ -41548,8 +41547,8 @@ namespace CSharpMarkup.Wpf // RibbonSplitButton
         => DependencyProperty<TTarget, object>.Get(target, Windows.Controls.Ribbon.RibbonSplitButton.CommandParameterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.Ribbon.RibbonSplitButton.Command"/></summary>
-        public static DependencyProperty<TTarget, ICommand> Command<TTarget>(this TTarget target) where TTarget : RibbonSplitButton
-        => DependencyProperty<TTarget, ICommand>.Get(target, Windows.Controls.Ribbon.RibbonSplitButton.CommandProperty);
+        public static DependencyProperty<TTarget, Windows.Input.ICommand> Command<TTarget>(this TTarget target) where TTarget : RibbonSplitButton
+        => DependencyProperty<TTarget, Windows.Input.ICommand>.Get(target, Windows.Controls.Ribbon.RibbonSplitButton.CommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.Ribbon.RibbonSplitButton.CommandTarget"/></summary>
         public static DependencyProperty<TTarget, Windows.IInputElement> CommandTarget<TTarget>(this TTarget target) where TTarget : RibbonSplitButton
@@ -42028,7 +42027,7 @@ namespace CSharpMarkup.Wpf // RibbonTextBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonTextBox"/></summary>
-        public static RibbonTextBox RibbonTextBox(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<double> TextBoxWidth = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonTextBox RibbonTextBox(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<double> TextBoxWidth = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonTextBox();
             if (CanAddToQuickAccessToolBarDirectly.HasValue) ui.CanAddToQuickAccessToolBarDirectly = CanAddToQuickAccessToolBarDirectly.Value;
@@ -42098,7 +42097,7 @@ namespace CSharpMarkup.Wpf // RibbonTextBox
         public static TView CanAddToQuickAccessToolBarDirectly<TView>(this TView view, bool value) where TView : RibbonTextBox { view.UI.CanAddToQuickAccessToolBarDirectly = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.Ribbon.RibbonTextBox.Command"/></summary>
-        public static TView Command<TView>(this TView view, ICommand value) where TView : RibbonTextBox { view.UI.Command = value; return view; }
+        public static TView Command<TView>(this TView view, Windows.Input.ICommand value) where TView : RibbonTextBox { view.UI.Command = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.Ribbon.RibbonTextBox.CommandParameter"/></summary>
         public static TView CommandParameter<TView>(this TView view, object value) where TView : RibbonTextBox { view.UI.CommandParameter = value; return view; }
@@ -42193,8 +42192,8 @@ namespace CSharpMarkup.Wpf // RibbonTextBox
         => DependencyProperty<TTarget, object>.Get(target, Windows.Controls.Ribbon.RibbonTextBox.CommandParameterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.Ribbon.RibbonTextBox.Command"/></summary>
-        public static DependencyProperty<TTarget, ICommand> Command<TTarget>(this TTarget target) where TTarget : RibbonTextBox
-        => DependencyProperty<TTarget, ICommand>.Get(target, Windows.Controls.Ribbon.RibbonTextBox.CommandProperty);
+        public static DependencyProperty<TTarget, Windows.Input.ICommand> Command<TTarget>(this TTarget target) where TTarget : RibbonTextBox
+        => DependencyProperty<TTarget, Windows.Input.ICommand>.Get(target, Windows.Controls.Ribbon.RibbonTextBox.CommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.Ribbon.RibbonTextBox.CommandTarget"/></summary>
         public static DependencyProperty<TTarget, Windows.IInputElement> CommandTarget<TTarget>(this TTarget target) where TTarget : RibbonTextBox
