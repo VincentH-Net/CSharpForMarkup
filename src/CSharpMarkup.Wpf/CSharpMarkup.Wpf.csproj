@@ -8,9 +8,10 @@
 		<UseWPF>true</UseWPF>
 	</PropertyGroup>
 
-	<!--<PropertyGroup Condition="'$(Configuration)'=='Generate'">
-		<DefineConstants>$(DefineConstants);GENERATE</DefineConstants>
-	</PropertyGroup>-->
+	<ItemGroup>
+	  <Compile Remove="DataTemplate.cs" />
+	  <Compile Remove="DispatcherObjects.cs" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\CSharpMarkup.Generators\WinUI\SourceGenerators\SourceGenerators.csproj" Condition=" '$(Configuration)' == 'Generate' ">
