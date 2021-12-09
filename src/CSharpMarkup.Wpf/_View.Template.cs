@@ -15,8 +15,10 @@
 // We define and use them in the templates themselves to ensure that the template code is unambiguous in the context of these usings.
 #region NamespaceUsings
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Input;
 using Windows = System.Windows;
 using Stream = System.IO.Stream;

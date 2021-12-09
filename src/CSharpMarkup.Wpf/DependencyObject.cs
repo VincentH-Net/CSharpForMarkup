@@ -53,7 +53,7 @@ namespace CSharpMarkup.Wpf
         public static TDependencyObject Bind<TDependencyObject, TPropertyValue>(
             this DependencyProperty<TDependencyObject, TPropertyValue> property,
             object pathExpression = null,
-            BindingMode mode = BindingMode.OneWay,
+            BindingMode mode = BindingMode.Default,
             IValueConverter converter = null,
             object converterParameter = null,
             string converterLanguage = null,
@@ -79,7 +79,7 @@ namespace CSharpMarkup.Wpf
         public static TDependencyObject BindWithString<TDependencyObject, TPropertyValue>(
             this DependencyProperty<TDependencyObject, TPropertyValue> property,
             string path = bindingContextPath,
-            BindingMode mode = BindingMode.OneWay,
+            BindingMode mode = BindingMode.Default,
             IValueConverter converter = null,
             object converterParameter = null,
             string converterLanguage = null,
@@ -107,7 +107,7 @@ namespace CSharpMarkup.Wpf
         public static TDependencyObject Bind<TDependencyObject, TPropertyValue, TSource>(
             this DependencyProperty<TDependencyObject, TPropertyValue> property,
             object pathExpression = null,
-            BindingMode mode = BindingMode.OneWay,
+            BindingMode mode = BindingMode.Default,
             Func<TSource, TPropertyValue> convert = null,
             Func<TPropertyValue, TSource> convertBack = null,
             string converterLanguage = null,
@@ -132,7 +132,7 @@ namespace CSharpMarkup.Wpf
         public static TDependencyObject Bind<TDependencyObject, TPropertyValue, TSource, TParam>(
             this DependencyProperty<TDependencyObject, TPropertyValue> property,
             object pathExpression = null,
-            BindingMode mode = BindingMode.OneWay,
+            BindingMode mode = BindingMode.Default,
             Func<TSource, TParam, TPropertyValue> convert = null,
             Func<TPropertyValue, TParam, TSource> convertBack = null,
             TParam converterParameter = default,
@@ -158,7 +158,7 @@ namespace CSharpMarkup.Wpf
         public static TDependencyObject Bind<TDependencyObject>(
             this TDependencyObject target,
             object pathExpression = null,
-            BindingMode mode = BindingMode.OneWay,
+            BindingMode mode = BindingMode.Default,
             IValueConverter converter = null,
             object converterParameter = null,
             string converterLanguage = null,
@@ -184,7 +184,7 @@ namespace CSharpMarkup.Wpf
         public static TDependencyObject BindWithString<TDependencyObject>(
             this TDependencyObject target,
             string path = bindingContextPath,
-            BindingMode mode = BindingMode.OneWay,
+            BindingMode mode = BindingMode.Default,
             IValueConverter converter = null,
             object converterParameter = null,
             string converterLanguage = null,
@@ -194,22 +194,23 @@ namespace CSharpMarkup.Wpf
             object fallbackValue = default
         ) where TDependencyObject : DependencyObject, IDefaultBindProperty
         {
+            var binding = new System.Windows.Data.Binding(path)
+            {
+                Mode = mode,
+                Converter = converter,
+                ConverterParameter = converterParameter,
+                //ConverterLanguage = converterLanguage, // TODO: figure out correct default; can't be null
+                UpdateSourceTrigger = updateSourceTrigger,
+                // TODO: RelativeSource
+                TargetNullValue = targetNullValue,
+                FallbackValue = fallbackValue,
+            };
+            if (source != null) binding.Source = source; // In WPF, setting the binding Source to null prevents the binding from working, even though the value of Source in the created binding is null
+
             System.Windows.Data.BindingOperations.SetBinding(
                 target.UI,
                 target.DefaultBindProperty,
-                new System.Windows.Data.Binding
-                {
-                    Path = new System.Windows.PropertyPath(path),
-                    Mode = mode,
-                    Converter = converter,
-                    ConverterParameter = converterParameter,
-                    //ConverterLanguage = converterLanguage, // TODO: figure out correct default; can't be null
-                    UpdateSourceTrigger = updateSourceTrigger,
-                    Source = source,
-                    // TODO: RelativeSource
-                    TargetNullValue = targetNullValue,
-                    FallbackValue = fallbackValue,
-                }
+                binding
             );
             return target;
         }
@@ -219,7 +220,7 @@ namespace CSharpMarkup.Wpf
         public static TDependencyObject Bind<TDependencyObject, TPropertyValue, TSource>(
             this TDependencyObject target,
             object pathExpression = null,
-            BindingMode mode = BindingMode.OneWay,
+            BindingMode mode = BindingMode.Default,
             Func<TSource, TPropertyValue> convert = null,
             Func<TPropertyValue, TSource> convertBack = null,
             string converterLanguage = null,
@@ -244,7 +245,7 @@ namespace CSharpMarkup.Wpf
         public static TDependencyObject Bind<TDependencyObject, TPropertyValue, TSource, TParam>(
             this TDependencyObject target,
             object pathExpression = null,
-            BindingMode mode = BindingMode.OneWay,
+            BindingMode mode = BindingMode.Default,
             Func<TSource, TParam, TPropertyValue> convert = null,
             Func<TPropertyValue, TParam, TSource> convertBack = null,
             TParam converterParameter = default,
@@ -294,16 +295,18 @@ namespace CSharpMarkup.Wpf
             object parameterSource = null
         ) where TDependencyObject : DependencyObject, IDefaultBindCommandProperties
         {
+            var binding = new System.Windows.Data.Binding(path)
+            {
+                Mode = BindingMode.Default,
+                // TODO: RelativeSource
+            };
+
+            if (source != null) binding.Source = source; // In WPF, setting the binding Source to null prevents the binding from working, even though the value of Source in the created binding is null
+
             System.Windows.Data.BindingOperations.SetBinding(
                 target.UI,
                 target.DefaultBindCommandProperty,
-                new System.Windows.Data.Binding
-                {
-                    Path = new System.Windows.PropertyPath(path),
-                    Mode = BindingMode.OneWay,
-                    Source = source
-                    // TODO: RelativeSource
-                }
+                binding
             );
 
             if (parameterPath != null)
@@ -311,16 +314,18 @@ namespace CSharpMarkup.Wpf
                 if (target.DefaultBindCommandParameterProperty == null)
                     throw new ArgumentException($"{typeof(TDependencyObject).Name} does not have a default CommandParameterProperty", nameof(parameterPath));
 
+                binding = new System.Windows.Data.Binding(parameterPath)
+                {
+                    Mode = BindingMode.Default
+                    // TODO: RelativeSource
+                };
+
+                if (parameterSource != null) binding.Source = parameterSource; // In WPF, setting the binding Source to null prevents the binding from working, even though the value of Source in the created binding is null
+
                 System.Windows.Data.BindingOperations.SetBinding(
                     target.UI,
                     target.DefaultBindCommandParameterProperty,
-                    new System.Windows.Data.Binding
-                    {
-                        Path = new System.Windows.PropertyPath(parameterPath),
-                        Mode = BindingMode.OneWay,
-                        Source = parameterSource
-                        // TODO: RelativeSource
-                    }
+                    binding
                 );
             }
 
