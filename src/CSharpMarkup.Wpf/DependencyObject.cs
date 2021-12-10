@@ -6,20 +6,22 @@ using UpdateSourceTrigger = System.Windows.Data.UpdateSourceTrigger;
 
 namespace CSharpMarkup.Wpf
 {
-    public interface IUI<TUI> where TUI : System.Windows.DependencyObject
+    public interface IUI_Dispatcher<TUI> where TUI : System.Windows.Threading.DispatcherObject
     {
         TUI UI { get; }
     }
 
-#if HAS_UNO
-    public partial class DependencyObject : IUI<System.Windows.DependencyObject>
+    public partial class DispatcherObject : IUI_Dispatcher<System.Windows.Threading.DispatcherObject>
     {
-        public System.Windows.DependencyObject UI { get; protected set; }
+        public System.Windows.Threading.DispatcherObject UI { get; protected set; }
 
-        protected DependencyObject() { }
+        protected DispatcherObject() { }
     }
-#endif
 
+    public interface IUI<TUI> where TUI : System.Windows.DependencyObject
+    {
+        TUI UI { get; }
+    }
 
     /// <summary>Optional <typeparamref name="TValue"/> parameter</summary>
     public struct O<TValue>

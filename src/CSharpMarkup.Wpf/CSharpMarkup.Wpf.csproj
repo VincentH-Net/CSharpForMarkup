@@ -41,10 +41,7 @@
 	
 	<!-- TODO: After DispatchObjects are properly surfaced, below helpers can be included -->
 	<ItemGroup>
-	  <Compile Remove="DataTemplate.cs" />
 	  <Compile Remove="DispatcherObjects.cs" />
-	  <Compile Remove="ListView.cs" />
-	  <Compile Remove="Style.cs" />
 	</ItemGroup>
 
 	<ItemGroup>
