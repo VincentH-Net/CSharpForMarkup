@@ -46,7 +46,7 @@ namespace CSharpMarkup.Wpf.Delegators
             return id;
         }
 
-        public static Windows.DependencyProperty IdProperty = Windows.DependencyProperty.RegisterAttached("Id", typeof(string), typeof(BuildChild), new Windows.PropertyMetadata(null));
+        public static readonly Windows.DependencyProperty IdProperty = Windows.DependencyProperty.RegisterAttached("Id", typeof(string), typeof(BuildChild), new Windows.PropertyMetadata(null));
 
         public static string GetId(Windows.Controls.Panel panel) => (string)panel.GetValue(IdProperty);
 
