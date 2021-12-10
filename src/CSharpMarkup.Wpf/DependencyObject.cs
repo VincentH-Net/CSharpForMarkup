@@ -340,18 +340,11 @@ namespace CSharpMarkup.Wpf
             return bindable;
         }
 
-        // TODO: Namespace causes ambiguity between System.Windows.DependencyObject and CSharpMarkup.Wpf.DependencyObject
-        // Consider: why did we choose Microsoft.UI.Markup instead of CSharpMarkup.WinUI namespace?
-        // Was it so we get all the non-bindable types for free - meaning property types. Would those not be limited?
-
-        // Let's try to change that in Wpf and if that works out OK, backport to WinUI
-
-
         public static TDependencyObject Invoke<TDependencyObject, TUI>(this TDependencyObject bindable, Action<TUI> action)
-            where TDependencyObject : DependencyObject, IUI<TUI>
+            where TDependencyObject : IUI<TUI>
             where TUI : System.Windows.DependencyObject
         {
-            action?.Invoke((TUI)bindable.UI);
+            action?.Invoke(bindable.UI);
             return bindable;
         }
 
