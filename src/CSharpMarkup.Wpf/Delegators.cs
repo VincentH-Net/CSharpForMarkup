@@ -15,8 +15,7 @@ namespace CSharpMarkup.Wpf
 
 namespace CSharpMarkup.Wpf.Delegators
 {
-    // [Bindable]
-    public class BuildChild
+    public static class BuildChild
     {
         static Dictionary<string, Func<CSharpMarkup.Wpf.UIElement>> delegates = null;
 
@@ -46,15 +45,23 @@ namespace CSharpMarkup.Wpf.Delegators
             return id;
         }
 
-        public static readonly Windows.DependencyProperty IdProperty = Windows.DependencyProperty.RegisterAttached("Id", typeof(string), typeof(BuildChild), new Windows.PropertyMetadata(null));
+        public static readonly Windows.DependencyProperty IdProperty = Windows.DependencyProperty.RegisterAttached(
+            "Id", typeof(string), typeof(BuildChild), 
+            new Windows.FrameworkPropertyMetadata(propertyChangedCallback: OnIdChanged)
+        );
 
         public static string GetId(Windows.Controls.Panel panel) => (string)panel.GetValue(IdProperty);
 
-        public static void SetId(Windows.Controls.Panel panel, string id)
+        public static void SetId(Windows.Controls.Panel panel, string id) => panel.SetValue(IdProperty, id);
+
+        // A propertyChangedCallback is necessary because GetId and SetId are not called by WPF XamlReader 
+        static void OnIdChanged(Windows.DependencyObject target, Windows.DependencyPropertyChangedEventArgs e)
         {
-            panel.SetValue(IdProperty, id);
-            panel.Children.Clear();
-            if (!string.IsNullOrEmpty(id)) panel.Children.Add(delegates[id]().UI);
+            if (target is Windows.Controls.Panel panel && e.NewValue is string id)
+            {
+                panel.Children.Clear();
+                if (!string.IsNullOrEmpty(id)) panel.Children.Add(delegates[id]().UI);
+            }
         }
     }
 
@@ -75,14 +82,19 @@ namespace CSharpMarkup.Wpf.Delegators
             return delegateId;
         }
 
-        public static readonly Windows.DependencyProperty IdProperty = Windows.DependencyProperty.RegisterAttached("Id", typeof(string), typeof(ConfigureRoot), new Windows.PropertyMetadata(null));
+        public static readonly Windows.DependencyProperty IdProperty = Windows.DependencyProperty.RegisterAttached(
+            "Id", typeof(string), typeof(ConfigureRoot), 
+            new Windows.PropertyMetadata(propertyChangedCallback: OnIdChanged)
+        );
 
         public static string GetId(Windows.DependencyObject target) => (string)target.GetValue(IdProperty);
 
-        public static void SetId(Windows.DependencyObject target, string id)
+        public static void SetId(Windows.DependencyObject target, string id) => target.SetValue(IdProperty, id);
+
+        // A propertyChangedCallback is necessary because GetId and SetId are not called by WPF XamlReader 
+        static void OnIdChanged(Windows.DependencyObject target, Windows.DependencyPropertyChangedEventArgs e)
         {
-            target.SetValue(IdProperty, id);
-            if (!string.IsNullOrEmpty(id)) delegates[id](target);
+            if (e.NewValue is string id && !string.IsNullOrEmpty(id)) delegates[id](target);
         }
     }
 }
