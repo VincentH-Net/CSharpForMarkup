@@ -74,7 +74,6 @@ namespace _MarkupNamespace_
     using _ViewBaseTypeName_ = CSharpMarkup.Wpf.FrameworkElement; // This is to get the template compiling; _ViewBaseTypeName_ is defined in the _UIViewNamespace_
     using _UIEnumPropertyType_ = _UIViewNamespace_._EnumPropertyTypeName_;
     using _UIViewParameterType_ = Windows.UIElement;
-    // TODO: do we need this? using Microsoft.CodeAnalysis.CSharp.Syntax;
 
     public static partial class Helpers
     {
@@ -244,9 +243,6 @@ namespace _MarkupNamespace_
     // Classes to get template compiling, not part of template
     public partial class _PropertyTarget_ : 
         _ViewTypeName_
-#if !WINDOWS
-        , AttachedPropertyTargetType 
-#endif
     { }
 
     public partial class _NonViewPropertyTarget_ : System.Windows.DependencyObject { }

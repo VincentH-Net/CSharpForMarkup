@@ -22,48 +22,28 @@ namespace CSharpMarkup.Wpf
         /// <remarks>Types must be fully specified for codegen to work</remarks>
         static System.Windows.DependencyProperty[] DefaultBindProperties => new System.Windows.DependencyProperty[]
         {
-            //System.Windows.Controls.AutoSuggestBox.TextProperty,
-            //System.Windows.Controls.BitmapIcon.UriSourceProperty,
-            //System.Windows.Controls.BitmapIconSource.UriSourceProperty,
-            //System.Windows.Controls.CalendarDatePicker.DateProperty,
-            //System.Windows.Controls.CalendarViewDayItem.DateProperty,
-            //System.Windows.Controls.CaptureElement.SourceProperty,
-            //System.Windows.Controls.ColorPicker.ColorProperty,
             System.Windows.Controls.ColumnDefinition.WidthProperty,
             System.Windows.Controls.ContentControl.ContentProperty,
             System.Windows.Controls.ContentPresenter.ContentProperty,
-            //System.Windows.Controls.DatePicker.DateProperty,
-            //System.Windows.Controls.DatePickerFlyout.DateProperty,
-            //System.Windows.Controls.FontIcon.GlyphProperty,
-            //System.Windows.Controls.FontIconSource.GlyphProperty,
+
             System.Windows.Controls.Image.SourceProperty,
             System.Windows.Controls.ItemsControl.ItemsSourceProperty,
-            //System.Windows.Controls.ListPickerFlyout.ItemsSourceProperty,
+
             System.Windows.Controls.MediaElement.SourceProperty,
-            //System.Windows.Controls.PasswordBox.PasswordProperty,
-            //System.Windows.Controls.PathIcon.DataProperty,
-            //System.Windows.Controls.PathIconSource.DataProperty,
+
             System.Windows.Controls.Primitives.ButtonBase.CommandProperty,
-            //System.Windows.Controls.Primitives.ColorSpectrum.ColorProperty,
+
             System.Windows.Controls.Primitives.RangeBase.ValueProperty,
-            //System.Windows.Controls.Primitives.SelectorItem.IsSelectedProperty,
+
             System.Windows.Controls.Primitives.ToggleButton.IsCheckedProperty,
-            //System.Windows.Controls.ProgressRing.IsActiveProperty,
-            //System.Windows.Controls.RatingControl.ValueProperty,
+
             System.Windows.Controls.RowDefinition.HeightProperty,
-            //System.Windows.Controls.SplitButton.CommandProperty,
-            //System.Windows.Controls.SwipeItem.CommandProperty,
-            //System.Windows.Controls.SymbolIcon.SymbolProperty,
-            //System.Windows.Controls.SymbolIconSource.SymbolProperty,
+
             System.Windows.Controls.TextBlock.TextProperty,
             System.Windows.Controls.TextBox.TextProperty,
-            //System.Windows.Controls.TimePicker.TimeProperty,
-            //System.Windows.Controls.TimePickerFlyout.TimeProperty,
-            //System.Windows.Controls.ToggleMenuFlyoutItem.IsCheckedProperty,
-            //System.Windows.Controls.ToggleSwitch.IsOnProperty,
+
             System.Windows.Controls.TreeView.ItemsSourceProperty,
             System.Windows.Controls.TreeViewItem.ItemsSourceProperty,
-            //System.Windows.Controls.TreeViewNode.ContentProperty,
 
             // TODO: Complete items after last one above + from subnamespaces Documents, Input, Media, Media.Animation, Shapes
 
@@ -75,7 +55,5 @@ namespace CSharpMarkup.Wpf
         // Note that for now the signature must be in the _Helpers.cs file
 
         public static partial TextBlock TextBlock(string Text); // Specify parameter properties
-
-        // TODO: already defined? public static partial Run Run(string Text);
     }
 }

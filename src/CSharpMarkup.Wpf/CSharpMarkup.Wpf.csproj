@@ -39,11 +39,6 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 	</PropertyGroup>
 	
-	<!-- TODO: After DispatchObjects are properly surfaced, below helpers can be included -->
-	<ItemGroup>
-	  <Compile Remove="DispatcherObjects.cs" />
-	</ItemGroup>
-
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\CSharpMarkup.Generators\WinUI\SourceGenerators\SourceGenerators.csproj" Condition=" '$(Configuration)' == 'Generate' ">
 			<OutputItemType>Analyzer</OutputItemType>

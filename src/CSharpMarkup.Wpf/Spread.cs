@@ -41,7 +41,7 @@ namespace CSharpMarkup.Wpf
         }
     }
 
-    public partial class UIElementRange : System.Windows.FrameworkElement // TODO: Document why partial keyword is needed here to prevent compile error on Android target. Maybe some UNO codegen?
+    public class UIElementRange : System.Windows.FrameworkElement
     {
         public List<System.Windows.UIElement> Elements { get; set; }
     }

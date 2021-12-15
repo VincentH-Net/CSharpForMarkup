@@ -3,13 +3,6 @@ using System.Globalization;
 using Windows = System.Windows;
 using Controls = System.Windows.Controls;
 
-// TODO: check what is the appropriate symbol for WinUI 3 Desktop #if NETFX_CORE
-#if FALSE //WINDOWS
-using _Length = Microsoft.UI.Markup.ConvertedGridLength;
-#else
-using _Length = System.Windows.GridLength;
-#endif
-
 namespace CSharpMarkup.Wpf
 {
     public static partial class Helpers
@@ -27,11 +20,11 @@ namespace CSharpMarkup.Wpf
             return grid;
         }
 
-        public static RowHeights Rows(params _Length[] heights) => new RowHeights { Lengths = heights };
+        public static RowHeights Rows(params Windows.GridLength[] heights) => new RowHeights { Lengths = heights };
 
-        public static RowHeights Rows<TEnum>(params (TEnum name, _Length height)[] rows) where TEnum : Enum
+        public static RowHeights Rows<TEnum>(params (TEnum name, Windows.GridLength height)[] rows) where TEnum : Enum
         {
-            var rowHeights = new RowHeights { Lengths = new _Length[rows.Length] };
+            var rowHeights = new RowHeights { Lengths = new Windows.GridLength[rows.Length] };
             for (int i = 0; i < rows.Length; i++)
             {
                 if (i != rows[i].name.ToInt())
@@ -44,11 +37,11 @@ namespace CSharpMarkup.Wpf
             return rowHeights;
         }
 
-        public static ColumnWidths Columns(params _Length[] widths) => new ColumnWidths { Lengths = widths };
+        public static ColumnWidths Columns(params Windows.GridLength[] widths) => new ColumnWidths { Lengths = widths };
 
-        public static ColumnWidths Columns<TEnum>(params (TEnum name, _Length width)[] columns) where TEnum : Enum
+        public static ColumnWidths Columns<TEnum>(params (TEnum name, Windows.GridLength width)[] columns) where TEnum : Enum
         {
-            var columnWidths = new ColumnWidths{ Lengths = new _Length[columns.Length] };
+            var columnWidths = new ColumnWidths{ Lengths = new Windows.GridLength[columns.Length] };
             for (int i = 0; i < columns.Length; i++)
             {
                 if (i != columns[i].name.ToInt())
@@ -61,23 +54,15 @@ namespace CSharpMarkup.Wpf
             return columnWidths;
         }
 
-        public struct RowHeights { internal _Length[] Lengths; }
+        public struct RowHeights { internal Windows.GridLength[] Lengths; }
 
-        public struct ColumnWidths { internal _Length[] Lengths; }
+        public struct ColumnWidths { internal Windows.GridLength[] Lengths; }
 
-#if WINDOWS_UWP
-        public static GridLength Auto => new GridLength { GridUnitType = GridUnitType.Auto };
-
-        public static GridLength Star = new GridLength { Value = 1, GridUnitType = GridUnitType.Star };
-
-        public static GridLength Stars(double value) => new GridLength { Value = value, GridUnitType = GridUnitType.Star };
-#else
         public static Windows.GridLength Auto => Windows.GridLength.Auto;
 
         public static Windows.GridLength Star = new Windows.GridLength(1, Windows.GridUnitType.Star);
 
         public static Windows.GridLength Stars(double value) => new Windows.GridLength(value, Windows.GridUnitType.Star);
-#endif
 
         public static int All<TEnum>() where TEnum : Enum
         {
@@ -100,23 +85,4 @@ namespace CSharpMarkup.Wpf
 
         static int ToInt(this Enum enumValue) => Convert.ToInt32(enumValue, CultureInfo.InvariantCulture);
     }
-
-#if FALSE // WINDOWS
-    public struct ConvertedGridLength
-    {
-        readonly GridLength length;
-
-        public ConvertedGridLength(GridLength length) => this.length = length;
-
-        public static implicit operator ConvertedGridLength(GridLength gridLength) => new ConvertedGridLength(gridLength);
-        public static implicit operator ConvertedGridLength(double pixels) => new ConvertedGridLength(
-#if WINDOWS_UWP
-        new GridLength { Value = pixels, GridUnitType = GridUnitType.Pixel }
-#else
-        new GridLength(pixels)
-#endif
-        );
-        public static implicit operator GridLength(ConvertedGridLength convertedGridLength) => convertedGridLength.length;
-    }
-#endif
 }
