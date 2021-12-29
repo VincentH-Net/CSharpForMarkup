@@ -38,6 +38,15 @@
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)' == 'Generate' ">
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup Condition=" '$(Configuration)' == 'Generate' ">
+		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/*/**/*.cs" />
+	</ItemGroup>
 	
 	<ItemGroup>
 		<ProjectReference Include="..\..\..\CSharpMarkup.Generators\WinUI\SourceGenerators\SourceGenerators.csproj" Condition=" '$(Configuration)' == 'Generate' ">

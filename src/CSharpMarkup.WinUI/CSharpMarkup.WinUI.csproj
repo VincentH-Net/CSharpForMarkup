@@ -4,10 +4,6 @@
 		<IsUno>true</IsUno>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)'=='Generate'">
-		<DefineConstants>DEBUG;TRACE;GENERATE</DefineConstants>
-	</PropertyGroup>
-
 	<PropertyGroup>
 		<PackageId>CSharpMarkup.WinUI</PackageId>
 		<Title>CSharpMarkup.WinUI</Title>
@@ -26,7 +22,7 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>0.5.1-dev.1</Version>
+		<Version>0.6.1-dev.1</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573</NoWarn>
@@ -41,21 +37,34 @@
 		
 	<PropertyGroup>
 		<TargetFrameworks>net6.0-windows10.0.19041.0;net6.0</TargetFrameworks>
-		<RootNamespace>Microsoft.UI.Markup</RootNamespace>
+		<RootNamespace>CSharpMarkup.WinUI</RootNamespace>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('windows10.'))">
 		<IsUno>false</IsUno>
 		
-		<DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
+		<DefineConstants>$(DefineConstants);WINUI</DefineConstants>
 		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
 		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
 		<UseWinUI>true</UseWinUI>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="$(TargetFramework.Contains('MonoAndroid'))"> <!-- TODO : update TFM and test -->
-		<DefineConstants>$(DefineConstants);ANDROID</DefineConstants>
+	<PropertyGroup Condition="$(IsUno)">
+		<DefineConstants>$(DefineConstants);HAS_UNO</DefineConstants>
 	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)' == 'Generate' ">
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup Condition=" '$(Configuration)' == 'Generate' ">
+		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/*/**/*.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Generated/Uno.UI.SourceGenerators/**/*.cs" />
+	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)==false">
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.0" />

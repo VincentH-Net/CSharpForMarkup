@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for the Microsoft.WindowsDesktop.App Object hierarchy
-#if !GENERATE && WPF
+#if WPF
 
 using System;
 using System.Collections;
@@ -21608,6 +21608,7 @@ namespace CSharpMarkup.Wpf // Calendar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Calendar"/></summary>
+        /// <remarks>Remark: Calendar().Bind() binds to <see cref="Windows.Controls.Calendar.SelectedDateProperty"/></remarks>
         public static Calendar Calendar(O<Windows.Style> CalendarButtonStyle = default, O<Windows.Style> CalendarDayButtonStyle = default, O<Windows.Style> CalendarItemStyle = default, O<DateTime> DisplayDate = default, O<DateTime?> DisplayDateEnd = default, O<DateTime?> DisplayDateStart = default, O<Windows.Controls.CalendarMode> DisplayMode = default, O<DayOfWeek> FirstDayOfWeek = default, O<bool> IsTodayHighlighted = default, O<DateTime?> SelectedDate = default, O<Windows.Controls.CalendarSelectionMode> SelectionMode = default)
         {
             var ui = new Windows.Controls.Calendar();
@@ -21626,6 +21627,7 @@ namespace CSharpMarkup.Wpf // Calendar
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Calendar"/></summary>
+        /// <remarks>Remark: Calendar().Bind() binds to <see cref="Windows.Controls.Calendar.SelectedDateProperty"/></remarks>
         public static Calendar Calendar()
         {
             var ui = new Windows.Controls.Calendar();
@@ -21633,7 +21635,7 @@ namespace CSharpMarkup.Wpf // Calendar
         }
     }
 
-    public partial class Calendar : Control, IUI<System.Windows.Controls.Calendar>
+    public partial class Calendar : Control, IUI<System.Windows.Controls.Calendar>, IDefaultBindProperty
     {
         static Calendar instance;
 
@@ -21651,6 +21653,9 @@ namespace CSharpMarkup.Wpf // Calendar
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.Calendar.SelectedDateProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.Calendar.SelectedDateProperty;
 
         public static implicit operator Windows.UIElement(Calendar view) => view?.UI;
 
@@ -24022,6 +24027,7 @@ namespace CSharpMarkup.Wpf // DatePicker
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.DatePicker"/></summary>
+        /// <remarks>Remark: DatePicker().Bind() binds to <see cref="Windows.Controls.DatePicker.SelectedDateProperty"/></remarks>
         public static DatePicker DatePicker(O<Windows.Style> CalendarStyle = default, O<DateTime> DisplayDate = default, O<DateTime?> DisplayDateEnd = default, O<DateTime?> DisplayDateStart = default, O<DayOfWeek> FirstDayOfWeek = default, O<bool> IsDropDownOpen = default, O<bool> IsTodayHighlighted = default, O<DateTime?> SelectedDate = default, O<Windows.Controls.DatePickerFormat> SelectedDateFormat = default, O<string> Text = default)
         {
             var ui = new Windows.Controls.DatePicker();
@@ -24039,6 +24045,7 @@ namespace CSharpMarkup.Wpf // DatePicker
         }
 
         /// <summary>Create a <see cref="Windows.Controls.DatePicker"/></summary>
+        /// <remarks>Remark: DatePicker().Bind() binds to <see cref="Windows.Controls.DatePicker.SelectedDateProperty"/></remarks>
         public static DatePicker DatePicker()
         {
             var ui = new Windows.Controls.DatePicker();
@@ -24046,7 +24053,7 @@ namespace CSharpMarkup.Wpf // DatePicker
         }
     }
 
-    public partial class DatePicker : Control, IUI<System.Windows.Controls.DatePicker>
+    public partial class DatePicker : Control, IUI<System.Windows.Controls.DatePicker>, IDefaultBindProperty
     {
         static DatePicker instance;
 
@@ -24064,6 +24071,9 @@ namespace CSharpMarkup.Wpf // DatePicker
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.DatePicker.SelectedDateProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.DatePicker.SelectedDateProperty;
 
         public static implicit operator Windows.UIElement(DatePicker view) => view?.UI;
 
@@ -24450,6 +24460,7 @@ namespace CSharpMarkup.Wpf // Expander
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Expander"/></summary>
+        /// <remarks>Remark: Expander().Bind() binds to <see cref="Windows.Controls.Expander.IsExpandedProperty"/></remarks>
         public static Expander Expander(object content)
         {
             var ui = new Windows.Controls.Expander();
@@ -24458,6 +24469,7 @@ namespace CSharpMarkup.Wpf // Expander
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Expander"/></summary>
+        /// <remarks>Remark: Expander().Bind() binds to <see cref="Windows.Controls.Expander.IsExpandedProperty"/></remarks>
         public static Expander Expander(O<Windows.Controls.ExpandDirection> ExpandDirection = default, O<bool> IsExpanded = default)
         {
             var ui = new Windows.Controls.Expander();
@@ -24467,6 +24479,7 @@ namespace CSharpMarkup.Wpf // Expander
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Expander"/></summary>
+        /// <remarks>Remark: Expander().Bind() binds to <see cref="Windows.Controls.Expander.IsExpandedProperty"/></remarks>
         public static Expander Expander()
         {
             var ui = new Windows.Controls.Expander();
@@ -24474,7 +24487,7 @@ namespace CSharpMarkup.Wpf // Expander
         }
     }
 
-    public partial class Expander : HeaderedContentControl, IUI<System.Windows.Controls.Expander>
+    public partial class Expander : HeaderedContentControl, IUI<System.Windows.Controls.Expander>, IDefaultBindProperty
     {
         static Expander instance;
 
@@ -24492,6 +24505,9 @@ namespace CSharpMarkup.Wpf // Expander
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.Expander.IsExpandedProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.Expander.IsExpandedProperty;
 
         public static implicit operator Windows.UIElement(Expander view) => view?.UI;
 
@@ -24650,6 +24666,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentReader
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentReader"/></summary>
+        /// <remarks>Remark: FlowDocumentReader().Bind() binds to <see cref="Windows.Controls.FlowDocumentReader.DocumentProperty"/></remarks>
         public static FlowDocumentReader FlowDocumentReader(O<Windows.Documents.FlowDocument> Document = default, O<bool> IsFindEnabled = default, O<bool> IsInactiveSelectionHighlightEnabled = default, O<bool> IsPageViewEnabled = default, O<bool> IsPrintEnabled = default, O<bool> IsScrollViewEnabled = default, O<bool> IsTwoPageViewEnabled = default, O<double> MaxZoom = default, O<double> MinZoom = default, O<Windows.Media.Brush> SelectionBrush = default, O<double> SelectionOpacity = default, O<Windows.Controls.FlowDocumentReaderViewingMode> ViewingMode = default, O<double> Zoom = default, O<double> ZoomIncrement = default)
         {
             var ui = new Windows.Controls.FlowDocumentReader();
@@ -24671,6 +24688,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentReader
         }
 
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentReader"/></summary>
+        /// <remarks>Remark: FlowDocumentReader().Bind() binds to <see cref="Windows.Controls.FlowDocumentReader.DocumentProperty"/></remarks>
         public static FlowDocumentReader FlowDocumentReader()
         {
             var ui = new Windows.Controls.FlowDocumentReader();
@@ -24678,7 +24696,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentReader
         }
     }
 
-    public partial class FlowDocumentReader : Control, IUI<System.Windows.Controls.FlowDocumentReader>
+    public partial class FlowDocumentReader : Control, IUI<System.Windows.Controls.FlowDocumentReader>, IDefaultBindProperty
     {
         static FlowDocumentReader instance;
 
@@ -24696,6 +24714,9 @@ namespace CSharpMarkup.Wpf // FlowDocumentReader
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.FlowDocumentReader.DocumentProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.FlowDocumentReader.DocumentProperty;
 
         public static implicit operator Windows.UIElement(FlowDocumentReader view) => view?.UI;
 
@@ -24847,6 +24868,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentScrollViewer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentScrollViewer"/></summary>
+        /// <remarks>Remark: FlowDocumentScrollViewer().Bind() binds to <see cref="Windows.Controls.FlowDocumentScrollViewer.DocumentProperty"/></remarks>
         public static FlowDocumentScrollViewer FlowDocumentScrollViewer(O<Windows.Documents.FlowDocument> Document = default, O<Windows.Controls.ScrollBarVisibility> HorizontalScrollBarVisibility = default, O<bool> IsInactiveSelectionHighlightEnabled = default, O<bool> IsSelectionEnabled = default, O<bool> IsToolBarVisible = default, O<double> MaxZoom = default, O<double> MinZoom = default, O<Windows.Media.Brush> SelectionBrush = default, O<double> SelectionOpacity = default, O<Windows.Controls.ScrollBarVisibility> VerticalScrollBarVisibility = default, O<double> Zoom = default, O<double> ZoomIncrement = default)
         {
             var ui = new Windows.Controls.FlowDocumentScrollViewer();
@@ -24866,6 +24888,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentScrollViewer
         }
 
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentScrollViewer"/></summary>
+        /// <remarks>Remark: FlowDocumentScrollViewer().Bind() binds to <see cref="Windows.Controls.FlowDocumentScrollViewer.DocumentProperty"/></remarks>
         public static FlowDocumentScrollViewer FlowDocumentScrollViewer()
         {
             var ui = new Windows.Controls.FlowDocumentScrollViewer();
@@ -24873,7 +24896,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentScrollViewer
         }
     }
 
-    public partial class FlowDocumentScrollViewer : Control, IUI<System.Windows.Controls.FlowDocumentScrollViewer>
+    public partial class FlowDocumentScrollViewer : Control, IUI<System.Windows.Controls.FlowDocumentScrollViewer>, IDefaultBindProperty
     {
         static FlowDocumentScrollViewer instance;
 
@@ -24891,6 +24914,9 @@ namespace CSharpMarkup.Wpf // FlowDocumentScrollViewer
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.FlowDocumentScrollViewer.DocumentProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.FlowDocumentScrollViewer.DocumentProperty;
 
         public static implicit operator Windows.UIElement(FlowDocumentScrollViewer view) => view?.UI;
 
@@ -26344,6 +26370,7 @@ namespace CSharpMarkup.Wpf // InkPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.InkPresenter"/></summary>
+        /// <remarks>Remark: InkPresenter().Bind() binds to <see cref="Windows.Controls.InkPresenter.StrokesProperty"/></remarks>
         public static InkPresenter InkPresenter(O<Windows.Ink.StrokeCollection> Strokes = default)
         {
             var ui = new Windows.Controls.InkPresenter();
@@ -26352,6 +26379,7 @@ namespace CSharpMarkup.Wpf // InkPresenter
         }
 
         /// <summary>Create a <see cref="Windows.Controls.InkPresenter"/></summary>
+        /// <remarks>Remark: InkPresenter().Bind() binds to <see cref="Windows.Controls.InkPresenter.StrokesProperty"/></remarks>
         public static InkPresenter InkPresenter()
         {
             var ui = new Windows.Controls.InkPresenter();
@@ -26359,7 +26387,7 @@ namespace CSharpMarkup.Wpf // InkPresenter
         }
     }
 
-    public partial class InkPresenter : Decorator, IUI<System.Windows.Controls.InkPresenter>
+    public partial class InkPresenter : Decorator, IUI<System.Windows.Controls.InkPresenter>, IDefaultBindProperty
     {
         static InkPresenter instance;
 
@@ -26377,6 +26405,9 @@ namespace CSharpMarkup.Wpf // InkPresenter
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.InkPresenter.StrokesProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.InkPresenter.StrokesProperty;
 
         public static implicit operator Windows.UIElement(InkPresenter view) => view?.UI;
 
@@ -26612,6 +26643,7 @@ namespace CSharpMarkup.Wpf // Label
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Label"/></summary>
+        /// <remarks>Remark: Label().Bind() binds to <see cref="Windows.Controls.Label.TargetProperty"/></remarks>
         public static Label Label(object content)
         {
             var ui = new Windows.Controls.Label();
@@ -26620,6 +26652,7 @@ namespace CSharpMarkup.Wpf // Label
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Label"/></summary>
+        /// <remarks>Remark: Label().Bind() binds to <see cref="Windows.Controls.Label.TargetProperty"/></remarks>
         public static Label Label(O<Windows.UIElement> Target = default)
         {
             var ui = new Windows.Controls.Label();
@@ -26628,6 +26661,7 @@ namespace CSharpMarkup.Wpf // Label
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Label"/></summary>
+        /// <remarks>Remark: Label().Bind() binds to <see cref="Windows.Controls.Label.TargetProperty"/></remarks>
         public static Label Label()
         {
             var ui = new Windows.Controls.Label();
@@ -26635,7 +26669,7 @@ namespace CSharpMarkup.Wpf // Label
         }
     }
 
-    public partial class Label : ContentControl, IUI<System.Windows.Controls.Label>
+    public partial class Label : ContentControl, IUI<System.Windows.Controls.Label>, IDefaultBindProperty
     {
         static Label instance;
 
@@ -26653,6 +26687,9 @@ namespace CSharpMarkup.Wpf // Label
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.Label.TargetProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.Label.TargetProperty;
 
         public static implicit operator Windows.UIElement(Label view) => view?.UI;
 
@@ -27271,6 +27308,7 @@ namespace CSharpMarkup.Wpf // Page
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Page"/></summary>
+        /// <remarks>Remark: Page().Bind() binds to <see cref="Windows.Controls.Page.TitleProperty"/></remarks>
         public static Page Page(O<Windows.Media.Brush> Background = default, O<object> Content = default, O<Windows.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.Media.Brush> Foreground = default, O<bool> KeepAlive = default, O<bool> ShowsNavigationUI = default, O<Windows.Controls.ControlTemplate> Template = default, O<string> Title = default, O<double> WindowHeight = default, O<string> WindowTitle = default, O<double> WindowWidth = default)
         {
             var ui = new Windows.Controls.Page();
@@ -27290,6 +27328,7 @@ namespace CSharpMarkup.Wpf // Page
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Page"/></summary>
+        /// <remarks>Remark: Page().Bind() binds to <see cref="Windows.Controls.Page.TitleProperty"/></remarks>
         public static Page Page()
         {
             var ui = new Windows.Controls.Page();
@@ -27297,7 +27336,7 @@ namespace CSharpMarkup.Wpf // Page
         }
     }
 
-    public partial class Page : FrameworkElement, IUI<System.Windows.Controls.Page>
+    public partial class Page : FrameworkElement, IUI<System.Windows.Controls.Page>, IDefaultBindProperty
     {
         static Page instance;
 
@@ -27315,6 +27354,9 @@ namespace CSharpMarkup.Wpf // Page
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.Page.TitleProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.Page.TitleProperty;
 
         public static implicit operator Windows.UIElement(Page view) => view?.UI;
 
@@ -28318,6 +28360,7 @@ namespace CSharpMarkup.Wpf // SoundPlayerAction
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.SoundPlayerAction"/></summary>
+        /// <remarks>Remark: SoundPlayerAction().Bind() binds to <see cref="Windows.Controls.SoundPlayerAction.SourceProperty"/></remarks>
         public static SoundPlayerAction SoundPlayerAction(O<Uri> Source = default)
         {
             var ui = new Windows.Controls.SoundPlayerAction();
@@ -28326,6 +28369,7 @@ namespace CSharpMarkup.Wpf // SoundPlayerAction
         }
 
         /// <summary>Create a <see cref="Windows.Controls.SoundPlayerAction"/></summary>
+        /// <remarks>Remark: SoundPlayerAction().Bind() binds to <see cref="Windows.Controls.SoundPlayerAction.SourceProperty"/></remarks>
         public static SoundPlayerAction SoundPlayerAction()
         {
             var ui = new Windows.Controls.SoundPlayerAction();
@@ -28333,7 +28377,7 @@ namespace CSharpMarkup.Wpf // SoundPlayerAction
         }
     }
 
-    public partial class SoundPlayerAction : TriggerAction, IUI<System.Windows.Controls.SoundPlayerAction>
+    public partial class SoundPlayerAction : TriggerAction, IUI<System.Windows.Controls.SoundPlayerAction>, IDefaultBindProperty
     {
         static SoundPlayerAction instance;
 
@@ -28351,6 +28395,9 @@ namespace CSharpMarkup.Wpf // SoundPlayerAction
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.SoundPlayerAction.SourceProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.SoundPlayerAction.SourceProperty;
 
         public static implicit operator Windows.Controls.SoundPlayerAction(SoundPlayerAction view) => view?.UI;
 
@@ -29451,7 +29498,6 @@ namespace CSharpMarkup.Wpf // TreeView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.TreeView"/></summary>
-        /// <remarks>Remark: TreeView().Bind() binds to <see cref="Windows.Controls.TreeView.ItemsSourceProperty"/></remarks>
         public static TreeView TreeView(O<string> SelectedValuePath = default)
         {
             var ui = new Windows.Controls.TreeView();
@@ -29460,7 +29506,6 @@ namespace CSharpMarkup.Wpf // TreeView
         }
 
         /// <summary>Create a <see cref="Windows.Controls.TreeView"/></summary>
-        /// <remarks>Remark: TreeView().Bind() binds to <see cref="Windows.Controls.TreeView.ItemsSourceProperty"/></remarks>
         public static TreeView TreeView()
         {
             var ui = new Windows.Controls.TreeView();
@@ -29468,7 +29513,7 @@ namespace CSharpMarkup.Wpf // TreeView
         }
     }
 
-    public partial class TreeView : ItemsControl, IUI<System.Windows.Controls.TreeView>, IDefaultBindProperty
+    public partial class TreeView : ItemsControl, IUI<System.Windows.Controls.TreeView>
     {
         static TreeView instance;
 
@@ -29486,9 +29531,6 @@ namespace CSharpMarkup.Wpf // TreeView
             get => ui;
             protected set => base.UI = ui = value;
         }
-
-        /// <summary><see cref="Windows.Controls.TreeView.ItemsSourceProperty"/></summary>
-        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.TreeView.ItemsSourceProperty;
 
         public static implicit operator Windows.UIElement(TreeView view) => view?.UI;
 
@@ -29523,7 +29565,6 @@ namespace CSharpMarkup.Wpf // TreeViewItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.TreeViewItem"/></summary>
-        /// <remarks>Remark: TreeViewItem().Bind() binds to <see cref="Windows.Controls.TreeViewItem.ItemsSourceProperty"/></remarks>
         public static TreeViewItem TreeViewItem(O<bool> IsExpanded = default, O<bool> IsSelected = default)
         {
             var ui = new Windows.Controls.TreeViewItem();
@@ -29533,7 +29574,6 @@ namespace CSharpMarkup.Wpf // TreeViewItem
         }
 
         /// <summary>Create a <see cref="Windows.Controls.TreeViewItem"/></summary>
-        /// <remarks>Remark: TreeViewItem().Bind() binds to <see cref="Windows.Controls.TreeViewItem.ItemsSourceProperty"/></remarks>
         public static TreeViewItem TreeViewItem()
         {
             var ui = new Windows.Controls.TreeViewItem();
@@ -29541,7 +29581,7 @@ namespace CSharpMarkup.Wpf // TreeViewItem
         }
     }
 
-    public partial class TreeViewItem : HeaderedItemsControl, IUI<System.Windows.Controls.TreeViewItem>, IDefaultBindProperty
+    public partial class TreeViewItem : HeaderedItemsControl, IUI<System.Windows.Controls.TreeViewItem>
     {
         static TreeViewItem instance;
 
@@ -29559,9 +29599,6 @@ namespace CSharpMarkup.Wpf // TreeViewItem
             get => ui;
             protected set => base.UI = ui = value;
         }
-
-        /// <summary><see cref="Windows.Controls.TreeViewItem.ItemsSourceProperty"/></summary>
-        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.TreeViewItem.ItemsSourceProperty;
 
         public static implicit operator Windows.UIElement(TreeViewItem view) => view?.UI;
 
@@ -29735,6 +29772,7 @@ namespace CSharpMarkup.Wpf // Viewport3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Viewport3D"/></summary>
+        /// <remarks>Remark: Viewport3D().Bind() binds to <see cref="Windows.Controls.Viewport3D.ChildrenProperty"/></remarks>
         public static Viewport3D Viewport3D(O<Windows.Media.Media3D.Camera> Camera = default)
         {
             var ui = new Windows.Controls.Viewport3D();
@@ -29743,6 +29781,7 @@ namespace CSharpMarkup.Wpf // Viewport3D
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Viewport3D"/></summary>
+        /// <remarks>Remark: Viewport3D().Bind() binds to <see cref="Windows.Controls.Viewport3D.ChildrenProperty"/></remarks>
         public static Viewport3D Viewport3D()
         {
             var ui = new Windows.Controls.Viewport3D();
@@ -29750,7 +29789,7 @@ namespace CSharpMarkup.Wpf // Viewport3D
         }
     }
 
-    public partial class Viewport3D : FrameworkElement, IUI<System.Windows.Controls.Viewport3D>
+    public partial class Viewport3D : FrameworkElement, IUI<System.Windows.Controls.Viewport3D>, IDefaultBindProperty
     {
         static Viewport3D instance;
 
@@ -29768,6 +29807,9 @@ namespace CSharpMarkup.Wpf // Viewport3D
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.Viewport3D.ChildrenProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.Viewport3D.ChildrenProperty;
 
         public static implicit operator Windows.UIElement(Viewport3D view) => view?.UI;
 
@@ -30879,7 +30921,7 @@ namespace CSharpMarkup.Wpf // DocumentPageView
 
 namespace CSharpMarkup.Wpf // DocumentViewerBase
 {
-    public partial class DocumentViewerBase : Control, IUI<System.Windows.Controls.Primitives.DocumentViewerBase>
+    public partial class DocumentViewerBase : Control, IUI<System.Windows.Controls.Primitives.DocumentViewerBase>, IDefaultBindProperty
     {
         Windows.Controls.Primitives.DocumentViewerBase ui;
 
@@ -30888,6 +30930,9 @@ namespace CSharpMarkup.Wpf // DocumentViewerBase
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.Primitives.DocumentViewerBase.DocumentProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.Primitives.DocumentViewerBase.DocumentProperty;
 
         protected DocumentViewerBase() { }
     }
@@ -30929,7 +30974,7 @@ namespace CSharpMarkup.Wpf // DocumentViewerBase
 
 namespace CSharpMarkup.Wpf // GridViewRowPresenterBase
 {
-    public partial class GridViewRowPresenterBase : FrameworkElement, IUI<System.Windows.Controls.Primitives.GridViewRowPresenterBase>
+    public partial class GridViewRowPresenterBase : FrameworkElement, IUI<System.Windows.Controls.Primitives.GridViewRowPresenterBase>, IDefaultBindProperty
     {
         Windows.Controls.Primitives.GridViewRowPresenterBase ui;
 
@@ -30938,6 +30983,9 @@ namespace CSharpMarkup.Wpf // GridViewRowPresenterBase
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.Primitives.GridViewRowPresenterBase.ColumnsProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.Primitives.GridViewRowPresenterBase.ColumnsProperty;
 
         protected GridViewRowPresenterBase() { }
     }
@@ -31390,6 +31438,7 @@ namespace CSharpMarkup.Wpf // SelectiveScrollingGrid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.SelectiveScrollingGrid"/></summary>
+        /// <remarks>Remark: SelectiveScrollingGrid().Bind() binds to <see cref="Windows.Controls.Primitives.SelectiveScrollingGrid.SelectiveScrollingOrientationProperty"/></remarks>
         public static SelectiveScrollingGrid SelectiveScrollingGrid(params Windows.UIElement[] children)
         {
             var ui = new Windows.Controls.Primitives.SelectiveScrollingGrid();
@@ -31399,7 +31448,7 @@ namespace CSharpMarkup.Wpf // SelectiveScrollingGrid
         }
     }
 
-    public partial class SelectiveScrollingGrid : Grid, IUI<System.Windows.Controls.Primitives.SelectiveScrollingGrid>
+    public partial class SelectiveScrollingGrid : Grid, IUI<System.Windows.Controls.Primitives.SelectiveScrollingGrid>, IDefaultBindProperty
     {
         static SelectiveScrollingGrid instance;
 
@@ -31417,6 +31466,9 @@ namespace CSharpMarkup.Wpf // SelectiveScrollingGrid
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.Primitives.SelectiveScrollingGrid.SelectiveScrollingOrientationProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.Primitives.SelectiveScrollingGrid.SelectiveScrollingOrientationProperty;
 
         public static implicit operator Windows.UIElement(SelectiveScrollingGrid view) => view?.UI;
 
@@ -32182,6 +32234,7 @@ namespace CSharpMarkup.Wpf // Track
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.Track"/></summary>
+        /// <remarks>Remark: Track().Bind() binds to <see cref="Windows.Controls.Primitives.Track.ValueProperty"/></remarks>
         public static Track Track(O<Windows.Controls.Primitives.RepeatButton> DecreaseRepeatButton = default, O<Windows.Controls.Primitives.RepeatButton> IncreaseRepeatButton = default, O<bool> IsDirectionReversed = default, O<double> Maximum = default, O<double> Minimum = default, O<Windows.Controls.Orientation> Orientation = default, O<Windows.Controls.Primitives.Thumb> Thumb = default, O<double> Value = default, O<double> ViewportSize = default)
         {
             var ui = new Windows.Controls.Primitives.Track();
@@ -32198,6 +32251,7 @@ namespace CSharpMarkup.Wpf // Track
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.Track"/></summary>
+        /// <remarks>Remark: Track().Bind() binds to <see cref="Windows.Controls.Primitives.Track.ValueProperty"/></remarks>
         public static Track Track()
         {
             var ui = new Windows.Controls.Primitives.Track();
@@ -32205,7 +32259,7 @@ namespace CSharpMarkup.Wpf // Track
         }
     }
 
-    public partial class Track : FrameworkElement, IUI<System.Windows.Controls.Primitives.Track>
+    public partial class Track : FrameworkElement, IUI<System.Windows.Controls.Primitives.Track>, IDefaultBindProperty
     {
         static Track instance;
 
@@ -32223,6 +32277,9 @@ namespace CSharpMarkup.Wpf // Track
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.Primitives.Track.ValueProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.Primitives.Track.ValueProperty;
 
         public static implicit operator Windows.UIElement(Track view) => view?.UI;
 
@@ -37663,6 +37720,7 @@ namespace CSharpMarkup.Wpf // KeyTipControl
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.KeyTipControl"/></summary>
+        /// <remarks>Remark: KeyTipControl().Bind() binds to <see cref="Windows.Controls.KeyTipControl.TextProperty"/></remarks>
         public static KeyTipControl KeyTipControl(O<string> Text = default)
         {
             var ui = new Windows.Controls.KeyTipControl();
@@ -37671,6 +37729,7 @@ namespace CSharpMarkup.Wpf // KeyTipControl
         }
 
         /// <summary>Create a <see cref="Windows.Controls.KeyTipControl"/></summary>
+        /// <remarks>Remark: KeyTipControl().Bind() binds to <see cref="Windows.Controls.KeyTipControl.TextProperty"/></remarks>
         public static KeyTipControl KeyTipControl()
         {
             var ui = new Windows.Controls.KeyTipControl();
@@ -37678,7 +37737,7 @@ namespace CSharpMarkup.Wpf // KeyTipControl
         }
     }
 
-    public partial class KeyTipControl : Control, IUI<System.Windows.Controls.KeyTipControl>
+    public partial class KeyTipControl : Control, IUI<System.Windows.Controls.KeyTipControl>, IDefaultBindProperty
     {
         static KeyTipControl instance;
 
@@ -37696,6 +37755,9 @@ namespace CSharpMarkup.Wpf // KeyTipControl
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Controls.KeyTipControl.TextProperty"/></summary>
+        public virtual Windows.DependencyProperty DefaultBindProperty => Windows.Controls.KeyTipControl.TextProperty;
 
         public static implicit operator Windows.UIElement(KeyTipControl view) => view?.UI;
 
