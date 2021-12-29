@@ -1,5 +1,5 @@
-﻿using Microsoft.UI.Markup;
-using static Microsoft.UI.Markup.Helpers;
+﻿using CSharpMarkup.WinUI;
+using static CSharpMarkup.WinUI.Helpers;
 
 namespace WinUICsMarkupExamples;
 
