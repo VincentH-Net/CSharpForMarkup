@@ -2,7 +2,7 @@
 using System.Globalization;
 using Controls = Microsoft.UI.Xaml.Controls;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
 	public static class FrameworkElementInGridExtensions
     {

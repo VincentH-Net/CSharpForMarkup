@@ -1,12 +1,13 @@
-﻿#if WINDOWS
+﻿#if WINUI
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using Microsoft.UI.Xaml.Data;
+using Xaml = Microsoft.UI.Xaml;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     interface IStartChain<TUI, TMarkup> where TUI : Xaml.DependencyObject where TMarkup : DependencyObject
     {
@@ -14,12 +15,12 @@ namespace Microsoft.UI.Markup
     }
 }
 
-namespace Microsoft.UI.Markup.Delegators
+namespace CSharpMarkup.WinUI.Delegators
 {
     [Bindable]
     public class BuildChild
     {
-        static Dictionary<string, Func<Microsoft.UI.Markup.UIElement>> delegates = null;
+        static Dictionary<string, Func<CSharpMarkup.WinUI.UIElement>> delegates = null;
 
         static string Id(Delegate build) => $"{build.Method.DeclaringType.FullName}.{build.Method.Name}";
 
@@ -36,11 +37,11 @@ namespace Microsoft.UI.Markup.Delegators
             }
         }
 
-        public static string CreateIdFor(Func<Microsoft.UI.Markup.UIElement> build)
+        public static string CreateIdFor(Func<CSharpMarkup.WinUI.UIElement> build)
         {
             AssertStateless(build);
 
-            if (delegates == null) delegates = new Dictionary<string, Func<Microsoft.UI.Markup.UIElement>>();
+            if (delegates == null) delegates = new Dictionary<string, Func<CSharpMarkup.WinUI.UIElement>>();
 
             string id = Id(build);
             delegates[id] = build;

@@ -241,7 +241,7 @@ namespace _MarkupNamespace_
     }
 
     // Classes to get template compiling, not part of template
-    public partial class _PropertyTarget_ : 
+    public partial class _PropertyTarget_ :
         _ViewTypeName_
     { }
 

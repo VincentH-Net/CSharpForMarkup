@@ -2,14 +2,14 @@
 // Any usings below that are unused are included to detect compile ambiguities
 using System;
 using Microsoft.UI;
-using Microsoft.UI.Markup;
+using CSharpMarkup.WinUI;
 using static Microsoft.UI.Colors;
-using static Microsoft.UI.Markup.Helpers;
+using static CSharpMarkup.WinUI.Helpers;
 using UI = Microsoft.UI.Xaml;
 using Color = Windows.UI.Color;
 using TextBloek = Microsoft.UI.Xaml.Controls.TextBlock;
 
-namespace CSharpMarkup.WinUI.CompileTests
+namespace CompileTests
 {
     partial class TestPage
     {

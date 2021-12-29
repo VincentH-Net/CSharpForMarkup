@@ -2,10 +2,10 @@
 using Microsoft.UI.Xaml.Controls;
 using static Microsoft.UI.Colors;
 using Color = Windows.UI.Color;
-using Markup = Microsoft.UI.Markup;
+using Markup = CSharpMarkup.WinUI;
 using UI = Microsoft.UI.Xaml;
 
-namespace CSharpMarkup.WinUI.CompileTests
+namespace CompileTests
 {
     partial class TestPage : Page
     {

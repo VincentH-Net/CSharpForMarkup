@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     public static partial class Helpers
     {

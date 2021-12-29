@@ -1,9 +1,10 @@
 ﻿#if GENERATE
 using CSharpMarkup.Generate.WinUI;
+using Xaml = Microsoft.UI.Xaml;
 using Controls = Microsoft.UI.Xaml.Controls;
 
 [assembly: MarkupHelpers(
-    markupHelpersType: typeof(Microsoft.UI.Markup.Helpers),
+    markupHelpersType: typeof(CSharpMarkup.WinUI.Helpers),
     baseViewType: typeof(Microsoft.UI.Xaml.DependencyObject),
     contentPropertyName: "Content",
     contentControlBaseClass: typeof(Controls.ContentControl),
@@ -13,7 +14,7 @@ using Controls = Microsoft.UI.Xaml.Controls;
 )]
 #endif
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     public static partial class Helpers
     {
@@ -27,7 +28,6 @@ namespace Microsoft.UI.Markup
             Microsoft.UI.Xaml.Controls.BitmapIconSource.UriSourceProperty,
             Microsoft.UI.Xaml.Controls.CalendarDatePicker.DateProperty,
             Microsoft.UI.Xaml.Controls.CalendarViewDayItem.DateProperty,
-            Microsoft.UI.Xaml.Controls.CaptureElement.SourceProperty,
             Microsoft.UI.Xaml.Controls.ColorPicker.ColorProperty,
             Microsoft.UI.Xaml.Controls.ColumnDefinition.WidthProperty,
             Microsoft.UI.Xaml.Controls.ContentControl.ContentProperty,
@@ -39,7 +39,6 @@ namespace Microsoft.UI.Markup
             Microsoft.UI.Xaml.Controls.Image.SourceProperty,
             Microsoft.UI.Xaml.Controls.ItemsControl.ItemsSourceProperty,
             Microsoft.UI.Xaml.Controls.ListPickerFlyout.ItemsSourceProperty,
-            Microsoft.UI.Xaml.Controls.MediaElement.SourceProperty,
             Microsoft.UI.Xaml.Controls.PasswordBox.PasswordProperty,
             Microsoft.UI.Xaml.Controls.PathIcon.DataProperty,
             Microsoft.UI.Xaml.Controls.PathIconSource.DataProperty,
@@ -70,6 +69,13 @@ namespace Microsoft.UI.Markup
             Microsoft.UI.Xaml.Media.SolidColorBrush.ColorProperty
         };
         #endif
+        
+        /* TODO: Enable to specify DefaultBindProperties that exist in UNO but not in WinUI, e.g.:
+           Microsoft.UI.Xaml.Controls.CaptureElement.SourceProperty,
+           Microsoft.UI.Xaml.Controls.MediaElement.SourceProperty,
+           This could be done by copying the entire array in source within #if HAS_UNO #else
+           Not worth it for just two properties so postpone.
+        */
 
         // Helper signatures - codegen will generate the method body based on the parameter names and types
         // Note that for now the signature must be in the _Helpers.cs file

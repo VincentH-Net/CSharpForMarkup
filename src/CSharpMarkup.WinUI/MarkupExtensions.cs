@@ -1,6 +1,7 @@
-﻿using Color = Windows.UI.Color;
+﻿using Xaml = Microsoft.UI.Xaml;
+using Color = Windows.UI.Color;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     public static class MarkupExtensions
     {

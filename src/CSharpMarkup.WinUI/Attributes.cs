@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     /// <summary>
     /// Apply to a helper method that is shorthand for a (sequence of) other helpers, e.g. <code>[ShortFor("HorizontalAlignment().Left()")]</code> on a <code>Left()</code> helper.

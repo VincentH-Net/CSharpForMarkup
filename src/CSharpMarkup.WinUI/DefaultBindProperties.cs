@@ -1,6 +1,7 @@
-﻿using Controls = Microsoft.UI.Xaml.Controls;
+﻿using Xaml = Microsoft.UI.Xaml;
+using Controls = Microsoft.UI.Xaml.Controls;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     public interface IDefaultBindProperty // TODO: Generate this automatically if only one possibility
     {

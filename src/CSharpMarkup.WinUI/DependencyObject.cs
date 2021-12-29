@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using Xaml = Microsoft.UI.Xaml;
 using BindingMode = Microsoft.UI.Xaml.Data.BindingMode;
 using IValueConverter = Microsoft.UI.Xaml.Data.IValueConverter;
 using UpdateSourceTrigger = Microsoft.UI.Xaml.Data.UpdateSourceTrigger;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     public interface IUI<TUI> where TUI : Xaml.DependencyObject
     {
         TUI UI { get; }
     }
 
-#if !WINDOWS
+#if !WINUI
     public partial class DependencyObject : IUI<Xaml.DependencyObject>
     {
         public Xaml.DependencyObject UI { get; protected set; }

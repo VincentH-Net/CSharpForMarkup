@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Globalization;
 using Microsoft.UI.Xaml;
+using Xaml = Microsoft.UI.Xaml;
 using Controls = Microsoft.UI.Xaml.Controls;
 
 // TODO: check what is the appropriate symbol for WinUI 3 Desktop #if NETFX_CORE
-#if WINDOWS
-using _Length = Microsoft.UI.Markup.ConvertedGridLength;
+#if WINUI
+using _Length = CSharpMarkup.WinUI.ConvertedGridLength;
 #else
 using _Length = Microsoft.UI.Xaml.GridLength;
 #endif
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     public static partial class Helpers
     {
@@ -101,7 +102,7 @@ namespace Microsoft.UI.Markup
         static int ToInt(this Enum enumValue) => Convert.ToInt32(enumValue, CultureInfo.InvariantCulture);
     }
 
-#if WINDOWS
+#if WINUI
     public struct ConvertedGridLength
     {
         readonly GridLength length;

@@ -1,5 +1,5 @@
 ﻿#if DEBUG
-namespace CSharpMarkup.WinUI.CompileTests
+namespace CompileTests
 {
     public partial class TestViewModel
     {

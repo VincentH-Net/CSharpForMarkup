@@ -1,7 +1,7 @@
 ﻿using System;
 using IValueConverter = Microsoft.UI.Xaml.Data.IValueConverter;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
 	public class FuncConverter<TSource, TDest, TParam> : IValueConverter
 	{
