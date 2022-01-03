@@ -242,7 +242,7 @@ namespace _MarkupNamespace_
 
     // Classes to get template compiling, not part of template
     public partial class _PropertyTarget_ :
-        _ViewTypeName_
+        DependencyObject
     { }
 
     public partial class _NonViewPropertyTarget_ : System.Windows.DependencyObject { }
