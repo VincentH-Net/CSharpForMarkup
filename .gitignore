@@ -244,4 +244,6 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
-/GridChat/GridChat.Droid/packages - Copy.config
+
+# Ignore Uno Platform generated code
+**/Uno.UI.SourceGenerators
