@@ -20569,6 +20569,14 @@ namespace CSharpMarkup.Wpf // FrameworkElement
         /// <summary>Bind (or set enum value of) <see cref="Windows.FrameworkElement.Width"/></summary>
         public static DependencyProperty<TTarget, double> Width<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, double>.Get(target, Windows.FrameworkElement.WidthProperty);
+
+        /// <summary>Set <see cref="Windows.FrameworkElement.FlowDirection"/></summary>
+        public static TTarget FrameworkElement_FlowDirection<TTarget>(this TTarget target, Windows.FlowDirection value) where TTarget : DependencyObject
+        { Windows.FrameworkElement.SetFlowDirection(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.FrameworkElement.FlowDirection"/></summary>
+        public static DependencyProperty<TTarget, Windows.FlowDirection> FrameworkElement_FlowDirection<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.FlowDirection>.Get(target, Windows.FrameworkElement.FlowDirectionProperty);
     }
 }
 
@@ -28148,6 +28156,98 @@ namespace CSharpMarkup.Wpf // ScrollViewer
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.ScrollViewer.ViewportWidth"/></summary>
         public static DependencyProperty<TTarget, double> ViewportWidth<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, double>.Get(target, Windows.Controls.ScrollViewer.ViewportWidthProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.ScrollViewer.CanContentScroll"/></summary>
+        public static TTarget ScrollViewer_CanContentScroll<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
+        { Windows.Controls.ScrollViewer.SetCanContentScroll(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.ScrollViewer.CanContentScroll"/></summary>
+        public static DependencyProperty<TTarget, bool> ScrollViewer_CanContentScroll<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, bool>.Get(target, Windows.Controls.ScrollViewer.CanContentScrollProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.ScrollViewer.HorizontalScrollBarVisibility"/></summary>
+        public static TTarget ScrollViewer_HorizontalScrollBarVisibility<TTarget>(this TTarget target, Windows.Controls.ScrollBarVisibility value) where TTarget : DependencyObject
+        { Windows.Controls.ScrollViewer.SetHorizontalScrollBarVisibility(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.ScrollViewer.HorizontalScrollBarVisibility"/></summary>
+        public static DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> ScrollViewer_HorizontalScrollBarVisibility<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility>.Get(target, Windows.Controls.ScrollViewer.HorizontalScrollBarVisibilityProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled"/></summary>
+        public static TTarget ScrollViewer_IsDeferredScrollingEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
+        { Windows.Controls.ScrollViewer.SetIsDeferredScrollingEnabled(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.ScrollViewer.IsDeferredScrollingEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> ScrollViewer_IsDeferredScrollingEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, bool>.Get(target, Windows.Controls.ScrollViewer.IsDeferredScrollingEnabledProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.ScrollViewer.PanningDeceleration"/></summary>
+        public static TTarget ScrollViewer_PanningDeceleration<TTarget>(this TTarget target, double value) where TTarget : DependencyObject
+        { Windows.Controls.ScrollViewer.SetPanningDeceleration(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.ScrollViewer.PanningDeceleration"/></summary>
+        public static DependencyProperty<TTarget, double> ScrollViewer_PanningDeceleration<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, double>.Get(target, Windows.Controls.ScrollViewer.PanningDecelerationProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.ScrollViewer.PanningMode"/></summary>
+        public static TTarget ScrollViewer_PanningMode<TTarget>(this TTarget target, Windows.Controls.PanningMode value) where TTarget : DependencyObject
+        { Windows.Controls.ScrollViewer.SetPanningMode(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.ScrollViewer.PanningMode"/></summary>
+        public static DependencyProperty<TTarget, Windows.Controls.PanningMode> ScrollViewer_PanningMode<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.Controls.PanningMode>.Get(target, Windows.Controls.ScrollViewer.PanningModeProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.ScrollViewer.PanningRatio"/></summary>
+        public static TTarget ScrollViewer_PanningRatio<TTarget>(this TTarget target, double value) where TTarget : DependencyObject
+        { Windows.Controls.ScrollViewer.SetPanningRatio(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.ScrollViewer.PanningRatio"/></summary>
+        public static DependencyProperty<TTarget, double> ScrollViewer_PanningRatio<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, double>.Get(target, Windows.Controls.ScrollViewer.PanningRatioProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.ScrollViewer.VerticalScrollBarVisibility"/></summary>
+        public static TTarget ScrollViewer_VerticalScrollBarVisibility<TTarget>(this TTarget target, Windows.Controls.ScrollBarVisibility value) where TTarget : DependencyObject
+        { Windows.Controls.ScrollViewer.SetVerticalScrollBarVisibility(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.ScrollViewer.VerticalScrollBarVisibility"/></summary>
+        public static DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> ScrollViewer_VerticalScrollBarVisibility<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility>.Get(target, Windows.Controls.ScrollViewer.VerticalScrollBarVisibilityProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.ScrollViewer"/> attached properties</summary>
+        public static TTarget ScrollViewer<TTarget>(this TTarget target
+
+            , O<bool> CanContentScroll = default
+
+            , O<Windows.Controls.ScrollBarVisibility> HorizontalScrollBarVisibility = default
+
+            , O<bool> IsDeferredScrollingEnabled = default
+
+            , O<double> PanningDeceleration = default
+
+            , O<Windows.Controls.PanningMode> PanningMode = default
+
+            , O<double> PanningRatio = default
+
+            , O<Windows.Controls.ScrollBarVisibility> VerticalScrollBarVisibility = default
+
+        ) where TTarget : DependencyObject
+        {
+            if (CanContentScroll.HasValue) Windows.Controls.ScrollViewer.SetCanContentScroll(target.UI, CanContentScroll.Value);
+
+            if (HorizontalScrollBarVisibility.HasValue) Windows.Controls.ScrollViewer.SetHorizontalScrollBarVisibility(target.UI, HorizontalScrollBarVisibility.Value);
+
+            if (IsDeferredScrollingEnabled.HasValue) Windows.Controls.ScrollViewer.SetIsDeferredScrollingEnabled(target.UI, IsDeferredScrollingEnabled.Value);
+
+            if (PanningDeceleration.HasValue) Windows.Controls.ScrollViewer.SetPanningDeceleration(target.UI, PanningDeceleration.Value);
+
+            if (PanningMode.HasValue) Windows.Controls.ScrollViewer.SetPanningMode(target.UI, PanningMode.Value);
+
+            if (PanningRatio.HasValue) Windows.Controls.ScrollViewer.SetPanningRatio(target.UI, PanningRatio.Value);
+
+            if (VerticalScrollBarVisibility.HasValue) Windows.Controls.ScrollViewer.SetVerticalScrollBarVisibility(target.UI, VerticalScrollBarVisibility.Value);
+
+            return target;
+        }
     }
 }
 
@@ -28992,6 +29092,134 @@ namespace CSharpMarkup.Wpf // TextBlock
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.TextBlock.TextWrapping"/></summary>
         public static DependencyProperty<TTarget, Windows.TextWrapping> TextWrapping<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, Windows.TextWrapping>.Get(target, Windows.Controls.TextBlock.TextWrappingProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.TextBlock.BaselineOffset"/></summary>
+        public static TTarget TextBlock_BaselineOffset<TTarget>(this TTarget target, double value) where TTarget : DependencyObject
+        { Windows.Controls.TextBlock.SetBaselineOffset(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.TextBlock.BaselineOffset"/></summary>
+        public static DependencyProperty<TTarget, double> TextBlock_BaselineOffset<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, double>.Get(target, Windows.Controls.TextBlock.BaselineOffsetProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.TextBlock.FontFamily"/></summary>
+        public static TTarget TextBlock_FontFamily<TTarget>(this TTarget target, Windows.Media.FontFamily value) where TTarget : DependencyObject
+        { Windows.Controls.TextBlock.SetFontFamily(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.TextBlock.FontFamily"/></summary>
+        public static DependencyProperty<TTarget, Windows.Media.FontFamily> TextBlock_FontFamily<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.Media.FontFamily>.Get(target, Windows.Controls.TextBlock.FontFamilyProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.TextBlock.FontSize"/></summary>
+        public static TTarget TextBlock_FontSize<TTarget>(this TTarget target, double value) where TTarget : DependencyObject
+        { Windows.Controls.TextBlock.SetFontSize(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.TextBlock.FontSize"/></summary>
+        public static DependencyProperty<TTarget, double> TextBlock_FontSize<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, double>.Get(target, Windows.Controls.TextBlock.FontSizeProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.TextBlock.FontStretch"/></summary>
+        public static TTarget TextBlock_FontStretch<TTarget>(this TTarget target, Windows.FontStretch value) where TTarget : DependencyObject
+        { Windows.Controls.TextBlock.SetFontStretch(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.TextBlock.FontStretch"/></summary>
+        public static DependencyProperty<TTarget, Windows.FontStretch> TextBlock_FontStretch<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.FontStretch>.Get(target, Windows.Controls.TextBlock.FontStretchProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.TextBlock.FontStyle"/></summary>
+        public static TTarget TextBlock_FontStyle<TTarget>(this TTarget target, Windows.FontStyle value) where TTarget : DependencyObject
+        { Windows.Controls.TextBlock.SetFontStyle(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.TextBlock.FontStyle"/></summary>
+        public static DependencyProperty<TTarget, Windows.FontStyle> TextBlock_FontStyle<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.FontStyle>.Get(target, Windows.Controls.TextBlock.FontStyleProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.TextBlock.FontWeight"/></summary>
+        public static TTarget TextBlock_FontWeight<TTarget>(this TTarget target, Windows.FontWeight value) where TTarget : DependencyObject
+        { Windows.Controls.TextBlock.SetFontWeight(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.TextBlock.FontWeight"/></summary>
+        public static DependencyProperty<TTarget, Windows.FontWeight> TextBlock_FontWeight<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.FontWeight>.Get(target, Windows.Controls.TextBlock.FontWeightProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.TextBlock.Foreground"/></summary>
+        public static TTarget TextBlock_Foreground<TTarget>(this TTarget target, Windows.Media.Brush value) where TTarget : DependencyObject
+        { Windows.Controls.TextBlock.SetForeground(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.TextBlock.Foreground"/></summary>
+        public static DependencyProperty<TTarget, Windows.Media.Brush> TextBlock_Foreground<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.Media.Brush>.Get(target, Windows.Controls.TextBlock.ForegroundProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.TextBlock.LineHeight"/></summary>
+        public static TTarget TextBlock_LineHeight<TTarget>(this TTarget target, double value) where TTarget : DependencyObject
+        { Windows.Controls.TextBlock.SetLineHeight(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.TextBlock.LineHeight"/></summary>
+        public static DependencyProperty<TTarget, double> TextBlock_LineHeight<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, double>.Get(target, Windows.Controls.TextBlock.LineHeightProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.TextBlock.LineStackingStrategy"/></summary>
+        public static TTarget TextBlock_LineStackingStrategy<TTarget>(this TTarget target, Windows.LineStackingStrategy value) where TTarget : DependencyObject
+        { Windows.Controls.TextBlock.SetLineStackingStrategy(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.TextBlock.LineStackingStrategy"/></summary>
+        public static DependencyProperty<TTarget, Windows.LineStackingStrategy> TextBlock_LineStackingStrategy<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.LineStackingStrategy>.Get(target, Windows.Controls.TextBlock.LineStackingStrategyProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.TextBlock.TextAlignment"/></summary>
+        public static TTarget TextBlock_TextAlignment<TTarget>(this TTarget target, Windows.TextAlignment value) where TTarget : DependencyObject
+        { Windows.Controls.TextBlock.SetTextAlignment(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.TextBlock.TextAlignment"/></summary>
+        public static DependencyProperty<TTarget, Windows.TextAlignment> TextBlock_TextAlignment<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.TextAlignment>.Get(target, Windows.Controls.TextBlock.TextAlignmentProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.TextBlock"/> attached properties</summary>
+        public static TTarget TextBlock<TTarget>(this TTarget target
+
+            , O<double> BaselineOffset = default
+
+            , O<Windows.Media.FontFamily> FontFamily = default
+
+            , O<double> FontSize = default
+
+            , O<Windows.FontStretch> FontStretch = default
+
+            , O<Windows.FontStyle> FontStyle = default
+
+            , O<Windows.FontWeight> FontWeight = default
+
+            , O<Windows.Media.Brush> Foreground = default
+
+            , O<double> LineHeight = default
+
+            , O<Windows.LineStackingStrategy> LineStackingStrategy = default
+
+            , O<Windows.TextAlignment> TextAlignment = default
+
+        ) where TTarget : DependencyObject
+        {
+            if (BaselineOffset.HasValue) Windows.Controls.TextBlock.SetBaselineOffset(target.UI, BaselineOffset.Value);
+
+            if (FontFamily.HasValue) Windows.Controls.TextBlock.SetFontFamily(target.UI, FontFamily.Value);
+
+            if (FontSize.HasValue) Windows.Controls.TextBlock.SetFontSize(target.UI, FontSize.Value);
+
+            if (FontStretch.HasValue) Windows.Controls.TextBlock.SetFontStretch(target.UI, FontStretch.Value);
+
+            if (FontStyle.HasValue) Windows.Controls.TextBlock.SetFontStyle(target.UI, FontStyle.Value);
+
+            if (FontWeight.HasValue) Windows.Controls.TextBlock.SetFontWeight(target.UI, FontWeight.Value);
+
+            if (Foreground.HasValue) Windows.Controls.TextBlock.SetForeground(target.UI, Foreground.Value);
+
+            if (LineHeight.HasValue) Windows.Controls.TextBlock.SetLineHeight(target.UI, LineHeight.Value);
+
+            if (LineStackingStrategy.HasValue) Windows.Controls.TextBlock.SetLineStackingStrategy(target.UI, LineStackingStrategy.Value);
+
+            if (TextAlignment.HasValue) Windows.Controls.TextBlock.SetTextAlignment(target.UI, TextAlignment.Value);
+
+            return target;
+        }
     }
 }
 
@@ -29351,6 +29579,14 @@ namespace CSharpMarkup.Wpf // ToolBarTray
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.ToolBarTray.Orientation"/></summary>
         public static DependencyProperty<TTarget, Windows.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : ToolBarTray
         => DependencyProperty<TTarget, Windows.Controls.Orientation>.Get(target, Windows.Controls.ToolBarTray.OrientationProperty);
+
+        /// <summary>Set <see cref="Windows.Controls.ToolBarTray.IsLocked"/></summary>
+        public static TTarget ToolBarTray_IsLocked<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
+        { Windows.Controls.ToolBarTray.SetIsLocked(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.ToolBarTray.IsLocked"/></summary>
+        public static DependencyProperty<TTarget, bool> ToolBarTray_IsLocked<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, bool>.Get(target, Windows.Controls.ToolBarTray.IsLockedProperty);
     }
 }
 
@@ -33010,6 +33246,62 @@ namespace CSharpMarkup.Wpf // Block
         /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.Block.TextAlignment"/></summary>
         public static DependencyProperty<TTarget, Windows.TextAlignment> TextAlignment<TTarget>(this TTarget target) where TTarget : Block
         => DependencyProperty<TTarget, Windows.TextAlignment>.Get(target, Windows.Documents.Block.TextAlignmentProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.Block.IsHyphenationEnabled"/></summary>
+        public static TTarget Block_IsHyphenationEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
+        { Windows.Documents.Block.SetIsHyphenationEnabled(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.Block.IsHyphenationEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> Block_IsHyphenationEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, bool>.Get(target, Windows.Documents.Block.IsHyphenationEnabledProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.Block.LineHeight"/></summary>
+        public static TTarget Block_LineHeight<TTarget>(this TTarget target, double value) where TTarget : DependencyObject
+        { Windows.Documents.Block.SetLineHeight(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.Block.LineHeight"/></summary>
+        public static DependencyProperty<TTarget, double> Block_LineHeight<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, double>.Get(target, Windows.Documents.Block.LineHeightProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.Block.LineStackingStrategy"/></summary>
+        public static TTarget Block_LineStackingStrategy<TTarget>(this TTarget target, Windows.LineStackingStrategy value) where TTarget : DependencyObject
+        { Windows.Documents.Block.SetLineStackingStrategy(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.Block.LineStackingStrategy"/></summary>
+        public static DependencyProperty<TTarget, Windows.LineStackingStrategy> Block_LineStackingStrategy<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.LineStackingStrategy>.Get(target, Windows.Documents.Block.LineStackingStrategyProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.Block.TextAlignment"/></summary>
+        public static TTarget Block_TextAlignment<TTarget>(this TTarget target, Windows.TextAlignment value) where TTarget : DependencyObject
+        { Windows.Documents.Block.SetTextAlignment(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.Block.TextAlignment"/></summary>
+        public static DependencyProperty<TTarget, Windows.TextAlignment> Block_TextAlignment<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.TextAlignment>.Get(target, Windows.Documents.Block.TextAlignmentProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.Block"/> attached properties</summary>
+        public static TTarget Block<TTarget>(this TTarget target
+
+            , O<bool> IsHyphenationEnabled = default
+
+            , O<double> LineHeight = default
+
+            , O<Windows.LineStackingStrategy> LineStackingStrategy = default
+
+            , O<Windows.TextAlignment> TextAlignment = default
+
+        ) where TTarget : DependencyObject
+        {
+            if (IsHyphenationEnabled.HasValue) Windows.Documents.Block.SetIsHyphenationEnabled(target.UI, IsHyphenationEnabled.Value);
+
+            if (LineHeight.HasValue) Windows.Documents.Block.SetLineHeight(target.UI, LineHeight.Value);
+
+            if (LineStackingStrategy.HasValue) Windows.Documents.Block.SetLineStackingStrategy(target.UI, LineStackingStrategy.Value);
+
+            if (TextAlignment.HasValue) Windows.Documents.Block.SetTextAlignment(target.UI, TextAlignment.Value);
+
+            return target;
+        }
     }
 }
 
@@ -35550,6 +35842,86 @@ namespace CSharpMarkup.Wpf // TextElement
         /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.TextElement.TextEffects"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.TextEffectCollection> TextEffects<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, Windows.Media.TextEffectCollection>.Get(target, Windows.Documents.TextElement.TextEffectsProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.TextElement.FontFamily"/></summary>
+        public static TTarget TextElement_FontFamily<TTarget>(this TTarget target, Windows.Media.FontFamily value) where TTarget : DependencyObject
+        { Windows.Documents.TextElement.SetFontFamily(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.TextElement.FontFamily"/></summary>
+        public static DependencyProperty<TTarget, Windows.Media.FontFamily> TextElement_FontFamily<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.Media.FontFamily>.Get(target, Windows.Documents.TextElement.FontFamilyProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.TextElement.FontSize"/></summary>
+        public static TTarget TextElement_FontSize<TTarget>(this TTarget target, double value) where TTarget : DependencyObject
+        { Windows.Documents.TextElement.SetFontSize(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.TextElement.FontSize"/></summary>
+        public static DependencyProperty<TTarget, double> TextElement_FontSize<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, double>.Get(target, Windows.Documents.TextElement.FontSizeProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.TextElement.FontStretch"/></summary>
+        public static TTarget TextElement_FontStretch<TTarget>(this TTarget target, Windows.FontStretch value) where TTarget : DependencyObject
+        { Windows.Documents.TextElement.SetFontStretch(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.TextElement.FontStretch"/></summary>
+        public static DependencyProperty<TTarget, Windows.FontStretch> TextElement_FontStretch<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.FontStretch>.Get(target, Windows.Documents.TextElement.FontStretchProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.TextElement.FontStyle"/></summary>
+        public static TTarget TextElement_FontStyle<TTarget>(this TTarget target, Windows.FontStyle value) where TTarget : DependencyObject
+        { Windows.Documents.TextElement.SetFontStyle(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.TextElement.FontStyle"/></summary>
+        public static DependencyProperty<TTarget, Windows.FontStyle> TextElement_FontStyle<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.FontStyle>.Get(target, Windows.Documents.TextElement.FontStyleProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.TextElement.FontWeight"/></summary>
+        public static TTarget TextElement_FontWeight<TTarget>(this TTarget target, Windows.FontWeight value) where TTarget : DependencyObject
+        { Windows.Documents.TextElement.SetFontWeight(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.TextElement.FontWeight"/></summary>
+        public static DependencyProperty<TTarget, Windows.FontWeight> TextElement_FontWeight<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.FontWeight>.Get(target, Windows.Documents.TextElement.FontWeightProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.TextElement.Foreground"/></summary>
+        public static TTarget TextElement_Foreground<TTarget>(this TTarget target, Windows.Media.Brush value) where TTarget : DependencyObject
+        { Windows.Documents.TextElement.SetForeground(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.TextElement.Foreground"/></summary>
+        public static DependencyProperty<TTarget, Windows.Media.Brush> TextElement_Foreground<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Windows.Media.Brush>.Get(target, Windows.Documents.TextElement.ForegroundProperty);
+
+        /// <summary>Set <see cref="Windows.Documents.TextElement"/> attached properties</summary>
+        public static TTarget TextElement<TTarget>(this TTarget target
+
+            , O<Windows.Media.FontFamily> FontFamily = default
+
+            , O<double> FontSize = default
+
+            , O<Windows.FontStretch> FontStretch = default
+
+            , O<Windows.FontStyle> FontStyle = default
+
+            , O<Windows.FontWeight> FontWeight = default
+
+            , O<Windows.Media.Brush> Foreground = default
+
+        ) where TTarget : DependencyObject
+        {
+            if (FontFamily.HasValue) Windows.Documents.TextElement.SetFontFamily(target.UI, FontFamily.Value);
+
+            if (FontSize.HasValue) Windows.Documents.TextElement.SetFontSize(target.UI, FontSize.Value);
+
+            if (FontStretch.HasValue) Windows.Documents.TextElement.SetFontStretch(target.UI, FontStretch.Value);
+
+            if (FontStyle.HasValue) Windows.Documents.TextElement.SetFontStyle(target.UI, FontStyle.Value);
+
+            if (FontWeight.HasValue) Windows.Documents.TextElement.SetFontWeight(target.UI, FontWeight.Value);
+
+            if (Foreground.HasValue) Windows.Documents.TextElement.SetForeground(target.UI, Foreground.Value);
+
+            return target;
+        }
     }
 }
 
@@ -36708,6 +37080,30 @@ namespace CSharpMarkup.Wpf // JournalEntry
         /// <summary>Bind (or set enum value of) <see cref="Windows.Navigation.JournalEntry.KeepAlive"/></summary>
         public static DependencyProperty<TTarget, bool> JournalEntry_KeepAlive<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Windows.Navigation.JournalEntry.KeepAliveProperty);
+
+        /// <summary>Set <see cref="Windows.Navigation.JournalEntry.Name"/></summary>
+        public static TTarget JournalEntry_Name<TTarget>(this TTarget target, string value) where TTarget : DependencyObject
+        { Windows.Navigation.JournalEntry.SetName(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Windows.Navigation.JournalEntry.Name"/></summary>
+        public static DependencyProperty<TTarget, string> JournalEntry_Name<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, string>.Get(target, Windows.Navigation.JournalEntry.NameProperty);
+
+        /// <summary>Set <see cref="Windows.Navigation.JournalEntry"/> attached properties</summary>
+        public static TTarget JournalEntry<TTarget>(this TTarget target
+
+            , O<bool> KeepAlive = default
+
+            , O<string> Name = default
+
+        ) where TTarget : DependencyObject
+        {
+            if (KeepAlive.HasValue) Windows.Navigation.JournalEntry.SetKeepAlive(target.UI, KeepAlive.Value);
+
+            if (Name.HasValue) Windows.Navigation.JournalEntry.SetName(target.UI, Name.Value);
+
+            return target;
+        }
     }
 }
 
@@ -43746,57 +44142,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.TextTrimming.WordEllipsis"/></summary>
         public static TTarget WordEllipsis<TTarget>(this DependencyProperty<TTarget, Windows.TextTrimming> property) where TTarget : AccessText
         => property.Set(Windows.TextTrimming.WordEllipsis);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : AccessText
-        => property.Set(Windows.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : AccessText
-        => property.Set(Windows.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : AccessText
-        => property.Set(Windows.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : AccessText
-        => property.Set(Windows.TextAlignment.Justify);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : AccessText
-        => property.Set(Windows.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : AccessText
-        => property.Set(Windows.LineStackingStrategy.MaxHeight);
-    }
-
-    public static partial class AnchoredBlockExtensions
-    {
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : AnchoredBlock
-        => property.Set(Windows.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : AnchoredBlock
-        => property.Set(Windows.LineStackingStrategy.MaxHeight);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : AnchoredBlock
-        => property.Set(Windows.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : AnchoredBlock
-        => property.Set(Windows.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : AnchoredBlock
-        => property.Set(Windows.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : AnchoredBlock
-        => property.Set(Windows.TextAlignment.Justify);
     }
 
     public static partial class ArcSegmentExtensions
@@ -43858,22 +44203,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         public static TTarget Rotate270<TTarget>(this DependencyProperty<TTarget, Windows.Media.Imaging.Rotation> property) where TTarget : BitmapImage
         => property.Set(Windows.Media.Imaging.Rotation.Rotate270);
 
-        /// <summary>Set to <see cref="Windows.Media.Imaging.BitmapCacheOption.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Windows.Media.Imaging.BitmapCacheOption> property) where TTarget : BitmapImage
-        => property.Set(Windows.Media.Imaging.BitmapCacheOption.Default);
-
-        /// <summary>Set to <see cref="Windows.Media.Imaging.BitmapCacheOption.OnDemand"/></summary>
-        public static TTarget OnDemand<TTarget>(this DependencyProperty<TTarget, Windows.Media.Imaging.BitmapCacheOption> property) where TTarget : BitmapImage
-        => property.Set(Windows.Media.Imaging.BitmapCacheOption.OnDemand);
-
-        /// <summary>Set to <see cref="Windows.Media.Imaging.BitmapCacheOption.OnLoad"/></summary>
-        public static TTarget OnLoad<TTarget>(this DependencyProperty<TTarget, Windows.Media.Imaging.BitmapCacheOption> property) where TTarget : BitmapImage
-        => property.Set(Windows.Media.Imaging.BitmapCacheOption.OnLoad);
-
-        /// <summary>Set to <see cref="Windows.Media.Imaging.BitmapCacheOption.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Media.Imaging.BitmapCacheOption> property) where TTarget : BitmapImage
-        => property.Set(Windows.Media.Imaging.BitmapCacheOption.None);
-
         /// <summary>Set to <see cref="Windows.Media.Imaging.BitmapCreateOptions.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Media.Imaging.BitmapCreateOptions> property) where TTarget : BitmapImage
         => property.Set(Windows.Media.Imaging.BitmapCreateOptions.None);
@@ -43893,42 +44222,26 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Media.Imaging.BitmapCreateOptions.IgnoreImageCache"/></summary>
         public static TTarget IgnoreImageCache<TTarget>(this DependencyProperty<TTarget, Windows.Media.Imaging.BitmapCreateOptions> property) where TTarget : BitmapImage
         => property.Set(Windows.Media.Imaging.BitmapCreateOptions.IgnoreImageCache);
+
+        /// <summary>Set to <see cref="Windows.Media.Imaging.BitmapCacheOption.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Windows.Media.Imaging.BitmapCacheOption> property) where TTarget : BitmapImage
+        => property.Set(Windows.Media.Imaging.BitmapCacheOption.Default);
+
+        /// <summary>Set to <see cref="Windows.Media.Imaging.BitmapCacheOption.OnDemand"/></summary>
+        public static TTarget OnDemand<TTarget>(this DependencyProperty<TTarget, Windows.Media.Imaging.BitmapCacheOption> property) where TTarget : BitmapImage
+        => property.Set(Windows.Media.Imaging.BitmapCacheOption.OnDemand);
+
+        /// <summary>Set to <see cref="Windows.Media.Imaging.BitmapCacheOption.OnLoad"/></summary>
+        public static TTarget OnLoad<TTarget>(this DependencyProperty<TTarget, Windows.Media.Imaging.BitmapCacheOption> property) where TTarget : BitmapImage
+        => property.Set(Windows.Media.Imaging.BitmapCacheOption.OnLoad);
+
+        /// <summary>Set to <see cref="Windows.Media.Imaging.BitmapCacheOption.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Media.Imaging.BitmapCacheOption> property) where TTarget : BitmapImage
+        => property.Set(Windows.Media.Imaging.BitmapCacheOption.None);
     }
 
     public static partial class BlockExtensions
     {
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : Block
-        => property.Set(Windows.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : Block
-        => property.Set(Windows.LineStackingStrategy.MaxHeight);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : Block
-        => property.Set(Windows.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : Block
-        => property.Set(Windows.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : Block
-        => property.Set(Windows.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : Block
-        => property.Set(Windows.TextAlignment.Justify);
-
-        /// <summary>Set to <see cref="Windows.FlowDirection.LeftToRight"/></summary>
-        public static TTarget LeftToRight<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : Block
-        => property.Set(Windows.FlowDirection.LeftToRight);
-
-        /// <summary>Set to <see cref="Windows.FlowDirection.RightToLeft"/></summary>
-        public static TTarget RightToLeft<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : Block
-        => property.Set(Windows.FlowDirection.RightToLeft);
-
         /// <summary>Set to <see cref="Windows.WrapDirection.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.WrapDirection> property) where TTarget : Block
         => property.Set(Windows.WrapDirection.None);
@@ -44021,18 +44334,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         public static TTarget Saturday<TTarget>(this DependencyProperty<TTarget, DayOfWeek> property) where TTarget : Calendar
         => property.Set(DayOfWeek.Saturday);
 
-        /// <summary>Set to <see cref="Windows.Controls.CalendarMode.Month"/></summary>
-        public static TTarget Month<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CalendarMode> property) where TTarget : Calendar
-        => property.Set(Windows.Controls.CalendarMode.Month);
-
-        /// <summary>Set to <see cref="Windows.Controls.CalendarMode.Year"/></summary>
-        public static TTarget Year<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CalendarMode> property) where TTarget : Calendar
-        => property.Set(Windows.Controls.CalendarMode.Year);
-
-        /// <summary>Set to <see cref="Windows.Controls.CalendarMode.Decade"/></summary>
-        public static TTarget Decade<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CalendarMode> property) where TTarget : Calendar
-        => property.Set(Windows.Controls.CalendarMode.Decade);
-
         /// <summary>Set to <see cref="Windows.Controls.CalendarSelectionMode.SingleDate"/></summary>
         public static TTarget SingleDate<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CalendarSelectionMode> property) where TTarget : Calendar
         => property.Set(Windows.Controls.CalendarSelectionMode.SingleDate);
@@ -44048,6 +44349,18 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Controls.CalendarSelectionMode.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CalendarSelectionMode> property) where TTarget : Calendar
         => property.Set(Windows.Controls.CalendarSelectionMode.None);
+
+        /// <summary>Set to <see cref="Windows.Controls.CalendarMode.Month"/></summary>
+        public static TTarget Month<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CalendarMode> property) where TTarget : Calendar
+        => property.Set(Windows.Controls.CalendarMode.Month);
+
+        /// <summary>Set to <see cref="Windows.Controls.CalendarMode.Year"/></summary>
+        public static TTarget Year<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CalendarMode> property) where TTarget : Calendar
+        => property.Set(Windows.Controls.CalendarMode.Year);
+
+        /// <summary>Set to <see cref="Windows.Controls.CalendarMode.Decade"/></summary>
+        public static TTarget Decade<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CalendarMode> property) where TTarget : Calendar
+        => property.Set(Windows.Controls.CalendarMode.Decade);
     }
 
     public static partial class CombinedGeometryExtensions
@@ -44122,6 +44435,18 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
 
     public static partial class DataGridExtensions
     {
+        /// <summary>Set to <see cref="Windows.Controls.DataGridSelectionUnit.Cell"/></summary>
+        public static TTarget Cell<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridSelectionUnit> property) where TTarget : DataGrid
+        => property.Set(Windows.Controls.DataGridSelectionUnit.Cell);
+
+        /// <summary>Set to <see cref="Windows.Controls.DataGridSelectionUnit.FullRow"/></summary>
+        public static TTarget FullRow<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridSelectionUnit> property) where TTarget : DataGrid
+        => property.Set(Windows.Controls.DataGridSelectionUnit.FullRow);
+
+        /// <summary>Set to <see cref="Windows.Controls.DataGridSelectionUnit.CellOrRowHeader"/></summary>
+        public static TTarget CellOrRowHeader<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridSelectionUnit> property) where TTarget : DataGrid
+        => property.Set(Windows.Controls.DataGridSelectionUnit.CellOrRowHeader);
+
         /// <summary>Set to <see cref="Windows.Controls.DataGridSelectionMode.Single"/></summary>
         public static TTarget Single<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridSelectionMode> property) where TTarget : DataGrid
         => property.Set(Windows.Controls.DataGridSelectionMode.Single);
@@ -44130,21 +44455,33 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         public static TTarget Extended<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridSelectionMode> property) where TTarget : DataGrid
         => property.Set(Windows.Controls.DataGridSelectionMode.Extended);
 
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.ScrollBarVisibility.Disabled);
+        /// <summary>Set to <see cref="Windows.Controls.DataGridRowDetailsVisibilityMode.Collapsed"/></summary>
+        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridRowDetailsVisibilityMode> property) where TTarget : DataGrid
+        => property.Set(Windows.Controls.DataGridRowDetailsVisibilityMode.Collapsed);
 
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.ScrollBarVisibility.Auto);
+        /// <summary>Set to <see cref="Windows.Controls.DataGridRowDetailsVisibilityMode.Visible"/></summary>
+        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridRowDetailsVisibilityMode> property) where TTarget : DataGrid
+        => property.Set(Windows.Controls.DataGridRowDetailsVisibilityMode.Visible);
 
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.ScrollBarVisibility.Hidden);
+        /// <summary>Set to <see cref="Windows.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected"/></summary>
+        public static TTarget VisibleWhenSelected<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridRowDetailsVisibilityMode> property) where TTarget : DataGrid
+        => property.Set(Windows.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected);
 
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.ScrollBarVisibility.Visible);
+        /// <summary>Set to <see cref="Windows.Controls.DataGridHeadersVisibility.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridHeadersVisibility> property) where TTarget : DataGrid
+        => property.Set(Windows.Controls.DataGridHeadersVisibility.None);
+
+        /// <summary>Set to <see cref="Windows.Controls.DataGridHeadersVisibility.Column"/></summary>
+        public static TTarget Column<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridHeadersVisibility> property) where TTarget : DataGrid
+        => property.Set(Windows.Controls.DataGridHeadersVisibility.Column);
+
+        /// <summary>Set to <see cref="Windows.Controls.DataGridHeadersVisibility.Row"/></summary>
+        public static TTarget Row<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridHeadersVisibility> property) where TTarget : DataGrid
+        => property.Set(Windows.Controls.DataGridHeadersVisibility.Row);
+
+        /// <summary>Set to <see cref="Windows.Controls.DataGridHeadersVisibility.All"/></summary>
+        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridHeadersVisibility> property) where TTarget : DataGrid
+        => property.Set(Windows.Controls.DataGridHeadersVisibility.All);
 
         /// <summary>Set to <see cref="Windows.Controls.DataGridGridLinesVisibility.All"/></summary>
         public static TTarget All<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridGridLinesVisibility> property) where TTarget : DataGrid
@@ -44173,46 +44510,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Controls.DataGridClipboardCopyMode.IncludeHeader"/></summary>
         public static TTarget IncludeHeader<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridClipboardCopyMode> property) where TTarget : DataGrid
         => property.Set(Windows.Controls.DataGridClipboardCopyMode.IncludeHeader);
-
-        /// <summary>Set to <see cref="Windows.Controls.DataGridRowDetailsVisibilityMode.Collapsed"/></summary>
-        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridRowDetailsVisibilityMode> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.DataGridRowDetailsVisibilityMode.Collapsed);
-
-        /// <summary>Set to <see cref="Windows.Controls.DataGridRowDetailsVisibilityMode.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridRowDetailsVisibilityMode> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.DataGridRowDetailsVisibilityMode.Visible);
-
-        /// <summary>Set to <see cref="Windows.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected"/></summary>
-        public static TTarget VisibleWhenSelected<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridRowDetailsVisibilityMode> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected);
-
-        /// <summary>Set to <see cref="Windows.Controls.DataGridSelectionUnit.Cell"/></summary>
-        public static TTarget Cell<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridSelectionUnit> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.DataGridSelectionUnit.Cell);
-
-        /// <summary>Set to <see cref="Windows.Controls.DataGridSelectionUnit.FullRow"/></summary>
-        public static TTarget FullRow<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridSelectionUnit> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.DataGridSelectionUnit.FullRow);
-
-        /// <summary>Set to <see cref="Windows.Controls.DataGridSelectionUnit.CellOrRowHeader"/></summary>
-        public static TTarget CellOrRowHeader<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridSelectionUnit> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.DataGridSelectionUnit.CellOrRowHeader);
-
-        /// <summary>Set to <see cref="Windows.Controls.DataGridHeadersVisibility.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridHeadersVisibility> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.DataGridHeadersVisibility.None);
-
-        /// <summary>Set to <see cref="Windows.Controls.DataGridHeadersVisibility.Column"/></summary>
-        public static TTarget Column<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridHeadersVisibility> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.DataGridHeadersVisibility.Column);
-
-        /// <summary>Set to <see cref="Windows.Controls.DataGridHeadersVisibility.Row"/></summary>
-        public static TTarget Row<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridHeadersVisibility> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.DataGridHeadersVisibility.Row);
-
-        /// <summary>Set to <see cref="Windows.Controls.DataGridHeadersVisibility.All"/></summary>
-        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Windows.Controls.DataGridHeadersVisibility> property) where TTarget : DataGrid
-        => property.Set(Windows.Controls.DataGridHeadersVisibility.All);
     }
 
     public static partial class DataGridColumnExtensions
@@ -44271,21 +44568,29 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
 
     public static partial class DependencyObjectExtensions
     {
-        /// <summary>Set to <see cref="Windows.Controls.VirtualizationMode.Standard"/></summary>
-        public static TTarget Standard<TTarget>(this DependencyProperty<TTarget, Windows.Controls.VirtualizationMode> property) where TTarget : DependencyObject
-        => property.Set(Windows.Controls.VirtualizationMode.Standard);
+        /// <summary>Set to <see cref="Windows.TextAlignment.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : DependencyObject
+        => property.Set(Windows.TextAlignment.Left);
 
-        /// <summary>Set to <see cref="Windows.Controls.VirtualizationMode.Recycling"/></summary>
-        public static TTarget Recycling<TTarget>(this DependencyProperty<TTarget, Windows.Controls.VirtualizationMode> property) where TTarget : DependencyObject
-        => property.Set(Windows.Controls.VirtualizationMode.Recycling);
+        /// <summary>Set to <see cref="Windows.TextAlignment.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : DependencyObject
+        => property.Set(Windows.TextAlignment.Right);
 
-        /// <summary>Set to <see cref="Windows.Controls.ScrollUnit.Pixel"/></summary>
-        public static TTarget Pixel<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollUnit> property) where TTarget : DependencyObject
-        => property.Set(Windows.Controls.ScrollUnit.Pixel);
+        /// <summary>Set to <see cref="Windows.TextAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : DependencyObject
+        => property.Set(Windows.TextAlignment.Center);
 
-        /// <summary>Set to <see cref="Windows.Controls.ScrollUnit.Item"/></summary>
-        public static TTarget Item<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollUnit> property) where TTarget : DependencyObject
-        => property.Set(Windows.Controls.ScrollUnit.Item);
+        /// <summary>Set to <see cref="Windows.TextAlignment.Justify"/></summary>
+        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : DependencyObject
+        => property.Set(Windows.TextAlignment.Justify);
+
+        /// <summary>Set to <see cref="Windows.LineStackingStrategy.BlockLineHeight"/></summary>
+        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : DependencyObject
+        => property.Set(Windows.LineStackingStrategy.BlockLineHeight);
+
+        /// <summary>Set to <see cref="Windows.LineStackingStrategy.MaxHeight"/></summary>
+        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : DependencyObject
+        => property.Set(Windows.LineStackingStrategy.MaxHeight);
 
         /// <summary>Set to <see cref="Windows.Controls.VirtualizationCacheLengthUnit.Pixel"/></summary>
         public static TTarget Pixel<TTarget>(this DependencyProperty<TTarget, Windows.Controls.VirtualizationCacheLengthUnit> property) where TTarget : DependencyObject
@@ -44298,6 +44603,82 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Controls.VirtualizationCacheLengthUnit.Page"/></summary>
         public static TTarget Page<TTarget>(this DependencyProperty<TTarget, Windows.Controls.VirtualizationCacheLengthUnit> property) where TTarget : DependencyObject
         => property.Set(Windows.Controls.VirtualizationCacheLengthUnit.Page);
+
+        /// <summary>Set to <see cref="Windows.Controls.ScrollUnit.Pixel"/></summary>
+        public static TTarget Pixel<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollUnit> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.ScrollUnit.Pixel);
+
+        /// <summary>Set to <see cref="Windows.Controls.ScrollUnit.Item"/></summary>
+        public static TTarget Item<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollUnit> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.ScrollUnit.Item);
+
+        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Disabled"/></summary>
+        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.ScrollBarVisibility.Disabled);
+
+        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.ScrollBarVisibility.Auto);
+
+        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Hidden"/></summary>
+        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.ScrollBarVisibility.Hidden);
+
+        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Visible"/></summary>
+        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.ScrollBarVisibility.Visible);
+
+        /// <summary>Set to <see cref="Windows.Controls.PanningMode.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.PanningMode.None);
+
+        /// <summary>Set to <see cref="Windows.Controls.PanningMode.HorizontalOnly"/></summary>
+        public static TTarget HorizontalOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.PanningMode.HorizontalOnly);
+
+        /// <summary>Set to <see cref="Windows.Controls.PanningMode.VerticalOnly"/></summary>
+        public static TTarget VerticalOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.PanningMode.VerticalOnly);
+
+        /// <summary>Set to <see cref="Windows.Controls.PanningMode.Both"/></summary>
+        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.PanningMode.Both);
+
+        /// <summary>Set to <see cref="Windows.Controls.PanningMode.HorizontalFirst"/></summary>
+        public static TTarget HorizontalFirst<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.PanningMode.HorizontalFirst);
+
+        /// <summary>Set to <see cref="Windows.Controls.PanningMode.VerticalFirst"/></summary>
+        public static TTarget VerticalFirst<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.PanningMode.VerticalFirst);
+
+        /// <summary>Set to <see cref="Windows.Controls.OverflowMode.AsNeeded"/></summary>
+        public static TTarget AsNeeded<TTarget>(this DependencyProperty<TTarget, Windows.Controls.OverflowMode> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.OverflowMode.AsNeeded);
+
+        /// <summary>Set to <see cref="Windows.Controls.OverflowMode.Always"/></summary>
+        public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Windows.Controls.OverflowMode> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.OverflowMode.Always);
+
+        /// <summary>Set to <see cref="Windows.Controls.OverflowMode.Never"/></summary>
+        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Windows.Controls.OverflowMode> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.OverflowMode.Never);
+
+        /// <summary>Set to <see cref="Windows.Controls.VirtualizationMode.Standard"/></summary>
+        public static TTarget Standard<TTarget>(this DependencyProperty<TTarget, Windows.Controls.VirtualizationMode> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.VirtualizationMode.Standard);
+
+        /// <summary>Set to <see cref="Windows.Controls.VirtualizationMode.Recycling"/></summary>
+        public static TTarget Recycling<TTarget>(this DependencyProperty<TTarget, Windows.Controls.VirtualizationMode> property) where TTarget : DependencyObject
+        => property.Set(Windows.Controls.VirtualizationMode.Recycling);
+
+        /// <summary>Set to <see cref="Windows.FlowDirection.LeftToRight"/></summary>
+        public static TTarget LeftToRight<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : DependencyObject
+        => property.Set(Windows.FlowDirection.LeftToRight);
+
+        /// <summary>Set to <see cref="Windows.FlowDirection.RightToLeft"/></summary>
+        public static TTarget RightToLeft<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : DependencyObject
+        => property.Set(Windows.FlowDirection.RightToLeft);
 
         /// <summary>Set to <see cref="Windows.Controls.SelectiveScrollingOrientation.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Controls.SelectiveScrollingOrientation> property) where TTarget : DependencyObject
@@ -44314,22 +44695,22 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Controls.SelectiveScrollingOrientation.Both"/></summary>
         public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Windows.Controls.SelectiveScrollingOrientation> property) where TTarget : DependencyObject
         => property.Set(Windows.Controls.SelectiveScrollingOrientation.Both);
-
-        /// <summary>Set to <see cref="Windows.Controls.OverflowMode.AsNeeded"/></summary>
-        public static TTarget AsNeeded<TTarget>(this DependencyProperty<TTarget, Windows.Controls.OverflowMode> property) where TTarget : DependencyObject
-        => property.Set(Windows.Controls.OverflowMode.AsNeeded);
-
-        /// <summary>Set to <see cref="Windows.Controls.OverflowMode.Always"/></summary>
-        public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Windows.Controls.OverflowMode> property) where TTarget : DependencyObject
-        => property.Set(Windows.Controls.OverflowMode.Always);
-
-        /// <summary>Set to <see cref="Windows.Controls.OverflowMode.Never"/></summary>
-        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Windows.Controls.OverflowMode> property) where TTarget : DependencyObject
-        => property.Set(Windows.Controls.OverflowMode.Never);
     }
 
     public static partial class DocumentPageViewExtensions
     {
+        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.UpOnly"/></summary>
+        public static TTarget UpOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : DocumentPageView
+        => property.Set(Windows.Controls.StretchDirection.UpOnly);
+
+        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.DownOnly"/></summary>
+        public static TTarget DownOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : DocumentPageView
+        => property.Set(Windows.Controls.StretchDirection.DownOnly);
+
+        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.Both"/></summary>
+        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : DocumentPageView
+        => property.Set(Windows.Controls.StretchDirection.Both);
+
         /// <summary>Set to <see cref="Windows.Media.Stretch.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : DocumentPageView
         => property.Set(Windows.Media.Stretch.None);
@@ -44345,18 +44726,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Media.Stretch.UniformToFill"/></summary>
         public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : DocumentPageView
         => property.Set(Windows.Media.Stretch.UniformToFill);
-
-        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.UpOnly"/></summary>
-        public static TTarget UpOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : DocumentPageView
-        => property.Set(Windows.Controls.StretchDirection.UpOnly);
-
-        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.DownOnly"/></summary>
-        public static TTarget DownOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : DocumentPageView
-        => property.Set(Windows.Controls.StretchDirection.DownOnly);
-
-        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.Both"/></summary>
-        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : DocumentPageView
-        => property.Set(Windows.Controls.StretchDirection.Both);
     }
 
     public static partial class DoubleAnimationUsingPathExtensions
@@ -44521,41 +44890,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         => property.Set(Windows.HorizontalAlignment.Stretch);
     }
 
-    public static partial class FlowDocumentExtensions
-    {
-        /// <summary>Set to <see cref="Windows.FlowDirection.LeftToRight"/></summary>
-        public static TTarget LeftToRight<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : FlowDocument
-        => property.Set(Windows.FlowDirection.LeftToRight);
-
-        /// <summary>Set to <see cref="Windows.FlowDirection.RightToLeft"/></summary>
-        public static TTarget RightToLeft<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : FlowDocument
-        => property.Set(Windows.FlowDirection.RightToLeft);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : FlowDocument
-        => property.Set(Windows.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : FlowDocument
-        => property.Set(Windows.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : FlowDocument
-        => property.Set(Windows.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : FlowDocument
-        => property.Set(Windows.TextAlignment.Justify);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : FlowDocument
-        => property.Set(Windows.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : FlowDocument
-        => property.Set(Windows.LineStackingStrategy.MaxHeight);
-    }
-
     public static partial class FlowDocumentReaderExtensions
     {
         /// <summary>Set to <see cref="Windows.Controls.FlowDocumentReaderViewingMode.Page"/></summary>
@@ -44569,25 +44903,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Controls.FlowDocumentReaderViewingMode.Scroll"/></summary>
         public static TTarget Scroll<TTarget>(this DependencyProperty<TTarget, Windows.Controls.FlowDocumentReaderViewingMode> property) where TTarget : FlowDocumentReader
         => property.Set(Windows.Controls.FlowDocumentReaderViewingMode.Scroll);
-    }
-
-    public static partial class FlowDocumentScrollViewerExtensions
-    {
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : FlowDocumentScrollViewer
-        => property.Set(Windows.Controls.ScrollBarVisibility.Disabled);
-
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : FlowDocumentScrollViewer
-        => property.Set(Windows.Controls.ScrollBarVisibility.Auto);
-
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : FlowDocumentScrollViewer
-        => property.Set(Windows.Controls.ScrollBarVisibility.Hidden);
-
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : FlowDocumentScrollViewer
-        => property.Set(Windows.Controls.ScrollBarVisibility.Visible);
     }
 
     public static partial class FrameExtensions
@@ -44619,14 +44934,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
 
     public static partial class FrameworkElementExtensions
     {
-        /// <summary>Set to <see cref="Windows.FlowDirection.LeftToRight"/></summary>
-        public static TTarget LeftToRight<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : FrameworkElement
-        => property.Set(Windows.FlowDirection.LeftToRight);
-
-        /// <summary>Set to <see cref="Windows.FlowDirection.RightToLeft"/></summary>
-        public static TTarget RightToLeft<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : FrameworkElement
-        => property.Set(Windows.FlowDirection.RightToLeft);
-
         /// <summary>Set to <see cref="Windows.HorizontalAlignment.Left"/></summary>
         public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.HorizontalAlignment> property) where TTarget : FrameworkElement
         => property.Set(Windows.HorizontalAlignment.Left);
@@ -44692,6 +44999,14 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
 
     public static partial class GradientBrushExtensions
     {
+        /// <summary>Set to <see cref="Windows.Media.ColorInterpolationMode.ScRgbLinearInterpolation"/></summary>
+        public static TTarget ScRgbLinearInterpolation<TTarget>(this DependencyProperty<TTarget, Windows.Media.ColorInterpolationMode> property) where TTarget : GradientBrush
+        => property.Set(Windows.Media.ColorInterpolationMode.ScRgbLinearInterpolation);
+
+        /// <summary>Set to <see cref="Windows.Media.ColorInterpolationMode.SRgbLinearInterpolation"/></summary>
+        public static TTarget SRgbLinearInterpolation<TTarget>(this DependencyProperty<TTarget, Windows.Media.ColorInterpolationMode> property) where TTarget : GradientBrush
+        => property.Set(Windows.Media.ColorInterpolationMode.SRgbLinearInterpolation);
+
         /// <summary>Set to <see cref="Windows.Media.GradientSpreadMethod.Pad"/></summary>
         public static TTarget Pad<TTarget>(this DependencyProperty<TTarget, Windows.Media.GradientSpreadMethod> property) where TTarget : GradientBrush
         => property.Set(Windows.Media.GradientSpreadMethod.Pad);
@@ -44711,14 +45026,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Media.BrushMappingMode.RelativeToBoundingBox"/></summary>
         public static TTarget RelativeToBoundingBox<TTarget>(this DependencyProperty<TTarget, Windows.Media.BrushMappingMode> property) where TTarget : GradientBrush
         => property.Set(Windows.Media.BrushMappingMode.RelativeToBoundingBox);
-
-        /// <summary>Set to <see cref="Windows.Media.ColorInterpolationMode.ScRgbLinearInterpolation"/></summary>
-        public static TTarget ScRgbLinearInterpolation<TTarget>(this DependencyProperty<TTarget, Windows.Media.ColorInterpolationMode> property) where TTarget : GradientBrush
-        => property.Set(Windows.Media.ColorInterpolationMode.ScRgbLinearInterpolation);
-
-        /// <summary>Set to <see cref="Windows.Media.ColorInterpolationMode.SRgbLinearInterpolation"/></summary>
-        public static TTarget SRgbLinearInterpolation<TTarget>(this DependencyProperty<TTarget, Windows.Media.ColorInterpolationMode> property) where TTarget : GradientBrush
-        => property.Set(Windows.Media.ColorInterpolationMode.SRgbLinearInterpolation);
     }
 
     public static partial class GridSplitterExtensions
@@ -44769,18 +45076,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
 
     public static partial class ImageExtensions
     {
-        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.UpOnly"/></summary>
-        public static TTarget UpOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Image
-        => property.Set(Windows.Controls.StretchDirection.UpOnly);
-
-        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.DownOnly"/></summary>
-        public static TTarget DownOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Image
-        => property.Set(Windows.Controls.StretchDirection.DownOnly);
-
-        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.Both"/></summary>
-        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Image
-        => property.Set(Windows.Controls.StretchDirection.Both);
-
         /// <summary>Set to <see cref="Windows.Media.Stretch.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : Image
         => property.Set(Windows.Media.Stretch.None);
@@ -44796,6 +45091,18 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Media.Stretch.UniformToFill"/></summary>
         public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : Image
         => property.Set(Windows.Media.Stretch.UniformToFill);
+
+        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.UpOnly"/></summary>
+        public static TTarget UpOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Image
+        => property.Set(Windows.Controls.StretchDirection.UpOnly);
+
+        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.DownOnly"/></summary>
+        public static TTarget DownOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Image
+        => property.Set(Windows.Controls.StretchDirection.DownOnly);
+
+        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.Both"/></summary>
+        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Image
+        => property.Set(Windows.Controls.StretchDirection.Both);
     }
 
     public static partial class InkCanvasExtensions
@@ -44831,14 +45138,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
 
     public static partial class InlineExtensions
     {
-        /// <summary>Set to <see cref="Windows.FlowDirection.LeftToRight"/></summary>
-        public static TTarget LeftToRight<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : Inline
-        => property.Set(Windows.FlowDirection.LeftToRight);
-
-        /// <summary>Set to <see cref="Windows.FlowDirection.RightToLeft"/></summary>
-        public static TTarget RightToLeft<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : Inline
-        => property.Set(Windows.FlowDirection.RightToLeft);
-
         /// <summary>Set to <see cref="Windows.BaselineAlignment.Top"/></summary>
         public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Windows.BaselineAlignment> property) where TTarget : Inline
         => property.Set(Windows.BaselineAlignment.Top);
@@ -44930,43 +45229,24 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         => property.Set(Windows.Controls.SelectionMode.Extended);
     }
 
-    public static partial class ListItemExtensions
-    {
-        /// <summary>Set to <see cref="Windows.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : ListItem
-        => property.Set(Windows.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : ListItem
-        => property.Set(Windows.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : ListItem
-        => property.Set(Windows.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : ListItem
-        => property.Set(Windows.TextAlignment.Justify);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : ListItem
-        => property.Set(Windows.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : ListItem
-        => property.Set(Windows.LineStackingStrategy.MaxHeight);
-
-        /// <summary>Set to <see cref="Windows.FlowDirection.LeftToRight"/></summary>
-        public static TTarget LeftToRight<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : ListItem
-        => property.Set(Windows.FlowDirection.LeftToRight);
-
-        /// <summary>Set to <see cref="Windows.FlowDirection.RightToLeft"/></summary>
-        public static TTarget RightToLeft<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : ListItem
-        => property.Set(Windows.FlowDirection.RightToLeft);
-    }
-
     public static partial class MediaElementExtensions
     {
+        /// <summary>Set to <see cref="Windows.Media.Stretch.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : MediaElement
+        => property.Set(Windows.Media.Stretch.None);
+
+        /// <summary>Set to <see cref="Windows.Media.Stretch.Fill"/></summary>
+        public static TTarget Fill<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : MediaElement
+        => property.Set(Windows.Media.Stretch.Fill);
+
+        /// <summary>Set to <see cref="Windows.Media.Stretch.Uniform"/></summary>
+        public static TTarget Uniform<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : MediaElement
+        => property.Set(Windows.Media.Stretch.Uniform);
+
+        /// <summary>Set to <see cref="Windows.Media.Stretch.UniformToFill"/></summary>
+        public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : MediaElement
+        => property.Set(Windows.Media.Stretch.UniformToFill);
+
         /// <summary>Set to <see cref="Windows.Controls.StretchDirection.UpOnly"/></summary>
         public static TTarget UpOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : MediaElement
         => property.Set(Windows.Controls.StretchDirection.UpOnly);
@@ -44998,22 +45278,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Controls.MediaState.Stop"/></summary>
         public static TTarget Stop<TTarget>(this DependencyProperty<TTarget, Windows.Controls.MediaState> property) where TTarget : MediaElement
         => property.Set(Windows.Controls.MediaState.Stop);
-
-        /// <summary>Set to <see cref="Windows.Media.Stretch.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : MediaElement
-        => property.Set(Windows.Media.Stretch.None);
-
-        /// <summary>Set to <see cref="Windows.Media.Stretch.Fill"/></summary>
-        public static TTarget Fill<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : MediaElement
-        => property.Set(Windows.Media.Stretch.Fill);
-
-        /// <summary>Set to <see cref="Windows.Media.Stretch.Uniform"/></summary>
-        public static TTarget Uniform<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : MediaElement
-        => property.Set(Windows.Media.Stretch.Uniform);
-
-        /// <summary>Set to <see cref="Windows.Media.Stretch.UniformToFill"/></summary>
-        public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : MediaElement
-        => property.Set(Windows.Media.Stretch.UniformToFill);
     }
 
     public static partial class MenuItemExtensions
@@ -45127,22 +45391,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
 
     public static partial class PopupExtensions
     {
-        /// <summary>Set to <see cref="Windows.Controls.Primitives.PopupAnimation.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.PopupAnimation> property) where TTarget : Popup
-        => property.Set(Windows.Controls.Primitives.PopupAnimation.None);
-
-        /// <summary>Set to <see cref="Windows.Controls.Primitives.PopupAnimation.Fade"/></summary>
-        public static TTarget Fade<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.PopupAnimation> property) where TTarget : Popup
-        => property.Set(Windows.Controls.Primitives.PopupAnimation.Fade);
-
-        /// <summary>Set to <see cref="Windows.Controls.Primitives.PopupAnimation.Slide"/></summary>
-        public static TTarget Slide<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.PopupAnimation> property) where TTarget : Popup
-        => property.Set(Windows.Controls.Primitives.PopupAnimation.Slide);
-
-        /// <summary>Set to <see cref="Windows.Controls.Primitives.PopupAnimation.Scroll"/></summary>
-        public static TTarget Scroll<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.PopupAnimation> property) where TTarget : Popup
-        => property.Set(Windows.Controls.Primitives.PopupAnimation.Scroll);
-
         /// <summary>Set to <see cref="Windows.Controls.Primitives.PlacementMode.Absolute"/></summary>
         public static TTarget Absolute<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.PlacementMode> property) where TTarget : Popup
         => property.Set(Windows.Controls.Primitives.PlacementMode.Absolute);
@@ -45190,6 +45438,22 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Controls.Primitives.PlacementMode.Custom"/></summary>
         public static TTarget Custom<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.PlacementMode> property) where TTarget : Popup
         => property.Set(Windows.Controls.Primitives.PlacementMode.Custom);
+
+        /// <summary>Set to <see cref="Windows.Controls.Primitives.PopupAnimation.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.PopupAnimation> property) where TTarget : Popup
+        => property.Set(Windows.Controls.Primitives.PopupAnimation.None);
+
+        /// <summary>Set to <see cref="Windows.Controls.Primitives.PopupAnimation.Fade"/></summary>
+        public static TTarget Fade<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.PopupAnimation> property) where TTarget : Popup
+        => property.Set(Windows.Controls.Primitives.PopupAnimation.Fade);
+
+        /// <summary>Set to <see cref="Windows.Controls.Primitives.PopupAnimation.Slide"/></summary>
+        public static TTarget Slide<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.PopupAnimation> property) where TTarget : Popup
+        => property.Set(Windows.Controls.Primitives.PopupAnimation.Slide);
+
+        /// <summary>Set to <see cref="Windows.Controls.Primitives.PopupAnimation.Scroll"/></summary>
+        public static TTarget Scroll<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.PopupAnimation> property) where TTarget : Popup
+        => property.Set(Windows.Controls.Primitives.PopupAnimation.Scroll);
     }
 
     public static partial class ProgressBarExtensions
@@ -45272,30 +45536,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.TextTrimming.WordEllipsis"/></summary>
         public static TTarget WordEllipsis<TTarget>(this DependencyProperty<TTarget, Windows.TextTrimming> property) where TTarget : RibbonTwoLineText
         => property.Set(Windows.TextTrimming.WordEllipsis);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : RibbonTwoLineText
-        => property.Set(Windows.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : RibbonTwoLineText
-        => property.Set(Windows.LineStackingStrategy.MaxHeight);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : RibbonTwoLineText
-        => property.Set(Windows.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : RibbonTwoLineText
-        => property.Set(Windows.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : RibbonTwoLineText
-        => property.Set(Windows.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : RibbonTwoLineText
-        => property.Set(Windows.TextAlignment.Justify);
     }
 
     public static partial class ScrollBarExtensions
@@ -45309,63 +45549,8 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         => property.Set(Windows.Controls.Orientation.Vertical);
     }
 
-    public static partial class ScrollViewerExtensions
-    {
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : ScrollViewer
-        => property.Set(Windows.Controls.ScrollBarVisibility.Disabled);
-
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : ScrollViewer
-        => property.Set(Windows.Controls.ScrollBarVisibility.Auto);
-
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : ScrollViewer
-        => property.Set(Windows.Controls.ScrollBarVisibility.Hidden);
-
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : ScrollViewer
-        => property.Set(Windows.Controls.ScrollBarVisibility.Visible);
-
-        /// <summary>Set to <see cref="Windows.Controls.PanningMode.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : ScrollViewer
-        => property.Set(Windows.Controls.PanningMode.None);
-
-        /// <summary>Set to <see cref="Windows.Controls.PanningMode.HorizontalOnly"/></summary>
-        public static TTarget HorizontalOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : ScrollViewer
-        => property.Set(Windows.Controls.PanningMode.HorizontalOnly);
-
-        /// <summary>Set to <see cref="Windows.Controls.PanningMode.VerticalOnly"/></summary>
-        public static TTarget VerticalOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : ScrollViewer
-        => property.Set(Windows.Controls.PanningMode.VerticalOnly);
-
-        /// <summary>Set to <see cref="Windows.Controls.PanningMode.Both"/></summary>
-        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : ScrollViewer
-        => property.Set(Windows.Controls.PanningMode.Both);
-
-        /// <summary>Set to <see cref="Windows.Controls.PanningMode.HorizontalFirst"/></summary>
-        public static TTarget HorizontalFirst<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : ScrollViewer
-        => property.Set(Windows.Controls.PanningMode.HorizontalFirst);
-
-        /// <summary>Set to <see cref="Windows.Controls.PanningMode.VerticalFirst"/></summary>
-        public static TTarget VerticalFirst<TTarget>(this DependencyProperty<TTarget, Windows.Controls.PanningMode> property) where TTarget : ScrollViewer
-        => property.Set(Windows.Controls.PanningMode.VerticalFirst);
-    }
-
     public static partial class ShapeExtensions
     {
-        /// <summary>Set to <see cref="Windows.Media.PenLineJoin.Miter"/></summary>
-        public static TTarget Miter<TTarget>(this DependencyProperty<TTarget, Windows.Media.PenLineJoin> property) where TTarget : Shape
-        => property.Set(Windows.Media.PenLineJoin.Miter);
-
-        /// <summary>Set to <see cref="Windows.Media.PenLineJoin.Bevel"/></summary>
-        public static TTarget Bevel<TTarget>(this DependencyProperty<TTarget, Windows.Media.PenLineJoin> property) where TTarget : Shape
-        => property.Set(Windows.Media.PenLineJoin.Bevel);
-
-        /// <summary>Set to <see cref="Windows.Media.PenLineJoin.Round"/></summary>
-        public static TTarget Round<TTarget>(this DependencyProperty<TTarget, Windows.Media.PenLineJoin> property) where TTarget : Shape
-        => property.Set(Windows.Media.PenLineJoin.Round);
-
         /// <summary>Set to <see cref="Windows.Media.Stretch.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : Shape
         => property.Set(Windows.Media.Stretch.None);
@@ -45381,6 +45566,18 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Media.Stretch.UniformToFill"/></summary>
         public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : Shape
         => property.Set(Windows.Media.Stretch.UniformToFill);
+
+        /// <summary>Set to <see cref="Windows.Media.PenLineJoin.Miter"/></summary>
+        public static TTarget Miter<TTarget>(this DependencyProperty<TTarget, Windows.Media.PenLineJoin> property) where TTarget : Shape
+        => property.Set(Windows.Media.PenLineJoin.Miter);
+
+        /// <summary>Set to <see cref="Windows.Media.PenLineJoin.Bevel"/></summary>
+        public static TTarget Bevel<TTarget>(this DependencyProperty<TTarget, Windows.Media.PenLineJoin> property) where TTarget : Shape
+        => property.Set(Windows.Media.PenLineJoin.Bevel);
+
+        /// <summary>Set to <see cref="Windows.Media.PenLineJoin.Round"/></summary>
+        public static TTarget Round<TTarget>(this DependencyProperty<TTarget, Windows.Media.PenLineJoin> property) where TTarget : Shape
+        => property.Set(Windows.Media.PenLineJoin.Round);
 
         /// <summary>Set to <see cref="Windows.Media.PenLineCap.Flat"/></summary>
         public static TTarget Flat<TTarget>(this DependencyProperty<TTarget, Windows.Media.PenLineCap> property) where TTarget : Shape
@@ -45401,6 +45598,26 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
 
     public static partial class SliderExtensions
     {
+        /// <summary>Set to <see cref="Windows.Controls.Orientation.Horizontal"/></summary>
+        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Orientation> property) where TTarget : Slider
+        => property.Set(Windows.Controls.Orientation.Horizontal);
+
+        /// <summary>Set to <see cref="Windows.Controls.Orientation.Vertical"/></summary>
+        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Orientation> property) where TTarget : Slider
+        => property.Set(Windows.Controls.Orientation.Vertical);
+
+        /// <summary>Set to <see cref="Windows.Controls.Primitives.AutoToolTipPlacement.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.AutoToolTipPlacement> property) where TTarget : Slider
+        => property.Set(Windows.Controls.Primitives.AutoToolTipPlacement.None);
+
+        /// <summary>Set to <see cref="Windows.Controls.Primitives.AutoToolTipPlacement.TopLeft"/></summary>
+        public static TTarget TopLeft<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.AutoToolTipPlacement> property) where TTarget : Slider
+        => property.Set(Windows.Controls.Primitives.AutoToolTipPlacement.TopLeft);
+
+        /// <summary>Set to <see cref="Windows.Controls.Primitives.AutoToolTipPlacement.BottomRight"/></summary>
+        public static TTarget BottomRight<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.AutoToolTipPlacement> property) where TTarget : Slider
+        => property.Set(Windows.Controls.Primitives.AutoToolTipPlacement.BottomRight);
+
         /// <summary>Set to <see cref="Windows.Controls.Primitives.TickPlacement.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.TickPlacement> property) where TTarget : Slider
         => property.Set(Windows.Controls.Primitives.TickPlacement.None);
@@ -45416,26 +45633,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Controls.Primitives.TickPlacement.Both"/></summary>
         public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.TickPlacement> property) where TTarget : Slider
         => property.Set(Windows.Controls.Primitives.TickPlacement.Both);
-
-        /// <summary>Set to <see cref="Windows.Controls.Primitives.AutoToolTipPlacement.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.AutoToolTipPlacement> property) where TTarget : Slider
-        => property.Set(Windows.Controls.Primitives.AutoToolTipPlacement.None);
-
-        /// <summary>Set to <see cref="Windows.Controls.Primitives.AutoToolTipPlacement.TopLeft"/></summary>
-        public static TTarget TopLeft<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.AutoToolTipPlacement> property) where TTarget : Slider
-        => property.Set(Windows.Controls.Primitives.AutoToolTipPlacement.TopLeft);
-
-        /// <summary>Set to <see cref="Windows.Controls.Primitives.AutoToolTipPlacement.BottomRight"/></summary>
-        public static TTarget BottomRight<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Primitives.AutoToolTipPlacement> property) where TTarget : Slider
-        => property.Set(Windows.Controls.Primitives.AutoToolTipPlacement.BottomRight);
-
-        /// <summary>Set to <see cref="Windows.Controls.Orientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Orientation> property) where TTarget : Slider
-        => property.Set(Windows.Controls.Orientation.Horizontal);
-
-        /// <summary>Set to <see cref="Windows.Controls.Orientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Windows.Controls.Orientation> property) where TTarget : Slider
-        => property.Set(Windows.Controls.Orientation.Vertical);
     }
 
     public static partial class StackPanelExtensions
@@ -45469,41 +45666,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Media.FillRule.Nonzero"/></summary>
         public static TTarget Nonzero<TTarget>(this DependencyProperty<TTarget, Windows.Media.FillRule> property) where TTarget : StreamGeometry
         => property.Set(Windows.Media.FillRule.Nonzero);
-    }
-
-    public static partial class TableCellExtensions
-    {
-        /// <summary>Set to <see cref="Windows.FlowDirection.LeftToRight"/></summary>
-        public static TTarget LeftToRight<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : TableCell
-        => property.Set(Windows.FlowDirection.LeftToRight);
-
-        /// <summary>Set to <see cref="Windows.FlowDirection.RightToLeft"/></summary>
-        public static TTarget RightToLeft<TTarget>(this DependencyProperty<TTarget, Windows.FlowDirection> property) where TTarget : TableCell
-        => property.Set(Windows.FlowDirection.RightToLeft);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : TableCell
-        => property.Set(Windows.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : TableCell
-        => property.Set(Windows.LineStackingStrategy.MaxHeight);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TableCell
-        => property.Set(Windows.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TableCell
-        => property.Set(Windows.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TableCell
-        => property.Set(Windows.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TableCell
-        => property.Set(Windows.TextAlignment.Justify);
     }
 
     public static partial class TaskbarItemInfoExtensions
@@ -45554,62 +45716,10 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.TextTrimming.WordEllipsis"/></summary>
         public static TTarget WordEllipsis<TTarget>(this DependencyProperty<TTarget, Windows.TextTrimming> property) where TTarget : TextBlock
         => property.Set(Windows.TextTrimming.WordEllipsis);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TextBlock
-        => property.Set(Windows.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TextBlock
-        => property.Set(Windows.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TextBlock
-        => property.Set(Windows.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TextBlock
-        => property.Set(Windows.TextAlignment.Justify);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : TextBlock
-        => property.Set(Windows.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Windows.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Windows.LineStackingStrategy> property) where TTarget : TextBlock
-        => property.Set(Windows.LineStackingStrategy.MaxHeight);
     }
 
     public static partial class TextBoxExtensions
     {
-        /// <summary>Set to <see cref="Windows.Controls.CharacterCasing.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CharacterCasing> property) where TTarget : TextBox
-        => property.Set(Windows.Controls.CharacterCasing.Normal);
-
-        /// <summary>Set to <see cref="Windows.Controls.CharacterCasing.Lower"/></summary>
-        public static TTarget Lower<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CharacterCasing> property) where TTarget : TextBox
-        => property.Set(Windows.Controls.CharacterCasing.Lower);
-
-        /// <summary>Set to <see cref="Windows.Controls.CharacterCasing.Upper"/></summary>
-        public static TTarget Upper<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CharacterCasing> property) where TTarget : TextBox
-        => property.Set(Windows.Controls.CharacterCasing.Upper);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TextBox
-        => property.Set(Windows.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TextBox
-        => property.Set(Windows.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TextBox
-        => property.Set(Windows.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Windows.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Windows.TextAlignment> property) where TTarget : TextBox
-        => property.Set(Windows.TextAlignment.Justify);
-
         /// <summary>Set to <see cref="Windows.TextWrapping.WrapWithOverflow"/></summary>
         public static TTarget WrapWithOverflow<TTarget>(this DependencyProperty<TTarget, Windows.TextWrapping> property) where TTarget : TextBox
         => property.Set(Windows.TextWrapping.WrapWithOverflow);
@@ -45621,25 +45731,18 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.TextWrapping.Wrap"/></summary>
         public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Windows.TextWrapping> property) where TTarget : TextBox
         => property.Set(Windows.TextWrapping.Wrap);
-    }
 
-    public static partial class TextBoxBaseExtensions
-    {
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : TextBoxBase
-        => property.Set(Windows.Controls.ScrollBarVisibility.Disabled);
+        /// <summary>Set to <see cref="Windows.Controls.CharacterCasing.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CharacterCasing> property) where TTarget : TextBox
+        => property.Set(Windows.Controls.CharacterCasing.Normal);
 
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : TextBoxBase
-        => property.Set(Windows.Controls.ScrollBarVisibility.Auto);
+        /// <summary>Set to <see cref="Windows.Controls.CharacterCasing.Lower"/></summary>
+        public static TTarget Lower<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CharacterCasing> property) where TTarget : TextBox
+        => property.Set(Windows.Controls.CharacterCasing.Lower);
 
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : TextBoxBase
-        => property.Set(Windows.Controls.ScrollBarVisibility.Hidden);
-
-        /// <summary>Set to <see cref="Windows.Controls.ScrollBarVisibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Windows.Controls.ScrollBarVisibility> property) where TTarget : TextBoxBase
-        => property.Set(Windows.Controls.ScrollBarVisibility.Visible);
+        /// <summary>Set to <see cref="Windows.Controls.CharacterCasing.Upper"/></summary>
+        public static TTarget Upper<TTarget>(this DependencyProperty<TTarget, Windows.Controls.CharacterCasing> property) where TTarget : TextBox
+        => property.Set(Windows.Controls.CharacterCasing.Upper);
     }
 
     public static partial class TextDecorationExtensions
@@ -45729,6 +45832,14 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         public static TTarget Tile<TTarget>(this DependencyProperty<TTarget, Windows.Media.TileMode> property) where TTarget : TileBrush
         => property.Set(Windows.Media.TileMode.Tile);
 
+        /// <summary>Set to <see cref="Windows.Media.BrushMappingMode.Absolute"/></summary>
+        public static TTarget Absolute<TTarget>(this DependencyProperty<TTarget, Windows.Media.BrushMappingMode> property) where TTarget : TileBrush
+        => property.Set(Windows.Media.BrushMappingMode.Absolute);
+
+        /// <summary>Set to <see cref="Windows.Media.BrushMappingMode.RelativeToBoundingBox"/></summary>
+        public static TTarget RelativeToBoundingBox<TTarget>(this DependencyProperty<TTarget, Windows.Media.BrushMappingMode> property) where TTarget : TileBrush
+        => property.Set(Windows.Media.BrushMappingMode.RelativeToBoundingBox);
+
         /// <summary>Set to <see cref="Windows.Media.AlignmentX.Left"/></summary>
         public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Windows.Media.AlignmentX> property) where TTarget : TileBrush
         => property.Set(Windows.Media.AlignmentX.Left);
@@ -45752,14 +45863,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Media.AlignmentY.Bottom"/></summary>
         public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Windows.Media.AlignmentY> property) where TTarget : TileBrush
         => property.Set(Windows.Media.AlignmentY.Bottom);
-
-        /// <summary>Set to <see cref="Windows.Media.BrushMappingMode.Absolute"/></summary>
-        public static TTarget Absolute<TTarget>(this DependencyProperty<TTarget, Windows.Media.BrushMappingMode> property) where TTarget : TileBrush
-        => property.Set(Windows.Media.BrushMappingMode.Absolute);
-
-        /// <summary>Set to <see cref="Windows.Media.BrushMappingMode.RelativeToBoundingBox"/></summary>
-        public static TTarget RelativeToBoundingBox<TTarget>(this DependencyProperty<TTarget, Windows.Media.BrushMappingMode> property) where TTarget : TileBrush
-        => property.Set(Windows.Media.BrushMappingMode.RelativeToBoundingBox);
 
         /// <summary>Set to <see cref="Windows.Media.Stretch.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : TileBrush
@@ -45921,6 +46024,18 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
 
     public static partial class ViewboxExtensions
     {
+        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.UpOnly"/></summary>
+        public static TTarget UpOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Viewbox
+        => property.Set(Windows.Controls.StretchDirection.UpOnly);
+
+        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.DownOnly"/></summary>
+        public static TTarget DownOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Viewbox
+        => property.Set(Windows.Controls.StretchDirection.DownOnly);
+
+        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.Both"/></summary>
+        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Viewbox
+        => property.Set(Windows.Controls.StretchDirection.Both);
+
         /// <summary>Set to <see cref="Windows.Media.Stretch.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : Viewbox
         => property.Set(Windows.Media.Stretch.None);
@@ -45936,18 +46051,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Media.Stretch.UniformToFill"/></summary>
         public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Windows.Media.Stretch> property) where TTarget : Viewbox
         => property.Set(Windows.Media.Stretch.UniformToFill);
-
-        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.UpOnly"/></summary>
-        public static TTarget UpOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Viewbox
-        => property.Set(Windows.Controls.StretchDirection.UpOnly);
-
-        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.DownOnly"/></summary>
-        public static TTarget DownOnly<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Viewbox
-        => property.Set(Windows.Controls.StretchDirection.DownOnly);
-
-        /// <summary>Set to <see cref="Windows.Controls.StretchDirection.Both"/></summary>
-        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Windows.Controls.StretchDirection> property) where TTarget : Viewbox
-        => property.Set(Windows.Controls.StretchDirection.Both);
     }
 
     public static partial class VirtualizingStackPanelExtensions
@@ -45963,6 +46066,34 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
 
     public static partial class WindowExtensions
     {
+        /// <summary>Set to <see cref="Windows.WindowState.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.WindowState> property) where TTarget : Window
+        => property.Set(Windows.WindowState.Normal);
+
+        /// <summary>Set to <see cref="Windows.WindowState.Minimized"/></summary>
+        public static TTarget Minimized<TTarget>(this DependencyProperty<TTarget, Windows.WindowState> property) where TTarget : Window
+        => property.Set(Windows.WindowState.Minimized);
+
+        /// <summary>Set to <see cref="Windows.WindowState.Maximized"/></summary>
+        public static TTarget Maximized<TTarget>(this DependencyProperty<TTarget, Windows.WindowState> property) where TTarget : Window
+        => property.Set(Windows.WindowState.Maximized);
+
+        /// <summary>Set to <see cref="Windows.WindowStyle.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.WindowStyle> property) where TTarget : Window
+        => property.Set(Windows.WindowStyle.None);
+
+        /// <summary>Set to <see cref="Windows.WindowStyle.SingleBorderWindow"/></summary>
+        public static TTarget SingleBorderWindow<TTarget>(this DependencyProperty<TTarget, Windows.WindowStyle> property) where TTarget : Window
+        => property.Set(Windows.WindowStyle.SingleBorderWindow);
+
+        /// <summary>Set to <see cref="Windows.WindowStyle.ThreeDBorderWindow"/></summary>
+        public static TTarget ThreeDBorderWindow<TTarget>(this DependencyProperty<TTarget, Windows.WindowStyle> property) where TTarget : Window
+        => property.Set(Windows.WindowStyle.ThreeDBorderWindow);
+
+        /// <summary>Set to <see cref="Windows.WindowStyle.ToolWindow"/></summary>
+        public static TTarget ToolWindow<TTarget>(this DependencyProperty<TTarget, Windows.WindowStyle> property) where TTarget : Window
+        => property.Set(Windows.WindowStyle.ToolWindow);
+
         /// <summary>Set to <see cref="Windows.SizeToContent.Manual"/></summary>
         public static TTarget Manual<TTarget>(this DependencyProperty<TTarget, Windows.SizeToContent> property) where TTarget : Window
         => property.Set(Windows.SizeToContent.Manual);
@@ -45994,34 +46125,6 @@ namespace CSharpMarkup.Wpf // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.ResizeMode.CanResizeWithGrip"/></summary>
         public static TTarget CanResizeWithGrip<TTarget>(this DependencyProperty<TTarget, Windows.ResizeMode> property) where TTarget : Window
         => property.Set(Windows.ResizeMode.CanResizeWithGrip);
-
-        /// <summary>Set to <see cref="Windows.WindowState.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.WindowState> property) where TTarget : Window
-        => property.Set(Windows.WindowState.Normal);
-
-        /// <summary>Set to <see cref="Windows.WindowState.Minimized"/></summary>
-        public static TTarget Minimized<TTarget>(this DependencyProperty<TTarget, Windows.WindowState> property) where TTarget : Window
-        => property.Set(Windows.WindowState.Minimized);
-
-        /// <summary>Set to <see cref="Windows.WindowState.Maximized"/></summary>
-        public static TTarget Maximized<TTarget>(this DependencyProperty<TTarget, Windows.WindowState> property) where TTarget : Window
-        => property.Set(Windows.WindowState.Maximized);
-
-        /// <summary>Set to <see cref="Windows.WindowStyle.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.WindowStyle> property) where TTarget : Window
-        => property.Set(Windows.WindowStyle.None);
-
-        /// <summary>Set to <see cref="Windows.WindowStyle.SingleBorderWindow"/></summary>
-        public static TTarget SingleBorderWindow<TTarget>(this DependencyProperty<TTarget, Windows.WindowStyle> property) where TTarget : Window
-        => property.Set(Windows.WindowStyle.SingleBorderWindow);
-
-        /// <summary>Set to <see cref="Windows.WindowStyle.ThreeDBorderWindow"/></summary>
-        public static TTarget ThreeDBorderWindow<TTarget>(this DependencyProperty<TTarget, Windows.WindowStyle> property) where TTarget : Window
-        => property.Set(Windows.WindowStyle.ThreeDBorderWindow);
-
-        /// <summary>Set to <see cref="Windows.WindowStyle.ToolWindow"/></summary>
-        public static TTarget ToolWindow<TTarget>(this DependencyProperty<TTarget, Windows.WindowStyle> property) where TTarget : Window
-        => property.Set(Windows.WindowStyle.ToolWindow);
     }
 
     public static partial class WindowChromeExtensions

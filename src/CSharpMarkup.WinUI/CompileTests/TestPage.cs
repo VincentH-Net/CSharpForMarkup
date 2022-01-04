@@ -57,6 +57,20 @@ namespace CompileTests
                .Background(SolidColorBrush().Color().Bind(vm.IsOk, convert: (bool isOk) => OkColor(isOk))) // Note that this is type-safe; e.g. try using OkBrush
         );
 
+        StackPanel Scrolling => VStack(
+            ScrollViewer(
+                TextBlock(new string('A', 100)).UI
+            )  .HorizontalScrollMode(UI.Controls.ScrollMode.Enabled)
+               .HorizontalScrollMode().Enabled()
+               .HorizontalScrollMode().Bind()
+            ,
+
+            ListView(() =>
+                TextBlock("Item")
+            )  .ScrollViewer_HorizontalScrollMode().Enabled()
+               .ScrollViewer_HorizontalScrollMode().Bind()
+               .ScrollViewer_HorizontalScrollMode(UI.Controls.ScrollMode.Enabled)
+        );
 
         enum row { First, Second, Third }
         enum column { First, Second, Third }
