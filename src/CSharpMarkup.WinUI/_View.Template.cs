@@ -53,6 +53,8 @@ namespace _UIViewNamespace_
 
     public partial class ContentView : ContentControl { }
 
+    public partial class ChildView { public Xaml.UIElement Child { get; set; } }
+
     public partial class LayoutView : LayoutControl { }
 
     public class InlinesView : InlinesControl { }
@@ -96,6 +98,19 @@ namespace _MarkupNamespace_
             if (content != null) ui.Content = content;
 #endregion
             return _MarkupNamespace_.ContentView.StartChain(ui);
+        }
+
+        public static ChildView ChildView(
+        #region _ChildViewHelperParameters_
+            Xaml.UIElement Child
+        #endregion
+        )
+        {
+            var ui = new _UIViewNamespace_.ChildView();
+            #region _ChildViewHelperStatements_
+            if (Child != null) ui.Child = Child;
+            #endregion
+            return _MarkupNamespace_.ChildView.StartChain(ui);
         }
 
         // TODO: UNO supports WinUI views which have equivalent Markup UI type, plus native views
@@ -247,6 +262,8 @@ namespace _MarkupNamespace_
     public partial class _NonViewPropertyTarget_ : Microsoft.UI.Xaml.DependencyObject { }
 
     public class ContentView { internal static ContentView StartChain(_UIViewNamespace_.ContentView ui) => null; }
+
+    public class ChildView { internal static ChildView StartChain(_UIViewNamespace_.ChildView ui) => null; }
 
     public class LayoutView { internal static LayoutView StartChain(_UIViewNamespace_.LayoutView ui) => null; }
 

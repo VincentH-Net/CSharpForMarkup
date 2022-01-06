@@ -38,6 +38,7 @@ namespace _UIViewNamespace_
 {
     using DependencyProperty = System.Windows.DependencyProperty;
     using ContentControl = System.Windows.Controls.ContentControl;
+    using ChildControl = System.Windows.Controls.Decorator;
     using LayoutControl = System.Windows.Controls.Panel;
     using InlinesControl = System.Windows.Documents.Span;
 
@@ -57,6 +58,8 @@ namespace _UIViewNamespace_
     }
 
     public partial class ContentView : ContentControl { }
+
+    public partial class ChildView : ChildControl { }
 
     public partial class LayoutView : LayoutControl { }
 
@@ -102,11 +105,19 @@ namespace _MarkupNamespace_
             return _MarkupNamespace_.ContentView.StartChain(ui);
         }
 
-        // TODO: UNO supports WinUI views which have equivalent Markup UI type, plus native views
-        // Markup UI types are created with a helper
-        // A non-view type is created with new
-        // To allow a native type to be added to a layout, below params type should be a base element/interface of all native view types and WinUI types alike
-        // TODO: UNO what is that type for Android/iOS/...?
+        public static ChildView ChildView(
+        #region _ChildViewHelperParameters_
+            Windows.UIElement Child
+        #endregion
+        )
+        {
+            var ui = new _UIViewNamespace_.ChildView();
+            #region _ChildViewHelperStatements_
+            if (Child != null) ui.Child = Child;
+            #endregion
+            return _MarkupNamespace_.ChildView.StartChain(ui);
+        }
+
         public static LayoutView LayoutView(
 #region _LayoutViewHelperParameters_
             params Windows.UIElement[] children
@@ -248,6 +259,8 @@ namespace _MarkupNamespace_
     public partial class _NonViewPropertyTarget_ : System.Windows.DependencyObject { }
 
     public class ContentView { internal static ContentView StartChain(_UIViewNamespace_.ContentView ui) => null; }
+
+    public class ChildView { internal static ChildView StartChain(_UIViewNamespace_.ChildView ui) => null; }
 
     public class LayoutView { internal static LayoutView StartChain(_UIViewNamespace_.LayoutView ui) => null; }
 

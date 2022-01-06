@@ -5357,11 +5357,18 @@ namespace CSharpMarkup.WinUI // Border
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Border"/></summary>
-        public static Border Border(O<Xaml.BrushTransition> BackgroundTransition = default, O<Xaml.UIElement> Child = default, O<Xaml.CornerRadius> CornerRadius = default, O<Xaml.Media.Animation.TransitionCollection> ChildTransitions = default, O<Xaml.Thickness> Padding = default, O<Xaml.Controls.BackgroundSizing> BackgroundSizing = default, O<Xaml.Thickness> BorderThickness = default, O<Xaml.Media.Brush> BorderBrush = default)
+        public static Border Border(Xaml.UIElement Child)
+        {
+            var ui = new Xaml.Controls.Border();
+            if (Child != null) ui.Child = Child;
+            return global::CSharpMarkup.WinUI.Border.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.Border"/></summary>
+        public static Border Border(O<Xaml.BrushTransition> BackgroundTransition = default, O<Xaml.CornerRadius> CornerRadius = default, O<Xaml.Media.Animation.TransitionCollection> ChildTransitions = default, O<Xaml.Thickness> Padding = default, O<Xaml.Controls.BackgroundSizing> BackgroundSizing = default, O<Xaml.Thickness> BorderThickness = default, O<Xaml.Media.Brush> BorderBrush = default)
         {
             var ui = new Xaml.Controls.Border();
             if (BackgroundTransition.HasValue) ui.BackgroundTransition = BackgroundTransition.Value;
-            if (Child.HasValue) ui.Child = Child.Value;
             if (CornerRadius.HasValue) ui.CornerRadius = CornerRadius.Value;
             if (ChildTransitions.HasValue) ui.ChildTransitions = ChildTransitions.Value;
             if (Padding.HasValue) ui.Padding = Padding.Value;
@@ -5411,9 +5418,6 @@ namespace CSharpMarkup.WinUI // Border
     {
         /// <summary>Set <see cref="Xaml.Controls.Border.BackgroundTransition"/></summary>
         public static TView BackgroundTransition<TView>(this TView view, Xaml.BrushTransition value) where TView : Border { view.UI.BackgroundTransition = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Border.Child"/></summary>
-        public static TView Child<TView>(this TView view, Xaml.UIElement value) where TView : Border { view.UI.Child = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Border.CornerRadius"/></summary>
         public static TView CornerRadius<TView>(this TView view, Xaml.CornerRadius value) where TView : Border { view.UI.CornerRadius = value; return view; }
@@ -14461,7 +14465,15 @@ namespace CSharpMarkup.WinUI // ParallaxView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ParallaxView"/></summary>
-        public static ParallaxView ParallaxView(O<double> VerticalSourceStartOffset = default, O<Xaml.Controls.ParallaxSourceOffsetKind> VerticalSourceOffsetKind = default, O<double> VerticalSourceEndOffset = default, O<double> VerticalShift = default, O<Xaml.UIElement> Source = default, O<double> MaxVerticalShiftRatio = default, O<double> MaxHorizontalShiftRatio = default, O<bool> IsVerticalShiftClamped = default, O<bool> IsHorizontalShiftClamped = default, O<double> HorizontalSourceStartOffset = default, O<Xaml.Controls.ParallaxSourceOffsetKind> HorizontalSourceOffsetKind = default, O<double> HorizontalSourceEndOffset = default, O<double> HorizontalShift = default, O<Xaml.UIElement> Child = default)
+        public static ParallaxView ParallaxView(Xaml.UIElement Child)
+        {
+            var ui = new Xaml.Controls.ParallaxView();
+            if (Child != null) ui.Child = Child;
+            return global::CSharpMarkup.WinUI.ParallaxView.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.ParallaxView"/></summary>
+        public static ParallaxView ParallaxView(O<double> VerticalSourceStartOffset = default, O<Xaml.Controls.ParallaxSourceOffsetKind> VerticalSourceOffsetKind = default, O<double> VerticalSourceEndOffset = default, O<double> VerticalShift = default, O<Xaml.UIElement> Source = default, O<double> MaxVerticalShiftRatio = default, O<double> MaxHorizontalShiftRatio = default, O<bool> IsVerticalShiftClamped = default, O<bool> IsHorizontalShiftClamped = default, O<double> HorizontalSourceStartOffset = default, O<Xaml.Controls.ParallaxSourceOffsetKind> HorizontalSourceOffsetKind = default, O<double> HorizontalSourceEndOffset = default, O<double> HorizontalShift = default)
         {
             var ui = new Xaml.Controls.ParallaxView();
             if (VerticalSourceStartOffset.HasValue) ui.VerticalSourceStartOffset = VerticalSourceStartOffset.Value;
@@ -14477,7 +14489,6 @@ namespace CSharpMarkup.WinUI // ParallaxView
             if (HorizontalSourceOffsetKind.HasValue) ui.HorizontalSourceOffsetKind = HorizontalSourceOffsetKind.Value;
             if (HorizontalSourceEndOffset.HasValue) ui.HorizontalSourceEndOffset = HorizontalSourceEndOffset.Value;
             if (HorizontalShift.HasValue) ui.HorizontalShift = HorizontalShift.Value;
-            if (Child.HasValue) ui.Child = Child.Value;
             return global::CSharpMarkup.WinUI.ParallaxView.StartChain(ui);
         }
 
@@ -14557,9 +14568,6 @@ namespace CSharpMarkup.WinUI // ParallaxView
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.HorizontalShift"/></summary>
         public static TView HorizontalShift<TView>(this TView view, double value) where TView : ParallaxView { view.UI.HorizontalShift = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ParallaxView.Child"/></summary>
-        public static TView Child<TView>(this TView view, Xaml.UIElement value) where TView : ParallaxView { view.UI.Child = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.Child"/></summary>
         public static DependencyProperty<TTarget, Xaml.UIElement> Child<TTarget>(this TTarget target) where TTarget : ParallaxView
@@ -22500,10 +22508,17 @@ namespace CSharpMarkup.WinUI // Viewbox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Viewbox"/></summary>
-        public static Viewbox Viewbox(O<Xaml.UIElement> Child = default, O<Xaml.Controls.StretchDirection> StretchDirection = default, O<Xaml.Media.Stretch> Stretch = default)
+        public static Viewbox Viewbox(Xaml.UIElement Child)
         {
             var ui = new Xaml.Controls.Viewbox();
-            if (Child.HasValue) ui.Child = Child.Value;
+            if (Child != null) ui.Child = Child;
+            return global::CSharpMarkup.WinUI.Viewbox.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.Viewbox"/></summary>
+        public static Viewbox Viewbox(O<Xaml.Controls.StretchDirection> StretchDirection = default, O<Xaml.Media.Stretch> Stretch = default)
+        {
+            var ui = new Xaml.Controls.Viewbox();
             if (StretchDirection.HasValue) ui.StretchDirection = StretchDirection.Value;
             if (Stretch.HasValue) ui.Stretch = Stretch.Value;
             return global::CSharpMarkup.WinUI.Viewbox.StartChain(ui);
@@ -22547,9 +22562,6 @@ namespace CSharpMarkup.WinUI // Viewbox
 
     public static partial class ViewboxExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.Viewbox.Child"/></summary>
-        public static TView Child<TView>(this TView view, Xaml.UIElement value) where TView : Viewbox { view.UI.Child = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.Viewbox.StretchDirection"/></summary>
         public static TView StretchDirection<TView>(this TView view, Xaml.Controls.StretchDirection value) where TView : Viewbox { view.UI.StretchDirection = value; return view; }
 
@@ -23850,11 +23862,18 @@ namespace CSharpMarkup.WinUI // NativePopupBase
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.NativePopupBase"/></summary>
-        public static NativePopupBase NativePopupBase(O<bool> IsOpen = default, O<Xaml.UIElement> Child = default, O<bool> IsLightDismissEnabled = default, O<double> HorizontalOffset = default, O<double> VerticalOffset = default)
+        public static NativePopupBase NativePopupBase(Xaml.UIElement Child)
+        {
+            var ui = new Xaml.Controls.NativePopupBase();
+            if (Child != null) ui.Child = Child;
+            return global::CSharpMarkup.WinUI.NativePopupBase.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.NativePopupBase"/></summary>
+        public static NativePopupBase NativePopupBase(O<bool> IsOpen = default, O<bool> IsLightDismissEnabled = default, O<double> HorizontalOffset = default, O<double> VerticalOffset = default)
         {
             var ui = new Xaml.Controls.NativePopupBase();
             if (IsOpen.HasValue) ui.IsOpen = IsOpen.Value;
-            if (Child.HasValue) ui.Child = Child.Value;
             if (IsLightDismissEnabled.HasValue) ui.IsLightDismissEnabled = IsLightDismissEnabled.Value;
             if (HorizontalOffset.HasValue) ui.HorizontalOffset = HorizontalOffset.Value;
             if (VerticalOffset.HasValue) ui.VerticalOffset = VerticalOffset.Value;
@@ -23901,9 +23920,6 @@ namespace CSharpMarkup.WinUI // NativePopupBase
     {
         /// <summary>Set <see cref="Xaml.Controls.NativePopupBase.IsOpen"/></summary>
         public static TView IsOpen<TView>(this TView view, bool value) where TView : NativePopupBase { view.UI.IsOpen = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePopupBase.Child"/></summary>
-        public static TView Child<TView>(this TView view, Xaml.UIElement value) where TView : NativePopupBase { view.UI.Child = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.NativePopupBase.IsLightDismissEnabled"/></summary>
         public static TView IsLightDismissEnabled<TView>(this TView view, bool value) where TView : NativePopupBase { view.UI.IsLightDismissEnabled = value; return view; }
@@ -27299,14 +27315,21 @@ namespace CSharpMarkup.WinUI // Popup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.Popup"/></summary>
-        public static Popup Popup(O<bool> ShouldConstrainToRootBounds = default, O<Xaml.Media.Animation.TransitionCollection> ChildTransitions = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, O<bool> IsOpen = default, O<Xaml.UIElement> Child = default, O<bool> IsLightDismissEnabled = default, O<double> HorizontalOffset = default, O<double> VerticalOffset = default)
+        public static Popup Popup(Xaml.UIElement Child)
+        {
+            var ui = new Xaml.Controls.Primitives.Popup();
+            if (Child != null) ui.Child = Child;
+            return global::CSharpMarkup.WinUI.Popup.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.Primitives.Popup"/></summary>
+        public static Popup Popup(O<bool> ShouldConstrainToRootBounds = default, O<Xaml.Media.Animation.TransitionCollection> ChildTransitions = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, O<bool> IsOpen = default, O<bool> IsLightDismissEnabled = default, O<double> HorizontalOffset = default, O<double> VerticalOffset = default)
         {
             var ui = new Xaml.Controls.Primitives.Popup();
             if (ShouldConstrainToRootBounds.HasValue) ui.ShouldConstrainToRootBounds = ShouldConstrainToRootBounds.Value;
             if (ChildTransitions.HasValue) ui.ChildTransitions = ChildTransitions.Value;
             if (LightDismissOverlayMode.HasValue) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
             if (IsOpen.HasValue) ui.IsOpen = IsOpen.Value;
-            if (Child.HasValue) ui.Child = Child.Value;
             if (IsLightDismissEnabled.HasValue) ui.IsLightDismissEnabled = IsLightDismissEnabled.Value;
             if (HorizontalOffset.HasValue) ui.HorizontalOffset = HorizontalOffset.Value;
             if (VerticalOffset.HasValue) ui.VerticalOffset = VerticalOffset.Value;
@@ -27362,9 +27385,6 @@ namespace CSharpMarkup.WinUI // Popup
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.Popup.IsOpen"/></summary>
         public static TView IsOpen<TView>(this TView view, bool value) where TView : Popup { view.UI.IsOpen = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.Popup.Child"/></summary>
-        public static TView Child<TView>(this TView view, Xaml.UIElement value) where TView : Popup { view.UI.Child = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.Popup.IsLightDismissEnabled"/></summary>
         public static TView IsLightDismissEnabled<TView>(this TView view, bool value) where TView : Popup { view.UI.IsLightDismissEnabled = value; return view; }
@@ -29523,10 +29543,10 @@ namespace CSharpMarkup.WinUI // InlineUIContainer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Documents.InlineUIContainer"/></summary>
-        public static InlineUIContainer InlineUIContainer(O<Xaml.UIElement> Child = default)
+        public static InlineUIContainer InlineUIContainer(Xaml.UIElement Child)
         {
             var ui = new Xaml.Documents.InlineUIContainer();
-            if (Child.HasValue) ui.Child = Child.Value;
+            if (Child != null) ui.Child = Child;
             return global::CSharpMarkup.WinUI.InlineUIContainer.StartChain(ui);
         }
 
@@ -29564,12 +29584,6 @@ namespace CSharpMarkup.WinUI // InlineUIContainer
         public static implicit operator InlineUIContainer(Xaml.Documents.InlineUIContainer ui) => InlineUIContainer.StartChain(ui);
 
         protected InlineUIContainer() { }
-    }
-
-    public static partial class InlineUIContainerExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Documents.InlineUIContainer.Child"/></summary>
-        public static TView Child<TView>(this TView view, Xaml.UIElement value) where TView : InlineUIContainer { view.UI.Child = value; return view; }
     }
 }
 

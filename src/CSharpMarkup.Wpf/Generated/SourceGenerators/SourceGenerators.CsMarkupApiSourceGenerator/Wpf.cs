@@ -21355,10 +21355,10 @@ namespace CSharpMarkup.Wpf // AdornedElementPlaceholder
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.AdornedElementPlaceholder"/></summary>
-        public static AdornedElementPlaceholder AdornedElementPlaceholder(O<Windows.UIElement> Child = default)
+        public static AdornedElementPlaceholder AdornedElementPlaceholder(Windows.UIElement Child)
         {
             var ui = new Windows.Controls.AdornedElementPlaceholder();
-            if (Child.HasValue) ui.Child = Child.Value;
+            if (Child != null) ui.Child = Child;
             return global::CSharpMarkup.Wpf.AdornedElementPlaceholder.StartChain(ui);
         }
 
@@ -21397,18 +21397,20 @@ namespace CSharpMarkup.Wpf // AdornedElementPlaceholder
 
         protected AdornedElementPlaceholder() { }
     }
-
-    public static partial class AdornedElementPlaceholderExtensions
-    {
-        /// <summary>Set <see cref="Windows.Controls.AdornedElementPlaceholder.Child"/></summary>
-        public static TView Child<TView>(this TView view, Windows.UIElement value) where TView : AdornedElementPlaceholder { view.UI.Child = value; return view; }
-    }
 }
 
 namespace CSharpMarkup.Wpf // Border
 {
     public static partial class Helpers
     {
+        /// <summary>Create a <see cref="Windows.Controls.Border"/></summary>
+        public static Border Border(Windows.UIElement Child)
+        {
+            var ui = new Windows.Controls.Border();
+            if (Child != null) ui.Child = Child;
+            return global::CSharpMarkup.Wpf.Border.StartChain(ui);
+        }
+
         /// <summary>Create a <see cref="Windows.Controls.Border"/></summary>
         public static Border Border(O<Windows.Media.Brush> Background = default, O<Windows.Media.Brush> BorderBrush = default, O<Windows.Thickness> BorderThickness = default, O<Windows.CornerRadius> CornerRadius = default, O<Windows.Thickness> Padding = default)
         {
@@ -24171,10 +24173,10 @@ namespace CSharpMarkup.Wpf // Decorator
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Decorator"/></summary>
-        public static Decorator Decorator(O<Windows.UIElement> Child = default)
+        public static Decorator Decorator(Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Decorator();
-            if (Child.HasValue) ui.Child = Child.Value;
+            if (Child != null) ui.Child = Child;
             return global::CSharpMarkup.Wpf.Decorator.StartChain(ui);
         }
 
@@ -24212,12 +24214,6 @@ namespace CSharpMarkup.Wpf // Decorator
         public static implicit operator Decorator(Windows.Controls.Decorator ui) => Decorator.StartChain(ui);
 
         protected Decorator() { }
-    }
-
-    public static partial class DecoratorExtensions
-    {
-        /// <summary>Set <see cref="Windows.Controls.Decorator.Child"/></summary>
-        public static TView Child<TView>(this TView view, Windows.UIElement value) where TView : Decorator { view.UI.Child = value; return view; }
     }
 }
 
@@ -26377,6 +26373,15 @@ namespace CSharpMarkup.Wpf // InkPresenter
 {
     public static partial class Helpers
     {
+        /// <summary>Create a <see cref="Windows.Controls.InkPresenter"/></summary>
+        /// <remarks>Remark: InkPresenter().Bind() binds to <see cref="Windows.Controls.InkPresenter.StrokesProperty"/></remarks>
+        public static InkPresenter InkPresenter(Windows.UIElement Child)
+        {
+            var ui = new Windows.Controls.InkPresenter();
+            if (Child != null) ui.Child = Child;
+            return global::CSharpMarkup.Wpf.InkPresenter.StartChain(ui);
+        }
+
         /// <summary>Create a <see cref="Windows.Controls.InkPresenter"/></summary>
         /// <remarks>Remark: InkPresenter().Bind() binds to <see cref="Windows.Controls.InkPresenter.StrokesProperty"/></remarks>
         public static InkPresenter InkPresenter(O<Windows.Ink.StrokeCollection> Strokes = default)
@@ -29937,10 +29942,17 @@ namespace CSharpMarkup.Wpf // Viewbox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Viewbox"/></summary>
-        public static Viewbox Viewbox(O<Windows.UIElement> Child = default, O<Windows.Media.Stretch> Stretch = default, O<Windows.Controls.StretchDirection> StretchDirection = default)
+        public static Viewbox Viewbox(Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Viewbox();
-            if (Child.HasValue) ui.Child = Child.Value;
+            if (Child != null) ui.Child = Child;
+            return global::CSharpMarkup.Wpf.Viewbox.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Windows.Controls.Viewbox"/></summary>
+        public static Viewbox Viewbox(O<Windows.Media.Stretch> Stretch = default, O<Windows.Controls.StretchDirection> StretchDirection = default)
+        {
+            var ui = new Windows.Controls.Viewbox();
             if (Stretch.HasValue) ui.Stretch = Stretch.Value;
             if (StretchDirection.HasValue) ui.StretchDirection = StretchDirection.Value;
             return global::CSharpMarkup.Wpf.Viewbox.StartChain(ui);
@@ -29984,9 +29996,6 @@ namespace CSharpMarkup.Wpf // Viewbox
 
     public static partial class ViewboxExtensions
     {
-        /// <summary>Set <see cref="Windows.Controls.Viewbox.Child"/></summary>
-        public static TView Child<TView>(this TView view, Windows.UIElement value) where TView : Viewbox { view.UI.Child = value; return view; }
-
         /// <summary>Set <see cref="Windows.Controls.Viewbox.Stretch"/></summary>
         public static TView Stretch<TView>(this TView view, Windows.Media.Stretch value) where TView : Viewbox { view.UI.Stretch = value; return view; }
 
@@ -30395,6 +30404,14 @@ namespace CSharpMarkup.Wpf // BulletDecorator
 {
     public static partial class Helpers
     {
+        /// <summary>Create a <see cref="Windows.Controls.Primitives.BulletDecorator"/></summary>
+        public static BulletDecorator BulletDecorator(Windows.UIElement Child)
+        {
+            var ui = new Windows.Controls.Primitives.BulletDecorator();
+            if (Child != null) ui.Child = Child;
+            return global::CSharpMarkup.Wpf.BulletDecorator.StartChain(ui);
+        }
+
         /// <summary>Create a <see cref="Windows.Controls.Primitives.BulletDecorator"/></summary>
         public static BulletDecorator BulletDecorator(O<Windows.Media.Brush> Background = default, O<Windows.UIElement> Bullet = default)
         {
@@ -31291,11 +31308,18 @@ namespace CSharpMarkup.Wpf // Popup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.Popup"/></summary>
-        public static Popup Popup(O<bool> AllowsTransparency = default, O<Windows.UIElement> Child = default, O<Windows.Controls.Primitives.CustomPopupPlacementCallback> CustomPopupPlacementCallback = default, O<double> HorizontalOffset = default, O<bool> IsOpen = default, O<Windows.Controls.Primitives.PlacementMode> Placement = default, O<Windows.Rect> PlacementRectangle = default, O<Windows.UIElement> PlacementTarget = default, O<Windows.Controls.Primitives.PopupAnimation> PopupAnimation = default, O<bool> StaysOpen = default, O<double> VerticalOffset = default)
+        public static Popup Popup(Windows.UIElement Child)
+        {
+            var ui = new Windows.Controls.Primitives.Popup();
+            if (Child != null) ui.Child = Child;
+            return global::CSharpMarkup.Wpf.Popup.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Windows.Controls.Primitives.Popup"/></summary>
+        public static Popup Popup(O<bool> AllowsTransparency = default, O<Windows.Controls.Primitives.CustomPopupPlacementCallback> CustomPopupPlacementCallback = default, O<double> HorizontalOffset = default, O<bool> IsOpen = default, O<Windows.Controls.Primitives.PlacementMode> Placement = default, O<Windows.Rect> PlacementRectangle = default, O<Windows.UIElement> PlacementTarget = default, O<Windows.Controls.Primitives.PopupAnimation> PopupAnimation = default, O<bool> StaysOpen = default, O<double> VerticalOffset = default)
         {
             var ui = new Windows.Controls.Primitives.Popup();
             if (AllowsTransparency.HasValue) ui.AllowsTransparency = AllowsTransparency.Value;
-            if (Child.HasValue) ui.Child = Child.Value;
             if (CustomPopupPlacementCallback.HasValue) ui.CustomPopupPlacementCallback = CustomPopupPlacementCallback.Value;
             if (HorizontalOffset.HasValue) ui.HorizontalOffset = HorizontalOffset.Value;
             if (IsOpen.HasValue) ui.IsOpen = IsOpen.Value;
@@ -31348,9 +31372,6 @@ namespace CSharpMarkup.Wpf // Popup
     {
         /// <summary>Set <see cref="Windows.Controls.Primitives.Popup.AllowsTransparency"/></summary>
         public static TView AllowsTransparency<TView>(this TView view, bool value) where TView : Popup { view.UI.AllowsTransparency = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Controls.Primitives.Popup.Child"/></summary>
-        public static TView Child<TView>(this TView view, Windows.UIElement value) where TView : Popup { view.UI.Child = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.Primitives.Popup.CustomPopupPlacementCallback"/></summary>
         public static TView CustomPopupPlacementCallback<TView>(this TView view, Windows.Controls.Primitives.CustomPopupPlacementCallback value) where TView : Popup { view.UI.CustomPopupPlacementCallback = value; return view; }
@@ -32928,10 +32949,10 @@ namespace CSharpMarkup.Wpf // AdornerDecorator
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.AdornerDecorator"/></summary>
-        public static AdornerDecorator AdornerDecorator(O<Windows.UIElement> Child = default)
+        public static AdornerDecorator AdornerDecorator(Windows.UIElement Child)
         {
             var ui = new Windows.Documents.AdornerDecorator();
-            if (Child.HasValue) ui.Child = Child.Value;
+            if (Child != null) ui.Child = Child;
             return global::CSharpMarkup.Wpf.AdornerDecorator.StartChain(ui);
         }
 
@@ -32969,12 +32990,6 @@ namespace CSharpMarkup.Wpf // AdornerDecorator
         public static implicit operator AdornerDecorator(Windows.Documents.AdornerDecorator ui) => AdornerDecorator.StartChain(ui);
 
         protected AdornerDecorator() { }
-    }
-
-    public static partial class AdornerDecoratorExtensions
-    {
-        /// <summary>Set <see cref="Windows.Documents.AdornerDecorator.Child"/></summary>
-        public static TView Child<TView>(this TView view, Windows.UIElement value) where TView : AdornerDecorator { view.UI.Child = value; return view; }
     }
 }
 
