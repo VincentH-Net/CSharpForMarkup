@@ -57,11 +57,11 @@ namespace _UIViewNamespace_
         public static DependencyProperty _AttachedPropertyName_Property { get; }
     }
 
-    public partial class ContentView : ContentControl { }
+    public partial class ContentView : ContentControl { public _PropertyType_ _PropertyName_ { get; set; } }
 
     public partial class ChildView : ChildControl { }
 
-    public partial class LayoutView : LayoutControl { }
+    public partial class LayoutView : LayoutControl { public List<_PropertyType_> _PropertyName_ { get; set; } }
 
     public class InlinesView : InlinesControl { }
 }
@@ -94,13 +94,13 @@ namespace _MarkupNamespace_
 #endregion
 
         public static ContentView ContentView(
-#region _ContentViewHelperParameters_
-            object content
-#endregion
+        #region _ContentViewHelperParameters_
+            _PropertyType_ _PropertyName_
+        #endregion
         ) {
             var ui = new _UIViewNamespace_.ContentView();
 #region _ContentViewHelperStatements_
-            if (content != null) ui.Content = content;
+            if (_PropertyName_ is not null) ui._PropertyName_ = _PropertyName_;
 #endregion
             return _MarkupNamespace_.ContentView.StartChain(ui);
         }
@@ -120,13 +120,13 @@ namespace _MarkupNamespace_
 
         public static LayoutView LayoutView(
 #region _LayoutViewHelperParameters_
-            params Windows.UIElement[] children
+            params _PropertyType_[] _PropertyName_
 #endregion
         ) {
             var ui = new _UIViewNamespace_.LayoutView();
 #region _LayoutViewHelperStatements_
-            foreach (var child in children) if (child != null) ui.Children.Add(child);
-            CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
+            foreach (var child in _PropertyName_) if (child is not null) ui._PropertyName_.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui._PropertyName_);
 #endregion
             return _MarkupNamespace_.LayoutView.StartChain(ui);
         }
