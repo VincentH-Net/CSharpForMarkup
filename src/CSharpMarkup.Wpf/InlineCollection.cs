@@ -15,23 +15,31 @@ namespace CSharpMarkup.Wpf
         }
     }
 
-    public class InlineCollectionItem : TypesWrapper<string, System.Windows.Documents.Inline, System.Windows.UIElement>
+    /// <summary>Allows to specify either a <see cref="string"/>, a <see cref="System.Windows.Documents.Inline"/> or a <see cref="System.Windows.UIElement"/></summary>
+    public class InlineCollectionItem : OneOf<string, System.Windows.Documents.Inline, System.Windows.UIElement>
     {
-        public static implicit operator InlineCollectionItem(string    value) => new InlineCollectionItem { Value = value   , TypeIndex = 1 };
-        public static implicit operator InlineCollectionItem(Inline    value) => new InlineCollectionItem { Value = value.UI, TypeIndex = 2 };
-        public static implicit operator InlineCollectionItem(UIElement value) => new InlineCollectionItem { Value = value.UI, TypeIndex = 3 };
+        public static implicit operator InlineCollectionItem(string    value) => new InlineCollectionItem(value);
+        public static implicit operator InlineCollectionItem(Inline    value) => new InlineCollectionItem(value.UI);
+        public static implicit operator InlineCollectionItem(UIElement value) => new InlineCollectionItem(value.UI);
+
+        InlineCollectionItem(string value) : base(value) { }
+        InlineCollectionItem(System.Windows.Documents.Inline value) : base(value) { }
+        InlineCollectionItem(System.Windows.UIElement value) : base(value) { }
     }
 
     /// <summary>Allows to specify either a <typeparamref name="T1"/>, a <typeparamref name="T2"/> or a <typeparamref name="T3"/></summary>
-    public abstract class TypesWrapper<T1, T2, T3>
+    public class OneOf<T1, T2, T3>
     {
-        protected object Value { get; init; }
-        public int TypeIndex { get; init; } // TODO: 2022 Make TypeIndex assignment automatic
+        readonly object value;
 
-        public T1 T1Value => TypeIndex == 1 ? (T1)Value : throw new InvalidOperationException();
-        public T2 T2Value => TypeIndex == 2 ? (T2)Value : throw new InvalidOperationException();
-        public T3 T3Value => TypeIndex == 3 ? (T3)Value : throw new InvalidOperationException();
+        public int TypeIndex { get; }
 
-        protected TypesWrapper() { }
+        public T1 T1Value => TypeIndex == 1 ? (T1)value : throw new InvalidOperationException();
+        public T2 T2Value => TypeIndex == 2 ? (T2)value : throw new InvalidOperationException();
+        public T3 T3Value => TypeIndex == 3 ? (T3)value : throw new InvalidOperationException();
+
+        public OneOf(T1 value) { this.value = value; TypeIndex = 1; }
+        public OneOf(T2 value) { this.value = value; TypeIndex = 2; }
+        public OneOf(T3 value) { this.value = value; TypeIndex = 3; }
     }
 }
