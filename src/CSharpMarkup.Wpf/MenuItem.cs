@@ -10,6 +10,6 @@ namespace CSharpMarkup.Wpf // MenuItem
     {
         /// <summary>Create a <see cref="Windows.Controls.MenuItem"/></summary>
         /// <remarks>Use named parameter to select this overload, e.g. <code>MenuItem (Header: "First", 1, 2, 3)</code></remarks>
-        public static MenuItem MenuItem(object Header, params object[] Items) => MenuItem(Items).Header(Header);
+        public static MenuItem MenuItem(object Header, params UIObject[] Items) => MenuItem(Items).Header(Header);
     } 
 }

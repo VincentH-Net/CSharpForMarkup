@@ -11,6 +11,21 @@ namespace CSharpMarkup.Wpf
         TUI UI { get; }
     }
 
+    /// <summary>Allows to specify both markup views (e.g. <see cref="TextBlock"/>) and non-view object types (e.g. <see cref="string"/>) as UI content</summary>
+    public class UIObject
+    {
+        public object UI { get; }
+
+        public static implicit operator UIObject(int value) => new UIObject(value);
+        public static implicit operator UIObject(float value) => new UIObject(value);
+        public static implicit operator UIObject(double value) => new UIObject(value);
+        public static implicit operator UIObject(char value) => new UIObject(value);
+        public static implicit operator UIObject(string value) => new UIObject(value);
+        public static implicit operator UIObject(DependencyObject value) => new UIObject(value.UI);
+
+        public UIObject(object ui) => UI = ui;
+    }
+
     /// <summary>Optional <typeparamref name="TValue"/> parameter</summary>
     public struct O<TValue>
     {

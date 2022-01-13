@@ -21510,11 +21510,11 @@ namespace CSharpMarkup.Wpf // Window
     {
         /// <summary>Create a <see cref="Windows.Window"/></summary>
         public static Window Window(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Window();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.Window.StartChain(ui);
         }
 
@@ -22080,11 +22080,11 @@ namespace CSharpMarkup.Wpf // Button
     {
         /// <summary>Create a <see cref="Windows.Controls.Button"/></summary>
         public static Button Button(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Button();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.Button.StartChain(ui);
         }
 
@@ -22409,11 +22409,11 @@ namespace CSharpMarkup.Wpf // CheckBox
     {
         /// <summary>Create a <see cref="Windows.Controls.CheckBox"/></summary>
         public static CheckBox CheckBox(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.CheckBox();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.CheckBox.StartChain(ui);
         }
 
@@ -22538,11 +22538,11 @@ namespace CSharpMarkup.Wpf // ComboBox
     {
         /// <summary>Create a <see cref="Windows.Controls.ComboBox"/></summary>
         public static ComboBox ComboBox(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.ComboBox();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ComboBox.StartChain(ui);
         }
@@ -22668,11 +22668,11 @@ namespace CSharpMarkup.Wpf // ComboBoxItem
     {
         /// <summary>Create a <see cref="Windows.Controls.ComboBoxItem"/></summary>
         public static ComboBoxItem ComboBoxItem(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.ComboBoxItem();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ComboBoxItem.StartChain(ui);
         }
 
@@ -22727,11 +22727,11 @@ namespace CSharpMarkup.Wpf // ContentControl
         /// <summary>Create a <see cref="Windows.Controls.ContentControl"/></summary>
         /// <remarks>Remark: ContentControl().Bind() binds to <see cref="Windows.Controls.ContentControl.ContentProperty"/></remarks>
         public static ContentControl ContentControl(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.ContentControl();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ContentControl.StartChain(ui);
         }
 
@@ -22929,11 +22929,11 @@ namespace CSharpMarkup.Wpf // ContextMenu
     {
         /// <summary>Create a <see cref="Windows.Controls.ContextMenu"/></summary>
         public static ContextMenu ContextMenu(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.ContextMenu();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ContextMenu.StartChain(ui);
         }
@@ -23276,11 +23276,11 @@ namespace CSharpMarkup.Wpf // DataGrid
     {
         /// <summary>Create a <see cref="Windows.Controls.DataGrid"/></summary>
         public static DataGrid DataGrid(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.DataGrid();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.DataGrid.StartChain(ui);
         }
@@ -23785,11 +23785,11 @@ namespace CSharpMarkup.Wpf // DataGridCell
     {
         /// <summary>Create a <see cref="Windows.Controls.DataGridCell"/></summary>
         public static DataGridCell DataGridCell(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.DataGridCell();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.DataGridCell.StartChain(ui);
         }
 
@@ -25067,11 +25067,11 @@ namespace CSharpMarkup.Wpf // Expander
         /// <summary>Create a <see cref="Windows.Controls.Expander"/></summary>
         /// <remarks>Remark: Expander().Bind() binds to <see cref="Windows.Controls.Expander.IsExpandedProperty"/></remarks>
         public static Expander Expander(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Expander();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.Expander.StartChain(ui);
         }
 
@@ -26131,11 +26131,11 @@ namespace CSharpMarkup.Wpf // GridViewColumn
     {
         /// <summary>Create a <see cref="Windows.Controls.GridViewColumn"/></summary>
         public static GridViewColumn GridViewColumn(
-            object Header
+            UIObject Header
 )
         {
             var ui = new Windows.Controls.GridViewColumn();
-            if (Header is not null) ui.Header = Header;
+            if (Header is not null) ui.Header = Header.UI;
             return global::CSharpMarkup.Wpf.GridViewColumn.StartChain(ui);
         }
 
@@ -26258,11 +26258,11 @@ namespace CSharpMarkup.Wpf // GridViewColumnHeader
     {
         /// <summary>Create a <see cref="Windows.Controls.GridViewColumnHeader"/></summary>
         public static GridViewColumnHeader GridViewColumnHeader(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.GridViewColumnHeader();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.GridViewColumnHeader.StartChain(ui);
         }
 
@@ -26486,11 +26486,11 @@ namespace CSharpMarkup.Wpf // GroupBox
     {
         /// <summary>Create a <see cref="Windows.Controls.GroupBox"/></summary>
         public static GroupBox GroupBox(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.GroupBox();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.GroupBox.StartChain(ui);
         }
 
@@ -26537,11 +26537,11 @@ namespace CSharpMarkup.Wpf // GroupItem
     {
         /// <summary>Create a <see cref="Windows.Controls.GroupItem"/></summary>
         public static GroupItem GroupItem(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.GroupItem();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.GroupItem.StartChain(ui);
         }
 
@@ -26588,11 +26588,11 @@ namespace CSharpMarkup.Wpf // HeaderedContentControl
     {
         /// <summary>Create a <see cref="Windows.Controls.HeaderedContentControl"/></summary>
         public static HeaderedContentControl HeaderedContentControl(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.HeaderedContentControl();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.HeaderedContentControl.StartChain(ui);
         }
 
@@ -26685,11 +26685,11 @@ namespace CSharpMarkup.Wpf // HeaderedItemsControl
     {
         /// <summary>Create a <see cref="Windows.Controls.HeaderedItemsControl"/></summary>
         public static HeaderedItemsControl HeaderedItemsControl(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.HeaderedItemsControl();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.HeaderedItemsControl.StartChain(ui);
         }
@@ -27131,11 +27131,11 @@ namespace CSharpMarkup.Wpf // ItemsControl
         /// <summary>Create a <see cref="Windows.Controls.ItemsControl"/></summary>
         /// <remarks>Remark: ItemsControl().Bind() binds to <see cref="Windows.Controls.ItemsControl.ItemsSourceProperty"/></remarks>
         public static ItemsControl ItemsControl(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.ItemsControl();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ItemsControl.StartChain(ui);
         }
@@ -27352,11 +27352,11 @@ namespace CSharpMarkup.Wpf // Label
         /// <summary>Create a <see cref="Windows.Controls.Label"/></summary>
         /// <remarks>Remark: Label().Bind() binds to <see cref="Windows.Controls.Label.TargetProperty"/></remarks>
         public static Label Label(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Label();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.Label.StartChain(ui);
         }
 
@@ -27426,11 +27426,11 @@ namespace CSharpMarkup.Wpf // ListBox
     {
         /// <summary>Create a <see cref="Windows.Controls.ListBox"/></summary>
         public static ListBox ListBox(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.ListBox();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ListBox.StartChain(ui);
         }
@@ -27500,11 +27500,11 @@ namespace CSharpMarkup.Wpf // ListBoxItem
     {
         /// <summary>Create a <see cref="Windows.Controls.ListBoxItem"/></summary>
         public static ListBoxItem ListBoxItem(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.ListBoxItem();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ListBoxItem.StartChain(ui);
         }
 
@@ -27569,11 +27569,11 @@ namespace CSharpMarkup.Wpf // ListView
     {
         /// <summary>Create a <see cref="Windows.Controls.ListView"/></summary>
         public static ListView ListView(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.ListView();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ListView.StartChain(ui);
         }
@@ -27639,11 +27639,11 @@ namespace CSharpMarkup.Wpf // ListViewItem
     {
         /// <summary>Create a <see cref="Windows.Controls.ListViewItem"/></summary>
         public static ListViewItem ListViewItem(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.ListViewItem();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ListViewItem.StartChain(ui);
         }
 
@@ -27830,11 +27830,11 @@ namespace CSharpMarkup.Wpf // Menu
     {
         /// <summary>Create a <see cref="Windows.Controls.Menu"/></summary>
         public static Menu Menu(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Menu();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.Menu.StartChain(ui);
         }
@@ -27900,11 +27900,11 @@ namespace CSharpMarkup.Wpf // MenuItem
     {
         /// <summary>Create a <see cref="Windows.Controls.MenuItem"/></summary>
         public static MenuItem MenuItem(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.MenuItem();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.MenuItem.StartChain(ui);
         }
@@ -28067,11 +28067,11 @@ namespace CSharpMarkup.Wpf // Page
         /// <summary>Create a <see cref="Windows.Controls.Page"/></summary>
         /// <remarks>Remark: Page().Bind() binds to <see cref="Windows.Controls.Page.TitleProperty"/></remarks>
         public static Page Page(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Page();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.Page.StartChain(ui);
         }
 
@@ -28472,11 +28472,11 @@ namespace CSharpMarkup.Wpf // RadioButton
     {
         /// <summary>Create a <see cref="Windows.Controls.RadioButton"/></summary>
         public static RadioButton RadioButton(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.RadioButton();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RadioButton.StartChain(ui);
         }
 
@@ -28764,11 +28764,11 @@ namespace CSharpMarkup.Wpf // ScrollViewer
     {
         /// <summary>Create a <see cref="Windows.Controls.ScrollViewer"/></summary>
         public static ScrollViewer ScrollViewer(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.ScrollViewer();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ScrollViewer.StartChain(ui);
         }
 
@@ -29446,11 +29446,11 @@ namespace CSharpMarkup.Wpf // TabControl
     {
         /// <summary>Create a <see cref="Windows.Controls.TabControl"/></summary>
         public static TabControl TabControl(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.TabControl();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.TabControl.StartChain(ui);
         }
@@ -29556,11 +29556,11 @@ namespace CSharpMarkup.Wpf // TabItem
     {
         /// <summary>Create a <see cref="Windows.Controls.TabItem"/></summary>
         public static TabItem TabItem(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.TabItem();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.TabItem.StartChain(ui);
         }
 
@@ -30208,11 +30208,11 @@ namespace CSharpMarkup.Wpf // ToolBar
     {
         /// <summary>Create a <see cref="Windows.Controls.ToolBar"/></summary>
         public static ToolBar ToolBar(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.ToolBar();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ToolBar.StartChain(ui);
         }
@@ -30410,11 +30410,11 @@ namespace CSharpMarkup.Wpf // ToolTip
     {
         /// <summary>Create a <see cref="Windows.Controls.ToolTip"/></summary>
         public static ToolTip ToolTip(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.ToolTip();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ToolTip.StartChain(ui);
         }
 
@@ -30551,11 +30551,11 @@ namespace CSharpMarkup.Wpf // TreeView
     {
         /// <summary>Create a <see cref="Windows.Controls.TreeView"/></summary>
         public static TreeView TreeView(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.TreeView();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.TreeView.StartChain(ui);
         }
@@ -30629,11 +30629,11 @@ namespace CSharpMarkup.Wpf // TreeViewItem
     {
         /// <summary>Create a <see cref="Windows.Controls.TreeViewItem"/></summary>
         public static TreeViewItem TreeViewItem(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.TreeViewItem();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.TreeViewItem.StartChain(ui);
         }
@@ -30711,11 +30711,11 @@ namespace CSharpMarkup.Wpf // UserControl
     {
         /// <summary>Create a <see cref="Windows.Controls.UserControl"/></summary>
         public static UserControl UserControl(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.UserControl();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.UserControl.StartChain(ui);
         }
 
@@ -31392,11 +31392,11 @@ namespace CSharpMarkup.Wpf // CalendarButton
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.CalendarButton"/></summary>
         public static CalendarButton CalendarButton(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Primitives.CalendarButton();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.CalendarButton.StartChain(ui);
         }
 
@@ -31454,11 +31454,11 @@ namespace CSharpMarkup.Wpf // CalendarDayButton
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.CalendarDayButton"/></summary>
         public static CalendarDayButton CalendarDayButton(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Primitives.CalendarDayButton();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.CalendarDayButton.StartChain(ui);
         }
 
@@ -31569,11 +31569,11 @@ namespace CSharpMarkup.Wpf // DataGridCellsPresenter
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridCellsPresenter"/></summary>
         public static DataGridCellsPresenter DataGridCellsPresenter(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Primitives.DataGridCellsPresenter();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.DataGridCellsPresenter.StartChain(ui);
         }
@@ -31621,11 +31621,11 @@ namespace CSharpMarkup.Wpf // DataGridColumnHeader
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridColumnHeader"/></summary>
         public static DataGridColumnHeader DataGridColumnHeader(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Primitives.DataGridColumnHeader();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.DataGridColumnHeader.StartChain(ui);
         }
 
@@ -31720,11 +31720,11 @@ namespace CSharpMarkup.Wpf // DataGridColumnHeadersPresenter
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridColumnHeadersPresenter"/></summary>
         public static DataGridColumnHeadersPresenter DataGridColumnHeadersPresenter(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Primitives.DataGridColumnHeadersPresenter();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.DataGridColumnHeadersPresenter.StartChain(ui);
         }
@@ -31813,11 +31813,11 @@ namespace CSharpMarkup.Wpf // DataGridRowHeader
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridRowHeader"/></summary>
         public static DataGridRowHeader DataGridRowHeader(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Primitives.DataGridRowHeader();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.DataGridRowHeader.StartChain(ui);
         }
 
@@ -32412,11 +32412,11 @@ namespace CSharpMarkup.Wpf // RepeatButton
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.RepeatButton"/></summary>
         public static RepeatButton RepeatButton(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Primitives.RepeatButton();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RepeatButton.StartChain(ui);
         }
 
@@ -32719,11 +32719,11 @@ namespace CSharpMarkup.Wpf // StatusBar
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.StatusBar"/></summary>
         public static StatusBar StatusBar(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Primitives.StatusBar();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.StatusBar.StartChain(ui);
         }
@@ -32797,11 +32797,11 @@ namespace CSharpMarkup.Wpf // StatusBarItem
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.StatusBarItem"/></summary>
         public static StatusBarItem StatusBarItem(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Primitives.StatusBarItem();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.StatusBarItem.StartChain(ui);
         }
 
@@ -33226,11 +33226,11 @@ namespace CSharpMarkup.Wpf // ToggleButton
         /// <summary>Create a <see cref="Windows.Controls.Primitives.ToggleButton"/></summary>
         /// <remarks>Remark: ToggleButton().Bind() binds to <see cref="Windows.Controls.Primitives.ToggleButton.IsCheckedProperty"/></remarks>
         public static ToggleButton ToggleButton(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Primitives.ToggleButton();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ToggleButton.StartChain(ui);
         }
 
@@ -39313,11 +39313,11 @@ namespace CSharpMarkup.Wpf // Ribbon
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Ribbon"/></summary>
         public static Ribbon Ribbon(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.Ribbon();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.Ribbon.StartChain(ui);
         }
@@ -39619,11 +39619,11 @@ namespace CSharpMarkup.Wpf // RibbonApplicationMenu
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonApplicationMenu"/></summary>
         public static RibbonApplicationMenu RibbonApplicationMenu(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonApplicationMenu();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonApplicationMenu.StartChain(ui);
         }
@@ -39729,11 +39729,11 @@ namespace CSharpMarkup.Wpf // RibbonApplicationMenuItem
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonApplicationMenuItem"/></summary>
         public static RibbonApplicationMenuItem RibbonApplicationMenuItem(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonApplicationMenuItem();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonApplicationMenuItem.StartChain(ui);
         }
@@ -39788,11 +39788,11 @@ namespace CSharpMarkup.Wpf // RibbonApplicationSplitMenuItem
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonApplicationSplitMenuItem"/></summary>
         public static RibbonApplicationSplitMenuItem RibbonApplicationSplitMenuItem(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonApplicationSplitMenuItem();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonApplicationSplitMenuItem.StartChain(ui);
         }
@@ -39847,11 +39847,11 @@ namespace CSharpMarkup.Wpf // RibbonButton
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonButton"/></summary>
         public static RibbonButton RibbonButton(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonButton();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonButton.StartChain(ui);
         }
 
@@ -40128,11 +40128,11 @@ namespace CSharpMarkup.Wpf // RibbonCheckBox
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonCheckBox"/></summary>
         public static RibbonCheckBox RibbonCheckBox(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonCheckBox();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonCheckBox.StartChain(ui);
         }
 
@@ -40429,11 +40429,11 @@ namespace CSharpMarkup.Wpf // RibbonComboBox
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonComboBox"/></summary>
         public static RibbonComboBox RibbonComboBox(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonComboBox();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonComboBox.StartChain(ui);
         }
@@ -40618,11 +40618,11 @@ namespace CSharpMarkup.Wpf // RibbonContextMenu
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonContextMenu"/></summary>
         public static RibbonContextMenu RibbonContextMenu(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonContextMenu();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonContextMenu.StartChain(ui);
         }
@@ -40677,11 +40677,11 @@ namespace CSharpMarkup.Wpf // RibbonContextualTabGroup
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonContextualTabGroup"/></summary>
         public static RibbonContextualTabGroup RibbonContextualTabGroup(
-            object Header
+            UIObject Header
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonContextualTabGroup();
-            if (Header is not null) ui.Header = Header;
+            if (Header is not null) ui.Header = Header.UI;
             return global::CSharpMarkup.Wpf.RibbonContextualTabGroup.StartChain(ui);
         }
 
@@ -40774,11 +40774,11 @@ namespace CSharpMarkup.Wpf // RibbonContextualTabGroupItemsControl
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonContextualTabGroupItemsControl"/></summary>
         public static RibbonContextualTabGroupItemsControl RibbonContextualTabGroupItemsControl(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonContextualTabGroupItemsControl();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonContextualTabGroupItemsControl.StartChain(ui);
         }
@@ -40833,11 +40833,11 @@ namespace CSharpMarkup.Wpf // RibbonControl
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonControl"/></summary>
         public static RibbonControl RibbonControl(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonControl();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonControl.StartChain(ui);
         }
 
@@ -40910,11 +40910,11 @@ namespace CSharpMarkup.Wpf // RibbonControlGroup
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonControlGroup"/></summary>
         public static RibbonControlGroup RibbonControlGroup(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonControlGroup();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonControlGroup.StartChain(ui);
         }
@@ -41081,11 +41081,11 @@ namespace CSharpMarkup.Wpf // RibbonFilterMenuButton
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonFilterMenuButton"/></summary>
         public static RibbonFilterMenuButton RibbonFilterMenuButton(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonFilterMenuButton();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonFilterMenuButton.StartChain(ui);
         }
@@ -41133,11 +41133,11 @@ namespace CSharpMarkup.Wpf // RibbonGallery
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGallery"/></summary>
         public static RibbonGallery RibbonGallery(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonGallery();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonGallery.StartChain(ui);
         }
@@ -41483,11 +41483,11 @@ namespace CSharpMarkup.Wpf // RibbonGalleryCategory
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGalleryCategory"/></summary>
         public static RibbonGalleryCategory RibbonGalleryCategory(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonGalleryCategory();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonGalleryCategory.StartChain(ui);
         }
@@ -41585,11 +41585,11 @@ namespace CSharpMarkup.Wpf // RibbonGalleryItem
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGalleryItem"/></summary>
         public static RibbonGalleryItem RibbonGalleryItem(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonGalleryItem();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonGalleryItem.StartChain(ui);
         }
 
@@ -41806,11 +41806,11 @@ namespace CSharpMarkup.Wpf // RibbonGroup
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGroup"/></summary>
         public static RibbonGroup RibbonGroup(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonGroup();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonGroup.StartChain(ui);
         }
@@ -42173,11 +42173,11 @@ namespace CSharpMarkup.Wpf // RibbonMenuButton
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonMenuButton"/></summary>
         public static RibbonMenuButton RibbonMenuButton(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonMenuButton();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonMenuButton.StartChain(ui);
         }
@@ -42483,11 +42483,11 @@ namespace CSharpMarkup.Wpf // RibbonMenuItem
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonMenuItem"/></summary>
         public static RibbonMenuItem RibbonMenuItem(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonMenuItem();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonMenuItem.StartChain(ui);
         }
@@ -42753,11 +42753,11 @@ namespace CSharpMarkup.Wpf // RibbonQuickAccessToolBar
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonQuickAccessToolBar"/></summary>
         public static RibbonQuickAccessToolBar RibbonQuickAccessToolBar(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonQuickAccessToolBar();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonQuickAccessToolBar.StartChain(ui);
         }
@@ -42839,11 +42839,11 @@ namespace CSharpMarkup.Wpf // RibbonRadioButton
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonRadioButton"/></summary>
         public static RibbonRadioButton RibbonRadioButton(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonRadioButton();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonRadioButton.StartChain(ui);
         }
 
@@ -43211,11 +43211,11 @@ namespace CSharpMarkup.Wpf // RibbonSplitButton
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonSplitButton"/></summary>
         public static RibbonSplitButton RibbonSplitButton(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonSplitButton();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonSplitButton.StartChain(ui);
         }
@@ -43413,11 +43413,11 @@ namespace CSharpMarkup.Wpf // RibbonSplitMenuItem
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonSplitMenuItem"/></summary>
         public static RibbonSplitMenuItem RibbonSplitMenuItem(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonSplitMenuItem();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonSplitMenuItem.StartChain(ui);
         }
@@ -43539,11 +43539,11 @@ namespace CSharpMarkup.Wpf // RibbonTab
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonTab"/></summary>
         public static RibbonTab RibbonTab(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonTab();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonTab.StartChain(ui);
         }
@@ -43657,11 +43657,11 @@ namespace CSharpMarkup.Wpf // RibbonTabHeader
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonTabHeader"/></summary>
         public static RibbonTabHeader RibbonTabHeader(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonTabHeader();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonTabHeader.StartChain(ui);
         }
 
@@ -43818,11 +43818,11 @@ namespace CSharpMarkup.Wpf // RibbonTabHeaderItemsControl
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonTabHeaderItemsControl"/></summary>
         public static RibbonTabHeaderItemsControl RibbonTabHeaderItemsControl(
-            params object[] Items
+            params UIObject[] Items
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonTabHeaderItemsControl();
-            foreach (var child in Items) if (child is not null) ui.Items.Add(child);
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonTabHeaderItemsControl.StartChain(ui);
         }
@@ -44147,11 +44147,11 @@ namespace CSharpMarkup.Wpf // RibbonToggleButton
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonToggleButton"/></summary>
         public static RibbonToggleButton RibbonToggleButton(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonToggleButton();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonToggleButton.StartChain(ui);
         }
 
@@ -44456,11 +44456,11 @@ namespace CSharpMarkup.Wpf // RibbonToolTip
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonToolTip"/></summary>
         public static RibbonToolTip RibbonToolTip(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonToolTip();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonToolTip.StartChain(ui);
         }
 
@@ -44776,11 +44776,11 @@ namespace CSharpMarkup.Wpf // RibbonWindow
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonWindow"/></summary>
         public static RibbonWindow RibbonWindow(
-            object Content
+            UIObject Content
 )
         {
             var ui = new Windows.Controls.Ribbon.RibbonWindow();
-            if (Content is not null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonWindow.StartChain(ui);
         }
 

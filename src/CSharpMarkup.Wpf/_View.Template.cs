@@ -100,8 +100,8 @@ namespace _MarkupNamespace_
         ) {
             var ui = new _UIViewNamespace_.ContentView();
 #region _ContentViewHelperStatements_
-            if (_PropertyName_ is not null) ui._PropertyName_ = _PropertyName_;
-#endregion
+            if (_PropertyName_ is not null) ui._PropertyName_ = _PropertyName_/*_AccessUI_*/;
+            #endregion
             return _MarkupNamespace_.ContentView.StartChain(ui);
         }
 
@@ -125,7 +125,7 @@ namespace _MarkupNamespace_
         ) {
             var ui = new _UIViewNamespace_.LayoutView();
 #region _LayoutViewHelperStatements_
-            foreach (var child in _PropertyName_) if (child is not null) ui._PropertyName_.Add(child);
+            foreach (var child in _PropertyName_) if (child is not null) ui._PropertyName_.Add(child/*_AccessUI_*/);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui._PropertyName_);
 #endregion
             return _MarkupNamespace_.LayoutView.StartChain(ui);
