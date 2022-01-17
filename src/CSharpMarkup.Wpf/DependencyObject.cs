@@ -11,6 +11,11 @@ namespace CSharpMarkup.Wpf
         TUI UI { get; }
     }
 
+    public interface IUI_Dispatcher<TUI> where TUI : System.Windows.Threading.DispatcherObject
+    {
+        TUI UI { get; }
+    }
+
     /// <summary>Allows to specify both markup views (e.g. <see cref="TextBlock"/>) and non-view object types (e.g. <see cref="string"/>) as UI content</summary>
     public class UIObject
     {
