@@ -59,8 +59,6 @@ namespace _UIViewNamespace_
 
     public partial class ContentView : ContentControl { public _PropertyType_ _PropertyName_ { get; set; } }
 
-    public partial class ChildView : ChildControl { }
-
     public partial class LayoutView : LayoutControl { public List<_PropertyType_> _PropertyName_ { get; set; } }
 
     public class InlinesView : InlinesControl { }
@@ -103,19 +101,6 @@ namespace _MarkupNamespace_
             if (_PropertyName_ is not null) ui._PropertyName_ = _PropertyName_/*_AccessUI_*/;
             #endregion
             return _MarkupNamespace_.ContentView.StartChain(ui);
-        }
-
-        public static ChildView ChildView(
-        #region _ChildViewHelperParameters_
-            Windows.UIElement Child
-        #endregion
-        )
-        {
-            var ui = new _UIViewNamespace_.ChildView();
-            #region _ChildViewHelperStatements_
-            if (Child != null) ui.Child = Child;
-            #endregion
-            return _MarkupNamespace_.ChildView.StartChain(ui);
         }
 
         public static LayoutView LayoutView(
@@ -259,8 +244,6 @@ namespace _MarkupNamespace_
     public partial class _NonViewPropertyTarget_ : System.Windows.DependencyObject { }
 
     public class ContentView { internal static ContentView StartChain(_UIViewNamespace_.ContentView ui) => null; }
-
-    public class ChildView { internal static ChildView StartChain(_UIViewNamespace_.ChildView ui) => null; }
 
     public class LayoutView { internal static LayoutView StartChain(_UIViewNamespace_.LayoutView ui) => null; }
 
