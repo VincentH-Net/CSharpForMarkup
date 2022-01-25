@@ -23198,6 +23198,13 @@ namespace CSharpMarkup.Wpf // Canvas
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.Canvas.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.Canvas"/></summary>
+        public static Canvas Canvas()
+        {
+            var ui = new Windows.Controls.Canvas();
+            return global::CSharpMarkup.Wpf.Canvas.StartChain(ui);
+        }
     }
 
     public partial class Canvas : Panel, IUI<System.Windows.Controls.Canvas>
@@ -24824,6 +24831,13 @@ namespace CSharpMarkup.Wpf // DataGridCellsPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.DataGridCellsPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.DataGridCellsPanel"/></summary>
+        public static DataGridCellsPanel DataGridCellsPanel()
+        {
+            var ui = new Windows.Controls.DataGridCellsPanel();
+            return global::CSharpMarkup.Wpf.DataGridCellsPanel.StartChain(ui);
+        }
     }
 
     public partial class DataGridCellsPanel : VirtualizingPanel, IUI<System.Windows.Controls.DataGridCellsPanel>
@@ -25798,6 +25812,13 @@ namespace CSharpMarkup.Wpf // DockPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.DockPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.DockPanel"/></summary>
+        public static DockPanel DockPanel()
+        {
+            var ui = new Windows.Controls.DockPanel();
+            return global::CSharpMarkup.Wpf.DockPanel.StartChain(ui);
+        }
     }
 
     public partial class DockPanel : Panel, IUI<System.Windows.Controls.DockPanel>
@@ -26722,6 +26743,13 @@ namespace CSharpMarkup.Wpf // Grid
             if (ShowGridLines.HasValue) ui.ShowGridLines = ShowGridLines.Value;
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
+            return global::CSharpMarkup.Wpf.Grid.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Windows.Controls.Grid"/></summary>
+        public static Grid Grid()
+        {
+            var ui = new Windows.Controls.Grid();
             return global::CSharpMarkup.Wpf.Grid.StartChain(ui);
         }
     }
@@ -30334,6 +30362,13 @@ namespace CSharpMarkup.Wpf // StackPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.StackPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.StackPanel"/></summary>
+        public static StackPanel StackPanel()
+        {
+            var ui = new Windows.Controls.StackPanel();
+            return global::CSharpMarkup.Wpf.StackPanel.StartChain(ui);
+        }
     }
 
     public partial class StackPanel : Panel, IUI<System.Windows.Controls.StackPanel>
@@ -32083,6 +32118,13 @@ namespace CSharpMarkup.Wpf // VirtualizingStackPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.VirtualizingStackPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.VirtualizingStackPanel"/></summary>
+        public static VirtualizingStackPanel VirtualizingStackPanel()
+        {
+            var ui = new Windows.Controls.VirtualizingStackPanel();
+            return global::CSharpMarkup.Wpf.VirtualizingStackPanel.StartChain(ui);
+        }
     }
 
     public partial class VirtualizingStackPanel : VirtualizingPanel, IUI<System.Windows.Controls.VirtualizingStackPanel>
@@ -32214,6 +32256,13 @@ namespace CSharpMarkup.Wpf // WrapPanel
             if (Orientation.HasValue) ui.Orientation = Orientation.Value;
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
+            return global::CSharpMarkup.Wpf.WrapPanel.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Windows.Controls.WrapPanel"/></summary>
+        public static WrapPanel WrapPanel()
+        {
+            var ui = new Windows.Controls.WrapPanel();
             return global::CSharpMarkup.Wpf.WrapPanel.StartChain(ui);
         }
     }
@@ -32913,6 +32962,13 @@ namespace CSharpMarkup.Wpf // DataGridRowsPresenter
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.DataGridRowsPresenter.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridRowsPresenter"/></summary>
+        public static DataGridRowsPresenter DataGridRowsPresenter()
+        {
+            var ui = new Windows.Controls.Primitives.DataGridRowsPresenter();
+            return global::CSharpMarkup.Wpf.DataGridRowsPresenter.StartChain(ui);
+        }
     }
 
     public partial class DataGridRowsPresenter : VirtualizingStackPanel, IUI<System.Windows.Controls.Primitives.DataGridRowsPresenter>
@@ -33602,6 +33658,14 @@ namespace CSharpMarkup.Wpf // SelectiveScrollingGrid
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.SelectiveScrollingGrid.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.Primitives.SelectiveScrollingGrid"/></summary>
+        /// <remarks>Remark: SelectiveScrollingGrid().Bind() binds to <see cref="Windows.Controls.Primitives.SelectiveScrollingGrid.SelectiveScrollingOrientationProperty"/></remarks>
+        public static SelectiveScrollingGrid SelectiveScrollingGrid()
+        {
+            var ui = new Windows.Controls.Primitives.SelectiveScrollingGrid();
+            return global::CSharpMarkup.Wpf.SelectiveScrollingGrid.StartChain(ui);
+        }
     }
 
     public partial class SelectiveScrollingGrid : Grid, IUI<System.Windows.Controls.Primitives.SelectiveScrollingGrid>, IDefaultBindProperty
@@ -33846,6 +33910,13 @@ namespace CSharpMarkup.Wpf // TabPanel
             var ui = new Windows.Controls.Primitives.TabPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
+            return global::CSharpMarkup.Wpf.TabPanel.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Windows.Controls.Primitives.TabPanel"/></summary>
+        public static TabPanel TabPanel()
+        {
+            var ui = new Windows.Controls.Primitives.TabPanel();
             return global::CSharpMarkup.Wpf.TabPanel.StartChain(ui);
         }
     }
@@ -34315,6 +34386,13 @@ namespace CSharpMarkup.Wpf // ToolBarOverflowPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.ToolBarOverflowPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.Primitives.ToolBarOverflowPanel"/></summary>
+        public static ToolBarOverflowPanel ToolBarOverflowPanel()
+        {
+            var ui = new Windows.Controls.Primitives.ToolBarOverflowPanel();
+            return global::CSharpMarkup.Wpf.ToolBarOverflowPanel.StartChain(ui);
+        }
     }
 
     public partial class ToolBarOverflowPanel : Panel, IUI<System.Windows.Controls.Primitives.ToolBarOverflowPanel>
@@ -34366,6 +34444,13 @@ namespace CSharpMarkup.Wpf // ToolBarPanel
             var ui = new Windows.Controls.Primitives.ToolBarPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
+            return global::CSharpMarkup.Wpf.ToolBarPanel.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Windows.Controls.Primitives.ToolBarPanel"/></summary>
+        public static ToolBarPanel ToolBarPanel()
+        {
+            var ui = new Windows.Controls.Primitives.ToolBarPanel();
             return global::CSharpMarkup.Wpf.ToolBarPanel.StartChain(ui);
         }
     }
@@ -34537,6 +34622,13 @@ namespace CSharpMarkup.Wpf // UniformGrid
             if (Rows.HasValue) ui.Rows = Rows.Value;
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
+            return global::CSharpMarkup.Wpf.UniformGrid.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Windows.Controls.Primitives.UniformGrid"/></summary>
+        public static UniformGrid UniformGrid()
+        {
+            var ui = new Windows.Controls.Primitives.UniformGrid();
             return global::CSharpMarkup.Wpf.UniformGrid.StartChain(ui);
         }
     }
@@ -45855,6 +45947,13 @@ namespace CSharpMarkup.Wpf // RibbonContextualTabGroupsPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.RibbonContextualTabGroupsPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonContextualTabGroupsPanel"/></summary>
+        public static RibbonContextualTabGroupsPanel RibbonContextualTabGroupsPanel()
+        {
+            var ui = new Windows.Controls.Ribbon.Primitives.RibbonContextualTabGroupsPanel();
+            return global::CSharpMarkup.Wpf.RibbonContextualTabGroupsPanel.StartChain(ui);
+        }
     }
 
     public partial class RibbonContextualTabGroupsPanel : Panel, IUI<System.Windows.Controls.Ribbon.Primitives.RibbonContextualTabGroupsPanel>
@@ -45917,6 +46016,13 @@ namespace CSharpMarkup.Wpf // RibbonGalleryCategoriesPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.RibbonGalleryCategoriesPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGalleryCategoriesPanel"/></summary>
+        public static RibbonGalleryCategoriesPanel RibbonGalleryCategoriesPanel()
+        {
+            var ui = new Windows.Controls.Ribbon.Primitives.RibbonGalleryCategoriesPanel();
+            return global::CSharpMarkup.Wpf.RibbonGalleryCategoriesPanel.StartChain(ui);
+        }
     }
 
     public partial class RibbonGalleryCategoriesPanel : Panel, IUI<System.Windows.Controls.Ribbon.Primitives.RibbonGalleryCategoriesPanel>
@@ -45972,6 +46078,13 @@ namespace CSharpMarkup.Wpf // RibbonGalleryItemsPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.RibbonGalleryItemsPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGalleryItemsPanel"/></summary>
+        public static RibbonGalleryItemsPanel RibbonGalleryItemsPanel()
+        {
+            var ui = new Windows.Controls.Ribbon.Primitives.RibbonGalleryItemsPanel();
+            return global::CSharpMarkup.Wpf.RibbonGalleryItemsPanel.StartChain(ui);
+        }
     }
 
     public partial class RibbonGalleryItemsPanel : Panel, IUI<System.Windows.Controls.Ribbon.Primitives.RibbonGalleryItemsPanel>
@@ -46015,6 +46128,13 @@ namespace CSharpMarkup.Wpf // RibbonGroupItemsPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.RibbonGroupItemsPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGroupItemsPanel"/></summary>
+        public static RibbonGroupItemsPanel RibbonGroupItemsPanel()
+        {
+            var ui = new Windows.Controls.Ribbon.Primitives.RibbonGroupItemsPanel();
+            return global::CSharpMarkup.Wpf.RibbonGroupItemsPanel.StartChain(ui);
+        }
     }
 
     public partial class RibbonGroupItemsPanel : Panel, IUI<System.Windows.Controls.Ribbon.Primitives.RibbonGroupItemsPanel>
@@ -46056,6 +46176,13 @@ namespace CSharpMarkup.Wpf // RibbonGroupsPanel
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonGroupsPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
+            return global::CSharpMarkup.Wpf.RibbonGroupsPanel.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGroupsPanel"/></summary>
+        public static RibbonGroupsPanel RibbonGroupsPanel()
+        {
+            var ui = new Windows.Controls.Ribbon.Primitives.RibbonGroupsPanel();
             return global::CSharpMarkup.Wpf.RibbonGroupsPanel.StartChain(ui);
         }
     }
@@ -46108,6 +46235,13 @@ namespace CSharpMarkup.Wpf // RibbonMenuItemsPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.RibbonMenuItemsPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonMenuItemsPanel"/></summary>
+        public static RibbonMenuItemsPanel RibbonMenuItemsPanel()
+        {
+            var ui = new Windows.Controls.Ribbon.Primitives.RibbonMenuItemsPanel();
+            return global::CSharpMarkup.Wpf.RibbonMenuItemsPanel.StartChain(ui);
+        }
     }
 
     public partial class RibbonMenuItemsPanel : VirtualizingStackPanel, IUI<System.Windows.Controls.Ribbon.Primitives.RibbonMenuItemsPanel>
@@ -46151,6 +46285,13 @@ namespace CSharpMarkup.Wpf // RibbonQuickAccessToolBarOverflowPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.RibbonQuickAccessToolBarOverflowPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarOverflowPanel"/></summary>
+        public static RibbonQuickAccessToolBarOverflowPanel RibbonQuickAccessToolBarOverflowPanel()
+        {
+            var ui = new Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarOverflowPanel();
+            return global::CSharpMarkup.Wpf.RibbonQuickAccessToolBarOverflowPanel.StartChain(ui);
+        }
     }
 
     public partial class RibbonQuickAccessToolBarOverflowPanel : Panel, IUI<System.Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarOverflowPanel>
@@ -46192,6 +46333,13 @@ namespace CSharpMarkup.Wpf // RibbonQuickAccessToolBarPanel
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
+            return global::CSharpMarkup.Wpf.RibbonQuickAccessToolBarPanel.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarPanel"/></summary>
+        public static RibbonQuickAccessToolBarPanel RibbonQuickAccessToolBarPanel()
+        {
+            var ui = new Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarPanel();
             return global::CSharpMarkup.Wpf.RibbonQuickAccessToolBarPanel.StartChain(ui);
         }
     }
@@ -46247,6 +46395,13 @@ namespace CSharpMarkup.Wpf // RibbonTabHeadersPanel
             if (ScrollOwner.HasValue) ui.ScrollOwner = ScrollOwner.Value;
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
+            return global::CSharpMarkup.Wpf.RibbonTabHeadersPanel.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonTabHeadersPanel"/></summary>
+        public static RibbonTabHeadersPanel RibbonTabHeadersPanel()
+        {
+            var ui = new Windows.Controls.Ribbon.Primitives.RibbonTabHeadersPanel();
             return global::CSharpMarkup.Wpf.RibbonTabHeadersPanel.StartChain(ui);
         }
     }
@@ -46320,6 +46475,13 @@ namespace CSharpMarkup.Wpf // RibbonTabsPanel
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.RibbonTabsPanel.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonTabsPanel"/></summary>
+        public static RibbonTabsPanel RibbonTabsPanel()
+        {
+            var ui = new Windows.Controls.Ribbon.Primitives.RibbonTabsPanel();
+            return global::CSharpMarkup.Wpf.RibbonTabsPanel.StartChain(ui);
+        }
     }
 
     public partial class RibbonTabsPanel : Panel, IUI<System.Windows.Controls.Ribbon.Primitives.RibbonTabsPanel>
@@ -46373,6 +46535,13 @@ namespace CSharpMarkup.Wpf // RibbonTitlePanel
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonTitlePanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
+            return global::CSharpMarkup.Wpf.RibbonTitlePanel.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonTitlePanel"/></summary>
+        public static RibbonTitlePanel RibbonTitlePanel()
+        {
+            var ui = new Windows.Controls.Ribbon.Primitives.RibbonTitlePanel();
             return global::CSharpMarkup.Wpf.RibbonTitlePanel.StartChain(ui);
         }
     }

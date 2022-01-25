@@ -5,10 +5,7 @@ using Controls = System.Windows.Controls;
 [assembly: MarkupHelpers(
     markupHelpersType: typeof(CSharpMarkup.Wpf.Helpers),
     baseViewType: typeof(System.Windows.Threading.DispatcherObject),
-    contentPropertyName: "Content",
     contentControlBaseClass: typeof(Controls.ContentControl),
-    childrenPropertyName: "Children",
-    childrenPropertyType: typeof(Controls.UIElementCollection),
     bindablePropertyType: typeof(System.Windows.DependencyProperty)
 )]
 #endif
