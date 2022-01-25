@@ -40,7 +40,6 @@ namespace _UIViewNamespace_
     using ContentControl = System.Windows.Controls.ContentControl;
     using ChildControl = System.Windows.Controls.Decorator;
     using LayoutControl = System.Windows.Controls.Panel;
-    using InlinesControl = System.Windows.Documents.Span;
 
     using _ViewBaseTypeName_ = System.Windows.FrameworkElement;
 
@@ -60,8 +59,6 @@ namespace _UIViewNamespace_
     public partial class ContentView : ContentControl { public _PropertyType_ _PropertyName_ { get; set; } }
 
     public partial class LayoutView : LayoutControl { public List<_PropertyType_> _PropertyName_ { get; set; } }
-
-    public class InlinesView : InlinesControl { }
 }
 
 namespace _MarkupNamespace_
@@ -114,20 +111,6 @@ namespace _MarkupNamespace_
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui._PropertyName_);
 #endregion
             return _MarkupNamespace_.LayoutView.StartChain(ui);
-        }
-
-        public static InlinesView InlinesView(
-#region _InlinesViewHelperParameters_
-            IEnumerable<Windows.Documents.Inline> inlines
-#endregion
-        )
-        {
-            var ui = new _UIViewNamespace_.InlinesView();
-#region _InlinesViewHelperStatements_
-            foreach (var inline in inlines) if (inline != null) ui.Inlines.Add(inline);
-            CSharpMarkup.Wpf.Helpers.SpreadInlines(ui.Inlines);
-#endregion
-            return _MarkupNamespace_.InlinesView.StartChain(ui);
         }
     }
 
@@ -246,7 +229,5 @@ namespace _MarkupNamespace_
     public class ContentView { internal static ContentView StartChain(_UIViewNamespace_.ContentView ui) => null; }
 
     public class LayoutView { internal static LayoutView StartChain(_UIViewNamespace_.LayoutView ui) => null; }
-
-    public class InlinesView { internal static InlinesView StartChain(_UIViewNamespace_.InlinesView ui) => null; }
 }
 #endif
