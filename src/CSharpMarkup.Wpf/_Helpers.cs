@@ -3,9 +3,7 @@ using CSharpMarkup.Generate.WinUI;
 using Controls = System.Windows.Controls;
 
 [assembly: MarkupHelpers(
-    markupHelpersType: typeof(CSharpMarkup.Wpf.Helpers),
-    baseViewType: typeof(System.Windows.Threading.DispatcherObject),
-    bindablePropertyType: typeof(System.Windows.DependencyProperty)
+    markupHelpersType: typeof(CSharpMarkup.Wpf.Helpers)
 )]
 #endif
 

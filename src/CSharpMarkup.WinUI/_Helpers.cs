@@ -4,13 +4,7 @@ using Xaml = Microsoft.UI.Xaml;
 using Controls = Microsoft.UI.Xaml.Controls;
 
 [assembly: MarkupHelpers(
-    markupHelpersType: typeof(CSharpMarkup.WinUI.Helpers),
-    baseViewType: typeof(Microsoft.UI.Xaml.DependencyObject),
-    contentPropertyName: "Content",
-    contentControlBaseClass: typeof(Controls.ContentControl),
-    childrenPropertyName: "Children",
-    childrenPropertyType: typeof(Controls.UIElementCollection),
-    bindablePropertyType: typeof(Microsoft.UI.Xaml.DependencyProperty)
+    markupHelpersType: typeof(CSharpMarkup.WinUI.Helpers)
 )]
 #endif
 
