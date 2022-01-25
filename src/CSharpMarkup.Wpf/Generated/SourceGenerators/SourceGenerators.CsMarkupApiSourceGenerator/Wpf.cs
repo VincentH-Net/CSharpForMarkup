@@ -1774,9 +1774,7 @@ namespace CSharpMarkup.Wpf // DrawingGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.DrawingGroup"/></summary>
-        public static DrawingGroup DrawingGroup(
-            params System.Windows.Media.Drawing[] Children
-)
+        public static DrawingGroup DrawingGroup(params System.Windows.Media.Drawing[] Children)
         {
             var ui = new Windows.Media.DrawingGroup();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -1785,17 +1783,18 @@ namespace CSharpMarkup.Wpf // DrawingGroup
         }
 
         /// <summary>Create a <see cref="Windows.Media.DrawingGroup"/></summary>
-        public static DrawingGroup DrawingGroup(O<Windows.Media.Effects.BitmapEffect> BitmapEffect = default, O<Windows.Media.Effects.BitmapEffectInput> BitmapEffectInput = default, O<Windows.Media.DrawingCollection> Children = default, O<Windows.Media.Geometry> ClipGeometry = default, O<Windows.Media.GuidelineSet> GuidelineSet = default, O<double> Opacity = default, O<Windows.Media.Brush> OpacityMask = default, O<Windows.Media.Transform> Transform = default)
+        public static DrawingGroup DrawingGroup(O<Windows.Media.Effects.BitmapEffect> BitmapEffect = default, O<Windows.Media.Effects.BitmapEffectInput> BitmapEffectInput = default, O<Windows.Media.Geometry> ClipGeometry = default, O<Windows.Media.GuidelineSet> GuidelineSet = default, O<double> Opacity = default, O<Windows.Media.Brush> OpacityMask = default, O<Windows.Media.Transform> Transform = default, params System.Windows.Media.Drawing[] Children)
         {
             var ui = new Windows.Media.DrawingGroup();
             if (BitmapEffect.HasValue) ui.BitmapEffect = BitmapEffect.Value;
             if (BitmapEffectInput.HasValue) ui.BitmapEffectInput = BitmapEffectInput.Value;
-            if (Children.HasValue) ui.Children = Children.Value;
             if (ClipGeometry.HasValue) ui.ClipGeometry = ClipGeometry.Value;
             if (GuidelineSet.HasValue) ui.GuidelineSet = GuidelineSet.Value;
             if (Opacity.HasValue) ui.Opacity = Opacity.Value;
             if (OpacityMask.HasValue) ui.OpacityMask = OpacityMask.Value;
             if (Transform.HasValue) ui.Transform = Transform.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.DrawingGroup.StartChain(ui);
         }
 
@@ -1840,9 +1839,6 @@ namespace CSharpMarkup.Wpf // DrawingGroup
 
         /// <summary>Set <see cref="Windows.Media.DrawingGroup.BitmapEffectInput"/></summary>
         public static TView BitmapEffectInput<TView>(this TView view, Windows.Media.Effects.BitmapEffectInput value) where TView : DrawingGroup { view.UI.BitmapEffectInput = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.DrawingGroup.Children"/></summary>
-        public static TView Children<TView>(this TView view, Windows.Media.DrawingCollection value) where TView : DrawingGroup { view.UI.Children = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.DrawingGroup.ClipGeometry"/></summary>
         public static TView ClipGeometry<TView>(this TView view, Windows.Media.Geometry value) where TView : DrawingGroup { view.UI.ClipGeometry = value; return view; }
@@ -2170,21 +2166,11 @@ namespace CSharpMarkup.Wpf // GeneralTransformGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.GeneralTransformGroup"/></summary>
-        public static GeneralTransformGroup GeneralTransformGroup(
-            params System.Windows.Media.GeneralTransform[] Children
-)
+        public static GeneralTransformGroup GeneralTransformGroup(params System.Windows.Media.GeneralTransform[] Children)
         {
             var ui = new Windows.Media.GeneralTransformGroup();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
-            return global::CSharpMarkup.Wpf.GeneralTransformGroup.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.GeneralTransformGroup"/></summary>
-        public static GeneralTransformGroup GeneralTransformGroup(O<Windows.Media.GeneralTransformCollection> Children = default)
-        {
-            var ui = new Windows.Media.GeneralTransformGroup();
-            if (Children.HasValue) ui.Children = Children.Value;
             return global::CSharpMarkup.Wpf.GeneralTransformGroup.StartChain(ui);
         }
 
@@ -2224,9 +2210,6 @@ namespace CSharpMarkup.Wpf // GeneralTransformGroup
 
     public static partial class GeneralTransformGroupExtensions
     {
-        /// <summary>Set <see cref="Windows.Media.GeneralTransformGroup.Children"/></summary>
-        public static TView Children<TView>(this TView view, Windows.Media.GeneralTransformCollection value) where TView : GeneralTransformGroup { view.UI.Children = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.GeneralTransformGroup.Children"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.GeneralTransformCollection> Children<TTarget>(this TTarget target) where TTarget : GeneralTransformGroup
         => DependencyProperty<TTarget, Windows.Media.GeneralTransformCollection>.Get(target, Windows.Media.GeneralTransformGroup.ChildrenProperty);
@@ -2403,9 +2386,7 @@ namespace CSharpMarkup.Wpf // GeometryGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.GeometryGroup"/></summary>
-        public static GeometryGroup GeometryGroup(
-            params System.Windows.Media.Geometry[] Children
-)
+        public static GeometryGroup GeometryGroup(params System.Windows.Media.Geometry[] Children)
         {
             var ui = new Windows.Media.GeometryGroup();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -2414,11 +2395,12 @@ namespace CSharpMarkup.Wpf // GeometryGroup
         }
 
         /// <summary>Create a <see cref="Windows.Media.GeometryGroup"/></summary>
-        public static GeometryGroup GeometryGroup(O<Windows.Media.GeometryCollection> Children = default, O<Windows.Media.FillRule> FillRule = default)
+        public static GeometryGroup GeometryGroup(O<Windows.Media.FillRule> FillRule = default, params System.Windows.Media.Geometry[] Children)
         {
             var ui = new Windows.Media.GeometryGroup();
-            if (Children.HasValue) ui.Children = Children.Value;
             if (FillRule.HasValue) ui.FillRule = FillRule.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.GeometryGroup.StartChain(ui);
         }
 
@@ -2458,9 +2440,6 @@ namespace CSharpMarkup.Wpf // GeometryGroup
 
     public static partial class GeometryGroupExtensions
     {
-        /// <summary>Set <see cref="Windows.Media.GeometryGroup.Children"/></summary>
-        public static TView Children<TView>(this TView view, Windows.Media.GeometryCollection value) where TView : GeometryGroup { view.UI.Children = value; return view; }
-
         /// <summary>Set <see cref="Windows.Media.GeometryGroup.FillRule"/></summary>
         public static TView FillRule<TView>(this TView view, Windows.Media.FillRule value) where TView : GeometryGroup { view.UI.FillRule = value; return view; }
 
@@ -2571,9 +2550,6 @@ namespace CSharpMarkup.Wpf // GradientBrush
     {
         /// <summary>Set <see cref="Windows.Media.GradientBrush.ColorInterpolationMode"/></summary>
         public static TView ColorInterpolationMode<TView>(this TView view, Windows.Media.ColorInterpolationMode value) where TView : GradientBrush { view.UI.ColorInterpolationMode = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.GradientBrush.GradientStops"/></summary>
-        public static TView GradientStops<TView>(this TView view, Windows.Media.GradientStopCollection value) where TView : GradientBrush { view.UI.GradientStops = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.GradientBrush.MappingMode"/></summary>
         public static TView MappingMode<TView>(this TView view, Windows.Media.BrushMappingMode value) where TView : GradientBrush { view.UI.MappingMode = value; return view; }
@@ -3061,9 +3037,7 @@ namespace CSharpMarkup.Wpf // LinearGradientBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.LinearGradientBrush"/></summary>
-        public static LinearGradientBrush LinearGradientBrush(
-            params System.Windows.Media.GradientStop[] GradientStops
-)
+        public static LinearGradientBrush LinearGradientBrush(params System.Windows.Media.GradientStop[] GradientStops)
         {
             var ui = new Windows.Media.LinearGradientBrush();
             foreach (var child in GradientStops) if (child is not null) ui.GradientStops.Add(child);
@@ -3072,11 +3046,13 @@ namespace CSharpMarkup.Wpf // LinearGradientBrush
         }
 
         /// <summary>Create a <see cref="Windows.Media.LinearGradientBrush"/></summary>
-        public static LinearGradientBrush LinearGradientBrush(O<Windows.Point> EndPoint = default, O<Windows.Point> StartPoint = default)
+        public static LinearGradientBrush LinearGradientBrush(O<Windows.Point> EndPoint = default, O<Windows.Point> StartPoint = default, params System.Windows.Media.GradientStop[] GradientStops)
         {
             var ui = new Windows.Media.LinearGradientBrush();
             if (EndPoint.HasValue) ui.EndPoint = EndPoint.Value;
             if (StartPoint.HasValue) ui.StartPoint = StartPoint.Value;
+            foreach (var child in GradientStops) if (child is not null) ui.GradientStops.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.GradientStops);
             return global::CSharpMarkup.Wpf.LinearGradientBrush.StartChain(ui);
         }
 
@@ -3564,9 +3540,7 @@ namespace CSharpMarkup.Wpf // PathFigure
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.PathFigure"/></summary>
-        public static PathFigure PathFigure(
-            params System.Windows.Media.PathSegment[] Segments
-)
+        public static PathFigure PathFigure(params System.Windows.Media.PathSegment[] Segments)
         {
             var ui = new Windows.Media.PathFigure();
             foreach (var child in Segments) if (child is not null) ui.Segments.Add(child);
@@ -3575,13 +3549,14 @@ namespace CSharpMarkup.Wpf // PathFigure
         }
 
         /// <summary>Create a <see cref="Windows.Media.PathFigure"/></summary>
-        public static PathFigure PathFigure(O<bool> IsClosed = default, O<bool> IsFilled = default, O<Windows.Media.PathSegmentCollection> Segments = default, O<Windows.Point> StartPoint = default)
+        public static PathFigure PathFigure(O<bool> IsClosed = default, O<bool> IsFilled = default, O<Windows.Point> StartPoint = default, params System.Windows.Media.PathSegment[] Segments)
         {
             var ui = new Windows.Media.PathFigure();
             if (IsClosed.HasValue) ui.IsClosed = IsClosed.Value;
             if (IsFilled.HasValue) ui.IsFilled = IsFilled.Value;
-            if (Segments.HasValue) ui.Segments = Segments.Value;
             if (StartPoint.HasValue) ui.StartPoint = StartPoint.Value;
+            foreach (var child in Segments) if (child is not null) ui.Segments.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Segments);
             return global::CSharpMarkup.Wpf.PathFigure.StartChain(ui);
         }
 
@@ -3633,9 +3608,6 @@ namespace CSharpMarkup.Wpf // PathFigure
 
         /// <summary>Set <see cref="Windows.Media.PathFigure.IsFilled"/></summary>
         public static TView IsFilled<TView>(this TView view, bool value) where TView : PathFigure { view.UI.IsFilled = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.PathFigure.Segments"/></summary>
-        public static TView Segments<TView>(this TView view, Windows.Media.PathSegmentCollection value) where TView : PathFigure { view.UI.Segments = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.PathFigure.StartPoint"/></summary>
         public static TView StartPoint<TView>(this TView view, Windows.Point value) where TView : PathFigure { view.UI.StartPoint = value; return view; }
@@ -3716,9 +3688,7 @@ namespace CSharpMarkup.Wpf // PathGeometry
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.PathGeometry"/></summary>
-        public static PathGeometry PathGeometry(
-            params System.Windows.Media.PathFigure[] Figures
-)
+        public static PathGeometry PathGeometry(params System.Windows.Media.PathFigure[] Figures)
         {
             var ui = new Windows.Media.PathGeometry();
             foreach (var child in Figures) if (child is not null) ui.Figures.Add(child);
@@ -3727,11 +3697,12 @@ namespace CSharpMarkup.Wpf // PathGeometry
         }
 
         /// <summary>Create a <see cref="Windows.Media.PathGeometry"/></summary>
-        public static PathGeometry PathGeometry(O<Windows.Media.PathFigureCollection> Figures = default, O<Windows.Media.FillRule> FillRule = default)
+        public static PathGeometry PathGeometry(O<Windows.Media.FillRule> FillRule = default, params System.Windows.Media.PathFigure[] Figures)
         {
             var ui = new Windows.Media.PathGeometry();
-            if (Figures.HasValue) ui.Figures = Figures.Value;
             if (FillRule.HasValue) ui.FillRule = FillRule.Value;
+            foreach (var child in Figures) if (child is not null) ui.Figures.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Figures);
             return global::CSharpMarkup.Wpf.PathGeometry.StartChain(ui);
         }
 
@@ -3785,9 +3756,6 @@ namespace CSharpMarkup.Wpf // PathGeometry
 
     public static partial class PathGeometryExtensions
     {
-        /// <summary>Set <see cref="Windows.Media.PathGeometry.Figures"/></summary>
-        public static TView Figures<TView>(this TView view, Windows.Media.PathFigureCollection value) where TView : PathGeometry { view.UI.Figures = value; return view; }
-
         /// <summary>Set <see cref="Windows.Media.PathGeometry.FillRule"/></summary>
         public static TView FillRule<TView>(this TView view, Windows.Media.FillRule value) where TView : PathGeometry { view.UI.FillRule = value; return view; }
 
@@ -4335,9 +4303,7 @@ namespace CSharpMarkup.Wpf // RadialGradientBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.RadialGradientBrush"/></summary>
-        public static RadialGradientBrush RadialGradientBrush(
-            params System.Windows.Media.GradientStop[] GradientStops
-)
+        public static RadialGradientBrush RadialGradientBrush(params System.Windows.Media.GradientStop[] GradientStops)
         {
             var ui = new Windows.Media.RadialGradientBrush();
             foreach (var child in GradientStops) if (child is not null) ui.GradientStops.Add(child);
@@ -4346,13 +4312,15 @@ namespace CSharpMarkup.Wpf // RadialGradientBrush
         }
 
         /// <summary>Create a <see cref="Windows.Media.RadialGradientBrush"/></summary>
-        public static RadialGradientBrush RadialGradientBrush(O<Windows.Point> Center = default, O<Windows.Point> GradientOrigin = default, O<double> RadiusX = default, O<double> RadiusY = default)
+        public static RadialGradientBrush RadialGradientBrush(O<Windows.Point> Center = default, O<Windows.Point> GradientOrigin = default, O<double> RadiusX = default, O<double> RadiusY = default, params System.Windows.Media.GradientStop[] GradientStops)
         {
             var ui = new Windows.Media.RadialGradientBrush();
             if (Center.HasValue) ui.Center = Center.Value;
             if (GradientOrigin.HasValue) ui.GradientOrigin = GradientOrigin.Value;
             if (RadiusX.HasValue) ui.RadiusX = RadiusX.Value;
             if (RadiusY.HasValue) ui.RadiusY = RadiusY.Value;
+            foreach (var child in GradientStops) if (child is not null) ui.GradientStops.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.GradientStops);
             return global::CSharpMarkup.Wpf.RadialGradientBrush.StartChain(ui);
         }
 
@@ -5254,21 +5222,11 @@ namespace CSharpMarkup.Wpf // TransformGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.TransformGroup"/></summary>
-        public static TransformGroup TransformGroup(
-            params System.Windows.Media.Transform[] Children
-)
+        public static TransformGroup TransformGroup(params System.Windows.Media.Transform[] Children)
         {
             var ui = new Windows.Media.TransformGroup();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
-            return global::CSharpMarkup.Wpf.TransformGroup.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.TransformGroup"/></summary>
-        public static TransformGroup TransformGroup(O<Windows.Media.TransformCollection> Children = default)
-        {
-            var ui = new Windows.Media.TransformGroup();
-            if (Children.HasValue) ui.Children = Children.Value;
             return global::CSharpMarkup.Wpf.TransformGroup.StartChain(ui);
         }
 
@@ -5308,9 +5266,6 @@ namespace CSharpMarkup.Wpf // TransformGroup
 
     public static partial class TransformGroupExtensions
     {
-        /// <summary>Set <see cref="Windows.Media.TransformGroup.Children"/></summary>
-        public static TView Children<TView>(this TView view, Windows.Media.TransformCollection value) where TView : TransformGroup { view.UI.Children = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.TransformGroup.Children"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.TransformCollection> Children<TTarget>(this TTarget target) where TTarget : TransformGroup
         => DependencyProperty<TTarget, Windows.Media.TransformCollection>.Get(target, Windows.Media.TransformGroup.ChildrenProperty);
@@ -5737,21 +5692,11 @@ namespace CSharpMarkup.Wpf // BooleanAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.BooleanAnimationUsingKeyFrames"/></summary>
-        public static BooleanAnimationUsingKeyFrames BooleanAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.BooleanKeyFrame[] KeyFrames
-)
+        public static BooleanAnimationUsingKeyFrames BooleanAnimationUsingKeyFrames(params System.Windows.Media.Animation.BooleanKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.BooleanAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
-            return global::CSharpMarkup.Wpf.BooleanAnimationUsingKeyFrames.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.Animation.BooleanAnimationUsingKeyFrames"/></summary>
-        public static BooleanAnimationUsingKeyFrames BooleanAnimationUsingKeyFrames(O<Windows.Media.Animation.BooleanKeyFrameCollection> KeyFrames = default)
-        {
-            var ui = new Windows.Media.Animation.BooleanAnimationUsingKeyFrames();
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
             return global::CSharpMarkup.Wpf.BooleanAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -5787,12 +5732,6 @@ namespace CSharpMarkup.Wpf // BooleanAnimationUsingKeyFrames
         public static implicit operator BooleanAnimationUsingKeyFrames(Windows.Media.Animation.BooleanAnimationUsingKeyFrames ui) => BooleanAnimationUsingKeyFrames.StartChain(ui);
 
         protected BooleanAnimationUsingKeyFrames() { }
-    }
-
-    public static partial class BooleanAnimationUsingKeyFramesExtensions
-    {
-        /// <summary>Set <see cref="Windows.Media.Animation.BooleanAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.BooleanKeyFrameCollection value) where TView : BooleanAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -6071,9 +6010,7 @@ namespace CSharpMarkup.Wpf // ByteAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ByteAnimationUsingKeyFrames"/></summary>
-        public static ByteAnimationUsingKeyFrames ByteAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.ByteKeyFrame[] KeyFrames
-)
+        public static ByteAnimationUsingKeyFrames ByteAnimationUsingKeyFrames(params System.Windows.Media.Animation.ByteKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.ByteAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -6082,12 +6019,13 @@ namespace CSharpMarkup.Wpf // ByteAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.ByteAnimationUsingKeyFrames"/></summary>
-        public static ByteAnimationUsingKeyFrames ByteAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.ByteKeyFrameCollection> KeyFrames = default)
+        public static ByteAnimationUsingKeyFrames ByteAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.ByteKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.ByteAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.ByteAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -6132,9 +6070,6 @@ namespace CSharpMarkup.Wpf // ByteAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.ByteAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : ByteAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.ByteAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.ByteKeyFrameCollection value) where TView : ByteAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -6231,21 +6166,11 @@ namespace CSharpMarkup.Wpf // CharAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.CharAnimationUsingKeyFrames"/></summary>
-        public static CharAnimationUsingKeyFrames CharAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.CharKeyFrame[] KeyFrames
-)
+        public static CharAnimationUsingKeyFrames CharAnimationUsingKeyFrames(params System.Windows.Media.Animation.CharKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.CharAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
-            return global::CSharpMarkup.Wpf.CharAnimationUsingKeyFrames.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.Animation.CharAnimationUsingKeyFrames"/></summary>
-        public static CharAnimationUsingKeyFrames CharAnimationUsingKeyFrames(O<Windows.Media.Animation.CharKeyFrameCollection> KeyFrames = default)
-        {
-            var ui = new Windows.Media.Animation.CharAnimationUsingKeyFrames();
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
             return global::CSharpMarkup.Wpf.CharAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -6281,12 +6206,6 @@ namespace CSharpMarkup.Wpf // CharAnimationUsingKeyFrames
         public static implicit operator CharAnimationUsingKeyFrames(Windows.Media.Animation.CharAnimationUsingKeyFrames ui) => CharAnimationUsingKeyFrames.StartChain(ui);
 
         protected CharAnimationUsingKeyFrames() { }
-    }
-
-    public static partial class CharAnimationUsingKeyFramesExtensions
-    {
-        /// <summary>Set <see cref="Windows.Media.Animation.CharAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.CharKeyFrameCollection value) where TView : CharAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -6593,9 +6512,7 @@ namespace CSharpMarkup.Wpf // ColorAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ColorAnimationUsingKeyFrames"/></summary>
-        public static ColorAnimationUsingKeyFrames ColorAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.ColorKeyFrame[] KeyFrames
-)
+        public static ColorAnimationUsingKeyFrames ColorAnimationUsingKeyFrames(params System.Windows.Media.Animation.ColorKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.ColorAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -6604,12 +6521,13 @@ namespace CSharpMarkup.Wpf // ColorAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.ColorAnimationUsingKeyFrames"/></summary>
-        public static ColorAnimationUsingKeyFrames ColorAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.ColorKeyFrameCollection> KeyFrames = default)
+        public static ColorAnimationUsingKeyFrames ColorAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.ColorKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.ColorAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.ColorAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -6654,9 +6572,6 @@ namespace CSharpMarkup.Wpf // ColorAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.ColorAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : ColorAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.ColorAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.ColorKeyFrameCollection value) where TView : ColorAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -6909,9 +6824,7 @@ namespace CSharpMarkup.Wpf // DecimalAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.DecimalAnimationUsingKeyFrames"/></summary>
-        public static DecimalAnimationUsingKeyFrames DecimalAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.DecimalKeyFrame[] KeyFrames
-)
+        public static DecimalAnimationUsingKeyFrames DecimalAnimationUsingKeyFrames(params System.Windows.Media.Animation.DecimalKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.DecimalAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -6920,12 +6833,13 @@ namespace CSharpMarkup.Wpf // DecimalAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.DecimalAnimationUsingKeyFrames"/></summary>
-        public static DecimalAnimationUsingKeyFrames DecimalAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.DecimalKeyFrameCollection> KeyFrames = default)
+        public static DecimalAnimationUsingKeyFrames DecimalAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.DecimalKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.DecimalAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.DecimalAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -6970,9 +6884,6 @@ namespace CSharpMarkup.Wpf // DecimalAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.DecimalAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : DecimalAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.DecimalAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.DecimalKeyFrameCollection value) where TView : DecimalAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -8299,9 +8210,7 @@ namespace CSharpMarkup.Wpf // DoubleAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.DoubleAnimationUsingKeyFrames"/></summary>
-        public static DoubleAnimationUsingKeyFrames DoubleAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.DoubleKeyFrame[] KeyFrames
-)
+        public static DoubleAnimationUsingKeyFrames DoubleAnimationUsingKeyFrames(params System.Windows.Media.Animation.DoubleKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.DoubleAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -8310,12 +8219,13 @@ namespace CSharpMarkup.Wpf // DoubleAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.DoubleAnimationUsingKeyFrames"/></summary>
-        public static DoubleAnimationUsingKeyFrames DoubleAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.DoubleKeyFrameCollection> KeyFrames = default)
+        public static DoubleAnimationUsingKeyFrames DoubleAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.DoubleKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.DoubleAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.DoubleAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -8360,9 +8270,6 @@ namespace CSharpMarkup.Wpf // DoubleAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.DoubleAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : DoubleAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.DoubleAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.DoubleKeyFrameCollection value) where TView : DoubleAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -10053,9 +9960,7 @@ namespace CSharpMarkup.Wpf // Int16AnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int16AnimationUsingKeyFrames"/></summary>
-        public static Int16AnimationUsingKeyFrames Int16AnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.Int16KeyFrame[] KeyFrames
-)
+        public static Int16AnimationUsingKeyFrames Int16AnimationUsingKeyFrames(params System.Windows.Media.Animation.Int16KeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Int16AnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -10064,12 +9969,13 @@ namespace CSharpMarkup.Wpf // Int16AnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.Int16AnimationUsingKeyFrames"/></summary>
-        public static Int16AnimationUsingKeyFrames Int16AnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.Int16KeyFrameCollection> KeyFrames = default)
+        public static Int16AnimationUsingKeyFrames Int16AnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.Int16KeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Int16AnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.Int16AnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -10114,9 +10020,6 @@ namespace CSharpMarkup.Wpf // Int16AnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.Int16AnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : Int16AnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.Int16AnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.Int16KeyFrameCollection value) where TView : Int16AnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -10330,9 +10233,7 @@ namespace CSharpMarkup.Wpf // Int32AnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int32AnimationUsingKeyFrames"/></summary>
-        public static Int32AnimationUsingKeyFrames Int32AnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.Int32KeyFrame[] KeyFrames
-)
+        public static Int32AnimationUsingKeyFrames Int32AnimationUsingKeyFrames(params System.Windows.Media.Animation.Int32KeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Int32AnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -10341,12 +10242,13 @@ namespace CSharpMarkup.Wpf // Int32AnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.Int32AnimationUsingKeyFrames"/></summary>
-        public static Int32AnimationUsingKeyFrames Int32AnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.Int32KeyFrameCollection> KeyFrames = default)
+        public static Int32AnimationUsingKeyFrames Int32AnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.Int32KeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Int32AnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.Int32AnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -10391,9 +10293,6 @@ namespace CSharpMarkup.Wpf // Int32AnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.Int32AnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : Int32AnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.Int32AnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.Int32KeyFrameCollection value) where TView : Int32AnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -10607,9 +10506,7 @@ namespace CSharpMarkup.Wpf // Int64AnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int64AnimationUsingKeyFrames"/></summary>
-        public static Int64AnimationUsingKeyFrames Int64AnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.Int64KeyFrame[] KeyFrames
-)
+        public static Int64AnimationUsingKeyFrames Int64AnimationUsingKeyFrames(params System.Windows.Media.Animation.Int64KeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Int64AnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -10618,12 +10515,13 @@ namespace CSharpMarkup.Wpf // Int64AnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.Int64AnimationUsingKeyFrames"/></summary>
-        public static Int64AnimationUsingKeyFrames Int64AnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.Int64KeyFrameCollection> KeyFrames = default)
+        public static Int64AnimationUsingKeyFrames Int64AnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.Int64KeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Int64AnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.Int64AnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -10668,9 +10566,6 @@ namespace CSharpMarkup.Wpf // Int64AnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.Int64AnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : Int64AnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.Int64AnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.Int64KeyFrameCollection value) where TView : Int64AnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -11704,21 +11599,11 @@ namespace CSharpMarkup.Wpf // MatrixAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.MatrixAnimationUsingKeyFrames"/></summary>
-        public static MatrixAnimationUsingKeyFrames MatrixAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.MatrixKeyFrame[] KeyFrames
-)
+        public static MatrixAnimationUsingKeyFrames MatrixAnimationUsingKeyFrames(params System.Windows.Media.Animation.MatrixKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.MatrixAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
-            return global::CSharpMarkup.Wpf.MatrixAnimationUsingKeyFrames.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.Animation.MatrixAnimationUsingKeyFrames"/></summary>
-        public static MatrixAnimationUsingKeyFrames MatrixAnimationUsingKeyFrames(O<Windows.Media.Animation.MatrixKeyFrameCollection> KeyFrames = default)
-        {
-            var ui = new Windows.Media.Animation.MatrixAnimationUsingKeyFrames();
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
             return global::CSharpMarkup.Wpf.MatrixAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -11754,12 +11639,6 @@ namespace CSharpMarkup.Wpf // MatrixAnimationUsingKeyFrames
         public static implicit operator MatrixAnimationUsingKeyFrames(Windows.Media.Animation.MatrixAnimationUsingKeyFrames ui) => MatrixAnimationUsingKeyFrames.StartChain(ui);
 
         protected MatrixAnimationUsingKeyFrames() { }
-    }
-
-    public static partial class MatrixAnimationUsingKeyFramesExtensions
-    {
-        /// <summary>Set <see cref="Windows.Media.Animation.MatrixAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.MatrixKeyFrameCollection value) where TView : MatrixAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -11941,21 +11820,11 @@ namespace CSharpMarkup.Wpf // ObjectAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ObjectAnimationUsingKeyFrames"/></summary>
-        public static ObjectAnimationUsingKeyFrames ObjectAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.ObjectKeyFrame[] KeyFrames
-)
+        public static ObjectAnimationUsingKeyFrames ObjectAnimationUsingKeyFrames(params System.Windows.Media.Animation.ObjectKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.ObjectAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
-            return global::CSharpMarkup.Wpf.ObjectAnimationUsingKeyFrames.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.Animation.ObjectAnimationUsingKeyFrames"/></summary>
-        public static ObjectAnimationUsingKeyFrames ObjectAnimationUsingKeyFrames(O<Windows.Media.Animation.ObjectKeyFrameCollection> KeyFrames = default)
-        {
-            var ui = new Windows.Media.Animation.ObjectAnimationUsingKeyFrames();
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
             return global::CSharpMarkup.Wpf.ObjectAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -11991,12 +11860,6 @@ namespace CSharpMarkup.Wpf // ObjectAnimationUsingKeyFrames
         public static implicit operator ObjectAnimationUsingKeyFrames(Windows.Media.Animation.ObjectAnimationUsingKeyFrames ui) => ObjectAnimationUsingKeyFrames.StartChain(ui);
 
         protected ObjectAnimationUsingKeyFrames() { }
-    }
-
-    public static partial class ObjectAnimationUsingKeyFramesExtensions
-    {
-        /// <summary>Set <see cref="Windows.Media.Animation.ObjectAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.ObjectKeyFrameCollection value) where TView : ObjectAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -12077,9 +11940,7 @@ namespace CSharpMarkup.Wpf // ParallelTimeline
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ParallelTimeline"/></summary>
-        public static ParallelTimeline ParallelTimeline(
-            params System.Windows.Media.Animation.Timeline[] Children
-)
+        public static ParallelTimeline ParallelTimeline(params System.Windows.Media.Animation.Timeline[] Children)
         {
             var ui = new Windows.Media.Animation.ParallelTimeline();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -12088,10 +11949,12 @@ namespace CSharpMarkup.Wpf // ParallelTimeline
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.ParallelTimeline"/></summary>
-        public static ParallelTimeline ParallelTimeline(O<Windows.Media.Animation.SlipBehavior> SlipBehavior = default)
+        public static ParallelTimeline ParallelTimeline(O<Windows.Media.Animation.SlipBehavior> SlipBehavior = default, params System.Windows.Media.Animation.Timeline[] Children)
         {
             var ui = new Windows.Media.Animation.ParallelTimeline();
             if (SlipBehavior.HasValue) ui.SlipBehavior = SlipBehavior.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.ParallelTimeline.StartChain(ui);
         }
 
@@ -12299,9 +12162,7 @@ namespace CSharpMarkup.Wpf // Point3DAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Point3DAnimationUsingKeyFrames"/></summary>
-        public static Point3DAnimationUsingKeyFrames Point3DAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.Point3DKeyFrame[] KeyFrames
-)
+        public static Point3DAnimationUsingKeyFrames Point3DAnimationUsingKeyFrames(params System.Windows.Media.Animation.Point3DKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Point3DAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -12310,12 +12171,13 @@ namespace CSharpMarkup.Wpf // Point3DAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.Point3DAnimationUsingKeyFrames"/></summary>
-        public static Point3DAnimationUsingKeyFrames Point3DAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.Point3DKeyFrameCollection> KeyFrames = default)
+        public static Point3DAnimationUsingKeyFrames Point3DAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.Point3DKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Point3DAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.Point3DAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -12360,9 +12222,6 @@ namespace CSharpMarkup.Wpf // Point3DAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.Point3DAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : Point3DAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.Point3DAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.Point3DKeyFrameCollection value) where TView : Point3DAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -12576,9 +12435,7 @@ namespace CSharpMarkup.Wpf // PointAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.PointAnimationUsingKeyFrames"/></summary>
-        public static PointAnimationUsingKeyFrames PointAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.PointKeyFrame[] KeyFrames
-)
+        public static PointAnimationUsingKeyFrames PointAnimationUsingKeyFrames(params System.Windows.Media.Animation.PointKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.PointAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -12587,12 +12444,13 @@ namespace CSharpMarkup.Wpf // PointAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.PointAnimationUsingKeyFrames"/></summary>
-        public static PointAnimationUsingKeyFrames PointAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.PointKeyFrameCollection> KeyFrames = default)
+        public static PointAnimationUsingKeyFrames PointAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.PointKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.PointAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.PointAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -12637,9 +12495,6 @@ namespace CSharpMarkup.Wpf // PointAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.PointAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : PointAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.PointAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.PointKeyFrameCollection value) where TView : PointAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -13061,9 +12916,7 @@ namespace CSharpMarkup.Wpf // QuaternionAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.QuaternionAnimationUsingKeyFrames"/></summary>
-        public static QuaternionAnimationUsingKeyFrames QuaternionAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.QuaternionKeyFrame[] KeyFrames
-)
+        public static QuaternionAnimationUsingKeyFrames QuaternionAnimationUsingKeyFrames(params System.Windows.Media.Animation.QuaternionKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.QuaternionAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -13072,12 +12925,13 @@ namespace CSharpMarkup.Wpf // QuaternionAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.QuaternionAnimationUsingKeyFrames"/></summary>
-        public static QuaternionAnimationUsingKeyFrames QuaternionAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.QuaternionKeyFrameCollection> KeyFrames = default)
+        public static QuaternionAnimationUsingKeyFrames QuaternionAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.QuaternionKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.QuaternionAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.QuaternionAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -13122,9 +12976,6 @@ namespace CSharpMarkup.Wpf // QuaternionAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.QuaternionAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : QuaternionAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.QuaternionAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.QuaternionKeyFrameCollection value) where TView : QuaternionAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -13377,9 +13228,7 @@ namespace CSharpMarkup.Wpf // RectAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.RectAnimationUsingKeyFrames"/></summary>
-        public static RectAnimationUsingKeyFrames RectAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.RectKeyFrame[] KeyFrames
-)
+        public static RectAnimationUsingKeyFrames RectAnimationUsingKeyFrames(params System.Windows.Media.Animation.RectKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.RectAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -13388,12 +13237,13 @@ namespace CSharpMarkup.Wpf // RectAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.RectAnimationUsingKeyFrames"/></summary>
-        public static RectAnimationUsingKeyFrames RectAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.RectKeyFrameCollection> KeyFrames = default)
+        public static RectAnimationUsingKeyFrames RectAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.RectKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.RectAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.RectAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -13438,9 +13288,6 @@ namespace CSharpMarkup.Wpf // RectAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.RectAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : RectAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.RectAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.RectKeyFrameCollection value) where TView : RectAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -13654,9 +13501,7 @@ namespace CSharpMarkup.Wpf // Rotation3DAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames"/></summary>
-        public static Rotation3DAnimationUsingKeyFrames Rotation3DAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.Rotation3DKeyFrame[] KeyFrames
-)
+        public static Rotation3DAnimationUsingKeyFrames Rotation3DAnimationUsingKeyFrames(params System.Windows.Media.Animation.Rotation3DKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -13665,12 +13510,13 @@ namespace CSharpMarkup.Wpf // Rotation3DAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames"/></summary>
-        public static Rotation3DAnimationUsingKeyFrames Rotation3DAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.Rotation3DKeyFrameCollection> KeyFrames = default)
+        public static Rotation3DAnimationUsingKeyFrames Rotation3DAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.Rotation3DKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.Rotation3DAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -13715,9 +13561,6 @@ namespace CSharpMarkup.Wpf // Rotation3DAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : Rotation3DAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.Rotation3DKeyFrameCollection value) where TView : Rotation3DAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -13970,9 +13813,7 @@ namespace CSharpMarkup.Wpf // SingleAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.SingleAnimationUsingKeyFrames"/></summary>
-        public static SingleAnimationUsingKeyFrames SingleAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.SingleKeyFrame[] KeyFrames
-)
+        public static SingleAnimationUsingKeyFrames SingleAnimationUsingKeyFrames(params System.Windows.Media.Animation.SingleKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.SingleAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -13981,12 +13822,13 @@ namespace CSharpMarkup.Wpf // SingleAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.SingleAnimationUsingKeyFrames"/></summary>
-        public static SingleAnimationUsingKeyFrames SingleAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.SingleKeyFrameCollection> KeyFrames = default)
+        public static SingleAnimationUsingKeyFrames SingleAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.SingleKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.SingleAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.SingleAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -14031,9 +13873,6 @@ namespace CSharpMarkup.Wpf // SingleAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.SingleAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : SingleAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.SingleAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.SingleKeyFrameCollection value) where TView : SingleAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -14247,9 +14086,7 @@ namespace CSharpMarkup.Wpf // SizeAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.SizeAnimationUsingKeyFrames"/></summary>
-        public static SizeAnimationUsingKeyFrames SizeAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.SizeKeyFrame[] KeyFrames
-)
+        public static SizeAnimationUsingKeyFrames SizeAnimationUsingKeyFrames(params System.Windows.Media.Animation.SizeKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.SizeAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -14258,12 +14095,13 @@ namespace CSharpMarkup.Wpf // SizeAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.SizeAnimationUsingKeyFrames"/></summary>
-        public static SizeAnimationUsingKeyFrames SizeAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.SizeKeyFrameCollection> KeyFrames = default)
+        public static SizeAnimationUsingKeyFrames SizeAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.SizeKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.SizeAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.SizeAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -14308,9 +14146,6 @@ namespace CSharpMarkup.Wpf // SizeAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.SizeAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : SizeAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.SizeAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.SizeKeyFrameCollection value) where TView : SizeAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -15663,21 +15498,11 @@ namespace CSharpMarkup.Wpf // StringAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.StringAnimationUsingKeyFrames"/></summary>
-        public static StringAnimationUsingKeyFrames StringAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.StringKeyFrame[] KeyFrames
-)
+        public static StringAnimationUsingKeyFrames StringAnimationUsingKeyFrames(params System.Windows.Media.Animation.StringKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.StringAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
-            return global::CSharpMarkup.Wpf.StringAnimationUsingKeyFrames.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.Animation.StringAnimationUsingKeyFrames"/></summary>
-        public static StringAnimationUsingKeyFrames StringAnimationUsingKeyFrames(O<Windows.Media.Animation.StringKeyFrameCollection> KeyFrames = default)
-        {
-            var ui = new Windows.Media.Animation.StringAnimationUsingKeyFrames();
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
             return global::CSharpMarkup.Wpf.StringAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -15713,12 +15538,6 @@ namespace CSharpMarkup.Wpf // StringAnimationUsingKeyFrames
         public static implicit operator StringAnimationUsingKeyFrames(Windows.Media.Animation.StringAnimationUsingKeyFrames ui) => StringAnimationUsingKeyFrames.StartChain(ui);
 
         protected StringAnimationUsingKeyFrames() { }
-    }
-
-    public static partial class StringAnimationUsingKeyFramesExtensions
-    {
-        /// <summary>Set <see cref="Windows.Media.Animation.StringAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.StringKeyFrameCollection value) where TView : StringAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -15954,9 +15773,6 @@ namespace CSharpMarkup.Wpf // TimelineGroup
 
     public static partial class TimelineGroupExtensions
     {
-        /// <summary>Set <see cref="Windows.Media.Animation.TimelineGroup.Children"/></summary>
-        public static TView Children<TView>(this TView view, Windows.Media.Animation.TimelineCollection value) where TView : TimelineGroup { view.UI.Children = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.TimelineGroup.Children"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.Animation.TimelineCollection> Children<TTarget>(this TTarget target) where TTarget : TimelineGroup
         => DependencyProperty<TTarget, Windows.Media.Animation.TimelineCollection>.Get(target, Windows.Media.Animation.TimelineGroup.ChildrenProperty);
@@ -16101,9 +15917,7 @@ namespace CSharpMarkup.Wpf // Vector3DAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Vector3DAnimationUsingKeyFrames"/></summary>
-        public static Vector3DAnimationUsingKeyFrames Vector3DAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.Vector3DKeyFrame[] KeyFrames
-)
+        public static Vector3DAnimationUsingKeyFrames Vector3DAnimationUsingKeyFrames(params System.Windows.Media.Animation.Vector3DKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Vector3DAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -16112,12 +15926,13 @@ namespace CSharpMarkup.Wpf // Vector3DAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.Vector3DAnimationUsingKeyFrames"/></summary>
-        public static Vector3DAnimationUsingKeyFrames Vector3DAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.Vector3DKeyFrameCollection> KeyFrames = default)
+        public static Vector3DAnimationUsingKeyFrames Vector3DAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.Vector3DKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Vector3DAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.Vector3DAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -16162,9 +15977,6 @@ namespace CSharpMarkup.Wpf // Vector3DAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.Vector3DAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : Vector3DAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.Vector3DAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.Vector3DKeyFrameCollection value) where TView : Vector3DAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -16378,9 +16190,7 @@ namespace CSharpMarkup.Wpf // VectorAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.VectorAnimationUsingKeyFrames"/></summary>
-        public static VectorAnimationUsingKeyFrames VectorAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.VectorKeyFrame[] KeyFrames
-)
+        public static VectorAnimationUsingKeyFrames VectorAnimationUsingKeyFrames(params System.Windows.Media.Animation.VectorKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.VectorAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -16389,12 +16199,13 @@ namespace CSharpMarkup.Wpf // VectorAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.VectorAnimationUsingKeyFrames"/></summary>
-        public static VectorAnimationUsingKeyFrames VectorAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.VectorKeyFrameCollection> KeyFrames = default)
+        public static VectorAnimationUsingKeyFrames VectorAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.VectorKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.VectorAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.VectorAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -16439,9 +16250,6 @@ namespace CSharpMarkup.Wpf // VectorAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.VectorAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : VectorAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.VectorAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.VectorKeyFrameCollection value) where TView : VectorAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -16680,21 +16488,11 @@ namespace CSharpMarkup.Wpf // BitmapEffectGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Effects.BitmapEffectGroup"/></summary>
-        public static BitmapEffectGroup BitmapEffectGroup(
-            params System.Windows.Media.Effects.BitmapEffect[] Children
-)
+        public static BitmapEffectGroup BitmapEffectGroup(params System.Windows.Media.Effects.BitmapEffect[] Children)
         {
             var ui = new Windows.Media.Effects.BitmapEffectGroup();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
-            return global::CSharpMarkup.Wpf.BitmapEffectGroup.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.Effects.BitmapEffectGroup"/></summary>
-        public static BitmapEffectGroup BitmapEffectGroup(O<Windows.Media.Effects.BitmapEffectCollection> Children = default)
-        {
-            var ui = new Windows.Media.Effects.BitmapEffectGroup();
-            if (Children.HasValue) ui.Children = Children.Value;
             return global::CSharpMarkup.Wpf.BitmapEffectGroup.StartChain(ui);
         }
 
@@ -16734,9 +16532,6 @@ namespace CSharpMarkup.Wpf // BitmapEffectGroup
 
     public static partial class BitmapEffectGroupExtensions
     {
-        /// <summary>Set <see cref="Windows.Media.Effects.BitmapEffectGroup.Children"/></summary>
-        public static TView Children<TView>(this TView view, Windows.Media.Effects.BitmapEffectCollection value) where TView : BitmapEffectGroup { view.UI.Children = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Effects.BitmapEffectGroup.Children"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.Effects.BitmapEffectCollection> Children<TTarget>(this TTarget target) where TTarget : BitmapEffectGroup
         => DependencyProperty<TTarget, Windows.Media.Effects.BitmapEffectCollection>.Get(target, Windows.Media.Effects.BitmapEffectGroup.ChildrenProperty);
@@ -18743,9 +18538,7 @@ namespace CSharpMarkup.Wpf // ContainerUIElement3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.ContainerUIElement3D"/></summary>
-        public static ContainerUIElement3D ContainerUIElement3D(
-            params System.Windows.Media.Media3D.Visual3D[] Children
-)
+        public static ContainerUIElement3D ContainerUIElement3D(params System.Windows.Media.Media3D.Visual3D[] Children)
         {
             var ui = new Windows.Media.Media3D.ContainerUIElement3D();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -19106,21 +18899,11 @@ namespace CSharpMarkup.Wpf // GeneralTransform3DGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.GeneralTransform3DGroup"/></summary>
-        public static GeneralTransform3DGroup GeneralTransform3DGroup(
-            params System.Windows.Media.Media3D.GeneralTransform3D[] Children
-)
+        public static GeneralTransform3DGroup GeneralTransform3DGroup(params System.Windows.Media.Media3D.GeneralTransform3D[] Children)
         {
             var ui = new Windows.Media.Media3D.GeneralTransform3DGroup();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
-            return global::CSharpMarkup.Wpf.GeneralTransform3DGroup.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.Media3D.GeneralTransform3DGroup"/></summary>
-        public static GeneralTransform3DGroup GeneralTransform3DGroup(O<Windows.Media.Media3D.GeneralTransform3DCollection> Children = default)
-        {
-            var ui = new Windows.Media.Media3D.GeneralTransform3DGroup();
-            if (Children.HasValue) ui.Children = Children.Value;
             return global::CSharpMarkup.Wpf.GeneralTransform3DGroup.StartChain(ui);
         }
 
@@ -19160,9 +18943,6 @@ namespace CSharpMarkup.Wpf // GeneralTransform3DGroup
 
     public static partial class GeneralTransform3DGroupExtensions
     {
-        /// <summary>Set <see cref="Windows.Media.Media3D.GeneralTransform3DGroup.Children"/></summary>
-        public static TView Children<TView>(this TView view, Windows.Media.Media3D.GeneralTransform3DCollection value) where TView : GeneralTransform3DGroup { view.UI.Children = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Media3D.GeneralTransform3DGroup.Children"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.Media3D.GeneralTransform3DCollection> Children<TTarget>(this TTarget target) where TTarget : GeneralTransform3DGroup
         => DependencyProperty<TTarget, Windows.Media.Media3D.GeneralTransform3DCollection>.Get(target, Windows.Media.Media3D.GeneralTransform3DGroup.ChildrenProperty);
@@ -19381,21 +19161,11 @@ namespace CSharpMarkup.Wpf // MaterialGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.MaterialGroup"/></summary>
-        public static MaterialGroup MaterialGroup(
-            params System.Windows.Media.Media3D.Material[] Children
-)
+        public static MaterialGroup MaterialGroup(params System.Windows.Media.Media3D.Material[] Children)
         {
             var ui = new Windows.Media.Media3D.MaterialGroup();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
-            return global::CSharpMarkup.Wpf.MaterialGroup.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.Media3D.MaterialGroup"/></summary>
-        public static MaterialGroup MaterialGroup(O<Windows.Media.Media3D.MaterialCollection> Children = default)
-        {
-            var ui = new Windows.Media.Media3D.MaterialGroup();
-            if (Children.HasValue) ui.Children = Children.Value;
             return global::CSharpMarkup.Wpf.MaterialGroup.StartChain(ui);
         }
 
@@ -19435,9 +19205,6 @@ namespace CSharpMarkup.Wpf // MaterialGroup
 
     public static partial class MaterialGroupExtensions
     {
-        /// <summary>Set <see cref="Windows.Media.Media3D.MaterialGroup.Children"/></summary>
-        public static TView Children<TView>(this TView view, Windows.Media.Media3D.MaterialCollection value) where TView : MaterialGroup { view.UI.Children = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Media3D.MaterialGroup.Children"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.Media3D.MaterialCollection> Children<TTarget>(this TTarget target) where TTarget : MaterialGroup
         => DependencyProperty<TTarget, Windows.Media.Media3D.MaterialCollection>.Get(target, Windows.Media.Media3D.MaterialGroup.ChildrenProperty);
@@ -19745,21 +19512,11 @@ namespace CSharpMarkup.Wpf // Model3DGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.Model3DGroup"/></summary>
-        public static Model3DGroup Model3DGroup(
-            params System.Windows.Media.Media3D.Model3D[] Children
-)
+        public static Model3DGroup Model3DGroup(params System.Windows.Media.Media3D.Model3D[] Children)
         {
             var ui = new Windows.Media.Media3D.Model3DGroup();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
-            return global::CSharpMarkup.Wpf.Model3DGroup.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.Media3D.Model3DGroup"/></summary>
-        public static Model3DGroup Model3DGroup(O<Windows.Media.Media3D.Model3DCollection> Children = default)
-        {
-            var ui = new Windows.Media.Media3D.Model3DGroup();
-            if (Children.HasValue) ui.Children = Children.Value;
             return global::CSharpMarkup.Wpf.Model3DGroup.StartChain(ui);
         }
 
@@ -19799,9 +19556,6 @@ namespace CSharpMarkup.Wpf // Model3DGroup
 
     public static partial class Model3DGroupExtensions
     {
-        /// <summary>Set <see cref="Windows.Media.Media3D.Model3DGroup.Children"/></summary>
-        public static TView Children<TView>(this TView view, Windows.Media.Media3D.Model3DCollection value) where TView : Model3DGroup { view.UI.Children = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Media3D.Model3DGroup.Children"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.Media3D.Model3DCollection> Children<TTarget>(this TTarget target) where TTarget : Model3DGroup
         => DependencyProperty<TTarget, Windows.Media.Media3D.Model3DCollection>.Get(target, Windows.Media.Media3D.Model3DGroup.ChildrenProperty);
@@ -19813,20 +19567,10 @@ namespace CSharpMarkup.Wpf // ModelUIElement3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.ModelUIElement3D"/></summary>
-        public static ModelUIElement3D ModelUIElement3D(
-            System.Windows.Media.Media3D.Model3D Model
-)
+        public static ModelUIElement3D ModelUIElement3D(System.Windows.Media.Media3D.Model3D Model)
         {
             var ui = new Windows.Media.Media3D.ModelUIElement3D();
             if (Model is not null) ui.Model = Model;
-            return global::CSharpMarkup.Wpf.ModelUIElement3D.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.Media3D.ModelUIElement3D"/></summary>
-        public static ModelUIElement3D ModelUIElement3D(O<Windows.Media.Media3D.Model3D> Model = default)
-        {
-            var ui = new Windows.Media.Media3D.ModelUIElement3D();
-            if (Model.HasValue) ui.Model = Model.Value;
             return global::CSharpMarkup.Wpf.ModelUIElement3D.StartChain(ui);
         }
 
@@ -19866,9 +19610,6 @@ namespace CSharpMarkup.Wpf // ModelUIElement3D
 
     public static partial class ModelUIElement3DExtensions
     {
-        /// <summary>Set <see cref="Windows.Media.Media3D.ModelUIElement3D.Model"/></summary>
-        public static TView Model<TView>(this TView view, Windows.Media.Media3D.Model3D value) where TView : ModelUIElement3D { view.UI.Model = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Media3D.ModelUIElement3D.Model"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.Media3D.Model3D> Model<TTarget>(this TTarget target) where TTarget : ModelUIElement3D
         => DependencyProperty<TTarget, Windows.Media.Media3D.Model3D>.Get(target, Windows.Media.Media3D.ModelUIElement3D.ModelProperty);
@@ -19880,9 +19621,7 @@ namespace CSharpMarkup.Wpf // ModelVisual3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.ModelVisual3D"/></summary>
-        public static ModelVisual3D ModelVisual3D(
-            params System.Windows.Media.Media3D.Visual3D[] Children
-)
+        public static ModelVisual3D ModelVisual3D(params System.Windows.Media.Media3D.Visual3D[] Children)
         {
             var ui = new Windows.Media.Media3D.ModelVisual3D();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -19891,11 +19630,13 @@ namespace CSharpMarkup.Wpf // ModelVisual3D
         }
 
         /// <summary>Create a <see cref="Windows.Media.Media3D.ModelVisual3D"/></summary>
-        public static ModelVisual3D ModelVisual3D(O<Windows.Media.Media3D.Model3D> Content = default, O<Windows.Media.Media3D.Transform3D> Transform = default)
+        public static ModelVisual3D ModelVisual3D(O<Windows.Media.Media3D.Model3D> Content = default, O<Windows.Media.Media3D.Transform3D> Transform = default, params System.Windows.Media.Media3D.Visual3D[] Children)
         {
             var ui = new Windows.Media.Media3D.ModelVisual3D();
             if (Content.HasValue) ui.Content = Content.Value;
             if (Transform.HasValue) ui.Transform = Transform.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.ModelVisual3D.StartChain(ui);
         }
 
@@ -20833,21 +20574,11 @@ namespace CSharpMarkup.Wpf // Transform3DGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.Transform3DGroup"/></summary>
-        public static Transform3DGroup Transform3DGroup(
-            params System.Windows.Media.Media3D.Transform3D[] Children
-)
+        public static Transform3DGroup Transform3DGroup(params System.Windows.Media.Media3D.Transform3D[] Children)
         {
             var ui = new Windows.Media.Media3D.Transform3DGroup();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
-            return global::CSharpMarkup.Wpf.Transform3DGroup.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Media.Media3D.Transform3DGroup"/></summary>
-        public static Transform3DGroup Transform3DGroup(O<Windows.Media.Media3D.Transform3DCollection> Children = default)
-        {
-            var ui = new Windows.Media.Media3D.Transform3DGroup();
-            if (Children.HasValue) ui.Children = Children.Value;
             return global::CSharpMarkup.Wpf.Transform3DGroup.StartChain(ui);
         }
 
@@ -20887,9 +20618,6 @@ namespace CSharpMarkup.Wpf // Transform3DGroup
 
     public static partial class Transform3DGroupExtensions
     {
-        /// <summary>Set <see cref="Windows.Media.Media3D.Transform3DGroup.Children"/></summary>
-        public static TView Children<TView>(this TView view, Windows.Media.Media3D.Transform3DCollection value) where TView : Transform3DGroup { view.UI.Children = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Media3D.Transform3DGroup.Children"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.Media3D.Transform3DCollection> Children<TTarget>(this TTarget target) where TTarget : Transform3DGroup
         => DependencyProperty<TTarget, Windows.Media.Media3D.Transform3DCollection>.Get(target, Windows.Media.Media3D.Transform3DGroup.ChildrenProperty);
@@ -21041,9 +20769,7 @@ namespace CSharpMarkup.Wpf // Viewport2DVisual3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.Viewport2DVisual3D"/></summary>
-        public static Viewport2DVisual3D Viewport2DVisual3D(
-            System.Windows.Media.Visual Visual
-)
+        public static Viewport2DVisual3D Viewport2DVisual3D(System.Windows.Media.Visual Visual)
         {
             var ui = new Windows.Media.Media3D.Viewport2DVisual3D();
             if (Visual is not null) ui.Visual = Visual;
@@ -21051,13 +20777,13 @@ namespace CSharpMarkup.Wpf // Viewport2DVisual3D
         }
 
         /// <summary>Create a <see cref="Windows.Media.Media3D.Viewport2DVisual3D"/></summary>
-        public static Viewport2DVisual3D Viewport2DVisual3D(O<Windows.Media.CacheMode> CacheMode = default, O<Windows.Media.Media3D.Geometry3D> Geometry = default, O<Windows.Media.Media3D.Material> Material = default, O<Windows.Media.Visual> Visual = default)
+        public static Viewport2DVisual3D Viewport2DVisual3D(O<Windows.Media.CacheMode> CacheMode = default, O<Windows.Media.Media3D.Geometry3D> Geometry = default, O<Windows.Media.Media3D.Material> Material = default, System.Windows.Media.Visual Visual = default)
         {
             var ui = new Windows.Media.Media3D.Viewport2DVisual3D();
             if (CacheMode.HasValue) ui.CacheMode = CacheMode.Value;
             if (Geometry.HasValue) ui.Geometry = Geometry.Value;
             if (Material.HasValue) ui.Material = Material.Value;
-            if (Visual.HasValue) ui.Visual = Visual.Value;
+            if (Visual is not null) ui.Visual = Visual;
             return global::CSharpMarkup.Wpf.Viewport2DVisual3D.StartChain(ui);
         }
 
@@ -21106,9 +20832,6 @@ namespace CSharpMarkup.Wpf // Viewport2DVisual3D
         /// <summary>Set <see cref="Windows.Media.Media3D.Viewport2DVisual3D.Material"/></summary>
         public static TView Material<TView>(this TView view, Windows.Media.Media3D.Material value) where TView : Viewport2DVisual3D { view.UI.Material = value; return view; }
 
-        /// <summary>Set <see cref="Windows.Media.Media3D.Viewport2DVisual3D.Visual"/></summary>
-        public static TView Visual<TView>(this TView view, Windows.Media.Visual value) where TView : Viewport2DVisual3D { view.UI.Visual = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Media3D.Viewport2DVisual3D.CacheMode"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.CacheMode> CacheMode<TTarget>(this TTarget target) where TTarget : Viewport2DVisual3D
         => DependencyProperty<TTarget, Windows.Media.CacheMode>.Get(target, Windows.Media.Media3D.Viewport2DVisual3D.CacheModeProperty);
@@ -21140,9 +20863,7 @@ namespace CSharpMarkup.Wpf // Viewport3DVisual
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.Viewport3DVisual"/></summary>
-        public static Viewport3DVisual Viewport3DVisual(
-            params System.Windows.Media.Media3D.Visual3D[] Children
-)
+        public static Viewport3DVisual Viewport3DVisual(params System.Windows.Media.Media3D.Visual3D[] Children)
         {
             var ui = new Windows.Media.Media3D.Viewport3DVisual();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -21151,7 +20872,7 @@ namespace CSharpMarkup.Wpf // Viewport3DVisual
         }
 
         /// <summary>Create a <see cref="Windows.Media.Media3D.Viewport3DVisual"/></summary>
-        public static Viewport3DVisual Viewport3DVisual(O<Windows.Media.Effects.BitmapEffect> BitmapEffect = default, O<Windows.Media.Effects.BitmapEffectInput> BitmapEffectInput = default, O<Windows.Media.Media3D.Camera> Camera = default, O<Windows.Media.Geometry> Clip = default, O<Windows.Vector> Offset = default, O<double> Opacity = default, O<Windows.Media.Brush> OpacityMask = default, O<Windows.Media.Transform> Transform = default, O<Windows.Rect> Viewport = default)
+        public static Viewport3DVisual Viewport3DVisual(O<Windows.Media.Effects.BitmapEffect> BitmapEffect = default, O<Windows.Media.Effects.BitmapEffectInput> BitmapEffectInput = default, O<Windows.Media.Media3D.Camera> Camera = default, O<Windows.Media.Geometry> Clip = default, O<Windows.Vector> Offset = default, O<double> Opacity = default, O<Windows.Media.Brush> OpacityMask = default, O<Windows.Media.Transform> Transform = default, O<Windows.Rect> Viewport = default, params System.Windows.Media.Media3D.Visual3D[] Children)
         {
             var ui = new Windows.Media.Media3D.Viewport3DVisual();
             if (BitmapEffect.HasValue) ui.BitmapEffect = BitmapEffect.Value;
@@ -21163,6 +20884,8 @@ namespace CSharpMarkup.Wpf // Viewport3DVisual
             if (OpacityMask.HasValue) ui.OpacityMask = OpacityMask.Value;
             if (Transform.HasValue) ui.Transform = Transform.Value;
             if (Viewport.HasValue) ui.Viewport = Viewport.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.Viewport3DVisual.StartChain(ui);
         }
 
@@ -21341,9 +21064,7 @@ namespace CSharpMarkup.Wpf // DataTemplate
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.DataTemplate"/></summary>
-        public static DataTemplate DataTemplate(
-            System.Windows.FrameworkElementFactory VisualTree
-)
+        public static DataTemplate DataTemplate(System.Windows.FrameworkElementFactory VisualTree)
         {
             var ui = new Windows.DataTemplate();
             if (VisualTree is not null) ui.VisualTree = VisualTree;
@@ -21351,10 +21072,11 @@ namespace CSharpMarkup.Wpf // DataTemplate
         }
 
         /// <summary>Create a <see cref="Windows.DataTemplate"/></summary>
-        public static DataTemplate DataTemplate(O<object> DataType = default)
+        public static DataTemplate DataTemplate(O<object> DataType = default, System.Windows.FrameworkElementFactory VisualTree = default)
         {
             var ui = new Windows.DataTemplate();
             if (DataType.HasValue) ui.DataType = DataType.Value;
+            if (VisualTree is not null) ui.VisualTree = VisualTree;
             return global::CSharpMarkup.Wpf.DataTemplate.StartChain(ui);
         }
 
@@ -21411,9 +21133,7 @@ namespace CSharpMarkup.Wpf // DataTrigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.DataTrigger"/></summary>
-        public static DataTrigger DataTrigger(
-            params System.Windows.SetterBase[] Setters
-)
+        public static DataTrigger DataTrigger(params System.Windows.SetterBase[] Setters)
         {
             var ui = new Windows.DataTrigger();
             foreach (var child in Setters) if (child is not null) ui.Setters.Add(child);
@@ -21422,11 +21142,13 @@ namespace CSharpMarkup.Wpf // DataTrigger
         }
 
         /// <summary>Create a <see cref="Windows.DataTrigger"/></summary>
-        public static DataTrigger DataTrigger(O<Windows.Data.BindingBase> Binding = default, O<object> Value = default)
+        public static DataTrigger DataTrigger(O<Windows.Data.BindingBase> Binding = default, O<object> Value = default, params System.Windows.SetterBase[] Setters)
         {
             var ui = new Windows.DataTrigger();
             if (Binding.HasValue) ui.Binding = Binding.Value;
             if (Value.HasValue) ui.Value = Value.Value;
+            foreach (var child in Setters) if (child is not null) ui.Setters.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Setters);
             return global::CSharpMarkup.Wpf.DataTrigger.StartChain(ui);
         }
 
@@ -21479,9 +21201,7 @@ namespace CSharpMarkup.Wpf // EventTrigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.EventTrigger"/></summary>
-        public static EventTrigger EventTrigger(
-            params System.Windows.TriggerAction[] Actions
-)
+        public static EventTrigger EventTrigger(params System.Windows.TriggerAction[] Actions)
         {
             var ui = new Windows.EventTrigger();
             foreach (var child in Actions) if (child is not null) ui.Actions.Add(child);
@@ -21490,11 +21210,13 @@ namespace CSharpMarkup.Wpf // EventTrigger
         }
 
         /// <summary>Create a <see cref="Windows.EventTrigger"/></summary>
-        public static EventTrigger EventTrigger(O<Windows.RoutedEvent> RoutedEvent = default, O<string> SourceName = default)
+        public static EventTrigger EventTrigger(O<Windows.RoutedEvent> RoutedEvent = default, O<string> SourceName = default, params System.Windows.TriggerAction[] Actions)
         {
             var ui = new Windows.EventTrigger();
             if (RoutedEvent.HasValue) ui.RoutedEvent = RoutedEvent.Value;
             if (SourceName.HasValue) ui.SourceName = SourceName.Value;
+            foreach (var child in Actions) if (child is not null) ui.Actions.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Actions);
             return global::CSharpMarkup.Wpf.EventTrigger.StartChain(ui);
         }
 
@@ -22011,9 +21733,6 @@ namespace CSharpMarkup.Wpf // FrameworkTemplate
 
         /// <summary>Set <see cref="Windows.FrameworkTemplate.Template"/></summary>
         public static TView Template<TView>(this TView view, Windows.TemplateContent value) where TView : FrameworkTemplate { view.UI.Template = value; return view; }
-
-        /// <summary>Set <see cref="Windows.FrameworkTemplate.VisualTree"/></summary>
-        public static TView VisualTree<TView>(this TView view, Windows.FrameworkElementFactory value) where TView : FrameworkTemplate { view.UI.VisualTree = value; return view; }
     }
 }
 
@@ -22022,9 +21741,7 @@ namespace CSharpMarkup.Wpf // HierarchicalDataTemplate
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.HierarchicalDataTemplate"/></summary>
-        public static HierarchicalDataTemplate HierarchicalDataTemplate(
-            System.Windows.FrameworkElementFactory VisualTree
-)
+        public static HierarchicalDataTemplate HierarchicalDataTemplate(System.Windows.FrameworkElementFactory VisualTree)
         {
             var ui = new Windows.HierarchicalDataTemplate();
             if (VisualTree is not null) ui.VisualTree = VisualTree;
@@ -22032,7 +21749,7 @@ namespace CSharpMarkup.Wpf // HierarchicalDataTemplate
         }
 
         /// <summary>Create a <see cref="Windows.HierarchicalDataTemplate"/></summary>
-        public static HierarchicalDataTemplate HierarchicalDataTemplate(O<int> AlternationCount = default, O<Windows.Data.BindingGroup> ItemBindingGroup = default, O<Windows.Style> ItemContainerStyle = default, O<Windows.Controls.StyleSelector> ItemContainerStyleSelector = default, O<Windows.Data.BindingBase> ItemsSource = default, O<string> ItemStringFormat = default, O<Windows.DataTemplate> ItemTemplate = default, O<Windows.Controls.DataTemplateSelector> ItemTemplateSelector = default)
+        public static HierarchicalDataTemplate HierarchicalDataTemplate(O<int> AlternationCount = default, O<Windows.Data.BindingGroup> ItemBindingGroup = default, O<Windows.Style> ItemContainerStyle = default, O<Windows.Controls.StyleSelector> ItemContainerStyleSelector = default, O<Windows.Data.BindingBase> ItemsSource = default, O<string> ItemStringFormat = default, O<Windows.DataTemplate> ItemTemplate = default, O<Windows.Controls.DataTemplateSelector> ItemTemplateSelector = default, System.Windows.FrameworkElementFactory VisualTree = default)
         {
             var ui = new Windows.HierarchicalDataTemplate();
             if (AlternationCount.HasValue) ui.AlternationCount = AlternationCount.Value;
@@ -22043,6 +21760,7 @@ namespace CSharpMarkup.Wpf // HierarchicalDataTemplate
             if (ItemStringFormat.HasValue) ui.ItemStringFormat = ItemStringFormat.Value;
             if (ItemTemplate.HasValue) ui.ItemTemplate = ItemTemplate.Value;
             if (ItemTemplateSelector.HasValue) ui.ItemTemplateSelector = ItemTemplateSelector.Value;
+            if (VisualTree is not null) ui.VisualTree = VisualTree;
             return global::CSharpMarkup.Wpf.HierarchicalDataTemplate.StartChain(ui);
         }
 
@@ -22136,9 +21854,7 @@ namespace CSharpMarkup.Wpf // MultiDataTrigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.MultiDataTrigger"/></summary>
-        public static MultiDataTrigger MultiDataTrigger(
-            params System.Windows.SetterBase[] Setters
-)
+        public static MultiDataTrigger MultiDataTrigger(params System.Windows.SetterBase[] Setters)
         {
             var ui = new Windows.MultiDataTrigger();
             foreach (var child in Setters) if (child is not null) ui.Setters.Add(child);
@@ -22186,9 +21902,7 @@ namespace CSharpMarkup.Wpf // MultiTrigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.MultiTrigger"/></summary>
-        public static MultiTrigger MultiTrigger(
-            params System.Windows.SetterBase[] Setters
-)
+        public static MultiTrigger MultiTrigger(params System.Windows.SetterBase[] Setters)
         {
             var ui = new Windows.MultiTrigger();
             foreach (var child in Setters) if (child is not null) ui.Setters.Add(child);
@@ -22236,9 +21950,7 @@ namespace CSharpMarkup.Wpf // Style
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Style"/></summary>
-        public static Style Style(
-            params System.Windows.SetterBase[] Setters
-)
+        public static Style Style(params System.Windows.SetterBase[] Setters)
         {
             var ui = new Windows.Style();
             foreach (var child in Setters) if (child is not null) ui.Setters.Add(child);
@@ -22247,12 +21959,14 @@ namespace CSharpMarkup.Wpf // Style
         }
 
         /// <summary>Create a <see cref="Windows.Style"/></summary>
-        public static Style Style(O<Windows.Style> BasedOn = default, O<Windows.ResourceDictionary> Resources = default, O<Type> TargetType = default)
+        public static Style Style(O<Windows.Style> BasedOn = default, O<Windows.ResourceDictionary> Resources = default, O<Type> TargetType = default, params System.Windows.SetterBase[] Setters)
         {
             var ui = new Windows.Style();
             if (BasedOn.HasValue) ui.BasedOn = BasedOn.Value;
             if (Resources.HasValue) ui.Resources = Resources.Value;
             if (TargetType.HasValue) ui.TargetType = TargetType.Value;
+            foreach (var child in Setters) if (child is not null) ui.Setters.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Setters);
             return global::CSharpMarkup.Wpf.Style.StartChain(ui);
         }
 
@@ -22322,9 +22036,7 @@ namespace CSharpMarkup.Wpf // Trigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Trigger"/></summary>
-        public static Trigger Trigger(
-            params System.Windows.SetterBase[] Setters
-)
+        public static Trigger Trigger(params System.Windows.SetterBase[] Setters)
         {
             var ui = new Windows.Trigger();
             foreach (var child in Setters) if (child is not null) ui.Setters.Add(child);
@@ -22333,12 +22045,14 @@ namespace CSharpMarkup.Wpf // Trigger
         }
 
         /// <summary>Create a <see cref="Windows.Trigger"/></summary>
-        public static Trigger Trigger(O<Windows.DependencyProperty> Property = default, O<string> SourceName = default, O<object> Value = default)
+        public static Trigger Trigger(O<Windows.DependencyProperty> Property = default, O<string> SourceName = default, O<object> Value = default, params System.Windows.SetterBase[] Setters)
         {
             var ui = new Windows.Trigger();
             if (Property.HasValue) ui.Property = Property.Value;
             if (SourceName.HasValue) ui.SourceName = SourceName.Value;
             if (Value.HasValue) ui.Value = Value.Value;
+            foreach (var child in Setters) if (child is not null) ui.Setters.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Setters);
             return global::CSharpMarkup.Wpf.Trigger.StartChain(ui);
         }
 
@@ -22426,9 +22140,7 @@ namespace CSharpMarkup.Wpf // VisualState
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.VisualState"/></summary>
-        public static VisualState VisualState(
-            System.Windows.Media.Animation.Storyboard Storyboard
-)
+        public static VisualState VisualState(System.Windows.Media.Animation.Storyboard Storyboard)
         {
             var ui = new Windows.VisualState();
             if (Storyboard is not null) ui.Storyboard = Storyboard;
@@ -22436,11 +22148,11 @@ namespace CSharpMarkup.Wpf // VisualState
         }
 
         /// <summary>Create a <see cref="Windows.VisualState"/></summary>
-        public static VisualState VisualState(O<string> Name = default, O<Windows.Media.Animation.Storyboard> Storyboard = default)
+        public static VisualState VisualState(O<string> Name = default, System.Windows.Media.Animation.Storyboard Storyboard = default)
         {
             var ui = new Windows.VisualState();
             if (Name.HasValue) ui.Name = Name.Value;
-            if (Storyboard.HasValue) ui.Storyboard = Storyboard.Value;
+            if (Storyboard is not null) ui.Storyboard = Storyboard;
             return global::CSharpMarkup.Wpf.VisualState.StartChain(ui);
         }
 
@@ -22482,9 +22194,6 @@ namespace CSharpMarkup.Wpf // VisualState
     {
         /// <summary>Set <see cref="Windows.VisualState.Name"/></summary>
         public static TView Name<TView>(this TView view, string value) where TView : VisualState { view.UI.Name = value; return view; }
-
-        /// <summary>Set <see cref="Windows.VisualState.Storyboard"/></summary>
-        public static TView Storyboard<TView>(this TView view, Windows.Media.Animation.Storyboard value) where TView : VisualState { view.UI.Storyboard = value; return view; }
     }
 }
 
@@ -22493,9 +22202,7 @@ namespace CSharpMarkup.Wpf // VisualStateGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.VisualStateGroup"/></summary>
-        public static VisualStateGroup VisualStateGroup(
-            params object?[] States
-)
+        public static VisualStateGroup VisualStateGroup(params object?[] States)
         {
             var ui = new Windows.VisualStateGroup();
             foreach (var child in States) if (child is not null) ui.States.Add(child);
@@ -22504,10 +22211,12 @@ namespace CSharpMarkup.Wpf // VisualStateGroup
         }
 
         /// <summary>Create a <see cref="Windows.VisualStateGroup"/></summary>
-        public static VisualStateGroup VisualStateGroup(O<string> Name = default)
+        public static VisualStateGroup VisualStateGroup(O<string> Name = default, params object?[] States)
         {
             var ui = new Windows.VisualStateGroup();
             if (Name.HasValue) ui.Name = Name.Value;
+            foreach (var child in States) if (child is not null) ui.States.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.States);
             return global::CSharpMarkup.Wpf.VisualStateGroup.StartChain(ui);
         }
 
@@ -22607,9 +22316,7 @@ namespace CSharpMarkup.Wpf // VisualTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.VisualTransition"/></summary>
-        public static VisualTransition VisualTransition(
-            System.Windows.Media.Animation.Storyboard Storyboard
-)
+        public static VisualTransition VisualTransition(System.Windows.Media.Animation.Storyboard Storyboard)
         {
             var ui = new Windows.VisualTransition();
             if (Storyboard is not null) ui.Storyboard = Storyboard;
@@ -22617,14 +22324,14 @@ namespace CSharpMarkup.Wpf // VisualTransition
         }
 
         /// <summary>Create a <see cref="Windows.VisualTransition"/></summary>
-        public static VisualTransition VisualTransition(O<string> From = default, O<Windows.Duration> GeneratedDuration = default, O<Windows.Media.Animation.IEasingFunction> GeneratedEasingFunction = default, O<Windows.Media.Animation.Storyboard> Storyboard = default, O<string> To = default)
+        public static VisualTransition VisualTransition(O<string> From = default, O<Windows.Duration> GeneratedDuration = default, O<Windows.Media.Animation.IEasingFunction> GeneratedEasingFunction = default, O<string> To = default, System.Windows.Media.Animation.Storyboard Storyboard = default)
         {
             var ui = new Windows.VisualTransition();
             if (From.HasValue) ui.From = From.Value;
             if (GeneratedDuration.HasValue) ui.GeneratedDuration = GeneratedDuration.Value;
             if (GeneratedEasingFunction.HasValue) ui.GeneratedEasingFunction = GeneratedEasingFunction.Value;
-            if (Storyboard.HasValue) ui.Storyboard = Storyboard.Value;
             if (To.HasValue) ui.To = To.Value;
+            if (Storyboard is not null) ui.Storyboard = Storyboard;
             return global::CSharpMarkup.Wpf.VisualTransition.StartChain(ui);
         }
 
@@ -22673,9 +22380,6 @@ namespace CSharpMarkup.Wpf // VisualTransition
         /// <summary>Set <see cref="Windows.VisualTransition.GeneratedEasingFunction"/></summary>
         public static TView GeneratedEasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : VisualTransition { view.UI.GeneratedEasingFunction = value; return view; }
 
-        /// <summary>Set <see cref="Windows.VisualTransition.Storyboard"/></summary>
-        public static TView Storyboard<TView>(this TView view, Windows.Media.Animation.Storyboard value) where TView : VisualTransition { view.UI.Storyboard = value; return view; }
-
         /// <summary>Set <see cref="Windows.VisualTransition.To"/></summary>
         public static TView To<TView>(this TView view, string value) where TView : VisualTransition { view.UI.To = value; return view; }
     }
@@ -22686,9 +22390,7 @@ namespace CSharpMarkup.Wpf // Window
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Window"/></summary>
-        public static Window Window(
-            UIObject Content
-)
+        public static Window Window(UIObject Content)
         {
             var ui = new Windows.Window();
             if (Content is not null) ui.Content = Content.UI;
@@ -22696,7 +22398,7 @@ namespace CSharpMarkup.Wpf // Window
         }
 
         /// <summary>Create a <see cref="Windows.Window"/></summary>
-        public static Window Window(O<bool> AllowsTransparency = default, O<bool?> DialogResult = default, O<Windows.Media.ImageSource> Icon = default, O<double> Left = default, O<Windows.Window> Owner = default, O<Windows.ResizeMode> ResizeMode = default, O<bool> ShowActivated = default, O<bool> ShowInTaskbar = default, O<Windows.SizeToContent> SizeToContent = default, O<Windows.Shell.TaskbarItemInfo> TaskbarItemInfo = default, O<string> Title = default, O<double> Top = default, O<bool> Topmost = default, O<Windows.WindowStartupLocation> WindowStartupLocation = default, O<Windows.WindowState> WindowState = default, O<Windows.WindowStyle> WindowStyle = default)
+        public static Window Window(O<bool> AllowsTransparency = default, O<bool?> DialogResult = default, O<Windows.Media.ImageSource> Icon = default, O<double> Left = default, O<Windows.Window> Owner = default, O<Windows.ResizeMode> ResizeMode = default, O<bool> ShowActivated = default, O<bool> ShowInTaskbar = default, O<Windows.SizeToContent> SizeToContent = default, O<Windows.Shell.TaskbarItemInfo> TaskbarItemInfo = default, O<string> Title = default, O<double> Top = default, O<bool> Topmost = default, O<Windows.WindowStartupLocation> WindowStartupLocation = default, O<Windows.WindowState> WindowState = default, O<Windows.WindowStyle> WindowStyle = default, UIObject Content = default)
         {
             var ui = new Windows.Window();
             if (AllowsTransparency.HasValue) ui.AllowsTransparency = AllowsTransparency.Value;
@@ -22715,6 +22417,7 @@ namespace CSharpMarkup.Wpf // Window
             if (WindowStartupLocation.HasValue) ui.WindowStartupLocation = WindowStartupLocation.Value;
             if (WindowState.HasValue) ui.WindowState = WindowState.Value;
             if (WindowStyle.HasValue) ui.WindowStyle = WindowStyle.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.Window.StartChain(ui);
         }
 
@@ -22883,9 +22586,7 @@ namespace CSharpMarkup.Wpf // AccessText
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.AccessText"/></summary>
-        public static AccessText AccessText(
-            string Text
-)
+        public static AccessText AccessText(string Text)
         {
             var ui = new Windows.Controls.AccessText();
             if (Text is not null) ui.Text = Text;
@@ -22893,7 +22594,7 @@ namespace CSharpMarkup.Wpf // AccessText
         }
 
         /// <summary>Create a <see cref="Windows.Controls.AccessText"/></summary>
-        public static AccessText AccessText(O<Windows.Media.Brush> Background = default, O<double> BaselineOffset = default, O<Windows.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.FontStretch> FontStretch = default, O<Windows.FontStyle> FontStyle = default, O<Windows.FontWeight> FontWeight = default, O<Windows.Media.Brush> Foreground = default, O<double> LineHeight = default, O<Windows.LineStackingStrategy> LineStackingStrategy = default, O<string> Text = default, O<Windows.TextAlignment> TextAlignment = default, O<Windows.TextDecorationCollection> TextDecorations = default, O<Windows.Media.TextEffectCollection> TextEffects = default, O<Windows.TextTrimming> TextTrimming = default, O<Windows.TextWrapping> TextWrapping = default)
+        public static AccessText AccessText(O<Windows.Media.Brush> Background = default, O<double> BaselineOffset = default, O<Windows.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.FontStretch> FontStretch = default, O<Windows.FontStyle> FontStyle = default, O<Windows.FontWeight> FontWeight = default, O<Windows.Media.Brush> Foreground = default, O<double> LineHeight = default, O<Windows.LineStackingStrategy> LineStackingStrategy = default, O<Windows.TextAlignment> TextAlignment = default, O<Windows.TextDecorationCollection> TextDecorations = default, O<Windows.Media.TextEffectCollection> TextEffects = default, O<Windows.TextTrimming> TextTrimming = default, O<Windows.TextWrapping> TextWrapping = default, string Text = default)
         {
             var ui = new Windows.Controls.AccessText();
             if (Background.HasValue) ui.Background = Background.Value;
@@ -22906,12 +22607,12 @@ namespace CSharpMarkup.Wpf // AccessText
             if (Foreground.HasValue) ui.Foreground = Foreground.Value;
             if (LineHeight.HasValue) ui.LineHeight = LineHeight.Value;
             if (LineStackingStrategy.HasValue) ui.LineStackingStrategy = LineStackingStrategy.Value;
-            if (Text.HasValue) ui.Text = Text.Value;
             if (TextAlignment.HasValue) ui.TextAlignment = TextAlignment.Value;
             if (TextDecorations.HasValue) ui.TextDecorations = TextDecorations.Value;
             if (TextEffects.HasValue) ui.TextEffects = TextEffects.Value;
             if (TextTrimming.HasValue) ui.TextTrimming = TextTrimming.Value;
             if (TextWrapping.HasValue) ui.TextWrapping = TextWrapping.Value;
+            if (Text is not null) ui.Text = Text;
             return global::CSharpMarkup.Wpf.AccessText.StartChain(ui);
         }
 
@@ -22994,9 +22695,6 @@ namespace CSharpMarkup.Wpf // AccessText
 
         /// <summary>Set <see cref="Windows.Controls.AccessText.LineStackingStrategy"/></summary>
         public static TView LineStackingStrategy<TView>(this TView view, Windows.LineStackingStrategy value) where TView : AccessText { view.UI.LineStackingStrategy = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Controls.AccessText.Text"/></summary>
-        public static TView Text<TView>(this TView view, string value) where TView : AccessText { view.UI.Text = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.AccessText.TextAlignment"/></summary>
         public static TView TextAlignment<TView>(this TView view, Windows.TextAlignment value) where TView : AccessText { view.UI.TextAlignment = value; return view; }
@@ -23084,9 +22782,7 @@ namespace CSharpMarkup.Wpf // AdornedElementPlaceholder
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.AdornedElementPlaceholder"/></summary>
-        public static AdornedElementPlaceholder AdornedElementPlaceholder(
-            System.Windows.UIElement Child
-)
+        public static AdornedElementPlaceholder AdornedElementPlaceholder(System.Windows.UIElement Child)
         {
             var ui = new Windows.Controls.AdornedElementPlaceholder();
             if (Child is not null) ui.Child = Child;
@@ -23135,9 +22831,7 @@ namespace CSharpMarkup.Wpf // Border
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Border"/></summary>
-        public static Border Border(
-            System.Windows.UIElement Child
-)
+        public static Border Border(System.Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Border();
             if (Child is not null) ui.Child = Child;
@@ -23145,7 +22839,7 @@ namespace CSharpMarkup.Wpf // Border
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Border"/></summary>
-        public static Border Border(O<Windows.Media.Brush> Background = default, O<Windows.Media.Brush> BorderBrush = default, O<Windows.Thickness> BorderThickness = default, O<Windows.CornerRadius> CornerRadius = default, O<Windows.Thickness> Padding = default)
+        public static Border Border(O<Windows.Media.Brush> Background = default, O<Windows.Media.Brush> BorderBrush = default, O<Windows.Thickness> BorderThickness = default, O<Windows.CornerRadius> CornerRadius = default, O<Windows.Thickness> Padding = default, System.Windows.UIElement Child = default)
         {
             var ui = new Windows.Controls.Border();
             if (Background.HasValue) ui.Background = Background.Value;
@@ -23153,6 +22847,7 @@ namespace CSharpMarkup.Wpf // Border
             if (BorderThickness.HasValue) ui.BorderThickness = BorderThickness.Value;
             if (CornerRadius.HasValue) ui.CornerRadius = CornerRadius.Value;
             if (Padding.HasValue) ui.Padding = Padding.Value;
+            if (Child is not null) ui.Child = Child;
             return global::CSharpMarkup.Wpf.Border.StartChain(ui);
         }
 
@@ -23272,9 +22967,7 @@ namespace CSharpMarkup.Wpf // Button
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Button"/></summary>
-        public static Button Button(
-            UIObject Content
-)
+        public static Button Button(UIObject Content)
         {
             var ui = new Windows.Controls.Button();
             if (Content is not null) ui.Content = Content.UI;
@@ -23282,11 +22975,12 @@ namespace CSharpMarkup.Wpf // Button
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Button"/></summary>
-        public static Button Button(O<bool> IsCancel = default, O<bool> IsDefault = default)
+        public static Button Button(O<bool> IsCancel = default, O<bool> IsDefault = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Button();
             if (IsCancel.HasValue) ui.IsCancel = IsCancel.Value;
             if (IsDefault.HasValue) ui.IsDefault = IsDefault.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.Button.StartChain(ui);
         }
 
@@ -23497,9 +23191,7 @@ namespace CSharpMarkup.Wpf // Canvas
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Canvas"/></summary>
-        public static Canvas Canvas(
-            params System.Windows.UIElement[] Children
-)
+        public static Canvas Canvas(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Canvas();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -23601,9 +23293,7 @@ namespace CSharpMarkup.Wpf // CheckBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.CheckBox"/></summary>
-        public static CheckBox CheckBox(
-            UIObject Content
-)
+        public static CheckBox CheckBox(UIObject Content)
         {
             var ui = new Windows.Controls.CheckBox();
             if (Content is not null) ui.Content = Content.UI;
@@ -23730,9 +23420,7 @@ namespace CSharpMarkup.Wpf // ComboBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ComboBox"/></summary>
-        public static ComboBox ComboBox(
-            params UIObject[] Items
-)
+        public static ComboBox ComboBox(params UIObject[] Items)
         {
             var ui = new Windows.Controls.ComboBox();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -23741,7 +23429,7 @@ namespace CSharpMarkup.Wpf // ComboBox
         }
 
         /// <summary>Create a <see cref="Windows.Controls.ComboBox"/></summary>
-        public static ComboBox ComboBox(O<bool> IsDropDownOpen = default, O<bool> IsEditable = default, O<bool> IsReadOnly = default, O<double> MaxDropDownHeight = default, O<bool> ShouldPreserveUserEnteredPrefix = default, O<bool> StaysOpenOnEdit = default, O<string> Text = default)
+        public static ComboBox ComboBox(O<bool> IsDropDownOpen = default, O<bool> IsEditable = default, O<bool> IsReadOnly = default, O<double> MaxDropDownHeight = default, O<bool> ShouldPreserveUserEnteredPrefix = default, O<bool> StaysOpenOnEdit = default, O<string> Text = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.ComboBox();
             if (IsDropDownOpen.HasValue) ui.IsDropDownOpen = IsDropDownOpen.Value;
@@ -23751,6 +23439,8 @@ namespace CSharpMarkup.Wpf // ComboBox
             if (ShouldPreserveUserEnteredPrefix.HasValue) ui.ShouldPreserveUserEnteredPrefix = ShouldPreserveUserEnteredPrefix.Value;
             if (StaysOpenOnEdit.HasValue) ui.StaysOpenOnEdit = StaysOpenOnEdit.Value;
             if (Text.HasValue) ui.Text = Text.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ComboBox.StartChain(ui);
         }
 
@@ -23860,9 +23550,7 @@ namespace CSharpMarkup.Wpf // ComboBoxItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ComboBoxItem"/></summary>
-        public static ComboBoxItem ComboBoxItem(
-            UIObject Content
-)
+        public static ComboBoxItem ComboBoxItem(UIObject Content)
         {
             var ui = new Windows.Controls.ComboBoxItem();
             if (Content is not null) ui.Content = Content.UI;
@@ -23919,9 +23607,7 @@ namespace CSharpMarkup.Wpf // ContentControl
     {
         /// <summary>Create a <see cref="Windows.Controls.ContentControl"/></summary>
         /// <remarks>Remark: ContentControl().Bind() binds to <see cref="Windows.Controls.ContentControl.ContentProperty"/></remarks>
-        public static ContentControl ContentControl(
-            UIObject Content
-)
+        public static ContentControl ContentControl(UIObject Content)
         {
             var ui = new Windows.Controls.ContentControl();
             if (Content is not null) ui.Content = Content.UI;
@@ -23930,12 +23616,13 @@ namespace CSharpMarkup.Wpf // ContentControl
 
         /// <summary>Create a <see cref="Windows.Controls.ContentControl"/></summary>
         /// <remarks>Remark: ContentControl().Bind() binds to <see cref="Windows.Controls.ContentControl.ContentProperty"/></remarks>
-        public static ContentControl ContentControl(O<string> ContentStringFormat = default, O<Windows.DataTemplate> ContentTemplate = default, O<Windows.Controls.DataTemplateSelector> ContentTemplateSelector = default)
+        public static ContentControl ContentControl(O<string> ContentStringFormat = default, O<Windows.DataTemplate> ContentTemplate = default, O<Windows.Controls.DataTemplateSelector> ContentTemplateSelector = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.ContentControl();
             if (ContentStringFormat.HasValue) ui.ContentStringFormat = ContentStringFormat.Value;
             if (ContentTemplate.HasValue) ui.ContentTemplate = ContentTemplate.Value;
             if (ContentTemplateSelector.HasValue) ui.ContentTemplateSelector = ContentTemplateSelector.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ContentControl.StartChain(ui);
         }
 
@@ -24121,9 +23808,7 @@ namespace CSharpMarkup.Wpf // ContextMenu
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ContextMenu"/></summary>
-        public static ContextMenu ContextMenu(
-            params UIObject[] Items
-)
+        public static ContextMenu ContextMenu(params UIObject[] Items)
         {
             var ui = new Windows.Controls.ContextMenu();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -24132,7 +23817,7 @@ namespace CSharpMarkup.Wpf // ContextMenu
         }
 
         /// <summary>Create a <see cref="Windows.Controls.ContextMenu"/></summary>
-        public static ContextMenu ContextMenu(O<Windows.Controls.Primitives.CustomPopupPlacementCallback> CustomPopupPlacementCallback = default, O<bool> HasDropShadow = default, O<double> HorizontalOffset = default, O<bool> IsOpen = default, O<Windows.Controls.Primitives.PlacementMode> Placement = default, O<Windows.Rect> PlacementRectangle = default, O<Windows.UIElement> PlacementTarget = default, O<bool> StaysOpen = default, O<double> VerticalOffset = default)
+        public static ContextMenu ContextMenu(O<Windows.Controls.Primitives.CustomPopupPlacementCallback> CustomPopupPlacementCallback = default, O<bool> HasDropShadow = default, O<double> HorizontalOffset = default, O<bool> IsOpen = default, O<Windows.Controls.Primitives.PlacementMode> Placement = default, O<Windows.Rect> PlacementRectangle = default, O<Windows.UIElement> PlacementTarget = default, O<bool> StaysOpen = default, O<double> VerticalOffset = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.ContextMenu();
             if (CustomPopupPlacementCallback.HasValue) ui.CustomPopupPlacementCallback = CustomPopupPlacementCallback.Value;
@@ -24144,6 +23829,8 @@ namespace CSharpMarkup.Wpf // ContextMenu
             if (PlacementTarget.HasValue) ui.PlacementTarget = PlacementTarget.Value;
             if (StaysOpen.HasValue) ui.StaysOpen = StaysOpen.Value;
             if (VerticalOffset.HasValue) ui.VerticalOffset = VerticalOffset.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ContextMenu.StartChain(ui);
         }
 
@@ -24468,9 +24155,7 @@ namespace CSharpMarkup.Wpf // ControlTemplate
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ControlTemplate"/></summary>
-        public static ControlTemplate ControlTemplate(
-            System.Windows.FrameworkElementFactory VisualTree
-)
+        public static ControlTemplate ControlTemplate(System.Windows.FrameworkElementFactory VisualTree)
         {
             var ui = new Windows.Controls.ControlTemplate();
             if (VisualTree is not null) ui.VisualTree = VisualTree;
@@ -24478,10 +24163,11 @@ namespace CSharpMarkup.Wpf // ControlTemplate
         }
 
         /// <summary>Create a <see cref="Windows.Controls.ControlTemplate"/></summary>
-        public static ControlTemplate ControlTemplate(O<Type> TargetType = default)
+        public static ControlTemplate ControlTemplate(O<Type> TargetType = default, System.Windows.FrameworkElementFactory VisualTree = default)
         {
             var ui = new Windows.Controls.ControlTemplate();
             if (TargetType.HasValue) ui.TargetType = TargetType.Value;
+            if (VisualTree is not null) ui.VisualTree = VisualTree;
             return global::CSharpMarkup.Wpf.ControlTemplate.StartChain(ui);
         }
 
@@ -24538,9 +24224,7 @@ namespace CSharpMarkup.Wpf // DataGrid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.DataGrid"/></summary>
-        public static DataGrid DataGrid(
-            params UIObject[] Items
-)
+        public static DataGrid DataGrid(params UIObject[] Items)
         {
             var ui = new Windows.Controls.DataGrid();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -24549,7 +24233,7 @@ namespace CSharpMarkup.Wpf // DataGrid
         }
 
         /// <summary>Create a <see cref="Windows.Controls.DataGrid"/></summary>
-        public static DataGrid DataGrid(O<Windows.Media.Brush> AlternatingRowBackground = default, O<bool> AreRowDetailsFrozen = default, O<bool> AutoGenerateColumns = default, O<bool> CanUserAddRows = default, O<bool> CanUserDeleteRows = default, O<bool> CanUserReorderColumns = default, O<bool> CanUserResizeColumns = default, O<bool> CanUserResizeRows = default, O<bool> CanUserSortColumns = default, O<Windows.Style> CellStyle = default, O<Windows.Controls.DataGridClipboardCopyMode> ClipboardCopyMode = default, O<double> ColumnHeaderHeight = default, O<Windows.Style> ColumnHeaderStyle = default, O<Windows.Controls.DataGridLength> ColumnWidth = default, O<Windows.Controls.DataGridCellInfo> CurrentCell = default, O<Windows.Controls.DataGridColumn> CurrentColumn = default, O<object> CurrentItem = default, O<Windows.Style> DragIndicatorStyle = default, O<Windows.Style> DropLocationIndicatorStyle = default, O<bool> EnableColumnVirtualization = default, O<bool> EnableRowVirtualization = default, O<int> FrozenColumnCount = default, O<Windows.Controls.DataGridGridLinesVisibility> GridLinesVisibility = default, O<Windows.Controls.DataGridHeadersVisibility> HeadersVisibility = default, O<Windows.Media.Brush> HorizontalGridLinesBrush = default, O<Windows.Controls.ScrollBarVisibility> HorizontalScrollBarVisibility = default, O<bool> IsReadOnly = default, O<double> MaxColumnWidth = default, O<double> MinColumnWidth = default, O<double> MinRowHeight = default, O<Windows.Media.Brush> RowBackground = default, O<Windows.DataTemplate> RowDetailsTemplate = default, O<Windows.Controls.DataTemplateSelector> RowDetailsTemplateSelector = default, O<Windows.Controls.DataGridRowDetailsVisibilityMode> RowDetailsVisibilityMode = default, O<Windows.Style> RowHeaderStyle = default, O<Windows.DataTemplate> RowHeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> RowHeaderTemplateSelector = default, O<double> RowHeaderWidth = default, O<double> RowHeight = default, O<Windows.Style> RowStyle = default, O<Windows.Controls.StyleSelector> RowStyleSelector = default, O<Windows.Controls.ControlTemplate> RowValidationErrorTemplate = default, O<Windows.Controls.DataGridSelectionMode> SelectionMode = default, O<Windows.Controls.DataGridSelectionUnit> SelectionUnit = default, O<Windows.Media.Brush> VerticalGridLinesBrush = default, O<Windows.Controls.ScrollBarVisibility> VerticalScrollBarVisibility = default)
+        public static DataGrid DataGrid(O<Windows.Media.Brush> AlternatingRowBackground = default, O<bool> AreRowDetailsFrozen = default, O<bool> AutoGenerateColumns = default, O<bool> CanUserAddRows = default, O<bool> CanUserDeleteRows = default, O<bool> CanUserReorderColumns = default, O<bool> CanUserResizeColumns = default, O<bool> CanUserResizeRows = default, O<bool> CanUserSortColumns = default, O<Windows.Style> CellStyle = default, O<Windows.Controls.DataGridClipboardCopyMode> ClipboardCopyMode = default, O<double> ColumnHeaderHeight = default, O<Windows.Style> ColumnHeaderStyle = default, O<Windows.Controls.DataGridLength> ColumnWidth = default, O<Windows.Controls.DataGridCellInfo> CurrentCell = default, O<Windows.Controls.DataGridColumn> CurrentColumn = default, O<object> CurrentItem = default, O<Windows.Style> DragIndicatorStyle = default, O<Windows.Style> DropLocationIndicatorStyle = default, O<bool> EnableColumnVirtualization = default, O<bool> EnableRowVirtualization = default, O<int> FrozenColumnCount = default, O<Windows.Controls.DataGridGridLinesVisibility> GridLinesVisibility = default, O<Windows.Controls.DataGridHeadersVisibility> HeadersVisibility = default, O<Windows.Media.Brush> HorizontalGridLinesBrush = default, O<Windows.Controls.ScrollBarVisibility> HorizontalScrollBarVisibility = default, O<bool> IsReadOnly = default, O<double> MaxColumnWidth = default, O<double> MinColumnWidth = default, O<double> MinRowHeight = default, O<Windows.Media.Brush> RowBackground = default, O<Windows.DataTemplate> RowDetailsTemplate = default, O<Windows.Controls.DataTemplateSelector> RowDetailsTemplateSelector = default, O<Windows.Controls.DataGridRowDetailsVisibilityMode> RowDetailsVisibilityMode = default, O<Windows.Style> RowHeaderStyle = default, O<Windows.DataTemplate> RowHeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> RowHeaderTemplateSelector = default, O<double> RowHeaderWidth = default, O<double> RowHeight = default, O<Windows.Style> RowStyle = default, O<Windows.Controls.StyleSelector> RowStyleSelector = default, O<Windows.Controls.ControlTemplate> RowValidationErrorTemplate = default, O<Windows.Controls.DataGridSelectionMode> SelectionMode = default, O<Windows.Controls.DataGridSelectionUnit> SelectionUnit = default, O<Windows.Media.Brush> VerticalGridLinesBrush = default, O<Windows.Controls.ScrollBarVisibility> VerticalScrollBarVisibility = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.DataGrid();
             if (AlternatingRowBackground.HasValue) ui.AlternatingRowBackground = AlternatingRowBackground.Value;
@@ -24598,6 +24282,8 @@ namespace CSharpMarkup.Wpf // DataGrid
             if (SelectionUnit.HasValue) ui.SelectionUnit = SelectionUnit.Value;
             if (VerticalGridLinesBrush.HasValue) ui.VerticalGridLinesBrush = VerticalGridLinesBrush.Value;
             if (VerticalScrollBarVisibility.HasValue) ui.VerticalScrollBarVisibility = VerticalScrollBarVisibility.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.DataGrid.StartChain(ui);
         }
 
@@ -25047,9 +24733,7 @@ namespace CSharpMarkup.Wpf // DataGridCell
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.DataGridCell"/></summary>
-        public static DataGridCell DataGridCell(
-            UIObject Content
-)
+        public static DataGridCell DataGridCell(UIObject Content)
         {
             var ui = new Windows.Controls.DataGridCell();
             if (Content is not null) ui.Content = Content.UI;
@@ -25057,11 +24741,12 @@ namespace CSharpMarkup.Wpf // DataGridCell
         }
 
         /// <summary>Create a <see cref="Windows.Controls.DataGridCell"/></summary>
-        public static DataGridCell DataGridCell(O<bool> IsEditing = default, O<bool> IsSelected = default)
+        public static DataGridCell DataGridCell(O<bool> IsEditing = default, O<bool> IsSelected = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.DataGridCell();
             if (IsEditing.HasValue) ui.IsEditing = IsEditing.Value;
             if (IsSelected.HasValue) ui.IsSelected = IsSelected.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.DataGridCell.StartChain(ui);
         }
 
@@ -25132,9 +24817,7 @@ namespace CSharpMarkup.Wpf // DataGridCellsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.DataGridCellsPanel"/></summary>
-        public static DataGridCellsPanel DataGridCellsPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static DataGridCellsPanel DataGridCellsPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.DataGridCellsPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -26023,9 +25706,7 @@ namespace CSharpMarkup.Wpf // Decorator
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Decorator"/></summary>
-        public static Decorator Decorator(
-            System.Windows.UIElement Child
-)
+        public static Decorator Decorator(System.Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Decorator();
             if (Child is not null) ui.Child = Child;
@@ -26100,9 +25781,7 @@ namespace CSharpMarkup.Wpf // DockPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.DockPanel"/></summary>
-        public static DockPanel DockPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static DockPanel DockPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.DockPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -26111,10 +25790,12 @@ namespace CSharpMarkup.Wpf // DockPanel
         }
 
         /// <summary>Create a <see cref="Windows.Controls.DockPanel"/></summary>
-        public static DockPanel DockPanel(O<bool> LastChildFill = default)
+        public static DockPanel DockPanel(O<bool> LastChildFill = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.DockPanel();
             if (LastChildFill.HasValue) ui.LastChildFill = LastChildFill.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.DockPanel.StartChain(ui);
         }
     }
@@ -26171,9 +25852,7 @@ namespace CSharpMarkup.Wpf // DocumentViewer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.DocumentViewer"/></summary>
-        public static DocumentViewer DocumentViewer(
-            System.Windows.Documents.IDocumentPaginatorSource Document
-)
+        public static DocumentViewer DocumentViewer(System.Windows.Documents.IDocumentPaginatorSource Document)
         {
             var ui = new Windows.Controls.DocumentViewer();
             if (Document is not null) ui.Document = Document;
@@ -26181,7 +25860,7 @@ namespace CSharpMarkup.Wpf // DocumentViewer
         }
 
         /// <summary>Create a <see cref="Windows.Controls.DocumentViewer"/></summary>
-        public static DocumentViewer DocumentViewer(O<double> HorizontalOffset = default, O<double> HorizontalPageSpacing = default, O<int> MaxPagesAcross = default, O<bool> ShowPageBorders = default, O<double> VerticalOffset = default, O<double> VerticalPageSpacing = default, O<double> Zoom = default)
+        public static DocumentViewer DocumentViewer(O<double> HorizontalOffset = default, O<double> HorizontalPageSpacing = default, O<int> MaxPagesAcross = default, O<bool> ShowPageBorders = default, O<double> VerticalOffset = default, O<double> VerticalPageSpacing = default, O<double> Zoom = default, System.Windows.Documents.IDocumentPaginatorSource Document = default)
         {
             var ui = new Windows.Controls.DocumentViewer();
             if (HorizontalOffset.HasValue) ui.HorizontalOffset = HorizontalOffset.Value;
@@ -26191,6 +25870,7 @@ namespace CSharpMarkup.Wpf // DocumentViewer
             if (VerticalOffset.HasValue) ui.VerticalOffset = VerticalOffset.Value;
             if (VerticalPageSpacing.HasValue) ui.VerticalPageSpacing = VerticalPageSpacing.Value;
             if (Zoom.HasValue) ui.Zoom = Zoom.Value;
+            if (Document is not null) ui.Document = Document;
             return global::CSharpMarkup.Wpf.DocumentViewer.StartChain(ui);
         }
 
@@ -26329,9 +26009,7 @@ namespace CSharpMarkup.Wpf // Expander
     {
         /// <summary>Create a <see cref="Windows.Controls.Expander"/></summary>
         /// <remarks>Remark: Expander().Bind() binds to <see cref="Windows.Controls.Expander.IsExpandedProperty"/></remarks>
-        public static Expander Expander(
-            UIObject Content
-)
+        public static Expander Expander(UIObject Content)
         {
             var ui = new Windows.Controls.Expander();
             if (Content is not null) ui.Content = Content.UI;
@@ -26340,11 +26018,12 @@ namespace CSharpMarkup.Wpf // Expander
 
         /// <summary>Create a <see cref="Windows.Controls.Expander"/></summary>
         /// <remarks>Remark: Expander().Bind() binds to <see cref="Windows.Controls.Expander.IsExpandedProperty"/></remarks>
-        public static Expander Expander(O<Windows.Controls.ExpandDirection> ExpandDirection = default, O<bool> IsExpanded = default)
+        public static Expander Expander(O<Windows.Controls.ExpandDirection> ExpandDirection = default, O<bool> IsExpanded = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Expander();
             if (ExpandDirection.HasValue) ui.ExpandDirection = ExpandDirection.Value;
             if (IsExpanded.HasValue) ui.IsExpanded = IsExpanded.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.Expander.StartChain(ui);
         }
 
@@ -26411,9 +26090,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentPageViewer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentPageViewer"/></summary>
-        public static FlowDocumentPageViewer FlowDocumentPageViewer(
-            System.Windows.Documents.IDocumentPaginatorSource Document
-)
+        public static FlowDocumentPageViewer FlowDocumentPageViewer(System.Windows.Documents.IDocumentPaginatorSource Document)
         {
             var ui = new Windows.Controls.FlowDocumentPageViewer();
             if (Document is not null) ui.Document = Document;
@@ -26421,7 +26098,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentPageViewer
         }
 
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentPageViewer"/></summary>
-        public static FlowDocumentPageViewer FlowDocumentPageViewer(O<bool> IsInactiveSelectionHighlightEnabled = default, O<double> MaxZoom = default, O<double> MinZoom = default, O<Windows.Media.Brush> SelectionBrush = default, O<double> SelectionOpacity = default, O<double> Zoom = default, O<double> ZoomIncrement = default)
+        public static FlowDocumentPageViewer FlowDocumentPageViewer(O<bool> IsInactiveSelectionHighlightEnabled = default, O<double> MaxZoom = default, O<double> MinZoom = default, O<Windows.Media.Brush> SelectionBrush = default, O<double> SelectionOpacity = default, O<double> Zoom = default, O<double> ZoomIncrement = default, System.Windows.Documents.IDocumentPaginatorSource Document = default)
         {
             var ui = new Windows.Controls.FlowDocumentPageViewer();
             if (IsInactiveSelectionHighlightEnabled.HasValue) ui.IsInactiveSelectionHighlightEnabled = IsInactiveSelectionHighlightEnabled.Value;
@@ -26431,6 +26108,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentPageViewer
             if (SelectionOpacity.HasValue) ui.SelectionOpacity = SelectionOpacity.Value;
             if (Zoom.HasValue) ui.Zoom = Zoom.Value;
             if (ZoomIncrement.HasValue) ui.ZoomIncrement = ZoomIncrement.Value;
+            if (Document is not null) ui.Document = Document;
             return global::CSharpMarkup.Wpf.FlowDocumentPageViewer.StartChain(ui);
         }
 
@@ -26547,9 +26225,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentReader
     {
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentReader"/></summary>
         /// <remarks>Remark: FlowDocumentReader().Bind() binds to <see cref="Windows.Controls.FlowDocumentReader.DocumentProperty"/></remarks>
-        public static FlowDocumentReader FlowDocumentReader(
-            System.Windows.Documents.FlowDocument Document
-)
+        public static FlowDocumentReader FlowDocumentReader(System.Windows.Documents.FlowDocument Document)
         {
             var ui = new Windows.Controls.FlowDocumentReader();
             if (Document is not null) ui.Document = Document;
@@ -26558,10 +26234,9 @@ namespace CSharpMarkup.Wpf // FlowDocumentReader
 
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentReader"/></summary>
         /// <remarks>Remark: FlowDocumentReader().Bind() binds to <see cref="Windows.Controls.FlowDocumentReader.DocumentProperty"/></remarks>
-        public static FlowDocumentReader FlowDocumentReader(O<Windows.Documents.FlowDocument> Document = default, O<bool> IsFindEnabled = default, O<bool> IsInactiveSelectionHighlightEnabled = default, O<bool> IsPageViewEnabled = default, O<bool> IsPrintEnabled = default, O<bool> IsScrollViewEnabled = default, O<bool> IsTwoPageViewEnabled = default, O<double> MaxZoom = default, O<double> MinZoom = default, O<Windows.Media.Brush> SelectionBrush = default, O<double> SelectionOpacity = default, O<Windows.Controls.FlowDocumentReaderViewingMode> ViewingMode = default, O<double> Zoom = default, O<double> ZoomIncrement = default)
+        public static FlowDocumentReader FlowDocumentReader(O<bool> IsFindEnabled = default, O<bool> IsInactiveSelectionHighlightEnabled = default, O<bool> IsPageViewEnabled = default, O<bool> IsPrintEnabled = default, O<bool> IsScrollViewEnabled = default, O<bool> IsTwoPageViewEnabled = default, O<double> MaxZoom = default, O<double> MinZoom = default, O<Windows.Media.Brush> SelectionBrush = default, O<double> SelectionOpacity = default, O<Windows.Controls.FlowDocumentReaderViewingMode> ViewingMode = default, O<double> Zoom = default, O<double> ZoomIncrement = default, System.Windows.Documents.FlowDocument Document = default)
         {
             var ui = new Windows.Controls.FlowDocumentReader();
-            if (Document.HasValue) ui.Document = Document.Value;
             if (IsFindEnabled.HasValue) ui.IsFindEnabled = IsFindEnabled.Value;
             if (IsInactiveSelectionHighlightEnabled.HasValue) ui.IsInactiveSelectionHighlightEnabled = IsInactiveSelectionHighlightEnabled.Value;
             if (IsPageViewEnabled.HasValue) ui.IsPageViewEnabled = IsPageViewEnabled.Value;
@@ -26575,6 +26250,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentReader
             if (ViewingMode.HasValue) ui.ViewingMode = ViewingMode.Value;
             if (Zoom.HasValue) ui.Zoom = Zoom.Value;
             if (ZoomIncrement.HasValue) ui.ZoomIncrement = ZoomIncrement.Value;
+            if (Document is not null) ui.Document = Document;
             return global::CSharpMarkup.Wpf.FlowDocumentReader.StartChain(ui);
         }
 
@@ -26620,9 +26296,6 @@ namespace CSharpMarkup.Wpf // FlowDocumentReader
 
     public static partial class FlowDocumentReaderExtensions
     {
-        /// <summary>Set <see cref="Windows.Controls.FlowDocumentReader.Document"/></summary>
-        public static TView Document<TView>(this TView view, Windows.Documents.FlowDocument value) where TView : FlowDocumentReader { view.UI.Document = value; return view; }
-
         /// <summary>Set <see cref="Windows.Controls.FlowDocumentReader.IsFindEnabled"/></summary>
         public static TView IsFindEnabled<TView>(this TView view, bool value) where TView : FlowDocumentReader { view.UI.IsFindEnabled = value; return view; }
 
@@ -26760,9 +26433,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentScrollViewer
     {
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentScrollViewer"/></summary>
         /// <remarks>Remark: FlowDocumentScrollViewer().Bind() binds to <see cref="Windows.Controls.FlowDocumentScrollViewer.DocumentProperty"/></remarks>
-        public static FlowDocumentScrollViewer FlowDocumentScrollViewer(
-            System.Windows.Documents.FlowDocument Document
-)
+        public static FlowDocumentScrollViewer FlowDocumentScrollViewer(System.Windows.Documents.FlowDocument Document)
         {
             var ui = new Windows.Controls.FlowDocumentScrollViewer();
             if (Document is not null) ui.Document = Document;
@@ -26771,10 +26442,9 @@ namespace CSharpMarkup.Wpf // FlowDocumentScrollViewer
 
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentScrollViewer"/></summary>
         /// <remarks>Remark: FlowDocumentScrollViewer().Bind() binds to <see cref="Windows.Controls.FlowDocumentScrollViewer.DocumentProperty"/></remarks>
-        public static FlowDocumentScrollViewer FlowDocumentScrollViewer(O<Windows.Documents.FlowDocument> Document = default, O<Windows.Controls.ScrollBarVisibility> HorizontalScrollBarVisibility = default, O<bool> IsInactiveSelectionHighlightEnabled = default, O<bool> IsSelectionEnabled = default, O<bool> IsToolBarVisible = default, O<double> MaxZoom = default, O<double> MinZoom = default, O<Windows.Media.Brush> SelectionBrush = default, O<double> SelectionOpacity = default, O<Windows.Controls.ScrollBarVisibility> VerticalScrollBarVisibility = default, O<double> Zoom = default, O<double> ZoomIncrement = default)
+        public static FlowDocumentScrollViewer FlowDocumentScrollViewer(O<Windows.Controls.ScrollBarVisibility> HorizontalScrollBarVisibility = default, O<bool> IsInactiveSelectionHighlightEnabled = default, O<bool> IsSelectionEnabled = default, O<bool> IsToolBarVisible = default, O<double> MaxZoom = default, O<double> MinZoom = default, O<Windows.Media.Brush> SelectionBrush = default, O<double> SelectionOpacity = default, O<Windows.Controls.ScrollBarVisibility> VerticalScrollBarVisibility = default, O<double> Zoom = default, O<double> ZoomIncrement = default, System.Windows.Documents.FlowDocument Document = default)
         {
             var ui = new Windows.Controls.FlowDocumentScrollViewer();
-            if (Document.HasValue) ui.Document = Document.Value;
             if (HorizontalScrollBarVisibility.HasValue) ui.HorizontalScrollBarVisibility = HorizontalScrollBarVisibility.Value;
             if (IsInactiveSelectionHighlightEnabled.HasValue) ui.IsInactiveSelectionHighlightEnabled = IsInactiveSelectionHighlightEnabled.Value;
             if (IsSelectionEnabled.HasValue) ui.IsSelectionEnabled = IsSelectionEnabled.Value;
@@ -26786,6 +26456,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentScrollViewer
             if (VerticalScrollBarVisibility.HasValue) ui.VerticalScrollBarVisibility = VerticalScrollBarVisibility.Value;
             if (Zoom.HasValue) ui.Zoom = Zoom.Value;
             if (ZoomIncrement.HasValue) ui.ZoomIncrement = ZoomIncrement.Value;
+            if (Document is not null) ui.Document = Document;
             return global::CSharpMarkup.Wpf.FlowDocumentScrollViewer.StartChain(ui);
         }
 
@@ -26831,9 +26502,6 @@ namespace CSharpMarkup.Wpf // FlowDocumentScrollViewer
 
     public static partial class FlowDocumentScrollViewerExtensions
     {
-        /// <summary>Set <see cref="Windows.Controls.FlowDocumentScrollViewer.Document"/></summary>
-        public static TView Document<TView>(this TView view, Windows.Documents.FlowDocument value) where TView : FlowDocumentScrollViewer { view.UI.Document = value; return view; }
-
         /// <summary>Set <see cref="Windows.Controls.FlowDocumentScrollViewer.HorizontalScrollBarVisibility"/></summary>
         public static TView HorizontalScrollBarVisibility<TView>(this TView view, Windows.Controls.ScrollBarVisibility value) where TView : FlowDocumentScrollViewer { view.UI.HorizontalScrollBarVisibility = value; return view; }
 
@@ -27039,9 +26707,7 @@ namespace CSharpMarkup.Wpf // Grid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Grid"/></summary>
-        public static Grid Grid(
-            params System.Windows.UIElement[] Children
-)
+        public static Grid Grid(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Grid();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -27050,10 +26716,12 @@ namespace CSharpMarkup.Wpf // Grid
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Grid"/></summary>
-        public static Grid Grid(O<bool> ShowGridLines = default)
+        public static Grid Grid(O<bool> ShowGridLines = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Grid();
             if (ShowGridLines.HasValue) ui.ShowGridLines = ShowGridLines.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.Grid.StartChain(ui);
         }
     }
@@ -27269,9 +26937,7 @@ namespace CSharpMarkup.Wpf // GridView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.GridView"/></summary>
-        public static GridView GridView(
-            params System.Windows.Controls.GridViewColumn[] Columns
-)
+        public static GridView GridView(params System.Windows.Controls.GridViewColumn[] Columns)
         {
             var ui = new Windows.Controls.GridView();
             foreach (var child in Columns) if (child is not null) ui.Columns.Add(child);
@@ -27280,7 +26946,7 @@ namespace CSharpMarkup.Wpf // GridView
         }
 
         /// <summary>Create a <see cref="Windows.Controls.GridView"/></summary>
-        public static GridView GridView(O<bool> AllowsColumnReorder = default, O<Windows.Style> ColumnHeaderContainerStyle = default, O<Windows.Controls.ContextMenu> ColumnHeaderContextMenu = default, O<string> ColumnHeaderStringFormat = default, O<Windows.DataTemplate> ColumnHeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> ColumnHeaderTemplateSelector = default, O<object> ColumnHeaderToolTip = default)
+        public static GridView GridView(O<bool> AllowsColumnReorder = default, O<Windows.Style> ColumnHeaderContainerStyle = default, O<Windows.Controls.ContextMenu> ColumnHeaderContextMenu = default, O<string> ColumnHeaderStringFormat = default, O<Windows.DataTemplate> ColumnHeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> ColumnHeaderTemplateSelector = default, O<object> ColumnHeaderToolTip = default, params System.Windows.Controls.GridViewColumn[] Columns)
         {
             var ui = new Windows.Controls.GridView();
             if (AllowsColumnReorder.HasValue) ui.AllowsColumnReorder = AllowsColumnReorder.Value;
@@ -27290,6 +26956,8 @@ namespace CSharpMarkup.Wpf // GridView
             if (ColumnHeaderTemplate.HasValue) ui.ColumnHeaderTemplate = ColumnHeaderTemplate.Value;
             if (ColumnHeaderTemplateSelector.HasValue) ui.ColumnHeaderTemplateSelector = ColumnHeaderTemplateSelector.Value;
             if (ColumnHeaderToolTip.HasValue) ui.ColumnHeaderToolTip = ColumnHeaderToolTip.Value;
+            foreach (var child in Columns) if (child is not null) ui.Columns.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Columns);
             return global::CSharpMarkup.Wpf.GridView.StartChain(ui);
         }
 
@@ -27393,9 +27061,7 @@ namespace CSharpMarkup.Wpf // GridViewColumn
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.GridViewColumn"/></summary>
-        public static GridViewColumn GridViewColumn(
-            UIObject Header
-)
+        public static GridViewColumn GridViewColumn(UIObject Header)
         {
             var ui = new Windows.Controls.GridViewColumn();
             if (Header is not null) ui.Header = Header.UI;
@@ -27403,18 +27069,18 @@ namespace CSharpMarkup.Wpf // GridViewColumn
         }
 
         /// <summary>Create a <see cref="Windows.Controls.GridViewColumn"/></summary>
-        public static GridViewColumn GridViewColumn(O<Windows.DataTemplate> CellTemplate = default, O<Windows.Controls.DataTemplateSelector> CellTemplateSelector = default, O<Windows.Data.BindingBase> DisplayMemberBinding = default, O<object> Header = default, O<Windows.Style> HeaderContainerStyle = default, O<string> HeaderStringFormat = default, O<Windows.DataTemplate> HeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> HeaderTemplateSelector = default, O<double> Width = default)
+        public static GridViewColumn GridViewColumn(O<Windows.DataTemplate> CellTemplate = default, O<Windows.Controls.DataTemplateSelector> CellTemplateSelector = default, O<Windows.Data.BindingBase> DisplayMemberBinding = default, O<Windows.Style> HeaderContainerStyle = default, O<string> HeaderStringFormat = default, O<Windows.DataTemplate> HeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> HeaderTemplateSelector = default, O<double> Width = default, UIObject Header = default)
         {
             var ui = new Windows.Controls.GridViewColumn();
             if (CellTemplate.HasValue) ui.CellTemplate = CellTemplate.Value;
             if (CellTemplateSelector.HasValue) ui.CellTemplateSelector = CellTemplateSelector.Value;
             if (DisplayMemberBinding.HasValue) ui.DisplayMemberBinding = DisplayMemberBinding.Value;
-            if (Header.HasValue) ui.Header = Header.Value;
             if (HeaderContainerStyle.HasValue) ui.HeaderContainerStyle = HeaderContainerStyle.Value;
             if (HeaderStringFormat.HasValue) ui.HeaderStringFormat = HeaderStringFormat.Value;
             if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
             if (HeaderTemplateSelector.HasValue) ui.HeaderTemplateSelector = HeaderTemplateSelector.Value;
             if (Width.HasValue) ui.Width = Width.Value;
+            if (Header is not null) ui.Header = Header.UI;
             return global::CSharpMarkup.Wpf.GridViewColumn.StartChain(ui);
         }
 
@@ -27462,9 +27128,6 @@ namespace CSharpMarkup.Wpf // GridViewColumn
 
         /// <summary>Set <see cref="Windows.Controls.GridViewColumn.DisplayMemberBinding"/></summary>
         public static TView DisplayMemberBinding<TView>(this TView view, Windows.Data.BindingBase value) where TView : GridViewColumn { view.UI.DisplayMemberBinding = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Controls.GridViewColumn.Header"/></summary>
-        public static TView Header<TView>(this TView view, object value) where TView : GridViewColumn { view.UI.Header = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.GridViewColumn.HeaderContainerStyle"/></summary>
         public static TView HeaderContainerStyle<TView>(this TView view, Windows.Style value) where TView : GridViewColumn { view.UI.HeaderContainerStyle = value; return view; }
@@ -27520,9 +27183,7 @@ namespace CSharpMarkup.Wpf // GridViewColumnHeader
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.GridViewColumnHeader"/></summary>
-        public static GridViewColumnHeader GridViewColumnHeader(
-            UIObject Content
-)
+        public static GridViewColumnHeader GridViewColumnHeader(UIObject Content)
         {
             var ui = new Windows.Controls.GridViewColumnHeader();
             if (Content is not null) ui.Content = Content.UI;
@@ -27748,9 +27409,7 @@ namespace CSharpMarkup.Wpf // GroupBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.GroupBox"/></summary>
-        public static GroupBox GroupBox(
-            UIObject Content
-)
+        public static GroupBox GroupBox(UIObject Content)
         {
             var ui = new Windows.Controls.GroupBox();
             if (Content is not null) ui.Content = Content.UI;
@@ -27799,9 +27458,7 @@ namespace CSharpMarkup.Wpf // GroupItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.GroupItem"/></summary>
-        public static GroupItem GroupItem(
-            UIObject Content
-)
+        public static GroupItem GroupItem(UIObject Content)
         {
             var ui = new Windows.Controls.GroupItem();
             if (Content is not null) ui.Content = Content.UI;
@@ -27850,9 +27507,7 @@ namespace CSharpMarkup.Wpf // HeaderedContentControl
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.HeaderedContentControl"/></summary>
-        public static HeaderedContentControl HeaderedContentControl(
-            UIObject Content
-)
+        public static HeaderedContentControl HeaderedContentControl(UIObject Content)
         {
             var ui = new Windows.Controls.HeaderedContentControl();
             if (Content is not null) ui.Content = Content.UI;
@@ -27860,13 +27515,14 @@ namespace CSharpMarkup.Wpf // HeaderedContentControl
         }
 
         /// <summary>Create a <see cref="Windows.Controls.HeaderedContentControl"/></summary>
-        public static HeaderedContentControl HeaderedContentControl(O<object> Header = default, O<string> HeaderStringFormat = default, O<Windows.DataTemplate> HeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> HeaderTemplateSelector = default)
+        public static HeaderedContentControl HeaderedContentControl(O<object> Header = default, O<string> HeaderStringFormat = default, O<Windows.DataTemplate> HeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> HeaderTemplateSelector = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.HeaderedContentControl();
             if (Header.HasValue) ui.Header = Header.Value;
             if (HeaderStringFormat.HasValue) ui.HeaderStringFormat = HeaderStringFormat.Value;
             if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
             if (HeaderTemplateSelector.HasValue) ui.HeaderTemplateSelector = HeaderTemplateSelector.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.HeaderedContentControl.StartChain(ui);
         }
 
@@ -27947,9 +27603,7 @@ namespace CSharpMarkup.Wpf // HeaderedItemsControl
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.HeaderedItemsControl"/></summary>
-        public static HeaderedItemsControl HeaderedItemsControl(
-            params UIObject[] Items
-)
+        public static HeaderedItemsControl HeaderedItemsControl(params UIObject[] Items)
         {
             var ui = new Windows.Controls.HeaderedItemsControl();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -27958,13 +27612,15 @@ namespace CSharpMarkup.Wpf // HeaderedItemsControl
         }
 
         /// <summary>Create a <see cref="Windows.Controls.HeaderedItemsControl"/></summary>
-        public static HeaderedItemsControl HeaderedItemsControl(O<object> Header = default, O<string> HeaderStringFormat = default, O<Windows.DataTemplate> HeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> HeaderTemplateSelector = default)
+        public static HeaderedItemsControl HeaderedItemsControl(O<object> Header = default, O<string> HeaderStringFormat = default, O<Windows.DataTemplate> HeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> HeaderTemplateSelector = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.HeaderedItemsControl();
             if (Header.HasValue) ui.Header = Header.Value;
             if (HeaderStringFormat.HasValue) ui.HeaderStringFormat = HeaderStringFormat.Value;
             if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
             if (HeaderTemplateSelector.HasValue) ui.HeaderTemplateSelector = HeaderTemplateSelector.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.HeaderedItemsControl.StartChain(ui);
         }
 
@@ -28125,9 +27781,7 @@ namespace CSharpMarkup.Wpf // InkCanvas
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.InkCanvas"/></summary>
-        public static InkCanvas InkCanvas(
-            params System.Windows.UIElement[] Children
-)
+        public static InkCanvas InkCanvas(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.InkCanvas();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -28136,7 +27790,7 @@ namespace CSharpMarkup.Wpf // InkCanvas
         }
 
         /// <summary>Create a <see cref="Windows.Controls.InkCanvas"/></summary>
-        public static InkCanvas InkCanvas(O<Windows.Media.Brush> Background = default, O<Windows.Ink.DrawingAttributes> DefaultDrawingAttributes = default, O<Windows.Input.StylusPointDescription> DefaultStylusPointDescription = default, O<Windows.Controls.InkCanvasEditingMode> EditingMode = default, O<Windows.Controls.InkCanvasEditingMode> EditingModeInverted = default, O<Windows.Ink.StylusShape> EraserShape = default, O<bool> MoveEnabled = default, O<IEnumerable<Windows.Controls.InkCanvasClipboardFormat>> PreferredPasteFormats = default, O<bool> ResizeEnabled = default, O<Windows.Ink.StrokeCollection> Strokes = default, O<bool> UseCustomCursor = default)
+        public static InkCanvas InkCanvas(O<Windows.Media.Brush> Background = default, O<Windows.Ink.DrawingAttributes> DefaultDrawingAttributes = default, O<Windows.Input.StylusPointDescription> DefaultStylusPointDescription = default, O<Windows.Controls.InkCanvasEditingMode> EditingMode = default, O<Windows.Controls.InkCanvasEditingMode> EditingModeInverted = default, O<Windows.Ink.StylusShape> EraserShape = default, O<bool> MoveEnabled = default, O<IEnumerable<Windows.Controls.InkCanvasClipboardFormat>> PreferredPasteFormats = default, O<bool> ResizeEnabled = default, O<Windows.Ink.StrokeCollection> Strokes = default, O<bool> UseCustomCursor = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.InkCanvas();
             if (Background.HasValue) ui.Background = Background.Value;
@@ -28150,6 +27804,8 @@ namespace CSharpMarkup.Wpf // InkCanvas
             if (ResizeEnabled.HasValue) ui.ResizeEnabled = ResizeEnabled.Value;
             if (Strokes.HasValue) ui.Strokes = Strokes.Value;
             if (UseCustomCursor.HasValue) ui.UseCustomCursor = UseCustomCursor.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.InkCanvas.StartChain(ui);
         }
 
@@ -28318,9 +27974,7 @@ namespace CSharpMarkup.Wpf // InkPresenter
     {
         /// <summary>Create a <see cref="Windows.Controls.InkPresenter"/></summary>
         /// <remarks>Remark: InkPresenter().Bind() binds to <see cref="Windows.Controls.InkPresenter.StrokesProperty"/></remarks>
-        public static InkPresenter InkPresenter(
-            System.Windows.UIElement Child
-)
+        public static InkPresenter InkPresenter(System.Windows.UIElement Child)
         {
             var ui = new Windows.Controls.InkPresenter();
             if (Child is not null) ui.Child = Child;
@@ -28329,10 +27983,11 @@ namespace CSharpMarkup.Wpf // InkPresenter
 
         /// <summary>Create a <see cref="Windows.Controls.InkPresenter"/></summary>
         /// <remarks>Remark: InkPresenter().Bind() binds to <see cref="Windows.Controls.InkPresenter.StrokesProperty"/></remarks>
-        public static InkPresenter InkPresenter(O<Windows.Ink.StrokeCollection> Strokes = default)
+        public static InkPresenter InkPresenter(O<Windows.Ink.StrokeCollection> Strokes = default, System.Windows.UIElement Child = default)
         {
             var ui = new Windows.Controls.InkPresenter();
             if (Strokes.HasValue) ui.Strokes = Strokes.Value;
+            if (Child is not null) ui.Child = Child;
             return global::CSharpMarkup.Wpf.InkPresenter.StartChain(ui);
         }
 
@@ -28423,9 +28078,7 @@ namespace CSharpMarkup.Wpf // ItemContainerTemplate
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ItemContainerTemplate"/></summary>
-        public static ItemContainerTemplate ItemContainerTemplate(
-            System.Windows.FrameworkElementFactory VisualTree
-)
+        public static ItemContainerTemplate ItemContainerTemplate(System.Windows.FrameworkElementFactory VisualTree)
         {
             var ui = new Windows.Controls.ItemContainerTemplate();
             if (VisualTree is not null) ui.VisualTree = VisualTree;
@@ -28473,9 +28126,7 @@ namespace CSharpMarkup.Wpf // ItemsControl
     {
         /// <summary>Create a <see cref="Windows.Controls.ItemsControl"/></summary>
         /// <remarks>Remark: ItemsControl().Bind() binds to <see cref="Windows.Controls.ItemsControl.ItemsSourceProperty"/></remarks>
-        public static ItemsControl ItemsControl(
-            params UIObject[] Items
-)
+        public static ItemsControl ItemsControl(params UIObject[] Items)
         {
             var ui = new Windows.Controls.ItemsControl();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -28485,7 +28136,7 @@ namespace CSharpMarkup.Wpf // ItemsControl
 
         /// <summary>Create a <see cref="Windows.Controls.ItemsControl"/></summary>
         /// <remarks>Remark: ItemsControl().Bind() binds to <see cref="Windows.Controls.ItemsControl.ItemsSourceProperty"/></remarks>
-        public static ItemsControl ItemsControl(O<int> AlternationCount = default, O<string> DisplayMemberPath = default, O<Windows.Controls.GroupStyleSelector> GroupStyleSelector = default, O<bool> IsTextSearchCaseSensitive = default, O<bool> IsTextSearchEnabled = default, O<Windows.Data.BindingGroup> ItemBindingGroup = default, O<Windows.Style> ItemContainerStyle = default, O<Windows.Controls.StyleSelector> ItemContainerStyleSelector = default, O<Windows.Controls.ItemsPanelTemplate> ItemsPanel = default, O<IEnumerable> ItemsSource = default, O<string> ItemStringFormat = default, O<Windows.DataTemplate> ItemTemplate = default, O<Windows.Controls.DataTemplateSelector> ItemTemplateSelector = default)
+        public static ItemsControl ItemsControl(O<int> AlternationCount = default, O<string> DisplayMemberPath = default, O<Windows.Controls.GroupStyleSelector> GroupStyleSelector = default, O<bool> IsTextSearchCaseSensitive = default, O<bool> IsTextSearchEnabled = default, O<Windows.Data.BindingGroup> ItemBindingGroup = default, O<Windows.Style> ItemContainerStyle = default, O<Windows.Controls.StyleSelector> ItemContainerStyleSelector = default, O<Windows.Controls.ItemsPanelTemplate> ItemsPanel = default, O<IEnumerable> ItemsSource = default, O<string> ItemStringFormat = default, O<Windows.DataTemplate> ItemTemplate = default, O<Windows.Controls.DataTemplateSelector> ItemTemplateSelector = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.ItemsControl();
             if (AlternationCount.HasValue) ui.AlternationCount = AlternationCount.Value;
@@ -28501,6 +28152,8 @@ namespace CSharpMarkup.Wpf // ItemsControl
             if (ItemStringFormat.HasValue) ui.ItemStringFormat = ItemStringFormat.Value;
             if (ItemTemplate.HasValue) ui.ItemTemplate = ItemTemplate.Value;
             if (ItemTemplateSelector.HasValue) ui.ItemTemplateSelector = ItemTemplateSelector.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ItemsControl.StartChain(ui);
         }
 
@@ -28740,9 +28393,7 @@ namespace CSharpMarkup.Wpf // Label
     {
         /// <summary>Create a <see cref="Windows.Controls.Label"/></summary>
         /// <remarks>Remark: Label().Bind() binds to <see cref="Windows.Controls.Label.TargetProperty"/></remarks>
-        public static Label Label(
-            UIObject Content
-)
+        public static Label Label(UIObject Content)
         {
             var ui = new Windows.Controls.Label();
             if (Content is not null) ui.Content = Content.UI;
@@ -28751,10 +28402,11 @@ namespace CSharpMarkup.Wpf // Label
 
         /// <summary>Create a <see cref="Windows.Controls.Label"/></summary>
         /// <remarks>Remark: Label().Bind() binds to <see cref="Windows.Controls.Label.TargetProperty"/></remarks>
-        public static Label Label(O<Windows.UIElement> Target = default)
+        public static Label Label(O<Windows.UIElement> Target = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Label();
             if (Target.HasValue) ui.Target = Target.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.Label.StartChain(ui);
         }
 
@@ -28814,9 +28466,7 @@ namespace CSharpMarkup.Wpf // ListBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ListBox"/></summary>
-        public static ListBox ListBox(
-            params UIObject[] Items
-)
+        public static ListBox ListBox(params UIObject[] Items)
         {
             var ui = new Windows.Controls.ListBox();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -28825,10 +28475,12 @@ namespace CSharpMarkup.Wpf // ListBox
         }
 
         /// <summary>Create a <see cref="Windows.Controls.ListBox"/></summary>
-        public static ListBox ListBox(O<Windows.Controls.SelectionMode> SelectionMode = default)
+        public static ListBox ListBox(O<Windows.Controls.SelectionMode> SelectionMode = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.ListBox();
             if (SelectionMode.HasValue) ui.SelectionMode = SelectionMode.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ListBox.StartChain(ui);
         }
 
@@ -28888,9 +28540,7 @@ namespace CSharpMarkup.Wpf // ListBoxItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ListBoxItem"/></summary>
-        public static ListBoxItem ListBoxItem(
-            UIObject Content
-)
+        public static ListBoxItem ListBoxItem(UIObject Content)
         {
             var ui = new Windows.Controls.ListBoxItem();
             if (Content is not null) ui.Content = Content.UI;
@@ -28898,10 +28548,11 @@ namespace CSharpMarkup.Wpf // ListBoxItem
         }
 
         /// <summary>Create a <see cref="Windows.Controls.ListBoxItem"/></summary>
-        public static ListBoxItem ListBoxItem(O<bool> IsSelected = default)
+        public static ListBoxItem ListBoxItem(O<bool> IsSelected = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.ListBoxItem();
             if (IsSelected.HasValue) ui.IsSelected = IsSelected.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ListBoxItem.StartChain(ui);
         }
 
@@ -28957,9 +28608,7 @@ namespace CSharpMarkup.Wpf // ListView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ListView"/></summary>
-        public static ListView ListView(
-            params UIObject[] Items
-)
+        public static ListView ListView(params UIObject[] Items)
         {
             var ui = new Windows.Controls.ListView();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -28968,10 +28617,12 @@ namespace CSharpMarkup.Wpf // ListView
         }
 
         /// <summary>Create a <see cref="Windows.Controls.ListView"/></summary>
-        public static ListView ListView(O<Windows.Controls.ViewBase> View = default)
+        public static ListView ListView(O<Windows.Controls.ViewBase> View = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.ListView();
             if (View.HasValue) ui.View = View.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ListView.StartChain(ui);
         }
 
@@ -29027,9 +28678,7 @@ namespace CSharpMarkup.Wpf // ListViewItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ListViewItem"/></summary>
-        public static ListViewItem ListViewItem(
-            UIObject Content
-)
+        public static ListViewItem ListViewItem(UIObject Content)
         {
             var ui = new Windows.Controls.ListViewItem();
             if (Content is not null) ui.Content = Content.UI;
@@ -29218,9 +28867,7 @@ namespace CSharpMarkup.Wpf // Menu
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Menu"/></summary>
-        public static Menu Menu(
-            params UIObject[] Items
-)
+        public static Menu Menu(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Menu();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -29229,10 +28876,12 @@ namespace CSharpMarkup.Wpf // Menu
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Menu"/></summary>
-        public static Menu Menu(O<bool> IsMainMenu = default)
+        public static Menu Menu(O<bool> IsMainMenu = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Menu();
             if (IsMainMenu.HasValue) ui.IsMainMenu = IsMainMenu.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.Menu.StartChain(ui);
         }
 
@@ -29288,9 +28937,7 @@ namespace CSharpMarkup.Wpf // MenuItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.MenuItem"/></summary>
-        public static MenuItem MenuItem(
-            params UIObject[] Items
-)
+        public static MenuItem MenuItem(params UIObject[] Items)
         {
             var ui = new Windows.Controls.MenuItem();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -29299,7 +28946,7 @@ namespace CSharpMarkup.Wpf // MenuItem
         }
 
         /// <summary>Create a <see cref="Windows.Controls.MenuItem"/></summary>
-        public static MenuItem MenuItem(O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<object> Icon = default, O<string> InputGestureText = default, O<bool> IsCheckable = default, O<bool> IsChecked = default, O<bool> IsSubmenuOpen = default, O<Windows.Controls.ItemContainerTemplateSelector> ItemContainerTemplateSelector = default, O<bool> StaysOpenOnClick = default, O<bool> UsesItemContainerTemplate = default)
+        public static MenuItem MenuItem(O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<object> Icon = default, O<string> InputGestureText = default, O<bool> IsCheckable = default, O<bool> IsChecked = default, O<bool> IsSubmenuOpen = default, O<Windows.Controls.ItemContainerTemplateSelector> ItemContainerTemplateSelector = default, O<bool> StaysOpenOnClick = default, O<bool> UsesItemContainerTemplate = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.MenuItem();
             if (Command.HasValue) ui.Command = Command.Value;
@@ -29313,6 +28960,8 @@ namespace CSharpMarkup.Wpf // MenuItem
             if (ItemContainerTemplateSelector.HasValue) ui.ItemContainerTemplateSelector = ItemContainerTemplateSelector.Value;
             if (StaysOpenOnClick.HasValue) ui.StaysOpenOnClick = StaysOpenOnClick.Value;
             if (UsesItemContainerTemplate.HasValue) ui.UsesItemContainerTemplate = UsesItemContainerTemplate.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.MenuItem.StartChain(ui);
         }
 
@@ -29455,9 +29104,7 @@ namespace CSharpMarkup.Wpf // Page
     {
         /// <summary>Create a <see cref="Windows.Controls.Page"/></summary>
         /// <remarks>Remark: Page().Bind() binds to <see cref="Windows.Controls.Page.TitleProperty"/></remarks>
-        public static Page Page(
-            UIObject Content
-)
+        public static Page Page(UIObject Content)
         {
             var ui = new Windows.Controls.Page();
             if (Content is not null) ui.Content = Content.UI;
@@ -29466,11 +29113,10 @@ namespace CSharpMarkup.Wpf // Page
 
         /// <summary>Create a <see cref="Windows.Controls.Page"/></summary>
         /// <remarks>Remark: Page().Bind() binds to <see cref="Windows.Controls.Page.TitleProperty"/></remarks>
-        public static Page Page(O<Windows.Media.Brush> Background = default, O<object> Content = default, O<Windows.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.Media.Brush> Foreground = default, O<bool> KeepAlive = default, O<bool> ShowsNavigationUI = default, O<Windows.Controls.ControlTemplate> Template = default, O<string> Title = default, O<double> WindowHeight = default, O<string> WindowTitle = default, O<double> WindowWidth = default)
+        public static Page Page(O<Windows.Media.Brush> Background = default, O<Windows.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.Media.Brush> Foreground = default, O<bool> KeepAlive = default, O<bool> ShowsNavigationUI = default, O<Windows.Controls.ControlTemplate> Template = default, O<string> Title = default, O<double> WindowHeight = default, O<string> WindowTitle = default, O<double> WindowWidth = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Page();
             if (Background.HasValue) ui.Background = Background.Value;
-            if (Content.HasValue) ui.Content = Content.Value;
             if (FontFamily.HasValue) ui.FontFamily = FontFamily.Value;
             if (FontSize.HasValue) ui.FontSize = FontSize.Value;
             if (Foreground.HasValue) ui.Foreground = Foreground.Value;
@@ -29481,6 +29127,7 @@ namespace CSharpMarkup.Wpf // Page
             if (WindowHeight.HasValue) ui.WindowHeight = WindowHeight.Value;
             if (WindowTitle.HasValue) ui.WindowTitle = WindowTitle.Value;
             if (WindowWidth.HasValue) ui.WindowWidth = WindowWidth.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.Page.StartChain(ui);
         }
 
@@ -29534,9 +29181,6 @@ namespace CSharpMarkup.Wpf // Page
 
         /// <summary>Set <see cref="Windows.Controls.Page.Background"/></summary>
         public static TView Background<TView>(this TView view, string color) where TView : Page { view.UI.Background = new Windows.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Windows.Controls.Page.Content"/></summary>
-        public static TView Content<TView>(this TView view, object value) where TView : Page { view.UI.Content = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.Page.FontFamily"/></summary>
         public static TView FontFamily<TView>(this TView view, Windows.Media.FontFamily value) where TView : Page { view.UI.FontFamily = value; return view; }
@@ -29860,9 +29504,7 @@ namespace CSharpMarkup.Wpf // RadioButton
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.RadioButton"/></summary>
-        public static RadioButton RadioButton(
-            UIObject Content
-)
+        public static RadioButton RadioButton(UIObject Content)
         {
             var ui = new Windows.Controls.RadioButton();
             if (Content is not null) ui.Content = Content.UI;
@@ -29870,10 +29512,11 @@ namespace CSharpMarkup.Wpf // RadioButton
         }
 
         /// <summary>Create a <see cref="Windows.Controls.RadioButton"/></summary>
-        public static RadioButton RadioButton(O<string> GroupName = default)
+        public static RadioButton RadioButton(O<string> GroupName = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.RadioButton();
             if (GroupName.HasValue) ui.GroupName = GroupName.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RadioButton.StartChain(ui);
         }
 
@@ -29929,12 +29572,12 @@ namespace CSharpMarkup.Wpf // RichTextBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.RichTextBox"/></summary>
-        public static RichTextBox RichTextBox(O<Windows.Documents.TextPointer> CaretPosition = default, O<Windows.Documents.FlowDocument> Document = default, O<bool> IsDocumentEnabled = default)
+        public static RichTextBox RichTextBox(O<Windows.Documents.TextPointer> CaretPosition = default, O<bool> IsDocumentEnabled = default, System.Windows.Documents.FlowDocument Document = default)
         {
             var ui = new Windows.Controls.RichTextBox();
             if (CaretPosition.HasValue) ui.CaretPosition = CaretPosition.Value;
-            if (Document.HasValue) ui.Document = Document.Value;
             if (IsDocumentEnabled.HasValue) ui.IsDocumentEnabled = IsDocumentEnabled.Value;
+            if (Document is not null) ui.Document = Document;
             return global::CSharpMarkup.Wpf.RichTextBox.StartChain(ui);
         }
 
@@ -29985,9 +29628,6 @@ namespace CSharpMarkup.Wpf // RichTextBox
     {
         /// <summary>Set <see cref="Windows.Controls.RichTextBox.CaretPosition"/></summary>
         public static TView CaretPosition<TView>(this TView view, Windows.Documents.TextPointer value) where TView : RichTextBox { view.UI.CaretPosition = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Controls.RichTextBox.Document"/></summary>
-        public static TView Document<TView>(this TView view, Windows.Documents.FlowDocument value) where TView : RichTextBox { view.UI.Document = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.RichTextBox.IsDocumentEnabled"/></summary>
         public static TView IsDocumentEnabled<TView>(this TView view, bool value) where TView : RichTextBox { view.UI.IsDocumentEnabled = value; return view; }
@@ -30152,9 +29792,7 @@ namespace CSharpMarkup.Wpf // ScrollViewer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ScrollViewer"/></summary>
-        public static ScrollViewer ScrollViewer(
-            UIObject Content
-)
+        public static ScrollViewer ScrollViewer(UIObject Content)
         {
             var ui = new Windows.Controls.ScrollViewer();
             if (Content is not null) ui.Content = Content.UI;
@@ -30162,7 +29800,7 @@ namespace CSharpMarkup.Wpf // ScrollViewer
         }
 
         /// <summary>Create a <see cref="Windows.Controls.ScrollViewer"/></summary>
-        public static ScrollViewer ScrollViewer(O<bool> CanContentScroll = default, O<Windows.Controls.ScrollBarVisibility> HorizontalScrollBarVisibility = default, O<bool> IsDeferredScrollingEnabled = default, O<double> PanningDeceleration = default, O<Windows.Controls.PanningMode> PanningMode = default, O<double> PanningRatio = default, O<Windows.Controls.ScrollBarVisibility> VerticalScrollBarVisibility = default)
+        public static ScrollViewer ScrollViewer(O<bool> CanContentScroll = default, O<Windows.Controls.ScrollBarVisibility> HorizontalScrollBarVisibility = default, O<bool> IsDeferredScrollingEnabled = default, O<double> PanningDeceleration = default, O<Windows.Controls.PanningMode> PanningMode = default, O<double> PanningRatio = default, O<Windows.Controls.ScrollBarVisibility> VerticalScrollBarVisibility = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.ScrollViewer();
             if (CanContentScroll.HasValue) ui.CanContentScroll = CanContentScroll.Value;
@@ -30172,6 +29810,7 @@ namespace CSharpMarkup.Wpf // ScrollViewer
             if (PanningMode.HasValue) ui.PanningMode = PanningMode.Value;
             if (PanningRatio.HasValue) ui.PanningRatio = PanningRatio.Value;
             if (VerticalScrollBarVisibility.HasValue) ui.VerticalScrollBarVisibility = VerticalScrollBarVisibility.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ScrollViewer.StartChain(ui);
         }
 
@@ -30675,9 +30314,7 @@ namespace CSharpMarkup.Wpf // StackPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.StackPanel"/></summary>
-        public static StackPanel StackPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static StackPanel StackPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.StackPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -30686,13 +30323,15 @@ namespace CSharpMarkup.Wpf // StackPanel
         }
 
         /// <summary>Create a <see cref="Windows.Controls.StackPanel"/></summary>
-        public static StackPanel StackPanel(O<bool> CanHorizontallyScroll = default, O<bool> CanVerticallyScroll = default, O<Windows.Controls.Orientation> Orientation = default, O<Windows.Controls.ScrollViewer> ScrollOwner = default)
+        public static StackPanel StackPanel(O<bool> CanHorizontallyScroll = default, O<bool> CanVerticallyScroll = default, O<Windows.Controls.Orientation> Orientation = default, O<Windows.Controls.ScrollViewer> ScrollOwner = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.StackPanel();
             if (CanHorizontallyScroll.HasValue) ui.CanHorizontallyScroll = CanHorizontallyScroll.Value;
             if (CanVerticallyScroll.HasValue) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
             if (Orientation.HasValue) ui.Orientation = Orientation.Value;
             if (ScrollOwner.HasValue) ui.ScrollOwner = ScrollOwner.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.StackPanel.StartChain(ui);
         }
     }
@@ -30834,9 +30473,7 @@ namespace CSharpMarkup.Wpf // TabControl
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.TabControl"/></summary>
-        public static TabControl TabControl(
-            params UIObject[] Items
-)
+        public static TabControl TabControl(params UIObject[] Items)
         {
             var ui = new Windows.Controls.TabControl();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -30845,13 +30482,15 @@ namespace CSharpMarkup.Wpf // TabControl
         }
 
         /// <summary>Create a <see cref="Windows.Controls.TabControl"/></summary>
-        public static TabControl TabControl(O<string> ContentStringFormat = default, O<Windows.DataTemplate> ContentTemplate = default, O<Windows.Controls.DataTemplateSelector> ContentTemplateSelector = default, O<Windows.Controls.Dock> TabStripPlacement = default)
+        public static TabControl TabControl(O<string> ContentStringFormat = default, O<Windows.DataTemplate> ContentTemplate = default, O<Windows.Controls.DataTemplateSelector> ContentTemplateSelector = default, O<Windows.Controls.Dock> TabStripPlacement = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.TabControl();
             if (ContentStringFormat.HasValue) ui.ContentStringFormat = ContentStringFormat.Value;
             if (ContentTemplate.HasValue) ui.ContentTemplate = ContentTemplate.Value;
             if (ContentTemplateSelector.HasValue) ui.ContentTemplateSelector = ContentTemplateSelector.Value;
             if (TabStripPlacement.HasValue) ui.TabStripPlacement = TabStripPlacement.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.TabControl.StartChain(ui);
         }
 
@@ -30944,9 +30583,7 @@ namespace CSharpMarkup.Wpf // TabItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.TabItem"/></summary>
-        public static TabItem TabItem(
-            UIObject Content
-)
+        public static TabItem TabItem(UIObject Content)
         {
             var ui = new Windows.Controls.TabItem();
             if (Content is not null) ui.Content = Content.UI;
@@ -30954,10 +30591,11 @@ namespace CSharpMarkup.Wpf // TabItem
         }
 
         /// <summary>Create a <see cref="Windows.Controls.TabItem"/></summary>
-        public static TabItem TabItem(O<bool> IsSelected = default)
+        public static TabItem TabItem(O<bool> IsSelected = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.TabItem();
             if (IsSelected.HasValue) ui.IsSelected = IsSelected.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.TabItem.StartChain(ui);
         }
 
@@ -31018,9 +30656,7 @@ namespace CSharpMarkup.Wpf // TextBlock
     {
         /// <summary>Create a <see cref="Windows.Controls.TextBlock"/></summary>
         /// <remarks>Remark: TextBlock().Bind() binds to <see cref="Windows.Controls.TextBlock.TextProperty"/></remarks>
-        public static TextBlock TextBlock(
-            params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines
-)
+        public static TextBlock TextBlock(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Controls.TextBlock();
             foreach (var child in Inlines) if (child is not null) ui.Inlines.Add(child);
@@ -31030,7 +30666,7 @@ namespace CSharpMarkup.Wpf // TextBlock
 
         /// <summary>Create a <see cref="Windows.Controls.TextBlock"/></summary>
         /// <remarks>Remark: TextBlock().Bind() binds to <see cref="Windows.Controls.TextBlock.TextProperty"/></remarks>
-        public static TextBlock TextBlock(O<Windows.Media.Brush> Background = default, O<double> BaselineOffset = default, O<Windows.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.FontStretch> FontStretch = default, O<Windows.FontStyle> FontStyle = default, O<Windows.FontWeight> FontWeight = default, O<Windows.Media.Brush> Foreground = default, O<bool> IsHyphenationEnabled = default, O<double> LineHeight = default, O<Windows.LineStackingStrategy> LineStackingStrategy = default, O<Windows.Thickness> Padding = default, O<string> Text = default, O<Windows.TextAlignment> TextAlignment = default, O<Windows.TextDecorationCollection> TextDecorations = default, O<Windows.Media.TextEffectCollection> TextEffects = default, O<Windows.TextTrimming> TextTrimming = default, O<Windows.TextWrapping> TextWrapping = default)
+        public static TextBlock TextBlock(O<Windows.Media.Brush> Background = default, O<double> BaselineOffset = default, O<Windows.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.FontStretch> FontStretch = default, O<Windows.FontStyle> FontStyle = default, O<Windows.FontWeight> FontWeight = default, O<Windows.Media.Brush> Foreground = default, O<bool> IsHyphenationEnabled = default, O<double> LineHeight = default, O<Windows.LineStackingStrategy> LineStackingStrategy = default, O<Windows.Thickness> Padding = default, O<string> Text = default, O<Windows.TextAlignment> TextAlignment = default, O<Windows.TextDecorationCollection> TextDecorations = default, O<Windows.Media.TextEffectCollection> TextEffects = default, O<Windows.TextTrimming> TextTrimming = default, O<Windows.TextWrapping> TextWrapping = default, params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Controls.TextBlock();
             if (Background.HasValue) ui.Background = Background.Value;
@@ -31051,6 +30687,8 @@ namespace CSharpMarkup.Wpf // TextBlock
             if (TextEffects.HasValue) ui.TextEffects = TextEffects.Value;
             if (TextTrimming.HasValue) ui.TextTrimming = TextTrimming.Value;
             if (TextWrapping.HasValue) ui.TextWrapping = TextWrapping.Value;
+            foreach (var child in Inlines) if (child is not null) ui.Inlines.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Inlines);
             return global::CSharpMarkup.Wpf.TextBlock.StartChain(ui);
         }
 
@@ -31399,9 +31037,7 @@ namespace CSharpMarkup.Wpf // TextBox
     {
         /// <summary>Create a <see cref="Windows.Controls.TextBox"/></summary>
         /// <remarks>Remark: TextBox().Bind() binds to <see cref="Windows.Controls.TextBox.TextProperty"/></remarks>
-        public static TextBox TextBox(
-            string Text
-)
+        public static TextBox TextBox(string Text)
         {
             var ui = new Windows.Controls.TextBox();
             if (Text is not null) ui.Text = Text;
@@ -31410,7 +31046,7 @@ namespace CSharpMarkup.Wpf // TextBox
 
         /// <summary>Create a <see cref="Windows.Controls.TextBox"/></summary>
         /// <remarks>Remark: TextBox().Bind() binds to <see cref="Windows.Controls.TextBox.TextProperty"/></remarks>
-        public static TextBox TextBox(O<int> CaretIndex = default, O<Windows.Controls.CharacterCasing> CharacterCasing = default, O<int> MaxLength = default, O<int> MaxLines = default, O<int> MinLines = default, O<string> SelectedText = default, O<int> SelectionLength = default, O<int> SelectionStart = default, O<string> Text = default, O<Windows.TextAlignment> TextAlignment = default, O<Windows.TextDecorationCollection> TextDecorations = default, O<Windows.TextWrapping> TextWrapping = default)
+        public static TextBox TextBox(O<int> CaretIndex = default, O<Windows.Controls.CharacterCasing> CharacterCasing = default, O<int> MaxLength = default, O<int> MaxLines = default, O<int> MinLines = default, O<string> SelectedText = default, O<int> SelectionLength = default, O<int> SelectionStart = default, O<Windows.TextAlignment> TextAlignment = default, O<Windows.TextDecorationCollection> TextDecorations = default, O<Windows.TextWrapping> TextWrapping = default, string Text = default)
         {
             var ui = new Windows.Controls.TextBox();
             if (CaretIndex.HasValue) ui.CaretIndex = CaretIndex.Value;
@@ -31421,10 +31057,10 @@ namespace CSharpMarkup.Wpf // TextBox
             if (SelectedText.HasValue) ui.SelectedText = SelectedText.Value;
             if (SelectionLength.HasValue) ui.SelectionLength = SelectionLength.Value;
             if (SelectionStart.HasValue) ui.SelectionStart = SelectionStart.Value;
-            if (Text.HasValue) ui.Text = Text.Value;
             if (TextAlignment.HasValue) ui.TextAlignment = TextAlignment.Value;
             if (TextDecorations.HasValue) ui.TextDecorations = TextDecorations.Value;
             if (TextWrapping.HasValue) ui.TextWrapping = TextWrapping.Value;
+            if (Text is not null) ui.Text = Text;
             return global::CSharpMarkup.Wpf.TextBox.StartChain(ui);
         }
 
@@ -31493,9 +31129,6 @@ namespace CSharpMarkup.Wpf // TextBox
 
         /// <summary>Set <see cref="Windows.Controls.TextBox.SelectionStart"/></summary>
         public static TView SelectionStart<TView>(this TView view, int value) where TView : TextBox { view.UI.SelectionStart = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Controls.TextBox.Text"/></summary>
-        public static TView Text<TView>(this TView view, string value) where TView : TextBox { view.UI.Text = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.TextBox.TextAlignment"/></summary>
         public static TView TextAlignment<TView>(this TView view, Windows.TextAlignment value) where TView : TextBox { view.UI.TextAlignment = value; return view; }
@@ -31596,9 +31229,7 @@ namespace CSharpMarkup.Wpf // ToolBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ToolBar"/></summary>
-        public static ToolBar ToolBar(
-            params UIObject[] Items
-)
+        public static ToolBar ToolBar(params UIObject[] Items)
         {
             var ui = new Windows.Controls.ToolBar();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -31607,12 +31238,14 @@ namespace CSharpMarkup.Wpf // ToolBar
         }
 
         /// <summary>Create a <see cref="Windows.Controls.ToolBar"/></summary>
-        public static ToolBar ToolBar(O<int> Band = default, O<int> BandIndex = default, O<bool> IsOverflowOpen = default)
+        public static ToolBar ToolBar(O<int> Band = default, O<int> BandIndex = default, O<bool> IsOverflowOpen = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.ToolBar();
             if (Band.HasValue) ui.Band = Band.Value;
             if (BandIndex.HasValue) ui.BandIndex = BandIndex.Value;
             if (IsOverflowOpen.HasValue) ui.IsOverflowOpen = IsOverflowOpen.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.ToolBar.StartChain(ui);
         }
 
@@ -31698,9 +31331,7 @@ namespace CSharpMarkup.Wpf // ToolBarTray
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ToolBarTray"/></summary>
-        public static ToolBarTray ToolBarTray(
-            params System.Windows.Controls.ToolBar[] ToolBars
-)
+        public static ToolBarTray ToolBarTray(params System.Windows.Controls.ToolBar[] ToolBars)
         {
             var ui = new Windows.Controls.ToolBarTray();
             foreach (var child in ToolBars) if (child is not null) ui.ToolBars.Add(child);
@@ -31709,12 +31340,14 @@ namespace CSharpMarkup.Wpf // ToolBarTray
         }
 
         /// <summary>Create a <see cref="Windows.Controls.ToolBarTray"/></summary>
-        public static ToolBarTray ToolBarTray(O<Windows.Media.Brush> Background = default, O<bool> IsLocked = default, O<Windows.Controls.Orientation> Orientation = default)
+        public static ToolBarTray ToolBarTray(O<Windows.Media.Brush> Background = default, O<bool> IsLocked = default, O<Windows.Controls.Orientation> Orientation = default, params System.Windows.Controls.ToolBar[] ToolBars)
         {
             var ui = new Windows.Controls.ToolBarTray();
             if (Background.HasValue) ui.Background = Background.Value;
             if (IsLocked.HasValue) ui.IsLocked = IsLocked.Value;
             if (Orientation.HasValue) ui.Orientation = Orientation.Value;
+            foreach (var child in ToolBars) if (child is not null) ui.ToolBars.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.ToolBars);
             return global::CSharpMarkup.Wpf.ToolBarTray.StartChain(ui);
         }
 
@@ -31798,9 +31431,7 @@ namespace CSharpMarkup.Wpf // ToolTip
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ToolTip"/></summary>
-        public static ToolTip ToolTip(
-            UIObject Content
-)
+        public static ToolTip ToolTip(UIObject Content)
         {
             var ui = new Windows.Controls.ToolTip();
             if (Content is not null) ui.Content = Content.UI;
@@ -31808,7 +31439,7 @@ namespace CSharpMarkup.Wpf // ToolTip
         }
 
         /// <summary>Create a <see cref="Windows.Controls.ToolTip"/></summary>
-        public static ToolTip ToolTip(O<Windows.Controls.Primitives.CustomPopupPlacementCallback> CustomPopupPlacementCallback = default, O<bool> HasDropShadow = default, O<double> HorizontalOffset = default, O<bool> IsOpen = default, O<Windows.Controls.Primitives.PlacementMode> Placement = default, O<Windows.Rect> PlacementRectangle = default, O<Windows.UIElement> PlacementTarget = default, O<bool?> ShowsToolTipOnKeyboardFocus = default, O<bool> StaysOpen = default, O<double> VerticalOffset = default)
+        public static ToolTip ToolTip(O<Windows.Controls.Primitives.CustomPopupPlacementCallback> CustomPopupPlacementCallback = default, O<bool> HasDropShadow = default, O<double> HorizontalOffset = default, O<bool> IsOpen = default, O<Windows.Controls.Primitives.PlacementMode> Placement = default, O<Windows.Rect> PlacementRectangle = default, O<Windows.UIElement> PlacementTarget = default, O<bool?> ShowsToolTipOnKeyboardFocus = default, O<bool> StaysOpen = default, O<double> VerticalOffset = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.ToolTip();
             if (CustomPopupPlacementCallback.HasValue) ui.CustomPopupPlacementCallback = CustomPopupPlacementCallback.Value;
@@ -31821,6 +31452,7 @@ namespace CSharpMarkup.Wpf // ToolTip
             if (ShowsToolTipOnKeyboardFocus.HasValue) ui.ShowsToolTipOnKeyboardFocus = ShowsToolTipOnKeyboardFocus.Value;
             if (StaysOpen.HasValue) ui.StaysOpen = StaysOpen.Value;
             if (VerticalOffset.HasValue) ui.VerticalOffset = VerticalOffset.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ToolTip.StartChain(ui);
         }
 
@@ -31939,9 +31571,7 @@ namespace CSharpMarkup.Wpf // TreeView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.TreeView"/></summary>
-        public static TreeView TreeView(
-            params UIObject[] Items
-)
+        public static TreeView TreeView(params UIObject[] Items)
         {
             var ui = new Windows.Controls.TreeView();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -31950,10 +31580,12 @@ namespace CSharpMarkup.Wpf // TreeView
         }
 
         /// <summary>Create a <see cref="Windows.Controls.TreeView"/></summary>
-        public static TreeView TreeView(O<string> SelectedValuePath = default)
+        public static TreeView TreeView(O<string> SelectedValuePath = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.TreeView();
             if (SelectedValuePath.HasValue) ui.SelectedValuePath = SelectedValuePath.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.TreeView.StartChain(ui);
         }
 
@@ -32017,9 +31649,7 @@ namespace CSharpMarkup.Wpf // TreeViewItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.TreeViewItem"/></summary>
-        public static TreeViewItem TreeViewItem(
-            params UIObject[] Items
-)
+        public static TreeViewItem TreeViewItem(params UIObject[] Items)
         {
             var ui = new Windows.Controls.TreeViewItem();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -32028,11 +31658,13 @@ namespace CSharpMarkup.Wpf // TreeViewItem
         }
 
         /// <summary>Create a <see cref="Windows.Controls.TreeViewItem"/></summary>
-        public static TreeViewItem TreeViewItem(O<bool> IsExpanded = default, O<bool> IsSelected = default)
+        public static TreeViewItem TreeViewItem(O<bool> IsExpanded = default, O<bool> IsSelected = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.TreeViewItem();
             if (IsExpanded.HasValue) ui.IsExpanded = IsExpanded.Value;
             if (IsSelected.HasValue) ui.IsSelected = IsSelected.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.TreeViewItem.StartChain(ui);
         }
 
@@ -32099,9 +31731,7 @@ namespace CSharpMarkup.Wpf // UserControl
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.UserControl"/></summary>
-        public static UserControl UserControl(
-            UIObject Content
-)
+        public static UserControl UserControl(UIObject Content)
         {
             var ui = new Windows.Controls.UserControl();
             if (Content is not null) ui.Content = Content.UI;
@@ -32166,9 +31796,7 @@ namespace CSharpMarkup.Wpf // Viewbox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Viewbox"/></summary>
-        public static Viewbox Viewbox(
-            System.Windows.UIElement Child
-)
+        public static Viewbox Viewbox(System.Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Viewbox();
             if (Child is not null) ui.Child = Child;
@@ -32176,11 +31804,12 @@ namespace CSharpMarkup.Wpf // Viewbox
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Viewbox"/></summary>
-        public static Viewbox Viewbox(O<Windows.Media.Stretch> Stretch = default, O<Windows.Controls.StretchDirection> StretchDirection = default)
+        public static Viewbox Viewbox(O<Windows.Media.Stretch> Stretch = default, O<Windows.Controls.StretchDirection> StretchDirection = default, System.Windows.UIElement Child = default)
         {
             var ui = new Windows.Controls.Viewbox();
             if (Stretch.HasValue) ui.Stretch = Stretch.Value;
             if (StretchDirection.HasValue) ui.StretchDirection = StretchDirection.Value;
+            if (Child is not null) ui.Child = Child;
             return global::CSharpMarkup.Wpf.Viewbox.StartChain(ui);
         }
 
@@ -32244,9 +31873,7 @@ namespace CSharpMarkup.Wpf // Viewport3D
     {
         /// <summary>Create a <see cref="Windows.Controls.Viewport3D"/></summary>
         /// <remarks>Remark: Viewport3D().Bind() binds to <see cref="Windows.Controls.Viewport3D.ChildrenProperty"/></remarks>
-        public static Viewport3D Viewport3D(
-            params System.Windows.Media.Media3D.Visual3D[] Children
-)
+        public static Viewport3D Viewport3D(params System.Windows.Media.Media3D.Visual3D[] Children)
         {
             var ui = new Windows.Controls.Viewport3D();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -32256,10 +31883,12 @@ namespace CSharpMarkup.Wpf // Viewport3D
 
         /// <summary>Create a <see cref="Windows.Controls.Viewport3D"/></summary>
         /// <remarks>Remark: Viewport3D().Bind() binds to <see cref="Windows.Controls.Viewport3D.ChildrenProperty"/></remarks>
-        public static Viewport3D Viewport3D(O<Windows.Media.Media3D.Camera> Camera = default)
+        public static Viewport3D Viewport3D(O<Windows.Media.Media3D.Camera> Camera = default, params System.Windows.Media.Media3D.Visual3D[] Children)
         {
             var ui = new Windows.Controls.Viewport3D();
             if (Camera.HasValue) ui.Camera = Camera.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.Viewport3D.StartChain(ui);
         }
 
@@ -32434,9 +32063,7 @@ namespace CSharpMarkup.Wpf // VirtualizingStackPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.VirtualizingStackPanel"/></summary>
-        public static VirtualizingStackPanel VirtualizingStackPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static VirtualizingStackPanel VirtualizingStackPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.VirtualizingStackPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -32445,13 +32072,15 @@ namespace CSharpMarkup.Wpf // VirtualizingStackPanel
         }
 
         /// <summary>Create a <see cref="Windows.Controls.VirtualizingStackPanel"/></summary>
-        public static VirtualizingStackPanel VirtualizingStackPanel(O<bool> CanHorizontallyScroll = default, O<bool> CanVerticallyScroll = default, O<Windows.Controls.Orientation> Orientation = default, O<Windows.Controls.ScrollViewer> ScrollOwner = default)
+        public static VirtualizingStackPanel VirtualizingStackPanel(O<bool> CanHorizontallyScroll = default, O<bool> CanVerticallyScroll = default, O<Windows.Controls.Orientation> Orientation = default, O<Windows.Controls.ScrollViewer> ScrollOwner = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.VirtualizingStackPanel();
             if (CanHorizontallyScroll.HasValue) ui.CanHorizontallyScroll = CanHorizontallyScroll.Value;
             if (CanVerticallyScroll.HasValue) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
             if (Orientation.HasValue) ui.Orientation = Orientation.Value;
             if (ScrollOwner.HasValue) ui.ScrollOwner = ScrollOwner.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.VirtualizingStackPanel.StartChain(ui);
         }
     }
@@ -32568,9 +32197,7 @@ namespace CSharpMarkup.Wpf // WrapPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.WrapPanel"/></summary>
-        public static WrapPanel WrapPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static WrapPanel WrapPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.WrapPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -32579,12 +32206,14 @@ namespace CSharpMarkup.Wpf // WrapPanel
         }
 
         /// <summary>Create a <see cref="Windows.Controls.WrapPanel"/></summary>
-        public static WrapPanel WrapPanel(O<double> ItemHeight = default, O<double> ItemWidth = default, O<Windows.Controls.Orientation> Orientation = default)
+        public static WrapPanel WrapPanel(O<double> ItemHeight = default, O<double> ItemWidth = default, O<Windows.Controls.Orientation> Orientation = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.WrapPanel();
             if (ItemHeight.HasValue) ui.ItemHeight = ItemHeight.Value;
             if (ItemWidth.HasValue) ui.ItemWidth = ItemWidth.Value;
             if (Orientation.HasValue) ui.Orientation = Orientation.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.WrapPanel.StartChain(ui);
         }
     }
@@ -32647,9 +32276,7 @@ namespace CSharpMarkup.Wpf // BulletDecorator
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.BulletDecorator"/></summary>
-        public static BulletDecorator BulletDecorator(
-            System.Windows.UIElement Child
-)
+        public static BulletDecorator BulletDecorator(System.Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Primitives.BulletDecorator();
             if (Child is not null) ui.Child = Child;
@@ -32657,11 +32284,12 @@ namespace CSharpMarkup.Wpf // BulletDecorator
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.BulletDecorator"/></summary>
-        public static BulletDecorator BulletDecorator(O<Windows.Media.Brush> Background = default, O<Windows.UIElement> Bullet = default)
+        public static BulletDecorator BulletDecorator(O<Windows.Media.Brush> Background = default, O<Windows.UIElement> Bullet = default, System.Windows.UIElement Child = default)
         {
             var ui = new Windows.Controls.Primitives.BulletDecorator();
             if (Background.HasValue) ui.Background = Background.Value;
             if (Bullet.HasValue) ui.Bullet = Bullet.Value;
+            if (Child is not null) ui.Child = Child;
             return global::CSharpMarkup.Wpf.BulletDecorator.StartChain(ui);
         }
 
@@ -32780,9 +32408,7 @@ namespace CSharpMarkup.Wpf // CalendarButton
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.CalendarButton"/></summary>
-        public static CalendarButton CalendarButton(
-            UIObject Content
-)
+        public static CalendarButton CalendarButton(UIObject Content)
         {
             var ui = new Windows.Controls.Primitives.CalendarButton();
             if (Content is not null) ui.Content = Content.UI;
@@ -32842,9 +32468,7 @@ namespace CSharpMarkup.Wpf // CalendarDayButton
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.CalendarDayButton"/></summary>
-        public static CalendarDayButton CalendarDayButton(
-            UIObject Content
-)
+        public static CalendarDayButton CalendarDayButton(UIObject Content)
         {
             var ui = new Windows.Controls.Primitives.CalendarDayButton();
             if (Content is not null) ui.Content = Content.UI;
@@ -32957,9 +32581,7 @@ namespace CSharpMarkup.Wpf // DataGridCellsPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridCellsPresenter"/></summary>
-        public static DataGridCellsPresenter DataGridCellsPresenter(
-            params UIObject[] Items
-)
+        public static DataGridCellsPresenter DataGridCellsPresenter(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Primitives.DataGridCellsPresenter();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -33009,9 +32631,7 @@ namespace CSharpMarkup.Wpf // DataGridColumnHeader
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridColumnHeader"/></summary>
-        public static DataGridColumnHeader DataGridColumnHeader(
-            UIObject Content
-)
+        public static DataGridColumnHeader DataGridColumnHeader(UIObject Content)
         {
             var ui = new Windows.Controls.Primitives.DataGridColumnHeader();
             if (Content is not null) ui.Content = Content.UI;
@@ -33019,11 +32639,12 @@ namespace CSharpMarkup.Wpf // DataGridColumnHeader
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridColumnHeader"/></summary>
-        public static DataGridColumnHeader DataGridColumnHeader(O<Windows.Media.Brush> SeparatorBrush = default, O<Windows.Visibility> SeparatorVisibility = default)
+        public static DataGridColumnHeader DataGridColumnHeader(O<Windows.Media.Brush> SeparatorBrush = default, O<Windows.Visibility> SeparatorVisibility = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Primitives.DataGridColumnHeader();
             if (SeparatorBrush.HasValue) ui.SeparatorBrush = SeparatorBrush.Value;
             if (SeparatorVisibility.HasValue) ui.SeparatorVisibility = SeparatorVisibility.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.DataGridColumnHeader.StartChain(ui);
         }
 
@@ -33108,9 +32729,7 @@ namespace CSharpMarkup.Wpf // DataGridColumnHeadersPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridColumnHeadersPresenter"/></summary>
-        public static DataGridColumnHeadersPresenter DataGridColumnHeadersPresenter(
-            params UIObject[] Items
-)
+        public static DataGridColumnHeadersPresenter DataGridColumnHeadersPresenter(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Primitives.DataGridColumnHeadersPresenter();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -33201,9 +32820,7 @@ namespace CSharpMarkup.Wpf // DataGridRowHeader
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridRowHeader"/></summary>
-        public static DataGridRowHeader DataGridRowHeader(
-            UIObject Content
-)
+        public static DataGridRowHeader DataGridRowHeader(UIObject Content)
         {
             var ui = new Windows.Controls.Primitives.DataGridRowHeader();
             if (Content is not null) ui.Content = Content.UI;
@@ -33211,11 +32828,12 @@ namespace CSharpMarkup.Wpf // DataGridRowHeader
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridRowHeader"/></summary>
-        public static DataGridRowHeader DataGridRowHeader(O<Windows.Media.Brush> SeparatorBrush = default, O<Windows.Visibility> SeparatorVisibility = default)
+        public static DataGridRowHeader DataGridRowHeader(O<Windows.Media.Brush> SeparatorBrush = default, O<Windows.Visibility> SeparatorVisibility = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Primitives.DataGridRowHeader();
             if (SeparatorBrush.HasValue) ui.SeparatorBrush = SeparatorBrush.Value;
             if (SeparatorVisibility.HasValue) ui.SeparatorVisibility = SeparatorVisibility.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.DataGridRowHeader.StartChain(ui);
         }
 
@@ -33288,9 +32906,7 @@ namespace CSharpMarkup.Wpf // DataGridRowsPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridRowsPresenter"/></summary>
-        public static DataGridRowsPresenter DataGridRowsPresenter(
-            params System.Windows.UIElement[] Children
-)
+        public static DataGridRowsPresenter DataGridRowsPresenter(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.DataGridRowsPresenter();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -33333,9 +32949,7 @@ namespace CSharpMarkup.Wpf // DatePickerTextBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DatePickerTextBox"/></summary>
-        public static DatePickerTextBox DatePickerTextBox(
-            string Text
-)
+        public static DatePickerTextBox DatePickerTextBox(string Text)
         {
             var ui = new Windows.Controls.Primitives.DatePickerTextBox();
             if (Text is not null) ui.Text = Text;
@@ -33478,9 +33092,6 @@ namespace CSharpMarkup.Wpf // DocumentViewerBase
 
     public static partial class DocumentViewerBaseExtensions
     {
-        /// <summary>Set <see cref="Windows.Controls.Primitives.DocumentViewerBase.Document"/></summary>
-        public static TView Document<TView>(this TView view, Windows.Documents.IDocumentPaginatorSource value) where TView : DocumentViewerBase { view.UI.Document = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.Primitives.DocumentViewerBase.CanGoToNextPage"/></summary>
         public static DependencyProperty<TTarget, bool> CanGoToNextPage<TTarget>(this TTarget target) where TTarget : DocumentViewerBase
         => DependencyProperty<TTarget, bool>.Get(target, Windows.Controls.Primitives.DocumentViewerBase.CanGoToNextPageProperty);
@@ -33594,9 +33205,7 @@ namespace CSharpMarkup.Wpf // Popup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.Popup"/></summary>
-        public static Popup Popup(
-            System.Windows.UIElement Child
-)
+        public static Popup Popup(System.Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Primitives.Popup();
             if (Child is not null) ui.Child = Child;
@@ -33604,7 +33213,7 @@ namespace CSharpMarkup.Wpf // Popup
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.Popup"/></summary>
-        public static Popup Popup(O<bool> AllowsTransparency = default, O<Windows.Controls.Primitives.CustomPopupPlacementCallback> CustomPopupPlacementCallback = default, O<double> HorizontalOffset = default, O<bool> IsOpen = default, O<Windows.Controls.Primitives.PlacementMode> Placement = default, O<Windows.Rect> PlacementRectangle = default, O<Windows.UIElement> PlacementTarget = default, O<Windows.Controls.Primitives.PopupAnimation> PopupAnimation = default, O<bool> StaysOpen = default, O<double> VerticalOffset = default)
+        public static Popup Popup(O<bool> AllowsTransparency = default, O<Windows.Controls.Primitives.CustomPopupPlacementCallback> CustomPopupPlacementCallback = default, O<double> HorizontalOffset = default, O<bool> IsOpen = default, O<Windows.Controls.Primitives.PlacementMode> Placement = default, O<Windows.Rect> PlacementRectangle = default, O<Windows.UIElement> PlacementTarget = default, O<Windows.Controls.Primitives.PopupAnimation> PopupAnimation = default, O<bool> StaysOpen = default, O<double> VerticalOffset = default, System.Windows.UIElement Child = default)
         {
             var ui = new Windows.Controls.Primitives.Popup();
             if (AllowsTransparency.HasValue) ui.AllowsTransparency = AllowsTransparency.Value;
@@ -33617,6 +33226,7 @@ namespace CSharpMarkup.Wpf // Popup
             if (PopupAnimation.HasValue) ui.PopupAnimation = PopupAnimation.Value;
             if (StaysOpen.HasValue) ui.StaysOpen = StaysOpen.Value;
             if (VerticalOffset.HasValue) ui.VerticalOffset = VerticalOffset.Value;
+            if (Child is not null) ui.Child = Child;
             return global::CSharpMarkup.Wpf.Popup.StartChain(ui);
         }
 
@@ -33800,9 +33410,7 @@ namespace CSharpMarkup.Wpf // RepeatButton
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.RepeatButton"/></summary>
-        public static RepeatButton RepeatButton(
-            UIObject Content
-)
+        public static RepeatButton RepeatButton(UIObject Content)
         {
             var ui = new Windows.Controls.Primitives.RepeatButton();
             if (Content is not null) ui.Content = Content.UI;
@@ -33810,11 +33418,12 @@ namespace CSharpMarkup.Wpf // RepeatButton
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.RepeatButton"/></summary>
-        public static RepeatButton RepeatButton(O<int> Delay = default, O<int> Interval = default)
+        public static RepeatButton RepeatButton(O<int> Delay = default, O<int> Interval = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Primitives.RepeatButton();
             if (Delay.HasValue) ui.Delay = Delay.Value;
             if (Interval.HasValue) ui.Interval = Interval.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RepeatButton.StartChain(ui);
         }
 
@@ -33986,9 +33595,7 @@ namespace CSharpMarkup.Wpf // SelectiveScrollingGrid
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.SelectiveScrollingGrid"/></summary>
         /// <remarks>Remark: SelectiveScrollingGrid().Bind() binds to <see cref="Windows.Controls.Primitives.SelectiveScrollingGrid.SelectiveScrollingOrientationProperty"/></remarks>
-        public static SelectiveScrollingGrid SelectiveScrollingGrid(
-            params System.Windows.UIElement[] Children
-)
+        public static SelectiveScrollingGrid SelectiveScrollingGrid(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.SelectiveScrollingGrid();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -34107,9 +33714,7 @@ namespace CSharpMarkup.Wpf // StatusBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.StatusBar"/></summary>
-        public static StatusBar StatusBar(
-            params UIObject[] Items
-)
+        public static StatusBar StatusBar(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Primitives.StatusBar();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -34118,11 +33723,13 @@ namespace CSharpMarkup.Wpf // StatusBar
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.StatusBar"/></summary>
-        public static StatusBar StatusBar(O<Windows.Controls.ItemContainerTemplateSelector> ItemContainerTemplateSelector = default, O<bool> UsesItemContainerTemplate = default)
+        public static StatusBar StatusBar(O<Windows.Controls.ItemContainerTemplateSelector> ItemContainerTemplateSelector = default, O<bool> UsesItemContainerTemplate = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Primitives.StatusBar();
             if (ItemContainerTemplateSelector.HasValue) ui.ItemContainerTemplateSelector = ItemContainerTemplateSelector.Value;
             if (UsesItemContainerTemplate.HasValue) ui.UsesItemContainerTemplate = UsesItemContainerTemplate.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.StatusBar.StartChain(ui);
         }
 
@@ -34185,9 +33792,7 @@ namespace CSharpMarkup.Wpf // StatusBarItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.StatusBarItem"/></summary>
-        public static StatusBarItem StatusBarItem(
-            UIObject Content
-)
+        public static StatusBarItem StatusBarItem(UIObject Content)
         {
             var ui = new Windows.Controls.Primitives.StatusBarItem();
             if (Content is not null) ui.Content = Content.UI;
@@ -34236,9 +33841,7 @@ namespace CSharpMarkup.Wpf // TabPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.TabPanel"/></summary>
-        public static TabPanel TabPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static TabPanel TabPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.TabPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -34614,9 +34217,7 @@ namespace CSharpMarkup.Wpf // ToggleButton
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.ToggleButton"/></summary>
         /// <remarks>Remark: ToggleButton().Bind() binds to <see cref="Windows.Controls.Primitives.ToggleButton.IsCheckedProperty"/></remarks>
-        public static ToggleButton ToggleButton(
-            UIObject Content
-)
+        public static ToggleButton ToggleButton(UIObject Content)
         {
             var ui = new Windows.Controls.Primitives.ToggleButton();
             if (Content is not null) ui.Content = Content.UI;
@@ -34625,11 +34226,12 @@ namespace CSharpMarkup.Wpf // ToggleButton
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.ToggleButton"/></summary>
         /// <remarks>Remark: ToggleButton().Bind() binds to <see cref="Windows.Controls.Primitives.ToggleButton.IsCheckedProperty"/></remarks>
-        public static ToggleButton ToggleButton(O<bool?> IsChecked = default, O<bool> IsThreeState = default)
+        public static ToggleButton ToggleButton(O<bool?> IsChecked = default, O<bool> IsThreeState = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Primitives.ToggleButton();
             if (IsChecked.HasValue) ui.IsChecked = IsChecked.Value;
             if (IsThreeState.HasValue) ui.IsThreeState = IsThreeState.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.ToggleButton.StartChain(ui);
         }
 
@@ -34696,9 +34298,7 @@ namespace CSharpMarkup.Wpf // ToolBarOverflowPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.ToolBarOverflowPanel"/></summary>
-        public static ToolBarOverflowPanel ToolBarOverflowPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static ToolBarOverflowPanel ToolBarOverflowPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.ToolBarOverflowPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -34707,10 +34307,12 @@ namespace CSharpMarkup.Wpf // ToolBarOverflowPanel
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.ToolBarOverflowPanel"/></summary>
-        public static ToolBarOverflowPanel ToolBarOverflowPanel(O<double> WrapWidth = default)
+        public static ToolBarOverflowPanel ToolBarOverflowPanel(O<double> WrapWidth = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.ToolBarOverflowPanel();
             if (WrapWidth.HasValue) ui.WrapWidth = WrapWidth.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.ToolBarOverflowPanel.StartChain(ui);
         }
     }
@@ -34759,9 +34361,7 @@ namespace CSharpMarkup.Wpf // ToolBarPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.ToolBarPanel"/></summary>
-        public static ToolBarPanel ToolBarPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static ToolBarPanel ToolBarPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.ToolBarPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -34920,9 +34520,7 @@ namespace CSharpMarkup.Wpf // UniformGrid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.UniformGrid"/></summary>
-        public static UniformGrid UniformGrid(
-            params System.Windows.UIElement[] Children
-)
+        public static UniformGrid UniformGrid(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.UniformGrid();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -34931,12 +34529,14 @@ namespace CSharpMarkup.Wpf // UniformGrid
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.UniformGrid"/></summary>
-        public static UniformGrid UniformGrid(O<int> Columns = default, O<int> FirstColumn = default, O<int> Rows = default)
+        public static UniformGrid UniformGrid(O<int> Columns = default, O<int> FirstColumn = default, O<int> Rows = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.UniformGrid();
             if (Columns.HasValue) ui.Columns = Columns.Value;
             if (FirstColumn.HasValue) ui.FirstColumn = FirstColumn.Value;
             if (Rows.HasValue) ui.Rows = Rows.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.UniformGrid.StartChain(ui);
         }
     }
@@ -35388,9 +34988,7 @@ namespace CSharpMarkup.Wpf // AdornerDecorator
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.AdornerDecorator"/></summary>
-        public static AdornerDecorator AdornerDecorator(
-            System.Windows.UIElement Child
-)
+        public static AdornerDecorator AdornerDecorator(System.Windows.UIElement Child)
         {
             var ui = new Windows.Documents.AdornerDecorator();
             if (Child is not null) ui.Child = Child;
@@ -35766,14 +35364,6 @@ namespace CSharpMarkup.Wpf // BlockUIContainer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.BlockUIContainer"/></summary>
-        public static BlockUIContainer BlockUIContainer(O<Windows.UIElement> Child = default)
-        {
-            var ui = new Windows.Documents.BlockUIContainer();
-            if (Child.HasValue) ui.Child = Child.Value;
-            return global::CSharpMarkup.Wpf.BlockUIContainer.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Documents.BlockUIContainer"/></summary>
         public static BlockUIContainer BlockUIContainer()
         {
             var ui = new Windows.Documents.BlockUIContainer();
@@ -35813,12 +35403,6 @@ namespace CSharpMarkup.Wpf // BlockUIContainer
 
         protected BlockUIContainer() { }
     }
-
-    public static partial class BlockUIContainerExtensions
-    {
-        /// <summary>Set <see cref="Windows.Documents.BlockUIContainer.Child"/></summary>
-        public static TView Child<TView>(this TView view, Windows.UIElement value) where TView : BlockUIContainer { view.UI.Child = value; return view; }
-    }
 }
 
 namespace CSharpMarkup.Wpf // Bold
@@ -35826,9 +35410,7 @@ namespace CSharpMarkup.Wpf // Bold
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Bold"/></summary>
-        public static Bold Bold(
-            params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines
-)
+        public static Bold Bold(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Bold();
             foreach (var child in Inlines) if (child is not null) ui.Inlines.Add(child);
@@ -35958,9 +35540,7 @@ namespace CSharpMarkup.Wpf // Figure
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Figure"/></summary>
-        public static Figure Figure(
-            params System.Windows.Documents.Block[] Blocks
-)
+        public static Figure Figure(params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.Figure();
             foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
@@ -35969,7 +35549,7 @@ namespace CSharpMarkup.Wpf // Figure
         }
 
         /// <summary>Create a <see cref="Windows.Documents.Figure"/></summary>
-        public static Figure Figure(O<bool> CanDelayPlacement = default, O<Windows.FigureLength> Height = default, O<Windows.FigureHorizontalAnchor> HorizontalAnchor = default, O<double> HorizontalOffset = default, O<Windows.FigureVerticalAnchor> VerticalAnchor = default, O<double> VerticalOffset = default, O<Windows.FigureLength> Width = default, O<Windows.WrapDirection> WrapDirection = default)
+        public static Figure Figure(O<bool> CanDelayPlacement = default, O<Windows.FigureLength> Height = default, O<Windows.FigureHorizontalAnchor> HorizontalAnchor = default, O<double> HorizontalOffset = default, O<Windows.FigureVerticalAnchor> VerticalAnchor = default, O<double> VerticalOffset = default, O<Windows.FigureLength> Width = default, O<Windows.WrapDirection> WrapDirection = default, params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.Figure();
             if (CanDelayPlacement.HasValue) ui.CanDelayPlacement = CanDelayPlacement.Value;
@@ -35980,6 +35560,8 @@ namespace CSharpMarkup.Wpf // Figure
             if (VerticalOffset.HasValue) ui.VerticalOffset = VerticalOffset.Value;
             if (Width.HasValue) ui.Width = Width.Value;
             if (WrapDirection.HasValue) ui.WrapDirection = WrapDirection.Value;
+            foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Blocks);
             return global::CSharpMarkup.Wpf.Figure.StartChain(ui);
         }
 
@@ -36098,9 +35680,7 @@ namespace CSharpMarkup.Wpf // FixedDocument
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.FixedDocument"/></summary>
-        public static FixedDocument FixedDocument(
-            params System.Windows.Documents.PageContent[] Pages
-)
+        public static FixedDocument FixedDocument(params System.Windows.Documents.PageContent[] Pages)
         {
             var ui = new Windows.Documents.FixedDocument();
             foreach (var child in Pages) if (child is not null) ui.Pages.Add(child);
@@ -36109,10 +35689,12 @@ namespace CSharpMarkup.Wpf // FixedDocument
         }
 
         /// <summary>Create a <see cref="Windows.Documents.FixedDocument"/></summary>
-        public static FixedDocument FixedDocument(O<object> PrintTicket = default)
+        public static FixedDocument FixedDocument(O<object> PrintTicket = default, params System.Windows.Documents.PageContent[] Pages)
         {
             var ui = new Windows.Documents.FixedDocument();
             if (PrintTicket.HasValue) ui.PrintTicket = PrintTicket.Value;
+            foreach (var child in Pages) if (child is not null) ui.Pages.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Pages);
             return global::CSharpMarkup.Wpf.FixedDocument.StartChain(ui);
         }
 
@@ -36166,9 +35748,7 @@ namespace CSharpMarkup.Wpf // FixedDocumentSequence
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.FixedDocumentSequence"/></summary>
-        public static FixedDocumentSequence FixedDocumentSequence(
-            params System.Windows.Documents.DocumentReference[] References
-)
+        public static FixedDocumentSequence FixedDocumentSequence(params System.Windows.Documents.DocumentReference[] References)
         {
             var ui = new Windows.Documents.FixedDocumentSequence();
             foreach (var child in References) if (child is not null) ui.References.Add(child);
@@ -36177,10 +35757,12 @@ namespace CSharpMarkup.Wpf // FixedDocumentSequence
         }
 
         /// <summary>Create a <see cref="Windows.Documents.FixedDocumentSequence"/></summary>
-        public static FixedDocumentSequence FixedDocumentSequence(O<object> PrintTicket = default)
+        public static FixedDocumentSequence FixedDocumentSequence(O<object> PrintTicket = default, params System.Windows.Documents.DocumentReference[] References)
         {
             var ui = new Windows.Documents.FixedDocumentSequence();
             if (PrintTicket.HasValue) ui.PrintTicket = PrintTicket.Value;
+            foreach (var child in References) if (child is not null) ui.References.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.References);
             return global::CSharpMarkup.Wpf.FixedDocumentSequence.StartChain(ui);
         }
 
@@ -36234,9 +35816,7 @@ namespace CSharpMarkup.Wpf // FixedPage
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.FixedPage"/></summary>
-        public static FixedPage FixedPage(
-            params System.Windows.UIElement[] Children
-)
+        public static FixedPage FixedPage(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Documents.FixedPage();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -36245,13 +35825,15 @@ namespace CSharpMarkup.Wpf // FixedPage
         }
 
         /// <summary>Create a <see cref="Windows.Documents.FixedPage"/></summary>
-        public static FixedPage FixedPage(O<Windows.Media.Brush> Background = default, O<Windows.Rect> BleedBox = default, O<Windows.Rect> ContentBox = default, O<object> PrintTicket = default)
+        public static FixedPage FixedPage(O<Windows.Media.Brush> Background = default, O<Windows.Rect> BleedBox = default, O<Windows.Rect> ContentBox = default, O<object> PrintTicket = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Documents.FixedPage();
             if (Background.HasValue) ui.Background = Background.Value;
             if (BleedBox.HasValue) ui.BleedBox = BleedBox.Value;
             if (ContentBox.HasValue) ui.ContentBox = ContentBox.Value;
             if (PrintTicket.HasValue) ui.PrintTicket = PrintTicket.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.FixedPage.StartChain(ui);
         }
 
@@ -36402,9 +35984,7 @@ namespace CSharpMarkup.Wpf // Floater
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Floater"/></summary>
-        public static Floater Floater(
-            params System.Windows.Documents.Block[] Blocks
-)
+        public static Floater Floater(params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.Floater();
             foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
@@ -36413,11 +35993,13 @@ namespace CSharpMarkup.Wpf // Floater
         }
 
         /// <summary>Create a <see cref="Windows.Documents.Floater"/></summary>
-        public static Floater Floater(O<Windows.HorizontalAlignment> HorizontalAlignment = default, O<double> Width = default)
+        public static Floater Floater(O<Windows.HorizontalAlignment> HorizontalAlignment = default, O<double> Width = default, params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.Floater();
             if (HorizontalAlignment.HasValue) ui.HorizontalAlignment = HorizontalAlignment.Value;
             if (Width.HasValue) ui.Width = Width.Value;
+            foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Blocks);
             return global::CSharpMarkup.Wpf.Floater.StartChain(ui);
         }
 
@@ -36494,9 +36076,7 @@ namespace CSharpMarkup.Wpf // FlowDocument
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.FlowDocument"/></summary>
-        public static FlowDocument FlowDocument(
-            params System.Windows.Documents.Block[] Blocks
-)
+        public static FlowDocument FlowDocument(params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.FlowDocument();
             foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
@@ -36505,7 +36085,7 @@ namespace CSharpMarkup.Wpf // FlowDocument
         }
 
         /// <summary>Create a <see cref="Windows.Documents.FlowDocument"/></summary>
-        public static FlowDocument FlowDocument(O<Windows.Media.Brush> Background = default, O<double> ColumnGap = default, O<Windows.Media.Brush> ColumnRuleBrush = default, O<double> ColumnRuleWidth = default, O<double> ColumnWidth = default, O<Windows.FlowDirection> FlowDirection = default, O<Windows.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.FontStretch> FontStretch = default, O<Windows.FontStyle> FontStyle = default, O<Windows.FontWeight> FontWeight = default, O<Windows.Media.Brush> Foreground = default, O<bool> IsColumnWidthFlexible = default, O<bool> IsHyphenationEnabled = default, O<bool> IsOptimalParagraphEnabled = default, O<double> LineHeight = default, O<Windows.LineStackingStrategy> LineStackingStrategy = default, O<double> MaxPageHeight = default, O<double> MaxPageWidth = default, O<double> MinPageHeight = default, O<double> MinPageWidth = default, O<double> PageHeight = default, O<Windows.Thickness> PagePadding = default, O<double> PageWidth = default, O<Windows.TextAlignment> TextAlignment = default, O<Windows.Media.TextEffectCollection> TextEffects = default)
+        public static FlowDocument FlowDocument(O<Windows.Media.Brush> Background = default, O<double> ColumnGap = default, O<Windows.Media.Brush> ColumnRuleBrush = default, O<double> ColumnRuleWidth = default, O<double> ColumnWidth = default, O<Windows.FlowDirection> FlowDirection = default, O<Windows.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.FontStretch> FontStretch = default, O<Windows.FontStyle> FontStyle = default, O<Windows.FontWeight> FontWeight = default, O<Windows.Media.Brush> Foreground = default, O<bool> IsColumnWidthFlexible = default, O<bool> IsHyphenationEnabled = default, O<bool> IsOptimalParagraphEnabled = default, O<double> LineHeight = default, O<Windows.LineStackingStrategy> LineStackingStrategy = default, O<double> MaxPageHeight = default, O<double> MaxPageWidth = default, O<double> MinPageHeight = default, O<double> MinPageWidth = default, O<double> PageHeight = default, O<Windows.Thickness> PagePadding = default, O<double> PageWidth = default, O<Windows.TextAlignment> TextAlignment = default, O<Windows.Media.TextEffectCollection> TextEffects = default, params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.FlowDocument();
             if (Background.HasValue) ui.Background = Background.Value;
@@ -36534,6 +36114,8 @@ namespace CSharpMarkup.Wpf // FlowDocument
             if (PageWidth.HasValue) ui.PageWidth = PageWidth.Value;
             if (TextAlignment.HasValue) ui.TextAlignment = TextAlignment.Value;
             if (TextEffects.HasValue) ui.TextEffects = TextEffects.Value;
+            foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Blocks);
             return global::CSharpMarkup.Wpf.FlowDocument.StartChain(ui);
         }
 
@@ -36984,9 +36566,7 @@ namespace CSharpMarkup.Wpf // Hyperlink
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Hyperlink"/></summary>
-        public static Hyperlink Hyperlink(
-            params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines
-)
+        public static Hyperlink Hyperlink(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Hyperlink();
             foreach (var child in Inlines) if (child is not null) ui.Inlines.Add(child);
@@ -36995,7 +36575,7 @@ namespace CSharpMarkup.Wpf // Hyperlink
         }
 
         /// <summary>Create a <see cref="Windows.Documents.Hyperlink"/></summary>
-        public static Hyperlink Hyperlink(O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Uri> NavigateUri = default, O<string> TargetName = default)
+        public static Hyperlink Hyperlink(O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Uri> NavigateUri = default, O<string> TargetName = default, params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Hyperlink();
             if (Command.HasValue) ui.Command = Command.Value;
@@ -37003,6 +36583,8 @@ namespace CSharpMarkup.Wpf // Hyperlink
             if (CommandTarget.HasValue) ui.CommandTarget = CommandTarget.Value;
             if (NavigateUri.HasValue) ui.NavigateUri = NavigateUri.Value;
             if (TargetName.HasValue) ui.TargetName = TargetName.Value;
+            foreach (var child in Inlines) if (child is not null) ui.Inlines.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Inlines);
             return global::CSharpMarkup.Wpf.Hyperlink.StartChain(ui);
         }
 
@@ -37147,14 +36729,6 @@ namespace CSharpMarkup.Wpf // InlineUIContainer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.InlineUIContainer"/></summary>
-        public static InlineUIContainer InlineUIContainer(O<Windows.UIElement> Child = default)
-        {
-            var ui = new Windows.Documents.InlineUIContainer();
-            if (Child.HasValue) ui.Child = Child.Value;
-            return global::CSharpMarkup.Wpf.InlineUIContainer.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Documents.InlineUIContainer"/></summary>
         public static InlineUIContainer InlineUIContainer()
         {
             var ui = new Windows.Documents.InlineUIContainer();
@@ -37203,12 +36777,6 @@ namespace CSharpMarkup.Wpf // InlineUIContainer
 
         protected InlineUIContainer() { }
     }
-
-    public static partial class InlineUIContainerExtensions
-    {
-        /// <summary>Set <see cref="Windows.Documents.InlineUIContainer.Child"/></summary>
-        public static TView Child<TView>(this TView view, Windows.UIElement value) where TView : InlineUIContainer { view.UI.Child = value; return view; }
-    }
 }
 
 namespace CSharpMarkup.Wpf // Italic
@@ -37216,9 +36784,7 @@ namespace CSharpMarkup.Wpf // Italic
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Italic"/></summary>
-        public static Italic Italic(
-            params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines
-)
+        public static Italic Italic(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Italic();
             foreach (var child in Inlines) if (child is not null) ui.Inlines.Add(child);
@@ -37337,9 +36903,7 @@ namespace CSharpMarkup.Wpf // List
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.List"/></summary>
-        public static List List(
-            params System.Windows.Documents.ListItem[] ListItems
-)
+        public static List List(params System.Windows.Documents.ListItem[] ListItems)
         {
             var ui = new Windows.Documents.List();
             foreach (var child in ListItems) if (child is not null) ui.ListItems.Add(child);
@@ -37348,12 +36912,14 @@ namespace CSharpMarkup.Wpf // List
         }
 
         /// <summary>Create a <see cref="Windows.Documents.List"/></summary>
-        public static List List(O<double> MarkerOffset = default, O<Windows.TextMarkerStyle> MarkerStyle = default, O<int> StartIndex = default)
+        public static List List(O<double> MarkerOffset = default, O<Windows.TextMarkerStyle> MarkerStyle = default, O<int> StartIndex = default, params System.Windows.Documents.ListItem[] ListItems)
         {
             var ui = new Windows.Documents.List();
             if (MarkerOffset.HasValue) ui.MarkerOffset = MarkerOffset.Value;
             if (MarkerStyle.HasValue) ui.MarkerStyle = MarkerStyle.Value;
             if (StartIndex.HasValue) ui.StartIndex = StartIndex.Value;
+            foreach (var child in ListItems) if (child is not null) ui.ListItems.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.ListItems);
             return global::CSharpMarkup.Wpf.List.StartChain(ui);
         }
 
@@ -37428,9 +36994,7 @@ namespace CSharpMarkup.Wpf // ListItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.ListItem"/></summary>
-        public static ListItem ListItem(
-            params System.Windows.Documents.Block[] Blocks
-)
+        public static ListItem ListItem(params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.ListItem();
             foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
@@ -37439,7 +37003,7 @@ namespace CSharpMarkup.Wpf // ListItem
         }
 
         /// <summary>Create a <see cref="Windows.Documents.ListItem"/></summary>
-        public static ListItem ListItem(O<Windows.Media.Brush> BorderBrush = default, O<Windows.Thickness> BorderThickness = default, O<Windows.FlowDirection> FlowDirection = default, O<double> LineHeight = default, O<Windows.LineStackingStrategy> LineStackingStrategy = default, O<Windows.Thickness> Margin = default, O<Windows.Thickness> Padding = default, O<Windows.TextAlignment> TextAlignment = default)
+        public static ListItem ListItem(O<Windows.Media.Brush> BorderBrush = default, O<Windows.Thickness> BorderThickness = default, O<Windows.FlowDirection> FlowDirection = default, O<double> LineHeight = default, O<Windows.LineStackingStrategy> LineStackingStrategy = default, O<Windows.Thickness> Margin = default, O<Windows.Thickness> Padding = default, O<Windows.TextAlignment> TextAlignment = default, params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.ListItem();
             if (BorderBrush.HasValue) ui.BorderBrush = BorderBrush.Value;
@@ -37450,6 +37014,8 @@ namespace CSharpMarkup.Wpf // ListItem
             if (Margin.HasValue) ui.Margin = Margin.Value;
             if (Padding.HasValue) ui.Padding = Padding.Value;
             if (TextAlignment.HasValue) ui.TextAlignment = TextAlignment.Value;
+            foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Blocks);
             return global::CSharpMarkup.Wpf.ListItem.StartChain(ui);
         }
 
@@ -37601,9 +37167,7 @@ namespace CSharpMarkup.Wpf // PageContent
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.PageContent"/></summary>
-        public static PageContent PageContent(
-            System.Windows.Documents.FixedPage Child
-)
+        public static PageContent PageContent(System.Windows.Documents.FixedPage Child)
         {
             var ui = new Windows.Documents.PageContent();
             if (Child is not null) ui.Child = Child;
@@ -37611,11 +37175,11 @@ namespace CSharpMarkup.Wpf // PageContent
         }
 
         /// <summary>Create a <see cref="Windows.Documents.PageContent"/></summary>
-        public static PageContent PageContent(O<Windows.Documents.FixedPage> Child = default, O<Uri> Source = default)
+        public static PageContent PageContent(O<Uri> Source = default, System.Windows.Documents.FixedPage Child = default)
         {
             var ui = new Windows.Documents.PageContent();
-            if (Child.HasValue) ui.Child = Child.Value;
             if (Source.HasValue) ui.Source = Source.Value;
+            if (Child is not null) ui.Child = Child;
             return global::CSharpMarkup.Wpf.PageContent.StartChain(ui);
         }
 
@@ -37657,9 +37221,6 @@ namespace CSharpMarkup.Wpf // PageContent
 
     public static partial class PageContentExtensions
     {
-        /// <summary>Set <see cref="Windows.Documents.PageContent.Child"/></summary>
-        public static TView Child<TView>(this TView view, Windows.Documents.FixedPage value) where TView : PageContent { view.UI.Child = value; return view; }
-
         /// <summary>Set <see cref="Windows.Documents.PageContent.Source"/></summary>
         public static TView Source<TView>(this TView view, Uri value) where TView : PageContent { view.UI.Source = value; return view; }
 
@@ -37674,9 +37235,7 @@ namespace CSharpMarkup.Wpf // Paragraph
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Paragraph"/></summary>
-        public static Paragraph Paragraph(
-            params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines
-)
+        public static Paragraph Paragraph(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Paragraph();
             foreach (var child in Inlines) if (child is not null) ui.Inlines.Add(child);
@@ -37685,7 +37244,7 @@ namespace CSharpMarkup.Wpf // Paragraph
         }
 
         /// <summary>Create a <see cref="Windows.Documents.Paragraph"/></summary>
-        public static Paragraph Paragraph(O<bool> KeepTogether = default, O<bool> KeepWithNext = default, O<int> MinOrphanLines = default, O<int> MinWidowLines = default, O<Windows.TextDecorationCollection> TextDecorations = default, O<double> TextIndent = default)
+        public static Paragraph Paragraph(O<bool> KeepTogether = default, O<bool> KeepWithNext = default, O<int> MinOrphanLines = default, O<int> MinWidowLines = default, O<Windows.TextDecorationCollection> TextDecorations = default, O<double> TextIndent = default, params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Paragraph();
             if (KeepTogether.HasValue) ui.KeepTogether = KeepTogether.Value;
@@ -37694,6 +37253,8 @@ namespace CSharpMarkup.Wpf // Paragraph
             if (MinWidowLines.HasValue) ui.MinWidowLines = MinWidowLines.Value;
             if (TextDecorations.HasValue) ui.TextDecorations = TextDecorations.Value;
             if (TextIndent.HasValue) ui.TextIndent = TextIndent.Value;
+            foreach (var child in Inlines) if (child is not null) ui.Inlines.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Inlines);
             return global::CSharpMarkup.Wpf.Paragraph.StartChain(ui);
         }
 
@@ -37789,14 +37350,6 @@ namespace CSharpMarkup.Wpf // Run
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Run"/></summary>
-        public static Run Run(O<string> Text = default)
-        {
-            var ui = new Windows.Documents.Run();
-            if (Text.HasValue) ui.Text = Text.Value;
-            return global::CSharpMarkup.Wpf.Run.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Documents.Run"/></summary>
         public static Run Run()
         {
             var ui = new Windows.Documents.Run();
@@ -37848,9 +37401,6 @@ namespace CSharpMarkup.Wpf // Run
 
     public static partial class RunExtensions
     {
-        /// <summary>Set <see cref="Windows.Documents.Run.Text"/></summary>
-        public static TView Text<TView>(this TView view, string value) where TView : Run { view.UI.Text = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Documents.Run.Text"/></summary>
         public static DependencyProperty<TTarget, string> Text<TTarget>(this TTarget target) where TTarget : Run
         => DependencyProperty<TTarget, string>.Get(target, Windows.Documents.Run.TextProperty);
@@ -37862,9 +37412,7 @@ namespace CSharpMarkup.Wpf // Section
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Section"/></summary>
-        public static Section Section(
-            params System.Windows.Documents.Block[] Blocks
-)
+        public static Section Section(params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.Section();
             foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
@@ -37873,10 +37421,12 @@ namespace CSharpMarkup.Wpf // Section
         }
 
         /// <summary>Create a <see cref="Windows.Documents.Section"/></summary>
-        public static Section Section(O<bool> HasTrailingParagraphBreakOnPaste = default)
+        public static Section Section(O<bool> HasTrailingParagraphBreakOnPaste = default, params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.Section();
             if (HasTrailingParagraphBreakOnPaste.HasValue) ui.HasTrailingParagraphBreakOnPaste = HasTrailingParagraphBreakOnPaste.Value;
+            foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Blocks);
             return global::CSharpMarkup.Wpf.Section.StartChain(ui);
         }
 
@@ -37933,9 +37483,7 @@ namespace CSharpMarkup.Wpf // Span
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Span"/></summary>
-        public static Span Span(
-            params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines
-)
+        public static Span Span(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Span();
             foreach (var child in Inlines) if (child is not null) ui.Inlines.Add(child);
@@ -38006,9 +37554,7 @@ namespace CSharpMarkup.Wpf // Table
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Table"/></summary>
-        public static Table Table(
-            params System.Windows.Documents.TableRowGroup[] RowGroups
-)
+        public static Table Table(params System.Windows.Documents.TableRowGroup[] RowGroups)
         {
             var ui = new Windows.Documents.Table();
             foreach (var child in RowGroups) if (child is not null) ui.RowGroups.Add(child);
@@ -38017,10 +37563,12 @@ namespace CSharpMarkup.Wpf // Table
         }
 
         /// <summary>Create a <see cref="Windows.Documents.Table"/></summary>
-        public static Table Table(O<double> CellSpacing = default)
+        public static Table Table(O<double> CellSpacing = default, params System.Windows.Documents.TableRowGroup[] RowGroups)
         {
             var ui = new Windows.Documents.Table();
             if (CellSpacing.HasValue) ui.CellSpacing = CellSpacing.Value;
+            foreach (var child in RowGroups) if (child is not null) ui.RowGroups.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.RowGroups);
             return global::CSharpMarkup.Wpf.Table.StartChain(ui);
         }
 
@@ -38074,9 +37622,7 @@ namespace CSharpMarkup.Wpf // TableCell
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.TableCell"/></summary>
-        public static TableCell TableCell(
-            params System.Windows.Documents.Block[] Blocks
-)
+        public static TableCell TableCell(params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.TableCell();
             foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
@@ -38085,7 +37631,7 @@ namespace CSharpMarkup.Wpf // TableCell
         }
 
         /// <summary>Create a <see cref="Windows.Documents.TableCell"/></summary>
-        public static TableCell TableCell(O<Windows.Media.Brush> BorderBrush = default, O<Windows.Thickness> BorderThickness = default, O<int> ColumnSpan = default, O<Windows.FlowDirection> FlowDirection = default, O<double> LineHeight = default, O<Windows.LineStackingStrategy> LineStackingStrategy = default, O<Windows.Thickness> Padding = default, O<int> RowSpan = default, O<Windows.TextAlignment> TextAlignment = default)
+        public static TableCell TableCell(O<Windows.Media.Brush> BorderBrush = default, O<Windows.Thickness> BorderThickness = default, O<int> ColumnSpan = default, O<Windows.FlowDirection> FlowDirection = default, O<double> LineHeight = default, O<Windows.LineStackingStrategy> LineStackingStrategy = default, O<Windows.Thickness> Padding = default, O<int> RowSpan = default, O<Windows.TextAlignment> TextAlignment = default, params System.Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.TableCell();
             if (BorderBrush.HasValue) ui.BorderBrush = BorderBrush.Value;
@@ -38097,6 +37643,8 @@ namespace CSharpMarkup.Wpf // TableCell
             if (Padding.HasValue) ui.Padding = Padding.Value;
             if (RowSpan.HasValue) ui.RowSpan = RowSpan.Value;
             if (TextAlignment.HasValue) ui.TextAlignment = TextAlignment.Value;
+            foreach (var child in Blocks) if (child is not null) ui.Blocks.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Blocks);
             return global::CSharpMarkup.Wpf.TableCell.StartChain(ui);
         }
 
@@ -38314,9 +37862,7 @@ namespace CSharpMarkup.Wpf // TableRow
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.TableRow"/></summary>
-        public static TableRow TableRow(
-            params System.Windows.Documents.TableCell[] Cells
-)
+        public static TableRow TableRow(params System.Windows.Documents.TableCell[] Cells)
         {
             var ui = new Windows.Documents.TableRow();
             foreach (var child in Cells) if (child is not null) ui.Cells.Add(child);
@@ -38364,9 +37910,7 @@ namespace CSharpMarkup.Wpf // TableRowGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.TableRowGroup"/></summary>
-        public static TableRowGroup TableRowGroup(
-            params System.Windows.Documents.TableRow[] Rows
-)
+        public static TableRowGroup TableRowGroup(params System.Windows.Documents.TableRow[] Rows)
         {
             var ui = new Windows.Documents.TableRowGroup();
             foreach (var child in Rows) if (child is not null) ui.Rows.Add(child);
@@ -38581,9 +38125,7 @@ namespace CSharpMarkup.Wpf // Underline
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Underline"/></summary>
-        public static Underline Underline(
-            params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines
-)
+        public static Underline Underline(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Underline();
             foreach (var child in Inlines) if (child is not null) ui.Inlines.Add(child);
@@ -38686,9 +38228,7 @@ namespace CSharpMarkup.Wpf // BeginStoryboard
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.BeginStoryboard"/></summary>
-        public static BeginStoryboard BeginStoryboard(
-            System.Windows.Media.Animation.Storyboard Storyboard
-)
+        public static BeginStoryboard BeginStoryboard(System.Windows.Media.Animation.Storyboard Storyboard)
         {
             var ui = new Windows.Media.Animation.BeginStoryboard();
             if (Storyboard is not null) ui.Storyboard = Storyboard;
@@ -38696,12 +38236,12 @@ namespace CSharpMarkup.Wpf // BeginStoryboard
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.BeginStoryboard"/></summary>
-        public static BeginStoryboard BeginStoryboard(O<Windows.Media.Animation.HandoffBehavior> HandoffBehavior = default, O<string> Name = default, O<Windows.Media.Animation.Storyboard> Storyboard = default)
+        public static BeginStoryboard BeginStoryboard(O<Windows.Media.Animation.HandoffBehavior> HandoffBehavior = default, O<string> Name = default, System.Windows.Media.Animation.Storyboard Storyboard = default)
         {
             var ui = new Windows.Media.Animation.BeginStoryboard();
             if (HandoffBehavior.HasValue) ui.HandoffBehavior = HandoffBehavior.Value;
             if (Name.HasValue) ui.Name = Name.Value;
-            if (Storyboard.HasValue) ui.Storyboard = Storyboard.Value;
+            if (Storyboard is not null) ui.Storyboard = Storyboard;
             return global::CSharpMarkup.Wpf.BeginStoryboard.StartChain(ui);
         }
 
@@ -38746,9 +38286,6 @@ namespace CSharpMarkup.Wpf // BeginStoryboard
 
         /// <summary>Set <see cref="Windows.Media.Animation.BeginStoryboard.Name"/></summary>
         public static TView Name<TView>(this TView view, string value) where TView : BeginStoryboard { view.UI.Name = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.BeginStoryboard.Storyboard"/></summary>
-        public static TView Storyboard<TView>(this TView view, Windows.Media.Animation.Storyboard value) where TView : BeginStoryboard { view.UI.Storyboard = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.BeginStoryboard.Storyboard"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.Animation.Storyboard> Storyboard<TTarget>(this TTarget target) where TTarget : BeginStoryboard
@@ -39350,9 +38887,7 @@ namespace CSharpMarkup.Wpf // Storyboard
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Storyboard"/></summary>
-        public static Storyboard Storyboard(
-            params System.Windows.Media.Animation.Timeline[] Children
-)
+        public static Storyboard Storyboard(params System.Windows.Media.Animation.Timeline[] Children)
         {
             var ui = new Windows.Media.Animation.Storyboard();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -39580,9 +39115,7 @@ namespace CSharpMarkup.Wpf // ThicknessAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ThicknessAnimationUsingKeyFrames"/></summary>
-        public static ThicknessAnimationUsingKeyFrames ThicknessAnimationUsingKeyFrames(
-            params System.Windows.Media.Animation.ThicknessKeyFrame[] KeyFrames
-)
+        public static ThicknessAnimationUsingKeyFrames ThicknessAnimationUsingKeyFrames(params System.Windows.Media.Animation.ThicknessKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.ThicknessAnimationUsingKeyFrames();
             foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
@@ -39591,12 +39124,13 @@ namespace CSharpMarkup.Wpf // ThicknessAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.ThicknessAnimationUsingKeyFrames"/></summary>
-        public static ThicknessAnimationUsingKeyFrames ThicknessAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Animation.ThicknessKeyFrameCollection> KeyFrames = default)
+        public static ThicknessAnimationUsingKeyFrames ThicknessAnimationUsingKeyFrames(O<bool> IsAdditive = default, O<bool> IsCumulative = default, params System.Windows.Media.Animation.ThicknessKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.ThicknessAnimationUsingKeyFrames();
             if (IsAdditive.HasValue) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative.HasValue) ui.IsCumulative = IsCumulative.Value;
-            if (KeyFrames.HasValue) ui.KeyFrames = KeyFrames.Value;
+            foreach (var child in KeyFrames) if (child is not null) ui.KeyFrames.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.KeyFrames);
             return global::CSharpMarkup.Wpf.ThicknessAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -39641,9 +39175,6 @@ namespace CSharpMarkup.Wpf // ThicknessAnimationUsingKeyFrames
 
         /// <summary>Set <see cref="Windows.Media.Animation.ThicknessAnimationUsingKeyFrames.IsCumulative"/></summary>
         public static TView IsCumulative<TView>(this TView view, bool value) where TView : ThicknessAnimationUsingKeyFrames { view.UI.IsCumulative = value; return view; }
-
-        /// <summary>Set <see cref="Windows.Media.Animation.ThicknessAnimationUsingKeyFrames.KeyFrames"/></summary>
-        public static TView KeyFrames<TView>(this TView view, Windows.Media.Animation.ThicknessKeyFrameCollection value) where TView : ThicknessAnimationUsingKeyFrames { view.UI.KeyFrames = value; return view; }
     }
 }
 
@@ -40857,9 +40388,7 @@ namespace CSharpMarkup.Wpf // Ribbon
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Ribbon"/></summary>
-        public static Ribbon Ribbon(
-            params UIObject[] Items
-)
+        public static Ribbon Ribbon(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.Ribbon();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -40868,7 +40397,7 @@ namespace CSharpMarkup.Wpf // Ribbon
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Ribbon"/></summary>
-        public static Ribbon Ribbon(O<Windows.Controls.Ribbon.RibbonApplicationMenu> ApplicationMenu = default, O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.DataTemplate> ContextualTabGroupHeaderTemplate = default, O<IEnumerable> ContextualTabGroupsSource = default, O<Windows.Style> ContextualTabGroupStyle = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<object> HelpPaneContent = default, O<Windows.DataTemplate> HelpPaneContentTemplate = default, O<bool> IsCollapsed = default, O<bool> IsDropDownOpen = default, O<bool> IsMinimized = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonQuickAccessToolBar> QuickAccessToolBar = default, O<bool> ShowQuickAccessToolBarOnTop = default, O<Windows.Style> TabHeaderStyle = default, O<Windows.DataTemplate> TabHeaderTemplate = default, O<object> Title = default, O<Windows.DataTemplate> TitleTemplate = default, O<Windows.Visibility> WindowIconVisibility = default)
+        public static Ribbon Ribbon(O<Windows.Controls.Ribbon.RibbonApplicationMenu> ApplicationMenu = default, O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.DataTemplate> ContextualTabGroupHeaderTemplate = default, O<IEnumerable> ContextualTabGroupsSource = default, O<Windows.Style> ContextualTabGroupStyle = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<object> HelpPaneContent = default, O<Windows.DataTemplate> HelpPaneContentTemplate = default, O<bool> IsCollapsed = default, O<bool> IsDropDownOpen = default, O<bool> IsMinimized = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonQuickAccessToolBar> QuickAccessToolBar = default, O<bool> ShowQuickAccessToolBarOnTop = default, O<Windows.Style> TabHeaderStyle = default, O<Windows.DataTemplate> TabHeaderTemplate = default, O<object> Title = default, O<Windows.DataTemplate> TitleTemplate = default, O<Windows.Visibility> WindowIconVisibility = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.Ribbon();
             if (ApplicationMenu.HasValue) ui.ApplicationMenu = ApplicationMenu.Value;
@@ -40895,6 +40424,8 @@ namespace CSharpMarkup.Wpf // Ribbon
             if (Title.HasValue) ui.Title = Title.Value;
             if (TitleTemplate.HasValue) ui.TitleTemplate = TitleTemplate.Value;
             if (WindowIconVisibility.HasValue) ui.WindowIconVisibility = WindowIconVisibility.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.Ribbon.StartChain(ui);
         }
 
@@ -41163,9 +40694,7 @@ namespace CSharpMarkup.Wpf // RibbonApplicationMenu
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonApplicationMenu"/></summary>
-        public static RibbonApplicationMenu RibbonApplicationMenu(
-            params UIObject[] Items
-)
+        public static RibbonApplicationMenu RibbonApplicationMenu(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonApplicationMenu();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -41174,7 +40703,7 @@ namespace CSharpMarkup.Wpf // RibbonApplicationMenu
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonApplicationMenu"/></summary>
-        public static RibbonApplicationMenu RibbonApplicationMenu(O<object> AuxiliaryPaneContent = default, O<Windows.DataTemplate> AuxiliaryPaneContentTemplate = default, O<Windows.Controls.DataTemplateSelector> AuxiliaryPaneContentTemplateSelector = default, O<object> FooterPaneContent = default, O<Windows.DataTemplate> FooterPaneContentTemplate = default, O<Windows.Controls.DataTemplateSelector> FooterPaneContentTemplateSelector = default)
+        public static RibbonApplicationMenu RibbonApplicationMenu(O<object> AuxiliaryPaneContent = default, O<Windows.DataTemplate> AuxiliaryPaneContentTemplate = default, O<Windows.Controls.DataTemplateSelector> AuxiliaryPaneContentTemplateSelector = default, O<object> FooterPaneContent = default, O<Windows.DataTemplate> FooterPaneContentTemplate = default, O<Windows.Controls.DataTemplateSelector> FooterPaneContentTemplateSelector = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonApplicationMenu();
             if (AuxiliaryPaneContent.HasValue) ui.AuxiliaryPaneContent = AuxiliaryPaneContent.Value;
@@ -41183,6 +40712,8 @@ namespace CSharpMarkup.Wpf // RibbonApplicationMenu
             if (FooterPaneContent.HasValue) ui.FooterPaneContent = FooterPaneContent.Value;
             if (FooterPaneContentTemplate.HasValue) ui.FooterPaneContentTemplate = FooterPaneContentTemplate.Value;
             if (FooterPaneContentTemplateSelector.HasValue) ui.FooterPaneContentTemplateSelector = FooterPaneContentTemplateSelector.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonApplicationMenu.StartChain(ui);
         }
 
@@ -41273,9 +40804,7 @@ namespace CSharpMarkup.Wpf // RibbonApplicationMenuItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonApplicationMenuItem"/></summary>
-        public static RibbonApplicationMenuItem RibbonApplicationMenuItem(
-            params UIObject[] Items
-)
+        public static RibbonApplicationMenuItem RibbonApplicationMenuItem(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonApplicationMenuItem();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -41332,9 +40861,7 @@ namespace CSharpMarkup.Wpf // RibbonApplicationSplitMenuItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonApplicationSplitMenuItem"/></summary>
-        public static RibbonApplicationSplitMenuItem RibbonApplicationSplitMenuItem(
-            params UIObject[] Items
-)
+        public static RibbonApplicationSplitMenuItem RibbonApplicationSplitMenuItem(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonApplicationSplitMenuItem();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -41391,9 +40918,7 @@ namespace CSharpMarkup.Wpf // RibbonButton
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonButton"/></summary>
-        public static RibbonButton RibbonButton(
-            UIObject Content
-)
+        public static RibbonButton RibbonButton(UIObject Content)
         {
             var ui = new Windows.Controls.Ribbon.RibbonButton();
             if (Content is not null) ui.Content = Content.UI;
@@ -41401,7 +40926,7 @@ namespace CSharpMarkup.Wpf // RibbonButton
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonButton"/></summary>
-        public static RibbonButton RibbonButton(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.CornerRadius> CornerRadius = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonButton RibbonButton(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.CornerRadius> CornerRadius = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonButton();
             if (CanAddToQuickAccessToolBarDirectly.HasValue) ui.CanAddToQuickAccessToolBarDirectly = CanAddToQuickAccessToolBarDirectly.Value;
@@ -41425,6 +40950,7 @@ namespace CSharpMarkup.Wpf // RibbonButton
             if (ToolTipFooterTitle.HasValue) ui.ToolTipFooterTitle = ToolTipFooterTitle.Value;
             if (ToolTipImageSource.HasValue) ui.ToolTipImageSource = ToolTipImageSource.Value;
             if (ToolTipTitle.HasValue) ui.ToolTipTitle = ToolTipTitle.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonButton.StartChain(ui);
         }
 
@@ -41672,9 +41198,7 @@ namespace CSharpMarkup.Wpf // RibbonCheckBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonCheckBox"/></summary>
-        public static RibbonCheckBox RibbonCheckBox(
-            UIObject Content
-)
+        public static RibbonCheckBox RibbonCheckBox(UIObject Content)
         {
             var ui = new Windows.Controls.Ribbon.RibbonCheckBox();
             if (Content is not null) ui.Content = Content.UI;
@@ -41682,7 +41206,7 @@ namespace CSharpMarkup.Wpf // RibbonCheckBox
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonCheckBox"/></summary>
-        public static RibbonCheckBox RibbonCheckBox(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonCheckBox RibbonCheckBox(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonCheckBox();
             if (CanAddToQuickAccessToolBarDirectly.HasValue) ui.CanAddToQuickAccessToolBarDirectly = CanAddToQuickAccessToolBarDirectly.Value;
@@ -41707,6 +41231,7 @@ namespace CSharpMarkup.Wpf // RibbonCheckBox
             if (ToolTipFooterTitle.HasValue) ui.ToolTipFooterTitle = ToolTipFooterTitle.Value;
             if (ToolTipImageSource.HasValue) ui.ToolTipImageSource = ToolTipImageSource.Value;
             if (ToolTipTitle.HasValue) ui.ToolTipTitle = ToolTipTitle.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonCheckBox.StartChain(ui);
         }
 
@@ -41973,9 +41498,7 @@ namespace CSharpMarkup.Wpf // RibbonComboBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonComboBox"/></summary>
-        public static RibbonComboBox RibbonComboBox(
-            params UIObject[] Items
-)
+        public static RibbonComboBox RibbonComboBox(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonComboBox();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -41984,7 +41507,7 @@ namespace CSharpMarkup.Wpf // RibbonComboBox
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonComboBox"/></summary>
-        public static RibbonComboBox RibbonComboBox(O<bool> IsEditable = default, O<bool> IsReadOnly = default, O<double> SelectionBoxWidth = default, O<bool> StaysOpenOnEdit = default, O<string> Text = default)
+        public static RibbonComboBox RibbonComboBox(O<bool> IsEditable = default, O<bool> IsReadOnly = default, O<double> SelectionBoxWidth = default, O<bool> StaysOpenOnEdit = default, O<string> Text = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonComboBox();
             if (IsEditable.HasValue) ui.IsEditable = IsEditable.Value;
@@ -41992,6 +41515,8 @@ namespace CSharpMarkup.Wpf // RibbonComboBox
             if (SelectionBoxWidth.HasValue) ui.SelectionBoxWidth = SelectionBoxWidth.Value;
             if (StaysOpenOnEdit.HasValue) ui.StaysOpenOnEdit = StaysOpenOnEdit.Value;
             if (Text.HasValue) ui.Text = Text.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonComboBox.StartChain(ui);
         }
 
@@ -42162,9 +41687,7 @@ namespace CSharpMarkup.Wpf // RibbonContextMenu
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonContextMenu"/></summary>
-        public static RibbonContextMenu RibbonContextMenu(
-            params UIObject[] Items
-)
+        public static RibbonContextMenu RibbonContextMenu(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonContextMenu();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -42221,9 +41744,7 @@ namespace CSharpMarkup.Wpf // RibbonContextualTabGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonContextualTabGroup"/></summary>
-        public static RibbonContextualTabGroup RibbonContextualTabGroup(
-            UIObject Header
-)
+        public static RibbonContextualTabGroup RibbonContextualTabGroup(UIObject Header)
         {
             var ui = new Windows.Controls.Ribbon.RibbonContextualTabGroup();
             if (Header is not null) ui.Header = Header.UI;
@@ -42231,13 +41752,13 @@ namespace CSharpMarkup.Wpf // RibbonContextualTabGroup
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonContextualTabGroup"/></summary>
-        public static RibbonContextualTabGroup RibbonContextualTabGroup(O<object> Header = default, O<string> HeaderStringFormat = default, O<Windows.DataTemplate> HeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> HeaderTemplateSelector = default)
+        public static RibbonContextualTabGroup RibbonContextualTabGroup(O<string> HeaderStringFormat = default, O<Windows.DataTemplate> HeaderTemplate = default, O<Windows.Controls.DataTemplateSelector> HeaderTemplateSelector = default, UIObject Header = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonContextualTabGroup();
-            if (Header.HasValue) ui.Header = Header.Value;
             if (HeaderStringFormat.HasValue) ui.HeaderStringFormat = HeaderStringFormat.Value;
             if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
             if (HeaderTemplateSelector.HasValue) ui.HeaderTemplateSelector = HeaderTemplateSelector.Value;
+            if (Header is not null) ui.Header = Header.UI;
             return global::CSharpMarkup.Wpf.RibbonContextualTabGroup.StartChain(ui);
         }
 
@@ -42279,9 +41800,6 @@ namespace CSharpMarkup.Wpf // RibbonContextualTabGroup
 
     public static partial class RibbonContextualTabGroupExtensions
     {
-        /// <summary>Set <see cref="Windows.Controls.Ribbon.RibbonContextualTabGroup.Header"/></summary>
-        public static TView Header<TView>(this TView view, object value) where TView : RibbonContextualTabGroup { view.UI.Header = value; return view; }
-
         /// <summary>Set <see cref="Windows.Controls.Ribbon.RibbonContextualTabGroup.HeaderStringFormat"/></summary>
         public static TView HeaderStringFormat<TView>(this TView view, string value) where TView : RibbonContextualTabGroup { view.UI.HeaderStringFormat = value; return view; }
 
@@ -42318,9 +41836,7 @@ namespace CSharpMarkup.Wpf // RibbonContextualTabGroupItemsControl
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonContextualTabGroupItemsControl"/></summary>
-        public static RibbonContextualTabGroupItemsControl RibbonContextualTabGroupItemsControl(
-            params UIObject[] Items
-)
+        public static RibbonContextualTabGroupItemsControl RibbonContextualTabGroupItemsControl(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonContextualTabGroupItemsControl();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -42377,9 +41893,7 @@ namespace CSharpMarkup.Wpf // RibbonControl
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonControl"/></summary>
-        public static RibbonControl RibbonControl(
-            UIObject Content
-)
+        public static RibbonControl RibbonControl(UIObject Content)
         {
             var ui = new Windows.Controls.Ribbon.RibbonControl();
             if (Content is not null) ui.Content = Content.UI;
@@ -42387,10 +41901,11 @@ namespace CSharpMarkup.Wpf // RibbonControl
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonControl"/></summary>
-        public static RibbonControl RibbonControl(O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default)
+        public static RibbonControl RibbonControl(O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonControl();
             if (ControlSizeDefinition.HasValue) ui.ControlSizeDefinition = ControlSizeDefinition.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonControl.StartChain(ui);
         }
 
@@ -42454,9 +41969,7 @@ namespace CSharpMarkup.Wpf // RibbonControlGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonControlGroup"/></summary>
-        public static RibbonControlGroup RibbonControlGroup(
-            params UIObject[] Items
-)
+        public static RibbonControlGroup RibbonControlGroup(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonControlGroup();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -42465,10 +41978,12 @@ namespace CSharpMarkup.Wpf // RibbonControlGroup
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonControlGroup"/></summary>
-        public static RibbonControlGroup RibbonControlGroup(O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default)
+        public static RibbonControlGroup RibbonControlGroup(O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonControlGroup();
             if (ControlSizeDefinition.HasValue) ui.ControlSizeDefinition = ControlSizeDefinition.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonControlGroup.StartChain(ui);
         }
 
@@ -42625,9 +42140,7 @@ namespace CSharpMarkup.Wpf // RibbonFilterMenuButton
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonFilterMenuButton"/></summary>
-        public static RibbonFilterMenuButton RibbonFilterMenuButton(
-            params UIObject[] Items
-)
+        public static RibbonFilterMenuButton RibbonFilterMenuButton(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonFilterMenuButton();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -42677,9 +42190,7 @@ namespace CSharpMarkup.Wpf // RibbonGallery
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGallery"/></summary>
-        public static RibbonGallery RibbonGallery(
-            params UIObject[] Items
-)
+        public static RibbonGallery RibbonGallery(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGallery();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -42688,7 +42199,7 @@ namespace CSharpMarkup.Wpf // RibbonGallery
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGallery"/></summary>
-        public static RibbonGallery RibbonGallery(O<Windows.Style> AllFilterItemContainerStyle = default, O<Windows.DataTemplate> AllFilterItemTemplate = default, O<bool> CanAddToQuickAccessToolBarDirectly = default, O<bool> CanUserFilter = default, O<Windows.Style> CategoryStyle = default, O<Windows.DataTemplate> CategoryTemplate = default, O<bool> ColumnsStretchToFill = default, O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Windows.Style> FilterItemContainerStyle = default, O<Windows.Controls.StyleSelector> FilterItemContainerStyleSelector = default, O<Windows.DataTemplate> FilterItemTemplate = default, O<Windows.Controls.DataTemplateSelector> FilterItemTemplateSelector = default, O<Windows.Style> FilterMenuButtonStyle = default, O<object> FilterPaneContent = default, O<Windows.DataTemplate> FilterPaneContentTemplate = default, O<Windows.Style> GalleryItemStyle = default, O<Windows.DataTemplate> GalleryItemTemplate = default, O<bool> IsSharedColumnSizeScope = default, O<bool?> IsSynchronizedWithCurrentItem = default, O<int> MaxColumnCount = default, O<int> MinColumnCount = default, O<object> PreviewCommandParameter = default, O<object> QuickAccessToolBarId = default, O<object> SelectedItem = default, O<object> SelectedValue = default, O<string> SelectedValuePath = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonGallery RibbonGallery(O<Windows.Style> AllFilterItemContainerStyle = default, O<Windows.DataTemplate> AllFilterItemTemplate = default, O<bool> CanAddToQuickAccessToolBarDirectly = default, O<bool> CanUserFilter = default, O<Windows.Style> CategoryStyle = default, O<Windows.DataTemplate> CategoryTemplate = default, O<bool> ColumnsStretchToFill = default, O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Windows.Style> FilterItemContainerStyle = default, O<Windows.Controls.StyleSelector> FilterItemContainerStyleSelector = default, O<Windows.DataTemplate> FilterItemTemplate = default, O<Windows.Controls.DataTemplateSelector> FilterItemTemplateSelector = default, O<Windows.Style> FilterMenuButtonStyle = default, O<object> FilterPaneContent = default, O<Windows.DataTemplate> FilterPaneContentTemplate = default, O<Windows.Style> GalleryItemStyle = default, O<Windows.DataTemplate> GalleryItemTemplate = default, O<bool> IsSharedColumnSizeScope = default, O<bool?> IsSynchronizedWithCurrentItem = default, O<int> MaxColumnCount = default, O<int> MinColumnCount = default, O<object> PreviewCommandParameter = default, O<object> QuickAccessToolBarId = default, O<object> SelectedItem = default, O<object> SelectedValue = default, O<string> SelectedValuePath = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGallery();
             if (AllFilterItemContainerStyle.HasValue) ui.AllFilterItemContainerStyle = AllFilterItemContainerStyle.Value;
@@ -42726,6 +42237,8 @@ namespace CSharpMarkup.Wpf // RibbonGallery
             if (ToolTipFooterTitle.HasValue) ui.ToolTipFooterTitle = ToolTipFooterTitle.Value;
             if (ToolTipImageSource.HasValue) ui.ToolTipImageSource = ToolTipImageSource.Value;
             if (ToolTipTitle.HasValue) ui.ToolTipTitle = ToolTipTitle.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonGallery.StartChain(ui);
         }
 
@@ -43027,9 +42540,7 @@ namespace CSharpMarkup.Wpf // RibbonGalleryCategory
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGalleryCategory"/></summary>
-        public static RibbonGalleryCategory RibbonGalleryCategory(
-            params UIObject[] Items
-)
+        public static RibbonGalleryCategory RibbonGalleryCategory(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGalleryCategory();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -43038,7 +42549,7 @@ namespace CSharpMarkup.Wpf // RibbonGalleryCategory
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGalleryCategory"/></summary>
-        public static RibbonGalleryCategory RibbonGalleryCategory(O<bool> ColumnsStretchToFill = default, O<Windows.Visibility> HeaderVisibility = default, O<bool> IsSharedColumnSizeScope = default, O<int> MaxColumnCount = default, O<int> MinColumnCount = default)
+        public static RibbonGalleryCategory RibbonGalleryCategory(O<bool> ColumnsStretchToFill = default, O<Windows.Visibility> HeaderVisibility = default, O<bool> IsSharedColumnSizeScope = default, O<int> MaxColumnCount = default, O<int> MinColumnCount = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGalleryCategory();
             if (ColumnsStretchToFill.HasValue) ui.ColumnsStretchToFill = ColumnsStretchToFill.Value;
@@ -43046,6 +42557,8 @@ namespace CSharpMarkup.Wpf // RibbonGalleryCategory
             if (IsSharedColumnSizeScope.HasValue) ui.IsSharedColumnSizeScope = IsSharedColumnSizeScope.Value;
             if (MaxColumnCount.HasValue) ui.MaxColumnCount = MaxColumnCount.Value;
             if (MinColumnCount.HasValue) ui.MinColumnCount = MinColumnCount.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonGalleryCategory.StartChain(ui);
         }
 
@@ -43129,9 +42642,7 @@ namespace CSharpMarkup.Wpf // RibbonGalleryItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGalleryItem"/></summary>
-        public static RibbonGalleryItem RibbonGalleryItem(
-            UIObject Content
-)
+        public static RibbonGalleryItem RibbonGalleryItem(UIObject Content)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGalleryItem();
             if (Content is not null) ui.Content = Content.UI;
@@ -43139,7 +42650,7 @@ namespace CSharpMarkup.Wpf // RibbonGalleryItem
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGalleryItem"/></summary>
-        public static RibbonGalleryItem RibbonGalleryItem(O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<bool> IsSelected = default, O<string> KeyTip = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonGalleryItem RibbonGalleryItem(O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<bool> IsSelected = default, O<string> KeyTip = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGalleryItem();
             if (CheckedBackground.HasValue) ui.CheckedBackground = CheckedBackground.Value;
@@ -43156,6 +42667,7 @@ namespace CSharpMarkup.Wpf // RibbonGalleryItem
             if (ToolTipFooterTitle.HasValue) ui.ToolTipFooterTitle = ToolTipFooterTitle.Value;
             if (ToolTipImageSource.HasValue) ui.ToolTipImageSource = ToolTipImageSource.Value;
             if (ToolTipTitle.HasValue) ui.ToolTipTitle = ToolTipTitle.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonGalleryItem.StartChain(ui);
         }
 
@@ -43350,9 +42862,7 @@ namespace CSharpMarkup.Wpf // RibbonGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGroup"/></summary>
-        public static RibbonGroup RibbonGroup(
-            params UIObject[] Items
-)
+        public static RibbonGroup RibbonGroup(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGroup();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -43361,7 +42871,7 @@ namespace CSharpMarkup.Wpf // RibbonGroup
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGroup"/></summary>
-        public static RibbonGroup RibbonGroup(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Controls.Ribbon.RibbonGroupSizeDefinitionBaseCollection> GroupSizeDefinitions = default, O<bool> IsDropDownOpen = default, O<string> KeyTip = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonGroup RibbonGroup(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Controls.Ribbon.RibbonGroupSizeDefinitionBaseCollection> GroupSizeDefinitions = default, O<bool> IsDropDownOpen = default, O<string> KeyTip = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGroup();
             if (CanAddToQuickAccessToolBarDirectly.HasValue) ui.CanAddToQuickAccessToolBarDirectly = CanAddToQuickAccessToolBarDirectly.Value;
@@ -43379,6 +42889,8 @@ namespace CSharpMarkup.Wpf // RibbonGroup
             if (ToolTipFooterTitle.HasValue) ui.ToolTipFooterTitle = ToolTipFooterTitle.Value;
             if (ToolTipImageSource.HasValue) ui.ToolTipImageSource = ToolTipImageSource.Value;
             if (ToolTipTitle.HasValue) ui.ToolTipTitle = ToolTipTitle.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonGroup.StartChain(ui);
         }
 
@@ -43556,21 +43068,11 @@ namespace CSharpMarkup.Wpf // RibbonGroupSizeDefinition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGroupSizeDefinition"/></summary>
-        public static RibbonGroupSizeDefinition RibbonGroupSizeDefinition(
-            params System.Windows.Controls.Ribbon.RibbonControlSizeDefinition[] ControlSizeDefinitions
-)
+        public static RibbonGroupSizeDefinition RibbonGroupSizeDefinition(params System.Windows.Controls.Ribbon.RibbonControlSizeDefinition[] ControlSizeDefinitions)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGroupSizeDefinition();
             foreach (var child in ControlSizeDefinitions) if (child is not null) ui.ControlSizeDefinitions.Add(child);
             // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.ControlSizeDefinitions);
-            return global::CSharpMarkup.Wpf.RibbonGroupSizeDefinition.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGroupSizeDefinition"/></summary>
-        public static RibbonGroupSizeDefinition RibbonGroupSizeDefinition(O<Windows.Controls.Ribbon.RibbonControlSizeDefinitionCollection> ControlSizeDefinitions = default)
-        {
-            var ui = new Windows.Controls.Ribbon.RibbonGroupSizeDefinition();
-            if (ControlSizeDefinitions.HasValue) ui.ControlSizeDefinitions = ControlSizeDefinitions.Value;
             return global::CSharpMarkup.Wpf.RibbonGroupSizeDefinition.StartChain(ui);
         }
 
@@ -43610,9 +43112,6 @@ namespace CSharpMarkup.Wpf // RibbonGroupSizeDefinition
 
     public static partial class RibbonGroupSizeDefinitionExtensions
     {
-        /// <summary>Set <see cref="Windows.Controls.Ribbon.RibbonGroupSizeDefinition.ControlSizeDefinitions"/></summary>
-        public static TView ControlSizeDefinitions<TView>(this TView view, Windows.Controls.Ribbon.RibbonControlSizeDefinitionCollection value) where TView : RibbonGroupSizeDefinition { view.UI.ControlSizeDefinitions = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.Ribbon.RibbonGroupSizeDefinition.ControlSizeDefinitions"/></summary>
         public static DependencyProperty<TTarget, Windows.Controls.Ribbon.RibbonControlSizeDefinitionCollection> ControlSizeDefinitions<TTarget>(this TTarget target) where TTarget : RibbonGroupSizeDefinition
         => DependencyProperty<TTarget, Windows.Controls.Ribbon.RibbonControlSizeDefinitionCollection>.Get(target, Windows.Controls.Ribbon.RibbonGroupSizeDefinition.ControlSizeDefinitionsProperty);
@@ -43650,20 +43149,10 @@ namespace CSharpMarkup.Wpf // RibbonGroupTemplateSizeDefinition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGroupTemplateSizeDefinition"/></summary>
-        public static RibbonGroupTemplateSizeDefinition RibbonGroupTemplateSizeDefinition(
-            System.Windows.DataTemplate ContentTemplate
-)
+        public static RibbonGroupTemplateSizeDefinition RibbonGroupTemplateSizeDefinition(System.Windows.DataTemplate ContentTemplate)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGroupTemplateSizeDefinition();
             if (ContentTemplate is not null) ui.ContentTemplate = ContentTemplate;
-            return global::CSharpMarkup.Wpf.RibbonGroupTemplateSizeDefinition.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGroupTemplateSizeDefinition"/></summary>
-        public static RibbonGroupTemplateSizeDefinition RibbonGroupTemplateSizeDefinition(O<Windows.DataTemplate> ContentTemplate = default)
-        {
-            var ui = new Windows.Controls.Ribbon.RibbonGroupTemplateSizeDefinition();
-            if (ContentTemplate.HasValue) ui.ContentTemplate = ContentTemplate.Value;
             return global::CSharpMarkup.Wpf.RibbonGroupTemplateSizeDefinition.StartChain(ui);
         }
 
@@ -43703,9 +43192,6 @@ namespace CSharpMarkup.Wpf // RibbonGroupTemplateSizeDefinition
 
     public static partial class RibbonGroupTemplateSizeDefinitionExtensions
     {
-        /// <summary>Set <see cref="Windows.Controls.Ribbon.RibbonGroupTemplateSizeDefinition.ContentTemplate"/></summary>
-        public static TView ContentTemplate<TView>(this TView view, Windows.DataTemplate value) where TView : RibbonGroupTemplateSizeDefinition { view.UI.ContentTemplate = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Windows.Controls.Ribbon.RibbonGroupTemplateSizeDefinition.ContentTemplate"/></summary>
         public static DependencyProperty<TTarget, Windows.DataTemplate> ContentTemplate<TTarget>(this TTarget target) where TTarget : RibbonGroupTemplateSizeDefinition
         => DependencyProperty<TTarget, Windows.DataTemplate>.Get(target, Windows.Controls.Ribbon.RibbonGroupTemplateSizeDefinition.ContentTemplateProperty);
@@ -43717,9 +43203,7 @@ namespace CSharpMarkup.Wpf // RibbonMenuButton
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonMenuButton"/></summary>
-        public static RibbonMenuButton RibbonMenuButton(
-            params UIObject[] Items
-)
+        public static RibbonMenuButton RibbonMenuButton(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonMenuButton();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -43728,7 +43212,7 @@ namespace CSharpMarkup.Wpf // RibbonMenuButton
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonMenuButton"/></summary>
-        public static RibbonMenuButton RibbonMenuButton(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<bool> CanUserResizeHorizontally = default, O<bool> CanUserResizeVertically = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<double> DropDownHeight = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<bool> IsDropDownOpen = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonMenuButton RibbonMenuButton(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<bool> CanUserResizeHorizontally = default, O<bool> CanUserResizeVertically = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<double> DropDownHeight = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<bool> IsDropDownOpen = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonMenuButton();
             if (CanAddToQuickAccessToolBarDirectly.HasValue) ui.CanAddToQuickAccessToolBarDirectly = CanAddToQuickAccessToolBarDirectly.Value;
@@ -43755,6 +43239,8 @@ namespace CSharpMarkup.Wpf // RibbonMenuButton
             if (ToolTipFooterTitle.HasValue) ui.ToolTipFooterTitle = ToolTipFooterTitle.Value;
             if (ToolTipImageSource.HasValue) ui.ToolTipImageSource = ToolTipImageSource.Value;
             if (ToolTipTitle.HasValue) ui.ToolTipTitle = ToolTipTitle.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonMenuButton.StartChain(ui);
         }
 
@@ -44027,9 +43513,7 @@ namespace CSharpMarkup.Wpf // RibbonMenuItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonMenuItem"/></summary>
-        public static RibbonMenuItem RibbonMenuItem(
-            params UIObject[] Items
-)
+        public static RibbonMenuItem RibbonMenuItem(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonMenuItem();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -44038,7 +43522,7 @@ namespace CSharpMarkup.Wpf // RibbonMenuItem
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonMenuItem"/></summary>
-        public static RibbonMenuItem RibbonMenuItem(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<bool> CanUserResizeHorizontally = default, O<bool> CanUserResizeVertically = default, O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<double> DropDownHeight = default, O<Windows.Media.ImageSource> ImageSource = default, O<string> KeyTip = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> QuickAccessToolBarImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonMenuItem RibbonMenuItem(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<bool> CanUserResizeHorizontally = default, O<bool> CanUserResizeVertically = default, O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<double> DropDownHeight = default, O<Windows.Media.ImageSource> ImageSource = default, O<string> KeyTip = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> QuickAccessToolBarImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonMenuItem();
             if (CanAddToQuickAccessToolBarDirectly.HasValue) ui.CanAddToQuickAccessToolBarDirectly = CanAddToQuickAccessToolBarDirectly.Value;
@@ -44061,6 +43545,8 @@ namespace CSharpMarkup.Wpf // RibbonMenuItem
             if (ToolTipFooterTitle.HasValue) ui.ToolTipFooterTitle = ToolTipFooterTitle.Value;
             if (ToolTipImageSource.HasValue) ui.ToolTipImageSource = ToolTipImageSource.Value;
             if (ToolTipTitle.HasValue) ui.ToolTipTitle = ToolTipTitle.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonMenuItem.StartChain(ui);
         }
 
@@ -44297,9 +43783,7 @@ namespace CSharpMarkup.Wpf // RibbonQuickAccessToolBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonQuickAccessToolBar"/></summary>
-        public static RibbonQuickAccessToolBar RibbonQuickAccessToolBar(
-            params UIObject[] Items
-)
+        public static RibbonQuickAccessToolBar RibbonQuickAccessToolBar(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonQuickAccessToolBar();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -44308,11 +43792,13 @@ namespace CSharpMarkup.Wpf // RibbonQuickAccessToolBar
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonQuickAccessToolBar"/></summary>
-        public static RibbonQuickAccessToolBar RibbonQuickAccessToolBar(O<Windows.Controls.Ribbon.RibbonMenuButton> CustomizeMenuButton = default, O<bool> IsOverflowOpen = default)
+        public static RibbonQuickAccessToolBar RibbonQuickAccessToolBar(O<Windows.Controls.Ribbon.RibbonMenuButton> CustomizeMenuButton = default, O<bool> IsOverflowOpen = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonQuickAccessToolBar();
             if (CustomizeMenuButton.HasValue) ui.CustomizeMenuButton = CustomizeMenuButton.Value;
             if (IsOverflowOpen.HasValue) ui.IsOverflowOpen = IsOverflowOpen.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonQuickAccessToolBar.StartChain(ui);
         }
 
@@ -44383,9 +43869,7 @@ namespace CSharpMarkup.Wpf // RibbonRadioButton
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonRadioButton"/></summary>
-        public static RibbonRadioButton RibbonRadioButton(
-            UIObject Content
-)
+        public static RibbonRadioButton RibbonRadioButton(UIObject Content)
         {
             var ui = new Windows.Controls.Ribbon.RibbonRadioButton();
             if (Content is not null) ui.Content = Content.UI;
@@ -44393,7 +43877,7 @@ namespace CSharpMarkup.Wpf // RibbonRadioButton
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonRadioButton"/></summary>
-        public static RibbonRadioButton RibbonRadioButton(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.CornerRadius> CornerRadius = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonRadioButton RibbonRadioButton(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.CornerRadius> CornerRadius = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonRadioButton();
             if (CanAddToQuickAccessToolBarDirectly.HasValue) ui.CanAddToQuickAccessToolBarDirectly = CanAddToQuickAccessToolBarDirectly.Value;
@@ -44419,6 +43903,7 @@ namespace CSharpMarkup.Wpf // RibbonRadioButton
             if (ToolTipFooterTitle.HasValue) ui.ToolTipFooterTitle = ToolTipFooterTitle.Value;
             if (ToolTipImageSource.HasValue) ui.ToolTipImageSource = ToolTipImageSource.Value;
             if (ToolTipTitle.HasValue) ui.ToolTipTitle = ToolTipTitle.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonRadioButton.StartChain(ui);
         }
 
@@ -44755,9 +44240,7 @@ namespace CSharpMarkup.Wpf // RibbonSplitButton
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonSplitButton"/></summary>
-        public static RibbonSplitButton RibbonSplitButton(
-            params UIObject[] Items
-)
+        public static RibbonSplitButton RibbonSplitButton(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonSplitButton();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -44766,7 +44249,7 @@ namespace CSharpMarkup.Wpf // RibbonSplitButton
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonSplitButton"/></summary>
-        public static RibbonSplitButton RibbonSplitButton(O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<string> DropDownToolTipDescription = default, O<string> DropDownToolTipFooterDescription = default, O<Windows.Media.ImageSource> DropDownToolTipFooterImageSource = default, O<string> DropDownToolTipFooterTitle = default, O<Windows.Media.ImageSource> DropDownToolTipImageSource = default, O<string> DropDownToolTipTitle = default, O<string> HeaderKeyTip = default, O<object> HeaderQuickAccessToolBarId = default, O<bool> IsCheckable = default, O<bool> IsChecked = default, O<Windows.Controls.Ribbon.RibbonSplitButtonLabelPosition> LabelPosition = default)
+        public static RibbonSplitButton RibbonSplitButton(O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<string> DropDownToolTipDescription = default, O<string> DropDownToolTipFooterDescription = default, O<Windows.Media.ImageSource> DropDownToolTipFooterImageSource = default, O<string> DropDownToolTipFooterTitle = default, O<Windows.Media.ImageSource> DropDownToolTipImageSource = default, O<string> DropDownToolTipTitle = default, O<string> HeaderKeyTip = default, O<object> HeaderQuickAccessToolBarId = default, O<bool> IsCheckable = default, O<bool> IsChecked = default, O<Windows.Controls.Ribbon.RibbonSplitButtonLabelPosition> LabelPosition = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonSplitButton();
             if (CheckedBackground.HasValue) ui.CheckedBackground = CheckedBackground.Value;
@@ -44785,6 +44268,8 @@ namespace CSharpMarkup.Wpf // RibbonSplitButton
             if (IsCheckable.HasValue) ui.IsCheckable = IsCheckable.Value;
             if (IsChecked.HasValue) ui.IsChecked = IsChecked.Value;
             if (LabelPosition.HasValue) ui.LabelPosition = LabelPosition.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonSplitButton.StartChain(ui);
         }
 
@@ -44957,9 +44442,7 @@ namespace CSharpMarkup.Wpf // RibbonSplitMenuItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonSplitMenuItem"/></summary>
-        public static RibbonSplitMenuItem RibbonSplitMenuItem(
-            params UIObject[] Items
-)
+        public static RibbonSplitMenuItem RibbonSplitMenuItem(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonSplitMenuItem();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -44968,7 +44451,7 @@ namespace CSharpMarkup.Wpf // RibbonSplitMenuItem
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonSplitMenuItem"/></summary>
-        public static RibbonSplitMenuItem RibbonSplitMenuItem(O<string> DropDownToolTipDescription = default, O<string> DropDownToolTipFooterDescription = default, O<Windows.Media.ImageSource> DropDownToolTipFooterImageSource = default, O<string> DropDownToolTipFooterTitle = default, O<Windows.Media.ImageSource> DropDownToolTipImageSource = default, O<string> DropDownToolTipTitle = default, O<string> HeaderKeyTip = default, O<object> HeaderQuickAccessToolBarId = default)
+        public static RibbonSplitMenuItem RibbonSplitMenuItem(O<string> DropDownToolTipDescription = default, O<string> DropDownToolTipFooterDescription = default, O<Windows.Media.ImageSource> DropDownToolTipFooterImageSource = default, O<string> DropDownToolTipFooterTitle = default, O<Windows.Media.ImageSource> DropDownToolTipImageSource = default, O<string> DropDownToolTipTitle = default, O<string> HeaderKeyTip = default, O<object> HeaderQuickAccessToolBarId = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonSplitMenuItem();
             if (DropDownToolTipDescription.HasValue) ui.DropDownToolTipDescription = DropDownToolTipDescription.Value;
@@ -44979,6 +44462,8 @@ namespace CSharpMarkup.Wpf // RibbonSplitMenuItem
             if (DropDownToolTipTitle.HasValue) ui.DropDownToolTipTitle = DropDownToolTipTitle.Value;
             if (HeaderKeyTip.HasValue) ui.HeaderKeyTip = HeaderKeyTip.Value;
             if (HeaderQuickAccessToolBarId.HasValue) ui.HeaderQuickAccessToolBarId = HeaderQuickAccessToolBarId.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonSplitMenuItem.StartChain(ui);
         }
 
@@ -45083,9 +44568,7 @@ namespace CSharpMarkup.Wpf // RibbonTab
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonTab"/></summary>
-        public static RibbonTab RibbonTab(
-            params UIObject[] Items
-)
+        public static RibbonTab RibbonTab(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonTab();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -45094,7 +44577,7 @@ namespace CSharpMarkup.Wpf // RibbonTab
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonTab"/></summary>
-        public static RibbonTab RibbonTab(O<object> ContextualTabGroupHeader = default, O<StringCollection> GroupSizeReductionOrder = default, O<Windows.Style> HeaderStyle = default, O<bool> IsSelected = default, O<string> KeyTip = default)
+        public static RibbonTab RibbonTab(O<object> ContextualTabGroupHeader = default, O<StringCollection> GroupSizeReductionOrder = default, O<Windows.Style> HeaderStyle = default, O<bool> IsSelected = default, O<string> KeyTip = default, params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonTab();
             if (ContextualTabGroupHeader.HasValue) ui.ContextualTabGroupHeader = ContextualTabGroupHeader.Value;
@@ -45102,6 +44585,8 @@ namespace CSharpMarkup.Wpf // RibbonTab
             if (HeaderStyle.HasValue) ui.HeaderStyle = HeaderStyle.Value;
             if (IsSelected.HasValue) ui.IsSelected = IsSelected.Value;
             if (KeyTip.HasValue) ui.KeyTip = KeyTip.Value;
+            foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Items);
             return global::CSharpMarkup.Wpf.RibbonTab.StartChain(ui);
         }
 
@@ -45201,9 +44686,7 @@ namespace CSharpMarkup.Wpf // RibbonTabHeader
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonTabHeader"/></summary>
-        public static RibbonTabHeader RibbonTabHeader(
-            UIObject Content
-)
+        public static RibbonTabHeader RibbonTabHeader(UIObject Content)
         {
             var ui = new Windows.Controls.Ribbon.RibbonTabHeader();
             if (Content is not null) ui.Content = Content.UI;
@@ -45211,7 +44694,7 @@ namespace CSharpMarkup.Wpf // RibbonTabHeader
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonTabHeader"/></summary>
-        public static RibbonTabHeader RibbonTabHeader(O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default)
+        public static RibbonTabHeader RibbonTabHeader(O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonTabHeader();
             if (CheckedBackground.HasValue) ui.CheckedBackground = CheckedBackground.Value;
@@ -45220,6 +44703,7 @@ namespace CSharpMarkup.Wpf // RibbonTabHeader
             if (FocusedBorderBrush.HasValue) ui.FocusedBorderBrush = FocusedBorderBrush.Value;
             if (MouseOverBackground.HasValue) ui.MouseOverBackground = MouseOverBackground.Value;
             if (MouseOverBorderBrush.HasValue) ui.MouseOverBorderBrush = MouseOverBorderBrush.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonTabHeader.StartChain(ui);
         }
 
@@ -45362,9 +44846,7 @@ namespace CSharpMarkup.Wpf // RibbonTabHeaderItemsControl
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonTabHeaderItemsControl"/></summary>
-        public static RibbonTabHeaderItemsControl RibbonTabHeaderItemsControl(
-            params UIObject[] Items
-)
+        public static RibbonTabHeaderItemsControl RibbonTabHeaderItemsControl(params UIObject[] Items)
         {
             var ui = new Windows.Controls.Ribbon.RibbonTabHeaderItemsControl();
             foreach (var child in Items) if (child is not null) ui.Items.Add(child.UI);
@@ -45414,9 +44896,7 @@ namespace CSharpMarkup.Wpf // RibbonTextBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonTextBox"/></summary>
-        public static RibbonTextBox RibbonTextBox(
-            string Text
-)
+        public static RibbonTextBox RibbonTextBox(string Text)
         {
             var ui = new Windows.Controls.Ribbon.RibbonTextBox();
             if (Text is not null) ui.Text = Text;
@@ -45424,7 +44904,7 @@ namespace CSharpMarkup.Wpf // RibbonTextBox
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonTextBox"/></summary>
-        public static RibbonTextBox RibbonTextBox(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<double> TextBoxWidth = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonTextBox RibbonTextBox(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Input.ICommand> Command = default, O<object> CommandParameter = default, O<Windows.IInputElement> CommandTarget = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<double> TextBoxWidth = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default, string Text = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonTextBox();
             if (CanAddToQuickAccessToolBarDirectly.HasValue) ui.CanAddToQuickAccessToolBarDirectly = CanAddToQuickAccessToolBarDirectly.Value;
@@ -45449,6 +44929,7 @@ namespace CSharpMarkup.Wpf // RibbonTextBox
             if (ToolTipFooterTitle.HasValue) ui.ToolTipFooterTitle = ToolTipFooterTitle.Value;
             if (ToolTipImageSource.HasValue) ui.ToolTipImageSource = ToolTipImageSource.Value;
             if (ToolTipTitle.HasValue) ui.ToolTipTitle = ToolTipTitle.Value;
+            if (Text is not null) ui.Text = Text;
             return global::CSharpMarkup.Wpf.RibbonTextBox.StartChain(ui);
         }
 
@@ -45691,9 +45172,7 @@ namespace CSharpMarkup.Wpf // RibbonToggleButton
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonToggleButton"/></summary>
-        public static RibbonToggleButton RibbonToggleButton(
-            UIObject Content
-)
+        public static RibbonToggleButton RibbonToggleButton(UIObject Content)
         {
             var ui = new Windows.Controls.Ribbon.RibbonToggleButton();
             if (Content is not null) ui.Content = Content.UI;
@@ -45701,7 +45180,7 @@ namespace CSharpMarkup.Wpf // RibbonToggleButton
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonToggleButton"/></summary>
-        public static RibbonToggleButton RibbonToggleButton(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.CornerRadius> CornerRadius = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default)
+        public static RibbonToggleButton RibbonToggleButton(O<bool> CanAddToQuickAccessToolBarDirectly = default, O<Windows.Media.Brush> CheckedBackground = default, O<Windows.Media.Brush> CheckedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> ControlSizeDefinition = default, O<Windows.CornerRadius> CornerRadius = default, O<Windows.Media.Brush> FocusedBackground = default, O<Windows.Media.Brush> FocusedBorderBrush = default, O<string> KeyTip = default, O<string> Label = default, O<Windows.Media.ImageSource> LargeImageSource = default, O<Windows.Media.Brush> MouseOverBackground = default, O<Windows.Media.Brush> MouseOverBorderBrush = default, O<Windows.Media.Brush> PressedBackground = default, O<Windows.Media.Brush> PressedBorderBrush = default, O<Windows.Controls.Ribbon.RibbonControlSizeDefinition> QuickAccessToolBarControlSizeDefinition = default, O<object> QuickAccessToolBarId = default, O<Windows.Media.ImageSource> SmallImageSource = default, O<string> ToolTipDescription = default, O<string> ToolTipFooterDescription = default, O<Windows.Media.ImageSource> ToolTipFooterImageSource = default, O<string> ToolTipFooterTitle = default, O<Windows.Media.ImageSource> ToolTipImageSource = default, O<string> ToolTipTitle = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonToggleButton();
             if (CanAddToQuickAccessToolBarDirectly.HasValue) ui.CanAddToQuickAccessToolBarDirectly = CanAddToQuickAccessToolBarDirectly.Value;
@@ -45727,6 +45206,7 @@ namespace CSharpMarkup.Wpf // RibbonToggleButton
             if (ToolTipFooterTitle.HasValue) ui.ToolTipFooterTitle = ToolTipFooterTitle.Value;
             if (ToolTipImageSource.HasValue) ui.ToolTipImageSource = ToolTipImageSource.Value;
             if (ToolTipTitle.HasValue) ui.ToolTipTitle = ToolTipTitle.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonToggleButton.StartChain(ui);
         }
 
@@ -46000,9 +45480,7 @@ namespace CSharpMarkup.Wpf // RibbonToolTip
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonToolTip"/></summary>
-        public static RibbonToolTip RibbonToolTip(
-            UIObject Content
-)
+        public static RibbonToolTip RibbonToolTip(UIObject Content)
         {
             var ui = new Windows.Controls.Ribbon.RibbonToolTip();
             if (Content is not null) ui.Content = Content.UI;
@@ -46010,7 +45488,7 @@ namespace CSharpMarkup.Wpf // RibbonToolTip
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonToolTip"/></summary>
-        public static RibbonToolTip RibbonToolTip(O<string> Description = default, O<string> FooterDescription = default, O<Windows.Media.ImageSource> FooterImageSource = default, O<string> FooterTitle = default, O<Windows.Media.ImageSource> ImageSource = default, O<string> Title = default)
+        public static RibbonToolTip RibbonToolTip(O<string> Description = default, O<string> FooterDescription = default, O<Windows.Media.ImageSource> FooterImageSource = default, O<string> FooterTitle = default, O<Windows.Media.ImageSource> ImageSource = default, O<string> Title = default, UIObject Content = default)
         {
             var ui = new Windows.Controls.Ribbon.RibbonToolTip();
             if (Description.HasValue) ui.Description = Description.Value;
@@ -46019,6 +45497,7 @@ namespace CSharpMarkup.Wpf // RibbonToolTip
             if (FooterTitle.HasValue) ui.FooterTitle = FooterTitle.Value;
             if (ImageSource.HasValue) ui.ImageSource = ImageSource.Value;
             if (Title.HasValue) ui.Title = Title.Value;
+            if (Content is not null) ui.Content = Content.UI;
             return global::CSharpMarkup.Wpf.RibbonToolTip.StartChain(ui);
         }
 
@@ -46320,9 +45799,7 @@ namespace CSharpMarkup.Wpf // RibbonWindow
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonWindow"/></summary>
-        public static RibbonWindow RibbonWindow(
-            UIObject Content
-)
+        public static RibbonWindow RibbonWindow(UIObject Content)
         {
             var ui = new Windows.Controls.Ribbon.RibbonWindow();
             if (Content is not null) ui.Content = Content.UI;
@@ -46371,9 +45848,7 @@ namespace CSharpMarkup.Wpf // RibbonContextualTabGroupsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonContextualTabGroupsPanel"/></summary>
-        public static RibbonContextualTabGroupsPanel RibbonContextualTabGroupsPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static RibbonContextualTabGroupsPanel RibbonContextualTabGroupsPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonContextualTabGroupsPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -46423,9 +45898,7 @@ namespace CSharpMarkup.Wpf // RibbonGalleryCategoriesPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGalleryCategoriesPanel"/></summary>
-        public static RibbonGalleryCategoriesPanel RibbonGalleryCategoriesPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static RibbonGalleryCategoriesPanel RibbonGalleryCategoriesPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonGalleryCategoriesPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -46434,12 +45907,14 @@ namespace CSharpMarkup.Wpf // RibbonGalleryCategoriesPanel
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGalleryCategoriesPanel"/></summary>
-        public static RibbonGalleryCategoriesPanel RibbonGalleryCategoriesPanel(O<bool> CanHorizontallyScroll = default, O<bool> CanVerticallyScroll = default, O<Windows.Controls.ScrollViewer> ScrollOwner = default)
+        public static RibbonGalleryCategoriesPanel RibbonGalleryCategoriesPanel(O<bool> CanHorizontallyScroll = default, O<bool> CanVerticallyScroll = default, O<Windows.Controls.ScrollViewer> ScrollOwner = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonGalleryCategoriesPanel();
             if (CanHorizontallyScroll.HasValue) ui.CanHorizontallyScroll = CanHorizontallyScroll.Value;
             if (CanVerticallyScroll.HasValue) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
             if (ScrollOwner.HasValue) ui.ScrollOwner = ScrollOwner.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.RibbonGalleryCategoriesPanel.StartChain(ui);
         }
     }
@@ -46490,9 +45965,7 @@ namespace CSharpMarkup.Wpf // RibbonGalleryItemsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGalleryItemsPanel"/></summary>
-        public static RibbonGalleryItemsPanel RibbonGalleryItemsPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static RibbonGalleryItemsPanel RibbonGalleryItemsPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonGalleryItemsPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -46535,9 +46008,7 @@ namespace CSharpMarkup.Wpf // RibbonGroupItemsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGroupItemsPanel"/></summary>
-        public static RibbonGroupItemsPanel RibbonGroupItemsPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static RibbonGroupItemsPanel RibbonGroupItemsPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonGroupItemsPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -46580,9 +46051,7 @@ namespace CSharpMarkup.Wpf // RibbonGroupsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGroupsPanel"/></summary>
-        public static RibbonGroupsPanel RibbonGroupsPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static RibbonGroupsPanel RibbonGroupsPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonGroupsPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -46632,9 +46101,7 @@ namespace CSharpMarkup.Wpf // RibbonMenuItemsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonMenuItemsPanel"/></summary>
-        public static RibbonMenuItemsPanel RibbonMenuItemsPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static RibbonMenuItemsPanel RibbonMenuItemsPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonMenuItemsPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -46677,9 +46144,7 @@ namespace CSharpMarkup.Wpf // RibbonQuickAccessToolBarOverflowPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarOverflowPanel"/></summary>
-        public static RibbonQuickAccessToolBarOverflowPanel RibbonQuickAccessToolBarOverflowPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static RibbonQuickAccessToolBarOverflowPanel RibbonQuickAccessToolBarOverflowPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarOverflowPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -46722,9 +46187,7 @@ namespace CSharpMarkup.Wpf // RibbonQuickAccessToolBarPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarPanel"/></summary>
-        public static RibbonQuickAccessToolBarPanel RibbonQuickAccessToolBarPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static RibbonQuickAccessToolBarPanel RibbonQuickAccessToolBarPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -46767,9 +46230,7 @@ namespace CSharpMarkup.Wpf // RibbonTabHeadersPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonTabHeadersPanel"/></summary>
-        public static RibbonTabHeadersPanel RibbonTabHeadersPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static RibbonTabHeadersPanel RibbonTabHeadersPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonTabHeadersPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -46778,12 +46239,14 @@ namespace CSharpMarkup.Wpf // RibbonTabHeadersPanel
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonTabHeadersPanel"/></summary>
-        public static RibbonTabHeadersPanel RibbonTabHeadersPanel(O<bool> CanHorizontallyScroll = default, O<bool> CanVerticallyScroll = default, O<Windows.Controls.ScrollViewer> ScrollOwner = default)
+        public static RibbonTabHeadersPanel RibbonTabHeadersPanel(O<bool> CanHorizontallyScroll = default, O<bool> CanVerticallyScroll = default, O<Windows.Controls.ScrollViewer> ScrollOwner = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonTabHeadersPanel();
             if (CanHorizontallyScroll.HasValue) ui.CanHorizontallyScroll = CanHorizontallyScroll.Value;
             if (CanVerticallyScroll.HasValue) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
             if (ScrollOwner.HasValue) ui.ScrollOwner = ScrollOwner.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.RibbonTabHeadersPanel.StartChain(ui);
         }
     }
@@ -46838,9 +46301,7 @@ namespace CSharpMarkup.Wpf // RibbonTabsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonTabsPanel"/></summary>
-        public static RibbonTabsPanel RibbonTabsPanel(
-            params System.Windows.UIElement[] Children
-)
+        public static RibbonTabsPanel RibbonTabsPanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonTabsPanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
@@ -46849,12 +46310,14 @@ namespace CSharpMarkup.Wpf // RibbonTabsPanel
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonTabsPanel"/></summary>
-        public static RibbonTabsPanel RibbonTabsPanel(O<bool> CanHorizontallyScroll = default, O<bool> CanVerticallyScroll = default, O<Windows.Controls.ScrollViewer> ScrollOwner = default)
+        public static RibbonTabsPanel RibbonTabsPanel(O<bool> CanHorizontallyScroll = default, O<bool> CanVerticallyScroll = default, O<Windows.Controls.ScrollViewer> ScrollOwner = default, params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonTabsPanel();
             if (CanHorizontallyScroll.HasValue) ui.CanHorizontallyScroll = CanHorizontallyScroll.Value;
             if (CanVerticallyScroll.HasValue) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
             if (ScrollOwner.HasValue) ui.ScrollOwner = ScrollOwner.Value;
+            foreach (var child in Children) if (child is not null) ui.Children.Add(child);
+            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui.Children);
             return global::CSharpMarkup.Wpf.RibbonTabsPanel.StartChain(ui);
         }
     }
@@ -46905,9 +46368,7 @@ namespace CSharpMarkup.Wpf // RibbonTitlePanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonTitlePanel"/></summary>
-        public static RibbonTitlePanel RibbonTitlePanel(
-            params System.Windows.UIElement[] Children
-)
+        public static RibbonTitlePanel RibbonTitlePanel(params System.Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonTitlePanel();
             foreach (var child in Children) if (child is not null) ui.Children.Add(child);
