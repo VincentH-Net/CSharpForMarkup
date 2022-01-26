@@ -30,10 +30,10 @@ namespace CompileTests
                .Grid(Row: 1) .Margin(2)
                .HorizontalAlignment().Bind(vm.Right, convert: (bool right) => right ? UI.HorizontalAlignment.Right : UI.HorizontalAlignment.Left),
 
-            TextBlock(Inlines(
+            TextBlock(
                 Run("A"),
                 Hyperlink(new Uri(""))
-            )),
+            ),
 
             CheckBox("Check Me")
                .Bind(vm.IsOk),
@@ -59,7 +59,7 @@ namespace CompileTests
 
         StackPanel Scrolling => VStack(
             ScrollViewer(
-                TextBlock(new string('A', 100)).UI
+                TextBlock(new string('A', 100))
             )  .HorizontalScrollMode(UI.Controls.ScrollMode.Enabled)
                .HorizontalScrollMode().Enabled()
                .HorizontalScrollMode().Bind()

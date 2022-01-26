@@ -51,13 +51,9 @@ namespace _UIViewNamespace_
         public static DependencyProperty _AttachedPropertyName_Property { get; }
     }
 
-    public partial class ContentView : ContentControl { }
+    public partial class ContentView : ContentControl { public _PropertyType_ _PropertyName_ { get; set; } }
 
-    public partial class ChildView { public Xaml.UIElement Child { get; set; } }
-
-    public partial class LayoutView : LayoutControl { }
-
-    public class InlinesView : InlinesControl { }
+    public partial class LayoutView : LayoutControl { public List<_PropertyType_> _PropertyName_ { get; set; } }
 }
 
 namespace _MarkupNamespace_
@@ -90,27 +86,15 @@ namespace _MarkupNamespace_
 
         public static ContentView ContentView(
 #region _ContentViewHelperParameters_
-            object content
+            _PropertyType_ _PropertyName_
 #endregion
-        ) {
-            var ui = new _UIViewNamespace_.ContentView();
-#region _ContentViewHelperStatements_
-            if (content != null) ui.Content = content;
-#endregion
-            return _MarkupNamespace_.ContentView.StartChain(ui);
-        }
-
-        public static ChildView ChildView(
-        #region _ChildViewHelperParameters_
-            Xaml.UIElement Child
-        #endregion
         )
         {
-            var ui = new _UIViewNamespace_.ChildView();
-            #region _ChildViewHelperStatements_
-            if (Child != null) ui.Child = Child;
-            #endregion
-            return _MarkupNamespace_.ChildView.StartChain(ui);
+            var ui = new _UIViewNamespace_.ContentView();
+#region _ContentViewHelperStatements_
+            if (_PropertyName_ != null) ui._PropertyName_ = _PropertyName_/*_AccessUI_*/;
+#endregion
+            return _MarkupNamespace_.ContentView.StartChain(ui);
         }
 
         // TODO: UNO supports WinUI views which have equivalent Markup UI type, plus native views
@@ -120,29 +104,16 @@ namespace _MarkupNamespace_
         // TODO: UNO what is that type for Android/iOS/...?
         public static LayoutView LayoutView(
 #region _LayoutViewHelperParameters_
-            params Xaml.UIElement[] children
-#endregion
-        ) {
-            var ui = new _UIViewNamespace_.LayoutView();
-#region _LayoutViewHelperStatements_
-            foreach (var child in children) if (child != null) ui.Children.Add(child);
-            CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
-#endregion
-            return _MarkupNamespace_.LayoutView.StartChain(ui);
-        }
-
-        public static InlinesView InlinesView(
-#region _InlinesViewHelperParameters_
-            IEnumerable<Xaml.Documents.Inline> inlines
+            params _PropertyType_[] _PropertyName_
 #endregion
         )
         {
-            var ui = new _UIViewNamespace_.InlinesView();
-#region _InlinesViewHelperStatements_
-            foreach (var inline in inlines) if (inline != null) ui.Inlines.Add(inline);
-            CSharpMarkup.WinUI.Helpers.SpreadInlines(ui.Inlines);
+            var ui = new _UIViewNamespace_.LayoutView();
+#region _LayoutViewHelperStatements_
+            foreach (var child in _PropertyName_) if (child != null) ui._PropertyName_.Add(child/*_AccessUI_*/);
+            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
 #endregion
-            return _MarkupNamespace_.InlinesView.StartChain(ui);
+            return _MarkupNamespace_.LayoutView.StartChain(ui);
         }
     }
 
@@ -263,10 +234,6 @@ namespace _MarkupNamespace_
 
     public class ContentView { internal static ContentView StartChain(_UIViewNamespace_.ContentView ui) => null; }
 
-    public class ChildView { internal static ChildView StartChain(_UIViewNamespace_.ChildView ui) => null; }
-
     public class LayoutView { internal static LayoutView StartChain(_UIViewNamespace_.LayoutView ui) => null; }
-
-    public class InlinesView { internal static InlinesView StartChain(_UIViewNamespace_.InlinesView ui) => null; }
 }
 #endif

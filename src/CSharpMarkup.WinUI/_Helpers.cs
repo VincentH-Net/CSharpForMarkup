@@ -1,6 +1,6 @@
-﻿#if GENERATE
+﻿using Xaml = Microsoft.UI.Xaml;
+#if GENERATE
 using CSharpMarkup.Generate.WinUI;
-using Xaml = Microsoft.UI.Xaml;
 using Controls = Microsoft.UI.Xaml.Controls;
 
 [assembly: MarkupHelpers(
@@ -76,6 +76,16 @@ namespace CSharpMarkup.WinUI
 
         public static partial TextBlock TextBlock(string Text); // Specify parameter properties
 
-        public static partial Run Run(string Text);
+#if HAS_UNO && !WINDOWS_UWP
+        /// <summary>Create a <see cref="Xaml.Controls.TextBlock"/></summary>
+        /// <remarks>Remark: TextBlock().Bind() binds to <see cref="Xaml.Controls.TextBlock.TextProperty"/></remarks>
+        public static TextBlock TextBlock(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines) // In UnoWinUI this method is not generated automatically because there the TextBlock ContentProperty is Text, not Inlines as it is in WinUI
+        {
+            var ui = new Xaml.Controls.TextBlock();
+            foreach (var child in Inlines) if (child != null) ui.Inlines.Add(child);
+            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            return global::CSharpMarkup.WinUI.TextBlock.StartChain(ui);
+        }
+#endif
     }
 }
