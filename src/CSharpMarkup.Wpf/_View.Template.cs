@@ -89,14 +89,14 @@ namespace _MarkupNamespace_
 #endregion
 
         public static ContentView ContentView(
-        #region _ContentViewHelperParameters_
+#region _ContentViewHelperParameters_
             _PropertyType_ _PropertyName_
-        #endregion
+#endregion
         ) {
             var ui = new _UIViewNamespace_.ContentView();
 #region _ContentViewHelperStatements_
             if (_PropertyName_ is not null) ui._PropertyName_ = _PropertyName_/*_AccessUI_*/;
-            #endregion
+#endregion
             return _MarkupNamespace_.ContentView.StartChain(ui);
         }
 
