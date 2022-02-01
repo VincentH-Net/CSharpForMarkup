@@ -82,8 +82,18 @@ namespace CSharpMarkup.WinUI
         public static TextBlock TextBlock(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines) // In UnoWinUI this method is not generated automatically because there the TextBlock ContentProperty is Text, not Inlines as it is in WinUI
         {
             var ui = new Xaml.Controls.TextBlock();
-            foreach (var child in Inlines) if (child != null) ui.Inlines.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Inlines.Length; i++)
+            {
+                var child = Inlines[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Inlines.Add(subChildren[j]);
+                else
+                    ui.Inlines.Add(child);
+            }
             return global::CSharpMarkup.WinUI.TextBlock.StartChain(ui);
         }
 #endif

@@ -1116,8 +1116,18 @@ namespace CSharpMarkup.WinUI // Style
         public static Style Style(params Microsoft.UI.Xaml.SetterBase[] Setters)
         {
             var ui = new Xaml.Style();
-            foreach (var child in Setters) if (child != null) ui.Setters.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Setters.Length; i++)
+            {
+                var child = Setters[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.SetterBase>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Setters.Add(subChildren[j]);
+                else
+                    ui.Setters.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Style.StartChain(ui);
         }
 
@@ -1129,8 +1139,18 @@ namespace CSharpMarkup.WinUI // Style
             if (BasedOn.HasValue) ui.BasedOn = BasedOn.Value;
             if (DataContext.HasValue) ui.DataContext = DataContext.Value;
             if (TemplatedParent.HasValue) ui.TemplatedParent = TemplatedParent.Value;
-            foreach (var child in Setters) if (child != null) ui.Setters.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Setters.Length; i++)
+            {
+                var child = Setters[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.SetterBase>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Setters.Add(subChildren[j]);
+                else
+                    ui.Setters.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Style.StartChain(ui);
         }
 
@@ -4866,8 +4886,18 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
         public static AutoSuggestBox AutoSuggestBox(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.AutoSuggestBox();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.AutoSuggestBox.StartChain(ui);
         }
 
@@ -4892,8 +4922,18 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
             if (TextBoxStyle.HasValue) ui.TextBoxStyle = TextBoxStyle.Value;
             if (Text.HasValue) ui.Text = Text.Value;
             if (QueryIcon.HasValue) ui.QueryIcon = QueryIcon.Value;
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.AutoSuggestBox.StartChain(ui);
         }
 
@@ -6495,8 +6535,18 @@ namespace CSharpMarkup.WinUI // Canvas
         public static Canvas Canvas(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Canvas();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Canvas.StartChain(ui);
         }
 
@@ -6943,8 +6993,18 @@ namespace CSharpMarkup.WinUI // ComboBox
         public static ComboBox ComboBox(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.ComboBox();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.ComboBox.StartChain(ui);
         }
 
@@ -6970,8 +7030,18 @@ namespace CSharpMarkup.WinUI // ComboBox
             if (PlaceholderText.HasValue) ui.PlaceholderText = PlaceholderText.Value;
             if (IsDropDownOpen.HasValue) ui.IsDropDownOpen = IsDropDownOpen.Value;
             if (MaxDropDownHeight.HasValue) ui.MaxDropDownHeight = MaxDropDownHeight.Value;
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.ComboBox.StartChain(ui);
         }
 
@@ -7334,8 +7404,18 @@ namespace CSharpMarkup.WinUI // CommandBarOverflowPresenter
         public static CommandBarOverflowPresenter CommandBarOverflowPresenter(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.CommandBarOverflowPresenter();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.CommandBarOverflowPresenter.StartChain(ui);
         }
 
@@ -9179,8 +9259,18 @@ namespace CSharpMarkup.WinUI // FlipView
         public static FlipView FlipView(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.FlipView();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.FlipView.StartChain(ui);
         }
 
@@ -9189,8 +9279,18 @@ namespace CSharpMarkup.WinUI // FlipView
         {
             var ui = new Xaml.Controls.FlipView();
             if (UseTouchAnimationsForAllNavigation.HasValue) ui.UseTouchAnimationsForAllNavigation = UseTouchAnimationsForAllNavigation.Value;
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.FlipView.StartChain(ui);
         }
 
@@ -9851,8 +9951,18 @@ namespace CSharpMarkup.WinUI // Grid
         public static Grid Grid(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Grid();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Grid.StartChain(ui);
         }
 
@@ -9867,8 +9977,18 @@ namespace CSharpMarkup.WinUI // Grid
             if (CornerRadius.HasValue) ui.CornerRadius = CornerRadius.Value;
             if (RowSpacing.HasValue) ui.RowSpacing = RowSpacing.Value;
             if (ColumnSpacing.HasValue) ui.ColumnSpacing = ColumnSpacing.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Grid.StartChain(ui);
         }
 
@@ -10055,8 +10175,18 @@ namespace CSharpMarkup.WinUI // GridView
         public static GridView GridView(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.GridView();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.GridView.StartChain(ui);
         }
 
@@ -10945,8 +11075,18 @@ namespace CSharpMarkup.WinUI // ItemsControl
         public static ItemsControl ItemsControl(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.ItemsControl();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.ItemsControl.StartChain(ui);
         }
 
@@ -10965,8 +11105,18 @@ namespace CSharpMarkup.WinUI // ItemsControl
             if (ItemContainerStyle.HasValue) ui.ItemContainerStyle = ItemContainerStyle.Value;
             if (ItemContainerStyleSelector.HasValue) ui.ItemContainerStyleSelector = ItemContainerStyleSelector.Value;
             if (DisplayMemberPath.HasValue) ui.DisplayMemberPath = DisplayMemberPath.Value;
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.ItemsControl.StartChain(ui);
         }
 
@@ -11433,8 +11583,18 @@ namespace CSharpMarkup.WinUI // ItemsRepeaterScrollHost
         public static ItemsRepeaterScrollHost ItemsRepeaterScrollHost(params Microsoft.UI.Xaml.UIElement[] ScrollViewer)
         {
             var ui = new Xaml.Controls.ItemsRepeaterScrollHost();
-            foreach (var child in ScrollViewer) if (child != null) ui.ScrollViewer.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < ScrollViewer.Length; i++)
+            {
+                var child = ScrollViewer[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.ScrollViewer.Add(subChildren[j]);
+                else
+                    ui.ScrollViewer.Add(child);
+            }
             return global::CSharpMarkup.WinUI.ItemsRepeaterScrollHost.StartChain(ui);
         }
 
@@ -11483,8 +11643,18 @@ namespace CSharpMarkup.WinUI // ItemsStackPanel
         public static ItemsStackPanel ItemsStackPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.ItemsStackPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.ItemsStackPanel.StartChain(ui);
         }
 
@@ -11498,8 +11668,18 @@ namespace CSharpMarkup.WinUI // ItemsStackPanel
             if (GroupHeaderPlacement.HasValue) ui.GroupHeaderPlacement = GroupHeaderPlacement.Value;
             if (GroupPadding.HasValue) ui.GroupPadding = GroupPadding.Value;
             if (Orientation.HasValue) ui.Orientation = Orientation.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.ItemsStackPanel.StartChain(ui);
         }
 
@@ -11601,8 +11781,18 @@ namespace CSharpMarkup.WinUI // ItemsWrapGrid
         public static ItemsWrapGrid ItemsWrapGrid(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.ItemsWrapGrid();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.ItemsWrapGrid.StartChain(ui);
         }
 
@@ -11618,8 +11808,18 @@ namespace CSharpMarkup.WinUI // ItemsWrapGrid
             if (ItemWidth.HasValue) ui.ItemWidth = ItemWidth.Value;
             if (Orientation.HasValue) ui.Orientation = Orientation.Value;
             if (MaximumRowsOrColumns.HasValue) ui.MaximumRowsOrColumns = MaximumRowsOrColumns.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.ItemsWrapGrid.StartChain(ui);
         }
 
@@ -11873,8 +12073,18 @@ namespace CSharpMarkup.WinUI // LayoutPanel
         public static LayoutPanel LayoutPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.LayoutPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.LayoutPanel.StartChain(ui);
         }
 
@@ -11888,8 +12098,18 @@ namespace CSharpMarkup.WinUI // LayoutPanel
             if (Padding.HasValue) ui.Padding = Padding.Value;
             if (CornerRadius.HasValue) ui.CornerRadius = CornerRadius.Value;
             if (Layout.HasValue) ui.Layout = Layout.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.LayoutPanel.StartChain(ui);
         }
 
@@ -12009,8 +12229,18 @@ namespace CSharpMarkup.WinUI // ListBox
         public static ListBox ListBox(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.ListBox();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.ListBox.StartChain(ui);
         }
 
@@ -12020,8 +12250,18 @@ namespace CSharpMarkup.WinUI // ListBox
             var ui = new Xaml.Controls.ListBox();
             if (SingleSelectionFollowsFocus.HasValue) ui.SingleSelectionFollowsFocus = SingleSelectionFollowsFocus.Value;
             if (SelectionMode.HasValue) ui.SelectionMode = SelectionMode.Value;
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.ListBox.StartChain(ui);
         }
 
@@ -12295,8 +12535,18 @@ namespace CSharpMarkup.WinUI // ListView
         public static ListView ListView(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.ListView();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.ListView.StartChain(ui);
         }
 
@@ -12985,8 +13235,18 @@ namespace CSharpMarkup.WinUI // MenuFlyoutPresenter
         public static MenuFlyoutPresenter MenuFlyoutPresenter(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.MenuFlyoutPresenter();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.MenuFlyoutPresenter.StartChain(ui);
         }
 
@@ -12995,8 +13255,18 @@ namespace CSharpMarkup.WinUI // MenuFlyoutPresenter
         {
             var ui = new Xaml.Controls.MenuFlyoutPresenter();
             if (IsDefaultShadowEnabled.HasValue) ui.IsDefaultShadowEnabled = IsDefaultShadowEnabled.Value;
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.MenuFlyoutPresenter.StartChain(ui);
         }
 
@@ -14587,8 +14857,18 @@ namespace CSharpMarkup.WinUI // Panel
         public static Panel Panel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Panel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Panel.StartChain(ui);
         }
 
@@ -14598,8 +14878,18 @@ namespace CSharpMarkup.WinUI // Panel
             var ui = new Xaml.Controls.Panel();
             if (BackgroundTransition.HasValue) ui.BackgroundTransition = BackgroundTransition.Value;
             if (ChildrenTransitions.HasValue) ui.ChildrenTransitions = ChildrenTransitions.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Panel.StartChain(ui);
         }
 
@@ -15457,8 +15747,18 @@ namespace CSharpMarkup.WinUI // Pivot
         public static Pivot Pivot(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.Pivot();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.Pivot.StartChain(ui);
         }
 
@@ -15478,8 +15778,18 @@ namespace CSharpMarkup.WinUI // Pivot
             if (RightHeader.HasValue) ui.RightHeader = RightHeader.Value;
             if (LeftHeaderTemplate.HasValue) ui.LeftHeaderTemplate = LeftHeaderTemplate.Value;
             if (LeftHeader.HasValue) ui.LeftHeader = LeftHeader.Value;
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.Pivot.StartChain(ui);
         }
 
@@ -16920,8 +17230,18 @@ namespace CSharpMarkup.WinUI // RelativePanel
         public static RelativePanel RelativePanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.RelativePanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.RelativePanel.StartChain(ui);
         }
 
@@ -16934,8 +17254,18 @@ namespace CSharpMarkup.WinUI // RelativePanel
             if (BorderThickness.HasValue) ui.BorderThickness = BorderThickness.Value;
             if (Padding.HasValue) ui.Padding = Padding.Value;
             if (CornerRadius.HasValue) ui.CornerRadius = CornerRadius.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.RelativePanel.StartChain(ui);
         }
 
@@ -17301,8 +17631,18 @@ namespace CSharpMarkup.WinUI // RichTextBlock
         public static RichTextBlock RichTextBlock(params Microsoft.UI.Xaml.Documents.Block[] Blocks)
         {
             var ui = new Xaml.Controls.RichTextBlock();
-            foreach (var child in Blocks) if (child != null) ui.Blocks.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Blocks.Length; i++)
+            {
+                var child = Blocks[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Documents.Block>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Blocks.Add(subChildren[j]);
+                else
+                    ui.Blocks.Add(child);
+            }
             return global::CSharpMarkup.WinUI.RichTextBlock.StartChain(ui);
         }
 
@@ -17336,8 +17676,18 @@ namespace CSharpMarkup.WinUI // RichTextBlock
             if (OverflowContentTarget.HasValue) ui.OverflowContentTarget = OverflowContentTarget.Value;
             if (OpticalMarginAlignment.HasValue) ui.OpticalMarginAlignment = OpticalMarginAlignment.Value;
             if (MaxLines.HasValue) ui.MaxLines = MaxLines.Value;
-            foreach (var child in Blocks) if (child != null) ui.Blocks.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Blocks.Length; i++)
+            {
+                var child = Blocks[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Documents.Block>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Blocks.Add(subChildren[j]);
+                else
+                    ui.Blocks.Add(child);
+            }
             return global::CSharpMarkup.WinUI.RichTextBlock.StartChain(ui);
         }
 
@@ -19136,8 +19486,18 @@ namespace CSharpMarkup.WinUI // StackPanel
         public static StackPanel StackPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.StackPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.StackPanel.StartChain(ui);
         }
 
@@ -19153,8 +19513,18 @@ namespace CSharpMarkup.WinUI // StackPanel
             if (CornerRadius.HasValue) ui.CornerRadius = CornerRadius.Value;
             if (Orientation.HasValue) ui.Orientation = Orientation.Value;
             if (Spacing.HasValue) ui.Spacing = Spacing.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.StackPanel.StartChain(ui);
         }
 
@@ -19292,8 +19662,18 @@ namespace CSharpMarkup.WinUI // SwapChainBackgroundPanel
         public static SwapChainBackgroundPanel SwapChainBackgroundPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.SwapChainBackgroundPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.SwapChainBackgroundPanel.StartChain(ui);
         }
 
@@ -19342,8 +19722,18 @@ namespace CSharpMarkup.WinUI // SwapChainPanel
         public static SwapChainPanel SwapChainPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.SwapChainPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.SwapChainPanel.StartChain(ui);
         }
 
@@ -22218,8 +22608,18 @@ namespace CSharpMarkup.WinUI // TreeViewList
         public static TreeViewList TreeViewList(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.TreeViewList();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.TreeViewList.StartChain(ui);
         }
 
@@ -22655,8 +23055,18 @@ namespace CSharpMarkup.WinUI // VariableSizedWrapGrid
         public static VariableSizedWrapGrid VariableSizedWrapGrid(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.VariableSizedWrapGrid();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.VariableSizedWrapGrid.StartChain(ui);
         }
 
@@ -22670,8 +23080,18 @@ namespace CSharpMarkup.WinUI // VariableSizedWrapGrid
             if (ItemWidth.HasValue) ui.ItemWidth = ItemWidth.Value;
             if (ItemHeight.HasValue) ui.ItemHeight = ItemHeight.Value;
             if (HorizontalChildrenAlignment.HasValue) ui.HorizontalChildrenAlignment = HorizontalChildrenAlignment.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.VariableSizedWrapGrid.StartChain(ui);
         }
 
@@ -22965,8 +23385,18 @@ namespace CSharpMarkup.WinUI // VirtualizingPanel
         public static VirtualizingPanel VirtualizingPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.VirtualizingPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.VirtualizingPanel.StartChain(ui);
         }
 
@@ -23015,8 +23445,18 @@ namespace CSharpMarkup.WinUI // VirtualizingStackPanel
         public static VirtualizingStackPanel VirtualizingStackPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.VirtualizingStackPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.VirtualizingStackPanel.StartChain(ui);
         }
 
@@ -23026,8 +23466,18 @@ namespace CSharpMarkup.WinUI // VirtualizingStackPanel
             var ui = new Xaml.Controls.VirtualizingStackPanel();
             if (Orientation.HasValue) ui.Orientation = Orientation.Value;
             if (AreScrollSnapPointsRegular.HasValue) ui.AreScrollSnapPointsRegular = AreScrollSnapPointsRegular.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.VirtualizingStackPanel.StartChain(ui);
         }
 
@@ -23176,8 +23626,18 @@ namespace CSharpMarkup.WinUI // WrapGrid
         public static WrapGrid WrapGrid(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.WrapGrid();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.WrapGrid.StartChain(ui);
         }
 
@@ -23191,8 +23651,18 @@ namespace CSharpMarkup.WinUI // WrapGrid
             if (ItemWidth.HasValue) ui.ItemWidth = ItemWidth.Value;
             if (ItemHeight.HasValue) ui.ItemHeight = ItemHeight.Value;
             if (HorizontalChildrenAlignment.HasValue) ui.HorizontalChildrenAlignment = HorizontalChildrenAlignment.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.WrapGrid.StartChain(ui);
         }
 
@@ -24137,8 +24607,18 @@ namespace CSharpMarkup.WinUI // NativePivotPresenter
         public static NativePivotPresenter NativePivotPresenter(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.NativePivotPresenter();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.NativePivotPresenter.StartChain(ui);
         }
 
@@ -24367,8 +24847,18 @@ namespace CSharpMarkup.WinUI // WrapPanel
         public static WrapPanel WrapPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.WrapPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.WrapPanel.StartChain(ui);
         }
 
@@ -24379,8 +24869,18 @@ namespace CSharpMarkup.WinUI // WrapPanel
             if (Orientation.HasValue) ui.Orientation = Orientation.Value;
             if (ItemWidth.HasValue) ui.ItemWidth = ItemWidth.Value;
             if (ItemHeight.HasValue) ui.ItemHeight = ItemHeight.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.WrapPanel.StartChain(ui);
         }
 
@@ -24855,8 +25355,18 @@ namespace CSharpMarkup.WinUI // CalendarPanel
         public static CalendarPanel CalendarPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.CalendarPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.CalendarPanel.StartChain(ui);
         }
 
@@ -24970,8 +25480,18 @@ namespace CSharpMarkup.WinUI // CarouselPanel
         public static CarouselPanel CarouselPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.CarouselPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.CarouselPanel.StartChain(ui);
         }
 
@@ -24982,8 +25502,18 @@ namespace CSharpMarkup.WinUI // CarouselPanel
             if (ScrollOwner.HasValue) ui.ScrollOwner = ScrollOwner.Value;
             if (CanVerticallyScroll.HasValue) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
             if (CanHorizontallyScroll.HasValue) ui.CanHorizontallyScroll = CanHorizontallyScroll.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.CarouselPanel.StartChain(ui);
         }
 
@@ -26221,8 +26751,18 @@ namespace CSharpMarkup.WinUI // InfoBarPanel
         public static InfoBarPanel InfoBarPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.InfoBarPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.InfoBarPanel.StartChain(ui);
         }
 
@@ -26232,8 +26772,18 @@ namespace CSharpMarkup.WinUI // InfoBarPanel
             var ui = new Xaml.Controls.Primitives.InfoBarPanel();
             if (HorizontalOrientationPadding.HasValue) ui.HorizontalOrientationPadding = HorizontalOrientationPadding.Value;
             if (VerticalOrientationPadding.HasValue) ui.VerticalOrientationPadding = VerticalOrientationPadding.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.InfoBarPanel.StartChain(ui);
         }
 
@@ -27438,8 +27988,18 @@ namespace CSharpMarkup.WinUI // OrientedVirtualizingPanel
         public static OrientedVirtualizingPanel OrientedVirtualizingPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.OrientedVirtualizingPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.OrientedVirtualizingPanel.StartChain(ui);
         }
 
@@ -27450,8 +28010,18 @@ namespace CSharpMarkup.WinUI // OrientedVirtualizingPanel
             if (ScrollOwner.HasValue) ui.ScrollOwner = ScrollOwner.Value;
             if (CanVerticallyScroll.HasValue) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
             if (CanHorizontallyScroll.HasValue) ui.CanHorizontallyScroll = CanHorizontallyScroll.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.OrientedVirtualizingPanel.StartChain(ui);
         }
 
@@ -27611,8 +28181,18 @@ namespace CSharpMarkup.WinUI // PivotHeaderPanel
         public static PivotHeaderPanel PivotHeaderPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.PivotHeaderPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.PivotHeaderPanel.StartChain(ui);
         }
 
@@ -27661,8 +28241,18 @@ namespace CSharpMarkup.WinUI // PivotPanel
         public static PivotPanel PivotPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.PivotPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.PivotPanel.StartChain(ui);
         }
 
@@ -28323,8 +28913,18 @@ namespace CSharpMarkup.WinUI // Selector
         public static Selector Selector(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.Primitives.Selector();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.Selector.StartChain(ui);
         }
 
@@ -28338,8 +28938,18 @@ namespace CSharpMarkup.WinUI // Selector
             if (SelectedValue.HasValue) ui.SelectedValue = SelectedValue.Value;
             if (IsSynchronizedWithCurrentItem.HasValue) ui.IsSynchronizedWithCurrentItem = IsSynchronizedWithCurrentItem.Value;
             if (IsSelectionActive.HasValue) ui.IsSelectionActive = IsSelectionActive.Value;
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.Selector.StartChain(ui);
         }
 
@@ -28601,8 +29211,18 @@ namespace CSharpMarkup.WinUI // TabViewListView
         public static TabViewListView TabViewListView(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.Primitives.TabViewListView();
-            foreach (var child in Items) if (child != null) ui.Items.Add(child.UI);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return global::CSharpMarkup.WinUI.TabViewListView.StartChain(ui);
         }
 
@@ -29074,8 +29694,18 @@ namespace CSharpMarkup.WinUI // MonochromaticOverlayPresenter
         public static MonochromaticOverlayPresenter MonochromaticOverlayPresenter(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.MonochromaticOverlayPresenter();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.MonochromaticOverlayPresenter.StartChain(ui);
         }
 
@@ -29085,8 +29715,18 @@ namespace CSharpMarkup.WinUI // MonochromaticOverlayPresenter
             var ui = new Xaml.Controls.Primitives.MonochromaticOverlayPresenter();
             if (ReplacementColor.HasValue) ui.ReplacementColor = ReplacementColor.Value;
             if (SourceElement.HasValue) ui.SourceElement = SourceElement.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.MonochromaticOverlayPresenter.StartChain(ui);
         }
 
@@ -29601,8 +30241,18 @@ namespace CSharpMarkup.WinUI // Bold
         public static Bold Bold(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Bold();
-            foreach (var child in Inlines) if (child != null) ui.Inlines.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Inlines.Length; i++)
+            {
+                var child = Inlines[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Inlines.Add(subChildren[j]);
+                else
+                    ui.Inlines.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Bold.StartChain(ui);
         }
 
@@ -29788,8 +30438,18 @@ namespace CSharpMarkup.WinUI // Hyperlink
         public static Hyperlink Hyperlink(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Hyperlink();
-            foreach (var child in Inlines) if (child != null) ui.Inlines.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Inlines.Length; i++)
+            {
+                var child = Inlines[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Inlines.Add(subChildren[j]);
+                else
+                    ui.Inlines.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Hyperlink.StartChain(ui);
         }
 
@@ -29811,8 +30471,18 @@ namespace CSharpMarkup.WinUI // Hyperlink
             if (XYFocusLeftNavigationStrategy.HasValue) ui.XYFocusLeftNavigationStrategy = XYFocusLeftNavigationStrategy.Value;
             if (XYFocusRightNavigationStrategy.HasValue) ui.XYFocusRightNavigationStrategy = XYFocusRightNavigationStrategy.Value;
             if (XYFocusUpNavigationStrategy.HasValue) ui.XYFocusUpNavigationStrategy = XYFocusUpNavigationStrategy.Value;
-            foreach (var child in Inlines) if (child != null) ui.Inlines.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Inlines.Length; i++)
+            {
+                var child = Inlines[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Inlines.Add(subChildren[j]);
+                else
+                    ui.Inlines.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Hyperlink.StartChain(ui);
         }
 
@@ -30029,8 +30699,18 @@ namespace CSharpMarkup.WinUI // Italic
         public static Italic Italic(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Italic();
-            foreach (var child in Inlines) if (child != null) ui.Inlines.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Inlines.Length; i++)
+            {
+                var child = Inlines[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Inlines.Add(subChildren[j]);
+                else
+                    ui.Inlines.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Italic.StartChain(ui);
         }
 
@@ -30120,8 +30800,18 @@ namespace CSharpMarkup.WinUI // Paragraph
         public static Paragraph Paragraph(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Paragraph();
-            foreach (var child in Inlines) if (child != null) ui.Inlines.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Inlines.Length; i++)
+            {
+                var child = Inlines[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Inlines.Add(subChildren[j]);
+                else
+                    ui.Inlines.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Paragraph.StartChain(ui);
         }
 
@@ -30130,8 +30820,18 @@ namespace CSharpMarkup.WinUI // Paragraph
         {
             var ui = new Xaml.Documents.Paragraph();
             if (TextIndent.HasValue) ui.TextIndent = TextIndent.Value;
-            foreach (var child in Inlines) if (child != null) ui.Inlines.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Inlines.Length; i++)
+            {
+                var child = Inlines[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Inlines.Add(subChildren[j]);
+                else
+                    ui.Inlines.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Paragraph.StartChain(ui);
         }
 
@@ -30260,8 +30960,18 @@ namespace CSharpMarkup.WinUI // Span
         public static Span Span(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Span();
-            foreach (var child in Inlines) if (child != null) ui.Inlines.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Inlines.Length; i++)
+            {
+                var child = Inlines[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Inlines.Add(subChildren[j]);
+                else
+                    ui.Inlines.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Span.StartChain(ui);
         }
 
@@ -30553,8 +31263,18 @@ namespace CSharpMarkup.WinUI // Underline
         public static Underline Underline(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Underline();
-            foreach (var child in Inlines) if (child != null) ui.Inlines.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Inlines.Length; i++)
+            {
+                var child = Inlines[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Inlines.Add(subChildren[j]);
+                else
+                    ui.Inlines.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Underline.StartChain(ui);
         }
 
@@ -31705,8 +32425,18 @@ namespace CSharpMarkup.WinUI // GeometryGroup
         public static GeometryGroup GeometryGroup(params Microsoft.UI.Xaml.Media.Geometry[] Children)
         {
             var ui = new Xaml.Media.GeometryGroup();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Geometry>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.GeometryGroup.StartChain(ui);
         }
 
@@ -31715,8 +32445,18 @@ namespace CSharpMarkup.WinUI // GeometryGroup
         {
             var ui = new Xaml.Media.GeometryGroup();
             if (FillRule.HasValue) ui.FillRule = FillRule.Value;
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Geometry>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.GeometryGroup.StartChain(ui);
         }
 
@@ -32098,8 +32838,18 @@ namespace CSharpMarkup.WinUI // LinearGradientBrush
         public static LinearGradientBrush LinearGradientBrush(params Microsoft.UI.Xaml.Media.GradientStop[] GradientStops)
         {
             var ui = new Xaml.Media.LinearGradientBrush();
-            foreach (var child in GradientStops) if (child != null) ui.GradientStops.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < GradientStops.Length; i++)
+            {
+                var child = GradientStops[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.GradientStop>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.GradientStops.Add(subChildren[j]);
+                else
+                    ui.GradientStops.Add(child);
+            }
             return global::CSharpMarkup.WinUI.LinearGradientBrush.StartChain(ui);
         }
 
@@ -32109,8 +32859,18 @@ namespace CSharpMarkup.WinUI // LinearGradientBrush
             var ui = new Xaml.Media.LinearGradientBrush();
             if (StartPoint.HasValue) ui.StartPoint = StartPoint.Value;
             if (EndPoint.HasValue) ui.EndPoint = EndPoint.Value;
-            foreach (var child in GradientStops) if (child != null) ui.GradientStops.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < GradientStops.Length; i++)
+            {
+                var child = GradientStops[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.GradientStop>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.GradientStops.Add(subChildren[j]);
+                else
+                    ui.GradientStops.Add(child);
+            }
             return global::CSharpMarkup.WinUI.LinearGradientBrush.StartChain(ui);
         }
 
@@ -32417,8 +33177,18 @@ namespace CSharpMarkup.WinUI // PathFigure
         public static PathFigure PathFigure(params Microsoft.UI.Xaml.Media.PathSegment[] Segments)
         {
             var ui = new Xaml.Media.PathFigure();
-            foreach (var child in Segments) if (child != null) ui.Segments.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Segments.Length; i++)
+            {
+                var child = Segments[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.PathSegment>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Segments.Add(subChildren[j]);
+                else
+                    ui.Segments.Add(child);
+            }
             return global::CSharpMarkup.WinUI.PathFigure.StartChain(ui);
         }
 
@@ -32431,8 +33201,18 @@ namespace CSharpMarkup.WinUI // PathFigure
             if (IsClosed.HasValue) ui.IsClosed = IsClosed.Value;
             if (DataContext.HasValue) ui.DataContext = DataContext.Value;
             if (TemplatedParent.HasValue) ui.TemplatedParent = TemplatedParent.Value;
-            foreach (var child in Segments) if (child != null) ui.Segments.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Segments.Length; i++)
+            {
+                var child = Segments[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.PathSegment>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Segments.Add(subChildren[j]);
+                else
+                    ui.Segments.Add(child);
+            }
             return global::CSharpMarkup.WinUI.PathFigure.StartChain(ui);
         }
 
@@ -32560,8 +33340,18 @@ namespace CSharpMarkup.WinUI // PathGeometry
         public static PathGeometry PathGeometry(params Microsoft.UI.Xaml.Media.PathFigure[] Figures)
         {
             var ui = new Xaml.Media.PathGeometry();
-            foreach (var child in Figures) if (child != null) ui.Figures.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Figures.Length; i++)
+            {
+                var child = Figures[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.PathFigure>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Figures.Add(subChildren[j]);
+                else
+                    ui.Figures.Add(child);
+            }
             return global::CSharpMarkup.WinUI.PathGeometry.StartChain(ui);
         }
 
@@ -32570,8 +33360,18 @@ namespace CSharpMarkup.WinUI // PathGeometry
         {
             var ui = new Xaml.Media.PathGeometry();
             if (FillRule.HasValue) ui.FillRule = FillRule.Value;
-            foreach (var child in Figures) if (child != null) ui.Figures.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Figures.Length; i++)
+            {
+                var child = Figures[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.PathFigure>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Figures.Add(subChildren[j]);
+                else
+                    ui.Figures.Add(child);
+            }
             return global::CSharpMarkup.WinUI.PathGeometry.StartChain(ui);
         }
 
@@ -33924,8 +34724,18 @@ namespace CSharpMarkup.WinUI // TransformGroup
         public static TransformGroup TransformGroup(params Microsoft.UI.Xaml.Media.Transform[] Children)
         {
             var ui = new Xaml.Media.TransformGroup();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Transform>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.TransformGroup.StartChain(ui);
         }
 
@@ -34488,8 +35298,18 @@ namespace CSharpMarkup.WinUI // ColorAnimationUsingKeyFrames
         public static ColorAnimationUsingKeyFrames ColorAnimationUsingKeyFrames(params Microsoft.UI.Xaml.Media.Animation.ColorKeyFrame[] KeyFrames)
         {
             var ui = new Xaml.Media.Animation.ColorAnimationUsingKeyFrames();
-            foreach (var child in KeyFrames) if (child != null) ui.KeyFrames.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < KeyFrames.Length; i++)
+            {
+                var child = KeyFrames[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Animation.ColorKeyFrame>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.KeyFrames.Add(subChildren[j]);
+                else
+                    ui.KeyFrames.Add(child);
+            }
             return global::CSharpMarkup.WinUI.ColorAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -34498,8 +35318,18 @@ namespace CSharpMarkup.WinUI // ColorAnimationUsingKeyFrames
         {
             var ui = new Xaml.Media.Animation.ColorAnimationUsingKeyFrames();
             if (EnableDependentAnimation.HasValue) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            foreach (var child in KeyFrames) if (child != null) ui.KeyFrames.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < KeyFrames.Length; i++)
+            {
+                var child = KeyFrames[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Animation.ColorKeyFrame>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.KeyFrames.Add(subChildren[j]);
+                else
+                    ui.KeyFrames.Add(child);
+            }
             return global::CSharpMarkup.WinUI.ColorAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -35209,8 +36039,18 @@ namespace CSharpMarkup.WinUI // DoubleAnimationUsingKeyFrames
         public static DoubleAnimationUsingKeyFrames DoubleAnimationUsingKeyFrames(params Microsoft.UI.Xaml.Media.Animation.DoubleKeyFrame[] KeyFrames)
         {
             var ui = new Xaml.Media.Animation.DoubleAnimationUsingKeyFrames();
-            foreach (var child in KeyFrames) if (child != null) ui.KeyFrames.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < KeyFrames.Length; i++)
+            {
+                var child = KeyFrames[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Animation.DoubleKeyFrame>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.KeyFrames.Add(subChildren[j]);
+                else
+                    ui.KeyFrames.Add(child);
+            }
             return global::CSharpMarkup.WinUI.DoubleAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -35219,8 +36059,18 @@ namespace CSharpMarkup.WinUI // DoubleAnimationUsingKeyFrames
         {
             var ui = new Xaml.Media.Animation.DoubleAnimationUsingKeyFrames();
             if (EnableDependentAnimation.HasValue) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            foreach (var child in KeyFrames) if (child != null) ui.KeyFrames.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < KeyFrames.Length; i++)
+            {
+                var child = KeyFrames[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Animation.DoubleKeyFrame>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.KeyFrames.Add(subChildren[j]);
+                else
+                    ui.KeyFrames.Add(child);
+            }
             return global::CSharpMarkup.WinUI.DoubleAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -36740,8 +37590,18 @@ namespace CSharpMarkup.WinUI // ObjectAnimationUsingKeyFrames
         public static ObjectAnimationUsingKeyFrames ObjectAnimationUsingKeyFrames(params Microsoft.UI.Xaml.Media.Animation.ObjectKeyFrame[] KeyFrames)
         {
             var ui = new Xaml.Media.Animation.ObjectAnimationUsingKeyFrames();
-            foreach (var child in KeyFrames) if (child != null) ui.KeyFrames.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < KeyFrames.Length; i++)
+            {
+                var child = KeyFrames[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Animation.ObjectKeyFrame>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.KeyFrames.Add(subChildren[j]);
+                else
+                    ui.KeyFrames.Add(child);
+            }
             return global::CSharpMarkup.WinUI.ObjectAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -36750,8 +37610,18 @@ namespace CSharpMarkup.WinUI // ObjectAnimationUsingKeyFrames
         {
             var ui = new Xaml.Media.Animation.ObjectAnimationUsingKeyFrames();
             if (EnableDependentAnimation.HasValue) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            foreach (var child in KeyFrames) if (child != null) ui.KeyFrames.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < KeyFrames.Length; i++)
+            {
+                var child = KeyFrames[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Animation.ObjectKeyFrame>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.KeyFrames.Add(subChildren[j]);
+                else
+                    ui.KeyFrames.Add(child);
+            }
             return global::CSharpMarkup.WinUI.ObjectAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -38369,8 +39239,18 @@ namespace CSharpMarkup.WinUI // Storyboard
         public static Storyboard Storyboard(params Microsoft.UI.Xaml.Media.Animation.Timeline[] Children)
         {
             var ui = new Xaml.Media.Animation.Storyboard();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Animation.Timeline>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.Storyboard.StartChain(ui);
         }
 
@@ -40131,8 +41011,18 @@ namespace CSharpMarkup.WinUI // ManagedItemsStackPanel
         public static ManagedItemsStackPanel ManagedItemsStackPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new global::Uno.UI.Controls.ManagedItemsStackPanel();
-            foreach (var child in Children) if (child != null) ui.Children.Add(child);
-            // TODO: 2022 CSharpMarkup.WinUI.Helpers.SpreadChildren(ui.Children);
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return global::CSharpMarkup.WinUI.ManagedItemsStackPanel.StartChain(ui);
         }
 

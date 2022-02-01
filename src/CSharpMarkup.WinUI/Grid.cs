@@ -24,7 +24,6 @@ namespace CSharpMarkup.WinUI
             var grid = Grid(children);
             foreach (var height in rowHeights.Lengths) grid.UI.RowDefinitions.Add(new Controls.RowDefinition { Height = height });
             foreach (var width in columnWidths.Lengths) grid.UI.ColumnDefinitions.Add(new Controls.ColumnDefinition { Width = width });
-            SpreadChildren(grid.UI.Children);
             return grid;
         }
 

@@ -30,7 +30,7 @@ using Color = System.Windows.Media.Color;
 #endregion
 
 // Initialize some template placeholders with example values
-using _PropertyType_ = System.String;
+using _PropertyType_ = System.Object;
 using _AttachedPropertyType_ = System.Double;
 using AttachedPropertyTargetType = System.Windows.DependencyObject; // Attached properties can target Markup types as well as non-Markup types, which is why AttachedPropertyTargetType is used in both _UIViewNamespace_ and _MarkupNamespace_
 
@@ -107,10 +107,36 @@ namespace _MarkupNamespace_
         ) {
             var ui = new _UIViewNamespace_.LayoutView();
 #region _LayoutViewHelperStatements_
-            foreach (var child in _PropertyName_) if (child is not null) ui._PropertyName_.Add(child/*_AccessUI_*/);
-            // TODO: 2022 CSharpMarkup.Wpf.Helpers.SpreadChildren(ui._PropertyName_);
+            for (int i = 0; i < _PropertyName_.Length; i++)
+            {
+                var child = _PropertyName_[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<_PropertyType_>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui._PropertyName_.Add(subChildren[j]/*_AccessUI_*/);
+                else
+                    ui._PropertyName_.Add(child/*_AccessUI_*/);
+            }
 #endregion
             return _MarkupNamespace_.LayoutView.StartChain(ui);
+        }
+
+        public static LayoutView[] LayoutViewWithStructChildren(
+#region _LayoutViewStructHelperParameters_
+            params _PropertyType_[][] _PropertyName_
+#endregion
+        ) {
+            var ui = new _UIViewNamespace_.LayoutView();
+#region _LayoutViewStructHelperStatements_
+        for (int i = 0; i < _PropertyName_.Length; i++)
+        {
+            for (int j = 0; j < _PropertyName_[i].Length; j++)
+                ui._PropertyName_.Add(_PropertyName_[i][j]/*_AccessUI_*/);
+        }
+#endregion
+            return new LayoutView[] { _MarkupNamespace_.LayoutView.StartChain(ui) };
         }
     }
 
