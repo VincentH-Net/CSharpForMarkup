@@ -16,6 +16,15 @@ namespace CSharpMarkup.Wpf
         TUI UI { get; }
     }
 
+    public class UIDispatcherObject
+    {
+        public System.Windows.Threading.DispatcherObject UI { get; }
+
+        public UIDispatcherObject(System.Windows.Threading.DispatcherObject ui) => UI = ui;
+
+        public static implicit operator UIDispatcherObject(DispatcherObject dispatcherObject) => new(dispatcherObject.UI);
+    }
+
     /// <summary>Allows to specify both markup views (e.g. <see cref="TextBlock"/>) and non-view object types (e.g. <see cref="string"/>) as UI content</summary>
     public class UIObject
     {

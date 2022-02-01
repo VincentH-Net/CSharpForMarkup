@@ -44,6 +44,15 @@ namespace CSharpMarkup.Wpf
         [ShortFor("Width(size).Height(size)")]
         public static TFrameworkElement Size<TFrameworkElement>(this TFrameworkElement frameworkElement, double size) where TFrameworkElement : FrameworkElement
         { frameworkElement.UI.Width = size; frameworkElement.UI.Height = size; return frameworkElement; }
+
+        /// <summary>Assign key - <see cref="DispatcherObject"/> pairs to <see cref="Windows.FrameworkElement.Resources"/></summary>
+        public static TView Resources<TView>(this TView view, params (object key, UIDispatcherObject value)[] keyValuePairs) where TView : FrameworkElement
+        {
+            var resources = new Windows.ResourceDictionary();
+            foreach (var keyValue in keyValuePairs)
+                resources.Add(keyValue.key, keyValue.value.UI);
+            view.UI.Resources = resources; return view; 
+        }
     }
 
     public static partial class FrameworkElementExtensions
