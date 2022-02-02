@@ -359,14 +359,6 @@ namespace CSharpMarkup.Wpf
             return bindable;
         }
 
-        public static TDependencyObject Invoke<TDependencyObject, TUI>(this TDependencyObject bindable, Action<TUI> action)
-            where TDependencyObject : IUI<TUI>
-            where TUI : System.Windows.DependencyObject
-        {
-            action?.Invoke(bindable.UI);
-            return bindable;
-        }
-
         static string StripExpressionToPath(string pathExpressionString)
         {
             if (pathExpressionString == null) return bindingContextPath;

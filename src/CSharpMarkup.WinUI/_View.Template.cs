@@ -191,6 +191,8 @@ namespace _MarkupNamespace_
 #endregion
 
 #region ViewRequiredMembers
+        public _ViewTypeName_ Invoke(Action<_UIViewType_> action) { action?.Invoke(UI); return this; }
+
         protected _ViewTypeName_() { }
 #endregion
 
