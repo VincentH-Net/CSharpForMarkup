@@ -26,7 +26,6 @@ using IEnumerable = System.Collections.IEnumerable;
 using CultureInfo = System.Globalization.CultureInfo;
 using RequestCachePolicy = System.Net.Cache.RequestCachePolicy;
 using StringCollection = System.Collections.Specialized.StringCollection;
-using Color = System.Windows.Media.Color;
 #endregion
 
 // Initialize some template placeholders with example values
@@ -247,6 +246,31 @@ namespace _MarkupNamespace_
         const double _AttachedPropertySetValue_ = 0;
     }
 
+#region TypeConvertor
+    /// <summary><see cref="_ConvertableType_" /> or <see cref="string" /></summary>
+    public partial struct _TypeConvertorName_
+    {
+        static _TypeConvertorType_ converter;
+        static _TypeConvertorType_ Converter => converter ??= new();
+
+        readonly _ConvertableType_ value;
+
+        public _TypeConvertorName_(_ConvertableType_ value) => this.value = value;
+
+        public static implicit operator _ConvertableType_(_TypeConvertorName_ value) => value.value;
+        public static implicit operator _TypeConvertorName_(_ConvertableType_ value) => new(value);/*_TypeConvertorFromMarkup_*/
+
+        public static implicit operator _TypeConvertorName_(string value) => new((_ConvertableType_)_TypeConvertorName_.Converter.ConvertFromInvariantString(value));
+    }
+#endregion
+
+    public partial struct _TypeConvertorName_
+    {
+#region _TypeConvertorFromMarkup_
+        public static implicit operator _TypeConvertorName_(_MarkupConvertableType_ value) => new(value.UI);
+#endregion
+    }
+
     // Classes to get template compiling, not part of template
     public partial class _PropertyTarget_ :
         DependencyObject
@@ -257,5 +281,11 @@ namespace _MarkupNamespace_
     public class ContentView { internal static ContentView StartChain(_UIViewNamespace_.ContentView ui) => null; }
 
     public class LayoutView { internal static LayoutView StartChain(_UIViewNamespace_.LayoutView ui) => null; }
+
+    public class _TypeConvertorType_ { public object ConvertFromInvariantString(string _) => null; }
+
+    public class _ConvertableType_ { }
+
+    public class _MarkupConvertableType_ { public _ConvertableType_ UI => null; }
 }
 #endif
