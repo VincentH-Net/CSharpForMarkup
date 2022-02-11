@@ -3488,7 +3488,7 @@ namespace CSharpMarkup.Wpf // MediaPlayer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.MediaPlayer"/></summary>
-        public static MediaPlayer MediaPlayer(O<double> Balance = default, O<Windows.Media.MediaClock> Clock = default, O<bool> IsMuted = default, O<TimeSpan> Position = default, O<bool> ScrubbingEnabled = default, O<double> SpeedRatio = default, O<double> Volume = default)
+        public static MediaPlayer MediaPlayer(O<double> Balance = default, O<Windows.Media.MediaClock> Clock = default, O<bool> IsMuted = default, O<CSharpMarkup.Wpf.to.TimeSpan> Position = default, O<bool> ScrubbingEnabled = default, O<double> SpeedRatio = default, O<double> Volume = default)
         {
             var ui = new Windows.Media.MediaPlayer();
             if (Balance.HasValue) ui.Balance = Balance.Value;
@@ -3549,7 +3549,7 @@ namespace CSharpMarkup.Wpf // MediaPlayer
         public static TView IsMuted<TView>(this TView view, bool value) where TView : MediaPlayer { view.UI.IsMuted = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.MediaPlayer.Position"/></summary>
-        public static TView Position<TView>(this TView view, TimeSpan value) where TView : MediaPlayer { view.UI.Position = value; return view; }
+        public static TView Position<TView>(this TView view, CSharpMarkup.Wpf.to.TimeSpan value) where TView : MediaPlayer { view.UI.Position = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.MediaPlayer.ScrubbingEnabled"/></summary>
         public static TView ScrubbingEnabled<TView>(this TView view, bool value) where TView : MediaPlayer { view.UI.ScrubbingEnabled = value; return view; }
@@ -3567,7 +3567,7 @@ namespace CSharpMarkup.Wpf // MediaTimeline
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.MediaTimeline"/></summary>
-        public static MediaTimeline MediaTimeline(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<Uri> Source = default)
+        public static MediaTimeline MediaTimeline(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<Uri> Source = default)
         {
             var ui = new Windows.Media.MediaTimeline();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -3584,21 +3584,21 @@ namespace CSharpMarkup.Wpf // MediaTimeline
         }
 
         /// <summary>Create a <see cref="Windows.Media.MediaTimeline"/></summary>
-        public static MediaTimeline MediaTimeline(TimeSpan? beginTime)
+        public static MediaTimeline MediaTimeline(CSharpMarkup.Wpf.to.TimeSpan? beginTime)
         {
             var ui = new Windows.Media.MediaTimeline(beginTime);
             return CSharpMarkup.Wpf.MediaTimeline.StartChain(ui);
         }
 
         /// <summary>Create a <see cref="Windows.Media.MediaTimeline"/></summary>
-        public static MediaTimeline MediaTimeline(TimeSpan? beginTime, CSharpMarkup.Wpf.to.Duration duration)
+        public static MediaTimeline MediaTimeline(CSharpMarkup.Wpf.to.TimeSpan? beginTime, CSharpMarkup.Wpf.to.Duration duration)
         {
             var ui = new Windows.Media.MediaTimeline(beginTime, duration);
             return CSharpMarkup.Wpf.MediaTimeline.StartChain(ui);
         }
 
         /// <summary>Create a <see cref="Windows.Media.MediaTimeline"/></summary>
-        public static MediaTimeline MediaTimeline(TimeSpan? beginTime, CSharpMarkup.Wpf.to.Duration duration, CSharpMarkup.Wpf.to.RepeatBehavior repeatBehavior)
+        public static MediaTimeline MediaTimeline(CSharpMarkup.Wpf.to.TimeSpan? beginTime, CSharpMarkup.Wpf.to.Duration duration, CSharpMarkup.Wpf.to.RepeatBehavior repeatBehavior)
         {
             var ui = new Windows.Media.MediaTimeline(beginTime, duration, repeatBehavior);
             return CSharpMarkup.Wpf.MediaTimeline.StartChain(ui);
@@ -6088,7 +6088,7 @@ namespace CSharpMarkup.Wpf // ByteAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ByteAnimation"/></summary>
-        public static ByteAnimation ByteAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<byte?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<byte?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<byte?> To = default)
+        public static ByteAnimation ByteAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<byte?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<byte?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<byte?> To = default)
         {
             var ui = new Windows.Media.Animation.ByteAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -6627,7 +6627,7 @@ namespace CSharpMarkup.Wpf // ColorAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ColorAnimation"/></summary>
-        public static ColorAnimation ColorAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Color?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Color?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Color?> To = default)
+        public static ColorAnimation ColorAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Color?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Color?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Color?> To = default)
         {
             var ui = new Windows.Media.Animation.ColorAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -6952,7 +6952,7 @@ namespace CSharpMarkup.Wpf // DecimalAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.DecimalAnimation"/></summary>
-        public static DecimalAnimation DecimalAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<decimal?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<decimal?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<decimal?> To = default)
+        public static DecimalAnimation DecimalAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<decimal?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<decimal?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<decimal?> To = default)
         {
             var ui = new Windows.Media.Animation.DecimalAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -8391,7 +8391,7 @@ namespace CSharpMarkup.Wpf // DoubleAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.DoubleAnimation"/></summary>
-        public static DoubleAnimation DoubleAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<double?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<double?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<double?> To = default)
+        public static DoubleAnimation DoubleAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<double?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<double?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<double?> To = default)
         {
             var ui = new Windows.Media.Animation.DoubleAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -8599,7 +8599,7 @@ namespace CSharpMarkup.Wpf // DoubleAnimationUsingPath
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.DoubleAnimationUsingPath"/></summary>
-        public static DoubleAnimationUsingPath DoubleAnimationUsingPath(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.PathGeometry> PathGeometry = default, O<Windows.Media.Animation.PathAnimationSource> Source = default)
+        public static DoubleAnimationUsingPath DoubleAnimationUsingPath(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.PathGeometry> PathGeometry = default, O<Windows.Media.Animation.PathAnimationSource> Source = default)
         {
             var ui = new Windows.Media.Animation.DoubleAnimationUsingPath();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -10194,7 +10194,7 @@ namespace CSharpMarkup.Wpf // Int16Animation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int16Animation"/></summary>
-        public static Int16Animation Int16Animation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<short?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<short?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<short?> To = default)
+        public static Int16Animation Int16Animation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<short?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<short?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<short?> To = default)
         {
             var ui = new Windows.Media.Animation.Int16Animation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -10478,7 +10478,7 @@ namespace CSharpMarkup.Wpf // Int32Animation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int32Animation"/></summary>
-        public static Int32Animation Int32Animation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<int?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<int?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<int?> To = default)
+        public static Int32Animation Int32Animation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<int?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<int?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<int?> To = default)
         {
             var ui = new Windows.Media.Animation.Int32Animation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -10762,7 +10762,7 @@ namespace CSharpMarkup.Wpf // Int64Animation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int64Animation"/></summary>
-        public static Int64Animation Int64Animation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<long?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<long?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<long?> To = default)
+        public static Int64Animation Int64Animation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<long?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<long?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<long?> To = default)
         {
             var ui = new Windows.Media.Animation.Int64Animation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -12095,7 +12095,7 @@ namespace CSharpMarkup.Wpf // MatrixAnimationUsingPath
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.MatrixAnimationUsingPath"/></summary>
-        public static MatrixAnimationUsingPath MatrixAnimationUsingPath(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<bool> DoesRotateWithTangent = default, O<bool> IsAdditive = default, O<bool> IsAngleCumulative = default, O<bool> IsOffsetCumulative = default, O<Windows.Media.PathGeometry> PathGeometry = default)
+        public static MatrixAnimationUsingPath MatrixAnimationUsingPath(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<bool> DoesRotateWithTangent = default, O<bool> IsAdditive = default, O<bool> IsAngleCumulative = default, O<bool> IsOffsetCumulative = default, O<Windows.Media.PathGeometry> PathGeometry = default)
         {
             var ui = new Windows.Media.Animation.MatrixAnimationUsingPath();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -12440,21 +12440,21 @@ namespace CSharpMarkup.Wpf // ParallelTimeline
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.ParallelTimeline"/></summary>
-        public static ParallelTimeline ParallelTimeline(TimeSpan? beginTime)
+        public static ParallelTimeline ParallelTimeline(CSharpMarkup.Wpf.to.TimeSpan? beginTime)
         {
             var ui = new Windows.Media.Animation.ParallelTimeline(beginTime);
             return CSharpMarkup.Wpf.ParallelTimeline.StartChain(ui);
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.ParallelTimeline"/></summary>
-        public static ParallelTimeline ParallelTimeline(TimeSpan? beginTime, CSharpMarkup.Wpf.to.Duration duration)
+        public static ParallelTimeline ParallelTimeline(CSharpMarkup.Wpf.to.TimeSpan? beginTime, CSharpMarkup.Wpf.to.Duration duration)
         {
             var ui = new Windows.Media.Animation.ParallelTimeline(beginTime, duration);
             return CSharpMarkup.Wpf.ParallelTimeline.StartChain(ui);
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.ParallelTimeline"/></summary>
-        public static ParallelTimeline ParallelTimeline(TimeSpan? beginTime, CSharpMarkup.Wpf.to.Duration duration, CSharpMarkup.Wpf.to.RepeatBehavior repeatBehavior)
+        public static ParallelTimeline ParallelTimeline(CSharpMarkup.Wpf.to.TimeSpan? beginTime, CSharpMarkup.Wpf.to.Duration duration, CSharpMarkup.Wpf.to.RepeatBehavior repeatBehavior)
         {
             var ui = new Windows.Media.Animation.ParallelTimeline(beginTime, duration, repeatBehavior);
             return CSharpMarkup.Wpf.ParallelTimeline.StartChain(ui);
@@ -12505,7 +12505,7 @@ namespace CSharpMarkup.Wpf // Point3DAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Point3DAnimation"/></summary>
-        public static Point3DAnimation Point3DAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Point3D?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Point3D?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Point3D?> To = default)
+        public static Point3DAnimation Point3DAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Point3D?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Point3D?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Point3D?> To = default)
         {
             var ui = new Windows.Media.Animation.Point3DAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -12789,7 +12789,7 @@ namespace CSharpMarkup.Wpf // PointAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.PointAnimation"/></summary>
-        public static PointAnimation PointAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Point?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Point?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Point?> To = default)
+        public static PointAnimation PointAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Point?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Point?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Point?> To = default)
         {
             var ui = new Windows.Media.Animation.PointAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -12997,7 +12997,7 @@ namespace CSharpMarkup.Wpf // PointAnimationUsingPath
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.PointAnimationUsingPath"/></summary>
-        public static PointAnimationUsingPath PointAnimationUsingPath(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.PathGeometry> PathGeometry = default)
+        public static PointAnimationUsingPath PointAnimationUsingPath(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.PathGeometry> PathGeometry = default)
         {
             var ui = new Windows.Media.Animation.PointAnimationUsingPath();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -13283,7 +13283,7 @@ namespace CSharpMarkup.Wpf // QuaternionAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.QuaternionAnimation"/></summary>
-        public static QuaternionAnimation QuaternionAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Quaternion?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Quaternion?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Quaternion?> To = default, O<bool> UseShortestPath = default)
+        public static QuaternionAnimation QuaternionAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Quaternion?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Quaternion?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Quaternion?> To = default, O<bool> UseShortestPath = default)
         {
             var ui = new Windows.Media.Animation.QuaternionAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -13616,7 +13616,7 @@ namespace CSharpMarkup.Wpf // RectAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.RectAnimation"/></summary>
-        public static RectAnimation RectAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Rect?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Rect?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Rect?> To = default)
+        public static RectAnimation RectAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Rect?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Rect?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Rect?> To = default)
         {
             var ui = new Windows.Media.Animation.RectAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -13900,7 +13900,7 @@ namespace CSharpMarkup.Wpf // Rotation3DAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Rotation3DAnimation"/></summary>
-        public static Rotation3DAnimation Rotation3DAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<Windows.Media.Media3D.Rotation3D> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<Windows.Media.Media3D.Rotation3D> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Media3D.Rotation3D> To = default)
+        public static Rotation3DAnimation Rotation3DAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<Windows.Media.Media3D.Rotation3D> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<Windows.Media.Media3D.Rotation3D> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<Windows.Media.Media3D.Rotation3D> To = default)
         {
             var ui = new Windows.Media.Animation.Rotation3DAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -14225,7 +14225,7 @@ namespace CSharpMarkup.Wpf // SingleAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.SingleAnimation"/></summary>
-        public static SingleAnimation SingleAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<float?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<float?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<float?> To = default)
+        public static SingleAnimation SingleAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<float?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<float?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<float?> To = default)
         {
             var ui = new Windows.Media.Animation.SingleAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -14509,7 +14509,7 @@ namespace CSharpMarkup.Wpf // SizeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.SizeAnimation"/></summary>
-        public static SizeAnimation SizeAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Size?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Size?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Size?> To = default)
+        public static SizeAnimation SizeAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Size?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Size?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Size?> To = default)
         {
             var ui = new Windows.Media.Animation.SizeAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -16256,7 +16256,7 @@ namespace CSharpMarkup.Wpf // Timeline
         public static TView AutoReverse<TView>(this TView view, bool value) where TView : Timeline { view.UI.AutoReverse = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Timeline.BeginTime"/></summary>
-        public static TView BeginTime<TView>(this TView view, TimeSpan? value) where TView : Timeline { view.UI.BeginTime = value; return view; }
+        public static TView BeginTime<TView>(this TView view, CSharpMarkup.Wpf.to.TimeSpan? value) where TView : Timeline { view.UI.BeginTime = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Timeline.DecelerationRatio"/></summary>
         public static TView DecelerationRatio<TView>(this TView view, double value) where TView : Timeline { view.UI.DecelerationRatio = value; return view; }
@@ -16285,8 +16285,8 @@ namespace CSharpMarkup.Wpf // Timeline
         => DependencyProperty<TTarget, bool>.Get(target, Windows.Media.Animation.Timeline.AutoReverseProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Timeline.BeginTime"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan?> BeginTime<TTarget>(this TTarget target) where TTarget : Timeline
-        => DependencyProperty<TTarget, TimeSpan?>.Get(target, Windows.Media.Animation.Timeline.BeginTimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.TimeSpan?> BeginTime<TTarget>(this TTarget target) where TTarget : Timeline
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.TimeSpan?>.Get(target, Windows.Media.Animation.Timeline.BeginTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Timeline.DecelerationRatio"/></summary>
         public static DependencyProperty<TTarget, double> DecelerationRatio<TTarget>(this TTarget target) where TTarget : Timeline
@@ -16407,7 +16407,7 @@ namespace CSharpMarkup.Wpf // Vector3DAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Vector3DAnimation"/></summary>
-        public static Vector3DAnimation Vector3DAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Vector3D?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Vector3D?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Vector3D?> To = default)
+        public static Vector3DAnimation Vector3DAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Vector3D?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Vector3D?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Vector3D?> To = default)
         {
             var ui = new Windows.Media.Animation.Vector3DAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -16691,7 +16691,7 @@ namespace CSharpMarkup.Wpf // VectorAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.VectorAnimation"/></summary>
-        public static VectorAnimation VectorAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Vector?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Vector?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Vector?> To = default)
+        public static VectorAnimation VectorAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Vector?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Vector?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Vector?> To = default)
         {
             var ui = new Windows.Media.Animation.VectorAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -29737,7 +29737,7 @@ namespace CSharpMarkup.Wpf // MediaElement
     {
         /// <summary>Create a <see cref="Windows.Controls.MediaElement"/></summary>
         /// <remarks>Remark: MediaElement().Bind() binds to <see cref="Windows.Controls.MediaElement.SourceProperty"/></remarks>
-        public static MediaElement MediaElement(O<double> Balance = default, O<Windows.Media.MediaClock> Clock = default, O<bool> IsMuted = default, O<Windows.Controls.MediaState> LoadedBehavior = default, O<TimeSpan> Position = default, O<bool> ScrubbingEnabled = default, O<Uri> Source = default, O<double> SpeedRatio = default, O<Windows.Media.Stretch> Stretch = default, O<Windows.Controls.StretchDirection> StretchDirection = default, O<Windows.Controls.MediaState> UnloadedBehavior = default, O<double> Volume = default)
+        public static MediaElement MediaElement(O<double> Balance = default, O<Windows.Media.MediaClock> Clock = default, O<bool> IsMuted = default, O<Windows.Controls.MediaState> LoadedBehavior = default, O<CSharpMarkup.Wpf.to.TimeSpan> Position = default, O<bool> ScrubbingEnabled = default, O<Uri> Source = default, O<double> SpeedRatio = default, O<Windows.Media.Stretch> Stretch = default, O<Windows.Controls.StretchDirection> StretchDirection = default, O<Windows.Controls.MediaState> UnloadedBehavior = default, O<double> Volume = default)
         {
             var ui = new Windows.Controls.MediaElement();
             if (Balance.HasValue) ui.Balance = Balance.Value;
@@ -29812,7 +29812,7 @@ namespace CSharpMarkup.Wpf // MediaElement
         public static TView LoadedBehavior<TView>(this TView view, Windows.Controls.MediaState value) where TView : MediaElement { view.UI.LoadedBehavior = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.MediaElement.Position"/></summary>
-        public static TView Position<TView>(this TView view, TimeSpan value) where TView : MediaElement { view.UI.Position = value; return view; }
+        public static TView Position<TView>(this TView view, CSharpMarkup.Wpf.to.TimeSpan value) where TView : MediaElement { view.UI.Position = value; return view; }
 
         /// <summary>Set <see cref="Windows.Controls.MediaElement.ScrubbingEnabled"/></summary>
         public static TView ScrubbingEnabled<TView>(this TView view, bool value) where TView : MediaElement { view.UI.ScrubbingEnabled = value; return view; }
@@ -39950,7 +39950,7 @@ namespace CSharpMarkup.Wpf // SeekStoryboard
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.SeekStoryboard"/></summary>
-        public static SeekStoryboard SeekStoryboard(O<TimeSpan> Offset = default, O<Windows.Media.Animation.TimeSeekOrigin> Origin = default)
+        public static SeekStoryboard SeekStoryboard(O<CSharpMarkup.Wpf.to.TimeSpan> Offset = default, O<Windows.Media.Animation.TimeSeekOrigin> Origin = default)
         {
             var ui = new Windows.Media.Animation.SeekStoryboard();
             if (Offset.HasValue) ui.Offset = Offset.Value;
@@ -39997,7 +39997,7 @@ namespace CSharpMarkup.Wpf // SeekStoryboard
     public static partial class SeekStoryboardExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.SeekStoryboard.Offset"/></summary>
-        public static TView Offset<TView>(this TView view, TimeSpan value) where TView : SeekStoryboard { view.UI.Offset = value; return view; }
+        public static TView Offset<TView>(this TView view, CSharpMarkup.Wpf.to.TimeSpan value) where TView : SeekStoryboard { view.UI.Offset = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.SeekStoryboard.Origin"/></summary>
         public static TView Origin<TView>(this TView view, Windows.Media.Animation.TimeSeekOrigin value) where TView : SeekStoryboard { view.UI.Origin = value; return view; }
@@ -40333,7 +40333,7 @@ namespace CSharpMarkup.Wpf // ThicknessAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ThicknessAnimation"/></summary>
-        public static ThicknessAnimation ThicknessAnimation(O<TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Thickness?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Thickness?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Thickness?> To = default)
+        public static ThicknessAnimation ThicknessAnimation(O<CSharpMarkup.Wpf.to.TimeSpan?> BeginTime = default, O<CSharpMarkup.Wpf.to.Duration> Duration = default, O<CSharpMarkup.Wpf.to.Thickness?> By = default, O<Windows.Media.Animation.IEasingFunction> EasingFunction = default, O<CSharpMarkup.Wpf.to.Thickness?> From = default, O<bool> IsAdditive = default, O<bool> IsCumulative = default, O<CSharpMarkup.Wpf.to.Thickness?> To = default)
         {
             var ui = new Windows.Media.Animation.ThicknessAnimation();
             if (BeginTime.HasValue) ui.BeginTime = BeginTime.Value;
@@ -48203,753 +48203,887 @@ namespace CSharpMarkup.Wpf // DispatcherObject
 
 namespace CSharpMarkup.Wpf.to // Type convertors
 {
-    /// <summary><see cref="Windows.Media.CacheMode" /> or <see cref="string" /></summary>
-    public partial struct CacheMode
+    partial struct CornerRadius
     {
-        static Windows.Media.CacheModeConverter converter;
-        static Windows.Media.CacheModeConverter Converter => converter ??= new();
+        static Windows.CornerRadiusConverter fromStringconverter;
+        static Windows.CornerRadiusConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator CornerRadius(string value) => (Windows.CornerRadius)CornerRadius.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct CacheMode
+    {
         readonly Windows.Media.CacheMode value;
 
         public CacheMode(Windows.Media.CacheMode value) => this.value = value;
 
         public static implicit operator Windows.Media.CacheMode(CacheMode value) => value.value;
         public static implicit operator CacheMode(Windows.Media.CacheMode value) => new(value);
-        public static implicit operator CacheMode(CSharpMarkup.Wpf.CacheMode value) => new(value.UI);
-
-        public static implicit operator CacheMode(string value) => new((Windows.Media.CacheMode)CacheMode.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Geometry" /> or <see cref="string" /></summary>
-    public partial struct Geometry
+    partial struct CacheMode
     {
-        static Windows.Media.GeometryConverter converter;
-        static Windows.Media.GeometryConverter Converter => converter ??= new();
+        public static implicit operator CacheMode(CSharpMarkup.Wpf.CacheMode value) => new(value.UI);
+    }
 
+    partial struct CacheMode
+    {
+        static Windows.Media.CacheModeConverter fromStringconverter;
+        static Windows.Media.CacheModeConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator CacheMode(string value) => (Windows.Media.CacheMode)CacheMode.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Geometry
+    {
         readonly Windows.Media.Geometry value;
 
         public Geometry(Windows.Media.Geometry value) => this.value = value;
 
         public static implicit operator Windows.Media.Geometry(Geometry value) => value.value;
         public static implicit operator Geometry(Windows.Media.Geometry value) => new(value);
-        public static implicit operator Geometry(CSharpMarkup.Wpf.Geometry value) => new(value.UI);
-
-        public static implicit operator Geometry(string value) => new((Windows.Media.Geometry)Geometry.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Brush" /> or <see cref="string" /></summary>
-    public partial struct Brush
+    partial struct Geometry
     {
-        static Windows.Media.BrushConverter converter;
-        static Windows.Media.BrushConverter Converter => converter ??= new();
+        public static implicit operator Geometry(CSharpMarkup.Wpf.Geometry value) => new(value.UI);
+    }
 
+    partial struct Geometry
+    {
+        static Windows.Media.GeometryConverter fromStringconverter;
+        static Windows.Media.GeometryConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator Geometry(string value) => (Windows.Media.Geometry)Geometry.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Brush
+    {
         readonly Windows.Media.Brush value;
 
         public Brush(Windows.Media.Brush value) => this.value = value;
 
         public static implicit operator Windows.Media.Brush(Brush value) => value.value;
         public static implicit operator Brush(Windows.Media.Brush value) => new(value);
-        public static implicit operator Brush(CSharpMarkup.Wpf.Brush value) => new(value.UI);
-
-        public static implicit operator Brush(string value) => new((Windows.Media.Brush)Brush.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Size" /> or <see cref="string" /></summary>
-    public partial struct Size
+    partial struct Brush
     {
-        static Windows.SizeConverter converter;
-        static Windows.SizeConverter Converter => converter ??= new();
+        public static implicit operator Brush(CSharpMarkup.Wpf.Brush value) => new(value.UI);
+    }
 
+    partial struct Brush
+    {
+        static Windows.Media.BrushConverter fromStringconverter;
+        static Windows.Media.BrushConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator Brush(string value) => (Windows.Media.Brush)Brush.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Size
+    {
         readonly Windows.Size value;
 
         public Size(Windows.Size value) => this.value = value;
 
         public static implicit operator Windows.Size(Size value) => value.value;
         public static implicit operator Size(Windows.Size value) => new(value);
-
-        public static implicit operator Size(string value) => new((Windows.Size)Size.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Transform" /> or <see cref="string" /></summary>
-    public partial struct Transform
+    partial struct Size
     {
-        static Windows.Media.TransformConverter converter;
-        static Windows.Media.TransformConverter Converter => converter ??= new();
+        static Windows.SizeConverter fromStringconverter;
+        static Windows.SizeConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Size(string value) => (Windows.Size)Size.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Transform
+    {
         readonly Windows.Media.Transform value;
 
         public Transform(Windows.Media.Transform value) => this.value = value;
 
         public static implicit operator Windows.Media.Transform(Transform value) => value.value;
         public static implicit operator Transform(Windows.Media.Transform value) => new(value);
-        public static implicit operator Transform(CSharpMarkup.Wpf.Transform value) => new(value.UI);
-
-        public static implicit operator Transform(string value) => new((Windows.Media.Transform)Transform.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Point" /> or <see cref="string" /></summary>
-    public partial struct Point
+    partial struct Transform
     {
-        static Windows.PointConverter converter;
-        static Windows.PointConverter Converter => converter ??= new();
+        public static implicit operator Transform(CSharpMarkup.Wpf.Transform value) => new(value.UI);
+    }
 
+    partial struct Transform
+    {
+        static Windows.Media.TransformConverter fromStringconverter;
+        static Windows.Media.TransformConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator Transform(string value) => (Windows.Media.Transform)Transform.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Point
+    {
         readonly Windows.Point value;
 
         public Point(Windows.Point value) => this.value = value;
 
         public static implicit operator Windows.Point(Point value) => value.value;
         public static implicit operator Point(Windows.Point value) => new(value);
-
-        public static implicit operator Point(string value) => new((Windows.Point)Point.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Color" /> or <see cref="string" /></summary>
-    public partial struct Color
+    partial struct Point
     {
-        static Windows.Media.ColorConverter converter;
-        static Windows.Media.ColorConverter Converter => converter ??= new();
+        static Windows.PointConverter fromStringconverter;
+        static Windows.PointConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Point(string value) => (Windows.Point)Point.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Color
+    {
         readonly Windows.Media.Color value;
 
         public Color(Windows.Media.Color value) => this.value = value;
 
         public static implicit operator Windows.Media.Color(Color value) => value.value;
         public static implicit operator Color(Windows.Media.Color value) => new(value);
-
-        public static implicit operator Color(string value) => new((Windows.Media.Color)Color.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Vector" /> or <see cref="string" /></summary>
-    public partial struct Vector
+    partial struct Color
     {
-        static Windows.VectorConverter converter;
-        static Windows.VectorConverter Converter => converter ??= new();
+        static Windows.Media.ColorConverter fromStringconverter;
+        static Windows.Media.ColorConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Color(string value) => (Windows.Media.Color)Color.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Vector
+    {
         readonly Windows.Vector value;
 
         public Vector(Windows.Vector value) => this.value = value;
 
         public static implicit operator Windows.Vector(Vector value) => value.value;
         public static implicit operator Vector(Windows.Vector value) => new(value);
-
-        public static implicit operator Vector(string value) => new((Windows.Vector)Vector.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.DoubleCollection" /> or <see cref="string" /></summary>
-    public partial struct DoubleCollection
+    partial struct Vector
     {
-        static Windows.Media.DoubleCollectionConverter converter;
-        static Windows.Media.DoubleCollectionConverter Converter => converter ??= new();
+        static Windows.VectorConverter fromStringconverter;
+        static Windows.VectorConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Vector(string value) => (Windows.Vector)Vector.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct DoubleCollection
+    {
         readonly Windows.Media.DoubleCollection value;
 
         public DoubleCollection(Windows.Media.DoubleCollection value) => this.value = value;
 
         public static implicit operator Windows.Media.DoubleCollection(DoubleCollection value) => value.value;
         public static implicit operator DoubleCollection(Windows.Media.DoubleCollection value) => new(value);
-        public static implicit operator DoubleCollection(CSharpMarkup.Wpf.DoubleCollection value) => new(value.UI);
-
-        public static implicit operator DoubleCollection(string value) => new((Windows.Media.DoubleCollection)DoubleCollection.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Rect" /> or <see cref="string" /></summary>
-    public partial struct Rect
+    partial struct DoubleCollection
     {
-        static Windows.RectConverter converter;
-        static Windows.RectConverter Converter => converter ??= new();
+        public static implicit operator DoubleCollection(CSharpMarkup.Wpf.DoubleCollection value) => new(value.UI);
+    }
 
+    partial struct DoubleCollection
+    {
+        static Windows.Media.DoubleCollectionConverter fromStringconverter;
+        static Windows.Media.DoubleCollectionConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator DoubleCollection(string value) => (Windows.Media.DoubleCollection)DoubleCollection.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Rect
+    {
         readonly Windows.Rect value;
 
         public Rect(Windows.Rect value) => this.value = value;
 
         public static implicit operator Windows.Rect(Rect value) => value.value;
         public static implicit operator Rect(Windows.Rect value) => new(value);
-
-        public static implicit operator Rect(string value) => new((Windows.Rect)Rect.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.ImageSource" /> or <see cref="string" /></summary>
-    public partial struct ImageSource
+    partial struct Rect
     {
-        static Windows.Media.ImageSourceConverter converter;
-        static Windows.Media.ImageSourceConverter Converter => converter ??= new();
+        static Windows.RectConverter fromStringconverter;
+        static Windows.RectConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Rect(string value) => (Windows.Rect)Rect.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct ImageSource
+    {
         readonly Windows.Media.ImageSource value;
 
         public ImageSource(Windows.Media.ImageSource value) => this.value = value;
 
         public static implicit operator Windows.Media.ImageSource(ImageSource value) => value.value;
         public static implicit operator ImageSource(Windows.Media.ImageSource value) => new(value);
-        public static implicit operator ImageSource(CSharpMarkup.Wpf.ImageSource value) => new(value.UI);
-
-        public static implicit operator ImageSource(string value) => new((Windows.Media.ImageSource)ImageSource.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Matrix" /> or <see cref="string" /></summary>
-    public partial struct Matrix
+    partial struct ImageSource
     {
-        static Windows.Media.MatrixConverter converter;
-        static Windows.Media.MatrixConverter Converter => converter ??= new();
+        public static implicit operator ImageSource(CSharpMarkup.Wpf.ImageSource value) => new(value.UI);
+    }
 
+    partial struct ImageSource
+    {
+        static Windows.Media.ImageSourceConverter fromStringconverter;
+        static Windows.Media.ImageSourceConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator ImageSource(string value) => (Windows.Media.ImageSource)ImageSource.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Matrix
+    {
         readonly Windows.Media.Matrix value;
 
         public Matrix(Windows.Media.Matrix value) => this.value = value;
 
         public static implicit operator Windows.Media.Matrix(Matrix value) => value.value;
         public static implicit operator Matrix(Windows.Media.Matrix value) => new(value);
-
-        public static implicit operator Matrix(string value) => new((Windows.Media.Matrix)Matrix.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Duration" /> or <see cref="string" /></summary>
-    public partial struct Duration
+    partial struct Matrix
     {
-        static Windows.DurationConverter converter;
-        static Windows.DurationConverter Converter => converter ??= new();
+        static Windows.Media.MatrixConverter fromStringconverter;
+        static Windows.Media.MatrixConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Matrix(string value) => (Windows.Media.Matrix)Matrix.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Duration
+    {
         readonly Windows.Duration value;
 
         public Duration(Windows.Duration value) => this.value = value;
 
         public static implicit operator Windows.Duration(Duration value) => value.value;
         public static implicit operator Duration(Windows.Duration value) => new(value);
-
-        public static implicit operator Duration(string value) => new((Windows.Duration)Duration.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Animation.RepeatBehavior" /> or <see cref="string" /></summary>
-    public partial struct RepeatBehavior
+    partial struct Duration
     {
-        static Windows.Media.Animation.RepeatBehaviorConverter converter;
-        static Windows.Media.Animation.RepeatBehaviorConverter Converter => converter ??= new();
+        static Windows.DurationConverter fromStringconverter;
+        static Windows.DurationConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Duration(string value) => (Windows.Duration)Duration.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct RepeatBehavior
+    {
         readonly Windows.Media.Animation.RepeatBehavior value;
 
         public RepeatBehavior(Windows.Media.Animation.RepeatBehavior value) => this.value = value;
 
         public static implicit operator Windows.Media.Animation.RepeatBehavior(RepeatBehavior value) => value.value;
         public static implicit operator RepeatBehavior(Windows.Media.Animation.RepeatBehavior value) => new(value);
-
-        public static implicit operator RepeatBehavior(string value) => new((Windows.Media.Animation.RepeatBehavior)RepeatBehavior.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.PathFigureCollection" /> or <see cref="string" /></summary>
-    public partial struct PathFigureCollection
+    partial struct RepeatBehavior
     {
-        static Windows.Media.PathFigureCollectionConverter converter;
-        static Windows.Media.PathFigureCollectionConverter Converter => converter ??= new();
+        static Windows.Media.Animation.RepeatBehaviorConverter fromStringconverter;
+        static Windows.Media.Animation.RepeatBehaviorConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator RepeatBehavior(string value) => (Windows.Media.Animation.RepeatBehavior)RepeatBehavior.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct PathFigureCollection
+    {
         readonly Windows.Media.PathFigureCollection value;
 
         public PathFigureCollection(Windows.Media.PathFigureCollection value) => this.value = value;
 
         public static implicit operator Windows.Media.PathFigureCollection(PathFigureCollection value) => value.value;
         public static implicit operator PathFigureCollection(Windows.Media.PathFigureCollection value) => new(value);
-        public static implicit operator PathFigureCollection(CSharpMarkup.Wpf.PathFigureCollection value) => new(value.UI);
-
-        public static implicit operator PathFigureCollection(string value) => new((Windows.Media.PathFigureCollection)PathFigureCollection.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.PointCollection" /> or <see cref="string" /></summary>
-    public partial struct PointCollection
+    partial struct PathFigureCollection
     {
-        static Windows.Media.PointCollectionConverter converter;
-        static Windows.Media.PointCollectionConverter Converter => converter ??= new();
+        public static implicit operator PathFigureCollection(CSharpMarkup.Wpf.PathFigureCollection value) => new(value.UI);
+    }
 
+    partial struct PathFigureCollection
+    {
+        static Windows.Media.PathFigureCollectionConverter fromStringconverter;
+        static Windows.Media.PathFigureCollectionConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator PathFigureCollection(string value) => (Windows.Media.PathFigureCollection)PathFigureCollection.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct PointCollection
+    {
         readonly Windows.Media.PointCollection value;
 
         public PointCollection(Windows.Media.PointCollection value) => this.value = value;
 
         public static implicit operator Windows.Media.PointCollection(PointCollection value) => value.value;
         public static implicit operator PointCollection(Windows.Media.PointCollection value) => new(value);
-        public static implicit operator PointCollection(CSharpMarkup.Wpf.PointCollection value) => new(value.UI);
-
-        public static implicit operator PointCollection(string value) => new((Windows.Media.PointCollection)PointCollection.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Animation.KeyTime" /> or <see cref="string" /></summary>
-    public partial struct KeyTime
+    partial struct PointCollection
     {
-        static Windows.KeyTimeConverter converter;
-        static Windows.KeyTimeConverter Converter => converter ??= new();
+        public static implicit operator PointCollection(CSharpMarkup.Wpf.PointCollection value) => new(value.UI);
+    }
 
+    partial struct PointCollection
+    {
+        static Windows.Media.PointCollectionConverter fromStringconverter;
+        static Windows.Media.PointCollectionConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator PointCollection(string value) => (Windows.Media.PointCollection)PointCollection.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct KeyTime
+    {
         readonly Windows.Media.Animation.KeyTime value;
 
         public KeyTime(Windows.Media.Animation.KeyTime value) => this.value = value;
 
         public static implicit operator Windows.Media.Animation.KeyTime(KeyTime value) => value.value;
         public static implicit operator KeyTime(Windows.Media.Animation.KeyTime value) => new(value);
-
-        public static implicit operator KeyTime(string value) => new((Windows.Media.Animation.KeyTime)KeyTime.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Media3D.Point3D" /> or <see cref="string" /></summary>
-    public partial struct Point3D
+    partial struct KeyTime
     {
-        static Windows.Media.Media3D.Point3DConverter converter;
-        static Windows.Media.Media3D.Point3DConverter Converter => converter ??= new();
+        static Windows.KeyTimeConverter fromStringconverter;
+        static Windows.KeyTimeConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator KeyTime(string value) => (Windows.Media.Animation.KeyTime)KeyTime.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Point3D
+    {
         readonly Windows.Media.Media3D.Point3D value;
 
         public Point3D(Windows.Media.Media3D.Point3D value) => this.value = value;
 
         public static implicit operator Windows.Media.Media3D.Point3D(Point3D value) => value.value;
         public static implicit operator Point3D(Windows.Media.Media3D.Point3D value) => new(value);
-
-        public static implicit operator Point3D(string value) => new((Windows.Media.Media3D.Point3D)Point3D.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Media3D.Quaternion" /> or <see cref="string" /></summary>
-    public partial struct Quaternion
+    partial struct Point3D
     {
-        static Windows.Media.Media3D.QuaternionConverter converter;
-        static Windows.Media.Media3D.QuaternionConverter Converter => converter ??= new();
+        static Windows.Media.Media3D.Point3DConverter fromStringconverter;
+        static Windows.Media.Media3D.Point3DConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Point3D(string value) => (Windows.Media.Media3D.Point3D)Point3D.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Quaternion
+    {
         readonly Windows.Media.Media3D.Quaternion value;
 
         public Quaternion(Windows.Media.Media3D.Quaternion value) => this.value = value;
 
         public static implicit operator Windows.Media.Media3D.Quaternion(Quaternion value) => value.value;
         public static implicit operator Quaternion(Windows.Media.Media3D.Quaternion value) => new(value);
-
-        public static implicit operator Quaternion(string value) => new((Windows.Media.Media3D.Quaternion)Quaternion.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Media3D.Vector3D" /> or <see cref="string" /></summary>
-    public partial struct Vector3D
+    partial struct Quaternion
     {
-        static Windows.Media.Media3D.Vector3DConverter converter;
-        static Windows.Media.Media3D.Vector3DConverter Converter => converter ??= new();
+        static Windows.Media.Media3D.QuaternionConverter fromStringconverter;
+        static Windows.Media.Media3D.QuaternionConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Quaternion(string value) => (Windows.Media.Media3D.Quaternion)Quaternion.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Vector3D
+    {
         readonly Windows.Media.Media3D.Vector3D value;
 
         public Vector3D(Windows.Media.Media3D.Vector3D value) => this.value = value;
 
         public static implicit operator Windows.Media.Media3D.Vector3D(Vector3D value) => value.value;
         public static implicit operator Vector3D(Windows.Media.Media3D.Vector3D value) => new(value);
-
-        public static implicit operator Vector3D(string value) => new((Windows.Media.Media3D.Vector3D)Vector3D.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Animation.KeySpline" /> or <see cref="string" /></summary>
-    public partial struct KeySpline
+    partial struct Vector3D
     {
-        static Windows.KeySplineConverter converter;
-        static Windows.KeySplineConverter Converter => converter ??= new();
+        static Windows.Media.Media3D.Vector3DConverter fromStringconverter;
+        static Windows.Media.Media3D.Vector3DConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Vector3D(string value) => (Windows.Media.Media3D.Vector3D)Vector3D.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct KeySpline
+    {
         readonly Windows.Media.Animation.KeySpline value;
 
         public KeySpline(Windows.Media.Animation.KeySpline value) => this.value = value;
 
         public static implicit operator Windows.Media.Animation.KeySpline(KeySpline value) => value.value;
         public static implicit operator KeySpline(Windows.Media.Animation.KeySpline value) => new(value);
-        public static implicit operator KeySpline(CSharpMarkup.Wpf.KeySpline value) => new(value.UI);
-
-        public static implicit operator KeySpline(string value) => new((Windows.Media.Animation.KeySpline)KeySpline.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Int32Rect" /> or <see cref="string" /></summary>
-    public partial struct Int32Rect
+    partial struct KeySpline
     {
-        static Windows.Int32RectConverter converter;
-        static Windows.Int32RectConverter Converter => converter ??= new();
+        public static implicit operator KeySpline(CSharpMarkup.Wpf.KeySpline value) => new(value.UI);
+    }
 
+    partial struct KeySpline
+    {
+        static Windows.KeySplineConverter fromStringconverter;
+        static Windows.KeySplineConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator KeySpline(string value) => (Windows.Media.Animation.KeySpline)KeySpline.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Int32Rect
+    {
         readonly Windows.Int32Rect value;
 
         public Int32Rect(Windows.Int32Rect value) => this.value = value;
 
         public static implicit operator Windows.Int32Rect(Int32Rect value) => value.value;
         public static implicit operator Int32Rect(Windows.Int32Rect value) => new(value);
-
-        public static implicit operator Int32Rect(string value) => new((Windows.Int32Rect)Int32Rect.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.PixelFormat" /> or <see cref="string" /></summary>
-    public partial struct PixelFormat
+    partial struct Int32Rect
     {
-        static Windows.Media.PixelFormatConverter converter;
-        static Windows.Media.PixelFormatConverter Converter => converter ??= new();
+        static Windows.Int32RectConverter fromStringconverter;
+        static Windows.Int32RectConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Int32Rect(string value) => (Windows.Int32Rect)Int32Rect.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct PixelFormat
+    {
         readonly Windows.Media.PixelFormat value;
 
         public PixelFormat(Windows.Media.PixelFormat value) => this.value = value;
 
         public static implicit operator Windows.Media.PixelFormat(PixelFormat value) => value.value;
         public static implicit operator PixelFormat(Windows.Media.PixelFormat value) => new(value);
-
-        public static implicit operator PixelFormat(string value) => new((Windows.Media.PixelFormat)PixelFormat.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Media3D.Matrix3D" /> or <see cref="string" /></summary>
-    public partial struct Matrix3D
+    partial struct PixelFormat
     {
-        static Windows.Media.Media3D.Matrix3DConverter converter;
-        static Windows.Media.Media3D.Matrix3DConverter Converter => converter ??= new();
+        static Windows.Media.PixelFormatConverter fromStringconverter;
+        static Windows.Media.PixelFormatConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator PixelFormat(string value) => (Windows.Media.PixelFormat)PixelFormat.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Matrix3D
+    {
         readonly Windows.Media.Media3D.Matrix3D value;
 
         public Matrix3D(Windows.Media.Media3D.Matrix3D value) => this.value = value;
 
         public static implicit operator Windows.Media.Media3D.Matrix3D(Matrix3D value) => value.value;
         public static implicit operator Matrix3D(Windows.Media.Media3D.Matrix3D value) => new(value);
-
-        public static implicit operator Matrix3D(string value) => new((Windows.Media.Media3D.Matrix3D)Matrix3D.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Media3D.Vector3DCollection" /> or <see cref="string" /></summary>
-    public partial struct Vector3DCollection
+    partial struct Matrix3D
     {
-        static Windows.Media.Media3D.Vector3DCollectionConverter converter;
-        static Windows.Media.Media3D.Vector3DCollectionConverter Converter => converter ??= new();
+        static Windows.Media.Media3D.Matrix3DConverter fromStringconverter;
+        static Windows.Media.Media3D.Matrix3DConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Matrix3D(string value) => (Windows.Media.Media3D.Matrix3D)Matrix3D.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Vector3DCollection
+    {
         readonly Windows.Media.Media3D.Vector3DCollection value;
 
         public Vector3DCollection(Windows.Media.Media3D.Vector3DCollection value) => this.value = value;
 
         public static implicit operator Windows.Media.Media3D.Vector3DCollection(Vector3DCollection value) => value.value;
         public static implicit operator Vector3DCollection(Windows.Media.Media3D.Vector3DCollection value) => new(value);
-        public static implicit operator Vector3DCollection(CSharpMarkup.Wpf.Vector3DCollection value) => new(value.UI);
-
-        public static implicit operator Vector3DCollection(string value) => new((Windows.Media.Media3D.Vector3DCollection)Vector3DCollection.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Media3D.Point3DCollection" /> or <see cref="string" /></summary>
-    public partial struct Point3DCollection
+    partial struct Vector3DCollection
     {
-        static Windows.Media.Media3D.Point3DCollectionConverter converter;
-        static Windows.Media.Media3D.Point3DCollectionConverter Converter => converter ??= new();
+        public static implicit operator Vector3DCollection(CSharpMarkup.Wpf.Vector3DCollection value) => new(value.UI);
+    }
 
+    partial struct Vector3DCollection
+    {
+        static Windows.Media.Media3D.Vector3DCollectionConverter fromStringconverter;
+        static Windows.Media.Media3D.Vector3DCollectionConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator Vector3DCollection(string value) => (Windows.Media.Media3D.Vector3DCollection)Vector3DCollection.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Point3DCollection
+    {
         readonly Windows.Media.Media3D.Point3DCollection value;
 
         public Point3DCollection(Windows.Media.Media3D.Point3DCollection value) => this.value = value;
 
         public static implicit operator Windows.Media.Media3D.Point3DCollection(Point3DCollection value) => value.value;
         public static implicit operator Point3DCollection(Windows.Media.Media3D.Point3DCollection value) => new(value);
-        public static implicit operator Point3DCollection(CSharpMarkup.Wpf.Point3DCollection value) => new(value.UI);
-
-        public static implicit operator Point3DCollection(string value) => new((Windows.Media.Media3D.Point3DCollection)Point3DCollection.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.Int32Collection" /> or <see cref="string" /></summary>
-    public partial struct Int32Collection
+    partial struct Point3DCollection
     {
-        static Windows.Media.Int32CollectionConverter converter;
-        static Windows.Media.Int32CollectionConverter Converter => converter ??= new();
+        public static implicit operator Point3DCollection(CSharpMarkup.Wpf.Point3DCollection value) => new(value.UI);
+    }
 
+    partial struct Point3DCollection
+    {
+        static Windows.Media.Media3D.Point3DCollectionConverter fromStringconverter;
+        static Windows.Media.Media3D.Point3DCollectionConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator Point3DCollection(string value) => (Windows.Media.Media3D.Point3DCollection)Point3DCollection.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Int32Collection
+    {
         readonly Windows.Media.Int32Collection value;
 
         public Int32Collection(Windows.Media.Int32Collection value) => this.value = value;
 
         public static implicit operator Windows.Media.Int32Collection(Int32Collection value) => value.value;
         public static implicit operator Int32Collection(Windows.Media.Int32Collection value) => new(value);
-        public static implicit operator Int32Collection(CSharpMarkup.Wpf.Int32Collection value) => new(value.UI);
-
-        public static implicit operator Int32Collection(string value) => new((Windows.Media.Int32Collection)Int32Collection.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.RoutedEvent" /> or <see cref="string" /></summary>
-    public partial struct RoutedEvent
+    partial struct Int32Collection
     {
-        static Windows.Markup.RoutedEventConverter converter;
-        static Windows.Markup.RoutedEventConverter Converter => converter ??= new();
+        public static implicit operator Int32Collection(CSharpMarkup.Wpf.Int32Collection value) => new(value.UI);
+    }
 
+    partial struct Int32Collection
+    {
+        static Windows.Media.Int32CollectionConverter fromStringconverter;
+        static Windows.Media.Int32CollectionConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator Int32Collection(string value) => (Windows.Media.Int32Collection)Int32Collection.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct RoutedEvent
+    {
         readonly Windows.RoutedEvent value;
 
         public RoutedEvent(Windows.RoutedEvent value) => this.value = value;
 
         public static implicit operator Windows.RoutedEvent(RoutedEvent value) => value.value;
         public static implicit operator RoutedEvent(Windows.RoutedEvent value) => new(value);
-
-        public static implicit operator RoutedEvent(string value) => new((Windows.RoutedEvent)RoutedEvent.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Input.Cursor" /> or <see cref="string" /></summary>
-    public partial struct Cursor
+    partial struct RoutedEvent
     {
-        static Windows.Input.CursorConverter converter;
-        static Windows.Input.CursorConverter Converter => converter ??= new();
+        static Windows.Markup.RoutedEventConverter fromStringconverter;
+        static Windows.Markup.RoutedEventConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator RoutedEvent(string value) => (Windows.RoutedEvent)RoutedEvent.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Cursor
+    {
         readonly Windows.Input.Cursor value;
 
         public Cursor(Windows.Input.Cursor value) => this.value = value;
 
         public static implicit operator Windows.Input.Cursor(Cursor value) => value.value;
         public static implicit operator Cursor(Windows.Input.Cursor value) => new(value);
-
-        public static implicit operator Cursor(string value) => new((Windows.Input.Cursor)Cursor.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Input.InputScope" /> or <see cref="string" /></summary>
-    public partial struct InputScope
+    partial struct Cursor
     {
-        static Windows.Input.InputScopeConverter converter;
-        static Windows.Input.InputScopeConverter Converter => converter ??= new();
+        static Windows.Input.CursorConverter fromStringconverter;
+        static Windows.Input.CursorConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Cursor(string value) => (Windows.Input.Cursor)Cursor.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct InputScope
+    {
         readonly Windows.Input.InputScope value;
 
         public InputScope(Windows.Input.InputScope value) => this.value = value;
 
         public static implicit operator Windows.Input.InputScope(InputScope value) => value.value;
         public static implicit operator InputScope(Windows.Input.InputScope value) => new(value);
-
-        public static implicit operator InputScope(string value) => new((Windows.Input.InputScope)InputScope.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Markup.XmlLanguage" /> or <see cref="string" /></summary>
-    public partial struct XmlLanguage
+    partial struct InputScope
     {
-        static Windows.Markup.XmlLanguageConverter converter;
-        static Windows.Markup.XmlLanguageConverter Converter => converter ??= new();
+        static Windows.Input.InputScopeConverter fromStringconverter;
+        static Windows.Input.InputScopeConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator InputScope(string value) => (Windows.Input.InputScope)InputScope.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct XmlLanguage
+    {
         readonly Windows.Markup.XmlLanguage value;
 
         public XmlLanguage(Windows.Markup.XmlLanguage value) => this.value = value;
 
         public static implicit operator Windows.Markup.XmlLanguage(XmlLanguage value) => value.value;
         public static implicit operator XmlLanguage(Windows.Markup.XmlLanguage value) => new(value);
-
-        public static implicit operator XmlLanguage(string value) => new((Windows.Markup.XmlLanguage)XmlLanguage.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Thickness" /> or <see cref="string" /></summary>
-    public partial struct Thickness
+    partial struct XmlLanguage
     {
-        static Windows.ThicknessConverter converter;
-        static Windows.ThicknessConverter Converter => converter ??= new();
+        static Windows.Markup.XmlLanguageConverter fromStringconverter;
+        static Windows.Markup.XmlLanguageConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator XmlLanguage(string value) => (Windows.Markup.XmlLanguage)XmlLanguage.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Thickness
+    {
         readonly Windows.Thickness value;
 
         public Thickness(Windows.Thickness value) => this.value = value;
 
         public static implicit operator Windows.Thickness(Thickness value) => value.value;
         public static implicit operator Thickness(Windows.Thickness value) => new(value);
-
-        public static implicit operator Thickness(string value) => new((Windows.Thickness)Thickness.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.DependencyProperty" /> or <see cref="string" /></summary>
-    public partial struct DependencyProperty
+    partial struct Thickness
     {
-        static Windows.Markup.DependencyPropertyConverter converter;
-        static Windows.Markup.DependencyPropertyConverter Converter => converter ??= new();
+        static Windows.ThicknessConverter fromStringconverter;
+        static Windows.ThicknessConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Thickness(string value) => (Windows.Thickness)Thickness.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct DependencyProperty
+    {
         readonly Windows.DependencyProperty value;
 
         public DependencyProperty(Windows.DependencyProperty value) => this.value = value;
 
         public static implicit operator Windows.DependencyProperty(DependencyProperty value) => value.value;
         public static implicit operator DependencyProperty(Windows.DependencyProperty value) => new(value);
-
-        public static implicit operator DependencyProperty(string value) => new((Windows.DependencyProperty)DependencyProperty.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Media.FontFamily" /> or <see cref="string" /></summary>
-    public partial struct FontFamily
+    partial struct DependencyProperty
     {
-        static Windows.Media.FontFamilyConverter converter;
-        static Windows.Media.FontFamilyConverter Converter => converter ??= new();
+        static Windows.Markup.DependencyPropertyConverter fromStringconverter;
+        static Windows.Markup.DependencyPropertyConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator DependencyProperty(string value) => (Windows.DependencyProperty)DependencyProperty.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct FontFamily
+    {
         readonly Windows.Media.FontFamily value;
 
         public FontFamily(Windows.Media.FontFamily value) => this.value = value;
 
         public static implicit operator Windows.Media.FontFamily(FontFamily value) => value.value;
         public static implicit operator FontFamily(Windows.Media.FontFamily value) => new(value);
-
-        public static implicit operator FontFamily(string value) => new((Windows.Media.FontFamily)FontFamily.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.FontStretch" /> or <see cref="string" /></summary>
-    public partial struct FontStretch
+    partial struct FontFamily
     {
-        static Windows.FontStretchConverter converter;
-        static Windows.FontStretchConverter Converter => converter ??= new();
+        static Windows.Media.FontFamilyConverter fromStringconverter;
+        static Windows.Media.FontFamilyConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator FontFamily(string value) => (Windows.Media.FontFamily)FontFamily.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct FontStretch
+    {
         readonly Windows.FontStretch value;
 
         public FontStretch(Windows.FontStretch value) => this.value = value;
 
         public static implicit operator Windows.FontStretch(FontStretch value) => value.value;
         public static implicit operator FontStretch(Windows.FontStretch value) => new(value);
-
-        public static implicit operator FontStretch(string value) => new((Windows.FontStretch)FontStretch.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.FontStyle" /> or <see cref="string" /></summary>
-    public partial struct FontStyle
+    partial struct FontStretch
     {
-        static Windows.FontStyleConverter converter;
-        static Windows.FontStyleConverter Converter => converter ??= new();
+        static Windows.FontStretchConverter fromStringconverter;
+        static Windows.FontStretchConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator FontStretch(string value) => (Windows.FontStretch)FontStretch.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct FontStyle
+    {
         readonly Windows.FontStyle value;
 
         public FontStyle(Windows.FontStyle value) => this.value = value;
 
         public static implicit operator Windows.FontStyle(FontStyle value) => value.value;
         public static implicit operator FontStyle(Windows.FontStyle value) => new(value);
-
-        public static implicit operator FontStyle(string value) => new((Windows.FontStyle)FontStyle.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.FontWeight" /> or <see cref="string" /></summary>
-    public partial struct FontWeight
+    partial struct FontStyle
     {
-        static Windows.FontWeightConverter converter;
-        static Windows.FontWeightConverter Converter => converter ??= new();
+        static Windows.FontStyleConverter fromStringconverter;
+        static Windows.FontStyleConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator FontStyle(string value) => (Windows.FontStyle)FontStyle.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct FontWeight
+    {
         readonly Windows.FontWeight value;
 
         public FontWeight(Windows.FontWeight value) => this.value = value;
 
         public static implicit operator Windows.FontWeight(FontWeight value) => value.value;
         public static implicit operator FontWeight(Windows.FontWeight value) => new(value);
-
-        public static implicit operator FontWeight(string value) => new((Windows.FontWeight)FontWeight.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.TextDecorationCollection" /> or <see cref="string" /></summary>
-    public partial struct TextDecorationCollection
+    partial struct FontWeight
     {
-        static Windows.TextDecorationCollectionConverter converter;
-        static Windows.TextDecorationCollectionConverter Converter => converter ??= new();
+        static Windows.FontWeightConverter fromStringconverter;
+        static Windows.FontWeightConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator FontWeight(string value) => (Windows.FontWeight)FontWeight.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct TextDecorationCollection
+    {
         readonly Windows.TextDecorationCollection value;
 
         public TextDecorationCollection(Windows.TextDecorationCollection value) => this.value = value;
 
         public static implicit operator Windows.TextDecorationCollection(TextDecorationCollection value) => value.value;
         public static implicit operator TextDecorationCollection(Windows.TextDecorationCollection value) => new(value);
+    }
+
+    partial struct TextDecorationCollection
+    {
         public static implicit operator TextDecorationCollection(CSharpMarkup.Wpf.TextDecorationCollection value) => new(value.UI);
-
-        public static implicit operator TextDecorationCollection(string value) => new((Windows.TextDecorationCollection)TextDecorationCollection.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.CornerRadius" /> or <see cref="string" /></summary>
-    public partial struct CornerRadius
+    partial struct TextDecorationCollection
     {
-        static Windows.CornerRadiusConverter converter;
-        static Windows.CornerRadiusConverter Converter => converter ??= new();
+        static Windows.TextDecorationCollectionConverter fromStringconverter;
+        static Windows.TextDecorationCollectionConverter FromStringConverter => fromStringconverter ??= new();
 
-        readonly Windows.CornerRadius value;
-
-        public CornerRadius(Windows.CornerRadius value) => this.value = value;
-
-        public static implicit operator Windows.CornerRadius(CornerRadius value) => value.value;
-        public static implicit operator CornerRadius(Windows.CornerRadius value) => new(value);
-
-        public static implicit operator CornerRadius(string value) => new((Windows.CornerRadius)CornerRadius.Converter.ConvertFromInvariantString(value));
+        public static implicit operator TextDecorationCollection(string value) => (Windows.TextDecorationCollection)TextDecorationCollection.FromStringConverter.ConvertFromInvariantString(value);
     }
 
-    /// <summary><see cref="Windows.GridLength" /> or <see cref="string" /></summary>
-    public partial struct GridLength
+    readonly public partial struct GridLength
     {
-        static Windows.GridLengthConverter converter;
-        static Windows.GridLengthConverter Converter => converter ??= new();
-
         readonly Windows.GridLength value;
 
         public GridLength(Windows.GridLength value) => this.value = value;
 
         public static implicit operator Windows.GridLength(GridLength value) => value.value;
         public static implicit operator GridLength(Windows.GridLength value) => new(value);
-
-        public static implicit operator GridLength(string value) => new((Windows.GridLength)GridLength.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Controls.DataGridLength" /> or <see cref="string" /></summary>
-    public partial struct DataGridLength
+    partial struct GridLength
     {
-        static Windows.Controls.DataGridLengthConverter converter;
-        static Windows.Controls.DataGridLengthConverter Converter => converter ??= new();
+        static Windows.GridLengthConverter fromStringconverter;
+        static Windows.GridLengthConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator GridLength(string value) => (Windows.GridLength)GridLength.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct DataGridLength
+    {
         readonly Windows.Controls.DataGridLength value;
 
         public DataGridLength(Windows.Controls.DataGridLength value) => this.value = value;
 
         public static implicit operator Windows.Controls.DataGridLength(DataGridLength value) => value.value;
         public static implicit operator DataGridLength(Windows.Controls.DataGridLength value) => new(value);
-
-        public static implicit operator DataGridLength(string value) => new((Windows.Controls.DataGridLength)DataGridLength.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Ink.StrokeCollection" /> or <see cref="string" /></summary>
-    public partial struct StrokeCollection
+    partial struct DataGridLength
     {
-        static Windows.StrokeCollectionConverter converter;
-        static Windows.StrokeCollectionConverter Converter => converter ??= new();
+        static Windows.Controls.DataGridLengthConverter fromStringconverter;
+        static Windows.Controls.DataGridLengthConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator DataGridLength(string value) => (Windows.Controls.DataGridLength)DataGridLength.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct StrokeCollection
+    {
         readonly Windows.Ink.StrokeCollection value;
 
         public StrokeCollection(Windows.Ink.StrokeCollection value) => this.value = value;
 
         public static implicit operator Windows.Ink.StrokeCollection(StrokeCollection value) => value.value;
         public static implicit operator StrokeCollection(Windows.Ink.StrokeCollection value) => new(value);
-
-        public static implicit operator StrokeCollection(string value) => new((Windows.Ink.StrokeCollection)StrokeCollection.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Controls.VirtualizationCacheLength" /> or <see cref="string" /></summary>
-    public partial struct VirtualizationCacheLength
+    partial struct StrokeCollection
     {
-        static Windows.Controls.VirtualizationCacheLengthConverter converter;
-        static Windows.Controls.VirtualizationCacheLengthConverter Converter => converter ??= new();
+        static Windows.StrokeCollectionConverter fromStringconverter;
+        static Windows.StrokeCollectionConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator StrokeCollection(string value) => (Windows.Ink.StrokeCollection)StrokeCollection.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct VirtualizationCacheLength
+    {
         readonly Windows.Controls.VirtualizationCacheLength value;
 
         public VirtualizationCacheLength(Windows.Controls.VirtualizationCacheLength value) => this.value = value;
 
         public static implicit operator Windows.Controls.VirtualizationCacheLength(VirtualizationCacheLength value) => value.value;
         public static implicit operator VirtualizationCacheLength(Windows.Controls.VirtualizationCacheLength value) => new(value);
-
-        public static implicit operator VirtualizationCacheLength(string value) => new((Windows.Controls.VirtualizationCacheLength)VirtualizationCacheLength.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.FigureLength" /> or <see cref="string" /></summary>
-    public partial struct FigureLength
+    partial struct VirtualizationCacheLength
     {
-        static Windows.FigureLengthConverter converter;
-        static Windows.FigureLengthConverter Converter => converter ??= new();
+        static Windows.Controls.VirtualizationCacheLengthConverter fromStringconverter;
+        static Windows.Controls.VirtualizationCacheLengthConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator VirtualizationCacheLength(string value) => (Windows.Controls.VirtualizationCacheLength)VirtualizationCacheLength.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct FigureLength
+    {
         readonly Windows.FigureLength value;
 
         public FigureLength(Windows.FigureLength value) => this.value = value;
 
         public static implicit operator Windows.FigureLength(FigureLength value) => value.value;
         public static implicit operator FigureLength(Windows.FigureLength value) => new(value);
-
-        public static implicit operator FigureLength(string value) => new((Windows.FigureLength)FigureLength.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.PropertyPath" /> or <see cref="string" /></summary>
-    public partial struct PropertyPath
+    partial struct FigureLength
     {
-        static Windows.PropertyPathConverter converter;
-        static Windows.PropertyPathConverter Converter => converter ??= new();
+        static Windows.FigureLengthConverter fromStringconverter;
+        static Windows.FigureLengthConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator FigureLength(string value) => (Windows.FigureLength)FigureLength.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct PropertyPath
+    {
         readonly Windows.PropertyPath value;
 
         public PropertyPath(Windows.PropertyPath value) => this.value = value;
 
         public static implicit operator Windows.PropertyPath(PropertyPath value) => value.value;
         public static implicit operator PropertyPath(Windows.PropertyPath value) => new(value);
-
-        public static implicit operator PropertyPath(string value) => new((Windows.PropertyPath)PropertyPath.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Controls.Ribbon.RibbonControlLength" /> or <see cref="string" /></summary>
-    public partial struct RibbonControlLength
+    partial struct PropertyPath
     {
-        static Windows.Controls.Ribbon.RibbonControlLengthConverter converter;
-        static Windows.Controls.Ribbon.RibbonControlLengthConverter Converter => converter ??= new();
+        static Windows.PropertyPathConverter fromStringconverter;
+        static Windows.PropertyPathConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator PropertyPath(string value) => (Windows.PropertyPath)PropertyPath.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct RibbonControlLength
+    {
         readonly Windows.Controls.Ribbon.RibbonControlLength value;
 
         public RibbonControlLength(Windows.Controls.Ribbon.RibbonControlLength value) => this.value = value;
 
         public static implicit operator Windows.Controls.Ribbon.RibbonControlLength(RibbonControlLength value) => value.value;
         public static implicit operator RibbonControlLength(Windows.Controls.Ribbon.RibbonControlLength value) => new(value);
+    }
 
-        public static implicit operator RibbonControlLength(string value) => new((Windows.Controls.Ribbon.RibbonControlLength)RibbonControlLength.Converter.ConvertFromInvariantString(value));
+    partial struct RibbonControlLength
+    {
+        static Windows.Controls.Ribbon.RibbonControlLengthConverter fromStringconverter;
+        static Windows.Controls.Ribbon.RibbonControlLengthConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator RibbonControlLength(string value) => (Windows.Controls.Ribbon.RibbonControlLength)RibbonControlLength.FromStringConverter.ConvertFromInvariantString(value);
     }
 }
 

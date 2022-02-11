@@ -247,29 +247,33 @@ namespace _MarkupNamespace_
     }
 
 #region TypeConvertor
-    /// <summary><see cref="_ConvertableType_" /> or <see cref="string" /></summary>
-    public partial struct _TypeConvertorName_
+    readonly public partial struct _TypeConvertorName_
     {
-        static _TypeConvertorType_ converter;
-        static _TypeConvertorType_ Converter => converter ??= new();
-
         readonly _ConvertableType_ value;
 
         public _TypeConvertorName_(_ConvertableType_ value) => this.value = value;
 
         public static implicit operator _ConvertableType_(_TypeConvertorName_ value) => value.value;
-        public static implicit operator _TypeConvertorName_(_ConvertableType_ value) => new(value);/*_TypeConvertorFromMarkup_*/
-
-        public static implicit operator _TypeConvertorName_(string value) => new((_ConvertableType_)_TypeConvertorName_.Converter.ConvertFromInvariantString(value));
+        public static implicit operator _TypeConvertorName_(_ConvertableType_ value) => new(value);
     }
 #endregion
 
-    public partial struct _TypeConvertorName_
+#region TypeConvertorFromMarkup
+    partial struct _TypeConvertorName_
     {
-#region _TypeConvertorFromMarkup_
         public static implicit operator _TypeConvertorName_(_MarkupConvertableType_ value) => new(value.UI);
-#endregion
     }
+#endregion
+
+#region TypeConvertorFromString
+    partial struct _TypeConvertorName_
+    {
+        static _TypeConvertorType_ fromStringconverter;
+        static _TypeConvertorType_ FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator _TypeConvertorName_(string value) => (_ConvertableType_)_TypeConvertorName_.FromStringConverter.ConvertFromInvariantString(value);
+    }
+#endregion
 
     // Classes to get template compiling, not part of template
     public partial class _PropertyTarget_ :

@@ -23,9 +23,9 @@ namespace CompileTests
             StackPanel(),
 
             TextBlock (
-                Text: "Hi", 
-                LineHeight: 2.5
+                Text: "Hi"
             )  .Bind(vm.Title)
+               .LineHeight(2.5)
                .TextAlignment().Right()
                .Grid(Row: 1) .Margin(2)
                .HorizontalAlignment().Bind(vm.Right, convert: (bool right) => right ? UI.HorizontalAlignment.Right : UI.HorizontalAlignment.Left),
@@ -37,6 +37,10 @@ namespace CompileTests
 
             CheckBox("Check Me")
                .Bind(vm.IsOk),
+
+#if !WINUI // TODO: 2022 find out why this gives a compile error in Windows App SDK
+            FrameworkElement(Background: SolidColorBrush(Blue)),
+#endif
 
             Button(
                 HStack(
@@ -86,9 +90,9 @@ namespace CompileTests
             },
 
             TextBlock (
-                Text: "Hi",
-                LineHeight: 2.5
+                Text: "Hi"
             )  .TextAlignment() .Right()
+               .LineHeight (2.5)
                .OpticalMarginAlignment() .TrimSideBearings(),
 
             TextBlock(),

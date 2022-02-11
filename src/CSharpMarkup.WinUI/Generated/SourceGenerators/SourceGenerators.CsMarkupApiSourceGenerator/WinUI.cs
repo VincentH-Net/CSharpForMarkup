@@ -3832,8 +3832,8 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.AnimatedVisualPlayer.DiagnosticsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedVisualPlayer.Duration"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan> Duration<TTarget>(this TTarget target) where TTarget : AnimatedVisualPlayer
-        => DependencyProperty<TTarget, TimeSpan>.Get(target, Xaml.Controls.AnimatedVisualPlayer.DurationProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> Duration<TTarget>(this TTarget target) where TTarget : AnimatedVisualPlayer
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Controls.AnimatedVisualPlayer.DurationProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedVisualPlayer.FallbackContent"/></summary>
         public static DependencyProperty<TTarget, Xaml.DataTemplate> FallbackContent<TTarget>(this TTarget target) where TTarget : AnimatedVisualPlayer
@@ -4792,7 +4792,7 @@ namespace CSharpMarkup.WinUI // Border
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Border"/></summary>
-        public static Border Border(O<Xaml.Media.Brush> Background = default, O<Xaml.Controls.BackgroundSizing> BackgroundSizing = default, O<Xaml.BrushTransition> BackgroundTransition = default, O<Xaml.Media.Brush> BorderBrush = default, O<Xaml.Thickness> BorderThickness = default, O<Xaml.Media.Animation.TransitionCollection> ChildTransitions = default, O<Xaml.CornerRadius> CornerRadius = default, O<Xaml.Thickness> Padding = default, Microsoft.UI.Xaml.UIElement Child = default)
+        public static Border Border(O<Xaml.Media.Brush> Background = default, O<Xaml.Controls.BackgroundSizing> BackgroundSizing = default, O<Xaml.BrushTransition> BackgroundTransition = default, O<Xaml.Media.Brush> BorderBrush = default, O<Xaml.Thickness> BorderThickness = default, O<Xaml.Media.Animation.TransitionCollection> ChildTransitions = default, O<CSharpMarkup.WinUI.to.CornerRadius> CornerRadius = default, O<Xaml.Thickness> Padding = default, Microsoft.UI.Xaml.UIElement Child = default)
         {
             var ui = new Xaml.Controls.Border();
             if (Background.HasValue) ui.Background = Background.Value;
@@ -4890,7 +4890,7 @@ namespace CSharpMarkup.WinUI // Border
         public static TView ChildTransitions<TView>(this TView view, Xaml.Media.Animation.TransitionCollection value) where TView : Border { view.UI.ChildTransitions = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Border.CornerRadius"/></summary>
-        public static TView CornerRadius<TView>(this TView view, Xaml.CornerRadius value) where TView : Border { view.UI.CornerRadius = value; return view; }
+        public static TView CornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : Border { view.UI.CornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Border.Padding"/></summary>
         public static TView Padding<TView>(this TView view, Xaml.Thickness value) where TView : Border { view.UI.Padding = value; return view; }
@@ -4928,8 +4928,8 @@ namespace CSharpMarkup.WinUI // Border
         => DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection>.Get(target, Xaml.Controls.Border.ChildTransitionsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Border.CornerRadius"/></summary>
-        public static DependencyProperty<TTarget, Xaml.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : Border
-        => DependencyProperty<TTarget, Xaml.CornerRadius>.Get(target, Xaml.Controls.Border.CornerRadiusProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : Border
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.Border.CornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Border.Padding"/></summary>
         public static DependencyProperty<TTarget, Xaml.Thickness> Padding<TTarget>(this TTarget target) where TTarget : Border
@@ -5334,7 +5334,7 @@ namespace CSharpMarkup.WinUI // CalendarView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CalendarView"/></summary>
-        public static CalendarView CalendarView(O<Xaml.Media.Brush> BlackoutBackground = default, O<Xaml.Media.Brush> BlackoutForeground = default, O<Xaml.Media.Brush> BlackoutStrikethroughBrush = default, O<string> CalendarIdentifier = default, O<Xaml.Media.Brush> CalendarItemBackground = default, O<Xaml.Media.Brush> CalendarItemBorderBrush = default, O<Xaml.Thickness> CalendarItemBorderThickness = default, O<Xaml.CornerRadius> CalendarItemCornerRadius = default, O<Xaml.Media.Brush> CalendarItemDisabledBackground = default, O<Xaml.Media.Brush> CalendarItemForeground = default, O<Xaml.Media.Brush> CalendarItemHoverBackground = default, O<Xaml.Media.Brush> CalendarItemPressedBackground = default, O<Xaml.Style> CalendarViewDayItemStyle = default, O<Xaml.Media.FontFamily> DayItemFontFamily = default, O<double> DayItemFontSize = default, O<Windows.UI.Text.FontStyle> DayItemFontStyle = default, O<Windows.UI.Text.FontWeight> DayItemFontWeight = default, O<Xaml.Thickness> DayItemMargin = default, O<string> DayOfWeekFormat = default, O<Xaml.Media.Brush> DisabledForeground = default, O<Xaml.Controls.CalendarViewDisplayMode> DisplayMode = default, O<Windows.Globalization.DayOfWeek> FirstDayOfWeek = default, O<Xaml.Media.FontFamily> FirstOfMonthLabelFontFamily = default, O<double> FirstOfMonthLabelFontSize = default, O<Windows.UI.Text.FontStyle> FirstOfMonthLabelFontStyle = default, O<Windows.UI.Text.FontWeight> FirstOfMonthLabelFontWeight = default, O<Xaml.Thickness> FirstOfMonthLabelMargin = default, O<Xaml.Media.FontFamily> FirstOfYearDecadeLabelFontFamily = default, O<double> FirstOfYearDecadeLabelFontSize = default, O<Windows.UI.Text.FontStyle> FirstOfYearDecadeLabelFontStyle = default, O<Windows.UI.Text.FontWeight> FirstOfYearDecadeLabelFontWeight = default, O<Xaml.Thickness> FirstOfYearDecadeLabelMargin = default, O<Xaml.Media.Brush> FocusBorderBrush = default, O<Xaml.HorizontalAlignment> HorizontalDayItemAlignment = default, O<Xaml.HorizontalAlignment> HorizontalFirstOfMonthLabelAlignment = default, O<Xaml.Media.Brush> HoverBorderBrush = default, O<bool> IsGroupLabelVisible = default, O<bool> IsOutOfScopeEnabled = default, O<bool> IsTodayHighlighted = default, O<DateTimeOffset> MaxDate = default, O<DateTimeOffset> MinDate = default, O<Xaml.Media.FontFamily> MonthYearItemFontFamily = default, O<double> MonthYearItemFontSize = default, O<Windows.UI.Text.FontStyle> MonthYearItemFontStyle = default, O<Windows.UI.Text.FontWeight> MonthYearItemFontWeight = default, O<Xaml.Thickness> MonthYearItemMargin = default, O<int> NumberOfWeeksInView = default, O<Xaml.Media.Brush> OutOfScopeBackground = default, O<Xaml.Media.Brush> OutOfScopeForeground = default, O<Xaml.Media.Brush> OutOfScopeHoverForeground = default, O<Xaml.Media.Brush> OutOfScopePressedForeground = default, O<Xaml.Media.Brush> PressedBorderBrush = default, O<Xaml.Media.Brush> PressedForeground = default, O<Xaml.Media.Brush> SelectedBorderBrush = default, O<Xaml.Media.Brush> SelectedDisabledBorderBrush = default, O<Xaml.Media.Brush> SelectedDisabledForeground = default, O<Xaml.Media.Brush> SelectedForeground = default, O<Xaml.Media.Brush> SelectedHoverBorderBrush = default, O<Xaml.Media.Brush> SelectedHoverForeground = default, O<Xaml.Media.Brush> SelectedPressedBorderBrush = default, O<Xaml.Media.Brush> SelectedPressedForeground = default, O<Xaml.Controls.CalendarViewSelectionMode> SelectionMode = default, O<Xaml.Media.Brush> TodayBackground = default, O<Xaml.Media.Brush> TodayBlackoutBackground = default, O<Xaml.Media.Brush> TodayBlackoutForeground = default, O<Xaml.Media.Brush> TodayDisabledBackground = default, O<Windows.UI.Text.FontWeight> TodayFontWeight = default, O<Xaml.Media.Brush> TodayForeground = default, O<Xaml.Media.Brush> TodayHoverBackground = default, O<Xaml.Media.Brush> TodayPressedBackground = default, O<Xaml.Media.Brush> TodaySelectedInnerBorderBrush = default, O<Xaml.VerticalAlignment> VerticalDayItemAlignment = default, O<Xaml.VerticalAlignment> VerticalFirstOfMonthLabelAlignment = default)
+        public static CalendarView CalendarView(O<Xaml.Media.Brush> BlackoutBackground = default, O<Xaml.Media.Brush> BlackoutForeground = default, O<Xaml.Media.Brush> BlackoutStrikethroughBrush = default, O<string> CalendarIdentifier = default, O<Xaml.Media.Brush> CalendarItemBackground = default, O<Xaml.Media.Brush> CalendarItemBorderBrush = default, O<Xaml.Thickness> CalendarItemBorderThickness = default, O<CSharpMarkup.WinUI.to.CornerRadius> CalendarItemCornerRadius = default, O<Xaml.Media.Brush> CalendarItemDisabledBackground = default, O<Xaml.Media.Brush> CalendarItemForeground = default, O<Xaml.Media.Brush> CalendarItemHoverBackground = default, O<Xaml.Media.Brush> CalendarItemPressedBackground = default, O<Xaml.Style> CalendarViewDayItemStyle = default, O<Xaml.Media.FontFamily> DayItemFontFamily = default, O<double> DayItemFontSize = default, O<Windows.UI.Text.FontStyle> DayItemFontStyle = default, O<Windows.UI.Text.FontWeight> DayItemFontWeight = default, O<Xaml.Thickness> DayItemMargin = default, O<string> DayOfWeekFormat = default, O<Xaml.Media.Brush> DisabledForeground = default, O<Xaml.Controls.CalendarViewDisplayMode> DisplayMode = default, O<Windows.Globalization.DayOfWeek> FirstDayOfWeek = default, O<Xaml.Media.FontFamily> FirstOfMonthLabelFontFamily = default, O<double> FirstOfMonthLabelFontSize = default, O<Windows.UI.Text.FontStyle> FirstOfMonthLabelFontStyle = default, O<Windows.UI.Text.FontWeight> FirstOfMonthLabelFontWeight = default, O<Xaml.Thickness> FirstOfMonthLabelMargin = default, O<Xaml.Media.FontFamily> FirstOfYearDecadeLabelFontFamily = default, O<double> FirstOfYearDecadeLabelFontSize = default, O<Windows.UI.Text.FontStyle> FirstOfYearDecadeLabelFontStyle = default, O<Windows.UI.Text.FontWeight> FirstOfYearDecadeLabelFontWeight = default, O<Xaml.Thickness> FirstOfYearDecadeLabelMargin = default, O<Xaml.Media.Brush> FocusBorderBrush = default, O<Xaml.HorizontalAlignment> HorizontalDayItemAlignment = default, O<Xaml.HorizontalAlignment> HorizontalFirstOfMonthLabelAlignment = default, O<Xaml.Media.Brush> HoverBorderBrush = default, O<bool> IsGroupLabelVisible = default, O<bool> IsOutOfScopeEnabled = default, O<bool> IsTodayHighlighted = default, O<DateTimeOffset> MaxDate = default, O<DateTimeOffset> MinDate = default, O<Xaml.Media.FontFamily> MonthYearItemFontFamily = default, O<double> MonthYearItemFontSize = default, O<Windows.UI.Text.FontStyle> MonthYearItemFontStyle = default, O<Windows.UI.Text.FontWeight> MonthYearItemFontWeight = default, O<Xaml.Thickness> MonthYearItemMargin = default, O<int> NumberOfWeeksInView = default, O<Xaml.Media.Brush> OutOfScopeBackground = default, O<Xaml.Media.Brush> OutOfScopeForeground = default, O<Xaml.Media.Brush> OutOfScopeHoverForeground = default, O<Xaml.Media.Brush> OutOfScopePressedForeground = default, O<Xaml.Media.Brush> PressedBorderBrush = default, O<Xaml.Media.Brush> PressedForeground = default, O<Xaml.Media.Brush> SelectedBorderBrush = default, O<Xaml.Media.Brush> SelectedDisabledBorderBrush = default, O<Xaml.Media.Brush> SelectedDisabledForeground = default, O<Xaml.Media.Brush> SelectedForeground = default, O<Xaml.Media.Brush> SelectedHoverBorderBrush = default, O<Xaml.Media.Brush> SelectedHoverForeground = default, O<Xaml.Media.Brush> SelectedPressedBorderBrush = default, O<Xaml.Media.Brush> SelectedPressedForeground = default, O<Xaml.Controls.CalendarViewSelectionMode> SelectionMode = default, O<Xaml.Media.Brush> TodayBackground = default, O<Xaml.Media.Brush> TodayBlackoutBackground = default, O<Xaml.Media.Brush> TodayBlackoutForeground = default, O<Xaml.Media.Brush> TodayDisabledBackground = default, O<Windows.UI.Text.FontWeight> TodayFontWeight = default, O<Xaml.Media.Brush> TodayForeground = default, O<Xaml.Media.Brush> TodayHoverBackground = default, O<Xaml.Media.Brush> TodayPressedBackground = default, O<Xaml.Media.Brush> TodaySelectedInnerBorderBrush = default, O<Xaml.VerticalAlignment> VerticalDayItemAlignment = default, O<Xaml.VerticalAlignment> VerticalFirstOfMonthLabelAlignment = default)
         {
             var ui = new Xaml.Controls.CalendarView();
             if (BlackoutBackground.HasValue) ui.BlackoutBackground = BlackoutBackground.Value;
@@ -5517,7 +5517,7 @@ namespace CSharpMarkup.WinUI // CalendarView
         public static TView CalendarItemBorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : CalendarView { view.UI.CalendarItemBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemCornerRadius"/></summary>
-        public static TView CalendarItemCornerRadius<TView>(this TView view, Xaml.CornerRadius value) where TView : CalendarView { view.UI.CalendarItemCornerRadius = value; return view; }
+        public static TView CalendarItemCornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : CalendarView { view.UI.CalendarItemCornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemDisabledBackground"/></summary>
         public static TView CalendarItemDisabledBackground<TView>(this TView view, Xaml.Media.Brush value) where TView : CalendarView { view.UI.CalendarItemDisabledBackground = value; return view; }
@@ -5965,8 +5965,8 @@ namespace CSharpMarkup.WinUI // CalendarView
         => DependencyProperty<TTarget, Xaml.Thickness>.Get(target, Xaml.Controls.CalendarView.CalendarItemBorderThicknessProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.CalendarItemCornerRadius"/></summary>
-        public static DependencyProperty<TTarget, Xaml.CornerRadius> CalendarItemCornerRadius<TTarget>(this TTarget target) where TTarget : CalendarView
-        => DependencyProperty<TTarget, Xaml.CornerRadius>.Get(target, Xaml.Controls.CalendarView.CalendarItemCornerRadiusProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CalendarItemCornerRadius<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.CalendarView.CalendarItemCornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.CalendarItemDisabledBackground"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.Brush> CalendarItemDisabledBackground<TTarget>(this TTarget target) where TTarget : CalendarView
@@ -7504,7 +7504,7 @@ namespace CSharpMarkup.WinUI // ContentPresenter
 
         /// <summary>Create a <see cref="Xaml.Controls.ContentPresenter"/></summary>
         /// <remarks>Remark: ContentPresenter().Bind() binds to <see cref="Xaml.Controls.ContentPresenter.ContentProperty"/></remarks>
-        public static ContentPresenter ContentPresenter(O<Xaml.Media.Brush> Background = default, O<Xaml.Controls.BackgroundSizing> BackgroundSizing = default, O<Xaml.BrushTransition> BackgroundTransition = default, O<Xaml.Media.Brush> BorderBrush = default, O<Xaml.Thickness> BorderThickness = default, O<int> CharacterSpacing = default, O<Xaml.DataTemplate> ContentTemplate = default, O<Xaml.Controls.DataTemplateSelector> ContentTemplateSelector = default, O<Xaml.Media.Animation.TransitionCollection> ContentTransitions = default, O<Xaml.CornerRadius> CornerRadius = default, O<Xaml.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.UI.Text.FontStretch> FontStretch = default, O<Windows.UI.Text.FontStyle> FontStyle = default, O<Windows.UI.Text.FontWeight> FontWeight = default, O<Xaml.Media.Brush> Foreground = default, O<Xaml.HorizontalAlignment> HorizontalContentAlignment = default, O<bool> IsTextScaleFactorEnabled = default, O<double> LineHeight = default, O<Xaml.LineStackingStrategy> LineStackingStrategy = default, O<int> MaxLines = default, O<Xaml.OpticalMarginAlignment> OpticalMarginAlignment = default, O<Xaml.Thickness> Padding = default, O<Xaml.TextLineBounds> TextLineBounds = default, O<Xaml.TextWrapping> TextWrapping = default, O<Xaml.VerticalAlignment> VerticalContentAlignment = default, UIObject Content = default)
+        public static ContentPresenter ContentPresenter(O<Xaml.Media.Brush> Background = default, O<Xaml.Controls.BackgroundSizing> BackgroundSizing = default, O<Xaml.BrushTransition> BackgroundTransition = default, O<Xaml.Media.Brush> BorderBrush = default, O<Xaml.Thickness> BorderThickness = default, O<int> CharacterSpacing = default, O<Xaml.DataTemplate> ContentTemplate = default, O<Xaml.Controls.DataTemplateSelector> ContentTemplateSelector = default, O<Xaml.Media.Animation.TransitionCollection> ContentTransitions = default, O<CSharpMarkup.WinUI.to.CornerRadius> CornerRadius = default, O<Xaml.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.UI.Text.FontStretch> FontStretch = default, O<Windows.UI.Text.FontStyle> FontStyle = default, O<Windows.UI.Text.FontWeight> FontWeight = default, O<Xaml.Media.Brush> Foreground = default, O<Xaml.HorizontalAlignment> HorizontalContentAlignment = default, O<bool> IsTextScaleFactorEnabled = default, O<double> LineHeight = default, O<Xaml.LineStackingStrategy> LineStackingStrategy = default, O<int> MaxLines = default, O<Xaml.OpticalMarginAlignment> OpticalMarginAlignment = default, O<Xaml.Thickness> Padding = default, O<Xaml.TextLineBounds> TextLineBounds = default, O<Xaml.TextWrapping> TextWrapping = default, O<Xaml.VerticalAlignment> VerticalContentAlignment = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.ContentPresenter();
             if (Background.HasValue) ui.Background = Background.Value;
@@ -7633,7 +7633,7 @@ namespace CSharpMarkup.WinUI // ContentPresenter
         public static TView ContentTransitions<TView>(this TView view, Xaml.Media.Animation.TransitionCollection value) where TView : ContentPresenter { view.UI.ContentTransitions = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.CornerRadius"/></summary>
-        public static TView CornerRadius<TView>(this TView view, Xaml.CornerRadius value) where TView : ContentPresenter { view.UI.CornerRadius = value; return view; }
+        public static TView CornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : ContentPresenter { view.UI.CornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.FontFamily"/></summary>
         public static TView FontFamily<TView>(this TView view, Xaml.Media.FontFamily value) where TView : ContentPresenter { view.UI.FontFamily = value; return view; }
@@ -7738,8 +7738,8 @@ namespace CSharpMarkup.WinUI // ContentPresenter
         => DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection>.Get(target, Xaml.Controls.ContentPresenter.ContentTransitionsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ContentPresenter.CornerRadius"/></summary>
-        public static DependencyProperty<TTarget, Xaml.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : ContentPresenter
-        => DependencyProperty<TTarget, Xaml.CornerRadius>.Get(target, Xaml.Controls.ContentPresenter.CornerRadiusProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : ContentPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.ContentPresenter.CornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ContentPresenter.FontFamily"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.FontFamily> FontFamily<TTarget>(this TTarget target) where TTarget : ContentPresenter
@@ -7866,7 +7866,7 @@ namespace CSharpMarkup.WinUI // Control
         public static TView CharacterSpacing<TView>(this TView view, int value) where TView : Control { view.UI.CharacterSpacing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.CornerRadius"/></summary>
-        public static TView CornerRadius<TView>(this TView view, Xaml.CornerRadius value) where TView : Control { view.UI.CornerRadius = value; return view; }
+        public static TView CornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : Control { view.UI.CornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.DefaultStyleResourceUri"/></summary>
         public static TView DefaultStyleResourceUri<TView>(this TView view, Uri value) where TView : Control { view.UI.DefaultStyleResourceUri = value; return view; }
@@ -7961,8 +7961,8 @@ namespace CSharpMarkup.WinUI // Control
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.Control.CharacterSpacingProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Control.CornerRadius"/></summary>
-        public static DependencyProperty<TTarget, Xaml.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : Control
-        => DependencyProperty<TTarget, Xaml.CornerRadius>.Get(target, Xaml.Controls.Control.CornerRadiusProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : Control
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.Control.CornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Control.DefaultStyleResourceUri"/></summary>
         public static DependencyProperty<TTarget, Uri> DefaultStyleResourceUri<TTarget>(this TTarget target) where TTarget : Control
@@ -9415,7 +9415,7 @@ namespace CSharpMarkup.WinUI // Grid
         public static TView ColumnSpacing<TView>(this TView view, double value) where TView : Grid { view.UI.ColumnSpacing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Grid.CornerRadius"/></summary>
-        public static TView CornerRadius<TView>(this TView view, Xaml.CornerRadius value) where TView : Grid { view.UI.CornerRadius = value; return view; }
+        public static TView CornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : Grid { view.UI.CornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Grid.Padding"/></summary>
         public static TView Padding<TView>(this TView view, Xaml.Thickness value) where TView : Grid { view.UI.Padding = value; return view; }
@@ -9452,8 +9452,8 @@ namespace CSharpMarkup.WinUI // Grid
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Grid.ColumnSpacingProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Grid.CornerRadius"/></summary>
-        public static DependencyProperty<TTarget, Xaml.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : Grid
-        => DependencyProperty<TTarget, Xaml.CornerRadius>.Get(target, Xaml.Controls.Grid.CornerRadiusProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : Grid
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.Grid.CornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Grid.Padding"/></summary>
         public static DependencyProperty<TTarget, Xaml.Thickness> Padding<TTarget>(this TTarget target) where TTarget : Grid
@@ -15799,7 +15799,7 @@ namespace CSharpMarkup.WinUI // RelativePanel
         public static TView BorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : RelativePanel { view.UI.BorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RelativePanel.CornerRadius"/></summary>
-        public static TView CornerRadius<TView>(this TView view, Xaml.CornerRadius value) where TView : RelativePanel { view.UI.CornerRadius = value; return view; }
+        public static TView CornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : RelativePanel { view.UI.CornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RelativePanel.Padding"/></summary>
         public static TView Padding<TView>(this TView view, Xaml.Thickness value) where TView : RelativePanel { view.UI.Padding = value; return view; }
@@ -15829,8 +15829,8 @@ namespace CSharpMarkup.WinUI // RelativePanel
         => DependencyProperty<TTarget, Xaml.Thickness>.Get(target, Xaml.Controls.RelativePanel.BorderThicknessProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RelativePanel.CornerRadius"/></summary>
-        public static DependencyProperty<TTarget, Xaml.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : RelativePanel
-        => DependencyProperty<TTarget, Xaml.CornerRadius>.Get(target, Xaml.Controls.RelativePanel.CornerRadiusProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : RelativePanel
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.RelativePanel.CornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RelativePanel.Padding"/></summary>
         public static DependencyProperty<TTarget, Xaml.Thickness> Padding<TTarget>(this TTarget target) where TTarget : RelativePanel
@@ -18034,7 +18034,7 @@ namespace CSharpMarkup.WinUI // StackPanel
         public static TView BorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : StackPanel { view.UI.BorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.StackPanel.CornerRadius"/></summary>
-        public static TView CornerRadius<TView>(this TView view, Xaml.CornerRadius value) where TView : StackPanel { view.UI.CornerRadius = value; return view; }
+        public static TView CornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : StackPanel { view.UI.CornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.StackPanel.Orientation"/></summary>
         public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : StackPanel { view.UI.Orientation = value; return view; }
@@ -18074,8 +18074,8 @@ namespace CSharpMarkup.WinUI // StackPanel
         => DependencyProperty<TTarget, Xaml.Thickness>.Get(target, Xaml.Controls.StackPanel.BorderThicknessProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.StackPanel.CornerRadius"/></summary>
-        public static DependencyProperty<TTarget, Xaml.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : StackPanel
-        => DependencyProperty<TTarget, Xaml.CornerRadius>.Get(target, Xaml.Controls.StackPanel.CornerRadiusProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : StackPanel
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.StackPanel.CornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.StackPanel.Orientation"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : StackPanel
@@ -19981,7 +19981,7 @@ namespace CSharpMarkup.WinUI // TimePicker
 
         /// <summary>Create a <see cref="Xaml.Controls.TimePicker"/></summary>
         /// <remarks>Remark: TimePicker().Bind() binds to <see cref="Xaml.Controls.TimePicker.TimeProperty"/></remarks>
-        public static TimePicker TimePicker(O<string> ClockIdentifier = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, O<int> MinuteIncrement = default, O<TimeSpan?> SelectedTime = default, O<TimeSpan> Time = default, UIObject Header = default)
+        public static TimePicker TimePicker(O<string> ClockIdentifier = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, O<int> MinuteIncrement = default, O<CSharpMarkup.WinUI.to.TimeSpan?> SelectedTime = default, O<CSharpMarkup.WinUI.to.TimeSpan> Time = default, UIObject Header = default)
         {
             var ui = new Xaml.Controls.TimePicker();
             if (ClockIdentifier.HasValue) ui.ClockIdentifier = ClockIdentifier.Value;
@@ -20051,10 +20051,10 @@ namespace CSharpMarkup.WinUI // TimePicker
         public static TView MinuteIncrement<TView>(this TView view, int value) where TView : TimePicker { view.UI.MinuteIncrement = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TimePicker.SelectedTime"/></summary>
-        public static TView SelectedTime<TView>(this TView view, TimeSpan? value) where TView : TimePicker { view.UI.SelectedTime = value; return view; }
+        public static TView SelectedTime<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan? value) where TView : TimePicker { view.UI.SelectedTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TimePicker.Time"/></summary>
-        public static TView Time<TView>(this TView view, TimeSpan value) where TView : TimePicker { view.UI.Time = value; return view; }
+        public static TView Time<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : TimePicker { view.UI.Time = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.ClockIdentifier"/></summary>
         public static DependencyProperty<TTarget, string> ClockIdentifier<TTarget>(this TTarget target) where TTarget : TimePicker
@@ -20077,12 +20077,12 @@ namespace CSharpMarkup.WinUI // TimePicker
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.TimePicker.MinuteIncrementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.SelectedTime"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan?> SelectedTime<TTarget>(this TTarget target) where TTarget : TimePicker
-        => DependencyProperty<TTarget, TimeSpan?>.Get(target, Xaml.Controls.TimePicker.SelectedTimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?> SelectedTime<TTarget>(this TTarget target) where TTarget : TimePicker
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?>.Get(target, Xaml.Controls.TimePicker.SelectedTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.Time"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePicker
-        => DependencyProperty<TTarget, TimeSpan>.Get(target, Xaml.Controls.TimePicker.TimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePicker
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Controls.TimePicker.TimeProperty);
     }
 }
 
@@ -20092,7 +20092,7 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
     {
         /// <summary>Create a <see cref="Xaml.Controls.TimePickerFlyout"/></summary>
         /// <remarks>Remark: TimePickerFlyout().Bind() binds to <see cref="Xaml.Controls.TimePickerFlyout.TimeProperty"/></remarks>
-        public static TimePickerFlyout TimePickerFlyout(O<string> ClockIdentifier = default, O<int> MinuteIncrement = default, O<TimeSpan> Time = default)
+        public static TimePickerFlyout TimePickerFlyout(O<string> ClockIdentifier = default, O<int> MinuteIncrement = default, O<CSharpMarkup.WinUI.to.TimeSpan> Time = default)
         {
             var ui = new Xaml.Controls.TimePickerFlyout();
             if (ClockIdentifier.HasValue) ui.ClockIdentifier = ClockIdentifier.Value;
@@ -20150,7 +20150,7 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
         public static TView MinuteIncrement<TView>(this TView view, int value) where TView : TimePickerFlyout { view.UI.MinuteIncrement = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TimePickerFlyout.Time"/></summary>
-        public static TView Time<TView>(this TView view, TimeSpan value) where TView : TimePickerFlyout { view.UI.Time = value; return view; }
+        public static TView Time<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : TimePickerFlyout { view.UI.Time = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerFlyout.ClockIdentifier"/></summary>
         public static DependencyProperty<TTarget, string> ClockIdentifier<TTarget>(this TTarget target) where TTarget : TimePickerFlyout
@@ -20161,8 +20161,8 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.TimePickerFlyout.MinuteIncrementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerFlyout.Time"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePickerFlyout
-        => DependencyProperty<TTarget, TimeSpan>.Get(target, Xaml.Controls.TimePickerFlyout.TimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePickerFlyout
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Controls.TimePickerFlyout.TimeProperty);
     }
 }
 
@@ -23618,7 +23618,7 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ListViewItemPresenter"/></summary>
-        public static ListViewItemPresenter ListViewItemPresenter(O<Xaml.Media.Brush> CheckBoxBorderBrush = default, O<Xaml.Media.Brush> CheckBoxBrush = default, O<Xaml.CornerRadius> CheckBoxCornerRadius = default, O<Xaml.Media.Brush> CheckBoxDisabledBorderBrush = default, O<Xaml.Media.Brush> CheckBoxDisabledBrush = default, O<Xaml.Media.Brush> CheckBoxPointerOverBorderBrush = default, O<Xaml.Media.Brush> CheckBoxPointerOverBrush = default, O<Xaml.Media.Brush> CheckBoxPressedBorderBrush = default, O<Xaml.Media.Brush> CheckBoxPressedBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedDisabledBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedPointerOverBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedPressedBrush = default, O<Xaml.Media.Brush> CheckBrush = default, O<Xaml.Media.Brush> CheckDisabledBrush = default, O<Xaml.Media.Brush> CheckHintBrush = default, O<Xaml.Controls.Primitives.ListViewItemPresenterCheckMode> CheckMode = default, O<Xaml.Media.Brush> CheckPressedBrush = default, O<Xaml.Media.Brush> CheckSelectingBrush = default, O<Xaml.Thickness> ContentMargin = default, O<double> DisabledOpacity = default, O<Xaml.Media.Brush> DragBackground = default, O<Xaml.Media.Brush> DragForeground = default, O<double> DragOpacity = default, O<Xaml.Media.Brush> FocusBorderBrush = default, O<Xaml.Media.Brush> FocusSecondaryBorderBrush = default, O<Xaml.HorizontalAlignment> ListViewItemPresenterHorizontalContentAlignment = default, O<Xaml.Thickness> ListViewItemPresenterPadding = default, O<Xaml.VerticalAlignment> ListViewItemPresenterVerticalContentAlignment = default, O<Xaml.Media.Brush> PlaceholderBackground = default, O<Xaml.Media.Brush> PointerOverBackground = default, O<Xaml.Thickness> PointerOverBackgroundMargin = default, O<Xaml.Media.Brush> PointerOverBorderBrush = default, O<Xaml.Media.Brush> PointerOverForeground = default, O<Xaml.Media.Brush> PressedBackground = default, O<double> ReorderHintOffset = default, O<Xaml.Media.Brush> RevealBackground = default, O<bool> RevealBackgroundShowsAboveContent = default, O<Xaml.Media.Brush> RevealBorderBrush = default, O<Xaml.Thickness> RevealBorderThickness = default, O<Xaml.Media.Brush> SelectedBackground = default, O<Xaml.Media.Brush> SelectedBorderBrush = default, O<Xaml.Thickness> SelectedBorderThickness = default, O<Xaml.Media.Brush> SelectedDisabledBackground = default, O<Xaml.Media.Brush> SelectedDisabledBorderBrush = default, O<Xaml.Media.Brush> SelectedForeground = default, O<Xaml.Media.Brush> SelectedInnerBorderBrush = default, O<Xaml.Media.Brush> SelectedPointerOverBackground = default, O<Xaml.Media.Brush> SelectedPointerOverBorderBrush = default, O<Xaml.Media.Brush> SelectedPressedBackground = default, O<Xaml.Media.Brush> SelectedPressedBorderBrush = default, O<bool> SelectionCheckMarkVisualEnabled = default, O<Xaml.Media.Brush> SelectionIndicatorBrush = default, O<Xaml.CornerRadius> SelectionIndicatorCornerRadius = default, O<Xaml.Media.Brush> SelectionIndicatorDisabledBrush = default, O<Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode> SelectionIndicatorMode = default, O<Xaml.Media.Brush> SelectionIndicatorPointerOverBrush = default, O<Xaml.Media.Brush> SelectionIndicatorPressedBrush = default, O<bool> SelectionIndicatorVisualEnabled = default, UIObject Content = default)
+        public static ListViewItemPresenter ListViewItemPresenter(O<Xaml.Media.Brush> CheckBoxBorderBrush = default, O<Xaml.Media.Brush> CheckBoxBrush = default, O<CSharpMarkup.WinUI.to.CornerRadius> CheckBoxCornerRadius = default, O<Xaml.Media.Brush> CheckBoxDisabledBorderBrush = default, O<Xaml.Media.Brush> CheckBoxDisabledBrush = default, O<Xaml.Media.Brush> CheckBoxPointerOverBorderBrush = default, O<Xaml.Media.Brush> CheckBoxPointerOverBrush = default, O<Xaml.Media.Brush> CheckBoxPressedBorderBrush = default, O<Xaml.Media.Brush> CheckBoxPressedBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedDisabledBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedPointerOverBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedPressedBrush = default, O<Xaml.Media.Brush> CheckBrush = default, O<Xaml.Media.Brush> CheckDisabledBrush = default, O<Xaml.Media.Brush> CheckHintBrush = default, O<Xaml.Controls.Primitives.ListViewItemPresenterCheckMode> CheckMode = default, O<Xaml.Media.Brush> CheckPressedBrush = default, O<Xaml.Media.Brush> CheckSelectingBrush = default, O<Xaml.Thickness> ContentMargin = default, O<double> DisabledOpacity = default, O<Xaml.Media.Brush> DragBackground = default, O<Xaml.Media.Brush> DragForeground = default, O<double> DragOpacity = default, O<Xaml.Media.Brush> FocusBorderBrush = default, O<Xaml.Media.Brush> FocusSecondaryBorderBrush = default, O<Xaml.HorizontalAlignment> ListViewItemPresenterHorizontalContentAlignment = default, O<Xaml.Thickness> ListViewItemPresenterPadding = default, O<Xaml.VerticalAlignment> ListViewItemPresenterVerticalContentAlignment = default, O<Xaml.Media.Brush> PlaceholderBackground = default, O<Xaml.Media.Brush> PointerOverBackground = default, O<Xaml.Thickness> PointerOverBackgroundMargin = default, O<Xaml.Media.Brush> PointerOverBorderBrush = default, O<Xaml.Media.Brush> PointerOverForeground = default, O<Xaml.Media.Brush> PressedBackground = default, O<double> ReorderHintOffset = default, O<Xaml.Media.Brush> RevealBackground = default, O<bool> RevealBackgroundShowsAboveContent = default, O<Xaml.Media.Brush> RevealBorderBrush = default, O<Xaml.Thickness> RevealBorderThickness = default, O<Xaml.Media.Brush> SelectedBackground = default, O<Xaml.Media.Brush> SelectedBorderBrush = default, O<Xaml.Thickness> SelectedBorderThickness = default, O<Xaml.Media.Brush> SelectedDisabledBackground = default, O<Xaml.Media.Brush> SelectedDisabledBorderBrush = default, O<Xaml.Media.Brush> SelectedForeground = default, O<Xaml.Media.Brush> SelectedInnerBorderBrush = default, O<Xaml.Media.Brush> SelectedPointerOverBackground = default, O<Xaml.Media.Brush> SelectedPointerOverBorderBrush = default, O<Xaml.Media.Brush> SelectedPressedBackground = default, O<Xaml.Media.Brush> SelectedPressedBorderBrush = default, O<bool> SelectionCheckMarkVisualEnabled = default, O<Xaml.Media.Brush> SelectionIndicatorBrush = default, O<CSharpMarkup.WinUI.to.CornerRadius> SelectionIndicatorCornerRadius = default, O<Xaml.Media.Brush> SelectionIndicatorDisabledBrush = default, O<Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode> SelectionIndicatorMode = default, O<Xaml.Media.Brush> SelectionIndicatorPointerOverBrush = default, O<Xaml.Media.Brush> SelectionIndicatorPressedBrush = default, O<bool> SelectionIndicatorVisualEnabled = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Primitives.ListViewItemPresenter();
             if (CheckBoxBorderBrush.HasValue) ui.CheckBoxBorderBrush = CheckBoxBorderBrush.Value;
@@ -23743,7 +23743,7 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         public static TView CheckBoxBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxCornerRadius"/></summary>
-        public static TView CheckBoxCornerRadius<TView>(this TView view, Xaml.CornerRadius value) where TView : ListViewItemPresenter { view.UI.CheckBoxCornerRadius = value; return view; }
+        public static TView CheckBoxCornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : ListViewItemPresenter { view.UI.CheckBoxCornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrush"/></summary>
         public static TView CheckBoxDisabledBorderBrush<TView>(this TView view, Xaml.Media.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBorderBrush = value; return view; }
@@ -24178,7 +24178,7 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         public static TView SelectionIndicatorBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorCornerRadius"/></summary>
-        public static TView SelectionIndicatorCornerRadius<TView>(this TView view, Xaml.CornerRadius value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorCornerRadius = value; return view; }
+        public static TView SelectionIndicatorCornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorCornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrush"/></summary>
         public static TView SelectionIndicatorDisabledBrush<TView>(this TView view, Xaml.Media.Brush value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorDisabledBrush = value; return view; }
@@ -24222,8 +24222,8 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxCornerRadius"/></summary>
-        public static DependencyProperty<TTarget, Xaml.CornerRadius> CheckBoxCornerRadius<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
-        => DependencyProperty<TTarget, Xaml.CornerRadius>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxCornerRadiusProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CheckBoxCornerRadius<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxCornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrush"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.Brush> CheckBoxDisabledBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
@@ -24426,8 +24426,8 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorCornerRadius"/></summary>
-        public static DependencyProperty<TTarget, Xaml.CornerRadius> SelectionIndicatorCornerRadius<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
-        => DependencyProperty<TTarget, Xaml.CornerRadius>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorCornerRadiusProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> SelectionIndicatorCornerRadius<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorCornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrush"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.Brush> SelectionIndicatorDisabledBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
@@ -27439,7 +27439,7 @@ namespace CSharpMarkup.WinUI // AcrylicBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.AcrylicBrush"/></summary>
-        public static AcrylicBrush AcrylicBrush(O<bool> AlwaysUseFallback = default, O<Windows.UI.Color> TintColor = default, O<double?> TintLuminosityOpacity = default, O<double> TintOpacity = default, O<TimeSpan> TintTransitionDuration = default)
+        public static AcrylicBrush AcrylicBrush(O<bool> AlwaysUseFallback = default, O<Windows.UI.Color> TintColor = default, O<double?> TintLuminosityOpacity = default, O<double> TintOpacity = default, O<CSharpMarkup.WinUI.to.TimeSpan> TintTransitionDuration = default)
         {
             var ui = new Xaml.Media.AcrylicBrush();
             if (AlwaysUseFallback.HasValue) ui.AlwaysUseFallback = AlwaysUseFallback.Value;
@@ -27501,7 +27501,7 @@ namespace CSharpMarkup.WinUI // AcrylicBrush
         public static TView TintOpacity<TView>(this TView view, double value) where TView : AcrylicBrush { view.UI.TintOpacity = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.AcrylicBrush.TintTransitionDuration"/></summary>
-        public static TView TintTransitionDuration<TView>(this TView view, TimeSpan value) where TView : AcrylicBrush { view.UI.TintTransitionDuration = value; return view; }
+        public static TView TintTransitionDuration<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : AcrylicBrush { view.UI.TintTransitionDuration = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.AcrylicBrush.AlwaysUseFallback"/></summary>
         public static DependencyProperty<TTarget, bool> AlwaysUseFallback<TTarget>(this TTarget target) where TTarget : AcrylicBrush
@@ -27516,8 +27516,8 @@ namespace CSharpMarkup.WinUI // AcrylicBrush
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.AcrylicBrush.TintOpacityProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.AcrylicBrush.TintTransitionDuration"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan> TintTransitionDuration<TTarget>(this TTarget target) where TTarget : AcrylicBrush
-        => DependencyProperty<TTarget, TimeSpan>.Get(target, Xaml.Media.AcrylicBrush.TintTransitionDurationProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> TintTransitionDuration<TTarget>(this TTarget target) where TTarget : AcrylicBrush
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Media.AcrylicBrush.TintTransitionDurationProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.AcrylicBrush.TintLuminosityOpacity"/></summary>
         public static DependencyProperty<TTarget, double?> TintLuminosityOpacity<TTarget>(this TTarget target) where TTarget : AcrylicBrush
@@ -34320,7 +34320,7 @@ namespace CSharpMarkup.WinUI // Timeline
         public static TView AutoReverse<TView>(this TView view, bool value) where TView : Timeline { view.UI.AutoReverse = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.Timeline.BeginTime"/></summary>
-        public static TView BeginTime<TView>(this TView view, TimeSpan? value) where TView : Timeline { view.UI.BeginTime = value; return view; }
+        public static TView BeginTime<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan? value) where TView : Timeline { view.UI.BeginTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.Timeline.Duration"/></summary>
         public static TView Duration<TView>(this TView view, Xaml.Duration value) where TView : Timeline { view.UI.Duration = value; return view; }
@@ -34339,8 +34339,8 @@ namespace CSharpMarkup.WinUI // Timeline
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.Timeline.AutoReverseProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.Timeline.BeginTime"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan?> BeginTime<TTarget>(this TTarget target) where TTarget : Timeline
-        => DependencyProperty<TTarget, TimeSpan?>.Get(target, Xaml.Media.Animation.Timeline.BeginTimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?> BeginTime<TTarget>(this TTarget target) where TTarget : Timeline
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?>.Get(target, Xaml.Media.Animation.Timeline.BeginTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.Timeline.Duration"/></summary>
         public static DependencyProperty<TTarget, Xaml.Duration> Duration<TTarget>(this TTarget target) where TTarget : Timeline

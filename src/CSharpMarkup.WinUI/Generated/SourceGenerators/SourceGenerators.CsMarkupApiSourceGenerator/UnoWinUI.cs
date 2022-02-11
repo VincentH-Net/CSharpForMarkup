@@ -4599,8 +4599,8 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
         => DependencyProperty<TTarget, Xaml.Media.Stretch>.Get(target, Xaml.Controls.AnimatedVisualPlayer.StretchProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedVisualPlayer.Duration"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan> Duration<TTarget>(this TTarget target) where TTarget : AnimatedVisualPlayer
-        => DependencyProperty<TTarget, TimeSpan>.Get(target, Xaml.Controls.AnimatedVisualPlayer.DurationProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> Duration<TTarget>(this TTarget target) where TTarget : AnimatedVisualPlayer
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Controls.AnimatedVisualPlayer.DurationProperty);
     }
 }
 
@@ -21746,7 +21746,7 @@ namespace CSharpMarkup.WinUI // TimePicker
     {
         /// <summary>Create a <see cref="Xaml.Controls.TimePicker"/></summary>
         /// <remarks>Remark: TimePicker().Bind() binds to <see cref="Xaml.Controls.TimePicker.TimeProperty"/></remarks>
-        public static TimePicker TimePicker(O<TimeSpan> Time = default, O<TimeSpan?> SelectedTime = default, O<int> MinuteIncrement = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<object> Header = default, O<string> ClockIdentifier = default)
+        public static TimePicker TimePicker(O<CSharpMarkup.WinUI.to.TimeSpan> Time = default, O<CSharpMarkup.WinUI.to.TimeSpan?> SelectedTime = default, O<int> MinuteIncrement = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<object> Header = default, O<string> ClockIdentifier = default)
         {
             var ui = new Xaml.Controls.TimePicker();
             if (Time.HasValue) ui.Time = Time.Value;
@@ -21804,10 +21804,10 @@ namespace CSharpMarkup.WinUI // TimePicker
     public static partial class TimePickerExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.TimePicker.Time"/></summary>
-        public static TView Time<TView>(this TView view, TimeSpan value) where TView : TimePicker { view.UI.Time = value; return view; }
+        public static TView Time<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : TimePicker { view.UI.Time = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TimePicker.SelectedTime"/></summary>
-        public static TView SelectedTime<TView>(this TView view, TimeSpan? value) where TView : TimePicker { view.UI.SelectedTime = value; return view; }
+        public static TView SelectedTime<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan? value) where TView : TimePicker { view.UI.SelectedTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TimePicker.MinuteIncrement"/></summary>
         public static TView MinuteIncrement<TView>(this TView view, int value) where TView : TimePicker { view.UI.MinuteIncrement = value; return view; }
@@ -21841,12 +21841,12 @@ namespace CSharpMarkup.WinUI // TimePicker
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.TimePicker.MinuteIncrementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.SelectedTime"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan?> SelectedTime<TTarget>(this TTarget target) where TTarget : TimePicker
-        => DependencyProperty<TTarget, TimeSpan?>.Get(target, Xaml.Controls.TimePicker.SelectedTimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?> SelectedTime<TTarget>(this TTarget target) where TTarget : TimePicker
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?>.Get(target, Xaml.Controls.TimePicker.SelectedTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.Time"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePicker
-        => DependencyProperty<TTarget, TimeSpan>.Get(target, Xaml.Controls.TimePicker.TimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePicker
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Controls.TimePicker.TimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.ClockIdentifier"/></summary>
         public static DependencyProperty<TTarget, string> ClockIdentifier<TTarget>(this TTarget target) where TTarget : TimePicker
@@ -21860,7 +21860,7 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
     {
         /// <summary>Create a <see cref="Xaml.Controls.TimePickerFlyout"/></summary>
         /// <remarks>Remark: TimePickerFlyout().Bind() binds to <see cref="Xaml.Controls.TimePickerFlyout.TimeProperty"/></remarks>
-        public static TimePickerFlyout TimePickerFlyout(O<TimeSpan> Time = default, O<int> MinuteIncrement = default, O<string> ClockIdentifier = default)
+        public static TimePickerFlyout TimePickerFlyout(O<CSharpMarkup.WinUI.to.TimeSpan> Time = default, O<int> MinuteIncrement = default, O<string> ClockIdentifier = default)
         {
             var ui = new Xaml.Controls.TimePickerFlyout();
             if (Time.HasValue) ui.Time = Time.Value;
@@ -21912,7 +21912,7 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
     public static partial class TimePickerFlyoutExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.TimePickerFlyout.Time"/></summary>
-        public static TView Time<TView>(this TView view, TimeSpan value) where TView : TimePickerFlyout { view.UI.Time = value; return view; }
+        public static TView Time<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : TimePickerFlyout { view.UI.Time = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TimePickerFlyout.MinuteIncrement"/></summary>
         public static TView MinuteIncrement<TView>(this TView view, int value) where TView : TimePickerFlyout { view.UI.MinuteIncrement = value; return view; }
@@ -21921,8 +21921,8 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
         public static TView ClockIdentifier<TView>(this TView view, string value) where TView : TimePickerFlyout { view.UI.ClockIdentifier = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerFlyout.Time"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePickerFlyout
-        => DependencyProperty<TTarget, TimeSpan>.Get(target, Xaml.Controls.TimePickerFlyout.TimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePickerFlyout
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Controls.TimePickerFlyout.TimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerFlyout.MinuteIncrement"/></summary>
         public static DependencyProperty<TTarget, int> MinuteIncrement<TTarget>(this TTarget target) where TTarget : TimePickerFlyout
@@ -24894,7 +24894,7 @@ namespace CSharpMarkup.WinUI // TimePickerSelector
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.TimePickerSelector"/></summary>
-        public static TimePickerSelector TimePickerSelector(O<TimeSpan> Time = default, O<int> MinuteIncrement = default, O<string> ClockIdentifier = default, UIObject Content = default)
+        public static TimePickerSelector TimePickerSelector(O<CSharpMarkup.WinUI.to.TimeSpan> Time = default, O<int> MinuteIncrement = default, O<string> ClockIdentifier = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.TimePickerSelector();
             if (Time.HasValue) ui.Time = Time.Value;
@@ -24945,7 +24945,7 @@ namespace CSharpMarkup.WinUI // TimePickerSelector
     public static partial class TimePickerSelectorExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.TimePickerSelector.Time"/></summary>
-        public static TView Time<TView>(this TView view, TimeSpan value) where TView : TimePickerSelector { view.UI.Time = value; return view; }
+        public static TView Time<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : TimePickerSelector { view.UI.Time = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TimePickerSelector.MinuteIncrement"/></summary>
         public static TView MinuteIncrement<TView>(this TView view, int value) where TView : TimePickerSelector { view.UI.MinuteIncrement = value; return view; }
@@ -24954,8 +24954,8 @@ namespace CSharpMarkup.WinUI // TimePickerSelector
         public static TView ClockIdentifier<TView>(this TView view, string value) where TView : TimePickerSelector { view.UI.ClockIdentifier = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerSelector.Time"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePickerSelector
-        => DependencyProperty<TTarget, TimeSpan>.Get(target, Xaml.Controls.TimePickerSelector.TimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePickerSelector
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Controls.TimePickerSelector.TimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerSelector.MinuteIncrement"/></summary>
         public static DependencyProperty<TTarget, int> MinuteIncrement<TTarget>(this TTarget target) where TTarget : TimePickerSelector
@@ -31817,7 +31817,7 @@ namespace CSharpMarkup.WinUI // AcrylicBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.AcrylicBrush"/></summary>
-        public static AcrylicBrush AcrylicBrush(O<TimeSpan> TintTransitionDuration = default, O<Windows.UI.Color> TintColor = default, O<double> TintOpacity = default, O<double?> TintLuminosityOpacity = default, O<Xaml.Media.AcrylicBackgroundSource> BackgroundSource = default, O<bool> AlwaysUseFallback = default)
+        public static AcrylicBrush AcrylicBrush(O<CSharpMarkup.WinUI.to.TimeSpan> TintTransitionDuration = default, O<Windows.UI.Color> TintColor = default, O<double> TintOpacity = default, O<double?> TintLuminosityOpacity = default, O<Xaml.Media.AcrylicBackgroundSource> BackgroundSource = default, O<bool> AlwaysUseFallback = default)
         {
             var ui = new Xaml.Media.AcrylicBrush();
             if (TintTransitionDuration.HasValue) ui.TintTransitionDuration = TintTransitionDuration.Value;
@@ -31868,7 +31868,7 @@ namespace CSharpMarkup.WinUI // AcrylicBrush
     public static partial class AcrylicBrushExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.AcrylicBrush.TintTransitionDuration"/></summary>
-        public static TView TintTransitionDuration<TView>(this TView view, TimeSpan value) where TView : AcrylicBrush { view.UI.TintTransitionDuration = value; return view; }
+        public static TView TintTransitionDuration<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : AcrylicBrush { view.UI.TintTransitionDuration = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.AcrylicBrush.TintColor"/></summary>
         public static TView TintColor<TView>(this TView view, Windows.UI.Color value) where TView : AcrylicBrush { view.UI.TintColor = value; return view; }
@@ -31886,8 +31886,8 @@ namespace CSharpMarkup.WinUI // AcrylicBrush
         public static TView AlwaysUseFallback<TView>(this TView view, bool value) where TView : AcrylicBrush { view.UI.AlwaysUseFallback = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.AcrylicBrush.TintTransitionDuration"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan> TintTransitionDuration<TTarget>(this TTarget target) where TTarget : AcrylicBrush
-        => DependencyProperty<TTarget, TimeSpan>.Get(target, Xaml.Media.AcrylicBrush.TintTransitionDurationProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> TintTransitionDuration<TTarget>(this TTarget target) where TTarget : AcrylicBrush
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Media.AcrylicBrush.TintTransitionDurationProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.AcrylicBrush.TintColor"/></summary>
         public static DependencyProperty<TTarget, Windows.UI.Color> TintColor<TTarget>(this TTarget target) where TTarget : AcrylicBrush
@@ -39703,7 +39703,7 @@ namespace CSharpMarkup.WinUI // Timeline
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.Timeline"/></summary>
-        public static Timeline Timeline(O<double> SpeedRatio = default, O<bool> AutoReverse = default, O<TimeSpan?> BeginTime = default, O<Xaml.Duration> Duration = default, O<Xaml.Media.Animation.FillBehavior> FillBehavior = default, O<Xaml.Media.Animation.RepeatBehavior> RepeatBehavior = default, O<object> DataContext = default, O<Xaml.DependencyObject> TemplatedParent = default)
+        public static Timeline Timeline(O<double> SpeedRatio = default, O<bool> AutoReverse = default, O<CSharpMarkup.WinUI.to.TimeSpan?> BeginTime = default, O<Xaml.Duration> Duration = default, O<Xaml.Media.Animation.FillBehavior> FillBehavior = default, O<Xaml.Media.Animation.RepeatBehavior> RepeatBehavior = default, O<object> DataContext = default, O<Xaml.DependencyObject> TemplatedParent = default)
         {
             var ui = new Xaml.Media.Animation.Timeline();
             if (SpeedRatio.HasValue) ui.SpeedRatio = SpeedRatio.Value;
@@ -39762,7 +39762,7 @@ namespace CSharpMarkup.WinUI // Timeline
         public static TView AutoReverse<TView>(this TView view, bool value) where TView : Timeline { view.UI.AutoReverse = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.Timeline.BeginTime"/></summary>
-        public static TView BeginTime<TView>(this TView view, TimeSpan? value) where TView : Timeline { view.UI.BeginTime = value; return view; }
+        public static TView BeginTime<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan? value) where TView : Timeline { view.UI.BeginTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.Timeline.Duration"/></summary>
         public static TView Duration<TView>(this TView view, Xaml.Duration value) where TView : Timeline { view.UI.Duration = value; return view; }
@@ -39788,8 +39788,8 @@ namespace CSharpMarkup.WinUI // Timeline
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.Timeline.SpeedRatioProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.Timeline.BeginTime"/></summary>
-        public static DependencyProperty<TTarget, TimeSpan?> BeginTime<TTarget>(this TTarget target) where TTarget : Timeline
-        => DependencyProperty<TTarget, TimeSpan?>.Get(target, Xaml.Media.Animation.Timeline.BeginTimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?> BeginTime<TTarget>(this TTarget target) where TTarget : Timeline
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?>.Get(target, Xaml.Media.Animation.Timeline.BeginTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.Timeline.Duration"/></summary>
         public static DependencyProperty<TTarget, Xaml.Duration> Duration<TTarget>(this TTarget target) where TTarget : Timeline
@@ -41306,119 +41306,135 @@ namespace CSharpMarkup.WinUI // ManagedItemsStackPanel
 
 namespace CSharpMarkup.WinUI.to // Type convertors
 {
-    /// <summary><see cref="Xaml.Thickness" /> or <see cref="string" /></summary>
-    public partial struct Thickness
+    partial struct CornerRadius
     {
-        static Xaml.ThicknessConverter converter;
-        static Xaml.ThicknessConverter Converter => converter ??= new();
+        static Xaml.CornerRadiusConverter fromStringconverter;
+        static Xaml.CornerRadiusConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator CornerRadius(string value) => (Xaml.CornerRadius)CornerRadius.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Thickness
+    {
         readonly Xaml.Thickness value;
 
         public Thickness(Xaml.Thickness value) => this.value = value;
 
         public static implicit operator Xaml.Thickness(Thickness value) => value.value;
         public static implicit operator Thickness(Xaml.Thickness value) => new(value);
-
-        public static implicit operator Thickness(string value) => new((Xaml.Thickness)Thickness.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Xaml.Media.Brush" /> or <see cref="string" /></summary>
-    public partial struct Brush
+    partial struct Thickness
     {
-        static Xaml.Media.BrushConverter converter;
-        static Xaml.Media.BrushConverter Converter => converter ??= new();
+        static Xaml.ThicknessConverter fromStringconverter;
+        static Xaml.ThicknessConverter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator Thickness(string value) => (Xaml.Thickness)Thickness.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Brush
+    {
         readonly Xaml.Media.Brush value;
 
         public Brush(Xaml.Media.Brush value) => this.value = value;
 
         public static implicit operator Xaml.Media.Brush(Brush value) => value.value;
         public static implicit operator Brush(Xaml.Media.Brush value) => new(value);
+    }
+
+    partial struct Brush
+    {
         public static implicit operator Brush(CSharpMarkup.WinUI.Brush value) => new(value.UI);
-
-        public static implicit operator Brush(string value) => new((Xaml.Media.Brush)Brush.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Xaml.CornerRadius" /> or <see cref="string" /></summary>
-    public partial struct CornerRadius
+    partial struct Brush
     {
-        static Xaml.CornerRadiusConverter converter;
-        static Xaml.CornerRadiusConverter Converter => converter ??= new();
+        static Xaml.Media.BrushConverter fromStringconverter;
+        static Xaml.Media.BrushConverter FromStringConverter => fromStringconverter ??= new();
 
-        readonly Xaml.CornerRadius value;
-
-        public CornerRadius(Xaml.CornerRadius value) => this.value = value;
-
-        public static implicit operator Xaml.CornerRadius(CornerRadius value) => value.value;
-        public static implicit operator CornerRadius(Xaml.CornerRadius value) => new(value);
-
-        public static implicit operator CornerRadius(string value) => new((Xaml.CornerRadius)CornerRadius.Converter.ConvertFromInvariantString(value));
+        public static implicit operator Brush(string value) => (Xaml.Media.Brush)Brush.FromStringConverter.ConvertFromInvariantString(value);
     }
 
-    /// <summary><see cref="Xaml.GridLength" /> or <see cref="string" /></summary>
-    public partial struct GridLength
+    readonly public partial struct GridLength
     {
-        static Xaml.GridLength.Converter converter;
-        static Xaml.GridLength.Converter Converter => converter ??= new();
-
         readonly Xaml.GridLength value;
 
         public GridLength(Xaml.GridLength value) => this.value = value;
 
         public static implicit operator Xaml.GridLength(GridLength value) => value.value;
         public static implicit operator GridLength(Xaml.GridLength value) => new(value);
-
-        public static implicit operator GridLength(string value) => new((Xaml.GridLength)GridLength.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Xaml.Media.ImageSource" /> or <see cref="string" /></summary>
-    public partial struct ImageSource
+    partial struct GridLength
     {
-        static Xaml.Media.ImageSourceConverter converter;
-        static Xaml.Media.ImageSourceConverter Converter => converter ??= new();
+        static Xaml.GridLength.Converter fromStringconverter;
+        static Xaml.GridLength.Converter FromStringConverter => fromStringconverter ??= new();
 
+        public static implicit operator GridLength(string value) => (Xaml.GridLength)GridLength.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct ImageSource
+    {
         readonly Xaml.Media.ImageSource value;
 
         public ImageSource(Xaml.Media.ImageSource value) => this.value = value;
 
         public static implicit operator Xaml.Media.ImageSource(ImageSource value) => value.value;
         public static implicit operator ImageSource(Xaml.Media.ImageSource value) => new(value);
-        public static implicit operator ImageSource(CSharpMarkup.WinUI.ImageSource value) => new(value.UI);
-
-        public static implicit operator ImageSource(string value) => new((Xaml.Media.ImageSource)ImageSource.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Xaml.Media.Geometry" /> or <see cref="string" /></summary>
-    public partial struct Geometry
+    partial struct ImageSource
     {
-        static Uno.Media.GeometryConverter converter;
-        static Uno.Media.GeometryConverter Converter => converter ??= new();
+        public static implicit operator ImageSource(CSharpMarkup.WinUI.ImageSource value) => new(value.UI);
+    }
 
+    partial struct ImageSource
+    {
+        static Xaml.Media.ImageSourceConverter fromStringconverter;
+        static Xaml.Media.ImageSourceConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator ImageSource(string value) => (Xaml.Media.ImageSource)ImageSource.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Geometry
+    {
         readonly Xaml.Media.Geometry value;
 
         public Geometry(Xaml.Media.Geometry value) => this.value = value;
 
         public static implicit operator Xaml.Media.Geometry(Geometry value) => value.value;
         public static implicit operator Geometry(Xaml.Media.Geometry value) => new(value);
-        public static implicit operator Geometry(CSharpMarkup.WinUI.Geometry value) => new(value.UI);
-
-        public static implicit operator Geometry(string value) => new((Xaml.Media.Geometry)Geometry.Converter.ConvertFromInvariantString(value));
     }
 
-    /// <summary><see cref="Windows.Foundation.Size" /> or <see cref="string" /></summary>
-    public partial struct Size
+    partial struct Geometry
     {
-        static Windows.Foundation.SizeConverter converter;
-        static Windows.Foundation.SizeConverter Converter => converter ??= new();
+        public static implicit operator Geometry(CSharpMarkup.WinUI.Geometry value) => new(value.UI);
+    }
 
+    partial struct Geometry
+    {
+        static Uno.Media.GeometryConverter fromStringconverter;
+        static Uno.Media.GeometryConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator Geometry(string value) => (Xaml.Media.Geometry)Geometry.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    readonly public partial struct Size
+    {
         readonly Windows.Foundation.Size value;
 
         public Size(Windows.Foundation.Size value) => this.value = value;
 
         public static implicit operator Windows.Foundation.Size(Size value) => value.value;
         public static implicit operator Size(Windows.Foundation.Size value) => new(value);
+    }
 
-        public static implicit operator Size(string value) => new((Windows.Foundation.Size)Size.Converter.ConvertFromInvariantString(value));
+    partial struct Size
+    {
+        static Windows.Foundation.SizeConverter fromStringconverter;
+        static Windows.Foundation.SizeConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator Size(string value) => (Windows.Foundation.Size)Size.FromStringConverter.ConvertFromInvariantString(value);
     }
 }
 
