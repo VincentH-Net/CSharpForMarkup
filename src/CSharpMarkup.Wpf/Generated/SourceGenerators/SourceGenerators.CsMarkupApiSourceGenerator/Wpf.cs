@@ -48211,6 +48211,38 @@ namespace CSharpMarkup.Wpf.to // Type convertors
         public static implicit operator CornerRadius(string value) => (Windows.CornerRadius)CornerRadius.FromStringConverter.ConvertFromInvariantString(value);
     }
 
+    partial struct Size
+    {
+        static Windows.SizeConverter fromStringconverter;
+        static Windows.SizeConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator Size(string value) => (Windows.Size)Size.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    partial struct Point
+    {
+        static Windows.PointConverter fromStringconverter;
+        static Windows.PointConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator Point(string value) => (Windows.Point)Point.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    partial struct Duration
+    {
+        static Windows.DurationConverter fromStringconverter;
+        static Windows.DurationConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator Duration(string value) => (Windows.Duration)Duration.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
+    partial struct KeyTime
+    {
+        static Windows.KeyTimeConverter fromStringconverter;
+        static Windows.KeyTimeConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator KeyTime(string value) => (Windows.Media.Animation.KeyTime)KeyTime.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
     readonly public partial struct CacheMode
     {
         readonly Windows.Media.CacheMode value;
@@ -48280,24 +48312,6 @@ namespace CSharpMarkup.Wpf.to // Type convertors
         public static implicit operator Brush(string value) => (Windows.Media.Brush)Brush.FromStringConverter.ConvertFromInvariantString(value);
     }
 
-    readonly public partial struct Size
-    {
-        readonly Windows.Size value;
-
-        public Size(Windows.Size value) => this.value = value;
-
-        public static implicit operator Windows.Size(Size value) => value.value;
-        public static implicit operator Size(Windows.Size value) => new(value);
-    }
-
-    partial struct Size
-    {
-        static Windows.SizeConverter fromStringconverter;
-        static Windows.SizeConverter FromStringConverter => fromStringconverter ??= new();
-
-        public static implicit operator Size(string value) => (Windows.Size)Size.FromStringConverter.ConvertFromInvariantString(value);
-    }
-
     readonly public partial struct Transform
     {
         readonly Windows.Media.Transform value;
@@ -48319,24 +48333,6 @@ namespace CSharpMarkup.Wpf.to // Type convertors
         static Windows.Media.TransformConverter FromStringConverter => fromStringconverter ??= new();
 
         public static implicit operator Transform(string value) => (Windows.Media.Transform)Transform.FromStringConverter.ConvertFromInvariantString(value);
-    }
-
-    readonly public partial struct Point
-    {
-        readonly Windows.Point value;
-
-        public Point(Windows.Point value) => this.value = value;
-
-        public static implicit operator Windows.Point(Point value) => value.value;
-        public static implicit operator Point(Windows.Point value) => new(value);
-    }
-
-    partial struct Point
-    {
-        static Windows.PointConverter fromStringconverter;
-        static Windows.PointConverter FromStringConverter => fromStringconverter ??= new();
-
-        public static implicit operator Point(string value) => (Windows.Point)Point.FromStringConverter.ConvertFromInvariantString(value);
     }
 
     readonly public partial struct Color
@@ -48457,24 +48453,6 @@ namespace CSharpMarkup.Wpf.to // Type convertors
         public static implicit operator Matrix(string value) => (Windows.Media.Matrix)Matrix.FromStringConverter.ConvertFromInvariantString(value);
     }
 
-    readonly public partial struct Duration
-    {
-        readonly Windows.Duration value;
-
-        public Duration(Windows.Duration value) => this.value = value;
-
-        public static implicit operator Windows.Duration(Duration value) => value.value;
-        public static implicit operator Duration(Windows.Duration value) => new(value);
-    }
-
-    partial struct Duration
-    {
-        static Windows.DurationConverter fromStringconverter;
-        static Windows.DurationConverter FromStringConverter => fromStringconverter ??= new();
-
-        public static implicit operator Duration(string value) => (Windows.Duration)Duration.FromStringConverter.ConvertFromInvariantString(value);
-    }
-
     readonly public partial struct RepeatBehavior
     {
         readonly Windows.Media.Animation.RepeatBehavior value;
@@ -48537,24 +48515,6 @@ namespace CSharpMarkup.Wpf.to // Type convertors
         static Windows.Media.PointCollectionConverter FromStringConverter => fromStringconverter ??= new();
 
         public static implicit operator PointCollection(string value) => (Windows.Media.PointCollection)PointCollection.FromStringConverter.ConvertFromInvariantString(value);
-    }
-
-    readonly public partial struct KeyTime
-    {
-        readonly Windows.Media.Animation.KeyTime value;
-
-        public KeyTime(Windows.Media.Animation.KeyTime value) => this.value = value;
-
-        public static implicit operator Windows.Media.Animation.KeyTime(KeyTime value) => value.value;
-        public static implicit operator KeyTime(Windows.Media.Animation.KeyTime value) => new(value);
-    }
-
-    partial struct KeyTime
-    {
-        static Windows.KeyTimeConverter fromStringconverter;
-        static Windows.KeyTimeConverter FromStringConverter => fromStringconverter ??= new();
-
-        public static implicit operator KeyTime(string value) => (Windows.Media.Animation.KeyTime)KeyTime.FromStringConverter.ConvertFromInvariantString(value);
     }
 
     readonly public partial struct Point3D

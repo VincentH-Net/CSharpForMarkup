@@ -1146,7 +1146,7 @@ namespace CSharpMarkup.WinUI // UIElement
         public static TView RenderTransform<TView>(this TView view, Xaml.Media.Transform value) where TView : UIElement { view.UI.RenderTransform = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.RenderTransformOrigin"/></summary>
-        public static TView RenderTransformOrigin<TView>(this TView view, Windows.Foundation.Point value) where TView : UIElement { view.UI.RenderTransformOrigin = value; return view; }
+        public static TView RenderTransformOrigin<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : UIElement { view.UI.RenderTransformOrigin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.Rotation"/></summary>
         public static TView Rotation<TView>(this TView view, float value) where TView : UIElement { view.UI.Rotation = value; return view; }
@@ -1347,8 +1347,8 @@ namespace CSharpMarkup.WinUI // UIElement
         => DependencyProperty<TTarget, Xaml.Media.Projection>.Get(target, Xaml.UIElement.ProjectionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.RenderTransformOrigin"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> RenderTransformOrigin<TTarget>(this TTarget target) where TTarget : UIElement
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.UIElement.RenderTransformOriginProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> RenderTransformOrigin<TTarget>(this TTarget target) where TTarget : UIElement
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.UIElement.RenderTransformOriginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.RenderTransform"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.Transform> RenderTransform<TTarget>(this TTarget target) where TTarget : UIElement
@@ -1579,7 +1579,7 @@ namespace CSharpMarkup.WinUI // VisualTransition
         }
 
         /// <summary>Create a <see cref="Xaml.VisualTransition"/></summary>
-        public static VisualTransition VisualTransition(O<string> From = default, O<Xaml.Duration> GeneratedDuration = default, O<Xaml.Media.Animation.EasingFunctionBase> GeneratedEasingFunction = default, O<string> To = default, Microsoft.UI.Xaml.Media.Animation.Storyboard Storyboard = default)
+        public static VisualTransition VisualTransition(O<string> From = default, O<CSharpMarkup.WinUI.to.Duration> GeneratedDuration = default, O<Xaml.Media.Animation.EasingFunctionBase> GeneratedEasingFunction = default, O<string> To = default, Microsoft.UI.Xaml.Media.Animation.Storyboard Storyboard = default)
         {
             var ui = new Xaml.VisualTransition();
             if (From.HasValue) ui.From = From.Value;
@@ -1632,7 +1632,7 @@ namespace CSharpMarkup.WinUI // VisualTransition
         public static TView From<TView>(this TView view, string value) where TView : VisualTransition { view.UI.From = value; return view; }
 
         /// <summary>Set <see cref="Xaml.VisualTransition.GeneratedDuration"/></summary>
-        public static TView GeneratedDuration<TView>(this TView view, Xaml.Duration value) where TView : VisualTransition { view.UI.GeneratedDuration = value; return view; }
+        public static TView GeneratedDuration<TView>(this TView view, CSharpMarkup.WinUI.to.Duration value) where TView : VisualTransition { view.UI.GeneratedDuration = value; return view; }
 
         /// <summary>Set <see cref="Xaml.VisualTransition.GeneratedEasingFunction"/></summary>
         public static TView GeneratedEasingFunction<TView>(this TView view, Xaml.Media.Animation.EasingFunctionBase value) where TView : VisualTransition { view.UI.GeneratedEasingFunction = value; return view; }
@@ -21625,7 +21625,7 @@ namespace CSharpMarkup.WinUI // VirtualizingLayoutContext
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.VirtualizingLayoutContext"/></summary>
-        public static VirtualizingLayoutContext VirtualizingLayoutContext(O<Windows.Foundation.Point> LayoutOrigin = default)
+        public static VirtualizingLayoutContext VirtualizingLayoutContext(O<CSharpMarkup.WinUI.to.Point> LayoutOrigin = default)
         {
             var ui = new Xaml.Controls.VirtualizingLayoutContext();
             if (LayoutOrigin.HasValue) ui.LayoutOrigin = LayoutOrigin.Value;
@@ -21671,7 +21671,7 @@ namespace CSharpMarkup.WinUI // VirtualizingLayoutContext
     public static partial class VirtualizingLayoutContextExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.VirtualizingLayoutContext.LayoutOrigin"/></summary>
-        public static TView LayoutOrigin<TView>(this TView view, Windows.Foundation.Point value) where TView : VirtualizingLayoutContext { view.UI.LayoutOrigin = value; return view; }
+        public static TView LayoutOrigin<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : VirtualizingLayoutContext { view.UI.LayoutOrigin = value; return view; }
     }
 }
 
@@ -27530,7 +27530,7 @@ namespace CSharpMarkup.WinUI // ArcSegment
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.ArcSegment"/></summary>
-        public static ArcSegment ArcSegment(O<bool> IsLargeArc = default, O<Windows.Foundation.Point> Point = default, O<double> RotationAngle = default, O<Windows.Foundation.Size> Size = default, O<Xaml.Media.SweepDirection> SweepDirection = default)
+        public static ArcSegment ArcSegment(O<bool> IsLargeArc = default, O<CSharpMarkup.WinUI.to.Point> Point = default, O<double> RotationAngle = default, O<CSharpMarkup.WinUI.to.Size> Size = default, O<Xaml.Media.SweepDirection> SweepDirection = default)
         {
             var ui = new Xaml.Media.ArcSegment();
             if (IsLargeArc.HasValue) ui.IsLargeArc = IsLargeArc.Value;
@@ -27583,13 +27583,13 @@ namespace CSharpMarkup.WinUI // ArcSegment
         public static TView IsLargeArc<TView>(this TView view, bool value) where TView : ArcSegment { view.UI.IsLargeArc = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.ArcSegment.Point"/></summary>
-        public static TView Point<TView>(this TView view, Windows.Foundation.Point value) where TView : ArcSegment { view.UI.Point = value; return view; }
+        public static TView Point<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : ArcSegment { view.UI.Point = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.ArcSegment.RotationAngle"/></summary>
         public static TView RotationAngle<TView>(this TView view, double value) where TView : ArcSegment { view.UI.RotationAngle = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.ArcSegment.Size"/></summary>
-        public static TView Size<TView>(this TView view, Windows.Foundation.Size value) where TView : ArcSegment { view.UI.Size = value; return view; }
+        public static TView Size<TView>(this TView view, CSharpMarkup.WinUI.to.Size value) where TView : ArcSegment { view.UI.Size = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.ArcSegment.SweepDirection"/></summary>
         public static TView SweepDirection<TView>(this TView view, Xaml.Media.SweepDirection value) where TView : ArcSegment { view.UI.SweepDirection = value; return view; }
@@ -27599,16 +27599,16 @@ namespace CSharpMarkup.WinUI // ArcSegment
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.ArcSegment.IsLargeArcProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.ArcSegment.Point"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> Point<TTarget>(this TTarget target) where TTarget : ArcSegment
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.ArcSegment.PointProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Point<TTarget>(this TTarget target) where TTarget : ArcSegment
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.ArcSegment.PointProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.ArcSegment.RotationAngle"/></summary>
         public static DependencyProperty<TTarget, double> RotationAngle<TTarget>(this TTarget target) where TTarget : ArcSegment
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.ArcSegment.RotationAngleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.ArcSegment.Size"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Size> Size<TTarget>(this TTarget target) where TTarget : ArcSegment
-        => DependencyProperty<TTarget, Windows.Foundation.Size>.Get(target, Xaml.Media.ArcSegment.SizeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Size> Size<TTarget>(this TTarget target) where TTarget : ArcSegment
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Size>.Get(target, Xaml.Media.ArcSegment.SizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.ArcSegment.SweepDirection"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.SweepDirection> SweepDirection<TTarget>(this TTarget target) where TTarget : ArcSegment
@@ -27621,7 +27621,7 @@ namespace CSharpMarkup.WinUI // BezierSegment
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.BezierSegment"/></summary>
-        public static BezierSegment BezierSegment(O<Windows.Foundation.Point> Point1 = default, O<Windows.Foundation.Point> Point2 = default, O<Windows.Foundation.Point> Point3 = default)
+        public static BezierSegment BezierSegment(O<CSharpMarkup.WinUI.to.Point> Point1 = default, O<CSharpMarkup.WinUI.to.Point> Point2 = default, O<CSharpMarkup.WinUI.to.Point> Point3 = default)
         {
             var ui = new Xaml.Media.BezierSegment();
             if (Point1.HasValue) ui.Point1 = Point1.Value;
@@ -27669,25 +27669,25 @@ namespace CSharpMarkup.WinUI // BezierSegment
     public static partial class BezierSegmentExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.BezierSegment.Point1"/></summary>
-        public static TView Point1<TView>(this TView view, Windows.Foundation.Point value) where TView : BezierSegment { view.UI.Point1 = value; return view; }
+        public static TView Point1<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : BezierSegment { view.UI.Point1 = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.BezierSegment.Point2"/></summary>
-        public static TView Point2<TView>(this TView view, Windows.Foundation.Point value) where TView : BezierSegment { view.UI.Point2 = value; return view; }
+        public static TView Point2<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : BezierSegment { view.UI.Point2 = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.BezierSegment.Point3"/></summary>
-        public static TView Point3<TView>(this TView view, Windows.Foundation.Point value) where TView : BezierSegment { view.UI.Point3 = value; return view; }
+        public static TView Point3<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : BezierSegment { view.UI.Point3 = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.BezierSegment.Point1"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> Point1<TTarget>(this TTarget target) where TTarget : BezierSegment
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.BezierSegment.Point1Property);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Point1<TTarget>(this TTarget target) where TTarget : BezierSegment
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.BezierSegment.Point1Property);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.BezierSegment.Point2"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> Point2<TTarget>(this TTarget target) where TTarget : BezierSegment
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.BezierSegment.Point2Property);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Point2<TTarget>(this TTarget target) where TTarget : BezierSegment
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.BezierSegment.Point2Property);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.BezierSegment.Point3"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> Point3<TTarget>(this TTarget target) where TTarget : BezierSegment
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.BezierSegment.Point3Property);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Point3<TTarget>(this TTarget target) where TTarget : BezierSegment
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.BezierSegment.Point3Property);
     }
 }
 
@@ -27920,7 +27920,7 @@ namespace CSharpMarkup.WinUI // EllipseGeometry
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.EllipseGeometry"/></summary>
-        public static EllipseGeometry EllipseGeometry(O<Windows.Foundation.Point> Center = default, O<double> RadiusX = default, O<double> RadiusY = default)
+        public static EllipseGeometry EllipseGeometry(O<CSharpMarkup.WinUI.to.Point> Center = default, O<double> RadiusX = default, O<double> RadiusY = default)
         {
             var ui = new Xaml.Media.EllipseGeometry();
             if (Center.HasValue) ui.Center = Center.Value;
@@ -27968,7 +27968,7 @@ namespace CSharpMarkup.WinUI // EllipseGeometry
     public static partial class EllipseGeometryExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.EllipseGeometry.Center"/></summary>
-        public static TView Center<TView>(this TView view, Windows.Foundation.Point value) where TView : EllipseGeometry { view.UI.Center = value; return view; }
+        public static TView Center<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : EllipseGeometry { view.UI.Center = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.EllipseGeometry.RadiusX"/></summary>
         public static TView RadiusX<TView>(this TView view, double value) where TView : EllipseGeometry { view.UI.RadiusX = value; return view; }
@@ -27977,8 +27977,8 @@ namespace CSharpMarkup.WinUI // EllipseGeometry
         public static TView RadiusY<TView>(this TView view, double value) where TView : EllipseGeometry { view.UI.RadiusY = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.EllipseGeometry.Center"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> Center<TTarget>(this TTarget target) where TTarget : EllipseGeometry
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.EllipseGeometry.CenterProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Center<TTarget>(this TTarget target) where TTarget : EllipseGeometry
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.EllipseGeometry.CenterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.EllipseGeometry.RadiusX"/></summary>
         public static DependencyProperty<TTarget, double> RadiusX<TTarget>(this TTarget target) where TTarget : EllipseGeometry
@@ -28310,7 +28310,7 @@ namespace CSharpMarkup.WinUI // LineGeometry
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.LineGeometry"/></summary>
-        public static LineGeometry LineGeometry(O<Windows.Foundation.Point> EndPoint = default, O<Windows.Foundation.Point> StartPoint = default)
+        public static LineGeometry LineGeometry(O<CSharpMarkup.WinUI.to.Point> EndPoint = default, O<CSharpMarkup.WinUI.to.Point> StartPoint = default)
         {
             var ui = new Xaml.Media.LineGeometry();
             if (EndPoint.HasValue) ui.EndPoint = EndPoint.Value;
@@ -28357,18 +28357,18 @@ namespace CSharpMarkup.WinUI // LineGeometry
     public static partial class LineGeometryExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.LineGeometry.EndPoint"/></summary>
-        public static TView EndPoint<TView>(this TView view, Windows.Foundation.Point value) where TView : LineGeometry { view.UI.EndPoint = value; return view; }
+        public static TView EndPoint<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : LineGeometry { view.UI.EndPoint = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.LineGeometry.StartPoint"/></summary>
-        public static TView StartPoint<TView>(this TView view, Windows.Foundation.Point value) where TView : LineGeometry { view.UI.StartPoint = value; return view; }
+        public static TView StartPoint<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : LineGeometry { view.UI.StartPoint = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.LineGeometry.EndPoint"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> EndPoint<TTarget>(this TTarget target) where TTarget : LineGeometry
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.LineGeometry.EndPointProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> EndPoint<TTarget>(this TTarget target) where TTarget : LineGeometry
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.LineGeometry.EndPointProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.LineGeometry.StartPoint"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> StartPoint<TTarget>(this TTarget target) where TTarget : LineGeometry
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.LineGeometry.StartPointProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> StartPoint<TTarget>(this TTarget target) where TTarget : LineGeometry
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.LineGeometry.StartPointProperty);
     }
 }
 
@@ -28377,7 +28377,7 @@ namespace CSharpMarkup.WinUI // LineSegment
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.LineSegment"/></summary>
-        public static LineSegment LineSegment(O<Windows.Foundation.Point> Point = default)
+        public static LineSegment LineSegment(O<CSharpMarkup.WinUI.to.Point> Point = default)
         {
             var ui = new Xaml.Media.LineSegment();
             if (Point.HasValue) ui.Point = Point.Value;
@@ -28423,11 +28423,11 @@ namespace CSharpMarkup.WinUI // LineSegment
     public static partial class LineSegmentExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.LineSegment.Point"/></summary>
-        public static TView Point<TView>(this TView view, Windows.Foundation.Point value) where TView : LineSegment { view.UI.Point = value; return view; }
+        public static TView Point<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : LineSegment { view.UI.Point = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.LineSegment.Point"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> Point<TTarget>(this TTarget target) where TTarget : LineSegment
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.LineSegment.PointProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Point<TTarget>(this TTarget target) where TTarget : LineSegment
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.LineSegment.PointProperty);
     }
 }
 
@@ -28500,18 +28500,18 @@ namespace CSharpMarkup.WinUI // LinearGradientBrush
     public static partial class LinearGradientBrushExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.LinearGradientBrush.EndPoint"/></summary>
-        public static TView EndPoint<TView>(this TView view, Windows.Foundation.Point value) where TView : LinearGradientBrush { view.UI.EndPoint = value; return view; }
+        public static TView EndPoint<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : LinearGradientBrush { view.UI.EndPoint = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.LinearGradientBrush.StartPoint"/></summary>
-        public static TView StartPoint<TView>(this TView view, Windows.Foundation.Point value) where TView : LinearGradientBrush { view.UI.StartPoint = value; return view; }
+        public static TView StartPoint<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : LinearGradientBrush { view.UI.StartPoint = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.LinearGradientBrush.EndPoint"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> EndPoint<TTarget>(this TTarget target) where TTarget : LinearGradientBrush
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.LinearGradientBrush.EndPointProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> EndPoint<TTarget>(this TTarget target) where TTarget : LinearGradientBrush
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.LinearGradientBrush.EndPointProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.LinearGradientBrush.StartPoint"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> StartPoint<TTarget>(this TTarget target) where TTarget : LinearGradientBrush
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.LinearGradientBrush.StartPointProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> StartPoint<TTarget>(this TTarget target) where TTarget : LinearGradientBrush
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.LinearGradientBrush.StartPointProperty);
     }
 }
 
@@ -28698,7 +28698,7 @@ namespace CSharpMarkup.WinUI // PathFigure
         public static TView IsFilled<TView>(this TView view, bool value) where TView : PathFigure { view.UI.IsFilled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PathFigure.StartPoint"/></summary>
-        public static TView StartPoint<TView>(this TView view, Windows.Foundation.Point value) where TView : PathFigure { view.UI.StartPoint = value; return view; }
+        public static TView StartPoint<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : PathFigure { view.UI.StartPoint = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PathFigure.IsClosed"/></summary>
         public static DependencyProperty<TTarget, bool> IsClosed<TTarget>(this TTarget target) where TTarget : PathFigure
@@ -28713,8 +28713,8 @@ namespace CSharpMarkup.WinUI // PathFigure
         => DependencyProperty<TTarget, Xaml.Media.PathSegmentCollection>.Get(target, Xaml.Media.PathFigure.SegmentsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PathFigure.StartPoint"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> StartPoint<TTarget>(this TTarget target) where TTarget : PathFigure
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.PathFigure.StartPointProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> StartPoint<TTarget>(this TTarget target) where TTarget : PathFigure
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.PathFigure.StartPointProperty);
     }
 }
 
@@ -29164,7 +29164,7 @@ namespace CSharpMarkup.WinUI // QuadraticBezierSegment
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.QuadraticBezierSegment"/></summary>
-        public static QuadraticBezierSegment QuadraticBezierSegment(O<Windows.Foundation.Point> Point1 = default, O<Windows.Foundation.Point> Point2 = default)
+        public static QuadraticBezierSegment QuadraticBezierSegment(O<CSharpMarkup.WinUI.to.Point> Point1 = default, O<CSharpMarkup.WinUI.to.Point> Point2 = default)
         {
             var ui = new Xaml.Media.QuadraticBezierSegment();
             if (Point1.HasValue) ui.Point1 = Point1.Value;
@@ -29211,18 +29211,18 @@ namespace CSharpMarkup.WinUI // QuadraticBezierSegment
     public static partial class QuadraticBezierSegmentExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.QuadraticBezierSegment.Point1"/></summary>
-        public static TView Point1<TView>(this TView view, Windows.Foundation.Point value) where TView : QuadraticBezierSegment { view.UI.Point1 = value; return view; }
+        public static TView Point1<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : QuadraticBezierSegment { view.UI.Point1 = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.QuadraticBezierSegment.Point2"/></summary>
-        public static TView Point2<TView>(this TView view, Windows.Foundation.Point value) where TView : QuadraticBezierSegment { view.UI.Point2 = value; return view; }
+        public static TView Point2<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : QuadraticBezierSegment { view.UI.Point2 = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.QuadraticBezierSegment.Point1"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> Point1<TTarget>(this TTarget target) where TTarget : QuadraticBezierSegment
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.QuadraticBezierSegment.Point1Property);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Point1<TTarget>(this TTarget target) where TTarget : QuadraticBezierSegment
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.QuadraticBezierSegment.Point1Property);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.QuadraticBezierSegment.Point2"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> Point2<TTarget>(this TTarget target) where TTarget : QuadraticBezierSegment
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.QuadraticBezierSegment.Point2Property);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Point2<TTarget>(this TTarget target) where TTarget : QuadraticBezierSegment
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.QuadraticBezierSegment.Point2Property);
     }
 }
 
@@ -29231,7 +29231,7 @@ namespace CSharpMarkup.WinUI // RadialGradientBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.RadialGradientBrush"/></summary>
-        public static RadialGradientBrush RadialGradientBrush(O<Windows.Foundation.Point> Center = default, O<Windows.Foundation.Point> GradientOrigin = default, O<UI.Composition.CompositionColorSpace> InterpolationSpace = default, O<Xaml.Media.BrushMappingMode> MappingMode = default, O<double> RadiusX = default, O<double> RadiusY = default, O<Xaml.Media.GradientSpreadMethod> SpreadMethod = default)
+        public static RadialGradientBrush RadialGradientBrush(O<CSharpMarkup.WinUI.to.Point> Center = default, O<CSharpMarkup.WinUI.to.Point> GradientOrigin = default, O<UI.Composition.CompositionColorSpace> InterpolationSpace = default, O<Xaml.Media.BrushMappingMode> MappingMode = default, O<double> RadiusX = default, O<double> RadiusY = default, O<Xaml.Media.GradientSpreadMethod> SpreadMethod = default)
         {
             var ui = new Xaml.Media.RadialGradientBrush();
             if (Center.HasValue) ui.Center = Center.Value;
@@ -29283,10 +29283,10 @@ namespace CSharpMarkup.WinUI // RadialGradientBrush
     public static partial class RadialGradientBrushExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.RadialGradientBrush.Center"/></summary>
-        public static TView Center<TView>(this TView view, Windows.Foundation.Point value) where TView : RadialGradientBrush { view.UI.Center = value; return view; }
+        public static TView Center<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : RadialGradientBrush { view.UI.Center = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.RadialGradientBrush.GradientOrigin"/></summary>
-        public static TView GradientOrigin<TView>(this TView view, Windows.Foundation.Point value) where TView : RadialGradientBrush { view.UI.GradientOrigin = value; return view; }
+        public static TView GradientOrigin<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : RadialGradientBrush { view.UI.GradientOrigin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.RadialGradientBrush.InterpolationSpace"/></summary>
         public static TView InterpolationSpace<TView>(this TView view, UI.Composition.CompositionColorSpace value) where TView : RadialGradientBrush { view.UI.InterpolationSpace = value; return view; }
@@ -29304,12 +29304,12 @@ namespace CSharpMarkup.WinUI // RadialGradientBrush
         public static TView SpreadMethod<TView>(this TView view, Xaml.Media.GradientSpreadMethod value) where TView : RadialGradientBrush { view.UI.SpreadMethod = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RadialGradientBrush.Center"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> Center<TTarget>(this TTarget target) where TTarget : RadialGradientBrush
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.RadialGradientBrush.CenterProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Center<TTarget>(this TTarget target) where TTarget : RadialGradientBrush
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.RadialGradientBrush.CenterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RadialGradientBrush.GradientOrigin"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> GradientOrigin<TTarget>(this TTarget target) where TTarget : RadialGradientBrush
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.RadialGradientBrush.GradientOriginProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> GradientOrigin<TTarget>(this TTarget target) where TTarget : RadialGradientBrush
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.RadialGradientBrush.GradientOriginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RadialGradientBrush.InterpolationSpace"/></summary>
         public static DependencyProperty<TTarget, UI.Composition.CompositionColorSpace> InterpolationSpace<TTarget>(this TTarget target) where TTarget : RadialGradientBrush
@@ -30460,14 +30460,14 @@ namespace CSharpMarkup.WinUI // ColorKeyFrame
     public static partial class ColorKeyFrameExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.ColorKeyFrame.KeyTime"/></summary>
-        public static TView KeyTime<TView>(this TView view, Xaml.Media.Animation.KeyTime value) where TView : ColorKeyFrame { view.UI.KeyTime = value; return view; }
+        public static TView KeyTime<TView>(this TView view, CSharpMarkup.WinUI.to.KeyTime value) where TView : ColorKeyFrame { view.UI.KeyTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.ColorKeyFrame.Value"/></summary>
         public static TView Value<TView>(this TView view, Windows.UI.Color value) where TView : ColorKeyFrame { view.UI.Value = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ColorKeyFrame.KeyTime"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Animation.KeyTime> KeyTime<TTarget>(this TTarget target) where TTarget : ColorKeyFrame
-        => DependencyProperty<TTarget, Xaml.Media.Animation.KeyTime>.Get(target, Xaml.Media.Animation.ColorKeyFrame.KeyTimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.KeyTime> KeyTime<TTarget>(this TTarget target) where TTarget : ColorKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.KeyTime>.Get(target, Xaml.Media.Animation.ColorKeyFrame.KeyTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ColorKeyFrame.Value"/></summary>
         public static DependencyProperty<TTarget, Windows.UI.Color> Value<TTarget>(this TTarget target) where TTarget : ColorKeyFrame
@@ -31114,14 +31114,14 @@ namespace CSharpMarkup.WinUI // DoubleKeyFrame
     public static partial class DoubleKeyFrameExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.DoubleKeyFrame.KeyTime"/></summary>
-        public static TView KeyTime<TView>(this TView view, Xaml.Media.Animation.KeyTime value) where TView : DoubleKeyFrame { view.UI.KeyTime = value; return view; }
+        public static TView KeyTime<TView>(this TView view, CSharpMarkup.WinUI.to.KeyTime value) where TView : DoubleKeyFrame { view.UI.KeyTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.DoubleKeyFrame.Value"/></summary>
         public static TView Value<TView>(this TView view, double value) where TView : DoubleKeyFrame { view.UI.Value = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DoubleKeyFrame.KeyTime"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Animation.KeyTime> KeyTime<TTarget>(this TTarget target) where TTarget : DoubleKeyFrame
-        => DependencyProperty<TTarget, Xaml.Media.Animation.KeyTime>.Get(target, Xaml.Media.Animation.DoubleKeyFrame.KeyTimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.KeyTime> KeyTime<TTarget>(this TTarget target) where TTarget : DoubleKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.KeyTime>.Get(target, Xaml.Media.Animation.DoubleKeyFrame.KeyTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DoubleKeyFrame.Value"/></summary>
         public static DependencyProperty<TTarget, double> Value<TTarget>(this TTarget target) where TTarget : DoubleKeyFrame
@@ -32169,7 +32169,7 @@ namespace CSharpMarkup.WinUI // KeySpline
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.KeySpline"/></summary>
-        public static KeySpline KeySpline(O<Windows.Foundation.Point> ControlPoint1 = default, O<Windows.Foundation.Point> ControlPoint2 = default)
+        public static KeySpline KeySpline(O<CSharpMarkup.WinUI.to.Point> ControlPoint1 = default, O<CSharpMarkup.WinUI.to.Point> ControlPoint2 = default)
         {
             var ui = new Xaml.Media.Animation.KeySpline();
             if (ControlPoint1.HasValue) ui.ControlPoint1 = ControlPoint1.Value;
@@ -32216,10 +32216,10 @@ namespace CSharpMarkup.WinUI // KeySpline
     public static partial class KeySplineExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.KeySpline.ControlPoint1"/></summary>
-        public static TView ControlPoint1<TView>(this TView view, Windows.Foundation.Point value) where TView : KeySpline { view.UI.ControlPoint1 = value; return view; }
+        public static TView ControlPoint1<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : KeySpline { view.UI.ControlPoint1 = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.KeySpline.ControlPoint2"/></summary>
-        public static TView ControlPoint2<TView>(this TView view, Windows.Foundation.Point value) where TView : KeySpline { view.UI.ControlPoint2 = value; return view; }
+        public static TView ControlPoint2<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : KeySpline { view.UI.ControlPoint2 = value; return view; }
     }
 }
 
@@ -32510,14 +32510,14 @@ namespace CSharpMarkup.WinUI // ObjectKeyFrame
     public static partial class ObjectKeyFrameExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.ObjectKeyFrame.KeyTime"/></summary>
-        public static TView KeyTime<TView>(this TView view, Xaml.Media.Animation.KeyTime value) where TView : ObjectKeyFrame { view.UI.KeyTime = value; return view; }
+        public static TView KeyTime<TView>(this TView view, CSharpMarkup.WinUI.to.KeyTime value) where TView : ObjectKeyFrame { view.UI.KeyTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.ObjectKeyFrame.Value"/></summary>
         public static TView Value<TView>(this TView view, object value) where TView : ObjectKeyFrame { view.UI.Value = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ObjectKeyFrame.KeyTime"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Animation.KeyTime> KeyTime<TTarget>(this TTarget target) where TTarget : ObjectKeyFrame
-        => DependencyProperty<TTarget, Xaml.Media.Animation.KeyTime>.Get(target, Xaml.Media.Animation.ObjectKeyFrame.KeyTimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.KeyTime> KeyTime<TTarget>(this TTarget target) where TTarget : ObjectKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.KeyTime>.Get(target, Xaml.Media.Animation.ObjectKeyFrame.KeyTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ObjectKeyFrame.Value"/></summary>
         public static DependencyProperty<TTarget, object> Value<TTarget>(this TTarget target) where TTarget : ObjectKeyFrame
@@ -32589,7 +32589,7 @@ namespace CSharpMarkup.WinUI // PointAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointAnimation"/></summary>
-        public static PointAnimation PointAnimation(O<Windows.Foundation.Point?> By = default, O<Xaml.Media.Animation.EasingFunctionBase> EasingFunction = default, O<bool> EnableDependentAnimation = default, O<Windows.Foundation.Point?> From = default, O<Windows.Foundation.Point?> To = default)
+        public static PointAnimation PointAnimation(O<CSharpMarkup.WinUI.to.Point?> By = default, O<Xaml.Media.Animation.EasingFunctionBase> EasingFunction = default, O<bool> EnableDependentAnimation = default, O<CSharpMarkup.WinUI.to.Point?> From = default, O<CSharpMarkup.WinUI.to.Point?> To = default)
         {
             var ui = new Xaml.Media.Animation.PointAnimation();
             if (By.HasValue) ui.By = By.Value;
@@ -32639,7 +32639,7 @@ namespace CSharpMarkup.WinUI // PointAnimation
     public static partial class PointAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.By"/></summary>
-        public static TView By<TView>(this TView view, Windows.Foundation.Point? value) where TView : PointAnimation { view.UI.By = value; return view; }
+        public static TView By<TView>(this TView view, CSharpMarkup.WinUI.to.Point? value) where TView : PointAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.EasingFunction"/></summary>
         public static TView EasingFunction<TView>(this TView view, Xaml.Media.Animation.EasingFunctionBase value) where TView : PointAnimation { view.UI.EasingFunction = value; return view; }
@@ -32648,14 +32648,14 @@ namespace CSharpMarkup.WinUI // PointAnimation
         public static TView EnableDependentAnimation<TView>(this TView view, bool value) where TView : PointAnimation { view.UI.EnableDependentAnimation = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.From"/></summary>
-        public static TView From<TView>(this TView view, Windows.Foundation.Point? value) where TView : PointAnimation { view.UI.From = value; return view; }
+        public static TView From<TView>(this TView view, CSharpMarkup.WinUI.to.Point? value) where TView : PointAnimation { view.UI.From = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.To"/></summary>
-        public static TView To<TView>(this TView view, Windows.Foundation.Point? value) where TView : PointAnimation { view.UI.To = value; return view; }
+        public static TView To<TView>(this TView view, CSharpMarkup.WinUI.to.Point? value) where TView : PointAnimation { view.UI.To = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.By"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point?> By<TTarget>(this TTarget target) where TTarget : PointAnimation
-        => DependencyProperty<TTarget, Windows.Foundation.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.ByProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?> By<TTarget>(this TTarget target) where TTarget : PointAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.EasingFunction"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.Animation.EasingFunctionBase> EasingFunction<TTarget>(this TTarget target) where TTarget : PointAnimation
@@ -32666,12 +32666,12 @@ namespace CSharpMarkup.WinUI // PointAnimation
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.PointAnimation.EnableDependentAnimationProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.From"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point?> From<TTarget>(this TTarget target) where TTarget : PointAnimation
-        => DependencyProperty<TTarget, Windows.Foundation.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.FromProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?> From<TTarget>(this TTarget target) where TTarget : PointAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.FromProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.To"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point?> To<TTarget>(this TTarget target) where TTarget : PointAnimation
-        => DependencyProperty<TTarget, Windows.Foundation.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.ToProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?> To<TTarget>(this TTarget target) where TTarget : PointAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.ToProperty);
     }
 }
 
@@ -32765,18 +32765,18 @@ namespace CSharpMarkup.WinUI // PointKeyFrame
     public static partial class PointKeyFrameExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PointKeyFrame.KeyTime"/></summary>
-        public static TView KeyTime<TView>(this TView view, Xaml.Media.Animation.KeyTime value) where TView : PointKeyFrame { view.UI.KeyTime = value; return view; }
+        public static TView KeyTime<TView>(this TView view, CSharpMarkup.WinUI.to.KeyTime value) where TView : PointKeyFrame { view.UI.KeyTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointKeyFrame.Value"/></summary>
-        public static TView Value<TView>(this TView view, Windows.Foundation.Point value) where TView : PointKeyFrame { view.UI.Value = value; return view; }
+        public static TView Value<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : PointKeyFrame { view.UI.Value = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointKeyFrame.KeyTime"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Animation.KeyTime> KeyTime<TTarget>(this TTarget target) where TTarget : PointKeyFrame
-        => DependencyProperty<TTarget, Xaml.Media.Animation.KeyTime>.Get(target, Xaml.Media.Animation.PointKeyFrame.KeyTimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.KeyTime> KeyTime<TTarget>(this TTarget target) where TTarget : PointKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.KeyTime>.Get(target, Xaml.Media.Animation.PointKeyFrame.KeyTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointKeyFrame.Value"/></summary>
-        public static DependencyProperty<TTarget, Windows.Foundation.Point> Value<TTarget>(this TTarget target) where TTarget : PointKeyFrame
-        => DependencyProperty<TTarget, Windows.Foundation.Point>.Get(target, Xaml.Media.Animation.PointKeyFrame.ValueProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Value<TTarget>(this TTarget target) where TTarget : PointKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.Animation.PointKeyFrame.ValueProperty);
     }
 }
 
@@ -34323,7 +34323,7 @@ namespace CSharpMarkup.WinUI // Timeline
         public static TView BeginTime<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan? value) where TView : Timeline { view.UI.BeginTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.Timeline.Duration"/></summary>
-        public static TView Duration<TView>(this TView view, Xaml.Duration value) where TView : Timeline { view.UI.Duration = value; return view; }
+        public static TView Duration<TView>(this TView view, CSharpMarkup.WinUI.to.Duration value) where TView : Timeline { view.UI.Duration = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.Timeline.FillBehavior"/></summary>
         public static TView FillBehavior<TView>(this TView view, Xaml.Media.Animation.FillBehavior value) where TView : Timeline { view.UI.FillBehavior = value; return view; }
@@ -34343,8 +34343,8 @@ namespace CSharpMarkup.WinUI // Timeline
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?>.Get(target, Xaml.Media.Animation.Timeline.BeginTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.Timeline.Duration"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Duration> Duration<TTarget>(this TTarget target) where TTarget : Timeline
-        => DependencyProperty<TTarget, Xaml.Duration>.Get(target, Xaml.Media.Animation.Timeline.DurationProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Duration> Duration<TTarget>(this TTarget target) where TTarget : Timeline
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Duration>.Get(target, Xaml.Media.Animation.Timeline.DurationProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.Timeline.FillBehavior"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.Animation.FillBehavior> FillBehavior<TTarget>(this TTarget target) where TTarget : Timeline
