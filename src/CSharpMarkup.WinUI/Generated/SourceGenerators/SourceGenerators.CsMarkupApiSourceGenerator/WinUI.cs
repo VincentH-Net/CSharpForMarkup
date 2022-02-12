@@ -16,11 +16,11 @@ namespace CSharpMarkup.WinUI // AdaptiveTrigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.AdaptiveTrigger"/></summary>
-        public static AdaptiveTrigger AdaptiveTrigger(O<double> MinWindowHeight = default, O<double> MinWindowWidth = default)
+        public static AdaptiveTrigger AdaptiveTrigger(double? MinWindowHeight = default, double? MinWindowWidth = default)
         {
             var ui = new Xaml.AdaptiveTrigger();
-            if (MinWindowHeight.HasValue) ui.MinWindowHeight = MinWindowHeight.Value;
-            if (MinWindowWidth.HasValue) ui.MinWindowWidth = MinWindowWidth.Value;
+            if (MinWindowHeight is not null) ui.MinWindowHeight = MinWindowHeight.Value;
+            if (MinWindowWidth is not null) ui.MinWindowWidth = MinWindowWidth.Value;
             return CSharpMarkup.WinUI.AdaptiveTrigger.StartChain(ui);
         }
 
@@ -83,36 +83,36 @@ namespace CSharpMarkup.WinUI // ColorPaletteResources
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.ColorPaletteResources"/></summary>
-        public static ColorPaletteResources ColorPaletteResources(O<Windows.UI.Color?> Accent = default, O<Windows.UI.Color?> AltHigh = default, O<Windows.UI.Color?> AltLow = default, O<Windows.UI.Color?> AltMedium = default, O<Windows.UI.Color?> AltMediumHigh = default, O<Windows.UI.Color?> AltMediumLow = default, O<Windows.UI.Color?> BaseHigh = default, O<Windows.UI.Color?> BaseLow = default, O<Windows.UI.Color?> BaseMedium = default, O<Windows.UI.Color?> BaseMediumHigh = default, O<Windows.UI.Color?> BaseMediumLow = default, O<Windows.UI.Color?> ChromeAltLow = default, O<Windows.UI.Color?> ChromeBlackHigh = default, O<Windows.UI.Color?> ChromeBlackLow = default, O<Windows.UI.Color?> ChromeBlackMedium = default, O<Windows.UI.Color?> ChromeBlackMediumLow = default, O<Windows.UI.Color?> ChromeDisabledHigh = default, O<Windows.UI.Color?> ChromeDisabledLow = default, O<Windows.UI.Color?> ChromeGray = default, O<Windows.UI.Color?> ChromeHigh = default, O<Windows.UI.Color?> ChromeLow = default, O<Windows.UI.Color?> ChromeMedium = default, O<Windows.UI.Color?> ChromeMediumLow = default, O<Windows.UI.Color?> ChromeWhite = default, O<Windows.UI.Color?> ErrorText = default, O<Windows.UI.Color?> ListLow = default, O<Windows.UI.Color?> ListMedium = default)
+        public static ColorPaletteResources ColorPaletteResources(Windows.UI.Color? Accent = default, Windows.UI.Color? AltHigh = default, Windows.UI.Color? AltLow = default, Windows.UI.Color? AltMedium = default, Windows.UI.Color? AltMediumHigh = default, Windows.UI.Color? AltMediumLow = default, Windows.UI.Color? BaseHigh = default, Windows.UI.Color? BaseLow = default, Windows.UI.Color? BaseMedium = default, Windows.UI.Color? BaseMediumHigh = default, Windows.UI.Color? BaseMediumLow = default, Windows.UI.Color? ChromeAltLow = default, Windows.UI.Color? ChromeBlackHigh = default, Windows.UI.Color? ChromeBlackLow = default, Windows.UI.Color? ChromeBlackMedium = default, Windows.UI.Color? ChromeBlackMediumLow = default, Windows.UI.Color? ChromeDisabledHigh = default, Windows.UI.Color? ChromeDisabledLow = default, Windows.UI.Color? ChromeGray = default, Windows.UI.Color? ChromeHigh = default, Windows.UI.Color? ChromeLow = default, Windows.UI.Color? ChromeMedium = default, Windows.UI.Color? ChromeMediumLow = default, Windows.UI.Color? ChromeWhite = default, Windows.UI.Color? ErrorText = default, Windows.UI.Color? ListLow = default, Windows.UI.Color? ListMedium = default)
         {
             var ui = new Xaml.ColorPaletteResources();
-            if (Accent.HasValue) ui.Accent = Accent.Value;
-            if (AltHigh.HasValue) ui.AltHigh = AltHigh.Value;
-            if (AltLow.HasValue) ui.AltLow = AltLow.Value;
-            if (AltMedium.HasValue) ui.AltMedium = AltMedium.Value;
-            if (AltMediumHigh.HasValue) ui.AltMediumHigh = AltMediumHigh.Value;
-            if (AltMediumLow.HasValue) ui.AltMediumLow = AltMediumLow.Value;
-            if (BaseHigh.HasValue) ui.BaseHigh = BaseHigh.Value;
-            if (BaseLow.HasValue) ui.BaseLow = BaseLow.Value;
-            if (BaseMedium.HasValue) ui.BaseMedium = BaseMedium.Value;
-            if (BaseMediumHigh.HasValue) ui.BaseMediumHigh = BaseMediumHigh.Value;
-            if (BaseMediumLow.HasValue) ui.BaseMediumLow = BaseMediumLow.Value;
-            if (ChromeAltLow.HasValue) ui.ChromeAltLow = ChromeAltLow.Value;
-            if (ChromeBlackHigh.HasValue) ui.ChromeBlackHigh = ChromeBlackHigh.Value;
-            if (ChromeBlackLow.HasValue) ui.ChromeBlackLow = ChromeBlackLow.Value;
-            if (ChromeBlackMedium.HasValue) ui.ChromeBlackMedium = ChromeBlackMedium.Value;
-            if (ChromeBlackMediumLow.HasValue) ui.ChromeBlackMediumLow = ChromeBlackMediumLow.Value;
-            if (ChromeDisabledHigh.HasValue) ui.ChromeDisabledHigh = ChromeDisabledHigh.Value;
-            if (ChromeDisabledLow.HasValue) ui.ChromeDisabledLow = ChromeDisabledLow.Value;
-            if (ChromeGray.HasValue) ui.ChromeGray = ChromeGray.Value;
-            if (ChromeHigh.HasValue) ui.ChromeHigh = ChromeHigh.Value;
-            if (ChromeLow.HasValue) ui.ChromeLow = ChromeLow.Value;
-            if (ChromeMedium.HasValue) ui.ChromeMedium = ChromeMedium.Value;
-            if (ChromeMediumLow.HasValue) ui.ChromeMediumLow = ChromeMediumLow.Value;
-            if (ChromeWhite.HasValue) ui.ChromeWhite = ChromeWhite.Value;
-            if (ErrorText.HasValue) ui.ErrorText = ErrorText.Value;
-            if (ListLow.HasValue) ui.ListLow = ListLow.Value;
-            if (ListMedium.HasValue) ui.ListMedium = ListMedium.Value;
+            if (Accent is not null) ui.Accent = Accent;
+            if (AltHigh is not null) ui.AltHigh = AltHigh;
+            if (AltLow is not null) ui.AltLow = AltLow;
+            if (AltMedium is not null) ui.AltMedium = AltMedium;
+            if (AltMediumHigh is not null) ui.AltMediumHigh = AltMediumHigh;
+            if (AltMediumLow is not null) ui.AltMediumLow = AltMediumLow;
+            if (BaseHigh is not null) ui.BaseHigh = BaseHigh;
+            if (BaseLow is not null) ui.BaseLow = BaseLow;
+            if (BaseMedium is not null) ui.BaseMedium = BaseMedium;
+            if (BaseMediumHigh is not null) ui.BaseMediumHigh = BaseMediumHigh;
+            if (BaseMediumLow is not null) ui.BaseMediumLow = BaseMediumLow;
+            if (ChromeAltLow is not null) ui.ChromeAltLow = ChromeAltLow;
+            if (ChromeBlackHigh is not null) ui.ChromeBlackHigh = ChromeBlackHigh;
+            if (ChromeBlackLow is not null) ui.ChromeBlackLow = ChromeBlackLow;
+            if (ChromeBlackMedium is not null) ui.ChromeBlackMedium = ChromeBlackMedium;
+            if (ChromeBlackMediumLow is not null) ui.ChromeBlackMediumLow = ChromeBlackMediumLow;
+            if (ChromeDisabledHigh is not null) ui.ChromeDisabledHigh = ChromeDisabledHigh;
+            if (ChromeDisabledLow is not null) ui.ChromeDisabledLow = ChromeDisabledLow;
+            if (ChromeGray is not null) ui.ChromeGray = ChromeGray;
+            if (ChromeHigh is not null) ui.ChromeHigh = ChromeHigh;
+            if (ChromeLow is not null) ui.ChromeLow = ChromeLow;
+            if (ChromeMedium is not null) ui.ChromeMedium = ChromeMedium;
+            if (ChromeMediumLow is not null) ui.ChromeMediumLow = ChromeMediumLow;
+            if (ChromeWhite is not null) ui.ChromeWhite = ChromeWhite;
+            if (ErrorText is not null) ui.ErrorText = ErrorText;
+            if (ListLow is not null) ui.ListLow = ListLow;
+            if (ListMedium is not null) ui.ListMedium = ListMedium;
             return CSharpMarkup.WinUI.ColorPaletteResources.StartChain(ui);
         }
 
@@ -706,10 +706,10 @@ namespace CSharpMarkup.WinUI // ResourceDictionary
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.ResourceDictionary"/></summary>
-        public static ResourceDictionary ResourceDictionary(O<Uri> Source = default)
+        public static ResourceDictionary ResourceDictionary(Uri Source = default)
         {
             var ui = new Xaml.ResourceDictionary();
-            if (Source.HasValue) ui.Source = Source.Value;
+            if (Source is not null) ui.Source = Source;
             return CSharpMarkup.WinUI.ResourceDictionary.StartChain(ui);
         }
 
@@ -761,12 +761,12 @@ namespace CSharpMarkup.WinUI // Setter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Setter"/></summary>
-        public static Setter Setter(O<Xaml.DependencyProperty> Property = default, O<Xaml.TargetPropertyPath> Target = default, O<object> Value = default)
+        public static Setter Setter(Xaml.DependencyProperty Property = default, Xaml.TargetPropertyPath Target = default, object Value = default)
         {
             var ui = new Xaml.Setter();
-            if (Property.HasValue) ui.Property = Property.Value;
-            if (Target.HasValue) ui.Target = Target.Value;
-            if (Value.HasValue) ui.Value = Value.Value;
+            if (Property is not null) ui.Property = Property;
+            if (Target is not null) ui.Target = Target;
+            if (Value is not null) ui.Value = Value;
             return CSharpMarkup.WinUI.Setter.StartChain(ui);
         }
 
@@ -849,10 +849,10 @@ namespace CSharpMarkup.WinUI // StateTrigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.StateTrigger"/></summary>
-        public static StateTrigger StateTrigger(O<bool> IsActive = default)
+        public static StateTrigger StateTrigger(bool? IsActive = default)
         {
             var ui = new Xaml.StateTrigger();
-            if (IsActive.HasValue) ui.IsActive = IsActive.Value;
+            if (IsActive is not null) ui.IsActive = IsActive.Value;
             return CSharpMarkup.WinUI.StateTrigger.StartChain(ui);
         }
 
@@ -1579,13 +1579,13 @@ namespace CSharpMarkup.WinUI // VisualTransition
         }
 
         /// <summary>Create a <see cref="Xaml.VisualTransition"/></summary>
-        public static VisualTransition VisualTransition(O<string> From = default, O<CSharpMarkup.WinUI.to.Duration> GeneratedDuration = default, O<Xaml.Media.Animation.EasingFunctionBase> GeneratedEasingFunction = default, O<string> To = default, Microsoft.UI.Xaml.Media.Animation.Storyboard Storyboard = default)
+        public static VisualTransition VisualTransition(string From = default, CSharpMarkup.WinUI.to.Duration? GeneratedDuration = default, Xaml.Media.Animation.EasingFunctionBase GeneratedEasingFunction = default, string To = default, Microsoft.UI.Xaml.Media.Animation.Storyboard Storyboard = default)
         {
             var ui = new Xaml.VisualTransition();
-            if (From.HasValue) ui.From = From.Value;
-            if (GeneratedDuration.HasValue) ui.GeneratedDuration = GeneratedDuration.Value;
-            if (GeneratedEasingFunction.HasValue) ui.GeneratedEasingFunction = GeneratedEasingFunction.Value;
-            if (To.HasValue) ui.To = To.Value;
+            if (From is not null) ui.From = From;
+            if (GeneratedDuration is not null) ui.GeneratedDuration = GeneratedDuration.Value;
+            if (GeneratedEasingFunction is not null) ui.GeneratedEasingFunction = GeneratedEasingFunction;
+            if (To is not null) ui.To = To;
             if (Storyboard != null) ui.Storyboard = Storyboard;
             return CSharpMarkup.WinUI.VisualTransition.StartChain(ui);
         }
@@ -1647,11 +1647,11 @@ namespace CSharpMarkup.WinUI // AutomationAnnotation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Automation.AutomationAnnotation"/></summary>
-        public static AutomationAnnotation AutomationAnnotation(O<Xaml.UIElement> Element = default, O<Xaml.Automation.AnnotationType> Type = default)
+        public static AutomationAnnotation AutomationAnnotation(Xaml.UIElement Element = default, Xaml.Automation.AnnotationType? Type = default)
         {
             var ui = new Xaml.Automation.AutomationAnnotation();
-            if (Element.HasValue) ui.Element = Element.Value;
-            if (Type.HasValue) ui.Type = Type.Value;
+            if (Element is not null) ui.Element = Element;
+            if (Type is not null) ui.Type = Type.Value;
             return CSharpMarkup.WinUI.AutomationAnnotation.StartChain(ui);
         }
 
@@ -1842,11 +1842,11 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation"/></summary>
-        public static AutomationPeerAnnotation AutomationPeerAnnotation(O<Xaml.Automation.Peers.AutomationPeer> Peer = default, O<Xaml.Automation.AnnotationType> Type = default)
+        public static AutomationPeerAnnotation AutomationPeerAnnotation(Xaml.Automation.Peers.AutomationPeer Peer = default, Xaml.Automation.AnnotationType? Type = default)
         {
             var ui = new Xaml.Automation.Peers.AutomationPeerAnnotation();
-            if (Peer.HasValue) ui.Peer = Peer.Value;
-            if (Type.HasValue) ui.Type = Type.Value;
+            if (Peer is not null) ui.Peer = Peer;
+            if (Type is not null) ui.Type = Type.Value;
             return CSharpMarkup.WinUI.AutomationPeerAnnotation.StartChain(ui);
         }
 
@@ -3597,12 +3597,12 @@ namespace CSharpMarkup.WinUI // AnimatedIcon
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.AnimatedIcon"/></summary>
-        public static AnimatedIcon AnimatedIcon(O<Xaml.Controls.IconSource> FallbackIconSource = default, O<bool> MirroredWhenRightToLeft = default, O<Xaml.Controls.IAnimatedVisualSource2> Source = default)
+        public static AnimatedIcon AnimatedIcon(Xaml.Controls.IconSource FallbackIconSource = default, bool? MirroredWhenRightToLeft = default, Xaml.Controls.IAnimatedVisualSource2 Source = default)
         {
             var ui = new Xaml.Controls.AnimatedIcon();
-            if (FallbackIconSource.HasValue) ui.FallbackIconSource = FallbackIconSource.Value;
-            if (MirroredWhenRightToLeft.HasValue) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
-            if (Source.HasValue) ui.Source = Source.Value;
+            if (FallbackIconSource is not null) ui.FallbackIconSource = FallbackIconSource;
+            if (MirroredWhenRightToLeft is not null) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
+            if (Source is not null) ui.Source = Source;
             return CSharpMarkup.WinUI.AnimatedIcon.StartChain(ui);
         }
 
@@ -3682,12 +3682,12 @@ namespace CSharpMarkup.WinUI // AnimatedIconSource
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.AnimatedIconSource"/></summary>
-        public static AnimatedIconSource AnimatedIconSource(O<Xaml.Controls.IconSource> FallbackIconSource = default, O<bool> MirroredWhenRightToLeft = default, O<Xaml.Controls.IAnimatedVisualSource2> Source = default)
+        public static AnimatedIconSource AnimatedIconSource(Xaml.Controls.IconSource FallbackIconSource = default, bool? MirroredWhenRightToLeft = default, Xaml.Controls.IAnimatedVisualSource2 Source = default)
         {
             var ui = new Xaml.Controls.AnimatedIconSource();
-            if (FallbackIconSource.HasValue) ui.FallbackIconSource = FallbackIconSource.Value;
-            if (MirroredWhenRightToLeft.HasValue) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
-            if (Source.HasValue) ui.Source = Source.Value;
+            if (FallbackIconSource is not null) ui.FallbackIconSource = FallbackIconSource;
+            if (MirroredWhenRightToLeft is not null) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
+            if (Source is not null) ui.Source = Source;
             return CSharpMarkup.WinUI.AnimatedIconSource.StartChain(ui);
         }
 
@@ -3757,14 +3757,14 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.AnimatedVisualPlayer"/></summary>
-        public static AnimatedVisualPlayer AnimatedVisualPlayer(O<bool> AutoPlay = default, O<Xaml.DataTemplate> FallbackContent = default, O<double> PlaybackRate = default, O<Xaml.Controls.IAnimatedVisualSource> Source = default, O<Xaml.Media.Stretch> Stretch = default)
+        public static AnimatedVisualPlayer AnimatedVisualPlayer(bool? AutoPlay = default, Xaml.DataTemplate FallbackContent = default, double? PlaybackRate = default, Xaml.Controls.IAnimatedVisualSource Source = default, Xaml.Media.Stretch? Stretch = default)
         {
             var ui = new Xaml.Controls.AnimatedVisualPlayer();
-            if (AutoPlay.HasValue) ui.AutoPlay = AutoPlay.Value;
-            if (FallbackContent.HasValue) ui.FallbackContent = FallbackContent.Value;
-            if (PlaybackRate.HasValue) ui.PlaybackRate = PlaybackRate.Value;
-            if (Source.HasValue) ui.Source = Source.Value;
-            if (Stretch.HasValue) ui.Stretch = Stretch.Value;
+            if (AutoPlay is not null) ui.AutoPlay = AutoPlay.Value;
+            if (FallbackContent is not null) ui.FallbackContent = FallbackContent;
+            if (PlaybackRate is not null) ui.PlaybackRate = PlaybackRate.Value;
+            if (Source is not null) ui.Source = Source;
+            if (Stretch is not null) ui.Stretch = Stretch.Value;
             return CSharpMarkup.WinUI.AnimatedVisualPlayer.StartChain(ui);
         }
 
@@ -3874,13 +3874,13 @@ namespace CSharpMarkup.WinUI // AppBar
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.AppBar"/></summary>
-        public static AppBar AppBar(O<Xaml.Controls.AppBarClosedDisplayMode> ClosedDisplayMode = default, O<bool> IsOpen = default, O<bool> IsSticky = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, UIObject Content = default)
+        public static AppBar AppBar(Xaml.Controls.AppBarClosedDisplayMode? ClosedDisplayMode = default, bool? IsOpen = default, bool? IsSticky = default, Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.AppBar();
-            if (ClosedDisplayMode.HasValue) ui.ClosedDisplayMode = ClosedDisplayMode.Value;
-            if (IsOpen.HasValue) ui.IsOpen = IsOpen.Value;
-            if (IsSticky.HasValue) ui.IsSticky = IsSticky.Value;
-            if (LightDismissOverlayMode.HasValue) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
+            if (ClosedDisplayMode is not null) ui.ClosedDisplayMode = ClosedDisplayMode.Value;
+            if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
+            if (IsSticky is not null) ui.IsSticky = IsSticky.Value;
+            if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBar.StartChain(ui);
         }
@@ -3968,15 +3968,15 @@ namespace CSharpMarkup.WinUI // AppBarButton
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.AppBarButton"/></summary>
-        public static AppBarButton AppBarButton(O<int> DynamicOverflowOrder = default, O<Xaml.Controls.IconElement> Icon = default, O<bool> IsCompact = default, O<string> KeyboardAcceleratorTextOverride = default, O<string> Label = default, O<Xaml.Controls.CommandBarLabelPosition> LabelPosition = default, UIObject Content = default)
+        public static AppBarButton AppBarButton(int? DynamicOverflowOrder = default, Xaml.Controls.IconElement Icon = default, bool? IsCompact = default, string KeyboardAcceleratorTextOverride = default, string Label = default, Xaml.Controls.CommandBarLabelPosition? LabelPosition = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.AppBarButton();
-            if (DynamicOverflowOrder.HasValue) ui.DynamicOverflowOrder = DynamicOverflowOrder.Value;
-            if (Icon.HasValue) ui.Icon = Icon.Value;
-            if (IsCompact.HasValue) ui.IsCompact = IsCompact.Value;
-            if (KeyboardAcceleratorTextOverride.HasValue) ui.KeyboardAcceleratorTextOverride = KeyboardAcceleratorTextOverride.Value;
-            if (Label.HasValue) ui.Label = Label.Value;
-            if (LabelPosition.HasValue) ui.LabelPosition = LabelPosition.Value;
+            if (DynamicOverflowOrder is not null) ui.DynamicOverflowOrder = DynamicOverflowOrder.Value;
+            if (Icon is not null) ui.Icon = Icon;
+            if (IsCompact is not null) ui.IsCompact = IsCompact.Value;
+            if (KeyboardAcceleratorTextOverride is not null) ui.KeyboardAcceleratorTextOverride = KeyboardAcceleratorTextOverride;
+            if (Label is not null) ui.Label = Label;
+            if (LabelPosition is not null) ui.LabelPosition = LabelPosition.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBarButton.StartChain(ui);
         }
@@ -4082,11 +4082,11 @@ namespace CSharpMarkup.WinUI // AppBarElementContainer
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.AppBarElementContainer"/></summary>
-        public static AppBarElementContainer AppBarElementContainer(O<int> DynamicOverflowOrder = default, O<bool> IsCompact = default, UIObject Content = default)
+        public static AppBarElementContainer AppBarElementContainer(int? DynamicOverflowOrder = default, bool? IsCompact = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.AppBarElementContainer();
-            if (DynamicOverflowOrder.HasValue) ui.DynamicOverflowOrder = DynamicOverflowOrder.Value;
-            if (IsCompact.HasValue) ui.IsCompact = IsCompact.Value;
+            if (DynamicOverflowOrder is not null) ui.DynamicOverflowOrder = DynamicOverflowOrder.Value;
+            if (IsCompact is not null) ui.IsCompact = IsCompact.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBarElementContainer.StartChain(ui);
         }
@@ -4156,11 +4156,11 @@ namespace CSharpMarkup.WinUI // AppBarSeparator
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.AppBarSeparator"/></summary>
-        public static AppBarSeparator AppBarSeparator(O<int> DynamicOverflowOrder = default, O<bool> IsCompact = default)
+        public static AppBarSeparator AppBarSeparator(int? DynamicOverflowOrder = default, bool? IsCompact = default)
         {
             var ui = new Xaml.Controls.AppBarSeparator();
-            if (DynamicOverflowOrder.HasValue) ui.DynamicOverflowOrder = DynamicOverflowOrder.Value;
-            if (IsCompact.HasValue) ui.IsCompact = IsCompact.Value;
+            if (DynamicOverflowOrder is not null) ui.DynamicOverflowOrder = DynamicOverflowOrder.Value;
+            if (IsCompact is not null) ui.IsCompact = IsCompact.Value;
             return CSharpMarkup.WinUI.AppBarSeparator.StartChain(ui);
         }
 
@@ -4237,15 +4237,15 @@ namespace CSharpMarkup.WinUI // AppBarToggleButton
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.AppBarToggleButton"/></summary>
-        public static AppBarToggleButton AppBarToggleButton(O<int> DynamicOverflowOrder = default, O<Xaml.Controls.IconElement> Icon = default, O<bool> IsCompact = default, O<string> KeyboardAcceleratorTextOverride = default, O<string> Label = default, O<Xaml.Controls.CommandBarLabelPosition> LabelPosition = default, UIObject Content = default)
+        public static AppBarToggleButton AppBarToggleButton(int? DynamicOverflowOrder = default, Xaml.Controls.IconElement Icon = default, bool? IsCompact = default, string KeyboardAcceleratorTextOverride = default, string Label = default, Xaml.Controls.CommandBarLabelPosition? LabelPosition = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.AppBarToggleButton();
-            if (DynamicOverflowOrder.HasValue) ui.DynamicOverflowOrder = DynamicOverflowOrder.Value;
-            if (Icon.HasValue) ui.Icon = Icon.Value;
-            if (IsCompact.HasValue) ui.IsCompact = IsCompact.Value;
-            if (KeyboardAcceleratorTextOverride.HasValue) ui.KeyboardAcceleratorTextOverride = KeyboardAcceleratorTextOverride.Value;
-            if (Label.HasValue) ui.Label = Label.Value;
-            if (LabelPosition.HasValue) ui.LabelPosition = LabelPosition.Value;
+            if (DynamicOverflowOrder is not null) ui.DynamicOverflowOrder = DynamicOverflowOrder.Value;
+            if (Icon is not null) ui.Icon = Icon;
+            if (IsCompact is not null) ui.IsCompact = IsCompact.Value;
+            if (KeyboardAcceleratorTextOverride is not null) ui.KeyboardAcceleratorTextOverride = KeyboardAcceleratorTextOverride;
+            if (Label is not null) ui.Label = Label;
+            if (LabelPosition is not null) ui.LabelPosition = LabelPosition.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBarToggleButton.StartChain(ui);
         }
@@ -4579,10 +4579,10 @@ namespace CSharpMarkup.WinUI // AutoSuggestBoxTextChangedEventArgs
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.AutoSuggestBoxTextChangedEventArgs"/></summary>
-        public static AutoSuggestBoxTextChangedEventArgs AutoSuggestBoxTextChangedEventArgs(O<Xaml.Controls.AutoSuggestionBoxTextChangeReason> Reason = default)
+        public static AutoSuggestBoxTextChangedEventArgs AutoSuggestBoxTextChangedEventArgs(Xaml.Controls.AutoSuggestionBoxTextChangeReason? Reason = default)
         {
             var ui = new Xaml.Controls.AutoSuggestBoxTextChangedEventArgs();
-            if (Reason.HasValue) ui.Reason = Reason.Value;
+            if (Reason is not null) ui.Reason = Reason.Value;
             return CSharpMarkup.WinUI.AutoSuggestBoxTextChangedEventArgs.StartChain(ui);
         }
 
@@ -4639,11 +4639,11 @@ namespace CSharpMarkup.WinUI // BitmapIcon
     {
         /// <summary>Create a <see cref="Xaml.Controls.BitmapIcon"/></summary>
         /// <remarks>Remark: BitmapIcon().Bind() binds to <see cref="Xaml.Controls.BitmapIcon.UriSourceProperty"/></remarks>
-        public static BitmapIcon BitmapIcon(O<bool> ShowAsMonochrome = default, O<Uri> UriSource = default)
+        public static BitmapIcon BitmapIcon(bool? ShowAsMonochrome = default, Uri UriSource = default)
         {
             var ui = new Xaml.Controls.BitmapIcon();
-            if (ShowAsMonochrome.HasValue) ui.ShowAsMonochrome = ShowAsMonochrome.Value;
-            if (UriSource.HasValue) ui.UriSource = UriSource.Value;
+            if (ShowAsMonochrome is not null) ui.ShowAsMonochrome = ShowAsMonochrome.Value;
+            if (UriSource is not null) ui.UriSource = UriSource;
             return CSharpMarkup.WinUI.BitmapIcon.StartChain(ui);
         }
 
@@ -4713,11 +4713,11 @@ namespace CSharpMarkup.WinUI // BitmapIconSource
     {
         /// <summary>Create a <see cref="Xaml.Controls.BitmapIconSource"/></summary>
         /// <remarks>Remark: BitmapIconSource().Bind() binds to <see cref="Xaml.Controls.BitmapIconSource.UriSourceProperty"/></remarks>
-        public static BitmapIconSource BitmapIconSource(O<bool> ShowAsMonochrome = default, O<Uri> UriSource = default)
+        public static BitmapIconSource BitmapIconSource(bool? ShowAsMonochrome = default, Uri UriSource = default)
         {
             var ui = new Xaml.Controls.BitmapIconSource();
-            if (ShowAsMonochrome.HasValue) ui.ShowAsMonochrome = ShowAsMonochrome.Value;
-            if (UriSource.HasValue) ui.UriSource = UriSource.Value;
+            if (ShowAsMonochrome is not null) ui.ShowAsMonochrome = ShowAsMonochrome.Value;
+            if (UriSource is not null) ui.UriSource = UriSource;
             return CSharpMarkup.WinUI.BitmapIconSource.StartChain(ui);
         }
 
@@ -4792,17 +4792,17 @@ namespace CSharpMarkup.WinUI // Border
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Border"/></summary>
-        public static Border Border(O<Xaml.Media.Brush> Background = default, O<Xaml.Controls.BackgroundSizing> BackgroundSizing = default, O<Xaml.BrushTransition> BackgroundTransition = default, O<Xaml.Media.Brush> BorderBrush = default, O<Xaml.Thickness> BorderThickness = default, O<Xaml.Media.Animation.TransitionCollection> ChildTransitions = default, O<CSharpMarkup.WinUI.to.CornerRadius> CornerRadius = default, O<Xaml.Thickness> Padding = default, Microsoft.UI.Xaml.UIElement Child = default)
+        public static Border Border(Xaml.Media.Brush Background = default, Xaml.Controls.BackgroundSizing? BackgroundSizing = default, Xaml.BrushTransition BackgroundTransition = default, Xaml.Media.Brush BorderBrush = default, Xaml.Thickness? BorderThickness = default, Xaml.Media.Animation.TransitionCollection ChildTransitions = default, CSharpMarkup.WinUI.to.CornerRadius? CornerRadius = default, Xaml.Thickness? Padding = default, Microsoft.UI.Xaml.UIElement Child = default)
         {
             var ui = new Xaml.Controls.Border();
-            if (Background.HasValue) ui.Background = Background.Value;
-            if (BackgroundSizing.HasValue) ui.BackgroundSizing = BackgroundSizing.Value;
-            if (BackgroundTransition.HasValue) ui.BackgroundTransition = BackgroundTransition.Value;
-            if (BorderBrush.HasValue) ui.BorderBrush = BorderBrush.Value;
-            if (BorderThickness.HasValue) ui.BorderThickness = BorderThickness.Value;
-            if (ChildTransitions.HasValue) ui.ChildTransitions = ChildTransitions.Value;
-            if (CornerRadius.HasValue) ui.CornerRadius = CornerRadius.Value;
-            if (Padding.HasValue) ui.Padding = Padding.Value;
+            if (Background is not null) ui.Background = Background;
+            if (BackgroundSizing is not null) ui.BackgroundSizing = BackgroundSizing.Value;
+            if (BackgroundTransition is not null) ui.BackgroundTransition = BackgroundTransition;
+            if (BorderBrush is not null) ui.BorderBrush = BorderBrush;
+            if (BorderThickness is not null) ui.BorderThickness = BorderThickness.Value;
+            if (ChildTransitions is not null) ui.ChildTransitions = ChildTransitions;
+            if (CornerRadius is not null) ui.CornerRadius = CornerRadius.Value;
+            if (Padding is not null) ui.Padding = Padding.Value;
             if (Child != null) ui.Child = Child;
             return CSharpMarkup.WinUI.Border.StartChain(ui);
         }
@@ -4942,11 +4942,11 @@ namespace CSharpMarkup.WinUI // BreadcrumbBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBar"/></summary>
-        public static BreadcrumbBar BreadcrumbBar(O<object> ItemTemplate = default, O<object> ItemsSource = default)
+        public static BreadcrumbBar BreadcrumbBar(object ItemTemplate = default, object ItemsSource = default)
         {
             var ui = new Xaml.Controls.BreadcrumbBar();
-            if (ItemTemplate.HasValue) ui.ItemTemplate = ItemTemplate.Value;
-            if (ItemsSource.HasValue) ui.ItemsSource = ItemsSource.Value;
+            if (ItemTemplate is not null) ui.ItemTemplate = ItemTemplate;
+            if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
             return CSharpMarkup.WinUI.BreadcrumbBar.StartChain(ui);
         }
 
@@ -5070,10 +5070,10 @@ namespace CSharpMarkup.WinUI // Button
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Button"/></summary>
-        public static Button Button(O<Xaml.Controls.Primitives.FlyoutBase> Flyout = default, UIObject Content = default)
+        public static Button Button(Xaml.Controls.Primitives.FlyoutBase Flyout = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Button();
-            if (Flyout.HasValue) ui.Flyout = Flyout.Value;
+            if (Flyout is not null) ui.Flyout = Flyout;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Button.StartChain(ui);
         }
@@ -5133,27 +5133,27 @@ namespace CSharpMarkup.WinUI // CalendarDatePicker
     {
         /// <summary>Create a <see cref="Xaml.Controls.CalendarDatePicker"/></summary>
         /// <remarks>Remark: CalendarDatePicker().Bind() binds to <see cref="Xaml.Controls.CalendarDatePicker.DateProperty"/></remarks>
-        public static CalendarDatePicker CalendarDatePicker(O<string> CalendarIdentifier = default, O<Xaml.Style> CalendarViewStyle = default, O<DateTimeOffset?> Date = default, O<string> DateFormat = default, O<string> DayOfWeekFormat = default, O<object> Description = default, O<Xaml.Controls.CalendarViewDisplayMode> DisplayMode = default, O<Windows.Globalization.DayOfWeek> FirstDayOfWeek = default, O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<bool> IsCalendarOpen = default, O<bool> IsGroupLabelVisible = default, O<bool> IsOutOfScopeEnabled = default, O<bool> IsTodayHighlighted = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, O<DateTimeOffset> MaxDate = default, O<DateTimeOffset> MinDate = default, O<string> PlaceholderText = default)
+        public static CalendarDatePicker CalendarDatePicker(string CalendarIdentifier = default, Xaml.Style CalendarViewStyle = default, DateTimeOffset? Date = default, string DateFormat = default, string DayOfWeekFormat = default, object Description = default, Xaml.Controls.CalendarViewDisplayMode? DisplayMode = default, Windows.Globalization.DayOfWeek? FirstDayOfWeek = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, bool? IsCalendarOpen = default, bool? IsGroupLabelVisible = default, bool? IsOutOfScopeEnabled = default, bool? IsTodayHighlighted = default, Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, DateTimeOffset? MaxDate = default, DateTimeOffset? MinDate = default, string PlaceholderText = default)
         {
             var ui = new Xaml.Controls.CalendarDatePicker();
-            if (CalendarIdentifier.HasValue) ui.CalendarIdentifier = CalendarIdentifier.Value;
-            if (CalendarViewStyle.HasValue) ui.CalendarViewStyle = CalendarViewStyle.Value;
-            if (Date.HasValue) ui.Date = Date.Value;
-            if (DateFormat.HasValue) ui.DateFormat = DateFormat.Value;
-            if (DayOfWeekFormat.HasValue) ui.DayOfWeekFormat = DayOfWeekFormat.Value;
-            if (Description.HasValue) ui.Description = Description.Value;
-            if (DisplayMode.HasValue) ui.DisplayMode = DisplayMode.Value;
-            if (FirstDayOfWeek.HasValue) ui.FirstDayOfWeek = FirstDayOfWeek.Value;
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (IsCalendarOpen.HasValue) ui.IsCalendarOpen = IsCalendarOpen.Value;
-            if (IsGroupLabelVisible.HasValue) ui.IsGroupLabelVisible = IsGroupLabelVisible.Value;
-            if (IsOutOfScopeEnabled.HasValue) ui.IsOutOfScopeEnabled = IsOutOfScopeEnabled.Value;
-            if (IsTodayHighlighted.HasValue) ui.IsTodayHighlighted = IsTodayHighlighted.Value;
-            if (LightDismissOverlayMode.HasValue) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
-            if (MaxDate.HasValue) ui.MaxDate = MaxDate.Value;
-            if (MinDate.HasValue) ui.MinDate = MinDate.Value;
-            if (PlaceholderText.HasValue) ui.PlaceholderText = PlaceholderText.Value;
+            if (CalendarIdentifier is not null) ui.CalendarIdentifier = CalendarIdentifier;
+            if (CalendarViewStyle is not null) ui.CalendarViewStyle = CalendarViewStyle;
+            if (Date is not null) ui.Date = Date;
+            if (DateFormat is not null) ui.DateFormat = DateFormat;
+            if (DayOfWeekFormat is not null) ui.DayOfWeekFormat = DayOfWeekFormat;
+            if (Description is not null) ui.Description = Description;
+            if (DisplayMode is not null) ui.DisplayMode = DisplayMode.Value;
+            if (FirstDayOfWeek is not null) ui.FirstDayOfWeek = FirstDayOfWeek.Value;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (IsCalendarOpen is not null) ui.IsCalendarOpen = IsCalendarOpen.Value;
+            if (IsGroupLabelVisible is not null) ui.IsGroupLabelVisible = IsGroupLabelVisible.Value;
+            if (IsOutOfScopeEnabled is not null) ui.IsOutOfScopeEnabled = IsOutOfScopeEnabled.Value;
+            if (IsTodayHighlighted is not null) ui.IsTodayHighlighted = IsTodayHighlighted.Value;
+            if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
+            if (MaxDate is not null) ui.MaxDate = MaxDate.Value;
+            if (MinDate is not null) ui.MinDate = MinDate.Value;
+            if (PlaceholderText is not null) ui.PlaceholderText = PlaceholderText;
             return CSharpMarkup.WinUI.CalendarDatePicker.StartChain(ui);
         }
 
@@ -5334,82 +5334,82 @@ namespace CSharpMarkup.WinUI // CalendarView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CalendarView"/></summary>
-        public static CalendarView CalendarView(O<Xaml.Media.Brush> BlackoutBackground = default, O<Xaml.Media.Brush> BlackoutForeground = default, O<Xaml.Media.Brush> BlackoutStrikethroughBrush = default, O<string> CalendarIdentifier = default, O<Xaml.Media.Brush> CalendarItemBackground = default, O<Xaml.Media.Brush> CalendarItemBorderBrush = default, O<Xaml.Thickness> CalendarItemBorderThickness = default, O<CSharpMarkup.WinUI.to.CornerRadius> CalendarItemCornerRadius = default, O<Xaml.Media.Brush> CalendarItemDisabledBackground = default, O<Xaml.Media.Brush> CalendarItemForeground = default, O<Xaml.Media.Brush> CalendarItemHoverBackground = default, O<Xaml.Media.Brush> CalendarItemPressedBackground = default, O<Xaml.Style> CalendarViewDayItemStyle = default, O<Xaml.Media.FontFamily> DayItemFontFamily = default, O<double> DayItemFontSize = default, O<Windows.UI.Text.FontStyle> DayItemFontStyle = default, O<Windows.UI.Text.FontWeight> DayItemFontWeight = default, O<Xaml.Thickness> DayItemMargin = default, O<string> DayOfWeekFormat = default, O<Xaml.Media.Brush> DisabledForeground = default, O<Xaml.Controls.CalendarViewDisplayMode> DisplayMode = default, O<Windows.Globalization.DayOfWeek> FirstDayOfWeek = default, O<Xaml.Media.FontFamily> FirstOfMonthLabelFontFamily = default, O<double> FirstOfMonthLabelFontSize = default, O<Windows.UI.Text.FontStyle> FirstOfMonthLabelFontStyle = default, O<Windows.UI.Text.FontWeight> FirstOfMonthLabelFontWeight = default, O<Xaml.Thickness> FirstOfMonthLabelMargin = default, O<Xaml.Media.FontFamily> FirstOfYearDecadeLabelFontFamily = default, O<double> FirstOfYearDecadeLabelFontSize = default, O<Windows.UI.Text.FontStyle> FirstOfYearDecadeLabelFontStyle = default, O<Windows.UI.Text.FontWeight> FirstOfYearDecadeLabelFontWeight = default, O<Xaml.Thickness> FirstOfYearDecadeLabelMargin = default, O<Xaml.Media.Brush> FocusBorderBrush = default, O<Xaml.HorizontalAlignment> HorizontalDayItemAlignment = default, O<Xaml.HorizontalAlignment> HorizontalFirstOfMonthLabelAlignment = default, O<Xaml.Media.Brush> HoverBorderBrush = default, O<bool> IsGroupLabelVisible = default, O<bool> IsOutOfScopeEnabled = default, O<bool> IsTodayHighlighted = default, O<DateTimeOffset> MaxDate = default, O<DateTimeOffset> MinDate = default, O<Xaml.Media.FontFamily> MonthYearItemFontFamily = default, O<double> MonthYearItemFontSize = default, O<Windows.UI.Text.FontStyle> MonthYearItemFontStyle = default, O<Windows.UI.Text.FontWeight> MonthYearItemFontWeight = default, O<Xaml.Thickness> MonthYearItemMargin = default, O<int> NumberOfWeeksInView = default, O<Xaml.Media.Brush> OutOfScopeBackground = default, O<Xaml.Media.Brush> OutOfScopeForeground = default, O<Xaml.Media.Brush> OutOfScopeHoverForeground = default, O<Xaml.Media.Brush> OutOfScopePressedForeground = default, O<Xaml.Media.Brush> PressedBorderBrush = default, O<Xaml.Media.Brush> PressedForeground = default, O<Xaml.Media.Brush> SelectedBorderBrush = default, O<Xaml.Media.Brush> SelectedDisabledBorderBrush = default, O<Xaml.Media.Brush> SelectedDisabledForeground = default, O<Xaml.Media.Brush> SelectedForeground = default, O<Xaml.Media.Brush> SelectedHoverBorderBrush = default, O<Xaml.Media.Brush> SelectedHoverForeground = default, O<Xaml.Media.Brush> SelectedPressedBorderBrush = default, O<Xaml.Media.Brush> SelectedPressedForeground = default, O<Xaml.Controls.CalendarViewSelectionMode> SelectionMode = default, O<Xaml.Media.Brush> TodayBackground = default, O<Xaml.Media.Brush> TodayBlackoutBackground = default, O<Xaml.Media.Brush> TodayBlackoutForeground = default, O<Xaml.Media.Brush> TodayDisabledBackground = default, O<Windows.UI.Text.FontWeight> TodayFontWeight = default, O<Xaml.Media.Brush> TodayForeground = default, O<Xaml.Media.Brush> TodayHoverBackground = default, O<Xaml.Media.Brush> TodayPressedBackground = default, O<Xaml.Media.Brush> TodaySelectedInnerBorderBrush = default, O<Xaml.VerticalAlignment> VerticalDayItemAlignment = default, O<Xaml.VerticalAlignment> VerticalFirstOfMonthLabelAlignment = default)
+        public static CalendarView CalendarView(Xaml.Media.Brush BlackoutBackground = default, Xaml.Media.Brush BlackoutForeground = default, Xaml.Media.Brush BlackoutStrikethroughBrush = default, string CalendarIdentifier = default, Xaml.Media.Brush CalendarItemBackground = default, Xaml.Media.Brush CalendarItemBorderBrush = default, Xaml.Thickness? CalendarItemBorderThickness = default, CSharpMarkup.WinUI.to.CornerRadius? CalendarItemCornerRadius = default, Xaml.Media.Brush CalendarItemDisabledBackground = default, Xaml.Media.Brush CalendarItemForeground = default, Xaml.Media.Brush CalendarItemHoverBackground = default, Xaml.Media.Brush CalendarItemPressedBackground = default, Xaml.Style CalendarViewDayItemStyle = default, Xaml.Media.FontFamily DayItemFontFamily = default, double? DayItemFontSize = default, Windows.UI.Text.FontStyle? DayItemFontStyle = default, Windows.UI.Text.FontWeight? DayItemFontWeight = default, Xaml.Thickness? DayItemMargin = default, string DayOfWeekFormat = default, Xaml.Media.Brush DisabledForeground = default, Xaml.Controls.CalendarViewDisplayMode? DisplayMode = default, Windows.Globalization.DayOfWeek? FirstDayOfWeek = default, Xaml.Media.FontFamily FirstOfMonthLabelFontFamily = default, double? FirstOfMonthLabelFontSize = default, Windows.UI.Text.FontStyle? FirstOfMonthLabelFontStyle = default, Windows.UI.Text.FontWeight? FirstOfMonthLabelFontWeight = default, Xaml.Thickness? FirstOfMonthLabelMargin = default, Xaml.Media.FontFamily FirstOfYearDecadeLabelFontFamily = default, double? FirstOfYearDecadeLabelFontSize = default, Windows.UI.Text.FontStyle? FirstOfYearDecadeLabelFontStyle = default, Windows.UI.Text.FontWeight? FirstOfYearDecadeLabelFontWeight = default, Xaml.Thickness? FirstOfYearDecadeLabelMargin = default, Xaml.Media.Brush FocusBorderBrush = default, Xaml.HorizontalAlignment? HorizontalDayItemAlignment = default, Xaml.HorizontalAlignment? HorizontalFirstOfMonthLabelAlignment = default, Xaml.Media.Brush HoverBorderBrush = default, bool? IsGroupLabelVisible = default, bool? IsOutOfScopeEnabled = default, bool? IsTodayHighlighted = default, DateTimeOffset? MaxDate = default, DateTimeOffset? MinDate = default, Xaml.Media.FontFamily MonthYearItemFontFamily = default, double? MonthYearItemFontSize = default, Windows.UI.Text.FontStyle? MonthYearItemFontStyle = default, Windows.UI.Text.FontWeight? MonthYearItemFontWeight = default, Xaml.Thickness? MonthYearItemMargin = default, int? NumberOfWeeksInView = default, Xaml.Media.Brush OutOfScopeBackground = default, Xaml.Media.Brush OutOfScopeForeground = default, Xaml.Media.Brush OutOfScopeHoverForeground = default, Xaml.Media.Brush OutOfScopePressedForeground = default, Xaml.Media.Brush PressedBorderBrush = default, Xaml.Media.Brush PressedForeground = default, Xaml.Media.Brush SelectedBorderBrush = default, Xaml.Media.Brush SelectedDisabledBorderBrush = default, Xaml.Media.Brush SelectedDisabledForeground = default, Xaml.Media.Brush SelectedForeground = default, Xaml.Media.Brush SelectedHoverBorderBrush = default, Xaml.Media.Brush SelectedHoverForeground = default, Xaml.Media.Brush SelectedPressedBorderBrush = default, Xaml.Media.Brush SelectedPressedForeground = default, Xaml.Controls.CalendarViewSelectionMode? SelectionMode = default, Xaml.Media.Brush TodayBackground = default, Xaml.Media.Brush TodayBlackoutBackground = default, Xaml.Media.Brush TodayBlackoutForeground = default, Xaml.Media.Brush TodayDisabledBackground = default, Windows.UI.Text.FontWeight? TodayFontWeight = default, Xaml.Media.Brush TodayForeground = default, Xaml.Media.Brush TodayHoverBackground = default, Xaml.Media.Brush TodayPressedBackground = default, Xaml.Media.Brush TodaySelectedInnerBorderBrush = default, Xaml.VerticalAlignment? VerticalDayItemAlignment = default, Xaml.VerticalAlignment? VerticalFirstOfMonthLabelAlignment = default)
         {
             var ui = new Xaml.Controls.CalendarView();
-            if (BlackoutBackground.HasValue) ui.BlackoutBackground = BlackoutBackground.Value;
-            if (BlackoutForeground.HasValue) ui.BlackoutForeground = BlackoutForeground.Value;
-            if (BlackoutStrikethroughBrush.HasValue) ui.BlackoutStrikethroughBrush = BlackoutStrikethroughBrush.Value;
-            if (CalendarIdentifier.HasValue) ui.CalendarIdentifier = CalendarIdentifier.Value;
-            if (CalendarItemBackground.HasValue) ui.CalendarItemBackground = CalendarItemBackground.Value;
-            if (CalendarItemBorderBrush.HasValue) ui.CalendarItemBorderBrush = CalendarItemBorderBrush.Value;
-            if (CalendarItemBorderThickness.HasValue) ui.CalendarItemBorderThickness = CalendarItemBorderThickness.Value;
-            if (CalendarItemCornerRadius.HasValue) ui.CalendarItemCornerRadius = CalendarItemCornerRadius.Value;
-            if (CalendarItemDisabledBackground.HasValue) ui.CalendarItemDisabledBackground = CalendarItemDisabledBackground.Value;
-            if (CalendarItemForeground.HasValue) ui.CalendarItemForeground = CalendarItemForeground.Value;
-            if (CalendarItemHoverBackground.HasValue) ui.CalendarItemHoverBackground = CalendarItemHoverBackground.Value;
-            if (CalendarItemPressedBackground.HasValue) ui.CalendarItemPressedBackground = CalendarItemPressedBackground.Value;
-            if (CalendarViewDayItemStyle.HasValue) ui.CalendarViewDayItemStyle = CalendarViewDayItemStyle.Value;
-            if (DayItemFontFamily.HasValue) ui.DayItemFontFamily = DayItemFontFamily.Value;
-            if (DayItemFontSize.HasValue) ui.DayItemFontSize = DayItemFontSize.Value;
-            if (DayItemFontStyle.HasValue) ui.DayItemFontStyle = DayItemFontStyle.Value;
-            if (DayItemFontWeight.HasValue) ui.DayItemFontWeight = DayItemFontWeight.Value;
-            if (DayItemMargin.HasValue) ui.DayItemMargin = DayItemMargin.Value;
-            if (DayOfWeekFormat.HasValue) ui.DayOfWeekFormat = DayOfWeekFormat.Value;
-            if (DisabledForeground.HasValue) ui.DisabledForeground = DisabledForeground.Value;
-            if (DisplayMode.HasValue) ui.DisplayMode = DisplayMode.Value;
-            if (FirstDayOfWeek.HasValue) ui.FirstDayOfWeek = FirstDayOfWeek.Value;
-            if (FirstOfMonthLabelFontFamily.HasValue) ui.FirstOfMonthLabelFontFamily = FirstOfMonthLabelFontFamily.Value;
-            if (FirstOfMonthLabelFontSize.HasValue) ui.FirstOfMonthLabelFontSize = FirstOfMonthLabelFontSize.Value;
-            if (FirstOfMonthLabelFontStyle.HasValue) ui.FirstOfMonthLabelFontStyle = FirstOfMonthLabelFontStyle.Value;
-            if (FirstOfMonthLabelFontWeight.HasValue) ui.FirstOfMonthLabelFontWeight = FirstOfMonthLabelFontWeight.Value;
-            if (FirstOfMonthLabelMargin.HasValue) ui.FirstOfMonthLabelMargin = FirstOfMonthLabelMargin.Value;
-            if (FirstOfYearDecadeLabelFontFamily.HasValue) ui.FirstOfYearDecadeLabelFontFamily = FirstOfYearDecadeLabelFontFamily.Value;
-            if (FirstOfYearDecadeLabelFontSize.HasValue) ui.FirstOfYearDecadeLabelFontSize = FirstOfYearDecadeLabelFontSize.Value;
-            if (FirstOfYearDecadeLabelFontStyle.HasValue) ui.FirstOfYearDecadeLabelFontStyle = FirstOfYearDecadeLabelFontStyle.Value;
-            if (FirstOfYearDecadeLabelFontWeight.HasValue) ui.FirstOfYearDecadeLabelFontWeight = FirstOfYearDecadeLabelFontWeight.Value;
-            if (FirstOfYearDecadeLabelMargin.HasValue) ui.FirstOfYearDecadeLabelMargin = FirstOfYearDecadeLabelMargin.Value;
-            if (FocusBorderBrush.HasValue) ui.FocusBorderBrush = FocusBorderBrush.Value;
-            if (HorizontalDayItemAlignment.HasValue) ui.HorizontalDayItemAlignment = HorizontalDayItemAlignment.Value;
-            if (HorizontalFirstOfMonthLabelAlignment.HasValue) ui.HorizontalFirstOfMonthLabelAlignment = HorizontalFirstOfMonthLabelAlignment.Value;
-            if (HoverBorderBrush.HasValue) ui.HoverBorderBrush = HoverBorderBrush.Value;
-            if (IsGroupLabelVisible.HasValue) ui.IsGroupLabelVisible = IsGroupLabelVisible.Value;
-            if (IsOutOfScopeEnabled.HasValue) ui.IsOutOfScopeEnabled = IsOutOfScopeEnabled.Value;
-            if (IsTodayHighlighted.HasValue) ui.IsTodayHighlighted = IsTodayHighlighted.Value;
-            if (MaxDate.HasValue) ui.MaxDate = MaxDate.Value;
-            if (MinDate.HasValue) ui.MinDate = MinDate.Value;
-            if (MonthYearItemFontFamily.HasValue) ui.MonthYearItemFontFamily = MonthYearItemFontFamily.Value;
-            if (MonthYearItemFontSize.HasValue) ui.MonthYearItemFontSize = MonthYearItemFontSize.Value;
-            if (MonthYearItemFontStyle.HasValue) ui.MonthYearItemFontStyle = MonthYearItemFontStyle.Value;
-            if (MonthYearItemFontWeight.HasValue) ui.MonthYearItemFontWeight = MonthYearItemFontWeight.Value;
-            if (MonthYearItemMargin.HasValue) ui.MonthYearItemMargin = MonthYearItemMargin.Value;
-            if (NumberOfWeeksInView.HasValue) ui.NumberOfWeeksInView = NumberOfWeeksInView.Value;
-            if (OutOfScopeBackground.HasValue) ui.OutOfScopeBackground = OutOfScopeBackground.Value;
-            if (OutOfScopeForeground.HasValue) ui.OutOfScopeForeground = OutOfScopeForeground.Value;
-            if (OutOfScopeHoverForeground.HasValue) ui.OutOfScopeHoverForeground = OutOfScopeHoverForeground.Value;
-            if (OutOfScopePressedForeground.HasValue) ui.OutOfScopePressedForeground = OutOfScopePressedForeground.Value;
-            if (PressedBorderBrush.HasValue) ui.PressedBorderBrush = PressedBorderBrush.Value;
-            if (PressedForeground.HasValue) ui.PressedForeground = PressedForeground.Value;
-            if (SelectedBorderBrush.HasValue) ui.SelectedBorderBrush = SelectedBorderBrush.Value;
-            if (SelectedDisabledBorderBrush.HasValue) ui.SelectedDisabledBorderBrush = SelectedDisabledBorderBrush.Value;
-            if (SelectedDisabledForeground.HasValue) ui.SelectedDisabledForeground = SelectedDisabledForeground.Value;
-            if (SelectedForeground.HasValue) ui.SelectedForeground = SelectedForeground.Value;
-            if (SelectedHoverBorderBrush.HasValue) ui.SelectedHoverBorderBrush = SelectedHoverBorderBrush.Value;
-            if (SelectedHoverForeground.HasValue) ui.SelectedHoverForeground = SelectedHoverForeground.Value;
-            if (SelectedPressedBorderBrush.HasValue) ui.SelectedPressedBorderBrush = SelectedPressedBorderBrush.Value;
-            if (SelectedPressedForeground.HasValue) ui.SelectedPressedForeground = SelectedPressedForeground.Value;
-            if (SelectionMode.HasValue) ui.SelectionMode = SelectionMode.Value;
-            if (TodayBackground.HasValue) ui.TodayBackground = TodayBackground.Value;
-            if (TodayBlackoutBackground.HasValue) ui.TodayBlackoutBackground = TodayBlackoutBackground.Value;
-            if (TodayBlackoutForeground.HasValue) ui.TodayBlackoutForeground = TodayBlackoutForeground.Value;
-            if (TodayDisabledBackground.HasValue) ui.TodayDisabledBackground = TodayDisabledBackground.Value;
-            if (TodayFontWeight.HasValue) ui.TodayFontWeight = TodayFontWeight.Value;
-            if (TodayForeground.HasValue) ui.TodayForeground = TodayForeground.Value;
-            if (TodayHoverBackground.HasValue) ui.TodayHoverBackground = TodayHoverBackground.Value;
-            if (TodayPressedBackground.HasValue) ui.TodayPressedBackground = TodayPressedBackground.Value;
-            if (TodaySelectedInnerBorderBrush.HasValue) ui.TodaySelectedInnerBorderBrush = TodaySelectedInnerBorderBrush.Value;
-            if (VerticalDayItemAlignment.HasValue) ui.VerticalDayItemAlignment = VerticalDayItemAlignment.Value;
-            if (VerticalFirstOfMonthLabelAlignment.HasValue) ui.VerticalFirstOfMonthLabelAlignment = VerticalFirstOfMonthLabelAlignment.Value;
+            if (BlackoutBackground is not null) ui.BlackoutBackground = BlackoutBackground;
+            if (BlackoutForeground is not null) ui.BlackoutForeground = BlackoutForeground;
+            if (BlackoutStrikethroughBrush is not null) ui.BlackoutStrikethroughBrush = BlackoutStrikethroughBrush;
+            if (CalendarIdentifier is not null) ui.CalendarIdentifier = CalendarIdentifier;
+            if (CalendarItemBackground is not null) ui.CalendarItemBackground = CalendarItemBackground;
+            if (CalendarItemBorderBrush is not null) ui.CalendarItemBorderBrush = CalendarItemBorderBrush;
+            if (CalendarItemBorderThickness is not null) ui.CalendarItemBorderThickness = CalendarItemBorderThickness.Value;
+            if (CalendarItemCornerRadius is not null) ui.CalendarItemCornerRadius = CalendarItemCornerRadius.Value;
+            if (CalendarItemDisabledBackground is not null) ui.CalendarItemDisabledBackground = CalendarItemDisabledBackground;
+            if (CalendarItemForeground is not null) ui.CalendarItemForeground = CalendarItemForeground;
+            if (CalendarItemHoverBackground is not null) ui.CalendarItemHoverBackground = CalendarItemHoverBackground;
+            if (CalendarItemPressedBackground is not null) ui.CalendarItemPressedBackground = CalendarItemPressedBackground;
+            if (CalendarViewDayItemStyle is not null) ui.CalendarViewDayItemStyle = CalendarViewDayItemStyle;
+            if (DayItemFontFamily is not null) ui.DayItemFontFamily = DayItemFontFamily;
+            if (DayItemFontSize is not null) ui.DayItemFontSize = DayItemFontSize.Value;
+            if (DayItemFontStyle is not null) ui.DayItemFontStyle = DayItemFontStyle.Value;
+            if (DayItemFontWeight is not null) ui.DayItemFontWeight = DayItemFontWeight.Value;
+            if (DayItemMargin is not null) ui.DayItemMargin = DayItemMargin.Value;
+            if (DayOfWeekFormat is not null) ui.DayOfWeekFormat = DayOfWeekFormat;
+            if (DisabledForeground is not null) ui.DisabledForeground = DisabledForeground;
+            if (DisplayMode is not null) ui.DisplayMode = DisplayMode.Value;
+            if (FirstDayOfWeek is not null) ui.FirstDayOfWeek = FirstDayOfWeek.Value;
+            if (FirstOfMonthLabelFontFamily is not null) ui.FirstOfMonthLabelFontFamily = FirstOfMonthLabelFontFamily;
+            if (FirstOfMonthLabelFontSize is not null) ui.FirstOfMonthLabelFontSize = FirstOfMonthLabelFontSize.Value;
+            if (FirstOfMonthLabelFontStyle is not null) ui.FirstOfMonthLabelFontStyle = FirstOfMonthLabelFontStyle.Value;
+            if (FirstOfMonthLabelFontWeight is not null) ui.FirstOfMonthLabelFontWeight = FirstOfMonthLabelFontWeight.Value;
+            if (FirstOfMonthLabelMargin is not null) ui.FirstOfMonthLabelMargin = FirstOfMonthLabelMargin.Value;
+            if (FirstOfYearDecadeLabelFontFamily is not null) ui.FirstOfYearDecadeLabelFontFamily = FirstOfYearDecadeLabelFontFamily;
+            if (FirstOfYearDecadeLabelFontSize is not null) ui.FirstOfYearDecadeLabelFontSize = FirstOfYearDecadeLabelFontSize.Value;
+            if (FirstOfYearDecadeLabelFontStyle is not null) ui.FirstOfYearDecadeLabelFontStyle = FirstOfYearDecadeLabelFontStyle.Value;
+            if (FirstOfYearDecadeLabelFontWeight is not null) ui.FirstOfYearDecadeLabelFontWeight = FirstOfYearDecadeLabelFontWeight.Value;
+            if (FirstOfYearDecadeLabelMargin is not null) ui.FirstOfYearDecadeLabelMargin = FirstOfYearDecadeLabelMargin.Value;
+            if (FocusBorderBrush is not null) ui.FocusBorderBrush = FocusBorderBrush;
+            if (HorizontalDayItemAlignment is not null) ui.HorizontalDayItemAlignment = HorizontalDayItemAlignment.Value;
+            if (HorizontalFirstOfMonthLabelAlignment is not null) ui.HorizontalFirstOfMonthLabelAlignment = HorizontalFirstOfMonthLabelAlignment.Value;
+            if (HoverBorderBrush is not null) ui.HoverBorderBrush = HoverBorderBrush;
+            if (IsGroupLabelVisible is not null) ui.IsGroupLabelVisible = IsGroupLabelVisible.Value;
+            if (IsOutOfScopeEnabled is not null) ui.IsOutOfScopeEnabled = IsOutOfScopeEnabled.Value;
+            if (IsTodayHighlighted is not null) ui.IsTodayHighlighted = IsTodayHighlighted.Value;
+            if (MaxDate is not null) ui.MaxDate = MaxDate.Value;
+            if (MinDate is not null) ui.MinDate = MinDate.Value;
+            if (MonthYearItemFontFamily is not null) ui.MonthYearItemFontFamily = MonthYearItemFontFamily;
+            if (MonthYearItemFontSize is not null) ui.MonthYearItemFontSize = MonthYearItemFontSize.Value;
+            if (MonthYearItemFontStyle is not null) ui.MonthYearItemFontStyle = MonthYearItemFontStyle.Value;
+            if (MonthYearItemFontWeight is not null) ui.MonthYearItemFontWeight = MonthYearItemFontWeight.Value;
+            if (MonthYearItemMargin is not null) ui.MonthYearItemMargin = MonthYearItemMargin.Value;
+            if (NumberOfWeeksInView is not null) ui.NumberOfWeeksInView = NumberOfWeeksInView.Value;
+            if (OutOfScopeBackground is not null) ui.OutOfScopeBackground = OutOfScopeBackground;
+            if (OutOfScopeForeground is not null) ui.OutOfScopeForeground = OutOfScopeForeground;
+            if (OutOfScopeHoverForeground is not null) ui.OutOfScopeHoverForeground = OutOfScopeHoverForeground;
+            if (OutOfScopePressedForeground is not null) ui.OutOfScopePressedForeground = OutOfScopePressedForeground;
+            if (PressedBorderBrush is not null) ui.PressedBorderBrush = PressedBorderBrush;
+            if (PressedForeground is not null) ui.PressedForeground = PressedForeground;
+            if (SelectedBorderBrush is not null) ui.SelectedBorderBrush = SelectedBorderBrush;
+            if (SelectedDisabledBorderBrush is not null) ui.SelectedDisabledBorderBrush = SelectedDisabledBorderBrush;
+            if (SelectedDisabledForeground is not null) ui.SelectedDisabledForeground = SelectedDisabledForeground;
+            if (SelectedForeground is not null) ui.SelectedForeground = SelectedForeground;
+            if (SelectedHoverBorderBrush is not null) ui.SelectedHoverBorderBrush = SelectedHoverBorderBrush;
+            if (SelectedHoverForeground is not null) ui.SelectedHoverForeground = SelectedHoverForeground;
+            if (SelectedPressedBorderBrush is not null) ui.SelectedPressedBorderBrush = SelectedPressedBorderBrush;
+            if (SelectedPressedForeground is not null) ui.SelectedPressedForeground = SelectedPressedForeground;
+            if (SelectionMode is not null) ui.SelectionMode = SelectionMode.Value;
+            if (TodayBackground is not null) ui.TodayBackground = TodayBackground;
+            if (TodayBlackoutBackground is not null) ui.TodayBlackoutBackground = TodayBlackoutBackground;
+            if (TodayBlackoutForeground is not null) ui.TodayBlackoutForeground = TodayBlackoutForeground;
+            if (TodayDisabledBackground is not null) ui.TodayDisabledBackground = TodayDisabledBackground;
+            if (TodayFontWeight is not null) ui.TodayFontWeight = TodayFontWeight.Value;
+            if (TodayForeground is not null) ui.TodayForeground = TodayForeground;
+            if (TodayHoverBackground is not null) ui.TodayHoverBackground = TodayHoverBackground;
+            if (TodayPressedBackground is not null) ui.TodayPressedBackground = TodayPressedBackground;
+            if (TodaySelectedInnerBorderBrush is not null) ui.TodaySelectedInnerBorderBrush = TodaySelectedInnerBorderBrush;
+            if (VerticalDayItemAlignment is not null) ui.VerticalDayItemAlignment = VerticalDayItemAlignment.Value;
+            if (VerticalFirstOfMonthLabelAlignment is not null) ui.VerticalFirstOfMonthLabelAlignment = VerticalFirstOfMonthLabelAlignment.Value;
             return CSharpMarkup.WinUI.CalendarView.StartChain(ui);
         }
 
@@ -6244,10 +6244,10 @@ namespace CSharpMarkup.WinUI // CalendarViewDayItem
     {
         /// <summary>Create a <see cref="Xaml.Controls.CalendarViewDayItem"/></summary>
         /// <remarks>Remark: CalendarViewDayItem().Bind() binds to <see cref="Xaml.Controls.CalendarViewDayItem.DateProperty"/></remarks>
-        public static CalendarViewDayItem CalendarViewDayItem(O<bool> IsBlackout = default)
+        public static CalendarViewDayItem CalendarViewDayItem(bool? IsBlackout = default)
         {
             var ui = new Xaml.Controls.CalendarViewDayItem();
-            if (IsBlackout.HasValue) ui.IsBlackout = IsBlackout.Value;
+            if (IsBlackout is not null) ui.IsBlackout = IsBlackout.Value;
             return CSharpMarkup.WinUI.CalendarViewDayItem.StartChain(ui);
         }
 
@@ -6398,19 +6398,19 @@ namespace CSharpMarkup.WinUI // Canvas
         /// <summary>Set <see cref="Xaml.Controls.Canvas"/> attached properties</summary>
         public static TTarget Canvas<TTarget>(this TTarget target
 
-            , O<double> Left = default
+            , double? Left = default
 
-            , O<double> Top = default
+            , double? Top = default
 
-            , O<int> ZIndex = default
+            , int? ZIndex = default
 
         ) where TTarget : UIElement
         {
-            if (Left.HasValue) Xaml.Controls.Canvas.SetLeft(target.UI, Left.Value);
+            if (Left is not null) Xaml.Controls.Canvas.SetLeft(target.UI, Left.Value);
 
-            if (Top.HasValue) Xaml.Controls.Canvas.SetTop(target.UI, Top.Value);
+            if (Top is not null) Xaml.Controls.Canvas.SetTop(target.UI, Top.Value);
 
-            if (ZIndex.HasValue) Xaml.Controls.Canvas.SetZIndex(target.UI, ZIndex.Value);
+            if (ZIndex is not null) Xaml.Controls.Canvas.SetZIndex(target.UI, ZIndex.Value);
 
             return target;
         }
@@ -6474,28 +6474,28 @@ namespace CSharpMarkup.WinUI // ColorPicker
     {
         /// <summary>Create a <see cref="Xaml.Controls.ColorPicker"/></summary>
         /// <remarks>Remark: ColorPicker().Bind() binds to <see cref="Xaml.Controls.ColorPicker.ColorProperty"/></remarks>
-        public static ColorPicker ColorPicker(O<Windows.UI.Color> Color = default, O<Xaml.Controls.ColorSpectrumComponents> ColorSpectrumComponents = default, O<Xaml.Controls.ColorSpectrumShape> ColorSpectrumShape = default, O<bool> IsAlphaEnabled = default, O<bool> IsAlphaSliderVisible = default, O<bool> IsAlphaTextInputVisible = default, O<bool> IsColorChannelTextInputVisible = default, O<bool> IsColorPreviewVisible = default, O<bool> IsColorSliderVisible = default, O<bool> IsColorSpectrumVisible = default, O<bool> IsHexInputVisible = default, O<bool> IsMoreButtonVisible = default, O<int> MaxHue = default, O<int> MaxSaturation = default, O<int> MaxValue = default, O<int> MinHue = default, O<int> MinSaturation = default, O<int> MinValue = default, O<Windows.UI.Color?> PreviousColor = default)
+        public static ColorPicker ColorPicker(Windows.UI.Color? Color = default, Xaml.Controls.ColorSpectrumComponents? ColorSpectrumComponents = default, Xaml.Controls.ColorSpectrumShape? ColorSpectrumShape = default, bool? IsAlphaEnabled = default, bool? IsAlphaSliderVisible = default, bool? IsAlphaTextInputVisible = default, bool? IsColorChannelTextInputVisible = default, bool? IsColorPreviewVisible = default, bool? IsColorSliderVisible = default, bool? IsColorSpectrumVisible = default, bool? IsHexInputVisible = default, bool? IsMoreButtonVisible = default, int? MaxHue = default, int? MaxSaturation = default, int? MaxValue = default, int? MinHue = default, int? MinSaturation = default, int? MinValue = default, Windows.UI.Color? PreviousColor = default)
         {
             var ui = new Xaml.Controls.ColorPicker();
-            if (Color.HasValue) ui.Color = Color.Value;
-            if (ColorSpectrumComponents.HasValue) ui.ColorSpectrumComponents = ColorSpectrumComponents.Value;
-            if (ColorSpectrumShape.HasValue) ui.ColorSpectrumShape = ColorSpectrumShape.Value;
-            if (IsAlphaEnabled.HasValue) ui.IsAlphaEnabled = IsAlphaEnabled.Value;
-            if (IsAlphaSliderVisible.HasValue) ui.IsAlphaSliderVisible = IsAlphaSliderVisible.Value;
-            if (IsAlphaTextInputVisible.HasValue) ui.IsAlphaTextInputVisible = IsAlphaTextInputVisible.Value;
-            if (IsColorChannelTextInputVisible.HasValue) ui.IsColorChannelTextInputVisible = IsColorChannelTextInputVisible.Value;
-            if (IsColorPreviewVisible.HasValue) ui.IsColorPreviewVisible = IsColorPreviewVisible.Value;
-            if (IsColorSliderVisible.HasValue) ui.IsColorSliderVisible = IsColorSliderVisible.Value;
-            if (IsColorSpectrumVisible.HasValue) ui.IsColorSpectrumVisible = IsColorSpectrumVisible.Value;
-            if (IsHexInputVisible.HasValue) ui.IsHexInputVisible = IsHexInputVisible.Value;
-            if (IsMoreButtonVisible.HasValue) ui.IsMoreButtonVisible = IsMoreButtonVisible.Value;
-            if (MaxHue.HasValue) ui.MaxHue = MaxHue.Value;
-            if (MaxSaturation.HasValue) ui.MaxSaturation = MaxSaturation.Value;
-            if (MaxValue.HasValue) ui.MaxValue = MaxValue.Value;
-            if (MinHue.HasValue) ui.MinHue = MinHue.Value;
-            if (MinSaturation.HasValue) ui.MinSaturation = MinSaturation.Value;
-            if (MinValue.HasValue) ui.MinValue = MinValue.Value;
-            if (PreviousColor.HasValue) ui.PreviousColor = PreviousColor.Value;
+            if (Color is not null) ui.Color = Color.Value;
+            if (ColorSpectrumComponents is not null) ui.ColorSpectrumComponents = ColorSpectrumComponents.Value;
+            if (ColorSpectrumShape is not null) ui.ColorSpectrumShape = ColorSpectrumShape.Value;
+            if (IsAlphaEnabled is not null) ui.IsAlphaEnabled = IsAlphaEnabled.Value;
+            if (IsAlphaSliderVisible is not null) ui.IsAlphaSliderVisible = IsAlphaSliderVisible.Value;
+            if (IsAlphaTextInputVisible is not null) ui.IsAlphaTextInputVisible = IsAlphaTextInputVisible.Value;
+            if (IsColorChannelTextInputVisible is not null) ui.IsColorChannelTextInputVisible = IsColorChannelTextInputVisible.Value;
+            if (IsColorPreviewVisible is not null) ui.IsColorPreviewVisible = IsColorPreviewVisible.Value;
+            if (IsColorSliderVisible is not null) ui.IsColorSliderVisible = IsColorSliderVisible.Value;
+            if (IsColorSpectrumVisible is not null) ui.IsColorSpectrumVisible = IsColorSpectrumVisible.Value;
+            if (IsHexInputVisible is not null) ui.IsHexInputVisible = IsHexInputVisible.Value;
+            if (IsMoreButtonVisible is not null) ui.IsMoreButtonVisible = IsMoreButtonVisible.Value;
+            if (MaxHue is not null) ui.MaxHue = MaxHue.Value;
+            if (MaxSaturation is not null) ui.MaxSaturation = MaxSaturation.Value;
+            if (MaxValue is not null) ui.MaxValue = MaxValue.Value;
+            if (MinHue is not null) ui.MinHue = MinHue.Value;
+            if (MinSaturation is not null) ui.MinSaturation = MinSaturation.Value;
+            if (MinValue is not null) ui.MinValue = MinValue.Value;
+            if (PreviousColor is not null) ui.PreviousColor = PreviousColor;
             return CSharpMarkup.WinUI.ColorPicker.StartChain(ui);
         }
 
@@ -6693,11 +6693,11 @@ namespace CSharpMarkup.WinUI // ColumnDefinition
 
         /// <summary>Create a <see cref="Xaml.Controls.ColumnDefinition"/></summary>
         /// <remarks>Remark: ColumnDefinition().Bind() binds to <see cref="Xaml.Controls.ColumnDefinition.WidthProperty"/></remarks>
-        public static ColumnDefinition ColumnDefinition(O<double> MaxWidth = default, O<double> MinWidth = default, Microsoft.UI.Xaml.GridLength Width = default)
+        public static ColumnDefinition ColumnDefinition(double? MaxWidth = default, double? MinWidth = default, Microsoft.UI.Xaml.GridLength Width = default)
         {
             var ui = new Xaml.Controls.ColumnDefinition();
-            if (MaxWidth.HasValue) ui.MaxWidth = MaxWidth.Value;
-            if (MinWidth.HasValue) ui.MinWidth = MinWidth.Value;
+            if (MaxWidth is not null) ui.MaxWidth = MaxWidth.Value;
+            if (MinWidth is not null) ui.MinWidth = MinWidth.Value;
             if (Width != null) ui.Width = Width;
             return CSharpMarkup.WinUI.ColumnDefinition.StartChain(ui);
         }
@@ -6982,13 +6982,13 @@ namespace CSharpMarkup.WinUI // CommandBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CommandBar"/></summary>
-        public static CommandBar CommandBar(O<Xaml.Style> CommandBarOverflowPresenterStyle = default, O<Xaml.Controls.CommandBarDefaultLabelPosition> DefaultLabelPosition = default, O<bool> IsDynamicOverflowEnabled = default, O<Xaml.Controls.CommandBarOverflowButtonVisibility> OverflowButtonVisibility = default)
+        public static CommandBar CommandBar(Xaml.Style CommandBarOverflowPresenterStyle = default, Xaml.Controls.CommandBarDefaultLabelPosition? DefaultLabelPosition = default, bool? IsDynamicOverflowEnabled = default, Xaml.Controls.CommandBarOverflowButtonVisibility? OverflowButtonVisibility = default)
         {
             var ui = new Xaml.Controls.CommandBar();
-            if (CommandBarOverflowPresenterStyle.HasValue) ui.CommandBarOverflowPresenterStyle = CommandBarOverflowPresenterStyle.Value;
-            if (DefaultLabelPosition.HasValue) ui.DefaultLabelPosition = DefaultLabelPosition.Value;
-            if (IsDynamicOverflowEnabled.HasValue) ui.IsDynamicOverflowEnabled = IsDynamicOverflowEnabled.Value;
-            if (OverflowButtonVisibility.HasValue) ui.OverflowButtonVisibility = OverflowButtonVisibility.Value;
+            if (CommandBarOverflowPresenterStyle is not null) ui.CommandBarOverflowPresenterStyle = CommandBarOverflowPresenterStyle;
+            if (DefaultLabelPosition is not null) ui.DefaultLabelPosition = DefaultLabelPosition.Value;
+            if (IsDynamicOverflowEnabled is not null) ui.IsDynamicOverflowEnabled = IsDynamicOverflowEnabled.Value;
+            if (OverflowButtonVisibility is not null) ui.OverflowButtonVisibility = OverflowButtonVisibility.Value;
             return CSharpMarkup.WinUI.CommandBar.StartChain(ui);
         }
 
@@ -7075,10 +7075,10 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CommandBarFlyout"/></summary>
-        public static CommandBarFlyout CommandBarFlyout(O<bool> AlwaysExpanded = default)
+        public static CommandBarFlyout CommandBarFlyout(bool? AlwaysExpanded = default)
         {
             var ui = new Xaml.Controls.CommandBarFlyout();
-            if (AlwaysExpanded.HasValue) ui.AlwaysExpanded = AlwaysExpanded.Value;
+            if (AlwaysExpanded is not null) ui.AlwaysExpanded = AlwaysExpanded.Value;
             return CSharpMarkup.WinUI.CommandBarFlyout.StartChain(ui);
         }
 
@@ -7202,12 +7202,12 @@ namespace CSharpMarkup.WinUI // ContentControl
 
         /// <summary>Create a <see cref="Xaml.Controls.ContentControl"/></summary>
         /// <remarks>Remark: ContentControl().Bind() binds to <see cref="Xaml.Controls.ContentControl.ContentProperty"/></remarks>
-        public static ContentControl ContentControl(O<Xaml.DataTemplate> ContentTemplate = default, O<Xaml.Controls.DataTemplateSelector> ContentTemplateSelector = default, O<Xaml.Media.Animation.TransitionCollection> ContentTransitions = default, UIObject Content = default)
+        public static ContentControl ContentControl(Xaml.DataTemplate ContentTemplate = default, Xaml.Controls.DataTemplateSelector ContentTemplateSelector = default, Xaml.Media.Animation.TransitionCollection ContentTransitions = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.ContentControl();
-            if (ContentTemplate.HasValue) ui.ContentTemplate = ContentTemplate.Value;
-            if (ContentTemplateSelector.HasValue) ui.ContentTemplateSelector = ContentTemplateSelector.Value;
-            if (ContentTransitions.HasValue) ui.ContentTransitions = ContentTransitions.Value;
+            if (ContentTemplate is not null) ui.ContentTemplate = ContentTemplate;
+            if (ContentTemplateSelector is not null) ui.ContentTemplateSelector = ContentTemplateSelector;
+            if (ContentTransitions is not null) ui.ContentTransitions = ContentTransitions;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ContentControl.StartChain(ui);
         }
@@ -7296,27 +7296,27 @@ namespace CSharpMarkup.WinUI // ContentDialog
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ContentDialog"/></summary>
-        public static ContentDialog ContentDialog(O<ICommand> CloseButtonCommand = default, O<object> CloseButtonCommandParameter = default, O<Xaml.Style> CloseButtonStyle = default, O<string> CloseButtonText = default, O<Xaml.Controls.ContentDialogButton> DefaultButton = default, O<bool> FullSizeDesired = default, O<bool> IsPrimaryButtonEnabled = default, O<bool> IsSecondaryButtonEnabled = default, O<ICommand> PrimaryButtonCommand = default, O<object> PrimaryButtonCommandParameter = default, O<Xaml.Style> PrimaryButtonStyle = default, O<string> PrimaryButtonText = default, O<ICommand> SecondaryButtonCommand = default, O<object> SecondaryButtonCommandParameter = default, O<Xaml.Style> SecondaryButtonStyle = default, O<string> SecondaryButtonText = default, O<object> Title = default, O<Xaml.DataTemplate> TitleTemplate = default, UIObject Content = default)
+        public static ContentDialog ContentDialog(ICommand CloseButtonCommand = default, object CloseButtonCommandParameter = default, Xaml.Style CloseButtonStyle = default, string CloseButtonText = default, Xaml.Controls.ContentDialogButton? DefaultButton = default, bool? FullSizeDesired = default, bool? IsPrimaryButtonEnabled = default, bool? IsSecondaryButtonEnabled = default, ICommand PrimaryButtonCommand = default, object PrimaryButtonCommandParameter = default, Xaml.Style PrimaryButtonStyle = default, string PrimaryButtonText = default, ICommand SecondaryButtonCommand = default, object SecondaryButtonCommandParameter = default, Xaml.Style SecondaryButtonStyle = default, string SecondaryButtonText = default, object Title = default, Xaml.DataTemplate TitleTemplate = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.ContentDialog();
-            if (CloseButtonCommand.HasValue) ui.CloseButtonCommand = CloseButtonCommand.Value;
-            if (CloseButtonCommandParameter.HasValue) ui.CloseButtonCommandParameter = CloseButtonCommandParameter.Value;
-            if (CloseButtonStyle.HasValue) ui.CloseButtonStyle = CloseButtonStyle.Value;
-            if (CloseButtonText.HasValue) ui.CloseButtonText = CloseButtonText.Value;
-            if (DefaultButton.HasValue) ui.DefaultButton = DefaultButton.Value;
-            if (FullSizeDesired.HasValue) ui.FullSizeDesired = FullSizeDesired.Value;
-            if (IsPrimaryButtonEnabled.HasValue) ui.IsPrimaryButtonEnabled = IsPrimaryButtonEnabled.Value;
-            if (IsSecondaryButtonEnabled.HasValue) ui.IsSecondaryButtonEnabled = IsSecondaryButtonEnabled.Value;
-            if (PrimaryButtonCommand.HasValue) ui.PrimaryButtonCommand = PrimaryButtonCommand.Value;
-            if (PrimaryButtonCommandParameter.HasValue) ui.PrimaryButtonCommandParameter = PrimaryButtonCommandParameter.Value;
-            if (PrimaryButtonStyle.HasValue) ui.PrimaryButtonStyle = PrimaryButtonStyle.Value;
-            if (PrimaryButtonText.HasValue) ui.PrimaryButtonText = PrimaryButtonText.Value;
-            if (SecondaryButtonCommand.HasValue) ui.SecondaryButtonCommand = SecondaryButtonCommand.Value;
-            if (SecondaryButtonCommandParameter.HasValue) ui.SecondaryButtonCommandParameter = SecondaryButtonCommandParameter.Value;
-            if (SecondaryButtonStyle.HasValue) ui.SecondaryButtonStyle = SecondaryButtonStyle.Value;
-            if (SecondaryButtonText.HasValue) ui.SecondaryButtonText = SecondaryButtonText.Value;
-            if (Title.HasValue) ui.Title = Title.Value;
-            if (TitleTemplate.HasValue) ui.TitleTemplate = TitleTemplate.Value;
+            if (CloseButtonCommand is not null) ui.CloseButtonCommand = CloseButtonCommand;
+            if (CloseButtonCommandParameter is not null) ui.CloseButtonCommandParameter = CloseButtonCommandParameter;
+            if (CloseButtonStyle is not null) ui.CloseButtonStyle = CloseButtonStyle;
+            if (CloseButtonText is not null) ui.CloseButtonText = CloseButtonText;
+            if (DefaultButton is not null) ui.DefaultButton = DefaultButton.Value;
+            if (FullSizeDesired is not null) ui.FullSizeDesired = FullSizeDesired.Value;
+            if (IsPrimaryButtonEnabled is not null) ui.IsPrimaryButtonEnabled = IsPrimaryButtonEnabled.Value;
+            if (IsSecondaryButtonEnabled is not null) ui.IsSecondaryButtonEnabled = IsSecondaryButtonEnabled.Value;
+            if (PrimaryButtonCommand is not null) ui.PrimaryButtonCommand = PrimaryButtonCommand;
+            if (PrimaryButtonCommandParameter is not null) ui.PrimaryButtonCommandParameter = PrimaryButtonCommandParameter;
+            if (PrimaryButtonStyle is not null) ui.PrimaryButtonStyle = PrimaryButtonStyle;
+            if (PrimaryButtonText is not null) ui.PrimaryButtonText = PrimaryButtonText;
+            if (SecondaryButtonCommand is not null) ui.SecondaryButtonCommand = SecondaryButtonCommand;
+            if (SecondaryButtonCommandParameter is not null) ui.SecondaryButtonCommandParameter = SecondaryButtonCommandParameter;
+            if (SecondaryButtonStyle is not null) ui.SecondaryButtonStyle = SecondaryButtonStyle;
+            if (SecondaryButtonText is not null) ui.SecondaryButtonText = SecondaryButtonText;
+            if (Title is not null) ui.Title = Title;
+            if (TitleTemplate is not null) ui.TitleTemplate = TitleTemplate;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ContentDialog.StartChain(ui);
         }
@@ -7504,35 +7504,35 @@ namespace CSharpMarkup.WinUI // ContentPresenter
 
         /// <summary>Create a <see cref="Xaml.Controls.ContentPresenter"/></summary>
         /// <remarks>Remark: ContentPresenter().Bind() binds to <see cref="Xaml.Controls.ContentPresenter.ContentProperty"/></remarks>
-        public static ContentPresenter ContentPresenter(O<Xaml.Media.Brush> Background = default, O<Xaml.Controls.BackgroundSizing> BackgroundSizing = default, O<Xaml.BrushTransition> BackgroundTransition = default, O<Xaml.Media.Brush> BorderBrush = default, O<Xaml.Thickness> BorderThickness = default, O<int> CharacterSpacing = default, O<Xaml.DataTemplate> ContentTemplate = default, O<Xaml.Controls.DataTemplateSelector> ContentTemplateSelector = default, O<Xaml.Media.Animation.TransitionCollection> ContentTransitions = default, O<CSharpMarkup.WinUI.to.CornerRadius> CornerRadius = default, O<Xaml.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.UI.Text.FontStretch> FontStretch = default, O<Windows.UI.Text.FontStyle> FontStyle = default, O<Windows.UI.Text.FontWeight> FontWeight = default, O<Xaml.Media.Brush> Foreground = default, O<Xaml.HorizontalAlignment> HorizontalContentAlignment = default, O<bool> IsTextScaleFactorEnabled = default, O<double> LineHeight = default, O<Xaml.LineStackingStrategy> LineStackingStrategy = default, O<int> MaxLines = default, O<Xaml.OpticalMarginAlignment> OpticalMarginAlignment = default, O<Xaml.Thickness> Padding = default, O<Xaml.TextLineBounds> TextLineBounds = default, O<Xaml.TextWrapping> TextWrapping = default, O<Xaml.VerticalAlignment> VerticalContentAlignment = default, UIObject Content = default)
+        public static ContentPresenter ContentPresenter(Xaml.Media.Brush Background = default, Xaml.Controls.BackgroundSizing? BackgroundSizing = default, Xaml.BrushTransition BackgroundTransition = default, Xaml.Media.Brush BorderBrush = default, Xaml.Thickness? BorderThickness = default, int? CharacterSpacing = default, Xaml.DataTemplate ContentTemplate = default, Xaml.Controls.DataTemplateSelector ContentTemplateSelector = default, Xaml.Media.Animation.TransitionCollection ContentTransitions = default, CSharpMarkup.WinUI.to.CornerRadius? CornerRadius = default, Xaml.Media.FontFamily FontFamily = default, double? FontSize = default, Windows.UI.Text.FontStretch? FontStretch = default, Windows.UI.Text.FontStyle? FontStyle = default, Windows.UI.Text.FontWeight? FontWeight = default, Xaml.Media.Brush Foreground = default, Xaml.HorizontalAlignment? HorizontalContentAlignment = default, bool? IsTextScaleFactorEnabled = default, double? LineHeight = default, Xaml.LineStackingStrategy? LineStackingStrategy = default, int? MaxLines = default, Xaml.OpticalMarginAlignment? OpticalMarginAlignment = default, Xaml.Thickness? Padding = default, Xaml.TextLineBounds? TextLineBounds = default, Xaml.TextWrapping? TextWrapping = default, Xaml.VerticalAlignment? VerticalContentAlignment = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.ContentPresenter();
-            if (Background.HasValue) ui.Background = Background.Value;
-            if (BackgroundSizing.HasValue) ui.BackgroundSizing = BackgroundSizing.Value;
-            if (BackgroundTransition.HasValue) ui.BackgroundTransition = BackgroundTransition.Value;
-            if (BorderBrush.HasValue) ui.BorderBrush = BorderBrush.Value;
-            if (BorderThickness.HasValue) ui.BorderThickness = BorderThickness.Value;
-            if (CharacterSpacing.HasValue) ui.CharacterSpacing = CharacterSpacing.Value;
-            if (ContentTemplate.HasValue) ui.ContentTemplate = ContentTemplate.Value;
-            if (ContentTemplateSelector.HasValue) ui.ContentTemplateSelector = ContentTemplateSelector.Value;
-            if (ContentTransitions.HasValue) ui.ContentTransitions = ContentTransitions.Value;
-            if (CornerRadius.HasValue) ui.CornerRadius = CornerRadius.Value;
-            if (FontFamily.HasValue) ui.FontFamily = FontFamily.Value;
-            if (FontSize.HasValue) ui.FontSize = FontSize.Value;
-            if (FontStretch.HasValue) ui.FontStretch = FontStretch.Value;
-            if (FontStyle.HasValue) ui.FontStyle = FontStyle.Value;
-            if (FontWeight.HasValue) ui.FontWeight = FontWeight.Value;
-            if (Foreground.HasValue) ui.Foreground = Foreground.Value;
-            if (HorizontalContentAlignment.HasValue) ui.HorizontalContentAlignment = HorizontalContentAlignment.Value;
-            if (IsTextScaleFactorEnabled.HasValue) ui.IsTextScaleFactorEnabled = IsTextScaleFactorEnabled.Value;
-            if (LineHeight.HasValue) ui.LineHeight = LineHeight.Value;
-            if (LineStackingStrategy.HasValue) ui.LineStackingStrategy = LineStackingStrategy.Value;
-            if (MaxLines.HasValue) ui.MaxLines = MaxLines.Value;
-            if (OpticalMarginAlignment.HasValue) ui.OpticalMarginAlignment = OpticalMarginAlignment.Value;
-            if (Padding.HasValue) ui.Padding = Padding.Value;
-            if (TextLineBounds.HasValue) ui.TextLineBounds = TextLineBounds.Value;
-            if (TextWrapping.HasValue) ui.TextWrapping = TextWrapping.Value;
-            if (VerticalContentAlignment.HasValue) ui.VerticalContentAlignment = VerticalContentAlignment.Value;
+            if (Background is not null) ui.Background = Background;
+            if (BackgroundSizing is not null) ui.BackgroundSizing = BackgroundSizing.Value;
+            if (BackgroundTransition is not null) ui.BackgroundTransition = BackgroundTransition;
+            if (BorderBrush is not null) ui.BorderBrush = BorderBrush;
+            if (BorderThickness is not null) ui.BorderThickness = BorderThickness.Value;
+            if (CharacterSpacing is not null) ui.CharacterSpacing = CharacterSpacing.Value;
+            if (ContentTemplate is not null) ui.ContentTemplate = ContentTemplate;
+            if (ContentTemplateSelector is not null) ui.ContentTemplateSelector = ContentTemplateSelector;
+            if (ContentTransitions is not null) ui.ContentTransitions = ContentTransitions;
+            if (CornerRadius is not null) ui.CornerRadius = CornerRadius.Value;
+            if (FontFamily is not null) ui.FontFamily = FontFamily;
+            if (FontSize is not null) ui.FontSize = FontSize.Value;
+            if (FontStretch is not null) ui.FontStretch = FontStretch.Value;
+            if (FontStyle is not null) ui.FontStyle = FontStyle.Value;
+            if (FontWeight is not null) ui.FontWeight = FontWeight.Value;
+            if (Foreground is not null) ui.Foreground = Foreground;
+            if (HorizontalContentAlignment is not null) ui.HorizontalContentAlignment = HorizontalContentAlignment.Value;
+            if (IsTextScaleFactorEnabled is not null) ui.IsTextScaleFactorEnabled = IsTextScaleFactorEnabled.Value;
+            if (LineHeight is not null) ui.LineHeight = LineHeight.Value;
+            if (LineStackingStrategy is not null) ui.LineStackingStrategy = LineStackingStrategy.Value;
+            if (MaxLines is not null) ui.MaxLines = MaxLines.Value;
+            if (OpticalMarginAlignment is not null) ui.OpticalMarginAlignment = OpticalMarginAlignment.Value;
+            if (Padding is not null) ui.Padding = Padding.Value;
+            if (TextLineBounds is not null) ui.TextLineBounds = TextLineBounds.Value;
+            if (TextWrapping is not null) ui.TextWrapping = TextWrapping.Value;
+            if (VerticalContentAlignment is not null) ui.VerticalContentAlignment = VerticalContentAlignment.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ContentPresenter.StartChain(ui);
         }
@@ -8047,15 +8047,15 @@ namespace CSharpMarkup.WinUI // Control
         /// <summary>Set <see cref="Xaml.Controls.Control"/> attached properties</summary>
         public static TTarget Control<TTarget>(this TTarget target
 
-            , O<bool> IsTemplateFocusTarget = default
+            , bool? IsTemplateFocusTarget = default
 
-            , O<bool> IsTemplateKeyTipTarget = default
+            , bool? IsTemplateKeyTipTarget = default
 
         ) where TTarget : FrameworkElement
         {
-            if (IsTemplateFocusTarget.HasValue) Xaml.Controls.Control.SetIsTemplateFocusTarget(target.UI, IsTemplateFocusTarget.Value);
+            if (IsTemplateFocusTarget is not null) Xaml.Controls.Control.SetIsTemplateFocusTarget(target.UI, IsTemplateFocusTarget.Value);
 
-            if (IsTemplateKeyTipTarget.HasValue) Xaml.Controls.Control.SetIsTemplateKeyTipTarget(target.UI, IsTemplateKeyTipTarget.Value);
+            if (IsTemplateKeyTipTarget is not null) Xaml.Controls.Control.SetIsTemplateKeyTipTarget(target.UI, IsTemplateKeyTipTarget.Value);
 
             return target;
         }
@@ -8075,10 +8075,10 @@ namespace CSharpMarkup.WinUI // ControlTemplate
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ControlTemplate"/></summary>
-        public static ControlTemplate ControlTemplate(O<Type> TargetType = default)
+        public static ControlTemplate ControlTemplate(Type TargetType = default)
         {
             var ui = new Xaml.Controls.ControlTemplate();
-            if (TargetType.HasValue) ui.TargetType = TargetType.Value;
+            if (TargetType is not null) ui.TargetType = TargetType;
             return CSharpMarkup.WinUI.ControlTemplate.StartChain(ui);
         }
 
@@ -8181,23 +8181,23 @@ namespace CSharpMarkup.WinUI // DatePicker
 
         /// <summary>Create a <see cref="Xaml.Controls.DatePicker"/></summary>
         /// <remarks>Remark: DatePicker().Bind() binds to <see cref="Xaml.Controls.DatePicker.DateProperty"/></remarks>
-        public static DatePicker DatePicker(O<string> CalendarIdentifier = default, O<DateTimeOffset> Date = default, O<string> DayFormat = default, O<bool> DayVisible = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, O<DateTimeOffset> MaxYear = default, O<DateTimeOffset> MinYear = default, O<string> MonthFormat = default, O<bool> MonthVisible = default, O<Xaml.Controls.Orientation> Orientation = default, O<DateTimeOffset?> SelectedDate = default, O<string> YearFormat = default, O<bool> YearVisible = default, UIObject Header = default)
+        public static DatePicker DatePicker(string CalendarIdentifier = default, DateTimeOffset? Date = default, string DayFormat = default, bool? DayVisible = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, DateTimeOffset? MaxYear = default, DateTimeOffset? MinYear = default, string MonthFormat = default, bool? MonthVisible = default, Xaml.Controls.Orientation? Orientation = default, DateTimeOffset? SelectedDate = default, string YearFormat = default, bool? YearVisible = default, UIObject Header = default)
         {
             var ui = new Xaml.Controls.DatePicker();
-            if (CalendarIdentifier.HasValue) ui.CalendarIdentifier = CalendarIdentifier.Value;
-            if (Date.HasValue) ui.Date = Date.Value;
-            if (DayFormat.HasValue) ui.DayFormat = DayFormat.Value;
-            if (DayVisible.HasValue) ui.DayVisible = DayVisible.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (LightDismissOverlayMode.HasValue) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
-            if (MaxYear.HasValue) ui.MaxYear = MaxYear.Value;
-            if (MinYear.HasValue) ui.MinYear = MinYear.Value;
-            if (MonthFormat.HasValue) ui.MonthFormat = MonthFormat.Value;
-            if (MonthVisible.HasValue) ui.MonthVisible = MonthVisible.Value;
-            if (Orientation.HasValue) ui.Orientation = Orientation.Value;
-            if (SelectedDate.HasValue) ui.SelectedDate = SelectedDate.Value;
-            if (YearFormat.HasValue) ui.YearFormat = YearFormat.Value;
-            if (YearVisible.HasValue) ui.YearVisible = YearVisible.Value;
+            if (CalendarIdentifier is not null) ui.CalendarIdentifier = CalendarIdentifier;
+            if (Date is not null) ui.Date = Date.Value;
+            if (DayFormat is not null) ui.DayFormat = DayFormat;
+            if (DayVisible is not null) ui.DayVisible = DayVisible.Value;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
+            if (MaxYear is not null) ui.MaxYear = MaxYear.Value;
+            if (MinYear is not null) ui.MinYear = MinYear.Value;
+            if (MonthFormat is not null) ui.MonthFormat = MonthFormat;
+            if (MonthVisible is not null) ui.MonthVisible = MonthVisible.Value;
+            if (Orientation is not null) ui.Orientation = Orientation.Value;
+            if (SelectedDate is not null) ui.SelectedDate = SelectedDate;
+            if (YearFormat is not null) ui.YearFormat = YearFormat;
+            if (YearVisible is not null) ui.YearVisible = YearVisible.Value;
             if (Header != null) ui.Header = Header.UI;
             return CSharpMarkup.WinUI.DatePicker.StartChain(ui);
         }
@@ -8356,19 +8356,19 @@ namespace CSharpMarkup.WinUI // DatePickerFlyout
     {
         /// <summary>Create a <see cref="Xaml.Controls.DatePickerFlyout"/></summary>
         /// <remarks>Remark: DatePickerFlyout().Bind() binds to <see cref="Xaml.Controls.DatePickerFlyout.DateProperty"/></remarks>
-        public static DatePickerFlyout DatePickerFlyout(O<string> CalendarIdentifier = default, O<DateTimeOffset> Date = default, O<string> DayFormat = default, O<bool> DayVisible = default, O<DateTimeOffset> MaxYear = default, O<DateTimeOffset> MinYear = default, O<string> MonthFormat = default, O<bool> MonthVisible = default, O<string> YearFormat = default, O<bool> YearVisible = default)
+        public static DatePickerFlyout DatePickerFlyout(string CalendarIdentifier = default, DateTimeOffset? Date = default, string DayFormat = default, bool? DayVisible = default, DateTimeOffset? MaxYear = default, DateTimeOffset? MinYear = default, string MonthFormat = default, bool? MonthVisible = default, string YearFormat = default, bool? YearVisible = default)
         {
             var ui = new Xaml.Controls.DatePickerFlyout();
-            if (CalendarIdentifier.HasValue) ui.CalendarIdentifier = CalendarIdentifier.Value;
-            if (Date.HasValue) ui.Date = Date.Value;
-            if (DayFormat.HasValue) ui.DayFormat = DayFormat.Value;
-            if (DayVisible.HasValue) ui.DayVisible = DayVisible.Value;
-            if (MaxYear.HasValue) ui.MaxYear = MaxYear.Value;
-            if (MinYear.HasValue) ui.MinYear = MinYear.Value;
-            if (MonthFormat.HasValue) ui.MonthFormat = MonthFormat.Value;
-            if (MonthVisible.HasValue) ui.MonthVisible = MonthVisible.Value;
-            if (YearFormat.HasValue) ui.YearFormat = YearFormat.Value;
-            if (YearVisible.HasValue) ui.YearVisible = YearVisible.Value;
+            if (CalendarIdentifier is not null) ui.CalendarIdentifier = CalendarIdentifier;
+            if (Date is not null) ui.Date = Date.Value;
+            if (DayFormat is not null) ui.DayFormat = DayFormat;
+            if (DayVisible is not null) ui.DayVisible = DayVisible.Value;
+            if (MaxYear is not null) ui.MaxYear = MaxYear.Value;
+            if (MinYear is not null) ui.MinYear = MinYear.Value;
+            if (MonthFormat is not null) ui.MonthFormat = MonthFormat;
+            if (MonthVisible is not null) ui.MonthVisible = MonthVisible.Value;
+            if (YearFormat is not null) ui.YearFormat = YearFormat;
+            if (YearVisible is not null) ui.YearVisible = YearVisible.Value;
             return CSharpMarkup.WinUI.DatePickerFlyout.StartChain(ui);
         }
 
@@ -8613,14 +8613,14 @@ namespace CSharpMarkup.WinUI // Expander
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Expander"/></summary>
-        public static Expander Expander(O<Xaml.Controls.ExpandDirection> ExpandDirection = default, O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<Xaml.Controls.DataTemplateSelector> HeaderTemplateSelector = default, O<bool> IsExpanded = default, UIObject Content = default)
+        public static Expander Expander(Xaml.Controls.ExpandDirection? ExpandDirection = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.Controls.DataTemplateSelector HeaderTemplateSelector = default, bool? IsExpanded = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Expander();
-            if (ExpandDirection.HasValue) ui.ExpandDirection = ExpandDirection.Value;
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (HeaderTemplateSelector.HasValue) ui.HeaderTemplateSelector = HeaderTemplateSelector.Value;
-            if (IsExpanded.HasValue) ui.IsExpanded = IsExpanded.Value;
+            if (ExpandDirection is not null) ui.ExpandDirection = ExpandDirection.Value;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (HeaderTemplateSelector is not null) ui.HeaderTemplateSelector = HeaderTemplateSelector;
+            if (IsExpanded is not null) ui.IsExpanded = IsExpanded.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Expander.StartChain(ui);
         }
@@ -8856,10 +8856,10 @@ namespace CSharpMarkup.WinUI // Flyout
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Flyout"/></summary>
-        public static Flyout Flyout(O<Xaml.Style> FlyoutPresenterStyle = default, Microsoft.UI.Xaml.UIElement Content = default)
+        public static Flyout Flyout(Xaml.Style FlyoutPresenterStyle = default, Microsoft.UI.Xaml.UIElement Content = default)
         {
             var ui = new Xaml.Controls.Flyout();
-            if (FlyoutPresenterStyle.HasValue) ui.FlyoutPresenterStyle = FlyoutPresenterStyle.Value;
+            if (FlyoutPresenterStyle is not null) ui.FlyoutPresenterStyle = FlyoutPresenterStyle;
             if (Content != null) ui.Content = Content;
             return CSharpMarkup.WinUI.Flyout.StartChain(ui);
         }
@@ -8928,10 +8928,10 @@ namespace CSharpMarkup.WinUI // FlyoutPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.FlyoutPresenter"/></summary>
-        public static FlyoutPresenter FlyoutPresenter(O<bool> IsDefaultShadowEnabled = default, UIObject Content = default)
+        public static FlyoutPresenter FlyoutPresenter(bool? IsDefaultShadowEnabled = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.FlyoutPresenter();
-            if (IsDefaultShadowEnabled.HasValue) ui.IsDefaultShadowEnabled = IsDefaultShadowEnabled.Value;
+            if (IsDefaultShadowEnabled is not null) ui.IsDefaultShadowEnabled = IsDefaultShadowEnabled.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.FlyoutPresenter.StartChain(ui);
         }
@@ -8991,16 +8991,16 @@ namespace CSharpMarkup.WinUI // FontIcon
     {
         /// <summary>Create a <see cref="Xaml.Controls.FontIcon"/></summary>
         /// <remarks>Remark: FontIcon().Bind() binds to <see cref="Xaml.Controls.FontIcon.GlyphProperty"/></remarks>
-        public static FontIcon FontIcon(O<Xaml.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.UI.Text.FontStyle> FontStyle = default, O<Windows.UI.Text.FontWeight> FontWeight = default, O<string> Glyph = default, O<bool> IsTextScaleFactorEnabled = default, O<bool> MirroredWhenRightToLeft = default)
+        public static FontIcon FontIcon(Xaml.Media.FontFamily FontFamily = default, double? FontSize = default, Windows.UI.Text.FontStyle? FontStyle = default, Windows.UI.Text.FontWeight? FontWeight = default, string Glyph = default, bool? IsTextScaleFactorEnabled = default, bool? MirroredWhenRightToLeft = default)
         {
             var ui = new Xaml.Controls.FontIcon();
-            if (FontFamily.HasValue) ui.FontFamily = FontFamily.Value;
-            if (FontSize.HasValue) ui.FontSize = FontSize.Value;
-            if (FontStyle.HasValue) ui.FontStyle = FontStyle.Value;
-            if (FontWeight.HasValue) ui.FontWeight = FontWeight.Value;
-            if (Glyph.HasValue) ui.Glyph = Glyph.Value;
-            if (IsTextScaleFactorEnabled.HasValue) ui.IsTextScaleFactorEnabled = IsTextScaleFactorEnabled.Value;
-            if (MirroredWhenRightToLeft.HasValue) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
+            if (FontFamily is not null) ui.FontFamily = FontFamily;
+            if (FontSize is not null) ui.FontSize = FontSize.Value;
+            if (FontStyle is not null) ui.FontStyle = FontStyle.Value;
+            if (FontWeight is not null) ui.FontWeight = FontWeight.Value;
+            if (Glyph is not null) ui.Glyph = Glyph;
+            if (IsTextScaleFactorEnabled is not null) ui.IsTextScaleFactorEnabled = IsTextScaleFactorEnabled.Value;
+            if (MirroredWhenRightToLeft is not null) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
             return CSharpMarkup.WinUI.FontIcon.StartChain(ui);
         }
 
@@ -9105,16 +9105,16 @@ namespace CSharpMarkup.WinUI // FontIconSource
     {
         /// <summary>Create a <see cref="Xaml.Controls.FontIconSource"/></summary>
         /// <remarks>Remark: FontIconSource().Bind() binds to <see cref="Xaml.Controls.FontIconSource.GlyphProperty"/></remarks>
-        public static FontIconSource FontIconSource(O<Xaml.Media.FontFamily> FontFamily = default, O<double> FontSize = default, O<Windows.UI.Text.FontStyle> FontStyle = default, O<Windows.UI.Text.FontWeight> FontWeight = default, O<string> Glyph = default, O<bool> IsTextScaleFactorEnabled = default, O<bool> MirroredWhenRightToLeft = default)
+        public static FontIconSource FontIconSource(Xaml.Media.FontFamily FontFamily = default, double? FontSize = default, Windows.UI.Text.FontStyle? FontStyle = default, Windows.UI.Text.FontWeight? FontWeight = default, string Glyph = default, bool? IsTextScaleFactorEnabled = default, bool? MirroredWhenRightToLeft = default)
         {
             var ui = new Xaml.Controls.FontIconSource();
-            if (FontFamily.HasValue) ui.FontFamily = FontFamily.Value;
-            if (FontSize.HasValue) ui.FontSize = FontSize.Value;
-            if (FontStyle.HasValue) ui.FontStyle = FontStyle.Value;
-            if (FontWeight.HasValue) ui.FontWeight = FontWeight.Value;
-            if (Glyph.HasValue) ui.Glyph = Glyph.Value;
-            if (IsTextScaleFactorEnabled.HasValue) ui.IsTextScaleFactorEnabled = IsTextScaleFactorEnabled.Value;
-            if (MirroredWhenRightToLeft.HasValue) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
+            if (FontFamily is not null) ui.FontFamily = FontFamily;
+            if (FontSize is not null) ui.FontSize = FontSize.Value;
+            if (FontStyle is not null) ui.FontStyle = FontStyle.Value;
+            if (FontWeight is not null) ui.FontWeight = FontWeight.Value;
+            if (Glyph is not null) ui.Glyph = Glyph;
+            if (IsTextScaleFactorEnabled is not null) ui.IsTextScaleFactorEnabled = IsTextScaleFactorEnabled.Value;
+            if (MirroredWhenRightToLeft is not null) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
             return CSharpMarkup.WinUI.FontIconSource.StartChain(ui);
         }
 
@@ -9224,12 +9224,12 @@ namespace CSharpMarkup.WinUI // Frame
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Frame"/></summary>
-        public static Frame Frame(O<int> CacheSize = default, O<bool> IsNavigationStackEnabled = default, O<Type> SourcePageType = default, UIObject Content = default)
+        public static Frame Frame(int? CacheSize = default, bool? IsNavigationStackEnabled = default, Type SourcePageType = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Frame();
-            if (CacheSize.HasValue) ui.CacheSize = CacheSize.Value;
-            if (IsNavigationStackEnabled.HasValue) ui.IsNavigationStackEnabled = IsNavigationStackEnabled.Value;
-            if (SourcePageType.HasValue) ui.SourcePageType = SourcePageType.Value;
+            if (CacheSize is not null) ui.CacheSize = CacheSize.Value;
+            if (IsNavigationStackEnabled is not null) ui.IsNavigationStackEnabled = IsNavigationStackEnabled.Value;
+            if (SourcePageType is not null) ui.SourcePageType = SourcePageType;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Frame.StartChain(ui);
         }
@@ -9498,23 +9498,23 @@ namespace CSharpMarkup.WinUI // Grid
         /// <summary>Set <see cref="Xaml.Controls.Grid"/> attached properties</summary>
         public static TTarget Grid<TTarget>(this TTarget target
 
-            , O<int> Column = default
+            , int? Column = default
 
-            , O<int> ColumnSpan = default
+            , int? ColumnSpan = default
 
-            , O<int> Row = default
+            , int? Row = default
 
-            , O<int> RowSpan = default
+            , int? RowSpan = default
 
         ) where TTarget : FrameworkElement
         {
-            if (Column.HasValue) Xaml.Controls.Grid.SetColumn(target.UI, Column.Value);
+            if (Column is not null) Xaml.Controls.Grid.SetColumn(target.UI, Column.Value);
 
-            if (ColumnSpan.HasValue) Xaml.Controls.Grid.SetColumnSpan(target.UI, ColumnSpan.Value);
+            if (ColumnSpan is not null) Xaml.Controls.Grid.SetColumnSpan(target.UI, ColumnSpan.Value);
 
-            if (Row.HasValue) Xaml.Controls.Grid.SetRow(target.UI, Row.Value);
+            if (Row is not null) Xaml.Controls.Grid.SetRow(target.UI, Row.Value);
 
-            if (RowSpan.HasValue) Xaml.Controls.Grid.SetRowSpan(target.UI, RowSpan.Value);
+            if (RowSpan is not null) Xaml.Controls.Grid.SetRowSpan(target.UI, RowSpan.Value);
 
             return target;
         }
@@ -9741,16 +9741,16 @@ namespace CSharpMarkup.WinUI // Hub
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Hub"/></summary>
-        public static Hub Hub(O<int> DefaultSectionIndex = default, O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<bool> IsActiveView = default, O<bool> IsZoomedInView = default, O<Xaml.Controls.Orientation> Orientation = default, O<Xaml.Controls.SemanticZoom> SemanticZoomOwner = default)
+        public static Hub Hub(int? DefaultSectionIndex = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, bool? IsActiveView = default, bool? IsZoomedInView = default, Xaml.Controls.Orientation? Orientation = default, Xaml.Controls.SemanticZoom SemanticZoomOwner = default)
         {
             var ui = new Xaml.Controls.Hub();
-            if (DefaultSectionIndex.HasValue) ui.DefaultSectionIndex = DefaultSectionIndex.Value;
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (IsActiveView.HasValue) ui.IsActiveView = IsActiveView.Value;
-            if (IsZoomedInView.HasValue) ui.IsZoomedInView = IsZoomedInView.Value;
-            if (Orientation.HasValue) ui.Orientation = Orientation.Value;
-            if (SemanticZoomOwner.HasValue) ui.SemanticZoomOwner = SemanticZoomOwner.Value;
+            if (DefaultSectionIndex is not null) ui.DefaultSectionIndex = DefaultSectionIndex.Value;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (IsActiveView is not null) ui.IsActiveView = IsActiveView.Value;
+            if (IsZoomedInView is not null) ui.IsZoomedInView = IsZoomedInView.Value;
+            if (Orientation is not null) ui.Orientation = Orientation.Value;
+            if (SemanticZoomOwner is not null) ui.SemanticZoomOwner = SemanticZoomOwner;
             return CSharpMarkup.WinUI.Hub.StartChain(ui);
         }
 
@@ -9858,12 +9858,12 @@ namespace CSharpMarkup.WinUI // HubSection
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.HubSection"/></summary>
-        public static HubSection HubSection(O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<bool> IsHeaderInteractive = default, Microsoft.UI.Xaml.DataTemplate ContentTemplate = default)
+        public static HubSection HubSection(object Header = default, Xaml.DataTemplate HeaderTemplate = default, bool? IsHeaderInteractive = default, Microsoft.UI.Xaml.DataTemplate ContentTemplate = default)
         {
             var ui = new Xaml.Controls.HubSection();
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (IsHeaderInteractive.HasValue) ui.IsHeaderInteractive = IsHeaderInteractive.Value;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (IsHeaderInteractive is not null) ui.IsHeaderInteractive = IsHeaderInteractive.Value;
             if (ContentTemplate != null) ui.ContentTemplate = ContentTemplate;
             return CSharpMarkup.WinUI.HubSection.StartChain(ui);
         }
@@ -9948,10 +9948,10 @@ namespace CSharpMarkup.WinUI // HyperlinkButton
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.HyperlinkButton"/></summary>
-        public static HyperlinkButton HyperlinkButton(O<Uri> NavigateUri = default, UIObject Content = default)
+        public static HyperlinkButton HyperlinkButton(Uri NavigateUri = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.HyperlinkButton();
-            if (NavigateUri.HasValue) ui.NavigateUri = NavigateUri.Value;
+            if (NavigateUri is not null) ui.NavigateUri = NavigateUri;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.HyperlinkButton.StartChain(ui);
         }
@@ -10137,12 +10137,12 @@ namespace CSharpMarkup.WinUI // Image
     {
         /// <summary>Create a <see cref="Xaml.Controls.Image"/></summary>
         /// <remarks>Remark: Image().Bind() binds to <see cref="Xaml.Controls.Image.SourceProperty"/></remarks>
-        public static Image Image(O<Xaml.Thickness> NineGrid = default, O<Xaml.Media.ImageSource> Source = default, O<Xaml.Media.Stretch> Stretch = default)
+        public static Image Image(Xaml.Thickness? NineGrid = default, Xaml.Media.ImageSource Source = default, Xaml.Media.Stretch? Stretch = default)
         {
             var ui = new Xaml.Controls.Image();
-            if (NineGrid.HasValue) ui.NineGrid = NineGrid.Value;
-            if (Source.HasValue) ui.Source = Source.Value;
-            if (Stretch.HasValue) ui.Stretch = Stretch.Value;
+            if (NineGrid is not null) ui.NineGrid = NineGrid.Value;
+            if (Source is not null) ui.Source = Source;
+            if (Stretch is not null) ui.Stretch = Stretch.Value;
             return CSharpMarkup.WinUI.Image.StartChain(ui);
         }
 
@@ -10230,10 +10230,10 @@ namespace CSharpMarkup.WinUI // ImageIcon
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ImageIcon"/></summary>
-        public static ImageIcon ImageIcon(O<Xaml.Media.ImageSource> Source = default)
+        public static ImageIcon ImageIcon(Xaml.Media.ImageSource Source = default)
         {
             var ui = new Xaml.Controls.ImageIcon();
-            if (Source.HasValue) ui.Source = Source.Value;
+            if (Source is not null) ui.Source = Source;
             return CSharpMarkup.WinUI.ImageIcon.StartChain(ui);
         }
 
@@ -10291,10 +10291,10 @@ namespace CSharpMarkup.WinUI // ImageIconSource
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ImageIconSource"/></summary>
-        public static ImageIconSource ImageIconSource(O<Xaml.Media.ImageSource> ImageSource = default)
+        public static ImageIconSource ImageIconSource(Xaml.Media.ImageSource ImageSource = default)
         {
             var ui = new Xaml.Controls.ImageIconSource();
-            if (ImageSource.HasValue) ui.ImageSource = ImageSource.Value;
+            if (ImageSource is not null) ui.ImageSource = ImageSource;
             return CSharpMarkup.WinUI.ImageIconSource.StartChain(ui);
         }
 
@@ -10350,22 +10350,22 @@ namespace CSharpMarkup.WinUI // InfoBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.InfoBar"/></summary>
-        public static InfoBar InfoBar(O<Xaml.Controls.Primitives.ButtonBase> ActionButton = default, O<ICommand> CloseButtonCommand = default, O<object> CloseButtonCommandParameter = default, O<Xaml.Style> CloseButtonStyle = default, O<object> Content = default, O<Xaml.DataTemplate> ContentTemplate = default, O<Xaml.Controls.IconSource> IconSource = default, O<bool> IsClosable = default, O<bool> IsIconVisible = default, O<bool> IsOpen = default, O<string> Message = default, O<Xaml.Controls.InfoBarSeverity> Severity = default, O<string> Title = default)
+        public static InfoBar InfoBar(Xaml.Controls.Primitives.ButtonBase ActionButton = default, ICommand CloseButtonCommand = default, object CloseButtonCommandParameter = default, Xaml.Style CloseButtonStyle = default, object Content = default, Xaml.DataTemplate ContentTemplate = default, Xaml.Controls.IconSource IconSource = default, bool? IsClosable = default, bool? IsIconVisible = default, bool? IsOpen = default, string Message = default, Xaml.Controls.InfoBarSeverity? Severity = default, string Title = default)
         {
             var ui = new Xaml.Controls.InfoBar();
-            if (ActionButton.HasValue) ui.ActionButton = ActionButton.Value;
-            if (CloseButtonCommand.HasValue) ui.CloseButtonCommand = CloseButtonCommand.Value;
-            if (CloseButtonCommandParameter.HasValue) ui.CloseButtonCommandParameter = CloseButtonCommandParameter.Value;
-            if (CloseButtonStyle.HasValue) ui.CloseButtonStyle = CloseButtonStyle.Value;
-            if (Content.HasValue) ui.Content = Content.Value;
-            if (ContentTemplate.HasValue) ui.ContentTemplate = ContentTemplate.Value;
-            if (IconSource.HasValue) ui.IconSource = IconSource.Value;
-            if (IsClosable.HasValue) ui.IsClosable = IsClosable.Value;
-            if (IsIconVisible.HasValue) ui.IsIconVisible = IsIconVisible.Value;
-            if (IsOpen.HasValue) ui.IsOpen = IsOpen.Value;
-            if (Message.HasValue) ui.Message = Message.Value;
-            if (Severity.HasValue) ui.Severity = Severity.Value;
-            if (Title.HasValue) ui.Title = Title.Value;
+            if (ActionButton is not null) ui.ActionButton = ActionButton;
+            if (CloseButtonCommand is not null) ui.CloseButtonCommand = CloseButtonCommand;
+            if (CloseButtonCommandParameter is not null) ui.CloseButtonCommandParameter = CloseButtonCommandParameter;
+            if (CloseButtonStyle is not null) ui.CloseButtonStyle = CloseButtonStyle;
+            if (Content is not null) ui.Content = Content;
+            if (ContentTemplate is not null) ui.ContentTemplate = ContentTemplate;
+            if (IconSource is not null) ui.IconSource = IconSource;
+            if (IsClosable is not null) ui.IsClosable = IsClosable.Value;
+            if (IsIconVisible is not null) ui.IsIconVisible = IsIconVisible.Value;
+            if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
+            if (Message is not null) ui.Message = Message;
+            if (Severity is not null) ui.Severity = Severity.Value;
+            if (Title is not null) ui.Title = Title;
             return CSharpMarkup.WinUI.InfoBar.StartChain(ui);
         }
 
@@ -10511,10 +10511,10 @@ namespace CSharpMarkup.WinUI // InfoBarTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.InfoBarTemplateSettings"/></summary>
-        public static InfoBarTemplateSettings InfoBarTemplateSettings(O<Xaml.Controls.IconElement> IconElement = default)
+        public static InfoBarTemplateSettings InfoBarTemplateSettings(Xaml.Controls.IconElement IconElement = default)
         {
             var ui = new Xaml.Controls.InfoBarTemplateSettings();
-            if (IconElement.HasValue) ui.IconElement = IconElement.Value;
+            if (IconElement is not null) ui.IconElement = IconElement;
             return CSharpMarkup.WinUI.InfoBarTemplateSettings.StartChain(ui);
         }
 
@@ -10789,16 +10789,16 @@ namespace CSharpMarkup.WinUI // ItemsPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ItemsPresenter"/></summary>
-        public static ItemsPresenter ItemsPresenter(O<object> Footer = default, O<Xaml.DataTemplate> FooterTemplate = default, O<Xaml.Media.Animation.TransitionCollection> FooterTransitions = default, O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<Xaml.Media.Animation.TransitionCollection> HeaderTransitions = default, O<Xaml.Thickness> Padding = default)
+        public static ItemsPresenter ItemsPresenter(object Footer = default, Xaml.DataTemplate FooterTemplate = default, Xaml.Media.Animation.TransitionCollection FooterTransitions = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.Media.Animation.TransitionCollection HeaderTransitions = default, Xaml.Thickness? Padding = default)
         {
             var ui = new Xaml.Controls.ItemsPresenter();
-            if (Footer.HasValue) ui.Footer = Footer.Value;
-            if (FooterTemplate.HasValue) ui.FooterTemplate = FooterTemplate.Value;
-            if (FooterTransitions.HasValue) ui.FooterTransitions = FooterTransitions.Value;
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (HeaderTransitions.HasValue) ui.HeaderTransitions = HeaderTransitions.Value;
-            if (Padding.HasValue) ui.Padding = Padding.Value;
+            if (Footer is not null) ui.Footer = Footer;
+            if (FooterTemplate is not null) ui.FooterTemplate = FooterTemplate;
+            if (FooterTransitions is not null) ui.FooterTransitions = FooterTransitions;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (HeaderTransitions is not null) ui.HeaderTransitions = HeaderTransitions;
+            if (Padding is not null) ui.Padding = Padding.Value;
             return CSharpMarkup.WinUI.ItemsPresenter.StartChain(ui);
         }
 
@@ -10910,15 +10910,15 @@ namespace CSharpMarkup.WinUI // ItemsRepeater
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ItemsRepeater"/></summary>
-        public static ItemsRepeater ItemsRepeater(O<Xaml.Media.Brush> Background = default, O<double> HorizontalCacheLength = default, O<object> ItemTemplate = default, O<object> ItemsSource = default, O<Xaml.Controls.Layout> Layout = default, O<double> VerticalCacheLength = default)
+        public static ItemsRepeater ItemsRepeater(Xaml.Media.Brush Background = default, double? HorizontalCacheLength = default, object ItemTemplate = default, object ItemsSource = default, Xaml.Controls.Layout Layout = default, double? VerticalCacheLength = default)
         {
             var ui = new Xaml.Controls.ItemsRepeater();
-            if (Background.HasValue) ui.Background = Background.Value;
-            if (HorizontalCacheLength.HasValue) ui.HorizontalCacheLength = HorizontalCacheLength.Value;
-            if (ItemTemplate.HasValue) ui.ItemTemplate = ItemTemplate.Value;
-            if (ItemsSource.HasValue) ui.ItemsSource = ItemsSource.Value;
-            if (Layout.HasValue) ui.Layout = Layout.Value;
-            if (VerticalCacheLength.HasValue) ui.VerticalCacheLength = VerticalCacheLength.Value;
+            if (Background is not null) ui.Background = Background;
+            if (HorizontalCacheLength is not null) ui.HorizontalCacheLength = HorizontalCacheLength.Value;
+            if (ItemTemplate is not null) ui.ItemTemplate = ItemTemplate;
+            if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
+            if (Layout is not null) ui.Layout = Layout;
+            if (VerticalCacheLength is not null) ui.VerticalCacheLength = VerticalCacheLength.Value;
             return CSharpMarkup.WinUI.ItemsRepeater.StartChain(ui);
         }
 
@@ -11017,12 +11017,12 @@ namespace CSharpMarkup.WinUI // ItemsRepeaterScrollHost
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ItemsRepeaterScrollHost"/></summary>
-        public static ItemsRepeaterScrollHost ItemsRepeaterScrollHost(O<double> HorizontalAnchorRatio = default, O<Xaml.Controls.ScrollViewer> ScrollViewer = default, O<double> VerticalAnchorRatio = default)
+        public static ItemsRepeaterScrollHost ItemsRepeaterScrollHost(double? HorizontalAnchorRatio = default, Xaml.Controls.ScrollViewer ScrollViewer = default, double? VerticalAnchorRatio = default)
         {
             var ui = new Xaml.Controls.ItemsRepeaterScrollHost();
-            if (HorizontalAnchorRatio.HasValue) ui.HorizontalAnchorRatio = HorizontalAnchorRatio.Value;
-            if (ScrollViewer.HasValue) ui.ScrollViewer = ScrollViewer.Value;
-            if (VerticalAnchorRatio.HasValue) ui.VerticalAnchorRatio = VerticalAnchorRatio.Value;
+            if (HorizontalAnchorRatio is not null) ui.HorizontalAnchorRatio = HorizontalAnchorRatio.Value;
+            if (ScrollViewer is not null) ui.ScrollViewer = ScrollViewer;
+            if (VerticalAnchorRatio is not null) ui.VerticalAnchorRatio = VerticalAnchorRatio.Value;
             return CSharpMarkup.WinUI.ItemsRepeaterScrollHost.StartChain(ui);
         }
 
@@ -11503,17 +11503,17 @@ namespace CSharpMarkup.WinUI // ListPickerFlyout
     {
         /// <summary>Create a <see cref="Xaml.Controls.ListPickerFlyout"/></summary>
         /// <remarks>Remark: ListPickerFlyout().Bind() binds to <see cref="Xaml.Controls.ListPickerFlyout.ItemsSourceProperty"/></remarks>
-        public static ListPickerFlyout ListPickerFlyout(O<string> DisplayMemberPath = default, O<Xaml.DataTemplate> ItemTemplate = default, O<object> ItemsSource = default, O<int> SelectedIndex = default, O<object> SelectedItem = default, O<object> SelectedValue = default, O<string> SelectedValuePath = default, O<Xaml.Controls.ListPickerFlyoutSelectionMode> SelectionMode = default)
+        public static ListPickerFlyout ListPickerFlyout(string DisplayMemberPath = default, Xaml.DataTemplate ItemTemplate = default, object ItemsSource = default, int? SelectedIndex = default, object SelectedItem = default, object SelectedValue = default, string SelectedValuePath = default, Xaml.Controls.ListPickerFlyoutSelectionMode? SelectionMode = default)
         {
             var ui = new Xaml.Controls.ListPickerFlyout();
-            if (DisplayMemberPath.HasValue) ui.DisplayMemberPath = DisplayMemberPath.Value;
-            if (ItemTemplate.HasValue) ui.ItemTemplate = ItemTemplate.Value;
-            if (ItemsSource.HasValue) ui.ItemsSource = ItemsSource.Value;
-            if (SelectedIndex.HasValue) ui.SelectedIndex = SelectedIndex.Value;
-            if (SelectedItem.HasValue) ui.SelectedItem = SelectedItem.Value;
-            if (SelectedValue.HasValue) ui.SelectedValue = SelectedValue.Value;
-            if (SelectedValuePath.HasValue) ui.SelectedValuePath = SelectedValuePath.Value;
-            if (SelectionMode.HasValue) ui.SelectionMode = SelectionMode.Value;
+            if (DisplayMemberPath is not null) ui.DisplayMemberPath = DisplayMemberPath;
+            if (ItemTemplate is not null) ui.ItemTemplate = ItemTemplate;
+            if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
+            if (SelectedIndex is not null) ui.SelectedIndex = SelectedIndex.Value;
+            if (SelectedItem is not null) ui.SelectedItem = SelectedItem;
+            if (SelectedValue is not null) ui.SelectedValue = SelectedValue;
+            if (SelectedValuePath is not null) ui.SelectedValuePath = SelectedValuePath;
+            if (SelectionMode is not null) ui.SelectionMode = SelectionMode.Value;
             return CSharpMarkup.WinUI.ListPickerFlyout.StartChain(ui);
         }
 
@@ -12040,10 +12040,10 @@ namespace CSharpMarkup.WinUI // MenuBarItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.MenuBarItem"/></summary>
-        public static MenuBarItem MenuBarItem(O<string> Title = default)
+        public static MenuBarItem MenuBarItem(string Title = default)
         {
             var ui = new Xaml.Controls.MenuBarItem();
-            if (Title.HasValue) ui.Title = Title.Value;
+            if (Title is not null) ui.Title = Title;
             return CSharpMarkup.WinUI.MenuBarItem.StartChain(ui);
         }
 
@@ -12146,10 +12146,10 @@ namespace CSharpMarkup.WinUI // MenuFlyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.MenuFlyout"/></summary>
-        public static MenuFlyout MenuFlyout(O<Xaml.Style> MenuFlyoutPresenterStyle = default)
+        public static MenuFlyout MenuFlyout(Xaml.Style MenuFlyoutPresenterStyle = default)
         {
             var ui = new Xaml.Controls.MenuFlyout();
-            if (MenuFlyoutPresenterStyle.HasValue) ui.MenuFlyoutPresenterStyle = MenuFlyoutPresenterStyle.Value;
+            if (MenuFlyoutPresenterStyle is not null) ui.MenuFlyoutPresenterStyle = MenuFlyoutPresenterStyle;
             return CSharpMarkup.WinUI.MenuFlyout.StartChain(ui);
         }
 
@@ -12213,13 +12213,13 @@ namespace CSharpMarkup.WinUI // MenuFlyoutItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.MenuFlyoutItem"/></summary>
-        public static MenuFlyoutItem MenuFlyoutItem(O<ICommand> Command = default, O<object> CommandParameter = default, O<Xaml.Controls.IconElement> Icon = default, O<string> KeyboardAcceleratorTextOverride = default, string Text = default)
+        public static MenuFlyoutItem MenuFlyoutItem(ICommand Command = default, object CommandParameter = default, Xaml.Controls.IconElement Icon = default, string KeyboardAcceleratorTextOverride = default, string Text = default)
         {
             var ui = new Xaml.Controls.MenuFlyoutItem();
-            if (Command.HasValue) ui.Command = Command.Value;
-            if (CommandParameter.HasValue) ui.CommandParameter = CommandParameter.Value;
-            if (Icon.HasValue) ui.Icon = Icon.Value;
-            if (KeyboardAcceleratorTextOverride.HasValue) ui.KeyboardAcceleratorTextOverride = KeyboardAcceleratorTextOverride.Value;
+            if (Command is not null) ui.Command = Command;
+            if (CommandParameter is not null) ui.CommandParameter = CommandParameter;
+            if (Icon is not null) ui.Icon = Icon;
+            if (KeyboardAcceleratorTextOverride is not null) ui.KeyboardAcceleratorTextOverride = KeyboardAcceleratorTextOverride;
             if (Text != null) ui.Text = Text;
             return CSharpMarkup.WinUI.MenuFlyoutItem.StartChain(ui);
         }
@@ -12436,11 +12436,11 @@ namespace CSharpMarkup.WinUI // MenuFlyoutSubItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.MenuFlyoutSubItem"/></summary>
-        public static MenuFlyoutSubItem MenuFlyoutSubItem(O<Xaml.Controls.IconElement> Icon = default, O<string> Text = default)
+        public static MenuFlyoutSubItem MenuFlyoutSubItem(Xaml.Controls.IconElement Icon = default, string Text = default)
         {
             var ui = new Xaml.Controls.MenuFlyoutSubItem();
-            if (Icon.HasValue) ui.Icon = Icon.Value;
-            if (Text.HasValue) ui.Text = Text.Value;
+            if (Icon is not null) ui.Icon = Icon;
+            if (Text is not null) ui.Text = Text;
             return CSharpMarkup.WinUI.MenuFlyoutSubItem.StartChain(ui);
         }
 
@@ -12513,41 +12513,41 @@ namespace CSharpMarkup.WinUI // NavigationView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.NavigationView"/></summary>
-        public static NavigationView NavigationView(O<bool> AlwaysShowHeader = default, O<Xaml.Controls.AutoSuggestBox> AutoSuggestBox = default, O<double> CompactModeThresholdWidth = default, O<double> CompactPaneLength = default, O<Xaml.UIElement> ContentOverlay = default, O<double> ExpandedModeThresholdWidth = default, O<object> FooterMenuItemsSource = default, O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<Xaml.Controls.NavigationViewBackButtonVisible> IsBackButtonVisible = default, O<bool> IsBackEnabled = default, O<bool> IsPaneOpen = default, O<bool> IsPaneToggleButtonVisible = default, O<bool> IsPaneVisible = default, O<bool> IsSettingsVisible = default, O<bool> IsTitleBarAutoPaddingEnabled = default, O<Xaml.Style> MenuItemContainerStyle = default, O<Xaml.Controls.StyleSelector> MenuItemContainerStyleSelector = default, O<Xaml.DataTemplate> MenuItemTemplate = default, O<Xaml.Controls.DataTemplateSelector> MenuItemTemplateSelector = default, O<object> MenuItemsSource = default, O<double> OpenPaneLength = default, O<Xaml.Controls.NavigationViewOverflowLabelMode> OverflowLabelMode = default, O<Xaml.UIElement> PaneCustomContent = default, O<Xaml.Controls.NavigationViewPaneDisplayMode> PaneDisplayMode = default, O<Xaml.UIElement> PaneFooter = default, O<Xaml.UIElement> PaneHeader = default, O<string> PaneTitle = default, O<Xaml.Style> PaneToggleButtonStyle = default, O<object> SelectedItem = default, O<Xaml.Controls.NavigationViewSelectionFollowsFocus> SelectionFollowsFocus = default, O<Xaml.Controls.NavigationViewShoulderNavigationEnabled> ShoulderNavigationEnabled = default, UIObject Content = default)
+        public static NavigationView NavigationView(bool? AlwaysShowHeader = default, Xaml.Controls.AutoSuggestBox AutoSuggestBox = default, double? CompactModeThresholdWidth = default, double? CompactPaneLength = default, Xaml.UIElement ContentOverlay = default, double? ExpandedModeThresholdWidth = default, object FooterMenuItemsSource = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.Controls.NavigationViewBackButtonVisible? IsBackButtonVisible = default, bool? IsBackEnabled = default, bool? IsPaneOpen = default, bool? IsPaneToggleButtonVisible = default, bool? IsPaneVisible = default, bool? IsSettingsVisible = default, bool? IsTitleBarAutoPaddingEnabled = default, Xaml.Style MenuItemContainerStyle = default, Xaml.Controls.StyleSelector MenuItemContainerStyleSelector = default, Xaml.DataTemplate MenuItemTemplate = default, Xaml.Controls.DataTemplateSelector MenuItemTemplateSelector = default, object MenuItemsSource = default, double? OpenPaneLength = default, Xaml.Controls.NavigationViewOverflowLabelMode? OverflowLabelMode = default, Xaml.UIElement PaneCustomContent = default, Xaml.Controls.NavigationViewPaneDisplayMode? PaneDisplayMode = default, Xaml.UIElement PaneFooter = default, Xaml.UIElement PaneHeader = default, string PaneTitle = default, Xaml.Style PaneToggleButtonStyle = default, object SelectedItem = default, Xaml.Controls.NavigationViewSelectionFollowsFocus? SelectionFollowsFocus = default, Xaml.Controls.NavigationViewShoulderNavigationEnabled? ShoulderNavigationEnabled = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.NavigationView();
-            if (AlwaysShowHeader.HasValue) ui.AlwaysShowHeader = AlwaysShowHeader.Value;
-            if (AutoSuggestBox.HasValue) ui.AutoSuggestBox = AutoSuggestBox.Value;
-            if (CompactModeThresholdWidth.HasValue) ui.CompactModeThresholdWidth = CompactModeThresholdWidth.Value;
-            if (CompactPaneLength.HasValue) ui.CompactPaneLength = CompactPaneLength.Value;
-            if (ContentOverlay.HasValue) ui.ContentOverlay = ContentOverlay.Value;
-            if (ExpandedModeThresholdWidth.HasValue) ui.ExpandedModeThresholdWidth = ExpandedModeThresholdWidth.Value;
-            if (FooterMenuItemsSource.HasValue) ui.FooterMenuItemsSource = FooterMenuItemsSource.Value;
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (IsBackButtonVisible.HasValue) ui.IsBackButtonVisible = IsBackButtonVisible.Value;
-            if (IsBackEnabled.HasValue) ui.IsBackEnabled = IsBackEnabled.Value;
-            if (IsPaneOpen.HasValue) ui.IsPaneOpen = IsPaneOpen.Value;
-            if (IsPaneToggleButtonVisible.HasValue) ui.IsPaneToggleButtonVisible = IsPaneToggleButtonVisible.Value;
-            if (IsPaneVisible.HasValue) ui.IsPaneVisible = IsPaneVisible.Value;
-            if (IsSettingsVisible.HasValue) ui.IsSettingsVisible = IsSettingsVisible.Value;
-            if (IsTitleBarAutoPaddingEnabled.HasValue) ui.IsTitleBarAutoPaddingEnabled = IsTitleBarAutoPaddingEnabled.Value;
-            if (MenuItemContainerStyle.HasValue) ui.MenuItemContainerStyle = MenuItemContainerStyle.Value;
-            if (MenuItemContainerStyleSelector.HasValue) ui.MenuItemContainerStyleSelector = MenuItemContainerStyleSelector.Value;
-            if (MenuItemTemplate.HasValue) ui.MenuItemTemplate = MenuItemTemplate.Value;
-            if (MenuItemTemplateSelector.HasValue) ui.MenuItemTemplateSelector = MenuItemTemplateSelector.Value;
-            if (MenuItemsSource.HasValue) ui.MenuItemsSource = MenuItemsSource.Value;
-            if (OpenPaneLength.HasValue) ui.OpenPaneLength = OpenPaneLength.Value;
-            if (OverflowLabelMode.HasValue) ui.OverflowLabelMode = OverflowLabelMode.Value;
-            if (PaneCustomContent.HasValue) ui.PaneCustomContent = PaneCustomContent.Value;
-            if (PaneDisplayMode.HasValue) ui.PaneDisplayMode = PaneDisplayMode.Value;
-            if (PaneFooter.HasValue) ui.PaneFooter = PaneFooter.Value;
-            if (PaneHeader.HasValue) ui.PaneHeader = PaneHeader.Value;
-            if (PaneTitle.HasValue) ui.PaneTitle = PaneTitle.Value;
-            if (PaneToggleButtonStyle.HasValue) ui.PaneToggleButtonStyle = PaneToggleButtonStyle.Value;
-            if (SelectedItem.HasValue) ui.SelectedItem = SelectedItem.Value;
-            if (SelectionFollowsFocus.HasValue) ui.SelectionFollowsFocus = SelectionFollowsFocus.Value;
-            if (ShoulderNavigationEnabled.HasValue) ui.ShoulderNavigationEnabled = ShoulderNavigationEnabled.Value;
+            if (AlwaysShowHeader is not null) ui.AlwaysShowHeader = AlwaysShowHeader.Value;
+            if (AutoSuggestBox is not null) ui.AutoSuggestBox = AutoSuggestBox;
+            if (CompactModeThresholdWidth is not null) ui.CompactModeThresholdWidth = CompactModeThresholdWidth.Value;
+            if (CompactPaneLength is not null) ui.CompactPaneLength = CompactPaneLength.Value;
+            if (ContentOverlay is not null) ui.ContentOverlay = ContentOverlay;
+            if (ExpandedModeThresholdWidth is not null) ui.ExpandedModeThresholdWidth = ExpandedModeThresholdWidth.Value;
+            if (FooterMenuItemsSource is not null) ui.FooterMenuItemsSource = FooterMenuItemsSource;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (IsBackButtonVisible is not null) ui.IsBackButtonVisible = IsBackButtonVisible.Value;
+            if (IsBackEnabled is not null) ui.IsBackEnabled = IsBackEnabled.Value;
+            if (IsPaneOpen is not null) ui.IsPaneOpen = IsPaneOpen.Value;
+            if (IsPaneToggleButtonVisible is not null) ui.IsPaneToggleButtonVisible = IsPaneToggleButtonVisible.Value;
+            if (IsPaneVisible is not null) ui.IsPaneVisible = IsPaneVisible.Value;
+            if (IsSettingsVisible is not null) ui.IsSettingsVisible = IsSettingsVisible.Value;
+            if (IsTitleBarAutoPaddingEnabled is not null) ui.IsTitleBarAutoPaddingEnabled = IsTitleBarAutoPaddingEnabled.Value;
+            if (MenuItemContainerStyle is not null) ui.MenuItemContainerStyle = MenuItemContainerStyle;
+            if (MenuItemContainerStyleSelector is not null) ui.MenuItemContainerStyleSelector = MenuItemContainerStyleSelector;
+            if (MenuItemTemplate is not null) ui.MenuItemTemplate = MenuItemTemplate;
+            if (MenuItemTemplateSelector is not null) ui.MenuItemTemplateSelector = MenuItemTemplateSelector;
+            if (MenuItemsSource is not null) ui.MenuItemsSource = MenuItemsSource;
+            if (OpenPaneLength is not null) ui.OpenPaneLength = OpenPaneLength.Value;
+            if (OverflowLabelMode is not null) ui.OverflowLabelMode = OverflowLabelMode.Value;
+            if (PaneCustomContent is not null) ui.PaneCustomContent = PaneCustomContent;
+            if (PaneDisplayMode is not null) ui.PaneDisplayMode = PaneDisplayMode.Value;
+            if (PaneFooter is not null) ui.PaneFooter = PaneFooter;
+            if (PaneHeader is not null) ui.PaneHeader = PaneHeader;
+            if (PaneTitle is not null) ui.PaneTitle = PaneTitle;
+            if (PaneToggleButtonStyle is not null) ui.PaneToggleButtonStyle = PaneToggleButtonStyle;
+            if (SelectedItem is not null) ui.SelectedItem = SelectedItem;
+            if (SelectionFollowsFocus is not null) ui.SelectionFollowsFocus = SelectionFollowsFocus.Value;
+            if (ShoulderNavigationEnabled is not null) ui.ShoulderNavigationEnabled = ShoulderNavigationEnabled.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.NavigationView.StartChain(ui);
         }
@@ -12851,15 +12851,15 @@ namespace CSharpMarkup.WinUI // NavigationViewItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.NavigationViewItem"/></summary>
-        public static NavigationViewItem NavigationViewItem(O<bool> HasUnrealizedChildren = default, O<Xaml.Controls.IconElement> Icon = default, O<bool> IsChildSelected = default, O<bool> IsExpanded = default, O<object> MenuItemsSource = default, O<bool> SelectsOnInvoked = default, UIObject Content = default)
+        public static NavigationViewItem NavigationViewItem(bool? HasUnrealizedChildren = default, Xaml.Controls.IconElement Icon = default, bool? IsChildSelected = default, bool? IsExpanded = default, object MenuItemsSource = default, bool? SelectsOnInvoked = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.NavigationViewItem();
-            if (HasUnrealizedChildren.HasValue) ui.HasUnrealizedChildren = HasUnrealizedChildren.Value;
-            if (Icon.HasValue) ui.Icon = Icon.Value;
-            if (IsChildSelected.HasValue) ui.IsChildSelected = IsChildSelected.Value;
-            if (IsExpanded.HasValue) ui.IsExpanded = IsExpanded.Value;
-            if (MenuItemsSource.HasValue) ui.MenuItemsSource = MenuItemsSource.Value;
-            if (SelectsOnInvoked.HasValue) ui.SelectsOnInvoked = SelectsOnInvoked.Value;
+            if (HasUnrealizedChildren is not null) ui.HasUnrealizedChildren = HasUnrealizedChildren.Value;
+            if (Icon is not null) ui.Icon = Icon;
+            if (IsChildSelected is not null) ui.IsChildSelected = IsChildSelected.Value;
+            if (IsExpanded is not null) ui.IsExpanded = IsExpanded.Value;
+            if (MenuItemsSource is not null) ui.MenuItemsSource = MenuItemsSource;
+            if (SelectsOnInvoked is not null) ui.SelectsOnInvoked = SelectsOnInvoked.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.NavigationViewItem.StartChain(ui);
         }
@@ -13253,28 +13253,28 @@ namespace CSharpMarkup.WinUI // NumberBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.NumberBox"/></summary>
-        public static NumberBox NumberBox(O<bool> AcceptsExpression = default, O<object> Description = default, O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<bool> IsWrapEnabled = default, O<double> LargeChange = default, O<double> Maximum = default, O<double> Minimum = default, O<Windows.Globalization.NumberFormatting.INumberFormatter2> NumberFormatter = default, O<string> PlaceholderText = default, O<bool> PreventKeyboardDisplayOnProgrammaticFocus = default, O<Xaml.Controls.Primitives.FlyoutBase> SelectionFlyout = default, O<Xaml.Media.SolidColorBrush> SelectionHighlightColor = default, O<double> SmallChange = default, O<Xaml.Controls.NumberBoxSpinButtonPlacementMode> SpinButtonPlacementMode = default, O<string> Text = default, O<Xaml.TextReadingOrder> TextReadingOrder = default, O<Xaml.Controls.NumberBoxValidationMode> ValidationMode = default, O<double> Value = default)
+        public static NumberBox NumberBox(bool? AcceptsExpression = default, object Description = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, bool? IsWrapEnabled = default, double? LargeChange = default, double? Maximum = default, double? Minimum = default, Windows.Globalization.NumberFormatting.INumberFormatter2 NumberFormatter = default, string PlaceholderText = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, double? SmallChange = default, Xaml.Controls.NumberBoxSpinButtonPlacementMode? SpinButtonPlacementMode = default, string Text = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.Controls.NumberBoxValidationMode? ValidationMode = default, double? Value = default)
         {
             var ui = new Xaml.Controls.NumberBox();
-            if (AcceptsExpression.HasValue) ui.AcceptsExpression = AcceptsExpression.Value;
-            if (Description.HasValue) ui.Description = Description.Value;
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (IsWrapEnabled.HasValue) ui.IsWrapEnabled = IsWrapEnabled.Value;
-            if (LargeChange.HasValue) ui.LargeChange = LargeChange.Value;
-            if (Maximum.HasValue) ui.Maximum = Maximum.Value;
-            if (Minimum.HasValue) ui.Minimum = Minimum.Value;
-            if (NumberFormatter.HasValue) ui.NumberFormatter = NumberFormatter.Value;
-            if (PlaceholderText.HasValue) ui.PlaceholderText = PlaceholderText.Value;
-            if (PreventKeyboardDisplayOnProgrammaticFocus.HasValue) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
-            if (SelectionFlyout.HasValue) ui.SelectionFlyout = SelectionFlyout.Value;
-            if (SelectionHighlightColor.HasValue) ui.SelectionHighlightColor = SelectionHighlightColor.Value;
-            if (SmallChange.HasValue) ui.SmallChange = SmallChange.Value;
-            if (SpinButtonPlacementMode.HasValue) ui.SpinButtonPlacementMode = SpinButtonPlacementMode.Value;
-            if (Text.HasValue) ui.Text = Text.Value;
-            if (TextReadingOrder.HasValue) ui.TextReadingOrder = TextReadingOrder.Value;
-            if (ValidationMode.HasValue) ui.ValidationMode = ValidationMode.Value;
-            if (Value.HasValue) ui.Value = Value.Value;
+            if (AcceptsExpression is not null) ui.AcceptsExpression = AcceptsExpression.Value;
+            if (Description is not null) ui.Description = Description;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (IsWrapEnabled is not null) ui.IsWrapEnabled = IsWrapEnabled.Value;
+            if (LargeChange is not null) ui.LargeChange = LargeChange.Value;
+            if (Maximum is not null) ui.Maximum = Maximum.Value;
+            if (Minimum is not null) ui.Minimum = Minimum.Value;
+            if (NumberFormatter is not null) ui.NumberFormatter = NumberFormatter;
+            if (PlaceholderText is not null) ui.PlaceholderText = PlaceholderText;
+            if (PreventKeyboardDisplayOnProgrammaticFocus is not null) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
+            if (SelectionFlyout is not null) ui.SelectionFlyout = SelectionFlyout;
+            if (SelectionHighlightColor is not null) ui.SelectionHighlightColor = SelectionHighlightColor;
+            if (SmallChange is not null) ui.SmallChange = SmallChange.Value;
+            if (SpinButtonPlacementMode is not null) ui.SpinButtonPlacementMode = SpinButtonPlacementMode.Value;
+            if (Text is not null) ui.Text = Text;
+            if (TextReadingOrder is not null) ui.TextReadingOrder = TextReadingOrder.Value;
+            if (ValidationMode is not null) ui.ValidationMode = ValidationMode.Value;
+            if (Value is not null) ui.Value = Value.Value;
             return CSharpMarkup.WinUI.NumberBox.StartChain(ui);
         }
 
@@ -13466,12 +13466,12 @@ namespace CSharpMarkup.WinUI // Page
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Page"/></summary>
-        public static Page Page(O<Xaml.Controls.AppBar> BottomAppBar = default, O<Xaml.Navigation.NavigationCacheMode> NavigationCacheMode = default, O<Xaml.Controls.AppBar> TopAppBar = default, Microsoft.UI.Xaml.UIElement Content = default)
+        public static Page Page(Xaml.Controls.AppBar BottomAppBar = default, Xaml.Navigation.NavigationCacheMode? NavigationCacheMode = default, Xaml.Controls.AppBar TopAppBar = default, Microsoft.UI.Xaml.UIElement Content = default)
         {
             var ui = new Xaml.Controls.Page();
-            if (BottomAppBar.HasValue) ui.BottomAppBar = BottomAppBar.Value;
-            if (NavigationCacheMode.HasValue) ui.NavigationCacheMode = NavigationCacheMode.Value;
-            if (TopAppBar.HasValue) ui.TopAppBar = TopAppBar.Value;
+            if (BottomAppBar is not null) ui.BottomAppBar = BottomAppBar;
+            if (NavigationCacheMode is not null) ui.NavigationCacheMode = NavigationCacheMode.Value;
+            if (TopAppBar is not null) ui.TopAppBar = TopAppBar;
             if (Content != null) ui.Content = Content;
             return CSharpMarkup.WinUI.Page.StartChain(ui);
         }
@@ -13592,23 +13592,23 @@ namespace CSharpMarkup.WinUI // ParallaxView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ParallaxView"/></summary>
-        public static ParallaxView ParallaxView(O<Xaml.UIElement> Child = default, O<double> HorizontalShift = default, O<double> HorizontalSourceEndOffset = default, O<Xaml.Controls.ParallaxSourceOffsetKind> HorizontalSourceOffsetKind = default, O<double> HorizontalSourceStartOffset = default, O<bool> IsHorizontalShiftClamped = default, O<bool> IsVerticalShiftClamped = default, O<double> MaxHorizontalShiftRatio = default, O<double> MaxVerticalShiftRatio = default, O<Xaml.UIElement> Source = default, O<double> VerticalShift = default, O<double> VerticalSourceEndOffset = default, O<Xaml.Controls.ParallaxSourceOffsetKind> VerticalSourceOffsetKind = default, O<double> VerticalSourceStartOffset = default)
+        public static ParallaxView ParallaxView(Xaml.UIElement Child = default, double? HorizontalShift = default, double? HorizontalSourceEndOffset = default, Xaml.Controls.ParallaxSourceOffsetKind? HorizontalSourceOffsetKind = default, double? HorizontalSourceStartOffset = default, bool? IsHorizontalShiftClamped = default, bool? IsVerticalShiftClamped = default, double? MaxHorizontalShiftRatio = default, double? MaxVerticalShiftRatio = default, Xaml.UIElement Source = default, double? VerticalShift = default, double? VerticalSourceEndOffset = default, Xaml.Controls.ParallaxSourceOffsetKind? VerticalSourceOffsetKind = default, double? VerticalSourceStartOffset = default)
         {
             var ui = new Xaml.Controls.ParallaxView();
-            if (Child.HasValue) ui.Child = Child.Value;
-            if (HorizontalShift.HasValue) ui.HorizontalShift = HorizontalShift.Value;
-            if (HorizontalSourceEndOffset.HasValue) ui.HorizontalSourceEndOffset = HorizontalSourceEndOffset.Value;
-            if (HorizontalSourceOffsetKind.HasValue) ui.HorizontalSourceOffsetKind = HorizontalSourceOffsetKind.Value;
-            if (HorizontalSourceStartOffset.HasValue) ui.HorizontalSourceStartOffset = HorizontalSourceStartOffset.Value;
-            if (IsHorizontalShiftClamped.HasValue) ui.IsHorizontalShiftClamped = IsHorizontalShiftClamped.Value;
-            if (IsVerticalShiftClamped.HasValue) ui.IsVerticalShiftClamped = IsVerticalShiftClamped.Value;
-            if (MaxHorizontalShiftRatio.HasValue) ui.MaxHorizontalShiftRatio = MaxHorizontalShiftRatio.Value;
-            if (MaxVerticalShiftRatio.HasValue) ui.MaxVerticalShiftRatio = MaxVerticalShiftRatio.Value;
-            if (Source.HasValue) ui.Source = Source.Value;
-            if (VerticalShift.HasValue) ui.VerticalShift = VerticalShift.Value;
-            if (VerticalSourceEndOffset.HasValue) ui.VerticalSourceEndOffset = VerticalSourceEndOffset.Value;
-            if (VerticalSourceOffsetKind.HasValue) ui.VerticalSourceOffsetKind = VerticalSourceOffsetKind.Value;
-            if (VerticalSourceStartOffset.HasValue) ui.VerticalSourceStartOffset = VerticalSourceStartOffset.Value;
+            if (Child is not null) ui.Child = Child;
+            if (HorizontalShift is not null) ui.HorizontalShift = HorizontalShift.Value;
+            if (HorizontalSourceEndOffset is not null) ui.HorizontalSourceEndOffset = HorizontalSourceEndOffset.Value;
+            if (HorizontalSourceOffsetKind is not null) ui.HorizontalSourceOffsetKind = HorizontalSourceOffsetKind.Value;
+            if (HorizontalSourceStartOffset is not null) ui.HorizontalSourceStartOffset = HorizontalSourceStartOffset.Value;
+            if (IsHorizontalShiftClamped is not null) ui.IsHorizontalShiftClamped = IsHorizontalShiftClamped.Value;
+            if (IsVerticalShiftClamped is not null) ui.IsVerticalShiftClamped = IsVerticalShiftClamped.Value;
+            if (MaxHorizontalShiftRatio is not null) ui.MaxHorizontalShiftRatio = MaxHorizontalShiftRatio.Value;
+            if (MaxVerticalShiftRatio is not null) ui.MaxVerticalShiftRatio = MaxVerticalShiftRatio.Value;
+            if (Source is not null) ui.Source = Source;
+            if (VerticalShift is not null) ui.VerticalShift = VerticalShift.Value;
+            if (VerticalSourceEndOffset is not null) ui.VerticalSourceEndOffset = VerticalSourceEndOffset.Value;
+            if (VerticalSourceOffsetKind is not null) ui.VerticalSourceOffsetKind = VerticalSourceOffsetKind.Value;
+            if (VerticalSourceStartOffset is not null) ui.VerticalSourceStartOffset = VerticalSourceStartOffset.Value;
             return CSharpMarkup.WinUI.ParallaxView.StartChain(ui);
         }
 
@@ -13758,23 +13758,23 @@ namespace CSharpMarkup.WinUI // PasswordBox
     {
         /// <summary>Create a <see cref="Xaml.Controls.PasswordBox"/></summary>
         /// <remarks>Remark: PasswordBox().Bind() binds to <see cref="Xaml.Controls.PasswordBox.PasswordProperty"/></remarks>
-        public static PasswordBox PasswordBox(O<object> Description = default, O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<Xaml.Input.InputScope> InputScope = default, O<bool> IsPasswordRevealButtonEnabled = default, O<int> MaxLength = default, O<string> Password = default, O<string> PasswordChar = default, O<Xaml.Controls.PasswordRevealMode> PasswordRevealMode = default, O<string> PlaceholderText = default, O<bool> PreventKeyboardDisplayOnProgrammaticFocus = default, O<Xaml.Controls.Primitives.FlyoutBase> SelectionFlyout = default, O<Xaml.Media.SolidColorBrush> SelectionHighlightColor = default, O<Xaml.TextReadingOrder> TextReadingOrder = default)
+        public static PasswordBox PasswordBox(object Description = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.Input.InputScope InputScope = default, bool? IsPasswordRevealButtonEnabled = default, int? MaxLength = default, string Password = default, string PasswordChar = default, Xaml.Controls.PasswordRevealMode? PasswordRevealMode = default, string PlaceholderText = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, Xaml.TextReadingOrder? TextReadingOrder = default)
         {
             var ui = new Xaml.Controls.PasswordBox();
-            if (Description.HasValue) ui.Description = Description.Value;
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (InputScope.HasValue) ui.InputScope = InputScope.Value;
-            if (IsPasswordRevealButtonEnabled.HasValue) ui.IsPasswordRevealButtonEnabled = IsPasswordRevealButtonEnabled.Value;
-            if (MaxLength.HasValue) ui.MaxLength = MaxLength.Value;
-            if (Password.HasValue) ui.Password = Password.Value;
-            if (PasswordChar.HasValue) ui.PasswordChar = PasswordChar.Value;
-            if (PasswordRevealMode.HasValue) ui.PasswordRevealMode = PasswordRevealMode.Value;
-            if (PlaceholderText.HasValue) ui.PlaceholderText = PlaceholderText.Value;
-            if (PreventKeyboardDisplayOnProgrammaticFocus.HasValue) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
-            if (SelectionFlyout.HasValue) ui.SelectionFlyout = SelectionFlyout.Value;
-            if (SelectionHighlightColor.HasValue) ui.SelectionHighlightColor = SelectionHighlightColor.Value;
-            if (TextReadingOrder.HasValue) ui.TextReadingOrder = TextReadingOrder.Value;
+            if (Description is not null) ui.Description = Description;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (InputScope is not null) ui.InputScope = InputScope;
+            if (IsPasswordRevealButtonEnabled is not null) ui.IsPasswordRevealButtonEnabled = IsPasswordRevealButtonEnabled.Value;
+            if (MaxLength is not null) ui.MaxLength = MaxLength.Value;
+            if (Password is not null) ui.Password = Password;
+            if (PasswordChar is not null) ui.PasswordChar = PasswordChar;
+            if (PasswordRevealMode is not null) ui.PasswordRevealMode = PasswordRevealMode.Value;
+            if (PlaceholderText is not null) ui.PlaceholderText = PlaceholderText;
+            if (PreventKeyboardDisplayOnProgrammaticFocus is not null) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
+            if (SelectionFlyout is not null) ui.SelectionFlyout = SelectionFlyout;
+            if (SelectionHighlightColor is not null) ui.SelectionHighlightColor = SelectionHighlightColor;
+            if (TextReadingOrder is not null) ui.TextReadingOrder = TextReadingOrder.Value;
             return CSharpMarkup.WinUI.PasswordBox.StartChain(ui);
         }
 
@@ -13932,10 +13932,10 @@ namespace CSharpMarkup.WinUI // PathIcon
     {
         /// <summary>Create a <see cref="Xaml.Controls.PathIcon"/></summary>
         /// <remarks>Remark: PathIcon().Bind() binds to <see cref="Xaml.Controls.PathIcon.DataProperty"/></remarks>
-        public static PathIcon PathIcon(O<Xaml.Media.Geometry> Data = default)
+        public static PathIcon PathIcon(Xaml.Media.Geometry Data = default)
         {
             var ui = new Xaml.Controls.PathIcon();
-            if (Data.HasValue) ui.Data = Data.Value;
+            if (Data is not null) ui.Data = Data;
             return CSharpMarkup.WinUI.PathIcon.StartChain(ui);
         }
 
@@ -13998,10 +13998,10 @@ namespace CSharpMarkup.WinUI // PathIconSource
     {
         /// <summary>Create a <see cref="Xaml.Controls.PathIconSource"/></summary>
         /// <remarks>Remark: PathIconSource().Bind() binds to <see cref="Xaml.Controls.PathIconSource.DataProperty"/></remarks>
-        public static PathIconSource PathIconSource(O<Xaml.Media.Geometry> Data = default)
+        public static PathIconSource PathIconSource(Xaml.Media.Geometry Data = default)
         {
             var ui = new Xaml.Controls.PathIconSource();
-            if (Data.HasValue) ui.Data = Data.Value;
+            if (Data is not null) ui.Data = Data;
             return CSharpMarkup.WinUI.PathIconSource.StartChain(ui);
         }
 
@@ -14061,19 +14061,19 @@ namespace CSharpMarkup.WinUI // PersonPicture
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.PersonPicture"/></summary>
-        public static PersonPicture PersonPicture(O<string> BadgeGlyph = default, O<Xaml.Media.ImageSource> BadgeImageSource = default, O<int> BadgeNumber = default, O<string> BadgeText = default, O<Windows.ApplicationModel.Contacts.Contact> Contact = default, O<string> DisplayName = default, O<string> Initials = default, O<bool> IsGroup = default, O<bool> PreferSmallImage = default, O<Xaml.Media.ImageSource> ProfilePicture = default)
+        public static PersonPicture PersonPicture(string BadgeGlyph = default, Xaml.Media.ImageSource BadgeImageSource = default, int? BadgeNumber = default, string BadgeText = default, Windows.ApplicationModel.Contacts.Contact Contact = default, string DisplayName = default, string Initials = default, bool? IsGroup = default, bool? PreferSmallImage = default, Xaml.Media.ImageSource ProfilePicture = default)
         {
             var ui = new Xaml.Controls.PersonPicture();
-            if (BadgeGlyph.HasValue) ui.BadgeGlyph = BadgeGlyph.Value;
-            if (BadgeImageSource.HasValue) ui.BadgeImageSource = BadgeImageSource.Value;
-            if (BadgeNumber.HasValue) ui.BadgeNumber = BadgeNumber.Value;
-            if (BadgeText.HasValue) ui.BadgeText = BadgeText.Value;
-            if (Contact.HasValue) ui.Contact = Contact.Value;
-            if (DisplayName.HasValue) ui.DisplayName = DisplayName.Value;
-            if (Initials.HasValue) ui.Initials = Initials.Value;
-            if (IsGroup.HasValue) ui.IsGroup = IsGroup.Value;
-            if (PreferSmallImage.HasValue) ui.PreferSmallImage = PreferSmallImage.Value;
-            if (ProfilePicture.HasValue) ui.ProfilePicture = ProfilePicture.Value;
+            if (BadgeGlyph is not null) ui.BadgeGlyph = BadgeGlyph;
+            if (BadgeImageSource is not null) ui.BadgeImageSource = BadgeImageSource;
+            if (BadgeNumber is not null) ui.BadgeNumber = BadgeNumber.Value;
+            if (BadgeText is not null) ui.BadgeText = BadgeText;
+            if (Contact is not null) ui.Contact = Contact;
+            if (DisplayName is not null) ui.DisplayName = DisplayName;
+            if (Initials is not null) ui.Initials = Initials;
+            if (IsGroup is not null) ui.IsGroup = IsGroup.Value;
+            if (PreferSmallImage is not null) ui.PreferSmallImage = PreferSmallImage.Value;
+            if (ProfilePicture is not null) ui.ProfilePicture = ProfilePicture;
             return CSharpMarkup.WinUI.PersonPicture.StartChain(ui);
         }
 
@@ -14261,10 +14261,10 @@ namespace CSharpMarkup.WinUI // PickerFlyout
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.PickerFlyout"/></summary>
-        public static PickerFlyout PickerFlyout(O<bool> ConfirmationButtonsVisible = default, Microsoft.UI.Xaml.UIElement Content = default)
+        public static PickerFlyout PickerFlyout(bool? ConfirmationButtonsVisible = default, Microsoft.UI.Xaml.UIElement Content = default)
         {
             var ui = new Xaml.Controls.PickerFlyout();
-            if (ConfirmationButtonsVisible.HasValue) ui.ConfirmationButtonsVisible = ConfirmationButtonsVisible.Value;
+            if (ConfirmationButtonsVisible is not null) ui.ConfirmationButtonsVisible = ConfirmationButtonsVisible.Value;
             if (Content != null) ui.Content = Content;
             return CSharpMarkup.WinUI.PickerFlyout.StartChain(ui);
         }
@@ -14343,19 +14343,19 @@ namespace CSharpMarkup.WinUI // PipsPager
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.PipsPager"/></summary>
-        public static PipsPager PipsPager(O<int> MaxVisiblePips = default, O<Xaml.Style> NextButtonStyle = default, O<Xaml.Controls.PipsPagerButtonVisibility> NextButtonVisibility = default, O<Xaml.Style> NormalPipStyle = default, O<int> NumberOfPages = default, O<Xaml.Controls.Orientation> Orientation = default, O<Xaml.Style> PreviousButtonStyle = default, O<Xaml.Controls.PipsPagerButtonVisibility> PreviousButtonVisibility = default, O<int> SelectedPageIndex = default, O<Xaml.Style> SelectedPipStyle = default)
+        public static PipsPager PipsPager(int? MaxVisiblePips = default, Xaml.Style NextButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? NextButtonVisibility = default, Xaml.Style NormalPipStyle = default, int? NumberOfPages = default, Xaml.Controls.Orientation? Orientation = default, Xaml.Style PreviousButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? PreviousButtonVisibility = default, int? SelectedPageIndex = default, Xaml.Style SelectedPipStyle = default)
         {
             var ui = new Xaml.Controls.PipsPager();
-            if (MaxVisiblePips.HasValue) ui.MaxVisiblePips = MaxVisiblePips.Value;
-            if (NextButtonStyle.HasValue) ui.NextButtonStyle = NextButtonStyle.Value;
-            if (NextButtonVisibility.HasValue) ui.NextButtonVisibility = NextButtonVisibility.Value;
-            if (NormalPipStyle.HasValue) ui.NormalPipStyle = NormalPipStyle.Value;
-            if (NumberOfPages.HasValue) ui.NumberOfPages = NumberOfPages.Value;
-            if (Orientation.HasValue) ui.Orientation = Orientation.Value;
-            if (PreviousButtonStyle.HasValue) ui.PreviousButtonStyle = PreviousButtonStyle.Value;
-            if (PreviousButtonVisibility.HasValue) ui.PreviousButtonVisibility = PreviousButtonVisibility.Value;
-            if (SelectedPageIndex.HasValue) ui.SelectedPageIndex = SelectedPageIndex.Value;
-            if (SelectedPipStyle.HasValue) ui.SelectedPipStyle = SelectedPipStyle.Value;
+            if (MaxVisiblePips is not null) ui.MaxVisiblePips = MaxVisiblePips.Value;
+            if (NextButtonStyle is not null) ui.NextButtonStyle = NextButtonStyle;
+            if (NextButtonVisibility is not null) ui.NextButtonVisibility = NextButtonVisibility.Value;
+            if (NormalPipStyle is not null) ui.NormalPipStyle = NormalPipStyle;
+            if (NumberOfPages is not null) ui.NumberOfPages = NumberOfPages.Value;
+            if (Orientation is not null) ui.Orientation = Orientation.Value;
+            if (PreviousButtonStyle is not null) ui.PreviousButtonStyle = PreviousButtonStyle;
+            if (PreviousButtonVisibility is not null) ui.PreviousButtonVisibility = PreviousButtonVisibility.Value;
+            if (SelectedPageIndex is not null) ui.SelectedPageIndex = SelectedPageIndex.Value;
+            if (SelectedPipStyle is not null) ui.SelectedPipStyle = SelectedPipStyle;
             return CSharpMarkup.WinUI.PipsPager.StartChain(ui);
         }
 
@@ -14659,10 +14659,10 @@ namespace CSharpMarkup.WinUI // PivotItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.PivotItem"/></summary>
-        public static PivotItem PivotItem(O<object> Header = default, UIObject Content = default)
+        public static PivotItem PivotItem(object Header = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.PivotItem();
-            if (Header.HasValue) ui.Header = Header.Value;
+            if (Header is not null) ui.Header = Header;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.PivotItem.StartChain(ui);
         }
@@ -14721,12 +14721,12 @@ namespace CSharpMarkup.WinUI // ProgressBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ProgressBar"/></summary>
-        public static ProgressBar ProgressBar(O<bool> IsIndeterminate = default, O<bool> ShowError = default, O<bool> ShowPaused = default)
+        public static ProgressBar ProgressBar(bool? IsIndeterminate = default, bool? ShowError = default, bool? ShowPaused = default)
         {
             var ui = new Xaml.Controls.ProgressBar();
-            if (IsIndeterminate.HasValue) ui.IsIndeterminate = IsIndeterminate.Value;
-            if (ShowError.HasValue) ui.ShowError = ShowError.Value;
-            if (ShowPaused.HasValue) ui.ShowPaused = ShowPaused.Value;
+            if (IsIndeterminate is not null) ui.IsIndeterminate = IsIndeterminate.Value;
+            if (ShowError is not null) ui.ShowError = ShowError.Value;
+            if (ShowPaused is not null) ui.ShowPaused = ShowPaused.Value;
             return CSharpMarkup.WinUI.ProgressBar.StartChain(ui);
         }
 
@@ -14817,14 +14817,14 @@ namespace CSharpMarkup.WinUI // ProgressRing
     {
         /// <summary>Create a <see cref="Xaml.Controls.ProgressRing"/></summary>
         /// <remarks>Remark: ProgressRing().Bind() binds to <see cref="Xaml.Controls.ProgressRing.IsActiveProperty"/></remarks>
-        public static ProgressRing ProgressRing(O<bool> IsActive = default, O<bool> IsIndeterminate = default, O<double> Maximum = default, O<double> Minimum = default, O<double> Value = default)
+        public static ProgressRing ProgressRing(bool? IsActive = default, bool? IsIndeterminate = default, double? Maximum = default, double? Minimum = default, double? Value = default)
         {
             var ui = new Xaml.Controls.ProgressRing();
-            if (IsActive.HasValue) ui.IsActive = IsActive.Value;
-            if (IsIndeterminate.HasValue) ui.IsIndeterminate = IsIndeterminate.Value;
-            if (Maximum.HasValue) ui.Maximum = Maximum.Value;
-            if (Minimum.HasValue) ui.Minimum = Minimum.Value;
-            if (Value.HasValue) ui.Value = Value.Value;
+            if (IsActive is not null) ui.IsActive = IsActive.Value;
+            if (IsIndeterminate is not null) ui.IsIndeterminate = IsIndeterminate.Value;
+            if (Maximum is not null) ui.Maximum = Maximum.Value;
+            if (Minimum is not null) ui.Minimum = Minimum.Value;
+            if (Value is not null) ui.Value = Value.Value;
             return CSharpMarkup.WinUI.ProgressRing.StartChain(ui);
         }
 
@@ -14940,10 +14940,10 @@ namespace CSharpMarkup.WinUI // RadioButton
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.RadioButton"/></summary>
-        public static RadioButton RadioButton(O<string> GroupName = default, UIObject Content = default)
+        public static RadioButton RadioButton(string GroupName = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.RadioButton();
-            if (GroupName.HasValue) ui.GroupName = GroupName.Value;
+            if (GroupName is not null) ui.GroupName = GroupName;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.RadioButton.StartChain(ui);
         }
@@ -15002,16 +15002,16 @@ namespace CSharpMarkup.WinUI // RadioButtons
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RadioButtons"/></summary>
-        public static RadioButtons RadioButtons(O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<object> ItemTemplate = default, O<object> ItemsSource = default, O<int> MaxColumns = default, O<int> SelectedIndex = default, O<object> SelectedItem = default)
+        public static RadioButtons RadioButtons(object Header = default, Xaml.DataTemplate HeaderTemplate = default, object ItemTemplate = default, object ItemsSource = default, int? MaxColumns = default, int? SelectedIndex = default, object SelectedItem = default)
         {
             var ui = new Xaml.Controls.RadioButtons();
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (ItemTemplate.HasValue) ui.ItemTemplate = ItemTemplate.Value;
-            if (ItemsSource.HasValue) ui.ItemsSource = ItemsSource.Value;
-            if (MaxColumns.HasValue) ui.MaxColumns = MaxColumns.Value;
-            if (SelectedIndex.HasValue) ui.SelectedIndex = SelectedIndex.Value;
-            if (SelectedItem.HasValue) ui.SelectedItem = SelectedItem.Value;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (ItemTemplate is not null) ui.ItemTemplate = ItemTemplate;
+            if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
+            if (MaxColumns is not null) ui.MaxColumns = MaxColumns.Value;
+            if (SelectedIndex is not null) ui.SelectedIndex = SelectedIndex.Value;
+            if (SelectedItem is not null) ui.SelectedItem = SelectedItem;
             return CSharpMarkup.WinUI.RadioButtons.StartChain(ui);
         }
 
@@ -15123,11 +15123,11 @@ namespace CSharpMarkup.WinUI // RadioMenuFlyoutItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.RadioMenuFlyoutItem"/></summary>
-        public static RadioMenuFlyoutItem RadioMenuFlyoutItem(O<string> GroupName = default, O<bool> IsChecked = default, string Text = default)
+        public static RadioMenuFlyoutItem RadioMenuFlyoutItem(string GroupName = default, bool? IsChecked = default, string Text = default)
         {
             var ui = new Xaml.Controls.RadioMenuFlyoutItem();
-            if (GroupName.HasValue) ui.GroupName = GroupName.Value;
-            if (IsChecked.HasValue) ui.IsChecked = IsChecked.Value;
+            if (GroupName is not null) ui.GroupName = GroupName;
+            if (IsChecked is not null) ui.IsChecked = IsChecked.Value;
             if (Text != null) ui.Text = Text;
             return CSharpMarkup.WinUI.RadioMenuFlyoutItem.StartChain(ui);
         }
@@ -15202,17 +15202,17 @@ namespace CSharpMarkup.WinUI // RatingControl
     {
         /// <summary>Create a <see cref="Xaml.Controls.RatingControl"/></summary>
         /// <remarks>Remark: RatingControl().Bind() binds to <see cref="Xaml.Controls.RatingControl.ValueProperty"/></remarks>
-        public static RatingControl RatingControl(O<string> Caption = default, O<int> InitialSetValue = default, O<bool> IsClearEnabled = default, O<bool> IsReadOnly = default, O<Xaml.Controls.RatingItemInfo> ItemInfo = default, O<int> MaxRating = default, O<double> PlaceholderValue = default, O<double> Value = default)
+        public static RatingControl RatingControl(string Caption = default, int? InitialSetValue = default, bool? IsClearEnabled = default, bool? IsReadOnly = default, Xaml.Controls.RatingItemInfo ItemInfo = default, int? MaxRating = default, double? PlaceholderValue = default, double? Value = default)
         {
             var ui = new Xaml.Controls.RatingControl();
-            if (Caption.HasValue) ui.Caption = Caption.Value;
-            if (InitialSetValue.HasValue) ui.InitialSetValue = InitialSetValue.Value;
-            if (IsClearEnabled.HasValue) ui.IsClearEnabled = IsClearEnabled.Value;
-            if (IsReadOnly.HasValue) ui.IsReadOnly = IsReadOnly.Value;
-            if (ItemInfo.HasValue) ui.ItemInfo = ItemInfo.Value;
-            if (MaxRating.HasValue) ui.MaxRating = MaxRating.Value;
-            if (PlaceholderValue.HasValue) ui.PlaceholderValue = PlaceholderValue.Value;
-            if (Value.HasValue) ui.Value = Value.Value;
+            if (Caption is not null) ui.Caption = Caption;
+            if (InitialSetValue is not null) ui.InitialSetValue = InitialSetValue.Value;
+            if (IsClearEnabled is not null) ui.IsClearEnabled = IsClearEnabled.Value;
+            if (IsReadOnly is not null) ui.IsReadOnly = IsReadOnly.Value;
+            if (ItemInfo is not null) ui.ItemInfo = ItemInfo;
+            if (MaxRating is not null) ui.MaxRating = MaxRating.Value;
+            if (PlaceholderValue is not null) ui.PlaceholderValue = PlaceholderValue.Value;
+            if (Value is not null) ui.Value = Value.Value;
             return CSharpMarkup.WinUI.RatingControl.StartChain(ui);
         }
 
@@ -15323,15 +15323,15 @@ namespace CSharpMarkup.WinUI // RatingItemFontInfo
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RatingItemFontInfo"/></summary>
-        public static RatingItemFontInfo RatingItemFontInfo(O<string> DisabledGlyph = default, O<string> Glyph = default, O<string> PlaceholderGlyph = default, O<string> PointerOverGlyph = default, O<string> PointerOverPlaceholderGlyph = default, O<string> UnsetGlyph = default)
+        public static RatingItemFontInfo RatingItemFontInfo(string DisabledGlyph = default, string Glyph = default, string PlaceholderGlyph = default, string PointerOverGlyph = default, string PointerOverPlaceholderGlyph = default, string UnsetGlyph = default)
         {
             var ui = new Xaml.Controls.RatingItemFontInfo();
-            if (DisabledGlyph.HasValue) ui.DisabledGlyph = DisabledGlyph.Value;
-            if (Glyph.HasValue) ui.Glyph = Glyph.Value;
-            if (PlaceholderGlyph.HasValue) ui.PlaceholderGlyph = PlaceholderGlyph.Value;
-            if (PointerOverGlyph.HasValue) ui.PointerOverGlyph = PointerOverGlyph.Value;
-            if (PointerOverPlaceholderGlyph.HasValue) ui.PointerOverPlaceholderGlyph = PointerOverPlaceholderGlyph.Value;
-            if (UnsetGlyph.HasValue) ui.UnsetGlyph = UnsetGlyph.Value;
+            if (DisabledGlyph is not null) ui.DisabledGlyph = DisabledGlyph;
+            if (Glyph is not null) ui.Glyph = Glyph;
+            if (PlaceholderGlyph is not null) ui.PlaceholderGlyph = PlaceholderGlyph;
+            if (PointerOverGlyph is not null) ui.PointerOverGlyph = PointerOverGlyph;
+            if (PointerOverPlaceholderGlyph is not null) ui.PointerOverPlaceholderGlyph = PointerOverPlaceholderGlyph;
+            if (UnsetGlyph is not null) ui.UnsetGlyph = UnsetGlyph;
             return CSharpMarkup.WinUI.RatingItemFontInfo.StartChain(ui);
         }
 
@@ -15422,15 +15422,15 @@ namespace CSharpMarkup.WinUI // RatingItemImageInfo
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RatingItemImageInfo"/></summary>
-        public static RatingItemImageInfo RatingItemImageInfo(O<Xaml.Media.ImageSource> DisabledImage = default, O<Xaml.Media.ImageSource> Image = default, O<Xaml.Media.ImageSource> PlaceholderImage = default, O<Xaml.Media.ImageSource> PointerOverImage = default, O<Xaml.Media.ImageSource> PointerOverPlaceholderImage = default, O<Xaml.Media.ImageSource> UnsetImage = default)
+        public static RatingItemImageInfo RatingItemImageInfo(Xaml.Media.ImageSource DisabledImage = default, Xaml.Media.ImageSource Image = default, Xaml.Media.ImageSource PlaceholderImage = default, Xaml.Media.ImageSource PointerOverImage = default, Xaml.Media.ImageSource PointerOverPlaceholderImage = default, Xaml.Media.ImageSource UnsetImage = default)
         {
             var ui = new Xaml.Controls.RatingItemImageInfo();
-            if (DisabledImage.HasValue) ui.DisabledImage = DisabledImage.Value;
-            if (Image.HasValue) ui.Image = Image.Value;
-            if (PlaceholderImage.HasValue) ui.PlaceholderImage = PlaceholderImage.Value;
-            if (PointerOverImage.HasValue) ui.PointerOverImage = PointerOverImage.Value;
-            if (PointerOverPlaceholderImage.HasValue) ui.PointerOverPlaceholderImage = PointerOverPlaceholderImage.Value;
-            if (UnsetImage.HasValue) ui.UnsetImage = UnsetImage.Value;
+            if (DisabledImage is not null) ui.DisabledImage = DisabledImage;
+            if (Image is not null) ui.Image = Image;
+            if (PlaceholderImage is not null) ui.PlaceholderImage = PlaceholderImage;
+            if (PointerOverImage is not null) ui.PointerOverImage = PointerOverImage;
+            if (PointerOverPlaceholderImage is not null) ui.PointerOverPlaceholderImage = PointerOverPlaceholderImage;
+            if (UnsetImage is not null) ui.UnsetImage = UnsetImage;
             return CSharpMarkup.WinUI.RatingItemImageInfo.StartChain(ui);
         }
 
@@ -15570,11 +15570,11 @@ namespace CSharpMarkup.WinUI // RefreshContainer
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.RefreshContainer"/></summary>
-        public static RefreshContainer RefreshContainer(O<Xaml.Controls.RefreshPullDirection> PullDirection = default, O<Xaml.Controls.RefreshVisualizer> Visualizer = default, UIObject Content = default)
+        public static RefreshContainer RefreshContainer(Xaml.Controls.RefreshPullDirection? PullDirection = default, Xaml.Controls.RefreshVisualizer Visualizer = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.RefreshContainer();
-            if (PullDirection.HasValue) ui.PullDirection = PullDirection.Value;
-            if (Visualizer.HasValue) ui.Visualizer = Visualizer.Value;
+            if (PullDirection is not null) ui.PullDirection = PullDirection.Value;
+            if (Visualizer is not null) ui.Visualizer = Visualizer;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.RefreshContainer.StartChain(ui);
         }
@@ -15640,11 +15640,11 @@ namespace CSharpMarkup.WinUI // RefreshVisualizer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RefreshVisualizer"/></summary>
-        public static RefreshVisualizer RefreshVisualizer(O<Xaml.UIElement> Content = default, O<Xaml.Controls.RefreshVisualizerOrientation> Orientation = default)
+        public static RefreshVisualizer RefreshVisualizer(Xaml.UIElement Content = default, Xaml.Controls.RefreshVisualizerOrientation? Orientation = default)
         {
             var ui = new Xaml.Controls.RefreshVisualizer();
-            if (Content.HasValue) ui.Content = Content.Value;
-            if (Orientation.HasValue) ui.Orientation = Orientation.Value;
+            if (Content is not null) ui.Content = Content;
+            if (Orientation is not null) ui.Orientation = Orientation.Value;
             return CSharpMarkup.WinUI.RefreshVisualizer.StartChain(ui);
         }
 
@@ -15967,71 +15967,71 @@ namespace CSharpMarkup.WinUI // RelativePanel
         /// <summary>Set <see cref="Xaml.Controls.RelativePanel"/> attached properties</summary>
         public static TTarget RelativePanel<TTarget>(this TTarget target
 
-            , O<object> Above = default
+            , object Above = default
 
-            , O<bool> AlignBottomWithPanel = default
+            , bool? AlignBottomWithPanel = default
 
-            , O<object> AlignBottomWith = default
+            , object AlignBottomWith = default
 
-            , O<bool> AlignHorizontalCenterWithPanel = default
+            , bool? AlignHorizontalCenterWithPanel = default
 
-            , O<object> AlignHorizontalCenterWith = default
+            , object AlignHorizontalCenterWith = default
 
-            , O<bool> AlignLeftWithPanel = default
+            , bool? AlignLeftWithPanel = default
 
-            , O<object> AlignLeftWith = default
+            , object AlignLeftWith = default
 
-            , O<bool> AlignRightWithPanel = default
+            , bool? AlignRightWithPanel = default
 
-            , O<object> AlignRightWith = default
+            , object AlignRightWith = default
 
-            , O<bool> AlignTopWithPanel = default
+            , bool? AlignTopWithPanel = default
 
-            , O<object> AlignTopWith = default
+            , object AlignTopWith = default
 
-            , O<bool> AlignVerticalCenterWithPanel = default
+            , bool? AlignVerticalCenterWithPanel = default
 
-            , O<object> AlignVerticalCenterWith = default
+            , object AlignVerticalCenterWith = default
 
-            , O<object> Below = default
+            , object Below = default
 
-            , O<object> LeftOf = default
+            , object LeftOf = default
 
-            , O<object> RightOf = default
+            , object RightOf = default
 
         ) where TTarget : UIElement
         {
-            if (Above.HasValue) Xaml.Controls.RelativePanel.SetAbove(target.UI, Above.Value);
+            if (Above is not null) Xaml.Controls.RelativePanel.SetAbove(target.UI, Above);
 
-            if (AlignBottomWithPanel.HasValue) Xaml.Controls.RelativePanel.SetAlignBottomWithPanel(target.UI, AlignBottomWithPanel.Value);
+            if (AlignBottomWithPanel is not null) Xaml.Controls.RelativePanel.SetAlignBottomWithPanel(target.UI, AlignBottomWithPanel.Value);
 
-            if (AlignBottomWith.HasValue) Xaml.Controls.RelativePanel.SetAlignBottomWith(target.UI, AlignBottomWith.Value);
+            if (AlignBottomWith is not null) Xaml.Controls.RelativePanel.SetAlignBottomWith(target.UI, AlignBottomWith);
 
-            if (AlignHorizontalCenterWithPanel.HasValue) Xaml.Controls.RelativePanel.SetAlignHorizontalCenterWithPanel(target.UI, AlignHorizontalCenterWithPanel.Value);
+            if (AlignHorizontalCenterWithPanel is not null) Xaml.Controls.RelativePanel.SetAlignHorizontalCenterWithPanel(target.UI, AlignHorizontalCenterWithPanel.Value);
 
-            if (AlignHorizontalCenterWith.HasValue) Xaml.Controls.RelativePanel.SetAlignHorizontalCenterWith(target.UI, AlignHorizontalCenterWith.Value);
+            if (AlignHorizontalCenterWith is not null) Xaml.Controls.RelativePanel.SetAlignHorizontalCenterWith(target.UI, AlignHorizontalCenterWith);
 
-            if (AlignLeftWithPanel.HasValue) Xaml.Controls.RelativePanel.SetAlignLeftWithPanel(target.UI, AlignLeftWithPanel.Value);
+            if (AlignLeftWithPanel is not null) Xaml.Controls.RelativePanel.SetAlignLeftWithPanel(target.UI, AlignLeftWithPanel.Value);
 
-            if (AlignLeftWith.HasValue) Xaml.Controls.RelativePanel.SetAlignLeftWith(target.UI, AlignLeftWith.Value);
+            if (AlignLeftWith is not null) Xaml.Controls.RelativePanel.SetAlignLeftWith(target.UI, AlignLeftWith);
 
-            if (AlignRightWithPanel.HasValue) Xaml.Controls.RelativePanel.SetAlignRightWithPanel(target.UI, AlignRightWithPanel.Value);
+            if (AlignRightWithPanel is not null) Xaml.Controls.RelativePanel.SetAlignRightWithPanel(target.UI, AlignRightWithPanel.Value);
 
-            if (AlignRightWith.HasValue) Xaml.Controls.RelativePanel.SetAlignRightWith(target.UI, AlignRightWith.Value);
+            if (AlignRightWith is not null) Xaml.Controls.RelativePanel.SetAlignRightWith(target.UI, AlignRightWith);
 
-            if (AlignTopWithPanel.HasValue) Xaml.Controls.RelativePanel.SetAlignTopWithPanel(target.UI, AlignTopWithPanel.Value);
+            if (AlignTopWithPanel is not null) Xaml.Controls.RelativePanel.SetAlignTopWithPanel(target.UI, AlignTopWithPanel.Value);
 
-            if (AlignTopWith.HasValue) Xaml.Controls.RelativePanel.SetAlignTopWith(target.UI, AlignTopWith.Value);
+            if (AlignTopWith is not null) Xaml.Controls.RelativePanel.SetAlignTopWith(target.UI, AlignTopWith);
 
-            if (AlignVerticalCenterWithPanel.HasValue) Xaml.Controls.RelativePanel.SetAlignVerticalCenterWithPanel(target.UI, AlignVerticalCenterWithPanel.Value);
+            if (AlignVerticalCenterWithPanel is not null) Xaml.Controls.RelativePanel.SetAlignVerticalCenterWithPanel(target.UI, AlignVerticalCenterWithPanel.Value);
 
-            if (AlignVerticalCenterWith.HasValue) Xaml.Controls.RelativePanel.SetAlignVerticalCenterWith(target.UI, AlignVerticalCenterWith.Value);
+            if (AlignVerticalCenterWith is not null) Xaml.Controls.RelativePanel.SetAlignVerticalCenterWith(target.UI, AlignVerticalCenterWith);
 
-            if (Below.HasValue) Xaml.Controls.RelativePanel.SetBelow(target.UI, Below.Value);
+            if (Below is not null) Xaml.Controls.RelativePanel.SetBelow(target.UI, Below);
 
-            if (LeftOf.HasValue) Xaml.Controls.RelativePanel.SetLeftOf(target.UI, LeftOf.Value);
+            if (LeftOf is not null) Xaml.Controls.RelativePanel.SetLeftOf(target.UI, LeftOf);
 
-            if (RightOf.HasValue) Xaml.Controls.RelativePanel.SetRightOf(target.UI, RightOf.Value);
+            if (RightOf is not null) Xaml.Controls.RelativePanel.SetRightOf(target.UI, RightOf);
 
             return target;
         }
@@ -16094,32 +16094,32 @@ namespace CSharpMarkup.WinUI // RichEditBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RichEditBox"/></summary>
-        public static RichEditBox RichEditBox(O<bool> AcceptsReturn = default, O<Xaml.Controls.CharacterCasing> CharacterCasing = default, O<Xaml.Controls.RichEditClipboardFormat> ClipboardCopyFormat = default, O<object> Description = default, O<Xaml.Controls.CandidateWindowAlignment> DesiredCandidateWindowAlignment = default, O<Xaml.Controls.DisabledFormattingAccelerators> DisabledFormattingAccelerators = default, O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<Xaml.TextAlignment> HorizontalTextAlignment = default, O<Xaml.Input.InputScope> InputScope = default, O<bool> IsColorFontEnabled = default, O<bool> IsReadOnly = default, O<bool> IsSpellCheckEnabled = default, O<bool> IsTextPredictionEnabled = default, O<int> MaxLength = default, O<string> PlaceholderText = default, O<bool> PreventKeyboardDisplayOnProgrammaticFocus = default, O<Xaml.Controls.Primitives.FlyoutBase> SelectionFlyout = default, O<Xaml.Media.SolidColorBrush> SelectionHighlightColor = default, O<Xaml.Media.SolidColorBrush> SelectionHighlightColorWhenNotFocused = default, O<Xaml.TextAlignment> TextAlignment = default, O<Xaml.TextReadingOrder> TextReadingOrder = default, O<Xaml.TextWrapping> TextWrapping = default)
+        public static RichEditBox RichEditBox(bool? AcceptsReturn = default, Xaml.Controls.CharacterCasing? CharacterCasing = default, Xaml.Controls.RichEditClipboardFormat? ClipboardCopyFormat = default, object Description = default, Xaml.Controls.CandidateWindowAlignment? DesiredCandidateWindowAlignment = default, Xaml.Controls.DisabledFormattingAccelerators? DisabledFormattingAccelerators = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.TextAlignment? HorizontalTextAlignment = default, Xaml.Input.InputScope InputScope = default, bool? IsColorFontEnabled = default, bool? IsReadOnly = default, bool? IsSpellCheckEnabled = default, bool? IsTextPredictionEnabled = default, int? MaxLength = default, string PlaceholderText = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, Xaml.Media.SolidColorBrush SelectionHighlightColorWhenNotFocused = default, Xaml.TextAlignment? TextAlignment = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.TextWrapping? TextWrapping = default)
         {
             var ui = new Xaml.Controls.RichEditBox();
-            if (AcceptsReturn.HasValue) ui.AcceptsReturn = AcceptsReturn.Value;
-            if (CharacterCasing.HasValue) ui.CharacterCasing = CharacterCasing.Value;
-            if (ClipboardCopyFormat.HasValue) ui.ClipboardCopyFormat = ClipboardCopyFormat.Value;
-            if (Description.HasValue) ui.Description = Description.Value;
-            if (DesiredCandidateWindowAlignment.HasValue) ui.DesiredCandidateWindowAlignment = DesiredCandidateWindowAlignment.Value;
-            if (DisabledFormattingAccelerators.HasValue) ui.DisabledFormattingAccelerators = DisabledFormattingAccelerators.Value;
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (HorizontalTextAlignment.HasValue) ui.HorizontalTextAlignment = HorizontalTextAlignment.Value;
-            if (InputScope.HasValue) ui.InputScope = InputScope.Value;
-            if (IsColorFontEnabled.HasValue) ui.IsColorFontEnabled = IsColorFontEnabled.Value;
-            if (IsReadOnly.HasValue) ui.IsReadOnly = IsReadOnly.Value;
-            if (IsSpellCheckEnabled.HasValue) ui.IsSpellCheckEnabled = IsSpellCheckEnabled.Value;
-            if (IsTextPredictionEnabled.HasValue) ui.IsTextPredictionEnabled = IsTextPredictionEnabled.Value;
-            if (MaxLength.HasValue) ui.MaxLength = MaxLength.Value;
-            if (PlaceholderText.HasValue) ui.PlaceholderText = PlaceholderText.Value;
-            if (PreventKeyboardDisplayOnProgrammaticFocus.HasValue) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
-            if (SelectionFlyout.HasValue) ui.SelectionFlyout = SelectionFlyout.Value;
-            if (SelectionHighlightColor.HasValue) ui.SelectionHighlightColor = SelectionHighlightColor.Value;
-            if (SelectionHighlightColorWhenNotFocused.HasValue) ui.SelectionHighlightColorWhenNotFocused = SelectionHighlightColorWhenNotFocused.Value;
-            if (TextAlignment.HasValue) ui.TextAlignment = TextAlignment.Value;
-            if (TextReadingOrder.HasValue) ui.TextReadingOrder = TextReadingOrder.Value;
-            if (TextWrapping.HasValue) ui.TextWrapping = TextWrapping.Value;
+            if (AcceptsReturn is not null) ui.AcceptsReturn = AcceptsReturn.Value;
+            if (CharacterCasing is not null) ui.CharacterCasing = CharacterCasing.Value;
+            if (ClipboardCopyFormat is not null) ui.ClipboardCopyFormat = ClipboardCopyFormat.Value;
+            if (Description is not null) ui.Description = Description;
+            if (DesiredCandidateWindowAlignment is not null) ui.DesiredCandidateWindowAlignment = DesiredCandidateWindowAlignment.Value;
+            if (DisabledFormattingAccelerators is not null) ui.DisabledFormattingAccelerators = DisabledFormattingAccelerators.Value;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (HorizontalTextAlignment is not null) ui.HorizontalTextAlignment = HorizontalTextAlignment.Value;
+            if (InputScope is not null) ui.InputScope = InputScope;
+            if (IsColorFontEnabled is not null) ui.IsColorFontEnabled = IsColorFontEnabled.Value;
+            if (IsReadOnly is not null) ui.IsReadOnly = IsReadOnly.Value;
+            if (IsSpellCheckEnabled is not null) ui.IsSpellCheckEnabled = IsSpellCheckEnabled.Value;
+            if (IsTextPredictionEnabled is not null) ui.IsTextPredictionEnabled = IsTextPredictionEnabled.Value;
+            if (MaxLength is not null) ui.MaxLength = MaxLength.Value;
+            if (PlaceholderText is not null) ui.PlaceholderText = PlaceholderText;
+            if (PreventKeyboardDisplayOnProgrammaticFocus is not null) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
+            if (SelectionFlyout is not null) ui.SelectionFlyout = SelectionFlyout;
+            if (SelectionHighlightColor is not null) ui.SelectionHighlightColor = SelectionHighlightColor;
+            if (SelectionHighlightColorWhenNotFocused is not null) ui.SelectionHighlightColorWhenNotFocused = SelectionHighlightColorWhenNotFocused;
+            if (TextAlignment is not null) ui.TextAlignment = TextAlignment.Value;
+            if (TextReadingOrder is not null) ui.TextReadingOrder = TextReadingOrder.Value;
+            if (TextWrapping is not null) ui.TextWrapping = TextWrapping.Value;
             return CSharpMarkup.WinUI.RichEditBox.StartChain(ui);
         }
 
@@ -16612,12 +16612,12 @@ namespace CSharpMarkup.WinUI // RichTextBlockOverflow
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RichTextBlockOverflow"/></summary>
-        public static RichTextBlockOverflow RichTextBlockOverflow(O<int> MaxLines = default, O<Xaml.Controls.RichTextBlockOverflow> OverflowContentTarget = default, O<Xaml.Thickness> Padding = default)
+        public static RichTextBlockOverflow RichTextBlockOverflow(int? MaxLines = default, Xaml.Controls.RichTextBlockOverflow OverflowContentTarget = default, Xaml.Thickness? Padding = default)
         {
             var ui = new Xaml.Controls.RichTextBlockOverflow();
-            if (MaxLines.HasValue) ui.MaxLines = MaxLines.Value;
-            if (OverflowContentTarget.HasValue) ui.OverflowContentTarget = OverflowContentTarget.Value;
-            if (Padding.HasValue) ui.Padding = Padding.Value;
+            if (MaxLines is not null) ui.MaxLines = MaxLines.Value;
+            if (OverflowContentTarget is not null) ui.OverflowContentTarget = OverflowContentTarget;
+            if (Padding is not null) ui.Padding = Padding.Value;
             return CSharpMarkup.WinUI.RichTextBlockOverflow.StartChain(ui);
         }
 
@@ -16719,11 +16719,11 @@ namespace CSharpMarkup.WinUI // RowDefinition
 
         /// <summary>Create a <see cref="Xaml.Controls.RowDefinition"/></summary>
         /// <remarks>Remark: RowDefinition().Bind() binds to <see cref="Xaml.Controls.RowDefinition.HeightProperty"/></remarks>
-        public static RowDefinition RowDefinition(O<double> MaxHeight = default, O<double> MinHeight = default, Microsoft.UI.Xaml.GridLength Height = default)
+        public static RowDefinition RowDefinition(double? MaxHeight = default, double? MinHeight = default, Microsoft.UI.Xaml.GridLength Height = default)
         {
             var ui = new Xaml.Controls.RowDefinition();
-            if (MaxHeight.HasValue) ui.MaxHeight = MaxHeight.Value;
-            if (MinHeight.HasValue) ui.MinHeight = MinHeight.Value;
+            if (MaxHeight is not null) ui.MaxHeight = MaxHeight.Value;
+            if (MinHeight is not null) ui.MinHeight = MinHeight.Value;
             if (Height != null) ui.Height = Height;
             return CSharpMarkup.WinUI.RowDefinition.StartChain(ui);
         }
@@ -16803,14 +16803,14 @@ namespace CSharpMarkup.WinUI // ScrollContentPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ScrollContentPresenter"/></summary>
-        public static ScrollContentPresenter ScrollContentPresenter(O<bool> CanContentRenderOutsideBounds = default, O<bool> CanHorizontallyScroll = default, O<bool> CanVerticallyScroll = default, O<object> ScrollOwner = default, O<bool> SizesContentToTemplatedParent = default, UIObject Content = default)
+        public static ScrollContentPresenter ScrollContentPresenter(bool? CanContentRenderOutsideBounds = default, bool? CanHorizontallyScroll = default, bool? CanVerticallyScroll = default, object ScrollOwner = default, bool? SizesContentToTemplatedParent = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.ScrollContentPresenter();
-            if (CanContentRenderOutsideBounds.HasValue) ui.CanContentRenderOutsideBounds = CanContentRenderOutsideBounds.Value;
-            if (CanHorizontallyScroll.HasValue) ui.CanHorizontallyScroll = CanHorizontallyScroll.Value;
-            if (CanVerticallyScroll.HasValue) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
-            if (ScrollOwner.HasValue) ui.ScrollOwner = ScrollOwner.Value;
-            if (SizesContentToTemplatedParent.HasValue) ui.SizesContentToTemplatedParent = SizesContentToTemplatedParent.Value;
+            if (CanContentRenderOutsideBounds is not null) ui.CanContentRenderOutsideBounds = CanContentRenderOutsideBounds.Value;
+            if (CanHorizontallyScroll is not null) ui.CanHorizontallyScroll = CanHorizontallyScroll.Value;
+            if (CanVerticallyScroll is not null) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
+            if (ScrollOwner is not null) ui.ScrollOwner = ScrollOwner;
+            if (SizesContentToTemplatedParent is not null) ui.SizesContentToTemplatedParent = SizesContentToTemplatedParent.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ScrollContentPresenter.StartChain(ui);
         }
@@ -16893,37 +16893,37 @@ namespace CSharpMarkup.WinUI // ScrollViewer
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ScrollViewer"/></summary>
-        public static ScrollViewer ScrollViewer(O<bool> BringIntoViewOnFocusChange = default, O<bool> CanContentRenderOutsideBounds = default, O<double> HorizontalAnchorRatio = default, O<Xaml.Controls.ScrollBarVisibility> HorizontalScrollBarVisibility = default, O<Xaml.Controls.ScrollMode> HorizontalScrollMode = default, O<Xaml.Controls.Primitives.SnapPointsAlignment> HorizontalSnapPointsAlignment = default, O<Xaml.Controls.SnapPointsType> HorizontalSnapPointsType = default, O<bool> IsDeferredScrollingEnabled = default, O<bool> IsHorizontalRailEnabled = default, O<bool> IsHorizontalScrollChainingEnabled = default, O<bool> IsScrollInertiaEnabled = default, O<bool> IsVerticalRailEnabled = default, O<bool> IsVerticalScrollChainingEnabled = default, O<bool> IsZoomChainingEnabled = default, O<bool> IsZoomInertiaEnabled = default, O<Xaml.UIElement> LeftHeader = default, O<float> MaxZoomFactor = default, O<float> MinZoomFactor = default, O<bool> ReduceViewportForCoreInputViewOcclusions = default, O<Xaml.UIElement> TopHeader = default, O<Xaml.UIElement> TopLeftHeader = default, O<double> VerticalAnchorRatio = default, O<Xaml.Controls.ScrollBarVisibility> VerticalScrollBarVisibility = default, O<Xaml.Controls.ScrollMode> VerticalScrollMode = default, O<Xaml.Controls.Primitives.SnapPointsAlignment> VerticalSnapPointsAlignment = default, O<Xaml.Controls.SnapPointsType> VerticalSnapPointsType = default, O<Xaml.Controls.ZoomMode> ZoomMode = default, O<Xaml.Controls.SnapPointsType> ZoomSnapPointsType = default, UIObject Content = default)
+        public static ScrollViewer ScrollViewer(bool? BringIntoViewOnFocusChange = default, bool? CanContentRenderOutsideBounds = default, double? HorizontalAnchorRatio = default, Xaml.Controls.ScrollBarVisibility? HorizontalScrollBarVisibility = default, Xaml.Controls.ScrollMode? HorizontalScrollMode = default, Xaml.Controls.Primitives.SnapPointsAlignment? HorizontalSnapPointsAlignment = default, Xaml.Controls.SnapPointsType? HorizontalSnapPointsType = default, bool? IsDeferredScrollingEnabled = default, bool? IsHorizontalRailEnabled = default, bool? IsHorizontalScrollChainingEnabled = default, bool? IsScrollInertiaEnabled = default, bool? IsVerticalRailEnabled = default, bool? IsVerticalScrollChainingEnabled = default, bool? IsZoomChainingEnabled = default, bool? IsZoomInertiaEnabled = default, Xaml.UIElement LeftHeader = default, float? MaxZoomFactor = default, float? MinZoomFactor = default, bool? ReduceViewportForCoreInputViewOcclusions = default, Xaml.UIElement TopHeader = default, Xaml.UIElement TopLeftHeader = default, double? VerticalAnchorRatio = default, Xaml.Controls.ScrollBarVisibility? VerticalScrollBarVisibility = default, Xaml.Controls.ScrollMode? VerticalScrollMode = default, Xaml.Controls.Primitives.SnapPointsAlignment? VerticalSnapPointsAlignment = default, Xaml.Controls.SnapPointsType? VerticalSnapPointsType = default, Xaml.Controls.ZoomMode? ZoomMode = default, Xaml.Controls.SnapPointsType? ZoomSnapPointsType = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.ScrollViewer();
-            if (BringIntoViewOnFocusChange.HasValue) ui.BringIntoViewOnFocusChange = BringIntoViewOnFocusChange.Value;
-            if (CanContentRenderOutsideBounds.HasValue) ui.CanContentRenderOutsideBounds = CanContentRenderOutsideBounds.Value;
-            if (HorizontalAnchorRatio.HasValue) ui.HorizontalAnchorRatio = HorizontalAnchorRatio.Value;
-            if (HorizontalScrollBarVisibility.HasValue) ui.HorizontalScrollBarVisibility = HorizontalScrollBarVisibility.Value;
-            if (HorizontalScrollMode.HasValue) ui.HorizontalScrollMode = HorizontalScrollMode.Value;
-            if (HorizontalSnapPointsAlignment.HasValue) ui.HorizontalSnapPointsAlignment = HorizontalSnapPointsAlignment.Value;
-            if (HorizontalSnapPointsType.HasValue) ui.HorizontalSnapPointsType = HorizontalSnapPointsType.Value;
-            if (IsDeferredScrollingEnabled.HasValue) ui.IsDeferredScrollingEnabled = IsDeferredScrollingEnabled.Value;
-            if (IsHorizontalRailEnabled.HasValue) ui.IsHorizontalRailEnabled = IsHorizontalRailEnabled.Value;
-            if (IsHorizontalScrollChainingEnabled.HasValue) ui.IsHorizontalScrollChainingEnabled = IsHorizontalScrollChainingEnabled.Value;
-            if (IsScrollInertiaEnabled.HasValue) ui.IsScrollInertiaEnabled = IsScrollInertiaEnabled.Value;
-            if (IsVerticalRailEnabled.HasValue) ui.IsVerticalRailEnabled = IsVerticalRailEnabled.Value;
-            if (IsVerticalScrollChainingEnabled.HasValue) ui.IsVerticalScrollChainingEnabled = IsVerticalScrollChainingEnabled.Value;
-            if (IsZoomChainingEnabled.HasValue) ui.IsZoomChainingEnabled = IsZoomChainingEnabled.Value;
-            if (IsZoomInertiaEnabled.HasValue) ui.IsZoomInertiaEnabled = IsZoomInertiaEnabled.Value;
-            if (LeftHeader.HasValue) ui.LeftHeader = LeftHeader.Value;
-            if (MaxZoomFactor.HasValue) ui.MaxZoomFactor = MaxZoomFactor.Value;
-            if (MinZoomFactor.HasValue) ui.MinZoomFactor = MinZoomFactor.Value;
-            if (ReduceViewportForCoreInputViewOcclusions.HasValue) ui.ReduceViewportForCoreInputViewOcclusions = ReduceViewportForCoreInputViewOcclusions.Value;
-            if (TopHeader.HasValue) ui.TopHeader = TopHeader.Value;
-            if (TopLeftHeader.HasValue) ui.TopLeftHeader = TopLeftHeader.Value;
-            if (VerticalAnchorRatio.HasValue) ui.VerticalAnchorRatio = VerticalAnchorRatio.Value;
-            if (VerticalScrollBarVisibility.HasValue) ui.VerticalScrollBarVisibility = VerticalScrollBarVisibility.Value;
-            if (VerticalScrollMode.HasValue) ui.VerticalScrollMode = VerticalScrollMode.Value;
-            if (VerticalSnapPointsAlignment.HasValue) ui.VerticalSnapPointsAlignment = VerticalSnapPointsAlignment.Value;
-            if (VerticalSnapPointsType.HasValue) ui.VerticalSnapPointsType = VerticalSnapPointsType.Value;
-            if (ZoomMode.HasValue) ui.ZoomMode = ZoomMode.Value;
-            if (ZoomSnapPointsType.HasValue) ui.ZoomSnapPointsType = ZoomSnapPointsType.Value;
+            if (BringIntoViewOnFocusChange is not null) ui.BringIntoViewOnFocusChange = BringIntoViewOnFocusChange.Value;
+            if (CanContentRenderOutsideBounds is not null) ui.CanContentRenderOutsideBounds = CanContentRenderOutsideBounds.Value;
+            if (HorizontalAnchorRatio is not null) ui.HorizontalAnchorRatio = HorizontalAnchorRatio.Value;
+            if (HorizontalScrollBarVisibility is not null) ui.HorizontalScrollBarVisibility = HorizontalScrollBarVisibility.Value;
+            if (HorizontalScrollMode is not null) ui.HorizontalScrollMode = HorizontalScrollMode.Value;
+            if (HorizontalSnapPointsAlignment is not null) ui.HorizontalSnapPointsAlignment = HorizontalSnapPointsAlignment.Value;
+            if (HorizontalSnapPointsType is not null) ui.HorizontalSnapPointsType = HorizontalSnapPointsType.Value;
+            if (IsDeferredScrollingEnabled is not null) ui.IsDeferredScrollingEnabled = IsDeferredScrollingEnabled.Value;
+            if (IsHorizontalRailEnabled is not null) ui.IsHorizontalRailEnabled = IsHorizontalRailEnabled.Value;
+            if (IsHorizontalScrollChainingEnabled is not null) ui.IsHorizontalScrollChainingEnabled = IsHorizontalScrollChainingEnabled.Value;
+            if (IsScrollInertiaEnabled is not null) ui.IsScrollInertiaEnabled = IsScrollInertiaEnabled.Value;
+            if (IsVerticalRailEnabled is not null) ui.IsVerticalRailEnabled = IsVerticalRailEnabled.Value;
+            if (IsVerticalScrollChainingEnabled is not null) ui.IsVerticalScrollChainingEnabled = IsVerticalScrollChainingEnabled.Value;
+            if (IsZoomChainingEnabled is not null) ui.IsZoomChainingEnabled = IsZoomChainingEnabled.Value;
+            if (IsZoomInertiaEnabled is not null) ui.IsZoomInertiaEnabled = IsZoomInertiaEnabled.Value;
+            if (LeftHeader is not null) ui.LeftHeader = LeftHeader;
+            if (MaxZoomFactor is not null) ui.MaxZoomFactor = MaxZoomFactor.Value;
+            if (MinZoomFactor is not null) ui.MinZoomFactor = MinZoomFactor.Value;
+            if (ReduceViewportForCoreInputViewOcclusions is not null) ui.ReduceViewportForCoreInputViewOcclusions = ReduceViewportForCoreInputViewOcclusions.Value;
+            if (TopHeader is not null) ui.TopHeader = TopHeader;
+            if (TopLeftHeader is not null) ui.TopLeftHeader = TopLeftHeader;
+            if (VerticalAnchorRatio is not null) ui.VerticalAnchorRatio = VerticalAnchorRatio.Value;
+            if (VerticalScrollBarVisibility is not null) ui.VerticalScrollBarVisibility = VerticalScrollBarVisibility.Value;
+            if (VerticalScrollMode is not null) ui.VerticalScrollMode = VerticalScrollMode.Value;
+            if (VerticalSnapPointsAlignment is not null) ui.VerticalSnapPointsAlignment = VerticalSnapPointsAlignment.Value;
+            if (VerticalSnapPointsType is not null) ui.VerticalSnapPointsType = VerticalSnapPointsType.Value;
+            if (ZoomMode is not null) ui.ZoomMode = ZoomMode.Value;
+            if (ZoomSnapPointsType is not null) ui.ZoomSnapPointsType = ZoomSnapPointsType.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ScrollViewer.StartChain(ui);
         }
@@ -17335,67 +17335,67 @@ namespace CSharpMarkup.WinUI // ScrollViewer
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer"/> attached properties</summary>
         public static TTarget ScrollViewer<TTarget>(this TTarget target
 
-            , O<bool> BringIntoViewOnFocusChange = default
+            , bool? BringIntoViewOnFocusChange = default
 
-            , O<bool> CanContentRenderOutsideBounds = default
+            , bool? CanContentRenderOutsideBounds = default
 
-            , O<Xaml.Controls.ScrollBarVisibility> HorizontalScrollBarVisibility = default
+            , Xaml.Controls.ScrollBarVisibility? HorizontalScrollBarVisibility = default
 
-            , O<Xaml.Controls.ScrollMode> HorizontalScrollMode = default
+            , Xaml.Controls.ScrollMode? HorizontalScrollMode = default
 
-            , O<bool> IsDeferredScrollingEnabled = default
+            , bool? IsDeferredScrollingEnabled = default
 
-            , O<bool> IsHorizontalRailEnabled = default
+            , bool? IsHorizontalRailEnabled = default
 
-            , O<bool> IsHorizontalScrollChainingEnabled = default
+            , bool? IsHorizontalScrollChainingEnabled = default
 
-            , O<bool> IsScrollInertiaEnabled = default
+            , bool? IsScrollInertiaEnabled = default
 
-            , O<bool> IsVerticalRailEnabled = default
+            , bool? IsVerticalRailEnabled = default
 
-            , O<bool> IsVerticalScrollChainingEnabled = default
+            , bool? IsVerticalScrollChainingEnabled = default
 
-            , O<bool> IsZoomChainingEnabled = default
+            , bool? IsZoomChainingEnabled = default
 
-            , O<bool> IsZoomInertiaEnabled = default
+            , bool? IsZoomInertiaEnabled = default
 
-            , O<Xaml.Controls.ScrollBarVisibility> VerticalScrollBarVisibility = default
+            , Xaml.Controls.ScrollBarVisibility? VerticalScrollBarVisibility = default
 
-            , O<Xaml.Controls.ScrollMode> VerticalScrollMode = default
+            , Xaml.Controls.ScrollMode? VerticalScrollMode = default
 
-            , O<Xaml.Controls.ZoomMode> ZoomMode = default
+            , Xaml.Controls.ZoomMode? ZoomMode = default
 
         ) where TTarget : DependencyObject
         {
-            if (BringIntoViewOnFocusChange.HasValue) Xaml.Controls.ScrollViewer.SetBringIntoViewOnFocusChange(target.UI, BringIntoViewOnFocusChange.Value);
+            if (BringIntoViewOnFocusChange is not null) Xaml.Controls.ScrollViewer.SetBringIntoViewOnFocusChange(target.UI, BringIntoViewOnFocusChange.Value);
 
-            if (CanContentRenderOutsideBounds.HasValue) Xaml.Controls.ScrollViewer.SetCanContentRenderOutsideBounds(target.UI, CanContentRenderOutsideBounds.Value);
+            if (CanContentRenderOutsideBounds is not null) Xaml.Controls.ScrollViewer.SetCanContentRenderOutsideBounds(target.UI, CanContentRenderOutsideBounds.Value);
 
-            if (HorizontalScrollBarVisibility.HasValue) Xaml.Controls.ScrollViewer.SetHorizontalScrollBarVisibility(target.UI, HorizontalScrollBarVisibility.Value);
+            if (HorizontalScrollBarVisibility is not null) Xaml.Controls.ScrollViewer.SetHorizontalScrollBarVisibility(target.UI, HorizontalScrollBarVisibility.Value);
 
-            if (HorizontalScrollMode.HasValue) Xaml.Controls.ScrollViewer.SetHorizontalScrollMode(target.UI, HorizontalScrollMode.Value);
+            if (HorizontalScrollMode is not null) Xaml.Controls.ScrollViewer.SetHorizontalScrollMode(target.UI, HorizontalScrollMode.Value);
 
-            if (IsDeferredScrollingEnabled.HasValue) Xaml.Controls.ScrollViewer.SetIsDeferredScrollingEnabled(target.UI, IsDeferredScrollingEnabled.Value);
+            if (IsDeferredScrollingEnabled is not null) Xaml.Controls.ScrollViewer.SetIsDeferredScrollingEnabled(target.UI, IsDeferredScrollingEnabled.Value);
 
-            if (IsHorizontalRailEnabled.HasValue) Xaml.Controls.ScrollViewer.SetIsHorizontalRailEnabled(target.UI, IsHorizontalRailEnabled.Value);
+            if (IsHorizontalRailEnabled is not null) Xaml.Controls.ScrollViewer.SetIsHorizontalRailEnabled(target.UI, IsHorizontalRailEnabled.Value);
 
-            if (IsHorizontalScrollChainingEnabled.HasValue) Xaml.Controls.ScrollViewer.SetIsHorizontalScrollChainingEnabled(target.UI, IsHorizontalScrollChainingEnabled.Value);
+            if (IsHorizontalScrollChainingEnabled is not null) Xaml.Controls.ScrollViewer.SetIsHorizontalScrollChainingEnabled(target.UI, IsHorizontalScrollChainingEnabled.Value);
 
-            if (IsScrollInertiaEnabled.HasValue) Xaml.Controls.ScrollViewer.SetIsScrollInertiaEnabled(target.UI, IsScrollInertiaEnabled.Value);
+            if (IsScrollInertiaEnabled is not null) Xaml.Controls.ScrollViewer.SetIsScrollInertiaEnabled(target.UI, IsScrollInertiaEnabled.Value);
 
-            if (IsVerticalRailEnabled.HasValue) Xaml.Controls.ScrollViewer.SetIsVerticalRailEnabled(target.UI, IsVerticalRailEnabled.Value);
+            if (IsVerticalRailEnabled is not null) Xaml.Controls.ScrollViewer.SetIsVerticalRailEnabled(target.UI, IsVerticalRailEnabled.Value);
 
-            if (IsVerticalScrollChainingEnabled.HasValue) Xaml.Controls.ScrollViewer.SetIsVerticalScrollChainingEnabled(target.UI, IsVerticalScrollChainingEnabled.Value);
+            if (IsVerticalScrollChainingEnabled is not null) Xaml.Controls.ScrollViewer.SetIsVerticalScrollChainingEnabled(target.UI, IsVerticalScrollChainingEnabled.Value);
 
-            if (IsZoomChainingEnabled.HasValue) Xaml.Controls.ScrollViewer.SetIsZoomChainingEnabled(target.UI, IsZoomChainingEnabled.Value);
+            if (IsZoomChainingEnabled is not null) Xaml.Controls.ScrollViewer.SetIsZoomChainingEnabled(target.UI, IsZoomChainingEnabled.Value);
 
-            if (IsZoomInertiaEnabled.HasValue) Xaml.Controls.ScrollViewer.SetIsZoomInertiaEnabled(target.UI, IsZoomInertiaEnabled.Value);
+            if (IsZoomInertiaEnabled is not null) Xaml.Controls.ScrollViewer.SetIsZoomInertiaEnabled(target.UI, IsZoomInertiaEnabled.Value);
 
-            if (VerticalScrollBarVisibility.HasValue) Xaml.Controls.ScrollViewer.SetVerticalScrollBarVisibility(target.UI, VerticalScrollBarVisibility.Value);
+            if (VerticalScrollBarVisibility is not null) Xaml.Controls.ScrollViewer.SetVerticalScrollBarVisibility(target.UI, VerticalScrollBarVisibility.Value);
 
-            if (VerticalScrollMode.HasValue) Xaml.Controls.ScrollViewer.SetVerticalScrollMode(target.UI, VerticalScrollMode.Value);
+            if (VerticalScrollMode is not null) Xaml.Controls.ScrollViewer.SetVerticalScrollMode(target.UI, VerticalScrollMode.Value);
 
-            if (ZoomMode.HasValue) Xaml.Controls.ScrollViewer.SetZoomMode(target.UI, ZoomMode.Value);
+            if (ZoomMode is not null) Xaml.Controls.ScrollViewer.SetZoomMode(target.UI, ZoomMode.Value);
 
             return target;
         }
@@ -17415,13 +17415,13 @@ namespace CSharpMarkup.WinUI // SemanticZoom
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SemanticZoom"/></summary>
-        public static SemanticZoom SemanticZoom(O<bool> CanChangeViews = default, O<bool> IsZoomOutButtonEnabled = default, O<bool> IsZoomedInViewActive = default, O<Xaml.Controls.ISemanticZoomInformation> ZoomedOutView = default, Microsoft.UI.Xaml.Controls.ISemanticZoomInformation ZoomedInView = default)
+        public static SemanticZoom SemanticZoom(bool? CanChangeViews = default, bool? IsZoomOutButtonEnabled = default, bool? IsZoomedInViewActive = default, Xaml.Controls.ISemanticZoomInformation ZoomedOutView = default, Microsoft.UI.Xaml.Controls.ISemanticZoomInformation ZoomedInView = default)
         {
             var ui = new Xaml.Controls.SemanticZoom();
-            if (CanChangeViews.HasValue) ui.CanChangeViews = CanChangeViews.Value;
-            if (IsZoomOutButtonEnabled.HasValue) ui.IsZoomOutButtonEnabled = IsZoomOutButtonEnabled.Value;
-            if (IsZoomedInViewActive.HasValue) ui.IsZoomedInViewActive = IsZoomedInViewActive.Value;
-            if (ZoomedOutView.HasValue) ui.ZoomedOutView = ZoomedOutView.Value;
+            if (CanChangeViews is not null) ui.CanChangeViews = CanChangeViews.Value;
+            if (IsZoomOutButtonEnabled is not null) ui.IsZoomOutButtonEnabled = IsZoomOutButtonEnabled.Value;
+            if (IsZoomedInViewActive is not null) ui.IsZoomedInViewActive = IsZoomedInViewActive.Value;
+            if (ZoomedOutView is not null) ui.ZoomedOutView = ZoomedOutView;
             if (ZoomedInView != null) ui.ZoomedInView = ZoomedInView;
             return CSharpMarkup.WinUI.SemanticZoom.StartChain(ui);
         }
@@ -17505,20 +17505,20 @@ namespace CSharpMarkup.WinUI // Slider
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Slider"/></summary>
-        public static Slider Slider(O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<double> IntermediateValue = default, O<bool> IsDirectionReversed = default, O<bool> IsThumbToolTipEnabled = default, O<Xaml.Controls.Orientation> Orientation = default, O<Xaml.Controls.Primitives.SliderSnapsTo> SnapsTo = default, O<double> StepFrequency = default, O<Xaml.Data.IValueConverter> ThumbToolTipValueConverter = default, O<double> TickFrequency = default, O<Xaml.Controls.Primitives.TickPlacement> TickPlacement = default)
+        public static Slider Slider(object Header = default, Xaml.DataTemplate HeaderTemplate = default, double? IntermediateValue = default, bool? IsDirectionReversed = default, bool? IsThumbToolTipEnabled = default, Xaml.Controls.Orientation? Orientation = default, Xaml.Controls.Primitives.SliderSnapsTo? SnapsTo = default, double? StepFrequency = default, Xaml.Data.IValueConverter ThumbToolTipValueConverter = default, double? TickFrequency = default, Xaml.Controls.Primitives.TickPlacement? TickPlacement = default)
         {
             var ui = new Xaml.Controls.Slider();
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (IntermediateValue.HasValue) ui.IntermediateValue = IntermediateValue.Value;
-            if (IsDirectionReversed.HasValue) ui.IsDirectionReversed = IsDirectionReversed.Value;
-            if (IsThumbToolTipEnabled.HasValue) ui.IsThumbToolTipEnabled = IsThumbToolTipEnabled.Value;
-            if (Orientation.HasValue) ui.Orientation = Orientation.Value;
-            if (SnapsTo.HasValue) ui.SnapsTo = SnapsTo.Value;
-            if (StepFrequency.HasValue) ui.StepFrequency = StepFrequency.Value;
-            if (ThumbToolTipValueConverter.HasValue) ui.ThumbToolTipValueConverter = ThumbToolTipValueConverter.Value;
-            if (TickFrequency.HasValue) ui.TickFrequency = TickFrequency.Value;
-            if (TickPlacement.HasValue) ui.TickPlacement = TickPlacement.Value;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (IntermediateValue is not null) ui.IntermediateValue = IntermediateValue.Value;
+            if (IsDirectionReversed is not null) ui.IsDirectionReversed = IsDirectionReversed.Value;
+            if (IsThumbToolTipEnabled is not null) ui.IsThumbToolTipEnabled = IsThumbToolTipEnabled.Value;
+            if (Orientation is not null) ui.Orientation = Orientation.Value;
+            if (SnapsTo is not null) ui.SnapsTo = SnapsTo.Value;
+            if (StepFrequency is not null) ui.StepFrequency = StepFrequency.Value;
+            if (ThumbToolTipValueConverter is not null) ui.ThumbToolTipValueConverter = ThumbToolTipValueConverter;
+            if (TickFrequency is not null) ui.TickFrequency = TickFrequency.Value;
+            if (TickPlacement is not null) ui.TickPlacement = TickPlacement.Value;
             return CSharpMarkup.WinUI.Slider.StartChain(ui);
         }
 
@@ -17656,12 +17656,12 @@ namespace CSharpMarkup.WinUI // SplitButton
 
         /// <summary>Create a <see cref="Xaml.Controls.SplitButton"/></summary>
         /// <remarks>Remark: SplitButton().Bind() binds to <see cref="Xaml.Controls.SplitButton.CommandProperty"/></remarks>
-        public static SplitButton SplitButton(O<ICommand> Command = default, O<object> CommandParameter = default, O<Xaml.Controls.Primitives.FlyoutBase> Flyout = default, UIObject Content = default)
+        public static SplitButton SplitButton(ICommand Command = default, object CommandParameter = default, Xaml.Controls.Primitives.FlyoutBase Flyout = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.SplitButton();
-            if (Command.HasValue) ui.Command = Command.Value;
-            if (CommandParameter.HasValue) ui.CommandParameter = CommandParameter.Value;
-            if (Flyout.HasValue) ui.Flyout = Flyout.Value;
+            if (Command is not null) ui.Command = Command;
+            if (CommandParameter is not null) ui.CommandParameter = CommandParameter;
+            if (Flyout is not null) ui.Flyout = Flyout;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.SplitButton.StartChain(ui);
         }
@@ -17746,17 +17746,17 @@ namespace CSharpMarkup.WinUI // SplitView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SplitView"/></summary>
-        public static SplitView SplitView(O<double> CompactPaneLength = default, O<Xaml.Controls.SplitViewDisplayMode> DisplayMode = default, O<bool> IsPaneOpen = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, O<double> OpenPaneLength = default, O<Xaml.UIElement> Pane = default, O<Xaml.Media.Brush> PaneBackground = default, O<Xaml.Controls.SplitViewPanePlacement> PanePlacement = default, Microsoft.UI.Xaml.UIElement Content = default)
+        public static SplitView SplitView(double? CompactPaneLength = default, Xaml.Controls.SplitViewDisplayMode? DisplayMode = default, bool? IsPaneOpen = default, Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, double? OpenPaneLength = default, Xaml.UIElement Pane = default, Xaml.Media.Brush PaneBackground = default, Xaml.Controls.SplitViewPanePlacement? PanePlacement = default, Microsoft.UI.Xaml.UIElement Content = default)
         {
             var ui = new Xaml.Controls.SplitView();
-            if (CompactPaneLength.HasValue) ui.CompactPaneLength = CompactPaneLength.Value;
-            if (DisplayMode.HasValue) ui.DisplayMode = DisplayMode.Value;
-            if (IsPaneOpen.HasValue) ui.IsPaneOpen = IsPaneOpen.Value;
-            if (LightDismissOverlayMode.HasValue) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
-            if (OpenPaneLength.HasValue) ui.OpenPaneLength = OpenPaneLength.Value;
-            if (Pane.HasValue) ui.Pane = Pane.Value;
-            if (PaneBackground.HasValue) ui.PaneBackground = PaneBackground.Value;
-            if (PanePlacement.HasValue) ui.PanePlacement = PanePlacement.Value;
+            if (CompactPaneLength is not null) ui.CompactPaneLength = CompactPaneLength.Value;
+            if (DisplayMode is not null) ui.DisplayMode = DisplayMode.Value;
+            if (IsPaneOpen is not null) ui.IsPaneOpen = IsPaneOpen.Value;
+            if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
+            if (OpenPaneLength is not null) ui.OpenPaneLength = OpenPaneLength.Value;
+            if (Pane is not null) ui.Pane = Pane;
+            if (PaneBackground is not null) ui.PaneBackground = PaneBackground;
+            if (PanePlacement is not null) ui.PanePlacement = PanePlacement.Value;
             if (Content != null) ui.Content = Content;
             return CSharpMarkup.WinUI.SplitView.StartChain(ui);
         }
@@ -17878,11 +17878,11 @@ namespace CSharpMarkup.WinUI // StackLayout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.StackLayout"/></summary>
-        public static StackLayout StackLayout(O<Xaml.Controls.Orientation> Orientation = default, O<double> Spacing = default)
+        public static StackLayout StackLayout(Xaml.Controls.Orientation? Orientation = default, double? Spacing = default)
         {
             var ui = new Xaml.Controls.StackLayout();
-            if (Orientation.HasValue) ui.Orientation = Orientation.Value;
-            if (Spacing.HasValue) ui.Spacing = Spacing.Value;
+            if (Orientation is not null) ui.Orientation = Orientation.Value;
+            if (Spacing is not null) ui.Spacing = Spacing.Value;
             return CSharpMarkup.WinUI.StackLayout.StartChain(ui);
         }
 
@@ -18239,13 +18239,13 @@ namespace CSharpMarkup.WinUI // SwipeControl
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SwipeControl"/></summary>
-        public static SwipeControl SwipeControl(O<Xaml.Controls.SwipeItems> BottomItems = default, O<Xaml.Controls.SwipeItems> LeftItems = default, O<Xaml.Controls.SwipeItems> RightItems = default, O<Xaml.Controls.SwipeItems> TopItems = default, UIObject Content = default)
+        public static SwipeControl SwipeControl(Xaml.Controls.SwipeItems BottomItems = default, Xaml.Controls.SwipeItems LeftItems = default, Xaml.Controls.SwipeItems RightItems = default, Xaml.Controls.SwipeItems TopItems = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.SwipeControl();
-            if (BottomItems.HasValue) ui.BottomItems = BottomItems.Value;
-            if (LeftItems.HasValue) ui.LeftItems = LeftItems.Value;
-            if (RightItems.HasValue) ui.RightItems = RightItems.Value;
-            if (TopItems.HasValue) ui.TopItems = TopItems.Value;
+            if (BottomItems is not null) ui.BottomItems = BottomItems;
+            if (LeftItems is not null) ui.LeftItems = LeftItems;
+            if (RightItems is not null) ui.RightItems = RightItems;
+            if (TopItems is not null) ui.TopItems = TopItems;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.SwipeControl.StartChain(ui);
         }
@@ -18326,16 +18326,16 @@ namespace CSharpMarkup.WinUI // SwipeItem
     {
         /// <summary>Create a <see cref="Xaml.Controls.SwipeItem"/></summary>
         /// <remarks>Remark: SwipeItem().Bind() binds to <see cref="Xaml.Controls.SwipeItem.CommandProperty"/></remarks>
-        public static SwipeItem SwipeItem(O<Xaml.Media.Brush> Background = default, O<Xaml.Controls.SwipeBehaviorOnInvoked> BehaviorOnInvoked = default, O<ICommand> Command = default, O<object> CommandParameter = default, O<Xaml.Media.Brush> Foreground = default, O<Xaml.Controls.IconSource> IconSource = default, O<string> Text = default)
+        public static SwipeItem SwipeItem(Xaml.Media.Brush Background = default, Xaml.Controls.SwipeBehaviorOnInvoked? BehaviorOnInvoked = default, ICommand Command = default, object CommandParameter = default, Xaml.Media.Brush Foreground = default, Xaml.Controls.IconSource IconSource = default, string Text = default)
         {
             var ui = new Xaml.Controls.SwipeItem();
-            if (Background.HasValue) ui.Background = Background.Value;
-            if (BehaviorOnInvoked.HasValue) ui.BehaviorOnInvoked = BehaviorOnInvoked.Value;
-            if (Command.HasValue) ui.Command = Command.Value;
-            if (CommandParameter.HasValue) ui.CommandParameter = CommandParameter.Value;
-            if (Foreground.HasValue) ui.Foreground = Foreground.Value;
-            if (IconSource.HasValue) ui.IconSource = IconSource.Value;
-            if (Text.HasValue) ui.Text = Text.Value;
+            if (Background is not null) ui.Background = Background;
+            if (BehaviorOnInvoked is not null) ui.BehaviorOnInvoked = BehaviorOnInvoked.Value;
+            if (Command is not null) ui.Command = Command;
+            if (CommandParameter is not null) ui.CommandParameter = CommandParameter;
+            if (Foreground is not null) ui.Foreground = Foreground;
+            if (IconSource is not null) ui.IconSource = IconSource;
+            if (Text is not null) ui.Text = Text;
             return CSharpMarkup.WinUI.SwipeItem.StartChain(ui);
         }
 
@@ -18449,10 +18449,10 @@ namespace CSharpMarkup.WinUI // SwipeItems
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.SwipeItems"/></summary>
-        public static SwipeItems SwipeItems(O<Xaml.Controls.SwipeMode> Mode = default)
+        public static SwipeItems SwipeItems(Xaml.Controls.SwipeMode? Mode = default)
         {
             var ui = new Xaml.Controls.SwipeItems();
-            if (Mode.HasValue) ui.Mode = Mode.Value;
+            if (Mode is not null) ui.Mode = Mode.Value;
             return CSharpMarkup.WinUI.SwipeItems.StartChain(ui);
         }
 
@@ -18507,15 +18507,6 @@ namespace CSharpMarkup.WinUI // SymbolIcon
 {
     public static partial class Helpers
     {
-        /// <summary>Create a <see cref="Xaml.Controls.SymbolIcon"/></summary>
-        /// <remarks>Remark: SymbolIcon().Bind() binds to <see cref="Xaml.Controls.SymbolIcon.SymbolProperty"/></remarks>
-        public static SymbolIcon SymbolIcon(O<Xaml.Controls.Symbol> Symbol = default)
-        {
-            var ui = new Xaml.Controls.SymbolIcon();
-            if (Symbol.HasValue) ui.Symbol = Symbol.Value;
-            return CSharpMarkup.WinUI.SymbolIcon.StartChain(ui);
-        }
-
         /// <summary>Create a <see cref="Xaml.Controls.SymbolIcon"/></summary>
         /// <remarks>Remark: SymbolIcon().Bind() binds to <see cref="Xaml.Controls.SymbolIcon.SymbolProperty"/></remarks>
         public static SymbolIcon SymbolIcon()
@@ -18583,10 +18574,10 @@ namespace CSharpMarkup.WinUI // SymbolIconSource
     {
         /// <summary>Create a <see cref="Xaml.Controls.SymbolIconSource"/></summary>
         /// <remarks>Remark: SymbolIconSource().Bind() binds to <see cref="Xaml.Controls.SymbolIconSource.SymbolProperty"/></remarks>
-        public static SymbolIconSource SymbolIconSource(O<Xaml.Controls.Symbol> Symbol = default)
+        public static SymbolIconSource SymbolIconSource(Xaml.Controls.Symbol? Symbol = default)
         {
             var ui = new Xaml.Controls.SymbolIconSource();
-            if (Symbol.HasValue) ui.Symbol = Symbol.Value;
+            if (Symbol is not null) ui.Symbol = Symbol.Value;
             return CSharpMarkup.WinUI.SymbolIconSource.StartChain(ui);
         }
 
@@ -18646,26 +18637,26 @@ namespace CSharpMarkup.WinUI // TabView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TabView"/></summary>
-        public static TabView TabView(O<ICommand> AddTabButtonCommand = default, O<object> AddTabButtonCommandParameter = default, O<bool> AllowDropTabs = default, O<bool> CanDragTabs = default, O<bool> CanReorderTabs = default, O<Xaml.Controls.TabViewCloseButtonOverlayMode> CloseButtonOverlayMode = default, O<bool> IsAddTabButtonVisible = default, O<int> SelectedIndex = default, O<object> SelectedItem = default, O<Xaml.DataTemplate> TabItemTemplate = default, O<Xaml.Controls.DataTemplateSelector> TabItemTemplateSelector = default, O<object> TabItemsSource = default, O<object> TabStripFooter = default, O<Xaml.DataTemplate> TabStripFooterTemplate = default, O<object> TabStripHeader = default, O<Xaml.DataTemplate> TabStripHeaderTemplate = default, O<Xaml.Controls.TabViewWidthMode> TabWidthMode = default)
+        public static TabView TabView(ICommand AddTabButtonCommand = default, object AddTabButtonCommandParameter = default, bool? AllowDropTabs = default, bool? CanDragTabs = default, bool? CanReorderTabs = default, Xaml.Controls.TabViewCloseButtonOverlayMode? CloseButtonOverlayMode = default, bool? IsAddTabButtonVisible = default, int? SelectedIndex = default, object SelectedItem = default, Xaml.DataTemplate TabItemTemplate = default, Xaml.Controls.DataTemplateSelector TabItemTemplateSelector = default, object TabItemsSource = default, object TabStripFooter = default, Xaml.DataTemplate TabStripFooterTemplate = default, object TabStripHeader = default, Xaml.DataTemplate TabStripHeaderTemplate = default, Xaml.Controls.TabViewWidthMode? TabWidthMode = default)
         {
             var ui = new Xaml.Controls.TabView();
-            if (AddTabButtonCommand.HasValue) ui.AddTabButtonCommand = AddTabButtonCommand.Value;
-            if (AddTabButtonCommandParameter.HasValue) ui.AddTabButtonCommandParameter = AddTabButtonCommandParameter.Value;
-            if (AllowDropTabs.HasValue) ui.AllowDropTabs = AllowDropTabs.Value;
-            if (CanDragTabs.HasValue) ui.CanDragTabs = CanDragTabs.Value;
-            if (CanReorderTabs.HasValue) ui.CanReorderTabs = CanReorderTabs.Value;
-            if (CloseButtonOverlayMode.HasValue) ui.CloseButtonOverlayMode = CloseButtonOverlayMode.Value;
-            if (IsAddTabButtonVisible.HasValue) ui.IsAddTabButtonVisible = IsAddTabButtonVisible.Value;
-            if (SelectedIndex.HasValue) ui.SelectedIndex = SelectedIndex.Value;
-            if (SelectedItem.HasValue) ui.SelectedItem = SelectedItem.Value;
-            if (TabItemTemplate.HasValue) ui.TabItemTemplate = TabItemTemplate.Value;
-            if (TabItemTemplateSelector.HasValue) ui.TabItemTemplateSelector = TabItemTemplateSelector.Value;
-            if (TabItemsSource.HasValue) ui.TabItemsSource = TabItemsSource.Value;
-            if (TabStripFooter.HasValue) ui.TabStripFooter = TabStripFooter.Value;
-            if (TabStripFooterTemplate.HasValue) ui.TabStripFooterTemplate = TabStripFooterTemplate.Value;
-            if (TabStripHeader.HasValue) ui.TabStripHeader = TabStripHeader.Value;
-            if (TabStripHeaderTemplate.HasValue) ui.TabStripHeaderTemplate = TabStripHeaderTemplate.Value;
-            if (TabWidthMode.HasValue) ui.TabWidthMode = TabWidthMode.Value;
+            if (AddTabButtonCommand is not null) ui.AddTabButtonCommand = AddTabButtonCommand;
+            if (AddTabButtonCommandParameter is not null) ui.AddTabButtonCommandParameter = AddTabButtonCommandParameter;
+            if (AllowDropTabs is not null) ui.AllowDropTabs = AllowDropTabs.Value;
+            if (CanDragTabs is not null) ui.CanDragTabs = CanDragTabs.Value;
+            if (CanReorderTabs is not null) ui.CanReorderTabs = CanReorderTabs.Value;
+            if (CloseButtonOverlayMode is not null) ui.CloseButtonOverlayMode = CloseButtonOverlayMode.Value;
+            if (IsAddTabButtonVisible is not null) ui.IsAddTabButtonVisible = IsAddTabButtonVisible.Value;
+            if (SelectedIndex is not null) ui.SelectedIndex = SelectedIndex.Value;
+            if (SelectedItem is not null) ui.SelectedItem = SelectedItem;
+            if (TabItemTemplate is not null) ui.TabItemTemplate = TabItemTemplate;
+            if (TabItemTemplateSelector is not null) ui.TabItemTemplateSelector = TabItemTemplateSelector;
+            if (TabItemsSource is not null) ui.TabItemsSource = TabItemsSource;
+            if (TabStripFooter is not null) ui.TabStripFooter = TabStripFooter;
+            if (TabStripFooterTemplate is not null) ui.TabStripFooterTemplate = TabStripFooterTemplate;
+            if (TabStripHeader is not null) ui.TabStripHeader = TabStripHeader;
+            if (TabStripHeaderTemplate is not null) ui.TabStripHeaderTemplate = TabStripHeaderTemplate;
+            if (TabWidthMode is not null) ui.TabWidthMode = TabWidthMode.Value;
             return CSharpMarkup.WinUI.TabView.StartChain(ui);
         }
 
@@ -18847,13 +18838,13 @@ namespace CSharpMarkup.WinUI // TabViewItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.TabViewItem"/></summary>
-        public static TabViewItem TabViewItem(O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<Xaml.Controls.IconSource> IconSource = default, O<bool> IsClosable = default, UIObject Content = default)
+        public static TabViewItem TabViewItem(object Header = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.Controls.IconSource IconSource = default, bool? IsClosable = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.TabViewItem();
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (IconSource.HasValue) ui.IconSource = IconSource.Value;
-            if (IsClosable.HasValue) ui.IsClosable = IsClosable.Value;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (IconSource is not null) ui.IconSource = IconSource;
+            if (IsClosable is not null) ui.IsClosable = IsClosable.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.TabViewItem.StartChain(ui);
         }
@@ -18937,10 +18928,10 @@ namespace CSharpMarkup.WinUI // TabViewItemTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TabViewItemTemplateSettings"/></summary>
-        public static TabViewItemTemplateSettings TabViewItemTemplateSettings(O<Xaml.Controls.IconElement> IconElement = default)
+        public static TabViewItemTemplateSettings TabViewItemTemplateSettings(Xaml.Controls.IconElement IconElement = default)
         {
             var ui = new Xaml.Controls.TabViewItemTemplateSettings();
-            if (IconElement.HasValue) ui.IconElement = IconElement.Value;
+            if (IconElement is not null) ui.IconElement = IconElement;
             return CSharpMarkup.WinUI.TabViewItemTemplateSettings.StartChain(ui);
         }
 
@@ -19004,29 +18995,29 @@ namespace CSharpMarkup.WinUI // TeachingTip
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.TeachingTip"/></summary>
-        public static TeachingTip TeachingTip(O<ICommand> ActionButtonCommand = default, O<object> ActionButtonCommandParameter = default, O<object> ActionButtonContent = default, O<Xaml.Style> ActionButtonStyle = default, O<ICommand> CloseButtonCommand = default, O<object> CloseButtonCommandParameter = default, O<object> CloseButtonContent = default, O<Xaml.Style> CloseButtonStyle = default, O<Xaml.UIElement> HeroContent = default, O<Xaml.Controls.TeachingTipHeroContentPlacementMode> HeroContentPlacement = default, O<Xaml.Controls.IconSource> IconSource = default, O<bool> IsLightDismissEnabled = default, O<bool> IsOpen = default, O<Xaml.Thickness> PlacementMargin = default, O<Xaml.Controls.TeachingTipPlacementMode> PreferredPlacement = default, O<bool> ShouldConstrainToRootBounds = default, O<string> Subtitle = default, O<Xaml.Controls.TeachingTipTailVisibility> TailVisibility = default, O<Xaml.FrameworkElement> Target = default, O<string> Title = default, UIObject Content = default)
+        public static TeachingTip TeachingTip(ICommand ActionButtonCommand = default, object ActionButtonCommandParameter = default, object ActionButtonContent = default, Xaml.Style ActionButtonStyle = default, ICommand CloseButtonCommand = default, object CloseButtonCommandParameter = default, object CloseButtonContent = default, Xaml.Style CloseButtonStyle = default, Xaml.UIElement HeroContent = default, Xaml.Controls.TeachingTipHeroContentPlacementMode? HeroContentPlacement = default, Xaml.Controls.IconSource IconSource = default, bool? IsLightDismissEnabled = default, bool? IsOpen = default, Xaml.Thickness? PlacementMargin = default, Xaml.Controls.TeachingTipPlacementMode? PreferredPlacement = default, bool? ShouldConstrainToRootBounds = default, string Subtitle = default, Xaml.Controls.TeachingTipTailVisibility? TailVisibility = default, Xaml.FrameworkElement Target = default, string Title = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.TeachingTip();
-            if (ActionButtonCommand.HasValue) ui.ActionButtonCommand = ActionButtonCommand.Value;
-            if (ActionButtonCommandParameter.HasValue) ui.ActionButtonCommandParameter = ActionButtonCommandParameter.Value;
-            if (ActionButtonContent.HasValue) ui.ActionButtonContent = ActionButtonContent.Value;
-            if (ActionButtonStyle.HasValue) ui.ActionButtonStyle = ActionButtonStyle.Value;
-            if (CloseButtonCommand.HasValue) ui.CloseButtonCommand = CloseButtonCommand.Value;
-            if (CloseButtonCommandParameter.HasValue) ui.CloseButtonCommandParameter = CloseButtonCommandParameter.Value;
-            if (CloseButtonContent.HasValue) ui.CloseButtonContent = CloseButtonContent.Value;
-            if (CloseButtonStyle.HasValue) ui.CloseButtonStyle = CloseButtonStyle.Value;
-            if (HeroContent.HasValue) ui.HeroContent = HeroContent.Value;
-            if (HeroContentPlacement.HasValue) ui.HeroContentPlacement = HeroContentPlacement.Value;
-            if (IconSource.HasValue) ui.IconSource = IconSource.Value;
-            if (IsLightDismissEnabled.HasValue) ui.IsLightDismissEnabled = IsLightDismissEnabled.Value;
-            if (IsOpen.HasValue) ui.IsOpen = IsOpen.Value;
-            if (PlacementMargin.HasValue) ui.PlacementMargin = PlacementMargin.Value;
-            if (PreferredPlacement.HasValue) ui.PreferredPlacement = PreferredPlacement.Value;
-            if (ShouldConstrainToRootBounds.HasValue) ui.ShouldConstrainToRootBounds = ShouldConstrainToRootBounds.Value;
-            if (Subtitle.HasValue) ui.Subtitle = Subtitle.Value;
-            if (TailVisibility.HasValue) ui.TailVisibility = TailVisibility.Value;
-            if (Target.HasValue) ui.Target = Target.Value;
-            if (Title.HasValue) ui.Title = Title.Value;
+            if (ActionButtonCommand is not null) ui.ActionButtonCommand = ActionButtonCommand;
+            if (ActionButtonCommandParameter is not null) ui.ActionButtonCommandParameter = ActionButtonCommandParameter;
+            if (ActionButtonContent is not null) ui.ActionButtonContent = ActionButtonContent;
+            if (ActionButtonStyle is not null) ui.ActionButtonStyle = ActionButtonStyle;
+            if (CloseButtonCommand is not null) ui.CloseButtonCommand = CloseButtonCommand;
+            if (CloseButtonCommandParameter is not null) ui.CloseButtonCommandParameter = CloseButtonCommandParameter;
+            if (CloseButtonContent is not null) ui.CloseButtonContent = CloseButtonContent;
+            if (CloseButtonStyle is not null) ui.CloseButtonStyle = CloseButtonStyle;
+            if (HeroContent is not null) ui.HeroContent = HeroContent;
+            if (HeroContentPlacement is not null) ui.HeroContentPlacement = HeroContentPlacement.Value;
+            if (IconSource is not null) ui.IconSource = IconSource;
+            if (IsLightDismissEnabled is not null) ui.IsLightDismissEnabled = IsLightDismissEnabled.Value;
+            if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
+            if (PlacementMargin is not null) ui.PlacementMargin = PlacementMargin.Value;
+            if (PreferredPlacement is not null) ui.PreferredPlacement = PreferredPlacement.Value;
+            if (ShouldConstrainToRootBounds is not null) ui.ShouldConstrainToRootBounds = ShouldConstrainToRootBounds.Value;
+            if (Subtitle is not null) ui.Subtitle = Subtitle;
+            if (TailVisibility is not null) ui.TailVisibility = TailVisibility.Value;
+            if (Target is not null) ui.Target = Target;
+            if (Title is not null) ui.Title = Title;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.TeachingTip.StartChain(ui);
         }
@@ -19234,12 +19225,12 @@ namespace CSharpMarkup.WinUI // TeachingTipTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TeachingTipTemplateSettings"/></summary>
-        public static TeachingTipTemplateSettings TeachingTipTemplateSettings(O<Xaml.Controls.IconElement> IconElement = default, O<Xaml.Thickness> TopLeftHighlightMargin = default, O<Xaml.Thickness> TopRightHighlightMargin = default)
+        public static TeachingTipTemplateSettings TeachingTipTemplateSettings(Xaml.Controls.IconElement IconElement = default, Xaml.Thickness? TopLeftHighlightMargin = default, Xaml.Thickness? TopRightHighlightMargin = default)
         {
             var ui = new Xaml.Controls.TeachingTipTemplateSettings();
-            if (IconElement.HasValue) ui.IconElement = IconElement.Value;
-            if (TopLeftHighlightMargin.HasValue) ui.TopLeftHighlightMargin = TopLeftHighlightMargin.Value;
-            if (TopRightHighlightMargin.HasValue) ui.TopRightHighlightMargin = TopRightHighlightMargin.Value;
+            if (IconElement is not null) ui.IconElement = IconElement;
+            if (TopLeftHighlightMargin is not null) ui.TopLeftHighlightMargin = TopLeftHighlightMargin.Value;
+            if (TopRightHighlightMargin is not null) ui.TopRightHighlightMargin = TopRightHighlightMargin.Value;
             return CSharpMarkup.WinUI.TeachingTipTemplateSettings.StartChain(ui);
         }
 
@@ -19614,35 +19605,35 @@ namespace CSharpMarkup.WinUI // TextBox
     {
         /// <summary>Create a <see cref="Xaml.Controls.TextBox"/></summary>
         /// <remarks>Remark: TextBox().Bind() binds to <see cref="Xaml.Controls.TextBox.TextProperty"/></remarks>
-        public static TextBox TextBox(O<bool> AcceptsReturn = default, O<Xaml.Controls.CharacterCasing> CharacterCasing = default, O<object> Description = default, O<Xaml.Controls.CandidateWindowAlignment> DesiredCandidateWindowAlignment = default, O<object> Header = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<Xaml.TextAlignment> HorizontalTextAlignment = default, O<Xaml.Input.InputScope> InputScope = default, O<bool> IsColorFontEnabled = default, O<bool> IsReadOnly = default, O<bool> IsSpellCheckEnabled = default, O<bool> IsTextPredictionEnabled = default, O<int> MaxLength = default, O<Xaml.Media.Brush> PlaceholderForeground = default, O<string> PlaceholderText = default, O<bool> PreventKeyboardDisplayOnProgrammaticFocus = default, O<string> SelectedText = default, O<Xaml.Controls.Primitives.FlyoutBase> SelectionFlyout = default, O<Xaml.Media.SolidColorBrush> SelectionHighlightColor = default, O<Xaml.Media.SolidColorBrush> SelectionHighlightColorWhenNotFocused = default, O<int> SelectionLength = default, O<int> SelectionStart = default, O<string> Text = default, O<Xaml.TextAlignment> TextAlignment = default, O<Xaml.TextReadingOrder> TextReadingOrder = default, O<Xaml.TextWrapping> TextWrapping = default)
+        public static TextBox TextBox(bool? AcceptsReturn = default, Xaml.Controls.CharacterCasing? CharacterCasing = default, object Description = default, Xaml.Controls.CandidateWindowAlignment? DesiredCandidateWindowAlignment = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.TextAlignment? HorizontalTextAlignment = default, Xaml.Input.InputScope InputScope = default, bool? IsColorFontEnabled = default, bool? IsReadOnly = default, bool? IsSpellCheckEnabled = default, bool? IsTextPredictionEnabled = default, int? MaxLength = default, Xaml.Media.Brush PlaceholderForeground = default, string PlaceholderText = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, string SelectedText = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, Xaml.Media.SolidColorBrush SelectionHighlightColorWhenNotFocused = default, int? SelectionLength = default, int? SelectionStart = default, string Text = default, Xaml.TextAlignment? TextAlignment = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.TextWrapping? TextWrapping = default)
         {
             var ui = new Xaml.Controls.TextBox();
-            if (AcceptsReturn.HasValue) ui.AcceptsReturn = AcceptsReturn.Value;
-            if (CharacterCasing.HasValue) ui.CharacterCasing = CharacterCasing.Value;
-            if (Description.HasValue) ui.Description = Description.Value;
-            if (DesiredCandidateWindowAlignment.HasValue) ui.DesiredCandidateWindowAlignment = DesiredCandidateWindowAlignment.Value;
-            if (Header.HasValue) ui.Header = Header.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (HorizontalTextAlignment.HasValue) ui.HorizontalTextAlignment = HorizontalTextAlignment.Value;
-            if (InputScope.HasValue) ui.InputScope = InputScope.Value;
-            if (IsColorFontEnabled.HasValue) ui.IsColorFontEnabled = IsColorFontEnabled.Value;
-            if (IsReadOnly.HasValue) ui.IsReadOnly = IsReadOnly.Value;
-            if (IsSpellCheckEnabled.HasValue) ui.IsSpellCheckEnabled = IsSpellCheckEnabled.Value;
-            if (IsTextPredictionEnabled.HasValue) ui.IsTextPredictionEnabled = IsTextPredictionEnabled.Value;
-            if (MaxLength.HasValue) ui.MaxLength = MaxLength.Value;
-            if (PlaceholderForeground.HasValue) ui.PlaceholderForeground = PlaceholderForeground.Value;
-            if (PlaceholderText.HasValue) ui.PlaceholderText = PlaceholderText.Value;
-            if (PreventKeyboardDisplayOnProgrammaticFocus.HasValue) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
-            if (SelectedText.HasValue) ui.SelectedText = SelectedText.Value;
-            if (SelectionFlyout.HasValue) ui.SelectionFlyout = SelectionFlyout.Value;
-            if (SelectionHighlightColor.HasValue) ui.SelectionHighlightColor = SelectionHighlightColor.Value;
-            if (SelectionHighlightColorWhenNotFocused.HasValue) ui.SelectionHighlightColorWhenNotFocused = SelectionHighlightColorWhenNotFocused.Value;
-            if (SelectionLength.HasValue) ui.SelectionLength = SelectionLength.Value;
-            if (SelectionStart.HasValue) ui.SelectionStart = SelectionStart.Value;
-            if (Text.HasValue) ui.Text = Text.Value;
-            if (TextAlignment.HasValue) ui.TextAlignment = TextAlignment.Value;
-            if (TextReadingOrder.HasValue) ui.TextReadingOrder = TextReadingOrder.Value;
-            if (TextWrapping.HasValue) ui.TextWrapping = TextWrapping.Value;
+            if (AcceptsReturn is not null) ui.AcceptsReturn = AcceptsReturn.Value;
+            if (CharacterCasing is not null) ui.CharacterCasing = CharacterCasing.Value;
+            if (Description is not null) ui.Description = Description;
+            if (DesiredCandidateWindowAlignment is not null) ui.DesiredCandidateWindowAlignment = DesiredCandidateWindowAlignment.Value;
+            if (Header is not null) ui.Header = Header;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (HorizontalTextAlignment is not null) ui.HorizontalTextAlignment = HorizontalTextAlignment.Value;
+            if (InputScope is not null) ui.InputScope = InputScope;
+            if (IsColorFontEnabled is not null) ui.IsColorFontEnabled = IsColorFontEnabled.Value;
+            if (IsReadOnly is not null) ui.IsReadOnly = IsReadOnly.Value;
+            if (IsSpellCheckEnabled is not null) ui.IsSpellCheckEnabled = IsSpellCheckEnabled.Value;
+            if (IsTextPredictionEnabled is not null) ui.IsTextPredictionEnabled = IsTextPredictionEnabled.Value;
+            if (MaxLength is not null) ui.MaxLength = MaxLength.Value;
+            if (PlaceholderForeground is not null) ui.PlaceholderForeground = PlaceholderForeground;
+            if (PlaceholderText is not null) ui.PlaceholderText = PlaceholderText;
+            if (PreventKeyboardDisplayOnProgrammaticFocus is not null) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
+            if (SelectedText is not null) ui.SelectedText = SelectedText;
+            if (SelectionFlyout is not null) ui.SelectionFlyout = SelectionFlyout;
+            if (SelectionHighlightColor is not null) ui.SelectionHighlightColor = SelectionHighlightColor;
+            if (SelectionHighlightColorWhenNotFocused is not null) ui.SelectionHighlightColorWhenNotFocused = SelectionHighlightColorWhenNotFocused;
+            if (SelectionLength is not null) ui.SelectionLength = SelectionLength.Value;
+            if (SelectionStart is not null) ui.SelectionStart = SelectionStart.Value;
+            if (Text is not null) ui.Text = Text;
+            if (TextAlignment is not null) ui.TextAlignment = TextAlignment.Value;
+            if (TextReadingOrder is not null) ui.TextReadingOrder = TextReadingOrder.Value;
+            if (TextWrapping is not null) ui.TextWrapping = TextWrapping.Value;
             return CSharpMarkup.WinUI.TextBox.StartChain(ui);
         }
 
@@ -19981,15 +19972,15 @@ namespace CSharpMarkup.WinUI // TimePicker
 
         /// <summary>Create a <see cref="Xaml.Controls.TimePicker"/></summary>
         /// <remarks>Remark: TimePicker().Bind() binds to <see cref="Xaml.Controls.TimePicker.TimeProperty"/></remarks>
-        public static TimePicker TimePicker(O<string> ClockIdentifier = default, O<Xaml.DataTemplate> HeaderTemplate = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, O<int> MinuteIncrement = default, O<CSharpMarkup.WinUI.to.TimeSpan?> SelectedTime = default, O<CSharpMarkup.WinUI.to.TimeSpan> Time = default, UIObject Header = default)
+        public static TimePicker TimePicker(string ClockIdentifier = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, int? MinuteIncrement = default, CSharpMarkup.WinUI.to.TimeSpan? SelectedTime = default, CSharpMarkup.WinUI.to.TimeSpan? Time = default, UIObject Header = default)
         {
             var ui = new Xaml.Controls.TimePicker();
-            if (ClockIdentifier.HasValue) ui.ClockIdentifier = ClockIdentifier.Value;
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (LightDismissOverlayMode.HasValue) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
-            if (MinuteIncrement.HasValue) ui.MinuteIncrement = MinuteIncrement.Value;
-            if (SelectedTime.HasValue) ui.SelectedTime = SelectedTime.Value;
-            if (Time.HasValue) ui.Time = Time.Value;
+            if (ClockIdentifier is not null) ui.ClockIdentifier = ClockIdentifier;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
+            if (MinuteIncrement is not null) ui.MinuteIncrement = MinuteIncrement.Value;
+            if (SelectedTime is not null) ui.SelectedTime = SelectedTime;
+            if (Time is not null) ui.Time = Time.Value;
             if (Header != null) ui.Header = Header.UI;
             return CSharpMarkup.WinUI.TimePicker.StartChain(ui);
         }
@@ -20092,12 +20083,12 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
     {
         /// <summary>Create a <see cref="Xaml.Controls.TimePickerFlyout"/></summary>
         /// <remarks>Remark: TimePickerFlyout().Bind() binds to <see cref="Xaml.Controls.TimePickerFlyout.TimeProperty"/></remarks>
-        public static TimePickerFlyout TimePickerFlyout(O<string> ClockIdentifier = default, O<int> MinuteIncrement = default, O<CSharpMarkup.WinUI.to.TimeSpan> Time = default)
+        public static TimePickerFlyout TimePickerFlyout(string ClockIdentifier = default, int? MinuteIncrement = default, CSharpMarkup.WinUI.to.TimeSpan? Time = default)
         {
             var ui = new Xaml.Controls.TimePickerFlyout();
-            if (ClockIdentifier.HasValue) ui.ClockIdentifier = ClockIdentifier.Value;
-            if (MinuteIncrement.HasValue) ui.MinuteIncrement = MinuteIncrement.Value;
-            if (Time.HasValue) ui.Time = Time.Value;
+            if (ClockIdentifier is not null) ui.ClockIdentifier = ClockIdentifier;
+            if (MinuteIncrement is not null) ui.MinuteIncrement = MinuteIncrement.Value;
+            if (Time is not null) ui.Time = Time.Value;
             return CSharpMarkup.WinUI.TimePickerFlyout.StartChain(ui);
         }
 
@@ -20209,10 +20200,10 @@ namespace CSharpMarkup.WinUI // ToggleMenuFlyoutItem
 
         /// <summary>Create a <see cref="Xaml.Controls.ToggleMenuFlyoutItem"/></summary>
         /// <remarks>Remark: ToggleMenuFlyoutItem().Bind() binds to <see cref="Xaml.Controls.ToggleMenuFlyoutItem.IsCheckedProperty"/></remarks>
-        public static ToggleMenuFlyoutItem ToggleMenuFlyoutItem(O<bool> IsChecked = default, string Text = default)
+        public static ToggleMenuFlyoutItem ToggleMenuFlyoutItem(bool? IsChecked = default, string Text = default)
         {
             var ui = new Xaml.Controls.ToggleMenuFlyoutItem();
-            if (IsChecked.HasValue) ui.IsChecked = IsChecked.Value;
+            if (IsChecked is not null) ui.IsChecked = IsChecked.Value;
             if (Text != null) ui.Text = Text;
             return CSharpMarkup.WinUI.ToggleMenuFlyoutItem.StartChain(ui);
         }
@@ -20283,10 +20274,10 @@ namespace CSharpMarkup.WinUI // ToggleSplitButton
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ToggleSplitButton"/></summary>
-        public static ToggleSplitButton ToggleSplitButton(O<bool> IsChecked = default, UIObject Content = default)
+        public static ToggleSplitButton ToggleSplitButton(bool? IsChecked = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.ToggleSplitButton();
-            if (IsChecked.HasValue) ui.IsChecked = IsChecked.Value;
+            if (IsChecked is not null) ui.IsChecked = IsChecked.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ToggleSplitButton.StartChain(ui);
         }
@@ -20355,15 +20346,15 @@ namespace CSharpMarkup.WinUI // ToggleSwitch
 
         /// <summary>Create a <see cref="Xaml.Controls.ToggleSwitch"/></summary>
         /// <remarks>Remark: ToggleSwitch().Bind() binds to <see cref="Xaml.Controls.ToggleSwitch.IsOnProperty"/></remarks>
-        public static ToggleSwitch ToggleSwitch(O<Xaml.DataTemplate> HeaderTemplate = default, O<bool> IsOn = default, O<object> OffContent = default, O<Xaml.DataTemplate> OffContentTemplate = default, O<object> OnContent = default, O<Xaml.DataTemplate> OnContentTemplate = default, UIObject Header = default)
+        public static ToggleSwitch ToggleSwitch(Xaml.DataTemplate HeaderTemplate = default, bool? IsOn = default, object OffContent = default, Xaml.DataTemplate OffContentTemplate = default, object OnContent = default, Xaml.DataTemplate OnContentTemplate = default, UIObject Header = default)
         {
             var ui = new Xaml.Controls.ToggleSwitch();
-            if (HeaderTemplate.HasValue) ui.HeaderTemplate = HeaderTemplate.Value;
-            if (IsOn.HasValue) ui.IsOn = IsOn.Value;
-            if (OffContent.HasValue) ui.OffContent = OffContent.Value;
-            if (OffContentTemplate.HasValue) ui.OffContentTemplate = OffContentTemplate.Value;
-            if (OnContent.HasValue) ui.OnContent = OnContent.Value;
-            if (OnContentTemplate.HasValue) ui.OnContentTemplate = OnContentTemplate.Value;
+            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (IsOn is not null) ui.IsOn = IsOn.Value;
+            if (OffContent is not null) ui.OffContent = OffContent;
+            if (OffContentTemplate is not null) ui.OffContentTemplate = OffContentTemplate;
+            if (OnContent is not null) ui.OnContent = OnContent;
+            if (OnContentTemplate is not null) ui.OnContentTemplate = OnContentTemplate;
             if (Header != null) ui.Header = Header.UI;
             return CSharpMarkup.WinUI.ToggleSwitch.StartChain(ui);
         }
@@ -20473,15 +20464,15 @@ namespace CSharpMarkup.WinUI // ToolTip
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ToolTip"/></summary>
-        public static ToolTip ToolTip(O<double> HorizontalOffset = default, O<bool> IsOpen = default, O<Xaml.Controls.Primitives.PlacementMode> Placement = default, O<Windows.Foundation.Rect?> PlacementRect = default, O<Xaml.UIElement> PlacementTarget = default, O<double> VerticalOffset = default, UIObject Content = default)
+        public static ToolTip ToolTip(double? HorizontalOffset = default, bool? IsOpen = default, Xaml.Controls.Primitives.PlacementMode? Placement = default, Windows.Foundation.Rect? PlacementRect = default, Xaml.UIElement PlacementTarget = default, double? VerticalOffset = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.ToolTip();
-            if (HorizontalOffset.HasValue) ui.HorizontalOffset = HorizontalOffset.Value;
-            if (IsOpen.HasValue) ui.IsOpen = IsOpen.Value;
-            if (Placement.HasValue) ui.Placement = Placement.Value;
-            if (PlacementRect.HasValue) ui.PlacementRect = PlacementRect.Value;
-            if (PlacementTarget.HasValue) ui.PlacementTarget = PlacementTarget.Value;
-            if (VerticalOffset.HasValue) ui.VerticalOffset = VerticalOffset.Value;
+            if (HorizontalOffset is not null) ui.HorizontalOffset = HorizontalOffset.Value;
+            if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
+            if (Placement is not null) ui.Placement = Placement.Value;
+            if (PlacementRect is not null) ui.PlacementRect = PlacementRect;
+            if (PlacementTarget is not null) ui.PlacementTarget = PlacementTarget;
+            if (VerticalOffset is not null) ui.VerticalOffset = VerticalOffset.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ToolTip.StartChain(ui);
         }
@@ -20576,20 +20567,20 @@ namespace CSharpMarkup.WinUI // TreeView
     {
         /// <summary>Create a <see cref="Xaml.Controls.TreeView"/></summary>
         /// <remarks>Remark: TreeView().Bind() binds to <see cref="Xaml.Controls.TreeView.ItemsSourceProperty"/></remarks>
-        public static TreeView TreeView(O<bool> CanDragItems = default, O<bool> CanReorderItems = default, O<Xaml.Style> ItemContainerStyle = default, O<Xaml.Controls.StyleSelector> ItemContainerStyleSelector = default, O<Xaml.Media.Animation.TransitionCollection> ItemContainerTransitions = default, O<Xaml.DataTemplate> ItemTemplate = default, O<Xaml.Controls.DataTemplateSelector> ItemTemplateSelector = default, O<object> ItemsSource = default, O<object> SelectedItem = default, O<Xaml.Controls.TreeViewNode> SelectedNode = default, O<Xaml.Controls.TreeViewSelectionMode> SelectionMode = default)
+        public static TreeView TreeView(bool? CanDragItems = default, bool? CanReorderItems = default, Xaml.Style ItemContainerStyle = default, Xaml.Controls.StyleSelector ItemContainerStyleSelector = default, Xaml.Media.Animation.TransitionCollection ItemContainerTransitions = default, Xaml.DataTemplate ItemTemplate = default, Xaml.Controls.DataTemplateSelector ItemTemplateSelector = default, object ItemsSource = default, object SelectedItem = default, Xaml.Controls.TreeViewNode SelectedNode = default, Xaml.Controls.TreeViewSelectionMode? SelectionMode = default)
         {
             var ui = new Xaml.Controls.TreeView();
-            if (CanDragItems.HasValue) ui.CanDragItems = CanDragItems.Value;
-            if (CanReorderItems.HasValue) ui.CanReorderItems = CanReorderItems.Value;
-            if (ItemContainerStyle.HasValue) ui.ItemContainerStyle = ItemContainerStyle.Value;
-            if (ItemContainerStyleSelector.HasValue) ui.ItemContainerStyleSelector = ItemContainerStyleSelector.Value;
-            if (ItemContainerTransitions.HasValue) ui.ItemContainerTransitions = ItemContainerTransitions.Value;
-            if (ItemTemplate.HasValue) ui.ItemTemplate = ItemTemplate.Value;
-            if (ItemTemplateSelector.HasValue) ui.ItemTemplateSelector = ItemTemplateSelector.Value;
-            if (ItemsSource.HasValue) ui.ItemsSource = ItemsSource.Value;
-            if (SelectedItem.HasValue) ui.SelectedItem = SelectedItem.Value;
-            if (SelectedNode.HasValue) ui.SelectedNode = SelectedNode.Value;
-            if (SelectionMode.HasValue) ui.SelectionMode = SelectionMode.Value;
+            if (CanDragItems is not null) ui.CanDragItems = CanDragItems.Value;
+            if (CanReorderItems is not null) ui.CanReorderItems = CanReorderItems.Value;
+            if (ItemContainerStyle is not null) ui.ItemContainerStyle = ItemContainerStyle;
+            if (ItemContainerStyleSelector is not null) ui.ItemContainerStyleSelector = ItemContainerStyleSelector;
+            if (ItemContainerTransitions is not null) ui.ItemContainerTransitions = ItemContainerTransitions;
+            if (ItemTemplate is not null) ui.ItemTemplate = ItemTemplate;
+            if (ItemTemplateSelector is not null) ui.ItemTemplateSelector = ItemTemplateSelector;
+            if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
+            if (SelectedItem is not null) ui.SelectedItem = SelectedItem;
+            if (SelectedNode is not null) ui.SelectedNode = SelectedNode;
+            if (SelectionMode is not null) ui.SelectionMode = SelectionMode.Value;
             return CSharpMarkup.WinUI.TreeView.StartChain(ui);
         }
 
@@ -20727,17 +20718,17 @@ namespace CSharpMarkup.WinUI // TreeViewItem
 
         /// <summary>Create a <see cref="Xaml.Controls.TreeViewItem"/></summary>
         /// <remarks>Remark: TreeViewItem().Bind() binds to <see cref="Xaml.Controls.TreeViewItem.ItemsSourceProperty"/></remarks>
-        public static TreeViewItem TreeViewItem(O<string> CollapsedGlyph = default, O<string> ExpandedGlyph = default, O<Xaml.Media.Brush> GlyphBrush = default, O<double> GlyphOpacity = default, O<double> GlyphSize = default, O<bool> HasUnrealizedChildren = default, O<bool> IsExpanded = default, O<object> ItemsSource = default, UIObject Content = default)
+        public static TreeViewItem TreeViewItem(string CollapsedGlyph = default, string ExpandedGlyph = default, Xaml.Media.Brush GlyphBrush = default, double? GlyphOpacity = default, double? GlyphSize = default, bool? HasUnrealizedChildren = default, bool? IsExpanded = default, object ItemsSource = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.TreeViewItem();
-            if (CollapsedGlyph.HasValue) ui.CollapsedGlyph = CollapsedGlyph.Value;
-            if (ExpandedGlyph.HasValue) ui.ExpandedGlyph = ExpandedGlyph.Value;
-            if (GlyphBrush.HasValue) ui.GlyphBrush = GlyphBrush.Value;
-            if (GlyphOpacity.HasValue) ui.GlyphOpacity = GlyphOpacity.Value;
-            if (GlyphSize.HasValue) ui.GlyphSize = GlyphSize.Value;
-            if (HasUnrealizedChildren.HasValue) ui.HasUnrealizedChildren = HasUnrealizedChildren.Value;
-            if (IsExpanded.HasValue) ui.IsExpanded = IsExpanded.Value;
-            if (ItemsSource.HasValue) ui.ItemsSource = ItemsSource.Value;
+            if (CollapsedGlyph is not null) ui.CollapsedGlyph = CollapsedGlyph;
+            if (ExpandedGlyph is not null) ui.ExpandedGlyph = ExpandedGlyph;
+            if (GlyphBrush is not null) ui.GlyphBrush = GlyphBrush;
+            if (GlyphOpacity is not null) ui.GlyphOpacity = GlyphOpacity.Value;
+            if (GlyphSize is not null) ui.GlyphSize = GlyphSize.Value;
+            if (HasUnrealizedChildren is not null) ui.HasUnrealizedChildren = HasUnrealizedChildren.Value;
+            if (IsExpanded is not null) ui.IsExpanded = IsExpanded.Value;
+            if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.TreeViewItem.StartChain(ui);
         }
@@ -20982,12 +20973,12 @@ namespace CSharpMarkup.WinUI // TreeViewNode
     {
         /// <summary>Create a <see cref="Xaml.Controls.TreeViewNode"/></summary>
         /// <remarks>Remark: TreeViewNode().Bind() binds to <see cref="Xaml.Controls.TreeViewNode.ContentProperty"/></remarks>
-        public static TreeViewNode TreeViewNode(O<object> Content = default, O<bool> HasUnrealizedChildren = default, O<bool> IsExpanded = default)
+        public static TreeViewNode TreeViewNode(object Content = default, bool? HasUnrealizedChildren = default, bool? IsExpanded = default)
         {
             var ui = new Xaml.Controls.TreeViewNode();
-            if (Content.HasValue) ui.Content = Content.Value;
-            if (HasUnrealizedChildren.HasValue) ui.HasUnrealizedChildren = HasUnrealizedChildren.Value;
-            if (IsExpanded.HasValue) ui.IsExpanded = IsExpanded.Value;
+            if (Content is not null) ui.Content = Content;
+            if (HasUnrealizedChildren is not null) ui.HasUnrealizedChildren = HasUnrealizedChildren.Value;
+            if (IsExpanded is not null) ui.IsExpanded = IsExpanded.Value;
             return CSharpMarkup.WinUI.TreeViewNode.StartChain(ui);
         }
 
@@ -21065,18 +21056,18 @@ namespace CSharpMarkup.WinUI // TwoPaneView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TwoPaneView"/></summary>
-        public static TwoPaneView TwoPaneView(O<double> MinTallModeHeight = default, O<double> MinWideModeWidth = default, O<Xaml.UIElement> Pane1 = default, O<Xaml.GridLength> Pane1Length = default, O<Xaml.UIElement> Pane2 = default, O<Xaml.GridLength> Pane2Length = default, O<Xaml.Controls.TwoPaneViewPriority> PanePriority = default, O<Xaml.Controls.TwoPaneViewTallModeConfiguration> TallModeConfiguration = default, O<Xaml.Controls.TwoPaneViewWideModeConfiguration> WideModeConfiguration = default)
+        public static TwoPaneView TwoPaneView(double? MinTallModeHeight = default, double? MinWideModeWidth = default, Xaml.UIElement Pane1 = default, Xaml.GridLength? Pane1Length = default, Xaml.UIElement Pane2 = default, Xaml.GridLength? Pane2Length = default, Xaml.Controls.TwoPaneViewPriority? PanePriority = default, Xaml.Controls.TwoPaneViewTallModeConfiguration? TallModeConfiguration = default, Xaml.Controls.TwoPaneViewWideModeConfiguration? WideModeConfiguration = default)
         {
             var ui = new Xaml.Controls.TwoPaneView();
-            if (MinTallModeHeight.HasValue) ui.MinTallModeHeight = MinTallModeHeight.Value;
-            if (MinWideModeWidth.HasValue) ui.MinWideModeWidth = MinWideModeWidth.Value;
-            if (Pane1.HasValue) ui.Pane1 = Pane1.Value;
-            if (Pane1Length.HasValue) ui.Pane1Length = Pane1Length.Value;
-            if (Pane2.HasValue) ui.Pane2 = Pane2.Value;
-            if (Pane2Length.HasValue) ui.Pane2Length = Pane2Length.Value;
-            if (PanePriority.HasValue) ui.PanePriority = PanePriority.Value;
-            if (TallModeConfiguration.HasValue) ui.TallModeConfiguration = TallModeConfiguration.Value;
-            if (WideModeConfiguration.HasValue) ui.WideModeConfiguration = WideModeConfiguration.Value;
+            if (MinTallModeHeight is not null) ui.MinTallModeHeight = MinTallModeHeight.Value;
+            if (MinWideModeWidth is not null) ui.MinWideModeWidth = MinWideModeWidth.Value;
+            if (Pane1 is not null) ui.Pane1 = Pane1;
+            if (Pane1Length is not null) ui.Pane1Length = Pane1Length.Value;
+            if (Pane2 is not null) ui.Pane2 = Pane2;
+            if (Pane2Length is not null) ui.Pane2Length = Pane2Length.Value;
+            if (PanePriority is not null) ui.PanePriority = PanePriority.Value;
+            if (TallModeConfiguration is not null) ui.TallModeConfiguration = TallModeConfiguration.Value;
+            if (WideModeConfiguration is not null) ui.WideModeConfiguration = WideModeConfiguration.Value;
             return CSharpMarkup.WinUI.TwoPaneView.StartChain(ui);
         }
 
@@ -21194,17 +21185,17 @@ namespace CSharpMarkup.WinUI // UniformGridLayout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.UniformGridLayout"/></summary>
-        public static UniformGridLayout UniformGridLayout(O<Xaml.Controls.UniformGridLayoutItemsJustification> ItemsJustification = default, O<Xaml.Controls.UniformGridLayoutItemsStretch> ItemsStretch = default, O<int> MaximumRowsOrColumns = default, O<double> MinColumnSpacing = default, O<double> MinItemHeight = default, O<double> MinItemWidth = default, O<double> MinRowSpacing = default, O<Xaml.Controls.Orientation> Orientation = default)
+        public static UniformGridLayout UniformGridLayout(Xaml.Controls.UniformGridLayoutItemsJustification? ItemsJustification = default, Xaml.Controls.UniformGridLayoutItemsStretch? ItemsStretch = default, int? MaximumRowsOrColumns = default, double? MinColumnSpacing = default, double? MinItemHeight = default, double? MinItemWidth = default, double? MinRowSpacing = default, Xaml.Controls.Orientation? Orientation = default)
         {
             var ui = new Xaml.Controls.UniformGridLayout();
-            if (ItemsJustification.HasValue) ui.ItemsJustification = ItemsJustification.Value;
-            if (ItemsStretch.HasValue) ui.ItemsStretch = ItemsStretch.Value;
-            if (MaximumRowsOrColumns.HasValue) ui.MaximumRowsOrColumns = MaximumRowsOrColumns.Value;
-            if (MinColumnSpacing.HasValue) ui.MinColumnSpacing = MinColumnSpacing.Value;
-            if (MinItemHeight.HasValue) ui.MinItemHeight = MinItemHeight.Value;
-            if (MinItemWidth.HasValue) ui.MinItemWidth = MinItemWidth.Value;
-            if (MinRowSpacing.HasValue) ui.MinRowSpacing = MinRowSpacing.Value;
-            if (Orientation.HasValue) ui.Orientation = Orientation.Value;
+            if (ItemsJustification is not null) ui.ItemsJustification = ItemsJustification.Value;
+            if (ItemsStretch is not null) ui.ItemsStretch = ItemsStretch.Value;
+            if (MaximumRowsOrColumns is not null) ui.MaximumRowsOrColumns = MaximumRowsOrColumns.Value;
+            if (MinColumnSpacing is not null) ui.MinColumnSpacing = MinColumnSpacing.Value;
+            if (MinItemHeight is not null) ui.MinItemHeight = MinItemHeight.Value;
+            if (MinItemWidth is not null) ui.MinItemWidth = MinItemWidth.Value;
+            if (MinRowSpacing is not null) ui.MinRowSpacing = MinRowSpacing.Value;
+            if (Orientation is not null) ui.Orientation = Orientation.Value;
             return CSharpMarkup.WinUI.UniformGridLayout.StartChain(ui);
         }
 
@@ -21486,15 +21477,15 @@ namespace CSharpMarkup.WinUI // VariableSizedWrapGrid
         /// <summary>Set <see cref="Xaml.Controls.VariableSizedWrapGrid"/> attached properties</summary>
         public static TTarget VariableSizedWrapGrid<TTarget>(this TTarget target
 
-            , O<int> ColumnSpan = default
+            , int? ColumnSpan = default
 
-            , O<int> RowSpan = default
+            , int? RowSpan = default
 
         ) where TTarget : UIElement
         {
-            if (ColumnSpan.HasValue) Xaml.Controls.VariableSizedWrapGrid.SetColumnSpan(target.UI, ColumnSpan.Value);
+            if (ColumnSpan is not null) Xaml.Controls.VariableSizedWrapGrid.SetColumnSpan(target.UI, ColumnSpan.Value);
 
-            if (RowSpan.HasValue) Xaml.Controls.VariableSizedWrapGrid.SetRowSpan(target.UI, RowSpan.Value);
+            if (RowSpan is not null) Xaml.Controls.VariableSizedWrapGrid.SetRowSpan(target.UI, RowSpan.Value);
 
             return target;
         }
@@ -21514,11 +21505,11 @@ namespace CSharpMarkup.WinUI // Viewbox
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Viewbox"/></summary>
-        public static Viewbox Viewbox(O<Xaml.Media.Stretch> Stretch = default, O<Xaml.Controls.StretchDirection> StretchDirection = default, Microsoft.UI.Xaml.UIElement Child = default)
+        public static Viewbox Viewbox(Xaml.Media.Stretch? Stretch = default, Xaml.Controls.StretchDirection? StretchDirection = default, Microsoft.UI.Xaml.UIElement Child = default)
         {
             var ui = new Xaml.Controls.Viewbox();
-            if (Stretch.HasValue) ui.Stretch = Stretch.Value;
-            if (StretchDirection.HasValue) ui.StretchDirection = StretchDirection.Value;
+            if (Stretch is not null) ui.Stretch = Stretch.Value;
+            if (StretchDirection is not null) ui.StretchDirection = StretchDirection.Value;
             if (Child != null) ui.Child = Child;
             return CSharpMarkup.WinUI.Viewbox.StartChain(ui);
         }
@@ -21625,10 +21616,10 @@ namespace CSharpMarkup.WinUI // VirtualizingLayoutContext
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.VirtualizingLayoutContext"/></summary>
-        public static VirtualizingLayoutContext VirtualizingLayoutContext(O<CSharpMarkup.WinUI.to.Point> LayoutOrigin = default)
+        public static VirtualizingLayoutContext VirtualizingLayoutContext(CSharpMarkup.WinUI.to.Point? LayoutOrigin = default)
         {
             var ui = new Xaml.Controls.VirtualizingLayoutContext();
-            if (LayoutOrigin.HasValue) ui.LayoutOrigin = LayoutOrigin.Value;
+            if (LayoutOrigin is not null) ui.LayoutOrigin = LayoutOrigin.Value;
             return CSharpMarkup.WinUI.VirtualizingLayoutContext.StartChain(ui);
         }
 
@@ -21785,13 +21776,13 @@ namespace CSharpMarkup.WinUI // WebView2
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.WebView2"/></summary>
-        public static WebView2 WebView2(O<bool> CanGoBack = default, O<bool> CanGoForward = default, O<Windows.UI.Color> DefaultBackgroundColor = default, O<Uri> Source = default)
+        public static WebView2 WebView2(bool? CanGoBack = default, bool? CanGoForward = default, Windows.UI.Color? DefaultBackgroundColor = default, Uri Source = default)
         {
             var ui = new Xaml.Controls.WebView2();
-            if (CanGoBack.HasValue) ui.CanGoBack = CanGoBack.Value;
-            if (CanGoForward.HasValue) ui.CanGoForward = CanGoForward.Value;
-            if (DefaultBackgroundColor.HasValue) ui.DefaultBackgroundColor = DefaultBackgroundColor.Value;
-            if (Source.HasValue) ui.Source = Source.Value;
+            if (CanGoBack is not null) ui.CanGoBack = CanGoBack.Value;
+            if (CanGoForward is not null) ui.CanGoForward = CanGoForward.Value;
+            if (DefaultBackgroundColor is not null) ui.DefaultBackgroundColor = DefaultBackgroundColor.Value;
+            if (Source is not null) ui.Source = Source;
             return CSharpMarkup.WinUI.WebView2.StartChain(ui);
         }
 
@@ -21977,10 +21968,10 @@ namespace CSharpMarkup.WinUI // XamlControlsResources
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.XamlControlsResources"/></summary>
-        public static XamlControlsResources XamlControlsResources(O<bool> UseCompactResources = default)
+        public static XamlControlsResources XamlControlsResources(bool? UseCompactResources = default)
         {
             var ui = new Xaml.Controls.XamlControlsResources();
-            if (UseCompactResources.HasValue) ui.UseCompactResources = UseCompactResources.Value;
+            if (UseCompactResources is not null) ui.UseCompactResources = UseCompactResources.Value;
             return CSharpMarkup.WinUI.XamlControlsResources.StartChain(ui);
         }
 
@@ -22297,10 +22288,10 @@ namespace CSharpMarkup.WinUI // ColorPickerSlider
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ColorPickerSlider"/></summary>
-        public static ColorPickerSlider ColorPickerSlider(O<Xaml.Controls.ColorPickerHsvChannel> ColorChannel = default)
+        public static ColorPickerSlider ColorPickerSlider(Xaml.Controls.ColorPickerHsvChannel? ColorChannel = default)
         {
             var ui = new Xaml.Controls.Primitives.ColorPickerSlider();
-            if (ColorChannel.HasValue) ui.ColorChannel = ColorChannel.Value;
+            if (ColorChannel is not null) ui.ColorChannel = ColorChannel.Value;
             return CSharpMarkup.WinUI.ColorPickerSlider.StartChain(ui);
         }
 
@@ -22359,19 +22350,19 @@ namespace CSharpMarkup.WinUI // ColorSpectrum
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ColorSpectrum"/></summary>
         /// <remarks>Remark: ColorSpectrum().Bind() binds to <see cref="Xaml.Controls.Primitives.ColorSpectrum.ColorProperty"/></remarks>
-        public static ColorSpectrum ColorSpectrum(O<Windows.UI.Color> Color = default, O<Xaml.Controls.ColorSpectrumComponents> Components = default, O<Vector4> HsvColor = default, O<int> MaxHue = default, O<int> MaxSaturation = default, O<int> MaxValue = default, O<int> MinHue = default, O<int> MinSaturation = default, O<int> MinValue = default, O<Xaml.Controls.ColorSpectrumShape> Shape = default)
+        public static ColorSpectrum ColorSpectrum(Windows.UI.Color? Color = default, Xaml.Controls.ColorSpectrumComponents? Components = default, Vector4? HsvColor = default, int? MaxHue = default, int? MaxSaturation = default, int? MaxValue = default, int? MinHue = default, int? MinSaturation = default, int? MinValue = default, Xaml.Controls.ColorSpectrumShape? Shape = default)
         {
             var ui = new Xaml.Controls.Primitives.ColorSpectrum();
-            if (Color.HasValue) ui.Color = Color.Value;
-            if (Components.HasValue) ui.Components = Components.Value;
-            if (HsvColor.HasValue) ui.HsvColor = HsvColor.Value;
-            if (MaxHue.HasValue) ui.MaxHue = MaxHue.Value;
-            if (MaxSaturation.HasValue) ui.MaxSaturation = MaxSaturation.Value;
-            if (MaxValue.HasValue) ui.MaxValue = MaxValue.Value;
-            if (MinHue.HasValue) ui.MinHue = MinHue.Value;
-            if (MinSaturation.HasValue) ui.MinSaturation = MinSaturation.Value;
-            if (MinValue.HasValue) ui.MinValue = MinValue.Value;
-            if (Shape.HasValue) ui.Shape = Shape.Value;
+            if (Color is not null) ui.Color = Color.Value;
+            if (Components is not null) ui.Components = Components.Value;
+            if (HsvColor is not null) ui.HsvColor = HsvColor.Value;
+            if (MaxHue is not null) ui.MaxHue = MaxHue.Value;
+            if (MaxSaturation is not null) ui.MaxSaturation = MaxSaturation.Value;
+            if (MaxValue is not null) ui.MaxValue = MaxValue.Value;
+            if (MinHue is not null) ui.MinHue = MinHue.Value;
+            if (MinSaturation is not null) ui.MinSaturation = MinSaturation.Value;
+            if (MinValue is not null) ui.MinValue = MinValue.Value;
+            if (Shape is not null) ui.Shape = Shape.Value;
             return CSharpMarkup.WinUI.ColorSpectrum.StartChain(ui);
         }
 
@@ -22496,12 +22487,12 @@ namespace CSharpMarkup.WinUI // ColumnMajorUniformToLargestGridLayout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ColumnMajorUniformToLargestGridLayout"/></summary>
-        public static ColumnMajorUniformToLargestGridLayout ColumnMajorUniformToLargestGridLayout(O<double> ColumnSpacing = default, O<int> MaxColumns = default, O<double> RowSpacing = default)
+        public static ColumnMajorUniformToLargestGridLayout ColumnMajorUniformToLargestGridLayout(double? ColumnSpacing = default, int? MaxColumns = default, double? RowSpacing = default)
         {
             var ui = new Xaml.Controls.Primitives.ColumnMajorUniformToLargestGridLayout();
-            if (ColumnSpacing.HasValue) ui.ColumnSpacing = ColumnSpacing.Value;
-            if (MaxColumns.HasValue) ui.MaxColumns = MaxColumns.Value;
-            if (RowSpacing.HasValue) ui.RowSpacing = RowSpacing.Value;
+            if (ColumnSpacing is not null) ui.ColumnSpacing = ColumnSpacing.Value;
+            if (MaxColumns is not null) ui.MaxColumns = MaxColumns.Value;
+            if (RowSpacing is not null) ui.RowSpacing = RowSpacing.Value;
             return CSharpMarkup.WinUI.ColumnMajorUniformToLargestGridLayout.StartChain(ui);
         }
 
@@ -22668,11 +22659,11 @@ namespace CSharpMarkup.WinUI // CornerRadiusFilterConverter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CornerRadiusFilterConverter"/></summary>
-        public static CornerRadiusFilterConverter CornerRadiusFilterConverter(O<Xaml.Controls.Primitives.CornerRadiusFilterKind> Filter = default, O<double> Scale = default)
+        public static CornerRadiusFilterConverter CornerRadiusFilterConverter(Xaml.Controls.Primitives.CornerRadiusFilterKind? Filter = default, double? Scale = default)
         {
             var ui = new Xaml.Controls.Primitives.CornerRadiusFilterConverter();
-            if (Filter.HasValue) ui.Filter = Filter.Value;
-            if (Scale.HasValue) ui.Scale = Scale.Value;
+            if (Filter is not null) ui.Filter = Filter.Value;
+            if (Scale is not null) ui.Scale = Scale.Value;
             return CSharpMarkup.WinUI.CornerRadiusFilterConverter.StartChain(ui);
         }
 
@@ -22735,11 +22726,11 @@ namespace CSharpMarkup.WinUI // CornerRadiusToThicknessConverter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CornerRadiusToThicknessConverter"/></summary>
-        public static CornerRadiusToThicknessConverter CornerRadiusToThicknessConverter(O<Xaml.Controls.Primitives.CornerRadiusToThicknessConverterKind> ConversionKind = default, O<double> Multiplier = default)
+        public static CornerRadiusToThicknessConverter CornerRadiusToThicknessConverter(Xaml.Controls.Primitives.CornerRadiusToThicknessConverterKind? ConversionKind = default, double? Multiplier = default)
         {
             var ui = new Xaml.Controls.Primitives.CornerRadiusToThicknessConverter();
-            if (ConversionKind.HasValue) ui.ConversionKind = ConversionKind.Value;
-            if (Multiplier.HasValue) ui.Multiplier = Multiplier.Value;
+            if (ConversionKind is not null) ui.ConversionKind = ConversionKind.Value;
+            if (Multiplier is not null) ui.Multiplier = Multiplier.Value;
             return CSharpMarkup.WinUI.CornerRadiusToThicknessConverter.StartChain(ui);
         }
 
@@ -22917,31 +22908,31 @@ namespace CSharpMarkup.WinUI // GridViewItemPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.GridViewItemPresenter"/></summary>
-        public static GridViewItemPresenter GridViewItemPresenter(O<Xaml.Media.Brush> CheckBrush = default, O<Xaml.Media.Brush> CheckHintBrush = default, O<Xaml.Media.Brush> CheckSelectingBrush = default, O<Xaml.Thickness> ContentMargin = default, O<double> DisabledOpacity = default, O<Xaml.Media.Brush> DragBackground = default, O<Xaml.Media.Brush> DragForeground = default, O<double> DragOpacity = default, O<Xaml.Media.Brush> FocusBorderBrush = default, O<Xaml.HorizontalAlignment> GridViewItemPresenterHorizontalContentAlignment = default, O<Xaml.Thickness> GridViewItemPresenterPadding = default, O<Xaml.VerticalAlignment> GridViewItemPresenterVerticalContentAlignment = default, O<Xaml.Media.Brush> PlaceholderBackground = default, O<Xaml.Media.Brush> PointerOverBackground = default, O<Xaml.Thickness> PointerOverBackgroundMargin = default, O<double> ReorderHintOffset = default, O<Xaml.Media.Brush> SelectedBackground = default, O<Xaml.Thickness> SelectedBorderThickness = default, O<Xaml.Media.Brush> SelectedForeground = default, O<Xaml.Media.Brush> SelectedPointerOverBackground = default, O<Xaml.Media.Brush> SelectedPointerOverBorderBrush = default, O<bool> SelectionCheckMarkVisualEnabled = default, UIObject Content = default)
+        public static GridViewItemPresenter GridViewItemPresenter(Xaml.Media.Brush CheckBrush = default, Xaml.Media.Brush CheckHintBrush = default, Xaml.Media.Brush CheckSelectingBrush = default, Xaml.Thickness? ContentMargin = default, double? DisabledOpacity = default, Xaml.Media.Brush DragBackground = default, Xaml.Media.Brush DragForeground = default, double? DragOpacity = default, Xaml.Media.Brush FocusBorderBrush = default, Xaml.HorizontalAlignment? GridViewItemPresenterHorizontalContentAlignment = default, Xaml.Thickness? GridViewItemPresenterPadding = default, Xaml.VerticalAlignment? GridViewItemPresenterVerticalContentAlignment = default, Xaml.Media.Brush PlaceholderBackground = default, Xaml.Media.Brush PointerOverBackground = default, Xaml.Thickness? PointerOverBackgroundMargin = default, double? ReorderHintOffset = default, Xaml.Media.Brush SelectedBackground = default, Xaml.Thickness? SelectedBorderThickness = default, Xaml.Media.Brush SelectedForeground = default, Xaml.Media.Brush SelectedPointerOverBackground = default, Xaml.Media.Brush SelectedPointerOverBorderBrush = default, bool? SelectionCheckMarkVisualEnabled = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Primitives.GridViewItemPresenter();
-            if (CheckBrush.HasValue) ui.CheckBrush = CheckBrush.Value;
-            if (CheckHintBrush.HasValue) ui.CheckHintBrush = CheckHintBrush.Value;
-            if (CheckSelectingBrush.HasValue) ui.CheckSelectingBrush = CheckSelectingBrush.Value;
-            if (ContentMargin.HasValue) ui.ContentMargin = ContentMargin.Value;
-            if (DisabledOpacity.HasValue) ui.DisabledOpacity = DisabledOpacity.Value;
-            if (DragBackground.HasValue) ui.DragBackground = DragBackground.Value;
-            if (DragForeground.HasValue) ui.DragForeground = DragForeground.Value;
-            if (DragOpacity.HasValue) ui.DragOpacity = DragOpacity.Value;
-            if (FocusBorderBrush.HasValue) ui.FocusBorderBrush = FocusBorderBrush.Value;
-            if (GridViewItemPresenterHorizontalContentAlignment.HasValue) ui.GridViewItemPresenterHorizontalContentAlignment = GridViewItemPresenterHorizontalContentAlignment.Value;
-            if (GridViewItemPresenterPadding.HasValue) ui.GridViewItemPresenterPadding = GridViewItemPresenterPadding.Value;
-            if (GridViewItemPresenterVerticalContentAlignment.HasValue) ui.GridViewItemPresenterVerticalContentAlignment = GridViewItemPresenterVerticalContentAlignment.Value;
-            if (PlaceholderBackground.HasValue) ui.PlaceholderBackground = PlaceholderBackground.Value;
-            if (PointerOverBackground.HasValue) ui.PointerOverBackground = PointerOverBackground.Value;
-            if (PointerOverBackgroundMargin.HasValue) ui.PointerOverBackgroundMargin = PointerOverBackgroundMargin.Value;
-            if (ReorderHintOffset.HasValue) ui.ReorderHintOffset = ReorderHintOffset.Value;
-            if (SelectedBackground.HasValue) ui.SelectedBackground = SelectedBackground.Value;
-            if (SelectedBorderThickness.HasValue) ui.SelectedBorderThickness = SelectedBorderThickness.Value;
-            if (SelectedForeground.HasValue) ui.SelectedForeground = SelectedForeground.Value;
-            if (SelectedPointerOverBackground.HasValue) ui.SelectedPointerOverBackground = SelectedPointerOverBackground.Value;
-            if (SelectedPointerOverBorderBrush.HasValue) ui.SelectedPointerOverBorderBrush = SelectedPointerOverBorderBrush.Value;
-            if (SelectionCheckMarkVisualEnabled.HasValue) ui.SelectionCheckMarkVisualEnabled = SelectionCheckMarkVisualEnabled.Value;
+            if (CheckBrush is not null) ui.CheckBrush = CheckBrush;
+            if (CheckHintBrush is not null) ui.CheckHintBrush = CheckHintBrush;
+            if (CheckSelectingBrush is not null) ui.CheckSelectingBrush = CheckSelectingBrush;
+            if (ContentMargin is not null) ui.ContentMargin = ContentMargin.Value;
+            if (DisabledOpacity is not null) ui.DisabledOpacity = DisabledOpacity.Value;
+            if (DragBackground is not null) ui.DragBackground = DragBackground;
+            if (DragForeground is not null) ui.DragForeground = DragForeground;
+            if (DragOpacity is not null) ui.DragOpacity = DragOpacity.Value;
+            if (FocusBorderBrush is not null) ui.FocusBorderBrush = FocusBorderBrush;
+            if (GridViewItemPresenterHorizontalContentAlignment is not null) ui.GridViewItemPresenterHorizontalContentAlignment = GridViewItemPresenterHorizontalContentAlignment.Value;
+            if (GridViewItemPresenterPadding is not null) ui.GridViewItemPresenterPadding = GridViewItemPresenterPadding.Value;
+            if (GridViewItemPresenterVerticalContentAlignment is not null) ui.GridViewItemPresenterVerticalContentAlignment = GridViewItemPresenterVerticalContentAlignment.Value;
+            if (PlaceholderBackground is not null) ui.PlaceholderBackground = PlaceholderBackground;
+            if (PointerOverBackground is not null) ui.PointerOverBackground = PointerOverBackground;
+            if (PointerOverBackgroundMargin is not null) ui.PointerOverBackgroundMargin = PointerOverBackgroundMargin.Value;
+            if (ReorderHintOffset is not null) ui.ReorderHintOffset = ReorderHintOffset.Value;
+            if (SelectedBackground is not null) ui.SelectedBackground = SelectedBackground;
+            if (SelectedBorderThickness is not null) ui.SelectedBorderThickness = SelectedBorderThickness.Value;
+            if (SelectedForeground is not null) ui.SelectedForeground = SelectedForeground;
+            if (SelectedPointerOverBackground is not null) ui.SelectedPointerOverBackground = SelectedPointerOverBackground;
+            if (SelectedPointerOverBorderBrush is not null) ui.SelectedPointerOverBorderBrush = SelectedPointerOverBorderBrush;
+            if (SelectionCheckMarkVisualEnabled is not null) ui.SelectionCheckMarkVisualEnabled = SelectionCheckMarkVisualEnabled.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.GridViewItemPresenter.StartChain(ui);
         }
@@ -23432,15 +23423,15 @@ namespace CSharpMarkup.WinUI // InfoBarPanel
         /// <summary>Set <see cref="Xaml.Controls.Primitives.InfoBarPanel"/> attached properties</summary>
         public static TTarget InfoBarPanels<TTarget>(this TTarget target
 
-            , O<Xaml.Thickness> HorizontalOrientationMargin = default
+            , Xaml.Thickness? HorizontalOrientationMargin = default
 
-            , O<Xaml.Thickness> VerticalOrientationMargin = default
+            , Xaml.Thickness? VerticalOrientationMargin = default
 
         ) where TTarget : DependencyObject
         {
-            if (HorizontalOrientationMargin.HasValue) Xaml.Controls.Primitives.InfoBarPanel.SetHorizontalOrientationMargin(target.UI, HorizontalOrientationMargin.Value);
+            if (HorizontalOrientationMargin is not null) Xaml.Controls.Primitives.InfoBarPanel.SetHorizontalOrientationMargin(target.UI, HorizontalOrientationMargin.Value);
 
-            if (VerticalOrientationMargin.HasValue) Xaml.Controls.Primitives.InfoBarPanel.SetVerticalOrientationMargin(target.UI, VerticalOrientationMargin.Value);
+            if (VerticalOrientationMargin is not null) Xaml.Controls.Primitives.InfoBarPanel.SetVerticalOrientationMargin(target.UI, VerticalOrientationMargin.Value);
 
             return target;
         }
@@ -23452,11 +23443,11 @@ namespace CSharpMarkup.WinUI // JumpListItemBackgroundConverter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter"/></summary>
-        public static JumpListItemBackgroundConverter JumpListItemBackgroundConverter(O<Xaml.Media.Brush> Disabled = default, O<Xaml.Media.Brush> Enabled = default)
+        public static JumpListItemBackgroundConverter JumpListItemBackgroundConverter(Xaml.Media.Brush Disabled = default, Xaml.Media.Brush Enabled = default)
         {
             var ui = new Xaml.Controls.Primitives.JumpListItemBackgroundConverter();
-            if (Disabled.HasValue) ui.Disabled = Disabled.Value;
-            if (Enabled.HasValue) ui.Enabled = Enabled.Value;
+            if (Disabled is not null) ui.Disabled = Disabled;
+            if (Enabled is not null) ui.Enabled = Enabled;
             return CSharpMarkup.WinUI.JumpListItemBackgroundConverter.StartChain(ui);
         }
 
@@ -23531,11 +23522,11 @@ namespace CSharpMarkup.WinUI // JumpListItemForegroundConverter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter"/></summary>
-        public static JumpListItemForegroundConverter JumpListItemForegroundConverter(O<Xaml.Media.Brush> Disabled = default, O<Xaml.Media.Brush> Enabled = default)
+        public static JumpListItemForegroundConverter JumpListItemForegroundConverter(Xaml.Media.Brush Disabled = default, Xaml.Media.Brush Enabled = default)
         {
             var ui = new Xaml.Controls.Primitives.JumpListItemForegroundConverter();
-            if (Disabled.HasValue) ui.Disabled = Disabled.Value;
-            if (Enabled.HasValue) ui.Enabled = Enabled.Value;
+            if (Disabled is not null) ui.Disabled = Disabled;
+            if (Enabled is not null) ui.Enabled = Enabled;
             return CSharpMarkup.WinUI.JumpListItemForegroundConverter.StartChain(ui);
         }
 
@@ -23618,68 +23609,68 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ListViewItemPresenter"/></summary>
-        public static ListViewItemPresenter ListViewItemPresenter(O<Xaml.Media.Brush> CheckBoxBorderBrush = default, O<Xaml.Media.Brush> CheckBoxBrush = default, O<CSharpMarkup.WinUI.to.CornerRadius> CheckBoxCornerRadius = default, O<Xaml.Media.Brush> CheckBoxDisabledBorderBrush = default, O<Xaml.Media.Brush> CheckBoxDisabledBrush = default, O<Xaml.Media.Brush> CheckBoxPointerOverBorderBrush = default, O<Xaml.Media.Brush> CheckBoxPointerOverBrush = default, O<Xaml.Media.Brush> CheckBoxPressedBorderBrush = default, O<Xaml.Media.Brush> CheckBoxPressedBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedDisabledBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedPointerOverBrush = default, O<Xaml.Media.Brush> CheckBoxSelectedPressedBrush = default, O<Xaml.Media.Brush> CheckBrush = default, O<Xaml.Media.Brush> CheckDisabledBrush = default, O<Xaml.Media.Brush> CheckHintBrush = default, O<Xaml.Controls.Primitives.ListViewItemPresenterCheckMode> CheckMode = default, O<Xaml.Media.Brush> CheckPressedBrush = default, O<Xaml.Media.Brush> CheckSelectingBrush = default, O<Xaml.Thickness> ContentMargin = default, O<double> DisabledOpacity = default, O<Xaml.Media.Brush> DragBackground = default, O<Xaml.Media.Brush> DragForeground = default, O<double> DragOpacity = default, O<Xaml.Media.Brush> FocusBorderBrush = default, O<Xaml.Media.Brush> FocusSecondaryBorderBrush = default, O<Xaml.HorizontalAlignment> ListViewItemPresenterHorizontalContentAlignment = default, O<Xaml.Thickness> ListViewItemPresenterPadding = default, O<Xaml.VerticalAlignment> ListViewItemPresenterVerticalContentAlignment = default, O<Xaml.Media.Brush> PlaceholderBackground = default, O<Xaml.Media.Brush> PointerOverBackground = default, O<Xaml.Thickness> PointerOverBackgroundMargin = default, O<Xaml.Media.Brush> PointerOverBorderBrush = default, O<Xaml.Media.Brush> PointerOverForeground = default, O<Xaml.Media.Brush> PressedBackground = default, O<double> ReorderHintOffset = default, O<Xaml.Media.Brush> RevealBackground = default, O<bool> RevealBackgroundShowsAboveContent = default, O<Xaml.Media.Brush> RevealBorderBrush = default, O<Xaml.Thickness> RevealBorderThickness = default, O<Xaml.Media.Brush> SelectedBackground = default, O<Xaml.Media.Brush> SelectedBorderBrush = default, O<Xaml.Thickness> SelectedBorderThickness = default, O<Xaml.Media.Brush> SelectedDisabledBackground = default, O<Xaml.Media.Brush> SelectedDisabledBorderBrush = default, O<Xaml.Media.Brush> SelectedForeground = default, O<Xaml.Media.Brush> SelectedInnerBorderBrush = default, O<Xaml.Media.Brush> SelectedPointerOverBackground = default, O<Xaml.Media.Brush> SelectedPointerOverBorderBrush = default, O<Xaml.Media.Brush> SelectedPressedBackground = default, O<Xaml.Media.Brush> SelectedPressedBorderBrush = default, O<bool> SelectionCheckMarkVisualEnabled = default, O<Xaml.Media.Brush> SelectionIndicatorBrush = default, O<CSharpMarkup.WinUI.to.CornerRadius> SelectionIndicatorCornerRadius = default, O<Xaml.Media.Brush> SelectionIndicatorDisabledBrush = default, O<Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode> SelectionIndicatorMode = default, O<Xaml.Media.Brush> SelectionIndicatorPointerOverBrush = default, O<Xaml.Media.Brush> SelectionIndicatorPressedBrush = default, O<bool> SelectionIndicatorVisualEnabled = default, UIObject Content = default)
+        public static ListViewItemPresenter ListViewItemPresenter(Xaml.Media.Brush CheckBoxBorderBrush = default, Xaml.Media.Brush CheckBoxBrush = default, CSharpMarkup.WinUI.to.CornerRadius? CheckBoxCornerRadius = default, Xaml.Media.Brush CheckBoxDisabledBorderBrush = default, Xaml.Media.Brush CheckBoxDisabledBrush = default, Xaml.Media.Brush CheckBoxPointerOverBorderBrush = default, Xaml.Media.Brush CheckBoxPointerOverBrush = default, Xaml.Media.Brush CheckBoxPressedBorderBrush = default, Xaml.Media.Brush CheckBoxPressedBrush = default, Xaml.Media.Brush CheckBoxSelectedBrush = default, Xaml.Media.Brush CheckBoxSelectedDisabledBrush = default, Xaml.Media.Brush CheckBoxSelectedPointerOverBrush = default, Xaml.Media.Brush CheckBoxSelectedPressedBrush = default, Xaml.Media.Brush CheckBrush = default, Xaml.Media.Brush CheckDisabledBrush = default, Xaml.Media.Brush CheckHintBrush = default, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode? CheckMode = default, Xaml.Media.Brush CheckPressedBrush = default, Xaml.Media.Brush CheckSelectingBrush = default, Xaml.Thickness? ContentMargin = default, double? DisabledOpacity = default, Xaml.Media.Brush DragBackground = default, Xaml.Media.Brush DragForeground = default, double? DragOpacity = default, Xaml.Media.Brush FocusBorderBrush = default, Xaml.Media.Brush FocusSecondaryBorderBrush = default, Xaml.HorizontalAlignment? ListViewItemPresenterHorizontalContentAlignment = default, Xaml.Thickness? ListViewItemPresenterPadding = default, Xaml.VerticalAlignment? ListViewItemPresenterVerticalContentAlignment = default, Xaml.Media.Brush PlaceholderBackground = default, Xaml.Media.Brush PointerOverBackground = default, Xaml.Thickness? PointerOverBackgroundMargin = default, Xaml.Media.Brush PointerOverBorderBrush = default, Xaml.Media.Brush PointerOverForeground = default, Xaml.Media.Brush PressedBackground = default, double? ReorderHintOffset = default, Xaml.Media.Brush RevealBackground = default, bool? RevealBackgroundShowsAboveContent = default, Xaml.Media.Brush RevealBorderBrush = default, Xaml.Thickness? RevealBorderThickness = default, Xaml.Media.Brush SelectedBackground = default, Xaml.Media.Brush SelectedBorderBrush = default, Xaml.Thickness? SelectedBorderThickness = default, Xaml.Media.Brush SelectedDisabledBackground = default, Xaml.Media.Brush SelectedDisabledBorderBrush = default, Xaml.Media.Brush SelectedForeground = default, Xaml.Media.Brush SelectedInnerBorderBrush = default, Xaml.Media.Brush SelectedPointerOverBackground = default, Xaml.Media.Brush SelectedPointerOverBorderBrush = default, Xaml.Media.Brush SelectedPressedBackground = default, Xaml.Media.Brush SelectedPressedBorderBrush = default, bool? SelectionCheckMarkVisualEnabled = default, Xaml.Media.Brush SelectionIndicatorBrush = default, CSharpMarkup.WinUI.to.CornerRadius? SelectionIndicatorCornerRadius = default, Xaml.Media.Brush SelectionIndicatorDisabledBrush = default, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode? SelectionIndicatorMode = default, Xaml.Media.Brush SelectionIndicatorPointerOverBrush = default, Xaml.Media.Brush SelectionIndicatorPressedBrush = default, bool? SelectionIndicatorVisualEnabled = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Primitives.ListViewItemPresenter();
-            if (CheckBoxBorderBrush.HasValue) ui.CheckBoxBorderBrush = CheckBoxBorderBrush.Value;
-            if (CheckBoxBrush.HasValue) ui.CheckBoxBrush = CheckBoxBrush.Value;
-            if (CheckBoxCornerRadius.HasValue) ui.CheckBoxCornerRadius = CheckBoxCornerRadius.Value;
-            if (CheckBoxDisabledBorderBrush.HasValue) ui.CheckBoxDisabledBorderBrush = CheckBoxDisabledBorderBrush.Value;
-            if (CheckBoxDisabledBrush.HasValue) ui.CheckBoxDisabledBrush = CheckBoxDisabledBrush.Value;
-            if (CheckBoxPointerOverBorderBrush.HasValue) ui.CheckBoxPointerOverBorderBrush = CheckBoxPointerOverBorderBrush.Value;
-            if (CheckBoxPointerOverBrush.HasValue) ui.CheckBoxPointerOverBrush = CheckBoxPointerOverBrush.Value;
-            if (CheckBoxPressedBorderBrush.HasValue) ui.CheckBoxPressedBorderBrush = CheckBoxPressedBorderBrush.Value;
-            if (CheckBoxPressedBrush.HasValue) ui.CheckBoxPressedBrush = CheckBoxPressedBrush.Value;
-            if (CheckBoxSelectedBrush.HasValue) ui.CheckBoxSelectedBrush = CheckBoxSelectedBrush.Value;
-            if (CheckBoxSelectedDisabledBrush.HasValue) ui.CheckBoxSelectedDisabledBrush = CheckBoxSelectedDisabledBrush.Value;
-            if (CheckBoxSelectedPointerOverBrush.HasValue) ui.CheckBoxSelectedPointerOverBrush = CheckBoxSelectedPointerOverBrush.Value;
-            if (CheckBoxSelectedPressedBrush.HasValue) ui.CheckBoxSelectedPressedBrush = CheckBoxSelectedPressedBrush.Value;
-            if (CheckBrush.HasValue) ui.CheckBrush = CheckBrush.Value;
-            if (CheckDisabledBrush.HasValue) ui.CheckDisabledBrush = CheckDisabledBrush.Value;
-            if (CheckHintBrush.HasValue) ui.CheckHintBrush = CheckHintBrush.Value;
-            if (CheckMode.HasValue) ui.CheckMode = CheckMode.Value;
-            if (CheckPressedBrush.HasValue) ui.CheckPressedBrush = CheckPressedBrush.Value;
-            if (CheckSelectingBrush.HasValue) ui.CheckSelectingBrush = CheckSelectingBrush.Value;
-            if (ContentMargin.HasValue) ui.ContentMargin = ContentMargin.Value;
-            if (DisabledOpacity.HasValue) ui.DisabledOpacity = DisabledOpacity.Value;
-            if (DragBackground.HasValue) ui.DragBackground = DragBackground.Value;
-            if (DragForeground.HasValue) ui.DragForeground = DragForeground.Value;
-            if (DragOpacity.HasValue) ui.DragOpacity = DragOpacity.Value;
-            if (FocusBorderBrush.HasValue) ui.FocusBorderBrush = FocusBorderBrush.Value;
-            if (FocusSecondaryBorderBrush.HasValue) ui.FocusSecondaryBorderBrush = FocusSecondaryBorderBrush.Value;
-            if (ListViewItemPresenterHorizontalContentAlignment.HasValue) ui.ListViewItemPresenterHorizontalContentAlignment = ListViewItemPresenterHorizontalContentAlignment.Value;
-            if (ListViewItemPresenterPadding.HasValue) ui.ListViewItemPresenterPadding = ListViewItemPresenterPadding.Value;
-            if (ListViewItemPresenterVerticalContentAlignment.HasValue) ui.ListViewItemPresenterVerticalContentAlignment = ListViewItemPresenterVerticalContentAlignment.Value;
-            if (PlaceholderBackground.HasValue) ui.PlaceholderBackground = PlaceholderBackground.Value;
-            if (PointerOverBackground.HasValue) ui.PointerOverBackground = PointerOverBackground.Value;
-            if (PointerOverBackgroundMargin.HasValue) ui.PointerOverBackgroundMargin = PointerOverBackgroundMargin.Value;
-            if (PointerOverBorderBrush.HasValue) ui.PointerOverBorderBrush = PointerOverBorderBrush.Value;
-            if (PointerOverForeground.HasValue) ui.PointerOverForeground = PointerOverForeground.Value;
-            if (PressedBackground.HasValue) ui.PressedBackground = PressedBackground.Value;
-            if (ReorderHintOffset.HasValue) ui.ReorderHintOffset = ReorderHintOffset.Value;
-            if (RevealBackground.HasValue) ui.RevealBackground = RevealBackground.Value;
-            if (RevealBackgroundShowsAboveContent.HasValue) ui.RevealBackgroundShowsAboveContent = RevealBackgroundShowsAboveContent.Value;
-            if (RevealBorderBrush.HasValue) ui.RevealBorderBrush = RevealBorderBrush.Value;
-            if (RevealBorderThickness.HasValue) ui.RevealBorderThickness = RevealBorderThickness.Value;
-            if (SelectedBackground.HasValue) ui.SelectedBackground = SelectedBackground.Value;
-            if (SelectedBorderBrush.HasValue) ui.SelectedBorderBrush = SelectedBorderBrush.Value;
-            if (SelectedBorderThickness.HasValue) ui.SelectedBorderThickness = SelectedBorderThickness.Value;
-            if (SelectedDisabledBackground.HasValue) ui.SelectedDisabledBackground = SelectedDisabledBackground.Value;
-            if (SelectedDisabledBorderBrush.HasValue) ui.SelectedDisabledBorderBrush = SelectedDisabledBorderBrush.Value;
-            if (SelectedForeground.HasValue) ui.SelectedForeground = SelectedForeground.Value;
-            if (SelectedInnerBorderBrush.HasValue) ui.SelectedInnerBorderBrush = SelectedInnerBorderBrush.Value;
-            if (SelectedPointerOverBackground.HasValue) ui.SelectedPointerOverBackground = SelectedPointerOverBackground.Value;
-            if (SelectedPointerOverBorderBrush.HasValue) ui.SelectedPointerOverBorderBrush = SelectedPointerOverBorderBrush.Value;
-            if (SelectedPressedBackground.HasValue) ui.SelectedPressedBackground = SelectedPressedBackground.Value;
-            if (SelectedPressedBorderBrush.HasValue) ui.SelectedPressedBorderBrush = SelectedPressedBorderBrush.Value;
-            if (SelectionCheckMarkVisualEnabled.HasValue) ui.SelectionCheckMarkVisualEnabled = SelectionCheckMarkVisualEnabled.Value;
-            if (SelectionIndicatorBrush.HasValue) ui.SelectionIndicatorBrush = SelectionIndicatorBrush.Value;
-            if (SelectionIndicatorCornerRadius.HasValue) ui.SelectionIndicatorCornerRadius = SelectionIndicatorCornerRadius.Value;
-            if (SelectionIndicatorDisabledBrush.HasValue) ui.SelectionIndicatorDisabledBrush = SelectionIndicatorDisabledBrush.Value;
-            if (SelectionIndicatorMode.HasValue) ui.SelectionIndicatorMode = SelectionIndicatorMode.Value;
-            if (SelectionIndicatorPointerOverBrush.HasValue) ui.SelectionIndicatorPointerOverBrush = SelectionIndicatorPointerOverBrush.Value;
-            if (SelectionIndicatorPressedBrush.HasValue) ui.SelectionIndicatorPressedBrush = SelectionIndicatorPressedBrush.Value;
-            if (SelectionIndicatorVisualEnabled.HasValue) ui.SelectionIndicatorVisualEnabled = SelectionIndicatorVisualEnabled.Value;
+            if (CheckBoxBorderBrush is not null) ui.CheckBoxBorderBrush = CheckBoxBorderBrush;
+            if (CheckBoxBrush is not null) ui.CheckBoxBrush = CheckBoxBrush;
+            if (CheckBoxCornerRadius is not null) ui.CheckBoxCornerRadius = CheckBoxCornerRadius.Value;
+            if (CheckBoxDisabledBorderBrush is not null) ui.CheckBoxDisabledBorderBrush = CheckBoxDisabledBorderBrush;
+            if (CheckBoxDisabledBrush is not null) ui.CheckBoxDisabledBrush = CheckBoxDisabledBrush;
+            if (CheckBoxPointerOverBorderBrush is not null) ui.CheckBoxPointerOverBorderBrush = CheckBoxPointerOverBorderBrush;
+            if (CheckBoxPointerOverBrush is not null) ui.CheckBoxPointerOverBrush = CheckBoxPointerOverBrush;
+            if (CheckBoxPressedBorderBrush is not null) ui.CheckBoxPressedBorderBrush = CheckBoxPressedBorderBrush;
+            if (CheckBoxPressedBrush is not null) ui.CheckBoxPressedBrush = CheckBoxPressedBrush;
+            if (CheckBoxSelectedBrush is not null) ui.CheckBoxSelectedBrush = CheckBoxSelectedBrush;
+            if (CheckBoxSelectedDisabledBrush is not null) ui.CheckBoxSelectedDisabledBrush = CheckBoxSelectedDisabledBrush;
+            if (CheckBoxSelectedPointerOverBrush is not null) ui.CheckBoxSelectedPointerOverBrush = CheckBoxSelectedPointerOverBrush;
+            if (CheckBoxSelectedPressedBrush is not null) ui.CheckBoxSelectedPressedBrush = CheckBoxSelectedPressedBrush;
+            if (CheckBrush is not null) ui.CheckBrush = CheckBrush;
+            if (CheckDisabledBrush is not null) ui.CheckDisabledBrush = CheckDisabledBrush;
+            if (CheckHintBrush is not null) ui.CheckHintBrush = CheckHintBrush;
+            if (CheckMode is not null) ui.CheckMode = CheckMode.Value;
+            if (CheckPressedBrush is not null) ui.CheckPressedBrush = CheckPressedBrush;
+            if (CheckSelectingBrush is not null) ui.CheckSelectingBrush = CheckSelectingBrush;
+            if (ContentMargin is not null) ui.ContentMargin = ContentMargin.Value;
+            if (DisabledOpacity is not null) ui.DisabledOpacity = DisabledOpacity.Value;
+            if (DragBackground is not null) ui.DragBackground = DragBackground;
+            if (DragForeground is not null) ui.DragForeground = DragForeground;
+            if (DragOpacity is not null) ui.DragOpacity = DragOpacity.Value;
+            if (FocusBorderBrush is not null) ui.FocusBorderBrush = FocusBorderBrush;
+            if (FocusSecondaryBorderBrush is not null) ui.FocusSecondaryBorderBrush = FocusSecondaryBorderBrush;
+            if (ListViewItemPresenterHorizontalContentAlignment is not null) ui.ListViewItemPresenterHorizontalContentAlignment = ListViewItemPresenterHorizontalContentAlignment.Value;
+            if (ListViewItemPresenterPadding is not null) ui.ListViewItemPresenterPadding = ListViewItemPresenterPadding.Value;
+            if (ListViewItemPresenterVerticalContentAlignment is not null) ui.ListViewItemPresenterVerticalContentAlignment = ListViewItemPresenterVerticalContentAlignment.Value;
+            if (PlaceholderBackground is not null) ui.PlaceholderBackground = PlaceholderBackground;
+            if (PointerOverBackground is not null) ui.PointerOverBackground = PointerOverBackground;
+            if (PointerOverBackgroundMargin is not null) ui.PointerOverBackgroundMargin = PointerOverBackgroundMargin.Value;
+            if (PointerOverBorderBrush is not null) ui.PointerOverBorderBrush = PointerOverBorderBrush;
+            if (PointerOverForeground is not null) ui.PointerOverForeground = PointerOverForeground;
+            if (PressedBackground is not null) ui.PressedBackground = PressedBackground;
+            if (ReorderHintOffset is not null) ui.ReorderHintOffset = ReorderHintOffset.Value;
+            if (RevealBackground is not null) ui.RevealBackground = RevealBackground;
+            if (RevealBackgroundShowsAboveContent is not null) ui.RevealBackgroundShowsAboveContent = RevealBackgroundShowsAboveContent.Value;
+            if (RevealBorderBrush is not null) ui.RevealBorderBrush = RevealBorderBrush;
+            if (RevealBorderThickness is not null) ui.RevealBorderThickness = RevealBorderThickness.Value;
+            if (SelectedBackground is not null) ui.SelectedBackground = SelectedBackground;
+            if (SelectedBorderBrush is not null) ui.SelectedBorderBrush = SelectedBorderBrush;
+            if (SelectedBorderThickness is not null) ui.SelectedBorderThickness = SelectedBorderThickness.Value;
+            if (SelectedDisabledBackground is not null) ui.SelectedDisabledBackground = SelectedDisabledBackground;
+            if (SelectedDisabledBorderBrush is not null) ui.SelectedDisabledBorderBrush = SelectedDisabledBorderBrush;
+            if (SelectedForeground is not null) ui.SelectedForeground = SelectedForeground;
+            if (SelectedInnerBorderBrush is not null) ui.SelectedInnerBorderBrush = SelectedInnerBorderBrush;
+            if (SelectedPointerOverBackground is not null) ui.SelectedPointerOverBackground = SelectedPointerOverBackground;
+            if (SelectedPointerOverBorderBrush is not null) ui.SelectedPointerOverBorderBrush = SelectedPointerOverBorderBrush;
+            if (SelectedPressedBackground is not null) ui.SelectedPressedBackground = SelectedPressedBackground;
+            if (SelectedPressedBorderBrush is not null) ui.SelectedPressedBorderBrush = SelectedPressedBorderBrush;
+            if (SelectionCheckMarkVisualEnabled is not null) ui.SelectionCheckMarkVisualEnabled = SelectionCheckMarkVisualEnabled.Value;
+            if (SelectionIndicatorBrush is not null) ui.SelectionIndicatorBrush = SelectionIndicatorBrush;
+            if (SelectionIndicatorCornerRadius is not null) ui.SelectionIndicatorCornerRadius = SelectionIndicatorCornerRadius.Value;
+            if (SelectionIndicatorDisabledBrush is not null) ui.SelectionIndicatorDisabledBrush = SelectionIndicatorDisabledBrush;
+            if (SelectionIndicatorMode is not null) ui.SelectionIndicatorMode = SelectionIndicatorMode.Value;
+            if (SelectionIndicatorPointerOverBrush is not null) ui.SelectionIndicatorPointerOverBrush = SelectionIndicatorPointerOverBrush;
+            if (SelectionIndicatorPressedBrush is not null) ui.SelectionIndicatorPressedBrush = SelectionIndicatorPressedBrush;
+            if (SelectionIndicatorVisualEnabled is not null) ui.SelectionIndicatorVisualEnabled = SelectionIndicatorVisualEnabled.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ListViewItemPresenter.StartChain(ui);
         }
@@ -24703,10 +24694,10 @@ namespace CSharpMarkup.WinUI // NavigationViewItemPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenter"/></summary>
-        public static NavigationViewItemPresenter NavigationViewItemPresenter(O<Xaml.Controls.IconElement> Icon = default, UIObject Content = default)
+        public static NavigationViewItemPresenter NavigationViewItemPresenter(Xaml.Controls.IconElement Icon = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Primitives.NavigationViewItemPresenter();
-            if (Icon.HasValue) ui.Icon = Icon.Value;
+            if (Icon is not null) ui.Icon = Icon;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.NavigationViewItemPresenter.StartChain(ui);
         }
@@ -25063,16 +25054,16 @@ namespace CSharpMarkup.WinUI // Popup
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.Popup"/></summary>
-        public static Popup Popup(O<Xaml.Media.Animation.TransitionCollection> ChildTransitions = default, O<double> HorizontalOffset = default, O<bool> IsLightDismissEnabled = default, O<bool> IsOpen = default, O<Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode = default, O<bool> ShouldConstrainToRootBounds = default, O<double> VerticalOffset = default, Microsoft.UI.Xaml.UIElement Child = default)
+        public static Popup Popup(Xaml.Media.Animation.TransitionCollection ChildTransitions = default, double? HorizontalOffset = default, bool? IsLightDismissEnabled = default, bool? IsOpen = default, Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, bool? ShouldConstrainToRootBounds = default, double? VerticalOffset = default, Microsoft.UI.Xaml.UIElement Child = default)
         {
             var ui = new Xaml.Controls.Primitives.Popup();
-            if (ChildTransitions.HasValue) ui.ChildTransitions = ChildTransitions.Value;
-            if (HorizontalOffset.HasValue) ui.HorizontalOffset = HorizontalOffset.Value;
-            if (IsLightDismissEnabled.HasValue) ui.IsLightDismissEnabled = IsLightDismissEnabled.Value;
-            if (IsOpen.HasValue) ui.IsOpen = IsOpen.Value;
-            if (LightDismissOverlayMode.HasValue) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
-            if (ShouldConstrainToRootBounds.HasValue) ui.ShouldConstrainToRootBounds = ShouldConstrainToRootBounds.Value;
-            if (VerticalOffset.HasValue) ui.VerticalOffset = VerticalOffset.Value;
+            if (ChildTransitions is not null) ui.ChildTransitions = ChildTransitions;
+            if (HorizontalOffset is not null) ui.HorizontalOffset = HorizontalOffset.Value;
+            if (IsLightDismissEnabled is not null) ui.IsLightDismissEnabled = IsLightDismissEnabled.Value;
+            if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
+            if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
+            if (ShouldConstrainToRootBounds is not null) ui.ShouldConstrainToRootBounds = ShouldConstrainToRootBounds.Value;
+            if (VerticalOffset is not null) ui.VerticalOffset = VerticalOffset.Value;
             if (Child != null) ui.Child = Child;
             return CSharpMarkup.WinUI.Popup.StartChain(ui);
         }
@@ -25244,11 +25235,11 @@ namespace CSharpMarkup.WinUI // RepeatButton
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.RepeatButton"/></summary>
-        public static RepeatButton RepeatButton(O<int> Delay = default, O<int> Interval = default, UIObject Content = default)
+        public static RepeatButton RepeatButton(int? Delay = default, int? Interval = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Primitives.RepeatButton();
-            if (Delay.HasValue) ui.Delay = Delay.Value;
-            if (Interval.HasValue) ui.Interval = Interval.Value;
+            if (Delay is not null) ui.Delay = Delay.Value;
+            if (Interval is not null) ui.Interval = Interval.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.RepeatButton.StartChain(ui);
         }
@@ -25314,12 +25305,12 @@ namespace CSharpMarkup.WinUI // ScrollBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollBar"/></summary>
-        public static ScrollBar ScrollBar(O<Xaml.Controls.Primitives.ScrollingIndicatorMode> IndicatorMode = default, O<Xaml.Controls.Orientation> Orientation = default, O<double> ViewportSize = default)
+        public static ScrollBar ScrollBar(Xaml.Controls.Primitives.ScrollingIndicatorMode? IndicatorMode = default, Xaml.Controls.Orientation? Orientation = default, double? ViewportSize = default)
         {
             var ui = new Xaml.Controls.Primitives.ScrollBar();
-            if (IndicatorMode.HasValue) ui.IndicatorMode = IndicatorMode.Value;
-            if (Orientation.HasValue) ui.Orientation = Orientation.Value;
-            if (ViewportSize.HasValue) ui.ViewportSize = ViewportSize.Value;
+            if (IndicatorMode is not null) ui.IndicatorMode = IndicatorMode.Value;
+            if (Orientation is not null) ui.Orientation = Orientation.Value;
+            if (ViewportSize is not null) ui.ViewportSize = ViewportSize.Value;
             return CSharpMarkup.WinUI.ScrollBar.StartChain(ui);
         }
 
@@ -25608,10 +25599,10 @@ namespace CSharpMarkup.WinUI // TickBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.TickBar"/></summary>
-        public static TickBar TickBar(O<Xaml.Media.Brush> Fill = default)
+        public static TickBar TickBar(Xaml.Media.Brush Fill = default)
         {
             var ui = new Xaml.Controls.Primitives.TickBar();
-            if (Fill.HasValue) ui.Fill = Fill.Value;
+            if (Fill is not null) ui.Fill = Fill;
             return CSharpMarkup.WinUI.TickBar.StartChain(ui);
         }
 
@@ -25685,11 +25676,11 @@ namespace CSharpMarkup.WinUI // ToggleButton
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ToggleButton"/></summary>
         /// <remarks>Remark: ToggleButton().Bind() binds to <see cref="Xaml.Controls.Primitives.ToggleButton.IsCheckedProperty"/></remarks>
-        public static ToggleButton ToggleButton(O<bool?> IsChecked = default, O<bool> IsThreeState = default, UIObject Content = default)
+        public static ToggleButton ToggleButton(bool? IsChecked = default, bool? IsThreeState = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Primitives.ToggleButton();
-            if (IsChecked.HasValue) ui.IsChecked = IsChecked.Value;
-            if (IsThreeState.HasValue) ui.IsThreeState = IsThreeState.Value;
+            if (IsChecked is not null) ui.IsChecked = IsChecked;
+            if (IsThreeState is not null) ui.IsThreeState = IsThreeState.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ToggleButton.StartChain(ui);
         }
@@ -25795,20 +25786,20 @@ namespace CSharpMarkup.WinUI // Binding
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Data.Binding"/></summary>
-        public static Binding Binding(O<Xaml.Data.IValueConverter> Converter = default, O<string> ConverterLanguage = default, O<object> ConverterParameter = default, O<string> ElementName = default, O<object> FallbackValue = default, O<Xaml.Data.BindingMode> Mode = default, O<Xaml.PropertyPath> Path = default, O<Xaml.Data.RelativeSource> RelativeSource = default, O<object> Source = default, O<object> TargetNullValue = default, O<Xaml.Data.UpdateSourceTrigger> UpdateSourceTrigger = default)
+        public static Binding Binding(Xaml.Data.IValueConverter Converter = default, string ConverterLanguage = default, object ConverterParameter = default, string ElementName = default, object FallbackValue = default, Xaml.Data.BindingMode? Mode = default, Xaml.PropertyPath Path = default, Xaml.Data.RelativeSource RelativeSource = default, object Source = default, object TargetNullValue = default, Xaml.Data.UpdateSourceTrigger? UpdateSourceTrigger = default)
         {
             var ui = new Xaml.Data.Binding();
-            if (Converter.HasValue) ui.Converter = Converter.Value;
-            if (ConverterLanguage.HasValue) ui.ConverterLanguage = ConverterLanguage.Value;
-            if (ConverterParameter.HasValue) ui.ConverterParameter = ConverterParameter.Value;
-            if (ElementName.HasValue) ui.ElementName = ElementName.Value;
-            if (FallbackValue.HasValue) ui.FallbackValue = FallbackValue.Value;
-            if (Mode.HasValue) ui.Mode = Mode.Value;
-            if (Path.HasValue) ui.Path = Path.Value;
-            if (RelativeSource.HasValue) ui.RelativeSource = RelativeSource.Value;
-            if (Source.HasValue) ui.Source = Source.Value;
-            if (TargetNullValue.HasValue) ui.TargetNullValue = TargetNullValue.Value;
-            if (UpdateSourceTrigger.HasValue) ui.UpdateSourceTrigger = UpdateSourceTrigger.Value;
+            if (Converter is not null) ui.Converter = Converter;
+            if (ConverterLanguage is not null) ui.ConverterLanguage = ConverterLanguage;
+            if (ConverterParameter is not null) ui.ConverterParameter = ConverterParameter;
+            if (ElementName is not null) ui.ElementName = ElementName;
+            if (FallbackValue is not null) ui.FallbackValue = FallbackValue;
+            if (Mode is not null) ui.Mode = Mode.Value;
+            if (Path is not null) ui.Path = Path;
+            if (RelativeSource is not null) ui.RelativeSource = RelativeSource;
+            if (Source is not null) ui.Source = Source;
+            if (TargetNullValue is not null) ui.TargetNullValue = TargetNullValue;
+            if (UpdateSourceTrigger is not null) ui.UpdateSourceTrigger = UpdateSourceTrigger.Value;
             return CSharpMarkup.WinUI.Binding.StartChain(ui);
         }
 
@@ -25931,12 +25922,12 @@ namespace CSharpMarkup.WinUI // CollectionViewSource
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Data.CollectionViewSource"/></summary>
-        public static CollectionViewSource CollectionViewSource(O<bool> IsSourceGrouped = default, O<Xaml.PropertyPath> ItemsPath = default, O<object> Source = default)
+        public static CollectionViewSource CollectionViewSource(bool? IsSourceGrouped = default, Xaml.PropertyPath ItemsPath = default, object Source = default)
         {
             var ui = new Xaml.Data.CollectionViewSource();
-            if (IsSourceGrouped.HasValue) ui.IsSourceGrouped = IsSourceGrouped.Value;
-            if (ItemsPath.HasValue) ui.ItemsPath = ItemsPath.Value;
-            if (Source.HasValue) ui.Source = Source.Value;
+            if (IsSourceGrouped is not null) ui.IsSourceGrouped = IsSourceGrouped.Value;
+            if (ItemsPath is not null) ui.ItemsPath = ItemsPath;
+            if (Source is not null) ui.Source = Source;
             return CSharpMarkup.WinUI.CollectionViewSource.StartChain(ui);
         }
 
@@ -26010,10 +26001,10 @@ namespace CSharpMarkup.WinUI // RelativeSource
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Data.RelativeSource"/></summary>
-        public static RelativeSource RelativeSource(O<Xaml.Data.RelativeSourceMode> Mode = default)
+        public static RelativeSource RelativeSource(Xaml.Data.RelativeSourceMode? Mode = default)
         {
             var ui = new Xaml.Data.RelativeSource();
-            if (Mode.HasValue) ui.Mode = Mode.Value;
+            if (Mode is not null) ui.Mode = Mode.Value;
             return CSharpMarkup.WinUI.RelativeSource.StartChain(ui);
         }
 
@@ -26195,19 +26186,19 @@ namespace CSharpMarkup.WinUI // Glyphs
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Documents.Glyphs"/></summary>
-        public static Glyphs Glyphs(O<int> ColorFontPaletteIndex = default, O<Xaml.Media.Brush> Fill = default, O<double> FontRenderingEmSize = default, O<Uri> FontUri = default, O<string> Indices = default, O<bool> IsColorFontEnabled = default, O<double> OriginX = default, O<double> OriginY = default, O<Xaml.Media.StyleSimulations> StyleSimulations = default, O<string> UnicodeString = default)
+        public static Glyphs Glyphs(int? ColorFontPaletteIndex = default, Xaml.Media.Brush Fill = default, double? FontRenderingEmSize = default, Uri FontUri = default, string Indices = default, bool? IsColorFontEnabled = default, double? OriginX = default, double? OriginY = default, Xaml.Media.StyleSimulations? StyleSimulations = default, string UnicodeString = default)
         {
             var ui = new Xaml.Documents.Glyphs();
-            if (ColorFontPaletteIndex.HasValue) ui.ColorFontPaletteIndex = ColorFontPaletteIndex.Value;
-            if (Fill.HasValue) ui.Fill = Fill.Value;
-            if (FontRenderingEmSize.HasValue) ui.FontRenderingEmSize = FontRenderingEmSize.Value;
-            if (FontUri.HasValue) ui.FontUri = FontUri.Value;
-            if (Indices.HasValue) ui.Indices = Indices.Value;
-            if (IsColorFontEnabled.HasValue) ui.IsColorFontEnabled = IsColorFontEnabled.Value;
-            if (OriginX.HasValue) ui.OriginX = OriginX.Value;
-            if (OriginY.HasValue) ui.OriginY = OriginY.Value;
-            if (StyleSimulations.HasValue) ui.StyleSimulations = StyleSimulations.Value;
-            if (UnicodeString.HasValue) ui.UnicodeString = UnicodeString.Value;
+            if (ColorFontPaletteIndex is not null) ui.ColorFontPaletteIndex = ColorFontPaletteIndex.Value;
+            if (Fill is not null) ui.Fill = Fill;
+            if (FontRenderingEmSize is not null) ui.FontRenderingEmSize = FontRenderingEmSize.Value;
+            if (FontUri is not null) ui.FontUri = FontUri;
+            if (Indices is not null) ui.Indices = Indices;
+            if (IsColorFontEnabled is not null) ui.IsColorFontEnabled = IsColorFontEnabled.Value;
+            if (OriginX is not null) ui.OriginX = OriginX.Value;
+            if (OriginY is not null) ui.OriginY = OriginY.Value;
+            if (StyleSimulations is not null) ui.StyleSimulations = StyleSimulations.Value;
+            if (UnicodeString is not null) ui.UnicodeString = UnicodeString;
             return CSharpMarkup.WinUI.Glyphs.StartChain(ui);
         }
 
@@ -26746,10 +26737,10 @@ namespace CSharpMarkup.WinUI // Run
         }
 
         /// <summary>Create a <see cref="Xaml.Documents.Run"/></summary>
-        public static Run Run(O<Xaml.FlowDirection> FlowDirection = default, string Text = default)
+        public static Run Run(Xaml.FlowDirection? FlowDirection = default, string Text = default)
         {
             var ui = new Xaml.Documents.Run();
-            if (FlowDirection.HasValue) ui.FlowDirection = FlowDirection.Value;
+            if (FlowDirection is not null) ui.FlowDirection = FlowDirection.Value;
             if (Text != null) ui.Text = Text;
             return CSharpMarkup.WinUI.Run.StartChain(ui);
         }
@@ -27195,13 +27186,13 @@ namespace CSharpMarkup.WinUI // KeyboardAccelerator
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Input.KeyboardAccelerator"/></summary>
-        public static KeyboardAccelerator KeyboardAccelerator(O<bool> IsEnabled = default, O<VirtualKey> Key = default, O<VirtualKeyModifiers> Modifiers = default, O<Xaml.DependencyObject> ScopeOwner = default)
+        public static KeyboardAccelerator KeyboardAccelerator(bool? IsEnabled = default, VirtualKey? Key = default, VirtualKeyModifiers? Modifiers = default, Xaml.DependencyObject ScopeOwner = default)
         {
             var ui = new Xaml.Input.KeyboardAccelerator();
-            if (IsEnabled.HasValue) ui.IsEnabled = IsEnabled.Value;
-            if (Key.HasValue) ui.Key = Key.Value;
-            if (Modifiers.HasValue) ui.Modifiers = Modifiers.Value;
-            if (ScopeOwner.HasValue) ui.ScopeOwner = ScopeOwner.Value;
+            if (IsEnabled is not null) ui.IsEnabled = IsEnabled.Value;
+            if (Key is not null) ui.Key = Key.Value;
+            if (Modifiers is not null) ui.Modifiers = Modifiers.Value;
+            if (ScopeOwner is not null) ui.ScopeOwner = ScopeOwner;
             return CSharpMarkup.WinUI.KeyboardAccelerator.StartChain(ui);
         }
 
@@ -27278,14 +27269,6 @@ namespace CSharpMarkup.WinUI // StandardUICommand
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Input.StandardUICommand"/></summary>
-        public static StandardUICommand StandardUICommand(O<Xaml.Input.StandardUICommandKind> Kind = default)
-        {
-            var ui = new Xaml.Input.StandardUICommand();
-            if (Kind.HasValue) ui.Kind = Kind.Value;
-            return CSharpMarkup.WinUI.StandardUICommand.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Input.StandardUICommand"/></summary>
         public static StandardUICommand StandardUICommand()
         {
             var ui = new Xaml.Input.StandardUICommand();
@@ -27344,14 +27327,14 @@ namespace CSharpMarkup.WinUI // XamlUICommand
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Input.XamlUICommand"/></summary>
-        public static XamlUICommand XamlUICommand(O<string> AccessKey = default, O<ICommand> Command = default, O<string> Description = default, O<Xaml.Controls.IconSource> IconSource = default, O<string> Label = default)
+        public static XamlUICommand XamlUICommand(string AccessKey = default, ICommand Command = default, string Description = default, Xaml.Controls.IconSource IconSource = default, string Label = default)
         {
             var ui = new Xaml.Input.XamlUICommand();
-            if (AccessKey.HasValue) ui.AccessKey = AccessKey.Value;
-            if (Command.HasValue) ui.Command = Command.Value;
-            if (Description.HasValue) ui.Description = Description.Value;
-            if (IconSource.HasValue) ui.IconSource = IconSource.Value;
-            if (Label.HasValue) ui.Label = Label.Value;
+            if (AccessKey is not null) ui.AccessKey = AccessKey;
+            if (Command is not null) ui.Command = Command;
+            if (Description is not null) ui.Description = Description;
+            if (IconSource is not null) ui.IconSource = IconSource;
+            if (Label is not null) ui.Label = Label;
             return CSharpMarkup.WinUI.XamlUICommand.StartChain(ui);
         }
 
@@ -27439,14 +27422,14 @@ namespace CSharpMarkup.WinUI // AcrylicBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.AcrylicBrush"/></summary>
-        public static AcrylicBrush AcrylicBrush(O<bool> AlwaysUseFallback = default, O<Windows.UI.Color> TintColor = default, O<double?> TintLuminosityOpacity = default, O<double> TintOpacity = default, O<CSharpMarkup.WinUI.to.TimeSpan> TintTransitionDuration = default)
+        public static AcrylicBrush AcrylicBrush(bool? AlwaysUseFallback = default, Windows.UI.Color? TintColor = default, double? TintLuminosityOpacity = default, double? TintOpacity = default, CSharpMarkup.WinUI.to.TimeSpan? TintTransitionDuration = default)
         {
             var ui = new Xaml.Media.AcrylicBrush();
-            if (AlwaysUseFallback.HasValue) ui.AlwaysUseFallback = AlwaysUseFallback.Value;
-            if (TintColor.HasValue) ui.TintColor = TintColor.Value;
-            if (TintLuminosityOpacity.HasValue) ui.TintLuminosityOpacity = TintLuminosityOpacity.Value;
-            if (TintOpacity.HasValue) ui.TintOpacity = TintOpacity.Value;
-            if (TintTransitionDuration.HasValue) ui.TintTransitionDuration = TintTransitionDuration.Value;
+            if (AlwaysUseFallback is not null) ui.AlwaysUseFallback = AlwaysUseFallback.Value;
+            if (TintColor is not null) ui.TintColor = TintColor.Value;
+            if (TintLuminosityOpacity is not null) ui.TintLuminosityOpacity = TintLuminosityOpacity;
+            if (TintOpacity is not null) ui.TintOpacity = TintOpacity.Value;
+            if (TintTransitionDuration is not null) ui.TintTransitionDuration = TintTransitionDuration.Value;
             return CSharpMarkup.WinUI.AcrylicBrush.StartChain(ui);
         }
 
@@ -27530,14 +27513,14 @@ namespace CSharpMarkup.WinUI // ArcSegment
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.ArcSegment"/></summary>
-        public static ArcSegment ArcSegment(O<bool> IsLargeArc = default, O<CSharpMarkup.WinUI.to.Point> Point = default, O<double> RotationAngle = default, O<CSharpMarkup.WinUI.to.Size> Size = default, O<Xaml.Media.SweepDirection> SweepDirection = default)
+        public static ArcSegment ArcSegment(bool? IsLargeArc = default, CSharpMarkup.WinUI.to.Point? Point = default, double? RotationAngle = default, CSharpMarkup.WinUI.to.Size? Size = default, Xaml.Media.SweepDirection? SweepDirection = default)
         {
             var ui = new Xaml.Media.ArcSegment();
-            if (IsLargeArc.HasValue) ui.IsLargeArc = IsLargeArc.Value;
-            if (Point.HasValue) ui.Point = Point.Value;
-            if (RotationAngle.HasValue) ui.RotationAngle = RotationAngle.Value;
-            if (Size.HasValue) ui.Size = Size.Value;
-            if (SweepDirection.HasValue) ui.SweepDirection = SweepDirection.Value;
+            if (IsLargeArc is not null) ui.IsLargeArc = IsLargeArc.Value;
+            if (Point is not null) ui.Point = Point.Value;
+            if (RotationAngle is not null) ui.RotationAngle = RotationAngle.Value;
+            if (Size is not null) ui.Size = Size.Value;
+            if (SweepDirection is not null) ui.SweepDirection = SweepDirection.Value;
             return CSharpMarkup.WinUI.ArcSegment.StartChain(ui);
         }
 
@@ -27621,12 +27604,12 @@ namespace CSharpMarkup.WinUI // BezierSegment
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.BezierSegment"/></summary>
-        public static BezierSegment BezierSegment(O<CSharpMarkup.WinUI.to.Point> Point1 = default, O<CSharpMarkup.WinUI.to.Point> Point2 = default, O<CSharpMarkup.WinUI.to.Point> Point3 = default)
+        public static BezierSegment BezierSegment(CSharpMarkup.WinUI.to.Point? Point1 = default, CSharpMarkup.WinUI.to.Point? Point2 = default, CSharpMarkup.WinUI.to.Point? Point3 = default)
         {
             var ui = new Xaml.Media.BezierSegment();
-            if (Point1.HasValue) ui.Point1 = Point1.Value;
-            if (Point2.HasValue) ui.Point2 = Point2.Value;
-            if (Point3.HasValue) ui.Point3 = Point3.Value;
+            if (Point1 is not null) ui.Point1 = Point1.Value;
+            if (Point2 is not null) ui.Point2 = Point2.Value;
+            if (Point3 is not null) ui.Point3 = Point3.Value;
             return CSharpMarkup.WinUI.BezierSegment.StartChain(ui);
         }
 
@@ -27797,18 +27780,18 @@ namespace CSharpMarkup.WinUI // CompositeTransform
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.CompositeTransform"/></summary>
-        public static CompositeTransform CompositeTransform(O<double> CenterX = default, O<double> CenterY = default, O<double> Rotation = default, O<double> ScaleX = default, O<double> ScaleY = default, O<double> SkewX = default, O<double> SkewY = default, O<double> TranslateX = default, O<double> TranslateY = default)
+        public static CompositeTransform CompositeTransform(double? CenterX = default, double? CenterY = default, double? Rotation = default, double? ScaleX = default, double? ScaleY = default, double? SkewX = default, double? SkewY = default, double? TranslateX = default, double? TranslateY = default)
         {
             var ui = new Xaml.Media.CompositeTransform();
-            if (CenterX.HasValue) ui.CenterX = CenterX.Value;
-            if (CenterY.HasValue) ui.CenterY = CenterY.Value;
-            if (Rotation.HasValue) ui.Rotation = Rotation.Value;
-            if (ScaleX.HasValue) ui.ScaleX = ScaleX.Value;
-            if (ScaleY.HasValue) ui.ScaleY = ScaleY.Value;
-            if (SkewX.HasValue) ui.SkewX = SkewX.Value;
-            if (SkewY.HasValue) ui.SkewY = SkewY.Value;
-            if (TranslateX.HasValue) ui.TranslateX = TranslateX.Value;
-            if (TranslateY.HasValue) ui.TranslateY = TranslateY.Value;
+            if (CenterX is not null) ui.CenterX = CenterX.Value;
+            if (CenterY is not null) ui.CenterY = CenterY.Value;
+            if (Rotation is not null) ui.Rotation = Rotation.Value;
+            if (ScaleX is not null) ui.ScaleX = ScaleX.Value;
+            if (ScaleY is not null) ui.ScaleY = ScaleY.Value;
+            if (SkewX is not null) ui.SkewX = SkewX.Value;
+            if (SkewY is not null) ui.SkewY = SkewY.Value;
+            if (TranslateX is not null) ui.TranslateX = TranslateX.Value;
+            if (TranslateY is not null) ui.TranslateY = TranslateY.Value;
             return CSharpMarkup.WinUI.CompositeTransform.StartChain(ui);
         }
 
@@ -27920,12 +27903,12 @@ namespace CSharpMarkup.WinUI // EllipseGeometry
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.EllipseGeometry"/></summary>
-        public static EllipseGeometry EllipseGeometry(O<CSharpMarkup.WinUI.to.Point> Center = default, O<double> RadiusX = default, O<double> RadiusY = default)
+        public static EllipseGeometry EllipseGeometry(CSharpMarkup.WinUI.to.Point? Center = default, double? RadiusX = default, double? RadiusY = default)
         {
             var ui = new Xaml.Media.EllipseGeometry();
-            if (Center.HasValue) ui.Center = Center.Value;
-            if (RadiusX.HasValue) ui.RadiusX = RadiusX.Value;
-            if (RadiusY.HasValue) ui.RadiusY = RadiusY.Value;
+            if (Center is not null) ui.Center = Center.Value;
+            if (RadiusX is not null) ui.RadiusX = RadiusX.Value;
+            if (RadiusY is not null) ui.RadiusY = RadiusY.Value;
             return CSharpMarkup.WinUI.EllipseGeometry.StartChain(ui);
         }
 
@@ -28169,10 +28152,10 @@ namespace CSharpMarkup.WinUI // GradientStop
         }
 
         /// <summary>Create a <see cref="Xaml.Media.GradientStop"/></summary>
-        public static GradientStop GradientStop(O<double> Offset = default, Windows.UI.Color Color = default)
+        public static GradientStop GradientStop(double? Offset = default, Windows.UI.Color Color = default)
         {
             var ui = new Xaml.Media.GradientStop();
-            if (Offset.HasValue) ui.Offset = Offset.Value;
+            if (Offset is not null) ui.Offset = Offset.Value;
             if (Color != null) ui.Color = Color;
             return CSharpMarkup.WinUI.GradientStop.StartChain(ui);
         }
@@ -28233,10 +28216,10 @@ namespace CSharpMarkup.WinUI // ImageBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.ImageBrush"/></summary>
-        public static ImageBrush ImageBrush(O<Xaml.Media.ImageSource> ImageSource = default)
+        public static ImageBrush ImageBrush(Xaml.Media.ImageSource ImageSource = default)
         {
             var ui = new Xaml.Media.ImageBrush();
-            if (ImageSource.HasValue) ui.ImageSource = ImageSource.Value;
+            if (ImageSource is not null) ui.ImageSource = ImageSource;
             return CSharpMarkup.WinUI.ImageBrush.StartChain(ui);
         }
 
@@ -28310,11 +28293,11 @@ namespace CSharpMarkup.WinUI // LineGeometry
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.LineGeometry"/></summary>
-        public static LineGeometry LineGeometry(O<CSharpMarkup.WinUI.to.Point> EndPoint = default, O<CSharpMarkup.WinUI.to.Point> StartPoint = default)
+        public static LineGeometry LineGeometry(CSharpMarkup.WinUI.to.Point? EndPoint = default, CSharpMarkup.WinUI.to.Point? StartPoint = default)
         {
             var ui = new Xaml.Media.LineGeometry();
-            if (EndPoint.HasValue) ui.EndPoint = EndPoint.Value;
-            if (StartPoint.HasValue) ui.StartPoint = StartPoint.Value;
+            if (EndPoint is not null) ui.EndPoint = EndPoint.Value;
+            if (StartPoint is not null) ui.StartPoint = StartPoint.Value;
             return CSharpMarkup.WinUI.LineGeometry.StartChain(ui);
         }
 
@@ -28377,10 +28360,10 @@ namespace CSharpMarkup.WinUI // LineSegment
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.LineSegment"/></summary>
-        public static LineSegment LineSegment(O<CSharpMarkup.WinUI.to.Point> Point = default)
+        public static LineSegment LineSegment(CSharpMarkup.WinUI.to.Point? Point = default)
         {
             var ui = new Xaml.Media.LineSegment();
-            if (Point.HasValue) ui.Point = Point.Value;
+            if (Point is not null) ui.Point = Point.Value;
             return CSharpMarkup.WinUI.LineSegment.StartChain(ui);
         }
 
@@ -28576,10 +28559,10 @@ namespace CSharpMarkup.WinUI // MatrixTransform
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.MatrixTransform"/></summary>
-        public static MatrixTransform MatrixTransform(O<Xaml.Media.Matrix> Matrix = default)
+        public static MatrixTransform MatrixTransform(Xaml.Media.Matrix? Matrix = default)
         {
             var ui = new Xaml.Media.MatrixTransform();
-            if (Matrix.HasValue) ui.Matrix = Matrix.Value;
+            if (Matrix is not null) ui.Matrix = Matrix.Value;
             return CSharpMarkup.WinUI.MatrixTransform.StartChain(ui);
         }
 
@@ -28815,21 +28798,21 @@ namespace CSharpMarkup.WinUI // PlaneProjection
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.PlaneProjection"/></summary>
-        public static PlaneProjection PlaneProjection(O<double> CenterOfRotationX = default, O<double> CenterOfRotationY = default, O<double> CenterOfRotationZ = default, O<double> GlobalOffsetX = default, O<double> GlobalOffsetY = default, O<double> GlobalOffsetZ = default, O<double> LocalOffsetX = default, O<double> LocalOffsetY = default, O<double> LocalOffsetZ = default, O<double> RotationX = default, O<double> RotationY = default, O<double> RotationZ = default)
+        public static PlaneProjection PlaneProjection(double? CenterOfRotationX = default, double? CenterOfRotationY = default, double? CenterOfRotationZ = default, double? GlobalOffsetX = default, double? GlobalOffsetY = default, double? GlobalOffsetZ = default, double? LocalOffsetX = default, double? LocalOffsetY = default, double? LocalOffsetZ = default, double? RotationX = default, double? RotationY = default, double? RotationZ = default)
         {
             var ui = new Xaml.Media.PlaneProjection();
-            if (CenterOfRotationX.HasValue) ui.CenterOfRotationX = CenterOfRotationX.Value;
-            if (CenterOfRotationY.HasValue) ui.CenterOfRotationY = CenterOfRotationY.Value;
-            if (CenterOfRotationZ.HasValue) ui.CenterOfRotationZ = CenterOfRotationZ.Value;
-            if (GlobalOffsetX.HasValue) ui.GlobalOffsetX = GlobalOffsetX.Value;
-            if (GlobalOffsetY.HasValue) ui.GlobalOffsetY = GlobalOffsetY.Value;
-            if (GlobalOffsetZ.HasValue) ui.GlobalOffsetZ = GlobalOffsetZ.Value;
-            if (LocalOffsetX.HasValue) ui.LocalOffsetX = LocalOffsetX.Value;
-            if (LocalOffsetY.HasValue) ui.LocalOffsetY = LocalOffsetY.Value;
-            if (LocalOffsetZ.HasValue) ui.LocalOffsetZ = LocalOffsetZ.Value;
-            if (RotationX.HasValue) ui.RotationX = RotationX.Value;
-            if (RotationY.HasValue) ui.RotationY = RotationY.Value;
-            if (RotationZ.HasValue) ui.RotationZ = RotationZ.Value;
+            if (CenterOfRotationX is not null) ui.CenterOfRotationX = CenterOfRotationX.Value;
+            if (CenterOfRotationY is not null) ui.CenterOfRotationY = CenterOfRotationY.Value;
+            if (CenterOfRotationZ is not null) ui.CenterOfRotationZ = CenterOfRotationZ.Value;
+            if (GlobalOffsetX is not null) ui.GlobalOffsetX = GlobalOffsetX.Value;
+            if (GlobalOffsetY is not null) ui.GlobalOffsetY = GlobalOffsetY.Value;
+            if (GlobalOffsetZ is not null) ui.GlobalOffsetZ = GlobalOffsetZ.Value;
+            if (LocalOffsetX is not null) ui.LocalOffsetX = LocalOffsetX.Value;
+            if (LocalOffsetY is not null) ui.LocalOffsetY = LocalOffsetY.Value;
+            if (LocalOffsetZ is not null) ui.LocalOffsetZ = LocalOffsetZ.Value;
+            if (RotationX is not null) ui.RotationX = RotationX.Value;
+            if (RotationY is not null) ui.RotationY = RotationY.Value;
+            if (RotationZ is not null) ui.RotationZ = RotationZ.Value;
             return CSharpMarkup.WinUI.PlaneProjection.StartChain(ui);
         }
 
@@ -29164,11 +29147,11 @@ namespace CSharpMarkup.WinUI // QuadraticBezierSegment
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.QuadraticBezierSegment"/></summary>
-        public static QuadraticBezierSegment QuadraticBezierSegment(O<CSharpMarkup.WinUI.to.Point> Point1 = default, O<CSharpMarkup.WinUI.to.Point> Point2 = default)
+        public static QuadraticBezierSegment QuadraticBezierSegment(CSharpMarkup.WinUI.to.Point? Point1 = default, CSharpMarkup.WinUI.to.Point? Point2 = default)
         {
             var ui = new Xaml.Media.QuadraticBezierSegment();
-            if (Point1.HasValue) ui.Point1 = Point1.Value;
-            if (Point2.HasValue) ui.Point2 = Point2.Value;
+            if (Point1 is not null) ui.Point1 = Point1.Value;
+            if (Point2 is not null) ui.Point2 = Point2.Value;
             return CSharpMarkup.WinUI.QuadraticBezierSegment.StartChain(ui);
         }
 
@@ -29231,16 +29214,16 @@ namespace CSharpMarkup.WinUI // RadialGradientBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.RadialGradientBrush"/></summary>
-        public static RadialGradientBrush RadialGradientBrush(O<CSharpMarkup.WinUI.to.Point> Center = default, O<CSharpMarkup.WinUI.to.Point> GradientOrigin = default, O<UI.Composition.CompositionColorSpace> InterpolationSpace = default, O<Xaml.Media.BrushMappingMode> MappingMode = default, O<double> RadiusX = default, O<double> RadiusY = default, O<Xaml.Media.GradientSpreadMethod> SpreadMethod = default)
+        public static RadialGradientBrush RadialGradientBrush(CSharpMarkup.WinUI.to.Point? Center = default, CSharpMarkup.WinUI.to.Point? GradientOrigin = default, UI.Composition.CompositionColorSpace? InterpolationSpace = default, Xaml.Media.BrushMappingMode? MappingMode = default, double? RadiusX = default, double? RadiusY = default, Xaml.Media.GradientSpreadMethod? SpreadMethod = default)
         {
             var ui = new Xaml.Media.RadialGradientBrush();
-            if (Center.HasValue) ui.Center = Center.Value;
-            if (GradientOrigin.HasValue) ui.GradientOrigin = GradientOrigin.Value;
-            if (InterpolationSpace.HasValue) ui.InterpolationSpace = InterpolationSpace.Value;
-            if (MappingMode.HasValue) ui.MappingMode = MappingMode.Value;
-            if (RadiusX.HasValue) ui.RadiusX = RadiusX.Value;
-            if (RadiusY.HasValue) ui.RadiusY = RadiusY.Value;
-            if (SpreadMethod.HasValue) ui.SpreadMethod = SpreadMethod.Value;
+            if (Center is not null) ui.Center = Center.Value;
+            if (GradientOrigin is not null) ui.GradientOrigin = GradientOrigin.Value;
+            if (InterpolationSpace is not null) ui.InterpolationSpace = InterpolationSpace.Value;
+            if (MappingMode is not null) ui.MappingMode = MappingMode.Value;
+            if (RadiusX is not null) ui.RadiusX = RadiusX.Value;
+            if (RadiusY is not null) ui.RadiusY = RadiusY.Value;
+            if (SpreadMethod is not null) ui.SpreadMethod = SpreadMethod.Value;
             return CSharpMarkup.WinUI.RadialGradientBrush.StartChain(ui);
         }
 
@@ -29338,10 +29321,10 @@ namespace CSharpMarkup.WinUI // RectangleGeometry
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.RectangleGeometry"/></summary>
-        public static RectangleGeometry RectangleGeometry(O<Windows.Foundation.Rect> Rect = default)
+        public static RectangleGeometry RectangleGeometry(Windows.Foundation.Rect? Rect = default)
         {
             var ui = new Xaml.Media.RectangleGeometry();
-            if (Rect.HasValue) ui.Rect = Rect.Value;
+            if (Rect is not null) ui.Rect = Rect.Value;
             return CSharpMarkup.WinUI.RectangleGeometry.StartChain(ui);
         }
 
@@ -29397,12 +29380,12 @@ namespace CSharpMarkup.WinUI // RotateTransform
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.RotateTransform"/></summary>
-        public static RotateTransform RotateTransform(O<double> Angle = default, O<double> CenterX = default, O<double> CenterY = default)
+        public static RotateTransform RotateTransform(double? Angle = default, double? CenterX = default, double? CenterY = default)
         {
             var ui = new Xaml.Media.RotateTransform();
-            if (Angle.HasValue) ui.Angle = Angle.Value;
-            if (CenterX.HasValue) ui.CenterX = CenterX.Value;
-            if (CenterY.HasValue) ui.CenterY = CenterY.Value;
+            if (Angle is not null) ui.Angle = Angle.Value;
+            if (CenterX is not null) ui.CenterX = CenterX.Value;
+            if (CenterY is not null) ui.CenterY = CenterY.Value;
             return CSharpMarkup.WinUI.RotateTransform.StartChain(ui);
         }
 
@@ -29472,13 +29455,13 @@ namespace CSharpMarkup.WinUI // ScaleTransform
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.ScaleTransform"/></summary>
-        public static ScaleTransform ScaleTransform(O<double> CenterX = default, O<double> CenterY = default, O<double> ScaleX = default, O<double> ScaleY = default)
+        public static ScaleTransform ScaleTransform(double? CenterX = default, double? CenterY = default, double? ScaleX = default, double? ScaleY = default)
         {
             var ui = new Xaml.Media.ScaleTransform();
-            if (CenterX.HasValue) ui.CenterX = CenterX.Value;
-            if (CenterY.HasValue) ui.CenterY = CenterY.Value;
-            if (ScaleX.HasValue) ui.ScaleX = ScaleX.Value;
-            if (ScaleY.HasValue) ui.ScaleY = ScaleY.Value;
+            if (CenterX is not null) ui.CenterX = CenterX.Value;
+            if (CenterY is not null) ui.CenterY = CenterY.Value;
+            if (ScaleX is not null) ui.ScaleX = ScaleX.Value;
+            if (ScaleY is not null) ui.ScaleY = ScaleY.Value;
             return CSharpMarkup.WinUI.ScaleTransform.StartChain(ui);
         }
 
@@ -29573,13 +29556,13 @@ namespace CSharpMarkup.WinUI // SkewTransform
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.SkewTransform"/></summary>
-        public static SkewTransform SkewTransform(O<double> AngleX = default, O<double> AngleY = default, O<double> CenterX = default, O<double> CenterY = default)
+        public static SkewTransform SkewTransform(double? AngleX = default, double? AngleY = default, double? CenterX = default, double? CenterY = default)
         {
             var ui = new Xaml.Media.SkewTransform();
-            if (AngleX.HasValue) ui.AngleX = AngleX.Value;
-            if (AngleY.HasValue) ui.AngleY = AngleY.Value;
-            if (CenterX.HasValue) ui.CenterX = CenterX.Value;
-            if (CenterY.HasValue) ui.CenterY = CenterY.Value;
+            if (AngleX is not null) ui.AngleX = AngleX.Value;
+            if (AngleY is not null) ui.AngleY = AngleY.Value;
+            if (CenterX is not null) ui.CenterX = CenterX.Value;
+            if (CenterY is not null) ui.CenterY = CenterY.Value;
             return CSharpMarkup.WinUI.SkewTransform.StartChain(ui);
         }
 
@@ -29884,11 +29867,11 @@ namespace CSharpMarkup.WinUI // TranslateTransform
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.TranslateTransform"/></summary>
-        public static TranslateTransform TranslateTransform(O<double> X = default, O<double> Y = default)
+        public static TranslateTransform TranslateTransform(double? X = default, double? Y = default)
         {
             var ui = new Xaml.Media.TranslateTransform();
-            if (X.HasValue) ui.X = X.Value;
-            if (Y.HasValue) ui.Y = Y.Value;
+            if (X is not null) ui.X = X.Value;
+            if (Y is not null) ui.Y = Y.Value;
             return CSharpMarkup.WinUI.TranslateTransform.StartChain(ui);
         }
 
@@ -30061,10 +30044,10 @@ namespace CSharpMarkup.WinUI // BackEase
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.BackEase"/></summary>
-        public static BackEase BackEase(O<double> Amplitude = default)
+        public static BackEase BackEase(double? Amplitude = default)
         {
             var ui = new Xaml.Media.Animation.BackEase();
-            if (Amplitude.HasValue) ui.Amplitude = Amplitude.Value;
+            if (Amplitude is not null) ui.Amplitude = Amplitude.Value;
             return CSharpMarkup.WinUI.BackEase.StartChain(ui);
         }
 
@@ -30176,11 +30159,11 @@ namespace CSharpMarkup.WinUI // BounceEase
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.BounceEase"/></summary>
-        public static BounceEase BounceEase(O<int> Bounces = default, O<double> Bounciness = default)
+        public static BounceEase BounceEase(int? Bounces = default, double? Bounciness = default)
         {
             var ui = new Xaml.Media.Animation.BounceEase();
-            if (Bounces.HasValue) ui.Bounces = Bounces.Value;
-            if (Bounciness.HasValue) ui.Bounciness = Bounciness.Value;
+            if (Bounces is not null) ui.Bounces = Bounces.Value;
+            if (Bounciness is not null) ui.Bounciness = Bounciness.Value;
             return CSharpMarkup.WinUI.BounceEase.StartChain(ui);
         }
 
@@ -30284,14 +30267,16 @@ namespace CSharpMarkup.WinUI // ColorAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.ColorAnimation"/></summary>
-        public static ColorAnimation ColorAnimation(O<Windows.UI.Color?> By = default, O<Xaml.Media.Animation.EasingFunctionBase> EasingFunction = default, O<bool> EnableDependentAnimation = default, O<Windows.UI.Color?> From = default, O<Windows.UI.Color?> To = default)
+        public static ColorAnimation ColorAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, Windows.UI.Color? By = default, Xaml.Media.Animation.EasingFunctionBase EasingFunction = default, bool? EnableDependentAnimation = default, Windows.UI.Color? From = default, Windows.UI.Color? To = default)
         {
             var ui = new Xaml.Media.Animation.ColorAnimation();
-            if (By.HasValue) ui.By = By.Value;
-            if (EasingFunction.HasValue) ui.EasingFunction = EasingFunction.Value;
-            if (EnableDependentAnimation.HasValue) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            if (From.HasValue) ui.From = From.Value;
-            if (To.HasValue) ui.To = To.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (By is not null) ui.By = By;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EnableDependentAnimation is not null) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
+            if (From is not null) ui.From = From;
+            if (To is not null) ui.To = To;
             return CSharpMarkup.WinUI.ColorAnimation.StartChain(ui);
         }
 
@@ -30480,10 +30465,10 @@ namespace CSharpMarkup.WinUI // CommonNavigationTransitionInfo
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.CommonNavigationTransitionInfo"/></summary>
-        public static CommonNavigationTransitionInfo CommonNavigationTransitionInfo(O<bool> IsStaggeringEnabled = default)
+        public static CommonNavigationTransitionInfo CommonNavigationTransitionInfo(bool? IsStaggeringEnabled = default)
         {
             var ui = new Xaml.Media.Animation.CommonNavigationTransitionInfo();
-            if (IsStaggeringEnabled.HasValue) ui.IsStaggeringEnabled = IsStaggeringEnabled.Value;
+            if (IsStaggeringEnabled is not null) ui.IsStaggeringEnabled = IsStaggeringEnabled.Value;
             return CSharpMarkup.WinUI.CommonNavigationTransitionInfo.StartChain(ui);
         }
 
@@ -30547,11 +30532,11 @@ namespace CSharpMarkup.WinUI // ContentThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.ContentThemeTransition"/></summary>
-        public static ContentThemeTransition ContentThemeTransition(O<double> HorizontalOffset = default, O<double> VerticalOffset = default)
+        public static ContentThemeTransition ContentThemeTransition(double? HorizontalOffset = default, double? VerticalOffset = default)
         {
             var ui = new Xaml.Media.Animation.ContentThemeTransition();
-            if (HorizontalOffset.HasValue) ui.HorizontalOffset = HorizontalOffset.Value;
-            if (VerticalOffset.HasValue) ui.VerticalOffset = VerticalOffset.Value;
+            if (HorizontalOffset is not null) ui.HorizontalOffset = HorizontalOffset.Value;
+            if (VerticalOffset is not null) ui.VerticalOffset = VerticalOffset.Value;
             return CSharpMarkup.WinUI.ContentThemeTransition.StartChain(ui);
         }
 
@@ -30614,10 +30599,10 @@ namespace CSharpMarkup.WinUI // ContinuumNavigationTransitionInfo
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo"/></summary>
-        public static ContinuumNavigationTransitionInfo ContinuumNavigationTransitionInfo(O<Xaml.UIElement> ExitElement = default)
+        public static ContinuumNavigationTransitionInfo ContinuumNavigationTransitionInfo(Xaml.UIElement ExitElement = default)
         {
             var ui = new Xaml.Media.Animation.ContinuumNavigationTransitionInfo();
-            if (ExitElement.HasValue) ui.ExitElement = ExitElement.Value;
+            if (ExitElement is not null) ui.ExitElement = ExitElement;
             return CSharpMarkup.WinUI.ContinuumNavigationTransitionInfo.StartChain(ui);
         }
 
@@ -30677,19 +30662,19 @@ namespace CSharpMarkup.WinUI // ContinuumNavigationTransitionInfo
         /// <summary>Set <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo"/> attached properties</summary>
         public static TTarget ContinuumNavigationTransitionInfo<TTarget>(this TTarget target
 
-            , O<bool> ExitElementContainer = default
+            , bool? ExitElementContainer = default
 
-            , O<bool> IsEntranceElement = default
+            , bool? IsEntranceElement = default
 
-            , O<bool> IsExitElement = default
+            , bool? IsExitElement = default
 
         ) where TTarget : ListViewBase
         {
-            if (ExitElementContainer.HasValue) Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetExitElementContainer(target.UI, ExitElementContainer.Value);
+            if (ExitElementContainer is not null) Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetExitElementContainer(target.UI, ExitElementContainer.Value);
 
-            if (IsEntranceElement.HasValue) Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetIsEntranceElement(target.UI, IsEntranceElement.Value);
+            if (IsEntranceElement is not null) Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetIsEntranceElement(target.UI, IsEntranceElement.Value);
 
-            if (IsExitElement.HasValue) Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetIsExitElement(target.UI, IsExitElement.Value);
+            if (IsExitElement is not null) Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetIsExitElement(target.UI, IsExitElement.Value);
 
             return target;
         }
@@ -30713,15 +30698,15 @@ namespace CSharpMarkup.WinUI // ContinuumNavigationTransitionInfo
         /// <summary>Set <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo"/> attached properties</summary>
         public static TTarget ContinuumNavigationTransitionInfo<TTarget>(this TTarget target
 
-            , O<bool> IsEntranceElement = default
+            , bool? IsEntranceElement = default
 
-            , O<bool> IsExitElement = default
+            , bool? IsExitElement = default
 
         ) where TTarget : UIElement
         {
-            if (IsEntranceElement.HasValue) Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetIsEntranceElement(target.UI, IsEntranceElement.Value);
+            if (IsEntranceElement is not null) Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetIsEntranceElement(target.UI, IsEntranceElement.Value);
 
-            if (IsExitElement.HasValue) Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetIsExitElement(target.UI, IsExitElement.Value);
+            if (IsExitElement is not null) Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetIsExitElement(target.UI, IsExitElement.Value);
 
             return target;
         }
@@ -30938,14 +30923,16 @@ namespace CSharpMarkup.WinUI // DoubleAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DoubleAnimation"/></summary>
-        public static DoubleAnimation DoubleAnimation(O<double?> By = default, O<Xaml.Media.Animation.EasingFunctionBase> EasingFunction = default, O<bool> EnableDependentAnimation = default, O<double?> From = default, O<double?> To = default)
+        public static DoubleAnimation DoubleAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? By = default, Xaml.Media.Animation.EasingFunctionBase EasingFunction = default, bool? EnableDependentAnimation = default, double? From = default, double? To = default)
         {
             var ui = new Xaml.Media.Animation.DoubleAnimation();
-            if (By.HasValue) ui.By = By.Value;
-            if (EasingFunction.HasValue) ui.EasingFunction = EasingFunction.Value;
-            if (EnableDependentAnimation.HasValue) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            if (From.HasValue) ui.From = From.Value;
-            if (To.HasValue) ui.To = To.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (By is not null) ui.By = By;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EnableDependentAnimation is not null) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
+            if (From is not null) ui.From = From;
+            if (To is not null) ui.To = To;
             return CSharpMarkup.WinUI.DoubleAnimation.StartChain(ui);
         }
 
@@ -31134,10 +31121,12 @@ namespace CSharpMarkup.WinUI // DragItemThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DragItemThemeAnimation"/></summary>
-        public static DragItemThemeAnimation DragItemThemeAnimation(O<string> TargetName = default)
+        public static DragItemThemeAnimation DragItemThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.DragItemThemeAnimation();
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.DragItemThemeAnimation.StartChain(ui);
         }
 
@@ -31193,12 +31182,14 @@ namespace CSharpMarkup.WinUI // DragOverThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DragOverThemeAnimation"/></summary>
-        public static DragOverThemeAnimation DragOverThemeAnimation(O<Xaml.Controls.Primitives.AnimationDirection> Direction = default, O<string> TargetName = default, O<double> ToOffset = default)
+        public static DragOverThemeAnimation DragOverThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, Xaml.Controls.Primitives.AnimationDirection? Direction = default, string TargetName = default, double? ToOffset = default)
         {
             var ui = new Xaml.Media.Animation.DragOverThemeAnimation();
-            if (Direction.HasValue) ui.Direction = Direction.Value;
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
-            if (ToOffset.HasValue) ui.ToOffset = ToOffset.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (Direction is not null) ui.Direction = Direction.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
+            if (ToOffset is not null) ui.ToOffset = ToOffset.Value;
             return CSharpMarkup.WinUI.DragOverThemeAnimation.StartChain(ui);
         }
 
@@ -31309,13 +31300,15 @@ namespace CSharpMarkup.WinUI // DrillInThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DrillInThemeAnimation"/></summary>
-        public static DrillInThemeAnimation DrillInThemeAnimation(O<Xaml.DependencyObject> EntranceTarget = default, O<string> EntranceTargetName = default, O<Xaml.DependencyObject> ExitTarget = default, O<string> ExitTargetName = default)
+        public static DrillInThemeAnimation DrillInThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, Xaml.DependencyObject EntranceTarget = default, string EntranceTargetName = default, Xaml.DependencyObject ExitTarget = default, string ExitTargetName = default)
         {
             var ui = new Xaml.Media.Animation.DrillInThemeAnimation();
-            if (EntranceTarget.HasValue) ui.EntranceTarget = EntranceTarget.Value;
-            if (EntranceTargetName.HasValue) ui.EntranceTargetName = EntranceTargetName.Value;
-            if (ExitTarget.HasValue) ui.ExitTarget = ExitTarget.Value;
-            if (ExitTargetName.HasValue) ui.ExitTargetName = ExitTargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (EntranceTarget is not null) ui.EntranceTarget = EntranceTarget;
+            if (EntranceTargetName is not null) ui.EntranceTargetName = EntranceTargetName;
+            if (ExitTarget is not null) ui.ExitTarget = ExitTarget;
+            if (ExitTargetName is not null) ui.ExitTargetName = ExitTargetName;
             return CSharpMarkup.WinUI.DrillInThemeAnimation.StartChain(ui);
         }
 
@@ -31392,13 +31385,15 @@ namespace CSharpMarkup.WinUI // DrillOutThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DrillOutThemeAnimation"/></summary>
-        public static DrillOutThemeAnimation DrillOutThemeAnimation(O<Xaml.DependencyObject> EntranceTarget = default, O<string> EntranceTargetName = default, O<Xaml.DependencyObject> ExitTarget = default, O<string> ExitTargetName = default)
+        public static DrillOutThemeAnimation DrillOutThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, Xaml.DependencyObject EntranceTarget = default, string EntranceTargetName = default, Xaml.DependencyObject ExitTarget = default, string ExitTargetName = default)
         {
             var ui = new Xaml.Media.Animation.DrillOutThemeAnimation();
-            if (EntranceTarget.HasValue) ui.EntranceTarget = EntranceTarget.Value;
-            if (EntranceTargetName.HasValue) ui.EntranceTargetName = EntranceTargetName.Value;
-            if (ExitTarget.HasValue) ui.ExitTarget = ExitTarget.Value;
-            if (ExitTargetName.HasValue) ui.ExitTargetName = ExitTargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (EntranceTarget is not null) ui.EntranceTarget = EntranceTarget;
+            if (EntranceTargetName is not null) ui.EntranceTargetName = EntranceTargetName;
+            if (ExitTarget is not null) ui.ExitTarget = ExitTarget;
+            if (ExitTargetName is not null) ui.ExitTargetName = ExitTargetName;
             return CSharpMarkup.WinUI.DrillOutThemeAnimation.StartChain(ui);
         }
 
@@ -31475,10 +31470,12 @@ namespace CSharpMarkup.WinUI // DropTargetItemThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DropTargetItemThemeAnimation"/></summary>
-        public static DropTargetItemThemeAnimation DropTargetItemThemeAnimation(O<string> TargetName = default)
+        public static DropTargetItemThemeAnimation DropTargetItemThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.DropTargetItemThemeAnimation();
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.DropTargetItemThemeAnimation.StartChain(ui);
         }
 
@@ -31534,10 +31531,10 @@ namespace CSharpMarkup.WinUI // EasingColorKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.EasingColorKeyFrame"/></summary>
-        public static EasingColorKeyFrame EasingColorKeyFrame(O<Xaml.Media.Animation.EasingFunctionBase> EasingFunction = default)
+        public static EasingColorKeyFrame EasingColorKeyFrame(Xaml.Media.Animation.EasingFunctionBase EasingFunction = default)
         {
             var ui = new Xaml.Media.Animation.EasingColorKeyFrame();
-            if (EasingFunction.HasValue) ui.EasingFunction = EasingFunction.Value;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
             return CSharpMarkup.WinUI.EasingColorKeyFrame.StartChain(ui);
         }
 
@@ -31593,10 +31590,10 @@ namespace CSharpMarkup.WinUI // EasingDoubleKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.EasingDoubleKeyFrame"/></summary>
-        public static EasingDoubleKeyFrame EasingDoubleKeyFrame(O<Xaml.Media.Animation.EasingFunctionBase> EasingFunction = default)
+        public static EasingDoubleKeyFrame EasingDoubleKeyFrame(Xaml.Media.Animation.EasingFunctionBase EasingFunction = default)
         {
             var ui = new Xaml.Media.Animation.EasingDoubleKeyFrame();
-            if (EasingFunction.HasValue) ui.EasingFunction = EasingFunction.Value;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
             return CSharpMarkup.WinUI.EasingDoubleKeyFrame.StartChain(ui);
         }
 
@@ -31680,10 +31677,10 @@ namespace CSharpMarkup.WinUI // EasingPointKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.EasingPointKeyFrame"/></summary>
-        public static EasingPointKeyFrame EasingPointKeyFrame(O<Xaml.Media.Animation.EasingFunctionBase> EasingFunction = default)
+        public static EasingPointKeyFrame EasingPointKeyFrame(Xaml.Media.Animation.EasingFunctionBase EasingFunction = default)
         {
             var ui = new Xaml.Media.Animation.EasingPointKeyFrame();
-            if (EasingFunction.HasValue) ui.EasingFunction = EasingFunction.Value;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
             return CSharpMarkup.WinUI.EasingPointKeyFrame.StartChain(ui);
         }
 
@@ -31739,10 +31736,10 @@ namespace CSharpMarkup.WinUI // EdgeUIThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.EdgeUIThemeTransition"/></summary>
-        public static EdgeUIThemeTransition EdgeUIThemeTransition(O<Xaml.Controls.Primitives.EdgeTransitionLocation> Edge = default)
+        public static EdgeUIThemeTransition EdgeUIThemeTransition(Xaml.Controls.Primitives.EdgeTransitionLocation? Edge = default)
         {
             var ui = new Xaml.Media.Animation.EdgeUIThemeTransition();
-            if (Edge.HasValue) ui.Edge = Edge.Value;
+            if (Edge is not null) ui.Edge = Edge.Value;
             return CSharpMarkup.WinUI.EdgeUIThemeTransition.StartChain(ui);
         }
 
@@ -31798,11 +31795,11 @@ namespace CSharpMarkup.WinUI // ElasticEase
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.ElasticEase"/></summary>
-        public static ElasticEase ElasticEase(O<int> Oscillations = default, O<double> Springiness = default)
+        public static ElasticEase ElasticEase(int? Oscillations = default, double? Springiness = default)
         {
             var ui = new Xaml.Media.Animation.ElasticEase();
-            if (Oscillations.HasValue) ui.Oscillations = Oscillations.Value;
-            if (Springiness.HasValue) ui.Springiness = Springiness.Value;
+            if (Oscillations is not null) ui.Oscillations = Oscillations.Value;
+            if (Springiness is not null) ui.Springiness = Springiness.Value;
             return CSharpMarkup.WinUI.ElasticEase.StartChain(ui);
         }
 
@@ -31917,12 +31914,12 @@ namespace CSharpMarkup.WinUI // EntranceThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.EntranceThemeTransition"/></summary>
-        public static EntranceThemeTransition EntranceThemeTransition(O<double> FromHorizontalOffset = default, O<double> FromVerticalOffset = default, O<bool> IsStaggeringEnabled = default)
+        public static EntranceThemeTransition EntranceThemeTransition(double? FromHorizontalOffset = default, double? FromVerticalOffset = default, bool? IsStaggeringEnabled = default)
         {
             var ui = new Xaml.Media.Animation.EntranceThemeTransition();
-            if (FromHorizontalOffset.HasValue) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
-            if (FromVerticalOffset.HasValue) ui.FromVerticalOffset = FromVerticalOffset.Value;
-            if (IsStaggeringEnabled.HasValue) ui.IsStaggeringEnabled = IsStaggeringEnabled.Value;
+            if (FromHorizontalOffset is not null) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
+            if (FromVerticalOffset is not null) ui.FromVerticalOffset = FromVerticalOffset.Value;
+            if (IsStaggeringEnabled is not null) ui.IsStaggeringEnabled = IsStaggeringEnabled.Value;
             return CSharpMarkup.WinUI.EntranceThemeTransition.StartChain(ui);
         }
 
@@ -31992,10 +31989,10 @@ namespace CSharpMarkup.WinUI // ExponentialEase
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.ExponentialEase"/></summary>
-        public static ExponentialEase ExponentialEase(O<double> Exponent = default)
+        public static ExponentialEase ExponentialEase(double? Exponent = default)
         {
             var ui = new Xaml.Media.Animation.ExponentialEase();
-            if (Exponent.HasValue) ui.Exponent = Exponent.Value;
+            if (Exponent is not null) ui.Exponent = Exponent.Value;
             return CSharpMarkup.WinUI.ExponentialEase.StartChain(ui);
         }
 
@@ -32051,10 +32048,12 @@ namespace CSharpMarkup.WinUI // FadeInThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.FadeInThemeAnimation"/></summary>
-        public static FadeInThemeAnimation FadeInThemeAnimation(O<string> TargetName = default)
+        public static FadeInThemeAnimation FadeInThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.FadeInThemeAnimation();
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.FadeInThemeAnimation.StartChain(ui);
         }
 
@@ -32110,10 +32109,12 @@ namespace CSharpMarkup.WinUI // FadeOutThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.FadeOutThemeAnimation"/></summary>
-        public static FadeOutThemeAnimation FadeOutThemeAnimation(O<string> TargetName = default)
+        public static FadeOutThemeAnimation FadeOutThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.FadeOutThemeAnimation();
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.FadeOutThemeAnimation.StartChain(ui);
         }
 
@@ -32169,11 +32170,11 @@ namespace CSharpMarkup.WinUI // KeySpline
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.KeySpline"/></summary>
-        public static KeySpline KeySpline(O<CSharpMarkup.WinUI.to.Point> ControlPoint1 = default, O<CSharpMarkup.WinUI.to.Point> ControlPoint2 = default)
+        public static KeySpline KeySpline(CSharpMarkup.WinUI.to.Point? ControlPoint1 = default, CSharpMarkup.WinUI.to.Point? ControlPoint2 = default)
         {
             var ui = new Xaml.Media.Animation.KeySpline();
-            if (ControlPoint1.HasValue) ui.ControlPoint1 = ControlPoint1.Value;
-            if (ControlPoint2.HasValue) ui.ControlPoint2 = ControlPoint2.Value;
+            if (ControlPoint1 is not null) ui.ControlPoint1 = ControlPoint1.Value;
+            if (ControlPoint2 is not null) ui.ControlPoint2 = ControlPoint2.Value;
             return CSharpMarkup.WinUI.KeySpline.StartChain(ui);
         }
 
@@ -32530,10 +32531,10 @@ namespace CSharpMarkup.WinUI // PaneThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PaneThemeTransition"/></summary>
-        public static PaneThemeTransition PaneThemeTransition(O<Xaml.Controls.Primitives.EdgeTransitionLocation> Edge = default)
+        public static PaneThemeTransition PaneThemeTransition(Xaml.Controls.Primitives.EdgeTransitionLocation? Edge = default)
         {
             var ui = new Xaml.Media.Animation.PaneThemeTransition();
-            if (Edge.HasValue) ui.Edge = Edge.Value;
+            if (Edge is not null) ui.Edge = Edge.Value;
             return CSharpMarkup.WinUI.PaneThemeTransition.StartChain(ui);
         }
 
@@ -32589,14 +32590,16 @@ namespace CSharpMarkup.WinUI // PointAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointAnimation"/></summary>
-        public static PointAnimation PointAnimation(O<CSharpMarkup.WinUI.to.Point?> By = default, O<Xaml.Media.Animation.EasingFunctionBase> EasingFunction = default, O<bool> EnableDependentAnimation = default, O<CSharpMarkup.WinUI.to.Point?> From = default, O<CSharpMarkup.WinUI.to.Point?> To = default)
+        public static PointAnimation PointAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, CSharpMarkup.WinUI.to.Point? By = default, Xaml.Media.Animation.EasingFunctionBase EasingFunction = default, bool? EnableDependentAnimation = default, CSharpMarkup.WinUI.to.Point? From = default, CSharpMarkup.WinUI.to.Point? To = default)
         {
             var ui = new Xaml.Media.Animation.PointAnimation();
-            if (By.HasValue) ui.By = By.Value;
-            if (EasingFunction.HasValue) ui.EasingFunction = EasingFunction.Value;
-            if (EnableDependentAnimation.HasValue) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            if (From.HasValue) ui.From = From.Value;
-            if (To.HasValue) ui.To = To.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (By is not null) ui.By = By;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EnableDependentAnimation is not null) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
+            if (From is not null) ui.From = From;
+            if (To is not null) ui.To = To;
             return CSharpMarkup.WinUI.PointAnimation.StartChain(ui);
         }
 
@@ -32785,10 +32788,12 @@ namespace CSharpMarkup.WinUI // PointerDownThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointerDownThemeAnimation"/></summary>
-        public static PointerDownThemeAnimation PointerDownThemeAnimation(O<string> TargetName = default)
+        public static PointerDownThemeAnimation PointerDownThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.PointerDownThemeAnimation();
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.PointerDownThemeAnimation.StartChain(ui);
         }
 
@@ -32844,10 +32849,12 @@ namespace CSharpMarkup.WinUI // PointerUpThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointerUpThemeAnimation"/></summary>
-        public static PointerUpThemeAnimation PointerUpThemeAnimation(O<string> TargetName = default)
+        public static PointerUpThemeAnimation PointerUpThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.PointerUpThemeAnimation();
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.PointerUpThemeAnimation.StartChain(ui);
         }
 
@@ -32903,12 +32910,14 @@ namespace CSharpMarkup.WinUI // PopInThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PopInThemeAnimation"/></summary>
-        public static PopInThemeAnimation PopInThemeAnimation(O<double> FromHorizontalOffset = default, O<double> FromVerticalOffset = default, O<string> TargetName = default)
+        public static PopInThemeAnimation PopInThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? FromHorizontalOffset = default, double? FromVerticalOffset = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.PopInThemeAnimation();
-            if (FromHorizontalOffset.HasValue) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
-            if (FromVerticalOffset.HasValue) ui.FromVerticalOffset = FromVerticalOffset.Value;
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (FromHorizontalOffset is not null) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
+            if (FromVerticalOffset is not null) ui.FromVerticalOffset = FromVerticalOffset.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.PopInThemeAnimation.StartChain(ui);
         }
 
@@ -32978,10 +32987,12 @@ namespace CSharpMarkup.WinUI // PopOutThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PopOutThemeAnimation"/></summary>
-        public static PopOutThemeAnimation PopOutThemeAnimation(O<string> TargetName = default)
+        public static PopOutThemeAnimation PopOutThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.PopOutThemeAnimation();
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.PopOutThemeAnimation.StartChain(ui);
         }
 
@@ -33037,11 +33048,11 @@ namespace CSharpMarkup.WinUI // PopupThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PopupThemeTransition"/></summary>
-        public static PopupThemeTransition PopupThemeTransition(O<double> FromHorizontalOffset = default, O<double> FromVerticalOffset = default)
+        public static PopupThemeTransition PopupThemeTransition(double? FromHorizontalOffset = default, double? FromVerticalOffset = default)
         {
             var ui = new Xaml.Media.Animation.PopupThemeTransition();
-            if (FromHorizontalOffset.HasValue) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
-            if (FromVerticalOffset.HasValue) ui.FromVerticalOffset = FromVerticalOffset.Value;
+            if (FromHorizontalOffset is not null) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
+            if (FromVerticalOffset is not null) ui.FromVerticalOffset = FromVerticalOffset.Value;
             return CSharpMarkup.WinUI.PopupThemeTransition.StartChain(ui);
         }
 
@@ -33104,10 +33115,10 @@ namespace CSharpMarkup.WinUI // PowerEase
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PowerEase"/></summary>
-        public static PowerEase PowerEase(O<double> Power = default)
+        public static PowerEase PowerEase(double? Power = default)
         {
             var ui = new Xaml.Media.Animation.PowerEase();
-            if (Power.HasValue) ui.Power = Power.Value;
+            if (Power is not null) ui.Power = Power.Value;
             return CSharpMarkup.WinUI.PowerEase.StartChain(ui);
         }
 
@@ -33327,12 +33338,14 @@ namespace CSharpMarkup.WinUI // RepositionThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.RepositionThemeAnimation"/></summary>
-        public static RepositionThemeAnimation RepositionThemeAnimation(O<double> FromHorizontalOffset = default, O<double> FromVerticalOffset = default, O<string> TargetName = default)
+        public static RepositionThemeAnimation RepositionThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? FromHorizontalOffset = default, double? FromVerticalOffset = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.RepositionThemeAnimation();
-            if (FromHorizontalOffset.HasValue) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
-            if (FromVerticalOffset.HasValue) ui.FromVerticalOffset = FromVerticalOffset.Value;
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (FromHorizontalOffset is not null) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
+            if (FromVerticalOffset is not null) ui.FromVerticalOffset = FromVerticalOffset.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.RepositionThemeAnimation.StartChain(ui);
         }
 
@@ -33402,10 +33415,10 @@ namespace CSharpMarkup.WinUI // RepositionThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.RepositionThemeTransition"/></summary>
-        public static RepositionThemeTransition RepositionThemeTransition(O<bool> IsStaggeringEnabled = default)
+        public static RepositionThemeTransition RepositionThemeTransition(bool? IsStaggeringEnabled = default)
         {
             var ui = new Xaml.Media.Animation.RepositionThemeTransition();
-            if (IsStaggeringEnabled.HasValue) ui.IsStaggeringEnabled = IsStaggeringEnabled.Value;
+            if (IsStaggeringEnabled is not null) ui.IsStaggeringEnabled = IsStaggeringEnabled.Value;
             return CSharpMarkup.WinUI.RepositionThemeTransition.StartChain(ui);
         }
 
@@ -33502,10 +33515,10 @@ namespace CSharpMarkup.WinUI // SlideNavigationTransitionInfo
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SlideNavigationTransitionInfo"/></summary>
-        public static SlideNavigationTransitionInfo SlideNavigationTransitionInfo(O<Xaml.Media.Animation.SlideNavigationTransitionEffect> Effect = default)
+        public static SlideNavigationTransitionInfo SlideNavigationTransitionInfo(Xaml.Media.Animation.SlideNavigationTransitionEffect? Effect = default)
         {
             var ui = new Xaml.Media.Animation.SlideNavigationTransitionInfo();
-            if (Effect.HasValue) ui.Effect = Effect.Value;
+            if (Effect is not null) ui.Effect = Effect.Value;
             return CSharpMarkup.WinUI.SlideNavigationTransitionInfo.StartChain(ui);
         }
 
@@ -33561,10 +33574,10 @@ namespace CSharpMarkup.WinUI // SplineColorKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SplineColorKeyFrame"/></summary>
-        public static SplineColorKeyFrame SplineColorKeyFrame(O<Xaml.Media.Animation.KeySpline> KeySpline = default)
+        public static SplineColorKeyFrame SplineColorKeyFrame(Xaml.Media.Animation.KeySpline KeySpline = default)
         {
             var ui = new Xaml.Media.Animation.SplineColorKeyFrame();
-            if (KeySpline.HasValue) ui.KeySpline = KeySpline.Value;
+            if (KeySpline is not null) ui.KeySpline = KeySpline;
             return CSharpMarkup.WinUI.SplineColorKeyFrame.StartChain(ui);
         }
 
@@ -33620,10 +33633,10 @@ namespace CSharpMarkup.WinUI // SplineDoubleKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SplineDoubleKeyFrame"/></summary>
-        public static SplineDoubleKeyFrame SplineDoubleKeyFrame(O<Xaml.Media.Animation.KeySpline> KeySpline = default)
+        public static SplineDoubleKeyFrame SplineDoubleKeyFrame(Xaml.Media.Animation.KeySpline KeySpline = default)
         {
             var ui = new Xaml.Media.Animation.SplineDoubleKeyFrame();
-            if (KeySpline.HasValue) ui.KeySpline = KeySpline.Value;
+            if (KeySpline is not null) ui.KeySpline = KeySpline;
             return CSharpMarkup.WinUI.SplineDoubleKeyFrame.StartChain(ui);
         }
 
@@ -33679,10 +33692,10 @@ namespace CSharpMarkup.WinUI // SplinePointKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SplinePointKeyFrame"/></summary>
-        public static SplinePointKeyFrame SplinePointKeyFrame(O<Xaml.Media.Animation.KeySpline> KeySpline = default)
+        public static SplinePointKeyFrame SplinePointKeyFrame(Xaml.Media.Animation.KeySpline KeySpline = default)
         {
             var ui = new Xaml.Media.Animation.SplinePointKeyFrame();
-            if (KeySpline.HasValue) ui.KeySpline = KeySpline.Value;
+            if (KeySpline is not null) ui.KeySpline = KeySpline;
             return CSharpMarkup.WinUI.SplinePointKeyFrame.StartChain(ui);
         }
 
@@ -33738,20 +33751,22 @@ namespace CSharpMarkup.WinUI // SplitCloseThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation"/></summary>
-        public static SplitCloseThemeAnimation SplitCloseThemeAnimation(O<double> ClosedLength = default, O<Xaml.DependencyObject> ClosedTarget = default, O<string> ClosedTargetName = default, O<Xaml.DependencyObject> ContentTarget = default, O<string> ContentTargetName = default, O<Xaml.Controls.Primitives.AnimationDirection> ContentTranslationDirection = default, O<double> ContentTranslationOffset = default, O<double> OffsetFromCenter = default, O<double> OpenedLength = default, O<Xaml.DependencyObject> OpenedTarget = default, O<string> OpenedTargetName = default)
+        public static SplitCloseThemeAnimation SplitCloseThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? ClosedLength = default, Xaml.DependencyObject ClosedTarget = default, string ClosedTargetName = default, Xaml.DependencyObject ContentTarget = default, string ContentTargetName = default, Xaml.Controls.Primitives.AnimationDirection? ContentTranslationDirection = default, double? ContentTranslationOffset = default, double? OffsetFromCenter = default, double? OpenedLength = default, Xaml.DependencyObject OpenedTarget = default, string OpenedTargetName = default)
         {
             var ui = new Xaml.Media.Animation.SplitCloseThemeAnimation();
-            if (ClosedLength.HasValue) ui.ClosedLength = ClosedLength.Value;
-            if (ClosedTarget.HasValue) ui.ClosedTarget = ClosedTarget.Value;
-            if (ClosedTargetName.HasValue) ui.ClosedTargetName = ClosedTargetName.Value;
-            if (ContentTarget.HasValue) ui.ContentTarget = ContentTarget.Value;
-            if (ContentTargetName.HasValue) ui.ContentTargetName = ContentTargetName.Value;
-            if (ContentTranslationDirection.HasValue) ui.ContentTranslationDirection = ContentTranslationDirection.Value;
-            if (ContentTranslationOffset.HasValue) ui.ContentTranslationOffset = ContentTranslationOffset.Value;
-            if (OffsetFromCenter.HasValue) ui.OffsetFromCenter = OffsetFromCenter.Value;
-            if (OpenedLength.HasValue) ui.OpenedLength = OpenedLength.Value;
-            if (OpenedTarget.HasValue) ui.OpenedTarget = OpenedTarget.Value;
-            if (OpenedTargetName.HasValue) ui.OpenedTargetName = OpenedTargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (ClosedLength is not null) ui.ClosedLength = ClosedLength.Value;
+            if (ClosedTarget is not null) ui.ClosedTarget = ClosedTarget;
+            if (ClosedTargetName is not null) ui.ClosedTargetName = ClosedTargetName;
+            if (ContentTarget is not null) ui.ContentTarget = ContentTarget;
+            if (ContentTargetName is not null) ui.ContentTargetName = ContentTargetName;
+            if (ContentTranslationDirection is not null) ui.ContentTranslationDirection = ContentTranslationDirection.Value;
+            if (ContentTranslationOffset is not null) ui.ContentTranslationOffset = ContentTranslationOffset.Value;
+            if (OffsetFromCenter is not null) ui.OffsetFromCenter = OffsetFromCenter.Value;
+            if (OpenedLength is not null) ui.OpenedLength = OpenedLength.Value;
+            if (OpenedTarget is not null) ui.OpenedTarget = OpenedTarget;
+            if (OpenedTargetName is not null) ui.OpenedTargetName = OpenedTargetName;
             return CSharpMarkup.WinUI.SplitCloseThemeAnimation.StartChain(ui);
         }
 
@@ -33877,20 +33892,22 @@ namespace CSharpMarkup.WinUI // SplitOpenThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation"/></summary>
-        public static SplitOpenThemeAnimation SplitOpenThemeAnimation(O<double> ClosedLength = default, O<Xaml.DependencyObject> ClosedTarget = default, O<string> ClosedTargetName = default, O<Xaml.DependencyObject> ContentTarget = default, O<string> ContentTargetName = default, O<Xaml.Controls.Primitives.AnimationDirection> ContentTranslationDirection = default, O<double> ContentTranslationOffset = default, O<double> OffsetFromCenter = default, O<double> OpenedLength = default, O<Xaml.DependencyObject> OpenedTarget = default, O<string> OpenedTargetName = default)
+        public static SplitOpenThemeAnimation SplitOpenThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? ClosedLength = default, Xaml.DependencyObject ClosedTarget = default, string ClosedTargetName = default, Xaml.DependencyObject ContentTarget = default, string ContentTargetName = default, Xaml.Controls.Primitives.AnimationDirection? ContentTranslationDirection = default, double? ContentTranslationOffset = default, double? OffsetFromCenter = default, double? OpenedLength = default, Xaml.DependencyObject OpenedTarget = default, string OpenedTargetName = default)
         {
             var ui = new Xaml.Media.Animation.SplitOpenThemeAnimation();
-            if (ClosedLength.HasValue) ui.ClosedLength = ClosedLength.Value;
-            if (ClosedTarget.HasValue) ui.ClosedTarget = ClosedTarget.Value;
-            if (ClosedTargetName.HasValue) ui.ClosedTargetName = ClosedTargetName.Value;
-            if (ContentTarget.HasValue) ui.ContentTarget = ContentTarget.Value;
-            if (ContentTargetName.HasValue) ui.ContentTargetName = ContentTargetName.Value;
-            if (ContentTranslationDirection.HasValue) ui.ContentTranslationDirection = ContentTranslationDirection.Value;
-            if (ContentTranslationOffset.HasValue) ui.ContentTranslationOffset = ContentTranslationOffset.Value;
-            if (OffsetFromCenter.HasValue) ui.OffsetFromCenter = OffsetFromCenter.Value;
-            if (OpenedLength.HasValue) ui.OpenedLength = OpenedLength.Value;
-            if (OpenedTarget.HasValue) ui.OpenedTarget = OpenedTarget.Value;
-            if (OpenedTargetName.HasValue) ui.OpenedTargetName = OpenedTargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (ClosedLength is not null) ui.ClosedLength = ClosedLength.Value;
+            if (ClosedTarget is not null) ui.ClosedTarget = ClosedTarget;
+            if (ClosedTargetName is not null) ui.ClosedTargetName = ClosedTargetName;
+            if (ContentTarget is not null) ui.ContentTarget = ContentTarget;
+            if (ContentTargetName is not null) ui.ContentTargetName = ContentTargetName;
+            if (ContentTranslationDirection is not null) ui.ContentTranslationDirection = ContentTranslationDirection.Value;
+            if (ContentTranslationOffset is not null) ui.ContentTranslationOffset = ContentTranslationOffset.Value;
+            if (OffsetFromCenter is not null) ui.OffsetFromCenter = OffsetFromCenter.Value;
+            if (OpenedLength is not null) ui.OpenedLength = OpenedLength.Value;
+            if (OpenedTarget is not null) ui.OpenedTarget = OpenedTarget;
+            if (OpenedTargetName is not null) ui.OpenedTargetName = OpenedTargetName;
             return CSharpMarkup.WinUI.SplitOpenThemeAnimation.StartChain(ui);
         }
 
@@ -34091,15 +34108,15 @@ namespace CSharpMarkup.WinUI // Storyboard
         /// <summary>Set <see cref="Xaml.Media.Animation.Storyboard"/> attached properties</summary>
         public static TTarget Storyboard<TTarget>(this TTarget target
 
-            , O<string> TargetName = default
+            , string TargetName = default
 
-            , O<string> TargetProperty = default
+            , string TargetProperty = default
 
         ) where TTarget : Timeline
         {
-            if (TargetName.HasValue) Xaml.Media.Animation.Storyboard.SetTargetName(target.UI, TargetName.Value);
+            if (TargetName is not null) Xaml.Media.Animation.Storyboard.SetTargetName(target.UI, TargetName);
 
-            if (TargetProperty.HasValue) Xaml.Media.Animation.Storyboard.SetTargetProperty(target.UI, TargetProperty.Value);
+            if (TargetProperty is not null) Xaml.Media.Animation.Storyboard.SetTargetProperty(target.UI, TargetProperty);
 
             return target;
         }
@@ -34152,12 +34169,14 @@ namespace CSharpMarkup.WinUI // SwipeBackThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SwipeBackThemeAnimation"/></summary>
-        public static SwipeBackThemeAnimation SwipeBackThemeAnimation(O<double> FromHorizontalOffset = default, O<double> FromVerticalOffset = default, O<string> TargetName = default)
+        public static SwipeBackThemeAnimation SwipeBackThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? FromHorizontalOffset = default, double? FromVerticalOffset = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.SwipeBackThemeAnimation();
-            if (FromHorizontalOffset.HasValue) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
-            if (FromVerticalOffset.HasValue) ui.FromVerticalOffset = FromVerticalOffset.Value;
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (FromHorizontalOffset is not null) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
+            if (FromVerticalOffset is not null) ui.FromVerticalOffset = FromVerticalOffset.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.SwipeBackThemeAnimation.StartChain(ui);
         }
 
@@ -34227,12 +34246,14 @@ namespace CSharpMarkup.WinUI // SwipeHintThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SwipeHintThemeAnimation"/></summary>
-        public static SwipeHintThemeAnimation SwipeHintThemeAnimation(O<string> TargetName = default, O<double> ToHorizontalOffset = default, O<double> ToVerticalOffset = default)
+        public static SwipeHintThemeAnimation SwipeHintThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default, double? ToHorizontalOffset = default, double? ToVerticalOffset = default)
         {
             var ui = new Xaml.Media.Animation.SwipeHintThemeAnimation();
-            if (TargetName.HasValue) ui.TargetName = TargetName.Value;
-            if (ToHorizontalOffset.HasValue) ui.ToHorizontalOffset = ToHorizontalOffset.Value;
-            if (ToVerticalOffset.HasValue) ui.ToVerticalOffset = ToVerticalOffset.Value;
+            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (Duration is not null) ui.Duration = Duration.Value;
+            if (TargetName is not null) ui.TargetName = TargetName;
+            if (ToHorizontalOffset is not null) ui.ToHorizontalOffset = ToHorizontalOffset.Value;
+            if (ToVerticalOffset is not null) ui.ToVerticalOffset = ToVerticalOffset.Value;
             return CSharpMarkup.WinUI.SwipeHintThemeAnimation.StartChain(ui);
         }
 
@@ -34383,15 +34404,15 @@ namespace CSharpMarkup.WinUI // BitmapImage
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Imaging.BitmapImage"/></summary>
-        public static BitmapImage BitmapImage(O<bool> AutoPlay = default, O<Xaml.Media.Imaging.BitmapCreateOptions> CreateOptions = default, O<int> DecodePixelHeight = default, O<Xaml.Media.Imaging.DecodePixelType> DecodePixelType = default, O<int> DecodePixelWidth = default, O<Uri> UriSource = default)
+        public static BitmapImage BitmapImage(bool? AutoPlay = default, Xaml.Media.Imaging.BitmapCreateOptions? CreateOptions = default, int? DecodePixelHeight = default, Xaml.Media.Imaging.DecodePixelType? DecodePixelType = default, int? DecodePixelWidth = default, Uri UriSource = default)
         {
             var ui = new Xaml.Media.Imaging.BitmapImage();
-            if (AutoPlay.HasValue) ui.AutoPlay = AutoPlay.Value;
-            if (CreateOptions.HasValue) ui.CreateOptions = CreateOptions.Value;
-            if (DecodePixelHeight.HasValue) ui.DecodePixelHeight = DecodePixelHeight.Value;
-            if (DecodePixelType.HasValue) ui.DecodePixelType = DecodePixelType.Value;
-            if (DecodePixelWidth.HasValue) ui.DecodePixelWidth = DecodePixelWidth.Value;
-            if (UriSource.HasValue) ui.UriSource = UriSource.Value;
+            if (AutoPlay is not null) ui.AutoPlay = AutoPlay.Value;
+            if (CreateOptions is not null) ui.CreateOptions = CreateOptions.Value;
+            if (DecodePixelHeight is not null) ui.DecodePixelHeight = DecodePixelHeight.Value;
+            if (DecodePixelType is not null) ui.DecodePixelType = DecodePixelType.Value;
+            if (DecodePixelWidth is not null) ui.DecodePixelWidth = DecodePixelWidth.Value;
+            if (UriSource is not null) ui.UriSource = UriSource;
             return CSharpMarkup.WinUI.BitmapImage.StartChain(ui);
         }
 
@@ -34637,12 +34658,12 @@ namespace CSharpMarkup.WinUI // SvgImageSource
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Imaging.SvgImageSource"/></summary>
-        public static SvgImageSource SvgImageSource(O<double> RasterizePixelHeight = default, O<double> RasterizePixelWidth = default, O<Uri> UriSource = default)
+        public static SvgImageSource SvgImageSource(double? RasterizePixelHeight = default, double? RasterizePixelWidth = default, Uri UriSource = default)
         {
             var ui = new Xaml.Media.Imaging.SvgImageSource();
-            if (RasterizePixelHeight.HasValue) ui.RasterizePixelHeight = RasterizePixelHeight.Value;
-            if (RasterizePixelWidth.HasValue) ui.RasterizePixelWidth = RasterizePixelWidth.Value;
-            if (UriSource.HasValue) ui.UriSource = UriSource.Value;
+            if (RasterizePixelHeight is not null) ui.RasterizePixelHeight = RasterizePixelHeight.Value;
+            if (RasterizePixelWidth is not null) ui.RasterizePixelWidth = RasterizePixelWidth.Value;
+            if (UriSource is not null) ui.UriSource = UriSource;
             return CSharpMarkup.WinUI.SvgImageSource.StartChain(ui);
         }
 
@@ -34755,21 +34776,21 @@ namespace CSharpMarkup.WinUI // CompositeTransform3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Media3D.CompositeTransform3D"/></summary>
-        public static CompositeTransform3D CompositeTransform3D(O<double> CenterX = default, O<double> CenterY = default, O<double> CenterZ = default, O<double> RotationX = default, O<double> RotationY = default, O<double> RotationZ = default, O<double> ScaleX = default, O<double> ScaleY = default, O<double> ScaleZ = default, O<double> TranslateX = default, O<double> TranslateY = default, O<double> TranslateZ = default)
+        public static CompositeTransform3D CompositeTransform3D(double? CenterX = default, double? CenterY = default, double? CenterZ = default, double? RotationX = default, double? RotationY = default, double? RotationZ = default, double? ScaleX = default, double? ScaleY = default, double? ScaleZ = default, double? TranslateX = default, double? TranslateY = default, double? TranslateZ = default)
         {
             var ui = new Xaml.Media.Media3D.CompositeTransform3D();
-            if (CenterX.HasValue) ui.CenterX = CenterX.Value;
-            if (CenterY.HasValue) ui.CenterY = CenterY.Value;
-            if (CenterZ.HasValue) ui.CenterZ = CenterZ.Value;
-            if (RotationX.HasValue) ui.RotationX = RotationX.Value;
-            if (RotationY.HasValue) ui.RotationY = RotationY.Value;
-            if (RotationZ.HasValue) ui.RotationZ = RotationZ.Value;
-            if (ScaleX.HasValue) ui.ScaleX = ScaleX.Value;
-            if (ScaleY.HasValue) ui.ScaleY = ScaleY.Value;
-            if (ScaleZ.HasValue) ui.ScaleZ = ScaleZ.Value;
-            if (TranslateX.HasValue) ui.TranslateX = TranslateX.Value;
-            if (TranslateY.HasValue) ui.TranslateY = TranslateY.Value;
-            if (TranslateZ.HasValue) ui.TranslateZ = TranslateZ.Value;
+            if (CenterX is not null) ui.CenterX = CenterX.Value;
+            if (CenterY is not null) ui.CenterY = CenterY.Value;
+            if (CenterZ is not null) ui.CenterZ = CenterZ.Value;
+            if (RotationX is not null) ui.RotationX = RotationX.Value;
+            if (RotationY is not null) ui.RotationY = RotationY.Value;
+            if (RotationZ is not null) ui.RotationZ = RotationZ.Value;
+            if (ScaleX is not null) ui.ScaleX = ScaleX.Value;
+            if (ScaleY is not null) ui.ScaleY = ScaleY.Value;
+            if (ScaleZ is not null) ui.ScaleZ = ScaleZ.Value;
+            if (TranslateX is not null) ui.TranslateX = TranslateX.Value;
+            if (TranslateY is not null) ui.TranslateY = TranslateY.Value;
+            if (TranslateZ is not null) ui.TranslateZ = TranslateZ.Value;
             return CSharpMarkup.WinUI.CompositeTransform3D.StartChain(ui);
         }
 
@@ -34902,12 +34923,12 @@ namespace CSharpMarkup.WinUI // PerspectiveTransform3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Media3D.PerspectiveTransform3D"/></summary>
-        public static PerspectiveTransform3D PerspectiveTransform3D(O<double> Depth = default, O<double> OffsetX = default, O<double> OffsetY = default)
+        public static PerspectiveTransform3D PerspectiveTransform3D(double? Depth = default, double? OffsetX = default, double? OffsetY = default)
         {
             var ui = new Xaml.Media.Media3D.PerspectiveTransform3D();
-            if (Depth.HasValue) ui.Depth = Depth.Value;
-            if (OffsetX.HasValue) ui.OffsetX = OffsetX.Value;
-            if (OffsetY.HasValue) ui.OffsetY = OffsetY.Value;
+            if (Depth is not null) ui.Depth = Depth.Value;
+            if (OffsetX is not null) ui.OffsetX = OffsetX.Value;
+            if (OffsetY is not null) ui.OffsetY = OffsetY.Value;
             return CSharpMarkup.WinUI.PerspectiveTransform3D.StartChain(ui);
         }
 
@@ -35111,13 +35132,13 @@ namespace CSharpMarkup.WinUI // Line
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Shapes.Line"/></summary>
-        public static Line Line(O<double> X1 = default, O<double> X2 = default, O<double> Y1 = default, O<double> Y2 = default)
+        public static Line Line(double? X1 = default, double? X2 = default, double? Y1 = default, double? Y2 = default)
         {
             var ui = new Xaml.Shapes.Line();
-            if (X1.HasValue) ui.X1 = X1.Value;
-            if (X2.HasValue) ui.X2 = X2.Value;
-            if (Y1.HasValue) ui.Y1 = Y1.Value;
-            if (Y2.HasValue) ui.Y2 = Y2.Value;
+            if (X1 is not null) ui.X1 = X1.Value;
+            if (X2 is not null) ui.X2 = X2.Value;
+            if (Y1 is not null) ui.Y1 = Y1.Value;
+            if (Y2 is not null) ui.Y2 = Y2.Value;
             return CSharpMarkup.WinUI.Line.StartChain(ui);
         }
 
@@ -35196,10 +35217,10 @@ namespace CSharpMarkup.WinUI // Path
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Shapes.Path"/></summary>
-        public static Path Path(O<Xaml.Media.Geometry> Data = default)
+        public static Path Path(Xaml.Media.Geometry Data = default)
         {
             var ui = new Xaml.Shapes.Path();
-            if (Data.HasValue) ui.Data = Data.Value;
+            if (Data is not null) ui.Data = Data;
             return CSharpMarkup.WinUI.Path.StartChain(ui);
         }
 
@@ -35257,11 +35278,11 @@ namespace CSharpMarkup.WinUI // Polygon
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Shapes.Polygon"/></summary>
-        public static Polygon Polygon(O<Xaml.Media.FillRule> FillRule = default, O<Xaml.Media.PointCollection> Points = default)
+        public static Polygon Polygon(Xaml.Media.FillRule? FillRule = default, Xaml.Media.PointCollection Points = default)
         {
             var ui = new Xaml.Shapes.Polygon();
-            if (FillRule.HasValue) ui.FillRule = FillRule.Value;
-            if (Points.HasValue) ui.Points = Points.Value;
+            if (FillRule is not null) ui.FillRule = FillRule.Value;
+            if (Points is not null) ui.Points = Points;
             return CSharpMarkup.WinUI.Polygon.StartChain(ui);
         }
 
@@ -35326,11 +35347,11 @@ namespace CSharpMarkup.WinUI // Polyline
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Shapes.Polyline"/></summary>
-        public static Polyline Polyline(O<Xaml.Media.FillRule> FillRule = default, O<Xaml.Media.PointCollection> Points = default)
+        public static Polyline Polyline(Xaml.Media.FillRule? FillRule = default, Xaml.Media.PointCollection Points = default)
         {
             var ui = new Xaml.Shapes.Polyline();
-            if (FillRule.HasValue) ui.FillRule = FillRule.Value;
-            if (Points.HasValue) ui.Points = Points.Value;
+            if (FillRule is not null) ui.FillRule = FillRule.Value;
+            if (Points is not null) ui.Points = Points;
             return CSharpMarkup.WinUI.Polyline.StartChain(ui);
         }
 
@@ -35395,11 +35416,11 @@ namespace CSharpMarkup.WinUI // Rectangle
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Shapes.Rectangle"/></summary>
-        public static Rectangle Rectangle(O<double> RadiusX = default, O<double> RadiusY = default)
+        public static Rectangle Rectangle(double? RadiusX = default, double? RadiusY = default)
         {
             var ui = new Xaml.Shapes.Rectangle();
-            if (RadiusX.HasValue) ui.RadiusX = RadiusX.Value;
-            if (RadiusY.HasValue) ui.RadiusY = RadiusY.Value;
+            if (RadiusX is not null) ui.RadiusX = RadiusX.Value;
+            if (RadiusY is not null) ui.RadiusY = RadiusY.Value;
             return CSharpMarkup.WinUI.Rectangle.StartChain(ui);
         }
 

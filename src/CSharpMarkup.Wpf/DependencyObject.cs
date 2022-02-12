@@ -40,14 +40,6 @@ namespace CSharpMarkup.Wpf
         public UIObject(object ui) => UI = ui;
     }
 
-    /// <summary>Optional <typeparamref name="TValue"/> parameter</summary>
-    public struct O<TValue>
-    {
-        internal TValue Value;
-        internal bool HasValue;
-        public static implicit operator O<TValue>(TValue value) => new O<TValue> { Value = value, HasValue = true };
-    }
-
     // Since DependencyObject is the root object of the UI hierarchy, this is a good place to explain why and how a single static instance of a chain is safe:
 
     // Chains have a separate static instance per class; that instance is also a separate instance of all the ancestor classes of that class.

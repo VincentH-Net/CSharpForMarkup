@@ -30,7 +30,7 @@ using StringCollection = System.Collections.Specialized.StringCollection;
 
 // Initialize some template placeholders with example values
 using _PropertyType_ = System.Object;
-using _AttachedPropertyType_ = System.Double;
+using _AttachedPropertyType_ = System.Nullable<System.Double>;
 using AttachedPropertyTargetType = System.Windows.DependencyObject; // Attached properties can target Markup types as well as non-Markup types, which is why AttachedPropertyTargetType is used in both _UIViewNamespace_ and _MarkupNamespace_
 
 namespace _UIViewNamespace_
@@ -219,12 +219,12 @@ namespace _MarkupNamespace_
         /// <summary>Set <see cref="_UIViewType_"/> attached properties</summary>
         public static TTarget _ViewTypeName_/*_Suffix_*/<TTarget>(this TTarget target
 #region _AttachedPropertiesParameters_
-            , O<_AttachedPropertyType_> _AttachedPropertyName_ = default
+            , _AttachedPropertyType_/*_Nullable_*/ _AttachedPropertyName_ = default
 #endregion
         ) where TTarget : _PropertyTarget_
         {
 #region _AttachedPropertiesAssignments_
-            if (_AttachedPropertyName_.HasValue) _UIViewType_.Set_AttachedPropertyName_(target/*_AccessUI_*/, _AttachedPropertyName_.Value);
+            if (_AttachedPropertyName_ is not null) _UIViewType_.Set_AttachedPropertyName_(target/*_AccessUI_*/, _AttachedPropertyName_/*_GetValue_*/);
 #endregion
             return target;
         }

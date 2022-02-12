@@ -59,5 +59,8 @@ namespace CSharpMarkup.Wpf
         // Note that for now the signature must be in the _Helpers.cs file
 
         public static partial TextBlock TextBlock(string Text); // Specify parameter properties
+
+        static partial void Timeline_IncludeInDerived(System.TimeSpan? BeginTime, System.Windows.Duration Duration);
+            // Specify parameter properties to include them in derived types
     }
 }

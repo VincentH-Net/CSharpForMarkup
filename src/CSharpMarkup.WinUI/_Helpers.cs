@@ -76,6 +76,9 @@ namespace CSharpMarkup.WinUI
 
         public static partial TextBlock TextBlock(string Text); // Specify parameter properties
 
+        static partial void Timeline_IncludeInDerived(System.TimeSpan? BeginTime, Microsoft.UI.Xaml.Duration Duration);
+        // Specify parameter properties to include them in derived types
+
 #if HAS_UNO && !WINDOWS_UWP
         /// <summary>Create a <see cref="Xaml.Controls.TextBlock"/></summary>
         /// <remarks>Remark: TextBlock().Bind() binds to <see cref="Xaml.Controls.TextBlock.TextProperty"/></remarks>

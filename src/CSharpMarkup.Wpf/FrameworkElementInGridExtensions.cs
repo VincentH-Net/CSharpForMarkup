@@ -62,13 +62,13 @@ namespace CSharpMarkup.Wpf
 			return element;
 		}
 
-		public static TFrameworkElement Grid<TFrameworkElement, TRow, TColumn>(this TFrameworkElement element, TRow firstRow, TRow lastRow, TColumn firstColumn, O<TColumn> lastColumn = default)
+		public static TFrameworkElement Grid<TFrameworkElement, TRow, TColumn>(this TFrameworkElement element, TRow firstRow, TRow lastRow, TColumn firstColumn, TColumn lastColumn = default)
 			where TFrameworkElement : FrameworkElement where TRow : Enum where TColumn : Enum
 		{
 			int rowIndex = firstRow.ToInt();
 			int rowSpan = lastRow.ToInt() - rowIndex + 1;
 			int columnIndex = firstColumn.ToInt();
-			int columnSpan = lastColumn.HasValue ? lastColumn.Value.ToInt() + 1 - columnIndex : 1;
+			int columnSpan = lastColumn is not null ? lastColumn.ToInt() + 1 - columnIndex : 1;
 			element.UI.SetValue(Controls.Grid.RowProperty, rowIndex);
 			element.UI.SetValue(Controls.Grid.RowSpanProperty, rowSpan);
 			element.UI.SetValue(Controls.Grid.ColumnProperty, columnIndex);
