@@ -1,7 +1,6 @@
 using System.Linq;
 using CSharpMarkup.WinUI;
 using static CSharpMarkup.WinUI.Helpers;
-
 namespace WinUICsMarkupExamples;
 
 public partial class FlutterPage

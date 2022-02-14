@@ -1,6 +1,5 @@
 ﻿using CSharpMarkup.WinUI;
 using static CSharpMarkup.WinUI.Helpers;
-
 namespace WinUICsMarkupExamples;
 
 public static class Styles
@@ -8,8 +7,8 @@ public static class Styles
     static Style<Button> headerButton;
 
     public static Style<Button> HeaderButton => headerButton ??= new Style<Button>(
-        (UI.Controls.Button.ForegroundProperty, CornflowerBlue),
-        (UI.Controls.Button.FontSizeProperty, 24)
+        (Button_UI.ForegroundProperty, CornflowerBlue),
+        (Button_UI.FontSizeProperty, 24)
     )   .BasedOn (Implicit.Buttons);
 
     public static class Implicit
@@ -25,22 +24,22 @@ public static class Styles
         );
 
         public static Style<TextBlock> TextBlocks => textBlocks ??= new Style<TextBlock>(
-            (UI.Controls.TextBlock.ForegroundProperty, White)
+            (TextBlock_UI.ForegroundProperty, White)
         );
 
         public static Style<Button> Buttons => buttons ??= new Style<Button>(
-            (UI.Controls.Button.BackgroundProperty, Transparent)
+            (Button_UI.BackgroundProperty, Transparent)
         );
 
         public static Style<TextBox> TextBoxes => textBoxes ??= new Style<TextBox>(
-            (UI.Controls.TextBox.ForegroundProperty, White),
-            (UI.Controls.TextBox.BackgroundProperty, Black)
+            (TextBox_UI.ForegroundProperty, White),
+            (TextBox_UI.BackgroundProperty, Black)
         );
 
         public static Style<ListViewItem> ListViewItems => listViewItems ??= new Style<ListViewItem>(
-            (UI.Controls.ListViewItem.HorizontalContentAlignmentProperty, UI.HorizontalAlignment.Stretch),
-            (UI.Controls.ListViewItem.PaddingProperty, Thickness(0)),
-            (UI.Controls.ListViewItem.MarginProperty, Thickness(0))
+            (ListViewItem_UI.HorizontalContentAlignmentProperty, UI.HorizontalAlignment.Stretch),
+            (ListViewItem_UI.PaddingProperty, Thickness(0)),
+            (ListViewItem_UI.MarginProperty, Thickness(0))
         );
 
         static UI.ResourceDictionary CreateResourceDictionary(params UI.Style[] styles)
