@@ -47984,6 +47984,14 @@ namespace CSharpMarkup.Wpf // DispatcherObject
 
 namespace CSharpMarkup.Wpf.to // Type convertors
 {
+    partial struct GridLength
+    {
+        static Windows.GridLengthConverter fromStringconverter;
+        static Windows.GridLengthConverter FromStringConverter => fromStringconverter ??= new();
+
+        public static implicit operator GridLength(string value) => (Windows.GridLength)GridLength.FromStringConverter.ConvertFromInvariantString(value);
+    }
+
     partial struct CornerRadius
     {
         static Windows.CornerRadiusConverter fromStringconverter;
@@ -48699,24 +48707,6 @@ namespace CSharpMarkup.Wpf.to // Type convertors
         static Windows.TextDecorationCollectionConverter FromStringConverter => fromStringconverter ??= new();
 
         public static implicit operator TextDecorationCollection(string value) => (Windows.TextDecorationCollection)TextDecorationCollection.FromStringConverter.ConvertFromInvariantString(value);
-    }
-
-    readonly public partial struct GridLength
-    {
-        readonly Windows.GridLength value;
-
-        public GridLength(Windows.GridLength value) => this.value = value;
-
-        public static implicit operator Windows.GridLength(GridLength value) => value.value;
-        public static implicit operator GridLength(Windows.GridLength value) => new(value);
-    }
-
-    partial struct GridLength
-    {
-        static Windows.GridLengthConverter fromStringconverter;
-        static Windows.GridLengthConverter FromStringConverter => fromStringconverter ??= new();
-
-        public static implicit operator GridLength(string value) => (Windows.GridLength)GridLength.FromStringConverter.ConvertFromInvariantString(value);
     }
 
     readonly public partial struct DataGridLength

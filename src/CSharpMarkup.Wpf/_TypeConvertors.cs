@@ -17,6 +17,23 @@
         public static implicit operator TimeSpan(double seconds) => System.TimeSpan.FromSeconds(seconds);
     }
 
+    /// <summary>Set/convert to a <see cref="System.Windows.GridLength"/></summary>
+    /// <remarks>Converts from:
+    /// <code>0.5   // double</code>
+    /// <code>"0.5" // string with double</code>
+    /// </remarks>
+    readonly public partial struct GridLength
+    {
+        readonly System.Windows.GridLength value;
+
+        public GridLength(System.Windows.GridLength value) => this.value = value;
+
+        public static implicit operator System.Windows.GridLength(GridLength value) => value.value;
+        public static implicit operator GridLength(System.Windows.GridLength value) => new(value);
+
+        public static implicit operator GridLength(double value) => new System.Windows.GridLength(value);
+    }
+
     /// <summary>Set/convert to a <see cref="System.Windows.CornerRadius"/></summary>
     /// <remarks>Converts from:
     /// <code>2.5            // double uniformRadius</code>

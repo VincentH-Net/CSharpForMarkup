@@ -2,6 +2,7 @@
 using System.Globalization;
 using Windows = System.Windows;
 using Controls = System.Windows.Controls;
+using Length = CSharpMarkup.Wpf.to.GridLength;
 
 namespace CSharpMarkup.Wpf
 {
@@ -19,11 +20,11 @@ namespace CSharpMarkup.Wpf
             return grid;
         }
 
-        public static RowHeights Rows(params Windows.GridLength[] heights) => new RowHeights { Lengths = heights };
+        public static RowHeights Rows(params Length[] heights) => new RowHeights { Lengths = heights };
 
-        public static RowHeights Rows<TEnum>(params (TEnum name, Windows.GridLength height)[] rows) where TEnum : Enum
+        public static RowHeights Rows<TEnum>(params (TEnum name, Length height)[] rows) where TEnum : Enum
         {
-            var rowHeights = new RowHeights { Lengths = new Windows.GridLength[rows.Length] };
+            var rowHeights = new RowHeights { Lengths = new Length[rows.Length] };
             for (int i = 0; i < rows.Length; i++)
             {
                 if (i != rows[i].name.ToInt())
@@ -36,11 +37,11 @@ namespace CSharpMarkup.Wpf
             return rowHeights;
         }
 
-        public static ColumnWidths Columns(params Windows.GridLength[] widths) => new ColumnWidths { Lengths = widths };
+        public static ColumnWidths Columns(params Length[] widths) => new ColumnWidths { Lengths = widths };
 
-        public static ColumnWidths Columns<TEnum>(params (TEnum name, Windows.GridLength width)[] columns) where TEnum : Enum
+        public static ColumnWidths Columns<TEnum>(params (TEnum name, Length width)[] columns) where TEnum : Enum
         {
-            var columnWidths = new ColumnWidths{ Lengths = new Windows.GridLength[columns.Length] };
+            var columnWidths = new ColumnWidths{ Lengths = new Length[columns.Length] };
             for (int i = 0; i < columns.Length; i++)
             {
                 if (i != columns[i].name.ToInt())
@@ -53,9 +54,9 @@ namespace CSharpMarkup.Wpf
             return columnWidths;
         }
 
-        public struct RowHeights { internal Windows.GridLength[] Lengths; }
+        public struct RowHeights { internal Length[] Lengths; }
 
-        public struct ColumnWidths { internal Windows.GridLength[] Lengths; }
+        public struct ColumnWidths { internal Length[] Lengths; }
 
         public static Windows.GridLength Auto => Windows.GridLength.Auto;
 
