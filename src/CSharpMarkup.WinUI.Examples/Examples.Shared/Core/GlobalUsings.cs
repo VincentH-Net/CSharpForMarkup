@@ -8,3 +8,6 @@ global using static WinUICsMarkupExamples.Styles;
 global using UI = Microsoft.UI.Xaml;
 global using ICommand = System.Windows.Input.ICommand;
 global using Tweet = WinUICsMarkupExamples.SearchViewModel.Tweet;
+global using BindingMode = Microsoft.UI.Xaml.Data.BindingMode;
+global using TextBlock_UI = Microsoft.UI.Xaml.Controls.TextBlock;
+global using InlineCollection_UI = Microsoft.UI.Xaml.Documents.InlineCollection;
