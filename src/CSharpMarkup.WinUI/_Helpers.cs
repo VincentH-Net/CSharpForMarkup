@@ -60,7 +60,10 @@ namespace CSharpMarkup.WinUI
 
             // TODO: Complete items after last one above + from subnamespaces Documents, Input, Media, Media.Animation, Shapes
 
-            Microsoft.UI.Xaml.Media.SolidColorBrush.ColorProperty
+            // TODO: Consider supporting UNO-only Reveal* brush types
+            
+            Microsoft.UI.Xaml.Media.ImageBrush.ImageSourceProperty,
+            Microsoft.UI.Xaml.Media.SolidColorBrush.ColorProperty,
         };
         #endif
         

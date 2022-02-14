@@ -32764,6 +32764,7 @@ namespace CSharpMarkup.WinUI // ImageBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.ImageBrush"/></summary>
+        /// <remarks>Remark: ImageBrush().Bind() binds to <see cref="Xaml.Media.ImageBrush.ImageSourceProperty"/></remarks>
         public static ImageBrush ImageBrush(Xaml.Media.AlignmentX? AlignmentX = default, Xaml.Media.AlignmentY? AlignmentY = default, Xaml.Media.Stretch? Stretch = default, CSharpMarkup.WinUI.to.ImageSource? ImageSource = default)
         {
             var ui = new Xaml.Media.ImageBrush();
@@ -32775,6 +32776,7 @@ namespace CSharpMarkup.WinUI // ImageBrush
         }
 
         /// <summary>Create a <see cref="Xaml.Media.ImageBrush"/></summary>
+        /// <remarks>Remark: ImageBrush().Bind() binds to <see cref="Xaml.Media.ImageBrush.ImageSourceProperty"/></remarks>
         public static ImageBrush ImageBrush()
         {
             var ui = new Xaml.Media.ImageBrush();
@@ -32782,7 +32784,7 @@ namespace CSharpMarkup.WinUI // ImageBrush
         }
     }
 
-    public partial class ImageBrush : Brush, IUI<Microsoft.UI.Xaml.Media.ImageBrush>
+    public partial class ImageBrush : Brush, IUI<Microsoft.UI.Xaml.Media.ImageBrush>, IDefaultBindProperty
     {
         static ImageBrush instance;
 
@@ -32800,6 +32802,9 @@ namespace CSharpMarkup.WinUI // ImageBrush
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Xaml.Media.ImageBrush.ImageSourceProperty"/></summary>
+        public virtual Xaml.DependencyProperty DefaultBindProperty => Xaml.Media.ImageBrush.ImageSourceProperty;
 
         public static implicit operator Xaml.Media.ImageBrush(ImageBrush view) => view?.UI;
 

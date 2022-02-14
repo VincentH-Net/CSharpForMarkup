@@ -51,7 +51,11 @@ namespace CSharpMarkup.Wpf
 
             // TODO: Complete items after last one above + from subnamespaces Documents, Input, Media, Media.Animation, Shapes
 
-            System.Windows.Media.SolidColorBrush.ColorProperty
+            System.Windows.Media.BitmapCacheBrush.BitmapCacheProperty,
+            System.Windows.Media.DrawingBrush.DrawingProperty,
+            System.Windows.Media.ImageBrush.ImageSourceProperty,
+            System.Windows.Media.SolidColorBrush.ColorProperty,
+            System.Windows.Media.VisualBrush.VisualProperty
         };
         #endif
 

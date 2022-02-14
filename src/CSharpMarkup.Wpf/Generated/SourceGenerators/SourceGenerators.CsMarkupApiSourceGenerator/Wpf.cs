@@ -1166,6 +1166,7 @@ namespace CSharpMarkup.Wpf // BitmapCacheBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.BitmapCacheBrush"/></summary>
+        /// <remarks>Remark: BitmapCacheBrush().Bind() binds to <see cref="Windows.Media.BitmapCacheBrush.BitmapCacheProperty"/></remarks>
         public static BitmapCacheBrush BitmapCacheBrush(bool? AutoLayoutContent = default, Windows.Media.BitmapCache BitmapCache = default, Windows.Media.Visual Target = default)
         {
             var ui = new Windows.Media.BitmapCacheBrush();
@@ -1176,6 +1177,7 @@ namespace CSharpMarkup.Wpf // BitmapCacheBrush
         }
 
         /// <summary>Create a <see cref="Windows.Media.BitmapCacheBrush"/></summary>
+        /// <remarks>Remark: BitmapCacheBrush().Bind() binds to <see cref="Windows.Media.BitmapCacheBrush.BitmapCacheProperty"/></remarks>
         public static BitmapCacheBrush BitmapCacheBrush()
         {
             var ui = new Windows.Media.BitmapCacheBrush();
@@ -1183,6 +1185,7 @@ namespace CSharpMarkup.Wpf // BitmapCacheBrush
         }
 
         /// <summary>Create a <see cref="Windows.Media.BitmapCacheBrush"/></summary>
+        /// <remarks>Remark: BitmapCacheBrush().Bind() binds to <see cref="Windows.Media.BitmapCacheBrush.BitmapCacheProperty"/></remarks>
         public static BitmapCacheBrush BitmapCacheBrush(Windows.Media.Visual visual)
         {
             var ui = new Windows.Media.BitmapCacheBrush(visual);
@@ -1190,7 +1193,7 @@ namespace CSharpMarkup.Wpf // BitmapCacheBrush
         }
     }
 
-    public partial class BitmapCacheBrush : Brush, IUI<System.Windows.Media.BitmapCacheBrush>
+    public partial class BitmapCacheBrush : Brush, IUI<System.Windows.Media.BitmapCacheBrush>, IDefaultBindProperty
     {
         static BitmapCacheBrush instance;
 
@@ -1208,6 +1211,9 @@ namespace CSharpMarkup.Wpf // BitmapCacheBrush
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Media.BitmapCacheBrush.BitmapCacheProperty"/></summary>
+        public Windows.DependencyProperty DefaultBindProperty => Windows.Media.BitmapCacheBrush.BitmapCacheProperty;
 
         public static implicit operator Windows.Media.BitmapCacheBrush(BitmapCacheBrush view) => view?.UI;
 
@@ -1676,6 +1682,7 @@ namespace CSharpMarkup.Wpf // DrawingBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.DrawingBrush"/></summary>
+        /// <remarks>Remark: DrawingBrush().Bind() binds to <see cref="Windows.Media.DrawingBrush.DrawingProperty"/></remarks>
         public static DrawingBrush DrawingBrush()
         {
             var ui = new Windows.Media.DrawingBrush();
@@ -1683,6 +1690,7 @@ namespace CSharpMarkup.Wpf // DrawingBrush
         }
 
         /// <summary>Create a <see cref="Windows.Media.DrawingBrush"/></summary>
+        /// <remarks>Remark: DrawingBrush().Bind() binds to <see cref="Windows.Media.DrawingBrush.DrawingProperty"/></remarks>
         public static DrawingBrush DrawingBrush(Windows.Media.Drawing drawing)
         {
             var ui = new Windows.Media.DrawingBrush(drawing);
@@ -1690,7 +1698,7 @@ namespace CSharpMarkup.Wpf // DrawingBrush
         }
     }
 
-    public partial class DrawingBrush : TileBrush, IUI<System.Windows.Media.DrawingBrush>
+    public partial class DrawingBrush : TileBrush, IUI<System.Windows.Media.DrawingBrush>, IDefaultBindProperty
     {
         static DrawingBrush instance;
 
@@ -1708,6 +1716,9 @@ namespace CSharpMarkup.Wpf // DrawingBrush
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Media.DrawingBrush.DrawingProperty"/></summary>
+        public Windows.DependencyProperty DefaultBindProperty => Windows.Media.DrawingBrush.DrawingProperty;
 
         public static implicit operator Windows.Media.DrawingBrush(DrawingBrush view) => view?.UI;
 
@@ -2851,6 +2862,7 @@ namespace CSharpMarkup.Wpf // ImageBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.ImageBrush"/></summary>
+        /// <remarks>Remark: ImageBrush().Bind() binds to <see cref="Windows.Media.ImageBrush.ImageSourceProperty"/></remarks>
         public static ImageBrush ImageBrush()
         {
             var ui = new Windows.Media.ImageBrush();
@@ -2858,6 +2870,7 @@ namespace CSharpMarkup.Wpf // ImageBrush
         }
 
         /// <summary>Create a <see cref="Windows.Media.ImageBrush"/></summary>
+        /// <remarks>Remark: ImageBrush().Bind() binds to <see cref="Windows.Media.ImageBrush.ImageSourceProperty"/></remarks>
         public static ImageBrush ImageBrush(CSharpMarkup.Wpf.to.ImageSource image)
         {
             var ui = new Windows.Media.ImageBrush(image);
@@ -2865,7 +2878,7 @@ namespace CSharpMarkup.Wpf // ImageBrush
         }
     }
 
-    public partial class ImageBrush : TileBrush, IUI<System.Windows.Media.ImageBrush>
+    public partial class ImageBrush : TileBrush, IUI<System.Windows.Media.ImageBrush>, IDefaultBindProperty
     {
         static ImageBrush instance;
 
@@ -2883,6 +2896,9 @@ namespace CSharpMarkup.Wpf // ImageBrush
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Media.ImageBrush.ImageSourceProperty"/></summary>
+        public Windows.DependencyProperty DefaultBindProperty => Windows.Media.ImageBrush.ImageSourceProperty;
 
         public static implicit operator Windows.Media.ImageBrush(ImageBrush view) => view?.UI;
 
@@ -5522,6 +5538,7 @@ namespace CSharpMarkup.Wpf // VisualBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.VisualBrush"/></summary>
+        /// <remarks>Remark: VisualBrush().Bind() binds to <see cref="Windows.Media.VisualBrush.VisualProperty"/></remarks>
         public static VisualBrush VisualBrush(bool? AutoLayoutContent = default, Windows.Media.Visual Visual = default)
         {
             var ui = new Windows.Media.VisualBrush();
@@ -5531,6 +5548,7 @@ namespace CSharpMarkup.Wpf // VisualBrush
         }
 
         /// <summary>Create a <see cref="Windows.Media.VisualBrush"/></summary>
+        /// <remarks>Remark: VisualBrush().Bind() binds to <see cref="Windows.Media.VisualBrush.VisualProperty"/></remarks>
         public static VisualBrush VisualBrush()
         {
             var ui = new Windows.Media.VisualBrush();
@@ -5538,6 +5556,7 @@ namespace CSharpMarkup.Wpf // VisualBrush
         }
 
         /// <summary>Create a <see cref="Windows.Media.VisualBrush"/></summary>
+        /// <remarks>Remark: VisualBrush().Bind() binds to <see cref="Windows.Media.VisualBrush.VisualProperty"/></remarks>
         public static VisualBrush VisualBrush(Windows.Media.Visual visual)
         {
             var ui = new Windows.Media.VisualBrush(visual);
@@ -5545,7 +5564,7 @@ namespace CSharpMarkup.Wpf // VisualBrush
         }
     }
 
-    public partial class VisualBrush : TileBrush, IUI<System.Windows.Media.VisualBrush>
+    public partial class VisualBrush : TileBrush, IUI<System.Windows.Media.VisualBrush>, IDefaultBindProperty
     {
         static VisualBrush instance;
 
@@ -5563,6 +5582,9 @@ namespace CSharpMarkup.Wpf // VisualBrush
             get => ui;
             protected set => base.UI = ui = value;
         }
+
+        /// <summary><see cref="Windows.Media.VisualBrush.VisualProperty"/></summary>
+        public Windows.DependencyProperty DefaultBindProperty => Windows.Media.VisualBrush.VisualProperty;
 
         public static implicit operator Windows.Media.VisualBrush(VisualBrush view) => view?.UI;
 
