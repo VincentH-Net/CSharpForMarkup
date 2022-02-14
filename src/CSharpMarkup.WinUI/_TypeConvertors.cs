@@ -1,7 +1,4 @@
-﻿// TODO: 2022 add WinUI convertors manually for Windows App SDK - e.g. take st from WPF, manually inspect to select / add overloads, for string conv call https://docs.microsoft.com/en-us/uwp/api/windows.ui.xaml.markup.xamlbindinghelper.convertvalue
-// TODO: 2022 optimize with readonly, in etc: see https://docs.microsoft.com/en-us/dotnet/csharp/write-safe-efficient-code
-
-namespace CSharpMarkup.WinUI.to // Manual (or extensions to generated) type convertors
+﻿namespace CSharpMarkup.WinUI.to
 {
     /// <summary>Set/convert to a <see cref="System.TimeSpan"/></summary>
     /// <remarks>Converts from:
