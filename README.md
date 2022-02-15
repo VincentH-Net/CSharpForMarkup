@@ -10,6 +10,7 @@ No XAML / HTML / JavaScript / CSS required
 
 > NuGet<br />
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI?color=gold&label=CSharpMarkup.WinUI&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI)
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF)
 
 > Chat (if needed, [join DotNetEvolution](https://aka.ms/dotnet-discord) first)<br />
 > [![Discord](https://img.shields.io/discord/732297728826277939?label=Discord%20%23csharp-markup%20on%20DotNetEvolution&style=plastic)](https://discord.com/channels/732297728826277939/931198774234189844)
