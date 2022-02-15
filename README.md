@@ -18,6 +18,12 @@ No XAML / HTML / JavaScript / CSS required
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*February 15, 2022*
+> ## New 0.6 release: adds WPF and many improvements!
+See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-6-14) for the full list of improvements
+
+> **Note:** the documentation below is not yet updated to this release; it will be soon!
+> However the example WPF and WinUI applications are fully updated; feel free to explore and experiment! Feedback is appreciated.
 
 *November 30, 2021*
 >## C# Markup 2 announced at UNOCONF 2021!
