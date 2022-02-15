@@ -1,4 +1,5 @@
-﻿namespace WpfCsMarkupExamples;
+﻿#nullable disable
+namespace WpfCsMarkupExamples;
 
 public class RelayCommand : ICommand
 {

@@ -2,9 +2,9 @@
 
 public class FlutterViewModel : BaseViewModel
 {
-    ICommand toggleMoreCommand, backCommand;
+    ICommand? toggleMoreCommand, backCommand;
 
-    List<string> subTitles;
+    List<string>? subTitles;
 
     public string Title { get; set; } = "Flutter-Like UI markup";
     public bool ShowMore { get; set; } = true;
@@ -15,5 +15,5 @@ public class FlutterViewModel : BaseViewModel
     public ICommand BackCommand => backCommand ??= new RelayCommand(Back);
 
     void ToggleMore() { ShowMore = !ShowMore; }
-    void Back() => App.Current.NavigateBack();
+    void Back() => App.Current?.NavigateBack();
 }

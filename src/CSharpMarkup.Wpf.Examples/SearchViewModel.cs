@@ -4,13 +4,13 @@ namespace WpfCsMarkupExamples;
 
 public class SearchViewModel : BaseViewModel
 {
-    ICommand backCommand, searchCommand, likeCommand;
+    ICommand? goToOtherCommand, searchCommand, likeCommand;
 
-    public string SearchText { get; set; }
+    public string SearchText { get; set; } = string.Empty;
 
-    public List<Tweet> SearchResults { get; set; }
+    public List<Tweet> SearchResults { get; set; }= new ();
 
-    public ICommand BackCommand => backCommand ??= new RelayCommand(Back);
+    public ICommand GoToOtherCommand => goToOtherCommand ??= new RelayCommand(GoToOther);
     public ICommand SearchCommand => searchCommand ??= new RelayCommand(Search);
     public ICommand LikeCommand => likeCommand ??= new RelayCommand<Tweet>(Like);
 
@@ -135,7 +135,7 @@ public class SearchViewModel : BaseViewModel
 
     public static Uri LinkUri(string linkText) => new(linkText.StartsWith("#") == true ? TwitterSearchUri(linkText) : linkText, uriKind: UriKind.Absolute);
 
-    void Back() => App.Current.NavigateToFlutterPage();
+    void GoToOther() => App.Current?.NavigateToFlutterPage();
     void Search() => App.LaunchUri(new Uri(TwitterSearchUri(SearchText)));
     void Like(Tweet tweet) => tweet.IsLikedByMe = !tweet.IsLikedByMe;
 
@@ -143,15 +143,15 @@ public class SearchViewModel : BaseViewModel
 
     public class Tweet : BaseViewModel
     {
-        public string AuthorImage { get; set; }
-        public string Header { get; set; }
-        public List<TextFragment> Body { get; set; }
+        public string? AuthorImage { get; set; }
+        public string? Header { get; set; }
+        public List<TextFragment>? Body { get; set; }
         public bool IsLikedByMe { get; set; }
     }
 
     public class TextFragment
     {
-        public string Text { get; set; }
+        public string? Text { get; set; }
 
         public bool IsMatch { get; set; }
     }

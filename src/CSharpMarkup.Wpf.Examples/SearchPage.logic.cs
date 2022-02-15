@@ -1,20 +1,26 @@
+// IMPORTANT:
+// In <page>.cs:
+// Include CSharpMarkup namespace usings but no UI objectmodel usings.
+// You *can* also use the UI objectmodel safely in <page>.cs; a good practice then is to
+// define a "global using TypeName_UI = <UI objectmodel namespace>.TypeName" alias in GlobalUsings.cs
+
+// In <page>.logic.cs:
+// DO NOT include CSharpMarkup namespace usings and DO NOT use CSharpMarkup objects.
+// Markup object instances are not safe to use outside of a markup expression (due to performance features).
+// That is why Assign and Invoke pass the UI object to the logic, not the markup object.
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
-// Note: in code behind we do NOT use CSharpMarkup.WinUI, only the UI object model.
-// That is why Assign and Invoke pass the UI object to the logic, not the markup object.
-// Markup object instances are not safe to use outside of a markup expression.
-
 namespace WpfCsMarkupExamples;
 
-public sealed partial class SearchPage : Page, IBuild
+internal sealed partial class SearchPage : BasePage, IBuild
 {
     static SearchViewModel.Tweet tweet = new();
     readonly SearchViewModel vm;
-    StackPanel header;
+    StackPanel? header;
 
     public SearchPage()
     {
-        DataContext = vm = App.Current.SearchViewModel;
+        DataContext = vm = App.Current!.SearchViewModel;
         Build();
     }
 

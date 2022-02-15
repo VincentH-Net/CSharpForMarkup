@@ -2,20 +2,20 @@ using CSharpMarkup.Wpf;
 using static CSharpMarkup.Wpf.Helpers;
 namespace WpfCsMarkupExamples;
 
-public partial class SearchPage
+partial class SearchPage
 {
-    public void Build() => Content =
-
-    StackPanel (
+    public void Build() => Content = 
+    
+    VStack (
         Header .Assign (out header),
         SearchResults,
         Footer
-    )  .Background (Black) .WithHotReloadButton();
+    ) .Background (Black);
 
     StackPanel Header => HStack (
         Button ("\u22EF") .Style (HeaderButton)
            .Width (50)
-           .Bind (vm.BackCommand),
+           .Bind (vm.GoToOtherCommand),
 
         TextBox() .Foreground (White)
            .VCenter () .Width (350)
@@ -71,7 +71,7 @@ public partial class SearchPage
 
         tweet?.Body?.ForEach(fragment => textBlock.Inlines.Add(
             fragment.IsMatch ?
-            Link (fragment.Text, SearchViewModel.LinkUri(fragment.Text)) .FontSize (15) :
+            Link (fragment.Text!, SearchViewModel.LinkUri(fragment.Text!)) .FontSize (15) :
             Run (fragment.Text)
         ));
     }

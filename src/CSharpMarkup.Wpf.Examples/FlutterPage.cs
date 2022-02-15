@@ -3,7 +3,7 @@ using CSharpMarkup.Wpf;
 using static CSharpMarkup.Wpf.Helpers;
 namespace WpfCsMarkupExamples;
 
-public partial class FlutterPage
+partial class FlutterPage
 {
     public void Build() => Content =
 
@@ -31,7 +31,7 @@ public partial class FlutterPage
         TextBlock ("Pairs:"),
         Spread (Pairs())
 
-    )  .Background (SolidColorBrush(Black)) .TextBlock_Foreground(SolidColorBrush(White))  .WithHotReloadButton();
+    )  .Background (Black) .TextBlock_Foreground(SolidColorBrush(White));
 
     IEnumerable<UI.UIElement> Subtitles => vm.Subtitles.Select(subtitle => TextBlock(subtitle) .Margin (0, 5) .UI);
 
