@@ -1,6 +1,7 @@
 ﻿using System;
+using Xaml = Microsoft.UI.Xaml;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     public static partial class Helpers
     {
@@ -43,6 +44,15 @@ namespace Microsoft.UI.Markup
         [ShortFor("Width(size).Height(size)")]
         public static TFrameworkElement Size<TFrameworkElement>(this TFrameworkElement frameworkElement, double size) where TFrameworkElement : FrameworkElement
         { frameworkElement.UI.Width = size; frameworkElement.UI.Height = size; return frameworkElement; }
+
+        /// <summary>Assign key - <see cref="DependencyObject"/> pairs to <see cref="Xaml.FrameworkElement.Resources"/></summary>
+        public static TView Resources<TView>(this TView view, params (object key, UIDependencyObject value)[] keyValuePairs) where TView : FrameworkElement
+        {
+            var resources = new Xaml.ResourceDictionary();
+            foreach (var keyValue in keyValuePairs)
+                resources.Add(keyValue.key, keyValue.value.UI);
+            view.UI.Resources = resources; return view;
+        }
     }
 
     public static partial class FrameworkElementExtensions

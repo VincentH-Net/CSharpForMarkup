@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
+using Xaml = Microsoft.UI.Xaml;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
 	public static partial class Helpers
 	{

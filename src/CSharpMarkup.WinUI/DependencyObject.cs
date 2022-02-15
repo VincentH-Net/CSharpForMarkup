@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using Xaml = Microsoft.UI.Xaml;
 using BindingMode = Microsoft.UI.Xaml.Data.BindingMode;
 using IValueConverter = Microsoft.UI.Xaml.Data.IValueConverter;
 using UpdateSourceTrigger = Microsoft.UI.Xaml.Data.UpdateSourceTrigger;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     public interface IUI<TUI> where TUI : Xaml.DependencyObject
     {
         TUI UI { get; }
     }
 
-#if !WINDOWS
+#if !WINUI
     public partial class DependencyObject : IUI<Xaml.DependencyObject>
     {
         public Xaml.DependencyObject UI { get; protected set; }
@@ -20,6 +21,29 @@ namespace Microsoft.UI.Markup
     }
 #endif
 
+    public class UIDependencyObject
+    {
+        public Xaml.DependencyObject UI { get; }
+
+        public UIDependencyObject(Xaml.DependencyObject ui) => UI = ui;
+
+        public static implicit operator UIDependencyObject(DependencyObject dependencyObject) => new(dependencyObject.UI);
+    }
+
+    /// <summary>Allows to specify both markup views (e.g. <see cref="TextBlock"/>) and non-view object types (e.g. <see cref="string"/>) as UI content</summary>
+    public class UIObject
+    {
+        public object UI { get; }
+
+        public static implicit operator UIObject(int value) => new UIObject(value);
+        public static implicit operator UIObject(float value) => new UIObject(value);
+        public static implicit operator UIObject(double value) => new UIObject(value);
+        public static implicit operator UIObject(char value) => new UIObject(value);
+        public static implicit operator UIObject(string value) => new UIObject(value);
+        public static implicit operator UIObject(DependencyObject value) => new UIObject(value.UI);
+
+        public UIObject(object ui) => UI = ui;
+    }
 
     /// <summary>Optional <typeparamref name="TValue"/> parameter</summary>
     public struct O<TValue>
@@ -332,14 +356,6 @@ namespace Microsoft.UI.Markup
             where TUI : Xaml.DependencyObject
         {
             ui = (TUI)bindable.UI;
-            return bindable;
-        }
-
-        public static TDependencyObject Invoke<TDependencyObject, TUI>(this TDependencyObject bindable, Action<TUI> action)
-            where TDependencyObject : DependencyObject, IUI<TUI>
-            where TUI : Xaml.DependencyObject
-        {
-            action?.Invoke((TUI)bindable.UI);
             return bindable;
         }
 

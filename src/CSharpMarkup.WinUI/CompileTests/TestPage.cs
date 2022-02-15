@@ -2,14 +2,14 @@
 // Any usings below that are unused are included to detect compile ambiguities
 using System;
 using Microsoft.UI;
-using Microsoft.UI.Markup;
+using CSharpMarkup.WinUI;
 using static Microsoft.UI.Colors;
-using static Microsoft.UI.Markup.Helpers;
+using static CSharpMarkup.WinUI.Helpers;
 using UI = Microsoft.UI.Xaml;
 using Color = Windows.UI.Color;
 using TextBloek = Microsoft.UI.Xaml.Controls.TextBlock;
 
-namespace CSharpMarkup.WinUI.CompileTests
+namespace CompileTests
 {
     partial class TestPage
     {
@@ -23,20 +23,24 @@ namespace CSharpMarkup.WinUI.CompileTests
             StackPanel(),
 
             TextBlock (
-                Text: "Hi", 
-                LineHeight: 2.5
+                Text: "Hi"
             )  .Bind(vm.Title)
+               .LineHeight(2.5)
                .TextAlignment().Right()
                .Grid(Row: 1) .Margin(2)
                .HorizontalAlignment().Bind(vm.Right, convert: (bool right) => right ? UI.HorizontalAlignment.Right : UI.HorizontalAlignment.Left),
 
-            TextBlock(Inlines(
+            TextBlock(
                 Run("A"),
                 Hyperlink(new Uri(""))
-            )),
+            ),
 
             CheckBox("Check Me")
                .Bind(vm.IsOk),
+
+#if !WINUI // TODO: 2022 find out why this gives a compile error in Windows App SDK
+            FrameworkElement(Background: SolidColorBrush(Blue)),
+#endif
 
             Button(
                 HStack(
@@ -57,6 +61,20 @@ namespace CSharpMarkup.WinUI.CompileTests
                .Background(SolidColorBrush().Color().Bind(vm.IsOk, convert: (bool isOk) => OkColor(isOk))) // Note that this is type-safe; e.g. try using OkBrush
         );
 
+        StackPanel Scrolling => VStack(
+            ScrollViewer(
+                TextBlock(new string('A', 100))
+            )  .HorizontalScrollMode(UI.Controls.ScrollMode.Enabled)
+               .HorizontalScrollMode().Enabled()
+               .HorizontalScrollMode().Bind()
+            ,
+
+            ListView(() =>
+                TextBlock("Item")
+            )  .ScrollViewer_HorizontalScrollMode().Enabled()
+               .ScrollViewer_HorizontalScrollMode().Bind()
+               .ScrollViewer_HorizontalScrollMode(UI.Controls.ScrollMode.Enabled)
+        );
 
         enum row { First, Second, Third }
         enum column { First, Second, Third }
@@ -72,9 +90,9 @@ namespace CSharpMarkup.WinUI.CompileTests
             },
 
             TextBlock (
-                Text: "Hi",
-                LineHeight: 2.5
+                Text: "Hi"
             )  .TextAlignment() .Right()
+               .LineHeight (2.5)
                .OpticalMarginAlignment() .TrimSideBearings(),
 
             TextBlock(),

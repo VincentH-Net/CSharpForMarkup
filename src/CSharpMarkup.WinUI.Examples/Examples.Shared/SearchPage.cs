@@ -1,6 +1,5 @@
-using Microsoft.UI.Markup;
-using static Microsoft.UI.Markup.Helpers;
-
+using CSharpMarkup.WinUI;
+using static CSharpMarkup.WinUI.Helpers;
 namespace WinUICsMarkupExamples;
 
 public partial class SearchPage
@@ -20,11 +19,11 @@ public partial class SearchPage
 
         TextBox(PlaceholderText: "Search") .Foreground (White)
            .VCenter ()
-           .Bind (vm.SearchText, Microsoft.UI.Xaml.Data.BindingMode.TwoWay),
+           .Bind (vm.SearchText, BindingMode.TwoWay),
 
-        Button("\U0001F50D").Style(HeaderButton)
-           .Width(50)
-           .Bind(vm.SearchCommand)
+        Button("\U0001F50D") .Style (HeaderButton)
+           .Width (50)
+           .Bind (vm.SearchCommand)
     );
 
     enum TweetRow    { Title, Body, Actions }
@@ -50,10 +49,10 @@ public partial class SearchPage
                         .Grid (TweetRow.Title, TweetColumn.Content) .Margins (right: 10)
                         .Bind (tweet.Header),
 
-            TextBlock   (FontSize: 15)
-                        .TextWrapping().WrapWholeWords()
+            TextBlock   ()
+                        .FontSize (15) .TextWrapping().WrapWholeWords()
                         .Grid (TweetRow.Body, TweetColumn.Content) .Margins (right: 10)
-                        .OnDataContextChanged<TextBlock, UI.Controls.TextBlock, Tweet> (Format),
+                        .OnDataContextChanged<Tweet> (Format),
 
             LikeButton ()
                         .Grid (TweetRow.Actions, TweetColumn.Content) .Left () .Top ()
@@ -65,16 +64,16 @@ public partial class SearchPage
     )  .Background ("#171F2A") .SelectionMode().None()
        .Bind (vm.SearchResults);
 
-    Ellipse RoundImage(double size) => Ellipse()
-       .Width (size) .Height (size) .Fill (ImageBrush().ImageSource().Bind (tweet.AuthorImage));
+    Ellipse RoundImage(double size) => Ellipse() .Size (size) .Fill (ImageBrush().Bind (tweet.AuthorImage));
 
-    void Format(UI.Controls.TextBlock textBlock, Tweet tweet)
+    void Format(TextBlock_UI textBlock, Tweet tweet)
     {
         textBlock.Inlines.Clear();
 
-        tweet?.Body?.ForEach(fragment => textBlock.Inlines.Add(fragment.IsMatch ?
-            Link (fragment.Text, vm?.LinkUri(fragment.Text)) .FontSize (15) .UI :
-            (UI.Documents.Inline) Run (fragment.Text)
+        tweet?.Body?.ForEach(fragment => textBlock.Inlines.Add(
+            fragment.IsMatch ?
+            Link (fragment.Text, vm.LinkUri(fragment.Text)) .FontSize (15) :
+            Run  (fragment.Text)
         ));
     }
 
@@ -82,14 +81,11 @@ public partial class SearchPage
        .Foreground (White) .FontSize (20)
        .HorizontalContentAlignment().Center() .VerticalContentAlignment().Center() .Margin (0) .Size (32) .Padding (0)
        .Content().Bind (tweet.IsLikedByMe, convert: (bool like) => like ? "\u2764" : "\u2661");
-
-    Hyperlink Link(string text, Uri uri) => Hyperlink (uri, text) .Foreground (CornflowerBlue);
     
-    TextBlock Footer => TextBlock (Inlines(
-        Run  ("See "),
-        Link ("C# Markup on GitHub", CsMarkupUri),
-		Run  (" for more information")
-    )) .FontSize (14) .Foreground (White)
+    TextBlock Footer => TextBlock ("See ", Link ("C# Markup on GitHub", CsMarkupUri), " for more information")
+       .FontSize (14) .Foreground (White)
        .HCenter()
        .Margins (bottom: 6);
+
+    Hyperlink Link(string text, Uri uri) => Hyperlink(uri, text) .Foreground (CornflowerBlue);
 }

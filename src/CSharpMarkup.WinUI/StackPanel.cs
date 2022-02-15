@@ -1,4 +1,6 @@
-﻿namespace Microsoft.UI.Markup
+﻿using Xaml = Microsoft.UI.Xaml;
+
+namespace CSharpMarkup.WinUI
 {
     public static partial class Helpers
     {

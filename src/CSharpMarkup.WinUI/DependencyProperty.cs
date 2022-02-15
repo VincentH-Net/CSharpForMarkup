@@ -1,6 +1,7 @@
-﻿using BindingOperations = Microsoft.UI.Xaml.Data.BindingOperations;
+﻿using Xaml = Microsoft.UI.Xaml;
+using BindingOperations = Microsoft.UI.Xaml.Data.BindingOperations;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     public class DependencyProperty<TDependencyObject, TPropertyValue> where TDependencyObject : DependencyObject
     {

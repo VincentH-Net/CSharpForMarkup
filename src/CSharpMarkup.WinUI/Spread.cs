@@ -1,52 +1,49 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     public static partial class Helpers
     {
-        public static UIElementRange Spread(IEnumerable<Microsoft.UI.Xaml.UIElement> children) => new UIElementRange { Elements = children?.ToList() };
+        /// <summary>Insert <paramref name="children"/> of type class <typeparamref name="TChild"/> in the parent layout's children at the position where <see cref="Spread{TChild}(TChild[])"/> is called</summary>
+        /// <typeparam name="TChild">Must be a class; for struct types, use <see cref="SpreadS{TChild}(TChild[])"/></typeparam>
+        public static TChild Spread<TChild>(IEnumerable<TChild> children) where TChild : class => Spreader<TChild>.Spread(children.ToArray());
+        /// <summary>Insert <paramref name="children"/> of type class <typeparamref name="TChild"/> in the parent layout's children at the position where <see cref="Spread{TChild}(TChild[])"/> is called</summary>
+        /// <typeparam name="TChild">Must be a class; for struct types, use <see cref="SpreadS{TChild}(TChild[])"/></typeparam>
+        public static TChild Spread<TChild>(TChild[] children) where TChild : class => Spreader<TChild>.Spread(children);
 
-        public static void SpreadChildren(Microsoft.UI.Xaml.Controls.UIElementCollection children)
-        {
-            // TODO: Optimize - only traverse if Spread was called after last SpreadChildren call
-            for (int i = children.Count; --i >= 0;)
-            {
-                if (children[i] is UIElementRange range)
-                {
-                    children.RemoveAt(i);
-
-                    for (int j = 0; j < range.Elements.Count; j++)
-                        children.Insert(i + j, range.Elements[j]);
-                }
-            }
-        }
-
-        public static InlineRange Spread(IEnumerable<Microsoft.UI.Xaml.Documents.Inline> inlines) => new InlineRange { Inlines = inlines?.ToList() };
-
-        public static void SpreadInlines(Microsoft.UI.Xaml.Documents.InlineCollection inlines)
-        {
-            // TODO: Optimize - only traverse if Spread was called after last SpreadInlines call
-            for (int i = inlines.Count; --i >= 0;)
-            {
-                if (inlines[i] is InlineRange range)
-                {
-                    inlines.RemoveAt(i);
-
-                    for (int j = 0; j < range.Inlines.Count; j++)
-                        inlines.Insert(i + j, range.Inlines[j]);
-                }
-            }
-        }
+        /// <summary>Insert <paramref name="children"/> of type struct <typeparamref name="TChild"/> in the parent layout's children at the position where <see cref="SpreadS{TChild}(TChild[])"/> is called</summary>
+        /// <typeparam name="TChild">Must be a struct; for class types, use <see cref="Spread{TChild}(TChild[])"/></typeparam>
+        public static TChild[] SpreadS<TChild>(IEnumerable<TChild> children) where TChild : struct => children.ToArray();
+        /// <summary>Insert <paramref name="children"/> of type struct <typeparamref name="TChild"/> in the parent layout's children at the position where <see cref="SpreadS{TChild}(TChild[])"/> is called</summary>
+        /// <typeparam name="TChild">Must be a struct; for class types, use <see cref="Spread{TChild}(TChild[])"/></typeparam>
+        public static TChild[] SpreadS<TChild>(TChild[] children) where TChild : struct => children;
     }
 
-    public partial class UIElementRange : Microsoft.UI.Xaml.FrameworkElement // TODO: Document why partial keyword is needed here to prevent compile error on Android target. Maybe some UNO codegen?
+    /// <typeparam name="TChild">
+    /// Must be a class because we want to pass a spread into a layout with the same parameter type as a non-spread
+    /// (to avoid overhead when no spreads are used); the identity of the spread is the *reference* to it's first non-null child.
+    /// 
+    /// For spreads of structs, use jagged arrays instead of <see cref="Spreader{TChild}"/> - <see cref="Helpers.SpreadS"/>.
+    /// </typeparam>
+    /// <remarks>This class is used by <see cref="Helpers.Spread"/></remarks>
+    public static class Spreader<TChild> where TChild : class
     {
-        public List<Microsoft.UI.Xaml.UIElement> Elements { get; set; }
-    }
+        static Dictionary<TChild, TChild[]> spreads = new();
+        static bool hasSpreads = false;
 
-    public class InlineRange : Microsoft.UI.Xaml.Documents.Inline
-    {
-        public List<Microsoft.UI.Xaml.Documents.Inline> Inlines { get; set; }
+        public static TChild? Spread(TChild[] children)
+        {
+            var key = children.FirstOrDefault(item => item is not null);
+            if (key is not null) { spreads.Add(key, children); hasSpreads = true; }
+            return key;
+        }
+
+        public static TChild[]? ExtractChildren(TChild childOrSpread)
+        {
+            if (!hasSpreads) return null;
+            if (spreads.TryGetValue(childOrSpread, out var children)) { spreads.Remove(childOrSpread); hasSpreads = spreads.Count > 0; }
+            return children;
+        }
     }
 }

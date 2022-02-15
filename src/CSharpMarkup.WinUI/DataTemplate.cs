@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security;
-#if WINDOWS
-using Microsoft.UI.Markup.Delegators;
+#if WINUI
+using CSharpMarkup.WinUI.Delegators;
 #endif
 using Xaml = Microsoft.UI.Xaml;
 using Controls = Microsoft.UI.Xaml.Controls;
 
-namespace Microsoft.UI.Markup
+namespace CSharpMarkup.WinUI
 {
     public static partial class Helpers
     {
@@ -17,7 +17,7 @@ namespace Microsoft.UI.Markup
 
         public static DataTemplate DataTemplate<TRootUI>(Func<UIElement> build) where TRootUI : Xaml.Controls.Panel
         {
-#if WINDOWS
+#if WINUI
             string id = BuildChild.CreateIdFor(build);
             string idp = $"BuildChild.IdProperty = {BuildChild.IdProperty}"; // TODO: attempt fix remove
             string xaml =
@@ -38,12 +38,12 @@ namespace Microsoft.UI.Markup
                 return root;
             });
 #endif
-            return Markup.DataTemplate.StartChain(ui);
+            return CSharpMarkup.WinUI.DataTemplate.StartChain(ui);
         }
 
         public static DataTemplate DataTemplate<TRootUI>(Action<Xaml.DependencyObject> build) where TRootUI : Xaml.UIElement, new()
         {
-#if WINDOWS
+#if WINUI
             // TODO: check what is the appropriate symbol for WinUI 3 Desktop #if NETFX_CORE
             // Note that we cannot pass markup objects to the build action here, because we get the ui type instance.
             string id = ConfigureRoot.CreateIdFor(build);
@@ -66,7 +66,7 @@ namespace Microsoft.UI.Markup
                 return root;
             });
 #endif
-            return Markup.DataTemplate.StartChain(ui);
+            return CSharpMarkup.WinUI.DataTemplate.StartChain(ui);
         }
     }
 }

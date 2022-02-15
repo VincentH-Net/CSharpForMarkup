@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Configurations>Debug;Release;Generate</Configurations>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<!--<Nullable>enable</Nullable>-->
+		<DefineConstants>$(DefineConstants);WPF</DefineConstants>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>CSharpMarkup.WPF</PackageId>
+		<Title>CSharpMarkup.WPF</Title>
+		<Summary>Build WPF UI in declarative C#</Summary>
+		<Description>Enjoy a Flutter-like UI development experience with .NET Hot Reload and the best .NET UI frameworks. Build .NET applications fully in C#. No XAML required</Description>
+		<PackageReadmeFile>Readme.md</PackageReadmeFile>
+		<PackageTags>csharpformarkup,csharpmarkup,markup,csharp,ui,wpf,windows presentation foundation,windows,desktop,flutter</PackageTags>
+		<Copyright>Copyright © VincentH.NET</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Authors>VincentH.NET</Authors>
+		<Owners>VincentH.NET</Owners>
+		<RepositoryUrl>https://github.com/VincentH-Net/CSharpForMarkup</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/VincentH-Net/CSharpForMarkup</PackageProjectUrl>
+		<PackageReleaseNotes>See source repository for release notes</PackageReleaseNotes>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<Product>$(AssemblyName) ($(TargetFramework))</Product>
+		<Version>0.6.1-dev.14</Version>
+		<NeutralLanguage>en</NeutralLanguage>
+
+		<NoWarn>CS1591;CS1573</NoWarn>
+
+		<GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
+
+		<DebugType>portable</DebugType>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)' == 'Generate' ">
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup Condition=" '$(Configuration)' == 'Generate' ">
+		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/*/**/*.cs" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\CSharpMarkup.Generators\WinUI\SourceGenerators\SourceGenerators.csproj" Condition=" '$(Configuration)' == 'Generate' ">
+			<OutputItemType>Analyzer</OutputItemType>
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+		</ProjectReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Readme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
+
+</Project>
