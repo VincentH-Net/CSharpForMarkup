@@ -158,7 +158,7 @@ Note the use of `partial class`; this lets you separate the UI markup from **UI 
 
 `FlutterPage.logic.cs`:
 ```csharp
-using Microsoft.UI.Xaml.Controls;
+using <UI framework namespace>.Controls;
 
 namespace Examples;
 
@@ -175,12 +175,12 @@ public sealed partial class FlutterPage : Page, IBuild
 
 **IMPORTANT:**<br />
 - In **`<page>.cs`**:<br />
-Include `CSharpMarkup.*` namespace usings but **no UI objectmodel usings**.
+Include `CSharpMarkup.*` namespace usings but **no UI objectmodel usings**.<br />
 You *can* also use the UI objectmodel safely in `<page>.cs`; a good practice then is to
 define a `global using TypeName_UI = <UI objectmodel namespace>.TypeName` alias in `GlobalUsings.cs`
 
 - In **`<page>.logic.cs`**:<br />
-**DO NOT** include `CSharpMarkup.*` namespace usings and **DO NOT** use `CSharpMarkup` objects.
+**DO NOT** include `CSharpMarkup.*` namespace usings and **DO NOT** use `CSharpMarkup` objects.<br />
 Markup object instances are not safe to use outside of a markup expression (due to performance features - each markup object has a single static instance to prevent allocating an extra object for each view).
 That is why `Assign` and `Invoke` pass the UI object contained in the markup object to the logic, not the markup object itself.
 
