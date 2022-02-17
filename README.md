@@ -203,7 +203,7 @@ With `Assign` and `Invoke` you can integrate UI markup with UI logic:
 ![Markup Logic Invoke 2](img/markup-logic-invoke-2.png)
 
 > **Note**:<br />
-> In `SearchPage.cs`, `StackPanel and `TextBox` are **markup object types, while<br />
+> In `SearchPage.cs`, `StackPanel` and `TextBox` are **markup** object types, while<br />
 > in `SearchPage.logic.cs` they are the corresponding **UI framework** object types
 
 # Development workflow tips
