@@ -3,6 +3,12 @@ Enjoy a Flutter-like UI development experience with .NET Hot Reload and the best
 
 - Build .NET applications **fully in C#**
 - Target browsers and native desktop / mobile
+- Use existing UI frameworks. Mature or bleeding edge is *your* choice:<br />
+  WPF, WinUI 3, Uno Platform. Coming: AvaloniaUI, Maui, possibly Blazor.
+- Use the built-in MVVM support - or any other update model that supports your UI framework (e.g. [ReactiveUI](https://www.reactiveui.net/))
+- Use for part or all of your application UI
+- Designed to go big and fast<br />
+  Practically allocation-free, no reflection, efficient C#
 
 No XAML / HTML / JavaScript / CSS required
 
@@ -13,7 +19,12 @@ No XAML / HTML / JavaScript / CSS required
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF)
 
 > Chat (if needed, [join DotNetEvolution](https://aka.ms/dotnet-discord) first)<br />
-> [![Discord](https://img.shields.io/discord/732297728826277939?label=Discord%20%23csharp-markup%20on%20DotNetEvolution&style=plastic)](https://discord.com/channels/732297728826277939/931198774234189844)
+> [![Discord](https://img.shields.io/discord/732297728826277939?label=Discord%20%23csharp-markup%20on%20DotNetEvolution&style=plastic)](https://discord.com/channels/732297728826277939/931198774234189844)<br />
+> **The best place to ask questions or help!**
+
+# Getting Started
+- [Getting started with C# Markup 2 for WPF](#getting-started-for-wpf)
+- [Getting started with C# Markup 2 for WinUI 3 and Uno Platform](#getting-started-for-winui-3-and-uno-platform)
 
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
@@ -22,9 +33,6 @@ No XAML / HTML / JavaScript / CSS required
 > ## New 0.6 release: adds WPF and many improvements!
 See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-6-14) for the full list of improvements
 
-> **Note:** the documentation below is not yet updated to this release; it will be soon!
-> However the example WPF and WinUI applications are fully updated; feel free to explore and experiment! Feedback is appreciated.
-
 *November 30, 2021*
 >## C# Markup 2 announced at UNOCONF 2021!
 > This first preview targets WinUI 3 and Uno Platform - including browser webassembly - with C# 10 and .NET 6. It supports .NET Hot Reload for a fast inner dev loop.
@@ -32,12 +40,22 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 > See the [C# Markup 2 announcement at UNOCONF 2021](https://youtu.be/UJ7EzQeEQAg?t=2566):
 > [![UNOCONF Announces Csharp Markup 2](img/unoconf-announce-csharp-markup-2.png)](https://youtu.be/UJ7EzQeEQAg?t=2566)
 
-## Getting started with C# Markup 2 for WinUI and Uno Platform
-First check if your development environment is ready for Uno Platform and WinUI 3:
-- [Using Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html)
-- [Using other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
+## Getting started for WPF
+1. Clone this repo
+2. Open [CSharpMarkup.Wpf.Examples.sln](src/CSharpMarkup.Wpf.Examples/) and explore the source for the example pages. Note how page markup and page logic are separated in partial class files, and integrated with `Build()`, `Assign()` and `Invoke()`.
+3. .NET Hot Reload is supported; edit and save the page markup in VS 2022 while debugging to see instant updates
+4. To learn how to use C# Markup 2, read the [features description](#features) below and experiment in the example app
+5. To build your own app, reference [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF) from a .NET 6 WPF project and create the C# Markup UI windows, pages etc in that project. Note that for existing apps you can reference (WPF / class library) projects that target older .NET versions from the .NET 6 project, so you can add C# Markup UI to your app without having to migrate existing WPF UI and/or logic to .NET 6 and C# 10.
 
-### Work with the example solution
+## Getting started for WinUI 3 and Uno Platform
+First check if your development environment is ready for Uno Platform and WinUI 3:
+a) If you only want to target Windows desktop with WinUI 3:
+  - [Get started with the Windows App SDK](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/#get-started-with-the-windows-app-sdk)
+b) If you also want to target other OS-es with WinUI 3, using Uno Platform:
+  - [Using Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html)
+  - [Using other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
+
+Now you are ready to work with the WinUI 3 and Uno Platform example app:
 
 1. Clone this repo
 2. Open [CSharpMarkup.WinUI.Examples.sln](src/CSharpMarkup.WinUI.Examples/)
@@ -48,26 +66,17 @@ First check if your development environment is ready for Uno Platform and WinUI 
    2. Edit the markup
    3. Click ![Visual Studio Dotnet Hot Reload Button](img/visual-studio-dotnet-hot-reload-button.png) in Visual Studio
    4. After the Visual Studio status bar says ![Visual Studio Dotnet Hot Reload Statusbar](img/visual-studio-dotnet-hot-reload-statusbar.png), click ![In App Hot Reload Button](img/in-app-hot-reload-button.png) in the app
-
-To learn how to use C# Markup 2, see the [features description](#features) below.
+6. To learn how to use C# Markup 2, read the [features description](#features) below and experiment in the example app
+7. To build your own app, reference [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI?color=gold&label=CSharpMarkup.WinUI&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI) from a .NET 6 WinUI 3 project and create the C# Markup UI windows, pages etc in that project. Note that for existing apps you can reference (WinUI 3 / class library) projects that target older .NET versions from the .NET 6 project, so you can add C# Markup UI to your app without having to migrate existing WinUI 3 UI and/or logic to .NET 6 and C# 10.
 
 # Features
-C# Markup 2 contains a full declarative, fluent API for WinUI 3. It surfaces virtually every `DependencyObject` and `DependencyProperty` in WinUI 3, including attached properties, and includes **full inline documentation** that links each markup helper to the inline documentation for the underlying WinUI object / property.
+C# Markup 2 contains a full declarative, fluent API for existing UI frameworks. It surfaces virtually every layout, view and property, including attached properties, and includes **full inline documentation** that links each markup helper / parameter to the inline documentation for the underlying UI object / property.
 
-The rich WinUI 3 framework that C# Markup 2 surfaces contains **500+ bindable object types**. Layouts, views and styles, but also brushes, rich text elements, drawing primitives, transformations, animations, visual states and more. In addition C# Markup offers powerful and concise **convenience API's** for layout, bindings, convertors, templates and more.
+The rich frameworks that C# Markup 2 surfaces can contain as much as **500+ UI object types**. E.g. layouts, views and styles, but also brushes, rich text elements, drawing primitives, transformations, animations, visual states and more. In addition C# Markup offers powerful and concise **convenience API's** for layout, bindings, convertors, templates and more.
 
 - When targeting **Windows Desktop**, the WinUI API from Windows App SDK is surfaced (without any dependency on Uno Platform).
 - When targeting **Uno Platform**, the Uno.WinUI API is surfaced (atm only webassembly is tested, but any Uno target platform that can support .NET 6 and C# 10 should work)
-
-See C# Markup features in action in the `CSharpMarkup.WinUI.Examples` solution in this repo.
-
-> **NOTE** - this is an early preview, intended mainly to gauge interest and to get feedback on the shape and features of the markup API. 
-> NJoy playing around with this and chime in with issues if you like / want things or if you have questions.
-> 
-> Twitter feedback is also welcome - use [#CSharpForMarkup](https://twitter.com/search?q=%23CSharpForMarkup&f=live) and [@vincenth_net](https://twitter.com/vincenth_net), thanks!
-> 
-> Only Windows Desktop and webassembly targets have been tested at this time, and there has been no webassembly performance optimization so far.
-> Expect frequent updates in the coming weeks!
+- When targeting **WPF**, the WPF API is surfaced.
 
 ## Basic markup anatomy
 Layouts, views, properties and property values look like this:<br />
@@ -125,7 +134,7 @@ Thanks to C# 10, you don't have to use strings or `nameof()` to specify binding 
 
 **Note** that the `pathExpression` parameter supports several **convenience binding syntaxes**; see it's intellisense description in above image.
 
-`Bind` supports almost all functionality that WinUI 3 offers for binding. In addition, there are many `Bind` overloads that offer:
+`Bind` supports almost all functionality that the UI framework offers for binding. In addition, there are many `Bind` overloads that offer:
 - Omit the property name to bind to the **default property** of a view type:<br />![Bind Default Parameter](img/bind-default-parameter.png)
 - Bind with **inline conversion**:<br />![Bind Inline Conversion](img/bind-inline-conversion.png)
 - Bind a **command and it's parameter** in one go:<br />![Bindcommand](img/bindcommand.png)
@@ -135,12 +144,12 @@ A typical markup page starts like this:
 
 `FlutterPage.cs`:
 ```csharp
-using Microsoft.UI.Markup;
-using static Microsoft.UI.Markup.Helpers;
+using CSharpMarkup.<UI framework name>;
+using static CSharpMarkup.<UI framework name>.Helpers;
 
-namespace WinUICsMarkupExamples;
+namespace Examples;
 
-public partial class FlutterPage
+partial class FlutterPage
 {
     public void Build() => Content = 
 ```
@@ -151,7 +160,7 @@ Note the use of `partial class`; this lets you separate the UI markup from **UI 
 ```csharp
 using Microsoft.UI.Xaml.Controls;
 
-namespace WinUICsMarkupExamples;
+namespace Examples;
 
 public sealed partial class FlutterPage : Page, IBuild
 {
@@ -159,10 +168,21 @@ public sealed partial class FlutterPage : Page, IBuild
 
     public FlutterPage()
     {
-        InitializeComponent();
-        DataContext = vm = App.Current.FlutterViewModel;
+        InitializeComponent(); // Only needed for WinUI
+        DataContext = vm = <obtain viewmodel instance>;
         Build();
 ```
+
+**IMPORTANT:**<br />
+- In **`<page>.cs`**:<br />
+Include `CSharpMarkup.*` namespace usings but **no UI objectmodel usings**.
+You *can* also use the UI objectmodel safely in `<page>.cs`; a good practice then is to
+define a `global using TypeName_UI = <UI objectmodel namespace>.TypeName` alias in `GlobalUsings.cs`
+
+- In **`<page>.logic.cs`**:<br />
+**DO NOT** include `CSharpMarkup.*` namespace usings and **DO NOT** use `CSharpMarkup` objects.
+Markup object instances are not safe to use outside of a markup expression (due to performance features - each markup object has a single static instance to prevent allocating an extra object for each view).
+That is why `Assign` and `Invoke` pass the UI object contained in the markup object to the logic, not the markup object itself.
 
 > **Note** at the moment WinUI still requires that you have a XAML file for a page. It only needs to contain an empty `Page` element though, and you can move those files out of sight in a folder, e.g. `Xaml`:<br />
 > ![Markup Page Files](img/markup-page-files.png)
@@ -182,12 +202,10 @@ With `Assign` and `Invoke` you can integrate UI markup with UI logic:
 `SearchPage.logic.cs`:<br />
 ![Markup Logic Invoke 2](img/markup-logic-invoke-2.png)
 
-> **Note: in code behind do NOT use Microsoft.UI.Markup**, only the UI object model.
-> 
-> Due to a performance preservation mechanism in Markup objects, Markup object instances are not safe to use outside of a markup expression.
-> 
-> That is why Assign and Invoke pass the UI object to the logic, not the markup object.
- 
+> **Note**:<br />
+> In `SearchPage.cs`, `StackPanel and `TextBox` are **markup object types, while<br />
+> in `SearchPage.logic.cs` they are the corresponding **UI framework** object types
+
 # Development workflow tips
 
 ## Improve markup colorization in Visual Studio
@@ -201,3 +219,4 @@ Under `Fonts and Colors`, copy the color of `User Types - Classes` to `User Memb
 Get the fastest inner dev loop for C# Markup 2 by using .NET Hot Reload in Visual Studio 2022 Preview, targeting `Windows.Desktop` (packaged). Even when you are not targeting Windows, this is good for getting most of your UI build work done as quickly as possible. Switch to other target(s) to finetune and test.
 
 Since at this moment detecting hot reload in WinUI 3 is broken in .NET SDK, a workaround is to conditionally add a hot reload button on your pages for a debug Windows build. The example contains a `.WithHotReloadButton()` extension method to do this.
+In the WPF example app a small hot reload handler is included to automatically rebuild the UI on hot reload, so there is no button workaround needed there.
