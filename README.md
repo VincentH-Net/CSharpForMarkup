@@ -1,16 +1,14 @@
 # C# Markup 2
-Enjoy a Flutter-like UI development experience with .NET Hot Reload and the best .NET UI frameworks
+Enjoy a Flutter-like UI development experience with .NET Hot Reload and the main .NET UI frameworks
 
-- Build .NET applications **fully in C#**
+- Build **.NET applications fully in C#**
 - Target browsers and native desktop / mobile
-- Use existing UI frameworks. Mature or bleeding edge is *your* choice:<br />
-  WPF, WinUI 3, Uno Platform. Coming: AvaloniaUI, Maui, possibly Blazor.
+- Use existing UI frameworks. Mature or bleeding edge is *your* choice: WPF, WinUI 3, Uno Platform. Coming: AvaloniaUI, Maui, possibly Blazor.
 - Use the built-in MVVM support - or any other update model that supports your UI framework (e.g. [ReactiveUI](https://www.reactiveui.net/))
 - Use for part or all of your application UI
-- Designed to go big and fast<br />
-  Practically allocation-free, no reflection, efficient C#
+- Designed to handle large UI fast: practically allocation-free, no reflection, efficient C#
 
-No XAML / HTML / JavaScript / CSS required
+No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your way.
 
 ![Markup Example Flutter Page](img/markup-example-flutter-page.png)
 
@@ -43,15 +41,15 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 ## Getting started for WPF
 1. Clone this repo
 2. Open [CSharpMarkup.Wpf.Examples.sln](src/CSharpMarkup.Wpf.Examples/) and explore the source for the example pages. Note how page markup and page logic are separated in partial class files, and integrated with `Build()`, `Assign()` and `Invoke()`.
-3. .NET Hot Reload is supported; edit and save the page markup in VS 2022 while debugging to see instant updates
+3. **.NET Hot Reload** is supported; edit and save the page markup in VS 2022 while debugging to see instant updates
 4. To learn how to use C# Markup 2, read the [features description](#features) below and experiment in the example app
-5. To build your own app, reference [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF) from a .NET 6 WPF project and create the C# Markup UI windows, pages etc in that project. Note that for existing apps you can reference (WPF / class library) projects that target older .NET versions from the .NET 6 project, so you can add C# Markup UI to your app without having to migrate existing WPF UI and/or logic to .NET 6 and C# 10.
+5. To build your own app, reference [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF) from a .NET 6 WPF project and create the C# Markup UI windows, pages etc in that project. Note that for existing apps you can reference (WPF / class library) projects that target older .NET versions from the .NET 6 project, so you can add C# Markup UI to your app without having to migrate existing logic and/or WPF UI to .NET 6 and C# 10.
 
 ## Getting started for WinUI 3 and Uno Platform
-First check if your development environment is ready for Uno Platform and WinUI 3:
+First check if your development environment is ready for Uno Platform and/or WinUI 3:
 a) If you only want to target Windows desktop with WinUI 3:
   - [Get started with the Windows App SDK](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/#get-started-with-the-windows-app-sdk)
-b) If you also want to target other OS-es with WinUI 3, using Uno Platform:
+b) If you also want to target other OS-es with WinUI 3 using Uno Platform:
   - [Using Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html)
   - [Using other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
 
@@ -72,9 +70,9 @@ Now you are ready to work with the WinUI 3 and Uno Platform example app:
 # Features
 C# Markup 2 contains a full declarative, fluent API for existing UI frameworks. It surfaces virtually every layout, view and property, including attached properties, and includes **full inline documentation** that links each markup helper / parameter to the inline documentation for the underlying UI object / property.
 
-The rich frameworks that C# Markup 2 surfaces can contain as much as **500+ UI object types**. E.g. layouts, views and styles, but also brushes, rich text elements, drawing primitives, transformations, animations, visual states and more. In addition C# Markup offers powerful and concise **convenience API's** for layout, bindings, convertors, templates and more.
+The rich UI frameworks that C# Markup 2 surfaces can contain as much as **500+ UI object types**. E.g. layouts, views and styles, but also brushes, rich text elements, drawing primitives, transformations, animations, visual states and more. In addition C# Markup offers powerful and concise **convenience API's** for layout, bindings, convertors, templates and more.
 
-- When targeting **Windows Desktop**, the WinUI API from Windows App SDK is surfaced (without any dependency on Uno Platform).
+- When targeting **Windows Desktop**, the WinUI API from the Windows App SDK is surfaced (without any dependency on Uno Platform).
 - When targeting **Uno Platform**, the Uno.WinUI API is surfaced (atm only webassembly is tested, but any Uno target platform that can support .NET 6 and C# 10 should work)
 - When targeting **WPF**, the WPF API is surfaced.
 
