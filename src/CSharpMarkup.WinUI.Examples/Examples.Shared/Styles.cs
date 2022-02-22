@@ -23,23 +23,23 @@ public static class Styles
             TextBlocks, Buttons, TextBoxes, ListViewItems
         );
 
-        public static Style<TextBlock> TextBlocks => textBlocks ??= new Style<TextBlock>(
+        public static Style<TextBlock> TextBlocks => textBlocks ??= new (
             (TextBlock_UI.ForegroundProperty, White)
         );
 
-        public static Style<Button> Buttons => buttons ??= new Style<Button>(
+        public static Style<Button> Buttons => buttons ??= new (
             (Button_UI.BackgroundProperty, Transparent)
         );
 
-        public static Style<TextBox> TextBoxes => textBoxes ??= new Style<TextBox>(
+        public static Style<TextBox> TextBoxes => textBoxes ??= new (
             (TextBox_UI.ForegroundProperty, White),
             (TextBox_UI.BackgroundProperty, Black)
         );
 
-        public static Style<ListViewItem> ListViewItems => listViewItems ??= new Style<ListViewItem>(
+        public static Style<ListViewItem> ListViewItems => listViewItems ??= new (
             (ListViewItem_UI.HorizontalContentAlignmentProperty, UI.HorizontalAlignment.Stretch),
-            (ListViewItem_UI.PaddingProperty, Thickness(0)),
-            (ListViewItem_UI.MarginProperty, Thickness(0))
+            (ListViewItem_UI.PaddingProperty, "0"),
+            (ListViewItem_UI.MarginProperty, "0")
         );
 
         static UI.ResourceDictionary CreateResourceDictionary(params UI.Style[] styles)

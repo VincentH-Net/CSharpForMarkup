@@ -7,7 +7,7 @@ public static class Styles
     static Style<Button>? headerButton;
 
     public static Style<Button> HeaderButton => headerButton ??= new Style<Button>(
-        (Button_UI.ForegroundProperty, SolidColorBrush(CornflowerBlue).UI),
+        (Button_UI.ForegroundProperty, SolidColorBrush(CornflowerBlue)),
         (Button_UI.FontSizeProperty, 24.0)
     )   .BasedOn (Implicit.Buttons);
 
@@ -24,17 +24,17 @@ public static class Styles
         );
 
         public static Style<TextBlock> TextBlocks => textBlocks ??= new Style<TextBlock>(
-            (TextBlock_UI.ForegroundProperty, SolidColorBrush(White).UI)
+            (TextBlock_UI.ForegroundProperty, SolidColorBrush(White))
         );
 
         public static Style<Button> Buttons => buttons ??= new Style<Button>(
-            (Button_UI.BackgroundProperty, SolidColorBrush(Transparent).UI),
+            (Button_UI.BackgroundProperty, SolidColorBrush(Transparent)),
             (Button_UI.BorderThicknessProperty, Thickness(0))
         );
 
         public static Style<TextBox> TextBoxes => textBoxes ??= new Style<TextBox>(
-            (TextBox_UI.ForegroundProperty, SolidColorBrush(White).UI),
-            (TextBox_UI.BackgroundProperty, SolidColorBrush(Black).UI)
+            (TextBox_UI.ForegroundProperty, SolidColorBrush(White)),
+            (TextBox_UI.BackgroundProperty, SolidColorBrush(Black))
         );
 
         public static Style<ListViewItem> ListViewItems => listViewItems ??= new Style<ListViewItem>(

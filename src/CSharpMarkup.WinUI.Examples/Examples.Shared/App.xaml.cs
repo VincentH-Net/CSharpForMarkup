@@ -73,7 +73,10 @@ public sealed partial class App : Application
         if (rootFrame == null)
         {
             // Create a Frame to act as the navigation context and navigate to the first page
-            rootFrame = new Frame();
+            rootFrame = new Frame
+            {
+                Resources = Styles.Implicit.Dictionary
+            };
 
             rootFrame.NavigationFailed += OnNavigationFailed;
 

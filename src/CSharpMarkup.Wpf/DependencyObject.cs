@@ -25,18 +25,60 @@ namespace CSharpMarkup.Wpf
         public static implicit operator UIDispatcherObject(DispatcherObject dispatcherObject) => new(dispatcherObject.UI);
     }
 
-    /// <summary>Allows to specify both markup views (e.g. <see cref="TextBlock"/>) and non-view object types (e.g. <see cref="string"/>) as UI content</summary>
+    /// <summary>
+    /// Allows to specify <see cref="CSharpMarkup.Wpf"/> types (e.g. <see cref="TextBlock"/>) as well as commonly used built-in C# / UI types (e.g. <see cref="string"/> or <see cref="System.Windows.Thickness"/>).
+    /// </summary>
+    /// <remarks>For types not supported by implicit conversion, use the <see cref="UIObject(object)"/> contructor, e.g.: <code>new (FontCapitals.Normal)</code></remarks>
     public class UIObject
     {
         public object UI { get; }
 
+        // Built-in C# types
+        public static implicit operator UIObject(bool value) => new UIObject(value);
         public static implicit operator UIObject(int value) => new UIObject(value);
         public static implicit operator UIObject(float value) => new UIObject(value);
         public static implicit operator UIObject(double value) => new UIObject(value);
         public static implicit operator UIObject(char value) => new UIObject(value);
         public static implicit operator UIObject(string value) => new UIObject(value);
+
+        // Struct types
+        public static implicit operator UIObject(System.Windows.CornerRadius value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.Duration value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.FigureLength value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.FontStretch value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.FontStyle value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.FontWeight value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.GridLength value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.Int32Rect value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.Point value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.Rect value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.Size value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.Thickness value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.Media.Color value) => new UIObject(value);
+
+        // Enum types
+        public static implicit operator UIObject(System.Windows.BaselineAlignment value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.FigureHorizontalAnchor value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.FigureVerticalAnchor value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.FlowDirection value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.HorizontalAlignment value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.LineBreakCondition value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.LineStackingStrategy value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.TextAlignment value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.TextDecorationLocation value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.TextTrimming value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.TextWrapping value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.VerticalAlignment value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.Visibility value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.WrapDirection value) => new UIObject(value);
+
+        // Non-markup class types
+        public static implicit operator UIObject(System.Windows.Media.FontFamily value) => new UIObject(value);
+
+        // Markup types
         public static implicit operator UIObject(DependencyObject value) => new UIObject(value.UI);
 
+        /// <summary>Use to specify a value of any type that is not implicitly converted to <see cref="UIObject"/></summary>
         public UIObject(object ui) => UI = ui;
     }
 

@@ -22,16 +22,16 @@ namespace CSharpMarkup.Wpf
 
 		public Style() => Initialize();
 
-		public Style(Windows.DependencyProperty property, object value) { Initialize(); Set(property, value); }
+		public Style(Windows.DependencyProperty property, UIObject value) { Initialize(); Set(property, value); }
 
-		public Style(params (Windows.DependencyProperty property, object value)[] setters) { Initialize(); Set(setters); }
+		public Style(params (Windows.DependencyProperty property, UIObject value)[] setters) { Initialize(); Set(setters); }
 
-		public Style<T> Set(Windows.DependencyProperty property, object value) => Set((property, value));
+		public Style<T> Set(Windows.DependencyProperty property, UIObject value) => Set((property, value));
 
-		public Style<T> Set(params (Windows.DependencyProperty property, object value)[] setters)
+		public Style<T> Set(params (Windows.DependencyProperty property, UIObject value)[] setters)
 		{
-			foreach (var setter in setters)
-				UI.Setters.Add(new Windows.Setter(setter.property, setter.value));
+			foreach ((var property, var value) in setters)
+				UI.Setters.Add(new Windows.Setter(property, value.UI));
 			return this;
 		}
 	}

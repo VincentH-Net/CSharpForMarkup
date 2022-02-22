@@ -40,16 +40,16 @@
     <None Include="wwwroot\web.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CSharpMarkup.WinUI" Version="0.6.1-dev.14" />
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="CSharpMarkup.WinUI" Version="0.6.1-dev.16" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
     <PackageReference Include="Uno.Extensions.Logging.WebAssembly.Console" Version="1.1.0" />
-    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.0.9" />
-    <PackageReference Include="Uno.WinUI.WebAssembly" Version="4.0.9" />
-    <PackageReference Include="Uno.WinUI.RemoteControl" Version="4.0.9" Condition="'$(Configuration)'=='Debug'" />
-    <PackageReference Include="Uno.Wasm.Bootstrap" Version="3.1.2" />
-    <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="3.1.2" />
+    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.0.13" />
+    <PackageReference Include="Uno.WinUI.WebAssembly" Version="4.0.13" />
+    <PackageReference Include="Uno.WinUI.RemoteControl" Version="4.0.13" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.Wasm.Bootstrap" Version="3.2.0" />
+    <PackageReference Include="Uno.Wasm.Bootstrap.DevServer" Version="3.2.0" />
   </ItemGroup>
   <Import Project="..\Examples.Shared\Examples.Shared.projitems" Label="Shared" Condition="Exists('..\Examples.Shared\Examples.Shared.projitems')" />
 </Project>

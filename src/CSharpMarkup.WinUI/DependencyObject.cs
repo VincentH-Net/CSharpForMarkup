@@ -30,27 +30,58 @@ namespace CSharpMarkup.WinUI
         public static implicit operator UIDependencyObject(DependencyObject dependencyObject) => new(dependencyObject.UI);
     }
 
-    /// <summary>Allows to specify both markup views (e.g. <see cref="TextBlock"/>) and non-view object types (e.g. <see cref="string"/>) as UI content</summary>
+    /// <summary>
+    /// Allows to specify <see cref="CSharpMarkup.WinUI"/> types (e.g. <see cref="TextBlock"/>) as well as commonly used built-in C# / UI types (e.g. <see cref="string"/> or <see cref="Xaml.Thickness"/>).
+    /// </summary>
+    /// <remarks>For types not supported by implicit conversion, use the <see cref="UIObject(object)"/> contructor, e.g.: <code>new (FontCapitals.Normal)</code></remarks>
     public class UIObject
     {
         public object UI { get; }
 
+        // Built-in C# types
+        public static implicit operator UIObject(bool value) => new UIObject(value);
         public static implicit operator UIObject(int value) => new UIObject(value);
         public static implicit operator UIObject(float value) => new UIObject(value);
         public static implicit operator UIObject(double value) => new UIObject(value);
         public static implicit operator UIObject(char value) => new UIObject(value);
         public static implicit operator UIObject(string value) => new UIObject(value);
+
+        // Struct types
+        public static implicit operator UIObject(Xaml.CornerRadius value) => new UIObject(value);
+        public static implicit operator UIObject(Xaml.Duration value) => new UIObject(value);
+        public static implicit operator UIObject(Xaml.GridLength value) => new UIObject(value);
+        public static implicit operator UIObject(Xaml.Thickness value) => new UIObject(value);
+        public static implicit operator UIObject(Windows.UI.Color value) => new UIObject(value);
+        public static implicit operator UIObject(Windows.UI.Text.FontWeight value) => new UIObject(value);
+        public static implicit operator UIObject(Windows.Foundation.Point value) => new UIObject(value);
+        public static implicit operator UIObject(Windows.Foundation.Rect value) => new UIObject(value);
+        public static implicit operator UIObject(Windows.Foundation.Size value) => new UIObject(value);
+
+        // Enum types
+        public static implicit operator UIObject(Windows.UI.Text.FontStretch value) => new UIObject(value);
+        public static implicit operator UIObject(Windows.UI.Text.FontStyle value) => new UIObject(value);
+        public static implicit operator UIObject(Windows.UI.Text.HorizontalCharacterAlignment value) => new UIObject(value);
+        public static implicit operator UIObject(Windows.UI.Text.LineSpacingRule value) => new UIObject(value);
+        public static implicit operator UIObject(Windows.UI.Text.LinkType value) => new UIObject(value);
+        public static implicit operator UIObject(Windows.UI.Text.VerticalCharacterAlignment value) => new UIObject(value);
+
+        public static implicit operator UIObject(Xaml.FlowDirection value) => new UIObject(value);
+        public static implicit operator UIObject(Xaml.HorizontalAlignment value) => new UIObject(value);
+        public static implicit operator UIObject(Xaml.LineStackingStrategy value) => new UIObject(value);
+        public static implicit operator UIObject(Xaml.TextAlignment value) => new UIObject(value);
+        public static implicit operator UIObject(Xaml.TextTrimming value) => new UIObject(value);
+        public static implicit operator UIObject(Xaml.TextWrapping value) => new UIObject(value);
+        public static implicit operator UIObject(Xaml.VerticalAlignment value) => new UIObject(value);
+        public static implicit operator UIObject(Xaml.Visibility value) => new UIObject(value);
+
+        // Non-markup class types
+        public static implicit operator UIObject(Xaml.Media.FontFamily value) => new UIObject(value);
+
+        // Markup types
         public static implicit operator UIObject(DependencyObject value) => new UIObject(value.UI);
 
+        /// <summary>Use to specify a value of any type that is not implicitly converted to <see cref="UIObject"/></summary>
         public UIObject(object ui) => UI = ui;
-    }
-
-    /// <summary>Optional <typeparamref name="TValue"/> parameter</summary>
-    public struct O<TValue>
-    {
-        internal TValue Value;
-        internal bool HasValue;
-        public static implicit operator O<TValue>(TValue value) => new O<TValue> { Value = value, HasValue = true };
     }
 
     // Since DependencyObject is the root object of the UI hierarchy, this is a good place to explain why and how a single static instance of a chain is safe:
