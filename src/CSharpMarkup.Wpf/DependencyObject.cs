@@ -74,6 +74,7 @@ namespace CSharpMarkup.Wpf
 
         // Non-markup class types
         public static implicit operator UIObject(System.Windows.Media.FontFamily value) => new UIObject(value);
+        public static implicit operator UIObject(System.Windows.ResourceKey value) => new UIObject(value);
 
         // Markup types
         public static implicit operator UIObject(DependencyObject value) => new UIObject(value.UI);
