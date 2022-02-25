@@ -7,6 +7,12 @@ namespace CSharpMarkup.WinUI
 	{
 		// TODO: ? how to let intellisense offer only styles for the type?
 		// will helper .Style<T>(this T, Style<T> style) interfere with the generated .Style(this T, Style style)?
+
+		public static Style<T> Style<T>(Xaml.DependencyProperty property, UIObject value) where T : DependencyObject
+			=> new Style<T>(property, value);
+
+		public static Style<T> Style<T>(params (Xaml.DependencyProperty property, UIObject value)[] setters) where T : DependencyObject
+			=> new Style<T>(setters);
 	}
 
 	public static partial class FrameworkElementExtensions

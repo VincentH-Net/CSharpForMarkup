@@ -76,6 +76,7 @@ namespace CSharpMarkup.WinUI
 
         // Non-markup class types
         public static implicit operator UIObject(Xaml.Media.FontFamily value) => new UIObject(value);
+        public static implicit operator UIObject(Xaml.Data.Binding value) => new UIObject(value);
 
         // Markup types
         public static implicit operator UIObject(DependencyObject value) => new UIObject(value.UI);
