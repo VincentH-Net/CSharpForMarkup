@@ -7,6 +7,109 @@ using UpdateSourceTrigger = Microsoft.UI.Xaml.Data.UpdateSourceTrigger;
 
 namespace CSharpMarkup.WinUI
 {
+    public static partial class Helpers
+    {
+        /// <summary>Bind a <see cref="Xaml.DependencyProperty"/> in a <see cref="CSharpMarkup.WinUI.Style"/>. Use to specify a parameter for e.g. <see cref="Style{T}((Xaml.DependencyProperty property, UIObject value)[])"/></summary>
+        /// <param name="pathExpression">viewModel.Property or viewModel.Property1.Property2 or (SomeExpression.viewModel).Property <br />?. can be used safely - viewmodel instance is not required</param>
+        public static (Xaml.DependencyProperty, Xaml.Data.Binding) Bind(
+            this Xaml.DependencyProperty property,
+            object pathExpression = null,
+            BindingMode mode = BindingMode.OneWay,
+            IValueConverter converter = null,
+            object converterParameter = null,
+            string converterLanguage = null,
+            UpdateSourceTrigger updateSourceTrigger = UpdateSourceTrigger.Default,
+            object source = null,
+            object targetNullValue = default,
+            object fallbackValue = default,
+            [CallerArgumentExpression("pathExpression")] string pathExpressionString = default
+        )
+        => (property, new Xaml.Data.Binding
+        {
+            Path = new Xaml.PropertyPath(BindingExpressionToPath(pathExpressionString)),
+            Mode = mode,
+            Converter = converter,
+            ConverterParameter = converterParameter,
+            //ConverterLanguage = converterLanguage, // TODO: figure out correct default; can't be null
+            UpdateSourceTrigger = updateSourceTrigger,
+            Source = source,
+            // TODO: RelativeSource
+            TargetNullValue = targetNullValue,
+            FallbackValue = fallbackValue,
+        });
+
+        /// <summary>Bind a <see cref="Xaml.DependencyProperty"/> with inline conversion in a <see cref="CSharpMarkup.WinUI.Style"/>. Use to specify a parameter for e.g. <see cref="Style{T}((Xaml.DependencyProperty property, UIObject value)[])"/></summary>
+        /// <param name="pathExpression">viewModel.Property or viewModel.Property1.Property2 or (SomeExpression.viewModel).Property <br />?. can be used safely - viewmodel instance is not required</param>
+        public static (Xaml.DependencyProperty, Xaml.Data.Binding) Bind<TPropertyValue, TSource>(
+            this Xaml.DependencyProperty property,
+            object pathExpression = null,
+            BindingMode mode = BindingMode.OneWay,
+            Func<TSource, TPropertyValue> convert = null,
+            Func<TPropertyValue, TSource> convertBack = null,
+            string converterLanguage = null,
+            UpdateSourceTrigger updateSourceTrigger = UpdateSourceTrigger.Default,
+            object source = null,
+            TPropertyValue targetNullValue = default,
+            [CallerArgumentExpression("pathExpression")] string pathExpressionString = default
+        )
+        => (property, new Xaml.Data.Binding
+        {
+            Path = new Xaml.PropertyPath(BindingExpressionToPath(pathExpressionString)),
+            Mode = mode,
+            Converter = new FuncConverter<TSource, TPropertyValue, object>(convert, convertBack),
+            //ConverterLanguage = converterLanguage, // TODO: figure out correct default; can't be null
+            UpdateSourceTrigger = updateSourceTrigger,
+            Source = source,
+            // TODO: RelativeSource
+            TargetNullValue = targetNullValue
+        });
+
+        /// <summary>Bind a <see cref="Xaml.DependencyProperty"/> with inline conversion and conversion parameter in a <see cref="CSharpMarkup.WinUI.Style"/>. Use to specify a parameter for e.g. <see cref="Style{T}((Xaml.DependencyProperty property, UIObject value)[])"/></summary>
+        /// <param name="pathExpression">viewModel.Property or viewModel.Property1.Property2 or (SomeExpression.viewModel).Property <br />?. can be used safely - viewmodel instance is not required</param>
+        public static (Xaml.DependencyProperty, Xaml.Data.Binding) Bind<TPropertyValue, TSource, TParam>(
+            this Xaml.DependencyProperty property,
+            object pathExpression = null,
+            BindingMode mode = BindingMode.OneWay,
+            Func<TSource, TParam, TPropertyValue> convert = null,
+            Func<TPropertyValue, TParam, TSource> convertBack = null,
+            TParam converterParameter = default,
+            string converterLanguage = null,
+            UpdateSourceTrigger updateSourceTrigger = UpdateSourceTrigger.Default,
+            object source = null,
+            TPropertyValue targetNullValue = default,
+            [CallerArgumentExpression("pathExpression")] string pathExpressionString = default
+        )
+        => (property, new Xaml.Data.Binding
+        {
+            Path = new Xaml.PropertyPath(BindingExpressionToPath(pathExpressionString)),
+            Mode = mode,
+            Converter = new FuncConverter<TSource, TPropertyValue, TParam>(convert, convertBack),
+            ConverterParameter = converterParameter,
+            //ConverterLanguage = converterLanguage, // TODO: figure out correct default; can't be null
+            UpdateSourceTrigger = updateSourceTrigger,
+            Source = source,
+            // TODO: RelativeSource
+            TargetNullValue = targetNullValue
+        });
+
+        const string bindingContextPath = ""; // TODO: Find framework static var for this
+
+        public static string BindingExpressionToPath(string pathExpression)
+        {
+            if (pathExpression == null) return bindingContextPath;
+
+            // Allow to identify the viewmodel part of the expression with parenthesis
+            // <path expression> = <viewmodel>.<path> || (<viewmodel expression>).<path>, where <path> can contain dots
+            // e.g. .Bind ((vm.SelectedTweet).Title) => "Title", .Bind ((vm.SelectedTweet).Author.Name) => "Author.Name"
+            int endOfViewModelExpression = pathExpression.IndexOf('.', pathExpression.LastIndexOf(')') + 1) + 1;
+
+            return pathExpression
+                .Substring(endOfViewModelExpression) // Remove the viewmodel part from the binding string
+                .Replace("?", "")                    // Allow .Bind (tweet?.Title) where tweet is a null instance field used for binding only
+                .Trim('"', '@', ' ', '\t');          // Allow .Bind ("ILikeStringLiterals") => "ILikeStringLiterals"
+        }
+    }
+
     public interface IUI<TUI> where TUI : Xaml.DependencyObject
     {
         TUI UI { get; }
@@ -120,7 +223,7 @@ namespace CSharpMarkup.WinUI
             [CallerArgumentExpression("pathExpression")] string pathExpressionString = default
         ) where TDependencyObject : DependencyObject
         => property.BindWithString(
-            StripExpressionToPath(pathExpressionString),
+            Helpers.BindingExpressionToPath(pathExpressionString),
             mode,
             converter,
             converterParameter,
@@ -173,7 +276,7 @@ namespace CSharpMarkup.WinUI
             [CallerArgumentExpression("pathExpression")] string pathExpressionString = default
         ) where TDependencyObject : DependencyObject
         => property.BindWithString(
-            StripExpressionToPath(pathExpressionString),
+            Helpers.BindingExpressionToPath(pathExpressionString),
             mode,
             new FuncConverter<TSource, TPropertyValue, object>(convert, convertBack),
             null,
@@ -199,7 +302,7 @@ namespace CSharpMarkup.WinUI
             [CallerArgumentExpression("pathExpression")] string pathExpressionString = default
         ) where TDependencyObject : DependencyObject
         => property.BindWithString(
-            StripExpressionToPath(pathExpressionString),
+            Helpers.BindingExpressionToPath(pathExpressionString),
             mode,
             new FuncConverter<TSource, TPropertyValue, TParam>(convert, convertBack),
             converterParameter,
@@ -225,7 +328,7 @@ namespace CSharpMarkup.WinUI
             [CallerArgumentExpression("pathExpression")] string pathExpressionString = default
         ) where TDependencyObject : DependencyObject, IDefaultBindProperty
         => target.BindWithString(
-            StripExpressionToPath(pathExpressionString),
+            Helpers.BindingExpressionToPath(pathExpressionString),
             mode,
             converter,
             converterParameter,
@@ -285,7 +388,7 @@ namespace CSharpMarkup.WinUI
             [CallerArgumentExpression("pathExpression")] string pathExpressionString = default
         ) where TDependencyObject : DependencyObject, IDefaultBindProperty
         => target.BindWithString(
-            StripExpressionToPath(pathExpressionString),
+            Helpers.BindingExpressionToPath(pathExpressionString),
             mode,
             new FuncConverter<TSource, TPropertyValue, object>(convert, convertBack),
             null,
@@ -311,7 +414,7 @@ namespace CSharpMarkup.WinUI
             [CallerArgumentExpression("pathExpression")] string pathExpressionString = default
         ) where TDependencyObject : DependencyObject, IDefaultBindProperty
         => target.BindWithString(
-            StripExpressionToPath(pathExpressionString),
+            Helpers.BindingExpressionToPath(pathExpressionString),
             mode,
             new FuncConverter<TSource, TPropertyValue, TParam>(convert, convertBack),
             converterParameter,
@@ -334,9 +437,9 @@ namespace CSharpMarkup.WinUI
             [CallerArgumentExpression("parameterPathExpression")] string parameterPathExpressionString = default
         ) where TDependencyObject : DependencyObject, IDefaultBindCommandProperties
         => target.BindCommandWithString(
-            StripExpressionToPath(pathExpressionString),
+            Helpers.BindingExpressionToPath(pathExpressionString),
             source,
-            StripExpressionToPath(parameterPathExpressionString),
+            Helpers.BindingExpressionToPath(parameterPathExpressionString),
             parameterSource
         );
 
@@ -389,21 +492,6 @@ namespace CSharpMarkup.WinUI
         {
             ui = (TUI)bindable.UI;
             return bindable;
-        }
-
-        static string StripExpressionToPath(string pathExpressionString)
-        {
-            if (pathExpressionString == null) return bindingContextPath;
-
-            // Allow to identify the viewmodel part of the expression with parenthesis
-            // <path expression> = <viewmodel>.<path> || (<viewmodel expression>).<path>, where <path> can contain dots
-            // e.g. .Bind ((vm.SelectedTweet).Title) => "Title", .Bind ((vm.SelectedTweet).Author.Name) => "Author.Name"
-            int endOfViewModelExpression = pathExpressionString.IndexOf('.', pathExpressionString.LastIndexOf(')') + 1) + 1;
-
-            return pathExpressionString
-                .Substring(endOfViewModelExpression) // Remove the viewmodel part from the binding string
-                .Replace("?", "")                    // Allow .Bind (tweet?.Title) where tweet is a null instance field used for binding only
-                .Trim('"', '@', ' ', '\t');          // Allow .Bind ("ILikeStringLiterals") => "ILikeStringLiterals"
         }
     }
 }
