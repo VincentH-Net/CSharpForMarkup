@@ -494,4 +494,38 @@ namespace CSharpMarkup.WinUI
             return bindable;
         }
     }
+
+#if !WINUI
+    public static partial class DependencyObjectExtensions
+    {
+        /// <summary>Bind the value <paramref name="property"/> in a template to the value of the property named <paramref name="sourcePropertyNameExpression"/> on a templated control</summary>
+        /// <param name="sourcePropertyNameExpression">control.Property or (SomeExpression).Property <br />?. can be used safely - control instance is not required</param>
+        public static TDependencyObject BindTemplate<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property,
+            object sourcePropertyNameExpression = null,
+            IValueConverter converter = null,
+            object converterParameter = null,
+            [CallerArgumentExpression("sourcePropertyNameExpression")] string sourcePropertyNameExpressionString = default
+        ) where TDependencyObject : DependencyObject
+        => BindTemplate(property, Helpers.BindingExpressionToPath(sourcePropertyNameExpressionString), converter, converterParameter);
+
+        /// <summary>Bind the value <paramref name="property"/> in a template to the value of the property named <paramref name="sourcePropertyName"/> on a templated control</summary>
+        public static TDependencyObject BindTemplate<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property,
+            string sourcePropertyName,
+            IValueConverter converter = null,
+            object converterParameter = null
+        ) where TDependencyObject : DependencyObject
+        {
+            property.SetBinding(new Xaml.Data.Binding
+            {
+                Path = new Xaml.PropertyPath(sourcePropertyName),
+                Converter = converter,
+                ConverterParameter = converterParameter,
+                RelativeSource = new(Xaml.Data.RelativeSourceMode.TemplatedParent)
+            });
+            return property.Target;
+        }
+    }
+#endif
 }

@@ -496,4 +496,60 @@ namespace CSharpMarkup.Wpf
             return bindable;
         }
     }
+
+    public static partial class DependencyObjectExtensions
+    {
+        // Part of alternative solution (see below comments): internal static System.Windows.DependencyObject TemplatedParent { get; set; }
+
+        /// <summary>Bind the value <paramref name="property"/> in a template to the value of the property named <paramref name="sourcePropertyNameExpression"/> on a templated control</summary>
+        /// <param name="sourcePropertyNameExpression">control.Property or (SomeExpression).Property <br />?. can be used safely - control instance is not required</param>
+        public static TDependencyObject BindTemplate<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property,
+            object sourcePropertyNameExpression = null,
+            IValueConverter converter = null,
+            object converterParameter = null,
+            [CallerArgumentExpression("sourcePropertyNameExpression")] string sourcePropertyNameExpressionString = default
+        ) where TDependencyObject : DependencyObject
+        => BindTemplate(property, Helpers.BindingExpressionToPath(sourcePropertyNameExpressionString), converter, converterParameter);
+
+        /// <summary>Bind the value <paramref name="property"/> in a template to the value of the <paramref name="sourceProperty"/> on a templated control</summary>
+        public static TDependencyObject BindTemplate<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property,
+            System.Windows.DependencyProperty sourceProperty,
+            IValueConverter converter = null,
+            object converterParameter = null
+        ) where TDependencyObject : DependencyObject
+        => BindTemplate(property, sourceProperty.Name, converter, converterParameter);
+
+        /// <summary>Bind the value <paramref name="property"/> in a template to the value of the property named <paramref name="sourcePropertyName"/> on a templated control</summary>
+        public static TDependencyObject BindTemplate<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property,
+            string sourcePropertyName,
+            IValueConverter converter = null,
+            object converterParameter = null
+        ) where TDependencyObject : DependencyObject
+        {
+            property.SetBinding(new System.Windows.Data.Binding
+            {
+                Path = new System.Windows.PropertyPath(sourcePropertyName),
+                Converter = converter,
+                ConverterParameter = converterParameter,
+
+                RelativeSource = new(System.Windows.Data.RelativeSourceMode.TemplatedParent)
+                // Alternative solution: Source = TemplatedParent
+                // Note that setting Source here is a workaround for TemplatedParent not being settable for template elements created in code.
+                // This workaround requires that the template is instantiated each time it is applied.
+                // Alternatives to eliminate this performance hit are:
+                // 1) Use FrameworkElement.RegisterName and change binding to use ElementName.
+                //    However this does not seem to work - and also named bindings in templates do not work in every context, although this may be framework specific (see e.g. https://stackoverflow.com/questions/18389118/how-does-binding-elementname-work-exactly)
+                // 2) Use XamlWriter and XamlReader to serialize and deserialize the template once
+                //    This does require to register a type convertor to serialize binding expressions, e.g. see https://www.codeproject.com/Articles/27158/XamlWriter-and-Bindings-Serialization
+                //    This works in WPF to set the TemplatedParent.
+                //    However WinUI 3 does not have (or plan to have) a XamlWriter
+                //    In addition, WinUI3 Desktop does not have TemplatedParent read access - the property does not exist in WinUI3 FrameworkElement
+                //    Uno Platform WinUI3 does not need a workaround, it exposes all FrameworkTemplate derives classes to C#
+            });
+            return property.Target;
+        }
+    }
 }

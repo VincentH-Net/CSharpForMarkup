@@ -8001,14 +8001,6 @@ namespace CSharpMarkup.WinUI // ContentPresenter
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ContentPresenter.StartChain(ui);
         }
-
-        /// <summary>Create a <see cref="Xaml.Controls.ContentPresenter"/></summary>
-        /// <remarks>Remark: ContentPresenter().Bind() binds to <see cref="Xaml.Controls.ContentPresenter.ContentProperty"/></remarks>
-        public static ContentPresenter ContentPresenter()
-        {
-            var ui = new Xaml.Controls.ContentPresenter();
-            return CSharpMarkup.WinUI.ContentPresenter.StartChain(ui);
-        }
     }
 
     public partial class ContentPresenter : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.ContentPresenter>, IDefaultBindProperty
