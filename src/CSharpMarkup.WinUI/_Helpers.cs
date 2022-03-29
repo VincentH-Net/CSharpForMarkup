@@ -82,6 +82,27 @@ namespace CSharpMarkup.WinUI
         static partial void Timeline_IncludeInDerived(System.TimeSpan? BeginTime, Microsoft.UI.Xaml.Duration Duration);
         // Specify parameter properties to include them in derived types
 
+#if HAS_UNO
+        /// <summary>Create a <see cref="Xaml.Controls.ContentPresenter"/></summary>
+        /// <remarks>Remark: ContentPresenter().Bind() binds to <see cref="Xaml.Controls.ContentPresenter.ContentProperty"/></remarks>
+        public static ContentPresenter ContentPresenter()
+        {
+            var ui = new Xaml.Controls.ContentPresenter();
+            var markup = CSharpMarkup.WinUI.ContentPresenter.StartChain(ui);
+
+            // In UNO the implicit binding to Content* properties that should happen when the ContentPresenter is in a ControlTemplate
+            // (see https://docs.microsoft.com/en-us/windows/winui/api/microsoft.ui.xaml.controls.contentpresenter?view=winui-3.0#remarks)
+            // does not happen; see UNO issues https://github.com/unoplatform/uno/issues/857 and https://github.com/unoplatform/uno/issues/6452
+            // Below is a workaround to do this implicit binding if the ContentPresenter is in a ControlTemplate.
+            if (buildingControlTemplate)
+                markup.Content().BindTemplate("Content")
+                      .ContentTemplate().BindTemplate("ContentTemplate")
+                      .ContentTemplateSelector().BindTemplate("ContentTemplateSelector");
+
+            return markup;
+        }
+#endif
+
 #if HAS_UNO && !WINDOWS_UWP
         /// <summary>Create a <see cref="Xaml.Controls.TextBlock"/></summary>
         /// <remarks>Remark: TextBlock().Bind() binds to <see cref="Xaml.Controls.TextBlock.TextProperty"/></remarks>
