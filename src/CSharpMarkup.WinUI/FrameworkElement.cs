@@ -46,13 +46,30 @@ namespace CSharpMarkup.WinUI
         { frameworkElement.UI.Width = size; frameworkElement.UI.Height = size; return frameworkElement; }
 
         /// <summary>Assign key - <see cref="DependencyObject"/> pairs to <see cref="Xaml.FrameworkElement.Resources"/></summary>
-        public static TView Resources<TView>(this TView view, params (object key, UIDependencyObject value)[] keyValuePairs) where TView : FrameworkElement
+        public static TView Resources<TView>(this TView view, params (object key, UIObject value)[] keyValuePairs) where TView : FrameworkElement
         {
             var resources = new Xaml.ResourceDictionary();
-            foreach (var keyValue in keyValuePairs)
-                resources.Add(keyValue.key, keyValue.value.UI);
+            foreach ((var key, var value) in keyValuePairs) resources.Add(key, value.UI);
             view.UI.Resources = resources; return view;
         }
+
+#if HAS_UNO // WinUI does not allow setting the Name of the VisualStateGroup from C# - while Uno and WPF do allow that
+        /// <summary>Create a <see cref="Xaml.VisualStateGroup"/></summary>
+        public static VisualStateGroup VisualStateGroup(string name, Xaml.VisualState[] states = null, Xaml.VisualTransition[] transitions = null)
+        {
+            var ui = new Xaml.VisualStateGroup {  Name = name };
+            if (states != null) foreach (var state in states) ui.States.Add(state);
+            if (transitions != null) foreach (var transition in transitions) ui.Transitions.Add(transition);
+            return CSharpMarkup.WinUI.VisualStateGroup.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.VisualStateGroup"/></summary>
+        public static VisualStateGroup VisualStateGroup(string name, params Xaml.VisualState[] states) => VisualStateGroup(name, states, null);
+
+        public static Xaml.VisualState[] VisualStates(params Xaml.VisualState[] states) => states;
+
+        public static Xaml.VisualTransition[] VisualTransitions(params Xaml.VisualTransition[] transitions) => transitions;
+#endif
     }
 
     public static partial class FrameworkElementExtensions
@@ -63,5 +80,16 @@ namespace CSharpMarkup.WinUI
             target.UI.DataContextChanged += (s, a) => onChanged((TUI)s, (TContext)a.NewValue);
             return target;
         }
+
+#if HAS_UNO // WinUI does not allow setting the Name of the VisualStateGroup from C# - while Uno and WPF do allow that
+        public static TTarget VisualStateGroups<TTarget>(this TTarget target, params Xaml.VisualStateGroup[] groups)
+            where TTarget : FrameworkElement
+        {
+            var groupList = Xaml.VisualStateManager.GetVisualStateGroups(target);
+            groupList.Clear();
+            foreach (var group in groups) groupList.Add(group);
+            return target;
+        }
+#endif
     }
 }

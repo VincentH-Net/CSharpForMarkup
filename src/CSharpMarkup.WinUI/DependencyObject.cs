@@ -124,15 +124,6 @@ namespace CSharpMarkup.WinUI
     }
 #endif
 
-    public class UIDependencyObject
-    {
-        public Xaml.DependencyObject UI { get; }
-
-        public UIDependencyObject(Xaml.DependencyObject ui) => UI = ui;
-
-        public static implicit operator UIDependencyObject(DependencyObject dependencyObject) => new(dependencyObject.UI);
-    }
-
     /// <summary>
     /// Allows to specify <see cref="CSharpMarkup.WinUI"/> types (e.g. <see cref="TextBlock"/>) as well as commonly used built-in C# / UI types (e.g. <see cref="string"/> or <see cref="Xaml.Thickness"/>).
     /// </summary>

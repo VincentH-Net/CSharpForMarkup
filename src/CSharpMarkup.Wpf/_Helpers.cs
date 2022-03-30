@@ -65,6 +65,19 @@ namespace CSharpMarkup.Wpf
         public static partial TextBlock TextBlock(string Text); // Specify parameter properties
 
         static partial void Timeline_IncludeInDerived(System.TimeSpan? BeginTime, System.Windows.Duration Duration);
-            // Specify parameter properties to include them in derived types
+        // Specify parameter properties to include them in derived types
+
+        /// <summary>Create a <see cref="Windows.Controls.ContentPresenter"/></summary>
+        /// <remarks>Remark: ContentPresenter().Bind() binds to <see cref="Windows.Controls.ContentPresenter.ContentProperty"/></remarks>
+        public static ContentPresenter ContentPresenter()
+        {
+            var ui = new System.Windows.Controls.ContentPresenter();
+            var markup = CSharpMarkup.Wpf.ContentPresenter.StartChain(ui);
+            if (DependencyObjectExtensions.TemplatedParent is not null)
+                markup.Content().BindTemplate("Content")
+                      .ContentTemplate().BindTemplate("ContentTemplate")
+                      .ContentTemplateSelector().BindTemplate("ContentTemplateSelector");
+            return markup;
+        }
     }
 }

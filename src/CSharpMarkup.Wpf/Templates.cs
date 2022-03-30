@@ -51,15 +51,17 @@ namespace CSharpMarkup.Wpf
 
         public static ControlTemplate ControlTemplate<TRootUI>(Func<UIElement> build, Type targetType = null) where TRootUI : Controls.Panel, new()
         {
-            var ui = (Windows.Controls.ControlTemplate)CreateTemplate(nameof(Windows.Controls.ControlTemplate), build().UI, targetType);
+            //var ui = (Windows.Controls.ControlTemplate)CreateTemplate(nameof(Windows.Controls.ControlTemplate), build().UI, targetType); // XamlWriter way, but does not support VisualStates
+            var ui = (Windows.Controls.ControlTemplate)CreateTemplate(nameof(Windows.Controls.ControlTemplate), typeof(TRootUI), false, BuildChild.CreateIdFor(build)); // Attached property way, invokes build for every template application
             return CSharpMarkup.Wpf.ControlTemplate.StartChain(ui);
         }
 
         public static ControlTemplate ControlTemplate<TRootUI>(Action<Windows.DependencyObject> build, Type targetType = null) where TRootUI : Windows.DependencyObject, new()
         {
-            var root = new TRootUI();
-            build(root);
-            var ui = (Windows.Controls.ControlTemplate)CreateTemplate(nameof(Windows.Controls.ControlTemplate), root, targetType);
+            //var root = new TRootUI();
+            //build(root);
+            //var ui = (Windows.Controls.ControlTemplate)CreateTemplate(nameof(Windows.Controls.ControlTemplate), root, targetType); // XamlWriter way, but does not support VisualStates
+            var ui = (Windows.Controls.ControlTemplate)CreateTemplate(nameof(Windows.Controls.ControlTemplate), typeof(TRootUI), true, ConfigureRoot.CreateIdFor(build)); // Attached property way, invokes build for every template application
             return CSharpMarkup.Wpf.ControlTemplate.StartChain(ui);
         }
 

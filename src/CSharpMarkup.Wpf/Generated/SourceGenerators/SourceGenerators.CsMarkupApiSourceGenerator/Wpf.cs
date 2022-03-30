@@ -24479,14 +24479,6 @@ namespace CSharpMarkup.Wpf // ContentPresenter
             if (RecognizesAccessKey is not null) ui.RecognizesAccessKey = RecognizesAccessKey.Value;
             return CSharpMarkup.Wpf.ContentPresenter.StartChain(ui);
         }
-
-        /// <summary>Create a <see cref="Windows.Controls.ContentPresenter"/></summary>
-        /// <remarks>Remark: ContentPresenter().Bind() binds to <see cref="Windows.Controls.ContentPresenter.ContentProperty"/></remarks>
-        public static ContentPresenter ContentPresenter()
-        {
-            var ui = new Windows.Controls.ContentPresenter();
-            return CSharpMarkup.Wpf.ContentPresenter.StartChain(ui);
-        }
     }
 
     public partial class ContentPresenter : FrameworkElement, IUI<System.Windows.Controls.ContentPresenter>, IDefaultBindProperty

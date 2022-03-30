@@ -117,15 +117,6 @@ namespace CSharpMarkup.Wpf
         TUI UI { get; }
     }
 
-    public class UIDispatcherObject
-    {
-        public System.Windows.Threading.DispatcherObject UI { get; }
-
-        public UIDispatcherObject(System.Windows.Threading.DispatcherObject ui) => UI = ui;
-
-        public static implicit operator UIDispatcherObject(DispatcherObject dispatcherObject) => new(dispatcherObject.UI);
-    }
-
     /// <summary>
     /// Allows to specify <see cref="CSharpMarkup.Wpf"/> types (e.g. <see cref="TextBlock"/>) as well as commonly used built-in C# / UI types (e.g. <see cref="string"/> or <see cref="System.Windows.Thickness"/>).
     /// </summary>
@@ -179,7 +170,7 @@ namespace CSharpMarkup.Wpf
         public static implicit operator UIObject(System.Windows.Data.Binding value) => new UIObject(value);
 
         // Markup types
-        public static implicit operator UIObject(DependencyObject value) => new UIObject(value.UI);
+        public static implicit operator UIObject(DispatcherObject value) => new UIObject(value.UI);
 
         /// <summary>Use to specify a value of any type that is not implicitly converted to <see cref="UIObject"/></summary>
         public UIObject(object ui) => UI = ui;
@@ -499,7 +490,7 @@ namespace CSharpMarkup.Wpf
 
     public static partial class DependencyObjectExtensions
     {
-        // Part of alternative solution (see below comments): internal static System.Windows.DependencyObject TemplatedParent { get; set; }
+        internal static System.Windows.DependencyObject TemplatedParent { get; set; } // Part of alternative solution (see below comments)
 
         /// <summary>Bind the value <paramref name="property"/> in a template to the value of the property named <paramref name="sourcePropertyNameExpression"/> on a templated control</summary>
         /// <param name="sourcePropertyNameExpression">control.Property or (SomeExpression).Property <br />?. can be used safely - control instance is not required</param>
@@ -535,8 +526,8 @@ namespace CSharpMarkup.Wpf
                 Converter = converter,
                 ConverterParameter = converterParameter,
 
-                RelativeSource = new(System.Windows.Data.RelativeSourceMode.TemplatedParent)
-                // Alternative solution: Source = TemplatedParent
+                // Part of XamlWrite solution: RelativeSource = new(System.Windows.Data.RelativeSourceMode.TemplatedParent)
+                Source = TemplatedParent // Part of alternative solution
                 // Note that setting Source here is a workaround for TemplatedParent not being settable for template elements created in code.
                 // This workaround requires that the template is instantiated each time it is applied.
                 // Alternatives to eliminate this performance hit are:
@@ -545,6 +536,7 @@ namespace CSharpMarkup.Wpf
                 // 2) Use XamlWriter and XamlReader to serialize and deserialize the template once
                 //    This does require to register a type convertor to serialize binding expressions, e.g. see https://www.codeproject.com/Articles/27158/XamlWriter-and-Bindings-Serialization
                 //    This works in WPF to set the TemplatedParent.
+                //    With the limitation that XamlWriter does not serialize VisualStates: https://social.msdn.microsoft.com/Forums/vstudio/en-US/e1103342-86b1-4a39-8f85-078de20f5551/xamlwritersave-is-not-serializing-the-visual-state-manager-nodes?forum=wpf
                 //    However WinUI 3 does not have (or plan to have) a XamlWriter
                 //    In addition, WinUI3 Desktop does not have TemplatedParent read access - the property does not exist in WinUI3 FrameworkElement
                 //    Uno Platform WinUI3 does not need a workaround, it exposes all FrameworkTemplate derives classes to C#

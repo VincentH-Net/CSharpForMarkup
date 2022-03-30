@@ -60,7 +60,12 @@ namespace CSharpMarkup.Wpf.Delegators
             if (target is Windows.Controls.Panel panel && e.NewValue is string id)
             {
                 panel.Children.Clear();
-                if (!string.IsNullOrEmpty(id)) panel.Children.Add(delegates[id]().UI);
+                if (!string.IsNullOrEmpty(id))
+                {
+                    DependencyObjectExtensions.TemplatedParent = panel.TemplatedParent;
+                    try { panel.Children.Add(delegates[id]().UI); } // Any template bindings are created here, using the TemplatedParent for source
+                    finally { DependencyObjectExtensions.TemplatedParent = null; }
+                }
             }
         }
     }
@@ -94,7 +99,12 @@ namespace CSharpMarkup.Wpf.Delegators
         // A propertyChangedCallback is necessary because GetId and SetId are not called by WPF XamlReader 
         static void OnIdChanged(Windows.DependencyObject target, Windows.DependencyPropertyChangedEventArgs e)
         {
-            if (e.NewValue is string id && !string.IsNullOrEmpty(id)) delegates[id](target);
+            if (e.NewValue is string id && !string.IsNullOrEmpty(id))
+            {
+                DependencyObjectExtensions.TemplatedParent = (target as Windows.FrameworkElement)?.TemplatedParent;
+                try { delegates[id](target); }
+                finally { DependencyObjectExtensions.TemplatedParent = null; }
+            }
         }
     }
 }
