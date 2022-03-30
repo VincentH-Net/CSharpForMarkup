@@ -8,4 +8,4 @@ This preview targets WPF with C# 10 and .NET 6
 
 [Example application](https://github.com/VincentH-Net/CSharpForMarkup/tree/master/src/CSharpMarkup.Wpf.Examples)
 
-[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-6-14)
+[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-8-1)
