@@ -18,7 +18,12 @@ partial class FlutterPage
                .Bind (vm.Title)
         ),
 
-        Button (TextBlock().Bind(vm.ToggleMoreText))
+        Button("Templated")
+           .Template (RoundButton)
+           .Foreground (Red)
+           .Size (65),
+
+        Button(TextBlock().Bind(vm.ToggleMoreText))
            .Bind (vm.ToggleMoreCommand),
 
         vm.ShowMore ?
@@ -32,6 +37,15 @@ partial class FlutterPage
         Spread (Pairs())
 
     )  .Background (Black) .TextBlock_Foreground(SolidColorBrush(White));
+
+    ControlTemplate RoundButton = ControlTemplate(() =>
+       Grid (
+           Ellipse()
+               .Fill (RadialGradientBrush (Silver, Gold))
+               .Stroke().BindTemplate (b?.Foreground),
+           ContentPresenter()
+               .Center()
+       ), typeof(Button));
 
     IEnumerable<UI.UIElement> Subtitles => vm.Subtitles.Select(subtitle => TextBlock(subtitle) .Margin (0, 5) .UI);
 

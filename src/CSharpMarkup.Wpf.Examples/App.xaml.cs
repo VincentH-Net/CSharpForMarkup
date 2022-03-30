@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
+using System.Linq;
 
 namespace WpfCsMarkupExamples;
 
@@ -38,7 +39,23 @@ public partial class App : Application
     internal void NavigateToFlutterPage() => Navigate(FlutterPage);
     internal void NavigateBack() => mainWindow?.NavigationService.GoBack();
 
-    internal void BuildUI() => (mainWindow?.NavigationService.Content as IBuild)?.Build();
+#if DEBUG
+    internal void BuildUI(Type[]? types)
+    {
+        if (types is null) return;
+
+        bool buildStyles = types.Any(t => t == typeof(Styles) || t == typeof(Styles.Implicit));
+        if (buildStyles) { Styles.Implicit.ClearCache(); Styles.ClearCache(); }
+
+        // TODO: same for control templates as for styles - use nice controltemplate example (togglebutton?), then port to WinUI example
+
+        if (mainWindow is not null)
+        {
+            if (buildStyles) mainWindow.Resources = Styles.Implicit.Dictionary;
+            (mainWindow.NavigationService.Content as IBuild)?.Build();
+        }
+    }
+#endif
 
     Page SearchPage => searchPage ??= new SearchPage();
     Page FlutterPage => flutterPage ??= new FlutterPage();

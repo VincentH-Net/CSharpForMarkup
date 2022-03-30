@@ -1,10 +1,15 @@
 ﻿using CSharpMarkup.Wpf;
+using System.Diagnostics;
 using static CSharpMarkup.Wpf.Helpers;
 namespace WpfCsMarkupExamples;
 
 public static class Styles
 {
     static Style<Button>? headerButton;
+
+#if DEBUG // Hot reload support
+    internal static void ClearCache() { headerButton = null; }
+#endif
 
     public static Style<Button> HeaderButton => headerButton ??= new Style<Button>(
         (Button_UI.ForegroundProperty, SolidColorBrush(CornflowerBlue)),
@@ -18,6 +23,10 @@ public static class Styles
         static Style<TextBlock>? textBlocks;
         static Style<TextBox>? textBoxes;
         static Style<ListViewItem>? listViewItems;
+
+#if DEBUG // Hot reload support
+        internal static void ClearCache() { dictionary = null; buttons = null; textBlocks = null; textBoxes = null; listViewItems = null; }
+#endif
 
         public static UI.ResourceDictionary Dictionary => dictionary ??= CreateResourceDictionary(
             TextBlocks, Buttons, TextBoxes, ListViewItems

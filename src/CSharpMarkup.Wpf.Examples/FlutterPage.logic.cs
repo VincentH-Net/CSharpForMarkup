@@ -9,11 +9,14 @@
 // Markup object instances are not safe to use outside of a markup expression (due to performance features).
 // That is why Assign and Invoke pass the UI object to the logic, not the markup object.
 using System.ComponentModel;
+using System.Windows.Controls;
+
 namespace WpfCsMarkupExamples;
 
 internal sealed partial class FlutterPage : BasePage, IBuild
 {
     readonly FlutterViewModel vm;
+    static Button b;
 
     public FlutterPage()
     {
