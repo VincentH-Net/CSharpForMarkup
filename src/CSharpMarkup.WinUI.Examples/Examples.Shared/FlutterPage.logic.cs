@@ -5,6 +5,7 @@ namespace WinUICsMarkupExamples;
 public sealed partial class FlutterPage : Page, IBuild
 {
     readonly FlutterViewModel vm;
+    static Button b;
 
     public FlutterPage()
     {

@@ -23,10 +23,14 @@ public partial class FlutterPage
             .Bind (vm.ToggleMoreCommand),
 
         vm.ShowMore ?
-            TextBlock ("Demonstrate Flutter-like UI building features:\nConditional UI and the Spread() operator") .Center()
+            TextBlock ("Demonstrate Flutter-like UI building features:\nConditional UI and the Spread() operator")
             : null,
 
-        TextBlock ("Subtitles:"),
+        #if HAS_UNO
+        Button("Templated").Foreground(Black).Background(Gold).Size(75).Template(RoundButton),
+        #endif
+
+        TextBlock("Subtitles:"),
         Spread (Subtitles),
 
         TextBlock ("Pairs:"),
@@ -42,4 +46,15 @@ public partial class FlutterPage
             yield return TextBox(PlaceholderText: $"Enter value for {i}");
         }
     }
+
+    #if HAS_UNO
+    ControlTemplate RoundButton = ControlTemplate (() =>
+        Grid (
+            Ellipse ()
+                .Fill().BindTemplate(b?.Background) 
+                .Stroke().BindTemplate(b?.Foreground),
+            ContentPresenter ()
+                .Center()
+        ), typeof(Button));
+    #endif
 }
