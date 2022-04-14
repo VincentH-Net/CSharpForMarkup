@@ -96,7 +96,7 @@ namespace CSharpMarkup.Wpf.Delegators
 
         public static void SetId(Windows.DependencyObject target, string id) => target.SetValue(IdProperty, id);
 
-        // A propertyChangedCallback is necessary because GetId and SetId are not called by WPF XamlReader 
+        // A propertyChangedCallback is necessary because it catches all manners in which the property value can be changed, including SetValue
         static void OnIdChanged(Windows.DependencyObject target, Windows.DependencyPropertyChangedEventArgs e)
         {
             if (e.NewValue is string id && !string.IsNullOrEmpty(id))
