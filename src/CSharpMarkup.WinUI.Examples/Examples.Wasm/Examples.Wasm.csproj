@@ -40,7 +40,7 @@
     <None Include="wwwroot\web.config" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CSharpMarkup.WinUI" Version="0.8.1-dev.6" />
+    <PackageReference Include="CSharpMarkup.WinUI" Version="0.8.2-dev.3" />
     <PackageReference Include="Microsoft.Windows.Compatibility" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />

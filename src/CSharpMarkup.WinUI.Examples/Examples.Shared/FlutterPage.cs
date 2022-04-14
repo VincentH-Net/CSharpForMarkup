@@ -18,17 +18,14 @@ public partial class FlutterPage
                .Bind (vm.Title)
         ),
 
-        Button ()
+        Button () .Template (RoundButton)
+            .Foreground (Black) .Background (Gold) .Size (75)
             .Content().Bind (vm.ToggleMoreText)
             .Bind (vm.ToggleMoreCommand),
 
         vm.ShowMore ?
             TextBlock ("Demonstrate Flutter-like UI building features:\nConditional UI and the Spread() operator")
             : null,
-
-        #if HAS_UNO
-        Button("Templated").Foreground(Black).Background(Gold).Size(75).Template(RoundButton),
-        #endif
 
         TextBlock("Subtitles:"),
         Spread (Subtitles),
@@ -47,14 +44,12 @@ public partial class FlutterPage
         }
     }
 
-    #if HAS_UNO
-    ControlTemplate RoundButton = ControlTemplate (() =>
+    ControlTemplate RoundButton = ControlTemplate (typeof(Button), () =>
         Grid (
             Ellipse ()
                 .Fill().BindTemplate(b?.Background) 
                 .Stroke().BindTemplate(b?.Foreground),
             ContentPresenter ()
                 .Center()
-        ), typeof(Button));
-    #endif
+        ));
 }

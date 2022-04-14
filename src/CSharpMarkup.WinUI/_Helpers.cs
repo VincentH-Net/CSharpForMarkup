@@ -101,6 +101,23 @@ namespace CSharpMarkup.WinUI
 
             return markup;
         }
+#else // WINUI
+        /// <summary>Create a <see cref="Xaml.Controls.ContentPresenter"/></summary>
+        /// <remarks>Remark: ContentPresenter().Bind() binds to <see cref="Xaml.Controls.ContentPresenter.ContentProperty"/></remarks>
+        public static ContentPresenter ContentPresenter()
+        {
+            var ui = new Xaml.Controls.ContentPresenter();
+            var markup = CSharpMarkup.WinUI.ContentPresenter.StartChain(ui);
+
+            // In WinUI we use a workaround to simulate template bindings, so we have to explicitly create equivalent bindings
+            // for the bindings that ContentPresenter creates by default.
+            if (DependencyObjectExtensions.TemplatedParent is not null)
+                markup.Content().BindTemplate("Content")
+                      .ContentTemplate().BindTemplate("ContentTemplate")
+                      .ContentTemplateSelector().BindTemplate("ContentTemplateSelector");
+
+            return markup;
+        }
 #endif
 
 #if HAS_UNO && !WINDOWS_UWP

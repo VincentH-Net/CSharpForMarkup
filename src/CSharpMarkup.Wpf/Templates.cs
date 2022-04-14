@@ -27,36 +27,42 @@ namespace CSharpMarkup.Wpf
             return CSharpMarkup.Wpf.DataTemplate.StartChain(ui);
         }
 
-        public static ItemsPanelTemplate ItemsPanelTemplate(Func<UIElement> build, Type targetType = null) => ItemsPanelTemplate<Controls.Grid>(build, targetType);
+        public static ItemsPanelTemplate ItemsPanelTemplate(Func<UIElement> build) => ItemsPanelTemplate<Controls.Grid>(build);
 
-        public static ItemsPanelTemplate ItemsPanelTemplate(Action<Windows.DependencyObject> build, Type targetType = null) => ItemsPanelTemplate<Controls.Grid>(build, targetType);
+        public static ItemsPanelTemplate ItemsPanelTemplate(Action<Windows.DependencyObject> build) => ItemsPanelTemplate<Controls.Grid>(build);
 
-        public static ItemsPanelTemplate ItemsPanelTemplate<TRootUI>(Func<UIElement> build, Type targetType = null) where TRootUI : Controls.Panel, new()
+        public static ItemsPanelTemplate ItemsPanelTemplate<TRootUI>(Func<UIElement> build) where TRootUI : Controls.Panel, new()
         {
-            var ui = (Windows.Controls.ItemsPanelTemplate)CreateTemplate(nameof(Windows.Controls.ItemsPanelTemplate), build().UI, targetType);
+            var ui = (Windows.Controls.ItemsPanelTemplate)CreateTemplate(nameof(Windows.Controls.ItemsPanelTemplate), build().UI);
             return CSharpMarkup.Wpf.ItemsPanelTemplate.StartChain(ui);
         }
 
-        public static ItemsPanelTemplate ItemsPanelTemplate<TRootUI>(Action<Windows.DependencyObject> build, Type targetType = null) where TRootUI : Windows.DependencyObject, new()
+        public static ItemsPanelTemplate ItemsPanelTemplate<TRootUI>(Action<Windows.DependencyObject> build) where TRootUI : Windows.DependencyObject, new()
         {
             var root = new TRootUI();
             build(root);
-            var ui = (Windows.Controls.ItemsPanelTemplate)CreateTemplate(nameof(Windows.Controls.ItemsPanelTemplate), root, targetType);
+            var ui = (Windows.Controls.ItemsPanelTemplate)CreateTemplate(nameof(Windows.Controls.ItemsPanelTemplate), root);
             return CSharpMarkup.Wpf.ItemsPanelTemplate.StartChain(ui);
         }
 
-        public static ControlTemplate ControlTemplate(Func<UIElement> build, Type targetType = null) => ControlTemplate<Controls.Grid>(build, targetType);
+        public static ControlTemplate ControlTemplate(Func<UIElement> build) => ControlTemplate<Controls.Grid>(null, build);
 
-        public static ControlTemplate ControlTemplate(Action<Windows.DependencyObject> build, Type targetType = null) => ControlTemplate<Controls.Grid>(build, targetType);
+        public static ControlTemplate ControlTemplate(Type targetType, Func<UIElement> build) => ControlTemplate<Controls.Grid>(targetType, build);
 
-        public static ControlTemplate ControlTemplate<TRootUI>(Func<UIElement> build, Type targetType = null) where TRootUI : Controls.Panel, new()
+        public static ControlTemplate ControlTemplate(Action<Windows.DependencyObject> build) => ControlTemplate<Controls.Grid>(null, build);
+
+        public static ControlTemplate ControlTemplate(Type targetType, Action<Windows.DependencyObject> build) => ControlTemplate<Controls.Grid>(targetType, build);
+
+        public static ControlTemplate ControlTemplate<TRootUI>(Func<UIElement> build) where TRootUI : Controls.Panel, new() => ControlTemplate<TRootUI>(null, build);
+
+        public static ControlTemplate ControlTemplate<TRootUI>(Type targetType, Func<UIElement> build) where TRootUI : Controls.Panel, new()
         {
             //var ui = (Windows.Controls.ControlTemplate)CreateTemplate(nameof(Windows.Controls.ControlTemplate), build().UI, targetType); // XamlWriter way, but does not support VisualStates
             var ui = (Windows.Controls.ControlTemplate)CreateTemplate(nameof(Windows.Controls.ControlTemplate), typeof(TRootUI), false, BuildChild.CreateIdFor(build)); // Attached property way, invokes build for every template application
             return CSharpMarkup.Wpf.ControlTemplate.StartChain(ui);
         }
 
-        public static ControlTemplate ControlTemplate<TRootUI>(Action<Windows.DependencyObject> build, Type targetType = null) where TRootUI : Windows.DependencyObject, new()
+        public static ControlTemplate ControlTemplate<TRootUI>(Type targetType, Action<Windows.DependencyObject> build) where TRootUI : Windows.DependencyObject, new()
         {
             //var root = new TRootUI();
             //build(root);

@@ -20,9 +20,26 @@ namespace CSharpMarkup.WinUI.Delegators
     [Bindable]
     public class BuildChild
     {
-        static Dictionary<string, Func<CSharpMarkup.WinUI.UIElement>> delegates = null;
+        internal static Dictionary<string, Func<CSharpMarkup.WinUI.UIElement>> Delegates { get; private set; } = null;
 
         static string Id(Delegate build) => $"{build.Method.DeclaringType.FullName}.{build.Method.Name}";
+
+        public static string CreateIdFor(Func<CSharpMarkup.WinUI.UIElement> build)
+        {
+            AssertStateless(build);
+
+            if (Delegates == null) Delegates = new Dictionary<string, Func<CSharpMarkup.WinUI.UIElement>>();
+
+            string id = Id(build);
+            Delegates[id] = build;
+            return id;
+        }
+
+        public static Xaml.DependencyProperty IdProperty = Xaml.DependencyProperty.RegisterAttached("Id", typeof(string), typeof(BuildChild), new Xaml.PropertyMetadata(null, OnIdChanged));
+
+        public static string GetId(Xaml.Controls.Panel panel) => (string)panel.GetValue(IdProperty);
+
+        public static void SetId(Xaml.Controls.Panel panel, string id) => panel.SetValue(IdProperty, id);
 
         [Conditional("DEBUG")]
         internal static void AssertStateless(Delegate build)
@@ -37,54 +54,104 @@ namespace CSharpMarkup.WinUI.Delegators
             }
         }
 
-        public static string CreateIdFor(Func<CSharpMarkup.WinUI.UIElement> build)
+        // A propertyChangedCallback catches all manners in which the property value can be changed, including via SetValue or binding
+        static void OnIdChanged(Xaml.DependencyObject target, Xaml.DependencyPropertyChangedEventArgs e) => Build((Xaml.Controls.Panel)target, id: (string)e.NewValue);
+
+        static void Build(Xaml.Controls.Panel panel, string id = null)
         {
-            AssertStateless(build);
-
-            if (delegates == null) delegates = new Dictionary<string, Func<CSharpMarkup.WinUI.UIElement>>();
-
-            string id = Id(build);
-            delegates[id] = build;
-            return id;
-        }
-
-        public static Xaml.DependencyProperty IdProperty = Xaml.DependencyProperty.RegisterAttached("Id", typeof(string), typeof(BuildChild), new Xaml.PropertyMetadata(null));
-
-        public static string GetId(Microsoft.UI.Xaml.Controls.Panel panel) => (string)panel.GetValue(IdProperty);
-
-        public static void SetId(Microsoft.UI.Xaml.Controls.Panel panel, string id)
-        {
-            panel.SetValue(IdProperty, id);
+            if (id is null) return;
             panel.Children.Clear();
-            if (!string.IsNullOrEmpty(id)) panel.Children.Add(delegates[id]().UI);
+            panel.Children.Add(Delegates[id]().UI);
+        }
+    }
+
+    [Bindable]
+    public class BuildChildInControlTemplate
+    {
+        public static Xaml.DependencyProperty IdProperty = Xaml.DependencyProperty.RegisterAttached("Id", typeof(string), typeof(BuildChildInControlTemplate), new Xaml.PropertyMetadata(null, OnIdChanged));
+
+        public static string GetId(Xaml.Controls.Panel panel) => (string)panel.GetValue(IdProperty);
+
+        public static void SetId(Xaml.Controls.Panel panel, string id) => panel.SetValue(IdProperty, id);
+
+        public static Xaml.DependencyProperty TemplatedParentProperty = Xaml.DependencyProperty.RegisterAttached("TemplatedParent", typeof(Xaml.UIElement), typeof(BuildChildInControlTemplate), new Xaml.PropertyMetadata(null, OnTemplatedParentChanged));
+
+        public static Xaml.UIElement GetTemplatedParent(Xaml.Controls.Panel panel) => (Xaml.UIElement)panel.GetValue(TemplatedParentProperty);
+
+        public static void SetTemplatedParent(Xaml.Controls.Panel panel, Xaml.UIElement parent) => panel.SetValue(TemplatedParentProperty, parent);
+
+        static void OnIdChanged(Xaml.DependencyObject target, Xaml.DependencyPropertyChangedEventArgs e) => Build((Xaml.Controls.Panel)target, id: (string)e.NewValue);
+
+        static void OnTemplatedParentChanged(Xaml.DependencyObject target, Xaml.DependencyPropertyChangedEventArgs e) => Build((Xaml.Controls.Panel)target, templatedParent: (Xaml.UIElement)e.NewValue);
+
+        static void Build(Xaml.Controls.Panel panel, string id = null, Xaml.UIElement templatedParent = null)
+        {
+            id ??= GetId(panel);
+            templatedParent ??= GetTemplatedParent(panel);
+            if (id is null || templatedParent is null) return;
+
+            panel.Children.Clear();
+            DependencyObjectExtensions.TemplatedParent = templatedParent;
+            try { panel.Children.Add(BuildChild.Delegates[id]().UI); } // Any template bindings are created here, using the TemplatedParent for source
+            finally { DependencyObjectExtensions.TemplatedParent = null; }
         }
     }
 
     public static class ConfigureRoot
     {
-        static Dictionary<string, Action<Microsoft.UI.Xaml.DependencyObject>> delegates = null;
+        internal static Dictionary<string, Action<Xaml.DependencyObject>> Delegates { get; private set; } = null;
 
         static string Id(Delegate build) => $"{build.Method.DeclaringType.FullName}.{build.Method.Name}";
 
-        public static string CreateIdFor(Action<Microsoft.UI.Xaml.DependencyObject> build)
+        public static string CreateIdFor(Action<Xaml.DependencyObject> build)
         {
             BuildChild.AssertStateless(build);
 
-            if (delegates == null) delegates = new Dictionary<string, Action<Microsoft.UI.Xaml.DependencyObject>>();
+            if (Delegates == null) Delegates = new Dictionary<string, Action<Xaml.DependencyObject>>();
 
             string delegateId = Id(build);
-            delegates[delegateId] = build;
+            Delegates[delegateId] = build;
             return delegateId;
         }
 
         public static readonly Xaml.DependencyProperty IdProperty = Xaml.DependencyProperty.RegisterAttached("Id", typeof(string), typeof(ConfigureRoot), new Xaml.PropertyMetadata(null));
 
-        public static string GetId(Microsoft.UI.Xaml.DependencyObject target) => (string)target.GetValue(IdProperty);
+        public static string GetId(Xaml.DependencyObject target) => (string)target.GetValue(IdProperty);
 
-        public static void SetId(Microsoft.UI.Xaml.DependencyObject target, string id)
+        public static void SetId(Xaml.DependencyObject target, string id)
         {
             target.SetValue(IdProperty, id);
-            if (!string.IsNullOrEmpty(id)) delegates[id](target);
+            if (!string.IsNullOrEmpty(id)) Delegates[id](target);
+        }
+    }
+
+    public static class ConfigureRootInControlTemplate
+    {
+        public static Xaml.DependencyProperty IdProperty = Xaml.DependencyProperty.RegisterAttached("Id", typeof(string), typeof(ConfigureRootInControlTemplate), new Xaml.PropertyMetadata(null, OnIdChanged));
+
+        public static string GetId(Xaml.DependencyObject target) => (string)target.GetValue(IdProperty);
+
+        public static void SetId(Xaml.DependencyObject target, string id) => target.SetValue(IdProperty, id);
+
+        public static Xaml.DependencyProperty TemplatedParentProperty = Xaml.DependencyProperty.RegisterAttached("TemplatedParent", typeof(Xaml.UIElement), typeof(ConfigureRootInControlTemplate), new Xaml.PropertyMetadata(null, OnTemplatedParentChanged));
+
+        public static Xaml.UIElement GetTemplatedParent(Xaml.DependencyObject target) => (Xaml.UIElement)target.GetValue(TemplatedParentProperty);
+
+        public static void SetTemplatedParent(Xaml.DependencyObject target, Xaml.UIElement parent) => target.SetValue(TemplatedParentProperty, parent);
+
+        static void OnIdChanged(Xaml.DependencyObject target, Xaml.DependencyPropertyChangedEventArgs e) => Build(target, id: (string)e.NewValue);
+
+        static void OnTemplatedParentChanged(Xaml.DependencyObject target, Xaml.DependencyPropertyChangedEventArgs e) => Build(target, templatedParent: (Xaml.UIElement)e.NewValue);
+
+        static void Build(Xaml.DependencyObject target, string id = null, Xaml.UIElement templatedParent = null)
+        {
+            id ??= GetId(target);
+            templatedParent ??= GetTemplatedParent(target);
+            if (id is null || templatedParent is null) return;
+
+            DependencyObjectExtensions.TemplatedParent = templatedParent;
+            try { ConfigureRoot.Delegates[id](target); } // Any template bindings are created here, using the TemplatedParent for source
+            finally { DependencyObjectExtensions.TemplatedParent = null; }
         }
     }
 }

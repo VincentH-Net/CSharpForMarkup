@@ -486,9 +486,45 @@ namespace CSharpMarkup.WinUI
         }
     }
 
-#if !WINUI
     public static partial class DependencyObjectExtensions
     {
+#if WINUI
+        internal static Xaml.DependencyObject TemplatedParent { get; set; } // Part of alternative solution (see below comments)
+
+        /// <summary>Bind the value <paramref name="property"/> in a template to the value of the property named <paramref name="sourcePropertyNameExpression"/> on a templated control</summary>
+        /// <param name="sourcePropertyNameExpression">control.Property or (SomeExpression).Property <br />?. can be used safely - control instance is not required</param>
+        public static TDependencyObject BindTemplate<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property,
+            object sourcePropertyNameExpression = null,
+            IValueConverter converter = null,
+            object converterParameter = null,
+            [CallerArgumentExpression("sourcePropertyNameExpression")] string sourcePropertyNameExpressionString = default
+        ) where TDependencyObject : DependencyObject
+        => BindTemplate(property, Helpers.BindingExpressionToPath(sourcePropertyNameExpressionString), converter, converterParameter);
+
+        /// <summary>Bind the value <paramref name="property"/> in a template to the value of the property named <paramref name="sourcePropertyName"/> on a templated control</summary>
+        public static TDependencyObject BindTemplate<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property,
+            string sourcePropertyName,
+            IValueConverter converter = null,
+            object converterParameter = null
+        ) where TDependencyObject : DependencyObject
+        {
+            property.SetBinding(new Xaml.Data.Binding
+            {
+                Path = new Xaml.PropertyPath(sourcePropertyName),
+                Converter = converter,
+                ConverterParameter = converterParameter,
+
+                Source = TemplatedParent // Part of alternative solution
+                // Note that setting Source here is a workaround for TemplatedParent not being settable for template elements created in code.
+                // This workaround requires that the template is instantiated each time it is applied.
+                // Alternative to eliminate this performance hit: use FrameworkElement.RegisterName and change binding to use ElementName.
+                // TODO: Try to get ElementName approach to work in WinUI; named bindings in templates do not work in every context, although this may be framework specific (see e.g. https://stackoverflow.com/questions/18389118/how-does-binding-elementname-work-exactly)
+            });
+            return property.Target;
+        }
+#else
         /// <summary>Bind the value <paramref name="property"/> in a template to the value of the property named <paramref name="sourcePropertyNameExpression"/> on a templated control</summary>
         /// <param name="sourcePropertyNameExpression">control.Property or (SomeExpression).Property <br />?. can be used safely - control instance is not required</param>
         public static TDependencyObject BindTemplate<TDependencyObject, TPropertyValue>(
@@ -517,6 +553,6 @@ namespace CSharpMarkup.WinUI
             });
             return property.Target;
         }
-    }
 #endif
+    }
 }
