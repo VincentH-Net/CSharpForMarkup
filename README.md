@@ -28,7 +28,7 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 
 # News
 *April 14, 2022*
-> ## New 0.8 release: adds `ControlTemplate` support and many `Style` improvements!
+> ## New 0.8 release: adds `ControlTemplate` support and `Style` improvements!
 See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-8-2) and [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-8-1) for the full list of improvements
 
 *February 15, 2022*
@@ -83,7 +83,7 @@ The rich UI frameworks that C# Markup 2 surfaces can contain as much as **500+ U
 ## Basic markup anatomy
 Layouts, views, properties and property values look like this:<br />
 ![Markup Basic Anatomy](img/markup-basic-anatomy.png)<br />
-All properties can be set with extension methods - properties defined on the view type or it's base types, as well as attached properties.
+All properties can be set with extension methods: properties defined on the view type or it's base types, as well as attached properties.
 
 **Properties that are defined directly on the view type** can alternatively be set with named parameters:<br />
 ![Markup View Defined Properties](img/markup-view-defined-properties.png)<br />
@@ -108,7 +108,7 @@ Implicit converters are provided in the `to` subnamespace for common property va
 These are:
 - All converters that accept `string` values, as specified by the UI framework with the [TypeConverter attribute](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.typeconverterattribute)<br />
   Note that WinUI 3 Desktop does not use this attribute, but Uno Platform and WPF do.
-- Additional manual converters that also accept other types than `string`, including tuples if more than one value is expected. E.g.:<br .>
+- Additional manual converters that also accept other types than `string`, including tuples if more than one value is expected. E.g.:<br />
   ![Markup View Convenience Overload](img/markup-converter-cornerradius-doc.png)<br />
   Allows you to specify:<br />
   `Button() .CornerRadius (2.5)` or<br />
@@ -124,7 +124,7 @@ An example using `to.TimeSpan` and `to.Duration`:
 ColorAnimation (BeginTime: "0:0:5", Duration: 2.5)
 ```
 
-In many cases the inline documentation describes the supported values and formatting; especially for strings this can avoid guesswork.
+In many cases the inline documentation on the `to.` type describes the supported values and formatting; especially for strings this can avoid guesswork.
 
 ## Styles
 Styles can be assigned like this:<br />
@@ -174,7 +174,7 @@ The `Spread` helper allows to insert a variable number of children at a specific
 Thanks to the C# 10 [CallerArgumentExpression attribute](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10#callerargumentexpression-attribute-diagnostics), you don't have to use strings or `nameof()` to specify binding paths *with good performance*. Instead you can use C# expressions and enjoy all the goodness that they bring: full intellisense, compiler checked, renaming support :<br />
 ![Markup Binding Expression](img/markup-binding-expression.png)
 
-**Note** from the intellisense description in above image that the `pathExpression` parameter supports several **convenience binding syntaxes** which allow to:
+**Note** from the intellisense description in above image that the `pathExpression` parameter supports several **convenience binding syntaxes**, which allows to:
 - Identify the viewmodel part of the expression with parenthesis:<br />
   path expression = `viewmodel.path` || `(viewmodel expression).path`, where `path` can contain `.` e.g.:
   - `.Bind (vm.SelectedTweet)` binds to "SelectedTweet"
@@ -188,7 +188,7 @@ Thanks to the C# 10 [CallerArgumentExpression attribute](https://docs.microsoft.
 
 Any surrounding `"`, `@` or whitespace characters in `pathExpression` are ignored
 
-`Bind` supports almost all functionality that the UI framework offers for binding. In addition, there are many `Bind` overloads that allow you to:
+`Bind` supports almost all functionality that the UI framework offers for binding. In addition, there are many `Bind` overloads that allows to:
 - Omit the property name to bind to the **default property** of a view type:<br />![Bind Default Parameter](img/bind-default-parameter.png)
 - Bind with **inline conversion**:<br />![Bind Inline Conversion](img/bind-inline-conversion.png)
 - Bind a **command and it's parameter** in one go:<br />![Bindcommand](img/bindcommand.png)
@@ -238,8 +238,9 @@ define a `global using TypeName_UI = <UI objectmodel namespace>.TypeName` alias 
 Markup object instances are not safe to use outside of a markup expression (due to performance features - each markup object has a single static instance to prevent allocating an extra object for each view).
 That is why `Assign` and `Invoke` pass the UI object contained in the markup object to the logic, not the markup object itself.
 
-> **Note** at the moment WinUI still requires that you have a XAML file for a page. It only needs to contain an empty `Page` element though, and you can move those files out of sight in a folder, e.g. `Xaml`:<br />
+> **Note** at the moment WinUI for Uno Platform still requires that you have a XAML file for a page. It only needs to contain an empty `Page` element though, and you can move those files out of sight in a folder, e.g. `Xaml`:<br />
 > ![Markup Page Files](img/markup-page-files.png)
+> For WinUI 3 Desktop and WPF you can omit the page XAML files.
 
 ## Integrate UI markup with UI logic
 With `Assign` and `Invoke` you can integrate UI markup with UI logic:
