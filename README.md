@@ -27,6 +27,10 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*April 14, 2022*
+> ## New 0.8 release: adds `ControlTemplate` support and many `Style` improvements!
+See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-8-2) and [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-8-1) for the full list of improvements
+
 *February 15, 2022*
 > ## New 0.6 release: adds WPF and many improvements!
 See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-6-14) for the full list of improvements
@@ -91,8 +95,36 @@ This is mainly useful for properties that take primitive types.
 **Attached property** names are prefixed with the defining type plus underscore:<br />
 ![Markup Attached Properties](img/markup-attached-properties.png)
 
-In addition to this, there are convenience overloads for some view types with just the most commonly used parameters:<br />
+You can **set multiple attached property values** for the same defining type **in one call**:<br />
+![Markup Attached Properties](img/markup-attached-properties-set-multiple.png)
+
+In addition to this, there are **convenience overloads** for some view types with just the most commonly used parameters:<br />
 ![Markup View Convenience Overload](img/markup-view-convenience-overload.png)
+
+## Property value converters
+Implicit converters are provided in the `to` subnamespace for common property value types:<br />
+![Markup View Convenience Overload](img/markup-converters.png)
+
+These are:
+- All converters that accept `string` values, as specified by the UI framework with the [TypeConverter attribute](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.typeconverterattribute)<br />
+  Note that WinUI 3 Desktop does not use this attribute, but Uno Platform and WPF do.
+- Additional manual converters that also accept other types than `string`, including tuples if more than one value is expected. E.g.:<br .>
+  ![Markup View Convenience Overload](img/markup-converter-cornerradius-doc.png)<br />
+  Allows you to specify:<br />
+  `Button() .CornerRadius (2.5)` or<br />
+  `Button() .CornerRadius ((2.5, 0, 2.5, 0))`
+
+An example using `to.Point`:
+```csharp
+Button() .Background (RadialGradientBrush (Center: (50, 50), GradientOrigin: (100, 50)))
+```
+
+An example using `to.TimeSpan` and `to.Duration`:
+```csharp
+ColorAnimation (BeginTime: "0:0:5", Duration: 2.5)
+```
+
+In many cases the inline documentation describes the supported values and formatting; especially for strings this can avoid guesswork.
 
 ## Styles
 Styles can be assigned like this:<br />
@@ -101,9 +133,21 @@ Styles can be assigned like this:<br />
 And defined like this:<br />
 ![Markup Style Definition](img/markup-style-definition.png)
 
+In WPF you can bind a style setter value (WinUI 3 does not support this):<br />
+ ![Markup Style Setter Binding](img/markup-style-setter-binding.png)
+
 ## Templates
-Templates are passed in as a `Func<UIElement>`:<br />
-![Markup Templates](img/markup-templates.png)
+A `DataTemplate` is passed in as a `Func<UIElement>`:<br />
+![Markup Templates](img/markup-datatemplate.png)
+
+A `ControlTemplate` can be created like this:<br />
+![Markup Templates](img/markup-controltemplate.png)
+- The `.BindTemplate()` method lets you bind template properties to the templated parent
+- The `targetType` parameter is optional
+- `b` here is a null-valued `static UI_Button` field. In this example it only serves to demonstrate one way to get intellisense when editing binding expressions for a `Button`; see [Binding power](#binding-power) for details.
+
+Here is how you can use a `ControlTemplate` in an implicit or explicit `Style`:<br />
+![Markup Templates](img/markup-controltemplate-in-style.png)
 
 ## Enums for Grid rows and columns
 You can use enums instead of numbers for Grid rows and colums. This improves readability and saves you from manually renumbering rows and columns when adding/removing/reordering them<br />
@@ -127,12 +171,24 @@ The `Spread` helper allows to insert a variable number of children at a specific
 ![Markup Layout Insert Children Conditional Spread](img/markup-layout-insert-children-conditional-spread.png)
 
 ## Binding power
-Thanks to C# 10, you don't have to use strings or `nameof()` to specify binding paths *with good performance* :<br />
+Thanks to the C# 10 [CallerArgumentExpression attribute](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10#callerargumentexpression-attribute-diagnostics), you don't have to use strings or `nameof()` to specify binding paths *with good performance*. Instead you can use C# expressions and enjoy all the goodness that they bring: full intellisense, compiler checked, renaming support :<br />
 ![Markup Binding Expression](img/markup-binding-expression.png)
 
-**Note** that the `pathExpression` parameter supports several **convenience binding syntaxes**; see it's intellisense description in above image.
+**Note** from the intellisense description in above image that the `pathExpression` parameter supports several **convenience binding syntaxes** which allow to:
+- Identify the viewmodel part of the expression with parenthesis:<br />
+  path expression = `viewmodel.path` || `(viewmodel expression).path`, where `path` can contain `.` e.g.:
+  - `.Bind (vm.SelectedTweet)` binds to "SelectedTweet"
+  - `.Bind ((vm.SelectedTweet).Title)` binds to "Title"
+  - `.Bind ((vm.SelectedTweet).Author.Name)` binds to "Author.Name"
+- Use `?` with null-valued type instances to enjoy C# goodness without needing object instances e.g.:
+  - `.Bind (vm?.SelectedTweet?.Title)` binds to "Title"<br />
+  Note that using `?` can be necessary because the expression will be evaluated at runtime, even though we don't care about it's value; the [CallerArgumentExpression attribute](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-10#callerargumentexpression-attribute-diagnostics) supplies an expression string *in addition to* the expression value.
+- You can still pass in string literals
+  - `.Bind ("SelectedTweet")` binds to "SelectedTweet"
 
-`Bind` supports almost all functionality that the UI framework offers for binding. In addition, there are many `Bind` overloads that offer:
+Any surrounding `"`, `@` or whitespace characters in `pathExpression` are ignored
+
+`Bind` supports almost all functionality that the UI framework offers for binding. In addition, there are many `Bind` overloads that allow you to:
 - Omit the property name to bind to the **default property** of a view type:<br />![Bind Default Parameter](img/bind-default-parameter.png)
 - Bind with **inline conversion**:<br />![Bind Inline Conversion](img/bind-inline-conversion.png)
 - Bind a **command and it's parameter** in one go:<br />![Bindcommand](img/bindcommand.png)
