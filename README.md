@@ -239,7 +239,7 @@ Markup object instances are not safe to use outside of a markup expression (due 
 That is why `Assign` and `Invoke` pass the UI object contained in the markup object to the logic, not the markup object itself.
 
 > **Note** at the moment WinUI for Uno Platform still requires that you have a XAML file for a page. It only needs to contain an empty `Page` element though, and you can move those files out of sight in a folder, e.g. `Xaml`:<br />
-> ![Markup Page Files](img/markup-page-files.png)
+> ![Markup Page Files](img/markup-page-files.png)<br />
 > For WinUI 3 Desktop and WPF you can omit the page XAML files.
 
 ## Integrate UI markup with UI logic
