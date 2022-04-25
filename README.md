@@ -51,8 +51,10 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 
 ## Getting started for WinUI 3 and Uno Platform
 First check if your development environment is ready for Uno Platform and/or WinUI 3:
+
 a) If you only want to target Windows desktop with WinUI 3:
   - [Get started with the Windows App SDK](https://docs.microsoft.com/en-us/windows/apps/windows-app-sdk/#get-started-with-the-windows-app-sdk)
+
 b) If you also want to target other OS-es with WinUI 3 using Uno Platform:
   - [Using Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html)
   - [Using other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
