@@ -5176,9 +5176,6 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
         /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.LightDismissOverlayMode"/></summary>
         public static TView LightDismissOverlayMode<TView>(this TView view, Xaml.Controls.LightDismissOverlayMode value) where TView : AutoSuggestBox { view.UI.LightDismissOverlayMode = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.Description"/></summary>
-        public static TView Description<TView>(this TView view, object value) where TView : AutoSuggestBox { view.UI.Description = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.ValidationContext"/></summary>
         public static TView ValidationContext<TView>(this TView view, Xaml.Controls.InputValidationContext value) where TView : AutoSuggestBox { view.UI.ValidationContext = value; return view; }
 
@@ -5221,9 +5218,8 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
         /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.QueryIcon"/></summary>
         public static TView QueryIcon<TView>(this TView view, Xaml.Controls.IconElement value) where TView : AutoSuggestBox { view.UI.QueryIcon = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AutoSuggestBox.Description"/></summary>
-        public static DependencyProperty<TTarget, object> Description<TTarget>(this TTarget target) where TTarget : AutoSuggestBox
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.AutoSuggestBox.DescriptionProperty);
+        /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.Description"/></summary>
+        public static TView Description<TView>(this TView view, object value) where TView : AutoSuggestBox { view.UI.Description = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AutoSuggestBox.LightDismissOverlayMode"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode<TTarget>(this TTarget target) where TTarget : AutoSuggestBox
@@ -5280,6 +5276,10 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AutoSuggestBox.QueryIcon"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.IconElement> QueryIcon<TTarget>(this TTarget target) where TTarget : AutoSuggestBox
         => DependencyProperty<TTarget, Xaml.Controls.IconElement>.Get(target, Xaml.Controls.AutoSuggestBox.QueryIconProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AutoSuggestBox.Description"/></summary>
+        public static DependencyProperty<TTarget, object> Description<TTarget>(this TTarget target) where TTarget : AutoSuggestBox
+        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.AutoSuggestBox.DescriptionProperty);
     }
 }
 
@@ -7294,9 +7294,6 @@ namespace CSharpMarkup.WinUI // ComboBox
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.IsEditable"/></summary>
         public static TView IsEditable<TView>(this TView view, bool value) where TView : ComboBox { view.UI.IsEditable = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.ComboBox.Description"/></summary>
-        public static TView Description<TView>(this TView view, object value) where TView : ComboBox { view.UI.Description = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.ValidationContext"/></summary>
         public static TView ValidationContext<TView>(this TView view, Xaml.Controls.InputValidationContext value) where TView : ComboBox { view.UI.ValidationContext = value; return view; }
 
@@ -7315,6 +7312,9 @@ namespace CSharpMarkup.WinUI // ComboBox
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.HeaderTemplate"/></summary>
         public static TView HeaderTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : ComboBox { view.UI.HeaderTemplate = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.ComboBox.Description"/></summary>
+        public static TView Description<TView>(this TView view, object value) where TView : ComboBox { view.UI.Description = value; return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.IsPopupFullscreen"/></summary>
         public static TView IsPopupFullscreen<TView>(this TView view, bool value) where TView : ComboBox { view.UI.IsPopupFullscreen = value; return view; }
 
@@ -7329,10 +7329,6 @@ namespace CSharpMarkup.WinUI // ComboBox
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.MaxDropDownHeight"/></summary>
         public static TView MaxDropDownHeight<TView>(this TView view, double value) where TView : ComboBox { view.UI.MaxDropDownHeight = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.Description"/></summary>
-        public static DependencyProperty<TTarget, object> Description<TTarget>(this TTarget target) where TTarget : ComboBox
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ComboBox.DescriptionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.IsEditable"/></summary>
         public static DependencyProperty<TTarget, bool> IsEditable<TTarget>(this TTarget target) where TTarget : ComboBox
@@ -7377,6 +7373,10 @@ namespace CSharpMarkup.WinUI // ComboBox
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.HeaderTemplate"/></summary>
         public static DependencyProperty<TTarget, Xaml.DataTemplate> HeaderTemplate<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.ComboBox.HeaderTemplateProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.Description"/></summary>
+        public static DependencyProperty<TTarget, object> Description<TTarget>(this TTarget target) where TTarget : ComboBox
+        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ComboBox.DescriptionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.LightDismissOverlayMode"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode<TTarget>(this TTarget target) where TTarget : ComboBox
@@ -15242,7 +15242,7 @@ namespace CSharpMarkup.WinUI // PasswordBox
     {
         /// <summary>Create a <see cref="Xaml.Controls.PasswordBox"/></summary>
         /// <remarks>Remark: PasswordBox().Bind() binds to <see cref="Xaml.Controls.PasswordBox.PasswordProperty"/></remarks>
-        public static PasswordBox PasswordBox(Xaml.Controls.InputValidationContext ValidationContext = default, Xaml.Controls.InputValidationMode? InputValidationMode = default, Xaml.Controls.InputValidationKind? InputValidationKind = default, Xaml.DataTemplate ErrorTemplate = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, string PasswordChar = default, string Password = default, bool? IsPasswordRevealButtonEnabled = default, Xaml.Controls.PasswordRevealMode? PasswordRevealMode = default)
+        public static PasswordBox PasswordBox(Xaml.Controls.InputValidationContext ValidationContext = default, Xaml.Controls.InputValidationMode? InputValidationMode = default, Xaml.Controls.InputValidationKind? InputValidationKind = default, Xaml.DataTemplate ErrorTemplate = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, string PasswordChar = default, string Password = default, object Description = default, bool? IsPasswordRevealButtonEnabled = default, Xaml.Controls.PasswordRevealMode? PasswordRevealMode = default)
         {
             var ui = new Xaml.Controls.PasswordBox();
             if (ValidationContext is not null) ui.ValidationContext = ValidationContext;
@@ -15255,6 +15255,7 @@ namespace CSharpMarkup.WinUI // PasswordBox
             if (PreventKeyboardDisplayOnProgrammaticFocus is not null) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
             if (PasswordChar is not null) ui.PasswordChar = PasswordChar;
             if (Password is not null) ui.Password = Password;
+            if (Description is not null) ui.Description = Description;
             if (IsPasswordRevealButtonEnabled is not null) ui.IsPasswordRevealButtonEnabled = IsPasswordRevealButtonEnabled.Value;
             if (PasswordRevealMode is not null) ui.PasswordRevealMode = PasswordRevealMode.Value;
             return CSharpMarkup.WinUI.PasswordBox.StartChain(ui);
@@ -15334,6 +15335,9 @@ namespace CSharpMarkup.WinUI // PasswordBox
         /// <summary>Set <see cref="Xaml.Controls.PasswordBox.Password"/></summary>
         public static TView Password<TView>(this TView view, string value) where TView : PasswordBox { view.UI.Password = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.PasswordBox.Description"/></summary>
+        public static TView Description<TView>(this TView view, object value) where TView : PasswordBox { view.UI.Description = value; return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.PasswordBox.IsPasswordRevealButtonEnabled"/></summary>
         public static TView IsPasswordRevealButtonEnabled<TView>(this TView view, bool value) where TView : PasswordBox { view.UI.IsPasswordRevealButtonEnabled = value; return view; }
 
@@ -15379,6 +15383,10 @@ namespace CSharpMarkup.WinUI // PasswordBox
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.Password"/></summary>
         public static DependencyProperty<TTarget, string> Password<TTarget>(this TTarget target) where TTarget : PasswordBox
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.PasswordBox.PasswordProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.Description"/></summary>
+        public static DependencyProperty<TTarget, object> Description<TTarget>(this TTarget target) where TTarget : PasswordBox
+        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.PasswordBox.DescriptionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.IsPasswordRevealButtonEnabled"/></summary>
         public static DependencyProperty<TTarget, bool> IsPasswordRevealButtonEnabled<TTarget>(this TTarget target) where TTarget : PasswordBox
@@ -21317,7 +21325,7 @@ namespace CSharpMarkup.WinUI // TextBox
     {
         /// <summary>Create a <see cref="Xaml.Controls.TextBox"/></summary>
         /// <remarks>Remark: TextBox().Bind() binds to <see cref="Xaml.Controls.TextBox.TextProperty"/></remarks>
-        public static TextBox TextBox(Xaml.Controls.InputValidationContext ValidationContext = default, Xaml.Controls.InputValidationMode? InputValidationMode = default, Xaml.DataTemplate ErrorTemplate = default, Xaml.Controls.InputValidationKind? InputValidationKind = default, CSharpMarkup.WinUI.to.Brush? PlaceholderForeground = default, bool? IsColorFontEnabled = default, Xaml.TextAlignment? HorizontalTextAlignment = default, Xaml.Controls.CandidateWindowAlignment? DesiredCandidateWindowAlignment = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, string SelectedText = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.Media.SolidColorBrush SelectionHighlightColorWhenNotFocused = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, string Text = default, object Description = default, string PlaceholderText = default, Xaml.Input.InputScope InputScope = default, int? MaxLength = default, bool? AcceptsReturn = default, Xaml.TextWrapping? TextWrapping = default, Xaml.Controls.CharacterCasing? CharacterCasing = default, bool? IsReadOnly = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, bool? IsSpellCheckEnabled = default, bool? IsTextPredictionEnabled = default, Xaml.TextAlignment? TextAlignment = default, int? SelectionStart = default, int? SelectionLength = default)
+        public static TextBox TextBox(Xaml.Controls.InputValidationContext ValidationContext = default, Xaml.Controls.InputValidationMode? InputValidationMode = default, Xaml.DataTemplate ErrorTemplate = default, Xaml.Controls.InputValidationKind? InputValidationKind = default, CSharpMarkup.WinUI.to.Brush? PlaceholderForeground = default, bool? IsColorFontEnabled = default, Xaml.TextAlignment? HorizontalTextAlignment = default, Xaml.Controls.CandidateWindowAlignment? DesiredCandidateWindowAlignment = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.Media.SolidColorBrush SelectionHighlightColorWhenNotFocused = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, string Text = default, object Description = default, string PlaceholderText = default, Xaml.Input.InputScope InputScope = default, int? MaxLength = default, bool? AcceptsReturn = default, Xaml.TextWrapping? TextWrapping = default, Xaml.Controls.CharacterCasing? CharacterCasing = default, bool? IsReadOnly = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, bool? IsSpellCheckEnabled = default, bool? IsTextPredictionEnabled = default, Xaml.TextAlignment? TextAlignment = default, string SelectedText = default, int? SelectionStart = default, int? SelectionLength = default)
         {
             var ui = new Xaml.Controls.TextBox();
             if (ValidationContext is not null) ui.ValidationContext = ValidationContext;
@@ -21329,7 +21337,6 @@ namespace CSharpMarkup.WinUI // TextBox
             if (HorizontalTextAlignment is not null) ui.HorizontalTextAlignment = HorizontalTextAlignment.Value;
             if (DesiredCandidateWindowAlignment is not null) ui.DesiredCandidateWindowAlignment = DesiredCandidateWindowAlignment.Value;
             if (PreventKeyboardDisplayOnProgrammaticFocus is not null) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
-            if (SelectedText is not null) ui.SelectedText = SelectedText;
             if (TextReadingOrder is not null) ui.TextReadingOrder = TextReadingOrder.Value;
             if (SelectionHighlightColorWhenNotFocused is not null) ui.SelectionHighlightColorWhenNotFocused = SelectionHighlightColorWhenNotFocused;
             if (SelectionHighlightColor is not null) ui.SelectionHighlightColor = SelectionHighlightColor;
@@ -21348,6 +21355,7 @@ namespace CSharpMarkup.WinUI // TextBox
             if (IsSpellCheckEnabled is not null) ui.IsSpellCheckEnabled = IsSpellCheckEnabled.Value;
             if (IsTextPredictionEnabled is not null) ui.IsTextPredictionEnabled = IsTextPredictionEnabled.Value;
             if (TextAlignment is not null) ui.TextAlignment = TextAlignment.Value;
+            if (SelectedText is not null) ui.SelectedText = SelectedText;
             if (SelectionStart is not null) ui.SelectionStart = SelectionStart.Value;
             if (SelectionLength is not null) ui.SelectionLength = SelectionLength.Value;
             return CSharpMarkup.WinUI.TextBox.StartChain(ui);
@@ -21430,9 +21438,6 @@ namespace CSharpMarkup.WinUI // TextBox
         /// <summary>Set <see cref="Xaml.Controls.TextBox.PreventKeyboardDisplayOnProgrammaticFocus"/></summary>
         public static TView PreventKeyboardDisplayOnProgrammaticFocus<TView>(this TView view, bool value) where TView : TextBox { view.UI.PreventKeyboardDisplayOnProgrammaticFocus = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.TextBox.SelectedText"/></summary>
-        public static TView SelectedText<TView>(this TView view, string value) where TView : TextBox { view.UI.SelectedText = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.TextBox.TextReadingOrder"/></summary>
         public static TView TextReadingOrder<TView>(this TView view, Xaml.TextReadingOrder value) where TView : TextBox { view.UI.TextReadingOrder = value; return view; }
 
@@ -21486,6 +21491,9 @@ namespace CSharpMarkup.WinUI // TextBox
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.TextAlignment"/></summary>
         public static TView TextAlignment<TView>(this TView view, Xaml.TextAlignment value) where TView : TextBox { view.UI.TextAlignment = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TextBox.SelectedText"/></summary>
+        public static TView SelectedText<TView>(this TView view, string value) where TView : TextBox { view.UI.SelectedText = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.SelectionStart"/></summary>
         public static TView SelectionStart<TView>(this TView view, int value) where TView : TextBox { view.UI.SelectionStart = value; return view; }
@@ -26377,10 +26385,6 @@ namespace CSharpMarkup.WinUI // FlyoutBase
         public static DependencyProperty<TTarget, bool> InputDevicePrefersPrimaryCommands<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.FlyoutBase.InputDevicePrefersPrimaryCommandsProperty);
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.IsOpen"/></summary>
-        public static DependencyProperty<TTarget, bool> IsOpen<TTarget>(this TTarget target) where TTarget : FlyoutBase
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.FlyoutBase.IsOpenProperty);
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.OverlayInputPassThroughElement"/></summary>
         public static DependencyProperty<TTarget, Xaml.DependencyObject> OverlayInputPassThroughElement<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.Primitives.FlyoutBase.OverlayInputPassThroughElementProperty);
@@ -26396,6 +26400,10 @@ namespace CSharpMarkup.WinUI // FlyoutBase
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.Target"/></summary>
         public static DependencyProperty<TTarget, Xaml.FrameworkElement> Target<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, Xaml.FrameworkElement>.Get(target, Xaml.Controls.Primitives.FlyoutBase.TargetProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.IsOpen"/></summary>
+        public static DependencyProperty<TTarget, bool> IsOpen<TTarget>(this TTarget target) where TTarget : FlyoutBase
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.FlyoutBase.IsOpenProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.Placement"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutPlacementMode> Placement<TTarget>(this TTarget target) where TTarget : FlyoutBase
@@ -47297,6 +47305,10 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Uno.UI.Xaml.RoutedEventFlag.NoFocusCandidateFound"/></summary>
         public static TTarget NoFocusCandidateFound<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.RoutedEventFlag> property) where TTarget : UIElement
         => property.Set(Uno.UI.Xaml.RoutedEventFlag.NoFocusCandidateFound);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.RoutedEventFlag.BringIntoViewRequested"/></summary>
+        public static TTarget BringIntoViewRequested<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.RoutedEventFlag> property) where TTarget : UIElement
+        => property.Set(Uno.UI.Xaml.RoutedEventFlag.BringIntoViewRequested);
 
         /// <summary>Set to <see cref="Uno.UI.Xaml.RoutedEventFlag.DragStarting"/></summary>
         public static TTarget DragStarting<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.RoutedEventFlag> property) where TTarget : UIElement
