@@ -105,6 +105,18 @@ namespace CSharpMarkup.Wpf
                 .Replace("?", "")                    // Allow .Bind (tweet?.Title) where tweet is a null instance field used for binding only
                 .Trim('"', '@', ' ', '\t');          // Allow .Bind ("ILikeStringLiterals") => "ILikeStringLiterals"
         }
+
+        public static string NameExpressionToName(string? nameExpression)
+        {
+            if (nameExpression == null) return String.Empty;
+
+            int startOfName = nameExpression.LastIndexOf('.') + 1;
+
+            return nameExpression
+                .Substring(startOfName)     // Ignore anything before the last '.'
+                .Replace("?", "")           // Allow .xName (instance?.Name) => "Name", where instance is a null instance field used for binding only
+                .Trim('"', '@', ' ', '\t'); // Allow .xName ("Name") => "Name"
+        }
     }
 
     public interface IUI<TUI> where TUI : System.Windows.DependencyObject
