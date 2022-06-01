@@ -5970,13 +5970,13 @@ namespace CSharpMarkup.Wpf // ByteAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ByteAnimation"/></summary>
-        public static ByteAnimation ByteAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, byte? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, byte? From = default, bool? IsAdditive = default, bool? IsCumulative = default, byte? To = default)
+        public static ByteAnimation ByteAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, byte? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, byte? From = default, bool? IsAdditive = default, bool? IsCumulative = default, byte? To = default)
         {
             var ui = new Windows.Media.Animation.ByteAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -6054,7 +6054,7 @@ namespace CSharpMarkup.Wpf // ByteAnimation
         public static TView By<TView>(this TView view, byte? value) where TView : ByteAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.ByteAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : ByteAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : ByteAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.ByteAnimation.From"/></summary>
         public static TView From<TView>(this TView view, byte? value) where TView : ByteAnimation { view.UI.From = value; return view; }
@@ -6073,8 +6073,8 @@ namespace CSharpMarkup.Wpf // ByteAnimation
         => DependencyProperty<TTarget, byte?>.Get(target, Windows.Media.Animation.ByteAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.ByteAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : ByteAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.ByteAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : ByteAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.ByteAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.ByteAnimation.From"/></summary>
         public static DependencyProperty<TTarget, byte?> From<TTarget>(this TTarget target) where TTarget : ByteAnimation
@@ -6509,13 +6509,13 @@ namespace CSharpMarkup.Wpf // ColorAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ColorAnimation"/></summary>
-        public static ColorAnimation ColorAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Color? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, CSharpMarkup.Wpf.to.Color? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Color? To = default)
+        public static ColorAnimation ColorAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Color? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, CSharpMarkup.Wpf.to.Color? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Color? To = default)
         {
             var ui = new Windows.Media.Animation.ColorAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -6593,7 +6593,7 @@ namespace CSharpMarkup.Wpf // ColorAnimation
         public static TView By<TView>(this TView view, CSharpMarkup.Wpf.to.Color? value) where TView : ColorAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.ColorAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : ColorAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : ColorAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.ColorAnimation.From"/></summary>
         public static TView From<TView>(this TView view, CSharpMarkup.Wpf.to.Color? value) where TView : ColorAnimation { view.UI.From = value; return view; }
@@ -6612,8 +6612,8 @@ namespace CSharpMarkup.Wpf // ColorAnimation
         => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Color?>.Get(target, Windows.Media.Animation.ColorAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.ColorAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : ColorAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.ColorAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : ColorAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.ColorAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.ColorAnimation.From"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Color?> From<TTarget>(this TTarget target) where TTarget : ColorAnimation
@@ -6834,13 +6834,13 @@ namespace CSharpMarkup.Wpf // DecimalAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.DecimalAnimation"/></summary>
-        public static DecimalAnimation DecimalAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, decimal? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, decimal? From = default, bool? IsAdditive = default, bool? IsCumulative = default, decimal? To = default)
+        public static DecimalAnimation DecimalAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, decimal? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, decimal? From = default, bool? IsAdditive = default, bool? IsCumulative = default, decimal? To = default)
         {
             var ui = new Windows.Media.Animation.DecimalAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -6918,7 +6918,7 @@ namespace CSharpMarkup.Wpf // DecimalAnimation
         public static TView By<TView>(this TView view, decimal? value) where TView : DecimalAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.DecimalAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : DecimalAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : DecimalAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.DecimalAnimation.From"/></summary>
         public static TView From<TView>(this TView view, decimal? value) where TView : DecimalAnimation { view.UI.From = value; return view; }
@@ -6937,8 +6937,8 @@ namespace CSharpMarkup.Wpf // DecimalAnimation
         => DependencyProperty<TTarget, decimal?>.Get(target, Windows.Media.Animation.DecimalAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.DecimalAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : DecimalAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.DecimalAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : DecimalAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.DecimalAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.DecimalAnimation.From"/></summary>
         public static DependencyProperty<TTarget, decimal?> From<TTarget>(this TTarget target) where TTarget : DecimalAnimation
@@ -8273,13 +8273,13 @@ namespace CSharpMarkup.Wpf // DoubleAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.DoubleAnimation"/></summary>
-        public static DoubleAnimation DoubleAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, double? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, double? From = default, bool? IsAdditive = default, bool? IsCumulative = default, double? To = default)
+        public static DoubleAnimation DoubleAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, double? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, double? From = default, bool? IsAdditive = default, bool? IsCumulative = default, double? To = default)
         {
             var ui = new Windows.Media.Animation.DoubleAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -8357,7 +8357,7 @@ namespace CSharpMarkup.Wpf // DoubleAnimation
         public static TView By<TView>(this TView view, double? value) where TView : DoubleAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.DoubleAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : DoubleAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : DoubleAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.DoubleAnimation.From"/></summary>
         public static TView From<TView>(this TView view, double? value) where TView : DoubleAnimation { view.UI.From = value; return view; }
@@ -8376,8 +8376,8 @@ namespace CSharpMarkup.Wpf // DoubleAnimation
         => DependencyProperty<TTarget, double?>.Get(target, Windows.Media.Animation.DoubleAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.DoubleAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : DoubleAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.DoubleAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : DoubleAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.DoubleAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.DoubleAnimation.From"/></summary>
         public static DependencyProperty<TTarget, double?> From<TTarget>(this TTarget target) where TTarget : DoubleAnimation
@@ -8634,10 +8634,10 @@ namespace CSharpMarkup.Wpf // EasingByteKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingByteKeyFrame"/></summary>
-        public static EasingByteKeyFrame EasingByteKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingByteKeyFrame EasingByteKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingByteKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingByteKeyFrame.StartChain(ui);
         }
 
@@ -8663,7 +8663,7 @@ namespace CSharpMarkup.Wpf // EasingByteKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingByteKeyFrame"/></summary>
-        public static EasingByteKeyFrame EasingByteKeyFrame(byte value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingByteKeyFrame EasingByteKeyFrame(byte value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingByteKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingByteKeyFrame.StartChain(ui);
@@ -8701,11 +8701,11 @@ namespace CSharpMarkup.Wpf // EasingByteKeyFrame
     public static partial class EasingByteKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingByteKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingByteKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingByteKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingByteKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingByteKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingByteKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingByteKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingByteKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -8714,10 +8714,10 @@ namespace CSharpMarkup.Wpf // EasingColorKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingColorKeyFrame"/></summary>
-        public static EasingColorKeyFrame EasingColorKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingColorKeyFrame EasingColorKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingColorKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingColorKeyFrame.StartChain(ui);
         }
 
@@ -8743,7 +8743,7 @@ namespace CSharpMarkup.Wpf // EasingColorKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingColorKeyFrame"/></summary>
-        public static EasingColorKeyFrame EasingColorKeyFrame(CSharpMarkup.Wpf.to.Color value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingColorKeyFrame EasingColorKeyFrame(CSharpMarkup.Wpf.to.Color value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingColorKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingColorKeyFrame.StartChain(ui);
@@ -8781,11 +8781,11 @@ namespace CSharpMarkup.Wpf // EasingColorKeyFrame
     public static partial class EasingColorKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingColorKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingColorKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingColorKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingColorKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingColorKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingColorKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingColorKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingColorKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -8794,10 +8794,10 @@ namespace CSharpMarkup.Wpf // EasingDecimalKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingDecimalKeyFrame"/></summary>
-        public static EasingDecimalKeyFrame EasingDecimalKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingDecimalKeyFrame EasingDecimalKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingDecimalKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingDecimalKeyFrame.StartChain(ui);
         }
 
@@ -8823,7 +8823,7 @@ namespace CSharpMarkup.Wpf // EasingDecimalKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingDecimalKeyFrame"/></summary>
-        public static EasingDecimalKeyFrame EasingDecimalKeyFrame(decimal value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingDecimalKeyFrame EasingDecimalKeyFrame(decimal value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingDecimalKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingDecimalKeyFrame.StartChain(ui);
@@ -8861,11 +8861,11 @@ namespace CSharpMarkup.Wpf // EasingDecimalKeyFrame
     public static partial class EasingDecimalKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingDecimalKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingDecimalKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingDecimalKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingDecimalKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingDecimalKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingDecimalKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingDecimalKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingDecimalKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -8874,10 +8874,10 @@ namespace CSharpMarkup.Wpf // EasingDoubleKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingDoubleKeyFrame"/></summary>
-        public static EasingDoubleKeyFrame EasingDoubleKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingDoubleKeyFrame EasingDoubleKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingDoubleKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingDoubleKeyFrame.StartChain(ui);
         }
 
@@ -8903,7 +8903,7 @@ namespace CSharpMarkup.Wpf // EasingDoubleKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingDoubleKeyFrame"/></summary>
-        public static EasingDoubleKeyFrame EasingDoubleKeyFrame(double value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingDoubleKeyFrame EasingDoubleKeyFrame(double value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingDoubleKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingDoubleKeyFrame.StartChain(ui);
@@ -8941,11 +8941,11 @@ namespace CSharpMarkup.Wpf // EasingDoubleKeyFrame
     public static partial class EasingDoubleKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingDoubleKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingDoubleKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingDoubleKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingDoubleKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingDoubleKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingDoubleKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingDoubleKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingDoubleKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -8982,10 +8982,10 @@ namespace CSharpMarkup.Wpf // EasingInt16KeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingInt16KeyFrame"/></summary>
-        public static EasingInt16KeyFrame EasingInt16KeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingInt16KeyFrame EasingInt16KeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingInt16KeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingInt16KeyFrame.StartChain(ui);
         }
 
@@ -9011,7 +9011,7 @@ namespace CSharpMarkup.Wpf // EasingInt16KeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingInt16KeyFrame"/></summary>
-        public static EasingInt16KeyFrame EasingInt16KeyFrame(short value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingInt16KeyFrame EasingInt16KeyFrame(short value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingInt16KeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingInt16KeyFrame.StartChain(ui);
@@ -9049,11 +9049,11 @@ namespace CSharpMarkup.Wpf // EasingInt16KeyFrame
     public static partial class EasingInt16KeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingInt16KeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingInt16KeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingInt16KeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingInt16KeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingInt16KeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingInt16KeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingInt16KeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingInt16KeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -9062,10 +9062,10 @@ namespace CSharpMarkup.Wpf // EasingInt32KeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingInt32KeyFrame"/></summary>
-        public static EasingInt32KeyFrame EasingInt32KeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingInt32KeyFrame EasingInt32KeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingInt32KeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingInt32KeyFrame.StartChain(ui);
         }
 
@@ -9091,7 +9091,7 @@ namespace CSharpMarkup.Wpf // EasingInt32KeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingInt32KeyFrame"/></summary>
-        public static EasingInt32KeyFrame EasingInt32KeyFrame(int value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingInt32KeyFrame EasingInt32KeyFrame(int value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingInt32KeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingInt32KeyFrame.StartChain(ui);
@@ -9129,11 +9129,11 @@ namespace CSharpMarkup.Wpf // EasingInt32KeyFrame
     public static partial class EasingInt32KeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingInt32KeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingInt32KeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingInt32KeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingInt32KeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingInt32KeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingInt32KeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingInt32KeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingInt32KeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -9142,10 +9142,10 @@ namespace CSharpMarkup.Wpf // EasingInt64KeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingInt64KeyFrame"/></summary>
-        public static EasingInt64KeyFrame EasingInt64KeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingInt64KeyFrame EasingInt64KeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingInt64KeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingInt64KeyFrame.StartChain(ui);
         }
 
@@ -9171,7 +9171,7 @@ namespace CSharpMarkup.Wpf // EasingInt64KeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingInt64KeyFrame"/></summary>
-        public static EasingInt64KeyFrame EasingInt64KeyFrame(long value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingInt64KeyFrame EasingInt64KeyFrame(long value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingInt64KeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingInt64KeyFrame.StartChain(ui);
@@ -9209,11 +9209,11 @@ namespace CSharpMarkup.Wpf // EasingInt64KeyFrame
     public static partial class EasingInt64KeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingInt64KeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingInt64KeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingInt64KeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingInt64KeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingInt64KeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingInt64KeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingInt64KeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingInt64KeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -9222,10 +9222,10 @@ namespace CSharpMarkup.Wpf // EasingPoint3DKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingPoint3DKeyFrame"/></summary>
-        public static EasingPoint3DKeyFrame EasingPoint3DKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingPoint3DKeyFrame EasingPoint3DKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingPoint3DKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingPoint3DKeyFrame.StartChain(ui);
         }
 
@@ -9251,7 +9251,7 @@ namespace CSharpMarkup.Wpf // EasingPoint3DKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingPoint3DKeyFrame"/></summary>
-        public static EasingPoint3DKeyFrame EasingPoint3DKeyFrame(CSharpMarkup.Wpf.to.Point3D value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingPoint3DKeyFrame EasingPoint3DKeyFrame(CSharpMarkup.Wpf.to.Point3D value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingPoint3DKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingPoint3DKeyFrame.StartChain(ui);
@@ -9289,11 +9289,11 @@ namespace CSharpMarkup.Wpf // EasingPoint3DKeyFrame
     public static partial class EasingPoint3DKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingPoint3DKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingPoint3DKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingPoint3DKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingPoint3DKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingPoint3DKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingPoint3DKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingPoint3DKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingPoint3DKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -9302,10 +9302,10 @@ namespace CSharpMarkup.Wpf // EasingPointKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingPointKeyFrame"/></summary>
-        public static EasingPointKeyFrame EasingPointKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingPointKeyFrame EasingPointKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingPointKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingPointKeyFrame.StartChain(ui);
         }
 
@@ -9331,7 +9331,7 @@ namespace CSharpMarkup.Wpf // EasingPointKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingPointKeyFrame"/></summary>
-        public static EasingPointKeyFrame EasingPointKeyFrame(CSharpMarkup.Wpf.to.Point value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingPointKeyFrame EasingPointKeyFrame(CSharpMarkup.Wpf.to.Point value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingPointKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingPointKeyFrame.StartChain(ui);
@@ -9369,11 +9369,11 @@ namespace CSharpMarkup.Wpf // EasingPointKeyFrame
     public static partial class EasingPointKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingPointKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingPointKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingPointKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingPointKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingPointKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingPointKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingPointKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingPointKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -9382,10 +9382,10 @@ namespace CSharpMarkup.Wpf // EasingQuaternionKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingQuaternionKeyFrame"/></summary>
-        public static EasingQuaternionKeyFrame EasingQuaternionKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default, bool? UseShortestPath = default)
+        public static EasingQuaternionKeyFrame EasingQuaternionKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, bool? UseShortestPath = default)
         {
             var ui = new Windows.Media.Animation.EasingQuaternionKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (UseShortestPath is not null) ui.UseShortestPath = UseShortestPath.Value;
             return CSharpMarkup.Wpf.EasingQuaternionKeyFrame.StartChain(ui);
         }
@@ -9412,7 +9412,7 @@ namespace CSharpMarkup.Wpf // EasingQuaternionKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingQuaternionKeyFrame"/></summary>
-        public static EasingQuaternionKeyFrame EasingQuaternionKeyFrame(CSharpMarkup.Wpf.to.Quaternion value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingQuaternionKeyFrame EasingQuaternionKeyFrame(CSharpMarkup.Wpf.to.Quaternion value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingQuaternionKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingQuaternionKeyFrame.StartChain(ui);
@@ -9450,14 +9450,14 @@ namespace CSharpMarkup.Wpf // EasingQuaternionKeyFrame
     public static partial class EasingQuaternionKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingQuaternionKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingQuaternionKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingQuaternionKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.EasingQuaternionKeyFrame.UseShortestPath"/></summary>
         public static TView UseShortestPath<TView>(this TView view, bool value) where TView : EasingQuaternionKeyFrame { view.UI.UseShortestPath = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingQuaternionKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingQuaternionKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingQuaternionKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingQuaternionKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingQuaternionKeyFrame.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingQuaternionKeyFrame.UseShortestPath"/></summary>
         public static DependencyProperty<TTarget, bool> UseShortestPath<TTarget>(this TTarget target) where TTarget : EasingQuaternionKeyFrame
@@ -9470,10 +9470,10 @@ namespace CSharpMarkup.Wpf // EasingRectKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingRectKeyFrame"/></summary>
-        public static EasingRectKeyFrame EasingRectKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingRectKeyFrame EasingRectKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingRectKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingRectKeyFrame.StartChain(ui);
         }
 
@@ -9499,7 +9499,7 @@ namespace CSharpMarkup.Wpf // EasingRectKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingRectKeyFrame"/></summary>
-        public static EasingRectKeyFrame EasingRectKeyFrame(CSharpMarkup.Wpf.to.Rect value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingRectKeyFrame EasingRectKeyFrame(CSharpMarkup.Wpf.to.Rect value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingRectKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingRectKeyFrame.StartChain(ui);
@@ -9537,11 +9537,11 @@ namespace CSharpMarkup.Wpf // EasingRectKeyFrame
     public static partial class EasingRectKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingRectKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingRectKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingRectKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingRectKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingRectKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingRectKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingRectKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingRectKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -9550,10 +9550,10 @@ namespace CSharpMarkup.Wpf // EasingRotation3DKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingRotation3DKeyFrame"/></summary>
-        public static EasingRotation3DKeyFrame EasingRotation3DKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingRotation3DKeyFrame EasingRotation3DKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingRotation3DKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingRotation3DKeyFrame.StartChain(ui);
         }
 
@@ -9579,7 +9579,7 @@ namespace CSharpMarkup.Wpf // EasingRotation3DKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingRotation3DKeyFrame"/></summary>
-        public static EasingRotation3DKeyFrame EasingRotation3DKeyFrame(Windows.Media.Media3D.Rotation3D value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingRotation3DKeyFrame EasingRotation3DKeyFrame(Windows.Media.Media3D.Rotation3D value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingRotation3DKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingRotation3DKeyFrame.StartChain(ui);
@@ -9617,11 +9617,11 @@ namespace CSharpMarkup.Wpf // EasingRotation3DKeyFrame
     public static partial class EasingRotation3DKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingRotation3DKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingRotation3DKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingRotation3DKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingRotation3DKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingRotation3DKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingRotation3DKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingRotation3DKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingRotation3DKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -9630,10 +9630,10 @@ namespace CSharpMarkup.Wpf // EasingSingleKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingSingleKeyFrame"/></summary>
-        public static EasingSingleKeyFrame EasingSingleKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingSingleKeyFrame EasingSingleKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingSingleKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingSingleKeyFrame.StartChain(ui);
         }
 
@@ -9659,7 +9659,7 @@ namespace CSharpMarkup.Wpf // EasingSingleKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingSingleKeyFrame"/></summary>
-        public static EasingSingleKeyFrame EasingSingleKeyFrame(float value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingSingleKeyFrame EasingSingleKeyFrame(float value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingSingleKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingSingleKeyFrame.StartChain(ui);
@@ -9697,11 +9697,11 @@ namespace CSharpMarkup.Wpf // EasingSingleKeyFrame
     public static partial class EasingSingleKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingSingleKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingSingleKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingSingleKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingSingleKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingSingleKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingSingleKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingSingleKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingSingleKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -9710,10 +9710,10 @@ namespace CSharpMarkup.Wpf // EasingSizeKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingSizeKeyFrame"/></summary>
-        public static EasingSizeKeyFrame EasingSizeKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingSizeKeyFrame EasingSizeKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingSizeKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingSizeKeyFrame.StartChain(ui);
         }
 
@@ -9739,7 +9739,7 @@ namespace CSharpMarkup.Wpf // EasingSizeKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingSizeKeyFrame"/></summary>
-        public static EasingSizeKeyFrame EasingSizeKeyFrame(CSharpMarkup.Wpf.to.Size value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingSizeKeyFrame EasingSizeKeyFrame(CSharpMarkup.Wpf.to.Size value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingSizeKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingSizeKeyFrame.StartChain(ui);
@@ -9777,11 +9777,11 @@ namespace CSharpMarkup.Wpf // EasingSizeKeyFrame
     public static partial class EasingSizeKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingSizeKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingSizeKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingSizeKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingSizeKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingSizeKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingSizeKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingSizeKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingSizeKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -9790,10 +9790,10 @@ namespace CSharpMarkup.Wpf // EasingVector3DKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingVector3DKeyFrame"/></summary>
-        public static EasingVector3DKeyFrame EasingVector3DKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingVector3DKeyFrame EasingVector3DKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingVector3DKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingVector3DKeyFrame.StartChain(ui);
         }
 
@@ -9819,7 +9819,7 @@ namespace CSharpMarkup.Wpf // EasingVector3DKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingVector3DKeyFrame"/></summary>
-        public static EasingVector3DKeyFrame EasingVector3DKeyFrame(CSharpMarkup.Wpf.to.Vector3D value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingVector3DKeyFrame EasingVector3DKeyFrame(CSharpMarkup.Wpf.to.Vector3D value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingVector3DKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingVector3DKeyFrame.StartChain(ui);
@@ -9857,11 +9857,11 @@ namespace CSharpMarkup.Wpf // EasingVector3DKeyFrame
     public static partial class EasingVector3DKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingVector3DKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingVector3DKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingVector3DKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingVector3DKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingVector3DKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingVector3DKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingVector3DKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingVector3DKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -9870,10 +9870,10 @@ namespace CSharpMarkup.Wpf // EasingVectorKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingVectorKeyFrame"/></summary>
-        public static EasingVectorKeyFrame EasingVectorKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingVectorKeyFrame EasingVectorKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingVectorKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingVectorKeyFrame.StartChain(ui);
         }
 
@@ -9899,7 +9899,7 @@ namespace CSharpMarkup.Wpf // EasingVectorKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingVectorKeyFrame"/></summary>
-        public static EasingVectorKeyFrame EasingVectorKeyFrame(CSharpMarkup.Wpf.to.Vector value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingVectorKeyFrame EasingVectorKeyFrame(CSharpMarkup.Wpf.to.Vector value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingVectorKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingVectorKeyFrame.StartChain(ui);
@@ -9937,11 +9937,11 @@ namespace CSharpMarkup.Wpf // EasingVectorKeyFrame
     public static partial class EasingVectorKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingVectorKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingVectorKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingVectorKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingVectorKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingVectorKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingVectorKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingVectorKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingVectorKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -10076,13 +10076,13 @@ namespace CSharpMarkup.Wpf // Int16Animation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int16Animation"/></summary>
-        public static Int16Animation Int16Animation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, short? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, short? From = default, bool? IsAdditive = default, bool? IsCumulative = default, short? To = default)
+        public static Int16Animation Int16Animation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, short? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, short? From = default, bool? IsAdditive = default, bool? IsCumulative = default, short? To = default)
         {
             var ui = new Windows.Media.Animation.Int16Animation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -10160,7 +10160,7 @@ namespace CSharpMarkup.Wpf // Int16Animation
         public static TView By<TView>(this TView view, short? value) where TView : Int16Animation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Int16Animation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : Int16Animation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : Int16Animation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Int16Animation.From"/></summary>
         public static TView From<TView>(this TView view, short? value) where TView : Int16Animation { view.UI.From = value; return view; }
@@ -10179,8 +10179,8 @@ namespace CSharpMarkup.Wpf // Int16Animation
         => DependencyProperty<TTarget, short?>.Get(target, Windows.Media.Animation.Int16Animation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Int16Animation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Int16Animation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.Int16Animation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Int16Animation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.Int16Animation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Int16Animation.From"/></summary>
         public static DependencyProperty<TTarget, short?> From<TTarget>(this TTarget target) where TTarget : Int16Animation
@@ -10360,13 +10360,13 @@ namespace CSharpMarkup.Wpf // Int32Animation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int32Animation"/></summary>
-        public static Int32Animation Int32Animation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, int? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, int? From = default, bool? IsAdditive = default, bool? IsCumulative = default, int? To = default)
+        public static Int32Animation Int32Animation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, int? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, int? From = default, bool? IsAdditive = default, bool? IsCumulative = default, int? To = default)
         {
             var ui = new Windows.Media.Animation.Int32Animation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -10444,7 +10444,7 @@ namespace CSharpMarkup.Wpf // Int32Animation
         public static TView By<TView>(this TView view, int? value) where TView : Int32Animation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Int32Animation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : Int32Animation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : Int32Animation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Int32Animation.From"/></summary>
         public static TView From<TView>(this TView view, int? value) where TView : Int32Animation { view.UI.From = value; return view; }
@@ -10463,8 +10463,8 @@ namespace CSharpMarkup.Wpf // Int32Animation
         => DependencyProperty<TTarget, int?>.Get(target, Windows.Media.Animation.Int32Animation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Int32Animation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Int32Animation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.Int32Animation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Int32Animation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.Int32Animation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Int32Animation.From"/></summary>
         public static DependencyProperty<TTarget, int?> From<TTarget>(this TTarget target) where TTarget : Int32Animation
@@ -10644,13 +10644,13 @@ namespace CSharpMarkup.Wpf // Int64Animation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int64Animation"/></summary>
-        public static Int64Animation Int64Animation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, long? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, long? From = default, bool? IsAdditive = default, bool? IsCumulative = default, long? To = default)
+        public static Int64Animation Int64Animation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, long? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, long? From = default, bool? IsAdditive = default, bool? IsCumulative = default, long? To = default)
         {
             var ui = new Windows.Media.Animation.Int64Animation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -10728,7 +10728,7 @@ namespace CSharpMarkup.Wpf // Int64Animation
         public static TView By<TView>(this TView view, long? value) where TView : Int64Animation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Int64Animation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : Int64Animation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : Int64Animation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Int64Animation.From"/></summary>
         public static TView From<TView>(this TView view, long? value) where TView : Int64Animation { view.UI.From = value; return view; }
@@ -10747,8 +10747,8 @@ namespace CSharpMarkup.Wpf // Int64Animation
         => DependencyProperty<TTarget, long?>.Get(target, Windows.Media.Animation.Int64Animation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Int64Animation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Int64Animation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.Int64Animation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Int64Animation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.Int64Animation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Int64Animation.From"/></summary>
         public static DependencyProperty<TTarget, long?> From<TTarget>(this TTarget target) where TTarget : Int64Animation
@@ -12378,13 +12378,13 @@ namespace CSharpMarkup.Wpf // Point3DAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Point3DAnimation"/></summary>
-        public static Point3DAnimation Point3DAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Point3D? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, CSharpMarkup.Wpf.to.Point3D? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Point3D? To = default)
+        public static Point3DAnimation Point3DAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Point3D? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, CSharpMarkup.Wpf.to.Point3D? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Point3D? To = default)
         {
             var ui = new Windows.Media.Animation.Point3DAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -12462,7 +12462,7 @@ namespace CSharpMarkup.Wpf // Point3DAnimation
         public static TView By<TView>(this TView view, CSharpMarkup.Wpf.to.Point3D? value) where TView : Point3DAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Point3DAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : Point3DAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : Point3DAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Point3DAnimation.From"/></summary>
         public static TView From<TView>(this TView view, CSharpMarkup.Wpf.to.Point3D? value) where TView : Point3DAnimation { view.UI.From = value; return view; }
@@ -12481,8 +12481,8 @@ namespace CSharpMarkup.Wpf // Point3DAnimation
         => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Point3D?>.Get(target, Windows.Media.Animation.Point3DAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Point3DAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Point3DAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.Point3DAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Point3DAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.Point3DAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Point3DAnimation.From"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Point3D?> From<TTarget>(this TTarget target) where TTarget : Point3DAnimation
@@ -12662,13 +12662,13 @@ namespace CSharpMarkup.Wpf // PointAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.PointAnimation"/></summary>
-        public static PointAnimation PointAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Point? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, CSharpMarkup.Wpf.to.Point? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Point? To = default)
+        public static PointAnimation PointAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Point? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, CSharpMarkup.Wpf.to.Point? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Point? To = default)
         {
             var ui = new Windows.Media.Animation.PointAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -12746,7 +12746,7 @@ namespace CSharpMarkup.Wpf // PointAnimation
         public static TView By<TView>(this TView view, CSharpMarkup.Wpf.to.Point? value) where TView : PointAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.PointAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : PointAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : PointAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.PointAnimation.From"/></summary>
         public static TView From<TView>(this TView view, CSharpMarkup.Wpf.to.Point? value) where TView : PointAnimation { view.UI.From = value; return view; }
@@ -12765,8 +12765,8 @@ namespace CSharpMarkup.Wpf // PointAnimation
         => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Point?>.Get(target, Windows.Media.Animation.PointAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.PointAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : PointAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.PointAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : PointAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.PointAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.PointAnimation.From"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Point?> From<TTarget>(this TTarget target) where TTarget : PointAnimation
@@ -13156,13 +13156,13 @@ namespace CSharpMarkup.Wpf // QuaternionAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.QuaternionAnimation"/></summary>
-        public static QuaternionAnimation QuaternionAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Quaternion? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, CSharpMarkup.Wpf.to.Quaternion? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Quaternion? To = default, bool? UseShortestPath = default)
+        public static QuaternionAnimation QuaternionAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Quaternion? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, CSharpMarkup.Wpf.to.Quaternion? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Quaternion? To = default, bool? UseShortestPath = default)
         {
             var ui = new Windows.Media.Animation.QuaternionAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -13241,7 +13241,7 @@ namespace CSharpMarkup.Wpf // QuaternionAnimation
         public static TView By<TView>(this TView view, CSharpMarkup.Wpf.to.Quaternion? value) where TView : QuaternionAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.QuaternionAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : QuaternionAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : QuaternionAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.QuaternionAnimation.From"/></summary>
         public static TView From<TView>(this TView view, CSharpMarkup.Wpf.to.Quaternion? value) where TView : QuaternionAnimation { view.UI.From = value; return view; }
@@ -13263,8 +13263,8 @@ namespace CSharpMarkup.Wpf // QuaternionAnimation
         => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Quaternion?>.Get(target, Windows.Media.Animation.QuaternionAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.QuaternionAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : QuaternionAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.QuaternionAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : QuaternionAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.QuaternionAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.QuaternionAnimation.From"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Quaternion?> From<TTarget>(this TTarget target) where TTarget : QuaternionAnimation
@@ -13489,13 +13489,13 @@ namespace CSharpMarkup.Wpf // RectAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.RectAnimation"/></summary>
-        public static RectAnimation RectAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Rect? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, CSharpMarkup.Wpf.to.Rect? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Rect? To = default)
+        public static RectAnimation RectAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Rect? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, CSharpMarkup.Wpf.to.Rect? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Rect? To = default)
         {
             var ui = new Windows.Media.Animation.RectAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -13573,7 +13573,7 @@ namespace CSharpMarkup.Wpf // RectAnimation
         public static TView By<TView>(this TView view, CSharpMarkup.Wpf.to.Rect? value) where TView : RectAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.RectAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : RectAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : RectAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.RectAnimation.From"/></summary>
         public static TView From<TView>(this TView view, CSharpMarkup.Wpf.to.Rect? value) where TView : RectAnimation { view.UI.From = value; return view; }
@@ -13592,8 +13592,8 @@ namespace CSharpMarkup.Wpf // RectAnimation
         => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Rect?>.Get(target, Windows.Media.Animation.RectAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.RectAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : RectAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.RectAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : RectAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.RectAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.RectAnimation.From"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Rect?> From<TTarget>(this TTarget target) where TTarget : RectAnimation
@@ -13773,13 +13773,13 @@ namespace CSharpMarkup.Wpf // Rotation3DAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Rotation3DAnimation"/></summary>
-        public static Rotation3DAnimation Rotation3DAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, Windows.Media.Media3D.Rotation3D By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, Windows.Media.Media3D.Rotation3D From = default, bool? IsAdditive = default, bool? IsCumulative = default, Windows.Media.Media3D.Rotation3D To = default)
+        public static Rotation3DAnimation Rotation3DAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, Windows.Media.Media3D.Rotation3D By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, Windows.Media.Media3D.Rotation3D From = default, bool? IsAdditive = default, bool? IsCumulative = default, Windows.Media.Media3D.Rotation3D To = default)
         {
             var ui = new Windows.Media.Animation.Rotation3DAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -13857,7 +13857,7 @@ namespace CSharpMarkup.Wpf // Rotation3DAnimation
         public static TView By<TView>(this TView view, Windows.Media.Media3D.Rotation3D value) where TView : Rotation3DAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Rotation3DAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : Rotation3DAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : Rotation3DAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Rotation3DAnimation.From"/></summary>
         public static TView From<TView>(this TView view, Windows.Media.Media3D.Rotation3D value) where TView : Rotation3DAnimation { view.UI.From = value; return view; }
@@ -13876,8 +13876,8 @@ namespace CSharpMarkup.Wpf // Rotation3DAnimation
         => DependencyProperty<TTarget, Windows.Media.Media3D.Rotation3D>.Get(target, Windows.Media.Animation.Rotation3DAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Rotation3DAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Rotation3DAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.Rotation3DAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Rotation3DAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.Rotation3DAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Rotation3DAnimation.From"/></summary>
         public static DependencyProperty<TTarget, Windows.Media.Media3D.Rotation3D> From<TTarget>(this TTarget target) where TTarget : Rotation3DAnimation
@@ -14098,13 +14098,13 @@ namespace CSharpMarkup.Wpf // SingleAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.SingleAnimation"/></summary>
-        public static SingleAnimation SingleAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, float? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, float? From = default, bool? IsAdditive = default, bool? IsCumulative = default, float? To = default)
+        public static SingleAnimation SingleAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, float? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, float? From = default, bool? IsAdditive = default, bool? IsCumulative = default, float? To = default)
         {
             var ui = new Windows.Media.Animation.SingleAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -14182,7 +14182,7 @@ namespace CSharpMarkup.Wpf // SingleAnimation
         public static TView By<TView>(this TView view, float? value) where TView : SingleAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.SingleAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : SingleAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : SingleAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.SingleAnimation.From"/></summary>
         public static TView From<TView>(this TView view, float? value) where TView : SingleAnimation { view.UI.From = value; return view; }
@@ -14201,8 +14201,8 @@ namespace CSharpMarkup.Wpf // SingleAnimation
         => DependencyProperty<TTarget, float?>.Get(target, Windows.Media.Animation.SingleAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.SingleAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : SingleAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.SingleAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : SingleAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.SingleAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.SingleAnimation.From"/></summary>
         public static DependencyProperty<TTarget, float?> From<TTarget>(this TTarget target) where TTarget : SingleAnimation
@@ -14382,13 +14382,13 @@ namespace CSharpMarkup.Wpf // SizeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.SizeAnimation"/></summary>
-        public static SizeAnimation SizeAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Size? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, CSharpMarkup.Wpf.to.Size? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Size? To = default)
+        public static SizeAnimation SizeAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Size? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, CSharpMarkup.Wpf.to.Size? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Size? To = default)
         {
             var ui = new Windows.Media.Animation.SizeAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -14466,7 +14466,7 @@ namespace CSharpMarkup.Wpf // SizeAnimation
         public static TView By<TView>(this TView view, CSharpMarkup.Wpf.to.Size? value) where TView : SizeAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.SizeAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : SizeAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : SizeAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.SizeAnimation.From"/></summary>
         public static TView From<TView>(this TView view, CSharpMarkup.Wpf.to.Size? value) where TView : SizeAnimation { view.UI.From = value; return view; }
@@ -14485,8 +14485,8 @@ namespace CSharpMarkup.Wpf // SizeAnimation
         => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Size?>.Get(target, Windows.Media.Animation.SizeAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.SizeAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : SizeAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.SizeAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : SizeAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.SizeAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.SizeAnimation.From"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Size?> From<TTarget>(this TTarget target) where TTarget : SizeAnimation
@@ -16280,13 +16280,13 @@ namespace CSharpMarkup.Wpf // Vector3DAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Vector3DAnimation"/></summary>
-        public static Vector3DAnimation Vector3DAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Vector3D? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, CSharpMarkup.Wpf.to.Vector3D? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Vector3D? To = default)
+        public static Vector3DAnimation Vector3DAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Vector3D? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, CSharpMarkup.Wpf.to.Vector3D? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Vector3D? To = default)
         {
             var ui = new Windows.Media.Animation.Vector3DAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -16364,7 +16364,7 @@ namespace CSharpMarkup.Wpf // Vector3DAnimation
         public static TView By<TView>(this TView view, CSharpMarkup.Wpf.to.Vector3D? value) where TView : Vector3DAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Vector3DAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : Vector3DAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : Vector3DAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.Vector3DAnimation.From"/></summary>
         public static TView From<TView>(this TView view, CSharpMarkup.Wpf.to.Vector3D? value) where TView : Vector3DAnimation { view.UI.From = value; return view; }
@@ -16383,8 +16383,8 @@ namespace CSharpMarkup.Wpf // Vector3DAnimation
         => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Vector3D?>.Get(target, Windows.Media.Animation.Vector3DAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Vector3DAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Vector3DAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.Vector3DAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : Vector3DAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.Vector3DAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.Vector3DAnimation.From"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Vector3D?> From<TTarget>(this TTarget target) where TTarget : Vector3DAnimation
@@ -16564,13 +16564,13 @@ namespace CSharpMarkup.Wpf // VectorAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.VectorAnimation"/></summary>
-        public static VectorAnimation VectorAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Vector? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, CSharpMarkup.Wpf.to.Vector? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Vector? To = default)
+        public static VectorAnimation VectorAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Vector? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, CSharpMarkup.Wpf.to.Vector? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Vector? To = default)
         {
             var ui = new Windows.Media.Animation.VectorAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -16648,7 +16648,7 @@ namespace CSharpMarkup.Wpf // VectorAnimation
         public static TView By<TView>(this TView view, CSharpMarkup.Wpf.to.Vector? value) where TView : VectorAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.VectorAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : VectorAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : VectorAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.VectorAnimation.From"/></summary>
         public static TView From<TView>(this TView view, CSharpMarkup.Wpf.to.Vector? value) where TView : VectorAnimation { view.UI.From = value; return view; }
@@ -16667,8 +16667,8 @@ namespace CSharpMarkup.Wpf // VectorAnimation
         => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Vector?>.Get(target, Windows.Media.Animation.VectorAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.VectorAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : VectorAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.VectorAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : VectorAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.VectorAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.VectorAnimation.From"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Vector?> From<TTarget>(this TTarget target) where TTarget : VectorAnimation
@@ -23048,12 +23048,12 @@ namespace CSharpMarkup.Wpf // VisualTransition
         }
 
         /// <summary>Create a <see cref="Windows.VisualTransition"/></summary>
-        public static VisualTransition VisualTransition(string From = default, CSharpMarkup.Wpf.to.Duration? GeneratedDuration = default, Windows.Media.Animation.IEasingFunction GeneratedEasingFunction = default, string To = default, System.Windows.Media.Animation.Storyboard Storyboard = default)
+        public static VisualTransition VisualTransition(string From = default, CSharpMarkup.Wpf.to.Duration? GeneratedDuration = default, CSharpMarkup.Wpf.to.IEasingFunction? GeneratedEasingFunction = default, string To = default, System.Windows.Media.Animation.Storyboard Storyboard = default)
         {
             var ui = new Windows.VisualTransition();
             if (From is not null) ui.From = From;
             if (GeneratedDuration is not null) ui.GeneratedDuration = GeneratedDuration.Value;
-            if (GeneratedEasingFunction is not null) ui.GeneratedEasingFunction = GeneratedEasingFunction;
+            if (GeneratedEasingFunction is not null) ui.GeneratedEasingFunction = GeneratedEasingFunction.Value;
             if (To is not null) ui.To = To;
             if (Storyboard is not null) ui.Storyboard = Storyboard;
             return CSharpMarkup.Wpf.VisualTransition.StartChain(ui);
@@ -23104,7 +23104,7 @@ namespace CSharpMarkup.Wpf // VisualTransition
         public static TView GeneratedDuration<TView>(this TView view, CSharpMarkup.Wpf.to.Duration value) where TView : VisualTransition { view.UI.GeneratedDuration = value; return view; }
 
         /// <summary>Set <see cref="Windows.VisualTransition.GeneratedEasingFunction"/></summary>
-        public static TView GeneratedEasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : VisualTransition { view.UI.GeneratedEasingFunction = value; return view; }
+        public static TView GeneratedEasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : VisualTransition { view.UI.GeneratedEasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.VisualTransition.To"/></summary>
         public static TView To<TView>(this TView view, string value) where TView : VisualTransition { view.UI.To = value; return view; }
@@ -39473,10 +39473,10 @@ namespace CSharpMarkup.Wpf // EasingThicknessKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingThicknessKeyFrame"/></summary>
-        public static EasingThicknessKeyFrame EasingThicknessKeyFrame(Windows.Media.Animation.IEasingFunction EasingFunction = default)
+        public static EasingThicknessKeyFrame EasingThicknessKeyFrame(CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default)
         {
             var ui = new Windows.Media.Animation.EasingThicknessKeyFrame();
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             return CSharpMarkup.Wpf.EasingThicknessKeyFrame.StartChain(ui);
         }
 
@@ -39502,7 +39502,7 @@ namespace CSharpMarkup.Wpf // EasingThicknessKeyFrame
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.EasingThicknessKeyFrame"/></summary>
-        public static EasingThicknessKeyFrame EasingThicknessKeyFrame(CSharpMarkup.Wpf.to.Thickness value, CSharpMarkup.Wpf.to.KeyTime keyTime, Windows.Media.Animation.IEasingFunction easingFunction)
+        public static EasingThicknessKeyFrame EasingThicknessKeyFrame(CSharpMarkup.Wpf.to.Thickness value, CSharpMarkup.Wpf.to.KeyTime keyTime, CSharpMarkup.Wpf.to.IEasingFunction easingFunction)
         {
             var ui = new Windows.Media.Animation.EasingThicknessKeyFrame(value, keyTime, easingFunction);
             return CSharpMarkup.Wpf.EasingThicknessKeyFrame.StartChain(ui);
@@ -39540,11 +39540,11 @@ namespace CSharpMarkup.Wpf // EasingThicknessKeyFrame
     public static partial class EasingThicknessKeyFrameExtensions
     {
         /// <summary>Set <see cref="Windows.Media.Animation.EasingThicknessKeyFrame.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : EasingThicknessKeyFrame { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : EasingThicknessKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.EasingThicknessKeyFrame.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingThicknessKeyFrame
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.EasingThicknessKeyFrame.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingThicknessKeyFrame
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.EasingThicknessKeyFrame.EasingFunctionProperty);
     }
 }
 
@@ -40114,13 +40114,13 @@ namespace CSharpMarkup.Wpf // ThicknessAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ThicknessAnimation"/></summary>
-        public static ThicknessAnimation ThicknessAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Thickness? By = default, Windows.Media.Animation.IEasingFunction EasingFunction = default, CSharpMarkup.Wpf.to.Thickness? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Thickness? To = default)
+        public static ThicknessAnimation ThicknessAnimation(CSharpMarkup.Wpf.to.TimeSpan? BeginTime = default, CSharpMarkup.Wpf.to.Duration? Duration = default, CSharpMarkup.Wpf.to.Thickness? By = default, CSharpMarkup.Wpf.to.IEasingFunction? EasingFunction = default, CSharpMarkup.Wpf.to.Thickness? From = default, bool? IsAdditive = default, bool? IsCumulative = default, CSharpMarkup.Wpf.to.Thickness? To = default)
         {
             var ui = new Windows.Media.Animation.ThicknessAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
-            if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (EasingFunction is not null) ui.EasingFunction = EasingFunction.Value;
             if (From is not null) ui.From = From;
             if (IsAdditive is not null) ui.IsAdditive = IsAdditive.Value;
             if (IsCumulative is not null) ui.IsCumulative = IsCumulative.Value;
@@ -40198,7 +40198,7 @@ namespace CSharpMarkup.Wpf // ThicknessAnimation
         public static TView By<TView>(this TView view, CSharpMarkup.Wpf.to.Thickness? value) where TView : ThicknessAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.ThicknessAnimation.EasingFunction"/></summary>
-        public static TView EasingFunction<TView>(this TView view, Windows.Media.Animation.IEasingFunction value) where TView : ThicknessAnimation { view.UI.EasingFunction = value; return view; }
+        public static TView EasingFunction<TView>(this TView view, CSharpMarkup.Wpf.to.IEasingFunction value) where TView : ThicknessAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Windows.Media.Animation.ThicknessAnimation.From"/></summary>
         public static TView From<TView>(this TView view, CSharpMarkup.Wpf.to.Thickness? value) where TView : ThicknessAnimation { view.UI.From = value; return view; }
@@ -40217,8 +40217,8 @@ namespace CSharpMarkup.Wpf // ThicknessAnimation
         => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Thickness?>.Get(target, Windows.Media.Animation.ThicknessAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.ThicknessAnimation.EasingFunction"/></summary>
-        public static DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : ThicknessAnimation
-        => DependencyProperty<TTarget, Windows.Media.Animation.IEasingFunction>.Get(target, Windows.Media.Animation.ThicknessAnimation.EasingFunctionProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction> EasingFunction<TTarget>(this TTarget target) where TTarget : ThicknessAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.Wpf.to.IEasingFunction>.Get(target, Windows.Media.Animation.ThicknessAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Windows.Media.Animation.ThicknessAnimation.From"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.Wpf.to.Thickness?> From<TTarget>(this TTarget target) where TTarget : ThicknessAnimation

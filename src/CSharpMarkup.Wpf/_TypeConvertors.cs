@@ -129,4 +129,15 @@
         public static System.Windows.Media.Animation.KeyTime Paced => System.Windows.Media.Animation.KeyTime.Paced;
         public static System.Windows.Media.Animation.KeyTime Uniform => System.Windows.Media.Animation.KeyTime.Uniform;
     }
+
+    readonly public partial struct IEasingFunction : System.Windows.Media.Animation.IEasingFunction // We are wrapping an interface - bending the naming rules here so codegen will substitute this wrapper type for the interface
+    {
+        readonly System.Windows.Media.Animation.IEasingFunction value;
+
+        public IEasingFunction(System.Windows.Media.Animation.IEasingFunction value) => this.value = value;
+
+        public static implicit operator IEasingFunction(EasingFunctionBase value) => new(value.UI);
+
+        public double Ease(double normalizedTime) => value.Ease(normalizedTime);
+    }
 }
