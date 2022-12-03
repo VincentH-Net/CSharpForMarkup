@@ -91,6 +91,10 @@ namespace CSharpMarkup.Wpf
 
         const string bindingContextPath = ""; // TODO: Find framework static var for this
 
+        static string CleanupExpression(string expression) => expression
+            .Replace("?", "")           // Allow null instances
+            .Trim('"', '@', ' ', '\t'); // Allow string literals
+
         public static string BindingExpressionToPath(string pathExpression)
         {
             if (pathExpression == null) return bindingContextPath;
@@ -100,10 +104,7 @@ namespace CSharpMarkup.Wpf
             // e.g. .Bind ((vm.SelectedTweet).Title) => "Title", .Bind ((vm.SelectedTweet).Author.Name) => "Author.Name"
             int endOfViewModelExpression = pathExpression.IndexOf('.', pathExpression.LastIndexOf(')') + 1) + 1;
 
-            return pathExpression
-                .Substring(endOfViewModelExpression) // Remove the viewmodel part from the binding string
-                .Replace("?", "")                    // Allow .Bind (tweet?.Title) where tweet is a null instance field used for binding only
-                .Trim('"', '@', ' ', '\t');          // Allow .Bind ("ILikeStringLiterals") => "ILikeStringLiterals"
+            return CleanupExpression(pathExpression.Substring(endOfViewModelExpression)); // Remove the viewmodel part from the binding string
         }
 
         public static string NameExpressionToName(string? nameExpression)
@@ -112,10 +113,24 @@ namespace CSharpMarkup.Wpf
 
             int startOfName = nameExpression.LastIndexOf('.') + 1;
 
-            return nameExpression
-                .Substring(startOfName)     // Ignore anything before the last '.'
-                .Replace("?", "")           // Allow .xName (instance?.Name) => "Name", where instance is a null instance field used for binding only
-                .Trim('"', '@', ' ', '\t'); // Allow .xName ("Name") => "Name"
+            return CleanupExpression(nameExpression.Substring(startOfName)); // Ignore anything before the last '.'
+        }
+
+        public static (string, string) NamesExpressionToNames(string? nameExpression)
+        {
+            string name1 = string.Empty, name2 = string.Empty;
+            if (nameExpression != null) 
+            {
+                int start2 = nameExpression.LastIndexOf('.') + 1;
+                name2 = CleanupExpression(nameExpression.Substring(start2));
+
+                if (start2 >= 2)
+                {
+                    int start1 = nameExpression.LastIndexOf('.', start2 - 2) + 1;
+                    name1 = CleanupExpression(nameExpression.Substring(start1, start2 - start1 - 1));
+                }
+            }
+            return (name1, name2);
         }
     }
 
