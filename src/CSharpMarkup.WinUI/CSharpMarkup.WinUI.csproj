@@ -67,12 +67,12 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)==false">
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.3" />
-		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.197" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221209.1" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)">
-		<PackageReference Include="Uno.WinUI" Version="4.2.6" />
+		<PackageReference Include="Uno.WinUI" Version="4.6.19" />
 	</ItemGroup>
 
 	<ItemGroup>
