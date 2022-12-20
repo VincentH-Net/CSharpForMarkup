@@ -43,7 +43,15 @@ public sealed partial class App : Application
     internal bool NavigateToFlutterPage() => rootFrame.Navigate(typeof(FlutterPage));
     internal void NavigateBack() => rootFrame.GoBack();
 
-    internal void BuildWindowContent() => ((_window.Content as Frame)?.Content as IBuild)?.Build();
+#if WINDOWS && DEBUG
+    internal void BuildWindowContent()
+    {
+        if (CSharpMarkup.WinUI.HotReloadKeyboardWatcher.TryEnable(true))
+            CSharpMarkup.WinUI.HotReloadKeyboardWatcher.CtrlUpAfterS += Build;
+
+        void Build() => ((_window.Content as Frame)?.Content as IBuild)?.Build();
+    }
+#endif
 
     /// <summary>
     /// Invoked when the application is launched normally by the end user.  Other entry points
