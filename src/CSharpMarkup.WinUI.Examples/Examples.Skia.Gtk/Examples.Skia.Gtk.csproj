@@ -13,13 +13,13 @@
     <UpToDateCheckInput Include="..\Examples.Shared\**\*.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="CSharpMarkup.WinUI" Version="0.8.3-dev.2" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
-    <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
-    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.2.6" />
-    <PackageReference Include="Uno.WinUI.Skia.Gtk" Version="4.2.6" />
-    <PackageReference Include="Uno.WinUI.RemoteControl" Version="4.2.6" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="CSharpMarkup.WinUI" Version="0.8.3-dev.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
+    <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
+    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.6.19" />
+    <PackageReference Include="Uno.WinUI.Skia.Gtk" Version="4.6.19" />
+    <PackageReference Include="Uno.WinUI.RemoteControl" Version="4.6.19" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
   <Import Project="..\Examples.Shared\Examples.Shared.projitems" Label="Shared" />
 </Project>

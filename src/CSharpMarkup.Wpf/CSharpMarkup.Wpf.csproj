@@ -26,7 +26,7 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>0.8.3-dev.2</Version>
+		<Version>0.8.3-dev.3</Version>
 		<NeutralLanguage>en</NeutralLanguage>
 
 		<NoWarn>CS1591;CS1573</NoWarn>
