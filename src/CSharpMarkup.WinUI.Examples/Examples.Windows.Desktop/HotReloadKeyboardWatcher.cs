@@ -18,7 +18,7 @@ public static class HotReloadKeyboardWatcher
         (Key.LeftCtrl, false)
     };
 
-    static int toggleMatched = 0;
+    static int toggleMatchedLength = 0;
 
     static (Key key, bool down)[] rebuild = new[] {
         (Key.LeftCtrl, true),
@@ -27,7 +27,7 @@ public static class HotReloadKeyboardWatcher
         (Key.LeftCtrl, false)
     };
 
-    static int rebuildMatched = 0;
+    static int rebuildMatchedLength = 0;
 
     static bool isOn = false;
 
@@ -35,39 +35,29 @@ public static class HotReloadKeyboardWatcher
 
     public static event ParameterlessEventHandler CtrlUpAfterS;
 
-    public static bool TryEnable(bool enable)
+    public static void Enable(bool enable)
     {
         if (enable && hook is null && Debugger.IsAttached)
         {
-            isOn = false;
             hook = new();
             hook.KeyboardPressed += KeyboardPressed;
-            ToggleOnOff();
-            return true;
+            if (!isOn) ToggleOnOff();
         }
         else if (!enable && hook is not null)
         {
+            if (isOn) ToggleOnOff();
             hook.Dispose();
             hook = null;
-            if (isOn) ToggleOnOff();
-            return true;
+            toggleMatchedLength = rebuildMatchedLength = 0;
         }
-        return false;
-    }
-
-    static void ToggleOnOff()
-    {
-        isOn = !isOn;
-        Debug.WriteLine($"\U0001F525Rebuild UI on Hot Reload for WinUI 3 is now {(isOn ? "ON" : "OFF")}; see https://github.com/VincentH-Net/CSharpForMarkup#fast-inner-dev-loop-with-net-hot-reload for how to use");
     }
 
     static void KeyboardPressed(object sender, KeyboardHookEventArgs e)
     {
         var input = (e.InputEvent.Key, e.KeyPressType == KeyboardHook.KeyPressType.KeyDown);
 
-        if (IsMatch(input, toggle, ref toggleMatched)) { ToggleOnOff(); return; }
-
-        if (isOn && IsMatch(input, rebuild, ref rebuildMatched)) { CtrlUpAfterS?.Invoke(); return; }
+        if (IsMatch(input, toggle, ref toggleMatchedLength)) ToggleOnOff();
+        else if (isOn && IsMatch(input, rebuild, ref rebuildMatchedLength)) CtrlUpAfterS?.Invoke();
     }
 
     static bool IsMatch((Key key, bool down) input, (Key key, bool down)[] sequence, ref int index)
@@ -81,6 +71,12 @@ public static class HotReloadKeyboardWatcher
             index = 0;
         }
         return false;
+    }
+
+    static void ToggleOnOff()
+    {
+        isOn = !isOn;
+        Debug.WriteLine($"\U0001F525 Rebuild UI on Hot Reload for WinUI 3 is now {(isOn ? "ON" : "OFF")}; see https://github.com/VincentH-Net/CSharpForMarkup#fast-inner-dev-loop-with-net-hot-reload for how to use");
     }
 }
 #endif

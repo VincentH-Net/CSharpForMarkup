@@ -43,16 +43,6 @@ public sealed partial class App : Application
     internal bool NavigateToFlutterPage() => rootFrame.Navigate(typeof(FlutterPage));
     internal void NavigateBack() => rootFrame.GoBack();
 
-#if WINDOWS && DEBUG
-    internal void BuildWindowContent()
-    {
-        if (CSharpMarkup.WinUI.HotReloadKeyboardWatcher.TryEnable(true))
-            CSharpMarkup.WinUI.HotReloadKeyboardWatcher.CtrlUpAfterS += Build;
-
-        void Build() => ((_window.Content as Frame)?.Content as IBuild)?.Build();
-    }
-#endif
-
     /// <summary>
     /// Invoked when the application is launched normally by the end user.  Other entry points
     /// will be used such as when the application is launched to open a specific file.
@@ -95,6 +85,14 @@ public sealed partial class App : Application
 
             // Place the frame in the current Window
             _window.Content = rootFrame;
+
+#if WINDOWS && DEBUG
+            // TODO: Replace with MetadataUpdateHandler attribute after that works for .NET hot reload in WinUI 3
+            CSharpMarkup.WinUI.HotReloadKeyboardWatcher.Enable(true);
+            CSharpMarkup.WinUI.HotReloadKeyboardWatcher.CtrlUpAfterS += Build;
+
+            void Build() => (rootFrame.Content as IBuild)?.Build();
+#endif
         }
 
 #if !(NET6_0_OR_GREATER && WINDOWS)
