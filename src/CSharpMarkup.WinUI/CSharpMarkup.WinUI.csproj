@@ -22,7 +22,7 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>0.8.3-dev.3</Version>
+		<Version>0.8.3-dev.4</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573</NoWarn>
@@ -36,7 +36,7 @@
 	</PropertyGroup>
 		
 	<PropertyGroup>
-		<TargetFrameworks>net6.0-windows10.0.19041.0;net6.0</TargetFrameworks>
+		<TargetFrameworks>net6.0-windows10.0.18362.0;net6.0-android30.0;net6.0-ios;net6.0-maccatalyst;net6.0-macos;net7.0;net7.0-android30.0;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>
 		<RootNamespace>CSharpMarkup.WinUI</RootNamespace>
 	</PropertyGroup>
 
@@ -84,6 +84,10 @@
 	
 	<ItemGroup>
 		<None Include="Readme.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Folder Include="Generated\SourceGenerators\" />
 	</ItemGroup>
 	
 	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
