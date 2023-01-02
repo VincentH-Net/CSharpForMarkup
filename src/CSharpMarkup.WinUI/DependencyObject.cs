@@ -44,6 +44,13 @@ namespace CSharpMarkup.WinUI
     }
 #endif
 
+#if NET7_0_ANDROID
+    public partial class UIElement
+    {
+        public static implicit operator UIElement(Android.Views.View view) => Microsoft.UI.Xaml.Media.VisualTreeHelper.AdaptNative(view);
+    }
+#endif
+
     /// <summary>
     /// Allows to specify <see cref="CSharpMarkup.WinUI"/> types (e.g. <see cref="TextBlock"/>) as well as commonly used built-in C# / UI types (e.g. <see cref="string"/> or <see cref="Xaml.Thickness"/>).
     /// </summary>
