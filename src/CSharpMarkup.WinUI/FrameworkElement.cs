@@ -70,6 +70,11 @@ namespace CSharpMarkup.WinUI
 
         public static Xaml.VisualTransition[] VisualTransitions(params Xaml.VisualTransition[] transitions) => transitions;
 #endif
+
+#if NET7_0_ANDROID
+        public static FrameworkElement Native(Android.Views.View view) => Microsoft.UI.Xaml.Media.VisualTreeHelper.AdaptNative(view);
+#endif
+
     }
 
     public static partial class FrameworkElementExtensions
