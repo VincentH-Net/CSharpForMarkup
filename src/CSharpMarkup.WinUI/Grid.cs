@@ -13,7 +13,7 @@ using _Length = Microsoft.UI.Xaml.GridLength;
 
 #if NET7_0_ANDROID
 using _BaseMarkupViewType = CSharpMarkup.WinUI.UIElement;
-#elif NET7_0_IOS
+#elif NET7_0_IOS || NET7_0_MACCATALYST
 using _BaseMarkupViewType = CSharpMarkup.WinUI.BindableUIView;
 #endif
 
@@ -126,8 +126,8 @@ namespace CSharpMarkup.WinUI
     }
 #endif
 
-#if NET7_0_ANDROID || NET7_0_IOS
-    // In Android and IOS, UNO targets these API's at Android.Views.View / UIKit.UIView. Since - unlike UNO views - markup views do not derive from native views,
+#if NET7_0_ANDROID || NET7_0_IOS || NET7_0_MACCATALYST
+    // In Android, IOS and MACCATALYST, UNO targets these API's at Android.Views.View / UIKit.UIView. Since - unlike UNO views - markup views do not derive from native views,
     // we manually add overloads here targeting the base markup view type. The generated Android/iOS targeting API's are named with suffix 'N'
     // - e.g. Grid_RowN() - because C# does not support overloading generics on "where" constraints
     public static partial class GridExtensions
