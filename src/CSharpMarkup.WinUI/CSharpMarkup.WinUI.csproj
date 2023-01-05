@@ -22,7 +22,7 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>0.8.3-dev.5</Version>
+		<Version>0.8.3-dev.6</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573</NoWarn>
@@ -37,8 +37,7 @@
 		
 	<PropertyGroup>
 		<!--<TargetFrameworks>net6.0-windows10.0.18362.0;net6.0-android31.0;net6.0-ios;net6.0-maccatalyst;net6.0-macos;net7.0;net7.0-android33.0;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>-->
-		<!--<TargetFrameworks>net7.0-windows10.0.18362.0;net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>-->
-		<TargetFrameworks>net7.0-macos</TargetFrameworks>
+		<TargetFrameworks>net7.0-windows10.0.18362.0;net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>
 		<RootNamespace>CSharpMarkup.WinUI</RootNamespace>
 	</PropertyGroup>
 

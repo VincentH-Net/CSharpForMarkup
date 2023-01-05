@@ -10,6 +10,7 @@ using UI = Microsoft.UI;
 using Xaml = Microsoft.UI.Xaml;
 using VirtualKey = Windows.System.VirtualKey;
 using VirtualKeyModifiers = Windows.System.VirtualKeyModifiers;
+using Drawing = System.Drawing;
 
 namespace CSharpMarkup.WinUI // AdaptiveTrigger
 {
