@@ -23,9 +23,10 @@ using UI = Microsoft.UI;
 using Xaml = Microsoft.UI.Xaml;
 using VirtualKey = Windows.System.VirtualKey;
 using VirtualKeyModifiers = Windows.System.VirtualKeyModifiers;
+using Drawing = System.Drawing;
 #endregion
 
-// TODO: above aliases for VirtualKey and VirtualKeyModifiers are workarounds for compile errors, investigate why and remove if possible
+// TODO: above aliases are workarounds for compile errors, investigate why and remove if possible
 
 // Initialize some template placeholders with example values
 using _PropertyType_ = System.Object;

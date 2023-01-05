@@ -11,6 +11,12 @@ using _Length = CSharpMarkup.WinUI.ConvertedGridLength;
 using _Length = Microsoft.UI.Xaml.GridLength;
 #endif
 
+#if NET7_0_ANDROID
+using _BaseMarkupViewType = CSharpMarkup.WinUI.UIElement;
+#elif NET7_0_IOS
+using _BaseMarkupViewType = CSharpMarkup.WinUI.BindableUIView;
+#endif
+
 namespace CSharpMarkup.WinUI
 {
     public static partial class Helpers
@@ -120,28 +126,28 @@ namespace CSharpMarkup.WinUI
     }
 #endif
 
-#if NET7_0_ANDROID 
-    // In Android, UNO targets these API's at Android views. Since - unlike UNO views - markup views do not derive from Android views,
-    // we manually add overloads here targeting UIElement. Additionally, the generated Android targeting API's are named with suffix 'N'
-    // - e.g. Grid_RowN() - because C# does not support overloading generics on target type
+#if NET7_0_ANDROID || NET7_0_IOS
+    // In Android and IOS, UNO targets these API's at Android.Views.View / UIKit.UIView. Since - unlike UNO views - markup views do not derive from native views,
+    // we manually add overloads here targeting the base markup view type. The generated Android/iOS targeting API's are named with suffix 'N'
+    // - e.g. Grid_RowN() - because C# does not support overloading generics on "where" constraints
     public static partial class GridExtensions
     {
         // TODO: fix in codegen the cref's miss the "Property" suffix
 
         /// <summary>Set <see cref="Xaml.Controls.Grid.RowProperty"/></summary>
-        public static TTarget Grid_Row<TTarget>(this TTarget target, int value) where TTarget : UIElement
+        public static TTarget Grid_Row<TTarget>(this TTarget target, int value) where TTarget : _BaseMarkupViewType
         { Xaml.Controls.Grid.SetRow(target, value); return target; }
 
         /// <summary>Set <see cref="Xaml.Controls.Grid.ColumnProperty"/></summary>
-        public static TTarget Grid_Column<TTarget>(this TTarget target, int value) where TTarget : UIElement
+        public static TTarget Grid_Column<TTarget>(this TTarget target, int value) where TTarget : _BaseMarkupViewType
         { Xaml.Controls.Grid.SetColumn(target, value); return target; }
 
         /// <summary>Set <see cref="Xaml.Controls.Grid.RowSpanProperty"/></summary>
-        public static TTarget Grid_RowSpan<TTarget>(this TTarget target, int value) where TTarget : UIElement
+        public static TTarget Grid_RowSpan<TTarget>(this TTarget target, int value) where TTarget : _BaseMarkupViewType
         { Xaml.Controls.Grid.SetRowSpan(target, value); return target; }
 
         /// <summary>Set <see cref="Xaml.Controls.Grid.ColumnSpanProperty"/></summary>
-        public static TTarget Grid_ColumnSpan<TTarget>(this TTarget target, int value) where TTarget : UIElement
+        public static TTarget Grid_ColumnSpan<TTarget>(this TTarget target, int value) where TTarget : _BaseMarkupViewType
         { Xaml.Controls.Grid.SetColumnSpan(target, value); return target; }
 
         /// <summary>Set <see cref="Xaml.Controls.Grid"/> attached properties</summary>
@@ -150,7 +156,7 @@ namespace CSharpMarkup.WinUI
             , int? Column = default
             , int? RowSpan = default
             , int? ColumnSpan = default
-        ) where TTarget : UIElement
+        ) where TTarget : _BaseMarkupViewType
         {
             if (Row is not null) Xaml.Controls.Grid.SetRow(target, Row.Value);
 

@@ -10,6 +10,7 @@ using UI = Microsoft.UI;
 using Xaml = Microsoft.UI.Xaml;
 using VirtualKey = Windows.System.VirtualKey;
 using VirtualKeyModifiers = Windows.System.VirtualKeyModifiers;
+using Drawing = System.Drawing;
 
 namespace CSharpMarkup.WinUI // AdaptiveTrigger
 {
@@ -1179,22 +1180,21 @@ namespace CSharpMarkup.WinUI // Style
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Style"/></summary>
-        public static Style Style(Microsoft.UI.Xaml.SetterBaseCollection Setters)
+        public static Style Style(params Microsoft.UI.Xaml.SetterBase[] Setters)
         {
             var ui = new Xaml.Style();
-            if (Setters != null) ui.Setters = Setters;
-            return CSharpMarkup.WinUI.Style.StartChain(ui);
-        }
+            for (int i = 0; i < Setters.Length; i++)
+            {
+                var child = Setters[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Style"/></summary>
-        public static Style Style(Type? TargetType = default, Xaml.Style? BasedOn = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default, Microsoft.UI.Xaml.SetterBaseCollection Setters = default)
-        {
-            var ui = new Xaml.Style();
-            if (TargetType is not null) ui.TargetType = TargetType;
-            if (BasedOn is not null) ui.BasedOn = BasedOn;
-            if (DataContext is not null) ui.DataContext = DataContext;
-            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
-            if (Setters != null) ui.Setters = Setters;
+                var subChildren = Spreader<Microsoft.UI.Xaml.SetterBase>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Setters.Add(subChildren[j]);
+                else
+                    ui.Setters.Add(child);
+            }
             return CSharpMarkup.WinUI.Style.StartChain(ui);
         }
 
@@ -1997,21 +1997,12 @@ namespace CSharpMarkup.WinUI // VisualStateGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.VisualStateGroup"/></summary>
-        public static VisualStateGroup VisualStateGroup(System.Collections.Generic.IList<Microsoft.UI.Xaml.VisualState> States)
-        {
-            var ui = new Xaml.VisualStateGroup();
-            if (States != null) ui.States = States;
-            return CSharpMarkup.WinUI.VisualStateGroup.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.VisualStateGroup"/></summary>
-        public static VisualStateGroup VisualStateGroup(string Name = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default, System.Collections.Generic.IList<Microsoft.UI.Xaml.VisualState> States = default)
+        public static VisualStateGroup VisualStateGroup(string Name = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.VisualStateGroup();
             if (Name is not null) ui.Name = Name;
             if (DataContext is not null) ui.DataContext = DataContext;
             if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
-            if (States != null) ui.States = States;
             return CSharpMarkup.WinUI.VisualStateGroup.StartChain(ui);
         }
 
@@ -5253,35 +5244,21 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
     {
         /// <summary>Create a <see cref="Xaml.Controls.AutoSuggestBox"/></summary>
         /// <remarks>Remark: AutoSuggestBox().Bind() binds to <see cref="Xaml.Controls.AutoSuggestBox.TextProperty"/></remarks>
-        public static AutoSuggestBox AutoSuggestBox(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static AutoSuggestBox AutoSuggestBox(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.AutoSuggestBox();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.AutoSuggestBox.StartChain(ui);
-        }
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.AutoSuggestBox"/></summary>
-        /// <remarks>Remark: AutoSuggestBox().Bind() binds to <see cref="Xaml.Controls.AutoSuggestBox.TextProperty"/></remarks>
-        public static AutoSuggestBox AutoSuggestBox(Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, Xaml.Controls.InputValidationContext ValidationContext = default, Xaml.Controls.InputValidationMode? InputValidationMode = default, Xaml.Controls.InputValidationKind? InputValidationKind = default, Xaml.DataTemplate ErrorTemplate = default, string PlaceholderText = default, double? MaxSuggestionListHeight = default, bool? IsSuggestionListOpen = default, object Header = default, bool? AutoMaximizeSuggestionArea = default, bool? UpdateTextOnSelect = default, string TextMemberPath = default, Xaml.Style TextBoxStyle = default, string Text = default, Xaml.Controls.IconElement QueryIcon = default, object Description = default, Microsoft.UI.Xaml.Controls.ItemCollection Items = default)
-        {
-            var ui = new Xaml.Controls.AutoSuggestBox();
-            if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
-            if (ValidationContext is not null) ui.ValidationContext = ValidationContext;
-            if (InputValidationMode is not null) ui.InputValidationMode = InputValidationMode.Value;
-            if (InputValidationKind is not null) ui.InputValidationKind = InputValidationKind.Value;
-            if (ErrorTemplate is not null) ui.ErrorTemplate = ErrorTemplate;
-            if (PlaceholderText is not null) ui.PlaceholderText = PlaceholderText;
-            if (MaxSuggestionListHeight is not null) ui.MaxSuggestionListHeight = MaxSuggestionListHeight.Value;
-            if (IsSuggestionListOpen is not null) ui.IsSuggestionListOpen = IsSuggestionListOpen.Value;
-            if (Header is not null) ui.Header = Header;
-            if (AutoMaximizeSuggestionArea is not null) ui.AutoMaximizeSuggestionArea = AutoMaximizeSuggestionArea.Value;
-            if (UpdateTextOnSelect is not null) ui.UpdateTextOnSelect = UpdateTextOnSelect.Value;
-            if (TextMemberPath is not null) ui.TextMemberPath = TextMemberPath;
-            if (TextBoxStyle is not null) ui.TextBoxStyle = TextBoxStyle;
-            if (Text is not null) ui.Text = Text;
-            if (QueryIcon is not null) ui.QueryIcon = QueryIcon;
-            if (Description is not null) ui.Description = Description;
-            if (Items != null) ui.Items = Items;
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.AutoSuggestBox.StartChain(ui);
         }
 
@@ -5831,25 +5808,21 @@ namespace CSharpMarkup.WinUI // Border
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Border"/></summary>
-        public static Border Border(Microsoft.UI.Xaml.UIElement Child)
+        public static Border Border(params UIKit.UIView[] Child)
         {
             var ui = new Xaml.Controls.Border();
-            if (Child != null) ui.Child = Child;
-            return CSharpMarkup.WinUI.Border.StartChain(ui);
-        }
+            for (int i = 0; i < Child.Length; i++)
+            {
+                var child = Child[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Border"/></summary>
-        public static Border Border(Xaml.BrushTransition BackgroundTransition = default, CSharpMarkup.WinUI.to.CornerRadius? CornerRadius = default, Xaml.Media.Animation.TransitionCollection ChildTransitions = default, CSharpMarkup.WinUI.to.Thickness? Padding = default, Xaml.Controls.BackgroundSizing? BackgroundSizing = default, CSharpMarkup.WinUI.to.Thickness? BorderThickness = default, CSharpMarkup.WinUI.to.Brush? BorderBrush = default, Microsoft.UI.Xaml.UIElement Child = default)
-        {
-            var ui = new Xaml.Controls.Border();
-            if (BackgroundTransition is not null) ui.BackgroundTransition = BackgroundTransition;
-            if (CornerRadius is not null) ui.CornerRadius = CornerRadius.Value;
-            if (ChildTransitions is not null) ui.ChildTransitions = ChildTransitions;
-            if (Padding is not null) ui.Padding = Padding.Value;
-            if (BackgroundSizing is not null) ui.BackgroundSizing = BackgroundSizing.Value;
-            if (BorderThickness is not null) ui.BorderThickness = BorderThickness.Value;
-            if (BorderBrush is not null) ui.BorderBrush = BorderBrush.Value;
-            if (Child != null) ui.Child = Child;
+                var subChildren = Spreader<UIKit.UIView>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Child.Add(subChildren[j]);
+                else
+                    ui.Child.Add(child);
+            }
             return CSharpMarkup.WinUI.Border.StartChain(ui);
         }
 
@@ -7008,10 +6981,21 @@ namespace CSharpMarkup.WinUI // Canvas
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Canvas"/></summary>
-        public static Canvas Canvas(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static Canvas Canvas(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Canvas();
-            if (Children != null) ui.Children = Children;
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.Canvas.StartChain(ui);
         }
 
@@ -7515,36 +7499,21 @@ namespace CSharpMarkup.WinUI // ComboBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ComboBox"/></summary>
-        public static ComboBox ComboBox(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static ComboBox ComboBox(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.ComboBox();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.ComboBox.StartChain(ui);
-        }
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.ComboBox"/></summary>
-        public static ComboBox ComboBox(Xaml.Style TextBoxStyle = default, string Text = default, Xaml.Controls.ComboBoxSelectionChangedTrigger? SelectionChangedTrigger = default, CSharpMarkup.WinUI.to.Brush? PlaceholderForeground = default, bool? IsTextSearchEnabled = default, bool? IsEditable = default, Xaml.Controls.InputValidationContext ValidationContext = default, Xaml.Controls.InputValidationMode? InputValidationMode = default, Xaml.Controls.InputValidationKind? InputValidationKind = default, Xaml.DataTemplate ErrorTemplate = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, object Description = default, bool? IsPopupFullscreen = default, Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, string PlaceholderText = default, bool? IsDropDownOpen = default, double? MaxDropDownHeight = default, Microsoft.UI.Xaml.Controls.ItemCollection Items = default)
-        {
-            var ui = new Xaml.Controls.ComboBox();
-            if (TextBoxStyle is not null) ui.TextBoxStyle = TextBoxStyle;
-            if (Text is not null) ui.Text = Text;
-            if (SelectionChangedTrigger is not null) ui.SelectionChangedTrigger = SelectionChangedTrigger.Value;
-            if (PlaceholderForeground is not null) ui.PlaceholderForeground = PlaceholderForeground.Value;
-            if (IsTextSearchEnabled is not null) ui.IsTextSearchEnabled = IsTextSearchEnabled.Value;
-            if (IsEditable is not null) ui.IsEditable = IsEditable.Value;
-            if (ValidationContext is not null) ui.ValidationContext = ValidationContext;
-            if (InputValidationMode is not null) ui.InputValidationMode = InputValidationMode.Value;
-            if (InputValidationKind is not null) ui.InputValidationKind = InputValidationKind.Value;
-            if (ErrorTemplate is not null) ui.ErrorTemplate = ErrorTemplate;
-            if (Header is not null) ui.Header = Header;
-            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
-            if (Description is not null) ui.Description = Description;
-            if (IsPopupFullscreen is not null) ui.IsPopupFullscreen = IsPopupFullscreen.Value;
-            if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
-            if (PlaceholderText is not null) ui.PlaceholderText = PlaceholderText;
-            if (IsDropDownOpen is not null) ui.IsDropDownOpen = IsDropDownOpen.Value;
-            if (MaxDropDownHeight is not null) ui.MaxDropDownHeight = MaxDropDownHeight.Value;
-            if (Items != null) ui.Items = Items;
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.ComboBox.StartChain(ui);
         }
 
@@ -7798,15 +7767,7 @@ namespace CSharpMarkup.WinUI // CommandBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CommandBar"/></summary>
-        public static CommandBar CommandBar(Windows.Foundation.Collections.IObservableVector<Microsoft.UI.Xaml.Controls.ICommandBarElement> PrimaryCommands)
-        {
-            var ui = new Xaml.Controls.CommandBar();
-            if (PrimaryCommands != null) ui.PrimaryCommands = PrimaryCommands;
-            return CSharpMarkup.WinUI.CommandBar.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.CommandBar"/></summary>
-        public static CommandBar CommandBar(Xaml.Style CommandBarOverflowPresenterStyle = default, Xaml.Controls.Primitives.CommandBarTemplateSettings CommandBarTemplateSettings = default, Xaml.Controls.CommandBarDefaultLabelPosition? DefaultLabelPosition = default, bool? IsDynamicOverflowEnabled = default, Xaml.Controls.CommandBarOverflowButtonVisibility? OverflowButtonVisibility = default, Windows.Foundation.Collections.IObservableVector<Microsoft.UI.Xaml.Controls.ICommandBarElement> PrimaryCommands = default)
+        public static CommandBar CommandBar(Xaml.Style CommandBarOverflowPresenterStyle = default, Xaml.Controls.Primitives.CommandBarTemplateSettings CommandBarTemplateSettings = default, Xaml.Controls.CommandBarDefaultLabelPosition? DefaultLabelPosition = default, bool? IsDynamicOverflowEnabled = default, Xaml.Controls.CommandBarOverflowButtonVisibility? OverflowButtonVisibility = default)
         {
             var ui = new Xaml.Controls.CommandBar();
             if (CommandBarOverflowPresenterStyle is not null) ui.CommandBarOverflowPresenterStyle = CommandBarOverflowPresenterStyle;
@@ -7814,7 +7775,6 @@ namespace CSharpMarkup.WinUI // CommandBar
             if (DefaultLabelPosition is not null) ui.DefaultLabelPosition = DefaultLabelPosition.Value;
             if (IsDynamicOverflowEnabled is not null) ui.IsDynamicOverflowEnabled = IsDynamicOverflowEnabled.Value;
             if (OverflowButtonVisibility is not null) ui.OverflowButtonVisibility = OverflowButtonVisibility.Value;
-            if (PrimaryCommands != null) ui.PrimaryCommands = PrimaryCommands;
             return CSharpMarkup.WinUI.CommandBar.StartChain(ui);
         }
 
@@ -7963,10 +7923,21 @@ namespace CSharpMarkup.WinUI // CommandBarOverflowPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CommandBarOverflowPresenter"/></summary>
-        public static CommandBarOverflowPresenter CommandBarOverflowPresenter(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static CommandBarOverflowPresenter CommandBarOverflowPresenter(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.CommandBarOverflowPresenter();
-            if (Items != null) ui.Items = Items;
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.CommandBarOverflowPresenter.StartChain(ui);
         }
 
@@ -9959,19 +9930,21 @@ namespace CSharpMarkup.WinUI // FlipView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.FlipView"/></summary>
-        public static FlipView FlipView(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static FlipView FlipView(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.FlipView();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.FlipView.StartChain(ui);
-        }
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.FlipView"/></summary>
-        public static FlipView FlipView(bool? UseTouchAnimationsForAllNavigation = default, Microsoft.UI.Xaml.Controls.ItemCollection Items = default)
-        {
-            var ui = new Xaml.Controls.FlipView();
-            if (UseTouchAnimationsForAllNavigation is not null) ui.UseTouchAnimationsForAllNavigation = UseTouchAnimationsForAllNavigation.Value;
-            if (Items != null) ui.Items = Items;
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.FlipView.StartChain(ui);
         }
 
@@ -10191,19 +10164,21 @@ namespace CSharpMarkup.WinUI // Flyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Flyout"/></summary>
-        public static Flyout Flyout(Microsoft.UI.Xaml.UIElement Content)
+        public static Flyout Flyout(params UIKit.UIView[] Content)
         {
             var ui = new Xaml.Controls.Flyout();
-            if (Content != null) ui.Content = Content;
-            return CSharpMarkup.WinUI.Flyout.StartChain(ui);
-        }
+            for (int i = 0; i < Content.Length; i++)
+            {
+                var child = Content[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Flyout"/></summary>
-        public static Flyout Flyout(Xaml.Style FlyoutPresenterStyle = default, Microsoft.UI.Xaml.UIElement Content = default)
-        {
-            var ui = new Xaml.Controls.Flyout();
-            if (FlyoutPresenterStyle is not null) ui.FlyoutPresenterStyle = FlyoutPresenterStyle;
-            if (Content != null) ui.Content = Content;
+                var subChildren = Spreader<UIKit.UIView>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Content.Add(subChildren[j]);
+                else
+                    ui.Content.Add(child);
+            }
             return CSharpMarkup.WinUI.Flyout.StartChain(ui);
         }
 
@@ -10717,25 +10692,21 @@ namespace CSharpMarkup.WinUI // Grid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Grid"/></summary>
-        public static Grid Grid(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static Grid Grid(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Grid();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.Grid.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Grid"/></summary>
-        public static Grid Grid(Xaml.Controls.BackgroundSizing? BackgroundSizing = default, CSharpMarkup.WinUI.to.Brush? BorderBrush = default, CSharpMarkup.WinUI.to.Thickness? BorderThickness = default, CSharpMarkup.WinUI.to.Thickness? Padding = default, CSharpMarkup.WinUI.to.CornerRadius? CornerRadius = default, double? RowSpacing = default, double? ColumnSpacing = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.Grid();
-            if (BackgroundSizing is not null) ui.BackgroundSizing = BackgroundSizing.Value;
-            if (BorderBrush is not null) ui.BorderBrush = BorderBrush.Value;
-            if (BorderThickness is not null) ui.BorderThickness = BorderThickness.Value;
-            if (Padding is not null) ui.Padding = Padding.Value;
-            if (CornerRadius is not null) ui.CornerRadius = CornerRadius.Value;
-            if (RowSpacing is not null) ui.RowSpacing = RowSpacing.Value;
-            if (ColumnSpacing is not null) ui.ColumnSpacing = ColumnSpacing.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.Grid.StartChain(ui);
         }
 
@@ -10919,10 +10890,21 @@ namespace CSharpMarkup.WinUI // GridView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.GridView"/></summary>
-        public static GridView GridView(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static GridView GridView(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.GridView();
-            if (Items != null) ui.Items = Items;
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.GridView.StartChain(ui);
         }
 
@@ -11982,29 +11964,21 @@ namespace CSharpMarkup.WinUI // ItemsControl
     {
         /// <summary>Create a <see cref="Xaml.Controls.ItemsControl"/></summary>
         /// <remarks>Remark: ItemsControl().Bind() binds to <see cref="Xaml.Controls.ItemsControl.ItemsSourceProperty"/></remarks>
-        public static ItemsControl ItemsControl(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static ItemsControl ItemsControl(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.ItemsControl();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.ItemsControl.StartChain(ui);
-        }
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.ItemsControl"/></summary>
-        /// <remarks>Remark: ItemsControl().Bind() binds to <see cref="Xaml.Controls.ItemsControl.ItemsSourceProperty"/></remarks>
-        public static ItemsControl ItemsControl(Xaml.Media.Animation.TransitionCollection ItemContainerTransitions = default, Xaml.Controls.GroupStyleSelector GroupStyleSelector = default, Xaml.Controls.Panel ItemsPanelRoot = default, Xaml.Controls.ItemsPanelTemplate ItemsPanel = default, Xaml.DataTemplate ItemTemplate = default, Xaml.Controls.DataTemplateSelector ItemTemplateSelector = default, object ItemsSource = default, Xaml.Style ItemContainerStyle = default, Xaml.Controls.StyleSelector ItemContainerStyleSelector = default, string DisplayMemberPath = default, Microsoft.UI.Xaml.Controls.ItemCollection Items = default)
-        {
-            var ui = new Xaml.Controls.ItemsControl();
-            if (ItemContainerTransitions is not null) ui.ItemContainerTransitions = ItemContainerTransitions;
-            if (GroupStyleSelector is not null) ui.GroupStyleSelector = GroupStyleSelector;
-            if (ItemsPanelRoot is not null) ui.ItemsPanelRoot = ItemsPanelRoot;
-            if (ItemsPanel is not null) ui.ItemsPanel = ItemsPanel;
-            if (ItemTemplate is not null) ui.ItemTemplate = ItemTemplate;
-            if (ItemTemplateSelector is not null) ui.ItemTemplateSelector = ItemTemplateSelector;
-            if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
-            if (ItemContainerStyle is not null) ui.ItemContainerStyle = ItemContainerStyle;
-            if (ItemContainerStyleSelector is not null) ui.ItemContainerStyleSelector = ItemContainerStyleSelector;
-            if (DisplayMemberPath is not null) ui.DisplayMemberPath = DisplayMemberPath;
-            if (Items != null) ui.Items = Items;
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.ItemsControl.StartChain(ui);
         }
 
@@ -12522,10 +12496,21 @@ namespace CSharpMarkup.WinUI // ItemsRepeaterScrollHost
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ItemsRepeaterScrollHost"/></summary>
-        public static ItemsRepeaterScrollHost ItemsRepeaterScrollHost(Microsoft.UI.Xaml.Controls.ScrollViewer ScrollViewer)
+        public static ItemsRepeaterScrollHost ItemsRepeaterScrollHost(params UIKit.UIView[] ScrollViewer)
         {
             var ui = new Xaml.Controls.ItemsRepeaterScrollHost();
-            if (ScrollViewer != null) ui.ScrollViewer = ScrollViewer;
+            for (int i = 0; i < ScrollViewer.Length; i++)
+            {
+                var child = ScrollViewer[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIKit.UIView>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.ScrollViewer.Add(subChildren[j]);
+                else
+                    ui.ScrollViewer.Add(child);
+            }
             return CSharpMarkup.WinUI.ItemsRepeaterScrollHost.StartChain(ui);
         }
 
@@ -12587,24 +12572,21 @@ namespace CSharpMarkup.WinUI // ItemsStackPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ItemsStackPanel"/></summary>
-        public static ItemsStackPanel ItemsStackPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static ItemsStackPanel ItemsStackPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.ItemsStackPanel();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.ItemsStackPanel.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.ItemsStackPanel"/></summary>
-        public static ItemsStackPanel ItemsStackPanel(Xaml.Controls.ItemsUpdatingScrollMode? ItemsUpdatingScrollMode = default, double? CacheLength = default, bool? AreStickyGroupHeadersEnabled = default, Xaml.Controls.Primitives.GroupHeaderPlacement? GroupHeaderPlacement = default, CSharpMarkup.WinUI.to.Thickness? GroupPadding = default, Xaml.Controls.Orientation? Orientation = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.ItemsStackPanel();
-            if (ItemsUpdatingScrollMode is not null) ui.ItemsUpdatingScrollMode = ItemsUpdatingScrollMode.Value;
-            if (CacheLength is not null) ui.CacheLength = CacheLength.Value;
-            if (AreStickyGroupHeadersEnabled is not null) ui.AreStickyGroupHeadersEnabled = AreStickyGroupHeadersEnabled.Value;
-            if (GroupHeaderPlacement is not null) ui.GroupHeaderPlacement = GroupHeaderPlacement.Value;
-            if (GroupPadding is not null) ui.GroupPadding = GroupPadding.Value;
-            if (Orientation is not null) ui.Orientation = Orientation.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.ItemsStackPanel.StartChain(ui);
         }
 
@@ -12719,26 +12701,21 @@ namespace CSharpMarkup.WinUI // ItemsWrapGrid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ItemsWrapGrid"/></summary>
-        public static ItemsWrapGrid ItemsWrapGrid(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static ItemsWrapGrid ItemsWrapGrid(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.ItemsWrapGrid();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.ItemsWrapGrid.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.ItemsWrapGrid"/></summary>
-        public static ItemsWrapGrid ItemsWrapGrid(double? CacheLength = default, bool? AreStickyGroupHeadersEnabled = default, Xaml.Controls.Primitives.GroupHeaderPlacement? GroupHeaderPlacement = default, CSharpMarkup.WinUI.to.Thickness? GroupPadding = default, double? ItemHeight = default, double? ItemWidth = default, Xaml.Controls.Orientation? Orientation = default, int? MaximumRowsOrColumns = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.ItemsWrapGrid();
-            if (CacheLength is not null) ui.CacheLength = CacheLength.Value;
-            if (AreStickyGroupHeadersEnabled is not null) ui.AreStickyGroupHeadersEnabled = AreStickyGroupHeadersEnabled.Value;
-            if (GroupHeaderPlacement is not null) ui.GroupHeaderPlacement = GroupHeaderPlacement.Value;
-            if (GroupPadding is not null) ui.GroupPadding = GroupPadding.Value;
-            if (ItemHeight is not null) ui.ItemHeight = ItemHeight.Value;
-            if (ItemWidth is not null) ui.ItemWidth = ItemWidth.Value;
-            if (Orientation is not null) ui.Orientation = Orientation.Value;
-            if (MaximumRowsOrColumns is not null) ui.MaximumRowsOrColumns = MaximumRowsOrColumns.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.ItemsWrapGrid.StartChain(ui);
         }
 
@@ -13009,24 +12986,21 @@ namespace CSharpMarkup.WinUI // LayoutPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.LayoutPanel"/></summary>
-        public static LayoutPanel LayoutPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static LayoutPanel LayoutPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.LayoutPanel();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.LayoutPanel.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.LayoutPanel"/></summary>
-        public static LayoutPanel LayoutPanel(object LayoutState = default, CSharpMarkup.WinUI.to.Brush? BorderBrush = default, CSharpMarkup.WinUI.to.Thickness? BorderThickness = default, CSharpMarkup.WinUI.to.Thickness? Padding = default, CSharpMarkup.WinUI.to.CornerRadius? CornerRadius = default, Xaml.Controls.Layout Layout = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.LayoutPanel();
-            if (LayoutState is not null) ui.LayoutState = LayoutState;
-            if (BorderBrush is not null) ui.BorderBrush = BorderBrush.Value;
-            if (BorderThickness is not null) ui.BorderThickness = BorderThickness.Value;
-            if (Padding is not null) ui.Padding = Padding.Value;
-            if (CornerRadius is not null) ui.CornerRadius = CornerRadius.Value;
-            if (Layout is not null) ui.Layout = Layout;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.LayoutPanel.StartChain(ui);
         }
 
@@ -13159,20 +13133,21 @@ namespace CSharpMarkup.WinUI // ListBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ListBox"/></summary>
-        public static ListBox ListBox(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static ListBox ListBox(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.ListBox();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.ListBox.StartChain(ui);
-        }
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.ListBox"/></summary>
-        public static ListBox ListBox(bool? SingleSelectionFollowsFocus = default, Xaml.Controls.SelectionMode? SelectionMode = default, Microsoft.UI.Xaml.Controls.ItemCollection Items = default)
-        {
-            var ui = new Xaml.Controls.ListBox();
-            if (SingleSelectionFollowsFocus is not null) ui.SingleSelectionFollowsFocus = SingleSelectionFollowsFocus.Value;
-            if (SelectionMode is not null) ui.SelectionMode = SelectionMode.Value;
-            if (Items != null) ui.Items = Items;
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.ListBox.StartChain(ui);
         }
 
@@ -13493,10 +13468,21 @@ namespace CSharpMarkup.WinUI // ListView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ListView"/></summary>
-        public static ListView ListView(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static ListView ListView(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.ListView();
-            if (Items != null) ui.Items = Items;
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.ListView.StartChain(ui);
         }
 
@@ -13936,14 +13922,6 @@ namespace CSharpMarkup.WinUI // MenuBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.MenuBar"/></summary>
-        public static MenuBar MenuBar(System.Collections.Generic.IList<Microsoft.UI.Xaml.Controls.MenuBarItem> Items)
-        {
-            var ui = new Xaml.Controls.MenuBar();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.MenuBar.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.MenuBar"/></summary>
         public static MenuBar MenuBar()
         {
             var ui = new Xaml.Controls.MenuBar();
@@ -14008,19 +13986,10 @@ namespace CSharpMarkup.WinUI // MenuBarItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.MenuBarItem"/></summary>
-        public static MenuBarItem MenuBarItem(System.Collections.Generic.IList<Microsoft.UI.Xaml.Controls.MenuFlyoutItemBase> Items)
-        {
-            var ui = new Xaml.Controls.MenuBarItem();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.MenuBarItem.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.MenuBarItem"/></summary>
-        public static MenuBarItem MenuBarItem(string Title = default, System.Collections.Generic.IList<Microsoft.UI.Xaml.Controls.MenuFlyoutItemBase> Items = default)
+        public static MenuBarItem MenuBarItem(string Title = default)
         {
             var ui = new Xaml.Controls.MenuBarItem();
             if (Title is not null) ui.Title = Title;
-            if (Items != null) ui.Items = Items;
             return CSharpMarkup.WinUI.MenuBarItem.StartChain(ui);
         }
 
@@ -14096,14 +14065,6 @@ namespace CSharpMarkup.WinUI // MenuBarItemFlyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.MenuBarItemFlyout"/></summary>
-        public static MenuBarItemFlyout MenuBarItemFlyout(System.Collections.Generic.IList<Microsoft.UI.Xaml.Controls.MenuFlyoutItemBase> Items)
-        {
-            var ui = new Xaml.Controls.MenuBarItemFlyout();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.MenuBarItemFlyout.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.MenuBarItemFlyout"/></summary>
         public static MenuBarItemFlyout MenuBarItemFlyout()
         {
             var ui = new Xaml.Controls.MenuBarItemFlyout();
@@ -14145,19 +14106,10 @@ namespace CSharpMarkup.WinUI // MenuFlyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.MenuFlyout"/></summary>
-        public static MenuFlyout MenuFlyout(System.Collections.Generic.IList<Microsoft.UI.Xaml.Controls.MenuFlyoutItemBase> Items)
-        {
-            var ui = new Xaml.Controls.MenuFlyout();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.MenuFlyout.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.MenuFlyout"/></summary>
-        public static MenuFlyout MenuFlyout(Xaml.Style MenuFlyoutPresenterStyle = default, System.Collections.Generic.IList<Microsoft.UI.Xaml.Controls.MenuFlyoutItemBase> Items = default)
+        public static MenuFlyout MenuFlyout(Xaml.Style MenuFlyoutPresenterStyle = default)
         {
             var ui = new Xaml.Controls.MenuFlyout();
             if (MenuFlyoutPresenterStyle is not null) ui.MenuFlyoutPresenterStyle = MenuFlyoutPresenterStyle;
-            if (Items != null) ui.Items = Items;
             return CSharpMarkup.WinUI.MenuFlyout.StartChain(ui);
         }
 
@@ -14342,19 +14294,21 @@ namespace CSharpMarkup.WinUI // MenuFlyoutPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.MenuFlyoutPresenter"/></summary>
-        public static MenuFlyoutPresenter MenuFlyoutPresenter(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static MenuFlyoutPresenter MenuFlyoutPresenter(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.MenuFlyoutPresenter();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.MenuFlyoutPresenter.StartChain(ui);
-        }
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.MenuFlyoutPresenter"/></summary>
-        public static MenuFlyoutPresenter MenuFlyoutPresenter(bool? IsDefaultShadowEnabled = default, Microsoft.UI.Xaml.Controls.ItemCollection Items = default)
-        {
-            var ui = new Xaml.Controls.MenuFlyoutPresenter();
-            if (IsDefaultShadowEnabled is not null) ui.IsDefaultShadowEnabled = IsDefaultShadowEnabled.Value;
-            if (Items != null) ui.Items = Items;
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.MenuFlyoutPresenter.StartChain(ui);
         }
 
@@ -14483,20 +14437,11 @@ namespace CSharpMarkup.WinUI // MenuFlyoutSubItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.MenuFlyoutSubItem"/></summary>
-        public static MenuFlyoutSubItem MenuFlyoutSubItem(System.Collections.Generic.IList<Microsoft.UI.Xaml.Controls.MenuFlyoutItemBase> Items)
-        {
-            var ui = new Xaml.Controls.MenuFlyoutSubItem();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.MenuFlyoutSubItem.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.MenuFlyoutSubItem"/></summary>
-        public static MenuFlyoutSubItem MenuFlyoutSubItem(string Text = default, Xaml.Controls.IconElement Icon = default, System.Collections.Generic.IList<Microsoft.UI.Xaml.Controls.MenuFlyoutItemBase> Items = default)
+        public static MenuFlyoutSubItem MenuFlyoutSubItem(string Text = default, Xaml.Controls.IconElement Icon = default)
         {
             var ui = new Xaml.Controls.MenuFlyoutSubItem();
             if (Text is not null) ui.Text = Text;
             if (Icon is not null) ui.Icon = Icon;
-            if (Items != null) ui.Items = Items;
             return CSharpMarkup.WinUI.MenuFlyoutSubItem.StartChain(ui);
         }
 
@@ -16135,21 +16080,21 @@ namespace CSharpMarkup.WinUI // Panel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Panel"/></summary>
-        public static Panel Panel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static Panel Panel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Panel();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.Panel.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Panel"/></summary>
-        public static Panel Panel(Xaml.BrushTransition BackgroundTransition = default, Xaml.Media.Animation.TransitionCollection ChildrenTransitions = default, bool? HitTestOutsideFrame = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.Panel();
-            if (BackgroundTransition is not null) ui.BackgroundTransition = BackgroundTransition;
-            if (ChildrenTransitions is not null) ui.ChildrenTransitions = ChildrenTransitions;
-            if (HitTestOutsideFrame is not null) ui.HitTestOutsideFrame = HitTestOutsideFrame.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.Panel.StartChain(ui);
         }
 
@@ -17123,30 +17068,21 @@ namespace CSharpMarkup.WinUI // Pivot
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Pivot"/></summary>
-        public static Pivot Pivot(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static Pivot Pivot(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.Pivot();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.Pivot.StartChain(ui);
-        }
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Pivot"/></summary>
-        public static Pivot Pivot(bool? IsLocked = default, bool? IsHeaderItemsCarouselEnabled = default, Xaml.Controls.PivotHeaderFocusVisualPlacement? HeaderFocusVisualPlacement = default, Xaml.DataTemplate TitleTemplate = default, object Title = default, object SelectedItem = default, int? SelectedIndex = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.DataTemplate RightHeaderTemplate = default, object RightHeader = default, Xaml.DataTemplate LeftHeaderTemplate = default, object LeftHeader = default, Microsoft.UI.Xaml.Controls.ItemCollection Items = default)
-        {
-            var ui = new Xaml.Controls.Pivot();
-            if (IsLocked is not null) ui.IsLocked = IsLocked.Value;
-            if (IsHeaderItemsCarouselEnabled is not null) ui.IsHeaderItemsCarouselEnabled = IsHeaderItemsCarouselEnabled.Value;
-            if (HeaderFocusVisualPlacement is not null) ui.HeaderFocusVisualPlacement = HeaderFocusVisualPlacement.Value;
-            if (TitleTemplate is not null) ui.TitleTemplate = TitleTemplate;
-            if (Title is not null) ui.Title = Title;
-            if (SelectedItem is not null) ui.SelectedItem = SelectedItem;
-            if (SelectedIndex is not null) ui.SelectedIndex = SelectedIndex.Value;
-            if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
-            if (RightHeaderTemplate is not null) ui.RightHeaderTemplate = RightHeaderTemplate;
-            if (RightHeader is not null) ui.RightHeader = RightHeader;
-            if (LeftHeaderTemplate is not null) ui.LeftHeaderTemplate = LeftHeaderTemplate;
-            if (LeftHeader is not null) ui.LeftHeader = LeftHeader;
-            if (Items != null) ui.Items = Items;
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.Pivot.StartChain(ui);
         }
 
@@ -17905,25 +17841,17 @@ namespace CSharpMarkup.WinUI // RadioButtons
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RadioButtons"/></summary>
-        public static RadioButtons RadioButtons(System.Collections.Generic.IList<object> Items)
-        {
-            var ui = new Xaml.Controls.RadioButtons();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.RadioButtons.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.RadioButtons"/></summary>
-        public static RadioButtons RadioButtons(object Header = default, Xaml.DataTemplate HeaderTemplate = default, object ItemsSource = default, object ItemTemplate = default, int? MaxColumns = default, int? SelectedIndex = default, object SelectedItem = default, System.Collections.Generic.IList<object> Items = default)
+        public static RadioButtons RadioButtons(object Header = default, Xaml.DataTemplate HeaderTemplate = default, IList<object> Items = default, object ItemsSource = default, object ItemTemplate = default, int? MaxColumns = default, int? SelectedIndex = default, object SelectedItem = default)
         {
             var ui = new Xaml.Controls.RadioButtons();
             if (Header is not null) ui.Header = Header;
             if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
+            if (Items is not null) ui.Items = Items;
             if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
             if (ItemTemplate is not null) ui.ItemTemplate = ItemTemplate;
             if (MaxColumns is not null) ui.MaxColumns = MaxColumns.Value;
             if (SelectedIndex is not null) ui.SelectedIndex = SelectedIndex.Value;
             if (SelectedItem is not null) ui.SelectedItem = SelectedItem;
-            if (Items != null) ui.Items = Items;
             return CSharpMarkup.WinUI.RadioButtons.StartChain(ui);
         }
 
@@ -17986,6 +17914,9 @@ namespace CSharpMarkup.WinUI // RadioButtons
 
         /// <summary>Set <see cref="Xaml.Controls.RadioButtons.HeaderTemplate"/></summary>
         public static TView HeaderTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : RadioButtons { view.UI.HeaderTemplate = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.RadioButtons.Items"/></summary>
+        public static TView Items<TView>(this TView view, IList<object> value) where TView : RadioButtons { view.UI.Items = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RadioButtons.ItemsSource"/></summary>
         public static TView ItemsSource<TView>(this TView view, object value) where TView : RadioButtons { view.UI.ItemsSource = value; return view; }
@@ -18535,19 +18466,11 @@ namespace CSharpMarkup.WinUI // RecyclingElementFactory
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RecyclingElementFactory"/></summary>
-        public static RecyclingElementFactory RecyclingElementFactory(System.Collections.Generic.IDictionary<string, Microsoft.UI.Xaml.DataTemplate> Templates)
-        {
-            var ui = new Xaml.Controls.RecyclingElementFactory();
-            if (Templates != null) ui.Templates = Templates;
-            return CSharpMarkup.WinUI.RecyclingElementFactory.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.RecyclingElementFactory"/></summary>
-        public static RecyclingElementFactory RecyclingElementFactory(Xaml.Controls.RecyclePool RecyclePool = default, System.Collections.Generic.IDictionary<string, Microsoft.UI.Xaml.DataTemplate> Templates = default)
+        public static RecyclingElementFactory RecyclingElementFactory(Xaml.Controls.RecyclePool RecyclePool = default, IDictionary<string,Xaml.DataTemplate> Templates = default)
         {
             var ui = new Xaml.Controls.RecyclingElementFactory();
             if (RecyclePool is not null) ui.RecyclePool = RecyclePool;
-            if (Templates != null) ui.Templates = Templates;
+            if (Templates is not null) ui.Templates = Templates;
             return CSharpMarkup.WinUI.RecyclingElementFactory.StartChain(ui);
         }
 
@@ -18591,6 +18514,9 @@ namespace CSharpMarkup.WinUI // RecyclingElementFactory
     {
         /// <summary>Set <see cref="Xaml.Controls.RecyclingElementFactory.RecyclePool"/></summary>
         public static TView RecyclePool<TView>(this TView view, Xaml.Controls.RecyclePool value) where TView : RecyclingElementFactory { view.UI.RecyclePool = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.RecyclingElementFactory.Templates"/></summary>
+        public static TView Templates<TView>(this TView view, IDictionary<string,Xaml.DataTemplate> value) where TView : RecyclingElementFactory { view.UI.Templates = value; return view; }
     }
 }
 
@@ -18778,23 +18704,21 @@ namespace CSharpMarkup.WinUI // RelativePanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RelativePanel"/></summary>
-        public static RelativePanel RelativePanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static RelativePanel RelativePanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.RelativePanel();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.RelativePanel.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.RelativePanel"/></summary>
-        public static RelativePanel RelativePanel(Xaml.Controls.BackgroundSizing? BackgroundSizing = default, CSharpMarkup.WinUI.to.Brush? BorderBrush = default, CSharpMarkup.WinUI.to.Thickness? BorderThickness = default, CSharpMarkup.WinUI.to.Thickness? Padding = default, CSharpMarkup.WinUI.to.CornerRadius? CornerRadius = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.RelativePanel();
-            if (BackgroundSizing is not null) ui.BackgroundSizing = BackgroundSizing.Value;
-            if (BorderBrush is not null) ui.BorderBrush = BorderBrush.Value;
-            if (BorderThickness is not null) ui.BorderThickness = BorderThickness.Value;
-            if (Padding is not null) ui.Padding = Padding.Value;
-            if (CornerRadius is not null) ui.CornerRadius = CornerRadius.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.RelativePanel.StartChain(ui);
         }
 
@@ -19189,44 +19113,21 @@ namespace CSharpMarkup.WinUI // RichTextBlock
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RichTextBlock"/></summary>
-        public static RichTextBlock RichTextBlock(Microsoft.UI.Xaml.Documents.BlockCollection Blocks)
+        public static RichTextBlock RichTextBlock(params Microsoft.UI.Xaml.Documents.Block[] Blocks)
         {
             var ui = new Xaml.Controls.RichTextBlock();
-            if (Blocks != null) ui.Blocks = Blocks;
-            return CSharpMarkup.WinUI.RichTextBlock.StartChain(ui);
-        }
+            for (int i = 0; i < Blocks.Length; i++)
+            {
+                var child = Blocks[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.RichTextBlock"/></summary>
-        public static RichTextBlock RichTextBlock(Xaml.TextAlignment? HorizontalTextAlignment = default, double? LineHeight = default, CSharpMarkup.WinUI.to.Brush? Foreground = default, Windows.UI.Text.FontWeight? FontWeight = default, Windows.UI.Text.FontStyle? FontStyle = default, Windows.UI.Text.FontStretch? FontStretch = default, double? FontSize = default, Xaml.Media.FontFamily FontFamily = default, bool? IsTextSelectionEnabled = default, bool? IsTextScaleFactorEnabled = default, int? CharacterSpacing = default, bool? IsColorFontEnabled = default, Xaml.TextWrapping? TextWrapping = default, Xaml.LineStackingStrategy? LineStackingStrategy = default, Xaml.TextTrimming? TextTrimming = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.TextLineBounds? TextLineBounds = default, double? TextIndent = default, Windows.UI.Text.TextDecorations? TextDecorations = default, Xaml.TextAlignment? TextAlignment = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, CSharpMarkup.WinUI.to.Thickness? Padding = default, Xaml.Controls.RichTextBlockOverflow OverflowContentTarget = default, Xaml.OpticalMarginAlignment? OpticalMarginAlignment = default, int? MaxLines = default, Microsoft.UI.Xaml.Documents.BlockCollection Blocks = default)
-        {
-            var ui = new Xaml.Controls.RichTextBlock();
-            if (HorizontalTextAlignment is not null) ui.HorizontalTextAlignment = HorizontalTextAlignment.Value;
-            if (LineHeight is not null) ui.LineHeight = LineHeight.Value;
-            if (Foreground is not null) ui.Foreground = Foreground.Value;
-            if (FontWeight is not null) ui.FontWeight = FontWeight.Value;
-            if (FontStyle is not null) ui.FontStyle = FontStyle.Value;
-            if (FontStretch is not null) ui.FontStretch = FontStretch.Value;
-            if (FontSize is not null) ui.FontSize = FontSize.Value;
-            if (FontFamily is not null) ui.FontFamily = FontFamily;
-            if (IsTextSelectionEnabled is not null) ui.IsTextSelectionEnabled = IsTextSelectionEnabled.Value;
-            if (IsTextScaleFactorEnabled is not null) ui.IsTextScaleFactorEnabled = IsTextScaleFactorEnabled.Value;
-            if (CharacterSpacing is not null) ui.CharacterSpacing = CharacterSpacing.Value;
-            if (IsColorFontEnabled is not null) ui.IsColorFontEnabled = IsColorFontEnabled.Value;
-            if (TextWrapping is not null) ui.TextWrapping = TextWrapping.Value;
-            if (LineStackingStrategy is not null) ui.LineStackingStrategy = LineStackingStrategy.Value;
-            if (TextTrimming is not null) ui.TextTrimming = TextTrimming.Value;
-            if (TextReadingOrder is not null) ui.TextReadingOrder = TextReadingOrder.Value;
-            if (TextLineBounds is not null) ui.TextLineBounds = TextLineBounds.Value;
-            if (TextIndent is not null) ui.TextIndent = TextIndent.Value;
-            if (TextDecorations is not null) ui.TextDecorations = TextDecorations.Value;
-            if (TextAlignment is not null) ui.TextAlignment = TextAlignment.Value;
-            if (SelectionHighlightColor is not null) ui.SelectionHighlightColor = SelectionHighlightColor;
-            if (SelectionFlyout is not null) ui.SelectionFlyout = SelectionFlyout;
-            if (Padding is not null) ui.Padding = Padding.Value;
-            if (OverflowContentTarget is not null) ui.OverflowContentTarget = OverflowContentTarget;
-            if (OpticalMarginAlignment is not null) ui.OpticalMarginAlignment = OpticalMarginAlignment.Value;
-            if (MaxLines is not null) ui.MaxLines = MaxLines.Value;
-            if (Blocks != null) ui.Blocks = Blocks;
+                var subChildren = Spreader<Microsoft.UI.Xaml.Documents.Block>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Blocks.Add(subChildren[j]);
+                else
+                    ui.Blocks.Add(child);
+            }
             return CSharpMarkup.WinUI.RichTextBlock.StartChain(ui);
         }
 
@@ -20959,26 +20860,21 @@ namespace CSharpMarkup.WinUI // SplitView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.SplitView"/></summary>
-        public static SplitView SplitView(Microsoft.UI.Xaml.UIElement Content)
+        public static SplitView SplitView(params UIKit.UIView[] Content)
         {
             var ui = new Xaml.Controls.SplitView();
-            if (Content != null) ui.Content = Content;
-            return CSharpMarkup.WinUI.SplitView.StartChain(ui);
-        }
+            for (int i = 0; i < Content.Length; i++)
+            {
+                var child = Content[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.SplitView"/></summary>
-        public static SplitView SplitView(Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, double? CompactPaneLength = default, Xaml.UIElement Pane = default, Xaml.Controls.SplitViewDisplayMode? DisplayMode = default, bool? IsPaneOpen = default, double? OpenPaneLength = default, CSharpMarkup.WinUI.to.Brush? PaneBackground = default, Xaml.Controls.SplitViewPanePlacement? PanePlacement = default, Microsoft.UI.Xaml.UIElement Content = default)
-        {
-            var ui = new Xaml.Controls.SplitView();
-            if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
-            if (CompactPaneLength is not null) ui.CompactPaneLength = CompactPaneLength.Value;
-            if (Pane is not null) ui.Pane = Pane;
-            if (DisplayMode is not null) ui.DisplayMode = DisplayMode.Value;
-            if (IsPaneOpen is not null) ui.IsPaneOpen = IsPaneOpen.Value;
-            if (OpenPaneLength is not null) ui.OpenPaneLength = OpenPaneLength.Value;
-            if (PaneBackground is not null) ui.PaneBackground = PaneBackground.Value;
-            if (PanePlacement is not null) ui.PanePlacement = PanePlacement.Value;
-            if (Content != null) ui.Content = Content;
+                var subChildren = Spreader<UIKit.UIView>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Content.Add(subChildren[j]);
+                else
+                    ui.Content.Add(child);
+            }
             return CSharpMarkup.WinUI.SplitView.StartChain(ui);
         }
 
@@ -21188,26 +21084,21 @@ namespace CSharpMarkup.WinUI // StackPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.StackPanel"/></summary>
-        public static StackPanel StackPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static StackPanel StackPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.StackPanel();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.StackPanel.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.StackPanel"/></summary>
-        public static StackPanel StackPanel(bool? AreScrollSnapPointsRegular = default, Xaml.Controls.BackgroundSizing? BackgroundSizing = default, CSharpMarkup.WinUI.to.Brush? BorderBrush = default, CSharpMarkup.WinUI.to.Thickness? BorderThickness = default, CSharpMarkup.WinUI.to.Thickness? Padding = default, CSharpMarkup.WinUI.to.CornerRadius? CornerRadius = default, Xaml.Controls.Orientation? Orientation = default, double? Spacing = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.StackPanel();
-            if (AreScrollSnapPointsRegular is not null) ui.AreScrollSnapPointsRegular = AreScrollSnapPointsRegular.Value;
-            if (BackgroundSizing is not null) ui.BackgroundSizing = BackgroundSizing.Value;
-            if (BorderBrush is not null) ui.BorderBrush = BorderBrush.Value;
-            if (BorderThickness is not null) ui.BorderThickness = BorderThickness.Value;
-            if (Padding is not null) ui.Padding = Padding.Value;
-            if (CornerRadius is not null) ui.CornerRadius = CornerRadius.Value;
-            if (Orientation is not null) ui.Orientation = Orientation.Value;
-            if (Spacing is not null) ui.Spacing = Spacing.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.StackPanel.StartChain(ui);
         }
 
@@ -21358,10 +21249,21 @@ namespace CSharpMarkup.WinUI // SwapChainBackgroundPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.SwapChainBackgroundPanel"/></summary>
-        public static SwapChainBackgroundPanel SwapChainBackgroundPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static SwapChainBackgroundPanel SwapChainBackgroundPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.SwapChainBackgroundPanel();
-            if (Children != null) ui.Children = Children;
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.SwapChainBackgroundPanel.StartChain(ui);
         }
 
@@ -21423,10 +21325,21 @@ namespace CSharpMarkup.WinUI // SwapChainPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.SwapChainPanel"/></summary>
-        public static SwapChainPanel SwapChainPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static SwapChainPanel SwapChainPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.SwapChainPanel();
-            if (Children != null) ui.Children = Children;
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.SwapChainPanel.StartChain(ui);
         }
 
@@ -21967,15 +21880,7 @@ namespace CSharpMarkup.WinUI // TabView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TabView"/></summary>
-        public static TabView TabView(System.Collections.Generic.IList<object> TabItems)
-        {
-            var ui = new Xaml.Controls.TabView();
-            if (TabItems != null) ui.TabItems = TabItems;
-            return CSharpMarkup.WinUI.TabView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.TabView"/></summary>
-        public static TabView TabView(ICommand AddTabButtonCommand = default, object AddTabButtonCommandParameter = default, bool? AllowDropTabs = default, bool? CanDragTabs = default, bool? CanReorderTabs = default, Xaml.Controls.TabViewCloseButtonOverlayMode? CloseButtonOverlayMode = default, bool? IsAddTabButtonVisible = default, int? SelectedIndex = default, object SelectedItem = default, object TabItemsSource = default, Xaml.DataTemplate TabItemTemplate = default, Xaml.Controls.DataTemplateSelector TabItemTemplateSelector = default, object TabStripFooter = default, Xaml.DataTemplate TabStripFooterTemplate = default, object TabStripHeader = default, Xaml.DataTemplate TabStripHeaderTemplate = default, Xaml.Controls.TabViewWidthMode? TabWidthMode = default, System.Collections.Generic.IList<object> TabItems = default)
+        public static TabView TabView(ICommand AddTabButtonCommand = default, object AddTabButtonCommandParameter = default, bool? AllowDropTabs = default, bool? CanDragTabs = default, bool? CanReorderTabs = default, Xaml.Controls.TabViewCloseButtonOverlayMode? CloseButtonOverlayMode = default, bool? IsAddTabButtonVisible = default, int? SelectedIndex = default, object SelectedItem = default, object TabItemsSource = default, Xaml.DataTemplate TabItemTemplate = default, Xaml.Controls.DataTemplateSelector TabItemTemplateSelector = default, object TabStripFooter = default, Xaml.DataTemplate TabStripFooterTemplate = default, object TabStripHeader = default, Xaml.DataTemplate TabStripHeaderTemplate = default, Xaml.Controls.TabViewWidthMode? TabWidthMode = default)
         {
             var ui = new Xaml.Controls.TabView();
             if (AddTabButtonCommand is not null) ui.AddTabButtonCommand = AddTabButtonCommand;
@@ -21995,7 +21900,6 @@ namespace CSharpMarkup.WinUI // TabView
             if (TabStripHeader is not null) ui.TabStripHeader = TabStripHeader;
             if (TabStripHeaderTemplate is not null) ui.TabStripHeaderTemplate = TabStripHeaderTemplate;
             if (TabWidthMode is not null) ui.TabWidthMode = TabWidthMode.Value;
-            if (TabItems != null) ui.TabItems = TabItems;
             return CSharpMarkup.WinUI.TabView.StartChain(ui);
         }
 
@@ -24635,10 +24539,21 @@ namespace CSharpMarkup.WinUI // TreeViewList
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TreeViewList"/></summary>
-        public static TreeViewList TreeViewList(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static TreeViewList TreeViewList(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.TreeViewList();
-            if (Items != null) ui.Items = Items;
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.TreeViewList.StartChain(ui);
         }
 
@@ -25123,24 +25038,21 @@ namespace CSharpMarkup.WinUI // VariableSizedWrapGrid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.VariableSizedWrapGrid"/></summary>
-        public static VariableSizedWrapGrid VariableSizedWrapGrid(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static VariableSizedWrapGrid VariableSizedWrapGrid(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.VariableSizedWrapGrid();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.VariableSizedWrapGrid.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.VariableSizedWrapGrid"/></summary>
-        public static VariableSizedWrapGrid VariableSizedWrapGrid(Xaml.VerticalAlignment? VerticalChildrenAlignment = default, Xaml.Controls.Orientation? Orientation = default, int? MaximumRowsOrColumns = default, double? ItemWidth = default, double? ItemHeight = default, Xaml.HorizontalAlignment? HorizontalChildrenAlignment = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.VariableSizedWrapGrid();
-            if (VerticalChildrenAlignment is not null) ui.VerticalChildrenAlignment = VerticalChildrenAlignment.Value;
-            if (Orientation is not null) ui.Orientation = Orientation.Value;
-            if (MaximumRowsOrColumns is not null) ui.MaximumRowsOrColumns = MaximumRowsOrColumns.Value;
-            if (ItemWidth is not null) ui.ItemWidth = ItemWidth.Value;
-            if (ItemHeight is not null) ui.ItemHeight = ItemHeight.Value;
-            if (HorizontalChildrenAlignment is not null) ui.HorizontalChildrenAlignment = HorizontalChildrenAlignment.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.VariableSizedWrapGrid.StartChain(ui);
         }
 
@@ -25279,20 +25191,21 @@ namespace CSharpMarkup.WinUI // Viewbox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Viewbox"/></summary>
-        public static Viewbox Viewbox(Microsoft.UI.Xaml.UIElement Child)
+        public static Viewbox Viewbox(params UIKit.UIView[] Child)
         {
             var ui = new Xaml.Controls.Viewbox();
-            if (Child != null) ui.Child = Child;
-            return CSharpMarkup.WinUI.Viewbox.StartChain(ui);
-        }
+            for (int i = 0; i < Child.Length; i++)
+            {
+                var child = Child[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Viewbox"/></summary>
-        public static Viewbox Viewbox(Xaml.Controls.StretchDirection? StretchDirection = default, Xaml.Media.Stretch? Stretch = default, Microsoft.UI.Xaml.UIElement Child = default)
-        {
-            var ui = new Xaml.Controls.Viewbox();
-            if (StretchDirection is not null) ui.StretchDirection = StretchDirection.Value;
-            if (Stretch is not null) ui.Stretch = Stretch.Value;
-            if (Child != null) ui.Child = Child;
+                var subChildren = Spreader<UIKit.UIView>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Child.Add(subChildren[j]);
+                else
+                    ui.Child.Add(child);
+            }
             return CSharpMarkup.WinUI.Viewbox.StartChain(ui);
         }
 
@@ -25467,10 +25380,21 @@ namespace CSharpMarkup.WinUI // VirtualizingPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.VirtualizingPanel"/></summary>
-        public static VirtualizingPanel VirtualizingPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static VirtualizingPanel VirtualizingPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.VirtualizingPanel();
-            if (Children != null) ui.Children = Children;
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.VirtualizingPanel.StartChain(ui);
         }
 
@@ -25532,20 +25456,21 @@ namespace CSharpMarkup.WinUI // VirtualizingStackPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.VirtualizingStackPanel"/></summary>
-        public static VirtualizingStackPanel VirtualizingStackPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static VirtualizingStackPanel VirtualizingStackPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.VirtualizingStackPanel();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.VirtualizingStackPanel.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.VirtualizingStackPanel"/></summary>
-        public static VirtualizingStackPanel VirtualizingStackPanel(Xaml.Controls.Orientation? Orientation = default, bool? AreScrollSnapPointsRegular = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.VirtualizingStackPanel();
-            if (Orientation is not null) ui.Orientation = Orientation.Value;
-            if (AreScrollSnapPointsRegular is not null) ui.AreScrollSnapPointsRegular = AreScrollSnapPointsRegular.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.VirtualizingStackPanel.StartChain(ui);
         }
 
@@ -25723,24 +25648,21 @@ namespace CSharpMarkup.WinUI // WrapGrid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.WrapGrid"/></summary>
-        public static WrapGrid WrapGrid(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static WrapGrid WrapGrid(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.WrapGrid();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.WrapGrid.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.WrapGrid"/></summary>
-        public static WrapGrid WrapGrid(Xaml.VerticalAlignment? VerticalChildrenAlignment = default, Xaml.Controls.Orientation? Orientation = default, int? MaximumRowsOrColumns = default, double? ItemWidth = default, double? ItemHeight = default, Xaml.HorizontalAlignment? HorizontalChildrenAlignment = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.WrapGrid();
-            if (VerticalChildrenAlignment is not null) ui.VerticalChildrenAlignment = VerticalChildrenAlignment.Value;
-            if (Orientation is not null) ui.Orientation = Orientation.Value;
-            if (MaximumRowsOrColumns is not null) ui.MaximumRowsOrColumns = MaximumRowsOrColumns.Value;
-            if (ItemWidth is not null) ui.ItemWidth = ItemWidth.Value;
-            if (ItemHeight is not null) ui.ItemHeight = ItemHeight.Value;
-            if (HorizontalChildrenAlignment is not null) ui.HorizontalChildrenAlignment = HorizontalChildrenAlignment.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.WrapGrid.StartChain(ui);
         }
 
@@ -27633,10 +27555,21 @@ namespace CSharpMarkup.WinUI // NativePivotPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.NativePivotPresenter"/></summary>
-        public static NativePivotPresenter NativePivotPresenter(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static NativePivotPresenter NativePivotPresenter(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.NativePivotPresenter();
-            if (Items != null) ui.Items = Items;
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.NativePivotPresenter.StartChain(ui);
         }
 
@@ -27698,22 +27631,21 @@ namespace CSharpMarkup.WinUI // NativePopupBase
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.NativePopupBase"/></summary>
-        public static NativePopupBase NativePopupBase(Microsoft.UI.Xaml.UIElement Child)
+        public static NativePopupBase NativePopupBase(params UIKit.UIView[] Child)
         {
             var ui = new Xaml.Controls.NativePopupBase();
-            if (Child != null) ui.Child = Child;
-            return CSharpMarkup.WinUI.NativePopupBase.StartChain(ui);
-        }
+            for (int i = 0; i < Child.Length; i++)
+            {
+                var child = Child[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.NativePopupBase"/></summary>
-        public static NativePopupBase NativePopupBase(bool? IsOpen = default, bool? IsLightDismissEnabled = default, double? HorizontalOffset = default, double? VerticalOffset = default, Microsoft.UI.Xaml.UIElement Child = default)
-        {
-            var ui = new Xaml.Controls.NativePopupBase();
-            if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
-            if (IsLightDismissEnabled is not null) ui.IsLightDismissEnabled = IsLightDismissEnabled.Value;
-            if (HorizontalOffset is not null) ui.HorizontalOffset = HorizontalOffset.Value;
-            if (VerticalOffset is not null) ui.VerticalOffset = VerticalOffset.Value;
-            if (Child != null) ui.Child = Child;
+                var subChildren = Spreader<UIKit.UIView>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Child.Add(subChildren[j]);
+                else
+                    ui.Child.Add(child);
+            }
             return CSharpMarkup.WinUI.NativePopupBase.StartChain(ui);
         }
 
@@ -28005,21 +27937,21 @@ namespace CSharpMarkup.WinUI // WrapPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.WrapPanel"/></summary>
-        public static WrapPanel WrapPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static WrapPanel WrapPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.WrapPanel();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.WrapPanel.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.WrapPanel"/></summary>
-        public static WrapPanel WrapPanel(Xaml.Controls.Orientation? Orientation = default, float? ItemWidth = default, float? ItemHeight = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.WrapPanel();
-            if (Orientation is not null) ui.Orientation = Orientation.Value;
-            if (ItemWidth is not null) ui.ItemWidth = ItemWidth;
-            if (ItemHeight is not null) ui.ItemHeight = ItemHeight;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.WrapPanel.StartChain(ui);
         }
 
@@ -29653,10 +29585,21 @@ namespace CSharpMarkup.WinUI // CalendarPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CalendarPanel"/></summary>
-        public static CalendarPanel CalendarPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static CalendarPanel CalendarPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.CalendarPanel();
-            if (Children != null) ui.Children = Children;
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.CalendarPanel.StartChain(ui);
         }
 
@@ -29785,21 +29728,21 @@ namespace CSharpMarkup.WinUI // CarouselPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CarouselPanel"/></summary>
-        public static CarouselPanel CarouselPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static CarouselPanel CarouselPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.CarouselPanel();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.CarouselPanel.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.CarouselPanel"/></summary>
-        public static CarouselPanel CarouselPanel(object ScrollOwner = default, bool? CanVerticallyScroll = default, bool? CanHorizontallyScroll = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.Primitives.CarouselPanel();
-            if (ScrollOwner is not null) ui.ScrollOwner = ScrollOwner;
-            if (CanVerticallyScroll is not null) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
-            if (CanHorizontallyScroll is not null) ui.CanHorizontallyScroll = CanHorizontallyScroll.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.CarouselPanel.StartChain(ui);
         }
 
@@ -30243,14 +30186,6 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
 {
     public static partial class Helpers
     {
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBar"/></summary>
-        public static CommandBarFlyoutCommandBar CommandBarFlyoutCommandBar(Windows.Foundation.Collections.IObservableVector<Microsoft.UI.Xaml.Controls.ICommandBarElement> PrimaryCommands)
-        {
-            var ui = new Xaml.Controls.Primitives.CommandBarFlyoutCommandBar();
-            if (PrimaryCommands != null) ui.PrimaryCommands = PrimaryCommands;
-            return CSharpMarkup.WinUI.CommandBarFlyoutCommandBar.StartChain(ui);
-        }
-
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBar"/></summary>
         public static CommandBarFlyoutCommandBar CommandBarFlyoutCommandBar()
         {
@@ -31140,20 +31075,21 @@ namespace CSharpMarkup.WinUI // InfoBarPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.InfoBarPanel"/></summary>
-        public static InfoBarPanel InfoBarPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static InfoBarPanel InfoBarPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.InfoBarPanel();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.InfoBarPanel.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.InfoBarPanel"/></summary>
-        public static InfoBarPanel InfoBarPanel(CSharpMarkup.WinUI.to.Thickness? HorizontalOrientationPadding = default, CSharpMarkup.WinUI.to.Thickness? VerticalOrientationPadding = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.Primitives.InfoBarPanel();
-            if (HorizontalOrientationPadding is not null) ui.HorizontalOrientationPadding = HorizontalOrientationPadding.Value;
-            if (VerticalOrientationPadding is not null) ui.VerticalOrientationPadding = VerticalOrientationPadding.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.InfoBarPanel.StartChain(ui);
         }
 
@@ -32387,21 +32323,21 @@ namespace CSharpMarkup.WinUI // OrientedVirtualizingPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.OrientedVirtualizingPanel"/></summary>
-        public static OrientedVirtualizingPanel OrientedVirtualizingPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static OrientedVirtualizingPanel OrientedVirtualizingPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.OrientedVirtualizingPanel();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.OrientedVirtualizingPanel.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.OrientedVirtualizingPanel"/></summary>
-        public static OrientedVirtualizingPanel OrientedVirtualizingPanel(object ScrollOwner = default, bool? CanVerticallyScroll = default, bool? CanHorizontallyScroll = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.Primitives.OrientedVirtualizingPanel();
-            if (ScrollOwner is not null) ui.ScrollOwner = ScrollOwner;
-            if (CanVerticallyScroll is not null) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
-            if (CanHorizontallyScroll is not null) ui.CanHorizontallyScroll = CanHorizontallyScroll.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.OrientedVirtualizingPanel.StartChain(ui);
         }
 
@@ -32592,10 +32528,21 @@ namespace CSharpMarkup.WinUI // PivotHeaderPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.PivotHeaderPanel"/></summary>
-        public static PivotHeaderPanel PivotHeaderPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static PivotHeaderPanel PivotHeaderPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.PivotHeaderPanel();
-            if (Children != null) ui.Children = Children;
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.PivotHeaderPanel.StartChain(ui);
         }
 
@@ -32657,10 +32604,21 @@ namespace CSharpMarkup.WinUI // PivotPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.PivotPanel"/></summary>
-        public static PivotPanel PivotPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static PivotPanel PivotPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.PivotPanel();
-            if (Children != null) ui.Children = Children;
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.PivotPanel.StartChain(ui);
         }
 
@@ -32722,25 +32680,21 @@ namespace CSharpMarkup.WinUI // Popup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.Popup"/></summary>
-        public static Popup Popup(Microsoft.UI.Xaml.UIElement Child)
+        public static Popup Popup(params UIKit.UIView[] Child)
         {
             var ui = new Xaml.Controls.Primitives.Popup();
-            if (Child != null) ui.Child = Child;
-            return CSharpMarkup.WinUI.Popup.StartChain(ui);
-        }
+            for (int i = 0; i < Child.Length; i++)
+            {
+                var child = Child[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.Popup"/></summary>
-        public static Popup Popup(bool? ShouldConstrainToRootBounds = default, Xaml.Media.Animation.TransitionCollection ChildTransitions = default, Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, bool? IsOpen = default, bool? IsLightDismissEnabled = default, double? HorizontalOffset = default, double? VerticalOffset = default, Microsoft.UI.Xaml.UIElement Child = default)
-        {
-            var ui = new Xaml.Controls.Primitives.Popup();
-            if (ShouldConstrainToRootBounds is not null) ui.ShouldConstrainToRootBounds = ShouldConstrainToRootBounds.Value;
-            if (ChildTransitions is not null) ui.ChildTransitions = ChildTransitions;
-            if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
-            if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
-            if (IsLightDismissEnabled is not null) ui.IsLightDismissEnabled = IsLightDismissEnabled.Value;
-            if (HorizontalOffset is not null) ui.HorizontalOffset = HorizontalOffset.Value;
-            if (VerticalOffset is not null) ui.VerticalOffset = VerticalOffset.Value;
-            if (Child != null) ui.Child = Child;
+                var subChildren = Spreader<UIKit.UIView>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Child.Add(subChildren[j]);
+                else
+                    ui.Child.Add(child);
+            }
             return CSharpMarkup.WinUI.Popup.StartChain(ui);
         }
 
@@ -33404,24 +33358,21 @@ namespace CSharpMarkup.WinUI // Selector
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.Selector"/></summary>
-        public static Selector Selector(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static Selector Selector(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.Primitives.Selector();
-            if (Items != null) ui.Items = Items;
-            return CSharpMarkup.WinUI.Selector.StartChain(ui);
-        }
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.Selector"/></summary>
-        public static Selector Selector(object SelectedItem = default, int? SelectedIndex = default, string SelectedValuePath = default, object SelectedValue = default, bool? IsSynchronizedWithCurrentItem = default, bool? IsSelectionActive = default, Microsoft.UI.Xaml.Controls.ItemCollection Items = default)
-        {
-            var ui = new Xaml.Controls.Primitives.Selector();
-            if (SelectedItem is not null) ui.SelectedItem = SelectedItem;
-            if (SelectedIndex is not null) ui.SelectedIndex = SelectedIndex.Value;
-            if (SelectedValuePath is not null) ui.SelectedValuePath = SelectedValuePath;
-            if (SelectedValue is not null) ui.SelectedValue = SelectedValue;
-            if (IsSynchronizedWithCurrentItem is not null) ui.IsSynchronizedWithCurrentItem = IsSynchronizedWithCurrentItem;
-            if (IsSelectionActive is not null) ui.IsSelectionActive = IsSelectionActive.Value;
-            if (Items != null) ui.Items = Items;
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.Selector.StartChain(ui);
         }
 
@@ -33718,10 +33669,21 @@ namespace CSharpMarkup.WinUI // TabViewListView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.TabViewListView"/></summary>
-        public static TabViewListView TabViewListView(Microsoft.UI.Xaml.Controls.ItemCollection Items)
+        public static TabViewListView TabViewListView(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.Primitives.TabViewListView();
-            if (Items != null) ui.Items = Items;
+            for (int i = 0; i < Items.Length; i++)
+            {
+                var child = Items[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Items.Add(subChildren[j].UI);
+                else
+                    ui.Items.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.TabViewListView.StartChain(ui);
         }
 
@@ -34268,20 +34230,21 @@ namespace CSharpMarkup.WinUI // MonochromaticOverlayPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter"/></summary>
-        public static MonochromaticOverlayPresenter MonochromaticOverlayPresenter(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static MonochromaticOverlayPresenter MonochromaticOverlayPresenter(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.MonochromaticOverlayPresenter();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.MonochromaticOverlayPresenter.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter"/></summary>
-        public static MonochromaticOverlayPresenter MonochromaticOverlayPresenter(Windows.UI.Color? ReplacementColor = default, Xaml.UIElement SourceElement = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Xaml.Controls.Primitives.MonochromaticOverlayPresenter();
-            if (ReplacementColor is not null) ui.ReplacementColor = ReplacementColor.Value;
-            if (SourceElement is not null) ui.SourceElement = SourceElement;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.MonochromaticOverlayPresenter.StartChain(ui);
         }
 
@@ -37018,19 +36981,21 @@ namespace CSharpMarkup.WinUI // GeometryGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.GeometryGroup"/></summary>
-        public static GeometryGroup GeometryGroup(Microsoft.UI.Xaml.Media.GeometryCollection Children)
+        public static GeometryGroup GeometryGroup(params Microsoft.UI.Xaml.Media.Geometry[] Children)
         {
             var ui = new Xaml.Media.GeometryGroup();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.GeometryGroup.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Media.GeometryGroup"/></summary>
-        public static GeometryGroup GeometryGroup(Xaml.Media.FillRule? FillRule = default, Microsoft.UI.Xaml.Media.GeometryCollection Children = default)
-        {
-            var ui = new Xaml.Media.GeometryGroup();
-            if (FillRule is not null) ui.FillRule = FillRule.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Geometry>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.GeometryGroup.StartChain(ui);
         }
 
@@ -37393,20 +37358,21 @@ namespace CSharpMarkup.WinUI // LinearGradientBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.LinearGradientBrush"/></summary>
-        public static LinearGradientBrush LinearGradientBrush(Microsoft.UI.Xaml.Media.GradientStopCollection GradientStops)
+        public static LinearGradientBrush LinearGradientBrush(params Microsoft.UI.Xaml.Media.GradientStop[] GradientStops)
         {
             var ui = new Xaml.Media.LinearGradientBrush();
-            if (GradientStops != null) ui.GradientStops = GradientStops;
-            return CSharpMarkup.WinUI.LinearGradientBrush.StartChain(ui);
-        }
+            for (int i = 0; i < GradientStops.Length; i++)
+            {
+                var child = GradientStops[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Media.LinearGradientBrush"/></summary>
-        public static LinearGradientBrush LinearGradientBrush(CSharpMarkup.WinUI.to.Point? StartPoint = default, CSharpMarkup.WinUI.to.Point? EndPoint = default, Microsoft.UI.Xaml.Media.GradientStopCollection GradientStops = default)
-        {
-            var ui = new Xaml.Media.LinearGradientBrush();
-            if (StartPoint is not null) ui.StartPoint = StartPoint.Value;
-            if (EndPoint is not null) ui.EndPoint = EndPoint.Value;
-            if (GradientStops != null) ui.GradientStops = GradientStops;
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.GradientStop>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.GradientStops.Add(subChildren[j]);
+                else
+                    ui.GradientStops.Add(child);
+            }
             return CSharpMarkup.WinUI.LinearGradientBrush.StartChain(ui);
         }
 
@@ -37720,23 +37686,21 @@ namespace CSharpMarkup.WinUI // PathFigure
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.PathFigure"/></summary>
-        public static PathFigure PathFigure(Microsoft.UI.Xaml.Media.PathSegmentCollection Segments)
+        public static PathFigure PathFigure(params Microsoft.UI.Xaml.Media.PathSegment[] Segments)
         {
             var ui = new Xaml.Media.PathFigure();
-            if (Segments != null) ui.Segments = Segments;
-            return CSharpMarkup.WinUI.PathFigure.StartChain(ui);
-        }
+            for (int i = 0; i < Segments.Length; i++)
+            {
+                var child = Segments[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Media.PathFigure"/></summary>
-        public static PathFigure PathFigure(CSharpMarkup.WinUI.to.Point? StartPoint = default, bool? IsFilled = default, bool? IsClosed = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default, Microsoft.UI.Xaml.Media.PathSegmentCollection Segments = default)
-        {
-            var ui = new Xaml.Media.PathFigure();
-            if (StartPoint is not null) ui.StartPoint = StartPoint.Value;
-            if (IsFilled is not null) ui.IsFilled = IsFilled.Value;
-            if (IsClosed is not null) ui.IsClosed = IsClosed.Value;
-            if (DataContext is not null) ui.DataContext = DataContext;
-            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
-            if (Segments != null) ui.Segments = Segments;
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.PathSegment>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Segments.Add(subChildren[j]);
+                else
+                    ui.Segments.Add(child);
+            }
             return CSharpMarkup.WinUI.PathFigure.StartChain(ui);
         }
 
@@ -37865,19 +37829,21 @@ namespace CSharpMarkup.WinUI // PathGeometry
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.PathGeometry"/></summary>
-        public static PathGeometry PathGeometry(Microsoft.UI.Xaml.Media.PathFigureCollection Figures)
+        public static PathGeometry PathGeometry(params Microsoft.UI.Xaml.Media.PathFigure[] Figures)
         {
             var ui = new Xaml.Media.PathGeometry();
-            if (Figures != null) ui.Figures = Figures;
-            return CSharpMarkup.WinUI.PathGeometry.StartChain(ui);
-        }
+            for (int i = 0; i < Figures.Length; i++)
+            {
+                var child = Figures[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Media.PathGeometry"/></summary>
-        public static PathGeometry PathGeometry(Xaml.Media.FillRule? FillRule = default, Microsoft.UI.Xaml.Media.PathFigureCollection Figures = default)
-        {
-            var ui = new Xaml.Media.PathGeometry();
-            if (FillRule is not null) ui.FillRule = FillRule.Value;
-            if (Figures != null) ui.Figures = Figures;
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.PathFigure>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Figures.Add(subChildren[j]);
+                else
+                    ui.Figures.Add(child);
+            }
             return CSharpMarkup.WinUI.PathGeometry.StartChain(ui);
         }
 
@@ -39262,10 +39228,21 @@ namespace CSharpMarkup.WinUI // TransformGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.TransformGroup"/></summary>
-        public static TransformGroup TransformGroup(Microsoft.UI.Xaml.Media.TransformCollection Children)
+        public static TransformGroup TransformGroup(params Microsoft.UI.Xaml.Media.Transform[] Children)
         {
             var ui = new Xaml.Media.TransformGroup();
-            if (Children != null) ui.Children = Children;
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Transform>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.TransformGroup.StartChain(ui);
         }
 
@@ -39847,21 +39824,21 @@ namespace CSharpMarkup.WinUI // ColorAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.ColorAnimationUsingKeyFrames"/></summary>
-        public static ColorAnimationUsingKeyFrames ColorAnimationUsingKeyFrames(Microsoft.UI.Xaml.Media.Animation.ColorKeyFrameCollection KeyFrames)
+        public static ColorAnimationUsingKeyFrames ColorAnimationUsingKeyFrames(params Microsoft.UI.Xaml.Media.Animation.ColorKeyFrame[] KeyFrames)
         {
             var ui = new Xaml.Media.Animation.ColorAnimationUsingKeyFrames();
-            if (KeyFrames != null) ui.KeyFrames = KeyFrames;
-            return CSharpMarkup.WinUI.ColorAnimationUsingKeyFrames.StartChain(ui);
-        }
+            for (int i = 0; i < KeyFrames.Length; i++)
+            {
+                var child = KeyFrames[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Media.Animation.ColorAnimationUsingKeyFrames"/></summary>
-        public static ColorAnimationUsingKeyFrames ColorAnimationUsingKeyFrames(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, bool? EnableDependentAnimation = default, Microsoft.UI.Xaml.Media.Animation.ColorKeyFrameCollection KeyFrames = default)
-        {
-            var ui = new Xaml.Media.Animation.ColorAnimationUsingKeyFrames();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
-            if (Duration is not null) ui.Duration = Duration.Value;
-            if (EnableDependentAnimation is not null) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            if (KeyFrames != null) ui.KeyFrames = KeyFrames;
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Animation.ColorKeyFrame>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.KeyFrames.Add(subChildren[j]);
+                else
+                    ui.KeyFrames.Add(child);
+            }
             return CSharpMarkup.WinUI.ColorAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -40594,21 +40571,21 @@ namespace CSharpMarkup.WinUI // DoubleAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DoubleAnimationUsingKeyFrames"/></summary>
-        public static DoubleAnimationUsingKeyFrames DoubleAnimationUsingKeyFrames(Microsoft.UI.Xaml.Media.Animation.DoubleKeyFrameCollection KeyFrames)
+        public static DoubleAnimationUsingKeyFrames DoubleAnimationUsingKeyFrames(params Microsoft.UI.Xaml.Media.Animation.DoubleKeyFrame[] KeyFrames)
         {
             var ui = new Xaml.Media.Animation.DoubleAnimationUsingKeyFrames();
-            if (KeyFrames != null) ui.KeyFrames = KeyFrames;
-            return CSharpMarkup.WinUI.DoubleAnimationUsingKeyFrames.StartChain(ui);
-        }
+            for (int i = 0; i < KeyFrames.Length; i++)
+            {
+                var child = KeyFrames[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Media.Animation.DoubleAnimationUsingKeyFrames"/></summary>
-        public static DoubleAnimationUsingKeyFrames DoubleAnimationUsingKeyFrames(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, bool? EnableDependentAnimation = default, Microsoft.UI.Xaml.Media.Animation.DoubleKeyFrameCollection KeyFrames = default)
-        {
-            var ui = new Xaml.Media.Animation.DoubleAnimationUsingKeyFrames();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
-            if (Duration is not null) ui.Duration = Duration.Value;
-            if (EnableDependentAnimation is not null) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            if (KeyFrames != null) ui.KeyFrames = KeyFrames;
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Animation.DoubleKeyFrame>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.KeyFrames.Add(subChildren[j]);
+                else
+                    ui.KeyFrames.Add(child);
+            }
             return CSharpMarkup.WinUI.DoubleAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -42191,21 +42168,21 @@ namespace CSharpMarkup.WinUI // ObjectAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.ObjectAnimationUsingKeyFrames"/></summary>
-        public static ObjectAnimationUsingKeyFrames ObjectAnimationUsingKeyFrames(Microsoft.UI.Xaml.Media.Animation.ObjectKeyFrameCollection KeyFrames)
+        public static ObjectAnimationUsingKeyFrames ObjectAnimationUsingKeyFrames(params Microsoft.UI.Xaml.Media.Animation.ObjectKeyFrame[] KeyFrames)
         {
             var ui = new Xaml.Media.Animation.ObjectAnimationUsingKeyFrames();
-            if (KeyFrames != null) ui.KeyFrames = KeyFrames;
-            return CSharpMarkup.WinUI.ObjectAnimationUsingKeyFrames.StartChain(ui);
-        }
+            for (int i = 0; i < KeyFrames.Length; i++)
+            {
+                var child = KeyFrames[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Media.Animation.ObjectAnimationUsingKeyFrames"/></summary>
-        public static ObjectAnimationUsingKeyFrames ObjectAnimationUsingKeyFrames(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, bool? EnableDependentAnimation = default, Microsoft.UI.Xaml.Media.Animation.ObjectKeyFrameCollection KeyFrames = default)
-        {
-            var ui = new Xaml.Media.Animation.ObjectAnimationUsingKeyFrames();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
-            if (Duration is not null) ui.Duration = Duration.Value;
-            if (EnableDependentAnimation is not null) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            if (KeyFrames != null) ui.KeyFrames = KeyFrames;
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Animation.ObjectKeyFrame>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.KeyFrames.Add(subChildren[j]);
+                else
+                    ui.KeyFrames.Add(child);
+            }
             return CSharpMarkup.WinUI.ObjectAnimationUsingKeyFrames.StartChain(ui);
         }
 
@@ -43890,20 +43867,21 @@ namespace CSharpMarkup.WinUI // Storyboard
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.Storyboard"/></summary>
-        public static Storyboard Storyboard(Microsoft.UI.Xaml.Media.Animation.TimelineCollection Children)
+        public static Storyboard Storyboard(params Microsoft.UI.Xaml.Media.Animation.Timeline[] Children)
         {
             var ui = new Xaml.Media.Animation.Storyboard();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.Storyboard.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Xaml.Media.Animation.Storyboard"/></summary>
-        public static Storyboard Storyboard(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, Microsoft.UI.Xaml.Media.Animation.TimelineCollection Children = default)
-        {
-            var ui = new Xaml.Media.Animation.Storyboard();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
-            if (Duration is not null) ui.Duration = Duration.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.Media.Animation.Timeline>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.Storyboard.StartChain(ui);
         }
 
@@ -45789,20 +45767,21 @@ namespace CSharpMarkup.WinUI // ManagedItemsStackPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Uno.UI.Controls.ManagedItemsStackPanel"/></summary>
-        public static ManagedItemsStackPanel ManagedItemsStackPanel(Microsoft.UI.Xaml.Controls.UIElementCollection Children)
+        public static ManagedItemsStackPanel ManagedItemsStackPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Uno.UI.Controls.ManagedItemsStackPanel();
-            if (Children != null) ui.Children = Children;
-            return CSharpMarkup.WinUI.ManagedItemsStackPanel.StartChain(ui);
-        }
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
 
-        /// <summary>Create a <see cref="Uno.UI.Controls.ManagedItemsStackPanel"/></summary>
-        public static ManagedItemsStackPanel ManagedItemsStackPanel(Xaml.Controls.Orientation? Orientation = default, double? CacheLength = default, Microsoft.UI.Xaml.Controls.UIElementCollection Children = default)
-        {
-            var ui = new Uno.UI.Controls.ManagedItemsStackPanel();
-            if (Orientation is not null) ui.Orientation = Orientation.Value;
-            if (CacheLength is not null) ui.CacheLength = CacheLength.Value;
-            if (Children != null) ui.Children = Children;
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
             return CSharpMarkup.WinUI.ManagedItemsStackPanel.StartChain(ui);
         }
 
