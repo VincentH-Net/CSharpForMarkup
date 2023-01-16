@@ -20,24 +20,19 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Core\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Constants.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Core\MarkupExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\GlobalUsings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\HotReloadManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\IBuild.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\MarkupExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\XLog.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Core\IBuild.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)FlutterPage.logic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FlutterPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FlutterPage.logic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FlutterViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SearchPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SearchPage.logic.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)FlutterViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SearchViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Styles.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Xaml\FlutterPage.xaml">
@@ -50,6 +45,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Xaml\" />
+    <None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
   </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
+  </ItemGroup>
+  <Import Project="Examples.Shared.globs.props" Condition="'$(IsCodeSharingProject)'!='true'" />
 </Project>

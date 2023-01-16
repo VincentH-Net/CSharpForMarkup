@@ -17,4 +17,6 @@ public sealed partial class SearchPage : Page, IBuild
         DataContext = vm = App.Current.SearchViewModel;
         Build();
     }
+
+    public void Build() => this.SetContent(Markup);
 }

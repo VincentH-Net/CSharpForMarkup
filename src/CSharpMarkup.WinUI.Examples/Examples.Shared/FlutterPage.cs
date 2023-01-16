@@ -5,9 +5,7 @@ namespace WinUICsMarkupExamples;
 
 public partial class FlutterPage
 {
-    public void Build() => Content =
-
-    VStack (
+    StackPanel Markup => VStack (
         HStack (
             Button ("\u1438") .Style (HeaderButton)
                .Width (50)

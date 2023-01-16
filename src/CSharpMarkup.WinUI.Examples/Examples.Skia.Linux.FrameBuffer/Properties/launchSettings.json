@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "WinUICsMarkupExamples.Skia.Linux.FrameBuffer": {
+      "commandName": "Project"
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "distributionName": ""
+    }
+  }
+}

@@ -14,7 +14,7 @@ namespace WinUICsMarkupExamples.Skia.Gtk
 				expArgs.ExitApplication = true;
 			};
 
-			var host = new GtkHost(() => new App(), args);
+			var host = new GtkHost(() => new App());
 
 			host.Run();
 		}

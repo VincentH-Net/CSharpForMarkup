@@ -16,6 +16,8 @@ public sealed partial class FlutterPage : Page, IBuild
         vm.PropertyChanged += Vm_PropertyChanged;
     }
 
+    public void Build() => this.SetContent(Markup);
+
     void Vm_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
     {
         if (e.PropertyName == nameof(vm.ShowMore)) Build();

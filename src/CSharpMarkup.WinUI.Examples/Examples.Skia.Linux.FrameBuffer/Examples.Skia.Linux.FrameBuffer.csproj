@@ -2,21 +2,28 @@
   <PropertyGroup>
     <OutputType Condition="'$(Configuration)'=='Release'">WinExe</OutputType>
     <OutputType Condition="'$(Configuration)'=='Debug'">Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
-  <ItemGroup Condition="exists('..\Examples.UWP')">
-    <EmbeddedResource Include="..\Examples.UWP\Package.appxmanifest" LogicalName="Package.appxmanifest" />
-    <Content Include="..\Examples.UWP\Assets\StoreLogo.png" Link="Assets\StoreLogo.png" />
+  <ItemGroup Condition="exists('..\Examples.Windows')">
+    <EmbeddedResource Include="..\Examples.Windows\Package.appxmanifest" LogicalName="Package.appxmanifest" />
+    <Content Include="..\Examples.Windows\Images\StoreLogo.png" Link="Assets\StoreLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Assets\Fonts\uno-fluentui-assets.ttf" />
   </ItemGroup>
   <ItemGroup>
     <UpToDateCheckInput Include="..\Examples.Shared\**\*.xaml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
-    <PackageReference Include="Uno.WinUI.Skia.Linux.FrameBuffer" Version="3.11.6" />
-    <PackageReference Include="Uno.WinUI.RemoteControl" Version="3.11.6" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="CSharpMarkup.WinUI" Version="0.8.3-dev.7" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
+    <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
+    <PackageReference Include="Uno.WinUI.Skia.Linux.FrameBuffer" Version="4.6.39" />
+    <PackageReference Include="Uno.WinUI.RemoteControl" Version="4.6.39" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.6.39" />
+    <PackageReference Include="Uno.WinUI.Lottie" Version="4.6.39" />
+    <PackageReference Include="SkiaSharp.Views.Uno.WinUI" Version="2.88.3" />
+    <PackageReference Include="SkiaSharp.Skottie" Version="2.88.3" />
   </ItemGroup>
   <Import Project="..\Examples.Shared\Examples.Shared.projitems" Label="Shared" />
 </Project>

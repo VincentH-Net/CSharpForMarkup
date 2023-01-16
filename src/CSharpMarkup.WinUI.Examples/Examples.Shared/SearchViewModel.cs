@@ -15,7 +15,7 @@ public class SearchViewModel : BaseViewModel
     public ICommand SearchCommand => searchCommand ??= new RelayCommandAsync(Search);
     public ICommand LikeCommand => likeCommand ??= new RelayCommand<Tweet>(Like);
 
-    public Uri LinkUri(string linkText) => new (linkText?.StartsWith("#") == true ? TwitterSearchUri(linkText) : linkText);
+    public Uri LinkUri(string linkText) => new(linkText?.StartsWith("#") == true ? TwitterSearchUri(linkText) : linkText);
 
     public SearchViewModel Initialize()
     {
@@ -49,7 +49,7 @@ public class SearchViewModel : BaseViewModel
             },
             new Tweet
             {
-                AuthorImage = "https://pbs.twimg.com/profile_images/2159034926/MACAW_vincenth_LThumb_400x400.jpg",
+                AuthorImage = "https://pbs.twimg.com/profile_images/1527601353312419841/V7FQ6ftO_400x400.jpg",
                 Header = "VincentH.NET @vincenth_net · Nov 30",
                 Body = new List<TextFragment>
                 {
@@ -86,7 +86,7 @@ public class SearchViewModel : BaseViewModel
             },
             new Tweet
             {
-                AuthorImage = "https://pbs.twimg.com/profile_images/2159034926/MACAW_vincenth_LThumb_400x400.jpg",
+                AuthorImage = "https://pbs.twimg.com/profile_images/1527601353312419841/V7FQ6ftO_400x400.jpg",
                 Header = "VincentH.NET @vincenth_net · Nov 30",
                 Body = new List<TextFragment>
                 {
@@ -108,7 +108,7 @@ public class SearchViewModel : BaseViewModel
             },
             new Tweet
             {
-                AuthorImage = "https://pbs.twimg.com/profile_images/2159034926/MACAW_vincenth_LThumb_400x400.jpg",
+                AuthorImage = "https://pbs.twimg.com/profile_images/1527601353312419841/V7FQ6ftO_400x400.jpg",
                 Header = "VincentH.NET @vincenth_net · Nov 15",
                 Body = new List<TextFragment>
                 {
