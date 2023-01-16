@@ -22,7 +22,7 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>0.8.3-dev.6</Version>
+		<Version>0.8.3-dev.7</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573</NoWarn>
@@ -73,7 +73,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)">
-		<PackageReference Include="Uno.WinUI" Version="4.6.19" />
+		<PackageReference Include="Uno.WinUI" Version="4.6.39" />
 	</ItemGroup>
 
 	<ItemGroup>
