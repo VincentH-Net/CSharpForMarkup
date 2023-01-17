@@ -11,23 +11,17 @@ namespace WinUICsMarkupExamples
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
+    /// <remarks>
+    /// This partial class file is as close as possible to what is generated with dotnet new unoapp -f net7.0
+    /// The only changes are that it calls these methods:
+    /// <see cref="SetCurrentApp"/>, 
+    /// <see cref="CreateRootFrame"/>, 
+    /// <see cref="InitializeNavigation(Frame)"/> and 
+    /// <see cref="EnableHotReloadKeyboardWatcher"/>
+    /// which are implemented in the App.Example.xaml.cs partial class file
+    /// </remarks>
     public sealed partial class App : Application
     {
-        #region Added C# Markup
-        Frame rootFrame;
-
-        SearchViewModel searchViewModel;
-        FlutterViewModel flutterViewModel;
-
-        public static new App Current { get; private set; }
-
-        internal SearchViewModel SearchViewModel => searchViewModel ??= new SearchViewModel().Initialize();
-        internal FlutterViewModel FlutterViewModel => flutterViewModel ??= new FlutterViewModel();
-
-        internal bool NavigateToFlutterPage() => rootFrame.Navigate(typeof(FlutterPage));
-        internal void NavigateBack() => rootFrame.GoBack();
-        #endregion
-
         private Window _window;
 
         /// <summary>
@@ -36,7 +30,7 @@ namespace WinUICsMarkupExamples
         /// </summary>
         public App()
         {
-            Current = this; // Added C# Markup
+            SetCurrentApp();
 
             InitializeLogging();
 
@@ -68,17 +62,14 @@ namespace WinUICsMarkupExamples
             _window = Microsoft.UI.Xaml.Window.Current;
 #endif
 
-            /*TODO: changed C# Markup: var*/ rootFrame = _window.Content as Frame;
+            var rootFrame = _window.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
             if (rootFrame == null)
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
-                rootFrame = new Frame
-                {
-                    Resources = Styles.Implicit.Dictionary // TODO: added C# Markup
-                };
+                rootFrame = CreateRootFrame();
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
@@ -90,14 +81,10 @@ namespace WinUICsMarkupExamples
                 // Place the frame in the current Window
                 _window.Content = rootFrame;
 
-                #region Added C# Markup
-                #if WINDOWS && DEBUG && !HAS_UNO_SKIA_WPF
-                // TODO: Replace with MetadataUpdateHandler attribute after that works for .NET hot reload in WinUI 3
-                CSharpMarkup.WinUI.HotReloadKeyboardWatcher.Enable(true);
-                CSharpMarkup.WinUI.HotReloadKeyboardWatcher.CtrlUpAfterS += BuildUI;
-                #endif
-                #endregion
+                EnableHotReloadKeyboardWatcher();
             }
+
+            InitializeNavigation(rootFrame);
 
 #if !(NET6_0_OR_GREATER && WINDOWS)
             if (args.UWPLaunchActivatedEventArgs.PrelaunchActivated == false)
@@ -108,16 +95,12 @@ namespace WinUICsMarkupExamples
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(/* TODO: C# Markup change MainPage*/SearchPage), args.Arguments);
+                    NavigateToSearchPage(args.Arguments);
                 }
                 // Ensure the current window is active
                 _window.Activate();
             }
         }
-
-#if DEBUG && !HAS_UNO_WASM
-        internal void BuildUI() => _ = rootFrame.DispatcherQueue.TryEnqueue(() => (rootFrame.Content as IBuild)?.Build());
-#endif
 
         /// <summary>
         /// Invoked when Navigation to a certain page fails
