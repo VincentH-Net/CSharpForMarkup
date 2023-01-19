@@ -27,8 +27,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\HotReloadManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\IBuild.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\MarkupExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Core\RelayCommand.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Core\XLog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FlutterPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FlutterPage.logic.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FlutterViewModel.cs" />

@@ -1,10 +1,9 @@
 ﻿using CSharpMarkup.WinUI;
-using static CSharpMarkup.WinUI.Helpers;
 namespace WinUICsMarkupExamples;
 
 public static class Styles
 {
-    static Style<Button> headerButton;
+    static Style<Button>? headerButton;
 
     public static Style<Button> HeaderButton => headerButton ??= new Style<Button>(
         (Button_UI.ForegroundProperty, CornflowerBlue),
@@ -13,11 +12,11 @@ public static class Styles
 
     public static class Implicit
     {
-        static UI.ResourceDictionary dictionary;
-        static Style<Button> buttons;
-        static Style<TextBlock> textBlocks;
-        static Style<TextBox> textBoxes;
-        static Style<ListViewItem> listViewItems;
+        static UI.ResourceDictionary? dictionary;
+        static Style<Button>? buttons;
+        static Style<TextBlock>? textBlocks;
+        static Style<TextBox>? textBoxes;
+        static Style<ListViewItem>? listViewItems;
 
         public static UI.ResourceDictionary Dictionary => dictionary ??= CreateResourceDictionary(
             TextBlocks, Buttons, TextBoxes, ListViewItems

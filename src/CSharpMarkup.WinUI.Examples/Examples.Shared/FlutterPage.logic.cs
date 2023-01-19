@@ -2,10 +2,13 @@
 
 namespace WinUICsMarkupExamples;
 
-public sealed partial class FlutterPage : Page, IBuild
+partial class FlutterPage : Page, IBuild
 {
+#pragma warning disable CS0649
+    static readonly Button? b;
+#pragma warning restore
+
     readonly FlutterViewModel vm;
-    static Button b;
 
     public FlutterPage()
     {
@@ -18,7 +21,7 @@ public sealed partial class FlutterPage : Page, IBuild
 
     public void Build() => this.SetContent(Markup);
 
-    void Vm_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+    void Vm_PropertyChanged(object? _, System.ComponentModel.PropertyChangedEventArgs e)
     {
         if (e.PropertyName == nameof(vm.ShowMore)) Build();
     }

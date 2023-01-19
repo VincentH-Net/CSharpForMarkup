@@ -1,11 +1,12 @@
-using CSharpMarkup.WinUI;
+﻿using CSharpMarkup.WinUI;
 using static CSharpMarkup.WinUI.Helpers;
+using VM = WinUICsMarkupExamples.SearchViewModel;
 namespace WinUICsMarkupExamples;
 
-public partial class SearchPage
+sealed partial class SearchPage
 {
     StackPanel Markup => StackPanel(
-        Header.Assign(out header),
+        Header,
         SearchResults,
         Footer
     )  .Background(Black);
@@ -51,7 +52,7 @@ public partial class SearchPage
             TextBlock()
                 .FontSize(15) .TextWrapping().WrapWholeWords()
                 .Grid(TweetRow.Body, TweetColumn.Content) .Margins(right: 10)
-                .OnDataContextChanged<Tweet>(Format),
+                .OnDataContextChanged<Tweet?>(Format),
 
             LikeButton()
                 .Grid(TweetRow.Actions, TweetColumn.Content) .Left() .Top()
@@ -63,28 +64,28 @@ public partial class SearchPage
     )  .Background("#171F2A") .SelectionMode().None()
        .Bind(vm.SearchResults);
 
-    Ellipse RoundImage(double size) => Ellipse() .Size(size) .Fill(ImageBrush() .Bind(tweet.AuthorImage));
+    static Ellipse RoundImage(double size) => Ellipse() .Size(size) .Fill(ImageBrush() .Bind(tweet.AuthorImage));
 
-    void Format(TextBlock_UI textBlock, Tweet tweet)
+    void Format(TextBlock_UI textBlock, Tweet? tweet)
     {
         textBlock.Inlines.Clear();
 
         tweet?.Body?.ForEach(fragment => textBlock.Inlines.Add(
             fragment.IsMatch ?
-            Link(fragment.Text, vm.LinkUri(fragment.Text)) .FontSize(15) :
+            Link(fragment.Text, VM.LinkUri(fragment.Text)) .FontSize(15) :
             Run(fragment.Text)
         ));
     }
 
-    Button LikeButton() => Button()
+    static Button LikeButton() => Button()
        .Foreground(White) .FontSize(20)
        .HorizontalContentAlignment().Center() .VerticalContentAlignment().Center() .Margin(0) .Size(32) .Padding(0)
        .Content().Bind(tweet.IsLikedByMe, convert: (bool like) => like ? "\u2764" : "\u2661");
 
-    TextBlock Footer => TextBlock("See ", Link("C# Markup on GitHub", CsMarkupUri), " for more information")
+    static TextBlock Footer => TextBlock("See ", Link("C# Markup on GitHub", CsMarkupUri), " for more information")
        .FontSize(14) .Foreground(White)
        .HCenter()
        .Margins(bottom: 6);
 
-    Hyperlink Link(string text, Uri uri) => Hyperlink(uri, text) .Foreground(CornflowerBlue);
+    static Hyperlink Link(string text, Uri uri) => Hyperlink(uri, text) .Foreground(CornflowerBlue);
 }

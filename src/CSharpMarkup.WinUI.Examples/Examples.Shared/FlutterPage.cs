@@ -1,9 +1,9 @@
-using System.Linq;
+﻿using System.Linq;
 using CSharpMarkup.WinUI;
 using static CSharpMarkup.WinUI.Helpers;
 namespace WinUICsMarkupExamples;
 
-public partial class FlutterPage
+sealed partial class FlutterPage
 {
     StackPanel Markup => VStack (
         HStack (
@@ -35,14 +35,14 @@ public partial class FlutterPage
 
     IEnumerable<UI.UIElement> Subtitles => vm.Subtitles.Select(subtitle => TextBlock(subtitle) .Margin (0, 5) .UI);
 
-    IEnumerable <UI.UIElement> Pairs() {
+    static IEnumerable <UI.UIElement> Pairs() {
         for (int i = 1; i <= 5; i++) {
             yield return TextBlock($"Field {i}:") .Margins (top: 20);
             yield return TextBox(PlaceholderText: $"Enter value for {i}");
         }
     }
 
-    ControlTemplate RoundButton = ControlTemplate (typeof(Button), () =>
+    static ControlTemplate RoundButton => ControlTemplate (typeof(Button), () =>
         Grid (
             Ellipse ()
                 .Fill().BindTemplate(b?.Background) 

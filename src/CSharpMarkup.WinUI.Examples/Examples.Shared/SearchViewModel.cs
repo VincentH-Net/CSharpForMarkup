@@ -1,21 +1,17 @@
-﻿using Microsoft.UI.Xaml.Data;
+﻿using CommunityToolkit.Mvvm.Input;
+using Microsoft.UI.Xaml.Data;
 
 namespace WinUICsMarkupExamples;
 
 [Bindable]
-public class SearchViewModel : BaseViewModel
+public partial class SearchViewModel : BaseViewModel
 {
-    ICommand backCommand, searchCommand, likeCommand;
 
-    public string SearchText { get; set; }
+    public string SearchText { get; set; } = string.Empty;
 
-    public List<Tweet> SearchResults { get; set; }
+    public List<Tweet> SearchResults { get; set; } = new();
 
-    public ICommand BackCommand => backCommand ??= new RelayCommand(Back);
-    public ICommand SearchCommand => searchCommand ??= new RelayCommandAsync(Search);
-    public ICommand LikeCommand => likeCommand ??= new RelayCommand<Tweet>(Like);
-
-    public Uri LinkUri(string linkText) => new(linkText?.StartsWith("#") == true ? TwitterSearchUri(linkText) : linkText);
+    public static Uri LinkUri(string linkText) => new(linkText.StartsWith("#", StringComparison.Ordinal) ? TwitterSearchUri(linkText) : linkText);
 
     public SearchViewModel Initialize()
     {
@@ -136,24 +132,25 @@ public class SearchViewModel : BaseViewModel
         return this;
     }
 
-    void Back() => App.Current.NavigateToFlutterPage();
-    Task Search() => LaunchUri(TwitterSearchUri(SearchText));
-    void Like(Tweet tweet) => tweet.IsLikedByMe = !tweet.IsLikedByMe;
 
-    string TwitterSearchUri(string text) => $"https://twitter.com/search?q={Uri.EscapeDataString(text)}&f=live";
-    Task LaunchUri(string uriString) => (Task)Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
+    [RelayCommand] static void Back() => App.Current.NavigateToFlutterPage();
+    [RelayCommand] Task Search() => LaunchUri(TwitterSearchUri(SearchText));
+    [RelayCommand] static void Like(Tweet tweet) => tweet.IsLikedByMe = !tweet.IsLikedByMe;
+
+    static string TwitterSearchUri(string text) => $"https://twitter.com/search?q={Uri.EscapeDataString(text)}&f=live";
+    static async Task LaunchUri(string uriString) => await Windows.System.Launcher.LaunchUriAsync(new Uri(uriString));
 
     public class Tweet : BaseViewModel
     {
-        public string AuthorImage { get; set; }
-        public string Header { get; set; }
-        public List<TextFragment> Body { get; set; }
+        public string? AuthorImage { get; set; }
+        public string? Header { get; set; }
+        public List<TextFragment>? Body { get; set; }
         public bool IsLikedByMe { get; set; }
     }
 
     public class TextFragment
     {
-        public string Text { get; set; }
+        public string Text { get; set; } = string.Empty;
 
         public bool IsMatch { get; set; }
     }

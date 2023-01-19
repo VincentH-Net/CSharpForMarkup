@@ -20,11 +20,12 @@ namespace WinUICsMarkupExamples
 					// which dispatch keyboard input, and close the application as a result.
 					// This block can be moved to App.xaml.cs if it does not interfere with other
 					// platforms that may use the same keys.
-					CoreWindow.GetForCurrentThread().KeyDown += (s, e) =>
+					CoreWindow.GetForCurrentThread()!.KeyDown += (s, e) =>
 					{
 						if (e.VirtualKey == Windows.System.VirtualKey.F12)
 						{
-							Application.Current.Exit();
+							// TODO: Uno template bug? Exit() is not implemented:
+							// Application.Current.Exit();
 						}
 					};
 

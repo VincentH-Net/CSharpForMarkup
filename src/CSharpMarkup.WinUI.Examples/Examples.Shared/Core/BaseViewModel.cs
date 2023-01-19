@@ -4,5 +4,7 @@ namespace WinUICsMarkupExamples;
 
 public class BaseViewModel : INotifyPropertyChanged
 {
-    public event PropertyChangedEventHandler PropertyChanged;
+#pragma warning disable CS0067 // Justification: event is used by assembly weaver PropertyChanged.Fody
+    public event PropertyChangedEventHandler? PropertyChanged;
+#pragma warning restore
 }

@@ -13,7 +13,14 @@
     <RuntimeIdentifier Condition="'$(TargetFramework)' == 'net7.0-maccatalyst'">maccatalyst-x64</RuntimeIdentifier>
     <RuntimeIdentifier Condition="'$(TargetFramework)' == 'net7.0-macos'">osx-x64</RuntimeIdentifier>
   </PropertyGroup>
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>preview-All</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+  </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
     <PackageReference Include="CSharpMarkup.WinUI" Version="0.8.3-dev.7" />
     <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
     <PackageReference Include="Uno.WinUI" Version="4.6.39" />

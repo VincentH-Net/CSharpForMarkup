@@ -8,7 +8,7 @@ namespace CSharpMarkup.WinUI;
 
 public static class HotReloadKeyboardWatcher
 {
-    static KeyboardHook hook = null;
+    static KeyboardHook? hook = null;
 
     static (Key key, bool down)[] toggle = new[] {
         (Key.LeftCtrl, true),
@@ -34,7 +34,7 @@ public static class HotReloadKeyboardWatcher
 
     public delegate void ParameterlessEventHandler();
 
-    public static event ParameterlessEventHandler CtrlUpAfterS;
+    public static event ParameterlessEventHandler? CtrlUpAfterS;
 
     public static void Enable(bool enable)
     {
@@ -53,7 +53,7 @@ public static class HotReloadKeyboardWatcher
         }
     }
 
-    static void KeyboardPressed(object sender, KeyboardHookEventArgs e)
+    static void KeyboardPressed(object? _, KeyboardHookEventArgs e)
     {
         var input = (e.InputEvent.Key, e.KeyPressType == KeyboardHook.KeyPressType.KeyDown);
 
