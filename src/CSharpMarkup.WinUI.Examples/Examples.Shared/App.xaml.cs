@@ -56,6 +56,12 @@ public sealed partial class App : Application
 
 #if NET6_0_OR_GREATER && WINDOWS && !HAS_UNO
         window = new Window();
+        {
+            nint hWnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
+            var windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
+            var appWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
+            appWindow?.Resize(new(500, 1180));
+        }
         window.Activate();
 #else
         window = Microsoft.UI.Xaml.Window.Current;
