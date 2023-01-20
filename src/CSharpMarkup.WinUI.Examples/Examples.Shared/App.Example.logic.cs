@@ -31,7 +31,7 @@ public partial class App
 
     void SetCurrentApp() => Current = this;
 
-    static Frame CreateRootFrame() => new() { Resources = Implicit.Dictionary };
+    static Frame CreateRootFrame() => Markup.UI;
 
     void InitializeNavigation(Frame navigationFrame) => this.navigationFrame = navigationFrame;
 

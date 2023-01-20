@@ -9,18 +9,15 @@
     <Import_RootNamespace>WinUICsMarkupExamples</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)Xaml\App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)App.Example.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.Example.logic.cs" DependentUpon="App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.logic.cs" DependentUpon="App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\GlobalUsings.cs" />
@@ -28,10 +25,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\IBuild.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\MarkupExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FlutterPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)FlutterPage.logic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FlutterPage.logic.cs" DependentUpon="FlutterPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FlutterViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SearchPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SearchPage.logic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SearchPage.logic.cs" DependentUpon="SearchPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SearchViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Styles.cs" />
   </ItemGroup>
