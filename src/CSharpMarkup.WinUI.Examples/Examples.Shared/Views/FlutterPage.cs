@@ -30,8 +30,7 @@ partial class FlutterPage
 
         TextBlock ("Pairs:"),
         Spread (Pairs())
-
-    )  .Background (Black);
+    );
 
     IEnumerable<UI.UIElement> Subtitles => vm.Subtitles.Select(subtitle => TextBlock(subtitle) .Margin (0, 5) .UI);
 

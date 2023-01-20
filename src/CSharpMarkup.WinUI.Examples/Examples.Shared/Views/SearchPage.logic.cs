@@ -14,6 +14,7 @@ sealed partial class SearchPage : Page, IBuild
     {
         InitializeComponent();
         DataContext = vm = App.Current.SearchViewModel;
+        Background = new UI.Media.SolidColorBrush(Black);
         Build();
     }
 

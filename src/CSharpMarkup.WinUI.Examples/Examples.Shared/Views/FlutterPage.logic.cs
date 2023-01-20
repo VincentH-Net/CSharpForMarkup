@@ -14,6 +14,7 @@ sealed partial class FlutterPage : Page, IBuild
     {
         InitializeComponent();
         DataContext = vm = App.Current.FlutterViewModel;
+        Background = new UI.Media.SolidColorBrush(Black);
         Build();
 
         vm.PropertyChanged += Vm_PropertyChanged;

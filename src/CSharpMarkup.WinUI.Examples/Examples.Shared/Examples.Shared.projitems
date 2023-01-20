@@ -15,22 +15,22 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)App.Example.logic.cs" DependentUpon="App.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)App.logic.cs" DependentUpon="App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\App.Example.logic.cs" DependentUpon="App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\App.logic.cs" DependentUpon="App.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\GlobalUsings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\HotReloadManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\IBuild.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\MarkupExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)FlutterPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)FlutterPage.logic.cs" DependentUpon="FlutterPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)FlutterViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SearchPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SearchPage.logic.cs" DependentUpon="SearchPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)SearchViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Styles.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FlutterPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FlutterPage.logic.cs" DependentUpon="FlutterPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FlutterViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SearchPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SearchPage.logic.cs" DependentUpon="SearchPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SearchViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Styles.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Xaml\FlutterPage.xaml">
