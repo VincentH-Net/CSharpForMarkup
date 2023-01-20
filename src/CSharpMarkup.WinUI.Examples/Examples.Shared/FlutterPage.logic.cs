@@ -2,7 +2,7 @@
 
 namespace WinUICsMarkupExamples;
 
-partial class FlutterPage : Page, IBuild
+sealed partial class FlutterPage : Page, IBuild
 {
 #pragma warning disable CS0649
     static readonly Button? b;

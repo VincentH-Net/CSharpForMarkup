@@ -3,13 +3,15 @@ using static CSharpMarkup.WinUI.Helpers;
 using VM = WinUICsMarkupExamples.SearchViewModel;
 namespace WinUICsMarkupExamples;
 
-sealed partial class SearchPage
+partial class SearchPage
 {
-    StackPanel Markup => StackPanel(
+    Grid Markup => Grid(
+        Rows (Auto, Star, Auto),
+
         Header,
-        SearchResults,
-        Footer
-    )  .Background(Black);
+        SearchResults .Grid_Row(1),
+        Footer        .Grid_Row(2)
+    );
 
     StackPanel Header => HStack(
         Button("\u22EF").Style(HeaderButton)

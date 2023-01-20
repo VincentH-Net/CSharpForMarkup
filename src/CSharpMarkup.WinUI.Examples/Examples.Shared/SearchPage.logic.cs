@@ -5,7 +5,7 @@
 
 namespace WinUICsMarkupExamples;
 
-partial class SearchPage : Page, IBuild
+sealed partial class SearchPage : Page, IBuild
 {
     static readonly Tweet tweet = new();
     readonly SearchViewModel vm;

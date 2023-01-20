@@ -3,7 +3,7 @@ using CSharpMarkup.WinUI;
 using static CSharpMarkup.WinUI.Helpers;
 namespace WinUICsMarkupExamples;
 
-sealed partial class FlutterPage
+partial class FlutterPage
 {
     StackPanel Markup => VStack (
         HStack (
