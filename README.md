@@ -236,15 +236,16 @@ public sealed partial class FlutterPage : Page, IBuild
 
 ### Namespace separation of markup and UI logic
 **IMPORTANT:**<br />
-- In **`<page>.cs`**:<br />
-Include `CSharpMarkup.*` namespace usings but **no UI objectmodel usings** such as `Microsoft.UI.Xaml` (by design the type names in the CSharpMarkup namespace are identical to the type names in the UI objectmodel,  so including both would not work).<br />
-You *can* use the UI objectmodel safely in `<page>.cs`; a good practice then is to
-define a global using alias, e.g. `global using UI = Microsoft.UI.Xaml;`
+- In **C# markup files** like **`<page>.cs`**:<br />
+Include `CSharpMarkup.*` namespace usings but **no UI objectmodel usings** such as `using Microsoft.UI.Xaml;`<br /><br />
+(by design the type names in the CSharpMarkup namespace are identical to the type names in the UI objectmodel,  so including both would not work)<br /><br />
+Try to limit using the UI object model to UI logic files. If you must, you *can* use the UI objectmodel safely in C# markup files; a good practice then is to
+define global namespace using aliases, e.g. `global using UI = Microsoft.UI.Xaml;`
 
-- In **`<page>.logic.cs`**:<br />
-**DO NOT** include `CSharpMarkup.*` namespace usings and **DO NOT** use `CSharpMarkup` objects.<br />
+- In **UI logic files** like **`<page>.logic.cs`**:<br />
+**DO NOT** use `CSharpMarkup` objects<br /><br />
 Markup object instances are not safe to use outside of a markup expression (due to performance features - each markup object has a single static instance to prevent allocating an extra object for each view).
-That is why `Assign` and `Invoke` (see [below](#Integrate-UI-markup-with-UI-logic)) pass the UI object contained in the markup object to the logic, not the markup object itself.
+That is why `Assign` and `Invoke` (see [below](#Integrate-UI-markup-with-UI-logic)) pass the UI object contained in the markup object to the logic, instead of the markup object itself.
 
 ## Integrate UI markup with UI logic
 With `Assign` and `Invoke` you can integrate UI markup with UI logic:
