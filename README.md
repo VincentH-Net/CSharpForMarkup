@@ -27,6 +27,11 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*Feb 16, 2023*
+> ## A new release of C# Markup 2 for WinUI 3 and Uno Platform is coming in Feb 2023
+Updated to .NET 7, C# 11 and the latest Windows App SDK and Uno Platform. With many improvements - including C# hot reload support and a dotnet new project template.
+Watch this space!
+
 *April 14, 2022*
 > ## New 0.8 release: adds `ControlTemplate` support and `Style` improvements!
 See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-8-2) and [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-8-1) for the full list of improvements
@@ -229,20 +234,17 @@ public sealed partial class FlutterPage : Page, IBuild
         Build();
 ```
 
+### Namespace separation of markup and UI logic
 **IMPORTANT:**<br />
 - In **`<page>.cs`**:<br />
-Include `CSharpMarkup.*` namespace usings but **no UI objectmodel usings**.<br />
-You *can* also use the UI objectmodel safely in `<page>.cs`; a good practice then is to
-define a `global using TypeName_UI = <UI objectmodel namespace>.TypeName` alias in `GlobalUsings.cs`
+Include `CSharpMarkup.*` namespace usings but **no UI objectmodel usings** such as `Microsoft.UI.Xaml` (by design the type names in the CSharpMarkup namespace are identical to the type names in the UI objectmodel,  so including both would not work).<br />
+You *can* use the UI objectmodel safely in `<page>.cs`; a good practice then is to
+define a global using alias, e.g. `global using UI = Microsoft.UI.Xaml;`
 
 - In **`<page>.logic.cs`**:<br />
 **DO NOT** include `CSharpMarkup.*` namespace usings and **DO NOT** use `CSharpMarkup` objects.<br />
 Markup object instances are not safe to use outside of a markup expression (due to performance features - each markup object has a single static instance to prevent allocating an extra object for each view).
-That is why `Assign` and `Invoke` pass the UI object contained in the markup object to the logic, not the markup object itself.
-
-> **Note** at the moment WinUI for Uno Platform still requires that you have a XAML file for a page. It only needs to contain an empty `Page` element though, and you can move those files out of sight in a folder, e.g. `Xaml`:<br />
-> ![Markup Page Files](img/markup-page-files.png)<br />
-> For WinUI 3 Desktop and WPF you can omit the page XAML files.
+That is why `Assign` and `Invoke` (see [below](#Integrate-UI-markup-with-UI-logic)) pass the UI object contained in the markup object to the logic, not the markup object itself.
 
 ## Integrate UI markup with UI logic
 With `Assign` and `Invoke` you can integrate UI markup with UI logic:
@@ -273,7 +275,7 @@ Under `Fonts and Colors`, copy the color of `User Types - Classes` to `User Memb
 ![Improve Markup Colors In Vs](img/improve-markup-colors-in-vs.png)
 
 ## Fast inner dev loop with .NET Hot Reload
-Get the fastest inner dev loop for C# Markup 2 by using .NET Hot Reload in Visual Studio 2022 Preview, targeting `Windows.Desktop` (packaged). Even when you are not targeting Windows, this is good for getting most of your UI build work done as quickly as possible. Switch to other target(s) to finetune and test.
+Get the fastest inner dev loop for C# Markup 2 by using .NET Hot Reload in Visual Studio 2022, targeting `Windows.Desktop` (packaged). Even when you are not targeting Windows, this is good for getting most of your UI build work done as quickly as possible. Switch to other target(s) to finetune and test.
 
 Since at this moment detecting hot reload in WinUI 3 is broken in .NET SDK, a workaround is to conditionally add a hot reload button on your pages for a debug Windows build. The example contains a `.WithHotReloadButton()` extension method to do this.
 In the WPF example app a small hot reload handler is included to automatically rebuild the UI on hot reload, so there is no button workaround needed there.
