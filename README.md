@@ -244,7 +244,7 @@ define global namespace using aliases, e.g. `global using UI = Microsoft.UI.Xaml
 
 - In **UI logic files** like **`<page>.logic.cs`**:<br />
 **DO NOT** use `CSharpMarkup` objects<br /><br />
-Markup object instances are not safe to use outside of a markup expression (due to performance features - each markup object has a single static instance to prevent allocating an extra object for each view).
+Markup object instances are not safe to use outside of a markup expression (due to performance features - each markup object type has a single static instance to prevent allocating an extra object for each view).
 That is why `Assign` and `Invoke` (see [below](#Integrate-UI-markup-with-UI-logic)) pass the UI object contained in the markup object to the logic, instead of the markup object itself.
 
 ## Integrate UI markup with UI logic
