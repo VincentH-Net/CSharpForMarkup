@@ -141,5 +141,11 @@ namespace CSharpMarkup.WinUI
             return global::CSharpMarkup.WinUI.TextBlock.StartChain(ui);
         }
 #endif
+        /// <summary>This helper allows to configure an existing UI framework page object instance, i.e. when a page instance is created by the UI framework when specifying the page type in navigation</summary>
+        public static Page Content(this Xaml.Controls.Page page, Xaml.UIElement content)
+        {
+            page.Content = content;
+            return page;
+        }
     }
 }

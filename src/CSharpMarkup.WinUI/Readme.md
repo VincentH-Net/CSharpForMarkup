@@ -4,10 +4,13 @@
 
 No XAML / HTML / JavaScript / CSS required
 
-This preview targets WinUI 3 (Windows App SDK) and Uno Platform - including browser webassembly - with C# 10 and .NET 6.
+This release targets WinUI 3 (Windows App SDK) and Uno Platform - including browser webassembly - with C# 11 and .NET 7.
+When only targeting Windows, C# Markup 2 has no dependency on Uno - just the Windows App SDK.
+
+Get started quickly with the [mcs-winui3-app and mcs-winui3-view dotnet new templates](https://github.com/Applicita/Modern.CSharp.Templates#readme)
 
 [Docs](https://github.com/VincentH-Net/CSharpForMarkup#readme)
 
 [Example application](https://github.com/VincentH-Net/CSharpForMarkup/tree/master/src/CSharpMarkup.WinUI.Examples)
 
-[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-0-8-3)
+[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-2-0-0)
