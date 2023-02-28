@@ -19,7 +19,6 @@
 		<PackageProjectUrl>https://github.com/VincentH-Net/CSharpForMarkup</PackageProjectUrl>
 		<PackageReleaseNotes>See source repository for release notes</PackageReleaseNotes>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
 		<Version>2.0.0</Version>
@@ -29,6 +28,11 @@
 
 		<GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
+
+		<!-- Enable Source Link -->
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     
 		<DebugType>portable</DebugType>
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
@@ -73,6 +77,10 @@
 
 	<ItemGroup Condition="$(IsUno)">
 		<PackageReference Include="Uno.WinUI" Version="4.7.44" />
+	</ItemGroup>
+	
+	<ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup>
