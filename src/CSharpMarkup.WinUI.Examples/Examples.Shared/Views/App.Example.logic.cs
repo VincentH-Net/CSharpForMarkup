@@ -40,7 +40,8 @@ public partial class App
     {
         // TODO: Replace with MetadataUpdateHandler attribute when MS has fixed that for .NET hot reload in WinUI 3
         CSharpMarkup.WinUI.HotReloadKeyboardWatcher.Enable(true);
+        CSharpMarkup.WinUI.HotReloadKeyboardWatcher.CtrlUpAfterS -= BuildUI; // Ensure single subscribe
         CSharpMarkup.WinUI.HotReloadKeyboardWatcher.CtrlUpAfterS += BuildUI;
     }
-    #endif
+#endif
 }
