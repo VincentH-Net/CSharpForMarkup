@@ -97,7 +97,7 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 To learn how to use C# Markup 2, read the [features description](#features) below and inspect the [example app](src/CSharpMarkup.WinUI.Examples/)
 
 ## Fast inner dev loop with .NET Hot Reload
-Hot reload has been verified to work for editing existing C# Markup 2 views and viewmodels in Windows, Android and Webassembly; other targets should work as well. If you have a Windows head, use that - currently it has the best update experience.
+Hot reload has been verified to work for editing existing C# Markup 2 views, viewmodels and styles in Windows, Android and Webassembly; other targets should work as well. If you have a Windows head, use that - currently it has the best update experience.
 
 Steps:
 
@@ -117,7 +117,7 @@ Steps:
     
     ![Mcs Winui3 Hotreload Menu](img/mcs-winui3-hotreload-menu.png)
 
-Note that above are workarounds for various defects in MS Hot Reload; once these are fixed, the UI can update without a button or keyboard listener.
+    Note that above are workarounds for various defects in MS Hot Reload; once these are fixed, the UI can update without a button or keyboard listener.
 
 4) If you introduce other types (in addition to `Styles.cs`) that you want to update your UI with hot reload, you can customize your `App.BuildUI()` method.
 
