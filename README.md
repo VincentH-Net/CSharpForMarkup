@@ -59,7 +59,7 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 4. To learn how to use C# Markup 2, read the [features description](#features) below and experiment in the example app
 5. To build your own app, reference [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF) from a .NET 6 WPF project and create the C# Markup UI windows, pages etc in that project. Note that for existing apps you can reference (WPF / class library) projects that target older .NET versions from the .NET 6 project, so you can add C# Markup UI to your app without having to migrate existing logic and/or WPF UI to .NET 6 and C# 10.
 
-## Getting started for WinUI 3 and Uno Platform
+## Getting started for WinUI 3 and Windows App SDK / Uno Platform
 1) First check if your development environment is ready:
     - To target Windows desktop: [Get started with the Windows App SDK](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/#get-started-with-the-windows-app-sdk)
     - To (also) target other OS-es: [with Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html) [with other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
@@ -68,12 +68,17 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
   This gets you [templates for Windows App SDK, Uno Platform and more](https://github.com/Applicita/Modern.CSharp.Templates#readme)
 
 3) Create a new solution with the `mcs-winui3-app` template, e.g.:
-  `dotnet new mcs-winui3-app --name Modern.Shop`
-  This will create a ready to run solution (in a new folder) with just a Windows target, and prompt you to add an editorconfig and to open the solution (you can add `--allow-scripts <No|Yes>` to avoid prompts):
+    ```
+    dotnet new mcs-winui3-app --name Modern.Shop
+    ```
+    This will create a ready to run solution (in a new folder) with just a Windows target, and prompt you to add an editorconfig and to open the solution (you can add `--allow-scripts <No|Yes>` to avoid prompts):
 
     ![Mcs Winui3 App Default Sln](img/mcs-winui3-app-default-sln.png)
 
-    To see a list of all parameters for this template, run `dotnet new mcs-winui3-app -h`
+    To see a list of all parameters for this template, run:
+    ```
+    dotnet new mcs-winui3-app -h
+    ```
 
 4) Set the Windows head as start project and run it
 
@@ -87,10 +92,12 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 
     The parameters are documented in the `New-View.ps1` script file
 
+    Note that you can use the C# Markup in-app debugging overlay to navigate to the new view(s). You can quickly add many views and flesh them out in hot reload. No need to implement navigation first.
+
 To learn how to use C# Markup 2, read the [features description](#features) below and inspect the [example app](src/CSharpMarkup.WinUI.Examples/)
 
 ## Fast inner dev loop with .NET Hot Reload
-Hot reload has been verified to work with editing existing C# Markup 2 views and viewmodels in Windows, Android and Webassembly; other targets should work as well. If you have a Windows head, use that - currently it has the best update experience.
+Hot reload has been verified to work for editing existing C# Markup 2 views and viewmodels in Windows, Android and Webassembly; other targets should work as well. If you have a Windows head, use that - currently it has the best update experience.
 
 Steps:
 
@@ -102,7 +109,7 @@ Steps:
 
     ![Mcs Winui3 Hotreload In App Navigation](img/mcs-winui3-hotreload-in-app-navigation.png)
 
-3) Edit `MainPage.cs` and save it; after the VS status bar says ![Visual Studio Dotnet Hot Reload Statusbar](img/visual-studio-dotnet-hot-reload-statusbar.png), click ![In App Hot Reload Button](img/in-app-hot-reload-button.png) in the app to rebuild your UI. Note that you can also check for hot reload messages in the output window:
+3) Edit the `<name>Page.cs`, `<name>ViewModel.cs` or the `Styles.cs` and save it; after the VS status bar says ![Visual Studio Dotnet Hot Reload Statusbar](img/visual-studio-dotnet-hot-reload-statusbar.png), click ![In App Hot Reload Button](img/in-app-hot-reload-button.png) in the app to rebuild your UI. Note that you can also check for hot reload messages in the output window:
 
     ![Mcs Winui3 Hotreload Output](img/mcs-winui3-hotreload-output.png)
 
@@ -111,6 +118,8 @@ Steps:
     ![Mcs Winui3 Hotreload Menu](img/mcs-winui3-hotreload-menu.png)
 
 Note that above are workarounds for various defects in MS Hot Reload; once these are fixed, the UI can update without a button or keyboard listener.
+
+4) If you introduce other types (in addition to `Styles.cs`) that you want to update your UI with hot reload, you can customize your `App.BuildUI()` method.
 
 # Features
 C# Markup 2 contains a full declarative, fluent API for existing UI frameworks. It surfaces virtually every layout, view and property, including attached properties, and includes **full inline documentation** that links each markup helper / parameter to the inline documentation for the underlying UI object / property.
