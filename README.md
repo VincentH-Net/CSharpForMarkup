@@ -3,7 +3,7 @@ Enjoy a Flutter-like UI development experience with .NET Hot Reload and the main
 
 - Build **.NET applications fully in C#**
 - Target browsers and native desktop / mobile
-- Use existing UI frameworks. Mature or bleeding edge is *your* choice: WPF, WinUI 3, Uno Platform. Coming: AvaloniaUI, Maui, possibly Blazor.
+- Use existing UI frameworks. Mature or bleeding edge is *your* choice: WPF, WinUI 3 for Windows App SDK and Uno Platform. Coming: AvaloniaUI, Maui, possibly Blazor.
 - Use the built-in MVVM support - or any other update model that supports your UI framework (e.g. [ReactiveUI](https://www.reactiveui.net/))
 - Use for part or all of your application UI
 - Designed to handle large UI fast: practically allocation-free, no reflection, efficient C#
@@ -21,8 +21,8 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 > **The best place to ask questions or help!**
 
 # Getting Started
-- [Getting started with C# Markup 2 for WinUI 3 and Windows App SDK / Uno Platform](#getting-started-for-winui-3-and-windows-app-sdk--uno-platform)
-- [Getting started with C# Markup 2 for WPF](#getting-started-for-wpf)
+- **WinUI 3**: [Getting started with C# Markup 2 for WinUI 3 and Windows App SDK / Uno Platform](#getting-started-for-winui-3-and-windows-app-sdk--uno-platform)
+- **WPF**: [Getting started with C# Markup 2 for WPF](#getting-started-for-wpf)
 
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
@@ -30,7 +30,13 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Feb 28, 2023*
 > ## Major Release - C# Markup 2 for WinUI 2.0!
 Completely updated to .NET 7, C# 11 and the latest Windows App SDK and Uno Platform.
-With many improvements including 6 supported target platforms, C# hot reload support and dotnet new project templates. Details [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-2-0-0).
+With many improvements including 6 supported target platforms, C# hot reload support and [dotnet new project templates](https://github.com/Applicita/Modern.CSharp.Templates).
+
+**Brought to you by Applicita**
+
+Special thanks go to [Applicita](https://applicita.com/) for making this release possible; it's inspiring to see a company support OSS in this way (Applicita also open-sourced several [other useful libraries](https://github.com/Applicita))
+
+More on what's new in this release [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-2-0-0).
 
 *Feb 16, 2023*
 > ## A new release of C# Markup 2 for WinUI 3 and Uno Platform is coming in Feb 2023
@@ -60,22 +66,21 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 5. To build your own app, reference [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF) from a .NET 6 WPF project and create the C# Markup UI windows, pages etc in that project. Note that for existing apps you can reference (WPF / class library) projects that target older .NET versions from the .NET 6 project, so you can add C# Markup UI to your app without having to migrate existing logic and/or WPF UI to .NET 6 and C# 10.
 
 ## Getting started for WinUI 3 and Windows App SDK / Uno Platform
-1) First check if your development environment is ready:
-    - To target Windows desktop: [Get started with the Windows App SDK](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/#get-started-with-the-windows-app-sdk)
-    - To (also) target other OS-es: [with Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html) [with other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
+1) First check if your development environment is ready for WinUI 3:
+    - To target Windows desktop with Windows App SDK:<br />[Get started with the Windows App SDK](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/#get-started-with-the-windows-app-sdk)
+    - To (also) target other OS-es with Uno Platform:<br />[with Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html) or [with other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
 
-2) Install the [Modern.CSharp.Templates](https://www.nuget.org/packages/Modern.CSharp.Templates) for `dotnet new`<br />
-  This gets you [templates for Windows App SDK, Uno Platform and more](https://github.com/Applicita/Modern.CSharp.Templates#readme)
+2) Install the [Modern.CSharp.Templates](https://www.nuget.org/packages/Modern.CSharp.Templates) for `dotnet new` to get [these templates for Windows App SDK, Uno Platform and more](https://github.com/Applicita/Modern.CSharp.Templates#readme)
 
 3) Create a new solution with the `mcs-winui3-app` template, e.g.:
     ```
-    dotnet new mcs-winui3-app --name Modern.Shop
+    dotnet new mcs-winui3-app --name Modern.Shop --allow-scripts Yes
     ```
-    This will create a ready to run solution (in a new folder) with just a Windows target, and prompt you to add an editorconfig and to open the solution (you can add `--allow-scripts <No|Yes>` to avoid prompts):
+    This will create a ready to run solution (in a new folder) with just a Windows target. The `--allow-scripts Yes` parameter will run a `dotnet new mcs-editorconfig` and then will open the solution (omit this parameter to get prompted whether you want those actions run):
 
     ![Mcs Winui3 App Default Sln](img/mcs-winui3-app-default-sln.png)
 
-    To see a list of all parameters for this template, run:
+    You can opt-in to target platforms with optional parameters. To see a list of all parameters for this template, run:
     ```
     dotnet new mcs-winui3-app -h
     ```
@@ -83,6 +88,9 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 4) Set the Windows head as start project and run it
 
 5) To add a new view (plus optional viewmodel), use the `New-View.ps1` script; e.g. open Visual Studio's `View|Terminal` window, type `n` + `Tab` to expand to the script name, and supply a name:
+    ```
+    .\New-View.ps1 Cart
+    ```
 
     ![Mcs Winui3 New View](img/mcs-winui3-new-view.png)
 
@@ -97,11 +105,11 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 To learn how to use C# Markup 2, read the [features description](#features) below and inspect the [example app](src/CSharpMarkup.WinUI.Examples/)
 
 ## Fast inner dev loop with .NET Hot Reload
-Hot reload has been verified to work for editing existing C# Markup 2 views, viewmodels and styles in Windows, Android and Webassembly; other targets should work as well. If you have a Windows head, use that - currently it has the best update experience.
+[Hot reload in Visual Studio for Windows](https://learn.microsoft.com/en-us/visualstudio/debugger/hot-reload?view=vs-2022) has been verified to work for editing existing C# Markup 2 views, viewmodels and styles in Windows, Android and Webassembly targets; other targets should work as well. If you have a Windows target, use that - currently it has the best update experience.
 
 Steps:
 
-1) Run an app head with debugging; you will see the main page with a debugging overlay for [C# Hot Reload](https://learn.microsoft.com/en-us/visualstudio/debugger/hot-reload?view=vs-2022):
+1) Run an app head with debugging; you will see the main page with a debugging overlay for C# Hot Reload:
 
     ![Mcs Winui3 App Mainpage Debug](img/mcs-winui3-app-mainpage-debug.png)
 
@@ -119,7 +127,7 @@ Steps:
 
     Note that above are workarounds for various defects in MS Hot Reload; once these are fixed, the UI can update without a button or keyboard listener.
 
-4) If you introduce other types (in addition to `Styles.cs`) that you want to update your UI with hot reload, you can customize your `App.BuildUI()` method.
+4) If you introduce other types (in addition to `Styles.cs`) that should update your UI when hot reloading, you can customize your `App.BuildUI()` method to rebuild their instances.
 
 # Features
 C# Markup 2 contains a full declarative, fluent API for existing UI frameworks. It surfaces virtually every layout, view and property, including attached properties, and includes **full inline documentation** that links each markup helper / parameter to the inline documentation for the underlying UI object / property.
