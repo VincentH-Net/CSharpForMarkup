@@ -80,7 +80,7 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 
     ![Mcs Winui3 App Default Sln](img/mcs-winui3-app-default-sln.png)
 
-    You can opt-in to target platforms with optional parameters. To see a list of all parameters for this template, run:
+    You can use optional paramaters to opt-in to targets (Android, iOS, Mac Catalyst, WebAssembly, Skia/Tizen, Skia/WPF, and Skia/GTK for Linux). To see a list of all parameters for this template, run:
     ```
     dotnet new mcs-winui3-app -h
     ```
