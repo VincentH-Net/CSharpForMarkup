@@ -28,8 +28,8 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 
 # News
 *Feb 28, 2023*
-> ## Major Release - C# Markup 2 for WinUI 2.0!
-Completely updated to .NET 7, C# 11 and the latest Windows App SDK and Uno Platform.
+> ## Major Release - C# Markup 2 version 2.0 for WinUI 3!
+C# Markup 2 version 2.0 for WinUI 3 is here! Completely updated to .NET 7, C# 11 and the latest Windows App SDK and Uno Platform.
 With many improvements including 6 supported target platforms, C# hot reload support and [dotnet new project templates](https://github.com/Applicita/Modern.CSharp.Templates).
 
 **Brought to you by Applicita**
