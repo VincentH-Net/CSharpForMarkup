@@ -76,11 +76,11 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
     ```
     dotnet new mcs-winui3-app --name Modern.Shop --allow-scripts Yes
     ```
-    This will create a ready to run solution (in a new folder) with just a Windows target. The `--allow-scripts Yes` parameter will run a `dotnet new mcs-editorconfig` and then will open the solution (omit this parameter to get prompted whether you want those actions run):
+    This will create a ready to run solution (in a new folder) with just a Windows target. The `--allow-scripts Yes` parameter will run a `dotnet new mcs-editorconfig` and then will open the solution (omit this parameter to get prompted whether you want those actions to run):
 
     ![Mcs Winui3 App Default Sln](img/mcs-winui3-app-default-sln.png)
 
-    You can use optional paramaters to opt-in to targets (Android, iOS, Mac Catalyst, WebAssembly, Skia/Tizen, Skia/WPF, and Skia/GTK for Linux). To see a list of all parameters for this template, run:
+    You can use optional parameters to select more targets (Android, iOS, Mac Catalyst, WebAssembly, Skia/Tizen, Skia/WPF, and Skia/GTK for Linux). To see a list of all parameters for this template, run:
     ```
     dotnet new mcs-winui3-app -h
     ```
@@ -121,9 +121,13 @@ Steps:
 
     ![Mcs Winui3 Hotreload Output](img/mcs-winui3-hotreload-output.png)
 
-    For the Windows target the UI will update on save, no button click needed (the app listens to `Ctls+S`).
-    
+    For the Windows target the UI will update on save, no button click needed: the app listens to **`Ctrl+S`** (for the left Ctrl key). When you release those keys (S first, then Ctrl) it will rebuild the UI. So the flow is: Press and hold Ctrl+S until VS has applied the code changes, then release. After the first update this takes less than a second; after a few times it feels just as seamless as a proper automatic UI rebuild.
+        
     ![Mcs Winui3 Hotreload Menu](img/mcs-winui3-hotreload-menu.png)
+
+    You can toggle the UI rebuild off and on by pressing and releasing S twice instead of once (before releasing Ctrl). This is displayed in the debug output:
+
+![Mcs Winui3 Hotreload Rebuild Enabled](img/mcs-winui3-hotreload-rebuild-enabled.png)
 
     Note that above are workarounds for various defects in MS Hot Reload; once these are fixed, the UI can update without a button or keyboard listener.
 
