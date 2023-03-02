@@ -127,7 +127,7 @@ Steps:
 
     You can toggle the UI rebuild off and on by pressing and releasing S twice instead of once (before releasing Ctrl). This is displayed in the debug output:
 
-![Mcs Winui3 Hotreload Rebuild Enabled](img/mcs-winui3-hotreload-rebuild-enabled.png)
+    ![Mcs Winui3 Hotreload Rebuild Enabled](img/mcs-winui3-hotreload-rebuild-enabled.png)
 
     Note that above are workarounds for various defects in MS Hot Reload; once these are fixed, the UI can update without a button or keyboard listener.
 
