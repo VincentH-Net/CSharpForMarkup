@@ -1,0 +1,16 @@
+{
+  "solution": {
+    "path": "WinUICsMarkupExamples.sln",
+    "projects": [
+		"WinUICsMarkupExamples\\WinUICsMarkupExamples.csproj",
+
+		"WinUICsMarkupExamples.Mobile\\WinUICsMarkupExamples.Mobile.csproj",
+
+		"WinUICsMarkupExamples.Wasm\\WinUICsMarkupExamples.Wasm.csproj",
+
+		"WinUICsMarkupExamples.Skia.Gtk\\WinUICsMarkupExamples.Skia.Gtk.csproj",
+
+		"WinUICsMarkupExamples.Skia.Gtk\\WinUICsMarkupExamples.Skia.Gtk.csproj",
+    ]
+  }
+}
