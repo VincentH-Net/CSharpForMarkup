@@ -27,6 +27,19 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*March 25, 2023*
+> ## Poll results are in! And the winner is...
+The March 2023 poll results on what to build next for C# Markup 2 are in!
+
+A surprise addition was the ask for C# Markup 2 for Avalonia UI in the replies; it got a big response that catapulted it into a very close 2nd place.
+
+Here are the results for the [poll](https://twitter.com/vincenth_net/status/1637065646688043012) including the likes for "Other" options [Blazor](https://twitter.com/vincenth_net/status/1637119462603145226) and [AvaloniaUI](https://twitter.com/alex8x8/status/1638278598267228163):
+
+![Poll202303](img/poll202303.png)
+
+And the winner is: **C# Markup 2 for MAUI**!<br />
+Watch and star this repo to catch the release; you can also watch [#CSharpForMarkup tweets](https://twitter.com/search?q=%23CSharpForMarkup&src=typed_query&f=live) for progress. Thanks for your response!
+
 *Feb 28, 2023*
 > ## Major Release - C# Markup 2 version 2.0 for WinUI 3!
 C# Markup 2 version 2.0 for WinUI 3 is here! Completely updated to .NET 7, C# 11 and the latest Windows App SDK and Uno Platform.
