@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<Configurations>Debug;Release;Generate</Configurations>
-		<TargetFramework>net6.0-windows</TargetFramework>
+		<TargetFramework>net7.0-windows</TargetFramework>
 		<!--<Nullable>enable</Nullable>-->
 		<DefineConstants>$(DefineConstants);WPF</DefineConstants>
 		<UseWPF>true</UseWPF>
@@ -26,7 +26,7 @@
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>0.8.3-dev.3</Version>
+		<Version>0.8.3-dev.4</Version>
 		<NeutralLanguage>en</NeutralLanguage>
 
 		<NoWarn>CS1591;CS1573</NoWarn>

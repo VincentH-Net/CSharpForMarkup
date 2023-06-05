@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for the Microsoft.WindowsDesktop.App Object hierarchy
-#if WPF
+#if NET7_0 && WPF
 
 using System;
 using System.Collections;
