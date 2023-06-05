@@ -405,11 +405,12 @@ namespace CSharpMarkup.WinUI // FrameworkElement
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.FrameworkElement"/></summary>
-        public static FrameworkElement FrameworkElement(string Language = default, Xaml.FlowDirection? FlowDirection = default, bool? AreDimensionsConstrained = default, object Tag = default, Xaml.ResourceDictionary Resources = default, bool? IsParsing = default, Xaml.Style Style = default, Xaml.ElementTheme? RequestedTheme = default, CSharpMarkup.WinUI.to.Thickness? FocusVisualSecondaryThickness = default, CSharpMarkup.WinUI.to.Brush? FocusVisualSecondaryBrush = default, CSharpMarkup.WinUI.to.Thickness? FocusVisualPrimaryThickness = default, CSharpMarkup.WinUI.to.Brush? FocusVisualPrimaryBrush = default, CSharpMarkup.WinUI.to.Thickness? FocusVisualMargin = default, bool? AllowFocusWhenDisabled = default, bool? AllowFocusOnInteraction = default, bool? StretchAffectsMeasure = default, int? RenderPhase = default, CSharpMarkup.WinUI.to.Brush? Background = default, bool? IsEnabled = default, string Name = default, CSharpMarkup.WinUI.to.Thickness? Margin = default, Xaml.HorizontalAlignment? HorizontalAlignment = default, Xaml.VerticalAlignment? VerticalAlignment = default, double? Width = default, double? Height = default, double? MinWidth = default, double? MinHeight = default, double? MaxWidth = default, double? MaxHeight = default, Xaml.Media.Animation.TransitionCollection Transitions = default)
+        public static FrameworkElement FrameworkElement(string Language = default, Xaml.FlowDirection? FlowDirection = default, bool? StretchAffectsMeasure = default, bool? AreDimensionsConstrained = default, object Tag = default, Xaml.ResourceDictionary Resources = default, bool? IsParsing = default, Xaml.Style Style = default, Xaml.ElementTheme? RequestedTheme = default, CSharpMarkup.WinUI.to.Thickness? FocusVisualSecondaryThickness = default, CSharpMarkup.WinUI.to.Brush? FocusVisualSecondaryBrush = default, CSharpMarkup.WinUI.to.Thickness? FocusVisualPrimaryThickness = default, CSharpMarkup.WinUI.to.Brush? FocusVisualPrimaryBrush = default, CSharpMarkup.WinUI.to.Thickness? FocusVisualMargin = default, bool? AllowFocusWhenDisabled = default, bool? AllowFocusOnInteraction = default, int? RenderPhase = default, CSharpMarkup.WinUI.to.Brush? Background = default, bool? IsEnabled = default, string Name = default, CSharpMarkup.WinUI.to.Thickness? Margin = default, Xaml.HorizontalAlignment? HorizontalAlignment = default, Xaml.VerticalAlignment? VerticalAlignment = default, double? Width = default, double? Height = default, double? MinWidth = default, double? MinHeight = default, double? MaxWidth = default, double? MaxHeight = default, Xaml.Media.Animation.TransitionCollection Transitions = default)
         {
             var ui = new Xaml.FrameworkElement();
             if (Language is not null) ui.Language = Language;
             if (FlowDirection is not null) ui.FlowDirection = FlowDirection.Value;
+            if (StretchAffectsMeasure is not null) ui.StretchAffectsMeasure = StretchAffectsMeasure.Value;
             if (AreDimensionsConstrained is not null) ui.AreDimensionsConstrained = AreDimensionsConstrained;
             if (Tag is not null) ui.Tag = Tag;
             if (Resources is not null) ui.Resources = Resources;
@@ -423,7 +424,6 @@ namespace CSharpMarkup.WinUI // FrameworkElement
             if (FocusVisualMargin is not null) ui.FocusVisualMargin = FocusVisualMargin.Value;
             if (AllowFocusWhenDisabled is not null) ui.AllowFocusWhenDisabled = AllowFocusWhenDisabled.Value;
             if (AllowFocusOnInteraction is not null) ui.AllowFocusOnInteraction = AllowFocusOnInteraction.Value;
-            if (StretchAffectsMeasure is not null) ui.StretchAffectsMeasure = StretchAffectsMeasure.Value;
             if (RenderPhase is not null) ui.RenderPhase = RenderPhase;
             if (Background is not null) ui.Background = Background.Value;
             if (IsEnabled is not null) ui.IsEnabled = IsEnabled.Value;
@@ -493,6 +493,9 @@ namespace CSharpMarkup.WinUI // FrameworkElement
 
         /// <summary>Set <see cref="Xaml.FrameworkElement.FlowDirection"/></summary>
         public static TView FlowDirection<TView>(this TView view, Xaml.FlowDirection value) where TView : FrameworkElement { view.UI.FlowDirection = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.FrameworkElement.StretchAffectsMeasure"/></summary>
+        public static TView StretchAffectsMeasure<TView>(this TView view, bool value) where TView : FrameworkElement { view.UI.StretchAffectsMeasure = value; return view; }
 
         /// <summary>Set <see cref="Xaml.FrameworkElement.AreDimensionsConstrained"/></summary>
         public static TView AreDimensionsConstrained<TView>(this TView view, bool? value) where TView : FrameworkElement { view.UI.AreDimensionsConstrained = value; return view; }
@@ -581,9 +584,6 @@ namespace CSharpMarkup.WinUI // FrameworkElement
         /// <summary>Set <see cref="Xaml.FrameworkElement.AllowFocusOnInteraction"/></summary>
         public static TView AllowFocusOnInteraction<TView>(this TView view, bool value) where TView : FrameworkElement { view.UI.AllowFocusOnInteraction = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.FrameworkElement.StretchAffectsMeasure"/></summary>
-        public static TView StretchAffectsMeasure<TView>(this TView view, bool value) where TView : FrameworkElement { view.UI.StretchAffectsMeasure = value; return view; }
-
         /// <summary>Set <see cref="Xaml.FrameworkElement.RenderPhase"/></summary>
         public static TView RenderPhase<TView>(this TView view, int? value) where TView : FrameworkElement { view.UI.RenderPhase = value; return view; }
 
@@ -664,6 +664,10 @@ namespace CSharpMarkup.WinUI // FrameworkElement
         public static DependencyProperty<TTarget, string> Language<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, string>.Get(target, Xaml.FrameworkElement.LanguageProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.StretchAffectsMeasure"/></summary>
+        public static DependencyProperty<TTarget, bool> StretchAffectsMeasure<TTarget>(this TTarget target) where TTarget : FrameworkElement
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.FrameworkElement.StretchAffectsMeasureProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.Tag"/></summary>
         public static DependencyProperty<TTarget, object> Tag<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, object>.Get(target, Xaml.FrameworkElement.TagProperty);
@@ -703,10 +707,6 @@ namespace CSharpMarkup.WinUI // FrameworkElement
         /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.AllowFocusOnInteraction"/></summary>
         public static DependencyProperty<TTarget, bool> AllowFocusOnInteraction<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.FrameworkElement.AllowFocusOnInteractionProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.StretchAffectsMeasure"/></summary>
-        public static DependencyProperty<TTarget, bool> StretchAffectsMeasure<TTarget>(this TTarget target) where TTarget : FrameworkElement
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.FrameworkElement.StretchAffectsMeasureProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.Background"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> Background<TTarget>(this TTarget target) where TTarget : FrameworkElement
@@ -1397,7 +1397,7 @@ namespace CSharpMarkup.WinUI // UIElement
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.UIElement"/></summary>
-        public static UIElement UIElement(Xaml.Input.KeyboardAcceleratorPlacementMode? KeyboardAcceleratorPlacementMode = default, Xaml.ScalarTransition RotationTransition = default, Xaml.DependencyObject KeyTipTarget = default, Xaml.Input.KeyTipPlacementMode? KeyTipPlacementMode = default, double? KeyTipHorizontalOffset = default, bool? IsTapEnabled = default, bool? IsRightTapEnabled = default, bool? IsHoldingEnabled = default, bool? IsDoubleTapEnabled = default, string AccessKey = default, Xaml.ElementHighContrastAdjustment? HighContrastAdjustment = default, bool? ExitDisplayModeOnAccessKeyInvoked = default, Xaml.ScalarTransition OpacityTransition = default, Xaml.Media.ElementCompositeMode? CompositeMode = default, Vector3? Translation = default, bool? CanBeScrollAnchor = default, Xaml.Media.CacheMode CacheMode = default, Xaml.DependencyObject KeyboardAcceleratorPlacementTarget = default, Xaml.DependencyObject AccessKeyScopeOwner = default, bool? IsAccessKeyScope = default, double? KeyTipVerticalOffset = default, Vector3? CenterPoint = default, bool? UseLayoutRounding = default, Xaml.Vector3Transition TranslationTransition = default, Matrix4x4? TransformMatrix = default, float? Rotation = default, double? RasterizationScale = default, Xaml.Media.Projection Projection = default, Xaml.Media.Shadow Shadow = default, Xaml.Vector3Transition ScaleTransition = default, Vector3? Scale = default, Vector3? RotationAxis = default, Xaml.Media.Media3D.Transform3D Transform3D = default, Xaml.Media.RectangleGeometry Clip = default, Xaml.Media.Transform RenderTransform = default, CSharpMarkup.WinUI.to.Point? RenderTransformOrigin = default, Xaml.Input.XYFocusKeyboardNavigationMode? XYFocusKeyboardNavigation = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusDownNavigationStrategy = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusLeftNavigationStrategy = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusRightNavigationStrategy = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusUpNavigationStrategy = default, Xaml.Input.KeyboardNavigationMode? TabFocusNavigation = default, UI.Input.InputCursor ProtectedCursor = default, Xaml.FocusState? FocusState = default, bool? IsTabStop = default, int? TabIndex = default, Xaml.DependencyObject XYFocusUp = default, Xaml.DependencyObject XYFocusDown = default, Xaml.DependencyObject XYFocusLeft = default, Xaml.DependencyObject XYFocusRight = default, bool? UseSystemFocusVisuals = default, Xaml.Input.ManipulationModes? ManipulationMode = default, bool? CanDrag = default, bool? AllowDrop = default, bool? IsHitTestVisible = default, double? Opacity = default, Xaml.Visibility? Visibility = default, Xaml.Controls.Primitives.FlyoutBase ContextFlyout = default, IList<Xaml.Input.KeyboardAccelerator> KeyboardAccelerators = default, Uno.UI.Xaml.RoutedEventFlag? EventsBubblingInManagedCode = default, Xaml.XamlRoot? XamlRoot = default)
+        public static UIElement UIElement(Xaml.Input.KeyboardAcceleratorPlacementMode? KeyboardAcceleratorPlacementMode = default, Xaml.ScalarTransition RotationTransition = default, Xaml.DependencyObject KeyTipTarget = default, Xaml.Input.KeyTipPlacementMode? KeyTipPlacementMode = default, double? KeyTipHorizontalOffset = default, bool? IsTapEnabled = default, bool? IsRightTapEnabled = default, bool? IsHoldingEnabled = default, bool? IsDoubleTapEnabled = default, string AccessKey = default, Xaml.ElementHighContrastAdjustment? HighContrastAdjustment = default, bool? ExitDisplayModeOnAccessKeyInvoked = default, Xaml.ScalarTransition OpacityTransition = default, Xaml.Media.ElementCompositeMode? CompositeMode = default, bool? CanBeScrollAnchor = default, Xaml.Media.CacheMode CacheMode = default, Xaml.DependencyObject KeyboardAcceleratorPlacementTarget = default, Xaml.DependencyObject AccessKeyScopeOwner = default, bool? IsAccessKeyScope = default, double? KeyTipVerticalOffset = default, Vector3? CenterPoint = default, bool? UseLayoutRounding = default, Xaml.Vector3Transition TranslationTransition = default, Matrix4x4? TransformMatrix = default, float? Rotation = default, double? RasterizationScale = default, Xaml.Media.Projection Projection = default, Xaml.Vector3Transition ScaleTransition = default, Vector3? Scale = default, Vector3? RotationAxis = default, Xaml.Media.Media3D.Transform3D Transform3D = default, Vector3? Translation = default, Xaml.Media.Shadow Shadow = default, Xaml.Media.RectangleGeometry Clip = default, Xaml.Media.Transform RenderTransform = default, CSharpMarkup.WinUI.to.Point? RenderTransformOrigin = default, Xaml.Input.XYFocusKeyboardNavigationMode? XYFocusKeyboardNavigation = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusDownNavigationStrategy = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusLeftNavigationStrategy = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusRightNavigationStrategy = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusUpNavigationStrategy = default, Xaml.Input.KeyboardNavigationMode? TabFocusNavigation = default, Xaml.FocusState? FocusState = default, bool? IsTabStop = default, int? TabIndex = default, Xaml.DependencyObject XYFocusUp = default, Xaml.DependencyObject XYFocusDown = default, Xaml.DependencyObject XYFocusLeft = default, Xaml.DependencyObject XYFocusRight = default, bool? UseSystemFocusVisuals = default, Xaml.Input.ManipulationModes? ManipulationMode = default, bool? CanDrag = default, bool? AllowDrop = default, bool? IsHitTestVisible = default, double? Opacity = default, Xaml.Visibility? Visibility = default, Xaml.Controls.Primitives.FlyoutBase ContextFlyout = default, IList<Xaml.Input.KeyboardAccelerator> KeyboardAccelerators = default, Uno.UI.Xaml.RoutedEventFlag? EventsBubblingInManagedCode = default, Xaml.XamlRoot? XamlRoot = default)
         {
             var ui = new Xaml.UIElement();
             if (KeyboardAcceleratorPlacementMode is not null) ui.KeyboardAcceleratorPlacementMode = KeyboardAcceleratorPlacementMode.Value;
@@ -1414,7 +1414,6 @@ namespace CSharpMarkup.WinUI // UIElement
             if (ExitDisplayModeOnAccessKeyInvoked is not null) ui.ExitDisplayModeOnAccessKeyInvoked = ExitDisplayModeOnAccessKeyInvoked.Value;
             if (OpacityTransition is not null) ui.OpacityTransition = OpacityTransition;
             if (CompositeMode is not null) ui.CompositeMode = CompositeMode.Value;
-            if (Translation is not null) ui.Translation = Translation.Value;
             if (CanBeScrollAnchor is not null) ui.CanBeScrollAnchor = CanBeScrollAnchor.Value;
             if (CacheMode is not null) ui.CacheMode = CacheMode;
             if (KeyboardAcceleratorPlacementTarget is not null) ui.KeyboardAcceleratorPlacementTarget = KeyboardAcceleratorPlacementTarget;
@@ -1428,11 +1427,12 @@ namespace CSharpMarkup.WinUI // UIElement
             if (Rotation is not null) ui.Rotation = Rotation.Value;
             if (RasterizationScale is not null) ui.RasterizationScale = RasterizationScale.Value;
             if (Projection is not null) ui.Projection = Projection;
-            if (Shadow is not null) ui.Shadow = Shadow;
             if (ScaleTransition is not null) ui.ScaleTransition = ScaleTransition;
             if (Scale is not null) ui.Scale = Scale.Value;
             if (RotationAxis is not null) ui.RotationAxis = RotationAxis.Value;
             if (Transform3D is not null) ui.Transform3D = Transform3D;
+            if (Translation is not null) ui.Translation = Translation.Value;
+            if (Shadow is not null) ui.Shadow = Shadow;
             if (Clip is not null) ui.Clip = Clip;
             if (RenderTransform is not null) ui.RenderTransform = RenderTransform;
             if (RenderTransformOrigin is not null) ui.RenderTransformOrigin = RenderTransformOrigin.Value;
@@ -1442,7 +1442,6 @@ namespace CSharpMarkup.WinUI // UIElement
             if (XYFocusRightNavigationStrategy is not null) ui.XYFocusRightNavigationStrategy = XYFocusRightNavigationStrategy.Value;
             if (XYFocusUpNavigationStrategy is not null) ui.XYFocusUpNavigationStrategy = XYFocusUpNavigationStrategy.Value;
             if (TabFocusNavigation is not null) ui.TabFocusNavigation = TabFocusNavigation.Value;
-            if (ProtectedCursor is not null) ui.ProtectedCursor = ProtectedCursor;
             if (FocusState is not null) ui.FocusState = FocusState.Value;
             if (IsTabStop is not null) ui.IsTabStop = IsTabStop.Value;
             if (TabIndex is not null) ui.TabIndex = TabIndex.Value;
@@ -1551,9 +1550,6 @@ namespace CSharpMarkup.WinUI // UIElement
         /// <summary>Set <see cref="Xaml.UIElement.CompositeMode"/></summary>
         public static TView CompositeMode<TView>(this TView view, Xaml.Media.ElementCompositeMode value) where TView : UIElement { view.UI.CompositeMode = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.UIElement.Translation"/></summary>
-        public static TView Translation<TView>(this TView view, Vector3 value) where TView : UIElement { view.UI.Translation = value; return view; }
-
         /// <summary>Set <see cref="Xaml.UIElement.CanBeScrollAnchor"/></summary>
         public static TView CanBeScrollAnchor<TView>(this TView view, bool value) where TView : UIElement { view.UI.CanBeScrollAnchor = value; return view; }
 
@@ -1593,9 +1589,6 @@ namespace CSharpMarkup.WinUI // UIElement
         /// <summary>Set <see cref="Xaml.UIElement.Projection"/></summary>
         public static TView Projection<TView>(this TView view, Xaml.Media.Projection value) where TView : UIElement { view.UI.Projection = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.UIElement.Shadow"/></summary>
-        public static TView Shadow<TView>(this TView view, Xaml.Media.Shadow value) where TView : UIElement { view.UI.Shadow = value; return view; }
-
         /// <summary>Set <see cref="Xaml.UIElement.ScaleTransition"/></summary>
         public static TView ScaleTransition<TView>(this TView view, Xaml.Vector3Transition value) where TView : UIElement { view.UI.ScaleTransition = value; return view; }
 
@@ -1607,6 +1600,12 @@ namespace CSharpMarkup.WinUI // UIElement
 
         /// <summary>Set <see cref="Xaml.UIElement.Transform3D"/></summary>
         public static TView Transform3D<TView>(this TView view, Xaml.Media.Media3D.Transform3D value) where TView : UIElement { view.UI.Transform3D = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.UIElement.Translation"/></summary>
+        public static TView Translation<TView>(this TView view, Vector3 value) where TView : UIElement { view.UI.Translation = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.UIElement.Shadow"/></summary>
+        public static TView Shadow<TView>(this TView view, Xaml.Media.Shadow value) where TView : UIElement { view.UI.Shadow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.Clip"/></summary>
         public static TView Clip<TView>(this TView view, Xaml.Media.RectangleGeometry value) where TView : UIElement { view.UI.Clip = value; return view; }
@@ -1634,9 +1633,6 @@ namespace CSharpMarkup.WinUI // UIElement
 
         /// <summary>Set <see cref="Xaml.UIElement.TabFocusNavigation"/></summary>
         public static TView TabFocusNavigation<TView>(this TView view, Xaml.Input.KeyboardNavigationMode value) where TView : UIElement { view.UI.TabFocusNavigation = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.UIElement.ProtectedCursor"/></summary>
-        public static TView ProtectedCursor<TView>(this TView view, UI.Input.InputCursor value) where TView : UIElement { view.UI.ProtectedCursor = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.FocusState"/></summary>
         public static TView FocusState<TView>(this TView view, Xaml.FocusState value) where TView : UIElement { view.UI.FocusState = value; return view; }
@@ -1772,10 +1768,6 @@ namespace CSharpMarkup.WinUI // UIElement
         public static DependencyProperty<TTarget, Xaml.Media.Projection> Projection<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.Media.Projection>.Get(target, Xaml.UIElement.ProjectionProperty);
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.Shadow"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Shadow> Shadow<TTarget>(this TTarget target) where TTarget : UIElement
-        => DependencyProperty<TTarget, Xaml.Media.Shadow>.Get(target, Xaml.UIElement.ShadowProperty);
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.Transform3D"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.Media3D.Transform3D> Transform3D<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.Media.Media3D.Transform3D>.Get(target, Xaml.UIElement.Transform3DProperty);
@@ -1783,6 +1775,10 @@ namespace CSharpMarkup.WinUI // UIElement
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.UseLayoutRounding"/></summary>
         public static DependencyProperty<TTarget, bool> UseLayoutRounding<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.UIElement.UseLayoutRoundingProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.Shadow"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.Shadow> Shadow<TTarget>(this TTarget target) where TTarget : UIElement
+        => DependencyProperty<TTarget, Xaml.Media.Shadow>.Get(target, Xaml.UIElement.ShadowProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.Clip"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.RectangleGeometry> Clip<TTarget>(this TTarget target) where TTarget : UIElement
@@ -2248,6 +2244,54 @@ namespace CSharpMarkup.WinUI // VisualTransition
     }
 }
 
+namespace CSharpMarkup.WinUI // ApplicationActivity
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.ApplicationActivity"/></summary>
+        public static ApplicationActivity ApplicationActivity(nint ptr, Android.Runtime.JniHandleOwnership owner)
+        {
+            var ui = new Xaml.ApplicationActivity(ptr, owner);
+            return CSharpMarkup.WinUI.ApplicationActivity.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.ApplicationActivity"/></summary>
+        public static ApplicationActivity ApplicationActivity()
+        {
+            var ui = new Xaml.ApplicationActivity();
+            return CSharpMarkup.WinUI.ApplicationActivity.StartChain(ui);
+        }
+    }
+
+    public partial class ApplicationActivity : NativePage, IUI<Microsoft.UI.Xaml.ApplicationActivity>
+    {
+        static ApplicationActivity instance;
+
+        internal static ApplicationActivity StartChain(Xaml.ApplicationActivity ui)
+        {
+            if (instance == null) instance = new ApplicationActivity();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.ApplicationActivity ui;
+
+        public new Xaml.ApplicationActivity UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.ApplicationActivity(ApplicationActivity view) => view?.UI;
+
+        public static implicit operator ApplicationActivity(Xaml.ApplicationActivity ui) => ApplicationActivity.StartChain(ui);
+
+        public ApplicationActivity Invoke(Action<Xaml.ApplicationActivity> action) { action?.Invoke(UI); return this; }
+
+        protected ApplicationActivity() { }
+    }
+}
+
 namespace CSharpMarkup.WinUI // AttachedDependencyObject
 {
     public partial class AttachedDependencyObject : DependencyObject, IUI<Microsoft.UI.Xaml.AttachedDependencyObject>
@@ -2426,54 +2470,6 @@ namespace CSharpMarkup.WinUI // ElementStub
         /// <summary>Bind (or set enum value of) <see cref="Xaml.ElementStub.Load"/></summary>
         public static DependencyProperty<TTarget, bool> Load<TTarget>(this TTarget target) where TTarget : ElementStub
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.ElementStub.LoadProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // ApplicationActivity
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.ApplicationActivity"/></summary>
-        public static ApplicationActivity ApplicationActivity(nint ptr, Android.Runtime.JniHandleOwnership owner)
-        {
-            var ui = new Xaml.ApplicationActivity(ptr, owner);
-            return CSharpMarkup.WinUI.ApplicationActivity.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.ApplicationActivity"/></summary>
-        public static ApplicationActivity ApplicationActivity()
-        {
-            var ui = new Xaml.ApplicationActivity();
-            return CSharpMarkup.WinUI.ApplicationActivity.StartChain(ui);
-        }
-    }
-
-    public partial class ApplicationActivity : NativePage, IUI<Microsoft.UI.Xaml.ApplicationActivity>
-    {
-        static ApplicationActivity instance;
-
-        internal static ApplicationActivity StartChain(Xaml.ApplicationActivity ui)
-        {
-            if (instance == null) instance = new ApplicationActivity();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.ApplicationActivity ui;
-
-        public new Xaml.ApplicationActivity UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.ApplicationActivity(ApplicationActivity view) => view?.UI;
-
-        public static implicit operator ApplicationActivity(Xaml.ApplicationActivity ui) => ApplicationActivity.StartChain(ui);
-
-        public ApplicationActivity Invoke(Action<Xaml.ApplicationActivity> action) { action?.Invoke(UI); return this; }
-
-        protected ApplicationActivity() { }
     }
 }
 
@@ -2829,6 +2825,24 @@ namespace CSharpMarkup.WinUI // AutoSuggestBoxAutomationPeer
         public AutoSuggestBoxAutomationPeer Invoke(Action<Xaml.Automation.Peers.AutoSuggestBoxAutomationPeer> action) { action?.Invoke(UI); return this; }
 
         protected AutoSuggestBoxAutomationPeer() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // BreadcrumbBarItemAutomationPeer
+{
+    public partial class BreadcrumbBarItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.BreadcrumbBarItemAutomationPeer>
+    {
+        Xaml.Automation.Peers.BreadcrumbBarItemAutomationPeer ui;
+
+        public new Xaml.Automation.Peers.BreadcrumbBarItemAutomationPeer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public BreadcrumbBarItemAutomationPeer Invoke(Action<Xaml.Automation.Peers.BreadcrumbBarItemAutomationPeer> action) { action?.Invoke(UI); return this; }
+
+        protected BreadcrumbBarItemAutomationPeer() { }
     }
 }
 
@@ -3635,6 +3649,42 @@ namespace CSharpMarkup.WinUI // LoopingSelectorItemDataAutomationPeer
     }
 }
 
+namespace CSharpMarkup.WinUI // MediaPlayerElementAutomationPeer
+{
+    public partial class MediaPlayerElementAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer>
+    {
+        Xaml.Automation.Peers.MediaPlayerElementAutomationPeer ui;
+
+        public new Xaml.Automation.Peers.MediaPlayerElementAutomationPeer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public MediaPlayerElementAutomationPeer Invoke(Action<Xaml.Automation.Peers.MediaPlayerElementAutomationPeer> action) { action?.Invoke(UI); return this; }
+
+        protected MediaPlayerElementAutomationPeer() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // MediaTransportControlsAutomationPeer
+{
+    public partial class MediaTransportControlsAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.MediaTransportControlsAutomationPeer>
+    {
+        Xaml.Automation.Peers.MediaTransportControlsAutomationPeer ui;
+
+        public new Xaml.Automation.Peers.MediaTransportControlsAutomationPeer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public MediaTransportControlsAutomationPeer Invoke(Action<Xaml.Automation.Peers.MediaTransportControlsAutomationPeer> action) { action?.Invoke(UI); return this; }
+
+        protected MediaTransportControlsAutomationPeer() { }
+    }
+}
+
 namespace CSharpMarkup.WinUI // MenuBarAutomationPeer
 {
     public partial class MenuBarAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.MenuBarAutomationPeer>
@@ -3743,24 +3793,6 @@ namespace CSharpMarkup.WinUI // NavigationViewItemAutomationPeer
     }
 }
 
-namespace CSharpMarkup.WinUI // PagerControlAutomationPeer
-{
-    public partial class PagerControlAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PagerControlAutomationPeer>
-    {
-        Xaml.Automation.Peers.PagerControlAutomationPeer ui;
-
-        public new Xaml.Automation.Peers.PagerControlAutomationPeer UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public PagerControlAutomationPeer Invoke(Action<Xaml.Automation.Peers.PagerControlAutomationPeer> action) { action?.Invoke(UI); return this; }
-
-        protected PagerControlAutomationPeer() { }
-    }
-}
-
 namespace CSharpMarkup.WinUI // PasswordBoxAutomationPeer
 {
     public partial class PasswordBoxAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PasswordBoxAutomationPeer>
@@ -3838,6 +3870,24 @@ namespace CSharpMarkup.WinUI // PickerFlyoutPresenterAutomationPeer
     }
 }
 
+namespace CSharpMarkup.WinUI // PipsPagerAutomationPeer
+{
+    public partial class PipsPagerAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PipsPagerAutomationPeer>
+    {
+        Xaml.Automation.Peers.PipsPagerAutomationPeer ui;
+
+        public new Xaml.Automation.Peers.PipsPagerAutomationPeer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public PipsPagerAutomationPeer Invoke(Action<Xaml.Automation.Peers.PipsPagerAutomationPeer> action) { action?.Invoke(UI); return this; }
+
+        protected PipsPagerAutomationPeer() { }
+    }
+}
+
 namespace CSharpMarkup.WinUI // PivotAutomationPeer
 {
     public partial class PivotAutomationPeer : ItemsControlAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PivotAutomationPeer>
@@ -3907,6 +3957,24 @@ namespace CSharpMarkup.WinUI // RadioButtonAutomationPeer
         public RadioButtonAutomationPeer Invoke(Action<Xaml.Automation.Peers.RadioButtonAutomationPeer> action) { action?.Invoke(UI); return this; }
 
         protected RadioButtonAutomationPeer() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // RadioButtonsAutomationPeer
+{
+    public partial class RadioButtonsAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.RadioButtonsAutomationPeer>
+    {
+        Xaml.Automation.Peers.RadioButtonsAutomationPeer ui;
+
+        public new Xaml.Automation.Peers.RadioButtonsAutomationPeer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public RadioButtonsAutomationPeer Invoke(Action<Xaml.Automation.Peers.RadioButtonsAutomationPeer> action) { action?.Invoke(UI); return this; }
+
+        protected RadioButtonsAutomationPeer() { }
     }
 }
 
@@ -4051,24 +4119,6 @@ namespace CSharpMarkup.WinUI // ScrollBarAutomationPeer
         public ScrollBarAutomationPeer Invoke(Action<Xaml.Automation.Peers.ScrollBarAutomationPeer> action) { action?.Invoke(UI); return this; }
 
         protected ScrollBarAutomationPeer() { }
-    }
-}
-
-namespace CSharpMarkup.WinUI // ScrollPresenterAutomationPeer
-{
-    public partial class ScrollPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ScrollPresenterAutomationPeer>
-    {
-        Xaml.Automation.Peers.ScrollPresenterAutomationPeer ui;
-
-        public new Xaml.Automation.Peers.ScrollPresenterAutomationPeer UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public ScrollPresenterAutomationPeer Invoke(Action<Xaml.Automation.Peers.ScrollPresenterAutomationPeer> action) { action?.Invoke(UI); return this; }
-
-        protected ScrollPresenterAutomationPeer() { }
     }
 }
 
@@ -4491,39 +4541,21 @@ namespace CSharpMarkup.WinUI // WebView2AutomationPeer
     }
 }
 
-namespace CSharpMarkup.WinUI // BreadcrumbBarItemAutomationPeer
+namespace CSharpMarkup.WinUI // PagerControlAutomationPeer
 {
-    public partial class BreadcrumbBarItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.BreadcrumbBarItemAutomationPeer>
+    public partial class PagerControlAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PagerControlAutomationPeer>
     {
-        Xaml.Automation.Peers.BreadcrumbBarItemAutomationPeer ui;
+        Xaml.Automation.Peers.PagerControlAutomationPeer ui;
 
-        public new Xaml.Automation.Peers.BreadcrumbBarItemAutomationPeer UI
+        public new Xaml.Automation.Peers.PagerControlAutomationPeer UI
         {
             get => ui;
             protected set => base.UI = ui = value;
         }
 
-        public BreadcrumbBarItemAutomationPeer Invoke(Action<Xaml.Automation.Peers.BreadcrumbBarItemAutomationPeer> action) { action?.Invoke(UI); return this; }
+        public PagerControlAutomationPeer Invoke(Action<Xaml.Automation.Peers.PagerControlAutomationPeer> action) { action?.Invoke(UI); return this; }
 
-        protected BreadcrumbBarItemAutomationPeer() { }
-    }
-}
-
-namespace CSharpMarkup.WinUI // PipsPagerAutomationPeer
-{
-    public partial class PipsPagerAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PipsPagerAutomationPeer>
-    {
-        Xaml.Automation.Peers.PipsPagerAutomationPeer ui;
-
-        public new Xaml.Automation.Peers.PipsPagerAutomationPeer UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public PipsPagerAutomationPeer Invoke(Action<Xaml.Automation.Peers.PipsPagerAutomationPeer> action) { action?.Invoke(UI); return this; }
-
-        protected PipsPagerAutomationPeer() { }
+        protected PagerControlAutomationPeer() { }
     }
 }
 
@@ -4562,6 +4594,173 @@ namespace CSharpMarkup.WinUI // IRawElementProviderSimple
     }
 }
 
+namespace CSharpMarkup.WinUI // AnimatedIcon
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.AnimatedIcon"/></summary>
+        public static AnimatedIcon AnimatedIcon(Xaml.Controls.IconSource FallbackIconSource = default, bool? MirroredWhenRightToLeft = default, Xaml.Controls.IAnimatedVisualSource2 Source = default)
+        {
+            var ui = new Xaml.Controls.AnimatedIcon();
+            if (FallbackIconSource is not null) ui.FallbackIconSource = FallbackIconSource;
+            if (MirroredWhenRightToLeft is not null) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
+            if (Source is not null) ui.Source = Source;
+            return CSharpMarkup.WinUI.AnimatedIcon.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.AnimatedIcon"/></summary>
+        public static AnimatedIcon AnimatedIcon()
+        {
+            var ui = new Xaml.Controls.AnimatedIcon();
+            return CSharpMarkup.WinUI.AnimatedIcon.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.AnimatedIcon"/></summary>
+        public static AnimatedIcon AnimatedIcon(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.AnimatedIcon(javaReference, transfer);
+            return CSharpMarkup.WinUI.AnimatedIcon.StartChain(ui);
+        }
+    }
+
+    public partial class AnimatedIcon : IconElement, IUI<Microsoft.UI.Xaml.Controls.AnimatedIcon>
+    {
+        static AnimatedIcon instance;
+
+        internal static AnimatedIcon StartChain(Xaml.Controls.AnimatedIcon ui)
+        {
+            if (instance == null) instance = new AnimatedIcon();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.AnimatedIcon ui;
+
+        public new Xaml.Controls.AnimatedIcon UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(AnimatedIcon view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.AnimatedIcon(AnimatedIcon view) => view?.UI;
+
+        public static implicit operator AnimatedIcon(Xaml.Controls.AnimatedIcon ui) => AnimatedIcon.StartChain(ui);
+
+        public AnimatedIcon Invoke(Action<Xaml.Controls.AnimatedIcon> action) { action?.Invoke(UI); return this; }
+
+        protected AnimatedIcon() { }
+    }
+
+    public static partial class AnimatedIconExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.AnimatedIcon.FallbackIconSource"/></summary>
+        public static TView FallbackIconSource<TView>(this TView view, Xaml.Controls.IconSource value) where TView : AnimatedIcon { view.UI.FallbackIconSource = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.AnimatedIcon.MirroredWhenRightToLeft"/></summary>
+        public static TView MirroredWhenRightToLeft<TView>(this TView view, bool value) where TView : AnimatedIcon { view.UI.MirroredWhenRightToLeft = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.AnimatedIcon.Source"/></summary>
+        public static TView Source<TView>(this TView view, Xaml.Controls.IAnimatedVisualSource2 value) where TView : AnimatedIcon { view.UI.Source = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIcon.FallbackIconSource"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.IconSource> FallbackIconSource<TTarget>(this TTarget target) where TTarget : AnimatedIcon
+        => DependencyProperty<TTarget, Xaml.Controls.IconSource>.Get(target, Xaml.Controls.AnimatedIcon.FallbackIconSourceProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIcon.MirroredWhenRightToLeft"/></summary>
+        public static DependencyProperty<TTarget, bool> MirroredWhenRightToLeft<TTarget>(this TTarget target) where TTarget : AnimatedIcon
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.AnimatedIcon.MirroredWhenRightToLeftProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIcon.Source"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.IAnimatedVisualSource2> Source<TTarget>(this TTarget target) where TTarget : AnimatedIcon
+        => DependencyProperty<TTarget, Xaml.Controls.IAnimatedVisualSource2>.Get(target, Xaml.Controls.AnimatedIcon.SourceProperty);
+
+        /// <summary>Set <see cref="Xaml.Controls.AnimatedIcon.State"/></summary>
+        public static TTarget AnimatedIcon_State<TTarget>(this TTarget target, string value) where TTarget : DependencyObject
+        { Xaml.Controls.AnimatedIcon.SetState(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIcon.State"/></summary>
+        public static DependencyProperty<TTarget, string> AnimatedIcon_State<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.AnimatedIcon.StateProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // AnimatedIconSource
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.AnimatedIconSource"/></summary>
+        public static AnimatedIconSource AnimatedIconSource(Xaml.Controls.IconSource FallbackIconSource = default, bool? MirroredWhenRightToLeft = default, Xaml.Controls.IAnimatedVisualSource2 Source = default)
+        {
+            var ui = new Xaml.Controls.AnimatedIconSource();
+            if (FallbackIconSource is not null) ui.FallbackIconSource = FallbackIconSource;
+            if (MirroredWhenRightToLeft is not null) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
+            if (Source is not null) ui.Source = Source;
+            return CSharpMarkup.WinUI.AnimatedIconSource.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.AnimatedIconSource"/></summary>
+        public static AnimatedIconSource AnimatedIconSource()
+        {
+            var ui = new Xaml.Controls.AnimatedIconSource();
+            return CSharpMarkup.WinUI.AnimatedIconSource.StartChain(ui);
+        }
+    }
+
+    public partial class AnimatedIconSource : IconSource, IUI<Microsoft.UI.Xaml.Controls.AnimatedIconSource>
+    {
+        static AnimatedIconSource instance;
+
+        internal static AnimatedIconSource StartChain(Xaml.Controls.AnimatedIconSource ui)
+        {
+            if (instance == null) instance = new AnimatedIconSource();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.AnimatedIconSource ui;
+
+        public new Xaml.Controls.AnimatedIconSource UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.AnimatedIconSource(AnimatedIconSource view) => view?.UI;
+
+        public static implicit operator AnimatedIconSource(Xaml.Controls.AnimatedIconSource ui) => AnimatedIconSource.StartChain(ui);
+
+        public AnimatedIconSource Invoke(Action<Xaml.Controls.AnimatedIconSource> action) { action?.Invoke(UI); return this; }
+
+        protected AnimatedIconSource() { }
+    }
+
+    public static partial class AnimatedIconSourceExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.AnimatedIconSource.FallbackIconSource"/></summary>
+        public static TView FallbackIconSource<TView>(this TView view, Xaml.Controls.IconSource value) where TView : AnimatedIconSource { view.UI.FallbackIconSource = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.AnimatedIconSource.MirroredWhenRightToLeft"/></summary>
+        public static TView MirroredWhenRightToLeft<TView>(this TView view, bool value) where TView : AnimatedIconSource { view.UI.MirroredWhenRightToLeft = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.AnimatedIconSource.Source"/></summary>
+        public static TView Source<TView>(this TView view, Xaml.Controls.IAnimatedVisualSource2 value) where TView : AnimatedIconSource { view.UI.Source = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIconSource.FallbackIconSource"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.IconSource> FallbackIconSource<TTarget>(this TTarget target) where TTarget : AnimatedIconSource
+        => DependencyProperty<TTarget, Xaml.Controls.IconSource>.Get(target, Xaml.Controls.AnimatedIconSource.FallbackIconSourceProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIconSource.MirroredWhenRightToLeft"/></summary>
+        public static DependencyProperty<TTarget, bool> MirroredWhenRightToLeft<TTarget>(this TTarget target) where TTarget : AnimatedIconSource
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.AnimatedIconSource.MirroredWhenRightToLeftProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIconSource.Source"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.IAnimatedVisualSource2> Source<TTarget>(this TTarget target) where TTarget : AnimatedIconSource
+        => DependencyProperty<TTarget, Xaml.Controls.IAnimatedVisualSource2>.Get(target, Xaml.Controls.AnimatedIconSource.SourceProperty);
+    }
+}
+
 namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
 {
     public static partial class Helpers
@@ -4575,9 +4774,10 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.AnimatedVisualPlayer"/></summary>
-        public static AnimatedVisualPlayer AnimatedVisualPlayer(bool? AutoPlay = default, Xaml.DataTemplate FallbackContent = default, double? PlaybackRate = default, Xaml.Media.Stretch? Stretch = default, Microsoft.UI.Xaml.Controls.IAnimatedVisualSource Source = default)
+        public static AnimatedVisualPlayer AnimatedVisualPlayer(Xaml.Controls.PlayerAnimationOptimization? AnimationOptimization = default, bool? AutoPlay = default, Xaml.DataTemplate FallbackContent = default, double? PlaybackRate = default, Xaml.Media.Stretch? Stretch = default, Microsoft.UI.Xaml.Controls.IAnimatedVisualSource Source = default)
         {
             var ui = new Xaml.Controls.AnimatedVisualPlayer();
+            if (AnimationOptimization is not null) ui.AnimationOptimization = AnimationOptimization.Value;
             if (AutoPlay is not null) ui.AutoPlay = AutoPlay.Value;
             if (FallbackContent is not null) ui.FallbackContent = FallbackContent;
             if (PlaybackRate is not null) ui.PlaybackRate = PlaybackRate.Value;
@@ -4633,6 +4833,9 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
 
     public static partial class AnimatedVisualPlayerExtensions
     {
+        /// <summary>Set <see cref="Xaml.Controls.AnimatedVisualPlayer.AnimationOptimization"/></summary>
+        public static TView AnimationOptimization<TView>(this TView view, Xaml.Controls.PlayerAnimationOptimization value) where TView : AnimatedVisualPlayer { view.UI.AnimationOptimization = value; return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.AnimatedVisualPlayer.AutoPlay"/></summary>
         public static TView AutoPlay<TView>(this TView view, bool value) where TView : AnimatedVisualPlayer { view.UI.AutoPlay = value; return view; }
 
@@ -4648,6 +4851,10 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedVisualPlayer.Diagnostics"/></summary>
         public static DependencyProperty<TTarget, object> Diagnostics<TTarget>(this TTarget target) where TTarget : AnimatedVisualPlayer
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.AnimatedVisualPlayer.DiagnosticsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedVisualPlayer.AnimationOptimization"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.PlayerAnimationOptimization> AnimationOptimization<TTarget>(this TTarget target) where TTarget : AnimatedVisualPlayer
+        => DependencyProperty<TTarget, Xaml.Controls.PlayerAnimationOptimization>.Get(target, Xaml.Controls.AnimatedVisualPlayer.AnimationOptimizationProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedVisualPlayer.AutoPlay"/></summary>
         public static DependencyProperty<TTarget, bool> AutoPlay<TTarget>(this TTarget target) where TTarget : AnimatedVisualPlayer
@@ -5298,18 +5505,6 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
         /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.LightDismissOverlayMode"/></summary>
         public static TView LightDismissOverlayMode<TView>(this TView view, Xaml.Controls.LightDismissOverlayMode value) where TView : AutoSuggestBox { view.UI.LightDismissOverlayMode = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.ValidationContext"/></summary>
-        public static TView ValidationContext<TView>(this TView view, Xaml.Controls.InputValidationContext value) where TView : AutoSuggestBox { view.UI.ValidationContext = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.InputValidationMode"/></summary>
-        public static TView InputValidationMode<TView>(this TView view, Xaml.Controls.InputValidationMode value) where TView : AutoSuggestBox { view.UI.InputValidationMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.InputValidationKind"/></summary>
-        public static TView InputValidationKind<TView>(this TView view, Xaml.Controls.InputValidationKind value) where TView : AutoSuggestBox { view.UI.InputValidationKind = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.ErrorTemplate"/></summary>
-        public static TView ErrorTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : AutoSuggestBox { view.UI.ErrorTemplate = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.PlaceholderText"/></summary>
         public static TView PlaceholderText<TView>(this TView view, string value) where TView : AutoSuggestBox { view.UI.PlaceholderText = value; return view; }
 
@@ -5346,18 +5541,6 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AutoSuggestBox.LightDismissOverlayMode"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode<TTarget>(this TTarget target) where TTarget : AutoSuggestBox
         => DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode>.Get(target, Xaml.Controls.AutoSuggestBox.LightDismissOverlayModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AutoSuggestBox.ErrorTemplate"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DataTemplate> ErrorTemplate<TTarget>(this TTarget target) where TTarget : AutoSuggestBox
-        => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.AutoSuggestBox.ErrorTemplateProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AutoSuggestBox.InputValidationKind"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> InputValidationKind<TTarget>(this TTarget target) where TTarget : AutoSuggestBox
-        => DependencyProperty<TTarget, Xaml.Controls.InputValidationKind>.Get(target, Xaml.Controls.AutoSuggestBox.InputValidationKindProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AutoSuggestBox.InputValidationMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> InputValidationMode<TTarget>(this TTarget target) where TTarget : AutoSuggestBox
-        => DependencyProperty<TTarget, Xaml.Controls.InputValidationMode>.Get(target, Xaml.Controls.AutoSuggestBox.InputValidationModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AutoSuggestBox.MaxSuggestionListHeight"/></summary>
         public static DependencyProperty<TTarget, double> MaxSuggestionListHeight<TTarget>(this TTarget target) where TTarget : AutoSuggestBox
@@ -5923,6 +6106,140 @@ namespace CSharpMarkup.WinUI // Border
     }
 }
 
+namespace CSharpMarkup.WinUI // BreadcrumbBar
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBar"/></summary>
+        public static BreadcrumbBar BreadcrumbBar(object? ItemsSource = default, object? ItemTemplate = default)
+        {
+            var ui = new Xaml.Controls.BreadcrumbBar();
+            if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
+            if (ItemTemplate is not null) ui.ItemTemplate = ItemTemplate;
+            return CSharpMarkup.WinUI.BreadcrumbBar.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBar"/></summary>
+        public static BreadcrumbBar BreadcrumbBar()
+        {
+            var ui = new Xaml.Controls.BreadcrumbBar();
+            return CSharpMarkup.WinUI.BreadcrumbBar.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBar"/></summary>
+        public static BreadcrumbBar BreadcrumbBar(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.BreadcrumbBar(javaReference, transfer);
+            return CSharpMarkup.WinUI.BreadcrumbBar.StartChain(ui);
+        }
+    }
+
+    public partial class BreadcrumbBar : Control, IUI<Microsoft.UI.Xaml.Controls.BreadcrumbBar>
+    {
+        static BreadcrumbBar instance;
+
+        internal static BreadcrumbBar StartChain(Xaml.Controls.BreadcrumbBar ui)
+        {
+            if (instance == null) instance = new BreadcrumbBar();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.BreadcrumbBar ui;
+
+        public new Xaml.Controls.BreadcrumbBar UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(BreadcrumbBar view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.BreadcrumbBar(BreadcrumbBar view) => view?.UI;
+
+        public static implicit operator BreadcrumbBar(Xaml.Controls.BreadcrumbBar ui) => BreadcrumbBar.StartChain(ui);
+
+        public BreadcrumbBar Invoke(Action<Xaml.Controls.BreadcrumbBar> action) { action?.Invoke(UI); return this; }
+
+        protected BreadcrumbBar() { }
+    }
+
+    public static partial class BreadcrumbBarExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.BreadcrumbBar.ItemsSource"/></summary>
+        public static TView ItemsSource<TView>(this TView view, object? value) where TView : BreadcrumbBar { view.UI.ItemsSource = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.BreadcrumbBar.ItemTemplate"/></summary>
+        public static TView ItemTemplate<TView>(this TView view, object? value) where TView : BreadcrumbBar { view.UI.ItemTemplate = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.BreadcrumbBar.ItemsSource"/></summary>
+        public static DependencyProperty<TTarget, object?> ItemsSource<TTarget>(this TTarget target) where TTarget : BreadcrumbBar
+        => DependencyProperty<TTarget, object?>.Get(target, Xaml.Controls.BreadcrumbBar.ItemsSourceProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.BreadcrumbBar.ItemTemplate"/></summary>
+        public static DependencyProperty<TTarget, object?> ItemTemplate<TTarget>(this TTarget target) where TTarget : BreadcrumbBar
+        => DependencyProperty<TTarget, object?>.Get(target, Xaml.Controls.BreadcrumbBar.ItemTemplateProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // BreadcrumbBarItem
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBarItem"/></summary>
+        public static BreadcrumbBarItem BreadcrumbBarItem(UIObject Content)
+        {
+            var ui = new Xaml.Controls.BreadcrumbBarItem();
+            if (Content != null) ui.Content = Content.UI;
+            return CSharpMarkup.WinUI.BreadcrumbBarItem.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBarItem"/></summary>
+        public static BreadcrumbBarItem BreadcrumbBarItem()
+        {
+            var ui = new Xaml.Controls.BreadcrumbBarItem();
+            return CSharpMarkup.WinUI.BreadcrumbBarItem.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBarItem"/></summary>
+        public static BreadcrumbBarItem BreadcrumbBarItem(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.BreadcrumbBarItem(javaReference, transfer);
+            return CSharpMarkup.WinUI.BreadcrumbBarItem.StartChain(ui);
+        }
+    }
+
+    public partial class BreadcrumbBarItem : ContentControl, IUI<Microsoft.UI.Xaml.Controls.BreadcrumbBarItem>
+    {
+        static BreadcrumbBarItem instance;
+
+        internal static BreadcrumbBarItem StartChain(Xaml.Controls.BreadcrumbBarItem ui)
+        {
+            if (instance == null) instance = new BreadcrumbBarItem();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.BreadcrumbBarItem ui;
+
+        public new Xaml.Controls.BreadcrumbBarItem UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(BreadcrumbBarItem view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.BreadcrumbBarItem(BreadcrumbBarItem view) => view?.UI;
+
+        public static implicit operator BreadcrumbBarItem(Xaml.Controls.BreadcrumbBarItem ui) => BreadcrumbBarItem.StartChain(ui);
+
+        public BreadcrumbBarItem Invoke(Action<Xaml.Controls.BreadcrumbBarItem> action) { action?.Invoke(UI); return this; }
+
+        protected BreadcrumbBarItem() { }
+    }
+}
+
 namespace CSharpMarkup.WinUI // Button
 {
     public static partial class Helpers
@@ -6215,9 +6532,31 @@ namespace CSharpMarkup.WinUI // CalendarView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CalendarView"/></summary>
-        public static CalendarView CalendarView(Xaml.HorizontalAlignment? HorizontalFirstOfMonthLabelAlignment = default, Xaml.HorizontalAlignment? HorizontalDayItemAlignment = default, CSharpMarkup.WinUI.to.Brush? FocusBorderBrush = default, Windows.UI.Text.FontWeight? FirstOfYearDecadeLabelFontWeight = default, Windows.UI.Text.FontStyle? FirstOfYearDecadeLabelFontStyle = default, Xaml.Media.FontFamily MonthYearItemFontFamily = default, Xaml.Media.FontFamily FirstOfYearDecadeLabelFontFamily = default, Windows.UI.Text.FontWeight? FirstOfMonthLabelFontWeight = default, Windows.UI.Text.FontStyle? FirstOfMonthLabelFontStyle = default, double? FirstOfMonthLabelFontSize = default, Xaml.Media.FontFamily FirstOfMonthLabelFontFamily = default, Windows.Globalization.DayOfWeek? FirstDayOfWeek = default, CSharpMarkup.WinUI.to.Brush? BlackoutForeground = default, string DayOfWeekFormat = default, Windows.UI.Text.FontWeight? DayItemFontWeight = default, Windows.UI.Text.FontStyle? DayItemFontStyle = default, double? DayItemFontSize = default, Xaml.Media.FontFamily DayItemFontFamily = default, CSharpMarkup.WinUI.to.Brush? SelectedPressedBorderBrush = default, CSharpMarkup.WinUI.to.Brush? CalendarItemForeground = default, CSharpMarkup.WinUI.to.Thickness? CalendarItemBorderThickness = default, CSharpMarkup.WinUI.to.Brush? CalendarItemBorderBrush = default, CSharpMarkup.WinUI.to.Brush? CalendarItemBackground = default, string CalendarIdentifier = default, Xaml.Controls.CalendarViewDisplayMode? DisplayMode = default, CSharpMarkup.WinUI.to.Brush? HoverBorderBrush = default, CSharpMarkup.WinUI.to.Brush? PressedBorderBrush = default, Xaml.VerticalAlignment? VerticalDayItemAlignment = default, CSharpMarkup.WinUI.to.Brush? TodayForeground = default, Windows.UI.Text.FontWeight? TodayFontWeight = default, Xaml.Controls.CalendarViewSelectionMode? SelectionMode = default, Xaml.Style CalendarViewDayItemStyle = default, CSharpMarkup.WinUI.to.Brush? SelectedHoverBorderBrush = default, CSharpMarkup.WinUI.to.Brush? SelectedForeground = default, CSharpMarkup.WinUI.to.Brush? SelectedBorderBrush = default, CSharpMarkup.WinUI.to.Brush? PressedForeground = default, Xaml.VerticalAlignment? VerticalFirstOfMonthLabelAlignment = default, CSharpMarkup.WinUI.to.Brush? OutOfScopeForeground = default, CSharpMarkup.WinUI.to.Brush? OutOfScopeBackground = default, int? NumberOfWeeksInView = default, Windows.UI.Text.FontWeight? MonthYearItemFontWeight = default, Windows.UI.Text.FontStyle? MonthYearItemFontStyle = default, double? MonthYearItemFontSize = default, double? FirstOfYearDecadeLabelFontSize = default, DateTimeOffset? MinDate = default, DateTimeOffset? MaxDate = default, bool? IsTodayHighlighted = default, bool? IsOutOfScopeEnabled = default, bool? IsGroupLabelVisible = default, CSharpMarkup.WinUI.to.CornerRadius? DayItemCornerRadius = default, CSharpMarkup.WinUI.to.CornerRadius? CalendarItemCornerRadius = default, CSharpMarkup.WinUI.to.Brush? SelectedBackground = default, CSharpMarkup.WinUI.to.Brush? TodayBackground = default, CSharpMarkup.WinUI.to.Brush? TodaySelectedBackground = default)
+        public static CalendarView CalendarView(CSharpMarkup.WinUI.to.Thickness? DayItemMargin = default, CSharpMarkup.WinUI.to.Brush? CalendarItemPressedBackground = default, CSharpMarkup.WinUI.to.Brush? CalendarItemHoverBackground = default, CSharpMarkup.WinUI.to.Brush? TodayBlackoutBackground = default, CSharpMarkup.WinUI.to.Brush? CalendarItemDisabledBackground = default, CSharpMarkup.WinUI.to.Brush? BlackoutStrikethroughBrush = default, CSharpMarkup.WinUI.to.Brush? BlackoutBackground = default, CSharpMarkup.WinUI.to.Thickness? FirstOfYearDecadeLabelMargin = default, CSharpMarkup.WinUI.to.Thickness? FirstOfMonthLabelMargin = default, CSharpMarkup.WinUI.to.Brush? DisabledForeground = default, CSharpMarkup.WinUI.to.Brush? SelectedDisabledBorderBrush = default, CSharpMarkup.WinUI.to.Brush? OutOfScopePressedForeground = default, CSharpMarkup.WinUI.to.Brush? OutOfScopeHoverForeground = default, CSharpMarkup.WinUI.to.Thickness? MonthYearItemMargin = default, CSharpMarkup.WinUI.to.Brush? SelectedDisabledForeground = default, CSharpMarkup.WinUI.to.Brush? TodaySelectedInnerBorderBrush = default, CSharpMarkup.WinUI.to.Brush? TodayPressedBackground = default, CSharpMarkup.WinUI.to.Brush? TodayHoverBackground = default, CSharpMarkup.WinUI.to.Brush? TodayDisabledBackground = default, CSharpMarkup.WinUI.to.Brush? TodayBlackoutForeground = default, CSharpMarkup.WinUI.to.Brush? SelectedPressedForeground = default, CSharpMarkup.WinUI.to.Brush? SelectedHoverForeground = default, Xaml.HorizontalAlignment? HorizontalFirstOfMonthLabelAlignment = default, Xaml.HorizontalAlignment? HorizontalDayItemAlignment = default, CSharpMarkup.WinUI.to.Brush? FocusBorderBrush = default, Windows.UI.Text.FontWeight? FirstOfYearDecadeLabelFontWeight = default, Windows.UI.Text.FontStyle? FirstOfYearDecadeLabelFontStyle = default, Xaml.Media.FontFamily MonthYearItemFontFamily = default, Xaml.Media.FontFamily FirstOfYearDecadeLabelFontFamily = default, Windows.UI.Text.FontWeight? FirstOfMonthLabelFontWeight = default, Windows.UI.Text.FontStyle? FirstOfMonthLabelFontStyle = default, double? FirstOfMonthLabelFontSize = default, Xaml.Media.FontFamily FirstOfMonthLabelFontFamily = default, Windows.Globalization.DayOfWeek? FirstDayOfWeek = default, CSharpMarkup.WinUI.to.Brush? BlackoutForeground = default, string DayOfWeekFormat = default, Windows.UI.Text.FontWeight? DayItemFontWeight = default, Windows.UI.Text.FontStyle? DayItemFontStyle = default, double? DayItemFontSize = default, Xaml.Media.FontFamily DayItemFontFamily = default, CSharpMarkup.WinUI.to.Brush? SelectedPressedBorderBrush = default, CSharpMarkup.WinUI.to.Brush? CalendarItemForeground = default, CSharpMarkup.WinUI.to.Thickness? CalendarItemBorderThickness = default, CSharpMarkup.WinUI.to.Brush? CalendarItemBorderBrush = default, CSharpMarkup.WinUI.to.Brush? CalendarItemBackground = default, string CalendarIdentifier = default, Xaml.Controls.CalendarViewDisplayMode? DisplayMode = default, CSharpMarkup.WinUI.to.Brush? HoverBorderBrush = default, CSharpMarkup.WinUI.to.Brush? PressedBorderBrush = default, Xaml.VerticalAlignment? VerticalDayItemAlignment = default, CSharpMarkup.WinUI.to.Brush? TodayForeground = default, Windows.UI.Text.FontWeight? TodayFontWeight = default, Xaml.Controls.CalendarViewSelectionMode? SelectionMode = default, Xaml.Style CalendarViewDayItemStyle = default, CSharpMarkup.WinUI.to.Brush? SelectedHoverBorderBrush = default, CSharpMarkup.WinUI.to.Brush? SelectedForeground = default, CSharpMarkup.WinUI.to.Brush? SelectedBorderBrush = default, CSharpMarkup.WinUI.to.Brush? PressedForeground = default, Xaml.VerticalAlignment? VerticalFirstOfMonthLabelAlignment = default, CSharpMarkup.WinUI.to.Brush? OutOfScopeForeground = default, CSharpMarkup.WinUI.to.Brush? OutOfScopeBackground = default, int? NumberOfWeeksInView = default, Windows.UI.Text.FontWeight? MonthYearItemFontWeight = default, Windows.UI.Text.FontStyle? MonthYearItemFontStyle = default, double? MonthYearItemFontSize = default, double? FirstOfYearDecadeLabelFontSize = default, DateTimeOffset? MinDate = default, DateTimeOffset? MaxDate = default, bool? IsTodayHighlighted = default, bool? IsOutOfScopeEnabled = default, bool? IsGroupLabelVisible = default, CSharpMarkup.WinUI.to.CornerRadius? DayItemCornerRadius = default, CSharpMarkup.WinUI.to.CornerRadius? CalendarItemCornerRadius = default, CSharpMarkup.WinUI.to.Brush? SelectedBackground = default, CSharpMarkup.WinUI.to.Brush? TodayBackground = default, CSharpMarkup.WinUI.to.Brush? TodaySelectedBackground = default)
         {
             var ui = new Xaml.Controls.CalendarView();
+            if (DayItemMargin is not null) ui.DayItemMargin = DayItemMargin.Value;
+            if (CalendarItemPressedBackground is not null) ui.CalendarItemPressedBackground = CalendarItemPressedBackground.Value;
+            if (CalendarItemHoverBackground is not null) ui.CalendarItemHoverBackground = CalendarItemHoverBackground.Value;
+            if (TodayBlackoutBackground is not null) ui.TodayBlackoutBackground = TodayBlackoutBackground.Value;
+            if (CalendarItemDisabledBackground is not null) ui.CalendarItemDisabledBackground = CalendarItemDisabledBackground.Value;
+            if (BlackoutStrikethroughBrush is not null) ui.BlackoutStrikethroughBrush = BlackoutStrikethroughBrush.Value;
+            if (BlackoutBackground is not null) ui.BlackoutBackground = BlackoutBackground.Value;
+            if (FirstOfYearDecadeLabelMargin is not null) ui.FirstOfYearDecadeLabelMargin = FirstOfYearDecadeLabelMargin.Value;
+            if (FirstOfMonthLabelMargin is not null) ui.FirstOfMonthLabelMargin = FirstOfMonthLabelMargin.Value;
+            if (DisabledForeground is not null) ui.DisabledForeground = DisabledForeground.Value;
+            if (SelectedDisabledBorderBrush is not null) ui.SelectedDisabledBorderBrush = SelectedDisabledBorderBrush.Value;
+            if (OutOfScopePressedForeground is not null) ui.OutOfScopePressedForeground = OutOfScopePressedForeground.Value;
+            if (OutOfScopeHoverForeground is not null) ui.OutOfScopeHoverForeground = OutOfScopeHoverForeground.Value;
+            if (MonthYearItemMargin is not null) ui.MonthYearItemMargin = MonthYearItemMargin.Value;
+            if (SelectedDisabledForeground is not null) ui.SelectedDisabledForeground = SelectedDisabledForeground.Value;
+            if (TodaySelectedInnerBorderBrush is not null) ui.TodaySelectedInnerBorderBrush = TodaySelectedInnerBorderBrush.Value;
+            if (TodayPressedBackground is not null) ui.TodayPressedBackground = TodayPressedBackground.Value;
+            if (TodayHoverBackground is not null) ui.TodayHoverBackground = TodayHoverBackground.Value;
+            if (TodayDisabledBackground is not null) ui.TodayDisabledBackground = TodayDisabledBackground.Value;
+            if (TodayBlackoutForeground is not null) ui.TodayBlackoutForeground = TodayBlackoutForeground.Value;
+            if (SelectedPressedForeground is not null) ui.SelectedPressedForeground = SelectedPressedForeground.Value;
+            if (SelectedHoverForeground is not null) ui.SelectedHoverForeground = SelectedHoverForeground.Value;
             if (HorizontalFirstOfMonthLabelAlignment is not null) ui.HorizontalFirstOfMonthLabelAlignment = HorizontalFirstOfMonthLabelAlignment.Value;
             if (HorizontalDayItemAlignment is not null) ui.HorizontalDayItemAlignment = HorizontalDayItemAlignment.Value;
             if (FocusBorderBrush is not null) ui.FocusBorderBrush = FocusBorderBrush.Value;
@@ -6322,6 +6661,228 @@ namespace CSharpMarkup.WinUI // CalendarView
 
     public static partial class CalendarViewExtensions
     {
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        public static TView DayItemMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : CalendarView { view.UI.DayItemMargin = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        public static TView DayItemMargin<TView>(this TView view, double uniform) where TView : CalendarView { view.UI.DayItemMargin = Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        public static TView DayItemMargin<TView>(this TView view, double horizontal, double vertical) where TView : CalendarView { view.UI.DayItemMargin = Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        public static TView DayItemMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : CalendarView { view.UI.DayItemMargin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        public static TView DayItemMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : CalendarView { view.UI.DayItemMargin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemPressedBackground"/></summary>
+        public static TView CalendarItemPressedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.CalendarItemPressedBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemPressedBackground"/></summary>
+        public static TView CalendarItemPressedBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.CalendarItemPressedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemPressedBackground"/></summary>
+        public static TView CalendarItemPressedBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.CalendarItemPressedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemHoverBackground"/></summary>
+        public static TView CalendarItemHoverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.CalendarItemHoverBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemHoverBackground"/></summary>
+        public static TView CalendarItemHoverBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.CalendarItemHoverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemHoverBackground"/></summary>
+        public static TView CalendarItemHoverBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.CalendarItemHoverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutBackground"/></summary>
+        public static TView TodayBlackoutBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodayBlackoutBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutBackground"/></summary>
+        public static TView TodayBlackoutBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodayBlackoutBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutBackground"/></summary>
+        public static TView TodayBlackoutBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodayBlackoutBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemDisabledBackground"/></summary>
+        public static TView CalendarItemDisabledBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.CalendarItemDisabledBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemDisabledBackground"/></summary>
+        public static TView CalendarItemDisabledBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.CalendarItemDisabledBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemDisabledBackground"/></summary>
+        public static TView CalendarItemDisabledBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.CalendarItemDisabledBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutStrikethroughBrush"/></summary>
+        public static TView BlackoutStrikethroughBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.BlackoutStrikethroughBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutStrikethroughBrush"/></summary>
+        public static TView BlackoutStrikethroughBrush<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.BlackoutStrikethroughBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutStrikethroughBrush"/></summary>
+        public static TView BlackoutStrikethroughBrush<TView>(this TView view, string color) where TView : CalendarView { view.UI.BlackoutStrikethroughBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutBackground"/></summary>
+        public static TView BlackoutBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.BlackoutBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutBackground"/></summary>
+        public static TView BlackoutBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.BlackoutBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutBackground"/></summary>
+        public static TView BlackoutBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.BlackoutBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        public static TView FirstOfYearDecadeLabelMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : CalendarView { view.UI.FirstOfYearDecadeLabelMargin = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        public static TView FirstOfYearDecadeLabelMargin<TView>(this TView view, double uniform) where TView : CalendarView { view.UI.FirstOfYearDecadeLabelMargin = Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        public static TView FirstOfYearDecadeLabelMargin<TView>(this TView view, double horizontal, double vertical) where TView : CalendarView { view.UI.FirstOfYearDecadeLabelMargin = Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        public static TView FirstOfYearDecadeLabelMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : CalendarView { view.UI.FirstOfYearDecadeLabelMargin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        public static TView FirstOfYearDecadeLabelMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : CalendarView { view.UI.FirstOfYearDecadeLabelMargin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        public static TView FirstOfMonthLabelMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : CalendarView { view.UI.FirstOfMonthLabelMargin = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        public static TView FirstOfMonthLabelMargin<TView>(this TView view, double uniform) where TView : CalendarView { view.UI.FirstOfMonthLabelMargin = Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        public static TView FirstOfMonthLabelMargin<TView>(this TView view, double horizontal, double vertical) where TView : CalendarView { view.UI.FirstOfMonthLabelMargin = Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        public static TView FirstOfMonthLabelMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : CalendarView { view.UI.FirstOfMonthLabelMargin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        public static TView FirstOfMonthLabelMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : CalendarView { view.UI.FirstOfMonthLabelMargin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.DisabledForeground"/></summary>
+        public static TView DisabledForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.DisabledForeground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.DisabledForeground"/></summary>
+        public static TView DisabledForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.DisabledForeground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.DisabledForeground"/></summary>
+        public static TView DisabledForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.DisabledForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledBorderBrush"/></summary>
+        public static TView SelectedDisabledBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.SelectedDisabledBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledBorderBrush"/></summary>
+        public static TView SelectedDisabledBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.SelectedDisabledBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledBorderBrush"/></summary>
+        public static TView SelectedDisabledBorderBrush<TView>(this TView view, string color) where TView : CalendarView { view.UI.SelectedDisabledBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopePressedForeground"/></summary>
+        public static TView OutOfScopePressedForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.OutOfScopePressedForeground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopePressedForeground"/></summary>
+        public static TView OutOfScopePressedForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.OutOfScopePressedForeground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopePressedForeground"/></summary>
+        public static TView OutOfScopePressedForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.OutOfScopePressedForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopeHoverForeground"/></summary>
+        public static TView OutOfScopeHoverForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.OutOfScopeHoverForeground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopeHoverForeground"/></summary>
+        public static TView OutOfScopeHoverForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.OutOfScopeHoverForeground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopeHoverForeground"/></summary>
+        public static TView OutOfScopeHoverForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.OutOfScopeHoverForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        public static TView MonthYearItemMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : CalendarView { view.UI.MonthYearItemMargin = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        public static TView MonthYearItemMargin<TView>(this TView view, double uniform) where TView : CalendarView { view.UI.MonthYearItemMargin = Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        public static TView MonthYearItemMargin<TView>(this TView view, double horizontal, double vertical) where TView : CalendarView { view.UI.MonthYearItemMargin = Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        public static TView MonthYearItemMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : CalendarView { view.UI.MonthYearItemMargin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        public static TView MonthYearItemMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : CalendarView { view.UI.MonthYearItemMargin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledForeground"/></summary>
+        public static TView SelectedDisabledForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.SelectedDisabledForeground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledForeground"/></summary>
+        public static TView SelectedDisabledForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.SelectedDisabledForeground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledForeground"/></summary>
+        public static TView SelectedDisabledForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.SelectedDisabledForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodaySelectedInnerBorderBrush"/></summary>
+        public static TView TodaySelectedInnerBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodaySelectedInnerBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodaySelectedInnerBorderBrush"/></summary>
+        public static TView TodaySelectedInnerBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodaySelectedInnerBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodaySelectedInnerBorderBrush"/></summary>
+        public static TView TodaySelectedInnerBorderBrush<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodaySelectedInnerBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayPressedBackground"/></summary>
+        public static TView TodayPressedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodayPressedBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayPressedBackground"/></summary>
+        public static TView TodayPressedBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodayPressedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayPressedBackground"/></summary>
+        public static TView TodayPressedBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodayPressedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayHoverBackground"/></summary>
+        public static TView TodayHoverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodayHoverBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayHoverBackground"/></summary>
+        public static TView TodayHoverBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodayHoverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayHoverBackground"/></summary>
+        public static TView TodayHoverBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodayHoverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayDisabledBackground"/></summary>
+        public static TView TodayDisabledBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodayDisabledBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayDisabledBackground"/></summary>
+        public static TView TodayDisabledBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodayDisabledBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayDisabledBackground"/></summary>
+        public static TView TodayDisabledBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodayDisabledBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutForeground"/></summary>
+        public static TView TodayBlackoutForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodayBlackoutForeground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutForeground"/></summary>
+        public static TView TodayBlackoutForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodayBlackoutForeground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutForeground"/></summary>
+        public static TView TodayBlackoutForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodayBlackoutForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedPressedForeground"/></summary>
+        public static TView SelectedPressedForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.SelectedPressedForeground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedPressedForeground"/></summary>
+        public static TView SelectedPressedForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.SelectedPressedForeground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedPressedForeground"/></summary>
+        public static TView SelectedPressedForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.SelectedPressedForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedHoverForeground"/></summary>
+        public static TView SelectedHoverForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.SelectedHoverForeground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedHoverForeground"/></summary>
+        public static TView SelectedHoverForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.SelectedHoverForeground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedHoverForeground"/></summary>
+        public static TView SelectedHoverForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.SelectedHoverForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.HorizontalFirstOfMonthLabelAlignment"/></summary>
         public static TView HorizontalFirstOfMonthLabelAlignment<TView>(this TView view, Xaml.HorizontalAlignment value) where TView : CalendarView { view.UI.HorizontalFirstOfMonthLabelAlignment = value; return view; }
 
@@ -6603,6 +7164,94 @@ namespace CSharpMarkup.WinUI // CalendarView
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodaySelectedBackground"/></summary>
         public static TView TodaySelectedBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodaySelectedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.BlackoutBackground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> BlackoutBackground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.BlackoutBackgroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.BlackoutStrikethroughBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> BlackoutStrikethroughBrush<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.BlackoutStrikethroughBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.CalendarItemDisabledBackground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CalendarItemDisabledBackground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.CalendarItemDisabledBackgroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.CalendarItemHoverBackground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CalendarItemHoverBackground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.CalendarItemHoverBackgroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.CalendarItemPressedBackground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CalendarItemPressedBackground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.CalendarItemPressedBackgroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> DayItemMargin<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.CalendarView.DayItemMarginProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.DisabledForeground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> DisabledForeground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.DisabledForegroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> FirstOfMonthLabelMargin<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.CalendarView.FirstOfMonthLabelMarginProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> FirstOfYearDecadeLabelMargin<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMarginProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> MonthYearItemMargin<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.CalendarView.MonthYearItemMarginProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.OutOfScopeHoverForeground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> OutOfScopeHoverForeground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.OutOfScopeHoverForegroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.OutOfScopePressedForeground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> OutOfScopePressedForeground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.OutOfScopePressedForegroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.SelectedDisabledBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedDisabledBorderBrush<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.SelectedDisabledBorderBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.SelectedDisabledForeground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedDisabledForeground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.SelectedDisabledForegroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.SelectedHoverForeground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedHoverForeground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.SelectedHoverForegroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.SelectedPressedForeground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedPressedForeground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.SelectedPressedForegroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodayBlackoutBackground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodayBlackoutBackground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodayBlackoutBackgroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodayBlackoutForeground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodayBlackoutForeground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodayBlackoutForegroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodayDisabledBackground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodayDisabledBackground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodayDisabledBackgroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodayHoverBackground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodayHoverBackground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodayHoverBackgroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodayPressedBackground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodayPressedBackground<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodayPressedBackgroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodaySelectedInnerBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodaySelectedInnerBorderBrush<TTarget>(this TTarget target) where TTarget : CalendarView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodaySelectedInnerBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.BlackoutForeground"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> BlackoutForeground<TTarget>(this TTarget target) where TTarget : CalendarView
@@ -7498,18 +8147,6 @@ namespace CSharpMarkup.WinUI // ComboBox
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.IsEditable"/></summary>
         public static TView IsEditable<TView>(this TView view, bool value) where TView : ComboBox { view.UI.IsEditable = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.ComboBox.ValidationContext"/></summary>
-        public static TView ValidationContext<TView>(this TView view, Xaml.Controls.InputValidationContext value) where TView : ComboBox { view.UI.ValidationContext = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ComboBox.InputValidationMode"/></summary>
-        public static TView InputValidationMode<TView>(this TView view, Xaml.Controls.InputValidationMode value) where TView : ComboBox { view.UI.InputValidationMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ComboBox.InputValidationKind"/></summary>
-        public static TView InputValidationKind<TView>(this TView view, Xaml.Controls.InputValidationKind value) where TView : ComboBox { view.UI.InputValidationKind = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ComboBox.ErrorTemplate"/></summary>
-        public static TView ErrorTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : ComboBox { view.UI.ErrorTemplate = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.Header"/></summary>
         public static TView Header<TView>(this TView view, object value) where TView : ComboBox { view.UI.Header = value; return view; }
 
@@ -7557,18 +8194,6 @@ namespace CSharpMarkup.WinUI // ComboBox
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.Text"/></summary>
         public static DependencyProperty<TTarget, string> Text<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.ComboBox.TextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.ErrorTemplate"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DataTemplate> ErrorTemplate<TTarget>(this TTarget target) where TTarget : ComboBox
-        => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.ComboBox.ErrorTemplateProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.InputValidationKind"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> InputValidationKind<TTarget>(this TTarget target) where TTarget : ComboBox
-        => DependencyProperty<TTarget, Xaml.Controls.InputValidationKind>.Get(target, Xaml.Controls.ComboBox.InputValidationKindProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.InputValidationMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> InputValidationMode<TTarget>(this TTarget target) where TTarget : ComboBox
-        => DependencyProperty<TTarget, Xaml.Controls.InputValidationMode>.Get(target, Xaml.Controls.ComboBox.InputValidationModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.Header"/></summary>
         public static DependencyProperty<TTarget, object> Header<TTarget>(this TTarget target) where TTarget : ComboBox
@@ -7771,6 +8396,14 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CommandBarFlyout"/></summary>
+        public static CommandBarFlyout CommandBarFlyout(bool? AlwaysExpanded = default)
+        {
+            var ui = new Xaml.Controls.CommandBarFlyout();
+            if (AlwaysExpanded is not null) ui.AlwaysExpanded = AlwaysExpanded.Value;
+            return CSharpMarkup.WinUI.CommandBarFlyout.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.CommandBarFlyout"/></summary>
         public static CommandBarFlyout CommandBarFlyout()
         {
             var ui = new Xaml.Controls.CommandBarFlyout();
@@ -7804,6 +8437,12 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
         public CommandBarFlyout Invoke(Action<Xaml.Controls.CommandBarFlyout> action) { action?.Invoke(UI); return this; }
 
         protected CommandBarFlyout() { }
+    }
+
+    public static partial class CommandBarFlyoutExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.CommandBarFlyout.AlwaysExpanded"/></summary>
+        public static TView AlwaysExpanded<TView>(this TView view, bool value) where TView : CommandBarFlyout { view.UI.AlwaysExpanded = value; return view; }
     }
 }
 
@@ -9564,73 +10203,6 @@ namespace CSharpMarkup.WinUI // DropDownButton
     }
 }
 
-namespace CSharpMarkup.WinUI // ElementFactory
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.ElementFactory"/></summary>
-        public static ElementFactory ElementFactory(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
-        {
-            var ui = new Xaml.Controls.ElementFactory();
-            if (DataContext is not null) ui.DataContext = DataContext;
-            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
-            return CSharpMarkup.WinUI.ElementFactory.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.ElementFactory"/></summary>
-        public static ElementFactory ElementFactory()
-        {
-            var ui = new Xaml.Controls.ElementFactory();
-            return CSharpMarkup.WinUI.ElementFactory.StartChain(ui);
-        }
-    }
-
-    public partial class ElementFactory : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.ElementFactory>
-    {
-        static ElementFactory instance;
-
-        internal static ElementFactory StartChain(Xaml.Controls.ElementFactory ui)
-        {
-            if (instance == null) instance = new ElementFactory();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.ElementFactory ui;
-
-        public new Xaml.Controls.ElementFactory UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.ElementFactory(ElementFactory view) => view?.UI;
-
-        public static implicit operator ElementFactory(Xaml.Controls.ElementFactory ui) => ElementFactory.StartChain(ui);
-
-        public ElementFactory Invoke(Action<Xaml.Controls.ElementFactory> action) { action?.Invoke(UI); return this; }
-
-        protected ElementFactory() { }
-    }
-
-    public static partial class ElementFactoryExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.ElementFactory.DataContext"/></summary>
-        public static TView DataContext<TView>(this TView view, object value) where TView : ElementFactory { view.UI.DataContext = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ElementFactory.TemplatedParent"/></summary>
-        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : ElementFactory { view.UI.TemplatedParent = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ElementFactory.DataContext"/></summary>
-        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : ElementFactory
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ElementFactory.DataContextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ElementFactory.TemplatedParent"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : ElementFactory
-        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.ElementFactory.TemplatedParentProperty);
-    }
-}
-
 namespace CSharpMarkup.WinUI // Expander
 {
     public static partial class Helpers
@@ -9644,7 +10216,7 @@ namespace CSharpMarkup.WinUI // Expander
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Expander"/></summary>
-        public static Expander Expander(Xaml.Controls.ExpandDirection? ExpandDirection = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.Controls.DataTemplateSelector HeaderTemplateSelector = default, bool? IsExpanded = default, Xaml.Controls.ExpanderTemplateSettings TemplateSettings = default, UIObject Content = default)
+        public static Expander Expander(Xaml.Controls.ExpandDirection? ExpandDirection = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.Controls.DataTemplateSelector HeaderTemplateSelector = default, bool? IsExpanded = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Expander();
             if (ExpandDirection is not null) ui.ExpandDirection = ExpandDirection.Value;
@@ -9652,7 +10224,6 @@ namespace CSharpMarkup.WinUI // Expander
             if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
             if (HeaderTemplateSelector is not null) ui.HeaderTemplateSelector = HeaderTemplateSelector;
             if (IsExpanded is not null) ui.IsExpanded = IsExpanded.Value;
-            if (TemplateSettings is not null) ui.TemplateSettings = TemplateSettings;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Expander.StartChain(ui);
         }
@@ -9719,9 +10290,6 @@ namespace CSharpMarkup.WinUI // Expander
         /// <summary>Set <see cref="Xaml.Controls.Expander.IsExpanded"/></summary>
         public static TView IsExpanded<TView>(this TView view, bool value) where TView : Expander { view.UI.IsExpanded = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.Expander.TemplateSettings"/></summary>
-        public static TView TemplateSettings<TView>(this TView view, Xaml.Controls.ExpanderTemplateSettings value) where TView : Expander { view.UI.TemplateSettings = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Expander.ExpandDirection"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.ExpandDirection> ExpandDirection<TTarget>(this TTarget target) where TTarget : Expander
         => DependencyProperty<TTarget, Xaml.Controls.ExpandDirection>.Get(target, Xaml.Controls.Expander.ExpandDirectionProperty);
@@ -9741,10 +10309,41 @@ namespace CSharpMarkup.WinUI // Expander
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Expander.IsExpanded"/></summary>
         public static DependencyProperty<TTarget, bool> IsExpanded<TTarget>(this TTarget target) where TTarget : Expander
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Expander.IsExpandedProperty);
+    }
+}
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Expander.TemplateSettings"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ExpanderTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : Expander
-        => DependencyProperty<TTarget, Xaml.Controls.ExpanderTemplateSettings>.Get(target, Xaml.Controls.Expander.TemplateSettingsProperty);
+namespace CSharpMarkup.WinUI // ExpanderTemplateSettings
+{
+    public partial class ExpanderTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.ExpanderTemplateSettings>
+    {
+        Xaml.Controls.ExpanderTemplateSettings ui;
+
+        public new Xaml.Controls.ExpanderTemplateSettings UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public ExpanderTemplateSettings Invoke(Action<Xaml.Controls.ExpanderTemplateSettings> action) { action?.Invoke(UI); return this; }
+
+        protected ExpanderTemplateSettings() { }
+    }
+
+    public static partial class ExpanderTemplateSettingsExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.ExpanderTemplateSettings.DataContext"/></summary>
+        public static TView DataContext<TView>(this TView view, object value) where TView : ExpanderTemplateSettings { view.UI.DataContext = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.ExpanderTemplateSettings.TemplatedParent"/></summary>
+        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : ExpanderTemplateSettings { view.UI.TemplatedParent = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ExpanderTemplateSettings.DataContext"/></summary>
+        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : ExpanderTemplateSettings
+        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ExpanderTemplateSettings.DataContextProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ExpanderTemplateSettings.TemplatedParent"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : ExpanderTemplateSettings
+        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.ExpanderTemplateSettings.TemplatedParentProperty);
     }
 }
 
@@ -9882,89 +10481,6 @@ namespace CSharpMarkup.WinUI // FlipViewItem
         public FlipViewItem Invoke(Action<Xaml.Controls.FlipViewItem> action) { action?.Invoke(UI); return this; }
 
         protected FlipViewItem() { }
-    }
-}
-
-namespace CSharpMarkup.WinUI // FlowLayout
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.FlowLayout"/></summary>
-        public static FlowLayout FlowLayout(Xaml.Controls.FlowLayoutLineAlignment? LineAlignment = default, double? MinColumnSpacing = default, double? MinRowSpacing = default, Xaml.Controls.Orientation? Orientation = default)
-        {
-            var ui = new Xaml.Controls.FlowLayout();
-            if (LineAlignment is not null) ui.LineAlignment = LineAlignment.Value;
-            if (MinColumnSpacing is not null) ui.MinColumnSpacing = MinColumnSpacing.Value;
-            if (MinRowSpacing is not null) ui.MinRowSpacing = MinRowSpacing.Value;
-            if (Orientation is not null) ui.Orientation = Orientation.Value;
-            return CSharpMarkup.WinUI.FlowLayout.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.FlowLayout"/></summary>
-        public static FlowLayout FlowLayout()
-        {
-            var ui = new Xaml.Controls.FlowLayout();
-            return CSharpMarkup.WinUI.FlowLayout.StartChain(ui);
-        }
-    }
-
-    public partial class FlowLayout : VirtualizingLayout, IUI<Microsoft.UI.Xaml.Controls.FlowLayout>
-    {
-        static FlowLayout instance;
-
-        internal static FlowLayout StartChain(Xaml.Controls.FlowLayout ui)
-        {
-            if (instance == null) instance = new FlowLayout();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.FlowLayout ui;
-
-        public new Xaml.Controls.FlowLayout UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.FlowLayout(FlowLayout view) => view?.UI;
-
-        public static implicit operator FlowLayout(Xaml.Controls.FlowLayout ui) => FlowLayout.StartChain(ui);
-
-        public FlowLayout Invoke(Action<Xaml.Controls.FlowLayout> action) { action?.Invoke(UI); return this; }
-
-        protected FlowLayout() { }
-    }
-
-    public static partial class FlowLayoutExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.FlowLayout.LineAlignment"/></summary>
-        public static TView LineAlignment<TView>(this TView view, Xaml.Controls.FlowLayoutLineAlignment value) where TView : FlowLayout { view.UI.LineAlignment = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.FlowLayout.MinColumnSpacing"/></summary>
-        public static TView MinColumnSpacing<TView>(this TView view, double value) where TView : FlowLayout { view.UI.MinColumnSpacing = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.FlowLayout.MinRowSpacing"/></summary>
-        public static TView MinRowSpacing<TView>(this TView view, double value) where TView : FlowLayout { view.UI.MinRowSpacing = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.FlowLayout.Orientation"/></summary>
-        public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : FlowLayout { view.UI.Orientation = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FlowLayout.LineAlignment"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.FlowLayoutLineAlignment> LineAlignment<TTarget>(this TTarget target) where TTarget : FlowLayout
-        => DependencyProperty<TTarget, Xaml.Controls.FlowLayoutLineAlignment>.Get(target, Xaml.Controls.FlowLayout.LineAlignmentProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FlowLayout.MinColumnSpacing"/></summary>
-        public static DependencyProperty<TTarget, double> MinColumnSpacing<TTarget>(this TTarget target) where TTarget : FlowLayout
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.FlowLayout.MinColumnSpacingProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FlowLayout.MinRowSpacing"/></summary>
-        public static DependencyProperty<TTarget, double> MinRowSpacing<TTarget>(this TTarget target) where TTarget : FlowLayout
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.FlowLayout.MinRowSpacingProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FlowLayout.Orientation"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : FlowLayout
-        => DependencyProperty<TTarget, Xaml.Controls.Orientation>.Get(target, Xaml.Controls.FlowLayout.OrientationProperty);
     }
 }
 
@@ -10123,16 +10639,16 @@ namespace CSharpMarkup.WinUI // FontIcon
     {
         /// <summary>Create a <see cref="Xaml.Controls.FontIcon"/></summary>
         /// <remarks>Remark: FontIcon().Bind() binds to <see cref="Xaml.Controls.FontIcon.GlyphProperty"/></remarks>
-        public static FontIcon FontIcon(bool? MirroredWhenRightToLeft = default, string Glyph = default, Xaml.Media.FontFamily FontFamily = default, Windows.UI.Text.FontStyle? FontStyle = default, double? FontSize = default, Windows.UI.Text.FontWeight? FontWeight = default, bool? IsTextScaleFactorEnabled = default)
+        public static FontIcon FontIcon(Xaml.Media.FontFamily FontFamily = default, double? FontSize = default, Windows.UI.Text.FontStyle? FontStyle = default, Windows.UI.Text.FontWeight? FontWeight = default, string Glyph = default, bool? IsTextScaleFactorEnabled = default, bool? MirroredWhenRightToLeft = default)
         {
             var ui = new Xaml.Controls.FontIcon();
-            if (MirroredWhenRightToLeft is not null) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
-            if (Glyph is not null) ui.Glyph = Glyph;
             if (FontFamily is not null) ui.FontFamily = FontFamily;
-            if (FontStyle is not null) ui.FontStyle = FontStyle.Value;
             if (FontSize is not null) ui.FontSize = FontSize.Value;
+            if (FontStyle is not null) ui.FontStyle = FontStyle.Value;
             if (FontWeight is not null) ui.FontWeight = FontWeight.Value;
+            if (Glyph is not null) ui.Glyph = Glyph;
             if (IsTextScaleFactorEnabled is not null) ui.IsTextScaleFactorEnabled = IsTextScaleFactorEnabled.Value;
+            if (MirroredWhenRightToLeft is not null) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
             return CSharpMarkup.WinUI.FontIcon.StartChain(ui);
         }
 
@@ -10188,54 +10704,54 @@ namespace CSharpMarkup.WinUI // FontIcon
 
     public static partial class FontIconExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.FontIcon.MirroredWhenRightToLeft"/></summary>
-        public static TView MirroredWhenRightToLeft<TView>(this TView view, bool value) where TView : FontIcon { view.UI.MirroredWhenRightToLeft = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.FontIcon.Glyph"/></summary>
-        public static TView Glyph<TView>(this TView view, string value) where TView : FontIcon { view.UI.Glyph = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.FontIcon.FontFamily"/></summary>
         public static TView FontFamily<TView>(this TView view, Xaml.Media.FontFamily value) where TView : FontIcon { view.UI.FontFamily = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.FontIcon.FontStyle"/></summary>
-        public static TView FontStyle<TView>(this TView view, Windows.UI.Text.FontStyle value) where TView : FontIcon { view.UI.FontStyle = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.FontIcon.FontSize"/></summary>
         public static TView FontSize<TView>(this TView view, double value) where TView : FontIcon { view.UI.FontSize = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.FontIcon.FontStyle"/></summary>
+        public static TView FontStyle<TView>(this TView view, Windows.UI.Text.FontStyle value) where TView : FontIcon { view.UI.FontStyle = value; return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.FontIcon.FontWeight"/></summary>
         public static TView FontWeight<TView>(this TView view, Windows.UI.Text.FontWeight value) where TView : FontIcon { view.UI.FontWeight = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.FontIcon.Glyph"/></summary>
+        public static TView Glyph<TView>(this TView view, string value) where TView : FontIcon { view.UI.Glyph = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.FontIcon.IsTextScaleFactorEnabled"/></summary>
         public static TView IsTextScaleFactorEnabled<TView>(this TView view, bool value) where TView : FontIcon { view.UI.IsTextScaleFactorEnabled = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.MirroredWhenRightToLeft"/></summary>
-        public static DependencyProperty<TTarget, bool> MirroredWhenRightToLeft<TTarget>(this TTarget target) where TTarget : FontIcon
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.FontIcon.MirroredWhenRightToLeftProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.Glyph"/></summary>
-        public static DependencyProperty<TTarget, string> Glyph<TTarget>(this TTarget target) where TTarget : FontIcon
-        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.FontIcon.GlyphProperty);
+        /// <summary>Set <see cref="Xaml.Controls.FontIcon.MirroredWhenRightToLeft"/></summary>
+        public static TView MirroredWhenRightToLeft<TView>(this TView view, bool value) where TView : FontIcon { view.UI.MirroredWhenRightToLeft = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.FontFamily"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.FontFamily> FontFamily<TTarget>(this TTarget target) where TTarget : FontIcon
         => DependencyProperty<TTarget, Xaml.Media.FontFamily>.Get(target, Xaml.Controls.FontIcon.FontFamilyProperty);
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.FontStyle"/></summary>
-        public static DependencyProperty<TTarget, Windows.UI.Text.FontStyle> FontStyle<TTarget>(this TTarget target) where TTarget : FontIcon
-        => DependencyProperty<TTarget, Windows.UI.Text.FontStyle>.Get(target, Xaml.Controls.FontIcon.FontStyleProperty);
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.FontSize"/></summary>
         public static DependencyProperty<TTarget, double> FontSize<TTarget>(this TTarget target) where TTarget : FontIcon
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.FontIcon.FontSizeProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.FontStyle"/></summary>
+        public static DependencyProperty<TTarget, Windows.UI.Text.FontStyle> FontStyle<TTarget>(this TTarget target) where TTarget : FontIcon
+        => DependencyProperty<TTarget, Windows.UI.Text.FontStyle>.Get(target, Xaml.Controls.FontIcon.FontStyleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.FontWeight"/></summary>
         public static DependencyProperty<TTarget, Windows.UI.Text.FontWeight> FontWeight<TTarget>(this TTarget target) where TTarget : FontIcon
         => DependencyProperty<TTarget, Windows.UI.Text.FontWeight>.Get(target, Xaml.Controls.FontIcon.FontWeightProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.Glyph"/></summary>
+        public static DependencyProperty<TTarget, string> Glyph<TTarget>(this TTarget target) where TTarget : FontIcon
+        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.FontIcon.GlyphProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.IsTextScaleFactorEnabled"/></summary>
         public static DependencyProperty<TTarget, bool> IsTextScaleFactorEnabled<TTarget>(this TTarget target) where TTarget : FontIcon
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.FontIcon.IsTextScaleFactorEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.MirroredWhenRightToLeft"/></summary>
+        public static DependencyProperty<TTarget, bool> MirroredWhenRightToLeft<TTarget>(this TTarget target) where TTarget : FontIcon
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.FontIcon.MirroredWhenRightToLeftProperty);
     }
 }
 
@@ -11244,10 +11760,10 @@ namespace CSharpMarkup.WinUI // IconSourceElement
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.IconSourceElement"/></summary>
-        public static IconSourceElement IconSourceElement(Xaml.Controls.IconSource IconSource = default)
+        public static IconSourceElement IconSourceElement(Microsoft.UI.Xaml.Controls.IconSource IconSource)
         {
             var ui = new Xaml.Controls.IconSourceElement();
-            if (IconSource is not null) ui.IconSource = IconSource;
+            if (IconSource != null) ui.IconSource = IconSource;
             return CSharpMarkup.WinUI.IconSourceElement.StartChain(ui);
         }
 
@@ -11298,9 +11814,6 @@ namespace CSharpMarkup.WinUI // IconSourceElement
 
     public static partial class IconSourceElementExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.IconSourceElement.IconSource"/></summary>
-        public static TView IconSource<TView>(this TView view, Xaml.Controls.IconSource value) where TView : IconSourceElement { view.UI.IconSource = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.IconSourceElement.IconSource"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.IconSource> IconSource<TTarget>(this TTarget target) where TTarget : IconSourceElement
         => DependencyProperty<TTarget, Xaml.Controls.IconSource>.Get(target, Xaml.Controls.IconSourceElement.IconSourceProperty);
@@ -11414,6 +11927,300 @@ namespace CSharpMarkup.WinUI // Image
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Image.Stretch"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.Stretch> Stretch<TTarget>(this TTarget target) where TTarget : Image
         => DependencyProperty<TTarget, Xaml.Media.Stretch>.Get(target, Xaml.Controls.Image.StretchProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // ImageIcon
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.ImageIcon"/></summary>
+        public static ImageIcon ImageIcon(CSharpMarkup.WinUI.to.ImageSource? Source = default)
+        {
+            var ui = new Xaml.Controls.ImageIcon();
+            if (Source is not null) ui.Source = Source.Value;
+            return CSharpMarkup.WinUI.ImageIcon.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.ImageIcon"/></summary>
+        public static ImageIcon ImageIcon()
+        {
+            var ui = new Xaml.Controls.ImageIcon();
+            return CSharpMarkup.WinUI.ImageIcon.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.ImageIcon"/></summary>
+        public static ImageIcon ImageIcon(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.ImageIcon(javaReference, transfer);
+            return CSharpMarkup.WinUI.ImageIcon.StartChain(ui);
+        }
+    }
+
+    public partial class ImageIcon : IconElement, IUI<Microsoft.UI.Xaml.Controls.ImageIcon>
+    {
+        static ImageIcon instance;
+
+        internal static ImageIcon StartChain(Xaml.Controls.ImageIcon ui)
+        {
+            if (instance == null) instance = new ImageIcon();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.ImageIcon ui;
+
+        public new Xaml.Controls.ImageIcon UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(ImageIcon view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.ImageIcon(ImageIcon view) => view?.UI;
+
+        public static implicit operator ImageIcon(Xaml.Controls.ImageIcon ui) => ImageIcon.StartChain(ui);
+
+        public ImageIcon Invoke(Action<Xaml.Controls.ImageIcon> action) { action?.Invoke(UI); return this; }
+
+        protected ImageIcon() { }
+    }
+
+    public static partial class ImageIconExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.ImageIcon.Source"/></summary>
+        public static TView Source<TView>(this TView view, CSharpMarkup.WinUI.to.ImageSource value) where TView : ImageIcon { view.UI.Source = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ImageIcon.Source"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.ImageSource> Source<TTarget>(this TTarget target) where TTarget : ImageIcon
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.ImageSource>.Get(target, Xaml.Controls.ImageIcon.SourceProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // ImageIconSource
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.ImageIconSource"/></summary>
+        public static ImageIconSource ImageIconSource(CSharpMarkup.WinUI.to.ImageSource? ImageSource = default)
+        {
+            var ui = new Xaml.Controls.ImageIconSource();
+            if (ImageSource is not null) ui.ImageSource = ImageSource.Value;
+            return CSharpMarkup.WinUI.ImageIconSource.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.ImageIconSource"/></summary>
+        public static ImageIconSource ImageIconSource()
+        {
+            var ui = new Xaml.Controls.ImageIconSource();
+            return CSharpMarkup.WinUI.ImageIconSource.StartChain(ui);
+        }
+    }
+
+    public partial class ImageIconSource : IconSource, IUI<Microsoft.UI.Xaml.Controls.ImageIconSource>
+    {
+        static ImageIconSource instance;
+
+        internal static ImageIconSource StartChain(Xaml.Controls.ImageIconSource ui)
+        {
+            if (instance == null) instance = new ImageIconSource();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.ImageIconSource ui;
+
+        public new Xaml.Controls.ImageIconSource UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.ImageIconSource(ImageIconSource view) => view?.UI;
+
+        public static implicit operator ImageIconSource(Xaml.Controls.ImageIconSource ui) => ImageIconSource.StartChain(ui);
+
+        public ImageIconSource Invoke(Action<Xaml.Controls.ImageIconSource> action) { action?.Invoke(UI); return this; }
+
+        protected ImageIconSource() { }
+    }
+
+    public static partial class ImageIconSourceExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.ImageIconSource.ImageSource"/></summary>
+        public static TView ImageSource<TView>(this TView view, CSharpMarkup.WinUI.to.ImageSource value) where TView : ImageIconSource { view.UI.ImageSource = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ImageIconSource.ImageSource"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.ImageSource> ImageSource<TTarget>(this TTarget target) where TTarget : ImageIconSource
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.ImageSource>.Get(target, Xaml.Controls.ImageIconSource.ImageSourceProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // InfoBadge
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.InfoBadge"/></summary>
+        public static InfoBadge InfoBadge(int? Value = default, Xaml.Controls.InfoBadgeTemplateSettings TemplateSettings = default, Xaml.Controls.IconSource IconSource = default)
+        {
+            var ui = new Xaml.Controls.InfoBadge();
+            if (Value is not null) ui.Value = Value.Value;
+            if (TemplateSettings is not null) ui.TemplateSettings = TemplateSettings;
+            if (IconSource is not null) ui.IconSource = IconSource;
+            return CSharpMarkup.WinUI.InfoBadge.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.InfoBadge"/></summary>
+        public static InfoBadge InfoBadge()
+        {
+            var ui = new Xaml.Controls.InfoBadge();
+            return CSharpMarkup.WinUI.InfoBadge.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.InfoBadge"/></summary>
+        public static InfoBadge InfoBadge(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.InfoBadge(javaReference, transfer);
+            return CSharpMarkup.WinUI.InfoBadge.StartChain(ui);
+        }
+    }
+
+    public partial class InfoBadge : Control, IUI<Microsoft.UI.Xaml.Controls.InfoBadge>
+    {
+        static InfoBadge instance;
+
+        internal static InfoBadge StartChain(Xaml.Controls.InfoBadge ui)
+        {
+            if (instance == null) instance = new InfoBadge();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.InfoBadge ui;
+
+        public new Xaml.Controls.InfoBadge UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(InfoBadge view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.InfoBadge(InfoBadge view) => view?.UI;
+
+        public static implicit operator InfoBadge(Xaml.Controls.InfoBadge ui) => InfoBadge.StartChain(ui);
+
+        public InfoBadge Invoke(Action<Xaml.Controls.InfoBadge> action) { action?.Invoke(UI); return this; }
+
+        protected InfoBadge() { }
+    }
+
+    public static partial class InfoBadgeExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.InfoBadge.Value"/></summary>
+        public static TView Value<TView>(this TView view, int value) where TView : InfoBadge { view.UI.Value = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.InfoBadge.TemplateSettings"/></summary>
+        public static TView TemplateSettings<TView>(this TView view, Xaml.Controls.InfoBadgeTemplateSettings value) where TView : InfoBadge { view.UI.TemplateSettings = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.InfoBadge.IconSource"/></summary>
+        public static TView IconSource<TView>(this TView view, Xaml.Controls.IconSource value) where TView : InfoBadge { view.UI.IconSource = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadge.Value"/></summary>
+        public static DependencyProperty<TTarget, int> Value<TTarget>(this TTarget target) where TTarget : InfoBadge
+        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.InfoBadge.ValueProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadge.TemplateSettings"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.InfoBadgeTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : InfoBadge
+        => DependencyProperty<TTarget, Xaml.Controls.InfoBadgeTemplateSettings>.Get(target, Xaml.Controls.InfoBadge.TemplateSettingsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadge.IconSource"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.IconSource> IconSource<TTarget>(this TTarget target) where TTarget : InfoBadge
+        => DependencyProperty<TTarget, Xaml.Controls.IconSource>.Get(target, Xaml.Controls.InfoBadge.IconSourceProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // InfoBadgeTemplateSettings
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.InfoBadgeTemplateSettings"/></summary>
+        public static InfoBadgeTemplateSettings InfoBadgeTemplateSettings(Xaml.Controls.IconElement IconElement = default, CSharpMarkup.WinUI.to.CornerRadius? InfoBadgeCornerRadius = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
+        {
+            var ui = new Xaml.Controls.InfoBadgeTemplateSettings();
+            if (IconElement is not null) ui.IconElement = IconElement;
+            if (InfoBadgeCornerRadius is not null) ui.InfoBadgeCornerRadius = InfoBadgeCornerRadius.Value;
+            if (DataContext is not null) ui.DataContext = DataContext;
+            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
+            return CSharpMarkup.WinUI.InfoBadgeTemplateSettings.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.InfoBadgeTemplateSettings"/></summary>
+        public static InfoBadgeTemplateSettings InfoBadgeTemplateSettings()
+        {
+            var ui = new Xaml.Controls.InfoBadgeTemplateSettings();
+            return CSharpMarkup.WinUI.InfoBadgeTemplateSettings.StartChain(ui);
+        }
+    }
+
+    public partial class InfoBadgeTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.InfoBadgeTemplateSettings>
+    {
+        static InfoBadgeTemplateSettings instance;
+
+        internal static InfoBadgeTemplateSettings StartChain(Xaml.Controls.InfoBadgeTemplateSettings ui)
+        {
+            if (instance == null) instance = new InfoBadgeTemplateSettings();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.InfoBadgeTemplateSettings ui;
+
+        public new Xaml.Controls.InfoBadgeTemplateSettings UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.InfoBadgeTemplateSettings(InfoBadgeTemplateSettings view) => view?.UI;
+
+        public static implicit operator InfoBadgeTemplateSettings(Xaml.Controls.InfoBadgeTemplateSettings ui) => InfoBadgeTemplateSettings.StartChain(ui);
+
+        public InfoBadgeTemplateSettings Invoke(Action<Xaml.Controls.InfoBadgeTemplateSettings> action) { action?.Invoke(UI); return this; }
+
+        protected InfoBadgeTemplateSettings() { }
+    }
+
+    public static partial class InfoBadgeTemplateSettingsExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.InfoBadgeTemplateSettings.IconElement"/></summary>
+        public static TView IconElement<TView>(this TView view, Xaml.Controls.IconElement value) where TView : InfoBadgeTemplateSettings { view.UI.IconElement = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.InfoBadgeTemplateSettings.InfoBadgeCornerRadius"/></summary>
+        public static TView InfoBadgeCornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : InfoBadgeTemplateSettings { view.UI.InfoBadgeCornerRadius = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.InfoBadgeTemplateSettings.DataContext"/></summary>
+        public static TView DataContext<TView>(this TView view, object value) where TView : InfoBadgeTemplateSettings { view.UI.DataContext = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.InfoBadgeTemplateSettings.TemplatedParent"/></summary>
+        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : InfoBadgeTemplateSettings { view.UI.TemplatedParent = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadgeTemplateSettings.IconElement"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.IconElement> IconElement<TTarget>(this TTarget target) where TTarget : InfoBadgeTemplateSettings
+        => DependencyProperty<TTarget, Xaml.Controls.IconElement>.Get(target, Xaml.Controls.InfoBadgeTemplateSettings.IconElementProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadgeTemplateSettings.InfoBadgeCornerRadius"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> InfoBadgeCornerRadius<TTarget>(this TTarget target) where TTarget : InfoBadgeTemplateSettings
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.InfoBadgeTemplateSettings.InfoBadgeCornerRadiusProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadgeTemplateSettings.DataContext"/></summary>
+        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : InfoBadgeTemplateSettings
+        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.InfoBadgeTemplateSettings.DataContextProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadgeTemplateSettings.TemplatedParent"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : InfoBadgeTemplateSettings
+        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.InfoBadgeTemplateSettings.TemplatedParentProperty);
     }
 }
 
@@ -12645,146 +13452,6 @@ namespace CSharpMarkup.WinUI // LayoutContext
     }
 }
 
-namespace CSharpMarkup.WinUI // LayoutPanel
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.LayoutPanel"/></summary>
-        public static LayoutPanel LayoutPanel(params Microsoft.UI.Xaml.UIElement[] Children)
-        {
-            var ui = new Xaml.Controls.LayoutPanel();
-            for (int i = 0; i < Children.Length; i++)
-            {
-                var child = Children[i];
-                if (child == null) continue;
-
-                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
-                    for (int j = 0; j < subChildren.Length; j++)
-                        ui.Children.Add(subChildren[j]);
-                else
-                    ui.Children.Add(child);
-            }
-            return CSharpMarkup.WinUI.LayoutPanel.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.LayoutPanel"/></summary>
-        public static LayoutPanel LayoutPanel()
-        {
-            var ui = new Xaml.Controls.LayoutPanel();
-            return CSharpMarkup.WinUI.LayoutPanel.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.LayoutPanel"/></summary>
-        public static LayoutPanel LayoutPanel(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.LayoutPanel(javaReference, transfer);
-            return CSharpMarkup.WinUI.LayoutPanel.StartChain(ui);
-        }
-    }
-
-    public partial class LayoutPanel : Panel, IUI<Microsoft.UI.Xaml.Controls.LayoutPanel>
-    {
-        static LayoutPanel instance;
-
-        internal static LayoutPanel StartChain(Xaml.Controls.LayoutPanel ui)
-        {
-            if (instance == null) instance = new LayoutPanel();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.LayoutPanel ui;
-
-        public new Xaml.Controls.LayoutPanel UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.UIElement(LayoutPanel view) => view?.UI;
-
-        public static implicit operator Xaml.Controls.LayoutPanel(LayoutPanel view) => view?.UI;
-
-        public static implicit operator LayoutPanel(Xaml.Controls.LayoutPanel ui) => LayoutPanel.StartChain(ui);
-
-        public LayoutPanel Invoke(Action<Xaml.Controls.LayoutPanel> action) { action?.Invoke(UI); return this; }
-
-        protected LayoutPanel() { }
-    }
-
-    public static partial class LayoutPanelExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.LayoutState"/></summary>
-        public static TView LayoutState<TView>(this TView view, object value) where TView : LayoutPanel { view.UI.LayoutState = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderBrush"/></summary>
-        public static TView BorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : LayoutPanel { view.UI.BorderBrush = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderBrush"/></summary>
-        public static TView BorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : LayoutPanel { view.UI.BorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderBrush"/></summary>
-        public static TView BorderBrush<TView>(this TView view, string color) where TView : LayoutPanel { view.UI.BorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
-        public static TView BorderThickness<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : LayoutPanel { view.UI.BorderThickness = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
-        public static TView BorderThickness<TView>(this TView view, double uniform) where TView : LayoutPanel { view.UI.BorderThickness = Helpers.Thickness(uniform); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
-        public static TView BorderThickness<TView>(this TView view, double horizontal, double vertical) where TView : LayoutPanel { view.UI.BorderThickness = Helpers.Thickness(horizontal, vertical); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
-        public static TView BorderThickness<TView>(this TView view, double left, double top, double right, double bottom) where TView : LayoutPanel { view.UI.BorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
-        public static TView BorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : LayoutPanel { view.UI.BorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
-        public static TView Padding<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : LayoutPanel { view.UI.Padding = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
-        public static TView Padding<TView>(this TView view, double uniform) where TView : LayoutPanel { view.UI.Padding = Helpers.Thickness(uniform); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
-        public static TView Padding<TView>(this TView view, double horizontal, double vertical) where TView : LayoutPanel { view.UI.Padding = Helpers.Thickness(horizontal, vertical); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
-        public static TView Padding<TView>(this TView view, double left, double top, double right, double bottom) where TView : LayoutPanel { view.UI.Padding = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
-        public static TView Paddings<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : LayoutPanel { view.UI.Padding = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.CornerRadius"/></summary>
-        public static TView CornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : LayoutPanel { view.UI.CornerRadius = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Layout"/></summary>
-        public static TView Layout<TView>(this TView view, Xaml.Controls.Layout value) where TView : LayoutPanel { view.UI.Layout = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.LayoutPanel.BorderBrush"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> BorderBrush<TTarget>(this TTarget target) where TTarget : LayoutPanel
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.LayoutPanel.BorderBrushProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> BorderThickness<TTarget>(this TTarget target) where TTarget : LayoutPanel
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.LayoutPanel.BorderThicknessProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> Padding<TTarget>(this TTarget target) where TTarget : LayoutPanel
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.LayoutPanel.PaddingProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.LayoutPanel.CornerRadius"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : LayoutPanel
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.LayoutPanel.CornerRadiusProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.LayoutPanel.Layout"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.Layout> Layout<TTarget>(this TTarget target) where TTarget : LayoutPanel
-        => DependencyProperty<TTarget, Xaml.Controls.Layout>.Get(target, Xaml.Controls.LayoutPanel.LayoutProperty);
-    }
-}
-
 namespace CSharpMarkup.WinUI // ListBox
 {
     public static partial class Helpers
@@ -13516,6 +14183,511 @@ namespace CSharpMarkup.WinUI // ListViewItem
         public ListViewItem Invoke(Action<Xaml.Controls.ListViewItem> action) { action?.Invoke(UI); return this; }
 
         protected ListViewItem() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // MediaPlayerElement
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.MediaPlayerElement"/></summary>
+        public static MediaPlayerElement MediaPlayerElement(Windows.Media.Playback.IMediaPlaybackSource Source = default, CSharpMarkup.WinUI.to.ImageSource? PosterSource = default, bool? AutoPlay = default, bool? IsFullWindow = default, Windows.Media.Playback.MediaPlayer MediaPlayer = default, bool? AreTransportControlsEnabled = default, Xaml.Media.Stretch? Stretch = default, Xaml.Controls.MediaTransportControls TransportControls = default)
+        {
+            var ui = new Xaml.Controls.MediaPlayerElement();
+            if (Source is not null) ui.Source = Source;
+            if (PosterSource is not null) ui.PosterSource = PosterSource.Value;
+            if (AutoPlay is not null) ui.AutoPlay = AutoPlay.Value;
+            if (IsFullWindow is not null) ui.IsFullWindow = IsFullWindow.Value;
+            if (MediaPlayer is not null) ui.MediaPlayer = MediaPlayer;
+            if (AreTransportControlsEnabled is not null) ui.AreTransportControlsEnabled = AreTransportControlsEnabled.Value;
+            if (Stretch is not null) ui.Stretch = Stretch.Value;
+            if (TransportControls is not null) ui.TransportControls = TransportControls;
+            return CSharpMarkup.WinUI.MediaPlayerElement.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.MediaPlayerElement"/></summary>
+        public static MediaPlayerElement MediaPlayerElement()
+        {
+            var ui = new Xaml.Controls.MediaPlayerElement();
+            return CSharpMarkup.WinUI.MediaPlayerElement.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.MediaPlayerElement"/></summary>
+        public static MediaPlayerElement MediaPlayerElement(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.MediaPlayerElement(javaReference, transfer);
+            return CSharpMarkup.WinUI.MediaPlayerElement.StartChain(ui);
+        }
+    }
+
+    public partial class MediaPlayerElement : Control, IUI<Microsoft.UI.Xaml.Controls.MediaPlayerElement>
+    {
+        static MediaPlayerElement instance;
+
+        internal static MediaPlayerElement StartChain(Xaml.Controls.MediaPlayerElement ui)
+        {
+            if (instance == null) instance = new MediaPlayerElement();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.MediaPlayerElement ui;
+
+        public new Xaml.Controls.MediaPlayerElement UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(MediaPlayerElement view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.MediaPlayerElement(MediaPlayerElement view) => view?.UI;
+
+        public static implicit operator MediaPlayerElement(Xaml.Controls.MediaPlayerElement ui) => MediaPlayerElement.StartChain(ui);
+
+        public MediaPlayerElement Invoke(Action<Xaml.Controls.MediaPlayerElement> action) { action?.Invoke(UI); return this; }
+
+        protected MediaPlayerElement() { }
+    }
+
+    public static partial class MediaPlayerElementExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.MediaPlayerElement.Source"/></summary>
+        public static TView Source<TView>(this TView view, Windows.Media.Playback.IMediaPlaybackSource value) where TView : MediaPlayerElement { view.UI.Source = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaPlayerElement.PosterSource"/></summary>
+        public static TView PosterSource<TView>(this TView view, CSharpMarkup.WinUI.to.ImageSource value) where TView : MediaPlayerElement { view.UI.PosterSource = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaPlayerElement.AutoPlay"/></summary>
+        public static TView AutoPlay<TView>(this TView view, bool value) where TView : MediaPlayerElement { view.UI.AutoPlay = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaPlayerElement.IsFullWindow"/></summary>
+        public static TView IsFullWindow<TView>(this TView view, bool value) where TView : MediaPlayerElement { view.UI.IsFullWindow = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaPlayerElement.MediaPlayer"/></summary>
+        public static TView MediaPlayer<TView>(this TView view, Windows.Media.Playback.MediaPlayer value) where TView : MediaPlayerElement { view.UI.MediaPlayer = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaPlayerElement.AreTransportControlsEnabled"/></summary>
+        public static TView AreTransportControlsEnabled<TView>(this TView view, bool value) where TView : MediaPlayerElement { view.UI.AreTransportControlsEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaPlayerElement.Stretch"/></summary>
+        public static TView Stretch<TView>(this TView view, Xaml.Media.Stretch value) where TView : MediaPlayerElement { view.UI.Stretch = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaPlayerElement.TransportControls"/></summary>
+        public static TView TransportControls<TView>(this TView view, Xaml.Controls.MediaTransportControls value) where TView : MediaPlayerElement { view.UI.TransportControls = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaPlayerElement.Source"/></summary>
+        public static DependencyProperty<TTarget, Windows.Media.Playback.IMediaPlaybackSource> Source<TTarget>(this TTarget target) where TTarget : MediaPlayerElement
+        => DependencyProperty<TTarget, Windows.Media.Playback.IMediaPlaybackSource>.Get(target, Xaml.Controls.MediaPlayerElement.SourceProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaPlayerElement.PosterSource"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.ImageSource> PosterSource<TTarget>(this TTarget target) where TTarget : MediaPlayerElement
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.ImageSource>.Get(target, Xaml.Controls.MediaPlayerElement.PosterSourceProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaPlayerElement.AutoPlay"/></summary>
+        public static DependencyProperty<TTarget, bool> AutoPlay<TTarget>(this TTarget target) where TTarget : MediaPlayerElement
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaPlayerElement.AutoPlayProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaPlayerElement.IsFullWindow"/></summary>
+        public static DependencyProperty<TTarget, bool> IsFullWindow<TTarget>(this TTarget target) where TTarget : MediaPlayerElement
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaPlayerElement.IsFullWindowProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaPlayerElement.MediaPlayer"/></summary>
+        public static DependencyProperty<TTarget, Windows.Media.Playback.MediaPlayer> MediaPlayer<TTarget>(this TTarget target) where TTarget : MediaPlayerElement
+        => DependencyProperty<TTarget, Windows.Media.Playback.MediaPlayer>.Get(target, Xaml.Controls.MediaPlayerElement.MediaPlayerProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaPlayerElement.AreTransportControlsEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> AreTransportControlsEnabled<TTarget>(this TTarget target) where TTarget : MediaPlayerElement
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaPlayerElement.AreTransportControlsEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaPlayerElement.Stretch"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.Stretch> Stretch<TTarget>(this TTarget target) where TTarget : MediaPlayerElement
+        => DependencyProperty<TTarget, Xaml.Media.Stretch>.Get(target, Xaml.Controls.MediaPlayerElement.StretchProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // MediaPlayerPresenter
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.MediaPlayerPresenter"/></summary>
+        public static MediaPlayerPresenter MediaPlayerPresenter(Microsoft.UI.Xaml.UIElement Child)
+        {
+            var ui = new Xaml.Controls.MediaPlayerPresenter();
+            if (Child != null) ui.Child = Child;
+            return CSharpMarkup.WinUI.MediaPlayerPresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.MediaPlayerPresenter"/></summary>
+        public static MediaPlayerPresenter MediaPlayerPresenter(Windows.Media.Playback.MediaPlayer MediaPlayer = default, Xaml.Media.Stretch? Stretch = default, bool? IsFullWindow = default, Microsoft.UI.Xaml.UIElement Child = default)
+        {
+            var ui = new Xaml.Controls.MediaPlayerPresenter();
+            if (MediaPlayer is not null) ui.MediaPlayer = MediaPlayer;
+            if (Stretch is not null) ui.Stretch = Stretch.Value;
+            if (IsFullWindow is not null) ui.IsFullWindow = IsFullWindow.Value;
+            if (Child != null) ui.Child = Child;
+            return CSharpMarkup.WinUI.MediaPlayerPresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.MediaPlayerPresenter"/></summary>
+        public static MediaPlayerPresenter MediaPlayerPresenter()
+        {
+            var ui = new Xaml.Controls.MediaPlayerPresenter();
+            return CSharpMarkup.WinUI.MediaPlayerPresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.MediaPlayerPresenter"/></summary>
+        public static MediaPlayerPresenter MediaPlayerPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.MediaPlayerPresenter(javaReference, transfer);
+            return CSharpMarkup.WinUI.MediaPlayerPresenter.StartChain(ui);
+        }
+    }
+
+    public partial class MediaPlayerPresenter : Border, IUI<Microsoft.UI.Xaml.Controls.MediaPlayerPresenter>
+    {
+        static MediaPlayerPresenter instance;
+
+        internal static MediaPlayerPresenter StartChain(Xaml.Controls.MediaPlayerPresenter ui)
+        {
+            if (instance == null) instance = new MediaPlayerPresenter();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.MediaPlayerPresenter ui;
+
+        public new Xaml.Controls.MediaPlayerPresenter UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(MediaPlayerPresenter view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.MediaPlayerPresenter(MediaPlayerPresenter view) => view?.UI;
+
+        public static implicit operator MediaPlayerPresenter(Xaml.Controls.MediaPlayerPresenter ui) => MediaPlayerPresenter.StartChain(ui);
+
+        public MediaPlayerPresenter Invoke(Action<Xaml.Controls.MediaPlayerPresenter> action) { action?.Invoke(UI); return this; }
+
+        protected MediaPlayerPresenter() { }
+    }
+
+    public static partial class MediaPlayerPresenterExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.MediaPlayerPresenter.MediaPlayer"/></summary>
+        public static TView MediaPlayer<TView>(this TView view, Windows.Media.Playback.MediaPlayer value) where TView : MediaPlayerPresenter { view.UI.MediaPlayer = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaPlayerPresenter.Stretch"/></summary>
+        public static TView Stretch<TView>(this TView view, Xaml.Media.Stretch value) where TView : MediaPlayerPresenter { view.UI.Stretch = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaPlayerPresenter.IsFullWindow"/></summary>
+        public static TView IsFullWindow<TView>(this TView view, bool value) where TView : MediaPlayerPresenter { view.UI.IsFullWindow = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaPlayerPresenter.MediaPlayer"/></summary>
+        public static DependencyProperty<TTarget, Windows.Media.Playback.MediaPlayer> MediaPlayer<TTarget>(this TTarget target) where TTarget : MediaPlayerPresenter
+        => DependencyProperty<TTarget, Windows.Media.Playback.MediaPlayer>.Get(target, Xaml.Controls.MediaPlayerPresenter.MediaPlayerProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaPlayerPresenter.Stretch"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.Stretch> Stretch<TTarget>(this TTarget target) where TTarget : MediaPlayerPresenter
+        => DependencyProperty<TTarget, Xaml.Media.Stretch>.Get(target, Xaml.Controls.MediaPlayerPresenter.StretchProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaPlayerPresenter.IsFullWindow"/></summary>
+        public static DependencyProperty<TTarget, bool> IsFullWindow<TTarget>(this TTarget target) where TTarget : MediaPlayerPresenter
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaPlayerPresenter.IsFullWindowProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // MediaTransportControls
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.MediaTransportControls"/></summary>
+        public static MediaTransportControls MediaTransportControls(bool? IsFullWindowButtonVisible = default, bool? IsPlaybackRateEnabled = default, bool? IsFastRewindEnabled = default, bool? IsFastRewindButtonVisible = default, bool? IsFullWindowEnabled = default, bool? IsFastForwardEnabled = default, bool? IsCompact = default, bool? IsSeekEnabled = default, bool? IsStopEnabled = default, bool? IsFastForwardButtonVisible = default, bool? IsStopButtonVisible = default, bool? IsVolumeButtonVisible = default, bool? IsSeekBarVisible = default, bool? IsPlaybackRateButtonVisible = default, bool? IsZoomEnabled = default, bool? IsZoomButtonVisible = default, bool? IsVolumeEnabled = default, bool? IsSkipBackwardButtonVisible = default, bool? IsNextTrackButtonVisible = default, Xaml.Media.FastPlayFallbackBehaviour? FastPlayFallbackBehaviour = default, bool? IsSkipForwardEnabled = default, bool? IsPreviousTrackButtonVisible = default, bool? IsSkipForwardButtonVisible = default, bool? IsSkipBackwardEnabled = default, bool? ShowAndHideAutomatically = default, bool? IsRepeatButtonVisible = default, bool? IsRepeatEnabled = default, bool? IsCompactOverlayEnabled = default, bool? IsCompactOverlayButtonVisible = default)
+        {
+            var ui = new Xaml.Controls.MediaTransportControls();
+            if (IsFullWindowButtonVisible is not null) ui.IsFullWindowButtonVisible = IsFullWindowButtonVisible.Value;
+            if (IsPlaybackRateEnabled is not null) ui.IsPlaybackRateEnabled = IsPlaybackRateEnabled.Value;
+            if (IsFastRewindEnabled is not null) ui.IsFastRewindEnabled = IsFastRewindEnabled.Value;
+            if (IsFastRewindButtonVisible is not null) ui.IsFastRewindButtonVisible = IsFastRewindButtonVisible.Value;
+            if (IsFullWindowEnabled is not null) ui.IsFullWindowEnabled = IsFullWindowEnabled.Value;
+            if (IsFastForwardEnabled is not null) ui.IsFastForwardEnabled = IsFastForwardEnabled.Value;
+            if (IsCompact is not null) ui.IsCompact = IsCompact.Value;
+            if (IsSeekEnabled is not null) ui.IsSeekEnabled = IsSeekEnabled.Value;
+            if (IsStopEnabled is not null) ui.IsStopEnabled = IsStopEnabled.Value;
+            if (IsFastForwardButtonVisible is not null) ui.IsFastForwardButtonVisible = IsFastForwardButtonVisible.Value;
+            if (IsStopButtonVisible is not null) ui.IsStopButtonVisible = IsStopButtonVisible.Value;
+            if (IsVolumeButtonVisible is not null) ui.IsVolumeButtonVisible = IsVolumeButtonVisible.Value;
+            if (IsSeekBarVisible is not null) ui.IsSeekBarVisible = IsSeekBarVisible.Value;
+            if (IsPlaybackRateButtonVisible is not null) ui.IsPlaybackRateButtonVisible = IsPlaybackRateButtonVisible.Value;
+            if (IsZoomEnabled is not null) ui.IsZoomEnabled = IsZoomEnabled.Value;
+            if (IsZoomButtonVisible is not null) ui.IsZoomButtonVisible = IsZoomButtonVisible.Value;
+            if (IsVolumeEnabled is not null) ui.IsVolumeEnabled = IsVolumeEnabled.Value;
+            if (IsSkipBackwardButtonVisible is not null) ui.IsSkipBackwardButtonVisible = IsSkipBackwardButtonVisible.Value;
+            if (IsNextTrackButtonVisible is not null) ui.IsNextTrackButtonVisible = IsNextTrackButtonVisible.Value;
+            if (FastPlayFallbackBehaviour is not null) ui.FastPlayFallbackBehaviour = FastPlayFallbackBehaviour.Value;
+            if (IsSkipForwardEnabled is not null) ui.IsSkipForwardEnabled = IsSkipForwardEnabled.Value;
+            if (IsPreviousTrackButtonVisible is not null) ui.IsPreviousTrackButtonVisible = IsPreviousTrackButtonVisible.Value;
+            if (IsSkipForwardButtonVisible is not null) ui.IsSkipForwardButtonVisible = IsSkipForwardButtonVisible.Value;
+            if (IsSkipBackwardEnabled is not null) ui.IsSkipBackwardEnabled = IsSkipBackwardEnabled.Value;
+            if (ShowAndHideAutomatically is not null) ui.ShowAndHideAutomatically = ShowAndHideAutomatically.Value;
+            if (IsRepeatButtonVisible is not null) ui.IsRepeatButtonVisible = IsRepeatButtonVisible.Value;
+            if (IsRepeatEnabled is not null) ui.IsRepeatEnabled = IsRepeatEnabled.Value;
+            if (IsCompactOverlayEnabled is not null) ui.IsCompactOverlayEnabled = IsCompactOverlayEnabled.Value;
+            if (IsCompactOverlayButtonVisible is not null) ui.IsCompactOverlayButtonVisible = IsCompactOverlayButtonVisible.Value;
+            return CSharpMarkup.WinUI.MediaTransportControls.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.MediaTransportControls"/></summary>
+        public static MediaTransportControls MediaTransportControls()
+        {
+            var ui = new Xaml.Controls.MediaTransportControls();
+            return CSharpMarkup.WinUI.MediaTransportControls.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.MediaTransportControls"/></summary>
+        public static MediaTransportControls MediaTransportControls(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.MediaTransportControls(javaReference, transfer);
+            return CSharpMarkup.WinUI.MediaTransportControls.StartChain(ui);
+        }
+    }
+
+    public partial class MediaTransportControls : Control, IUI<Microsoft.UI.Xaml.Controls.MediaTransportControls>
+    {
+        static MediaTransportControls instance;
+
+        internal static MediaTransportControls StartChain(Xaml.Controls.MediaTransportControls ui)
+        {
+            if (instance == null) instance = new MediaTransportControls();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.MediaTransportControls ui;
+
+        public new Xaml.Controls.MediaTransportControls UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(MediaTransportControls view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.MediaTransportControls(MediaTransportControls view) => view?.UI;
+
+        public static implicit operator MediaTransportControls(Xaml.Controls.MediaTransportControls ui) => MediaTransportControls.StartChain(ui);
+
+        public MediaTransportControls Invoke(Action<Xaml.Controls.MediaTransportControls> action) { action?.Invoke(UI); return this; }
+
+        protected MediaTransportControls() { }
+    }
+
+    public static partial class MediaTransportControlsExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsFullWindowButtonVisible"/></summary>
+        public static TView IsFullWindowButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsFullWindowButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsPlaybackRateEnabled"/></summary>
+        public static TView IsPlaybackRateEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsPlaybackRateEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsFastRewindEnabled"/></summary>
+        public static TView IsFastRewindEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsFastRewindEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsFastRewindButtonVisible"/></summary>
+        public static TView IsFastRewindButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsFastRewindButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsFullWindowEnabled"/></summary>
+        public static TView IsFullWindowEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsFullWindowEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsFastForwardEnabled"/></summary>
+        public static TView IsFastForwardEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsFastForwardEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsCompact"/></summary>
+        public static TView IsCompact<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsCompact = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsSeekEnabled"/></summary>
+        public static TView IsSeekEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsSeekEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsStopEnabled"/></summary>
+        public static TView IsStopEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsStopEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsFastForwardButtonVisible"/></summary>
+        public static TView IsFastForwardButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsFastForwardButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsStopButtonVisible"/></summary>
+        public static TView IsStopButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsStopButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsVolumeButtonVisible"/></summary>
+        public static TView IsVolumeButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsVolumeButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsSeekBarVisible"/></summary>
+        public static TView IsSeekBarVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsSeekBarVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsPlaybackRateButtonVisible"/></summary>
+        public static TView IsPlaybackRateButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsPlaybackRateButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsZoomEnabled"/></summary>
+        public static TView IsZoomEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsZoomEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsZoomButtonVisible"/></summary>
+        public static TView IsZoomButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsZoomButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsVolumeEnabled"/></summary>
+        public static TView IsVolumeEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsVolumeEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsSkipBackwardButtonVisible"/></summary>
+        public static TView IsSkipBackwardButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsSkipBackwardButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsNextTrackButtonVisible"/></summary>
+        public static TView IsNextTrackButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsNextTrackButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.FastPlayFallbackBehaviour"/></summary>
+        public static TView FastPlayFallbackBehaviour<TView>(this TView view, Xaml.Media.FastPlayFallbackBehaviour value) where TView : MediaTransportControls { view.UI.FastPlayFallbackBehaviour = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsSkipForwardEnabled"/></summary>
+        public static TView IsSkipForwardEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsSkipForwardEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsPreviousTrackButtonVisible"/></summary>
+        public static TView IsPreviousTrackButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsPreviousTrackButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsSkipForwardButtonVisible"/></summary>
+        public static TView IsSkipForwardButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsSkipForwardButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsSkipBackwardEnabled"/></summary>
+        public static TView IsSkipBackwardEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsSkipBackwardEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.ShowAndHideAutomatically"/></summary>
+        public static TView ShowAndHideAutomatically<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.ShowAndHideAutomatically = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsRepeatButtonVisible"/></summary>
+        public static TView IsRepeatButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsRepeatButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsRepeatEnabled"/></summary>
+        public static TView IsRepeatEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsRepeatEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsCompactOverlayEnabled"/></summary>
+        public static TView IsCompactOverlayEnabled<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsCompactOverlayEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MediaTransportControls.IsCompactOverlayButtonVisible"/></summary>
+        public static TView IsCompactOverlayButtonVisible<TView>(this TView view, bool value) where TView : MediaTransportControls { view.UI.IsCompactOverlayButtonVisible = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsFullWindowButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsFullWindowButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsFullWindowButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsPlaybackRateEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsPlaybackRateEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsPlaybackRateEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsFastRewindEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsFastRewindEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsFastRewindEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsFastRewindButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsFastRewindButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsFastRewindButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsFullWindowEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsFullWindowEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsFullWindowEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsFastForwardEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsFastForwardEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsFastForwardEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsCompact"/></summary>
+        public static DependencyProperty<TTarget, bool> IsCompact<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsCompactProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsSeekEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsSeekEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsSeekEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsStopEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsStopEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsStopEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsFastForwardButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsFastForwardButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsFastForwardButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsStopButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsStopButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsStopButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsVolumeButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsVolumeButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsVolumeButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsSeekBarVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsSeekBarVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsSeekBarVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsPlaybackRateButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsPlaybackRateButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsPlaybackRateButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsZoomEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsZoomEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsZoomEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsZoomButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsZoomButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsZoomButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsVolumeEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsVolumeEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsVolumeEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsSkipBackwardButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsSkipBackwardButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsSkipBackwardButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsNextTrackButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsNextTrackButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsNextTrackButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.FastPlayFallbackBehaviour"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.FastPlayFallbackBehaviour> FastPlayFallbackBehaviour<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, Xaml.Media.FastPlayFallbackBehaviour>.Get(target, Xaml.Controls.MediaTransportControls.FastPlayFallbackBehaviourProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsSkipForwardEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsSkipForwardEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsSkipForwardEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsPreviousTrackButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsPreviousTrackButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsPreviousTrackButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsSkipForwardButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsSkipForwardButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsSkipForwardButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsSkipBackwardEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsSkipBackwardEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsSkipBackwardEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.ShowAndHideAutomatically"/></summary>
+        public static DependencyProperty<TTarget, bool> ShowAndHideAutomatically<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.ShowAndHideAutomaticallyProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsRepeatButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsRepeatButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsRepeatButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsRepeatEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsRepeatEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsRepeatEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsCompactOverlayEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsCompactOverlayEnabled<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsCompactOverlayEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MediaTransportControls.IsCompactOverlayButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsCompactOverlayButtonVisible<TTarget>(this TTarget target) where TTarget : MediaTransportControls
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MediaTransportControls.IsCompactOverlayButtonVisibleProperty);
     }
 }
 
@@ -15276,309 +16448,6 @@ namespace CSharpMarkup.WinUI // Page
     }
 }
 
-namespace CSharpMarkup.WinUI // PagerControl
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.PagerControl"/></summary>
-        public static PagerControl PagerControl(ICommand PagerInputCommand = default, bool? ButtonPanelAlwaysShowFirstLastPageIndex = default, Xaml.Controls.PagerControlDisplayMode? DisplayMode = default, ICommand FirstButtonCommand = default, Xaml.Style FirstButtonStyle = default, Xaml.Controls.PagerControlButtonVisibility? FirstButtonVisibility = default, ICommand LastButtonCommand = default, Xaml.Style LastButtonStyle = default, Xaml.Controls.PagerControlButtonVisibility? LastButtonVisibility = default, ICommand NextButtonCommand = default, Xaml.Style NextButtonStyle = default, Xaml.Controls.PagerControlButtonVisibility? NextButtonVisibility = default, int? NumberOfPages = default, string PrefixText = default, ICommand PreviousButtonCommand = default, Xaml.Style PreviousButtonStyle = default, Xaml.Controls.PagerControlButtonVisibility? PreviousButtonVisibility = default, int? SelectedPageIndex = default, string SuffixText = default, Xaml.Controls.PagerControlTemplateSettings TemplateSettings = default)
-        {
-            var ui = new Xaml.Controls.PagerControl();
-            if (PagerInputCommand is not null) ui.PagerInputCommand = PagerInputCommand;
-            if (ButtonPanelAlwaysShowFirstLastPageIndex is not null) ui.ButtonPanelAlwaysShowFirstLastPageIndex = ButtonPanelAlwaysShowFirstLastPageIndex.Value;
-            if (DisplayMode is not null) ui.DisplayMode = DisplayMode.Value;
-            if (FirstButtonCommand is not null) ui.FirstButtonCommand = FirstButtonCommand;
-            if (FirstButtonStyle is not null) ui.FirstButtonStyle = FirstButtonStyle;
-            if (FirstButtonVisibility is not null) ui.FirstButtonVisibility = FirstButtonVisibility.Value;
-            if (LastButtonCommand is not null) ui.LastButtonCommand = LastButtonCommand;
-            if (LastButtonStyle is not null) ui.LastButtonStyle = LastButtonStyle;
-            if (LastButtonVisibility is not null) ui.LastButtonVisibility = LastButtonVisibility.Value;
-            if (NextButtonCommand is not null) ui.NextButtonCommand = NextButtonCommand;
-            if (NextButtonStyle is not null) ui.NextButtonStyle = NextButtonStyle;
-            if (NextButtonVisibility is not null) ui.NextButtonVisibility = NextButtonVisibility.Value;
-            if (NumberOfPages is not null) ui.NumberOfPages = NumberOfPages.Value;
-            if (PrefixText is not null) ui.PrefixText = PrefixText;
-            if (PreviousButtonCommand is not null) ui.PreviousButtonCommand = PreviousButtonCommand;
-            if (PreviousButtonStyle is not null) ui.PreviousButtonStyle = PreviousButtonStyle;
-            if (PreviousButtonVisibility is not null) ui.PreviousButtonVisibility = PreviousButtonVisibility.Value;
-            if (SelectedPageIndex is not null) ui.SelectedPageIndex = SelectedPageIndex.Value;
-            if (SuffixText is not null) ui.SuffixText = SuffixText;
-            if (TemplateSettings is not null) ui.TemplateSettings = TemplateSettings;
-            return CSharpMarkup.WinUI.PagerControl.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.PagerControl"/></summary>
-        public static PagerControl PagerControl()
-        {
-            var ui = new Xaml.Controls.PagerControl();
-            return CSharpMarkup.WinUI.PagerControl.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.PagerControl"/></summary>
-        public static PagerControl PagerControl(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.PagerControl(javaReference, transfer);
-            return CSharpMarkup.WinUI.PagerControl.StartChain(ui);
-        }
-    }
-
-    public partial class PagerControl : Control, IUI<Microsoft.UI.Xaml.Controls.PagerControl>
-    {
-        static PagerControl instance;
-
-        internal static PagerControl StartChain(Xaml.Controls.PagerControl ui)
-        {
-            if (instance == null) instance = new PagerControl();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.PagerControl ui;
-
-        public new Xaml.Controls.PagerControl UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.UIElement(PagerControl view) => view?.UI;
-
-        public static implicit operator Xaml.Controls.PagerControl(PagerControl view) => view?.UI;
-
-        public static implicit operator PagerControl(Xaml.Controls.PagerControl ui) => PagerControl.StartChain(ui);
-
-        public PagerControl Invoke(Action<Xaml.Controls.PagerControl> action) { action?.Invoke(UI); return this; }
-
-        protected PagerControl() { }
-    }
-
-    public static partial class PagerControlExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.PagerInputCommand"/></summary>
-        public static TView PagerInputCommand<TView>(this TView view, ICommand value) where TView : PagerControl { view.UI.PagerInputCommand = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.ButtonPanelAlwaysShowFirstLastPageIndex"/></summary>
-        public static TView ButtonPanelAlwaysShowFirstLastPageIndex<TView>(this TView view, bool value) where TView : PagerControl { view.UI.ButtonPanelAlwaysShowFirstLastPageIndex = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.DisplayMode"/></summary>
-        public static TView DisplayMode<TView>(this TView view, Xaml.Controls.PagerControlDisplayMode value) where TView : PagerControl { view.UI.DisplayMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.FirstButtonCommand"/></summary>
-        public static TView FirstButtonCommand<TView>(this TView view, ICommand value) where TView : PagerControl { view.UI.FirstButtonCommand = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.FirstButtonStyle"/></summary>
-        public static TView FirstButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PagerControl { view.UI.FirstButtonStyle = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.FirstButtonVisibility"/></summary>
-        public static TView FirstButtonVisibility<TView>(this TView view, Xaml.Controls.PagerControlButtonVisibility value) where TView : PagerControl { view.UI.FirstButtonVisibility = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.LastButtonCommand"/></summary>
-        public static TView LastButtonCommand<TView>(this TView view, ICommand value) where TView : PagerControl { view.UI.LastButtonCommand = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.LastButtonStyle"/></summary>
-        public static TView LastButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PagerControl { view.UI.LastButtonStyle = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.LastButtonVisibility"/></summary>
-        public static TView LastButtonVisibility<TView>(this TView view, Xaml.Controls.PagerControlButtonVisibility value) where TView : PagerControl { view.UI.LastButtonVisibility = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.NextButtonCommand"/></summary>
-        public static TView NextButtonCommand<TView>(this TView view, ICommand value) where TView : PagerControl { view.UI.NextButtonCommand = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.NextButtonStyle"/></summary>
-        public static TView NextButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PagerControl { view.UI.NextButtonStyle = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.NextButtonVisibility"/></summary>
-        public static TView NextButtonVisibility<TView>(this TView view, Xaml.Controls.PagerControlButtonVisibility value) where TView : PagerControl { view.UI.NextButtonVisibility = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.NumberOfPages"/></summary>
-        public static TView NumberOfPages<TView>(this TView view, int value) where TView : PagerControl { view.UI.NumberOfPages = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.PrefixText"/></summary>
-        public static TView PrefixText<TView>(this TView view, string value) where TView : PagerControl { view.UI.PrefixText = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.PreviousButtonCommand"/></summary>
-        public static TView PreviousButtonCommand<TView>(this TView view, ICommand value) where TView : PagerControl { view.UI.PreviousButtonCommand = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.PreviousButtonStyle"/></summary>
-        public static TView PreviousButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PagerControl { view.UI.PreviousButtonStyle = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.PreviousButtonVisibility"/></summary>
-        public static TView PreviousButtonVisibility<TView>(this TView view, Xaml.Controls.PagerControlButtonVisibility value) where TView : PagerControl { view.UI.PreviousButtonVisibility = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.SelectedPageIndex"/></summary>
-        public static TView SelectedPageIndex<TView>(this TView view, int value) where TView : PagerControl { view.UI.SelectedPageIndex = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.SuffixText"/></summary>
-        public static TView SuffixText<TView>(this TView view, string value) where TView : PagerControl { view.UI.SuffixText = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControl.TemplateSettings"/></summary>
-        public static TView TemplateSettings<TView>(this TView view, Xaml.Controls.PagerControlTemplateSettings value) where TView : PagerControl { view.UI.TemplateSettings = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.PagerInputCommand"/></summary>
-        public static DependencyProperty<TTarget, ICommand> PagerInputCommand<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, ICommand>.Get(target, Xaml.Controls.PagerControl.PagerInputCommandProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.ButtonPanelAlwaysShowFirstLastPageIndex"/></summary>
-        public static DependencyProperty<TTarget, bool> ButtonPanelAlwaysShowFirstLastPageIndex<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.PagerControl.ButtonPanelAlwaysShowFirstLastPageIndexProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.DisplayMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlDisplayMode> DisplayMode<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, Xaml.Controls.PagerControlDisplayMode>.Get(target, Xaml.Controls.PagerControl.DisplayModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.FirstButtonCommand"/></summary>
-        public static DependencyProperty<TTarget, ICommand> FirstButtonCommand<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, ICommand>.Get(target, Xaml.Controls.PagerControl.FirstButtonCommandProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.FirstButtonStyle"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Style> FirstButtonStyle<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PagerControl.FirstButtonStyleProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.FirstButtonVisibility"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> FirstButtonVisibility<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility>.Get(target, Xaml.Controls.PagerControl.FirstButtonVisibilityProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.LastButtonCommand"/></summary>
-        public static DependencyProperty<TTarget, ICommand> LastButtonCommand<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, ICommand>.Get(target, Xaml.Controls.PagerControl.LastButtonCommandProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.LastButtonStyle"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Style> LastButtonStyle<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PagerControl.LastButtonStyleProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.LastButtonVisibility"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> LastButtonVisibility<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility>.Get(target, Xaml.Controls.PagerControl.LastButtonVisibilityProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.NextButtonCommand"/></summary>
-        public static DependencyProperty<TTarget, ICommand> NextButtonCommand<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, ICommand>.Get(target, Xaml.Controls.PagerControl.NextButtonCommandProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.NextButtonStyle"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Style> NextButtonStyle<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PagerControl.NextButtonStyleProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.NextButtonVisibility"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> NextButtonVisibility<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility>.Get(target, Xaml.Controls.PagerControl.NextButtonVisibilityProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.NumberOfPages"/></summary>
-        public static DependencyProperty<TTarget, int> NumberOfPages<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PagerControl.NumberOfPagesProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.PrefixText"/></summary>
-        public static DependencyProperty<TTarget, string> PrefixText<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.PagerControl.PrefixTextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.PreviousButtonCommand"/></summary>
-        public static DependencyProperty<TTarget, ICommand> PreviousButtonCommand<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, ICommand>.Get(target, Xaml.Controls.PagerControl.PreviousButtonCommandProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.PreviousButtonStyle"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Style> PreviousButtonStyle<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PagerControl.PreviousButtonStyleProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.PreviousButtonVisibility"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> PreviousButtonVisibility<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility>.Get(target, Xaml.Controls.PagerControl.PreviousButtonVisibilityProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.SelectedPageIndex"/></summary>
-        public static DependencyProperty<TTarget, int> SelectedPageIndex<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PagerControl.SelectedPageIndexProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.SuffixText"/></summary>
-        public static DependencyProperty<TTarget, string> SuffixText<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.PagerControl.SuffixTextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.TemplateSettings"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : PagerControl
-        => DependencyProperty<TTarget, Xaml.Controls.PagerControlTemplateSettings>.Get(target, Xaml.Controls.PagerControl.TemplateSettingsProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // PagerControlTemplateSettings
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.PagerControlTemplateSettings"/></summary>
-        public static PagerControlTemplateSettings PagerControlTemplateSettings(IList<object> Pages = default, IList<object> NumberPanelItems = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
-        {
-            var ui = new Xaml.Controls.PagerControlTemplateSettings();
-            if (Pages is not null) ui.Pages = Pages;
-            if (NumberPanelItems is not null) ui.NumberPanelItems = NumberPanelItems;
-            if (DataContext is not null) ui.DataContext = DataContext;
-            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
-            return CSharpMarkup.WinUI.PagerControlTemplateSettings.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.PagerControlTemplateSettings"/></summary>
-        public static PagerControlTemplateSettings PagerControlTemplateSettings()
-        {
-            var ui = new Xaml.Controls.PagerControlTemplateSettings();
-            return CSharpMarkup.WinUI.PagerControlTemplateSettings.StartChain(ui);
-        }
-    }
-
-    public partial class PagerControlTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.PagerControlTemplateSettings>
-    {
-        static PagerControlTemplateSettings instance;
-
-        internal static PagerControlTemplateSettings StartChain(Xaml.Controls.PagerControlTemplateSettings ui)
-        {
-            if (instance == null) instance = new PagerControlTemplateSettings();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.PagerControlTemplateSettings ui;
-
-        public new Xaml.Controls.PagerControlTemplateSettings UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.PagerControlTemplateSettings(PagerControlTemplateSettings view) => view?.UI;
-
-        public static implicit operator PagerControlTemplateSettings(Xaml.Controls.PagerControlTemplateSettings ui) => PagerControlTemplateSettings.StartChain(ui);
-
-        public PagerControlTemplateSettings Invoke(Action<Xaml.Controls.PagerControlTemplateSettings> action) { action?.Invoke(UI); return this; }
-
-        protected PagerControlTemplateSettings() { }
-    }
-
-    public static partial class PagerControlTemplateSettingsExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.PagerControlTemplateSettings.Pages"/></summary>
-        public static TView Pages<TView>(this TView view, IList<object> value) where TView : PagerControlTemplateSettings { view.UI.Pages = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControlTemplateSettings.NumberPanelItems"/></summary>
-        public static TView NumberPanelItems<TView>(this TView view, IList<object> value) where TView : PagerControlTemplateSettings { view.UI.NumberPanelItems = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControlTemplateSettings.DataContext"/></summary>
-        public static TView DataContext<TView>(this TView view, object value) where TView : PagerControlTemplateSettings { view.UI.DataContext = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PagerControlTemplateSettings.TemplatedParent"/></summary>
-        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : PagerControlTemplateSettings { view.UI.TemplatedParent = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControlTemplateSettings.Pages"/></summary>
-        public static DependencyProperty<TTarget, IList<object>> Pages<TTarget>(this TTarget target) where TTarget : PagerControlTemplateSettings
-        => DependencyProperty<TTarget, IList<object>>.Get(target, Xaml.Controls.PagerControlTemplateSettings.PagesProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControlTemplateSettings.NumberPanelItems"/></summary>
-        public static DependencyProperty<TTarget, IList<object>> NumberPanelItems<TTarget>(this TTarget target) where TTarget : PagerControlTemplateSettings
-        => DependencyProperty<TTarget, IList<object>>.Get(target, Xaml.Controls.PagerControlTemplateSettings.NumberPanelItemsProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControlTemplateSettings.DataContext"/></summary>
-        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : PagerControlTemplateSettings
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.PagerControlTemplateSettings.DataContextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControlTemplateSettings.TemplatedParent"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : PagerControlTemplateSettings
-        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.PagerControlTemplateSettings.TemplatedParentProperty);
-    }
-}
-
 namespace CSharpMarkup.WinUI // Panel
 {
     public static partial class Helpers
@@ -15843,13 +16712,9 @@ namespace CSharpMarkup.WinUI // PasswordBox
     {
         /// <summary>Create a <see cref="Xaml.Controls.PasswordBox"/></summary>
         /// <remarks>Remark: PasswordBox().Bind() binds to <see cref="Xaml.Controls.PasswordBox.PasswordProperty"/></remarks>
-        public static PasswordBox PasswordBox(Xaml.Controls.InputValidationContext ValidationContext = default, Xaml.Controls.InputValidationMode? InputValidationMode = default, Xaml.Controls.InputValidationKind? InputValidationKind = default, Xaml.DataTemplate ErrorTemplate = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, string PasswordChar = default, string Password = default, object Description = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, bool? IsPasswordRevealButtonEnabled = default, Xaml.Controls.PasswordRevealMode? PasswordRevealMode = default)
+        public static PasswordBox PasswordBox(Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, string PasswordChar = default, string Password = default, object Description = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, bool? IsPasswordRevealButtonEnabled = default, Xaml.Controls.PasswordRevealMode? PasswordRevealMode = default)
         {
             var ui = new Xaml.Controls.PasswordBox();
-            if (ValidationContext is not null) ui.ValidationContext = ValidationContext;
-            if (InputValidationMode is not null) ui.InputValidationMode = InputValidationMode.Value;
-            if (InputValidationKind is not null) ui.InputValidationKind = InputValidationKind.Value;
-            if (ErrorTemplate is not null) ui.ErrorTemplate = ErrorTemplate;
             if (TextReadingOrder is not null) ui.TextReadingOrder = TextReadingOrder.Value;
             if (SelectionFlyout is not null) ui.SelectionFlyout = SelectionFlyout;
             if (PasswordChar is not null) ui.PasswordChar = PasswordChar;
@@ -15913,18 +16778,6 @@ namespace CSharpMarkup.WinUI // PasswordBox
 
     public static partial class PasswordBoxExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.PasswordBox.ValidationContext"/></summary>
-        public static TView ValidationContext<TView>(this TView view, Xaml.Controls.InputValidationContext value) where TView : PasswordBox { view.UI.ValidationContext = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PasswordBox.InputValidationMode"/></summary>
-        public static TView InputValidationMode<TView>(this TView view, Xaml.Controls.InputValidationMode value) where TView : PasswordBox { view.UI.InputValidationMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PasswordBox.InputValidationKind"/></summary>
-        public static TView InputValidationKind<TView>(this TView view, Xaml.Controls.InputValidationKind value) where TView : PasswordBox { view.UI.InputValidationKind = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.PasswordBox.ErrorTemplate"/></summary>
-        public static TView ErrorTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : PasswordBox { view.UI.ErrorTemplate = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.PasswordBox.TextReadingOrder"/></summary>
         public static TView TextReadingOrder<TView>(this TView view, Xaml.TextReadingOrder value) where TView : PasswordBox { view.UI.TextReadingOrder = value; return view; }
 
@@ -15964,18 +16817,6 @@ namespace CSharpMarkup.WinUI // PasswordBox
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.TextReadingOrder"/></summary>
         public static DependencyProperty<TTarget, Xaml.TextReadingOrder> TextReadingOrder<TTarget>(this TTarget target) where TTarget : PasswordBox
         => DependencyProperty<TTarget, Xaml.TextReadingOrder>.Get(target, Xaml.Controls.PasswordBox.TextReadingOrderProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.ErrorTemplate"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DataTemplate> ErrorTemplate<TTarget>(this TTarget target) where TTarget : PasswordBox
-        => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.PasswordBox.ErrorTemplateProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.InputValidationKind"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> InputValidationKind<TTarget>(this TTarget target) where TTarget : PasswordBox
-        => DependencyProperty<TTarget, Xaml.Controls.InputValidationKind>.Get(target, Xaml.Controls.PasswordBox.InputValidationKindProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.InputValidationMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> InputValidationMode<TTarget>(this TTarget target) where TTarget : PasswordBox
-        => DependencyProperty<TTarget, Xaml.Controls.InputValidationMode>.Get(target, Xaml.Controls.PasswordBox.InputValidationModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.Password"/></summary>
         public static DependencyProperty<TTarget, string> Password<TTarget>(this TTarget target) where TTarget : PasswordBox
@@ -16509,6 +17350,217 @@ namespace CSharpMarkup.WinUI // PickerFlyoutPresenter
         public PickerFlyoutPresenter Invoke(Action<Xaml.Controls.PickerFlyoutPresenter> action) { action?.Invoke(UI); return this; }
 
         protected PickerFlyoutPresenter() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // PipsPager
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.PipsPager"/></summary>
+        public static PipsPager PipsPager(int? MaxVisiblePips = default, Xaml.Style NextButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? NextButtonVisibility = default, Xaml.Style NormalPipStyle = default, int? NumberOfPages = default, Xaml.Controls.Orientation? Orientation = default, Xaml.Style PreviousButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? PreviousButtonVisibility = default, int? SelectedPageIndex = default, Xaml.Style SelectedPipStyle = default)
+        {
+            var ui = new Xaml.Controls.PipsPager();
+            if (MaxVisiblePips is not null) ui.MaxVisiblePips = MaxVisiblePips.Value;
+            if (NextButtonStyle is not null) ui.NextButtonStyle = NextButtonStyle;
+            if (NextButtonVisibility is not null) ui.NextButtonVisibility = NextButtonVisibility.Value;
+            if (NormalPipStyle is not null) ui.NormalPipStyle = NormalPipStyle;
+            if (NumberOfPages is not null) ui.NumberOfPages = NumberOfPages.Value;
+            if (Orientation is not null) ui.Orientation = Orientation.Value;
+            if (PreviousButtonStyle is not null) ui.PreviousButtonStyle = PreviousButtonStyle;
+            if (PreviousButtonVisibility is not null) ui.PreviousButtonVisibility = PreviousButtonVisibility.Value;
+            if (SelectedPageIndex is not null) ui.SelectedPageIndex = SelectedPageIndex.Value;
+            if (SelectedPipStyle is not null) ui.SelectedPipStyle = SelectedPipStyle;
+            return CSharpMarkup.WinUI.PipsPager.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.PipsPager"/></summary>
+        public static PipsPager PipsPager()
+        {
+            var ui = new Xaml.Controls.PipsPager();
+            return CSharpMarkup.WinUI.PipsPager.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.PipsPager"/></summary>
+        public static PipsPager PipsPager(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.PipsPager(javaReference, transfer);
+            return CSharpMarkup.WinUI.PipsPager.StartChain(ui);
+        }
+    }
+
+    public partial class PipsPager : Control, IUI<Microsoft.UI.Xaml.Controls.PipsPager>
+    {
+        static PipsPager instance;
+
+        internal static PipsPager StartChain(Xaml.Controls.PipsPager ui)
+        {
+            if (instance == null) instance = new PipsPager();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.PipsPager ui;
+
+        public new Xaml.Controls.PipsPager UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(PipsPager view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.PipsPager(PipsPager view) => view?.UI;
+
+        public static implicit operator PipsPager(Xaml.Controls.PipsPager ui) => PipsPager.StartChain(ui);
+
+        public PipsPager Invoke(Action<Xaml.Controls.PipsPager> action) { action?.Invoke(UI); return this; }
+
+        protected PipsPager() { }
+    }
+
+    public static partial class PipsPagerExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.MaxVisiblePips"/></summary>
+        public static TView MaxVisiblePips<TView>(this TView view, int value) where TView : PipsPager { view.UI.MaxVisiblePips = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.NextButtonStyle"/></summary>
+        public static TView NextButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PipsPager { view.UI.NextButtonStyle = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.NextButtonVisibility"/></summary>
+        public static TView NextButtonVisibility<TView>(this TView view, Xaml.Controls.PipsPagerButtonVisibility value) where TView : PipsPager { view.UI.NextButtonVisibility = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.NormalPipStyle"/></summary>
+        public static TView NormalPipStyle<TView>(this TView view, Xaml.Style value) where TView : PipsPager { view.UI.NormalPipStyle = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.NumberOfPages"/></summary>
+        public static TView NumberOfPages<TView>(this TView view, int value) where TView : PipsPager { view.UI.NumberOfPages = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.Orientation"/></summary>
+        public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : PipsPager { view.UI.Orientation = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.PreviousButtonStyle"/></summary>
+        public static TView PreviousButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PipsPager { view.UI.PreviousButtonStyle = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.PreviousButtonVisibility"/></summary>
+        public static TView PreviousButtonVisibility<TView>(this TView view, Xaml.Controls.PipsPagerButtonVisibility value) where TView : PipsPager { view.UI.PreviousButtonVisibility = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.SelectedPageIndex"/></summary>
+        public static TView SelectedPageIndex<TView>(this TView view, int value) where TView : PipsPager { view.UI.SelectedPageIndex = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.SelectedPipStyle"/></summary>
+        public static TView SelectedPipStyle<TView>(this TView view, Xaml.Style value) where TView : PipsPager { view.UI.SelectedPipStyle = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.MaxVisiblePips"/></summary>
+        public static DependencyProperty<TTarget, int> MaxVisiblePips<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PipsPager.MaxVisiblePipsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.NextButtonStyle"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Style> NextButtonStyle<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PipsPager.NextButtonStyleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.NextButtonVisibility"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.PipsPagerButtonVisibility> NextButtonVisibility<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, Xaml.Controls.PipsPagerButtonVisibility>.Get(target, Xaml.Controls.PipsPager.NextButtonVisibilityProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.NormalPipStyle"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Style> NormalPipStyle<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PipsPager.NormalPipStyleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.NumberOfPages"/></summary>
+        public static DependencyProperty<TTarget, int> NumberOfPages<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PipsPager.NumberOfPagesProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.Orientation"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, Xaml.Controls.Orientation>.Get(target, Xaml.Controls.PipsPager.OrientationProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.PreviousButtonStyle"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Style> PreviousButtonStyle<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PipsPager.PreviousButtonStyleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.PreviousButtonVisibility"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.PipsPagerButtonVisibility> PreviousButtonVisibility<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, Xaml.Controls.PipsPagerButtonVisibility>.Get(target, Xaml.Controls.PipsPager.PreviousButtonVisibilityProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.SelectedPageIndex"/></summary>
+        public static DependencyProperty<TTarget, int> SelectedPageIndex<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PipsPager.SelectedPageIndexProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.SelectedPipStyle"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Style> SelectedPipStyle<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PipsPager.SelectedPipStyleProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // PipsPagerTemplateSettings
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.PipsPagerTemplateSettings"/></summary>
+        public static PipsPagerTemplateSettings PipsPagerTemplateSettings(IList<int> PipsPagerItems = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
+        {
+            var ui = new Xaml.Controls.PipsPagerTemplateSettings();
+            if (PipsPagerItems is not null) ui.PipsPagerItems = PipsPagerItems;
+            if (DataContext is not null) ui.DataContext = DataContext;
+            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
+            return CSharpMarkup.WinUI.PipsPagerTemplateSettings.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.PipsPagerTemplateSettings"/></summary>
+        public static PipsPagerTemplateSettings PipsPagerTemplateSettings()
+        {
+            var ui = new Xaml.Controls.PipsPagerTemplateSettings();
+            return CSharpMarkup.WinUI.PipsPagerTemplateSettings.StartChain(ui);
+        }
+    }
+
+    public partial class PipsPagerTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.PipsPagerTemplateSettings>
+    {
+        static PipsPagerTemplateSettings instance;
+
+        internal static PipsPagerTemplateSettings StartChain(Xaml.Controls.PipsPagerTemplateSettings ui)
+        {
+            if (instance == null) instance = new PipsPagerTemplateSettings();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.PipsPagerTemplateSettings ui;
+
+        public new Xaml.Controls.PipsPagerTemplateSettings UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.PipsPagerTemplateSettings(PipsPagerTemplateSettings view) => view?.UI;
+
+        public static implicit operator PipsPagerTemplateSettings(Xaml.Controls.PipsPagerTemplateSettings ui) => PipsPagerTemplateSettings.StartChain(ui);
+
+        public PipsPagerTemplateSettings Invoke(Action<Xaml.Controls.PipsPagerTemplateSettings> action) { action?.Invoke(UI); return this; }
+
+        protected PipsPagerTemplateSettings() { }
+    }
+
+    public static partial class PipsPagerTemplateSettingsExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.PipsPagerTemplateSettings.PipsPagerItems"/></summary>
+        public static TView PipsPagerItems<TView>(this TView view, IList<int> value) where TView : PipsPagerTemplateSettings { view.UI.PipsPagerItems = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.PipsPagerTemplateSettings.DataContext"/></summary>
+        public static TView DataContext<TView>(this TView view, object value) where TView : PipsPagerTemplateSettings { view.UI.DataContext = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.PipsPagerTemplateSettings.TemplatedParent"/></summary>
+        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : PipsPagerTemplateSettings { view.UI.TemplatedParent = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPagerTemplateSettings.DataContext"/></summary>
+        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : PipsPagerTemplateSettings
+        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.PipsPagerTemplateSettings.DataContextProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPagerTemplateSettings.TemplatedParent"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : PipsPagerTemplateSettings
+        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.PipsPagerTemplateSettings.TemplatedParentProperty);
     }
 }
 
@@ -17440,11 +18492,11 @@ namespace CSharpMarkup.WinUI // RadioMenuFlyoutItem
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RadioMenuFlyoutItem.IsCheckedProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.RadioMenuFlyoutItem.AreCheckStatesEnabled"/></summary>
-        public static TTarget RadioMenuFlyoutItem_AreCheckStatesEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
+        public static TTarget RadioMenuFlyoutItem_AreCheckStatesEnabled<TTarget>(this TTarget target, bool value) where TTarget : MenuFlyoutSubItem
         { Xaml.Controls.RadioMenuFlyoutItem.SetAreCheckStatesEnabled(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RadioMenuFlyoutItem.AreCheckStatesEnabled"/></summary>
-        public static DependencyProperty<TTarget, bool> RadioMenuFlyoutItem_AreCheckStatesEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
+        public static DependencyProperty<TTarget, bool> RadioMenuFlyoutItem_AreCheckStatesEnabled<TTarget>(this TTarget target) where TTarget : MenuFlyoutSubItem
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RadioMenuFlyoutItem.AreCheckStatesEnabledProperty);
     }
 }
@@ -17841,65 +18893,6 @@ namespace CSharpMarkup.WinUI // RatingItemInfo
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RatingItemInfo.TemplatedParent"/></summary>
         public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : RatingItemInfo
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.RatingItemInfo.TemplatedParentProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // RecyclingElementFactory
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.RecyclingElementFactory"/></summary>
-        public static RecyclingElementFactory RecyclingElementFactory(Xaml.Controls.RecyclePool RecyclePool = default, IDictionary<string,Xaml.DataTemplate> Templates = default)
-        {
-            var ui = new Xaml.Controls.RecyclingElementFactory();
-            if (RecyclePool is not null) ui.RecyclePool = RecyclePool;
-            if (Templates is not null) ui.Templates = Templates;
-            return CSharpMarkup.WinUI.RecyclingElementFactory.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.RecyclingElementFactory"/></summary>
-        public static RecyclingElementFactory RecyclingElementFactory()
-        {
-            var ui = new Xaml.Controls.RecyclingElementFactory();
-            return CSharpMarkup.WinUI.RecyclingElementFactory.StartChain(ui);
-        }
-    }
-
-    public partial class RecyclingElementFactory : ElementFactory, IUI<Microsoft.UI.Xaml.Controls.RecyclingElementFactory>
-    {
-        static RecyclingElementFactory instance;
-
-        internal static RecyclingElementFactory StartChain(Xaml.Controls.RecyclingElementFactory ui)
-        {
-            if (instance == null) instance = new RecyclingElementFactory();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.RecyclingElementFactory ui;
-
-        public new Xaml.Controls.RecyclingElementFactory UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.RecyclingElementFactory(RecyclingElementFactory view) => view?.UI;
-
-        public static implicit operator RecyclingElementFactory(Xaml.Controls.RecyclingElementFactory ui) => RecyclingElementFactory.StartChain(ui);
-
-        public RecyclingElementFactory Invoke(Action<Xaml.Controls.RecyclingElementFactory> action) { action?.Invoke(UI); return this; }
-
-        protected RecyclingElementFactory() { }
-    }
-
-    public static partial class RecyclingElementFactoryExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.RecyclingElementFactory.RecyclePool"/></summary>
-        public static TView RecyclePool<TView>(this TView view, Xaml.Controls.RecyclePool value) where TView : RecyclingElementFactory { view.UI.RecyclePool = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.RecyclingElementFactory.Templates"/></summary>
-        public static TView Templates<TView>(this TView view, IDictionary<string,Xaml.DataTemplate> value) where TView : RecyclingElementFactory { view.UI.Templates = value; return view; }
     }
 }
 
@@ -19305,210 +20298,6 @@ namespace CSharpMarkup.WinUI // ScrollContentPresenter
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollContentPresenter.SizesContentToTemplatedParent"/></summary>
         public static DependencyProperty<TTarget, bool> SizesContentToTemplatedParent<TTarget>(this TTarget target) where TTarget : ScrollContentPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollContentPresenter.SizesContentToTemplatedParentProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // ScrollView
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.ScrollView"/></summary>
-        public static ScrollView ScrollView(Xaml.Controls.ScrollingZoomMode? ZoomMode = default, Xaml.Controls.ScrollingChainMode? ZoomChainMode = default, Xaml.Controls.ScrollingRailMode? VerticalScrollRailMode = default, Xaml.Controls.ScrollingScrollMode? VerticalScrollMode = default, Xaml.Controls.ScrollingChainMode? VerticalScrollChainMode = default, Xaml.Controls.ScrollingScrollBarVisibility? VerticalScrollBarVisibility = default, double? VerticalAnchorRatio = default, double? MinZoomFactor = default, double? MaxZoomFactor = default, Xaml.Controls.ScrollingInputKinds? IgnoredInputKinds = default, Xaml.Controls.ScrollingRailMode? HorizontalScrollRailMode = default, Xaml.Controls.ScrollingScrollMode? HorizontalScrollMode = default, Xaml.Controls.ScrollingChainMode? HorizontalScrollChainMode = default, Xaml.Controls.ScrollingScrollBarVisibility? HorizontalScrollBarVisibility = default, double? HorizontalAnchorRatio = default, Xaml.Controls.ScrollingContentOrientation? ContentOrientation = default, Xaml.UIElement Content = default)
-        {
-            var ui = new Xaml.Controls.ScrollView();
-            if (ZoomMode is not null) ui.ZoomMode = ZoomMode.Value;
-            if (ZoomChainMode is not null) ui.ZoomChainMode = ZoomChainMode.Value;
-            if (VerticalScrollRailMode is not null) ui.VerticalScrollRailMode = VerticalScrollRailMode.Value;
-            if (VerticalScrollMode is not null) ui.VerticalScrollMode = VerticalScrollMode.Value;
-            if (VerticalScrollChainMode is not null) ui.VerticalScrollChainMode = VerticalScrollChainMode.Value;
-            if (VerticalScrollBarVisibility is not null) ui.VerticalScrollBarVisibility = VerticalScrollBarVisibility.Value;
-            if (VerticalAnchorRatio is not null) ui.VerticalAnchorRatio = VerticalAnchorRatio.Value;
-            if (MinZoomFactor is not null) ui.MinZoomFactor = MinZoomFactor.Value;
-            if (MaxZoomFactor is not null) ui.MaxZoomFactor = MaxZoomFactor.Value;
-            if (IgnoredInputKinds is not null) ui.IgnoredInputKinds = IgnoredInputKinds.Value;
-            if (HorizontalScrollRailMode is not null) ui.HorizontalScrollRailMode = HorizontalScrollRailMode.Value;
-            if (HorizontalScrollMode is not null) ui.HorizontalScrollMode = HorizontalScrollMode.Value;
-            if (HorizontalScrollChainMode is not null) ui.HorizontalScrollChainMode = HorizontalScrollChainMode.Value;
-            if (HorizontalScrollBarVisibility is not null) ui.HorizontalScrollBarVisibility = HorizontalScrollBarVisibility.Value;
-            if (HorizontalAnchorRatio is not null) ui.HorizontalAnchorRatio = HorizontalAnchorRatio.Value;
-            if (ContentOrientation is not null) ui.ContentOrientation = ContentOrientation.Value;
-            if (Content is not null) ui.Content = Content;
-            return CSharpMarkup.WinUI.ScrollView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.ScrollView"/></summary>
-        public static ScrollView ScrollView()
-        {
-            var ui = new Xaml.Controls.ScrollView();
-            return CSharpMarkup.WinUI.ScrollView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.ScrollView"/></summary>
-        public static ScrollView ScrollView(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.ScrollView(javaReference, transfer);
-            return CSharpMarkup.WinUI.ScrollView.StartChain(ui);
-        }
-    }
-
-    public partial class ScrollView : Control, IUI<Microsoft.UI.Xaml.Controls.ScrollView>
-    {
-        static ScrollView instance;
-
-        internal static ScrollView StartChain(Xaml.Controls.ScrollView ui)
-        {
-            if (instance == null) instance = new ScrollView();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.ScrollView ui;
-
-        public new Xaml.Controls.ScrollView UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.UIElement(ScrollView view) => view?.UI;
-
-        public static implicit operator Xaml.Controls.ScrollView(ScrollView view) => view?.UI;
-
-        public static implicit operator ScrollView(Xaml.Controls.ScrollView ui) => ScrollView.StartChain(ui);
-
-        public ScrollView Invoke(Action<Xaml.Controls.ScrollView> action) { action?.Invoke(UI); return this; }
-
-        protected ScrollView() { }
-    }
-
-    public static partial class ScrollViewExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.ZoomMode"/></summary>
-        public static TView ZoomMode<TView>(this TView view, Xaml.Controls.ScrollingZoomMode value) where TView : ScrollView { view.UI.ZoomMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.ZoomChainMode"/></summary>
-        public static TView ZoomChainMode<TView>(this TView view, Xaml.Controls.ScrollingChainMode value) where TView : ScrollView { view.UI.ZoomChainMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.VerticalScrollRailMode"/></summary>
-        public static TView VerticalScrollRailMode<TView>(this TView view, Xaml.Controls.ScrollingRailMode value) where TView : ScrollView { view.UI.VerticalScrollRailMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.VerticalScrollMode"/></summary>
-        public static TView VerticalScrollMode<TView>(this TView view, Xaml.Controls.ScrollingScrollMode value) where TView : ScrollView { view.UI.VerticalScrollMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.VerticalScrollChainMode"/></summary>
-        public static TView VerticalScrollChainMode<TView>(this TView view, Xaml.Controls.ScrollingChainMode value) where TView : ScrollView { view.UI.VerticalScrollChainMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.VerticalScrollBarVisibility"/></summary>
-        public static TView VerticalScrollBarVisibility<TView>(this TView view, Xaml.Controls.ScrollingScrollBarVisibility value) where TView : ScrollView { view.UI.VerticalScrollBarVisibility = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.VerticalAnchorRatio"/></summary>
-        public static TView VerticalAnchorRatio<TView>(this TView view, double value) where TView : ScrollView { view.UI.VerticalAnchorRatio = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.MinZoomFactor"/></summary>
-        public static TView MinZoomFactor<TView>(this TView view, double value) where TView : ScrollView { view.UI.MinZoomFactor = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.MaxZoomFactor"/></summary>
-        public static TView MaxZoomFactor<TView>(this TView view, double value) where TView : ScrollView { view.UI.MaxZoomFactor = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.IgnoredInputKinds"/></summary>
-        public static TView IgnoredInputKinds<TView>(this TView view, Xaml.Controls.ScrollingInputKinds value) where TView : ScrollView { view.UI.IgnoredInputKinds = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.HorizontalScrollRailMode"/></summary>
-        public static TView HorizontalScrollRailMode<TView>(this TView view, Xaml.Controls.ScrollingRailMode value) where TView : ScrollView { view.UI.HorizontalScrollRailMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.HorizontalScrollMode"/></summary>
-        public static TView HorizontalScrollMode<TView>(this TView view, Xaml.Controls.ScrollingScrollMode value) where TView : ScrollView { view.UI.HorizontalScrollMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.HorizontalScrollChainMode"/></summary>
-        public static TView HorizontalScrollChainMode<TView>(this TView view, Xaml.Controls.ScrollingChainMode value) where TView : ScrollView { view.UI.HorizontalScrollChainMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.HorizontalScrollBarVisibility"/></summary>
-        public static TView HorizontalScrollBarVisibility<TView>(this TView view, Xaml.Controls.ScrollingScrollBarVisibility value) where TView : ScrollView { view.UI.HorizontalScrollBarVisibility = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.HorizontalAnchorRatio"/></summary>
-        public static TView HorizontalAnchorRatio<TView>(this TView view, double value) where TView : ScrollView { view.UI.HorizontalAnchorRatio = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.ContentOrientation"/></summary>
-        public static TView ContentOrientation<TView>(this TView view, Xaml.Controls.ScrollingContentOrientation value) where TView : ScrollView { view.UI.ContentOrientation = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ScrollView.Content"/></summary>
-        public static TView Content<TView>(this TView view, Xaml.UIElement value) where TView : ScrollView { view.UI.Content = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.ComputedHorizontalScrollBarVisibility"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Visibility> ComputedHorizontalScrollBarVisibility<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Visibility>.Get(target, Xaml.Controls.ScrollView.ComputedHorizontalScrollBarVisibilityProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.ComputedVerticalScrollBarVisibility"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Visibility> ComputedVerticalScrollBarVisibility<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Visibility>.Get(target, Xaml.Controls.ScrollView.ComputedVerticalScrollBarVisibilityProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.ContentOrientation"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation> ContentOrientation<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation>.Get(target, Xaml.Controls.ScrollView.ContentOrientationProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.Content"/></summary>
-        public static DependencyProperty<TTarget, Xaml.UIElement> Content<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.ScrollView.ContentProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.HorizontalAnchorRatio"/></summary>
-        public static DependencyProperty<TTarget, double> HorizontalAnchorRatio<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ScrollView.HorizontalAnchorRatioProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.HorizontalScrollBarVisibility"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollBarVisibility> HorizontalScrollBarVisibility<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollBarVisibility>.Get(target, Xaml.Controls.ScrollView.HorizontalScrollBarVisibilityProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.HorizontalScrollChainMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> HorizontalScrollChainMode<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode>.Get(target, Xaml.Controls.ScrollView.HorizontalScrollChainModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.HorizontalScrollMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode> HorizontalScrollMode<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode>.Get(target, Xaml.Controls.ScrollView.HorizontalScrollModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.HorizontalScrollRailMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode> HorizontalScrollRailMode<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode>.Get(target, Xaml.Controls.ScrollView.HorizontalScrollRailModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.IgnoredInputKinds"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> IgnoredInputKinds<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds>.Get(target, Xaml.Controls.ScrollView.IgnoredInputKindsProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.MaxZoomFactor"/></summary>
-        public static DependencyProperty<TTarget, double> MaxZoomFactor<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ScrollView.MaxZoomFactorProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.MinZoomFactor"/></summary>
-        public static DependencyProperty<TTarget, double> MinZoomFactor<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ScrollView.MinZoomFactorProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.VerticalAnchorRatio"/></summary>
-        public static DependencyProperty<TTarget, double> VerticalAnchorRatio<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ScrollView.VerticalAnchorRatioProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.VerticalScrollBarVisibility"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollBarVisibility> VerticalScrollBarVisibility<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollBarVisibility>.Get(target, Xaml.Controls.ScrollView.VerticalScrollBarVisibilityProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.VerticalScrollChainMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> VerticalScrollChainMode<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode>.Get(target, Xaml.Controls.ScrollView.VerticalScrollChainModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.VerticalScrollMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode> VerticalScrollMode<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode>.Get(target, Xaml.Controls.ScrollView.VerticalScrollModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.VerticalScrollRailMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode> VerticalScrollRailMode<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode>.Get(target, Xaml.Controls.ScrollView.VerticalScrollRailModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.ZoomChainMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> ZoomChainMode<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode>.Get(target, Xaml.Controls.ScrollView.ZoomChainModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollView.ZoomMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingZoomMode> ZoomMode<TTarget>(this TTarget target) where TTarget : ScrollView
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingZoomMode>.Get(target, Xaml.Controls.ScrollView.ZoomModeProperty);
     }
 }
 
@@ -21693,9 +22482,10 @@ namespace CSharpMarkup.WinUI // TabViewItemTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TabViewItemTemplateSettings"/></summary>
-        public static TabViewItemTemplateSettings TabViewItemTemplateSettings(Xaml.Controls.IconElement IconElement = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
+        public static TabViewItemTemplateSettings TabViewItemTemplateSettings(CSharpMarkup.WinUI.to.Geometry? TabGeometry = default, Xaml.Controls.IconElement IconElement = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.TabViewItemTemplateSettings();
+            if (TabGeometry is not null) ui.TabGeometry = TabGeometry.Value;
             if (IconElement is not null) ui.IconElement = IconElement;
             if (DataContext is not null) ui.DataContext = DataContext;
             if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
@@ -21740,6 +22530,9 @@ namespace CSharpMarkup.WinUI // TabViewItemTemplateSettings
 
     public static partial class TabViewItemTemplateSettingsExtensions
     {
+        /// <summary>Set <see cref="Xaml.Controls.TabViewItemTemplateSettings.TabGeometry"/></summary>
+        public static TView TabGeometry<TView>(this TView view, CSharpMarkup.WinUI.to.Geometry value) where TView : TabViewItemTemplateSettings { view.UI.TabGeometry = value; return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.TabViewItemTemplateSettings.IconElement"/></summary>
         public static TView IconElement<TView>(this TView view, Xaml.Controls.IconElement value) where TView : TabViewItemTemplateSettings { view.UI.IconElement = value; return view; }
 
@@ -21748,6 +22541,10 @@ namespace CSharpMarkup.WinUI // TabViewItemTemplateSettings
 
         /// <summary>Set <see cref="Xaml.Controls.TabViewItemTemplateSettings.TemplatedParent"/></summary>
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : TabViewItemTemplateSettings { view.UI.TemplatedParent = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabViewItemTemplateSettings.TabGeometry"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry> TabGeometry<TTarget>(this TTarget target) where TTarget : TabViewItemTemplateSettings
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry>.Get(target, Xaml.Controls.TabViewItemTemplateSettings.TabGeometryProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabViewItemTemplateSettings.IconElement"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.IconElement> IconElement<TTarget>(this TTarget target) where TTarget : TabViewItemTemplateSettings
@@ -22427,19 +23224,20 @@ namespace CSharpMarkup.WinUI // TextBox
     {
         /// <summary>Create a <see cref="Xaml.Controls.TextBox"/></summary>
         /// <remarks>Remark: TextBox().Bind() binds to <see cref="Xaml.Controls.TextBox.TextProperty"/></remarks>
-        public static TextBox TextBox(Xaml.Controls.InputValidationContext ValidationContext = default, Xaml.Controls.InputValidationMode? InputValidationMode = default, Xaml.DataTemplate ErrorTemplate = default, Xaml.Controls.InputValidationKind? InputValidationKind = default, bool? IsColorFontEnabled = default, Xaml.TextAlignment? HorizontalTextAlignment = default, Xaml.Controls.CandidateWindowAlignment? DesiredCandidateWindowAlignment = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.Media.SolidColorBrush SelectionHighlightColorWhenNotFocused = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, string Text = default, object Description = default, string PlaceholderText = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, CSharpMarkup.WinUI.to.Brush? PlaceholderForeground = default, Xaml.Input.InputScope InputScope = default, int? MaxLength = default, bool? AcceptsReturn = default, Xaml.TextWrapping? TextWrapping = default, Xaml.Controls.CharacterCasing? CharacterCasing = default, bool? IsReadOnly = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, bool? IsSpellCheckEnabled = default, bool? IsTextPredictionEnabled = default, Xaml.TextAlignment? TextAlignment = default, string SelectedText = default, bool? ShouldForceDisableSpellCheck = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, Android.Views.InputMethods.ImeAction? ImeOptions = default, int? SelectionStart = default, int? SelectionLength = default)
+        public static TextBox TextBox(bool? IsColorFontEnabled = default, Xaml.TextAlignment? HorizontalTextAlignment = default, Xaml.Controls.CandidateWindowAlignment? DesiredCandidateWindowAlignment = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.Media.SolidColorBrush SelectionHighlightColorWhenNotFocused = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, bool? ShouldForceDisableSpellCheck = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, Android.Views.InputMethods.ImeAction? ImeOptions = default, int? SelectionStart = default, int? SelectionLength = default, string Text = default, object Description = default, string PlaceholderText = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, CSharpMarkup.WinUI.to.Brush? PlaceholderForeground = default, Xaml.Input.InputScope InputScope = default, int? MaxLength = default, bool? AcceptsReturn = default, Xaml.TextWrapping? TextWrapping = default, Xaml.Controls.CharacterCasing? CharacterCasing = default, bool? IsReadOnly = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, bool? IsSpellCheckEnabled = default, bool? IsTextPredictionEnabled = default, Xaml.TextAlignment? TextAlignment = default, string SelectedText = default)
         {
             var ui = new Xaml.Controls.TextBox();
-            if (ValidationContext is not null) ui.ValidationContext = ValidationContext;
-            if (InputValidationMode is not null) ui.InputValidationMode = InputValidationMode.Value;
-            if (ErrorTemplate is not null) ui.ErrorTemplate = ErrorTemplate;
-            if (InputValidationKind is not null) ui.InputValidationKind = InputValidationKind.Value;
             if (IsColorFontEnabled is not null) ui.IsColorFontEnabled = IsColorFontEnabled.Value;
             if (HorizontalTextAlignment is not null) ui.HorizontalTextAlignment = HorizontalTextAlignment.Value;
             if (DesiredCandidateWindowAlignment is not null) ui.DesiredCandidateWindowAlignment = DesiredCandidateWindowAlignment.Value;
             if (TextReadingOrder is not null) ui.TextReadingOrder = TextReadingOrder.Value;
             if (SelectionHighlightColorWhenNotFocused is not null) ui.SelectionHighlightColorWhenNotFocused = SelectionHighlightColorWhenNotFocused;
             if (SelectionFlyout is not null) ui.SelectionFlyout = SelectionFlyout;
+            if (ShouldForceDisableSpellCheck is not null) ui.ShouldForceDisableSpellCheck = ShouldForceDisableSpellCheck.Value;
+            if (PreventKeyboardDisplayOnProgrammaticFocus is not null) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
+            if (ImeOptions is not null) ui.ImeOptions = ImeOptions.Value;
+            if (SelectionStart is not null) ui.SelectionStart = SelectionStart.Value;
+            if (SelectionLength is not null) ui.SelectionLength = SelectionLength.Value;
             if (Text is not null) ui.Text = Text;
             if (Description is not null) ui.Description = Description;
             if (PlaceholderText is not null) ui.PlaceholderText = PlaceholderText;
@@ -22457,11 +23255,6 @@ namespace CSharpMarkup.WinUI // TextBox
             if (IsTextPredictionEnabled is not null) ui.IsTextPredictionEnabled = IsTextPredictionEnabled.Value;
             if (TextAlignment is not null) ui.TextAlignment = TextAlignment.Value;
             if (SelectedText is not null) ui.SelectedText = SelectedText;
-            if (ShouldForceDisableSpellCheck is not null) ui.ShouldForceDisableSpellCheck = ShouldForceDisableSpellCheck.Value;
-            if (PreventKeyboardDisplayOnProgrammaticFocus is not null) ui.PreventKeyboardDisplayOnProgrammaticFocus = PreventKeyboardDisplayOnProgrammaticFocus.Value;
-            if (ImeOptions is not null) ui.ImeOptions = ImeOptions.Value;
-            if (SelectionStart is not null) ui.SelectionStart = SelectionStart.Value;
-            if (SelectionLength is not null) ui.SelectionLength = SelectionLength.Value;
             return CSharpMarkup.WinUI.TextBox.StartChain(ui);
         }
 
@@ -22517,18 +23310,6 @@ namespace CSharpMarkup.WinUI // TextBox
 
     public static partial class TextBoxExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.TextBox.ValidationContext"/></summary>
-        public static TView ValidationContext<TView>(this TView view, Xaml.Controls.InputValidationContext value) where TView : TextBox { view.UI.ValidationContext = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.TextBox.InputValidationMode"/></summary>
-        public static TView InputValidationMode<TView>(this TView view, Xaml.Controls.InputValidationMode value) where TView : TextBox { view.UI.InputValidationMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.TextBox.ErrorTemplate"/></summary>
-        public static TView ErrorTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : TextBox { view.UI.ErrorTemplate = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.TextBox.InputValidationKind"/></summary>
-        public static TView InputValidationKind<TView>(this TView view, Xaml.Controls.InputValidationKind value) where TView : TextBox { view.UI.InputValidationKind = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.TextBox.IsColorFontEnabled"/></summary>
         public static TView IsColorFontEnabled<TView>(this TView view, bool value) where TView : TextBox { view.UI.IsColorFontEnabled = value; return view; }
 
@@ -22546,6 +23327,21 @@ namespace CSharpMarkup.WinUI // TextBox
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.SelectionFlyout"/></summary>
         public static TView SelectionFlyout<TView>(this TView view, Xaml.Controls.Primitives.FlyoutBase value) where TView : TextBox { view.UI.SelectionFlyout = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TextBox.ShouldForceDisableSpellCheck"/></summary>
+        public static TView ShouldForceDisableSpellCheck<TView>(this TView view, bool value) where TView : TextBox { view.UI.ShouldForceDisableSpellCheck = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TextBox.PreventKeyboardDisplayOnProgrammaticFocus"/></summary>
+        public static TView PreventKeyboardDisplayOnProgrammaticFocus<TView>(this TView view, bool value) where TView : TextBox { view.UI.PreventKeyboardDisplayOnProgrammaticFocus = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TextBox.ImeOptions"/></summary>
+        public static TView ImeOptions<TView>(this TView view, Android.Views.InputMethods.ImeAction value) where TView : TextBox { view.UI.ImeOptions = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TextBox.SelectionStart"/></summary>
+        public static TView SelectionStart<TView>(this TView view, int value) where TView : TextBox { view.UI.SelectionStart = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TextBox.SelectionLength"/></summary>
+        public static TView SelectionLength<TView>(this TView view, int value) where TView : TextBox { view.UI.SelectionLength = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.Text"/></summary>
         public static TView Text<TView>(this TView view, string value) where TView : TextBox { view.UI.Text = value; return view; }
@@ -22604,21 +23400,6 @@ namespace CSharpMarkup.WinUI // TextBox
         /// <summary>Set <see cref="Xaml.Controls.TextBox.SelectedText"/></summary>
         public static TView SelectedText<TView>(this TView view, string value) where TView : TextBox { view.UI.SelectedText = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.TextBox.ShouldForceDisableSpellCheck"/></summary>
-        public static TView ShouldForceDisableSpellCheck<TView>(this TView view, bool value) where TView : TextBox { view.UI.ShouldForceDisableSpellCheck = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.TextBox.PreventKeyboardDisplayOnProgrammaticFocus"/></summary>
-        public static TView PreventKeyboardDisplayOnProgrammaticFocus<TView>(this TView view, bool value) where TView : TextBox { view.UI.PreventKeyboardDisplayOnProgrammaticFocus = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.TextBox.ImeOptions"/></summary>
-        public static TView ImeOptions<TView>(this TView view, Android.Views.InputMethods.ImeAction value) where TView : TextBox { view.UI.ImeOptions = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.TextBox.SelectionStart"/></summary>
-        public static TView SelectionStart<TView>(this TView view, int value) where TView : TextBox { view.UI.SelectionStart = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.TextBox.SelectionLength"/></summary>
-        public static TView SelectionLength<TView>(this TView view, int value) where TView : TextBox { view.UI.SelectionLength = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.CanPasteClipboardContent"/></summary>
         public static DependencyProperty<TTarget, bool> CanPasteClipboardContent<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.CanPasteClipboardContentProperty);
@@ -22659,17 +23440,13 @@ namespace CSharpMarkup.WinUI // TextBox
         public static DependencyProperty<TTarget, Xaml.TextReadingOrder> TextReadingOrder<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, Xaml.TextReadingOrder>.Get(target, Xaml.Controls.TextBox.TextReadingOrderProperty);
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.ErrorTemplate"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DataTemplate> ErrorTemplate<TTarget>(this TTarget target) where TTarget : TextBox
-        => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.TextBox.ErrorTemplateProperty);
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.PreventKeyboardDisplayOnProgrammaticFocus"/></summary>
+        public static DependencyProperty<TTarget, bool> PreventKeyboardDisplayOnProgrammaticFocus<TTarget>(this TTarget target) where TTarget : TextBox
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.PreventKeyboardDisplayOnProgrammaticFocusProperty);
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.InputValidationKind"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> InputValidationKind<TTarget>(this TTarget target) where TTarget : TextBox
-        => DependencyProperty<TTarget, Xaml.Controls.InputValidationKind>.Get(target, Xaml.Controls.TextBox.InputValidationKindProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.InputValidationMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> InputValidationMode<TTarget>(this TTarget target) where TTarget : TextBox
-        => DependencyProperty<TTarget, Xaml.Controls.InputValidationMode>.Get(target, Xaml.Controls.TextBox.InputValidationModeProperty);
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.ImeOptions"/></summary>
+        public static DependencyProperty<TTarget, Android.Views.InputMethods.ImeAction> ImeOptions<TTarget>(this TTarget target) where TTarget : TextBox
+        => DependencyProperty<TTarget, Android.Views.InputMethods.ImeAction>.Get(target, Xaml.Controls.TextBox.ImeOptionsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.Text"/></summary>
         public static DependencyProperty<TTarget, string> Text<TTarget>(this TTarget target) where TTarget : TextBox
@@ -22734,14 +23511,6 @@ namespace CSharpMarkup.WinUI // TextBox
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.TextAlignment"/></summary>
         public static DependencyProperty<TTarget, Xaml.TextAlignment> TextAlignment<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, Xaml.TextAlignment>.Get(target, Xaml.Controls.TextBox.TextAlignmentProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.PreventKeyboardDisplayOnProgrammaticFocus"/></summary>
-        public static DependencyProperty<TTarget, bool> PreventKeyboardDisplayOnProgrammaticFocus<TTarget>(this TTarget target) where TTarget : TextBox
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.PreventKeyboardDisplayOnProgrammaticFocusProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.ImeOptions"/></summary>
-        public static DependencyProperty<TTarget, Android.Views.InputMethods.ImeAction> ImeOptions<TTarget>(this TTarget target) where TTarget : TextBox
-        => DependencyProperty<TTarget, Android.Views.InputMethods.ImeAction>.Get(target, Xaml.Controls.TextBox.ImeOptionsProperty);
     }
 }
 
@@ -24905,12 +25674,14 @@ namespace CSharpMarkup.WinUI // WebView2
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.WebView2"/></summary>
-        public static WebView2 WebView2(Uri Source = default, bool? CanGoForward = default, bool? CanGoBack = default)
+        public static WebView2 WebView2(Windows.UI.Color? DefaultBackgroundColor = default, bool? CanGoBack = default, bool? CanGoForward = default, Uri Source = default, bool? IsScrollEnabled = default)
         {
             var ui = new Xaml.Controls.WebView2();
-            if (Source is not null) ui.Source = Source;
-            if (CanGoForward is not null) ui.CanGoForward = CanGoForward.Value;
+            if (DefaultBackgroundColor is not null) ui.DefaultBackgroundColor = DefaultBackgroundColor.Value;
             if (CanGoBack is not null) ui.CanGoBack = CanGoBack.Value;
+            if (CanGoForward is not null) ui.CanGoForward = CanGoForward.Value;
+            if (Source is not null) ui.Source = Source;
+            if (IsScrollEnabled is not null) ui.IsScrollEnabled = IsScrollEnabled.Value;
             return CSharpMarkup.WinUI.WebView2.StartChain(ui);
         }
 
@@ -24929,7 +25700,7 @@ namespace CSharpMarkup.WinUI // WebView2
         }
     }
 
-    public partial class WebView2 : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.WebView2>
+    public partial class WebView2 : Control, IUI<Microsoft.UI.Xaml.Controls.WebView2>
     {
         static WebView2 instance;
 
@@ -24961,14 +25732,24 @@ namespace CSharpMarkup.WinUI // WebView2
 
     public static partial class WebView2Extensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.WebView2.Source"/></summary>
-        public static TView Source<TView>(this TView view, Uri value) where TView : WebView2 { view.UI.Source = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.WebView2.DefaultBackgroundColor"/></summary>
+        public static TView DefaultBackgroundColor<TView>(this TView view, Windows.UI.Color value) where TView : WebView2 { view.UI.DefaultBackgroundColor = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.WebView2.CanGoBack"/></summary>
+        public static TView CanGoBack<TView>(this TView view, bool value) where TView : WebView2 { view.UI.CanGoBack = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.WebView2.CanGoForward"/></summary>
         public static TView CanGoForward<TView>(this TView view, bool value) where TView : WebView2 { view.UI.CanGoForward = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.WebView2.CanGoBack"/></summary>
-        public static TView CanGoBack<TView>(this TView view, bool value) where TView : WebView2 { view.UI.CanGoBack = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.WebView2.Source"/></summary>
+        public static TView Source<TView>(this TView view, Uri value) where TView : WebView2 { view.UI.Source = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.WebView2.IsScrollEnabled"/></summary>
+        public static TView IsScrollEnabled<TView>(this TView view, bool value) where TView : WebView2 { view.UI.IsScrollEnabled = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.WebView2.DefaultBackgroundColor"/></summary>
+        public static DependencyProperty<TTarget, Windows.UI.Color> DefaultBackgroundColor<TTarget>(this TTarget target) where TTarget : WebView2
+        => DependencyProperty<TTarget, Windows.UI.Color>.Get(target, Xaml.Controls.WebView2.DefaultBackgroundColorProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.WebView2.CanGoBack"/></summary>
         public static DependencyProperty<TTarget, bool> CanGoBack<TTarget>(this TTarget target) where TTarget : WebView2
@@ -24981,6 +25762,10 @@ namespace CSharpMarkup.WinUI // WebView2
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.WebView2.Source"/></summary>
         public static DependencyProperty<TTarget, Uri> Source<TTarget>(this TTarget target) where TTarget : WebView2
         => DependencyProperty<TTarget, Uri>.Get(target, Xaml.Controls.WebView2.SourceProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.WebView2.IsScrollEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsScrollEnabled<TTarget>(this TTarget target) where TTarget : WebView2
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.WebView2.IsScrollEnabledProperty);
     }
 }
 
@@ -25098,674 +25883,144 @@ namespace CSharpMarkup.WinUI // WrapGrid
     }
 }
 
-namespace CSharpMarkup.WinUI // AnimatedIcon
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.AnimatedIcon"/></summary>
-        public static AnimatedIcon AnimatedIcon(Xaml.Controls.IconSource FallbackIconSource = default, bool? MirroredWhenRightToLeft = default, Xaml.Controls.IAnimatedVisualSource2 Source = default)
-        {
-            var ui = new Xaml.Controls.AnimatedIcon();
-            if (FallbackIconSource is not null) ui.FallbackIconSource = FallbackIconSource;
-            if (MirroredWhenRightToLeft is not null) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
-            if (Source is not null) ui.Source = Source;
-            return CSharpMarkup.WinUI.AnimatedIcon.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.AnimatedIcon"/></summary>
-        public static AnimatedIcon AnimatedIcon()
-        {
-            var ui = new Xaml.Controls.AnimatedIcon();
-            return CSharpMarkup.WinUI.AnimatedIcon.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.AnimatedIcon"/></summary>
-        public static AnimatedIcon AnimatedIcon(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.AnimatedIcon(javaReference, transfer);
-            return CSharpMarkup.WinUI.AnimatedIcon.StartChain(ui);
-        }
-    }
-
-    public partial class AnimatedIcon : IconElement, IUI<Microsoft.UI.Xaml.Controls.AnimatedIcon>
-    {
-        static AnimatedIcon instance;
-
-        internal static AnimatedIcon StartChain(Xaml.Controls.AnimatedIcon ui)
-        {
-            if (instance == null) instance = new AnimatedIcon();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.AnimatedIcon ui;
-
-        public new Xaml.Controls.AnimatedIcon UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.UIElement(AnimatedIcon view) => view?.UI;
-
-        public static implicit operator Xaml.Controls.AnimatedIcon(AnimatedIcon view) => view?.UI;
-
-        public static implicit operator AnimatedIcon(Xaml.Controls.AnimatedIcon ui) => AnimatedIcon.StartChain(ui);
-
-        public AnimatedIcon Invoke(Action<Xaml.Controls.AnimatedIcon> action) { action?.Invoke(UI); return this; }
-
-        protected AnimatedIcon() { }
-    }
-
-    public static partial class AnimatedIconExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.AnimatedIcon.FallbackIconSource"/></summary>
-        public static TView FallbackIconSource<TView>(this TView view, Xaml.Controls.IconSource value) where TView : AnimatedIcon { view.UI.FallbackIconSource = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.AnimatedIcon.MirroredWhenRightToLeft"/></summary>
-        public static TView MirroredWhenRightToLeft<TView>(this TView view, bool value) where TView : AnimatedIcon { view.UI.MirroredWhenRightToLeft = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.AnimatedIcon.Source"/></summary>
-        public static TView Source<TView>(this TView view, Xaml.Controls.IAnimatedVisualSource2 value) where TView : AnimatedIcon { view.UI.Source = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIcon.FallbackIconSource"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.IconSource> FallbackIconSource<TTarget>(this TTarget target) where TTarget : AnimatedIcon
-        => DependencyProperty<TTarget, Xaml.Controls.IconSource>.Get(target, Xaml.Controls.AnimatedIcon.FallbackIconSourceProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIcon.MirroredWhenRightToLeft"/></summary>
-        public static DependencyProperty<TTarget, bool> MirroredWhenRightToLeft<TTarget>(this TTarget target) where TTarget : AnimatedIcon
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.AnimatedIcon.MirroredWhenRightToLeftProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIcon.Source"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.IAnimatedVisualSource2> Source<TTarget>(this TTarget target) where TTarget : AnimatedIcon
-        => DependencyProperty<TTarget, Xaml.Controls.IAnimatedVisualSource2>.Get(target, Xaml.Controls.AnimatedIcon.SourceProperty);
-
-        /// <summary>Set <see cref="Xaml.Controls.AnimatedIcon.State"/></summary>
-        public static TTarget AnimatedIcon_State<TTarget>(this TTarget target, string value) where TTarget : DependencyObject
-        { Xaml.Controls.AnimatedIcon.SetState(target.UI, value); return target; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIcon.State"/></summary>
-        public static DependencyProperty<TTarget, string> AnimatedIcon_State<TTarget>(this TTarget target) where TTarget : DependencyObject
-        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.AnimatedIcon.StateProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // BreadcrumbBar
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBar"/></summary>
-        public static BreadcrumbBar BreadcrumbBar(object? ItemsSource = default, object? ItemTemplate = default)
-        {
-            var ui = new Xaml.Controls.BreadcrumbBar();
-            if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
-            if (ItemTemplate is not null) ui.ItemTemplate = ItemTemplate;
-            return CSharpMarkup.WinUI.BreadcrumbBar.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBar"/></summary>
-        public static BreadcrumbBar BreadcrumbBar()
-        {
-            var ui = new Xaml.Controls.BreadcrumbBar();
-            return CSharpMarkup.WinUI.BreadcrumbBar.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBar"/></summary>
-        public static BreadcrumbBar BreadcrumbBar(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.BreadcrumbBar(javaReference, transfer);
-            return CSharpMarkup.WinUI.BreadcrumbBar.StartChain(ui);
-        }
-    }
-
-    public partial class BreadcrumbBar : Control, IUI<Microsoft.UI.Xaml.Controls.BreadcrumbBar>
-    {
-        static BreadcrumbBar instance;
-
-        internal static BreadcrumbBar StartChain(Xaml.Controls.BreadcrumbBar ui)
-        {
-            if (instance == null) instance = new BreadcrumbBar();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.BreadcrumbBar ui;
-
-        public new Xaml.Controls.BreadcrumbBar UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.UIElement(BreadcrumbBar view) => view?.UI;
-
-        public static implicit operator Xaml.Controls.BreadcrumbBar(BreadcrumbBar view) => view?.UI;
-
-        public static implicit operator BreadcrumbBar(Xaml.Controls.BreadcrumbBar ui) => BreadcrumbBar.StartChain(ui);
-
-        public BreadcrumbBar Invoke(Action<Xaml.Controls.BreadcrumbBar> action) { action?.Invoke(UI); return this; }
-
-        protected BreadcrumbBar() { }
-    }
-
-    public static partial class BreadcrumbBarExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.BreadcrumbBar.ItemsSource"/></summary>
-        public static TView ItemsSource<TView>(this TView view, object? value) where TView : BreadcrumbBar { view.UI.ItemsSource = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.BreadcrumbBar.ItemTemplate"/></summary>
-        public static TView ItemTemplate<TView>(this TView view, object? value) where TView : BreadcrumbBar { view.UI.ItemTemplate = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.BreadcrumbBar.ItemsSource"/></summary>
-        public static DependencyProperty<TTarget, object?> ItemsSource<TTarget>(this TTarget target) where TTarget : BreadcrumbBar
-        => DependencyProperty<TTarget, object?>.Get(target, Xaml.Controls.BreadcrumbBar.ItemsSourceProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.BreadcrumbBar.ItemTemplate"/></summary>
-        public static DependencyProperty<TTarget, object?> ItemTemplate<TTarget>(this TTarget target) where TTarget : BreadcrumbBar
-        => DependencyProperty<TTarget, object?>.Get(target, Xaml.Controls.BreadcrumbBar.ItemTemplateProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // BreadcrumbBarItem
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBarItem"/></summary>
-        public static BreadcrumbBarItem BreadcrumbBarItem(UIObject Content)
-        {
-            var ui = new Xaml.Controls.BreadcrumbBarItem();
-            if (Content != null) ui.Content = Content.UI;
-            return CSharpMarkup.WinUI.BreadcrumbBarItem.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBarItem"/></summary>
-        public static BreadcrumbBarItem BreadcrumbBarItem()
-        {
-            var ui = new Xaml.Controls.BreadcrumbBarItem();
-            return CSharpMarkup.WinUI.BreadcrumbBarItem.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.BreadcrumbBarItem"/></summary>
-        public static BreadcrumbBarItem BreadcrumbBarItem(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.BreadcrumbBarItem(javaReference, transfer);
-            return CSharpMarkup.WinUI.BreadcrumbBarItem.StartChain(ui);
-        }
-    }
-
-    public partial class BreadcrumbBarItem : ContentControl, IUI<Microsoft.UI.Xaml.Controls.BreadcrumbBarItem>
-    {
-        static BreadcrumbBarItem instance;
-
-        internal static BreadcrumbBarItem StartChain(Xaml.Controls.BreadcrumbBarItem ui)
-        {
-            if (instance == null) instance = new BreadcrumbBarItem();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.BreadcrumbBarItem ui;
-
-        public new Xaml.Controls.BreadcrumbBarItem UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.UIElement(BreadcrumbBarItem view) => view?.UI;
-
-        public static implicit operator Xaml.Controls.BreadcrumbBarItem(BreadcrumbBarItem view) => view?.UI;
-
-        public static implicit operator BreadcrumbBarItem(Xaml.Controls.BreadcrumbBarItem ui) => BreadcrumbBarItem.StartChain(ui);
-
-        public BreadcrumbBarItem Invoke(Action<Xaml.Controls.BreadcrumbBarItem> action) { action?.Invoke(UI); return this; }
-
-        protected BreadcrumbBarItem() { }
-    }
-}
-
 // TODO: Name collision with Microsoft.UI.Xaml.Automation.Peers.ExpanderAutomationPeer by Microsoft.UI.Xaml.Controls.ExpanderAutomationPeer in Uno.UI, Version=255.255.255.255, Culture=neutral, PublicKeyToken=null
-namespace CSharpMarkup.WinUI // ExpanderTemplateSettings
+namespace CSharpMarkup.WinUI // LayoutPanel
 {
     public static partial class Helpers
     {
-        /// <summary>Create a <see cref="Xaml.Controls.ExpanderTemplateSettings"/></summary>
-        public static ExpanderTemplateSettings ExpanderTemplateSettings(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
+        /// <summary>Create a <see cref="Xaml.Controls.LayoutPanel"/></summary>
+        public static LayoutPanel LayoutPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
-            var ui = new Xaml.Controls.ExpanderTemplateSettings();
-            if (DataContext is not null) ui.DataContext = DataContext;
-            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
-            return CSharpMarkup.WinUI.ExpanderTemplateSettings.StartChain(ui);
+            var ui = new Xaml.Controls.LayoutPanel();
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
+            return CSharpMarkup.WinUI.LayoutPanel.StartChain(ui);
         }
 
-        /// <summary>Create a <see cref="Xaml.Controls.ExpanderTemplateSettings"/></summary>
-        public static ExpanderTemplateSettings ExpanderTemplateSettings()
+        /// <summary>Create a <see cref="Xaml.Controls.LayoutPanel"/></summary>
+        public static LayoutPanel LayoutPanel()
         {
-            var ui = new Xaml.Controls.ExpanderTemplateSettings();
-            return CSharpMarkup.WinUI.ExpanderTemplateSettings.StartChain(ui);
+            var ui = new Xaml.Controls.LayoutPanel();
+            return CSharpMarkup.WinUI.LayoutPanel.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.LayoutPanel"/></summary>
+        public static LayoutPanel LayoutPanel(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.LayoutPanel(javaReference, transfer);
+            return CSharpMarkup.WinUI.LayoutPanel.StartChain(ui);
         }
     }
 
-    public partial class ExpanderTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.ExpanderTemplateSettings>
+    public partial class LayoutPanel : Panel, IUI<Microsoft.UI.Xaml.Controls.LayoutPanel>
     {
-        static ExpanderTemplateSettings instance;
+        static LayoutPanel instance;
 
-        internal static ExpanderTemplateSettings StartChain(Xaml.Controls.ExpanderTemplateSettings ui)
+        internal static LayoutPanel StartChain(Xaml.Controls.LayoutPanel ui)
         {
-            if (instance == null) instance = new ExpanderTemplateSettings();
+            if (instance == null) instance = new LayoutPanel();
             instance.UI = ui;
             return instance;
         }
 
-        Xaml.Controls.ExpanderTemplateSettings ui;
+        Xaml.Controls.LayoutPanel ui;
 
-        public new Xaml.Controls.ExpanderTemplateSettings UI
+        public new Xaml.Controls.LayoutPanel UI
         {
             get => ui;
             protected set => base.UI = ui = value;
         }
 
-        public static implicit operator Xaml.Controls.ExpanderTemplateSettings(ExpanderTemplateSettings view) => view?.UI;
+        public static implicit operator Xaml.UIElement(LayoutPanel view) => view?.UI;
 
-        public static implicit operator ExpanderTemplateSettings(Xaml.Controls.ExpanderTemplateSettings ui) => ExpanderTemplateSettings.StartChain(ui);
+        public static implicit operator Xaml.Controls.LayoutPanel(LayoutPanel view) => view?.UI;
 
-        public ExpanderTemplateSettings Invoke(Action<Xaml.Controls.ExpanderTemplateSettings> action) { action?.Invoke(UI); return this; }
+        public static implicit operator LayoutPanel(Xaml.Controls.LayoutPanel ui) => LayoutPanel.StartChain(ui);
 
-        protected ExpanderTemplateSettings() { }
+        public LayoutPanel Invoke(Action<Xaml.Controls.LayoutPanel> action) { action?.Invoke(UI); return this; }
+
+        protected LayoutPanel() { }
     }
 
-    public static partial class ExpanderTemplateSettingsExtensions
+    public static partial class LayoutPanelExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.ExpanderTemplateSettings.DataContext"/></summary>
-        public static TView DataContext<TView>(this TView view, object value) where TView : ExpanderTemplateSettings { view.UI.DataContext = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ExpanderTemplateSettings.TemplatedParent"/></summary>
-        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : ExpanderTemplateSettings { view.UI.TemplatedParent = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ExpanderTemplateSettings.ContentHeight"/></summary>
-        public static DependencyProperty<TTarget, double> ContentHeight<TTarget>(this TTarget target) where TTarget : ExpanderTemplateSettings
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ExpanderTemplateSettings.ContentHeightProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ExpanderTemplateSettings.NegativeContentHeight"/></summary>
-        public static DependencyProperty<TTarget, double> NegativeContentHeight<TTarget>(this TTarget target) where TTarget : ExpanderTemplateSettings
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ExpanderTemplateSettings.NegativeContentHeightProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ExpanderTemplateSettings.DataContext"/></summary>
-        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : ExpanderTemplateSettings
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ExpanderTemplateSettings.DataContextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ExpanderTemplateSettings.TemplatedParent"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : ExpanderTemplateSettings
-        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.ExpanderTemplateSettings.TemplatedParentProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // AnimatedIconSource
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.AnimatedIconSource"/></summary>
-        public static AnimatedIconSource AnimatedIconSource(Xaml.Controls.IconSource FallbackIconSource = default, bool? MirroredWhenRightToLeft = default, Xaml.Controls.IAnimatedVisualSource2 Source = default)
-        {
-            var ui = new Xaml.Controls.AnimatedIconSource();
-            if (FallbackIconSource is not null) ui.FallbackIconSource = FallbackIconSource;
-            if (MirroredWhenRightToLeft is not null) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
-            if (Source is not null) ui.Source = Source;
-            return CSharpMarkup.WinUI.AnimatedIconSource.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.AnimatedIconSource"/></summary>
-        public static AnimatedIconSource AnimatedIconSource()
-        {
-            var ui = new Xaml.Controls.AnimatedIconSource();
-            return CSharpMarkup.WinUI.AnimatedIconSource.StartChain(ui);
-        }
-    }
-
-    public partial class AnimatedIconSource : IconSource, IUI<Microsoft.UI.Xaml.Controls.AnimatedIconSource>
-    {
-        static AnimatedIconSource instance;
-
-        internal static AnimatedIconSource StartChain(Xaml.Controls.AnimatedIconSource ui)
-        {
-            if (instance == null) instance = new AnimatedIconSource();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.AnimatedIconSource ui;
-
-        public new Xaml.Controls.AnimatedIconSource UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.AnimatedIconSource(AnimatedIconSource view) => view?.UI;
-
-        public static implicit operator AnimatedIconSource(Xaml.Controls.AnimatedIconSource ui) => AnimatedIconSource.StartChain(ui);
-
-        public AnimatedIconSource Invoke(Action<Xaml.Controls.AnimatedIconSource> action) { action?.Invoke(UI); return this; }
-
-        protected AnimatedIconSource() { }
-    }
-
-    public static partial class AnimatedIconSourceExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.AnimatedIconSource.FallbackIconSource"/></summary>
-        public static TView FallbackIconSource<TView>(this TView view, Xaml.Controls.IconSource value) where TView : AnimatedIconSource { view.UI.FallbackIconSource = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.AnimatedIconSource.MirroredWhenRightToLeft"/></summary>
-        public static TView MirroredWhenRightToLeft<TView>(this TView view, bool value) where TView : AnimatedIconSource { view.UI.MirroredWhenRightToLeft = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.AnimatedIconSource.Source"/></summary>
-        public static TView Source<TView>(this TView view, Xaml.Controls.IAnimatedVisualSource2 value) where TView : AnimatedIconSource { view.UI.Source = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIconSource.FallbackIconSource"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.IconSource> FallbackIconSource<TTarget>(this TTarget target) where TTarget : AnimatedIconSource
-        => DependencyProperty<TTarget, Xaml.Controls.IconSource>.Get(target, Xaml.Controls.AnimatedIconSource.FallbackIconSourceProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIconSource.MirroredWhenRightToLeft"/></summary>
-        public static DependencyProperty<TTarget, bool> MirroredWhenRightToLeft<TTarget>(this TTarget target) where TTarget : AnimatedIconSource
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.AnimatedIconSource.MirroredWhenRightToLeftProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedIconSource.Source"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.IAnimatedVisualSource2> Source<TTarget>(this TTarget target) where TTarget : AnimatedIconSource
-        => DependencyProperty<TTarget, Xaml.Controls.IAnimatedVisualSource2>.Get(target, Xaml.Controls.AnimatedIconSource.SourceProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // ImageIconSource
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.ImageIconSource"/></summary>
-        public static ImageIconSource ImageIconSource(CSharpMarkup.WinUI.to.ImageSource? ImageSource = default)
-        {
-            var ui = new Xaml.Controls.ImageIconSource();
-            if (ImageSource is not null) ui.ImageSource = ImageSource.Value;
-            return CSharpMarkup.WinUI.ImageIconSource.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.ImageIconSource"/></summary>
-        public static ImageIconSource ImageIconSource()
-        {
-            var ui = new Xaml.Controls.ImageIconSource();
-            return CSharpMarkup.WinUI.ImageIconSource.StartChain(ui);
-        }
-    }
-
-    public partial class ImageIconSource : IconSource, IUI<Microsoft.UI.Xaml.Controls.ImageIconSource>
-    {
-        static ImageIconSource instance;
-
-        internal static ImageIconSource StartChain(Xaml.Controls.ImageIconSource ui)
-        {
-            if (instance == null) instance = new ImageIconSource();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.ImageIconSource ui;
-
-        public new Xaml.Controls.ImageIconSource UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.ImageIconSource(ImageIconSource view) => view?.UI;
-
-        public static implicit operator ImageIconSource(Xaml.Controls.ImageIconSource ui) => ImageIconSource.StartChain(ui);
-
-        public ImageIconSource Invoke(Action<Xaml.Controls.ImageIconSource> action) { action?.Invoke(UI); return this; }
-
-        protected ImageIconSource() { }
-    }
-
-    public static partial class ImageIconSourceExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.ImageIconSource.ImageSource"/></summary>
-        public static TView ImageSource<TView>(this TView view, CSharpMarkup.WinUI.to.ImageSource value) where TView : ImageIconSource { view.UI.ImageSource = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ImageIconSource.ImageSource"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.ImageSource> ImageSource<TTarget>(this TTarget target) where TTarget : ImageIconSource
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.ImageSource>.Get(target, Xaml.Controls.ImageIconSource.ImageSourceProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // ImageIcon
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.ImageIcon"/></summary>
-        public static ImageIcon ImageIcon(CSharpMarkup.WinUI.to.ImageSource? Source = default)
-        {
-            var ui = new Xaml.Controls.ImageIcon();
-            if (Source is not null) ui.Source = Source.Value;
-            return CSharpMarkup.WinUI.ImageIcon.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.ImageIcon"/></summary>
-        public static ImageIcon ImageIcon()
-        {
-            var ui = new Xaml.Controls.ImageIcon();
-            return CSharpMarkup.WinUI.ImageIcon.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.ImageIcon"/></summary>
-        public static ImageIcon ImageIcon(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.ImageIcon(javaReference, transfer);
-            return CSharpMarkup.WinUI.ImageIcon.StartChain(ui);
-        }
-    }
-
-    public partial class ImageIcon : IconElement, IUI<Microsoft.UI.Xaml.Controls.ImageIcon>
-    {
-        static ImageIcon instance;
-
-        internal static ImageIcon StartChain(Xaml.Controls.ImageIcon ui)
-        {
-            if (instance == null) instance = new ImageIcon();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.ImageIcon ui;
-
-        public new Xaml.Controls.ImageIcon UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.UIElement(ImageIcon view) => view?.UI;
-
-        public static implicit operator Xaml.Controls.ImageIcon(ImageIcon view) => view?.UI;
-
-        public static implicit operator ImageIcon(Xaml.Controls.ImageIcon ui) => ImageIcon.StartChain(ui);
-
-        public ImageIcon Invoke(Action<Xaml.Controls.ImageIcon> action) { action?.Invoke(UI); return this; }
-
-        protected ImageIcon() { }
-    }
-
-    public static partial class ImageIconExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.ImageIcon.Source"/></summary>
-        public static TView Source<TView>(this TView view, CSharpMarkup.WinUI.to.ImageSource value) where TView : ImageIcon { view.UI.Source = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ImageIcon.Source"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.ImageSource> Source<TTarget>(this TTarget target) where TTarget : ImageIcon
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.ImageSource>.Get(target, Xaml.Controls.ImageIcon.SourceProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // InfoBadge
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.InfoBadge"/></summary>
-        public static InfoBadge InfoBadge(int? Value = default, Xaml.Controls.InfoBadgeTemplateSettings TemplateSettings = default, Xaml.Controls.IconSource IconSource = default)
-        {
-            var ui = new Xaml.Controls.InfoBadge();
-            if (Value is not null) ui.Value = Value.Value;
-            if (TemplateSettings is not null) ui.TemplateSettings = TemplateSettings;
-            if (IconSource is not null) ui.IconSource = IconSource;
-            return CSharpMarkup.WinUI.InfoBadge.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.InfoBadge"/></summary>
-        public static InfoBadge InfoBadge()
-        {
-            var ui = new Xaml.Controls.InfoBadge();
-            return CSharpMarkup.WinUI.InfoBadge.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.InfoBadge"/></summary>
-        public static InfoBadge InfoBadge(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.InfoBadge(javaReference, transfer);
-            return CSharpMarkup.WinUI.InfoBadge.StartChain(ui);
-        }
-    }
-
-    public partial class InfoBadge : Control, IUI<Microsoft.UI.Xaml.Controls.InfoBadge>
-    {
-        static InfoBadge instance;
-
-        internal static InfoBadge StartChain(Xaml.Controls.InfoBadge ui)
-        {
-            if (instance == null) instance = new InfoBadge();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.InfoBadge ui;
-
-        public new Xaml.Controls.InfoBadge UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.UIElement(InfoBadge view) => view?.UI;
-
-        public static implicit operator Xaml.Controls.InfoBadge(InfoBadge view) => view?.UI;
-
-        public static implicit operator InfoBadge(Xaml.Controls.InfoBadge ui) => InfoBadge.StartChain(ui);
-
-        public InfoBadge Invoke(Action<Xaml.Controls.InfoBadge> action) { action?.Invoke(UI); return this; }
-
-        protected InfoBadge() { }
-    }
-
-    public static partial class InfoBadgeExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.InfoBadge.Value"/></summary>
-        public static TView Value<TView>(this TView view, int value) where TView : InfoBadge { view.UI.Value = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.InfoBadge.TemplateSettings"/></summary>
-        public static TView TemplateSettings<TView>(this TView view, Xaml.Controls.InfoBadgeTemplateSettings value) where TView : InfoBadge { view.UI.TemplateSettings = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.InfoBadge.IconSource"/></summary>
-        public static TView IconSource<TView>(this TView view, Xaml.Controls.IconSource value) where TView : InfoBadge { view.UI.IconSource = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadge.Value"/></summary>
-        public static DependencyProperty<TTarget, int> Value<TTarget>(this TTarget target) where TTarget : InfoBadge
-        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.InfoBadge.ValueProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadge.TemplateSettings"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.InfoBadgeTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : InfoBadge
-        => DependencyProperty<TTarget, Xaml.Controls.InfoBadgeTemplateSettings>.Get(target, Xaml.Controls.InfoBadge.TemplateSettingsProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadge.IconSource"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.IconSource> IconSource<TTarget>(this TTarget target) where TTarget : InfoBadge
-        => DependencyProperty<TTarget, Xaml.Controls.IconSource>.Get(target, Xaml.Controls.InfoBadge.IconSourceProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // InfoBadgeTemplateSettings
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.InfoBadgeTemplateSettings"/></summary>
-        public static InfoBadgeTemplateSettings InfoBadgeTemplateSettings(Xaml.Controls.IconElement IconElement = default, CSharpMarkup.WinUI.to.CornerRadius? InfoBadgeCornerRadius = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
-        {
-            var ui = new Xaml.Controls.InfoBadgeTemplateSettings();
-            if (IconElement is not null) ui.IconElement = IconElement;
-            if (InfoBadgeCornerRadius is not null) ui.InfoBadgeCornerRadius = InfoBadgeCornerRadius.Value;
-            if (DataContext is not null) ui.DataContext = DataContext;
-            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
-            return CSharpMarkup.WinUI.InfoBadgeTemplateSettings.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.InfoBadgeTemplateSettings"/></summary>
-        public static InfoBadgeTemplateSettings InfoBadgeTemplateSettings()
-        {
-            var ui = new Xaml.Controls.InfoBadgeTemplateSettings();
-            return CSharpMarkup.WinUI.InfoBadgeTemplateSettings.StartChain(ui);
-        }
-    }
-
-    public partial class InfoBadgeTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.InfoBadgeTemplateSettings>
-    {
-        static InfoBadgeTemplateSettings instance;
-
-        internal static InfoBadgeTemplateSettings StartChain(Xaml.Controls.InfoBadgeTemplateSettings ui)
-        {
-            if (instance == null) instance = new InfoBadgeTemplateSettings();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.InfoBadgeTemplateSettings ui;
-
-        public new Xaml.Controls.InfoBadgeTemplateSettings UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.InfoBadgeTemplateSettings(InfoBadgeTemplateSettings view) => view?.UI;
-
-        public static implicit operator InfoBadgeTemplateSettings(Xaml.Controls.InfoBadgeTemplateSettings ui) => InfoBadgeTemplateSettings.StartChain(ui);
-
-        public InfoBadgeTemplateSettings Invoke(Action<Xaml.Controls.InfoBadgeTemplateSettings> action) { action?.Invoke(UI); return this; }
-
-        protected InfoBadgeTemplateSettings() { }
-    }
-
-    public static partial class InfoBadgeTemplateSettingsExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.InfoBadgeTemplateSettings.IconElement"/></summary>
-        public static TView IconElement<TView>(this TView view, Xaml.Controls.IconElement value) where TView : InfoBadgeTemplateSettings { view.UI.IconElement = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.InfoBadgeTemplateSettings.InfoBadgeCornerRadius"/></summary>
-        public static TView InfoBadgeCornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : InfoBadgeTemplateSettings { view.UI.InfoBadgeCornerRadius = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.InfoBadgeTemplateSettings.DataContext"/></summary>
-        public static TView DataContext<TView>(this TView view, object value) where TView : InfoBadgeTemplateSettings { view.UI.DataContext = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.InfoBadgeTemplateSettings.TemplatedParent"/></summary>
-        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : InfoBadgeTemplateSettings { view.UI.TemplatedParent = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadgeTemplateSettings.IconElement"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.IconElement> IconElement<TTarget>(this TTarget target) where TTarget : InfoBadgeTemplateSettings
-        => DependencyProperty<TTarget, Xaml.Controls.IconElement>.Get(target, Xaml.Controls.InfoBadgeTemplateSettings.IconElementProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadgeTemplateSettings.InfoBadgeCornerRadius"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> InfoBadgeCornerRadius<TTarget>(this TTarget target) where TTarget : InfoBadgeTemplateSettings
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.InfoBadgeTemplateSettings.InfoBadgeCornerRadiusProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadgeTemplateSettings.DataContext"/></summary>
-        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : InfoBadgeTemplateSettings
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.InfoBadgeTemplateSettings.DataContextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.InfoBadgeTemplateSettings.TemplatedParent"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : InfoBadgeTemplateSettings
-        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.InfoBadgeTemplateSettings.TemplatedParentProperty);
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.LayoutState"/></summary>
+        public static TView LayoutState<TView>(this TView view, object value) where TView : LayoutPanel { view.UI.LayoutState = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderBrush"/></summary>
+        public static TView BorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : LayoutPanel { view.UI.BorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderBrush"/></summary>
+        public static TView BorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : LayoutPanel { view.UI.BorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderBrush"/></summary>
+        public static TView BorderBrush<TView>(this TView view, string color) where TView : LayoutPanel { view.UI.BorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
+        public static TView BorderThickness<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : LayoutPanel { view.UI.BorderThickness = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
+        public static TView BorderThickness<TView>(this TView view, double uniform) where TView : LayoutPanel { view.UI.BorderThickness = Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
+        public static TView BorderThickness<TView>(this TView view, double horizontal, double vertical) where TView : LayoutPanel { view.UI.BorderThickness = Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
+        public static TView BorderThickness<TView>(this TView view, double left, double top, double right, double bottom) where TView : LayoutPanel { view.UI.BorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
+        public static TView BorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : LayoutPanel { view.UI.BorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
+        public static TView Padding<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : LayoutPanel { view.UI.Padding = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
+        public static TView Padding<TView>(this TView view, double uniform) where TView : LayoutPanel { view.UI.Padding = Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
+        public static TView Padding<TView>(this TView view, double horizontal, double vertical) where TView : LayoutPanel { view.UI.Padding = Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
+        public static TView Padding<TView>(this TView view, double left, double top, double right, double bottom) where TView : LayoutPanel { view.UI.Padding = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
+        public static TView Paddings<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : LayoutPanel { view.UI.Padding = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.CornerRadius"/></summary>
+        public static TView CornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : LayoutPanel { view.UI.CornerRadius = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.LayoutPanel.Layout"/></summary>
+        public static TView Layout<TView>(this TView view, Xaml.Controls.Layout value) where TView : LayoutPanel { view.UI.Layout = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.LayoutPanel.BorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> BorderBrush<TTarget>(this TTarget target) where TTarget : LayoutPanel
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.LayoutPanel.BorderBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.LayoutPanel.BorderThickness"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> BorderThickness<TTarget>(this TTarget target) where TTarget : LayoutPanel
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.LayoutPanel.BorderThicknessProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.LayoutPanel.Padding"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> Padding<TTarget>(this TTarget target) where TTarget : LayoutPanel
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.LayoutPanel.PaddingProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.LayoutPanel.CornerRadius"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CornerRadius<TTarget>(this TTarget target) where TTarget : LayoutPanel
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.LayoutPanel.CornerRadiusProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.LayoutPanel.Layout"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.Layout> Layout<TTarget>(this TTarget target) where TTarget : LayoutPanel
+        => DependencyProperty<TTarget, Xaml.Controls.Layout>.Get(target, Xaml.Controls.LayoutPanel.LayoutProperty);
     }
 }
 
@@ -25787,214 +26042,298 @@ namespace CSharpMarkup.WinUI // NumberBoxAutomationPeer
     }
 }
 
-namespace CSharpMarkup.WinUI // PipsPager
+namespace CSharpMarkup.WinUI // PagerControl
 {
     public static partial class Helpers
     {
-        /// <summary>Create a <see cref="Xaml.Controls.PipsPager"/></summary>
-        public static PipsPager PipsPager(int? MaxVisiblePips = default, Xaml.Style NextButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? NextButtonVisibility = default, Xaml.Style NormalPipStyle = default, int? NumberOfPages = default, Xaml.Controls.Orientation? Orientation = default, Xaml.Style PreviousButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? PreviousButtonVisibility = default, int? SelectedPageIndex = default, Xaml.Style SelectedPipStyle = default)
+        /// <summary>Create a <see cref="Xaml.Controls.PagerControl"/></summary>
+        public static PagerControl PagerControl(bool? ButtonPanelAlwaysShowFirstLastPageIndex = default, Xaml.Controls.PagerControlDisplayMode? DisplayMode = default, ICommand FirstButtonCommand = default, Xaml.Style FirstButtonStyle = default, Xaml.Controls.PagerControlButtonVisibility? FirstButtonVisibility = default, ICommand LastButtonCommand = default, Xaml.Style LastButtonStyle = default, Xaml.Controls.PagerControlButtonVisibility? LastButtonVisibility = default, ICommand NextButtonCommand = default, Xaml.Style NextButtonStyle = default, Xaml.Controls.PagerControlButtonVisibility? NextButtonVisibility = default, int? NumberOfPages = default, string PrefixText = default, ICommand PreviousButtonCommand = default, Xaml.Style PreviousButtonStyle = default, Xaml.Controls.PagerControlButtonVisibility? PreviousButtonVisibility = default, int? SelectedPageIndex = default, string SuffixText = default, Xaml.Controls.PagerControlTemplateSettings TemplateSettings = default)
         {
-            var ui = new Xaml.Controls.PipsPager();
-            if (MaxVisiblePips is not null) ui.MaxVisiblePips = MaxVisiblePips.Value;
+            var ui = new Xaml.Controls.PagerControl();
+            if (ButtonPanelAlwaysShowFirstLastPageIndex is not null) ui.ButtonPanelAlwaysShowFirstLastPageIndex = ButtonPanelAlwaysShowFirstLastPageIndex.Value;
+            if (DisplayMode is not null) ui.DisplayMode = DisplayMode.Value;
+            if (FirstButtonCommand is not null) ui.FirstButtonCommand = FirstButtonCommand;
+            if (FirstButtonStyle is not null) ui.FirstButtonStyle = FirstButtonStyle;
+            if (FirstButtonVisibility is not null) ui.FirstButtonVisibility = FirstButtonVisibility.Value;
+            if (LastButtonCommand is not null) ui.LastButtonCommand = LastButtonCommand;
+            if (LastButtonStyle is not null) ui.LastButtonStyle = LastButtonStyle;
+            if (LastButtonVisibility is not null) ui.LastButtonVisibility = LastButtonVisibility.Value;
+            if (NextButtonCommand is not null) ui.NextButtonCommand = NextButtonCommand;
             if (NextButtonStyle is not null) ui.NextButtonStyle = NextButtonStyle;
             if (NextButtonVisibility is not null) ui.NextButtonVisibility = NextButtonVisibility.Value;
-            if (NormalPipStyle is not null) ui.NormalPipStyle = NormalPipStyle;
             if (NumberOfPages is not null) ui.NumberOfPages = NumberOfPages.Value;
-            if (Orientation is not null) ui.Orientation = Orientation.Value;
+            if (PrefixText is not null) ui.PrefixText = PrefixText;
+            if (PreviousButtonCommand is not null) ui.PreviousButtonCommand = PreviousButtonCommand;
             if (PreviousButtonStyle is not null) ui.PreviousButtonStyle = PreviousButtonStyle;
             if (PreviousButtonVisibility is not null) ui.PreviousButtonVisibility = PreviousButtonVisibility.Value;
             if (SelectedPageIndex is not null) ui.SelectedPageIndex = SelectedPageIndex.Value;
-            if (SelectedPipStyle is not null) ui.SelectedPipStyle = SelectedPipStyle;
-            return CSharpMarkup.WinUI.PipsPager.StartChain(ui);
+            if (SuffixText is not null) ui.SuffixText = SuffixText;
+            if (TemplateSettings is not null) ui.TemplateSettings = TemplateSettings;
+            return CSharpMarkup.WinUI.PagerControl.StartChain(ui);
         }
 
-        /// <summary>Create a <see cref="Xaml.Controls.PipsPager"/></summary>
-        public static PipsPager PipsPager()
+        /// <summary>Create a <see cref="Xaml.Controls.PagerControl"/></summary>
+        public static PagerControl PagerControl()
         {
-            var ui = new Xaml.Controls.PipsPager();
-            return CSharpMarkup.WinUI.PipsPager.StartChain(ui);
+            var ui = new Xaml.Controls.PagerControl();
+            return CSharpMarkup.WinUI.PagerControl.StartChain(ui);
         }
 
-        /// <summary>Create a <see cref="Xaml.Controls.PipsPager"/></summary>
-        public static PipsPager PipsPager(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        /// <summary>Create a <see cref="Xaml.Controls.PagerControl"/></summary>
+        public static PagerControl PagerControl(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new Xaml.Controls.PipsPager(javaReference, transfer);
-            return CSharpMarkup.WinUI.PipsPager.StartChain(ui);
+            var ui = new Xaml.Controls.PagerControl(javaReference, transfer);
+            return CSharpMarkup.WinUI.PagerControl.StartChain(ui);
         }
     }
 
-    public partial class PipsPager : Control, IUI<Microsoft.UI.Xaml.Controls.PipsPager>
+    public partial class PagerControl : Control, IUI<Microsoft.UI.Xaml.Controls.PagerControl>
     {
-        static PipsPager instance;
+        static PagerControl instance;
 
-        internal static PipsPager StartChain(Xaml.Controls.PipsPager ui)
+        internal static PagerControl StartChain(Xaml.Controls.PagerControl ui)
         {
-            if (instance == null) instance = new PipsPager();
+            if (instance == null) instance = new PagerControl();
             instance.UI = ui;
             return instance;
         }
 
-        Xaml.Controls.PipsPager ui;
+        Xaml.Controls.PagerControl ui;
 
-        public new Xaml.Controls.PipsPager UI
+        public new Xaml.Controls.PagerControl UI
         {
             get => ui;
             protected set => base.UI = ui = value;
         }
 
-        public static implicit operator Xaml.UIElement(PipsPager view) => view?.UI;
+        public static implicit operator Xaml.UIElement(PagerControl view) => view?.UI;
 
-        public static implicit operator Xaml.Controls.PipsPager(PipsPager view) => view?.UI;
+        public static implicit operator Xaml.Controls.PagerControl(PagerControl view) => view?.UI;
 
-        public static implicit operator PipsPager(Xaml.Controls.PipsPager ui) => PipsPager.StartChain(ui);
+        public static implicit operator PagerControl(Xaml.Controls.PagerControl ui) => PagerControl.StartChain(ui);
 
-        public PipsPager Invoke(Action<Xaml.Controls.PipsPager> action) { action?.Invoke(UI); return this; }
+        public PagerControl Invoke(Action<Xaml.Controls.PagerControl> action) { action?.Invoke(UI); return this; }
 
-        protected PipsPager() { }
+        protected PagerControl() { }
     }
 
-    public static partial class PipsPagerExtensions
+    public static partial class PagerControlExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.PipsPager.MaxVisiblePips"/></summary>
-        public static TView MaxVisiblePips<TView>(this TView view, int value) where TView : PipsPager { view.UI.MaxVisiblePips = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.ButtonPanelAlwaysShowFirstLastPageIndex"/></summary>
+        public static TView ButtonPanelAlwaysShowFirstLastPageIndex<TView>(this TView view, bool value) where TView : PagerControl { view.UI.ButtonPanelAlwaysShowFirstLastPageIndex = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.PipsPager.NextButtonStyle"/></summary>
-        public static TView NextButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PipsPager { view.UI.NextButtonStyle = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.DisplayMode"/></summary>
+        public static TView DisplayMode<TView>(this TView view, Xaml.Controls.PagerControlDisplayMode value) where TView : PagerControl { view.UI.DisplayMode = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.PipsPager.NextButtonVisibility"/></summary>
-        public static TView NextButtonVisibility<TView>(this TView view, Xaml.Controls.PipsPagerButtonVisibility value) where TView : PipsPager { view.UI.NextButtonVisibility = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.FirstButtonCommand"/></summary>
+        public static TView FirstButtonCommand<TView>(this TView view, ICommand value) where TView : PagerControl { view.UI.FirstButtonCommand = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.PipsPager.NormalPipStyle"/></summary>
-        public static TView NormalPipStyle<TView>(this TView view, Xaml.Style value) where TView : PipsPager { view.UI.NormalPipStyle = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.FirstButtonStyle"/></summary>
+        public static TView FirstButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PagerControl { view.UI.FirstButtonStyle = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.PipsPager.NumberOfPages"/></summary>
-        public static TView NumberOfPages<TView>(this TView view, int value) where TView : PipsPager { view.UI.NumberOfPages = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.FirstButtonVisibility"/></summary>
+        public static TView FirstButtonVisibility<TView>(this TView view, Xaml.Controls.PagerControlButtonVisibility value) where TView : PagerControl { view.UI.FirstButtonVisibility = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.PipsPager.Orientation"/></summary>
-        public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : PipsPager { view.UI.Orientation = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.LastButtonCommand"/></summary>
+        public static TView LastButtonCommand<TView>(this TView view, ICommand value) where TView : PagerControl { view.UI.LastButtonCommand = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.PipsPager.PreviousButtonStyle"/></summary>
-        public static TView PreviousButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PipsPager { view.UI.PreviousButtonStyle = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.LastButtonStyle"/></summary>
+        public static TView LastButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PagerControl { view.UI.LastButtonStyle = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.PipsPager.PreviousButtonVisibility"/></summary>
-        public static TView PreviousButtonVisibility<TView>(this TView view, Xaml.Controls.PipsPagerButtonVisibility value) where TView : PipsPager { view.UI.PreviousButtonVisibility = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.LastButtonVisibility"/></summary>
+        public static TView LastButtonVisibility<TView>(this TView view, Xaml.Controls.PagerControlButtonVisibility value) where TView : PagerControl { view.UI.LastButtonVisibility = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.PipsPager.SelectedPageIndex"/></summary>
-        public static TView SelectedPageIndex<TView>(this TView view, int value) where TView : PipsPager { view.UI.SelectedPageIndex = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.NextButtonCommand"/></summary>
+        public static TView NextButtonCommand<TView>(this TView view, ICommand value) where TView : PagerControl { view.UI.NextButtonCommand = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.PipsPager.SelectedPipStyle"/></summary>
-        public static TView SelectedPipStyle<TView>(this TView view, Xaml.Style value) where TView : PipsPager { view.UI.SelectedPipStyle = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.NextButtonStyle"/></summary>
+        public static TView NextButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PagerControl { view.UI.NextButtonStyle = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.MaxVisiblePips"/></summary>
-        public static DependencyProperty<TTarget, int> MaxVisiblePips<TTarget>(this TTarget target) where TTarget : PipsPager
-        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PipsPager.MaxVisiblePipsProperty);
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.NextButtonVisibility"/></summary>
+        public static TView NextButtonVisibility<TView>(this TView view, Xaml.Controls.PagerControlButtonVisibility value) where TView : PagerControl { view.UI.NextButtonVisibility = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.NextButtonStyle"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Style> NextButtonStyle<TTarget>(this TTarget target) where TTarget : PipsPager
-        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PipsPager.NextButtonStyleProperty);
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.NumberOfPages"/></summary>
+        public static TView NumberOfPages<TView>(this TView view, int value) where TView : PagerControl { view.UI.NumberOfPages = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.NextButtonVisibility"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.PipsPagerButtonVisibility> NextButtonVisibility<TTarget>(this TTarget target) where TTarget : PipsPager
-        => DependencyProperty<TTarget, Xaml.Controls.PipsPagerButtonVisibility>.Get(target, Xaml.Controls.PipsPager.NextButtonVisibilityProperty);
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.PrefixText"/></summary>
+        public static TView PrefixText<TView>(this TView view, string value) where TView : PagerControl { view.UI.PrefixText = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.NormalPipStyle"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Style> NormalPipStyle<TTarget>(this TTarget target) where TTarget : PipsPager
-        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PipsPager.NormalPipStyleProperty);
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.PreviousButtonCommand"/></summary>
+        public static TView PreviousButtonCommand<TView>(this TView view, ICommand value) where TView : PagerControl { view.UI.PreviousButtonCommand = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.NumberOfPages"/></summary>
-        public static DependencyProperty<TTarget, int> NumberOfPages<TTarget>(this TTarget target) where TTarget : PipsPager
-        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PipsPager.NumberOfPagesProperty);
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.PreviousButtonStyle"/></summary>
+        public static TView PreviousButtonStyle<TView>(this TView view, Xaml.Style value) where TView : PagerControl { view.UI.PreviousButtonStyle = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.Orientation"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : PipsPager
-        => DependencyProperty<TTarget, Xaml.Controls.Orientation>.Get(target, Xaml.Controls.PipsPager.OrientationProperty);
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.PreviousButtonVisibility"/></summary>
+        public static TView PreviousButtonVisibility<TView>(this TView view, Xaml.Controls.PagerControlButtonVisibility value) where TView : PagerControl { view.UI.PreviousButtonVisibility = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.PreviousButtonStyle"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Style> PreviousButtonStyle<TTarget>(this TTarget target) where TTarget : PipsPager
-        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PipsPager.PreviousButtonStyleProperty);
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.SelectedPageIndex"/></summary>
+        public static TView SelectedPageIndex<TView>(this TView view, int value) where TView : PagerControl { view.UI.SelectedPageIndex = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.PreviousButtonVisibility"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.PipsPagerButtonVisibility> PreviousButtonVisibility<TTarget>(this TTarget target) where TTarget : PipsPager
-        => DependencyProperty<TTarget, Xaml.Controls.PipsPagerButtonVisibility>.Get(target, Xaml.Controls.PipsPager.PreviousButtonVisibilityProperty);
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.SuffixText"/></summary>
+        public static TView SuffixText<TView>(this TView view, string value) where TView : PagerControl { view.UI.SuffixText = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.SelectedPageIndex"/></summary>
-        public static DependencyProperty<TTarget, int> SelectedPageIndex<TTarget>(this TTarget target) where TTarget : PipsPager
-        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PipsPager.SelectedPageIndexProperty);
+        /// <summary>Set <see cref="Xaml.Controls.PagerControl.TemplateSettings"/></summary>
+        public static TView TemplateSettings<TView>(this TView view, Xaml.Controls.PagerControlTemplateSettings value) where TView : PagerControl { view.UI.TemplateSettings = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.SelectedPipStyle"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Style> SelectedPipStyle<TTarget>(this TTarget target) where TTarget : PipsPager
-        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PipsPager.SelectedPipStyleProperty);
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.ButtonPanelAlwaysShowFirstLastPageIndex"/></summary>
+        public static DependencyProperty<TTarget, bool> ButtonPanelAlwaysShowFirstLastPageIndex<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.PagerControl.ButtonPanelAlwaysShowFirstLastPageIndexProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.DisplayMode"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlDisplayMode> DisplayMode<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, Xaml.Controls.PagerControlDisplayMode>.Get(target, Xaml.Controls.PagerControl.DisplayModeProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.FirstButtonCommand"/></summary>
+        public static DependencyProperty<TTarget, ICommand> FirstButtonCommand<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, ICommand>.Get(target, Xaml.Controls.PagerControl.FirstButtonCommandProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.FirstButtonStyle"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Style> FirstButtonStyle<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PagerControl.FirstButtonStyleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.FirstButtonVisibility"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> FirstButtonVisibility<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility>.Get(target, Xaml.Controls.PagerControl.FirstButtonVisibilityProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.LastButtonCommand"/></summary>
+        public static DependencyProperty<TTarget, ICommand> LastButtonCommand<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, ICommand>.Get(target, Xaml.Controls.PagerControl.LastButtonCommandProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.LastButtonStyle"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Style> LastButtonStyle<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PagerControl.LastButtonStyleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.LastButtonVisibility"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> LastButtonVisibility<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility>.Get(target, Xaml.Controls.PagerControl.LastButtonVisibilityProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.NextButtonCommand"/></summary>
+        public static DependencyProperty<TTarget, ICommand> NextButtonCommand<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, ICommand>.Get(target, Xaml.Controls.PagerControl.NextButtonCommandProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.NextButtonStyle"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Style> NextButtonStyle<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PagerControl.NextButtonStyleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.NextButtonVisibility"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> NextButtonVisibility<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility>.Get(target, Xaml.Controls.PagerControl.NextButtonVisibilityProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.NumberOfPages"/></summary>
+        public static DependencyProperty<TTarget, int> NumberOfPages<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PagerControl.NumberOfPagesProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.PrefixText"/></summary>
+        public static DependencyProperty<TTarget, string> PrefixText<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.PagerControl.PrefixTextProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.PreviousButtonCommand"/></summary>
+        public static DependencyProperty<TTarget, ICommand> PreviousButtonCommand<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, ICommand>.Get(target, Xaml.Controls.PagerControl.PreviousButtonCommandProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.PreviousButtonStyle"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Style> PreviousButtonStyle<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PagerControl.PreviousButtonStyleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.PreviousButtonVisibility"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> PreviousButtonVisibility<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility>.Get(target, Xaml.Controls.PagerControl.PreviousButtonVisibilityProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.SelectedPageIndex"/></summary>
+        public static DependencyProperty<TTarget, int> SelectedPageIndex<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PagerControl.SelectedPageIndexProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.SuffixText"/></summary>
+        public static DependencyProperty<TTarget, string> SuffixText<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.PagerControl.SuffixTextProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControl.TemplateSettings"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.PagerControlTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : PagerControl
+        => DependencyProperty<TTarget, Xaml.Controls.PagerControlTemplateSettings>.Get(target, Xaml.Controls.PagerControl.TemplateSettingsProperty);
     }
 }
 
-namespace CSharpMarkup.WinUI // PipsPagerTemplateSettings
+namespace CSharpMarkup.WinUI // PagerControlTemplateSettings
 {
     public static partial class Helpers
     {
-        /// <summary>Create a <see cref="Xaml.Controls.PipsPagerTemplateSettings"/></summary>
-        public static PipsPagerTemplateSettings PipsPagerTemplateSettings(IList<int> PipsPagerItems = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
+        /// <summary>Create a <see cref="Xaml.Controls.PagerControlTemplateSettings"/></summary>
+        public static PagerControlTemplateSettings PagerControlTemplateSettings(IList<object> Pages = default, IList<object> NumberPanelItems = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
-            var ui = new Xaml.Controls.PipsPagerTemplateSettings();
-            if (PipsPagerItems is not null) ui.PipsPagerItems = PipsPagerItems;
+            var ui = new Xaml.Controls.PagerControlTemplateSettings();
+            if (Pages is not null) ui.Pages = Pages;
+            if (NumberPanelItems is not null) ui.NumberPanelItems = NumberPanelItems;
             if (DataContext is not null) ui.DataContext = DataContext;
             if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
-            return CSharpMarkup.WinUI.PipsPagerTemplateSettings.StartChain(ui);
+            return CSharpMarkup.WinUI.PagerControlTemplateSettings.StartChain(ui);
         }
 
-        /// <summary>Create a <see cref="Xaml.Controls.PipsPagerTemplateSettings"/></summary>
-        public static PipsPagerTemplateSettings PipsPagerTemplateSettings()
+        /// <summary>Create a <see cref="Xaml.Controls.PagerControlTemplateSettings"/></summary>
+        public static PagerControlTemplateSettings PagerControlTemplateSettings()
         {
-            var ui = new Xaml.Controls.PipsPagerTemplateSettings();
-            return CSharpMarkup.WinUI.PipsPagerTemplateSettings.StartChain(ui);
+            var ui = new Xaml.Controls.PagerControlTemplateSettings();
+            return CSharpMarkup.WinUI.PagerControlTemplateSettings.StartChain(ui);
         }
     }
 
-    public partial class PipsPagerTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.PipsPagerTemplateSettings>
+    public partial class PagerControlTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.PagerControlTemplateSettings>
     {
-        static PipsPagerTemplateSettings instance;
+        static PagerControlTemplateSettings instance;
 
-        internal static PipsPagerTemplateSettings StartChain(Xaml.Controls.PipsPagerTemplateSettings ui)
+        internal static PagerControlTemplateSettings StartChain(Xaml.Controls.PagerControlTemplateSettings ui)
         {
-            if (instance == null) instance = new PipsPagerTemplateSettings();
+            if (instance == null) instance = new PagerControlTemplateSettings();
             instance.UI = ui;
             return instance;
         }
 
-        Xaml.Controls.PipsPagerTemplateSettings ui;
+        Xaml.Controls.PagerControlTemplateSettings ui;
 
-        public new Xaml.Controls.PipsPagerTemplateSettings UI
+        public new Xaml.Controls.PagerControlTemplateSettings UI
         {
             get => ui;
             protected set => base.UI = ui = value;
         }
 
-        public static implicit operator Xaml.Controls.PipsPagerTemplateSettings(PipsPagerTemplateSettings view) => view?.UI;
+        public static implicit operator Xaml.Controls.PagerControlTemplateSettings(PagerControlTemplateSettings view) => view?.UI;
 
-        public static implicit operator PipsPagerTemplateSettings(Xaml.Controls.PipsPagerTemplateSettings ui) => PipsPagerTemplateSettings.StartChain(ui);
+        public static implicit operator PagerControlTemplateSettings(Xaml.Controls.PagerControlTemplateSettings ui) => PagerControlTemplateSettings.StartChain(ui);
 
-        public PipsPagerTemplateSettings Invoke(Action<Xaml.Controls.PipsPagerTemplateSettings> action) { action?.Invoke(UI); return this; }
+        public PagerControlTemplateSettings Invoke(Action<Xaml.Controls.PagerControlTemplateSettings> action) { action?.Invoke(UI); return this; }
 
-        protected PipsPagerTemplateSettings() { }
+        protected PagerControlTemplateSettings() { }
     }
 
-    public static partial class PipsPagerTemplateSettingsExtensions
+    public static partial class PagerControlTemplateSettingsExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.PipsPagerTemplateSettings.PipsPagerItems"/></summary>
-        public static TView PipsPagerItems<TView>(this TView view, IList<int> value) where TView : PipsPagerTemplateSettings { view.UI.PipsPagerItems = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControlTemplateSettings.Pages"/></summary>
+        public static TView Pages<TView>(this TView view, IList<object> value) where TView : PagerControlTemplateSettings { view.UI.Pages = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.PipsPagerTemplateSettings.DataContext"/></summary>
-        public static TView DataContext<TView>(this TView view, object value) where TView : PipsPagerTemplateSettings { view.UI.DataContext = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControlTemplateSettings.NumberPanelItems"/></summary>
+        public static TView NumberPanelItems<TView>(this TView view, IList<object> value) where TView : PagerControlTemplateSettings { view.UI.NumberPanelItems = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.PipsPagerTemplateSettings.TemplatedParent"/></summary>
-        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : PipsPagerTemplateSettings { view.UI.TemplatedParent = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.PagerControlTemplateSettings.DataContext"/></summary>
+        public static TView DataContext<TView>(this TView view, object value) where TView : PagerControlTemplateSettings { view.UI.DataContext = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPagerTemplateSettings.DataContext"/></summary>
-        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : PipsPagerTemplateSettings
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.PipsPagerTemplateSettings.DataContextProperty);
+        /// <summary>Set <see cref="Xaml.Controls.PagerControlTemplateSettings.TemplatedParent"/></summary>
+        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : PagerControlTemplateSettings { view.UI.TemplatedParent = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPagerTemplateSettings.TemplatedParent"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : PipsPagerTemplateSettings
-        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.PipsPagerTemplateSettings.TemplatedParentProperty);
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControlTemplateSettings.Pages"/></summary>
+        public static DependencyProperty<TTarget, IList<object>> Pages<TTarget>(this TTarget target) where TTarget : PagerControlTemplateSettings
+        => DependencyProperty<TTarget, IList<object>>.Get(target, Xaml.Controls.PagerControlTemplateSettings.PagesProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControlTemplateSettings.NumberPanelItems"/></summary>
+        public static DependencyProperty<TTarget, IList<object>> NumberPanelItems<TTarget>(this TTarget target) where TTarget : PagerControlTemplateSettings
+        => DependencyProperty<TTarget, IList<object>>.Get(target, Xaml.Controls.PagerControlTemplateSettings.NumberPanelItemsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControlTemplateSettings.DataContext"/></summary>
+        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : PagerControlTemplateSettings
+        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.PagerControlTemplateSettings.DataContextProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PagerControlTemplateSettings.TemplatedParent"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : PagerControlTemplateSettings
+        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.PagerControlTemplateSettings.TemplatedParentProperty);
     }
 }
 
@@ -26031,6 +26370,165 @@ namespace CSharpMarkup.WinUI // ProgressRingAutomationPeer
         public ProgressRingAutomationPeer Invoke(Action<Xaml.Controls.ProgressRingAutomationPeer> action) { action?.Invoke(UI); return this; }
 
         protected ProgressRingAutomationPeer() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // FlowLayout
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.FlowLayout"/></summary>
+        public static FlowLayout FlowLayout(Xaml.Controls.FlowLayoutLineAlignment? LineAlignment = default, double? MinColumnSpacing = default, double? MinRowSpacing = default, Xaml.Controls.Orientation? Orientation = default)
+        {
+            var ui = new Xaml.Controls.FlowLayout();
+            if (LineAlignment is not null) ui.LineAlignment = LineAlignment.Value;
+            if (MinColumnSpacing is not null) ui.MinColumnSpacing = MinColumnSpacing.Value;
+            if (MinRowSpacing is not null) ui.MinRowSpacing = MinRowSpacing.Value;
+            if (Orientation is not null) ui.Orientation = Orientation.Value;
+            return CSharpMarkup.WinUI.FlowLayout.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.FlowLayout"/></summary>
+        public static FlowLayout FlowLayout()
+        {
+            var ui = new Xaml.Controls.FlowLayout();
+            return CSharpMarkup.WinUI.FlowLayout.StartChain(ui);
+        }
+    }
+
+    public partial class FlowLayout : VirtualizingLayout, IUI<Microsoft.UI.Xaml.Controls.FlowLayout>
+    {
+        static FlowLayout instance;
+
+        internal static FlowLayout StartChain(Xaml.Controls.FlowLayout ui)
+        {
+            if (instance == null) instance = new FlowLayout();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.FlowLayout ui;
+
+        public new Xaml.Controls.FlowLayout UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.FlowLayout(FlowLayout view) => view?.UI;
+
+        public static implicit operator FlowLayout(Xaml.Controls.FlowLayout ui) => FlowLayout.StartChain(ui);
+
+        public FlowLayout Invoke(Action<Xaml.Controls.FlowLayout> action) { action?.Invoke(UI); return this; }
+
+        protected FlowLayout() { }
+    }
+
+    public static partial class FlowLayoutExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.FlowLayout.LineAlignment"/></summary>
+        public static TView LineAlignment<TView>(this TView view, Xaml.Controls.FlowLayoutLineAlignment value) where TView : FlowLayout { view.UI.LineAlignment = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.FlowLayout.MinColumnSpacing"/></summary>
+        public static TView MinColumnSpacing<TView>(this TView view, double value) where TView : FlowLayout { view.UI.MinColumnSpacing = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.FlowLayout.MinRowSpacing"/></summary>
+        public static TView MinRowSpacing<TView>(this TView view, double value) where TView : FlowLayout { view.UI.MinRowSpacing = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.FlowLayout.Orientation"/></summary>
+        public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : FlowLayout { view.UI.Orientation = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FlowLayout.LineAlignment"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.FlowLayoutLineAlignment> LineAlignment<TTarget>(this TTarget target) where TTarget : FlowLayout
+        => DependencyProperty<TTarget, Xaml.Controls.FlowLayoutLineAlignment>.Get(target, Xaml.Controls.FlowLayout.LineAlignmentProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FlowLayout.MinColumnSpacing"/></summary>
+        public static DependencyProperty<TTarget, double> MinColumnSpacing<TTarget>(this TTarget target) where TTarget : FlowLayout
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.FlowLayout.MinColumnSpacingProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FlowLayout.MinRowSpacing"/></summary>
+        public static DependencyProperty<TTarget, double> MinRowSpacing<TTarget>(this TTarget target) where TTarget : FlowLayout
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.FlowLayout.MinRowSpacingProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FlowLayout.Orientation"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : FlowLayout
+        => DependencyProperty<TTarget, Xaml.Controls.Orientation>.Get(target, Xaml.Controls.FlowLayout.OrientationProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // BindableButtonEx
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.BindableButtonEx"/></summary>
+        public static BindableButtonEx BindableButtonEx(bool? IsEnabled = default, Android.Graphics.Color? ForegroundColor = default, CSharpMarkup.WinUI.to.Brush? Foreground = default)
+        {
+            var ui = new Xaml.Controls.BindableButtonEx();
+            if (IsEnabled is not null) ui.IsEnabled = IsEnabled.Value;
+            if (ForegroundColor is not null) ui.ForegroundColor = ForegroundColor.Value;
+            if (Foreground is not null) ui.Foreground = Foreground.Value;
+            return CSharpMarkup.WinUI.BindableButtonEx.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.BindableButtonEx"/></summary>
+        public static BindableButtonEx BindableButtonEx()
+        {
+            var ui = new Xaml.Controls.BindableButtonEx();
+            return CSharpMarkup.WinUI.BindableButtonEx.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.BindableButtonEx"/></summary>
+        public static BindableButtonEx BindableButtonEx(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.BindableButtonEx(javaReference, transfer);
+            return CSharpMarkup.WinUI.BindableButtonEx.StartChain(ui);
+        }
+    }
+
+    public partial class BindableButtonEx : BindableButton, IUI<Microsoft.UI.Xaml.Controls.BindableButtonEx>
+    {
+        static BindableButtonEx instance;
+
+        internal static BindableButtonEx StartChain(Xaml.Controls.BindableButtonEx ui)
+        {
+            if (instance == null) instance = new BindableButtonEx();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.BindableButtonEx ui;
+
+        public new Xaml.Controls.BindableButtonEx UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.BindableButtonEx(BindableButtonEx view) => view?.UI;
+
+        public static implicit operator BindableButtonEx(Xaml.Controls.BindableButtonEx ui) => BindableButtonEx.StartChain(ui);
+
+        public BindableButtonEx Invoke(Action<Xaml.Controls.BindableButtonEx> action) { action?.Invoke(UI); return this; }
+
+        protected BindableButtonEx() { }
+    }
+
+    public static partial class BindableButtonExExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.BindableButtonEx.IsEnabled"/></summary>
+        public static TView IsEnabled<TView>(this TView view, bool value) where TView : BindableButtonEx { view.UI.IsEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.BindableButtonEx.ForegroundColor"/></summary>
+        public static TView ForegroundColor<TView>(this TView view, Android.Graphics.Color value) where TView : BindableButtonEx { view.UI.ForegroundColor = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.BindableButtonEx.Foreground"/></summary>
+        public static TView Foreground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : BindableButtonEx { view.UI.Foreground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.BindableButtonEx.Foreground"/></summary>
+        public static TView Foreground<TView>(this TView view, Windows.UI.Color value) where TView : BindableButtonEx { view.UI.Foreground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.BindableButtonEx.Foreground"/></summary>
+        public static TView Foreground<TView>(this TView view, string color) where TView : BindableButtonEx { view.UI.Foreground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
     }
 }
 
@@ -26234,6 +26732,65 @@ namespace CSharpMarkup.WinUI // DatePickerSelector
     }
 }
 
+namespace CSharpMarkup.WinUI // NativeDatePickerFlyout
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.NativeDatePickerFlyout"/></summary>
+        public static NativeDatePickerFlyout NativeDatePickerFlyout(bool? UseNativeMinMaxDates = default)
+        {
+            var ui = new Xaml.Controls.NativeDatePickerFlyout();
+            if (UseNativeMinMaxDates is not null) ui.UseNativeMinMaxDates = UseNativeMinMaxDates.Value;
+            return CSharpMarkup.WinUI.NativeDatePickerFlyout.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.NativeDatePickerFlyout"/></summary>
+        public static NativeDatePickerFlyout NativeDatePickerFlyout()
+        {
+            var ui = new Xaml.Controls.NativeDatePickerFlyout();
+            return CSharpMarkup.WinUI.NativeDatePickerFlyout.StartChain(ui);
+        }
+    }
+
+    public partial class NativeDatePickerFlyout : DatePickerFlyout, IUI<Microsoft.UI.Xaml.Controls.NativeDatePickerFlyout>
+    {
+        static NativeDatePickerFlyout instance;
+
+        internal static NativeDatePickerFlyout StartChain(Xaml.Controls.NativeDatePickerFlyout ui)
+        {
+            if (instance == null) instance = new NativeDatePickerFlyout();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.NativeDatePickerFlyout ui;
+
+        public new Xaml.Controls.NativeDatePickerFlyout UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.NativeDatePickerFlyout(NativeDatePickerFlyout view) => view?.UI;
+
+        public static implicit operator NativeDatePickerFlyout(Xaml.Controls.NativeDatePickerFlyout ui) => NativeDatePickerFlyout.StartChain(ui);
+
+        public NativeDatePickerFlyout Invoke(Action<Xaml.Controls.NativeDatePickerFlyout> action) { action?.Invoke(UI); return this; }
+
+        protected NativeDatePickerFlyout() { }
+    }
+
+    public static partial class NativeDatePickerFlyoutExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.NativeDatePickerFlyout.UseNativeMinMaxDates"/></summary>
+        public static TView UseNativeMinMaxDates<TView>(this TView view, bool value) where TView : NativeDatePickerFlyout { view.UI.UseNativeMinMaxDates = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativeDatePickerFlyout.UseNativeMinMaxDates"/></summary>
+        public static DependencyProperty<TTarget, bool> UseNativeMinMaxDates<TTarget>(this TTarget target) where TTarget : NativeDatePickerFlyout
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.NativeDatePickerFlyout.UseNativeMinMaxDatesProperty);
+    }
+}
+
 namespace CSharpMarkup.WinUI // DropDownButtonAutomationPeer
 {
     public partial class DropDownButtonAutomationPeer : ButtonAutomationPeer, IUI<Microsoft.UI.Xaml.Controls.DropDownButtonAutomationPeer>
@@ -26249,6 +26806,314 @@ namespace CSharpMarkup.WinUI // DropDownButtonAutomationPeer
         public DropDownButtonAutomationPeer Invoke(Action<Xaml.Controls.DropDownButtonAutomationPeer> action) { action?.Invoke(UI); return this; }
 
         protected DropDownButtonAutomationPeer() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // NativeFlipView
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.NativeFlipView"/></summary>
+        public static NativeFlipView NativeFlipView()
+        {
+            var ui = new Xaml.Controls.NativeFlipView();
+            return CSharpMarkup.WinUI.NativeFlipView.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.NativeFlipView"/></summary>
+        public static NativeFlipView NativeFlipView(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.NativeFlipView(javaReference, transfer);
+            return CSharpMarkup.WinUI.NativeFlipView.StartChain(ui);
+        }
+    }
+
+    public partial class NativeFlipView : NativePagedView, IUI<Microsoft.UI.Xaml.Controls.NativeFlipView>
+    {
+        static NativeFlipView instance;
+
+        internal static NativeFlipView StartChain(Xaml.Controls.NativeFlipView ui)
+        {
+            if (instance == null) instance = new NativeFlipView();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.NativeFlipView ui;
+
+        public new Xaml.Controls.NativeFlipView UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.NativeFlipView(NativeFlipView view) => view?.UI;
+
+        public static implicit operator NativeFlipView(Xaml.Controls.NativeFlipView ui) => NativeFlipView.StartChain(ui);
+
+        public NativeFlipView Invoke(Action<Xaml.Controls.NativeFlipView> action) { action?.Invoke(UI); return this; }
+
+        protected NativeFlipView() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // NativePagedView
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.NativePagedView"/></summary>
+        public static NativePagedView NativePagedView(int? RenderPhase = default, CSharpMarkup.WinUI.to.Brush? Background = default, double? Opacity = default, Xaml.Style Style = default, bool? IsParsing = default, bool? IsEnabled = default, bool? IsHitTestVisible = default, Xaml.Visibility? Visibility = default, string Name = default, CSharpMarkup.WinUI.to.Thickness? Margin = default, Xaml.HorizontalAlignment? HorizontalAlignment = default, Xaml.VerticalAlignment? VerticalAlignment = default, double? Width = default, double? Height = default, double? MinWidth = default, double? MinHeight = default, double? MaxWidth = default, double? MaxHeight = default, Xaml.Media.Animation.TransitionCollection Transitions = default, object Tag = default, Xaml.Media.Transform RenderTransform = default, CSharpMarkup.WinUI.to.Point? RenderTransformOrigin = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
+        {
+            var ui = new Xaml.Controls.NativePagedView();
+            if (RenderPhase is not null) ui.RenderPhase = RenderPhase;
+            if (Background is not null) ui.Background = Background.Value;
+            if (Opacity is not null) ui.Opacity = Opacity.Value;
+            if (Style is not null) ui.Style = Style;
+            if (IsParsing is not null) ui.IsParsing = IsParsing.Value;
+            if (IsEnabled is not null) ui.IsEnabled = IsEnabled.Value;
+            if (IsHitTestVisible is not null) ui.IsHitTestVisible = IsHitTestVisible.Value;
+            if (Visibility is not null) ui.Visibility = Visibility.Value;
+            if (Name is not null) ui.Name = Name;
+            if (Margin is not null) ui.Margin = Margin.Value;
+            if (HorizontalAlignment is not null) ui.HorizontalAlignment = HorizontalAlignment.Value;
+            if (VerticalAlignment is not null) ui.VerticalAlignment = VerticalAlignment.Value;
+            if (Width is not null) ui.Width = Width.Value;
+            if (Height is not null) ui.Height = Height.Value;
+            if (MinWidth is not null) ui.MinWidth = MinWidth.Value;
+            if (MinHeight is not null) ui.MinHeight = MinHeight.Value;
+            if (MaxWidth is not null) ui.MaxWidth = MaxWidth.Value;
+            if (MaxHeight is not null) ui.MaxHeight = MaxHeight.Value;
+            if (Transitions is not null) ui.Transitions = Transitions;
+            if (Tag is not null) ui.Tag = Tag;
+            if (RenderTransform is not null) ui.RenderTransform = RenderTransform;
+            if (RenderTransformOrigin is not null) ui.RenderTransformOrigin = RenderTransformOrigin.Value;
+            if (DataContext is not null) ui.DataContext = DataContext;
+            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
+            return CSharpMarkup.WinUI.NativePagedView.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.NativePagedView"/></summary>
+        public static NativePagedView NativePagedView()
+        {
+            var ui = new Xaml.Controls.NativePagedView();
+            return CSharpMarkup.WinUI.NativePagedView.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.NativePagedView"/></summary>
+        public static NativePagedView NativePagedView(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.NativePagedView(javaReference, transfer);
+            return CSharpMarkup.WinUI.NativePagedView.StartChain(ui);
+        }
+    }
+
+    public partial class NativePagedView : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.NativePagedView>
+    {
+        static NativePagedView instance;
+
+        internal static NativePagedView StartChain(Xaml.Controls.NativePagedView ui)
+        {
+            if (instance == null) instance = new NativePagedView();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.NativePagedView ui;
+
+        public new Xaml.Controls.NativePagedView UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.NativePagedView(NativePagedView view) => view?.UI;
+
+        public static implicit operator NativePagedView(Xaml.Controls.NativePagedView ui) => NativePagedView.StartChain(ui);
+
+        public NativePagedView Invoke(Action<Xaml.Controls.NativePagedView> action) { action?.Invoke(UI); return this; }
+
+        protected NativePagedView() { }
+    }
+
+    public static partial class NativePagedViewExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.RenderPhase"/></summary>
+        public static TView RenderPhase<TView>(this TView view, int? value) where TView : NativePagedView { view.UI.RenderPhase = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Background"/></summary>
+        public static TView Background<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : NativePagedView { view.UI.Background = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Background"/></summary>
+        public static TView Background<TView>(this TView view, Windows.UI.Color value) where TView : NativePagedView { view.UI.Background = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Background"/></summary>
+        public static TView Background<TView>(this TView view, string color) where TView : NativePagedView { view.UI.Background = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Opacity"/></summary>
+        public static TView Opacity<TView>(this TView view, double value) where TView : NativePagedView { view.UI.Opacity = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Style"/></summary>
+        public static TView Style<TView>(this TView view, Xaml.Style value) where TView : NativePagedView { view.UI.Style = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.IsParsing"/></summary>
+        public static TView IsParsing<TView>(this TView view, bool value) where TView : NativePagedView { view.UI.IsParsing = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.IsEnabled"/></summary>
+        public static TView IsEnabled<TView>(this TView view, bool value) where TView : NativePagedView { view.UI.IsEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.IsHitTestVisible"/></summary>
+        public static TView IsHitTestVisible<TView>(this TView view, bool value) where TView : NativePagedView { view.UI.IsHitTestVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Visibility"/></summary>
+        public static TView Visibility<TView>(this TView view, Xaml.Visibility value) where TView : NativePagedView { view.UI.Visibility = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Name"/></summary>
+        public static TView Name<TView>(this TView view, string value) where TView : NativePagedView { view.UI.Name = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
+        public static TView Margin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : NativePagedView { view.UI.Margin = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
+        public static TView Margin<TView>(this TView view, double uniform) where TView : NativePagedView { view.UI.Margin = Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
+        public static TView Margin<TView>(this TView view, double horizontal, double vertical) where TView : NativePagedView { view.UI.Margin = Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
+        public static TView Margin<TView>(this TView view, double left, double top, double right, double bottom) where TView : NativePagedView { view.UI.Margin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
+        public static TView Margins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : NativePagedView { view.UI.Margin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.HorizontalAlignment"/></summary>
+        public static TView HorizontalAlignment<TView>(this TView view, Xaml.HorizontalAlignment value) where TView : NativePagedView { view.UI.HorizontalAlignment = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.VerticalAlignment"/></summary>
+        public static TView VerticalAlignment<TView>(this TView view, Xaml.VerticalAlignment value) where TView : NativePagedView { view.UI.VerticalAlignment = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Width"/></summary>
+        public static TView Width<TView>(this TView view, double value) where TView : NativePagedView { view.UI.Width = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Height"/></summary>
+        public static TView Height<TView>(this TView view, double value) where TView : NativePagedView { view.UI.Height = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.MinWidth"/></summary>
+        public static TView MinWidth<TView>(this TView view, double value) where TView : NativePagedView { view.UI.MinWidth = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.MinHeight"/></summary>
+        public static TView MinHeight<TView>(this TView view, double value) where TView : NativePagedView { view.UI.MinHeight = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.MaxWidth"/></summary>
+        public static TView MaxWidth<TView>(this TView view, double value) where TView : NativePagedView { view.UI.MaxWidth = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.MaxHeight"/></summary>
+        public static TView MaxHeight<TView>(this TView view, double value) where TView : NativePagedView { view.UI.MaxHeight = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Transitions"/></summary>
+        public static TView Transitions<TView>(this TView view, Xaml.Media.Animation.TransitionCollection value) where TView : NativePagedView { view.UI.Transitions = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Tag"/></summary>
+        public static TView Tag<TView>(this TView view, object value) where TView : NativePagedView { view.UI.Tag = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.RenderTransform"/></summary>
+        public static TView RenderTransform<TView>(this TView view, Xaml.Media.Transform value) where TView : NativePagedView { view.UI.RenderTransform = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.RenderTransformOrigin"/></summary>
+        public static TView RenderTransformOrigin<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : NativePagedView { view.UI.RenderTransformOrigin = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.DataContext"/></summary>
+        public static TView DataContext<TView>(this TView view, object value) where TView : NativePagedView { view.UI.DataContext = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.TemplatedParent"/></summary>
+        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : NativePagedView { view.UI.TemplatedParent = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Background"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> Background<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.NativePagedView.BackgroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Opacity"/></summary>
+        public static DependencyProperty<TTarget, double> Opacity<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.OpacityProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Style"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Style> Style<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.NativePagedView.StyleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.IsEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsEnabled<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.NativePagedView.IsEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.IsHitTestVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsHitTestVisible<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.NativePagedView.IsHitTestVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Visibility"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Visibility> Visibility<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, Xaml.Visibility>.Get(target, Xaml.Controls.NativePagedView.VisibilityProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Name"/></summary>
+        public static DependencyProperty<TTarget, string> Name<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.NativePagedView.NameProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> Margin<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.NativePagedView.MarginProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.HorizontalAlignment"/></summary>
+        public static DependencyProperty<TTarget, Xaml.HorizontalAlignment> HorizontalAlignment<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, Xaml.HorizontalAlignment>.Get(target, Xaml.Controls.NativePagedView.HorizontalAlignmentProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.VerticalAlignment"/></summary>
+        public static DependencyProperty<TTarget, Xaml.VerticalAlignment> VerticalAlignment<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, Xaml.VerticalAlignment>.Get(target, Xaml.Controls.NativePagedView.VerticalAlignmentProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Width"/></summary>
+        public static DependencyProperty<TTarget, double> Width<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.WidthProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Height"/></summary>
+        public static DependencyProperty<TTarget, double> Height<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.HeightProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.MinWidth"/></summary>
+        public static DependencyProperty<TTarget, double> MinWidth<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.MinWidthProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.MinHeight"/></summary>
+        public static DependencyProperty<TTarget, double> MinHeight<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.MinHeightProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.MaxWidth"/></summary>
+        public static DependencyProperty<TTarget, double> MaxWidth<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.MaxWidthProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.MaxHeight"/></summary>
+        public static DependencyProperty<TTarget, double> MaxHeight<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.MaxHeightProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Transitions"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection> Transitions<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection>.Get(target, Xaml.Controls.NativePagedView.TransitionsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Tag"/></summary>
+        public static DependencyProperty<TTarget, object> Tag<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.NativePagedView.TagProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.RenderTransform"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.Transform> RenderTransform<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, Xaml.Media.Transform>.Get(target, Xaml.Controls.NativePagedView.RenderTransformProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.RenderTransformOrigin"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> RenderTransformOrigin<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Controls.NativePagedView.RenderTransformOriginProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.DataContext"/></summary>
+        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.NativePagedView.DataContextProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.TemplatedParent"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : NativePagedView
+        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.NativePagedView.TemplatedParentProperty);
     }
 }
 
@@ -26718,9 +27583,6 @@ namespace CSharpMarkup.WinUI // VirtualizingPanelLayout
 
     public static partial class VirtualizingPanelLayoutExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.VirtualizingPanelLayout.Orientation"/></summary>
-        public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : VirtualizingPanelLayout { view.UI.Orientation = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.VirtualizingPanelLayout.Padding"/></summary>
         public static TView Padding<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : VirtualizingPanelLayout { view.UI.Padding = value; return view; }
 
@@ -26735,6 +27597,9 @@ namespace CSharpMarkup.WinUI // VirtualizingPanelLayout
 
         /// <summary>Set <see cref="Xaml.Controls.VirtualizingPanelLayout.Padding"/></summary>
         public static TView Paddings<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : VirtualizingPanelLayout { view.UI.Padding = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.VirtualizingPanelLayout.Orientation"/></summary>
+        public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : VirtualizingPanelLayout { view.UI.Orientation = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.VirtualizingPanelLayout.AreStickyGroupHeadersEnabled"/></summary>
         public static TView AreStickyGroupHeadersEnabled<TView>(this TView view, bool value) where TView : VirtualizingPanelLayout { view.UI.AreStickyGroupHeadersEnabled = value; return view; }
@@ -26793,6 +27658,30 @@ namespace CSharpMarkup.WinUI // VirtualizingPanelLayout
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VirtualizingPanelLayout.TemplatedParent"/></summary>
         public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : VirtualizingPanelLayout
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.VirtualizingPanelLayout.TemplatedParentProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // NativePage
+{
+    public partial class NativePage : BaseActivity, IUI<Microsoft.UI.Xaml.Controls.NativePage>
+    {
+        Xaml.Controls.NativePage ui;
+
+        public new Xaml.Controls.NativePage UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public NativePage Invoke(Action<Xaml.Controls.NativePage> action) { action?.Invoke(UI); return this; }
+
+        protected NativePage() { }
+    }
+
+    public static partial class NativePageExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.NativePage.Content"/></summary>
+        public static TView Content<TView>(this TView view, Android.Views.View value) where TView : NativePage { view.UI.Content = value; return view; }
     }
 }
 
@@ -27229,473 +28118,6 @@ namespace CSharpMarkup.WinUI // WrapPanel
 
         /// <summary>Set <see cref="Xaml.Controls.WrapPanel.ItemHeight"/></summary>
         public static TView ItemHeight<TView>(this TView view, float? value) where TView : WrapPanel { view.UI.ItemHeight = value; return view; }
-    }
-}
-
-namespace CSharpMarkup.WinUI // BindableButtonEx
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.BindableButtonEx"/></summary>
-        public static BindableButtonEx BindableButtonEx(bool? IsEnabled = default, Android.Graphics.Color? ForegroundColor = default, CSharpMarkup.WinUI.to.Brush? Foreground = default)
-        {
-            var ui = new Xaml.Controls.BindableButtonEx();
-            if (IsEnabled is not null) ui.IsEnabled = IsEnabled.Value;
-            if (ForegroundColor is not null) ui.ForegroundColor = ForegroundColor.Value;
-            if (Foreground is not null) ui.Foreground = Foreground.Value;
-            return CSharpMarkup.WinUI.BindableButtonEx.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.BindableButtonEx"/></summary>
-        public static BindableButtonEx BindableButtonEx()
-        {
-            var ui = new Xaml.Controls.BindableButtonEx();
-            return CSharpMarkup.WinUI.BindableButtonEx.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.BindableButtonEx"/></summary>
-        public static BindableButtonEx BindableButtonEx(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.BindableButtonEx(javaReference, transfer);
-            return CSharpMarkup.WinUI.BindableButtonEx.StartChain(ui);
-        }
-    }
-
-    public partial class BindableButtonEx : BindableButton, IUI<Microsoft.UI.Xaml.Controls.BindableButtonEx>
-    {
-        static BindableButtonEx instance;
-
-        internal static BindableButtonEx StartChain(Xaml.Controls.BindableButtonEx ui)
-        {
-            if (instance == null) instance = new BindableButtonEx();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.BindableButtonEx ui;
-
-        public new Xaml.Controls.BindableButtonEx UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.BindableButtonEx(BindableButtonEx view) => view?.UI;
-
-        public static implicit operator BindableButtonEx(Xaml.Controls.BindableButtonEx ui) => BindableButtonEx.StartChain(ui);
-
-        public BindableButtonEx Invoke(Action<Xaml.Controls.BindableButtonEx> action) { action?.Invoke(UI); return this; }
-
-        protected BindableButtonEx() { }
-    }
-
-    public static partial class BindableButtonExExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.BindableButtonEx.IsEnabled"/></summary>
-        public static TView IsEnabled<TView>(this TView view, bool value) where TView : BindableButtonEx { view.UI.IsEnabled = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.BindableButtonEx.ForegroundColor"/></summary>
-        public static TView ForegroundColor<TView>(this TView view, Android.Graphics.Color value) where TView : BindableButtonEx { view.UI.ForegroundColor = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.BindableButtonEx.Foreground"/></summary>
-        public static TView Foreground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : BindableButtonEx { view.UI.Foreground = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.BindableButtonEx.Foreground"/></summary>
-        public static TView Foreground<TView>(this TView view, Windows.UI.Color value) where TView : BindableButtonEx { view.UI.Foreground = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.BindableButtonEx.Foreground"/></summary>
-        public static TView Foreground<TView>(this TView view, string color) where TView : BindableButtonEx { view.UI.Foreground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-    }
-}
-
-namespace CSharpMarkup.WinUI // NativeDatePickerFlyout
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.NativeDatePickerFlyout"/></summary>
-        public static NativeDatePickerFlyout NativeDatePickerFlyout(bool? UseNativeMinMaxDates = default)
-        {
-            var ui = new Xaml.Controls.NativeDatePickerFlyout();
-            if (UseNativeMinMaxDates is not null) ui.UseNativeMinMaxDates = UseNativeMinMaxDates.Value;
-            return CSharpMarkup.WinUI.NativeDatePickerFlyout.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.NativeDatePickerFlyout"/></summary>
-        public static NativeDatePickerFlyout NativeDatePickerFlyout()
-        {
-            var ui = new Xaml.Controls.NativeDatePickerFlyout();
-            return CSharpMarkup.WinUI.NativeDatePickerFlyout.StartChain(ui);
-        }
-    }
-
-    public partial class NativeDatePickerFlyout : DatePickerFlyout, IUI<Microsoft.UI.Xaml.Controls.NativeDatePickerFlyout>
-    {
-        static NativeDatePickerFlyout instance;
-
-        internal static NativeDatePickerFlyout StartChain(Xaml.Controls.NativeDatePickerFlyout ui)
-        {
-            if (instance == null) instance = new NativeDatePickerFlyout();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.NativeDatePickerFlyout ui;
-
-        public new Xaml.Controls.NativeDatePickerFlyout UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.NativeDatePickerFlyout(NativeDatePickerFlyout view) => view?.UI;
-
-        public static implicit operator NativeDatePickerFlyout(Xaml.Controls.NativeDatePickerFlyout ui) => NativeDatePickerFlyout.StartChain(ui);
-
-        public NativeDatePickerFlyout Invoke(Action<Xaml.Controls.NativeDatePickerFlyout> action) { action?.Invoke(UI); return this; }
-
-        protected NativeDatePickerFlyout() { }
-    }
-
-    public static partial class NativeDatePickerFlyoutExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.NativeDatePickerFlyout.UseNativeMinMaxDates"/></summary>
-        public static TView UseNativeMinMaxDates<TView>(this TView view, bool value) where TView : NativeDatePickerFlyout { view.UI.UseNativeMinMaxDates = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativeDatePickerFlyout.UseNativeMinMaxDates"/></summary>
-        public static DependencyProperty<TTarget, bool> UseNativeMinMaxDates<TTarget>(this TTarget target) where TTarget : NativeDatePickerFlyout
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.NativeDatePickerFlyout.UseNativeMinMaxDatesProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // NativeFlipView
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.NativeFlipView"/></summary>
-        public static NativeFlipView NativeFlipView()
-        {
-            var ui = new Xaml.Controls.NativeFlipView();
-            return CSharpMarkup.WinUI.NativeFlipView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.NativeFlipView"/></summary>
-        public static NativeFlipView NativeFlipView(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.NativeFlipView(javaReference, transfer);
-            return CSharpMarkup.WinUI.NativeFlipView.StartChain(ui);
-        }
-    }
-
-    public partial class NativeFlipView : NativePagedView, IUI<Microsoft.UI.Xaml.Controls.NativeFlipView>
-    {
-        static NativeFlipView instance;
-
-        internal static NativeFlipView StartChain(Xaml.Controls.NativeFlipView ui)
-        {
-            if (instance == null) instance = new NativeFlipView();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.NativeFlipView ui;
-
-        public new Xaml.Controls.NativeFlipView UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.NativeFlipView(NativeFlipView view) => view?.UI;
-
-        public static implicit operator NativeFlipView(Xaml.Controls.NativeFlipView ui) => NativeFlipView.StartChain(ui);
-
-        public NativeFlipView Invoke(Action<Xaml.Controls.NativeFlipView> action) { action?.Invoke(UI); return this; }
-
-        protected NativeFlipView() { }
-    }
-}
-
-namespace CSharpMarkup.WinUI // NativePagedView
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.NativePagedView"/></summary>
-        public static NativePagedView NativePagedView(int? RenderPhase = default, CSharpMarkup.WinUI.to.Brush? Background = default, double? Opacity = default, Xaml.Style Style = default, bool? IsParsing = default, bool? IsEnabled = default, bool? IsHitTestVisible = default, Xaml.Visibility? Visibility = default, string Name = default, CSharpMarkup.WinUI.to.Thickness? Margin = default, Xaml.HorizontalAlignment? HorizontalAlignment = default, Xaml.VerticalAlignment? VerticalAlignment = default, double? Width = default, double? Height = default, double? MinWidth = default, double? MinHeight = default, double? MaxWidth = default, double? MaxHeight = default, Xaml.Media.Animation.TransitionCollection Transitions = default, object Tag = default, Xaml.Media.Transform RenderTransform = default, CSharpMarkup.WinUI.to.Point? RenderTransformOrigin = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
-        {
-            var ui = new Xaml.Controls.NativePagedView();
-            if (RenderPhase is not null) ui.RenderPhase = RenderPhase;
-            if (Background is not null) ui.Background = Background.Value;
-            if (Opacity is not null) ui.Opacity = Opacity.Value;
-            if (Style is not null) ui.Style = Style;
-            if (IsParsing is not null) ui.IsParsing = IsParsing.Value;
-            if (IsEnabled is not null) ui.IsEnabled = IsEnabled.Value;
-            if (IsHitTestVisible is not null) ui.IsHitTestVisible = IsHitTestVisible.Value;
-            if (Visibility is not null) ui.Visibility = Visibility.Value;
-            if (Name is not null) ui.Name = Name;
-            if (Margin is not null) ui.Margin = Margin.Value;
-            if (HorizontalAlignment is not null) ui.HorizontalAlignment = HorizontalAlignment.Value;
-            if (VerticalAlignment is not null) ui.VerticalAlignment = VerticalAlignment.Value;
-            if (Width is not null) ui.Width = Width.Value;
-            if (Height is not null) ui.Height = Height.Value;
-            if (MinWidth is not null) ui.MinWidth = MinWidth.Value;
-            if (MinHeight is not null) ui.MinHeight = MinHeight.Value;
-            if (MaxWidth is not null) ui.MaxWidth = MaxWidth.Value;
-            if (MaxHeight is not null) ui.MaxHeight = MaxHeight.Value;
-            if (Transitions is not null) ui.Transitions = Transitions;
-            if (Tag is not null) ui.Tag = Tag;
-            if (RenderTransform is not null) ui.RenderTransform = RenderTransform;
-            if (RenderTransformOrigin is not null) ui.RenderTransformOrigin = RenderTransformOrigin.Value;
-            if (DataContext is not null) ui.DataContext = DataContext;
-            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
-            return CSharpMarkup.WinUI.NativePagedView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.NativePagedView"/></summary>
-        public static NativePagedView NativePagedView()
-        {
-            var ui = new Xaml.Controls.NativePagedView();
-            return CSharpMarkup.WinUI.NativePagedView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.NativePagedView"/></summary>
-        public static NativePagedView NativePagedView(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.NativePagedView(javaReference, transfer);
-            return CSharpMarkup.WinUI.NativePagedView.StartChain(ui);
-        }
-    }
-
-    public partial class NativePagedView : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.NativePagedView>
-    {
-        static NativePagedView instance;
-
-        internal static NativePagedView StartChain(Xaml.Controls.NativePagedView ui)
-        {
-            if (instance == null) instance = new NativePagedView();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.NativePagedView ui;
-
-        public new Xaml.Controls.NativePagedView UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.NativePagedView(NativePagedView view) => view?.UI;
-
-        public static implicit operator NativePagedView(Xaml.Controls.NativePagedView ui) => NativePagedView.StartChain(ui);
-
-        public NativePagedView Invoke(Action<Xaml.Controls.NativePagedView> action) { action?.Invoke(UI); return this; }
-
-        protected NativePagedView() { }
-    }
-
-    public static partial class NativePagedViewExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.RenderPhase"/></summary>
-        public static TView RenderPhase<TView>(this TView view, int? value) where TView : NativePagedView { view.UI.RenderPhase = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Background"/></summary>
-        public static TView Background<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : NativePagedView { view.UI.Background = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Background"/></summary>
-        public static TView Background<TView>(this TView view, Windows.UI.Color value) where TView : NativePagedView { view.UI.Background = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Background"/></summary>
-        public static TView Background<TView>(this TView view, string color) where TView : NativePagedView { view.UI.Background = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Opacity"/></summary>
-        public static TView Opacity<TView>(this TView view, double value) where TView : NativePagedView { view.UI.Opacity = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Style"/></summary>
-        public static TView Style<TView>(this TView view, Xaml.Style value) where TView : NativePagedView { view.UI.Style = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.IsParsing"/></summary>
-        public static TView IsParsing<TView>(this TView view, bool value) where TView : NativePagedView { view.UI.IsParsing = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.IsEnabled"/></summary>
-        public static TView IsEnabled<TView>(this TView view, bool value) where TView : NativePagedView { view.UI.IsEnabled = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.IsHitTestVisible"/></summary>
-        public static TView IsHitTestVisible<TView>(this TView view, bool value) where TView : NativePagedView { view.UI.IsHitTestVisible = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Visibility"/></summary>
-        public static TView Visibility<TView>(this TView view, Xaml.Visibility value) where TView : NativePagedView { view.UI.Visibility = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Name"/></summary>
-        public static TView Name<TView>(this TView view, string value) where TView : NativePagedView { view.UI.Name = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
-        public static TView Margin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : NativePagedView { view.UI.Margin = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
-        public static TView Margin<TView>(this TView view, double uniform) where TView : NativePagedView { view.UI.Margin = Helpers.Thickness(uniform); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
-        public static TView Margin<TView>(this TView view, double horizontal, double vertical) where TView : NativePagedView { view.UI.Margin = Helpers.Thickness(horizontal, vertical); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
-        public static TView Margin<TView>(this TView view, double left, double top, double right, double bottom) where TView : NativePagedView { view.UI.Margin = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
-        public static TView Margins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : NativePagedView { view.UI.Margin = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.HorizontalAlignment"/></summary>
-        public static TView HorizontalAlignment<TView>(this TView view, Xaml.HorizontalAlignment value) where TView : NativePagedView { view.UI.HorizontalAlignment = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.VerticalAlignment"/></summary>
-        public static TView VerticalAlignment<TView>(this TView view, Xaml.VerticalAlignment value) where TView : NativePagedView { view.UI.VerticalAlignment = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Width"/></summary>
-        public static TView Width<TView>(this TView view, double value) where TView : NativePagedView { view.UI.Width = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Height"/></summary>
-        public static TView Height<TView>(this TView view, double value) where TView : NativePagedView { view.UI.Height = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.MinWidth"/></summary>
-        public static TView MinWidth<TView>(this TView view, double value) where TView : NativePagedView { view.UI.MinWidth = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.MinHeight"/></summary>
-        public static TView MinHeight<TView>(this TView view, double value) where TView : NativePagedView { view.UI.MinHeight = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.MaxWidth"/></summary>
-        public static TView MaxWidth<TView>(this TView view, double value) where TView : NativePagedView { view.UI.MaxWidth = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.MaxHeight"/></summary>
-        public static TView MaxHeight<TView>(this TView view, double value) where TView : NativePagedView { view.UI.MaxHeight = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Transitions"/></summary>
-        public static TView Transitions<TView>(this TView view, Xaml.Media.Animation.TransitionCollection value) where TView : NativePagedView { view.UI.Transitions = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.Tag"/></summary>
-        public static TView Tag<TView>(this TView view, object value) where TView : NativePagedView { view.UI.Tag = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.RenderTransform"/></summary>
-        public static TView RenderTransform<TView>(this TView view, Xaml.Media.Transform value) where TView : NativePagedView { view.UI.RenderTransform = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.RenderTransformOrigin"/></summary>
-        public static TView RenderTransformOrigin<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : NativePagedView { view.UI.RenderTransformOrigin = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.DataContext"/></summary>
-        public static TView DataContext<TView>(this TView view, object value) where TView : NativePagedView { view.UI.DataContext = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.NativePagedView.TemplatedParent"/></summary>
-        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : NativePagedView { view.UI.TemplatedParent = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Background"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> Background<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.NativePagedView.BackgroundProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Opacity"/></summary>
-        public static DependencyProperty<TTarget, double> Opacity<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.OpacityProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Style"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Style> Style<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.NativePagedView.StyleProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.IsEnabled"/></summary>
-        public static DependencyProperty<TTarget, bool> IsEnabled<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.NativePagedView.IsEnabledProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.IsHitTestVisible"/></summary>
-        public static DependencyProperty<TTarget, bool> IsHitTestVisible<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.NativePagedView.IsHitTestVisibleProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Visibility"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Visibility> Visibility<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, Xaml.Visibility>.Get(target, Xaml.Controls.NativePagedView.VisibilityProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Name"/></summary>
-        public static DependencyProperty<TTarget, string> Name<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.NativePagedView.NameProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Margin"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> Margin<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.NativePagedView.MarginProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.HorizontalAlignment"/></summary>
-        public static DependencyProperty<TTarget, Xaml.HorizontalAlignment> HorizontalAlignment<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, Xaml.HorizontalAlignment>.Get(target, Xaml.Controls.NativePagedView.HorizontalAlignmentProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.VerticalAlignment"/></summary>
-        public static DependencyProperty<TTarget, Xaml.VerticalAlignment> VerticalAlignment<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, Xaml.VerticalAlignment>.Get(target, Xaml.Controls.NativePagedView.VerticalAlignmentProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Width"/></summary>
-        public static DependencyProperty<TTarget, double> Width<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.WidthProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Height"/></summary>
-        public static DependencyProperty<TTarget, double> Height<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.HeightProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.MinWidth"/></summary>
-        public static DependencyProperty<TTarget, double> MinWidth<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.MinWidthProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.MinHeight"/></summary>
-        public static DependencyProperty<TTarget, double> MinHeight<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.MinHeightProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.MaxWidth"/></summary>
-        public static DependencyProperty<TTarget, double> MaxWidth<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.MaxWidthProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.MaxHeight"/></summary>
-        public static DependencyProperty<TTarget, double> MaxHeight<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.NativePagedView.MaxHeightProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Transitions"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection> Transitions<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection>.Get(target, Xaml.Controls.NativePagedView.TransitionsProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.Tag"/></summary>
-        public static DependencyProperty<TTarget, object> Tag<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.NativePagedView.TagProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.RenderTransform"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Transform> RenderTransform<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, Xaml.Media.Transform>.Get(target, Xaml.Controls.NativePagedView.RenderTransformProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.RenderTransformOrigin"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> RenderTransformOrigin<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Controls.NativePagedView.RenderTransformOriginProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.DataContext"/></summary>
-        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.NativePagedView.DataContextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.NativePagedView.TemplatedParent"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : NativePagedView
-        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.NativePagedView.TemplatedParentProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // NativePage
-{
-    public partial class NativePage : BaseActivity, IUI<Microsoft.UI.Xaml.Controls.NativePage>
-    {
-        Xaml.Controls.NativePage ui;
-
-        public new Xaml.Controls.NativePage UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public NativePage Invoke(Action<Xaml.Controls.NativePage> action) { action?.Invoke(UI); return this; }
-
-        protected NativePage() { }
-    }
-
-    public static partial class NativePageExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.NativePage.Content"/></summary>
-        public static TView Content<TView>(this TView view, Android.Views.View value) where TView : NativePage { view.UI.Content = value; return view; }
     }
 }
 
@@ -28781,11 +29203,11 @@ namespace CSharpMarkup.WinUI // CornerRadiusFilterConverter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CornerRadiusFilterConverter"/></summary>
-        public static CornerRadiusFilterConverter CornerRadiusFilterConverter(double? Scale = default, Xaml.Controls.Primitives.CornerRadiusFilterKind? Filter = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
+        public static CornerRadiusFilterConverter CornerRadiusFilterConverter(Xaml.Controls.Primitives.CornerRadiusFilterKind? Filter = default, double? Scale = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.Primitives.CornerRadiusFilterConverter();
-            if (Scale is not null) ui.Scale = Scale.Value;
             if (Filter is not null) ui.Filter = Filter.Value;
+            if (Scale is not null) ui.Scale = Scale.Value;
             if (DataContext is not null) ui.DataContext = DataContext;
             if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
             return CSharpMarkup.WinUI.CornerRadiusFilterConverter.StartChain(ui);
@@ -28829,11 +29251,11 @@ namespace CSharpMarkup.WinUI // CornerRadiusFilterConverter
 
     public static partial class CornerRadiusFilterConverterExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.CornerRadiusFilterConverter.Scale"/></summary>
-        public static TView Scale<TView>(this TView view, double value) where TView : CornerRadiusFilterConverter { view.UI.Scale = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.Primitives.CornerRadiusFilterConverter.Filter"/></summary>
         public static TView Filter<TView>(this TView view, Xaml.Controls.Primitives.CornerRadiusFilterKind value) where TView : CornerRadiusFilterConverter { view.UI.Filter = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.CornerRadiusFilterConverter.Scale"/></summary>
+        public static TView Scale<TView>(this TView view, double value) where TView : CornerRadiusFilterConverter { view.UI.Scale = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.CornerRadiusFilterConverter.DataContext"/></summary>
         public static TView DataContext<TView>(this TView view, object value) where TView : CornerRadiusFilterConverter { view.UI.DataContext = value; return view; }
@@ -28841,13 +29263,13 @@ namespace CSharpMarkup.WinUI // CornerRadiusFilterConverter
         /// <summary>Set <see cref="Xaml.Controls.Primitives.CornerRadiusFilterConverter.TemplatedParent"/></summary>
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : CornerRadiusFilterConverter { view.UI.TemplatedParent = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.CornerRadiusFilterConverter.Scale"/></summary>
-        public static DependencyProperty<TTarget, double> Scale<TTarget>(this TTarget target) where TTarget : CornerRadiusFilterConverter
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.CornerRadiusFilterConverter.ScaleProperty);
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.CornerRadiusFilterConverter.Filter"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.CornerRadiusFilterKind> Filter<TTarget>(this TTarget target) where TTarget : CornerRadiusFilterConverter
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.CornerRadiusFilterKind>.Get(target, Xaml.Controls.Primitives.CornerRadiusFilterConverter.FilterProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.CornerRadiusFilterConverter.Scale"/></summary>
+        public static DependencyProperty<TTarget, double> Scale<TTarget>(this TTarget target) where TTarget : CornerRadiusFilterConverter
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.CornerRadiusFilterConverter.ScaleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.CornerRadiusFilterConverter.DataContext"/></summary>
         public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : CornerRadiusFilterConverter
@@ -28864,11 +29286,11 @@ namespace CSharpMarkup.WinUI // CornerRadiusToThicknessConverter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CornerRadiusToThicknessConverter"/></summary>
-        public static CornerRadiusToThicknessConverter CornerRadiusToThicknessConverter(double? Multiplier = default, Xaml.Controls.Primitives.CornerRadiusToThicknessConverterKind? ConversionKind = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
+        public static CornerRadiusToThicknessConverter CornerRadiusToThicknessConverter(Xaml.Controls.Primitives.CornerRadiusToThicknessConverterKind? ConversionKind = default, double? Multiplier = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.Primitives.CornerRadiusToThicknessConverter();
-            if (Multiplier is not null) ui.Multiplier = Multiplier.Value;
             if (ConversionKind is not null) ui.ConversionKind = ConversionKind.Value;
+            if (Multiplier is not null) ui.Multiplier = Multiplier.Value;
             if (DataContext is not null) ui.DataContext = DataContext;
             if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
             return CSharpMarkup.WinUI.CornerRadiusToThicknessConverter.StartChain(ui);
@@ -28912,11 +29334,11 @@ namespace CSharpMarkup.WinUI // CornerRadiusToThicknessConverter
 
     public static partial class CornerRadiusToThicknessConverterExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.Multiplier"/></summary>
-        public static TView Multiplier<TView>(this TView view, double value) where TView : CornerRadiusToThicknessConverter { view.UI.Multiplier = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.ConversionKind"/></summary>
         public static TView ConversionKind<TView>(this TView view, Xaml.Controls.Primitives.CornerRadiusToThicknessConverterKind value) where TView : CornerRadiusToThicknessConverter { view.UI.ConversionKind = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.Multiplier"/></summary>
+        public static TView Multiplier<TView>(this TView view, double value) where TView : CornerRadiusToThicknessConverter { view.UI.Multiplier = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.DataContext"/></summary>
         public static TView DataContext<TView>(this TView view, object value) where TView : CornerRadiusToThicknessConverter { view.UI.DataContext = value; return view; }
@@ -28924,13 +29346,13 @@ namespace CSharpMarkup.WinUI // CornerRadiusToThicknessConverter
         /// <summary>Set <see cref="Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.TemplatedParent"/></summary>
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : CornerRadiusToThicknessConverter { view.UI.TemplatedParent = value; return view; }
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.Multiplier"/></summary>
-        public static DependencyProperty<TTarget, double> Multiplier<TTarget>(this TTarget target) where TTarget : CornerRadiusToThicknessConverter
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.MultiplierProperty);
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.ConversionKind"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.CornerRadiusToThicknessConverterKind> ConversionKind<TTarget>(this TTarget target) where TTarget : CornerRadiusToThicknessConverter
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.CornerRadiusToThicknessConverterKind>.Get(target, Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.ConversionKindProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.Multiplier"/></summary>
+        public static DependencyProperty<TTarget, double> Multiplier<TTarget>(this TTarget target) where TTarget : CornerRadiusToThicknessConverter
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.MultiplierProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.CornerRadiusToThicknessConverter.DataContext"/></summary>
         public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : CornerRadiusToThicknessConverter
@@ -29843,41 +30265,68 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ListViewItemPresenter"/></summary>
-        public static ListViewItemPresenter ListViewItemPresenter(bool? SelectionCheckMarkVisualEnabled = default, CSharpMarkup.WinUI.to.Brush? SelectedPressedBackground = default, CSharpMarkup.WinUI.to.Brush? SelectedPointerOverBorderBrush = default, CSharpMarkup.WinUI.to.Brush? SelectedPointerOverBackground = default, CSharpMarkup.WinUI.to.Brush? SelectedForeground = default, CSharpMarkup.WinUI.to.Thickness? SelectedBorderThickness = default, CSharpMarkup.WinUI.to.Brush? SelectedBackground = default, CSharpMarkup.WinUI.to.Thickness? RevealBorderThickness = default, CSharpMarkup.WinUI.to.Brush? RevealBorderBrush = default, bool? RevealBackgroundShowsAboveContent = default, CSharpMarkup.WinUI.to.Brush? RevealBackground = default, double? ReorderHintOffset = default, CSharpMarkup.WinUI.to.Brush? PressedBackground = default, CSharpMarkup.WinUI.to.Brush? PointerOverForeground = default, CSharpMarkup.WinUI.to.Thickness? PointerOverBackgroundMargin = default, CSharpMarkup.WinUI.to.Brush? PointerOverBackground = default, CSharpMarkup.WinUI.to.Brush? PlaceholderBackground = default, Xaml.VerticalAlignment? ListViewItemPresenterVerticalContentAlignment = default, CSharpMarkup.WinUI.to.Thickness? ListViewItemPresenterPadding = default, Xaml.HorizontalAlignment? ListViewItemPresenterHorizontalContentAlignment = default, CSharpMarkup.WinUI.to.Brush? FocusSecondaryBorderBrush = default, CSharpMarkup.WinUI.to.Brush? FocusBorderBrush = default, double? DragOpacity = default, CSharpMarkup.WinUI.to.Brush? DragForeground = default, CSharpMarkup.WinUI.to.Brush? DragBackground = default, double? DisabledOpacity = default, CSharpMarkup.WinUI.to.Thickness? ContentMargin = default, CSharpMarkup.WinUI.to.Brush? CheckSelectingBrush = default, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode? CheckMode = default, CSharpMarkup.WinUI.to.Brush? CheckHintBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBoxBrush = default, UIObject Content = default)
+        public static ListViewItemPresenter ListViewItemPresenter(Xaml.VerticalAlignment? ListViewItemPresenterVerticalContentAlignment = default, CSharpMarkup.WinUI.to.Thickness? ListViewItemPresenterPadding = default, Xaml.HorizontalAlignment? ListViewItemPresenterHorizontalContentAlignment = default, CSharpMarkup.WinUI.to.Brush? FocusSecondaryBorderBrush = default, CSharpMarkup.WinUI.to.Brush? FocusBorderBrush = default, double? DragOpacity = default, CSharpMarkup.WinUI.to.Brush? RevealBackground = default, CSharpMarkup.WinUI.to.Brush? DragBackground = default, double? DisabledOpacity = default, CSharpMarkup.WinUI.to.Thickness? ContentMargin = default, CSharpMarkup.WinUI.to.Brush? CheckSelectingBrush = default, CSharpMarkup.WinUI.to.Brush? CheckPressedBrush = default, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode? CheckMode = default, CSharpMarkup.WinUI.to.Brush? CheckHintBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBoxBorderBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBoxSelectedPressedBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBoxSelectedPointerOverBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBoxSelectedDisabledBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBoxSelectedBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBoxPressedBrush = default, bool? SelectionCheckMarkVisualEnabled = default, CSharpMarkup.WinUI.to.Brush? CheckBoxPointerOverBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBoxPointerOverBorderBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBoxDisabledBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBoxDisabledBorderBrush = default, CSharpMarkup.WinUI.to.CornerRadius? CheckBoxCornerRadius = default, CSharpMarkup.WinUI.to.Brush? CheckBoxBrush = default, CSharpMarkup.WinUI.to.Brush? CheckDisabledBrush = default, CSharpMarkup.WinUI.to.Brush? PlaceholderBackground = default, CSharpMarkup.WinUI.to.Brush? SelectedDisabledBorderBrush = default, CSharpMarkup.WinUI.to.Brush? SelectionIndicatorPressedBrush = default, CSharpMarkup.WinUI.to.Brush? SelectionIndicatorPointerOverBrush = default, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode? SelectionIndicatorMode = default, CSharpMarkup.WinUI.to.Brush? SelectionIndicatorDisabledBrush = default, CSharpMarkup.WinUI.to.CornerRadius? SelectionIndicatorCornerRadius = default, CSharpMarkup.WinUI.to.Brush? SelectionIndicatorBrush = default, CSharpMarkup.WinUI.to.Brush? CheckBoxPressedBorderBrush = default, CSharpMarkup.WinUI.to.Brush? SelectedPressedBorderBrush = default, CSharpMarkup.WinUI.to.Brush? SelectedPressedBackground = default, CSharpMarkup.WinUI.to.Brush? SelectedPointerOverBorderBrush = default, CSharpMarkup.WinUI.to.Brush? SelectedPointerOverBackground = default, CSharpMarkup.WinUI.to.Brush? SelectedInnerBorderBrush = default, CSharpMarkup.WinUI.to.Brush? SelectedForeground = default, bool? SelectionIndicatorVisualEnabled = default, CSharpMarkup.WinUI.to.Brush? SelectedDisabledBackground = default, CSharpMarkup.WinUI.to.Thickness? SelectedBorderThickness = default, CSharpMarkup.WinUI.to.Brush? SelectedBorderBrush = default, CSharpMarkup.WinUI.to.Brush? SelectedBackground = default, CSharpMarkup.WinUI.to.Thickness? RevealBorderThickness = default, CSharpMarkup.WinUI.to.Brush? RevealBorderBrush = default, bool? RevealBackgroundShowsAboveContent = default, CSharpMarkup.WinUI.to.Brush? DragForeground = default, double? ReorderHintOffset = default, CSharpMarkup.WinUI.to.Brush? PressedBackground = default, CSharpMarkup.WinUI.to.Brush? PointerOverForeground = default, CSharpMarkup.WinUI.to.Brush? PointerOverBorderBrush = default, CSharpMarkup.WinUI.to.Thickness? PointerOverBackgroundMargin = default, CSharpMarkup.WinUI.to.Brush? PointerOverBackground = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Primitives.ListViewItemPresenter();
-            if (SelectionCheckMarkVisualEnabled is not null) ui.SelectionCheckMarkVisualEnabled = SelectionCheckMarkVisualEnabled.Value;
-            if (SelectedPressedBackground is not null) ui.SelectedPressedBackground = SelectedPressedBackground.Value;
-            if (SelectedPointerOverBorderBrush is not null) ui.SelectedPointerOverBorderBrush = SelectedPointerOverBorderBrush.Value;
-            if (SelectedPointerOverBackground is not null) ui.SelectedPointerOverBackground = SelectedPointerOverBackground.Value;
-            if (SelectedForeground is not null) ui.SelectedForeground = SelectedForeground.Value;
-            if (SelectedBorderThickness is not null) ui.SelectedBorderThickness = SelectedBorderThickness.Value;
-            if (SelectedBackground is not null) ui.SelectedBackground = SelectedBackground.Value;
-            if (RevealBorderThickness is not null) ui.RevealBorderThickness = RevealBorderThickness.Value;
-            if (RevealBorderBrush is not null) ui.RevealBorderBrush = RevealBorderBrush.Value;
-            if (RevealBackgroundShowsAboveContent is not null) ui.RevealBackgroundShowsAboveContent = RevealBackgroundShowsAboveContent.Value;
-            if (RevealBackground is not null) ui.RevealBackground = RevealBackground.Value;
-            if (ReorderHintOffset is not null) ui.ReorderHintOffset = ReorderHintOffset.Value;
-            if (PressedBackground is not null) ui.PressedBackground = PressedBackground.Value;
-            if (PointerOverForeground is not null) ui.PointerOverForeground = PointerOverForeground.Value;
-            if (PointerOverBackgroundMargin is not null) ui.PointerOverBackgroundMargin = PointerOverBackgroundMargin.Value;
-            if (PointerOverBackground is not null) ui.PointerOverBackground = PointerOverBackground.Value;
-            if (PlaceholderBackground is not null) ui.PlaceholderBackground = PlaceholderBackground.Value;
             if (ListViewItemPresenterVerticalContentAlignment is not null) ui.ListViewItemPresenterVerticalContentAlignment = ListViewItemPresenterVerticalContentAlignment.Value;
             if (ListViewItemPresenterPadding is not null) ui.ListViewItemPresenterPadding = ListViewItemPresenterPadding.Value;
             if (ListViewItemPresenterHorizontalContentAlignment is not null) ui.ListViewItemPresenterHorizontalContentAlignment = ListViewItemPresenterHorizontalContentAlignment.Value;
             if (FocusSecondaryBorderBrush is not null) ui.FocusSecondaryBorderBrush = FocusSecondaryBorderBrush.Value;
             if (FocusBorderBrush is not null) ui.FocusBorderBrush = FocusBorderBrush.Value;
             if (DragOpacity is not null) ui.DragOpacity = DragOpacity.Value;
-            if (DragForeground is not null) ui.DragForeground = DragForeground.Value;
+            if (RevealBackground is not null) ui.RevealBackground = RevealBackground.Value;
             if (DragBackground is not null) ui.DragBackground = DragBackground.Value;
             if (DisabledOpacity is not null) ui.DisabledOpacity = DisabledOpacity.Value;
             if (ContentMargin is not null) ui.ContentMargin = ContentMargin.Value;
             if (CheckSelectingBrush is not null) ui.CheckSelectingBrush = CheckSelectingBrush.Value;
+            if (CheckPressedBrush is not null) ui.CheckPressedBrush = CheckPressedBrush.Value;
             if (CheckMode is not null) ui.CheckMode = CheckMode.Value;
             if (CheckHintBrush is not null) ui.CheckHintBrush = CheckHintBrush.Value;
+            if (CheckBoxBorderBrush is not null) ui.CheckBoxBorderBrush = CheckBoxBorderBrush.Value;
             if (CheckBrush is not null) ui.CheckBrush = CheckBrush.Value;
+            if (CheckBoxSelectedPressedBrush is not null) ui.CheckBoxSelectedPressedBrush = CheckBoxSelectedPressedBrush.Value;
+            if (CheckBoxSelectedPointerOverBrush is not null) ui.CheckBoxSelectedPointerOverBrush = CheckBoxSelectedPointerOverBrush.Value;
+            if (CheckBoxSelectedDisabledBrush is not null) ui.CheckBoxSelectedDisabledBrush = CheckBoxSelectedDisabledBrush.Value;
+            if (CheckBoxSelectedBrush is not null) ui.CheckBoxSelectedBrush = CheckBoxSelectedBrush.Value;
+            if (CheckBoxPressedBrush is not null) ui.CheckBoxPressedBrush = CheckBoxPressedBrush.Value;
+            if (SelectionCheckMarkVisualEnabled is not null) ui.SelectionCheckMarkVisualEnabled = SelectionCheckMarkVisualEnabled.Value;
+            if (CheckBoxPointerOverBrush is not null) ui.CheckBoxPointerOverBrush = CheckBoxPointerOverBrush.Value;
+            if (CheckBoxPointerOverBorderBrush is not null) ui.CheckBoxPointerOverBorderBrush = CheckBoxPointerOverBorderBrush.Value;
+            if (CheckBoxDisabledBrush is not null) ui.CheckBoxDisabledBrush = CheckBoxDisabledBrush.Value;
+            if (CheckBoxDisabledBorderBrush is not null) ui.CheckBoxDisabledBorderBrush = CheckBoxDisabledBorderBrush.Value;
+            if (CheckBoxCornerRadius is not null) ui.CheckBoxCornerRadius = CheckBoxCornerRadius.Value;
             if (CheckBoxBrush is not null) ui.CheckBoxBrush = CheckBoxBrush.Value;
+            if (CheckDisabledBrush is not null) ui.CheckDisabledBrush = CheckDisabledBrush.Value;
+            if (PlaceholderBackground is not null) ui.PlaceholderBackground = PlaceholderBackground.Value;
+            if (SelectedDisabledBorderBrush is not null) ui.SelectedDisabledBorderBrush = SelectedDisabledBorderBrush.Value;
+            if (SelectionIndicatorPressedBrush is not null) ui.SelectionIndicatorPressedBrush = SelectionIndicatorPressedBrush.Value;
+            if (SelectionIndicatorPointerOverBrush is not null) ui.SelectionIndicatorPointerOverBrush = SelectionIndicatorPointerOverBrush.Value;
+            if (SelectionIndicatorMode is not null) ui.SelectionIndicatorMode = SelectionIndicatorMode.Value;
+            if (SelectionIndicatorDisabledBrush is not null) ui.SelectionIndicatorDisabledBrush = SelectionIndicatorDisabledBrush.Value;
+            if (SelectionIndicatorCornerRadius is not null) ui.SelectionIndicatorCornerRadius = SelectionIndicatorCornerRadius.Value;
+            if (SelectionIndicatorBrush is not null) ui.SelectionIndicatorBrush = SelectionIndicatorBrush.Value;
+            if (CheckBoxPressedBorderBrush is not null) ui.CheckBoxPressedBorderBrush = CheckBoxPressedBorderBrush.Value;
+            if (SelectedPressedBorderBrush is not null) ui.SelectedPressedBorderBrush = SelectedPressedBorderBrush.Value;
+            if (SelectedPressedBackground is not null) ui.SelectedPressedBackground = SelectedPressedBackground.Value;
+            if (SelectedPointerOverBorderBrush is not null) ui.SelectedPointerOverBorderBrush = SelectedPointerOverBorderBrush.Value;
+            if (SelectedPointerOverBackground is not null) ui.SelectedPointerOverBackground = SelectedPointerOverBackground.Value;
+            if (SelectedInnerBorderBrush is not null) ui.SelectedInnerBorderBrush = SelectedInnerBorderBrush.Value;
+            if (SelectedForeground is not null) ui.SelectedForeground = SelectedForeground.Value;
+            if (SelectionIndicatorVisualEnabled is not null) ui.SelectionIndicatorVisualEnabled = SelectionIndicatorVisualEnabled.Value;
+            if (SelectedDisabledBackground is not null) ui.SelectedDisabledBackground = SelectedDisabledBackground.Value;
+            if (SelectedBorderThickness is not null) ui.SelectedBorderThickness = SelectedBorderThickness.Value;
+            if (SelectedBorderBrush is not null) ui.SelectedBorderBrush = SelectedBorderBrush.Value;
+            if (SelectedBackground is not null) ui.SelectedBackground = SelectedBackground.Value;
+            if (RevealBorderThickness is not null) ui.RevealBorderThickness = RevealBorderThickness.Value;
+            if (RevealBorderBrush is not null) ui.RevealBorderBrush = RevealBorderBrush.Value;
+            if (RevealBackgroundShowsAboveContent is not null) ui.RevealBackgroundShowsAboveContent = RevealBackgroundShowsAboveContent.Value;
+            if (DragForeground is not null) ui.DragForeground = DragForeground.Value;
+            if (ReorderHintOffset is not null) ui.ReorderHintOffset = ReorderHintOffset.Value;
+            if (PressedBackground is not null) ui.PressedBackground = PressedBackground.Value;
+            if (PointerOverForeground is not null) ui.PointerOverForeground = PointerOverForeground.Value;
+            if (PointerOverBorderBrush is not null) ui.PointerOverBorderBrush = PointerOverBorderBrush.Value;
+            if (PointerOverBackgroundMargin is not null) ui.PointerOverBackgroundMargin = PointerOverBackgroundMargin.Value;
+            if (PointerOverBackground is not null) ui.PointerOverBackground = PointerOverBackground.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ListViewItemPresenter.StartChain(ui);
         }
@@ -29929,159 +30378,6 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
 
     public static partial class ListViewItemPresenterExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionCheckMarkVisualEnabled"/></summary>
-        public static TView SelectionCheckMarkVisualEnabled<TView>(this TView view, bool value) where TView : ListViewItemPresenter { view.UI.SelectionCheckMarkVisualEnabled = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackground"/></summary>
-        public static TView SelectedPressedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedPressedBackground = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackground"/></summary>
-        public static TView SelectedPressedBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedPressedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackground"/></summary>
-        public static TView SelectedPressedBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedPressedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
-        public static TView SelectedPointerOverBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
-        public static TView SelectedPointerOverBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
-        public static TView SelectedPointerOverBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackground"/></summary>
-        public static TView SelectedPointerOverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBackground = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackground"/></summary>
-        public static TView SelectedPointerOverBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackground"/></summary>
-        public static TView SelectedPointerOverBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForeground"/></summary>
-        public static TView SelectedForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedForeground = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForeground"/></summary>
-        public static TView SelectedForeground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedForeground = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForeground"/></summary>
-        public static TView SelectedForeground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
-        public static TView SelectedBorderThickness<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
-        public static TView SelectedBorderThickness<TView>(this TView view, double uniform) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(uniform); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
-        public static TView SelectedBorderThickness<TView>(this TView view, double horizontal, double vertical) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(horizontal, vertical); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
-        public static TView SelectedBorderThickness<TView>(this TView view, double left, double top, double right, double bottom) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
-        public static TView SelectedBorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackground"/></summary>
-        public static TView SelectedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedBackground = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackground"/></summary>
-        public static TView SelectedBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackground"/></summary>
-        public static TView SelectedBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
-        public static TView RevealBorderThickness<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
-        public static TView RevealBorderThickness<TView>(this TView view, double uniform) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(uniform); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
-        public static TView RevealBorderThickness<TView>(this TView view, double horizontal, double vertical) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(horizontal, vertical); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
-        public static TView RevealBorderThickness<TView>(this TView view, double left, double top, double right, double bottom) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
-        public static TView RevealBorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderBrush"/></summary>
-        public static TView RevealBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.RevealBorderBrush = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderBrush"/></summary>
-        public static TView RevealBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.RevealBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderBrush"/></summary>
-        public static TView RevealBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.RevealBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackgroundShowsAboveContent"/></summary>
-        public static TView RevealBackgroundShowsAboveContent<TView>(this TView view, bool value) where TView : ListViewItemPresenter { view.UI.RevealBackgroundShowsAboveContent = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackground"/></summary>
-        public static TView RevealBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.RevealBackground = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackground"/></summary>
-        public static TView RevealBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.RevealBackground = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackground"/></summary>
-        public static TView RevealBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.RevealBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ReorderHintOffset"/></summary>
-        public static TView ReorderHintOffset<TView>(this TView view, double value) where TView : ListViewItemPresenter { view.UI.ReorderHintOffset = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PressedBackground"/></summary>
-        public static TView PressedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PressedBackground = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PressedBackground"/></summary>
-        public static TView PressedBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PressedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PressedBackground"/></summary>
-        public static TView PressedBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PressedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForeground"/></summary>
-        public static TView PointerOverForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PointerOverForeground = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForeground"/></summary>
-        public static TView PointerOverForeground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PointerOverForeground = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForeground"/></summary>
-        public static TView PointerOverForeground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PointerOverForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
-        public static TView PointerOverBackgroundMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
-        public static TView PointerOverBackgroundMargin<TView>(this TView view, double uniform) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(uniform); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
-        public static TView PointerOverBackgroundMargin<TView>(this TView view, double horizontal, double vertical) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(horizontal, vertical); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
-        public static TView PointerOverBackgroundMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
-        public static TView PointerOverBackgroundMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(left, top, right, bottom); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackground"/></summary>
-        public static TView PointerOverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PointerOverBackground = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackground"/></summary>
-        public static TView PointerOverBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PointerOverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackground"/></summary>
-        public static TView PointerOverBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PointerOverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PlaceholderBackground"/></summary>
-        public static TView PlaceholderBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PlaceholderBackground = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PlaceholderBackground"/></summary>
-        public static TView PlaceholderBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PlaceholderBackground = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PlaceholderBackground"/></summary>
-        public static TView PlaceholderBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PlaceholderBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterVerticalContentAlignment"/></summary>
         public static TView ListViewItemPresenterVerticalContentAlignment<TView>(this TView view, Xaml.VerticalAlignment value) where TView : ListViewItemPresenter { view.UI.ListViewItemPresenterVerticalContentAlignment = value; return view; }
 
@@ -30124,14 +30420,14 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragOpacity"/></summary>
         public static TView DragOpacity<TView>(this TView view, double value) where TView : ListViewItemPresenter { view.UI.DragOpacity = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragForeground"/></summary>
-        public static TView DragForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.DragForeground = value; return view; }
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackground"/></summary>
+        public static TView RevealBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.RevealBackground = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragForeground"/></summary>
-        public static TView DragForeground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.DragForeground = new Xaml.Media.SolidColorBrush(value); return view; }
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackground"/></summary>
+        public static TView RevealBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.RevealBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragForeground"/></summary>
-        public static TView DragForeground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.DragForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackground"/></summary>
+        public static TView RevealBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.RevealBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragBackground"/></summary>
         public static TView DragBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.DragBackground = value; return view; }
@@ -30169,6 +30465,15 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckSelectingBrush"/></summary>
         public static TView CheckSelectingBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckSelectingBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckPressedBrush"/></summary>
+        public static TView CheckPressedBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckPressedBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckPressedBrush"/></summary>
+        public static TView CheckPressedBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckPressedBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckPressedBrush"/></summary>
+        public static TView CheckPressedBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckPressedBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckMode"/></summary>
         public static TView CheckMode<TView>(this TView view, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode value) where TView : ListViewItemPresenter { view.UI.CheckMode = value; return view; }
 
@@ -30181,6 +30486,15 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckHintBrush"/></summary>
         public static TView CheckHintBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckHintBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBorderBrush"/></summary>
+        public static TView CheckBoxBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBorderBrush"/></summary>
+        public static TView CheckBoxBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBorderBrush"/></summary>
+        public static TView CheckBoxBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBrush"/></summary>
         public static TView CheckBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBrush = value; return view; }
 
@@ -30189,6 +30503,93 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBrush"/></summary>
         public static TView CheckBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPressedBrush"/></summary>
+        public static TView CheckBoxSelectedPressedBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPressedBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPressedBrush"/></summary>
+        public static TView CheckBoxSelectedPressedBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPressedBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPressedBrush"/></summary>
+        public static TView CheckBoxSelectedPressedBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPressedBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPointerOverBrush"/></summary>
+        public static TView CheckBoxSelectedPointerOverBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPointerOverBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPointerOverBrush"/></summary>
+        public static TView CheckBoxSelectedPointerOverBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPointerOverBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPointerOverBrush"/></summary>
+        public static TView CheckBoxSelectedPointerOverBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPointerOverBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedDisabledBrush"/></summary>
+        public static TView CheckBoxSelectedDisabledBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedDisabledBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedDisabledBrush"/></summary>
+        public static TView CheckBoxSelectedDisabledBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedDisabledBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedDisabledBrush"/></summary>
+        public static TView CheckBoxSelectedDisabledBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedDisabledBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedBrush"/></summary>
+        public static TView CheckBoxSelectedBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedBrush"/></summary>
+        public static TView CheckBoxSelectedBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedBrush"/></summary>
+        public static TView CheckBoxSelectedBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBrush"/></summary>
+        public static TView CheckBoxPressedBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBrush"/></summary>
+        public static TView CheckBoxPressedBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBrush"/></summary>
+        public static TView CheckBoxPressedBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionCheckMarkVisualEnabled"/></summary>
+        public static TView SelectionCheckMarkVisualEnabled<TView>(this TView view, bool value) where TView : ListViewItemPresenter { view.UI.SelectionCheckMarkVisualEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBrush"/></summary>
+        public static TView CheckBoxPointerOverBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBrush"/></summary>
+        public static TView CheckBoxPointerOverBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBrush"/></summary>
+        public static TView CheckBoxPointerOverBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBorderBrush"/></summary>
+        public static TView CheckBoxPointerOverBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBorderBrush"/></summary>
+        public static TView CheckBoxPointerOverBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBorderBrush"/></summary>
+        public static TView CheckBoxPointerOverBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBrush"/></summary>
+        public static TView CheckBoxDisabledBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBrush"/></summary>
+        public static TView CheckBoxDisabledBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBrush"/></summary>
+        public static TView CheckBoxDisabledBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrush"/></summary>
+        public static TView CheckBoxDisabledBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrush"/></summary>
+        public static TView CheckBoxDisabledBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrush"/></summary>
+        public static TView CheckBoxDisabledBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxCornerRadius"/></summary>
+        public static TView CheckBoxCornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : ListViewItemPresenter { view.UI.CheckBoxCornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBrush"/></summary>
         public static TView CheckBoxBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxBrush = value; return view; }
@@ -30199,13 +30600,332 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBrush"/></summary>
         public static TView CheckBoxBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckDisabledBrush"/></summary>
+        public static TView CheckDisabledBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckDisabledBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckDisabledBrush"/></summary>
+        public static TView CheckDisabledBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckDisabledBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckDisabledBrush"/></summary>
+        public static TView CheckDisabledBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckDisabledBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PlaceholderBackground"/></summary>
+        public static TView PlaceholderBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PlaceholderBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PlaceholderBackground"/></summary>
+        public static TView PlaceholderBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PlaceholderBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PlaceholderBackground"/></summary>
+        public static TView PlaceholderBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PlaceholderBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBorderBrush"/></summary>
+        public static TView SelectedDisabledBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBorderBrush"/></summary>
+        public static TView SelectedDisabledBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBorderBrush"/></summary>
+        public static TView SelectedDisabledBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPressedBrush"/></summary>
+        public static TView SelectionIndicatorPressedBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPressedBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPressedBrush"/></summary>
+        public static TView SelectionIndicatorPressedBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPressedBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPressedBrush"/></summary>
+        public static TView SelectionIndicatorPressedBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPressedBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPointerOverBrush"/></summary>
+        public static TView SelectionIndicatorPointerOverBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPointerOverBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPointerOverBrush"/></summary>
+        public static TView SelectionIndicatorPointerOverBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPointerOverBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPointerOverBrush"/></summary>
+        public static TView SelectionIndicatorPointerOverBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPointerOverBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorMode"/></summary>
+        public static TView SelectionIndicatorMode<TView>(this TView view, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorMode = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrush"/></summary>
+        public static TView SelectionIndicatorDisabledBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorDisabledBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrush"/></summary>
+        public static TView SelectionIndicatorDisabledBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorDisabledBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrush"/></summary>
+        public static TView SelectionIndicatorDisabledBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorDisabledBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorCornerRadius"/></summary>
+        public static TView SelectionIndicatorCornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorCornerRadius = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorBrush"/></summary>
+        public static TView SelectionIndicatorBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorBrush"/></summary>
+        public static TView SelectionIndicatorBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorBrush"/></summary>
+        public static TView SelectionIndicatorBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBorderBrush"/></summary>
+        public static TView CheckBoxPressedBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBorderBrush"/></summary>
+        public static TView CheckBoxPressedBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBorderBrush"/></summary>
+        public static TView CheckBoxPressedBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBorderBrush"/></summary>
+        public static TView SelectedPressedBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedPressedBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBorderBrush"/></summary>
+        public static TView SelectedPressedBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedPressedBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBorderBrush"/></summary>
+        public static TView SelectedPressedBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedPressedBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackground"/></summary>
+        public static TView SelectedPressedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedPressedBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackground"/></summary>
+        public static TView SelectedPressedBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedPressedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackground"/></summary>
+        public static TView SelectedPressedBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedPressedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
+        public static TView SelectedPointerOverBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
+        public static TView SelectedPointerOverBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
+        public static TView SelectedPointerOverBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackground"/></summary>
+        public static TView SelectedPointerOverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackground"/></summary>
+        public static TView SelectedPointerOverBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackground"/></summary>
+        public static TView SelectedPointerOverBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedInnerBorderBrush"/></summary>
+        public static TView SelectedInnerBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedInnerBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedInnerBorderBrush"/></summary>
+        public static TView SelectedInnerBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedInnerBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedInnerBorderBrush"/></summary>
+        public static TView SelectedInnerBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedInnerBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForeground"/></summary>
+        public static TView SelectedForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedForeground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForeground"/></summary>
+        public static TView SelectedForeground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedForeground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForeground"/></summary>
+        public static TView SelectedForeground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorVisualEnabled"/></summary>
+        public static TView SelectionIndicatorVisualEnabled<TView>(this TView view, bool value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorVisualEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBackground"/></summary>
+        public static TView SelectedDisabledBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBackground"/></summary>
+        public static TView SelectedDisabledBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBackground"/></summary>
+        public static TView SelectedDisabledBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
+        public static TView SelectedBorderThickness<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
+        public static TView SelectedBorderThickness<TView>(this TView view, double uniform) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
+        public static TView SelectedBorderThickness<TView>(this TView view, double horizontal, double vertical) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
+        public static TView SelectedBorderThickness<TView>(this TView view, double left, double top, double right, double bottom) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
+        public static TView SelectedBorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderBrush"/></summary>
+        public static TView SelectedBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderBrush"/></summary>
+        public static TView SelectedBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderBrush"/></summary>
+        public static TView SelectedBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackground"/></summary>
+        public static TView SelectedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackground"/></summary>
+        public static TView SelectedBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackground"/></summary>
+        public static TView SelectedBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
+        public static TView RevealBorderThickness<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
+        public static TView RevealBorderThickness<TView>(this TView view, double uniform) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
+        public static TView RevealBorderThickness<TView>(this TView view, double horizontal, double vertical) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
+        public static TView RevealBorderThickness<TView>(this TView view, double left, double top, double right, double bottom) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
+        public static TView RevealBorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderBrush"/></summary>
+        public static TView RevealBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.RevealBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderBrush"/></summary>
+        public static TView RevealBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.RevealBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderBrush"/></summary>
+        public static TView RevealBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.RevealBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackgroundShowsAboveContent"/></summary>
+        public static TView RevealBackgroundShowsAboveContent<TView>(this TView view, bool value) where TView : ListViewItemPresenter { view.UI.RevealBackgroundShowsAboveContent = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragForeground"/></summary>
+        public static TView DragForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.DragForeground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragForeground"/></summary>
+        public static TView DragForeground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.DragForeground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragForeground"/></summary>
+        public static TView DragForeground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.DragForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ReorderHintOffset"/></summary>
+        public static TView ReorderHintOffset<TView>(this TView view, double value) where TView : ListViewItemPresenter { view.UI.ReorderHintOffset = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PressedBackground"/></summary>
+        public static TView PressedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PressedBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PressedBackground"/></summary>
+        public static TView PressedBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PressedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PressedBackground"/></summary>
+        public static TView PressedBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PressedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForeground"/></summary>
+        public static TView PointerOverForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PointerOverForeground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForeground"/></summary>
+        public static TView PointerOverForeground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PointerOverForeground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForeground"/></summary>
+        public static TView PointerOverForeground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PointerOverForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBorderBrush"/></summary>
+        public static TView PointerOverBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PointerOverBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBorderBrush"/></summary>
+        public static TView PointerOverBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PointerOverBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBorderBrush"/></summary>
+        public static TView PointerOverBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PointerOverBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        public static TView PointerOverBackgroundMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        public static TView PointerOverBackgroundMargin<TView>(this TView view, double uniform) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        public static TView PointerOverBackgroundMargin<TView>(this TView view, double horizontal, double vertical) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        public static TView PointerOverBackgroundMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        public static TView PointerOverBackgroundMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackground"/></summary>
+        public static TView PointerOverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PointerOverBackground = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackground"/></summary>
+        public static TView PointerOverBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PointerOverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackground"/></summary>
+        public static TView PointerOverBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PointerOverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBorderBrushProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBrush"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBrushProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxCornerRadius"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CheckBoxCornerRadius<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxCornerRadiusProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxDisabledBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxDisabledBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxPointerOverBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBorderBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxPointerOverBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxPressedBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBorderBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxPressedBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxSelectedBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedDisabledBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxSelectedDisabledBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedDisabledBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPointerOverBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxSelectedPointerOverBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPointerOverBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPressedBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxSelectedPressedBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPressedBrushProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBrush"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckDisabledBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckDisabledBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckDisabledBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckHintBrush"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckHintBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
@@ -30214,6 +30934,10 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckMode"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode> CheckMode<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckModeProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckPressedBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckPressedBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckPressedBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckSelectingBrush"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckSelectingBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
@@ -30271,6 +30995,10 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PointerOverBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PointerOverBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBorderBrushProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForeground"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PointerOverForeground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForegroundProperty);
@@ -30303,13 +31031,29 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackgroundProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderBrushProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> SelectedBorderThickness<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThicknessProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBackground"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedDisabledBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBackgroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedDisabledBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBorderBrushProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForeground"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedForeground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForegroundProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedInnerBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedInnerBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedInnerBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackground"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedPointerOverBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
@@ -30323,9 +31067,41 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedPressedBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackgroundProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedPressedBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBorderBrushProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionCheckMarkVisualEnabled"/></summary>
         public static DependencyProperty<TTarget, bool> SelectionCheckMarkVisualEnabled<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionCheckMarkVisualEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectionIndicatorBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorCornerRadius"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> SelectionIndicatorCornerRadius<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorCornerRadiusProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectionIndicatorDisabledBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorMode"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode> SelectionIndicatorMode<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorModeProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPointerOverBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectionIndicatorPointerOverBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPointerOverBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPressedBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectionIndicatorPressedBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPressedBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorVisualEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> SelectionIndicatorVisualEnabled<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorVisualEnabledProperty);
     }
 }
 
@@ -30636,6 +31412,92 @@ namespace CSharpMarkup.WinUI // MenuFlyoutPresenterTemplateSettings
     }
 }
 
+namespace CSharpMarkup.WinUI // MonochromaticOverlayPresenter
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter"/></summary>
+        public static MonochromaticOverlayPresenter MonochromaticOverlayPresenter(params Microsoft.UI.Xaml.UIElement[] Children)
+        {
+            var ui = new Xaml.Controls.Primitives.MonochromaticOverlayPresenter();
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
+            return CSharpMarkup.WinUI.MonochromaticOverlayPresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter"/></summary>
+        public static MonochromaticOverlayPresenter MonochromaticOverlayPresenter()
+        {
+            var ui = new Xaml.Controls.Primitives.MonochromaticOverlayPresenter();
+            return CSharpMarkup.WinUI.MonochromaticOverlayPresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter"/></summary>
+        public static MonochromaticOverlayPresenter MonochromaticOverlayPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Xaml.Controls.Primitives.MonochromaticOverlayPresenter(javaReference, transfer);
+            return CSharpMarkup.WinUI.MonochromaticOverlayPresenter.StartChain(ui);
+        }
+    }
+
+    public partial class MonochromaticOverlayPresenter : Grid, IUI<Microsoft.UI.Xaml.Controls.Primitives.MonochromaticOverlayPresenter>
+    {
+        static MonochromaticOverlayPresenter instance;
+
+        internal static MonochromaticOverlayPresenter StartChain(Xaml.Controls.Primitives.MonochromaticOverlayPresenter ui)
+        {
+            if (instance == null) instance = new MonochromaticOverlayPresenter();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.Primitives.MonochromaticOverlayPresenter ui;
+
+        public new Xaml.Controls.Primitives.MonochromaticOverlayPresenter UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(MonochromaticOverlayPresenter view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.Primitives.MonochromaticOverlayPresenter(MonochromaticOverlayPresenter view) => view?.UI;
+
+        public static implicit operator MonochromaticOverlayPresenter(Xaml.Controls.Primitives.MonochromaticOverlayPresenter ui) => MonochromaticOverlayPresenter.StartChain(ui);
+
+        public MonochromaticOverlayPresenter Invoke(Action<Xaml.Controls.Primitives.MonochromaticOverlayPresenter> action) { action?.Invoke(UI); return this; }
+
+        protected MonochromaticOverlayPresenter() { }
+    }
+
+    public static partial class MonochromaticOverlayPresenterExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter.ReplacementColor"/></summary>
+        public static TView ReplacementColor<TView>(this TView view, Windows.UI.Color value) where TView : MonochromaticOverlayPresenter { view.UI.ReplacementColor = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter.SourceElement"/></summary>
+        public static TView SourceElement<TView>(this TView view, Xaml.UIElement value) where TView : MonochromaticOverlayPresenter { view.UI.SourceElement = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter.ReplacementColor"/></summary>
+        public static DependencyProperty<TTarget, Windows.UI.Color> ReplacementColor<TTarget>(this TTarget target) where TTarget : MonochromaticOverlayPresenter
+        => DependencyProperty<TTarget, Windows.UI.Color>.Get(target, Xaml.Controls.Primitives.MonochromaticOverlayPresenter.ReplacementColorProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter.SourceElement"/></summary>
+        public static DependencyProperty<TTarget, Xaml.UIElement> SourceElement<TTarget>(this TTarget target) where TTarget : MonochromaticOverlayPresenter
+        => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.Primitives.MonochromaticOverlayPresenter.SourceElementProperty);
+    }
+}
+
 namespace CSharpMarkup.WinUI // NavigationViewItemPresenter
 {
     public static partial class Helpers
@@ -30722,6 +31584,81 @@ namespace CSharpMarkup.WinUI // NavigationViewItemPresenter
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenter.TemplateSettings"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : NavigationViewItemPresenter
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings>.Get(target, Xaml.Controls.Primitives.NavigationViewItemPresenter.TemplateSettingsProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // NavigationViewItemPresenterTemplateSettings
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings"/></summary>
+        public static NavigationViewItemPresenterTemplateSettings NavigationViewItemPresenterTemplateSettings(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
+        {
+            var ui = new Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings();
+            if (DataContext is not null) ui.DataContext = DataContext;
+            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
+            return CSharpMarkup.WinUI.NavigationViewItemPresenterTemplateSettings.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings"/></summary>
+        public static NavigationViewItemPresenterTemplateSettings NavigationViewItemPresenterTemplateSettings()
+        {
+            var ui = new Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings();
+            return CSharpMarkup.WinUI.NavigationViewItemPresenterTemplateSettings.StartChain(ui);
+        }
+    }
+
+    public partial class NavigationViewItemPresenterTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings>
+    {
+        static NavigationViewItemPresenterTemplateSettings instance;
+
+        internal static NavigationViewItemPresenterTemplateSettings StartChain(Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings ui)
+        {
+            if (instance == null) instance = new NavigationViewItemPresenterTemplateSettings();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings ui;
+
+        public new Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings(NavigationViewItemPresenterTemplateSettings view) => view?.UI;
+
+        public static implicit operator NavigationViewItemPresenterTemplateSettings(Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings ui) => NavigationViewItemPresenterTemplateSettings.StartChain(ui);
+
+        public NavigationViewItemPresenterTemplateSettings Invoke(Action<Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings> action) { action?.Invoke(UI); return this; }
+
+        protected NavigationViewItemPresenterTemplateSettings() { }
+    }
+
+    public static partial class NavigationViewItemPresenterTemplateSettingsExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.DataContext"/></summary>
+        public static TView DataContext<TView>(this TView view, object value) where TView : NavigationViewItemPresenterTemplateSettings { view.UI.DataContext = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.TemplatedParent"/></summary>
+        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : NavigationViewItemPresenterTemplateSettings { view.UI.TemplatedParent = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.IconWidth"/></summary>
+        public static DependencyProperty<TTarget, double> IconWidth<TTarget>(this TTarget target) where TTarget : NavigationViewItemPresenterTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.IconWidthProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.SmallerIconWidth"/></summary>
+        public static DependencyProperty<TTarget, double> SmallerIconWidth<TTarget>(this TTarget target) where TTarget : NavigationViewItemPresenterTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.SmallerIconWidthProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.DataContext"/></summary>
+        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : NavigationViewItemPresenterTemplateSettings
+        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.DataContextProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.TemplatedParent"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : NavigationViewItemPresenterTemplateSettings
+        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.TemplatedParentProperty);
     }
 }
 
@@ -31347,42 +32284,6 @@ namespace CSharpMarkup.WinUI // RepeatButton
     }
 }
 
-namespace CSharpMarkup.WinUI // RepeatedScrollSnapPoint
-{
-    public partial class RepeatedScrollSnapPoint : ScrollSnapPointBase, IUI<Microsoft.UI.Xaml.Controls.Primitives.RepeatedScrollSnapPoint>
-    {
-        Xaml.Controls.Primitives.RepeatedScrollSnapPoint ui;
-
-        public new Xaml.Controls.Primitives.RepeatedScrollSnapPoint UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public RepeatedScrollSnapPoint Invoke(Action<Xaml.Controls.Primitives.RepeatedScrollSnapPoint> action) { action?.Invoke(UI); return this; }
-
-        protected RepeatedScrollSnapPoint() { }
-    }
-}
-
-namespace CSharpMarkup.WinUI // RepeatedZoomSnapPoint
-{
-    public partial class RepeatedZoomSnapPoint : ZoomSnapPointBase, IUI<Microsoft.UI.Xaml.Controls.Primitives.RepeatedZoomSnapPoint>
-    {
-        Xaml.Controls.Primitives.RepeatedZoomSnapPoint ui;
-
-        public new Xaml.Controls.Primitives.RepeatedZoomSnapPoint UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public RepeatedZoomSnapPoint Invoke(Action<Xaml.Controls.Primitives.RepeatedZoomSnapPoint> action) { action?.Invoke(UI); return this; }
-
-        protected RepeatedZoomSnapPoint() { }
-    }
-}
-
 namespace CSharpMarkup.WinUI // ScrollBar
 {
     public static partial class Helpers
@@ -31464,267 +32365,6 @@ namespace CSharpMarkup.WinUI // ScrollBar
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollBar.ViewportSize"/></summary>
         public static DependencyProperty<TTarget, double> ViewportSize<TTarget>(this TTarget target) where TTarget : ScrollBar
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.ScrollBar.ViewportSizeProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // ScrollPresenter
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollPresenter"/></summary>
-        public static ScrollPresenter ScrollPresenter(Xaml.Controls.ScrollingScrollMode? HorizontalScrollMode = default, Xaml.Controls.Primitives.IScrollController HorizontalScrollController = default, Xaml.Controls.ScrollingChainMode? HorizontalScrollChainMode = default, double? MaxZoomFactor = default, double? HorizontalAnchorRatio = default, Xaml.Controls.ScrollingInputKinds? IgnoredInputKinds = default, double? MinZoomFactor = default, Xaml.Controls.ScrollingRailMode? HorizontalScrollRailMode = default, Xaml.Controls.ScrollingContentOrientation? ContentOrientation = default, Xaml.UIElement Content = default, CSharpMarkup.WinUI.to.Brush? Background = default, Xaml.Controls.ScrollingZoomMode? ZoomMode = default, Xaml.Controls.ScrollingChainMode? ZoomChainMode = default, Xaml.Controls.ScrollingRailMode? VerticalScrollRailMode = default, Xaml.Controls.ScrollingScrollMode? VerticalScrollMode = default, Xaml.Controls.Primitives.IScrollController VerticalScrollController = default, Xaml.Controls.ScrollingChainMode? VerticalScrollChainMode = default, double? VerticalAnchorRatio = default)
-        {
-            var ui = new Xaml.Controls.Primitives.ScrollPresenter();
-            if (HorizontalScrollMode is not null) ui.HorizontalScrollMode = HorizontalScrollMode.Value;
-            if (HorizontalScrollController is not null) ui.HorizontalScrollController = HorizontalScrollController;
-            if (HorizontalScrollChainMode is not null) ui.HorizontalScrollChainMode = HorizontalScrollChainMode.Value;
-            if (MaxZoomFactor is not null) ui.MaxZoomFactor = MaxZoomFactor.Value;
-            if (HorizontalAnchorRatio is not null) ui.HorizontalAnchorRatio = HorizontalAnchorRatio.Value;
-            if (IgnoredInputKinds is not null) ui.IgnoredInputKinds = IgnoredInputKinds.Value;
-            if (MinZoomFactor is not null) ui.MinZoomFactor = MinZoomFactor.Value;
-            if (HorizontalScrollRailMode is not null) ui.HorizontalScrollRailMode = HorizontalScrollRailMode.Value;
-            if (ContentOrientation is not null) ui.ContentOrientation = ContentOrientation.Value;
-            if (Content is not null) ui.Content = Content;
-            if (Background is not null) ui.Background = Background.Value;
-            if (ZoomMode is not null) ui.ZoomMode = ZoomMode.Value;
-            if (ZoomChainMode is not null) ui.ZoomChainMode = ZoomChainMode.Value;
-            if (VerticalScrollRailMode is not null) ui.VerticalScrollRailMode = VerticalScrollRailMode.Value;
-            if (VerticalScrollMode is not null) ui.VerticalScrollMode = VerticalScrollMode.Value;
-            if (VerticalScrollController is not null) ui.VerticalScrollController = VerticalScrollController;
-            if (VerticalScrollChainMode is not null) ui.VerticalScrollChainMode = VerticalScrollChainMode.Value;
-            if (VerticalAnchorRatio is not null) ui.VerticalAnchorRatio = VerticalAnchorRatio.Value;
-            return CSharpMarkup.WinUI.ScrollPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollPresenter"/></summary>
-        public static ScrollPresenter ScrollPresenter()
-        {
-            var ui = new Xaml.Controls.Primitives.ScrollPresenter();
-            return CSharpMarkup.WinUI.ScrollPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollPresenter"/></summary>
-        public static ScrollPresenter ScrollPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.Primitives.ScrollPresenter(javaReference, transfer);
-            return CSharpMarkup.WinUI.ScrollPresenter.StartChain(ui);
-        }
-    }
-
-    public partial class ScrollPresenter : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.Primitives.ScrollPresenter>
-    {
-        static ScrollPresenter instance;
-
-        internal static ScrollPresenter StartChain(Xaml.Controls.Primitives.ScrollPresenter ui)
-        {
-            if (instance == null) instance = new ScrollPresenter();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.Primitives.ScrollPresenter ui;
-
-        public new Xaml.Controls.Primitives.ScrollPresenter UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.UIElement(ScrollPresenter view) => view?.UI;
-
-        public static implicit operator Xaml.Controls.Primitives.ScrollPresenter(ScrollPresenter view) => view?.UI;
-
-        public static implicit operator ScrollPresenter(Xaml.Controls.Primitives.ScrollPresenter ui) => ScrollPresenter.StartChain(ui);
-
-        public ScrollPresenter Invoke(Action<Xaml.Controls.Primitives.ScrollPresenter> action) { action?.Invoke(UI); return this; }
-
-        protected ScrollPresenter() { }
-    }
-
-    public static partial class ScrollPresenterExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.HorizontalScrollMode"/></summary>
-        public static TView HorizontalScrollMode<TView>(this TView view, Xaml.Controls.ScrollingScrollMode value) where TView : ScrollPresenter { view.UI.HorizontalScrollMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.HorizontalScrollController"/></summary>
-        public static TView HorizontalScrollController<TView>(this TView view, Xaml.Controls.Primitives.IScrollController value) where TView : ScrollPresenter { view.UI.HorizontalScrollController = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.HorizontalScrollChainMode"/></summary>
-        public static TView HorizontalScrollChainMode<TView>(this TView view, Xaml.Controls.ScrollingChainMode value) where TView : ScrollPresenter { view.UI.HorizontalScrollChainMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.MaxZoomFactor"/></summary>
-        public static TView MaxZoomFactor<TView>(this TView view, double value) where TView : ScrollPresenter { view.UI.MaxZoomFactor = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.HorizontalAnchorRatio"/></summary>
-        public static TView HorizontalAnchorRatio<TView>(this TView view, double value) where TView : ScrollPresenter { view.UI.HorizontalAnchorRatio = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.IgnoredInputKinds"/></summary>
-        public static TView IgnoredInputKinds<TView>(this TView view, Xaml.Controls.ScrollingInputKinds value) where TView : ScrollPresenter { view.UI.IgnoredInputKinds = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.MinZoomFactor"/></summary>
-        public static TView MinZoomFactor<TView>(this TView view, double value) where TView : ScrollPresenter { view.UI.MinZoomFactor = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.HorizontalScrollRailMode"/></summary>
-        public static TView HorizontalScrollRailMode<TView>(this TView view, Xaml.Controls.ScrollingRailMode value) where TView : ScrollPresenter { view.UI.HorizontalScrollRailMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.ContentOrientation"/></summary>
-        public static TView ContentOrientation<TView>(this TView view, Xaml.Controls.ScrollingContentOrientation value) where TView : ScrollPresenter { view.UI.ContentOrientation = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.Content"/></summary>
-        public static TView Content<TView>(this TView view, Xaml.UIElement value) where TView : ScrollPresenter { view.UI.Content = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.Background"/></summary>
-        public static TView Background<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ScrollPresenter { view.UI.Background = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.Background"/></summary>
-        public static TView Background<TView>(this TView view, Windows.UI.Color value) where TView : ScrollPresenter { view.UI.Background = new Xaml.Media.SolidColorBrush(value); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.Background"/></summary>
-        public static TView Background<TView>(this TView view, string color) where TView : ScrollPresenter { view.UI.Background = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.ZoomMode"/></summary>
-        public static TView ZoomMode<TView>(this TView view, Xaml.Controls.ScrollingZoomMode value) where TView : ScrollPresenter { view.UI.ZoomMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.ZoomChainMode"/></summary>
-        public static TView ZoomChainMode<TView>(this TView view, Xaml.Controls.ScrollingChainMode value) where TView : ScrollPresenter { view.UI.ZoomChainMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.VerticalScrollRailMode"/></summary>
-        public static TView VerticalScrollRailMode<TView>(this TView view, Xaml.Controls.ScrollingRailMode value) where TView : ScrollPresenter { view.UI.VerticalScrollRailMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.VerticalScrollMode"/></summary>
-        public static TView VerticalScrollMode<TView>(this TView view, Xaml.Controls.ScrollingScrollMode value) where TView : ScrollPresenter { view.UI.VerticalScrollMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.VerticalScrollController"/></summary>
-        public static TView VerticalScrollController<TView>(this TView view, Xaml.Controls.Primitives.IScrollController value) where TView : ScrollPresenter { view.UI.VerticalScrollController = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.VerticalScrollChainMode"/></summary>
-        public static TView VerticalScrollChainMode<TView>(this TView view, Xaml.Controls.ScrollingChainMode value) where TView : ScrollPresenter { view.UI.VerticalScrollChainMode = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.ScrollPresenter.VerticalAnchorRatio"/></summary>
-        public static TView VerticalAnchorRatio<TView>(this TView view, double value) where TView : ScrollPresenter { view.UI.VerticalAnchorRatio = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.Background"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> Background<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.BackgroundProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.ContentOrientation"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation> ContentOrientation<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.ContentOrientationProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.Content"/></summary>
-        public static DependencyProperty<TTarget, Xaml.UIElement> Content<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.ContentProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.HorizontalAnchorRatio"/></summary>
-        public static DependencyProperty<TTarget, double> HorizontalAnchorRatio<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.HorizontalAnchorRatioProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.HorizontalScrollChainMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> HorizontalScrollChainMode<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.HorizontalScrollChainModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.HorizontalScrollMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode> HorizontalScrollMode<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.HorizontalScrollModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.HorizontalScrollRailMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode> HorizontalScrollRailMode<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.HorizontalScrollRailModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.IgnoredInputKinds"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> IgnoredInputKinds<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.IgnoredInputKindsProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.MaxZoomFactor"/></summary>
-        public static DependencyProperty<TTarget, double> MaxZoomFactor<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.MaxZoomFactorProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.MinZoomFactor"/></summary>
-        public static DependencyProperty<TTarget, double> MinZoomFactor<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.MinZoomFactorProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.VerticalAnchorRatio"/></summary>
-        public static DependencyProperty<TTarget, double> VerticalAnchorRatio<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.VerticalAnchorRatioProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.VerticalScrollChainMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> VerticalScrollChainMode<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.VerticalScrollChainModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.VerticalScrollMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode> VerticalScrollMode<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.VerticalScrollModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.VerticalScrollRailMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode> VerticalScrollRailMode<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.VerticalScrollRailModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.ZoomChainMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> ZoomChainMode<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.ZoomChainModeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ScrollPresenter.ZoomMode"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.ScrollingZoomMode> ZoomMode<TTarget>(this TTarget target) where TTarget : ScrollPresenter
-        => DependencyProperty<TTarget, Xaml.Controls.ScrollingZoomMode>.Get(target, Xaml.Controls.Primitives.ScrollPresenter.ZoomModeProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // ScrollSnapPoint
-{
-    public partial class ScrollSnapPoint : ScrollSnapPointBase, IUI<Microsoft.UI.Xaml.Controls.Primitives.ScrollSnapPoint>
-    {
-        Xaml.Controls.Primitives.ScrollSnapPoint ui;
-
-        public new Xaml.Controls.Primitives.ScrollSnapPoint UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public ScrollSnapPoint Invoke(Action<Xaml.Controls.Primitives.ScrollSnapPoint> action) { action?.Invoke(UI); return this; }
-
-        protected ScrollSnapPoint() { }
-    }
-}
-
-namespace CSharpMarkup.WinUI // ScrollSnapPointBase
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollSnapPointBase"/></summary>
-        public static ScrollSnapPointBase ScrollSnapPointBase()
-        {
-            var ui = new Xaml.Controls.Primitives.ScrollSnapPointBase();
-            return CSharpMarkup.WinUI.ScrollSnapPointBase.StartChain(ui);
-        }
-    }
-
-    public partial class ScrollSnapPointBase : SnapPointBase, IUI<Microsoft.UI.Xaml.Controls.Primitives.ScrollSnapPointBase>
-    {
-        static ScrollSnapPointBase instance;
-
-        internal static ScrollSnapPointBase StartChain(Xaml.Controls.Primitives.ScrollSnapPointBase ui)
-        {
-            if (instance == null) instance = new ScrollSnapPointBase();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.Primitives.ScrollSnapPointBase ui;
-
-        public new Xaml.Controls.Primitives.ScrollSnapPointBase UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.Primitives.ScrollSnapPointBase(ScrollSnapPointBase view) => view?.UI;
-
-        public static implicit operator ScrollSnapPointBase(Xaml.Controls.Primitives.ScrollSnapPointBase ui) => ScrollSnapPointBase.StartChain(ui);
-
-        public ScrollSnapPointBase Invoke(Action<Xaml.Controls.Primitives.ScrollSnapPointBase> action) { action?.Invoke(UI); return this; }
-
-        protected ScrollSnapPointBase() { }
     }
 }
 
@@ -31919,73 +32559,6 @@ namespace CSharpMarkup.WinUI // SelectorItem
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SelectorItem.IsSelected"/></summary>
         public static DependencyProperty<TTarget, bool> IsSelected<TTarget>(this TTarget target) where TTarget : SelectorItem
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.SelectorItem.IsSelectedProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // SnapPointBase
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.SnapPointBase"/></summary>
-        public static SnapPointBase SnapPointBase(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
-        {
-            var ui = new Xaml.Controls.Primitives.SnapPointBase();
-            if (DataContext is not null) ui.DataContext = DataContext;
-            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
-            return CSharpMarkup.WinUI.SnapPointBase.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.SnapPointBase"/></summary>
-        public static SnapPointBase SnapPointBase()
-        {
-            var ui = new Xaml.Controls.Primitives.SnapPointBase();
-            return CSharpMarkup.WinUI.SnapPointBase.StartChain(ui);
-        }
-    }
-
-    public partial class SnapPointBase : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.SnapPointBase>
-    {
-        static SnapPointBase instance;
-
-        internal static SnapPointBase StartChain(Xaml.Controls.Primitives.SnapPointBase ui)
-        {
-            if (instance == null) instance = new SnapPointBase();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.Primitives.SnapPointBase ui;
-
-        public new Xaml.Controls.Primitives.SnapPointBase UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.Primitives.SnapPointBase(SnapPointBase view) => view?.UI;
-
-        public static implicit operator SnapPointBase(Xaml.Controls.Primitives.SnapPointBase ui) => SnapPointBase.StartChain(ui);
-
-        public SnapPointBase Invoke(Action<Xaml.Controls.Primitives.SnapPointBase> action) { action?.Invoke(UI); return this; }
-
-        protected SnapPointBase() { }
-    }
-
-    public static partial class SnapPointBaseExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.SnapPointBase.DataContext"/></summary>
-        public static TView DataContext<TView>(this TView view, object value) where TView : SnapPointBase { view.UI.DataContext = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.SnapPointBase.TemplatedParent"/></summary>
-        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : SnapPointBase { view.UI.TemplatedParent = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SnapPointBase.DataContext"/></summary>
-        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : SnapPointBase
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.Primitives.SnapPointBase.DataContextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SnapPointBase.TemplatedParent"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : SnapPointBase
-        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.Primitives.SnapPointBase.TemplatedParentProperty);
     }
 }
 
@@ -32461,65 +33034,6 @@ namespace CSharpMarkup.WinUI // ToolTipTemplateSettings
     }
 }
 
-namespace CSharpMarkup.WinUI // ZoomSnapPoint
-{
-    public partial class ZoomSnapPoint : ZoomSnapPointBase, IUI<Microsoft.UI.Xaml.Controls.Primitives.ZoomSnapPoint>
-    {
-        Xaml.Controls.Primitives.ZoomSnapPoint ui;
-
-        public new Xaml.Controls.Primitives.ZoomSnapPoint UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public ZoomSnapPoint Invoke(Action<Xaml.Controls.Primitives.ZoomSnapPoint> action) { action?.Invoke(UI); return this; }
-
-        protected ZoomSnapPoint() { }
-    }
-}
-
-namespace CSharpMarkup.WinUI // ZoomSnapPointBase
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.ZoomSnapPointBase"/></summary>
-        public static ZoomSnapPointBase ZoomSnapPointBase()
-        {
-            var ui = new Xaml.Controls.Primitives.ZoomSnapPointBase();
-            return CSharpMarkup.WinUI.ZoomSnapPointBase.StartChain(ui);
-        }
-    }
-
-    public partial class ZoomSnapPointBase : SnapPointBase, IUI<Microsoft.UI.Xaml.Controls.Primitives.ZoomSnapPointBase>
-    {
-        static ZoomSnapPointBase instance;
-
-        internal static ZoomSnapPointBase StartChain(Xaml.Controls.Primitives.ZoomSnapPointBase ui)
-        {
-            if (instance == null) instance = new ZoomSnapPointBase();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.Primitives.ZoomSnapPointBase ui;
-
-        public new Xaml.Controls.Primitives.ZoomSnapPointBase UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.Primitives.ZoomSnapPointBase(ZoomSnapPointBase view) => view?.UI;
-
-        public static implicit operator ZoomSnapPointBase(Xaml.Controls.Primitives.ZoomSnapPointBase ui) => ZoomSnapPointBase.StartChain(ui);
-
-        public ZoomSnapPointBase Invoke(Action<Xaml.Controls.Primitives.ZoomSnapPointBase> action) { action?.Invoke(UI); return this; }
-
-        protected ZoomSnapPointBase() { }
-    }
-}
-
 namespace CSharpMarkup.WinUI // ColorPickerSliderAutomationPeer
 {
     public partial class ColorPickerSliderAutomationPeer : AutomationPeer, IUI<Microsoft.UI.Xaml.Controls.Primitives.ColorPickerSliderAutomationPeer>
@@ -32553,167 +33067,6 @@ namespace CSharpMarkup.WinUI // ColorSpectrumAutomationPeer
         public ColorSpectrumAutomationPeer Invoke(Action<Xaml.Controls.Primitives.ColorSpectrumAutomationPeer> action) { action?.Invoke(UI); return this; }
 
         protected ColorSpectrumAutomationPeer() { }
-    }
-}
-
-namespace CSharpMarkup.WinUI // MonochromaticOverlayPresenter
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter"/></summary>
-        public static MonochromaticOverlayPresenter MonochromaticOverlayPresenter(params Microsoft.UI.Xaml.UIElement[] Children)
-        {
-            var ui = new Xaml.Controls.Primitives.MonochromaticOverlayPresenter();
-            for (int i = 0; i < Children.Length; i++)
-            {
-                var child = Children[i];
-                if (child == null) continue;
-
-                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
-                    for (int j = 0; j < subChildren.Length; j++)
-                        ui.Children.Add(subChildren[j]);
-                else
-                    ui.Children.Add(child);
-            }
-            return CSharpMarkup.WinUI.MonochromaticOverlayPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter"/></summary>
-        public static MonochromaticOverlayPresenter MonochromaticOverlayPresenter()
-        {
-            var ui = new Xaml.Controls.Primitives.MonochromaticOverlayPresenter();
-            return CSharpMarkup.WinUI.MonochromaticOverlayPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter"/></summary>
-        public static MonochromaticOverlayPresenter MonochromaticOverlayPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Xaml.Controls.Primitives.MonochromaticOverlayPresenter(javaReference, transfer);
-            return CSharpMarkup.WinUI.MonochromaticOverlayPresenter.StartChain(ui);
-        }
-    }
-
-    public partial class MonochromaticOverlayPresenter : Grid, IUI<Microsoft.UI.Xaml.Controls.Primitives.MonochromaticOverlayPresenter>
-    {
-        static MonochromaticOverlayPresenter instance;
-
-        internal static MonochromaticOverlayPresenter StartChain(Xaml.Controls.Primitives.MonochromaticOverlayPresenter ui)
-        {
-            if (instance == null) instance = new MonochromaticOverlayPresenter();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.Primitives.MonochromaticOverlayPresenter ui;
-
-        public new Xaml.Controls.Primitives.MonochromaticOverlayPresenter UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.UIElement(MonochromaticOverlayPresenter view) => view?.UI;
-
-        public static implicit operator Xaml.Controls.Primitives.MonochromaticOverlayPresenter(MonochromaticOverlayPresenter view) => view?.UI;
-
-        public static implicit operator MonochromaticOverlayPresenter(Xaml.Controls.Primitives.MonochromaticOverlayPresenter ui) => MonochromaticOverlayPresenter.StartChain(ui);
-
-        public MonochromaticOverlayPresenter Invoke(Action<Xaml.Controls.Primitives.MonochromaticOverlayPresenter> action) { action?.Invoke(UI); return this; }
-
-        protected MonochromaticOverlayPresenter() { }
-    }
-
-    public static partial class MonochromaticOverlayPresenterExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter.ReplacementColor"/></summary>
-        public static TView ReplacementColor<TView>(this TView view, Windows.UI.Color value) where TView : MonochromaticOverlayPresenter { view.UI.ReplacementColor = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter.SourceElement"/></summary>
-        public static TView SourceElement<TView>(this TView view, Xaml.UIElement value) where TView : MonochromaticOverlayPresenter { view.UI.SourceElement = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter.ReplacementColor"/></summary>
-        public static DependencyProperty<TTarget, Windows.UI.Color> ReplacementColor<TTarget>(this TTarget target) where TTarget : MonochromaticOverlayPresenter
-        => DependencyProperty<TTarget, Windows.UI.Color>.Get(target, Xaml.Controls.Primitives.MonochromaticOverlayPresenter.ReplacementColorProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.MonochromaticOverlayPresenter.SourceElement"/></summary>
-        public static DependencyProperty<TTarget, Xaml.UIElement> SourceElement<TTarget>(this TTarget target) where TTarget : MonochromaticOverlayPresenter
-        => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.Primitives.MonochromaticOverlayPresenter.SourceElementProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // NavigationViewItemPresenterTemplateSettings
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings"/></summary>
-        public static NavigationViewItemPresenterTemplateSettings NavigationViewItemPresenterTemplateSettings(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
-        {
-            var ui = new Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings();
-            if (DataContext is not null) ui.DataContext = DataContext;
-            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
-            return CSharpMarkup.WinUI.NavigationViewItemPresenterTemplateSettings.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings"/></summary>
-        public static NavigationViewItemPresenterTemplateSettings NavigationViewItemPresenterTemplateSettings()
-        {
-            var ui = new Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings();
-            return CSharpMarkup.WinUI.NavigationViewItemPresenterTemplateSettings.StartChain(ui);
-        }
-    }
-
-    public partial class NavigationViewItemPresenterTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings>
-    {
-        static NavigationViewItemPresenterTemplateSettings instance;
-
-        internal static NavigationViewItemPresenterTemplateSettings StartChain(Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings ui)
-        {
-            if (instance == null) instance = new NavigationViewItemPresenterTemplateSettings();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings ui;
-
-        public new Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings(NavigationViewItemPresenterTemplateSettings view) => view?.UI;
-
-        public static implicit operator NavigationViewItemPresenterTemplateSettings(Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings ui) => NavigationViewItemPresenterTemplateSettings.StartChain(ui);
-
-        public NavigationViewItemPresenterTemplateSettings Invoke(Action<Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings> action) { action?.Invoke(UI); return this; }
-
-        protected NavigationViewItemPresenterTemplateSettings() { }
-    }
-
-    public static partial class NavigationViewItemPresenterTemplateSettingsExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.DataContext"/></summary>
-        public static TView DataContext<TView>(this TView view, object value) where TView : NavigationViewItemPresenterTemplateSettings { view.UI.DataContext = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.TemplatedParent"/></summary>
-        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : NavigationViewItemPresenterTemplateSettings { view.UI.TemplatedParent = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.IconWidth"/></summary>
-        public static DependencyProperty<TTarget, double> IconWidth<TTarget>(this TTarget target) where TTarget : NavigationViewItemPresenterTemplateSettings
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.IconWidthProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.SmallerIconWidth"/></summary>
-        public static DependencyProperty<TTarget, double> SmallerIconWidth<TTarget>(this TTarget target) where TTarget : NavigationViewItemPresenterTemplateSettings
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.SmallerIconWidthProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.DataContext"/></summary>
-        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : NavigationViewItemPresenterTemplateSettings
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.DataContextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.TemplatedParent"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : NavigationViewItemPresenterTemplateSettings
-        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings.TemplatedParentProperty);
     }
 }
 
@@ -35719,11 +36072,11 @@ namespace CSharpMarkup.WinUI // ImageSource
 
     public static partial class ImageSourceExtensions
     {
-        /// <summary>Set <see cref="Xaml.Media.ImageSource.UseTargetSize"/></summary>
-        public static TView UseTargetSize<TView>(this TView view, bool value) where TView : ImageSource { view.UI.UseTargetSize = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Media.ImageSource.ImageLoader"/></summary>
         public static TView ImageLoader<TView>(this TView view, Xaml.Media.ImageSource.ImageLoaderHandler value) where TView : ImageSource { view.UI.ImageLoader = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Media.ImageSource.UseTargetSize"/></summary>
+        public static TView UseTargetSize<TView>(this TView view, bool value) where TView : ImageSource { view.UI.UseTargetSize = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.ImageSource.DataContext"/></summary>
         public static TView DataContext<TView>(this TView view, object value) where TView : ImageSource { view.UI.DataContext = value; return view; }
@@ -36974,171 +37327,6 @@ namespace CSharpMarkup.WinUI // RectangleGeometry
     }
 }
 
-namespace CSharpMarkup.WinUI // RevealBackgroundBrush
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Media.RevealBackgroundBrush"/></summary>
-        public static RevealBackgroundBrush RevealBackgroundBrush()
-        {
-            var ui = new Xaml.Media.RevealBackgroundBrush();
-            return CSharpMarkup.WinUI.RevealBackgroundBrush.StartChain(ui);
-        }
-    }
-
-    public partial class RevealBackgroundBrush : RevealBrush, IUI<Microsoft.UI.Xaml.Media.RevealBackgroundBrush>
-    {
-        static RevealBackgroundBrush instance;
-
-        internal static RevealBackgroundBrush StartChain(Xaml.Media.RevealBackgroundBrush ui)
-        {
-            if (instance == null) instance = new RevealBackgroundBrush();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Media.RevealBackgroundBrush ui;
-
-        public new Xaml.Media.RevealBackgroundBrush UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Media.RevealBackgroundBrush(RevealBackgroundBrush view) => view?.UI;
-
-        public static implicit operator RevealBackgroundBrush(Xaml.Media.RevealBackgroundBrush ui) => RevealBackgroundBrush.StartChain(ui);
-
-        public RevealBackgroundBrush Invoke(Action<Xaml.Media.RevealBackgroundBrush> action) { action?.Invoke(UI); return this; }
-
-        protected RevealBackgroundBrush() { }
-    }
-}
-
-namespace CSharpMarkup.WinUI // RevealBorderBrush
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Media.RevealBorderBrush"/></summary>
-        public static RevealBorderBrush RevealBorderBrush()
-        {
-            var ui = new Xaml.Media.RevealBorderBrush();
-            return CSharpMarkup.WinUI.RevealBorderBrush.StartChain(ui);
-        }
-    }
-
-    public partial class RevealBorderBrush : RevealBrush, IUI<Microsoft.UI.Xaml.Media.RevealBorderBrush>
-    {
-        static RevealBorderBrush instance;
-
-        internal static RevealBorderBrush StartChain(Xaml.Media.RevealBorderBrush ui)
-        {
-            if (instance == null) instance = new RevealBorderBrush();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Media.RevealBorderBrush ui;
-
-        public new Xaml.Media.RevealBorderBrush UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Media.RevealBorderBrush(RevealBorderBrush view) => view?.UI;
-
-        public static implicit operator RevealBorderBrush(Xaml.Media.RevealBorderBrush ui) => RevealBorderBrush.StartChain(ui);
-
-        public RevealBorderBrush Invoke(Action<Xaml.Media.RevealBorderBrush> action) { action?.Invoke(UI); return this; }
-
-        protected RevealBorderBrush() { }
-    }
-}
-
-namespace CSharpMarkup.WinUI // RevealBrush
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Media.RevealBrush"/></summary>
-        public static RevealBrush RevealBrush(Xaml.ApplicationTheme? TargetTheme = default, bool? AlwaysUseFallback = default, Windows.UI.Color? Color = default)
-        {
-            var ui = new Xaml.Media.RevealBrush();
-            if (TargetTheme is not null) ui.TargetTheme = TargetTheme.Value;
-            if (AlwaysUseFallback is not null) ui.AlwaysUseFallback = AlwaysUseFallback.Value;
-            if (Color is not null) ui.Color = Color.Value;
-            return CSharpMarkup.WinUI.RevealBrush.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Media.RevealBrush"/></summary>
-        public static RevealBrush RevealBrush()
-        {
-            var ui = new Xaml.Media.RevealBrush();
-            return CSharpMarkup.WinUI.RevealBrush.StartChain(ui);
-        }
-    }
-
-    public partial class RevealBrush : XamlCompositionBrushBase, IUI<Microsoft.UI.Xaml.Media.RevealBrush>
-    {
-        static RevealBrush instance;
-
-        internal static RevealBrush StartChain(Xaml.Media.RevealBrush ui)
-        {
-            if (instance == null) instance = new RevealBrush();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Media.RevealBrush ui;
-
-        public new Xaml.Media.RevealBrush UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Media.RevealBrush(RevealBrush view) => view?.UI;
-
-        public static implicit operator RevealBrush(Xaml.Media.RevealBrush ui) => RevealBrush.StartChain(ui);
-
-        public RevealBrush Invoke(Action<Xaml.Media.RevealBrush> action) { action?.Invoke(UI); return this; }
-
-        protected RevealBrush() { }
-    }
-
-    public static partial class RevealBrushExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Media.RevealBrush.TargetTheme"/></summary>
-        public static TView TargetTheme<TView>(this TView view, Xaml.ApplicationTheme value) where TView : RevealBrush { view.UI.TargetTheme = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Media.RevealBrush.AlwaysUseFallback"/></summary>
-        public static TView AlwaysUseFallback<TView>(this TView view, bool value) where TView : RevealBrush { view.UI.AlwaysUseFallback = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Media.RevealBrush.Color"/></summary>
-        public static TView Color<TView>(this TView view, Windows.UI.Color value) where TView : RevealBrush { view.UI.Color = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RevealBrush.AlwaysUseFallback"/></summary>
-        public static DependencyProperty<TTarget, bool> AlwaysUseFallback<TTarget>(this TTarget target) where TTarget : RevealBrush
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.RevealBrush.AlwaysUseFallbackProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RevealBrush.TargetTheme"/></summary>
-        public static DependencyProperty<TTarget, Xaml.ApplicationTheme> TargetTheme<TTarget>(this TTarget target) where TTarget : RevealBrush
-        => DependencyProperty<TTarget, Xaml.ApplicationTheme>.Get(target, Xaml.Media.RevealBrush.TargetThemeProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RevealBrush.Color"/></summary>
-        public static DependencyProperty<TTarget, Windows.UI.Color> Color<TTarget>(this TTarget target) where TTarget : RevealBrush
-        => DependencyProperty<TTarget, Windows.UI.Color>.Get(target, Xaml.Media.RevealBrush.ColorProperty);
-
-        /// <summary>Set <see cref="Xaml.Media.RevealBrush.State"/></summary>
-        public static TTarget RevealBrush_State<TTarget>(this TTarget target, Xaml.Media.RevealBrushState value) where TTarget : UIElement
-        { Xaml.Media.RevealBrush.SetState(target.UI, value); return target; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RevealBrush.State"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.RevealBrushState> RevealBrush_State<TTarget>(this TTarget target) where TTarget : UIElement
-        => DependencyProperty<TTarget, Xaml.Media.RevealBrushState>.Get(target, Xaml.Media.RevealBrush.StateProperty);
-    }
-}
-
 namespace CSharpMarkup.WinUI // RotateTransform
 {
     public static partial class Helpers
@@ -37844,6 +38032,147 @@ namespace CSharpMarkup.WinUI // XamlLight
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.XamlLight.TemplatedParent"/></summary>
         public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : XamlLight
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.XamlLight.TemplatedParentProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // RevealBackgroundBrush
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Media.RevealBackgroundBrush"/></summary>
+        public static RevealBackgroundBrush RevealBackgroundBrush()
+        {
+            var ui = new Xaml.Media.RevealBackgroundBrush();
+            return CSharpMarkup.WinUI.RevealBackgroundBrush.StartChain(ui);
+        }
+    }
+
+    public partial class RevealBackgroundBrush : RevealBrush, IUI<Microsoft.UI.Xaml.Media.RevealBackgroundBrush>
+    {
+        static RevealBackgroundBrush instance;
+
+        internal static RevealBackgroundBrush StartChain(Xaml.Media.RevealBackgroundBrush ui)
+        {
+            if (instance == null) instance = new RevealBackgroundBrush();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Media.RevealBackgroundBrush ui;
+
+        public new Xaml.Media.RevealBackgroundBrush UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Media.RevealBackgroundBrush(RevealBackgroundBrush view) => view?.UI;
+
+        public static implicit operator RevealBackgroundBrush(Xaml.Media.RevealBackgroundBrush ui) => RevealBackgroundBrush.StartChain(ui);
+
+        public RevealBackgroundBrush Invoke(Action<Xaml.Media.RevealBackgroundBrush> action) { action?.Invoke(UI); return this; }
+
+        protected RevealBackgroundBrush() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // RevealBorderBrush
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Media.RevealBorderBrush"/></summary>
+        public static RevealBorderBrush RevealBorderBrush()
+        {
+            var ui = new Xaml.Media.RevealBorderBrush();
+            return CSharpMarkup.WinUI.RevealBorderBrush.StartChain(ui);
+        }
+    }
+
+    public partial class RevealBorderBrush : RevealBrush, IUI<Microsoft.UI.Xaml.Media.RevealBorderBrush>
+    {
+        static RevealBorderBrush instance;
+
+        internal static RevealBorderBrush StartChain(Xaml.Media.RevealBorderBrush ui)
+        {
+            if (instance == null) instance = new RevealBorderBrush();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Media.RevealBorderBrush ui;
+
+        public new Xaml.Media.RevealBorderBrush UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Media.RevealBorderBrush(RevealBorderBrush view) => view?.UI;
+
+        public static implicit operator RevealBorderBrush(Xaml.Media.RevealBorderBrush ui) => RevealBorderBrush.StartChain(ui);
+
+        public RevealBorderBrush Invoke(Action<Xaml.Media.RevealBorderBrush> action) { action?.Invoke(UI); return this; }
+
+        protected RevealBorderBrush() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // RevealBrush
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Media.RevealBrush"/></summary>
+        public static RevealBrush RevealBrush(Windows.UI.Color? Color = default)
+        {
+            var ui = new Xaml.Media.RevealBrush();
+            if (Color is not null) ui.Color = Color.Value;
+            return CSharpMarkup.WinUI.RevealBrush.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Media.RevealBrush"/></summary>
+        public static RevealBrush RevealBrush()
+        {
+            var ui = new Xaml.Media.RevealBrush();
+            return CSharpMarkup.WinUI.RevealBrush.StartChain(ui);
+        }
+    }
+
+    public partial class RevealBrush : XamlCompositionBrushBase, IUI<Microsoft.UI.Xaml.Media.RevealBrush>
+    {
+        static RevealBrush instance;
+
+        internal static RevealBrush StartChain(Xaml.Media.RevealBrush ui)
+        {
+            if (instance == null) instance = new RevealBrush();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Media.RevealBrush ui;
+
+        public new Xaml.Media.RevealBrush UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Media.RevealBrush(RevealBrush view) => view?.UI;
+
+        public static implicit operator RevealBrush(Xaml.Media.RevealBrush ui) => RevealBrush.StartChain(ui);
+
+        public RevealBrush Invoke(Action<Xaml.Media.RevealBrush> action) { action?.Invoke(UI); return this; }
+
+        protected RevealBrush() { }
+    }
+
+    public static partial class RevealBrushExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Media.RevealBrush.Color"/></summary>
+        public static TView Color<TView>(this TView view, Windows.UI.Color value) where TView : RevealBrush { view.UI.Color = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RevealBrush.Color"/></summary>
+        public static DependencyProperty<TTarget, Windows.UI.Color> Color<TTarget>(this TTarget target) where TTarget : RevealBrush
+        => DependencyProperty<TTarget, Windows.UI.Color>.Get(target, Xaml.Media.RevealBrush.ColorProperty);
     }
 }
 
@@ -44225,92 +44554,6 @@ namespace CSharpMarkup.WinUI // DelegateActivity
     }
 }
 
-namespace CSharpMarkup.WinUI // ManagedItemsStackPanel
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Uno.UI.Controls.ManagedItemsStackPanel"/></summary>
-        public static ManagedItemsStackPanel ManagedItemsStackPanel(params Microsoft.UI.Xaml.UIElement[] Children)
-        {
-            var ui = new Uno.UI.Controls.ManagedItemsStackPanel();
-            for (int i = 0; i < Children.Length; i++)
-            {
-                var child = Children[i];
-                if (child == null) continue;
-
-                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
-                    for (int j = 0; j < subChildren.Length; j++)
-                        ui.Children.Add(subChildren[j]);
-                else
-                    ui.Children.Add(child);
-            }
-            return CSharpMarkup.WinUI.ManagedItemsStackPanel.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Uno.UI.Controls.ManagedItemsStackPanel"/></summary>
-        public static ManagedItemsStackPanel ManagedItemsStackPanel()
-        {
-            var ui = new Uno.UI.Controls.ManagedItemsStackPanel();
-            return CSharpMarkup.WinUI.ManagedItemsStackPanel.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Uno.UI.Controls.ManagedItemsStackPanel"/></summary>
-        public static ManagedItemsStackPanel ManagedItemsStackPanel(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
-        {
-            var ui = new Uno.UI.Controls.ManagedItemsStackPanel(javaReference, transfer);
-            return CSharpMarkup.WinUI.ManagedItemsStackPanel.StartChain(ui);
-        }
-    }
-
-    public partial class ManagedItemsStackPanel : Panel, IUI<Uno.UI.Controls.ManagedItemsStackPanel>
-    {
-        static ManagedItemsStackPanel instance;
-
-        internal static ManagedItemsStackPanel StartChain(Uno.UI.Controls.ManagedItemsStackPanel ui)
-        {
-            if (instance == null) instance = new ManagedItemsStackPanel();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Uno.UI.Controls.ManagedItemsStackPanel ui;
-
-        public new Uno.UI.Controls.ManagedItemsStackPanel UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.UIElement(ManagedItemsStackPanel view) => view?.UI;
-
-        public static implicit operator Uno.UI.Controls.ManagedItemsStackPanel(ManagedItemsStackPanel view) => view?.UI;
-
-        public static implicit operator ManagedItemsStackPanel(Uno.UI.Controls.ManagedItemsStackPanel ui) => ManagedItemsStackPanel.StartChain(ui);
-
-        public ManagedItemsStackPanel Invoke(Action<Uno.UI.Controls.ManagedItemsStackPanel> action) { action?.Invoke(UI); return this; }
-
-        protected ManagedItemsStackPanel() { }
-    }
-
-    public static partial class ManagedItemsStackPanelExtensions
-    {
-        /// <summary>Set <see cref="Uno.UI.Controls.ManagedItemsStackPanel.Orientation"/></summary>
-        public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : ManagedItemsStackPanel { view.UI.Orientation = value; return view; }
-
-        /// <summary>Set <see cref="Uno.UI.Controls.ManagedItemsStackPanel.CacheLength"/></summary>
-        public static TView CacheLength<TView>(this TView view, double value) where TView : ManagedItemsStackPanel { view.UI.CacheLength = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Uno.UI.Controls.ManagedItemsStackPanel.Orientation"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : ManagedItemsStackPanel
-        => DependencyProperty<TTarget, Xaml.Controls.Orientation>.Get(target, Uno.UI.Controls.ManagedItemsStackPanel.OrientationProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Uno.UI.Controls.ManagedItemsStackPanel.CacheLength"/></summary>
-        public static DependencyProperty<TTarget, double> CacheLength<TTarget>(this TTarget target) where TTarget : ManagedItemsStackPanel
-        => DependencyProperty<TTarget, double>.Get(target, Uno.UI.Controls.ManagedItemsStackPanel.CacheLengthProperty);
-    }
-}
-
 namespace CSharpMarkup.WinUI // BindableButton
 {
     public partial class BindableButton : DependencyObject, IUI<Uno.UI.Controls.BindableButton>
@@ -45393,6 +45636,92 @@ namespace CSharpMarkup.WinUI // NativeFramePresenter
     }
 }
 
+namespace CSharpMarkup.WinUI // ManagedItemsStackPanel
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Uno.UI.Controls.ManagedItemsStackPanel"/></summary>
+        public static ManagedItemsStackPanel ManagedItemsStackPanel(params Microsoft.UI.Xaml.UIElement[] Children)
+        {
+            var ui = new Uno.UI.Controls.ManagedItemsStackPanel();
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Microsoft.UI.Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren != null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
+            return CSharpMarkup.WinUI.ManagedItemsStackPanel.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Uno.UI.Controls.ManagedItemsStackPanel"/></summary>
+        public static ManagedItemsStackPanel ManagedItemsStackPanel()
+        {
+            var ui = new Uno.UI.Controls.ManagedItemsStackPanel();
+            return CSharpMarkup.WinUI.ManagedItemsStackPanel.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Uno.UI.Controls.ManagedItemsStackPanel"/></summary>
+        public static ManagedItemsStackPanel ManagedItemsStackPanel(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Uno.UI.Controls.ManagedItemsStackPanel(javaReference, transfer);
+            return CSharpMarkup.WinUI.ManagedItemsStackPanel.StartChain(ui);
+        }
+    }
+
+    public partial class ManagedItemsStackPanel : Panel, IUI<Uno.UI.Controls.ManagedItemsStackPanel>
+    {
+        static ManagedItemsStackPanel instance;
+
+        internal static ManagedItemsStackPanel StartChain(Uno.UI.Controls.ManagedItemsStackPanel ui)
+        {
+            if (instance == null) instance = new ManagedItemsStackPanel();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Uno.UI.Controls.ManagedItemsStackPanel ui;
+
+        public new Uno.UI.Controls.ManagedItemsStackPanel UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(ManagedItemsStackPanel view) => view?.UI;
+
+        public static implicit operator Uno.UI.Controls.ManagedItemsStackPanel(ManagedItemsStackPanel view) => view?.UI;
+
+        public static implicit operator ManagedItemsStackPanel(Uno.UI.Controls.ManagedItemsStackPanel ui) => ManagedItemsStackPanel.StartChain(ui);
+
+        public ManagedItemsStackPanel Invoke(Action<Uno.UI.Controls.ManagedItemsStackPanel> action) { action?.Invoke(UI); return this; }
+
+        protected ManagedItemsStackPanel() { }
+    }
+
+    public static partial class ManagedItemsStackPanelExtensions
+    {
+        /// <summary>Set <see cref="Uno.UI.Controls.ManagedItemsStackPanel.Orientation"/></summary>
+        public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : ManagedItemsStackPanel { view.UI.Orientation = value; return view; }
+
+        /// <summary>Set <see cref="Uno.UI.Controls.ManagedItemsStackPanel.CacheLength"/></summary>
+        public static TView CacheLength<TView>(this TView view, double value) where TView : ManagedItemsStackPanel { view.UI.CacheLength = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Uno.UI.Controls.ManagedItemsStackPanel.Orientation"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : ManagedItemsStackPanel
+        => DependencyProperty<TTarget, Xaml.Controls.Orientation>.Get(target, Uno.UI.Controls.ManagedItemsStackPanel.OrientationProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Uno.UI.Controls.ManagedItemsStackPanel.CacheLength"/></summary>
+        public static DependencyProperty<TTarget, double> CacheLength<TTarget>(this TTarget target) where TTarget : ManagedItemsStackPanel
+        => DependencyProperty<TTarget, double>.Get(target, Uno.UI.Controls.ManagedItemsStackPanel.CacheLengthProperty);
+    }
+}
+
 namespace CSharpMarkup.WinUI // HorizontalGridView
 {
     public static partial class Helpers
@@ -46431,6 +46760,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Media.Stretch.UniformToFill"/></summary>
         public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : AnimatedVisualPlayer
         => property.Set(Xaml.Media.Stretch.UniformToFill);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PlayerAnimationOptimization.Latency"/></summary>
+        public static TTarget Latency<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PlayerAnimationOptimization> property) where TTarget : AnimatedVisualPlayer
+        => property.Set(Xaml.Controls.PlayerAnimationOptimization.Latency);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PlayerAnimationOptimization.Resources"/></summary>
+        public static TTarget Resources<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PlayerAnimationOptimization> property) where TTarget : AnimatedVisualPlayer
+        => property.Set(Xaml.Controls.PlayerAnimationOptimization.Resources);
     }
 
     public static partial class AppBarExtensions
@@ -46506,30 +46843,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Off"/></summary>
         public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : AutoSuggestBox
         => property.Set(Xaml.Controls.LightDismissOverlayMode.Off);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationKind.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> property) where TTarget : AutoSuggestBox
-        => property.Set(Xaml.Controls.InputValidationKind.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationKind.Compact"/></summary>
-        public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> property) where TTarget : AutoSuggestBox
-        => property.Set(Xaml.Controls.InputValidationKind.Compact);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationKind.Inline"/></summary>
-        public static TTarget Inline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> property) where TTarget : AutoSuggestBox
-        => property.Set(Xaml.Controls.InputValidationKind.Inline);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> property) where TTarget : AutoSuggestBox
-        => property.Set(Xaml.Controls.InputValidationMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationMode.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> property) where TTarget : AutoSuggestBox
-        => property.Set(Xaml.Controls.InputValidationMode.Default);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> property) where TTarget : AutoSuggestBox
-        => property.Set(Xaml.Controls.InputValidationMode.Disabled);
     }
 
     public static partial class AutoSuggestBoxTextChangedEventArgsExtensions
@@ -46758,18 +47071,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class BlockExtensions
     {
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : Block
-        => property.Set(Xaml.LineStackingStrategy.MaxHeight);
-
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : Block
-        => property.Set(Xaml.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BaselineToBaseline"/></summary>
-        public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : Block
-        => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
-
         /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
         public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : Block
         => property.Set(Xaml.TextAlignment.Center);
@@ -46797,6 +47098,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.TextAlignment.DetectFromContent"/></summary>
         public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : Block
         => property.Set(Xaml.TextAlignment.DetectFromContent);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.MaxHeight"/></summary>
+        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : Block
+        => property.Set(Xaml.LineStackingStrategy.MaxHeight);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BlockLineHeight"/></summary>
+        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : Block
+        => property.Set(Xaml.LineStackingStrategy.BlockLineHeight);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BaselineToBaseline"/></summary>
+        public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : Block
+        => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
     }
 
     public static partial class BorderExtensions
@@ -46827,18 +47140,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class CalendarDatePickerExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
-        => property.Set(Xaml.Controls.LightDismissOverlayMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.On"/></summary>
-        public static TTarget On<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
-        => property.Set(Xaml.Controls.LightDismissOverlayMode.On);
-
-        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Off"/></summary>
-        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
-        => property.Set(Xaml.Controls.LightDismissOverlayMode.Off);
-
         /// <summary>Set to <see cref="Windows.Globalization.DayOfWeek.Sunday"/></summary>
         public static TTarget Sunday<TTarget>(this DependencyProperty<TTarget, Windows.Globalization.DayOfWeek> property) where TTarget : CalendarDatePicker
         => property.Set(Windows.Globalization.DayOfWeek.Sunday);
@@ -46867,6 +47168,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Saturday<TTarget>(this DependencyProperty<TTarget, Windows.Globalization.DayOfWeek> property) where TTarget : CalendarDatePicker
         => property.Set(Windows.Globalization.DayOfWeek.Saturday);
 
+        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
+        => property.Set(Xaml.Controls.LightDismissOverlayMode.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.On"/></summary>
+        public static TTarget On<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
+        => property.Set(Xaml.Controls.LightDismissOverlayMode.On);
+
+        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Off"/></summary>
+        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
+        => property.Set(Xaml.Controls.LightDismissOverlayMode.Off);
+
         /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Month"/></summary>
         public static TTarget Month<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarDatePicker
         => property.Set(Xaml.Controls.CalendarViewDisplayMode.Month);
@@ -46882,17 +47195,17 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class CalendarViewExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
-        => property.Set(Xaml.Controls.CalendarViewSelectionMode.None);
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Month"/></summary>
+        public static TTarget Month<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarView
+        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Month);
 
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.Single"/></summary>
-        public static TTarget Single<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
-        => property.Set(Xaml.Controls.CalendarViewSelectionMode.Single);
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Year"/></summary>
+        public static TTarget Year<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarView
+        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Year);
 
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.Multiple"/></summary>
-        public static TTarget Multiple<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
-        => property.Set(Xaml.Controls.CalendarViewSelectionMode.Multiple);
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Decade"/></summary>
+        public static TTarget Decade<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarView
+        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Decade);
 
         /// <summary>Set to <see cref="Windows.Globalization.DayOfWeek.Sunday"/></summary>
         public static TTarget Sunday<TTarget>(this DependencyProperty<TTarget, Windows.Globalization.DayOfWeek> property) where TTarget : CalendarView
@@ -46922,21 +47235,37 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Saturday<TTarget>(this DependencyProperty<TTarget, Windows.Globalization.DayOfWeek> property) where TTarget : CalendarView
         => property.Set(Windows.Globalization.DayOfWeek.Saturday);
 
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Month"/></summary>
-        public static TTarget Month<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarView
-        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Month);
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
+        => property.Set(Xaml.Controls.CalendarViewSelectionMode.None);
 
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Year"/></summary>
-        public static TTarget Year<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarView
-        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Year);
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.Single"/></summary>
+        public static TTarget Single<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
+        => property.Set(Xaml.Controls.CalendarViewSelectionMode.Single);
 
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Decade"/></summary>
-        public static TTarget Decade<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarView
-        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Decade);
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.Multiple"/></summary>
+        public static TTarget Multiple<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
+        => property.Set(Xaml.Controls.CalendarViewSelectionMode.Multiple);
     }
 
     public static partial class ColorPickerExtensions
     {
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
+        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ColorPicker
+        => property.Set(Xaml.Controls.Orientation.Vertical);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
+        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ColorPicker
+        => property.Set(Xaml.Controls.Orientation.Horizontal);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ColorSpectrumShape.Box"/></summary>
+        public static TTarget Box<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ColorSpectrumShape> property) where TTarget : ColorPicker
+        => property.Set(Xaml.Controls.ColorSpectrumShape.Box);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ColorSpectrumShape.Ring"/></summary>
+        public static TTarget Ring<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ColorSpectrumShape> property) where TTarget : ColorPicker
+        => property.Set(Xaml.Controls.ColorSpectrumShape.Ring);
+
         /// <summary>Set to <see cref="Xaml.Controls.ColorSpectrumComponents.HueValue"/></summary>
         public static TTarget HueValue<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ColorSpectrumComponents> property) where TTarget : ColorPicker
         => property.Set(Xaml.Controls.ColorSpectrumComponents.HueValue);
@@ -46960,22 +47289,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.ColorSpectrumComponents.ValueSaturation"/></summary>
         public static TTarget ValueSaturation<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ColorSpectrumComponents> property) where TTarget : ColorPicker
         => property.Set(Xaml.Controls.ColorSpectrumComponents.ValueSaturation);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ColorSpectrumShape.Box"/></summary>
-        public static TTarget Box<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ColorSpectrumShape> property) where TTarget : ColorPicker
-        => property.Set(Xaml.Controls.ColorSpectrumShape.Box);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ColorSpectrumShape.Ring"/></summary>
-        public static TTarget Ring<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ColorSpectrumShape> property) where TTarget : ColorPicker
-        => property.Set(Xaml.Controls.ColorSpectrumShape.Ring);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ColorPicker
-        => property.Set(Xaml.Controls.Orientation.Vertical);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ColorPicker
-        => property.Set(Xaml.Controls.Orientation.Horizontal);
     }
 
     public static partial class ColorPickerSliderExtensions
@@ -47042,18 +47355,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ComboBoxSelectionChangedTrigger> property) where TTarget : ComboBox
         => property.Set(Xaml.Controls.ComboBoxSelectionChangedTrigger.Always);
 
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> property) where TTarget : ComboBox
-        => property.Set(Xaml.Controls.InputValidationMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationMode.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> property) where TTarget : ComboBox
-        => property.Set(Xaml.Controls.InputValidationMode.Default);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> property) where TTarget : ComboBox
-        => property.Set(Xaml.Controls.InputValidationMode.Disabled);
-
         /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : ComboBox
         => property.Set(Xaml.Controls.LightDismissOverlayMode.Auto);
@@ -47065,18 +47366,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Off"/></summary>
         public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : ComboBox
         => property.Set(Xaml.Controls.LightDismissOverlayMode.Off);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationKind.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> property) where TTarget : ComboBox
-        => property.Set(Xaml.Controls.InputValidationKind.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationKind.Compact"/></summary>
-        public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> property) where TTarget : ComboBox
-        => property.Set(Xaml.Controls.InputValidationKind.Compact);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationKind.Inline"/></summary>
-        public static TTarget Inline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> property) where TTarget : ComboBox
-        => property.Set(Xaml.Controls.InputValidationKind.Inline);
     }
 
     public static partial class CommandBarExtensions
@@ -47139,6 +47428,58 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : ContentPresenter
         => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
 
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.Full"/></summary>
+        public static TTarget Full<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextLineBounds.Full);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToCapHeight"/></summary>
+        public static TTarget TrimToCapHeight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextLineBounds.TrimToCapHeight);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToBaseline"/></summary>
+        public static TTarget TrimToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextLineBounds.TrimToBaseline);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.Tight"/></summary>
+        public static TTarget Tight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextLineBounds.Tight);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextAlignment.Center);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextAlignment.Left);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Start"/></summary>
+        public static TTarget Start<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextAlignment.Start);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextAlignment.Right);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.End"/></summary>
+        public static TTarget End<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextAlignment.End);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Justify"/></summary>
+        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextAlignment.Justify);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextAlignment.DetectFromContent);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.OpticalMarginAlignment.None);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
+        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
+
         /// <summary>Set to <see cref="Windows.UI.Text.FontStretch.Undefined"/></summary>
         public static TTarget Undefined<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : ContentPresenter
         => property.Set(Windows.UI.Text.FontStretch.Undefined);
@@ -47179,42 +47520,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget UltraExpanded<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : ContentPresenter
         => property.Set(Windows.UI.Text.FontStretch.UltraExpanded);
 
-        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
-        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextWrapping.NoWrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
-        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextWrapping.Wrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
-        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextWrapping.WrapWholeWords);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.Full"/></summary>
-        public static TTarget Full<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextLineBounds.Full);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToCapHeight"/></summary>
-        public static TTarget TrimToCapHeight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextLineBounds.TrimToCapHeight);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToBaseline"/></summary>
-        public static TTarget TrimToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextLineBounds.TrimToBaseline);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.Tight"/></summary>
-        public static TTarget Tight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextLineBounds.Tight);
-
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.OpticalMarginAlignment.None);
-
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
-        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
-
         /// <summary>Set to <see cref="Xaml.TextTrimming.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : ContentPresenter
         => property.Set(Xaml.TextTrimming.None);
@@ -47230,34 +47535,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.TextTrimming.Clip"/></summary>
         public static TTarget Clip<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : ContentPresenter
         => property.Set(Xaml.TextTrimming.Clip);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Start"/></summary>
-        public static TTarget Start<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextAlignment.Start);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.End"/></summary>
-        public static TTarget End<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextAlignment.End);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextAlignment.Justify);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextAlignment.DetectFromContent);
 
         /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
         public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : ContentPresenter
@@ -47278,33 +47555,41 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.BackgroundSizing.OuterBorderEdge"/></summary>
         public static TTarget OuterBorderEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.BackgroundSizing> property) where TTarget : ContentPresenter
         => property.Set(Xaml.Controls.BackgroundSizing.OuterBorderEdge);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
+        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextWrapping.NoWrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
+        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextWrapping.Wrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
+        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextWrapping.WrapWholeWords);
     }
 
     public static partial class ControlExtensions
     {
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
-        => property.Set(Xaml.ElementSoundMode.Default);
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : Control
+        => property.Set(Windows.UI.Text.FontStyle.Normal);
 
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.FocusOnly"/></summary>
-        public static TTarget FocusOnly<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
-        => property.Set(Xaml.ElementSoundMode.FocusOnly);
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Oblique"/></summary>
+        public static TTarget Oblique<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : Control
+        => property.Set(Windows.UI.Text.FontStyle.Oblique);
 
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Off"/></summary>
-        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
-        => property.Set(Xaml.ElementSoundMode.Off);
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
+        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : Control
+        => property.Set(Windows.UI.Text.FontStyle.Italic);
 
-        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.Never"/></summary>
-        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
-        => property.Set(Xaml.Controls.RequiresPointer.Never);
+        /// <summary>Set to <see cref="Xaml.Controls.BackgroundSizing.InnerBorderEdge"/></summary>
+        public static TTarget InnerBorderEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.BackgroundSizing> property) where TTarget : Control
+        => property.Set(Xaml.Controls.BackgroundSizing.InnerBorderEdge);
 
-        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.WhenEngaged"/></summary>
-        public static TTarget WhenEngaged<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
-        => property.Set(Xaml.Controls.RequiresPointer.WhenEngaged);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.WhenFocused"/></summary>
-        public static TTarget WhenFocused<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
-        => property.Set(Xaml.Controls.RequiresPointer.WhenFocused);
+        /// <summary>Set to <see cref="Xaml.Controls.BackgroundSizing.OuterBorderEdge"/></summary>
+        public static TTarget OuterBorderEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.BackgroundSizing> property) where TTarget : Control
+        => property.Set(Xaml.Controls.BackgroundSizing.OuterBorderEdge);
 
         /// <summary>Set to <see cref="Windows.UI.Text.FontStretch.Undefined"/></summary>
         public static TTarget Undefined<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : Control
@@ -47346,25 +47631,29 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget UltraExpanded<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : Control
         => property.Set(Windows.UI.Text.FontStretch.UltraExpanded);
 
-        /// <summary>Set to <see cref="Xaml.Controls.BackgroundSizing.InnerBorderEdge"/></summary>
-        public static TTarget InnerBorderEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.BackgroundSizing> property) where TTarget : Control
-        => property.Set(Xaml.Controls.BackgroundSizing.InnerBorderEdge);
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
+        => property.Set(Xaml.ElementSoundMode.Default);
 
-        /// <summary>Set to <see cref="Xaml.Controls.BackgroundSizing.OuterBorderEdge"/></summary>
-        public static TTarget OuterBorderEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.BackgroundSizing> property) where TTarget : Control
-        => property.Set(Xaml.Controls.BackgroundSizing.OuterBorderEdge);
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.FocusOnly"/></summary>
+        public static TTarget FocusOnly<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
+        => property.Set(Xaml.ElementSoundMode.FocusOnly);
 
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : Control
-        => property.Set(Windows.UI.Text.FontStyle.Normal);
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Off"/></summary>
+        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
+        => property.Set(Xaml.ElementSoundMode.Off);
 
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Oblique"/></summary>
-        public static TTarget Oblique<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : Control
-        => property.Set(Windows.UI.Text.FontStyle.Oblique);
+        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.Never"/></summary>
+        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
+        => property.Set(Xaml.Controls.RequiresPointer.Never);
 
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
-        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : Control
-        => property.Set(Windows.UI.Text.FontStyle.Italic);
+        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.WhenEngaged"/></summary>
+        public static TTarget WhenEngaged<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
+        => property.Set(Xaml.Controls.RequiresPointer.WhenEngaged);
+
+        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.WhenFocused"/></summary>
+        public static TTarget WhenFocused<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
+        => property.Set(Xaml.Controls.RequiresPointer.WhenFocused);
     }
 
     public static partial class CornerRadiusFilterConverterExtensions
@@ -47474,14 +47763,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class DependencyObjectExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.ZoomMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ZoomMode> property) where TTarget : DependencyObject
-        => property.Set(Xaml.Controls.ZoomMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ZoomMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ZoomMode> property) where TTarget : DependencyObject
-        => property.Set(Xaml.Controls.ZoomMode.Enabled);
-
         /// <summary>Set to <see cref="Xaml.Controls.ScrollMode.Disabled"/></summary>
         public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollMode> property) where TTarget : DependencyObject
         => property.Set(Xaml.Controls.ScrollMode.Disabled);
@@ -47517,6 +47798,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.VirtualizationMode.Recycling"/></summary>
         public static TTarget Recycling<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.VirtualizationMode> property) where TTarget : DependencyObject
         => property.Set(Xaml.Controls.VirtualizationMode.Recycling);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ZoomMode.Disabled"/></summary>
+        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ZoomMode> property) where TTarget : DependencyObject
+        => property.Set(Xaml.Controls.ZoomMode.Disabled);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ZoomMode.Enabled"/></summary>
+        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ZoomMode> property) where TTarget : DependencyObject
+        => property.Set(Xaml.Controls.ZoomMode.Enabled);
     }
 
     public static partial class DragOverThemeAnimationExtensions
@@ -47620,18 +47909,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class FlyoutBaseExtensions
     {
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
-        => property.Set(Xaml.ElementSoundMode.Default);
-
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.FocusOnly"/></summary>
-        public static TTarget FocusOnly<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
-        => property.Set(Xaml.ElementSoundMode.FocusOnly);
-
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Off"/></summary>
-        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
-        => property.Set(Xaml.ElementSoundMode.Off);
-
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.FlyoutShowMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutShowMode> property) where TTarget : FlyoutBase
         => property.Set(Xaml.Controls.Primitives.FlyoutShowMode.Auto);
@@ -47647,6 +47924,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.FlyoutShowMode.TransientWithDismissOnPointerMoveAway"/></summary>
         public static TTarget TransientWithDismissOnPointerMoveAway<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutShowMode> property) where TTarget : FlyoutBase
         => property.Set(Xaml.Controls.Primitives.FlyoutShowMode.TransientWithDismissOnPointerMoveAway);
+
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
+        => property.Set(Xaml.ElementSoundMode.Default);
+
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.FocusOnly"/></summary>
+        public static TTarget FocusOnly<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
+        => property.Set(Xaml.ElementSoundMode.FocusOnly);
+
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Off"/></summary>
+        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
+        => property.Set(Xaml.ElementSoundMode.Off);
 
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.FlyoutPlacementMode.Top"/></summary>
         public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutPlacementMode> property) where TTarget : FlyoutBase
@@ -47935,6 +48224,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class HorizontalListViewExtensions
     {
+        /// <summary>Set to <see cref="Xaml.Visibility.Visible"/></summary>
+        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : HorizontalListView
+        => property.Set(Xaml.Visibility.Visible);
+
+        /// <summary>Set to <see cref="Xaml.Visibility.Collapsed"/></summary>
+        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : HorizontalListView
+        => property.Set(Xaml.Visibility.Collapsed);
+
         /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Left"/></summary>
         public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : HorizontalListView
         => property.Set(Xaml.HorizontalAlignment.Left);
@@ -47950,22 +48247,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Stretch"/></summary>
         public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : HorizontalListView
         => property.Set(Xaml.HorizontalAlignment.Stretch);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : HorizontalListView
-        => property.Set(Xaml.Controls.ListViewSelectionMode.None);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.Single"/></summary>
-        public static TTarget Single<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : HorizontalListView
-        => property.Set(Xaml.Controls.ListViewSelectionMode.Single);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.Multiple"/></summary>
-        public static TTarget Multiple<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : HorizontalListView
-        => property.Set(Xaml.Controls.ListViewSelectionMode.Multiple);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.Extended"/></summary>
-        public static TTarget Extended<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : HorizontalListView
-        => property.Set(Xaml.Controls.ListViewSelectionMode.Extended);
 
         /// <summary>Set to <see cref="Xaml.VerticalAlignment.Top"/></summary>
         public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : HorizontalListView
@@ -47983,13 +48264,21 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : HorizontalListView
         => property.Set(Xaml.VerticalAlignment.Stretch);
 
-        /// <summary>Set to <see cref="Xaml.Visibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : HorizontalListView
-        => property.Set(Xaml.Visibility.Visible);
+        /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : HorizontalListView
+        => property.Set(Xaml.Controls.ListViewSelectionMode.None);
 
-        /// <summary>Set to <see cref="Xaml.Visibility.Collapsed"/></summary>
-        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : HorizontalListView
-        => property.Set(Xaml.Visibility.Collapsed);
+        /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.Single"/></summary>
+        public static TTarget Single<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : HorizontalListView
+        => property.Set(Xaml.Controls.ListViewSelectionMode.Single);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.Multiple"/></summary>
+        public static TTarget Multiple<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : HorizontalListView
+        => property.Set(Xaml.Controls.ListViewSelectionMode.Multiple);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.Extended"/></summary>
+        public static TTarget Extended<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : HorizontalListView
+        => property.Set(Xaml.Controls.ListViewSelectionMode.Extended);
     }
 
     public static partial class HubExtensions
@@ -48087,18 +48376,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : ImageBrush
         => property.Set(Xaml.Media.Stretch.UniformToFill);
 
-        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Top"/></summary>
-        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : ImageBrush
-        => property.Set(Xaml.Media.AlignmentY.Top);
-
-        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : ImageBrush
-        => property.Set(Xaml.Media.AlignmentY.Center);
-
-        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Bottom"/></summary>
-        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : ImageBrush
-        => property.Set(Xaml.Media.AlignmentY.Bottom);
-
         /// <summary>Set to <see cref="Xaml.Media.AlignmentX.Left"/></summary>
         public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentX> property) where TTarget : ImageBrush
         => property.Set(Xaml.Media.AlignmentX.Left);
@@ -48110,6 +48387,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Media.AlignmentX.Right"/></summary>
         public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentX> property) where TTarget : ImageBrush
         => property.Set(Xaml.Media.AlignmentX.Right);
+
+        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Top"/></summary>
+        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : ImageBrush
+        => property.Set(Xaml.Media.AlignmentY.Top);
+
+        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : ImageBrush
+        => property.Set(Xaml.Media.AlignmentY.Center);
+
+        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Bottom"/></summary>
+        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : ImageBrush
+        => property.Set(Xaml.Media.AlignmentY.Bottom);
     }
 
     public static partial class InfoBarExtensions
@@ -48916,6 +49205,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewReorderMode> property) where TTarget : ListViewBase
         => property.Set(Xaml.Controls.ListViewReorderMode.Enabled);
 
+        /// <summary>Set to <see cref="Xaml.Controls.IncrementalLoadingTrigger.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.IncrementalLoadingTrigger> property) where TTarget : ListViewBase
+        => property.Set(Xaml.Controls.IncrementalLoadingTrigger.None);
+
+        /// <summary>Set to <see cref="Xaml.Controls.IncrementalLoadingTrigger.Edge"/></summary>
+        public static TTarget Edge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.IncrementalLoadingTrigger> property) where TTarget : ListViewBase
+        => property.Set(Xaml.Controls.IncrementalLoadingTrigger.Edge);
+
         /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : ListViewBase
         => property.Set(Xaml.Controls.ListViewSelectionMode.None);
@@ -48931,14 +49228,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.Extended"/></summary>
         public static TTarget Extended<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : ListViewBase
         => property.Set(Xaml.Controls.ListViewSelectionMode.Extended);
-
-        /// <summary>Set to <see cref="Xaml.Controls.IncrementalLoadingTrigger.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.IncrementalLoadingTrigger> property) where TTarget : ListViewBase
-        => property.Set(Xaml.Controls.IncrementalLoadingTrigger.None);
-
-        /// <summary>Set to <see cref="Xaml.Controls.IncrementalLoadingTrigger.Edge"/></summary>
-        public static TTarget Edge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.IncrementalLoadingTrigger> property) where TTarget : ListViewBase
-        => property.Set(Xaml.Controls.IncrementalLoadingTrigger.Edge);
     }
 
     public static partial class ListViewItemPresenterExtensions
@@ -48950,6 +49239,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.ListViewItemPresenterCheckMode.Overlay"/></summary>
         public static TTarget Overlay<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode> property) where TTarget : ListViewItemPresenter
         => property.Set(Xaml.Controls.Primitives.ListViewItemPresenterCheckMode.Overlay);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode.Inline"/></summary>
+        public static TTarget Inline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode> property) where TTarget : ListViewItemPresenter
+        => property.Set(Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode.Inline);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode.Overlay"/></summary>
+        public static TTarget Overlay<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode> property) where TTarget : ListViewItemPresenter
+        => property.Set(Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode.Overlay);
     }
 
     public static partial class ManagedItemsStackPanelExtensions
@@ -48963,6 +49260,59 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         => property.Set(Xaml.Controls.Orientation.Horizontal);
     }
 
+    public static partial class MediaPlayerElementExtensions
+    {
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : MediaPlayerElement
+        => property.Set(Xaml.Media.Stretch.None);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.Fill"/></summary>
+        public static TTarget Fill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : MediaPlayerElement
+        => property.Set(Xaml.Media.Stretch.Fill);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.Uniform"/></summary>
+        public static TTarget Uniform<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : MediaPlayerElement
+        => property.Set(Xaml.Media.Stretch.Uniform);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.UniformToFill"/></summary>
+        public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : MediaPlayerElement
+        => property.Set(Xaml.Media.Stretch.UniformToFill);
+    }
+
+    public static partial class MediaPlayerPresenterExtensions
+    {
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : MediaPlayerPresenter
+        => property.Set(Xaml.Media.Stretch.None);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.Fill"/></summary>
+        public static TTarget Fill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : MediaPlayerPresenter
+        => property.Set(Xaml.Media.Stretch.Fill);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.Uniform"/></summary>
+        public static TTarget Uniform<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : MediaPlayerPresenter
+        => property.Set(Xaml.Media.Stretch.Uniform);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.UniformToFill"/></summary>
+        public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : MediaPlayerPresenter
+        => property.Set(Xaml.Media.Stretch.UniformToFill);
+    }
+
+    public static partial class MediaTransportControlsExtensions
+    {
+        /// <summary>Set to <see cref="Xaml.Media.FastPlayFallbackBehaviour.Skip"/></summary>
+        public static TTarget Skip<TTarget>(this DependencyProperty<TTarget, Xaml.Media.FastPlayFallbackBehaviour> property) where TTarget : MediaTransportControls
+        => property.Set(Xaml.Media.FastPlayFallbackBehaviour.Skip);
+
+        /// <summary>Set to <see cref="Xaml.Media.FastPlayFallbackBehaviour.Hide"/></summary>
+        public static TTarget Hide<TTarget>(this DependencyProperty<TTarget, Xaml.Media.FastPlayFallbackBehaviour> property) where TTarget : MediaTransportControls
+        => property.Set(Xaml.Media.FastPlayFallbackBehaviour.Hide);
+
+        /// <summary>Set to <see cref="Xaml.Media.FastPlayFallbackBehaviour.Disable"/></summary>
+        public static TTarget Disable<TTarget>(this DependencyProperty<TTarget, Xaml.Media.FastPlayFallbackBehaviour> property) where TTarget : MediaTransportControls
+        => property.Set(Xaml.Media.FastPlayFallbackBehaviour.Disable);
+    }
+
     public static partial class NativeListViewBaseExtensions
     {
         /// <summary>Set to <see cref="Xaml.Visibility.Visible"/></summary>
@@ -48972,22 +49322,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Visibility.Collapsed"/></summary>
         public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : NativeListViewBase
         => property.Set(Xaml.Visibility.Collapsed);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeListViewBase
-        => property.Set(Xaml.HorizontalAlignment.Left);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeListViewBase
-        => property.Set(Xaml.HorizontalAlignment.Center);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeListViewBase
-        => property.Set(Xaml.HorizontalAlignment.Right);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Stretch"/></summary>
-        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeListViewBase
-        => property.Set(Xaml.HorizontalAlignment.Stretch);
 
         /// <summary>Set to <see cref="Xaml.VerticalAlignment.Top"/></summary>
         public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativeListViewBase
@@ -49004,26 +49338,26 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.VerticalAlignment.Stretch"/></summary>
         public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativeListViewBase
         => property.Set(Xaml.VerticalAlignment.Stretch);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeListViewBase
+        => property.Set(Xaml.HorizontalAlignment.Left);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeListViewBase
+        => property.Set(Xaml.HorizontalAlignment.Center);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeListViewBase
+        => property.Set(Xaml.HorizontalAlignment.Right);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Stretch"/></summary>
+        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeListViewBase
+        => property.Set(Xaml.HorizontalAlignment.Stretch);
     }
 
     public static partial class NativePagedViewExtensions
     {
-        /// <summary>Set to <see cref="Xaml.VerticalAlignment.Top"/></summary>
-        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativePagedView
-        => property.Set(Xaml.VerticalAlignment.Top);
-
-        /// <summary>Set to <see cref="Xaml.VerticalAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativePagedView
-        => property.Set(Xaml.VerticalAlignment.Center);
-
-        /// <summary>Set to <see cref="Xaml.VerticalAlignment.Bottom"/></summary>
-        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativePagedView
-        => property.Set(Xaml.VerticalAlignment.Bottom);
-
-        /// <summary>Set to <see cref="Xaml.VerticalAlignment.Stretch"/></summary>
-        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativePagedView
-        => property.Set(Xaml.VerticalAlignment.Stretch);
-
         /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Left"/></summary>
         public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativePagedView
         => property.Set(Xaml.HorizontalAlignment.Left);
@@ -49040,6 +49374,22 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativePagedView
         => property.Set(Xaml.HorizontalAlignment.Stretch);
 
+        /// <summary>Set to <see cref="Xaml.VerticalAlignment.Top"/></summary>
+        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativePagedView
+        => property.Set(Xaml.VerticalAlignment.Top);
+
+        /// <summary>Set to <see cref="Xaml.VerticalAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativePagedView
+        => property.Set(Xaml.VerticalAlignment.Center);
+
+        /// <summary>Set to <see cref="Xaml.VerticalAlignment.Bottom"/></summary>
+        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativePagedView
+        => property.Set(Xaml.VerticalAlignment.Bottom);
+
+        /// <summary>Set to <see cref="Xaml.VerticalAlignment.Stretch"/></summary>
+        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativePagedView
+        => property.Set(Xaml.VerticalAlignment.Stretch);
+
         /// <summary>Set to <see cref="Xaml.Visibility.Visible"/></summary>
         public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : NativePagedView
         => property.Set(Xaml.Visibility.Visible);
@@ -49051,21 +49401,13 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class NativeRefreshControlExtensions
     {
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeRefreshControl
-        => property.Set(Xaml.HorizontalAlignment.Left);
+        /// <summary>Set to <see cref="Xaml.Visibility.Visible"/></summary>
+        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : NativeRefreshControl
+        => property.Set(Xaml.Visibility.Visible);
 
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeRefreshControl
-        => property.Set(Xaml.HorizontalAlignment.Center);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeRefreshControl
-        => property.Set(Xaml.HorizontalAlignment.Right);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Stretch"/></summary>
-        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeRefreshControl
-        => property.Set(Xaml.HorizontalAlignment.Stretch);
+        /// <summary>Set to <see cref="Xaml.Visibility.Collapsed"/></summary>
+        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : NativeRefreshControl
+        => property.Set(Xaml.Visibility.Collapsed);
 
         /// <summary>Set to <see cref="Xaml.VerticalAlignment.Top"/></summary>
         public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativeRefreshControl
@@ -49083,29 +49425,25 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : NativeRefreshControl
         => property.Set(Xaml.VerticalAlignment.Stretch);
 
-        /// <summary>Set to <see cref="Xaml.Visibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : NativeRefreshControl
-        => property.Set(Xaml.Visibility.Visible);
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeRefreshControl
+        => property.Set(Xaml.HorizontalAlignment.Left);
 
-        /// <summary>Set to <see cref="Xaml.Visibility.Collapsed"/></summary>
-        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : NativeRefreshControl
-        => property.Set(Xaml.Visibility.Collapsed);
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeRefreshControl
+        => property.Set(Xaml.HorizontalAlignment.Center);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeRefreshControl
+        => property.Set(Xaml.HorizontalAlignment.Right);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Stretch"/></summary>
+        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : NativeRefreshControl
+        => property.Set(Xaml.HorizontalAlignment.Stretch);
     }
 
     public static partial class NavigationViewExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Minimal"/></summary>
-        public static TTarget Minimal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Minimal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Compact"/></summary>
-        public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Compact);
-
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Expanded"/></summary>
-        public static TTarget Expanded<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Expanded);
-
         /// <summary>Set to <see cref="Xaml.Controls.NavigationViewBackButtonVisible.Collapsed"/></summary>
         public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewBackButtonVisible> property) where TTarget : NavigationView
         => property.Set(Xaml.Controls.NavigationViewBackButtonVisible.Collapsed);
@@ -49118,13 +49456,25 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewBackButtonVisible> property) where TTarget : NavigationView
         => property.Set(Xaml.Controls.NavigationViewBackButtonVisible.Auto);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel"/></summary>
-        public static TTarget MoreLabel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewOverflowLabelMode> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus"/></summary>
+        public static TTarget WhenSelectionFollowsFocus<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel"/></summary>
-        public static TTarget NoLabel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewOverflowLabelMode> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always"/></summary>
+        public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always);
+
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never"/></summary>
+        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never);
+
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewSelectionFollowsFocus.Disabled"/></summary>
+        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewSelectionFollowsFocus> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewSelectionFollowsFocus.Disabled);
+
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewSelectionFollowsFocus.Enabled"/></summary>
+        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewSelectionFollowsFocus> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewSelectionFollowsFocus.Enabled);
 
         /// <summary>Set to <see cref="Xaml.Controls.NavigationViewPaneDisplayMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewPaneDisplayMode> property) where TTarget : NavigationView
@@ -49146,25 +49496,25 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget LeftMinimal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewPaneDisplayMode> property) where TTarget : NavigationView
         => property.Set(Xaml.Controls.NavigationViewPaneDisplayMode.LeftMinimal);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewSelectionFollowsFocus.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewSelectionFollowsFocus> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewSelectionFollowsFocus.Disabled);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Minimal"/></summary>
+        public static TTarget Minimal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Minimal);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewSelectionFollowsFocus.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewSelectionFollowsFocus> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewSelectionFollowsFocus.Enabled);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Compact"/></summary>
+        public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Compact);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus"/></summary>
-        public static TTarget WhenSelectionFollowsFocus<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Expanded"/></summary>
+        public static TTarget Expanded<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Expanded);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always"/></summary>
-        public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel"/></summary>
+        public static TTarget MoreLabel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewOverflowLabelMode> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never"/></summary>
-        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel"/></summary>
+        public static TTarget NoLabel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewOverflowLabelMode> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel);
     }
 
     public static partial class NavigationViewTemplateSettingsExtensions
@@ -49180,14 +49530,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class NumberBoxExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.NumberBoxValidationMode.InvalidInputOverwritten"/></summary>
-        public static TTarget InvalidInputOverwritten<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NumberBoxValidationMode> property) where TTarget : NumberBox
-        => property.Set(Xaml.Controls.NumberBoxValidationMode.InvalidInputOverwritten);
-
-        /// <summary>Set to <see cref="Xaml.Controls.NumberBoxValidationMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NumberBoxValidationMode> property) where TTarget : NumberBox
-        => property.Set(Xaml.Controls.NumberBoxValidationMode.Disabled);
-
         /// <summary>Set to <see cref="Xaml.Controls.NumberBoxSpinButtonPlacementMode.Hidden"/></summary>
         public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NumberBoxSpinButtonPlacementMode> property) where TTarget : NumberBox
         => property.Set(Xaml.Controls.NumberBoxSpinButtonPlacementMode.Hidden);
@@ -49199,18 +49541,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.NumberBoxSpinButtonPlacementMode.Inline"/></summary>
         public static TTarget Inline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NumberBoxSpinButtonPlacementMode> property) where TTarget : NumberBox
         => property.Set(Xaml.Controls.NumberBoxSpinButtonPlacementMode.Inline);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
-        => property.Set(Xaml.TextReadingOrder.Default);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
-        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
-        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
-        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
 
         /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
         public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : NumberBox
@@ -49239,22 +49569,30 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.TextAlignment.DetectFromContent"/></summary>
         public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : NumberBox
         => property.Set(Xaml.TextAlignment.DetectFromContent);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
+        => property.Set(Xaml.TextReadingOrder.Default);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
+        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
+        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
+        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
+
+        /// <summary>Set to <see cref="Xaml.Controls.NumberBoxValidationMode.InvalidInputOverwritten"/></summary>
+        public static TTarget InvalidInputOverwritten<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NumberBoxValidationMode> property) where TTarget : NumberBox
+        => property.Set(Xaml.Controls.NumberBoxValidationMode.InvalidInputOverwritten);
+
+        /// <summary>Set to <see cref="Xaml.Controls.NumberBoxValidationMode.Disabled"/></summary>
+        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NumberBoxValidationMode> property) where TTarget : NumberBox
+        => property.Set(Xaml.Controls.NumberBoxValidationMode.Disabled);
     }
 
     public static partial class PagerControlExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
-        => property.Set(Xaml.Controls.PagerControlButtonVisibility.Visible);
-
-        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.HiddenOnEdge"/></summary>
-        public static TTarget HiddenOnEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
-        => property.Set(Xaml.Controls.PagerControlButtonVisibility.HiddenOnEdge);
-
-        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
-        => property.Set(Xaml.Controls.PagerControlButtonVisibility.Hidden);
-
         /// <summary>Set to <see cref="Xaml.Controls.PagerControlDisplayMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlDisplayMode> property) where TTarget : PagerControl
         => property.Set(Xaml.Controls.PagerControlDisplayMode.Auto);
@@ -49270,6 +49608,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.PagerControlDisplayMode.ButtonPanel"/></summary>
         public static TTarget ButtonPanel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlDisplayMode> property) where TTarget : PagerControl
         => property.Set(Xaml.Controls.PagerControlDisplayMode.ButtonPanel);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.Visible"/></summary>
+        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
+        => property.Set(Xaml.Controls.PagerControlButtonVisibility.Visible);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.HiddenOnEdge"/></summary>
+        public static TTarget HiddenOnEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
+        => property.Set(Xaml.Controls.PagerControlButtonVisibility.HiddenOnEdge);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.Hidden"/></summary>
+        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
+        => property.Set(Xaml.Controls.PagerControlButtonVisibility.Hidden);
     }
 
     public static partial class PaneThemeTransitionExtensions
@@ -49495,22 +49845,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class RefreshVisualizerExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
-        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
-        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Normal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Rotate90DegreesCounterclockwise"/></summary>
-        public static TTarget Rotate90DegreesCounterclockwise<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
-        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Rotate90DegreesCounterclockwise);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Rotate270DegreesCounterclockwise"/></summary>
-        public static TTarget Rotate270DegreesCounterclockwise<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
-        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Rotate270DegreesCounterclockwise);
-
         /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerState.Idle"/></summary>
         public static TTarget Idle<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerState> property) where TTarget : RefreshVisualizer
         => property.Set(Xaml.Controls.RefreshVisualizerState.Idle);
@@ -49530,6 +49864,22 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerState.Refreshing"/></summary>
         public static TTarget Refreshing<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerState> property) where TTarget : RefreshVisualizer
         => property.Set(Xaml.Controls.RefreshVisualizerState.Refreshing);
+
+        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
+        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
+        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Normal);
+
+        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Rotate90DegreesCounterclockwise"/></summary>
+        public static TTarget Rotate90DegreesCounterclockwise<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
+        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Rotate90DegreesCounterclockwise);
+
+        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Rotate270DegreesCounterclockwise"/></summary>
+        public static TTarget Rotate270DegreesCounterclockwise<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
+        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Rotate270DegreesCounterclockwise);
     }
 
     public static partial class RelativePanelExtensions
@@ -49543,26 +49893,51 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         => property.Set(Xaml.Controls.BackgroundSizing.OuterBorderEdge);
     }
 
-    public static partial class RevealBrushExtensions
-    {
-        /// <summary>Set to <see cref="Xaml.ApplicationTheme.Light"/></summary>
-        public static TTarget Light<TTarget>(this DependencyProperty<TTarget, Xaml.ApplicationTheme> property) where TTarget : RevealBrush
-        => property.Set(Xaml.ApplicationTheme.Light);
-
-        /// <summary>Set to <see cref="Xaml.ApplicationTheme.Dark"/></summary>
-        public static TTarget Dark<TTarget>(this DependencyProperty<TTarget, Xaml.ApplicationTheme> property) where TTarget : RevealBrush
-        => property.Set(Xaml.ApplicationTheme.Dark);
-    }
-
     public static partial class RichEditBoxExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.RichEditClipboardFormat.AllFormats"/></summary>
-        public static TTarget AllFormats<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RichEditClipboardFormat> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.RichEditClipboardFormat.AllFormats);
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.CharacterCasing.Normal);
 
-        /// <summary>Set to <see cref="Xaml.Controls.RichEditClipboardFormat.PlainText"/></summary>
-        public static TTarget PlainText<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RichEditClipboardFormat> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.RichEditClipboardFormat.PlainText);
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Lower"/></summary>
+        public static TTarget Lower<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.CharacterCasing.Lower);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Upper"/></summary>
+        public static TTarget Upper<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.CharacterCasing.Upper);
+
+        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.None);
+
+        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Bold"/></summary>
+        public static TTarget Bold<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Bold);
+
+        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Italic"/></summary>
+        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Italic);
+
+        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Underline"/></summary>
+        public static TTarget Underline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Underline);
+
+        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.All"/></summary>
+        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.All);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
+        => property.Set(Xaml.TextReadingOrder.Default);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
+        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
+        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
+        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
 
         /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
         public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichEditBox
@@ -49592,33 +49967,13 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichEditBox
         => property.Set(Xaml.TextAlignment.DetectFromContent);
 
-        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.None);
+        /// <summary>Set to <see cref="Xaml.Controls.RichEditClipboardFormat.AllFormats"/></summary>
+        public static TTarget AllFormats<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RichEditClipboardFormat> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.RichEditClipboardFormat.AllFormats);
 
-        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Bold"/></summary>
-        public static TTarget Bold<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Bold);
-
-        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Italic"/></summary>
-        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Italic);
-
-        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Underline"/></summary>
-        public static TTarget Underline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Underline);
-
-        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.All"/></summary>
-        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.All);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CandidateWindowAlignment.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.CandidateWindowAlignment.Default);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CandidateWindowAlignment.BottomEdge"/></summary>
-        public static TTarget BottomEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.CandidateWindowAlignment.BottomEdge);
+        /// <summary>Set to <see cref="Xaml.Controls.RichEditClipboardFormat.PlainText"/></summary>
+        public static TTarget PlainText<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RichEditClipboardFormat> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.RichEditClipboardFormat.PlainText);
 
         /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
         public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichEditBox
@@ -49632,53 +49987,17 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichEditBox
         => property.Set(Xaml.TextWrapping.WrapWholeWords);
 
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
-        => property.Set(Xaml.TextReadingOrder.Default);
+        /// <summary>Set to <see cref="Xaml.Controls.CandidateWindowAlignment.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.CandidateWindowAlignment.Default);
 
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
-        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
-        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
-        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.CharacterCasing.Normal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Lower"/></summary>
-        public static TTarget Lower<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.CharacterCasing.Lower);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Upper"/></summary>
-        public static TTarget Upper<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.CharacterCasing.Upper);
+        /// <summary>Set to <see cref="Xaml.Controls.CandidateWindowAlignment.BottomEdge"/></summary>
+        public static TTarget BottomEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.CandidateWindowAlignment.BottomEdge);
     }
 
     public static partial class RichTextBlockExtensions
     {
-        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
-        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextWrapping.NoWrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
-        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextWrapping.Wrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
-        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextWrapping.WrapWholeWords);
-
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.OpticalMarginAlignment.None);
-
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
-        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
-
         /// <summary>Set to <see cref="Xaml.TextTrimming.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : RichTextBlock
         => property.Set(Xaml.TextTrimming.None);
@@ -49695,6 +50014,66 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Clip<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : RichTextBlock
         => property.Set(Xaml.TextTrimming.Clip);
 
+        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
+        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextWrapping.NoWrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
+        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextWrapping.Wrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
+        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextWrapping.WrapWholeWords);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.Full"/></summary>
+        public static TTarget Full<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextLineBounds.Full);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToCapHeight"/></summary>
+        public static TTarget TrimToCapHeight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextLineBounds.TrimToCapHeight);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToBaseline"/></summary>
+        public static TTarget TrimToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextLineBounds.TrimToBaseline);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.Tight"/></summary>
+        public static TTarget Tight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextLineBounds.Tight);
+
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : RichTextBlock
+        => property.Set(Windows.UI.Text.FontStyle.Normal);
+
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Oblique"/></summary>
+        public static TTarget Oblique<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : RichTextBlock
+        => property.Set(Windows.UI.Text.FontStyle.Oblique);
+
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
+        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : RichTextBlock
+        => property.Set(Windows.UI.Text.FontStyle.Italic);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.OpticalMarginAlignment.None);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
+        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
+
+        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
+        => property.Set(Windows.UI.Text.TextDecorations.None);
+
+        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.Underline"/></summary>
+        public static TTarget Underline<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
+        => property.Set(Windows.UI.Text.TextDecorations.Underline);
+
+        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.Strikethrough"/></summary>
+        public static TTarget Strikethrough<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
+        => property.Set(Windows.UI.Text.TextDecorations.Strikethrough);
+
         /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
         public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichTextBlock
         => property.Set(Xaml.TextReadingOrder.Default);
@@ -49706,46 +50085,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
         public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichTextBlock
         => property.Set(Xaml.TextReadingOrder.DetectFromContent);
-
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.LineStackingStrategy.MaxHeight);
-
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BaselineToBaseline"/></summary>
-        public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Start"/></summary>
-        public static TTarget Start<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.Start);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.End"/></summary>
-        public static TTarget End<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.End);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.Justify);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.DetectFromContent);
 
         /// <summary>Set to <see cref="Windows.UI.Text.FontStretch.Undefined"/></summary>
         public static TTarget Undefined<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : RichTextBlock
@@ -49787,45 +50126,45 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget UltraExpanded<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : RichTextBlock
         => property.Set(Windows.UI.Text.FontStretch.UltraExpanded);
 
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : RichTextBlock
-        => property.Set(Windows.UI.Text.FontStyle.Normal);
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.Center);
 
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Oblique"/></summary>
-        public static TTarget Oblique<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : RichTextBlock
-        => property.Set(Windows.UI.Text.FontStyle.Oblique);
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.Left);
 
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
-        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : RichTextBlock
-        => property.Set(Windows.UI.Text.FontStyle.Italic);
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Start"/></summary>
+        public static TTarget Start<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.Start);
 
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.Full"/></summary>
-        public static TTarget Full<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextLineBounds.Full);
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.Right);
 
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToCapHeight"/></summary>
-        public static TTarget TrimToCapHeight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextLineBounds.TrimToCapHeight);
+        /// <summary>Set to <see cref="Xaml.TextAlignment.End"/></summary>
+        public static TTarget End<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.End);
 
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToBaseline"/></summary>
-        public static TTarget TrimToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextLineBounds.TrimToBaseline);
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Justify"/></summary>
+        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.Justify);
 
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.Tight"/></summary>
-        public static TTarget Tight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextLineBounds.Tight);
+        /// <summary>Set to <see cref="Xaml.TextAlignment.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.DetectFromContent);
 
-        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
-        => property.Set(Windows.UI.Text.TextDecorations.None);
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.MaxHeight"/></summary>
+        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.LineStackingStrategy.MaxHeight);
 
-        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.Underline"/></summary>
-        public static TTarget Underline<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
-        => property.Set(Windows.UI.Text.TextDecorations.Underline);
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BlockLineHeight"/></summary>
+        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.LineStackingStrategy.BlockLineHeight);
 
-        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.Strikethrough"/></summary>
-        public static TTarget Strikethrough<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
-        => property.Set(Windows.UI.Text.TextDecorations.Strikethrough);
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BaselineToBaseline"/></summary>
+        public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
     }
 
     public static partial class RunExtensions
@@ -49841,14 +50180,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class ScrollBarExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ScrollBar
-        => property.Set(Xaml.Controls.Orientation.Vertical);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ScrollBar
-        => property.Set(Xaml.Controls.Orientation.Horizontal);
-
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.ScrollingIndicatorMode.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.ScrollingIndicatorMode> property) where TTarget : ScrollBar
         => property.Set(Xaml.Controls.Primitives.ScrollingIndicatorMode.None);
@@ -49860,200 +50191,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.ScrollingIndicatorMode.MouseIndicator"/></summary>
         public static TTarget MouseIndicator<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.ScrollingIndicatorMode> property) where TTarget : ScrollBar
         => property.Set(Xaml.Controls.Primitives.ScrollingIndicatorMode.MouseIndicator);
-    }
 
-    public static partial class ScrollPresenterExtensions
-    {
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingRailMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingRailMode.Enabled);
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
+        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ScrollBar
+        => property.Set(Xaml.Controls.Orientation.Vertical);
 
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingRailMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingRailMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingChainMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingChainMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingChainMode.Always"/></summary>
-        public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingChainMode.Always);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingChainMode.Never"/></summary>
-        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingChainMode.Never);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingContentOrientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingContentOrientation.Vertical);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingContentOrientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingContentOrientation.Horizontal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingContentOrientation.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingContentOrientation.None);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingContentOrientation.Both"/></summary>
-        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingContentOrientation.Both);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingInputKinds.None);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.Touch"/></summary>
-        public static TTarget Touch<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingInputKinds.Touch);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.Pen"/></summary>
-        public static TTarget Pen<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingInputKinds.Pen);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.MouseWheel"/></summary>
-        public static TTarget MouseWheel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingInputKinds.MouseWheel);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.Keyboard"/></summary>
-        public static TTarget Keyboard<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingInputKinds.Keyboard);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.Gamepad"/></summary>
-        public static TTarget Gamepad<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingInputKinds.Gamepad);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.All"/></summary>
-        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingInputKinds.All);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingZoomMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingZoomMode> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingZoomMode.Enabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingZoomMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingZoomMode> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingZoomMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingScrollMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingScrollMode.Enabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingScrollMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode> property) where TTarget : ScrollPresenter
-        => property.Set(Xaml.Controls.ScrollingScrollMode.Disabled);
-    }
-
-    public static partial class ScrollViewExtensions
-    {
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingScrollBarVisibility.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollBarVisibility> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingScrollBarVisibility.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingScrollBarVisibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollBarVisibility> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingScrollBarVisibility.Visible);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingScrollBarVisibility.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollBarVisibility> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingScrollBarVisibility.Hidden);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingInputKinds.None);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.Touch"/></summary>
-        public static TTarget Touch<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingInputKinds.Touch);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.Pen"/></summary>
-        public static TTarget Pen<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingInputKinds.Pen);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.MouseWheel"/></summary>
-        public static TTarget MouseWheel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingInputKinds.MouseWheel);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.Keyboard"/></summary>
-        public static TTarget Keyboard<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingInputKinds.Keyboard);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.Gamepad"/></summary>
-        public static TTarget Gamepad<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingInputKinds.Gamepad);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingInputKinds.All"/></summary>
-        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingInputKinds> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingInputKinds.All);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingScrollMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingScrollMode.Enabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingScrollMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingScrollMode> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingScrollMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingContentOrientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingContentOrientation.Vertical);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingContentOrientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingContentOrientation.Horizontal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingContentOrientation.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingContentOrientation.None);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingContentOrientation.Both"/></summary>
-        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingContentOrientation> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingContentOrientation.Both);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingRailMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingRailMode.Enabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingRailMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingRailMode> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingRailMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingZoomMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingZoomMode> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingZoomMode.Enabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingZoomMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingZoomMode> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingZoomMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingChainMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingChainMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingChainMode.Always"/></summary>
-        public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingChainMode.Always);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollingChainMode.Never"/></summary>
-        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollingChainMode> property) where TTarget : ScrollView
-        => property.Set(Xaml.Controls.ScrollingChainMode.Never);
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
+        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ScrollBar
+        => property.Set(Xaml.Controls.Orientation.Horizontal);
     }
 
     public static partial class ScrollViewerExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Near"/></summary>
-        public static TTarget Near<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
-        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Near);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
-        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Center);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Far"/></summary>
-        public static TTarget Far<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
-        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Far);
-
         /// <summary>Set to <see cref="Xaml.Controls.SnapPointsType.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.SnapPointsType> property) where TTarget : ScrollViewer
         => property.Set(Xaml.Controls.SnapPointsType.None);
@@ -50073,6 +50222,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.SnapPointsType.MandatorySingle"/></summary>
         public static TTarget MandatorySingle<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.SnapPointsType> property) where TTarget : ScrollViewer
         => property.Set(Xaml.Controls.SnapPointsType.MandatorySingle);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Near"/></summary>
+        public static TTarget Near<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
+        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Near);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
+        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Center);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Far"/></summary>
+        public static TTarget Far<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
+        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Far);
     }
 
     public static partial class ShapeExtensions
@@ -50089,22 +50250,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Round<TTarget>(this DependencyProperty<TTarget, Xaml.Media.PenLineJoin> property) where TTarget : Shape
         => property.Set(Xaml.Media.PenLineJoin.Round);
 
-        /// <summary>Set to <see cref="Xaml.Media.Stretch.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Shape
-        => property.Set(Xaml.Media.Stretch.None);
-
-        /// <summary>Set to <see cref="Xaml.Media.Stretch.Fill"/></summary>
-        public static TTarget Fill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Shape
-        => property.Set(Xaml.Media.Stretch.Fill);
-
-        /// <summary>Set to <see cref="Xaml.Media.Stretch.Uniform"/></summary>
-        public static TTarget Uniform<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Shape
-        => property.Set(Xaml.Media.Stretch.Uniform);
-
-        /// <summary>Set to <see cref="Xaml.Media.Stretch.UniformToFill"/></summary>
-        public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Shape
-        => property.Set(Xaml.Media.Stretch.UniformToFill);
-
         /// <summary>Set to <see cref="Xaml.Media.PenLineCap.Flat"/></summary>
         public static TTarget Flat<TTarget>(this DependencyProperty<TTarget, Xaml.Media.PenLineCap> property) where TTarget : Shape
         => property.Set(Xaml.Media.PenLineCap.Flat);
@@ -50120,6 +50265,22 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Media.PenLineCap.Triangle"/></summary>
         public static TTarget Triangle<TTarget>(this DependencyProperty<TTarget, Xaml.Media.PenLineCap> property) where TTarget : Shape
         => property.Set(Xaml.Media.PenLineCap.Triangle);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Shape
+        => property.Set(Xaml.Media.Stretch.None);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.Fill"/></summary>
+        public static TTarget Fill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Shape
+        => property.Set(Xaml.Media.Stretch.Fill);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.Uniform"/></summary>
+        public static TTarget Uniform<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Shape
+        => property.Set(Xaml.Media.Stretch.Uniform);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.UniformToFill"/></summary>
+        public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Shape
+        => property.Set(Xaml.Media.Stretch.UniformToFill);
     }
 
     public static partial class SlideNavigationTransitionInfoExtensions
@@ -50139,14 +50300,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class SliderExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : Slider
-        => property.Set(Xaml.Controls.Orientation.Vertical);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : Slider
-        => property.Set(Xaml.Controls.Orientation.Horizontal);
-
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.SliderSnapsTo.StepValues"/></summary>
         public static TTarget StepValues<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SliderSnapsTo> property) where TTarget : Slider
         => property.Set(Xaml.Controls.Primitives.SliderSnapsTo.StepValues);
@@ -50174,6 +50327,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.TickPlacement.Inline"/></summary>
         public static TTarget Inline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.TickPlacement> property) where TTarget : Slider
         => property.Set(Xaml.Controls.Primitives.TickPlacement.Inline);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
+        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : Slider
+        => property.Set(Xaml.Controls.Orientation.Vertical);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
+        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : Slider
+        => property.Set(Xaml.Controls.Orientation.Horizontal);
     }
 
     public static partial class SplitCloseThemeAnimationExtensions
@@ -50216,18 +50377,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class SplitViewExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : SplitView
-        => property.Set(Xaml.Controls.LightDismissOverlayMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.On"/></summary>
-        public static TTarget On<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : SplitView
-        => property.Set(Xaml.Controls.LightDismissOverlayMode.On);
-
-        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Off"/></summary>
-        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : SplitView
-        => property.Set(Xaml.Controls.LightDismissOverlayMode.Off);
-
         /// <summary>Set to <see cref="Xaml.Controls.SplitViewDisplayMode.Overlay"/></summary>
         public static TTarget Overlay<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.SplitViewDisplayMode> property) where TTarget : SplitView
         => property.Set(Xaml.Controls.SplitViewDisplayMode.Overlay);
@@ -50243,6 +50392,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.SplitViewDisplayMode.CompactInline"/></summary>
         public static TTarget CompactInline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.SplitViewDisplayMode> property) where TTarget : SplitView
         => property.Set(Xaml.Controls.SplitViewDisplayMode.CompactInline);
+
+        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : SplitView
+        => property.Set(Xaml.Controls.LightDismissOverlayMode.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.On"/></summary>
+        public static TTarget On<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : SplitView
+        => property.Set(Xaml.Controls.LightDismissOverlayMode.On);
+
+        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Off"/></summary>
+        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : SplitView
+        => property.Set(Xaml.Controls.LightDismissOverlayMode.Off);
 
         /// <summary>Set to <see cref="Xaml.Controls.SplitViewPanePlacement.Left"/></summary>
         public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.SplitViewPanePlacement> property) where TTarget : SplitView
@@ -51964,18 +52125,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class TabViewExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.TabViewCloseButtonOverlayMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewCloseButtonOverlayMode> property) where TTarget : TabView
-        => property.Set(Xaml.Controls.TabViewCloseButtonOverlayMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.TabViewCloseButtonOverlayMode.OnPointerOver"/></summary>
-        public static TTarget OnPointerOver<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewCloseButtonOverlayMode> property) where TTarget : TabView
-        => property.Set(Xaml.Controls.TabViewCloseButtonOverlayMode.OnPointerOver);
-
-        /// <summary>Set to <see cref="Xaml.Controls.TabViewCloseButtonOverlayMode.Always"/></summary>
-        public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewCloseButtonOverlayMode> property) where TTarget : TabView
-        => property.Set(Xaml.Controls.TabViewCloseButtonOverlayMode.Always);
-
         /// <summary>Set to <see cref="Xaml.Controls.TabViewWidthMode.Equal"/></summary>
         public static TTarget Equal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewWidthMode> property) where TTarget : TabView
         => property.Set(Xaml.Controls.TabViewWidthMode.Equal);
@@ -51987,6 +52136,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.TabViewWidthMode.Compact"/></summary>
         public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewWidthMode> property) where TTarget : TabView
         => property.Set(Xaml.Controls.TabViewWidthMode.Compact);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TabViewCloseButtonOverlayMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewCloseButtonOverlayMode> property) where TTarget : TabView
+        => property.Set(Xaml.Controls.TabViewCloseButtonOverlayMode.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TabViewCloseButtonOverlayMode.OnPointerOver"/></summary>
+        public static TTarget OnPointerOver<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewCloseButtonOverlayMode> property) where TTarget : TabView
+        => property.Set(Xaml.Controls.TabViewCloseButtonOverlayMode.OnPointerOver);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TabViewCloseButtonOverlayMode.Always"/></summary>
+        public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewCloseButtonOverlayMode> property) where TTarget : TabView
+        => property.Set(Xaml.Controls.TabViewCloseButtonOverlayMode.Always);
     }
 
     public static partial class TeachingTipExtensions
@@ -52114,6 +52275,74 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextBlock
         => property.Set(Windows.UI.Text.FontStyle.Italic);
 
+        /// <summary>Set to <see cref="Xaml.TextTrimming.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextTrimming.None);
+
+        /// <summary>Set to <see cref="Xaml.TextTrimming.CharacterEllipsis"/></summary>
+        public static TTarget CharacterEllipsis<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextTrimming.CharacterEllipsis);
+
+        /// <summary>Set to <see cref="Xaml.TextTrimming.WordEllipsis"/></summary>
+        public static TTarget WordEllipsis<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextTrimming.WordEllipsis);
+
+        /// <summary>Set to <see cref="Xaml.TextTrimming.Clip"/></summary>
+        public static TTarget Clip<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextTrimming.Clip);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
+        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextWrapping.NoWrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
+        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextWrapping.Wrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
+        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextWrapping.WrapWholeWords);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.MaxHeight"/></summary>
+        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : TextBlock
+        => property.Set(Xaml.LineStackingStrategy.MaxHeight);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BlockLineHeight"/></summary>
+        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : TextBlock
+        => property.Set(Xaml.LineStackingStrategy.BlockLineHeight);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BaselineToBaseline"/></summary>
+        public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : TextBlock
+        => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.Full"/></summary>
+        public static TTarget Full<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextLineBounds.Full);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToCapHeight"/></summary>
+        public static TTarget TrimToCapHeight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextLineBounds.TrimToCapHeight);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToBaseline"/></summary>
+        public static TTarget TrimToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextLineBounds.TrimToBaseline);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.Tight"/></summary>
+        public static TTarget Tight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextLineBounds.Tight);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextReadingOrder.Default);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
+        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
+
         /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : TextBlock
         => property.Set(Windows.UI.Text.TextDecorations.None);
@@ -52125,6 +52354,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.Strikethrough"/></summary>
         public static TTarget Strikethrough<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : TextBlock
         => property.Set(Windows.UI.Text.TextDecorations.Strikethrough);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : TextBlock
+        => property.Set(Xaml.OpticalMarginAlignment.None);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
+        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : TextBlock
+        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
 
         /// <summary>Set to <see cref="Windows.UI.Text.FontStretch.Undefined"/></summary>
         public static TTarget Undefined<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : TextBlock
@@ -52165,86 +52402,58 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.UI.Text.FontStretch.UltraExpanded"/></summary>
         public static TTarget UltraExpanded<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : TextBlock
         => property.Set(Windows.UI.Text.FontStretch.UltraExpanded);
-
-        /// <summary>Set to <see cref="Xaml.TextTrimming.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextTrimming.None);
-
-        /// <summary>Set to <see cref="Xaml.TextTrimming.CharacterEllipsis"/></summary>
-        public static TTarget CharacterEllipsis<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextTrimming.CharacterEllipsis);
-
-        /// <summary>Set to <see cref="Xaml.TextTrimming.WordEllipsis"/></summary>
-        public static TTarget WordEllipsis<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextTrimming.WordEllipsis);
-
-        /// <summary>Set to <see cref="Xaml.TextTrimming.Clip"/></summary>
-        public static TTarget Clip<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextTrimming.Clip);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.Full"/></summary>
-        public static TTarget Full<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextLineBounds.Full);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToCapHeight"/></summary>
-        public static TTarget TrimToCapHeight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextLineBounds.TrimToCapHeight);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToBaseline"/></summary>
-        public static TTarget TrimToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextLineBounds.TrimToBaseline);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.Tight"/></summary>
-        public static TTarget Tight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextLineBounds.Tight);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
-        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextWrapping.NoWrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
-        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextWrapping.Wrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
-        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextWrapping.WrapWholeWords);
-
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : TextBlock
-        => property.Set(Xaml.LineStackingStrategy.MaxHeight);
-
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : TextBlock
-        => property.Set(Xaml.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BaselineToBaseline"/></summary>
-        public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : TextBlock
-        => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
-
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : TextBlock
-        => property.Set(Xaml.OpticalMarginAlignment.None);
-
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
-        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : TextBlock
-        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextReadingOrder.Default);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
-        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
     }
 
     public static partial class TextBoxExtensions
     {
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
+        => property.Set(Xaml.TextReadingOrder.Default);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
+        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
+        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
+        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CandidateWindowAlignment.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> property) where TTarget : TextBox
+        => property.Set(Xaml.Controls.CandidateWindowAlignment.Default);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CandidateWindowAlignment.BottomEdge"/></summary>
+        public static TTarget BottomEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> property) where TTarget : TextBox
+        => property.Set(Xaml.Controls.CandidateWindowAlignment.BottomEdge);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
+        => property.Set(Xaml.TextAlignment.Center);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
+        => property.Set(Xaml.TextAlignment.Left);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Start"/></summary>
+        public static TTarget Start<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
+        => property.Set(Xaml.TextAlignment.Start);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
+        => property.Set(Xaml.TextAlignment.Right);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.End"/></summary>
+        public static TTarget End<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
+        => property.Set(Xaml.TextAlignment.End);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Justify"/></summary>
+        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
+        => property.Set(Xaml.TextAlignment.Justify);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
+        => property.Set(Xaml.TextAlignment.DetectFromContent);
+
         /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
         public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBox
         => property.Set(Xaml.TextWrapping.NoWrap);
@@ -52257,17 +52466,17 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBox
         => property.Set(Xaml.TextWrapping.WrapWholeWords);
 
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationKind.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.InputValidationKind.Auto);
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
+        => property.Set(Xaml.Controls.CharacterCasing.Normal);
 
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationKind.Compact"/></summary>
-        public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.InputValidationKind.Compact);
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Lower"/></summary>
+        public static TTarget Lower<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
+        => property.Set(Xaml.Controls.CharacterCasing.Lower);
 
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationKind.Inline"/></summary>
-        public static TTarget Inline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationKind> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.InputValidationKind.Inline);
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Upper"/></summary>
+        public static TTarget Upper<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
+        => property.Set(Xaml.Controls.CharacterCasing.Upper);
 
         /// <summary>Set to <see cref="Android.Views.InputMethods.ImeAction.Done"/></summary>
         public static TTarget Done<TTarget>(this DependencyProperty<TTarget, Android.Views.InputMethods.ImeAction> property) where TTarget : TextBox
@@ -52308,109 +52517,21 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Android.Views.InputMethods.ImeAction.ImeNull"/></summary>
         public static TTarget ImeNull<TTarget>(this DependencyProperty<TTarget, Android.Views.InputMethods.ImeAction> property) where TTarget : TextBox
         => property.Set(Android.Views.InputMethods.ImeAction.ImeNull);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.InputValidationMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationMode.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.InputValidationMode.Default);
-
-        /// <summary>Set to <see cref="Xaml.Controls.InputValidationMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.InputValidationMode> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.InputValidationMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
-        => property.Set(Xaml.TextReadingOrder.Default);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
-        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
-        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
-        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CandidateWindowAlignment.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.CandidateWindowAlignment.Default);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CandidateWindowAlignment.BottomEdge"/></summary>
-        public static TTarget BottomEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.CandidateWindowAlignment.BottomEdge);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.CharacterCasing.Normal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Lower"/></summary>
-        public static TTarget Lower<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.CharacterCasing.Lower);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Upper"/></summary>
-        public static TTarget Upper<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.CharacterCasing.Upper);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
-        => property.Set(Xaml.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
-        => property.Set(Xaml.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Start"/></summary>
-        public static TTarget Start<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
-        => property.Set(Xaml.TextAlignment.Start);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
-        => property.Set(Xaml.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.End"/></summary>
-        public static TTarget End<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
-        => property.Set(Xaml.TextAlignment.End);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
-        => property.Set(Xaml.TextAlignment.Justify);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
-        => property.Set(Xaml.TextAlignment.DetectFromContent);
     }
 
     public static partial class TextElementExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Auto);
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextElement
+        => property.Set(Windows.UI.Text.FontStyle.Normal);
 
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Bottom"/></summary>
-        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Bottom);
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Oblique"/></summary>
+        public static TTarget Oblique<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextElement
+        => property.Set(Windows.UI.Text.FontStyle.Oblique);
 
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Top"/></summary>
-        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Top);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Left);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Right);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Center);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Hidden);
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
+        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextElement
+        => property.Set(Windows.UI.Text.FontStyle.Italic);
 
         /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : TextElement
@@ -52464,18 +52585,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget UltraExpanded<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : TextElement
         => property.Set(Windows.UI.Text.FontStretch.UltraExpanded);
 
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextElement
-        => property.Set(Windows.UI.Text.FontStyle.Normal);
-
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Oblique"/></summary>
-        public static TTarget Oblique<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextElement
-        => property.Set(Windows.UI.Text.FontStyle.Oblique);
-
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
-        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextElement
-        => property.Set(Windows.UI.Text.FontStyle.Italic);
-
         /// <summary>Set to <see cref="Xaml.Documents.BaseLineAlignment.Baseline"/></summary>
         public static TTarget Baseline<TTarget>(this DependencyProperty<TTarget, Xaml.Documents.BaseLineAlignment> property) where TTarget : TextElement
         => property.Set(Xaml.Documents.BaseLineAlignment.Baseline);
@@ -52483,10 +52592,54 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Documents.BaseLineAlignment.Superscript"/></summary>
         public static TTarget Superscript<TTarget>(this DependencyProperty<TTarget, Xaml.Documents.BaseLineAlignment> property) where TTarget : TextElement
         => property.Set(Xaml.Documents.BaseLineAlignment.Superscript);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Bottom"/></summary>
+        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Bottom);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Top"/></summary>
+        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Top);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Left);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Right);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Center);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Hidden"/></summary>
+        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Hidden);
     }
 
     public static partial class TileBrushExtensions
     {
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : TileBrush
+        => property.Set(Xaml.Media.Stretch.None);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.Fill"/></summary>
+        public static TTarget Fill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : TileBrush
+        => property.Set(Xaml.Media.Stretch.Fill);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.Uniform"/></summary>
+        public static TTarget Uniform<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : TileBrush
+        => property.Set(Xaml.Media.Stretch.Uniform);
+
+        /// <summary>Set to <see cref="Xaml.Media.Stretch.UniformToFill"/></summary>
+        public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : TileBrush
+        => property.Set(Xaml.Media.Stretch.UniformToFill);
+
         /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Top"/></summary>
         public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : TileBrush
         => property.Set(Xaml.Media.AlignmentY.Top);
@@ -52510,22 +52663,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Media.AlignmentX.Right"/></summary>
         public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentX> property) where TTarget : TileBrush
         => property.Set(Xaml.Media.AlignmentX.Right);
-
-        /// <summary>Set to <see cref="Xaml.Media.Stretch.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : TileBrush
-        => property.Set(Xaml.Media.Stretch.None);
-
-        /// <summary>Set to <see cref="Xaml.Media.Stretch.Fill"/></summary>
-        public static TTarget Fill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : TileBrush
-        => property.Set(Xaml.Media.Stretch.Fill);
-
-        /// <summary>Set to <see cref="Xaml.Media.Stretch.Uniform"/></summary>
-        public static TTarget Uniform<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : TileBrush
-        => property.Set(Xaml.Media.Stretch.Uniform);
-
-        /// <summary>Set to <see cref="Xaml.Media.Stretch.UniformToFill"/></summary>
-        public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : TileBrush
-        => property.Set(Xaml.Media.Stretch.UniformToFill);
     }
 
     public static partial class TimePickerExtensions
@@ -52673,18 +52810,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget BottomTop<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewTallModeConfiguration> property) where TTarget : TwoPaneView
         => property.Set(Xaml.Controls.TwoPaneViewTallModeConfiguration.BottomTop);
 
-        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.SinglePane"/></summary>
-        public static TTarget SinglePane<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
-        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.SinglePane);
-
-        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.LeftRight"/></summary>
-        public static TTarget LeftRight<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
-        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.LeftRight);
-
-        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.RightLeft"/></summary>
-        public static TTarget RightLeft<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
-        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.RightLeft);
-
         /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewMode.SinglePane"/></summary>
         public static TTarget SinglePane<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewMode> property) where TTarget : TwoPaneView
         => property.Set(Xaml.Controls.TwoPaneViewMode.SinglePane);
@@ -52697,6 +52822,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Tall<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewMode> property) where TTarget : TwoPaneView
         => property.Set(Xaml.Controls.TwoPaneViewMode.Tall);
 
+        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.SinglePane"/></summary>
+        public static TTarget SinglePane<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
+        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.SinglePane);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.LeftRight"/></summary>
+        public static TTarget LeftRight<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
+        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.LeftRight);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.RightLeft"/></summary>
+        public static TTarget RightLeft<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
+        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.RightLeft);
+
         /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewPriority.Pane1"/></summary>
         public static TTarget Pane1<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewPriority> property) where TTarget : TwoPaneView
         => property.Set(Xaml.Controls.TwoPaneViewPriority.Pane1);
@@ -52708,6 +52845,54 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class UIElementExtensions
     {
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.None);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateX"/></summary>
+        public static TTarget TranslateX<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.TranslateX);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateY"/></summary>
+        public static TTarget TranslateY<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.TranslateY);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateRailsX"/></summary>
+        public static TTarget TranslateRailsX<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.TranslateRailsX);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateRailsY"/></summary>
+        public static TTarget TranslateRailsY<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.TranslateRailsY);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.Rotate"/></summary>
+        public static TTarget Rotate<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.Rotate);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.Scale"/></summary>
+        public static TTarget Scale<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.Scale);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateInertia"/></summary>
+        public static TTarget TranslateInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.TranslateInertia);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.RotateInertia"/></summary>
+        public static TTarget RotateInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.RotateInertia);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.ScaleInertia"/></summary>
+        public static TTarget ScaleInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.ScaleInertia);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.All"/></summary>
+        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.All);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.System"/></summary>
+        public static TTarget System<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.System);
+
         /// <summary>Set to <see cref="Xaml.Input.KeyboardNavigationMode.Local"/></summary>
         public static TTarget Local<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardNavigationMode> property) where TTarget : UIElement
         => property.Set(Xaml.Input.KeyboardNavigationMode.Local);
@@ -52720,53 +52905,25 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Once<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardNavigationMode> property) where TTarget : UIElement
         => property.Set(Xaml.Input.KeyboardNavigationMode.Once);
 
-        /// <summary>Set to <see cref="Xaml.Media.RevealBrushState.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Media.RevealBrushState> property) where TTarget : UIElement
-        => property.Set(Xaml.Media.RevealBrushState.Normal);
+        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
+        => property.Set(Xaml.ElementHighContrastAdjustment.None);
 
-        /// <summary>Set to <see cref="Xaml.Media.RevealBrushState.PointerOver"/></summary>
-        public static TTarget PointerOver<TTarget>(this DependencyProperty<TTarget, Xaml.Media.RevealBrushState> property) where TTarget : UIElement
-        => property.Set(Xaml.Media.RevealBrushState.PointerOver);
+        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.Application"/></summary>
+        public static TTarget Application<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
+        => property.Set(Xaml.ElementHighContrastAdjustment.Application);
 
-        /// <summary>Set to <see cref="Xaml.Media.RevealBrushState.Pressed"/></summary>
-        public static TTarget Pressed<TTarget>(this DependencyProperty<TTarget, Xaml.Media.RevealBrushState> property) where TTarget : UIElement
-        => property.Set(Xaml.Media.RevealBrushState.Pressed);
+        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
+        => property.Set(Xaml.ElementHighContrastAdjustment.Auto);
 
-        /// <summary>Set to <see cref="Xaml.Input.XYFocusNavigationStrategy.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusNavigationStrategy> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.XYFocusNavigationStrategy.Auto);
+        /// <summary>Set to <see cref="Xaml.Visibility.Visible"/></summary>
+        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : UIElement
+        => property.Set(Xaml.Visibility.Visible);
 
-        /// <summary>Set to <see cref="Xaml.Input.XYFocusNavigationStrategy.Projection"/></summary>
-        public static TTarget Projection<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusNavigationStrategy> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.XYFocusNavigationStrategy.Projection);
-
-        /// <summary>Set to <see cref="Xaml.Input.XYFocusNavigationStrategy.NavigationDirectionDistance"/></summary>
-        public static TTarget NavigationDirectionDistance<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusNavigationStrategy> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.XYFocusNavigationStrategy.NavigationDirectionDistance);
-
-        /// <summary>Set to <see cref="Xaml.Input.XYFocusNavigationStrategy.RectilinearDistance"/></summary>
-        public static TTarget RectilinearDistance<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusNavigationStrategy> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.XYFocusNavigationStrategy.RectilinearDistance);
-
-        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Enabled);
-
-        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyboardAcceleratorPlacementMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyboardAcceleratorPlacementMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyboardAcceleratorPlacementMode.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyboardAcceleratorPlacementMode.Hidden);
+        /// <summary>Set to <see cref="Xaml.Visibility.Collapsed"/></summary>
+        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : UIElement
+        => property.Set(Xaml.Visibility.Collapsed);
 
         /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
@@ -52796,37 +52953,13 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
         => property.Set(Xaml.Input.KeyTipPlacementMode.Hidden);
 
-        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
-        => property.Set(Xaml.ElementHighContrastAdjustment.None);
+        /// <summary>Set to <see cref="Xaml.Input.KeyboardAcceleratorPlacementMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyboardAcceleratorPlacementMode.Auto);
 
-        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.Application"/></summary>
-        public static TTarget Application<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
-        => property.Set(Xaml.ElementHighContrastAdjustment.Application);
-
-        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
-        => property.Set(Xaml.ElementHighContrastAdjustment.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.Inherit"/></summary>
-        public static TTarget Inherit<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Media.ElementCompositeMode.Inherit);
-
-        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.SourceOver"/></summary>
-        public static TTarget SourceOver<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Media.ElementCompositeMode.SourceOver);
-
-        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.MinBlend"/></summary>
-        public static TTarget MinBlend<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Media.ElementCompositeMode.MinBlend);
-
-        /// <summary>Set to <see cref="Xaml.Visibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : UIElement
-        => property.Set(Xaml.Visibility.Visible);
-
-        /// <summary>Set to <see cref="Xaml.Visibility.Collapsed"/></summary>
-        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : UIElement
-        => property.Set(Xaml.Visibility.Collapsed);
+        /// <summary>Set to <see cref="Xaml.Input.KeyboardAcceleratorPlacementMode.Hidden"/></summary>
+        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyboardAcceleratorPlacementMode.Hidden);
 
         /// <summary>Set to <see cref="Uno.UI.Xaml.RoutedEventFlag.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.RoutedEventFlag> property) where TTarget : UIElement
@@ -52956,6 +53089,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Holding<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.RoutedEventFlag> property) where TTarget : UIElement
         => property.Set(Uno.UI.Xaml.RoutedEventFlag.Holding);
 
+        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Enabled"/></summary>
+        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Enabled);
+
+        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Disabled"/></summary>
+        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Disabled);
+
         /// <summary>Set to <see cref="Xaml.FocusState.Unfocused"/></summary>
         public static TTarget Unfocused<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : UIElement
         => property.Set(Xaml.FocusState.Unfocused);
@@ -52972,53 +53117,33 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Programmatic<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : UIElement
         => property.Set(Xaml.FocusState.Programmatic);
 
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.None);
+        /// <summary>Set to <see cref="Xaml.Input.XYFocusNavigationStrategy.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusNavigationStrategy> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.XYFocusNavigationStrategy.Auto);
 
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateX"/></summary>
-        public static TTarget TranslateX<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.TranslateX);
+        /// <summary>Set to <see cref="Xaml.Input.XYFocusNavigationStrategy.Projection"/></summary>
+        public static TTarget Projection<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusNavigationStrategy> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.XYFocusNavigationStrategy.Projection);
 
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateY"/></summary>
-        public static TTarget TranslateY<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.TranslateY);
+        /// <summary>Set to <see cref="Xaml.Input.XYFocusNavigationStrategy.NavigationDirectionDistance"/></summary>
+        public static TTarget NavigationDirectionDistance<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusNavigationStrategy> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.XYFocusNavigationStrategy.NavigationDirectionDistance);
 
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateRailsX"/></summary>
-        public static TTarget TranslateRailsX<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.TranslateRailsX);
+        /// <summary>Set to <see cref="Xaml.Input.XYFocusNavigationStrategy.RectilinearDistance"/></summary>
+        public static TTarget RectilinearDistance<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusNavigationStrategy> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.XYFocusNavigationStrategy.RectilinearDistance);
 
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateRailsY"/></summary>
-        public static TTarget TranslateRailsY<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.TranslateRailsY);
+        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.Inherit"/></summary>
+        public static TTarget Inherit<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Media.ElementCompositeMode.Inherit);
 
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.Rotate"/></summary>
-        public static TTarget Rotate<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.Rotate);
+        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.SourceOver"/></summary>
+        public static TTarget SourceOver<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Media.ElementCompositeMode.SourceOver);
 
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.Scale"/></summary>
-        public static TTarget Scale<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.Scale);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateInertia"/></summary>
-        public static TTarget TranslateInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.TranslateInertia);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.RotateInertia"/></summary>
-        public static TTarget RotateInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.RotateInertia);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.ScaleInertia"/></summary>
-        public static TTarget ScaleInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.ScaleInertia);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.All"/></summary>
-        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.All);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.System"/></summary>
-        public static TTarget System<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.System);
+        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.MinBlend"/></summary>
+        public static TTarget MinBlend<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Media.ElementCompositeMode.MinBlend);
     }
 
     public static partial class UniformGridLayoutExtensions
@@ -53030,18 +53155,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
         public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : UniformGridLayout
         => property.Set(Xaml.Controls.Orientation.Horizontal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.UniformGridLayoutItemsStretch.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.UniformGridLayoutItemsStretch> property) where TTarget : UniformGridLayout
-        => property.Set(Xaml.Controls.UniformGridLayoutItemsStretch.None);
-
-        /// <summary>Set to <see cref="Xaml.Controls.UniformGridLayoutItemsStretch.Fill"/></summary>
-        public static TTarget Fill<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.UniformGridLayoutItemsStretch> property) where TTarget : UniformGridLayout
-        => property.Set(Xaml.Controls.UniformGridLayoutItemsStretch.Fill);
-
-        /// <summary>Set to <see cref="Xaml.Controls.UniformGridLayoutItemsStretch.Uniform"/></summary>
-        public static TTarget Uniform<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.UniformGridLayoutItemsStretch> property) where TTarget : UniformGridLayout
-        => property.Set(Xaml.Controls.UniformGridLayoutItemsStretch.Uniform);
 
         /// <summary>Set to <see cref="Xaml.Controls.UniformGridLayoutItemsJustification.Start"/></summary>
         public static TTarget Start<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.UniformGridLayoutItemsJustification> property) where TTarget : UniformGridLayout
@@ -53066,6 +53179,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.UniformGridLayoutItemsJustification.SpaceEvenly"/></summary>
         public static TTarget SpaceEvenly<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.UniformGridLayoutItemsJustification> property) where TTarget : UniformGridLayout
         => property.Set(Xaml.Controls.UniformGridLayoutItemsJustification.SpaceEvenly);
+
+        /// <summary>Set to <see cref="Xaml.Controls.UniformGridLayoutItemsStretch.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.UniformGridLayoutItemsStretch> property) where TTarget : UniformGridLayout
+        => property.Set(Xaml.Controls.UniformGridLayoutItemsStretch.None);
+
+        /// <summary>Set to <see cref="Xaml.Controls.UniformGridLayoutItemsStretch.Fill"/></summary>
+        public static TTarget Fill<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.UniformGridLayoutItemsStretch> property) where TTarget : UniformGridLayout
+        => property.Set(Xaml.Controls.UniformGridLayoutItemsStretch.Fill);
+
+        /// <summary>Set to <see cref="Xaml.Controls.UniformGridLayoutItemsStretch.Uniform"/></summary>
+        public static TTarget Uniform<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.UniformGridLayoutItemsStretch> property) where TTarget : UniformGridLayout
+        => property.Set(Xaml.Controls.UniformGridLayoutItemsStretch.Uniform);
     }
 
     public static partial class VariableSizedWrapGridExtensions
@@ -53081,18 +53206,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class ViewboxExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.UpOnly"/></summary>
-        public static TTarget UpOnly<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
-        => property.Set(Xaml.Controls.StretchDirection.UpOnly);
-
-        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.DownOnly"/></summary>
-        public static TTarget DownOnly<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
-        => property.Set(Xaml.Controls.StretchDirection.DownOnly);
-
-        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.Both"/></summary>
-        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
-        => property.Set(Xaml.Controls.StretchDirection.Both);
-
         /// <summary>Set to <see cref="Xaml.Media.Stretch.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Viewbox
         => property.Set(Xaml.Media.Stretch.None);
@@ -53108,18 +53221,22 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Media.Stretch.UniformToFill"/></summary>
         public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Viewbox
         => property.Set(Xaml.Media.Stretch.UniformToFill);
+
+        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.UpOnly"/></summary>
+        public static TTarget UpOnly<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
+        => property.Set(Xaml.Controls.StretchDirection.UpOnly);
+
+        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.DownOnly"/></summary>
+        public static TTarget DownOnly<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
+        => property.Set(Xaml.Controls.StretchDirection.DownOnly);
+
+        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.Both"/></summary>
+        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
+        => property.Set(Xaml.Controls.StretchDirection.Both);
     }
 
     public static partial class VirtualizingPanelLayoutExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.GroupHeaderPlacement.Top"/></summary>
-        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.GroupHeaderPlacement> property) where TTarget : VirtualizingPanelLayout
-        => property.Set(Xaml.Controls.Primitives.GroupHeaderPlacement.Top);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.GroupHeaderPlacement.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.GroupHeaderPlacement> property) where TTarget : VirtualizingPanelLayout
-        => property.Set(Xaml.Controls.Primitives.GroupHeaderPlacement.Left);
-
         /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
         public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : VirtualizingPanelLayout
         => property.Set(Xaml.Controls.Orientation.Vertical);
@@ -53127,6 +53244,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
         public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : VirtualizingPanelLayout
         => property.Set(Xaml.Controls.Orientation.Horizontal);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.GroupHeaderPlacement.Top"/></summary>
+        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.GroupHeaderPlacement> property) where TTarget : VirtualizingPanelLayout
+        => property.Set(Xaml.Controls.Primitives.GroupHeaderPlacement.Top);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.GroupHeaderPlacement.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.GroupHeaderPlacement> property) where TTarget : VirtualizingPanelLayout
+        => property.Set(Xaml.Controls.Primitives.GroupHeaderPlacement.Left);
     }
 
     public static partial class VirtualizingStackPanelExtensions

@@ -21,7 +21,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>2.0.0</Version>
+		<Version>2.1.1</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573</NoWarn>
@@ -72,11 +72,11 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)==false">
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.230217.4" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.3.230502000" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)">
-		<PackageReference Include="Uno.WinUI" Version="4.7.44" />
+		<PackageReference Include="Uno.WinUI" Version="4.9.17" />
 	</ItemGroup>
 	
 	<ItemGroup>
