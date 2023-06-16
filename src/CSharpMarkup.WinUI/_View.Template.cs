@@ -18,6 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Windows.Input;
+using System.Runtime.Versioning;
 using Microsoft;
 using UI = Microsoft.UI;
 using Xaml = Microsoft.UI.Xaml;
@@ -77,7 +78,7 @@ namespace _MarkupNamespace_
     {
 #region _ViewHelper_
         /// <summary>Create a <see cref="_UIViewType_"/></summary>_ViewHelperRemarks_
-        public static/*_ViewHelperPartial_*/ _ViewTypeName_ _ViewTypeName_(/*_ViewHelperParameters_*/)
+        /*_UnsupportedOSPlatformAttribute_*/public static/*_ViewHelperPartial_*/ _ViewTypeName_ _ViewTypeName_(/*_ViewHelperParameters_*/)
         {
             var ui = new _UIViewType_(/*_ViewHelperPassCtorParameters_*/);/*_ViewHelperStatements_*/
             return _MarkupViewType_.StartChain(ui);
@@ -214,12 +215,12 @@ namespace _MarkupNamespace_
     {
 #region SetProperty
         /// <summary>Set <see cref="_UIViewType_._PropertyName_"/></summary>
-        public static TView _PropertyName_/*_Suffix_*/<TView>(this TView view/*_PropertyParameters_*/) where TView : _ViewTypeName_ { view.UI._PropertyName_ = _PropertySetValue_; return view; }
+        /*_UnsupportedOSPlatformAttribute_*/public static TView _PropertyName_/*_Suffix_*/<TView>(this TView view/*_PropertyParameters_*/) where TView : _ViewTypeName_ { view.UI._PropertyName_ = _PropertySetValue_; return view; }
 #endregion
 
 #region SetAttachedProperty
         /// <summary>Set <see cref="_UIViewType_._AttachedPropertyName_"/></summary>
-        public static TTarget /*_DefiningViewPrefix_*/_AttachedPropertyName_/*_Suffix_*/<TTarget>(this TTarget target/*_PropertyParameters_*/) where TTarget : _PropertyTarget_
+        /*_UnsupportedOSPlatformAttribute_*/public static TTarget /*_DefiningViewPrefix_*/_AttachedPropertyName_/*_Suffix_*/<TTarget>(this TTarget target/*_PropertyParameters_*/) where TTarget : _PropertyTarget_
         { _UIViewType_.Set_AttachedPropertyName_(target/*_AccessUI_*/, _AttachedPropertySetValue_); return target; }
 #endregion
 
@@ -240,7 +241,7 @@ namespace _MarkupNamespace_
 
 #region StartBindablePropertyChain
         /// <summary>Bind (or set enum value of) <see cref="_UIViewType_._PropertyName_"/></summary>
-        public static DependencyProperty<TTarget, _PropertyType_> _DefiningViewPrefix__PropertyName_<TTarget>(this TTarget target) where TTarget : _PropertyTarget_
+        /*_UnsupportedOSPlatformAttribute_*/public static DependencyProperty<TTarget, _PropertyType_> _DefiningViewPrefix__PropertyName_<TTarget>(this TTarget target) where TTarget : _PropertyTarget_
         => DependencyProperty<TTarget, _PropertyType_>.Get(target, _UIViewType_._PropertyName_Property);
 #endregion
 

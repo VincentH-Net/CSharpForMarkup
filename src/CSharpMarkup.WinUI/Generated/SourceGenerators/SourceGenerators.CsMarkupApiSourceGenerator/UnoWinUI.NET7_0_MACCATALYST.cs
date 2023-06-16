@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Windows.Input;
+using System.Runtime.Versioning;
 using Microsoft;
 using UI = Microsoft.UI;
 using Xaml = Microsoft.UI.Xaml;
@@ -84,6 +85,7 @@ namespace CSharpMarkup.WinUI // ColorPaletteResources
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.ColorPaletteResources"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ColorPaletteResources ColorPaletteResources(Windows.UI.Color? ListMedium = default, Windows.UI.Color? ListLow = default, Windows.UI.Color? ErrorText = default, Windows.UI.Color? ChromeWhite = default, Windows.UI.Color? ChromeMediumLow = default, Windows.UI.Color? ChromeMedium = default, Windows.UI.Color? ChromeLow = default, Windows.UI.Color? ChromeHigh = default, Windows.UI.Color? ChromeGray = default, Windows.UI.Color? ChromeDisabledLow = default, Windows.UI.Color? ChromeDisabledHigh = default, Windows.UI.Color? ChromeBlackMediumLow = default, Windows.UI.Color? ChromeBlackMedium = default, Windows.UI.Color? ChromeBlackLow = default, Windows.UI.Color? ChromeBlackHigh = default, Windows.UI.Color? ChromeAltLow = default, Windows.UI.Color? BaseMediumLow = default, Windows.UI.Color? BaseMediumHigh = default, Windows.UI.Color? BaseMedium = default, Windows.UI.Color? BaseLow = default, Windows.UI.Color? BaseHigh = default, Windows.UI.Color? AltMediumLow = default, Windows.UI.Color? AltMediumHigh = default, Windows.UI.Color? AltMedium = default, Windows.UI.Color? AltLow = default, Windows.UI.Color? AltHigh = default, Windows.UI.Color? Accent = default)
         {
             var ui = new Xaml.ColorPaletteResources();
@@ -118,6 +120,7 @@ namespace CSharpMarkup.WinUI // ColorPaletteResources
         }
 
         /// <summary>Create a <see cref="Xaml.ColorPaletteResources"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ColorPaletteResources ColorPaletteResources()
         {
             var ui = new Xaml.ColorPaletteResources();
@@ -156,84 +159,111 @@ namespace CSharpMarkup.WinUI // ColorPaletteResources
     public static partial class ColorPaletteResourcesExtensions
     {
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ListMedium"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ListMedium<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ListMedium = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ListLow"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ListLow<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ListLow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ErrorText"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ErrorText<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ErrorText = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeWhite"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeWhite<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeWhite = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeMediumLow"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeMediumLow<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeMediumLow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeMedium"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeMedium<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeMedium = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeLow"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeLow<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeLow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeHigh"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeHigh<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeHigh = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeGray"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeGray<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeGray = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeDisabledLow"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeDisabledLow<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeDisabledLow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeDisabledHigh"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeDisabledHigh<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeDisabledHigh = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeBlackMediumLow"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeBlackMediumLow<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeBlackMediumLow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeBlackMedium"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeBlackMedium<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeBlackMedium = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeBlackLow"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeBlackLow<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeBlackLow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeBlackHigh"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeBlackHigh<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeBlackHigh = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.ChromeAltLow"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChromeAltLow<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.ChromeAltLow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.BaseMediumLow"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BaseMediumLow<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.BaseMediumLow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.BaseMediumHigh"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BaseMediumHigh<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.BaseMediumHigh = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.BaseMedium"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BaseMedium<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.BaseMedium = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.BaseLow"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BaseLow<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.BaseLow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.BaseHigh"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BaseHigh<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.BaseHigh = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.AltMediumLow"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AltMediumLow<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.AltMediumLow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.AltMediumHigh"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AltMediumHigh<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.AltMediumHigh = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.AltMedium"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AltMedium<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.AltMedium = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.AltLow"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AltLow<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.AltLow = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.AltHigh"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AltHigh<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.AltHigh = value; return view; }
 
         /// <summary>Set <see cref="Xaml.ColorPaletteResources.Accent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Accent<TView>(this TView view, Windows.UI.Color? value) where TView : ColorPaletteResources { view.UI.Accent = value; return view; }
     }
 }
@@ -295,10 +325,12 @@ namespace CSharpMarkup.WinUI // DataTemplate
     public static partial class DataTemplateExtensions
     {
         /// <summary>Set <see cref="Xaml.DataTemplate.ExtensionInstance"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget DataTemplate_ExtensionInstance<TTarget>(this TTarget target, Xaml.IDataTemplateExtension value) where TTarget : FrameworkElement
         { Xaml.DataTemplate.SetExtensionInstance(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.DataTemplate.ExtensionInstance"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.IDataTemplateExtension> DataTemplate_ExtensionInstance<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, Xaml.IDataTemplateExtension>.Get(target, Xaml.DataTemplate.ExtensionInstanceProperty);
     }
@@ -350,6 +382,7 @@ namespace CSharpMarkup.WinUI // EventTrigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.EventTrigger"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static EventTrigger EventTrigger(Xaml.RoutedEvent RoutedEvent = default)
         {
             var ui = new Xaml.EventTrigger();
@@ -358,6 +391,7 @@ namespace CSharpMarkup.WinUI // EventTrigger
         }
 
         /// <summary>Create a <see cref="Xaml.EventTrigger"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static EventTrigger EventTrigger()
         {
             var ui = new Xaml.EventTrigger();
@@ -396,6 +430,7 @@ namespace CSharpMarkup.WinUI // EventTrigger
     public static partial class EventTriggerExtensions
     {
         /// <summary>Set <see cref="Xaml.EventTrigger.RoutedEvent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RoutedEvent<TView>(this TView view, Xaml.RoutedEvent value) where TView : EventTrigger { view.UI.RoutedEvent = value; return view; }
     }
 }
@@ -497,9 +532,11 @@ namespace CSharpMarkup.WinUI // FrameworkElement
     public static partial class FrameworkElementExtensions
     {
         /// <summary>Set <see cref="Xaml.FrameworkElement.Language"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Language<TView>(this TView view, string value) where TView : FrameworkElement { view.UI.Language = value; return view; }
 
         /// <summary>Set <see cref="Xaml.FrameworkElement.FlowDirection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FlowDirection<TView>(this TView view, Xaml.FlowDirection value) where TView : FrameworkElement { view.UI.FlowDirection = value; return view; }
 
         /// <summary>Set <see cref="Xaml.FrameworkElement.AreDimensionsConstrained"/></summary>
@@ -656,22 +693,27 @@ namespace CSharpMarkup.WinUI // FrameworkElement
         public static TView IsAccessibilityElement<TView>(this TView view, bool value) where TView : FrameworkElement { view.UI.IsAccessibilityElement = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.ActualHeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ActualHeight<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, double>.Get(target, Xaml.FrameworkElement.ActualHeightProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.ActualTheme"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.ElementTheme> ActualTheme<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, Xaml.ElementTheme>.Get(target, Xaml.FrameworkElement.ActualThemeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.ActualWidth"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ActualWidth<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, double>.Get(target, Xaml.FrameworkElement.ActualWidthProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.FlowDirection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.FlowDirection> FlowDirection<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, Xaml.FlowDirection>.Get(target, Xaml.FrameworkElement.FlowDirectionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.Language"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> Language<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, string>.Get(target, Xaml.FrameworkElement.LanguageProperty);
 
@@ -1270,6 +1312,7 @@ namespace CSharpMarkup.WinUI // TriggerAction
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.TriggerAction"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TriggerAction TriggerAction(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.TriggerAction();
@@ -1279,6 +1322,7 @@ namespace CSharpMarkup.WinUI // TriggerAction
         }
 
         /// <summary>Create a <see cref="Xaml.TriggerAction"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TriggerAction TriggerAction()
         {
             var ui = new Xaml.TriggerAction();
@@ -1337,6 +1381,7 @@ namespace CSharpMarkup.WinUI // TriggerBase
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.TriggerBase"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TriggerBase TriggerBase(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.TriggerBase();
@@ -1346,6 +1391,7 @@ namespace CSharpMarkup.WinUI // TriggerBase
         }
 
         /// <summary>Create a <see cref="Xaml.TriggerBase"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TriggerBase TriggerBase()
         {
             var ui = new Xaml.TriggerBase();
@@ -1524,96 +1570,127 @@ namespace CSharpMarkup.WinUI // UIElement
     public static partial class UIElementExtensions
     {
         /// <summary>Set <see cref="Xaml.UIElement.KeyboardAcceleratorPlacementMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeyboardAcceleratorPlacementMode<TView>(this TView view, Xaml.Input.KeyboardAcceleratorPlacementMode value) where TView : UIElement { view.UI.KeyboardAcceleratorPlacementMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.RotationTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RotationTransition<TView>(this TView view, Xaml.ScalarTransition value) where TView : UIElement { view.UI.RotationTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.KeyTipTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeyTipTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : UIElement { view.UI.KeyTipTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.KeyTipPlacementMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeyTipPlacementMode<TView>(this TView view, Xaml.Input.KeyTipPlacementMode value) where TView : UIElement { view.UI.KeyTipPlacementMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.KeyTipHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeyTipHorizontalOffset<TView>(this TView view, double value) where TView : UIElement { view.UI.KeyTipHorizontalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.IsTapEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTapEnabled<TView>(this TView view, bool value) where TView : UIElement { view.UI.IsTapEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.IsRightTapEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsRightTapEnabled<TView>(this TView view, bool value) where TView : UIElement { view.UI.IsRightTapEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.IsHoldingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsHoldingEnabled<TView>(this TView view, bool value) where TView : UIElement { view.UI.IsHoldingEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.IsDoubleTapEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsDoubleTapEnabled<TView>(this TView view, bool value) where TView : UIElement { view.UI.IsDoubleTapEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.AccessKey"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AccessKey<TView>(this TView view, string value) where TView : UIElement { view.UI.AccessKey = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.HighContrastAdjustment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HighContrastAdjustment<TView>(this TView view, Xaml.ElementHighContrastAdjustment value) where TView : UIElement { view.UI.HighContrastAdjustment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.ExitDisplayModeOnAccessKeyInvoked"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ExitDisplayModeOnAccessKeyInvoked<TView>(this TView view, bool value) where TView : UIElement { view.UI.ExitDisplayModeOnAccessKeyInvoked = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.OpacityTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OpacityTransition<TView>(this TView view, Xaml.ScalarTransition value) where TView : UIElement { view.UI.OpacityTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.CompositeMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CompositeMode<TView>(this TView view, Xaml.Media.ElementCompositeMode value) where TView : UIElement { view.UI.CompositeMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.CanBeScrollAnchor"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CanBeScrollAnchor<TView>(this TView view, bool value) where TView : UIElement { view.UI.CanBeScrollAnchor = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.CacheMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CacheMode<TView>(this TView view, Xaml.Media.CacheMode value) where TView : UIElement { view.UI.CacheMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.KeyboardAcceleratorPlacementTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeyboardAcceleratorPlacementTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : UIElement { view.UI.KeyboardAcceleratorPlacementTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.AccessKeyScopeOwner"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AccessKeyScopeOwner<TView>(this TView view, Xaml.DependencyObject value) where TView : UIElement { view.UI.AccessKeyScopeOwner = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.IsAccessKeyScope"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsAccessKeyScope<TView>(this TView view, bool value) where TView : UIElement { view.UI.IsAccessKeyScope = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.KeyTipVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeyTipVerticalOffset<TView>(this TView view, double value) where TView : UIElement { view.UI.KeyTipVerticalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.CenterPoint"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CenterPoint<TView>(this TView view, Vector3 value) where TView : UIElement { view.UI.CenterPoint = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.UseLayoutRounding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView UseLayoutRounding<TView>(this TView view, bool value) where TView : UIElement { view.UI.UseLayoutRounding = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.TranslationTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TranslationTransition<TView>(this TView view, Xaml.Vector3Transition value) where TView : UIElement { view.UI.TranslationTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.TransformMatrix"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TransformMatrix<TView>(this TView view, Matrix4x4 value) where TView : UIElement { view.UI.TransformMatrix = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.Rotation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Rotation<TView>(this TView view, float value) where TView : UIElement { view.UI.Rotation = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.RasterizationScale"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RasterizationScale<TView>(this TView view, double value) where TView : UIElement { view.UI.RasterizationScale = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.Projection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Projection<TView>(this TView view, Xaml.Media.Projection value) where TView : UIElement { view.UI.Projection = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.ScaleTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ScaleTransition<TView>(this TView view, Xaml.Vector3Transition value) where TView : UIElement { view.UI.ScaleTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.Scale"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Scale<TView>(this TView view, Vector3 value) where TView : UIElement { view.UI.Scale = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.RotationAxis"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RotationAxis<TView>(this TView view, Vector3 value) where TView : UIElement { view.UI.RotationAxis = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.Transform3D"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Transform3D<TView>(this TView view, Xaml.Media.Media3D.Transform3D value) where TView : UIElement { view.UI.Transform3D = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.Translation"/></summary>
@@ -1707,90 +1784,112 @@ namespace CSharpMarkup.WinUI // UIElement
         public static TView XamlRoot<TView>(this TView view, Xaml.XamlRoot? value) where TView : UIElement { view.UI.XamlRoot = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.AccessKey"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> AccessKey<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, string>.Get(target, Xaml.UIElement.AccessKeyProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.AccessKeyScopeOwner"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> AccessKeyScopeOwner<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.UIElement.AccessKeyScopeOwnerProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.CacheMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.CacheMode> CacheMode<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.Media.CacheMode>.Get(target, Xaml.UIElement.CacheModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.CanBeScrollAnchor"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> CanBeScrollAnchor<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.UIElement.CanBeScrollAnchorProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.CompositeMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> CompositeMode<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode>.Get(target, Xaml.UIElement.CompositeModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.ExitDisplayModeOnAccessKeyInvoked"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ExitDisplayModeOnAccessKeyInvoked<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.UIElement.ExitDisplayModeOnAccessKeyInvokedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.HighContrastAdjustment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> HighContrastAdjustment<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment>.Get(target, Xaml.UIElement.HighContrastAdjustmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.IsAccessKeyScope"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsAccessKeyScope<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.UIElement.IsAccessKeyScopeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.IsDoubleTapEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsDoubleTapEnabled<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.UIElement.IsDoubleTapEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.IsHoldingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsHoldingEnabled<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.UIElement.IsHoldingEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.IsRightTapEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsRightTapEnabled<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.UIElement.IsRightTapEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.IsTapEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTapEnabled<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.UIElement.IsTapEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.KeyTipHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> KeyTipHorizontalOffset<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, double>.Get(target, Xaml.UIElement.KeyTipHorizontalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.KeyTipPlacementMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> KeyTipPlacementMode<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode>.Get(target, Xaml.UIElement.KeyTipPlacementModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.KeyTipTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> KeyTipTarget<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.UIElement.KeyTipTargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.KeyTipVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> KeyTipVerticalOffset<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, double>.Get(target, Xaml.UIElement.KeyTipVerticalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.KeyboardAcceleratorPlacementMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode> KeyboardAcceleratorPlacementMode<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode>.Get(target, Xaml.UIElement.KeyboardAcceleratorPlacementModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.KeyboardAcceleratorPlacementTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> KeyboardAcceleratorPlacementTarget<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.UIElement.KeyboardAcceleratorPlacementTargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.Lights"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, IList<Xaml.Media.XamlLight>> Lights<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, IList<Xaml.Media.XamlLight>>.Get(target, Xaml.UIElement.LightsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.Projection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Projection> Projection<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.Media.Projection>.Get(target, Xaml.UIElement.ProjectionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.Transform3D"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Media3D.Transform3D> Transform3D<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.Media.Media3D.Transform3D>.Get(target, Xaml.UIElement.Transform3DProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.UseLayoutRounding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> UseLayoutRounding<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.UIElement.UseLayoutRoundingProperty);
 
@@ -2231,9 +2330,11 @@ namespace CSharpMarkup.WinUI // VisualTransition
     public static partial class VisualTransitionExtensions
     {
         /// <summary>Set <see cref="Xaml.VisualTransition.GeneratedEasingFunction"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GeneratedEasingFunction<TView>(this TView view, Xaml.Media.Animation.EasingFunctionBase value) where TView : VisualTransition { view.UI.GeneratedEasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Xaml.VisualTransition.GeneratedDuration"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GeneratedDuration<TView>(this TView view, CSharpMarkup.WinUI.to.Duration value) where TView : VisualTransition { view.UI.GeneratedDuration = value; return view; }
 
         /// <summary>Set <see cref="Xaml.VisualTransition.From"/></summary>
@@ -2455,6 +2556,7 @@ namespace CSharpMarkup.WinUI // AutomationAnnotation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Automation.AutomationAnnotation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static AutomationAnnotation AutomationAnnotation(Xaml.Automation.AnnotationType? Type = default, Xaml.UIElement Element = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Automation.AutomationAnnotation();
@@ -2466,6 +2568,7 @@ namespace CSharpMarkup.WinUI // AutomationAnnotation
         }
 
         /// <summary>Create a <see cref="Xaml.Automation.AutomationAnnotation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static AutomationAnnotation AutomationAnnotation(Xaml.Automation.AnnotationType type)
         {
             var ui = new Xaml.Automation.AutomationAnnotation(type);
@@ -2473,6 +2576,7 @@ namespace CSharpMarkup.WinUI // AutomationAnnotation
         }
 
         /// <summary>Create a <see cref="Xaml.Automation.AutomationAnnotation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static AutomationAnnotation AutomationAnnotation(Xaml.Automation.AnnotationType type, Xaml.UIElement element)
         {
             var ui = new Xaml.Automation.AutomationAnnotation(type, element);
@@ -2480,6 +2584,7 @@ namespace CSharpMarkup.WinUI // AutomationAnnotation
         }
 
         /// <summary>Create a <see cref="Xaml.Automation.AutomationAnnotation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static AutomationAnnotation AutomationAnnotation()
         {
             var ui = new Xaml.Automation.AutomationAnnotation();
@@ -2518,9 +2623,11 @@ namespace CSharpMarkup.WinUI // AutomationAnnotation
     public static partial class AutomationAnnotationExtensions
     {
         /// <summary>Set <see cref="Xaml.Automation.AutomationAnnotation.Type"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Type<TView>(this TView view, Xaml.Automation.AnnotationType value) where TView : AutomationAnnotation { view.UI.Type = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Automation.AutomationAnnotation.Element"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Element<TView>(this TView view, Xaml.UIElement value) where TView : AutomationAnnotation { view.UI.Element = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Automation.AutomationAnnotation.DataContext"/></summary>
@@ -2530,10 +2637,12 @@ namespace CSharpMarkup.WinUI // AutomationAnnotation
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : AutomationAnnotation { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Automation.AutomationAnnotation.Element"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> Element<TTarget>(this TTarget target) where TTarget : AutomationAnnotation
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Automation.AutomationAnnotation.ElementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Automation.AutomationAnnotation.Type"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Automation.AnnotationType> Type<TTarget>(this TTarget target) where TTarget : AutomationAnnotation
         => DependencyProperty<TTarget, Xaml.Automation.AnnotationType>.Get(target, Xaml.Automation.AutomationAnnotation.TypeProperty);
 
@@ -2695,6 +2804,7 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static AutomationPeerAnnotation AutomationPeerAnnotation(Xaml.Automation.AnnotationType? Type = default, Xaml.Automation.Peers.AutomationPeer Peer = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Automation.Peers.AutomationPeerAnnotation();
@@ -2706,6 +2816,7 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
         }
 
         /// <summary>Create a <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static AutomationPeerAnnotation AutomationPeerAnnotation(Xaml.Automation.AnnotationType type)
         {
             var ui = new Xaml.Automation.Peers.AutomationPeerAnnotation(type);
@@ -2713,6 +2824,7 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
         }
 
         /// <summary>Create a <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static AutomationPeerAnnotation AutomationPeerAnnotation(Xaml.Automation.AnnotationType type, Xaml.Automation.Peers.AutomationPeer peer)
         {
             var ui = new Xaml.Automation.Peers.AutomationPeerAnnotation(type, peer);
@@ -2720,6 +2832,7 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
         }
 
         /// <summary>Create a <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static AutomationPeerAnnotation AutomationPeerAnnotation()
         {
             var ui = new Xaml.Automation.Peers.AutomationPeerAnnotation();
@@ -2758,9 +2871,11 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
     public static partial class AutomationPeerAnnotationExtensions
     {
         /// <summary>Set <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation.Type"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Type<TView>(this TView view, Xaml.Automation.AnnotationType value) where TView : AutomationPeerAnnotation { view.UI.Type = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation.Peer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Peer<TView>(this TView view, Xaml.Automation.Peers.AutomationPeer value) where TView : AutomationPeerAnnotation { view.UI.Peer = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation.DataContext"/></summary>
@@ -2770,10 +2885,12 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : AutomationPeerAnnotation { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation.Peer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Automation.Peers.AutomationPeer> Peer<TTarget>(this TTarget target) where TTarget : AutomationPeerAnnotation
         => DependencyProperty<TTarget, Xaml.Automation.Peers.AutomationPeer>.Get(target, Xaml.Automation.Peers.AutomationPeerAnnotation.PeerProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation.Type"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Automation.AnnotationType> Type<TTarget>(this TTarget target) where TTarget : AutomationPeerAnnotation
         => DependencyProperty<TTarget, Xaml.Automation.AnnotationType>.Get(target, Xaml.Automation.Peers.AutomationPeerAnnotation.TypeProperty);
 
@@ -3428,6 +3545,7 @@ namespace CSharpMarkup.WinUI // ListPickerFlyoutPresenterAutomationPeer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Automation.Peers.ListPickerFlyoutPresenterAutomationPeer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListPickerFlyoutPresenterAutomationPeer ListPickerFlyoutPresenterAutomationPeer()
         {
             var ui = new Xaml.Automation.Peers.ListPickerFlyoutPresenterAutomationPeer();
@@ -3811,6 +3929,7 @@ namespace CSharpMarkup.WinUI // PickerFlyoutPresenterAutomationPeer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Automation.Peers.PickerFlyoutPresenterAutomationPeer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PickerFlyoutPresenterAutomationPeer PickerFlyoutPresenterAutomationPeer()
         {
             var ui = new Xaml.Automation.Peers.PickerFlyoutPresenterAutomationPeer();
@@ -4338,6 +4457,7 @@ namespace CSharpMarkup.WinUI // TimePickerFlyoutPresenterAutomationPeer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Automation.Peers.TimePickerFlyoutPresenterAutomationPeer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TimePickerFlyoutPresenterAutomationPeer TimePickerFlyoutPresenterAutomationPeer()
         {
             var ui = new Xaml.Automation.Peers.TimePickerFlyoutPresenterAutomationPeer();
@@ -4825,6 +4945,7 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
     public static partial class AnimatedVisualPlayerExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.AnimatedVisualPlayer.AnimationOptimization"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AnimationOptimization<TView>(this TView view, Xaml.Controls.PlayerAnimationOptimization value) where TView : AnimatedVisualPlayer { view.UI.AnimationOptimization = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.AnimatedVisualPlayer.AutoPlay"/></summary>
@@ -4840,10 +4961,12 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
         public static TView Stretch<TView>(this TView view, Xaml.Media.Stretch value) where TView : AnimatedVisualPlayer { view.UI.Stretch = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedVisualPlayer.Diagnostics"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> Diagnostics<TTarget>(this TTarget target) where TTarget : AnimatedVisualPlayer
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.AnimatedVisualPlayer.DiagnosticsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AnimatedVisualPlayer.AnimationOptimization"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.PlayerAnimationOptimization> AnimationOptimization<TTarget>(this TTarget target) where TTarget : AnimatedVisualPlayer
         => DependencyProperty<TTarget, Xaml.Controls.PlayerAnimationOptimization>.Get(target, Xaml.Controls.AnimatedVisualPlayer.AnimationOptimizationProperty);
 
@@ -5537,6 +5660,7 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
     public static partial class AutoSuggestBoxExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.LightDismissOverlayMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LightDismissOverlayMode<TView>(this TView view, Xaml.Controls.LightDismissOverlayMode value) where TView : AutoSuggestBox { view.UI.LightDismissOverlayMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.AutoSuggestBox.PlaceholderText"/></summary>
@@ -5573,6 +5697,7 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
         public static TView Description<TView>(this TView view, object value) where TView : AutoSuggestBox { view.UI.Description = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AutoSuggestBox.LightDismissOverlayMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode<TTarget>(this TTarget target) where TTarget : AutoSuggestBox
         => DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode>.Get(target, Xaml.Controls.AutoSuggestBox.LightDismissOverlayModeProperty);
 
@@ -6071,6 +6196,7 @@ namespace CSharpMarkup.WinUI // Border
     public static partial class BorderExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Border.BackgroundTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BackgroundTransition<TView>(this TView view, Xaml.BrushTransition value) where TView : Border { view.UI.BackgroundTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Border.CornerRadius"/></summary>
@@ -6743,225 +6869,299 @@ namespace CSharpMarkup.WinUI // CalendarView
     public static partial class CalendarViewExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DayItemMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : CalendarView { view.UI.DayItemMargin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DayItemMargin<TView>(this TView view, double uniform) where TView : CalendarView { view.UI.DayItemMargin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DayItemMargin<TView>(this TView view, double horizontal, double vertical) where TView : CalendarView { view.UI.DayItemMargin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DayItemMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : CalendarView { view.UI.DayItemMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DayItemMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : CalendarView { view.UI.DayItemMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CalendarItemPressedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.CalendarItemPressedBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CalendarItemPressedBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.CalendarItemPressedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CalendarItemPressedBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.CalendarItemPressedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemHoverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CalendarItemHoverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.CalendarItemHoverBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemHoverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CalendarItemHoverBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.CalendarItemHoverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemHoverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CalendarItemHoverBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.CalendarItemHoverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayBlackoutBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodayBlackoutBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayBlackoutBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodayBlackoutBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayBlackoutBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodayBlackoutBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CalendarItemDisabledBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.CalendarItemDisabledBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CalendarItemDisabledBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.CalendarItemDisabledBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.CalendarItemDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CalendarItemDisabledBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.CalendarItemDisabledBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutStrikethroughBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BlackoutStrikethroughBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.BlackoutStrikethroughBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutStrikethroughBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BlackoutStrikethroughBrush<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.BlackoutStrikethroughBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutStrikethroughBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BlackoutStrikethroughBrush<TView>(this TView view, string color) where TView : CalendarView { view.UI.BlackoutStrikethroughBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BlackoutBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.BlackoutBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BlackoutBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.BlackoutBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.BlackoutBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BlackoutBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.BlackoutBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FirstOfYearDecadeLabelMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : CalendarView { view.UI.FirstOfYearDecadeLabelMargin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FirstOfYearDecadeLabelMargin<TView>(this TView view, double uniform) where TView : CalendarView { view.UI.FirstOfYearDecadeLabelMargin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FirstOfYearDecadeLabelMargin<TView>(this TView view, double horizontal, double vertical) where TView : CalendarView { view.UI.FirstOfYearDecadeLabelMargin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FirstOfYearDecadeLabelMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : CalendarView { view.UI.FirstOfYearDecadeLabelMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FirstOfYearDecadeLabelMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : CalendarView { view.UI.FirstOfYearDecadeLabelMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FirstOfMonthLabelMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : CalendarView { view.UI.FirstOfMonthLabelMargin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FirstOfMonthLabelMargin<TView>(this TView view, double uniform) where TView : CalendarView { view.UI.FirstOfMonthLabelMargin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FirstOfMonthLabelMargin<TView>(this TView view, double horizontal, double vertical) where TView : CalendarView { view.UI.FirstOfMonthLabelMargin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FirstOfMonthLabelMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : CalendarView { view.UI.FirstOfMonthLabelMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FirstOfMonthLabelMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : CalendarView { view.UI.FirstOfMonthLabelMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.DisabledForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DisabledForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.DisabledForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.DisabledForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DisabledForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.DisabledForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.DisabledForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DisabledForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.DisabledForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.SelectedDisabledBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.SelectedDisabledBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledBorderBrush<TView>(this TView view, string color) where TView : CalendarView { view.UI.SelectedDisabledBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopePressedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OutOfScopePressedForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.OutOfScopePressedForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopePressedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OutOfScopePressedForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.OutOfScopePressedForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopePressedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OutOfScopePressedForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.OutOfScopePressedForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopeHoverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OutOfScopeHoverForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.OutOfScopeHoverForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopeHoverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OutOfScopeHoverForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.OutOfScopeHoverForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.OutOfScopeHoverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OutOfScopeHoverForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.OutOfScopeHoverForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MonthYearItemMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : CalendarView { view.UI.MonthYearItemMargin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MonthYearItemMargin<TView>(this TView view, double uniform) where TView : CalendarView { view.UI.MonthYearItemMargin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MonthYearItemMargin<TView>(this TView view, double horizontal, double vertical) where TView : CalendarView { view.UI.MonthYearItemMargin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MonthYearItemMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : CalendarView { view.UI.MonthYearItemMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MonthYearItemMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : CalendarView { view.UI.MonthYearItemMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.SelectedDisabledForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.SelectedDisabledForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedDisabledForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.SelectedDisabledForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodaySelectedInnerBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodaySelectedInnerBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodaySelectedInnerBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodaySelectedInnerBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodaySelectedInnerBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodaySelectedInnerBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodaySelectedInnerBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodaySelectedInnerBorderBrush<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodaySelectedInnerBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayPressedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodayPressedBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayPressedBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodayPressedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayPressedBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodayPressedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayHoverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayHoverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodayHoverBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayHoverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayHoverBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodayHoverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayHoverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayHoverBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodayHoverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayDisabledBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodayDisabledBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayDisabledBackground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodayDisabledBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayDisabledBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodayDisabledBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayBlackoutForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.TodayBlackoutForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayBlackoutForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.TodayBlackoutForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.TodayBlackoutForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TodayBlackoutForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodayBlackoutForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedPressedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPressedForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.SelectedPressedForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedPressedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPressedForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.SelectedPressedForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedPressedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPressedForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.SelectedPressedForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedHoverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedHoverForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : CalendarView { view.UI.SelectedHoverForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedHoverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedHoverForeground<TView>(this TView view, Windows.UI.Color value) where TView : CalendarView { view.UI.SelectedHoverForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.SelectedHoverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedHoverForeground<TView>(this TView view, string color) where TView : CalendarView { view.UI.SelectedHoverForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.CalendarView.HorizontalFirstOfMonthLabelAlignment"/></summary>
@@ -7247,90 +7447,112 @@ namespace CSharpMarkup.WinUI // CalendarView
         public static TView TodaySelectedBackground<TView>(this TView view, string color) where TView : CalendarView { view.UI.TodaySelectedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.BlackoutBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> BlackoutBackground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.BlackoutBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.BlackoutStrikethroughBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> BlackoutStrikethroughBrush<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.BlackoutStrikethroughBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.CalendarItemDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CalendarItemDisabledBackground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.CalendarItemDisabledBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.CalendarItemHoverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CalendarItemHoverBackground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.CalendarItemHoverBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.CalendarItemPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CalendarItemPressedBackground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.CalendarItemPressedBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.DayItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> DayItemMargin<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.CalendarView.DayItemMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.DisabledForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> DisabledForeground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.DisabledForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.FirstOfMonthLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> FirstOfMonthLabelMargin<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.CalendarView.FirstOfMonthLabelMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> FirstOfYearDecadeLabelMargin<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.CalendarView.FirstOfYearDecadeLabelMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.MonthYearItemMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> MonthYearItemMargin<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.CalendarView.MonthYearItemMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.OutOfScopeHoverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> OutOfScopeHoverForeground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.OutOfScopeHoverForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.OutOfScopePressedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> OutOfScopePressedForeground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.OutOfScopePressedForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.SelectedDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedDisabledBorderBrush<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.SelectedDisabledBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.SelectedDisabledForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedDisabledForeground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.SelectedDisabledForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.SelectedHoverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedHoverForeground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.SelectedHoverForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.SelectedPressedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedPressedForeground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.SelectedPressedForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodayBlackoutBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodayBlackoutBackground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodayBlackoutBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodayBlackoutForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodayBlackoutForeground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodayBlackoutForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodayDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodayDisabledBackground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodayDisabledBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodayHoverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodayHoverBackground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodayHoverBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodayPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodayPressedBackground<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodayPressedBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.CalendarView.TodaySelectedInnerBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> TodaySelectedInnerBorderBrush<TTarget>(this TTarget target) where TTarget : CalendarView
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.CalendarView.TodaySelectedInnerBorderBrushProperty);
 
@@ -8242,27 +8464,35 @@ namespace CSharpMarkup.WinUI // ComboBox
     public static partial class ComboBoxExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.TextBoxStyle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextBoxStyle<TView>(this TView view, Xaml.Style value) where TView : ComboBox { view.UI.TextBoxStyle = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.Text"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Text<TView>(this TView view, string value) where TView : ComboBox { view.UI.Text = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.SelectionChangedTrigger"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionChangedTrigger<TView>(this TView view, Xaml.Controls.ComboBoxSelectionChangedTrigger value) where TView : ComboBox { view.UI.SelectionChangedTrigger = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.PlaceholderForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ComboBox { view.UI.PlaceholderForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.PlaceholderForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderForeground<TView>(this TView view, Windows.UI.Color value) where TView : ComboBox { view.UI.PlaceholderForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.PlaceholderForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderForeground<TView>(this TView view, string color) where TView : ComboBox { view.UI.PlaceholderForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.IsTextSearchEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextSearchEnabled<TView>(this TView view, bool value) where TView : ComboBox { view.UI.IsTextSearchEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.IsEditable"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsEditable<TView>(this TView view, bool value) where TView : ComboBox { view.UI.IsEditable = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.Header"/></summary>
@@ -8290,26 +8520,32 @@ namespace CSharpMarkup.WinUI // ComboBox
         public static TView MaxDropDownHeight<TView>(this TView view, double value) where TView : ComboBox { view.UI.MaxDropDownHeight = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.IsEditable"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsEditable<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ComboBox.IsEditableProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.IsTextSearchEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextSearchEnabled<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ComboBox.IsTextSearchEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.PlaceholderForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PlaceholderForeground<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.ComboBox.PlaceholderForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.SelectionChangedTrigger"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.ComboBoxSelectionChangedTrigger> SelectionChangedTrigger<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, Xaml.Controls.ComboBoxSelectionChangedTrigger>.Get(target, Xaml.Controls.ComboBox.SelectionChangedTriggerProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.TextBoxStyle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Style> TextBoxStyle<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.ComboBox.TextBoxStyleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.Text"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> Text<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.ComboBox.TextProperty);
 
@@ -8528,6 +8764,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CommandBarFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static CommandBarFlyout CommandBarFlyout(bool? AlwaysExpanded = default)
         {
             var ui = new Xaml.Controls.CommandBarFlyout();
@@ -8536,6 +8773,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.CommandBarFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static CommandBarFlyout CommandBarFlyout()
         {
             var ui = new Xaml.Controls.CommandBarFlyout();
@@ -8574,6 +8812,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
     public static partial class CommandBarFlyoutExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.CommandBarFlyout.AlwaysExpanded"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AlwaysExpanded<TView>(this TView view, bool value) where TView : CommandBarFlyout { view.UI.AlwaysExpanded = value; return view; }
     }
 }
@@ -9088,27 +9327,35 @@ namespace CSharpMarkup.WinUI // ContentPresenter
     public static partial class ContentPresenterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.TextLineBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextLineBounds<TView>(this TView view, Xaml.TextLineBounds value) where TView : ContentPresenter { view.UI.TextLineBounds = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.OpticalMarginAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OpticalMarginAlignment<TView>(this TView view, Xaml.OpticalMarginAlignment value) where TView : ContentPresenter { view.UI.OpticalMarginAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.LineStackingStrategy"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LineStackingStrategy<TView>(this TView view, Xaml.LineStackingStrategy value) where TView : ContentPresenter { view.UI.LineStackingStrategy = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.LineHeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LineHeight<TView>(this TView view, double value) where TView : ContentPresenter { view.UI.LineHeight = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextScaleFactorEnabled<TView>(this TView view, bool value) where TView : ContentPresenter { view.UI.IsTextScaleFactorEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.FontStretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FontStretch<TView>(this TView view, Windows.UI.Text.FontStretch value) where TView : ContentPresenter { view.UI.FontStretch = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.CharacterSpacing"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CharacterSpacing<TView>(this TView view, int value) where TView : ContentPresenter { view.UI.CharacterSpacing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.BackgroundTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BackgroundTransition<TView>(this TView view, Xaml.BrushTransition value) where TView : ContentPresenter { view.UI.BackgroundTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.ContentTemplate"/></summary>
@@ -9205,30 +9452,37 @@ namespace CSharpMarkup.WinUI // ContentPresenter
         public static TView CornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : ContentPresenter { view.UI.CornerRadius = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ContentPresenter.CharacterSpacing"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> CharacterSpacing<TTarget>(this TTarget target) where TTarget : ContentPresenter
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.ContentPresenter.CharacterSpacingProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ContentPresenter.FontStretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.FontStretch> FontStretch<TTarget>(this TTarget target) where TTarget : ContentPresenter
         => DependencyProperty<TTarget, Windows.UI.Text.FontStretch>.Get(target, Xaml.Controls.ContentPresenter.FontStretchProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ContentPresenter.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextScaleFactorEnabled<TTarget>(this TTarget target) where TTarget : ContentPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ContentPresenter.IsTextScaleFactorEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ContentPresenter.LineHeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> LineHeight<TTarget>(this TTarget target) where TTarget : ContentPresenter
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ContentPresenter.LineHeightProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ContentPresenter.LineStackingStrategy"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.LineStackingStrategy> LineStackingStrategy<TTarget>(this TTarget target) where TTarget : ContentPresenter
         => DependencyProperty<TTarget, Xaml.LineStackingStrategy>.Get(target, Xaml.Controls.ContentPresenter.LineStackingStrategyProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ContentPresenter.OpticalMarginAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> OpticalMarginAlignment<TTarget>(this TTarget target) where TTarget : ContentPresenter
         => DependencyProperty<TTarget, Xaml.OpticalMarginAlignment>.Get(target, Xaml.Controls.ContentPresenter.OpticalMarginAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ContentPresenter.TextLineBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextLineBounds> TextLineBounds<TTarget>(this TTarget target) where TTarget : ContentPresenter
         => DependencyProperty<TTarget, Xaml.TextLineBounds>.Get(target, Xaml.Controls.ContentPresenter.TextLineBoundsProperty);
 
@@ -9410,21 +9664,27 @@ namespace CSharpMarkup.WinUI // Control
     public static partial class ControlExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Control.RequiresPointer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RequiresPointer<TView>(this TView view, Xaml.Controls.RequiresPointer value) where TView : Control { view.UI.RequiresPointer = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextScaleFactorEnabled<TView>(this TView view, bool value) where TView : Control { view.UI.IsTextScaleFactorEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.FontStretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FontStretch<TView>(this TView view, Windows.UI.Text.FontStretch value) where TView : Control { view.UI.FontStretch = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.ElementSoundMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ElementSoundMode<TView>(this TView view, Xaml.ElementSoundMode value) where TView : Control { view.UI.ElementSoundMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.DefaultStyleResourceUri"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DefaultStyleResourceUri<TView>(this TView view, Uri value) where TView : Control { view.UI.DefaultStyleResourceUri = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.CharacterSpacing"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CharacterSpacing<TView>(this TView view, int value) where TView : Control { view.UI.CharacterSpacing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.Template"/></summary>
@@ -9536,26 +9796,32 @@ namespace CSharpMarkup.WinUI // Control
         public static TView VerticalContentAlignment<TView>(this TView view, Xaml.VerticalAlignment value) where TView : Control { view.UI.VerticalContentAlignment = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Control.CharacterSpacing"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> CharacterSpacing<TTarget>(this TTarget target) where TTarget : Control
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.Control.CharacterSpacingProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Control.DefaultStyleResourceUri"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Uri> DefaultStyleResourceUri<TTarget>(this TTarget target) where TTarget : Control
         => DependencyProperty<TTarget, Uri>.Get(target, Xaml.Controls.Control.DefaultStyleResourceUriProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Control.ElementSoundMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.ElementSoundMode> ElementSoundMode<TTarget>(this TTarget target) where TTarget : Control
         => DependencyProperty<TTarget, Xaml.ElementSoundMode>.Get(target, Xaml.Controls.Control.ElementSoundModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Control.FontStretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.FontStretch> FontStretch<TTarget>(this TTarget target) where TTarget : Control
         => DependencyProperty<TTarget, Windows.UI.Text.FontStretch>.Get(target, Xaml.Controls.Control.FontStretchProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Control.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextScaleFactorEnabled<TTarget>(this TTarget target) where TTarget : Control
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Control.IsTextScaleFactorEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Control.RequiresPointer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> RequiresPointer<TTarget>(this TTarget target) where TTarget : Control
         => DependencyProperty<TTarget, Xaml.Controls.RequiresPointer>.Get(target, Xaml.Controls.Control.RequiresPointerProperty);
 
@@ -9656,10 +9922,12 @@ namespace CSharpMarkup.WinUI // Control
         => DependencyProperty<TTarget, Xaml.VerticalAlignment>.Get(target, Xaml.Controls.Control.VerticalContentAlignmentProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.Control.IsTemplateKeyTipTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget Control_IsTemplateKeyTipTarget<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { Xaml.Controls.Control.SetIsTemplateKeyTipTarget(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Control.IsTemplateKeyTipTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> Control_IsTemplateKeyTipTarget<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Control.IsTemplateKeyTipTargetProperty);
 
@@ -10321,9 +10589,11 @@ namespace CSharpMarkup.WinUI // DatePickerFlyoutPresenter
     public static partial class DatePickerFlyoutPresenterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.DatePickerFlyoutPresenter.IsDefaultShadowEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsDefaultShadowEnabled<TView>(this TView view, bool value) where TView : DatePickerFlyoutPresenter { view.UI.IsDefaultShadowEnabled = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.DatePickerFlyoutPresenter.IsDefaultShadowEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsDefaultShadowEnabled<TTarget>(this TTarget target) where TTarget : DatePickerFlyoutPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.DatePickerFlyoutPresenter.IsDefaultShadowEnabledProperty);
     }
@@ -10846,9 +11116,11 @@ namespace CSharpMarkup.WinUI // FlyoutPresenter
     public static partial class FlyoutPresenterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.FlyoutPresenter.IsDefaultShadowEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsDefaultShadowEnabled<TView>(this TView view, bool value) where TView : FlyoutPresenter { view.UI.IsDefaultShadowEnabled = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FlyoutPresenter.IsDefaultShadowEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsDefaultShadowEnabled<TTarget>(this TTarget target) where TTarget : FlyoutPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.FlyoutPresenter.IsDefaultShadowEnabledProperty);
     }
@@ -10949,6 +11221,7 @@ namespace CSharpMarkup.WinUI // FontIcon
         public static TView Glyph<TView>(this TView view, string value) where TView : FontIcon { view.UI.Glyph = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.FontIcon.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextScaleFactorEnabled<TView>(this TView view, bool value) where TView : FontIcon { view.UI.IsTextScaleFactorEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.FontIcon.MirroredWhenRightToLeft"/></summary>
@@ -10975,6 +11248,7 @@ namespace CSharpMarkup.WinUI // FontIcon
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.FontIcon.GlyphProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextScaleFactorEnabled<TTarget>(this TTarget target) where TTarget : FontIcon
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.FontIcon.IsTextScaleFactorEnabledProperty);
 
@@ -11633,6 +11907,7 @@ namespace CSharpMarkup.WinUI // GroupItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.GroupItem"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static GroupItem GroupItem(UIObject Content)
         {
             var ui = new Xaml.Controls.GroupItem();
@@ -11641,6 +11916,7 @@ namespace CSharpMarkup.WinUI // GroupItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.GroupItem"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static GroupItem GroupItem()
         {
             var ui = new Xaml.Controls.GroupItem();
@@ -11648,6 +11924,7 @@ namespace CSharpMarkup.WinUI // GroupItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.GroupItem"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static GroupItem GroupItem(nint handle)
         {
             var ui = new Xaml.Controls.GroupItem(handle);
@@ -11655,6 +11932,7 @@ namespace CSharpMarkup.WinUI // GroupItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.GroupItem"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static GroupItem GroupItem(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.GroupItem(handle);
@@ -11698,6 +11976,7 @@ namespace CSharpMarkup.WinUI // Hub
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Hub"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static Hub Hub(Xaml.Controls.Orientation? Orientation = default, Xaml.DataTemplate HeaderTemplate = default, object Header = default, int? DefaultSectionIndex = default, Xaml.Controls.SemanticZoom SemanticZoomOwner = default, bool? IsZoomedInView = default, bool? IsActiveView = default)
         {
             var ui = new Xaml.Controls.Hub();
@@ -11712,6 +11991,7 @@ namespace CSharpMarkup.WinUI // Hub
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Hub"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static Hub Hub()
         {
             var ui = new Xaml.Controls.Hub();
@@ -11719,6 +11999,7 @@ namespace CSharpMarkup.WinUI // Hub
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Hub"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static Hub Hub(nint handle)
         {
             var ui = new Xaml.Controls.Hub(handle);
@@ -11726,6 +12007,7 @@ namespace CSharpMarkup.WinUI // Hub
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Hub"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static Hub Hub(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.Hub(handle);
@@ -11766,51 +12048,65 @@ namespace CSharpMarkup.WinUI // Hub
     public static partial class HubExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Hub.Orientation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : Hub { view.UI.Orientation = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Hub.HeaderTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HeaderTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : Hub { view.UI.HeaderTemplate = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Hub.Header"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Header<TView>(this TView view, object value) where TView : Hub { view.UI.Header = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Hub.DefaultSectionIndex"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DefaultSectionIndex<TView>(this TView view, int value) where TView : Hub { view.UI.DefaultSectionIndex = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Hub.SemanticZoomOwner"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SemanticZoomOwner<TView>(this TView view, Xaml.Controls.SemanticZoom value) where TView : Hub { view.UI.SemanticZoomOwner = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Hub.IsZoomedInView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsZoomedInView<TView>(this TView view, bool value) where TView : Hub { view.UI.IsZoomedInView = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Hub.IsActiveView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsActiveView<TView>(this TView view, bool value) where TView : Hub { view.UI.IsActiveView = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Hub.DefaultSectionIndex"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> DefaultSectionIndex<TTarget>(this TTarget target) where TTarget : Hub
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.Hub.DefaultSectionIndexProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Hub.Header"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> Header<TTarget>(this TTarget target) where TTarget : Hub
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.Hub.HeaderProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Hub.HeaderTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DataTemplate> HeaderTemplate<TTarget>(this TTarget target) where TTarget : Hub
         => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.Hub.HeaderTemplateProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Hub.IsActiveView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsActiveView<TTarget>(this TTarget target) where TTarget : Hub
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Hub.IsActiveViewProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Hub.IsZoomedInView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsZoomedInView<TTarget>(this TTarget target) where TTarget : Hub
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Hub.IsZoomedInViewProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Hub.Orientation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : Hub
         => DependencyProperty<TTarget, Xaml.Controls.Orientation>.Get(target, Xaml.Controls.Hub.OrientationProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Hub.SemanticZoomOwner"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.SemanticZoom> SemanticZoomOwner<TTarget>(this TTarget target) where TTarget : Hub
         => DependencyProperty<TTarget, Xaml.Controls.SemanticZoom>.Get(target, Xaml.Controls.Hub.SemanticZoomOwnerProperty);
     }
@@ -11821,6 +12117,7 @@ namespace CSharpMarkup.WinUI // HubSection
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.HubSection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static HubSection HubSection(bool? IsHeaderInteractive = default, Xaml.DataTemplate HeaderTemplate = default, object Header = default, Xaml.DataTemplate ContentTemplate = default)
         {
             var ui = new Xaml.Controls.HubSection();
@@ -11832,6 +12129,7 @@ namespace CSharpMarkup.WinUI // HubSection
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.HubSection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static HubSection HubSection()
         {
             var ui = new Xaml.Controls.HubSection();
@@ -11839,6 +12137,7 @@ namespace CSharpMarkup.WinUI // HubSection
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.HubSection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static HubSection HubSection(nint handle)
         {
             var ui = new Xaml.Controls.HubSection(handle);
@@ -11846,6 +12145,7 @@ namespace CSharpMarkup.WinUI // HubSection
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.HubSection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static HubSection HubSection(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.HubSection(handle);
@@ -11886,30 +12186,38 @@ namespace CSharpMarkup.WinUI // HubSection
     public static partial class HubSectionExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.HubSection.IsHeaderInteractive"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsHeaderInteractive<TView>(this TView view, bool value) where TView : HubSection { view.UI.IsHeaderInteractive = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.HubSection.HeaderTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HeaderTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : HubSection { view.UI.HeaderTemplate = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.HubSection.Header"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Header<TView>(this TView view, object value) where TView : HubSection { view.UI.Header = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.HubSection.ContentTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : HubSection { view.UI.ContentTemplate = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.HubSection.ContentTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DataTemplate> ContentTemplate<TTarget>(this TTarget target) where TTarget : HubSection
         => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.HubSection.ContentTemplateProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.HubSection.Header"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> Header<TTarget>(this TTarget target) where TTarget : HubSection
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.HubSection.HeaderProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.HubSection.HeaderTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DataTemplate> HeaderTemplate<TTarget>(this TTarget target) where TTarget : HubSection
         => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.HubSection.HeaderTemplateProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.HubSection.IsHeaderInteractive"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsHeaderInteractive<TTarget>(this TTarget target) where TTarget : HubSection
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.HubSection.IsHeaderInteractiveProperty);
     }
@@ -12197,18 +12505,23 @@ namespace CSharpMarkup.WinUI // Image
     public static partial class ImageExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Image.NineGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView NineGrid<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : Image { view.UI.NineGrid = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Image.NineGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView NineGrid<TView>(this TView view, double uniform) where TView : Image { view.UI.NineGrid = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Image.NineGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView NineGrid<TView>(this TView view, double horizontal, double vertical) where TView : Image { view.UI.NineGrid = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Image.NineGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView NineGrid<TView>(this TView view, double left, double top, double right, double bottom) where TView : Image { view.UI.NineGrid = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Image.NineGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView NineGrids<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : Image { view.UI.NineGrid = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Image.PreserveStateOnUnload"/></summary>
@@ -12224,6 +12537,7 @@ namespace CSharpMarkup.WinUI // Image
         public static TView Stretch<TView>(this TView view, Xaml.Media.Stretch value) where TView : Image { view.UI.Stretch = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Image.NineGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> NineGrid<TTarget>(this TTarget target) where TTarget : Image
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.Image.NineGridProperty);
 
@@ -12885,9 +13199,11 @@ namespace CSharpMarkup.WinUI // ItemsControl
     public static partial class ItemsControlExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ItemsControl.ItemContainerTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ItemContainerTransitions<TView>(this TView view, Xaml.Media.Animation.TransitionCollection value) where TView : ItemsControl { view.UI.ItemContainerTransitions = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsControl.GroupStyleSelector"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GroupStyleSelector<TView>(this TView view, Xaml.Controls.GroupStyleSelector value) where TView : ItemsControl { view.UI.GroupStyleSelector = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsControl.ItemsPanelRoot"/></summary>
@@ -12915,10 +13231,12 @@ namespace CSharpMarkup.WinUI // ItemsControl
         public static TView DisplayMemberPath<TView>(this TView view, string value) where TView : ItemsControl { view.UI.DisplayMemberPath = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsControl.GroupStyleSelector"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.GroupStyleSelector> GroupStyleSelector<TTarget>(this TTarget target) where TTarget : ItemsControl
         => DependencyProperty<TTarget, Xaml.Controls.GroupStyleSelector>.Get(target, Xaml.Controls.ItemsControl.GroupStyleSelectorProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsControl.ItemContainerTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection> ItemContainerTransitions<TTarget>(this TTarget target) where TTarget : ItemsControl
         => DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection>.Get(target, Xaml.Controls.ItemsControl.ItemContainerTransitionsProperty);
 
@@ -13016,6 +13334,7 @@ namespace CSharpMarkup.WinUI // ItemsPickedEventArgs
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ItemsPickedEventArgs"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ItemsPickedEventArgs ItemsPickedEventArgs(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.ItemsPickedEventArgs();
@@ -13025,6 +13344,7 @@ namespace CSharpMarkup.WinUI // ItemsPickedEventArgs
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ItemsPickedEventArgs"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ItemsPickedEventArgs ItemsPickedEventArgs()
         {
             var ui = new Xaml.Controls.ItemsPickedEventArgs();
@@ -13151,21 +13471,27 @@ namespace CSharpMarkup.WinUI // ItemsPresenter
     public static partial class ItemsPresenterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ItemsPresenter.HeaderTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HeaderTransitions<TView>(this TView view, Xaml.Media.Animation.TransitionCollection value) where TView : ItemsPresenter { view.UI.HeaderTransitions = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsPresenter.HeaderTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HeaderTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : ItemsPresenter { view.UI.HeaderTemplate = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsPresenter.Header"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Header<TView>(this TView view, object value) where TView : ItemsPresenter { view.UI.Header = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsPresenter.FooterTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FooterTransitions<TView>(this TView view, Xaml.Media.Animation.TransitionCollection value) where TView : ItemsPresenter { view.UI.FooterTransitions = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsPresenter.FooterTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FooterTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : ItemsPresenter { view.UI.FooterTemplate = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsPresenter.Footer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Footer<TView>(this TView view, object value) where TView : ItemsPresenter { view.UI.Footer = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsPresenter.Padding"/></summary>
@@ -13184,26 +13510,32 @@ namespace CSharpMarkup.WinUI // ItemsPresenter
         public static TView Paddings<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ItemsPresenter { view.UI.Padding = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsPresenter.Footer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> Footer<TTarget>(this TTarget target) where TTarget : ItemsPresenter
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ItemsPresenter.FooterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsPresenter.FooterTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DataTemplate> FooterTemplate<TTarget>(this TTarget target) where TTarget : ItemsPresenter
         => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.ItemsPresenter.FooterTemplateProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsPresenter.FooterTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection> FooterTransitions<TTarget>(this TTarget target) where TTarget : ItemsPresenter
         => DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection>.Get(target, Xaml.Controls.ItemsPresenter.FooterTransitionsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsPresenter.Header"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> Header<TTarget>(this TTarget target) where TTarget : ItemsPresenter
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ItemsPresenter.HeaderProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsPresenter.HeaderTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DataTemplate> HeaderTemplate<TTarget>(this TTarget target) where TTarget : ItemsPresenter
         => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.ItemsPresenter.HeaderTemplateProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsPresenter.HeaderTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection> HeaderTransitions<TTarget>(this TTarget target) where TTarget : ItemsPresenter
         => DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection>.Get(target, Xaml.Controls.ItemsPresenter.HeaderTransitionsProperty);
 
@@ -13487,9 +13819,11 @@ namespace CSharpMarkup.WinUI // ItemsStackPanel
     public static partial class ItemsStackPanelExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ItemsStackPanel.ItemsUpdatingScrollMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ItemsUpdatingScrollMode<TView>(this TView view, Xaml.Controls.ItemsUpdatingScrollMode value) where TView : ItemsStackPanel { view.UI.ItemsUpdatingScrollMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsStackPanel.CacheLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CacheLength<TView>(this TView view, double value) where TView : ItemsStackPanel { view.UI.CacheLength = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsStackPanel.AreStickyGroupHeadersEnabled"/></summary>
@@ -13517,6 +13851,7 @@ namespace CSharpMarkup.WinUI // ItemsStackPanel
         public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : ItemsStackPanel { view.UI.Orientation = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsStackPanel.CacheLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> CacheLength<TTarget>(this TTarget target) where TTarget : ItemsStackPanel
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ItemsStackPanel.CacheLengthProperty);
 
@@ -13616,6 +13951,7 @@ namespace CSharpMarkup.WinUI // ItemsWrapGrid
     public static partial class ItemsWrapGridExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ItemsWrapGrid.CacheLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CacheLength<TView>(this TView view, double value) where TView : ItemsWrapGrid { view.UI.CacheLength = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsWrapGrid.AreStickyGroupHeadersEnabled"/></summary>
@@ -13652,6 +13988,7 @@ namespace CSharpMarkup.WinUI // ItemsWrapGrid
         public static TView MaximumRowsOrColumns<TView>(this TView view, int value) where TView : ItemsWrapGrid { view.UI.MaximumRowsOrColumns = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsWrapGrid.CacheLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> CacheLength<TTarget>(this TTarget target) where TTarget : ItemsWrapGrid
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ItemsWrapGrid.CacheLengthProperty);
 
@@ -13828,6 +14165,7 @@ namespace CSharpMarkup.WinUI // ListBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ListBox"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListBox ListBox(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.ListBox();
@@ -13847,6 +14185,7 @@ namespace CSharpMarkup.WinUI // ListBox
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ListBox"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListBox ListBox()
         {
             var ui = new Xaml.Controls.ListBox();
@@ -13854,6 +14193,7 @@ namespace CSharpMarkup.WinUI // ListBox
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ListBox"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListBox ListBox(nint handle)
         {
             var ui = new Xaml.Controls.ListBox(handle);
@@ -13861,6 +14201,7 @@ namespace CSharpMarkup.WinUI // ListBox
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ListBox"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListBox ListBox(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.ListBox(handle);
@@ -13901,16 +14242,20 @@ namespace CSharpMarkup.WinUI // ListBox
     public static partial class ListBoxExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ListBox.SingleSelectionFollowsFocus"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SingleSelectionFollowsFocus<TView>(this TView view, bool value) where TView : ListBox { view.UI.SingleSelectionFollowsFocus = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListBox.SelectionMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionMode<TView>(this TView view, Xaml.Controls.SelectionMode value) where TView : ListBox { view.UI.SelectionMode = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListBox.SelectionMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.SelectionMode> SelectionMode<TTarget>(this TTarget target) where TTarget : ListBox
         => DependencyProperty<TTarget, Xaml.Controls.SelectionMode>.Get(target, Xaml.Controls.ListBox.SelectionModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListBox.SingleSelectionFollowsFocus"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> SingleSelectionFollowsFocus<TTarget>(this TTarget target) where TTarget : ListBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListBox.SingleSelectionFollowsFocusProperty);
     }
@@ -13921,6 +14266,7 @@ namespace CSharpMarkup.WinUI // ListBoxItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ListBoxItem"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListBoxItem ListBoxItem(UIObject Content)
         {
             var ui = new Xaml.Controls.ListBoxItem();
@@ -13929,6 +14275,7 @@ namespace CSharpMarkup.WinUI // ListBoxItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ListBoxItem"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListBoxItem ListBoxItem()
         {
             var ui = new Xaml.Controls.ListBoxItem();
@@ -13936,6 +14283,7 @@ namespace CSharpMarkup.WinUI // ListBoxItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ListBoxItem"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListBoxItem ListBoxItem(nint handle)
         {
             var ui = new Xaml.Controls.ListBoxItem(handle);
@@ -13943,6 +14291,7 @@ namespace CSharpMarkup.WinUI // ListBoxItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ListBoxItem"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListBoxItem ListBoxItem(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.ListBoxItem(handle);
@@ -14044,58 +14393,74 @@ namespace CSharpMarkup.WinUI // ListPickerFlyout
     public static partial class ListPickerFlyoutExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ListPickerFlyout.SelectionMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionMode<TView>(this TView view, Xaml.Controls.ListPickerFlyoutSelectionMode value) where TView : ListPickerFlyout { view.UI.SelectionMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListPickerFlyout.SelectedValuePath"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedValuePath<TView>(this TView view, string value) where TView : ListPickerFlyout { view.UI.SelectedValuePath = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListPickerFlyout.SelectedValue"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedValue<TView>(this TView view, object value) where TView : ListPickerFlyout { view.UI.SelectedValue = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListPickerFlyout.SelectedItem"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedItem<TView>(this TView view, object value) where TView : ListPickerFlyout { view.UI.SelectedItem = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListPickerFlyout.SelectedIndex"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedIndex<TView>(this TView view, int value) where TView : ListPickerFlyout { view.UI.SelectedIndex = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListPickerFlyout.ItemsSource"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ItemsSource<TView>(this TView view, object value) where TView : ListPickerFlyout { view.UI.ItemsSource = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListPickerFlyout.ItemTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ItemTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : ListPickerFlyout { view.UI.ItemTemplate = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListPickerFlyout.DisplayMemberPath"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DisplayMemberPath<TView>(this TView view, string value) where TView : ListPickerFlyout { view.UI.DisplayMemberPath = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListPickerFlyout.DisplayMemberPath"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> DisplayMemberPath<TTarget>(this TTarget target) where TTarget : ListPickerFlyout
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.ListPickerFlyout.DisplayMemberPathProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListPickerFlyout.ItemTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DataTemplate> ItemTemplate<TTarget>(this TTarget target) where TTarget : ListPickerFlyout
         => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.ListPickerFlyout.ItemTemplateProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListPickerFlyout.ItemsSource"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> ItemsSource<TTarget>(this TTarget target) where TTarget : ListPickerFlyout
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ListPickerFlyout.ItemsSourceProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListPickerFlyout.SelectedIndex"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> SelectedIndex<TTarget>(this TTarget target) where TTarget : ListPickerFlyout
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.ListPickerFlyout.SelectedIndexProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListPickerFlyout.SelectedItem"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> SelectedItem<TTarget>(this TTarget target) where TTarget : ListPickerFlyout
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ListPickerFlyout.SelectedItemProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListPickerFlyout.SelectedValuePath"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> SelectedValuePath<TTarget>(this TTarget target) where TTarget : ListPickerFlyout
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.ListPickerFlyout.SelectedValuePathProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListPickerFlyout.SelectedValue"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> SelectedValue<TTarget>(this TTarget target) where TTarget : ListPickerFlyout
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ListPickerFlyout.SelectedValueProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListPickerFlyout.SelectionMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.ListPickerFlyoutSelectionMode> SelectionMode<TTarget>(this TTarget target) where TTarget : ListPickerFlyout
         => DependencyProperty<TTarget, Xaml.Controls.ListPickerFlyoutSelectionMode>.Get(target, Xaml.Controls.ListPickerFlyout.SelectionModeProperty);
     }
@@ -14106,6 +14471,7 @@ namespace CSharpMarkup.WinUI // ListPickerFlyoutPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ListPickerFlyoutPresenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListPickerFlyoutPresenter ListPickerFlyoutPresenter()
         {
             var ui = new Xaml.Controls.ListPickerFlyoutPresenter();
@@ -14113,6 +14479,7 @@ namespace CSharpMarkup.WinUI // ListPickerFlyoutPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ListPickerFlyoutPresenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListPickerFlyoutPresenter ListPickerFlyoutPresenter(nint handle)
         {
             var ui = new Xaml.Controls.ListPickerFlyoutPresenter(handle);
@@ -14120,6 +14487,7 @@ namespace CSharpMarkup.WinUI // ListPickerFlyoutPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ListPickerFlyoutPresenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ListPickerFlyoutPresenter ListPickerFlyoutPresenter(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.ListPickerFlyoutPresenter(handle);
@@ -14254,33 +14622,43 @@ namespace CSharpMarkup.WinUI // ListViewBase
     public static partial class ListViewBaseExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.SingleSelectionFollowsFocus"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SingleSelectionFollowsFocus<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.SingleSelectionFollowsFocus = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.ShowsScrollingPlaceholders"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ShowsScrollingPlaceholders<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.ShowsScrollingPlaceholders = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.ReorderMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ReorderMode<TView>(this TView view, Xaml.Controls.ListViewReorderMode value) where TView : ListViewBase { view.UI.ReorderMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.IsSwipeEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsSwipeEnabled<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.IsSwipeEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.IsMultiSelectCheckBoxEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsMultiSelectCheckBoxEnabled<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.IsMultiSelectCheckBoxEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.HeaderTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HeaderTransitions<TView>(this TView view, Xaml.Media.Animation.TransitionCollection value) where TView : ListViewBase { view.UI.HeaderTransitions = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.FooterTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FooterTransitions<TView>(this TView view, Xaml.Media.Animation.TransitionCollection value) where TView : ListViewBase { view.UI.FooterTransitions = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.SemanticZoomOwner"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SemanticZoomOwner<TView>(this TView view, Xaml.Controls.SemanticZoom value) where TView : ListViewBase { view.UI.SemanticZoomOwner = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.IsZoomedInView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsZoomedInView<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.IsZoomedInView = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.IsActiveView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsActiveView<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.IsActiveView = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.RefreshOnCollectionChanged"/></summary>
@@ -14332,42 +14710,52 @@ namespace CSharpMarkup.WinUI // ListViewBase
         public static TView IncrementalLoadingTrigger<TView>(this TView view, Xaml.Controls.IncrementalLoadingTrigger value) where TView : ListViewBase { view.UI.IncrementalLoadingTrigger = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.FooterTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection> FooterTransitions<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection>.Get(target, Xaml.Controls.ListViewBase.FooterTransitionsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.HeaderTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection> HeaderTransitions<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection>.Get(target, Xaml.Controls.ListViewBase.HeaderTransitionsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.IsActiveView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsActiveView<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.IsActiveViewProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.IsMultiSelectCheckBoxEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsMultiSelectCheckBoxEnabled<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.IsMultiSelectCheckBoxEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.IsSwipeEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsSwipeEnabled<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.IsSwipeEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.IsZoomedInView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsZoomedInView<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.IsZoomedInViewProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.ReorderMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.ListViewReorderMode> ReorderMode<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, Xaml.Controls.ListViewReorderMode>.Get(target, Xaml.Controls.ListViewBase.ReorderModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.SemanticZoomOwner"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.SemanticZoom> SemanticZoomOwner<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, Xaml.Controls.SemanticZoom>.Get(target, Xaml.Controls.ListViewBase.SemanticZoomOwnerProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.ShowsScrollingPlaceholders"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ShowsScrollingPlaceholders<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.ShowsScrollingPlaceholdersProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.SingleSelectionFollowsFocus"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> SingleSelectionFollowsFocus<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.SingleSelectionFollowsFocusProperty);
 
@@ -15588,9 +15976,11 @@ namespace CSharpMarkup.WinUI // MenuFlyoutPresenter
     public static partial class MenuFlyoutPresenterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.MenuFlyoutPresenter.IsDefaultShadowEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsDefaultShadowEnabled<TView>(this TView view, bool value) where TView : MenuFlyoutPresenter { view.UI.IsDefaultShadowEnabled = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MenuFlyoutPresenter.IsDefaultShadowEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsDefaultShadowEnabled<TTarget>(this TTarget target) where TTarget : MenuFlyoutPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MenuFlyoutPresenter.IsDefaultShadowEnabledProperty);
     }
@@ -16768,6 +17158,7 @@ namespace CSharpMarkup.WinUI // NumberBox
         public static TView PlaceholderText<TView>(this TView view, string value) where TView : NumberBox { view.UI.PlaceholderText = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.NumberBox.SelectionFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionFlyout<TView>(this TView view, Xaml.Controls.Primitives.FlyoutBase value) where TView : NumberBox { view.UI.SelectionFlyout = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.NumberBox.SelectionHighlightColor"/></summary>
@@ -16964,19 +17355,23 @@ namespace CSharpMarkup.WinUI // Page
     public static partial class PageExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Page.TopAppBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopAppBar<TView>(this TView view, Xaml.Controls.AppBar value) where TView : Page { view.UI.TopAppBar = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Page.BottomAppBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BottomAppBar<TView>(this TView view, Xaml.Controls.AppBar value) where TView : Page { view.UI.BottomAppBar = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Page.NavigationCacheMode"/></summary>
         public static TView NavigationCacheMode<TView>(this TView view, Xaml.Navigation.NavigationCacheMode value) where TView : Page { view.UI.NavigationCacheMode = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Page.TopAppBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.AppBar> TopAppBar<TTarget>(this TTarget target) where TTarget : Page
         => DependencyProperty<TTarget, Xaml.Controls.AppBar>.Get(target, Xaml.Controls.Page.TopAppBarProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Page.BottomAppBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.AppBar> BottomAppBar<TTarget>(this TTarget target) where TTarget : Page
         => DependencyProperty<TTarget, Xaml.Controls.AppBar>.Get(target, Xaml.Controls.Page.BottomAppBarProperty);
 
@@ -17064,6 +17459,7 @@ namespace CSharpMarkup.WinUI // Panel
     public static partial class PanelExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Panel.BackgroundTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BackgroundTransition<TView>(this TView view, Xaml.BrushTransition value) where TView : Panel { view.UI.BackgroundTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Panel.ChildrenTransitions"/></summary>
@@ -17087,6 +17483,7 @@ namespace CSharpMarkup.WinUI // ParallaxView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ParallaxView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ParallaxView ParallaxView(double? VerticalSourceStartOffset = default, Xaml.Controls.ParallaxSourceOffsetKind? VerticalSourceOffsetKind = default, double? VerticalSourceEndOffset = default, double? VerticalShift = default, Xaml.UIElement Source = default, double? MaxVerticalShiftRatio = default, double? MaxHorizontalShiftRatio = default, bool? IsVerticalShiftClamped = default, bool? IsHorizontalShiftClamped = default, double? HorizontalSourceStartOffset = default, Xaml.Controls.ParallaxSourceOffsetKind? HorizontalSourceOffsetKind = default, double? HorizontalSourceEndOffset = default, double? HorizontalShift = default, Xaml.UIElement Child = default)
         {
             var ui = new Xaml.Controls.ParallaxView();
@@ -17108,6 +17505,7 @@ namespace CSharpMarkup.WinUI // ParallaxView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ParallaxView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ParallaxView ParallaxView()
         {
             var ui = new Xaml.Controls.ParallaxView();
@@ -17115,6 +17513,7 @@ namespace CSharpMarkup.WinUI // ParallaxView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ParallaxView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ParallaxView ParallaxView(nint handle)
         {
             var ui = new Xaml.Controls.ParallaxView(handle);
@@ -17122,6 +17521,7 @@ namespace CSharpMarkup.WinUI // ParallaxView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ParallaxView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ParallaxView ParallaxView(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.ParallaxView(handle);
@@ -17162,100 +17562,128 @@ namespace CSharpMarkup.WinUI // ParallaxView
     public static partial class ParallaxViewExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.VerticalSourceStartOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView VerticalSourceStartOffset<TView>(this TView view, double value) where TView : ParallaxView { view.UI.VerticalSourceStartOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.VerticalSourceOffsetKind"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView VerticalSourceOffsetKind<TView>(this TView view, Xaml.Controls.ParallaxSourceOffsetKind value) where TView : ParallaxView { view.UI.VerticalSourceOffsetKind = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.VerticalSourceEndOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView VerticalSourceEndOffset<TView>(this TView view, double value) where TView : ParallaxView { view.UI.VerticalSourceEndOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.VerticalShift"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView VerticalShift<TView>(this TView view, double value) where TView : ParallaxView { view.UI.VerticalShift = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.Source"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Source<TView>(this TView view, Xaml.UIElement value) where TView : ParallaxView { view.UI.Source = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.MaxVerticalShiftRatio"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MaxVerticalShiftRatio<TView>(this TView view, double value) where TView : ParallaxView { view.UI.MaxVerticalShiftRatio = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.MaxHorizontalShiftRatio"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MaxHorizontalShiftRatio<TView>(this TView view, double value) where TView : ParallaxView { view.UI.MaxHorizontalShiftRatio = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.IsVerticalShiftClamped"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsVerticalShiftClamped<TView>(this TView view, bool value) where TView : ParallaxView { view.UI.IsVerticalShiftClamped = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.IsHorizontalShiftClamped"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsHorizontalShiftClamped<TView>(this TView view, bool value) where TView : ParallaxView { view.UI.IsHorizontalShiftClamped = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.HorizontalSourceStartOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalSourceStartOffset<TView>(this TView view, double value) where TView : ParallaxView { view.UI.HorizontalSourceStartOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.HorizontalSourceOffsetKind"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalSourceOffsetKind<TView>(this TView view, Xaml.Controls.ParallaxSourceOffsetKind value) where TView : ParallaxView { view.UI.HorizontalSourceOffsetKind = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.HorizontalSourceEndOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalSourceEndOffset<TView>(this TView view, double value) where TView : ParallaxView { view.UI.HorizontalSourceEndOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.HorizontalShift"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalShift<TView>(this TView view, double value) where TView : ParallaxView { view.UI.HorizontalShift = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ParallaxView.Child"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Child<TView>(this TView view, Xaml.UIElement value) where TView : ParallaxView { view.UI.Child = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.Child"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> Child<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.ParallaxView.ChildProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.HorizontalShift"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> HorizontalShift<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ParallaxView.HorizontalShiftProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.HorizontalSourceEndOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> HorizontalSourceEndOffset<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ParallaxView.HorizontalSourceEndOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.HorizontalSourceOffsetKind"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.ParallaxSourceOffsetKind> HorizontalSourceOffsetKind<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, Xaml.Controls.ParallaxSourceOffsetKind>.Get(target, Xaml.Controls.ParallaxView.HorizontalSourceOffsetKindProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.HorizontalSourceStartOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> HorizontalSourceStartOffset<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ParallaxView.HorizontalSourceStartOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.IsHorizontalShiftClamped"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsHorizontalShiftClamped<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ParallaxView.IsHorizontalShiftClampedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.IsVerticalShiftClamped"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsVerticalShiftClamped<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ParallaxView.IsVerticalShiftClampedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.MaxHorizontalShiftRatio"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> MaxHorizontalShiftRatio<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ParallaxView.MaxHorizontalShiftRatioProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.MaxVerticalShiftRatio"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> MaxVerticalShiftRatio<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ParallaxView.MaxVerticalShiftRatioProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.Source"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> Source<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.ParallaxView.SourceProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.VerticalShift"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> VerticalShift<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ParallaxView.VerticalShiftProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.VerticalSourceEndOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> VerticalSourceEndOffset<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ParallaxView.VerticalSourceEndOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.VerticalSourceOffsetKind"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.ParallaxSourceOffsetKind> VerticalSourceOffsetKind<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, Xaml.Controls.ParallaxSourceOffsetKind>.Get(target, Xaml.Controls.ParallaxView.VerticalSourceOffsetKindProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ParallaxView.VerticalSourceStartOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> VerticalSourceStartOffset<TTarget>(this TTarget target) where TTarget : ParallaxView
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ParallaxView.VerticalSourceStartOffsetProperty);
     }
@@ -17343,15 +17771,19 @@ namespace CSharpMarkup.WinUI // PasswordBox
     public static partial class PasswordBoxExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.PasswordBox.TextReadingOrder"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextReadingOrder<TView>(this TView view, Xaml.TextReadingOrder value) where TView : PasswordBox { view.UI.TextReadingOrder = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.PasswordBox.SelectionFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionFlyout<TView>(this TView view, Xaml.Controls.Primitives.FlyoutBase value) where TView : PasswordBox { view.UI.SelectionFlyout = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.PasswordBox.PreventKeyboardDisplayOnProgrammaticFocus"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PreventKeyboardDisplayOnProgrammaticFocus<TView>(this TView view, bool value) where TView : PasswordBox { view.UI.PreventKeyboardDisplayOnProgrammaticFocus = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.PasswordBox.PasswordChar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PasswordChar<TView>(this TView view, string value) where TView : PasswordBox { view.UI.PasswordChar = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.PasswordBox.Password"/></summary>
@@ -17370,22 +17802,27 @@ namespace CSharpMarkup.WinUI // PasswordBox
         public static TView PasswordRevealMode<TView>(this TView view, Xaml.Controls.PasswordRevealMode value) where TView : PasswordBox { view.UI.PasswordRevealMode = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.CanPasteClipboardContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> CanPasteClipboardContent<TTarget>(this TTarget target) where TTarget : PasswordBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.PasswordBox.CanPasteClipboardContentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.PasswordChar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> PasswordChar<TTarget>(this TTarget target) where TTarget : PasswordBox
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.PasswordBox.PasswordCharProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.PreventKeyboardDisplayOnProgrammaticFocus"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> PreventKeyboardDisplayOnProgrammaticFocus<TTarget>(this TTarget target) where TTarget : PasswordBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.PasswordBox.PreventKeyboardDisplayOnProgrammaticFocusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.SelectionFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase> SelectionFlyout<TTarget>(this TTarget target) where TTarget : PasswordBox
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase>.Get(target, Xaml.Controls.PasswordBox.SelectionFlyoutProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.TextReadingOrder"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextReadingOrder> TextReadingOrder<TTarget>(this TTarget target) where TTarget : PasswordBox
         => DependencyProperty<TTarget, Xaml.TextReadingOrder>.Get(target, Xaml.Controls.PasswordBox.TextReadingOrderProperty);
 
@@ -17784,6 +18221,7 @@ namespace CSharpMarkup.WinUI // PickerConfirmedEventArgs
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.PickerConfirmedEventArgs"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PickerConfirmedEventArgs PickerConfirmedEventArgs(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.PickerConfirmedEventArgs();
@@ -17793,6 +18231,7 @@ namespace CSharpMarkup.WinUI // PickerConfirmedEventArgs
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.PickerConfirmedEventArgs"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PickerConfirmedEventArgs PickerConfirmedEventArgs()
         {
             var ui = new Xaml.Controls.PickerConfirmedEventArgs();
@@ -17866,16 +18305,20 @@ namespace CSharpMarkup.WinUI // PickerFlyout
     public static partial class PickerFlyoutExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.PickerFlyout.Content"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Content<TView>(this TView view, Xaml.UIElement value) where TView : PickerFlyout { view.UI.Content = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.PickerFlyout.ConfirmationButtonsVisible"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ConfirmationButtonsVisible<TView>(this TView view, bool value) where TView : PickerFlyout { view.UI.ConfirmationButtonsVisible = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PickerFlyout.ConfirmationButtonsVisible"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ConfirmationButtonsVisible<TTarget>(this TTarget target) where TTarget : PickerFlyout
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.PickerFlyout.ConfirmationButtonsVisibleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PickerFlyout.Content"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> Content<TTarget>(this TTarget target) where TTarget : PickerFlyout
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.PickerFlyout.ContentProperty);
     }
@@ -17886,6 +18329,7 @@ namespace CSharpMarkup.WinUI // PickerFlyoutPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.PickerFlyoutPresenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PickerFlyoutPresenter PickerFlyoutPresenter(UIObject Content)
         {
             var ui = new Xaml.Controls.PickerFlyoutPresenter();
@@ -17894,6 +18338,7 @@ namespace CSharpMarkup.WinUI // PickerFlyoutPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.PickerFlyoutPresenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PickerFlyoutPresenter PickerFlyoutPresenter()
         {
             var ui = new Xaml.Controls.PickerFlyoutPresenter();
@@ -17901,6 +18346,7 @@ namespace CSharpMarkup.WinUI // PickerFlyoutPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.PickerFlyoutPresenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PickerFlyoutPresenter PickerFlyoutPresenter(nint handle)
         {
             var ui = new Xaml.Controls.PickerFlyoutPresenter(handle);
@@ -17908,6 +18354,7 @@ namespace CSharpMarkup.WinUI // PickerFlyoutPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.PickerFlyoutPresenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PickerFlyoutPresenter PickerFlyoutPresenter(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.PickerFlyoutPresenter(handle);
@@ -18242,12 +18689,15 @@ namespace CSharpMarkup.WinUI // Pivot
     public static partial class PivotExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Pivot.IsLocked"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsLocked<TView>(this TView view, bool value) where TView : Pivot { view.UI.IsLocked = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsHeaderItemsCarouselEnabled<TView>(this TView view, bool value) where TView : Pivot { view.UI.IsHeaderItemsCarouselEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Pivot.HeaderFocusVisualPlacement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HeaderFocusVisualPlacement<TView>(this TView view, Xaml.Controls.PivotHeaderFocusVisualPlacement value) where TView : Pivot { view.UI.HeaderFocusVisualPlacement = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Pivot.TitleTemplate"/></summary>
@@ -18278,10 +18728,12 @@ namespace CSharpMarkup.WinUI // Pivot
         public static TView LeftHeader<TView>(this TView view, object value) where TView : Pivot { view.UI.LeftHeader = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Pivot.HeaderFocusVisualPlacement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.PivotHeaderFocusVisualPlacement> HeaderFocusVisualPlacement<TTarget>(this TTarget target) where TTarget : Pivot
         => DependencyProperty<TTarget, Xaml.Controls.PivotHeaderFocusVisualPlacement>.Get(target, Xaml.Controls.Pivot.HeaderFocusVisualPlacementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsHeaderItemsCarouselEnabled<TTarget>(this TTarget target) where TTarget : Pivot
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Pivot.IsHeaderItemsCarouselEnabledProperty);
 
@@ -18326,10 +18778,12 @@ namespace CSharpMarkup.WinUI // Pivot
         => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.Pivot.RightHeaderTemplateProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.Pivot.SlideInAnimationGroup"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget Pivot_SlideInAnimationGroup<TTarget>(this TTarget target, Xaml.Controls.PivotSlideInAnimationGroup value) where TTarget : FrameworkElement
         { Xaml.Controls.Pivot.SetSlideInAnimationGroup(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Pivot.SlideInAnimationGroup"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.PivotSlideInAnimationGroup> Pivot_SlideInAnimationGroup<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, Xaml.Controls.PivotSlideInAnimationGroup>.Get(target, Xaml.Controls.Pivot.SlideInAnimationGroupProperty);
     }
@@ -18791,6 +19245,7 @@ namespace CSharpMarkup.WinUI // ProgressRingTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ProgressRingTemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ProgressRingTemplateSettings ProgressRingTemplateSettings(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.ProgressRingTemplateSettings();
@@ -18800,6 +19255,7 @@ namespace CSharpMarkup.WinUI // ProgressRingTemplateSettings
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ProgressRingTemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ProgressRingTemplateSettings ProgressRingTemplateSettings()
         {
             var ui = new Xaml.Controls.ProgressRingTemplateSettings();
@@ -19150,10 +19606,12 @@ namespace CSharpMarkup.WinUI // RadioMenuFlyoutItem
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RadioMenuFlyoutItem.IsCheckedProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.RadioMenuFlyoutItem.AreCheckStatesEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget RadioMenuFlyoutItem_AreCheckStatesEnabled<TTarget>(this TTarget target, bool value) where TTarget : MenuFlyoutSubItem
         { Xaml.Controls.RadioMenuFlyoutItem.SetAreCheckStatesEnabled(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RadioMenuFlyoutItem.AreCheckStatesEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> RadioMenuFlyoutItem_AreCheckStatesEnabled<TTarget>(this TTarget target) where TTarget : MenuFlyoutSubItem
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RadioMenuFlyoutItem.AreCheckStatesEnabledProperty);
     }
@@ -20090,6 +20548,7 @@ namespace CSharpMarkup.WinUI // RevealListViewItemPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RevealListViewItemPresenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static RevealListViewItemPresenter RevealListViewItemPresenter(UIObject Content)
         {
             var ui = new Xaml.Controls.RevealListViewItemPresenter();
@@ -20098,6 +20557,7 @@ namespace CSharpMarkup.WinUI // RevealListViewItemPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.RevealListViewItemPresenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static RevealListViewItemPresenter RevealListViewItemPresenter()
         {
             var ui = new Xaml.Controls.RevealListViewItemPresenter();
@@ -20105,6 +20565,7 @@ namespace CSharpMarkup.WinUI // RevealListViewItemPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.RevealListViewItemPresenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static RevealListViewItemPresenter RevealListViewItemPresenter(nint handle)
         {
             var ui = new Xaml.Controls.RevealListViewItemPresenter(handle);
@@ -20112,6 +20573,7 @@ namespace CSharpMarkup.WinUI // RevealListViewItemPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.RevealListViewItemPresenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static RevealListViewItemPresenter RevealListViewItemPresenter(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.RevealListViewItemPresenter(handle);
@@ -20239,167 +20701,214 @@ namespace CSharpMarkup.WinUI // RichEditBox
     public static partial class RichEditBoxExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.TextWrapping"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextWrapping<TView>(this TView view, Xaml.TextWrapping value) where TView : RichEditBox { view.UI.TextWrapping = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.TextReadingOrder"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextReadingOrder<TView>(this TView view, Xaml.TextReadingOrder value) where TView : RichEditBox { view.UI.TextReadingOrder = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.TextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextAlignment<TView>(this TView view, Xaml.TextAlignment value) where TView : RichEditBox { view.UI.TextAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.SelectionHighlightColorWhenNotFocused"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionHighlightColorWhenNotFocused<TView>(this TView view, Xaml.Media.SolidColorBrush value) where TView : RichEditBox { view.UI.SelectionHighlightColorWhenNotFocused = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.SelectionHighlightColor"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionHighlightColor<TView>(this TView view, Xaml.Media.SolidColorBrush value) where TView : RichEditBox { view.UI.SelectionHighlightColor = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.SelectionFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionFlyout<TView>(this TView view, Xaml.Controls.Primitives.FlyoutBase value) where TView : RichEditBox { view.UI.SelectionFlyout = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.PreventKeyboardDisplayOnProgrammaticFocus"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PreventKeyboardDisplayOnProgrammaticFocus<TView>(this TView view, bool value) where TView : RichEditBox { view.UI.PreventKeyboardDisplayOnProgrammaticFocus = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.PlaceholderText"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderText<TView>(this TView view, string value) where TView : RichEditBox { view.UI.PlaceholderText = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.MaxLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MaxLength<TView>(this TView view, int value) where TView : RichEditBox { view.UI.MaxLength = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.IsTextPredictionEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextPredictionEnabled<TView>(this TView view, bool value) where TView : RichEditBox { view.UI.IsTextPredictionEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.IsSpellCheckEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsSpellCheckEnabled<TView>(this TView view, bool value) where TView : RichEditBox { view.UI.IsSpellCheckEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.IsReadOnly"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsReadOnly<TView>(this TView view, bool value) where TView : RichEditBox { view.UI.IsReadOnly = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.IsColorFontEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsColorFontEnabled<TView>(this TView view, bool value) where TView : RichEditBox { view.UI.IsColorFontEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.InputScope"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView InputScope<TView>(this TView view, Xaml.Input.InputScope value) where TView : RichEditBox { view.UI.InputScope = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.HorizontalTextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalTextAlignment<TView>(this TView view, Xaml.TextAlignment value) where TView : RichEditBox { view.UI.HorizontalTextAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.HeaderTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HeaderTemplate<TView>(this TView view, Xaml.DataTemplate value) where TView : RichEditBox { view.UI.HeaderTemplate = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.Header"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Header<TView>(this TView view, object value) where TView : RichEditBox { view.UI.Header = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.DisabledFormattingAccelerators"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DisabledFormattingAccelerators<TView>(this TView view, Xaml.Controls.DisabledFormattingAccelerators value) where TView : RichEditBox { view.UI.DisabledFormattingAccelerators = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.DesiredCandidateWindowAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DesiredCandidateWindowAlignment<TView>(this TView view, Xaml.Controls.CandidateWindowAlignment value) where TView : RichEditBox { view.UI.DesiredCandidateWindowAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.Description"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Description<TView>(this TView view, object value) where TView : RichEditBox { view.UI.Description = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.ClipboardCopyFormat"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ClipboardCopyFormat<TView>(this TView view, Xaml.Controls.RichEditClipboardFormat value) where TView : RichEditBox { view.UI.ClipboardCopyFormat = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.CharacterCasing"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CharacterCasing<TView>(this TView view, Xaml.Controls.CharacterCasing value) where TView : RichEditBox { view.UI.CharacterCasing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichEditBox.AcceptsReturn"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AcceptsReturn<TView>(this TView view, bool value) where TView : RichEditBox { view.UI.AcceptsReturn = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.AcceptsReturn"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> AcceptsReturn<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichEditBox.AcceptsReturnProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.CharacterCasing"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> CharacterCasing<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.Controls.CharacterCasing>.Get(target, Xaml.Controls.RichEditBox.CharacterCasingProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.ClipboardCopyFormat"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.RichEditClipboardFormat> ClipboardCopyFormat<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.Controls.RichEditClipboardFormat>.Get(target, Xaml.Controls.RichEditBox.ClipboardCopyFormatProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.Description"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> Description<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.RichEditBox.DescriptionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.DesiredCandidateWindowAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> DesiredCandidateWindowAlignment<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment>.Get(target, Xaml.Controls.RichEditBox.DesiredCandidateWindowAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.DisabledFormattingAccelerators"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> DisabledFormattingAccelerators<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators>.Get(target, Xaml.Controls.RichEditBox.DisabledFormattingAcceleratorsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.Header"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> Header<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.RichEditBox.HeaderProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.HeaderTemplate"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DataTemplate> HeaderTemplate<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.DataTemplate>.Get(target, Xaml.Controls.RichEditBox.HeaderTemplateProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.HorizontalTextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextAlignment> HorizontalTextAlignment<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.TextAlignment>.Get(target, Xaml.Controls.RichEditBox.HorizontalTextAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.InputScope"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Input.InputScope> InputScope<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.Input.InputScope>.Get(target, Xaml.Controls.RichEditBox.InputScopeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.IsColorFontEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsColorFontEnabled<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichEditBox.IsColorFontEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.IsReadOnly"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsReadOnly<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichEditBox.IsReadOnlyProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.IsSpellCheckEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsSpellCheckEnabled<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichEditBox.IsSpellCheckEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.IsTextPredictionEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextPredictionEnabled<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichEditBox.IsTextPredictionEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.MaxLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> MaxLength<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.RichEditBox.MaxLengthProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.PlaceholderText"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> PlaceholderText<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.RichEditBox.PlaceholderTextProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.PreventKeyboardDisplayOnProgrammaticFocus"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> PreventKeyboardDisplayOnProgrammaticFocus<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichEditBox.PreventKeyboardDisplayOnProgrammaticFocusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.ProofingMenuFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase> ProofingMenuFlyout<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase>.Get(target, Xaml.Controls.RichEditBox.ProofingMenuFlyoutProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.SelectionFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase> SelectionFlyout<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase>.Get(target, Xaml.Controls.RichEditBox.SelectionFlyoutProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.SelectionHighlightColor"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.SolidColorBrush> SelectionHighlightColor<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.Media.SolidColorBrush>.Get(target, Xaml.Controls.RichEditBox.SelectionHighlightColorProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.SelectionHighlightColorWhenNotFocused"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.SolidColorBrush> SelectionHighlightColorWhenNotFocused<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.Media.SolidColorBrush>.Get(target, Xaml.Controls.RichEditBox.SelectionHighlightColorWhenNotFocusedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.TextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextAlignment> TextAlignment<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.TextAlignment>.Get(target, Xaml.Controls.RichEditBox.TextAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.TextReadingOrder"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextReadingOrder> TextReadingOrder<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.TextReadingOrder>.Get(target, Xaml.Controls.RichEditBox.TextReadingOrderProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichEditBox.TextWrapping"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextWrapping> TextWrapping<TTarget>(this TTarget target) where TTarget : RichEditBox
         => DependencyProperty<TTarget, Xaml.TextWrapping>.Get(target, Xaml.Controls.RichEditBox.TextWrappingProperty);
     }
@@ -20410,6 +20919,7 @@ namespace CSharpMarkup.WinUI // RichTextBlock
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RichTextBlock"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static RichTextBlock RichTextBlock(params Microsoft.UI.Xaml.Documents.Block[] Blocks)
         {
             var ui = new Xaml.Controls.RichTextBlock();
@@ -20429,6 +20939,7 @@ namespace CSharpMarkup.WinUI // RichTextBlock
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.RichTextBlock"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static RichTextBlock RichTextBlock()
         {
             var ui = new Xaml.Controls.RichTextBlock();
@@ -20436,6 +20947,7 @@ namespace CSharpMarkup.WinUI // RichTextBlock
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.RichTextBlock"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static RichTextBlock RichTextBlock(nint handle)
         {
             var ui = new Xaml.Controls.RichTextBlock(handle);
@@ -20443,6 +20955,7 @@ namespace CSharpMarkup.WinUI // RichTextBlock
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.RichTextBlock"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static RichTextBlock RichTextBlock(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.RichTextBlock(handle);
@@ -20483,214 +20996,275 @@ namespace CSharpMarkup.WinUI // RichTextBlock
     public static partial class RichTextBlockExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.HorizontalTextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalTextAlignment<TView>(this TView view, Xaml.TextAlignment value) where TView : RichTextBlock { view.UI.HorizontalTextAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.LineHeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LineHeight<TView>(this TView view, double value) where TView : RichTextBlock { view.UI.LineHeight = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.Foreground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Foreground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : RichTextBlock { view.UI.Foreground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.Foreground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Foreground<TView>(this TView view, Windows.UI.Color value) where TView : RichTextBlock { view.UI.Foreground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.Foreground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Foreground<TView>(this TView view, string color) where TView : RichTextBlock { view.UI.Foreground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.FontWeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FontWeight<TView>(this TView view, Windows.UI.Text.FontWeight value) where TView : RichTextBlock { view.UI.FontWeight = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.FontStyle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FontStyle<TView>(this TView view, Windows.UI.Text.FontStyle value) where TView : RichTextBlock { view.UI.FontStyle = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.FontStretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FontStretch<TView>(this TView view, Windows.UI.Text.FontStretch value) where TView : RichTextBlock { view.UI.FontStretch = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.FontSize"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FontSize<TView>(this TView view, double value) where TView : RichTextBlock { view.UI.FontSize = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.FontFamily"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FontFamily<TView>(this TView view, Xaml.Media.FontFamily value) where TView : RichTextBlock { view.UI.FontFamily = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.IsTextSelectionEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextSelectionEnabled<TView>(this TView view, bool value) where TView : RichTextBlock { view.UI.IsTextSelectionEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextScaleFactorEnabled<TView>(this TView view, bool value) where TView : RichTextBlock { view.UI.IsTextScaleFactorEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.CharacterSpacing"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CharacterSpacing<TView>(this TView view, int value) where TView : RichTextBlock { view.UI.CharacterSpacing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.IsColorFontEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsColorFontEnabled<TView>(this TView view, bool value) where TView : RichTextBlock { view.UI.IsColorFontEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.TextWrapping"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextWrapping<TView>(this TView view, Xaml.TextWrapping value) where TView : RichTextBlock { view.UI.TextWrapping = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.LineStackingStrategy"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LineStackingStrategy<TView>(this TView view, Xaml.LineStackingStrategy value) where TView : RichTextBlock { view.UI.LineStackingStrategy = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.TextTrimming"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextTrimming<TView>(this TView view, Xaml.TextTrimming value) where TView : RichTextBlock { view.UI.TextTrimming = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.TextReadingOrder"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextReadingOrder<TView>(this TView view, Xaml.TextReadingOrder value) where TView : RichTextBlock { view.UI.TextReadingOrder = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.TextLineBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextLineBounds<TView>(this TView view, Xaml.TextLineBounds value) where TView : RichTextBlock { view.UI.TextLineBounds = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.TextIndent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextIndent<TView>(this TView view, double value) where TView : RichTextBlock { view.UI.TextIndent = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.TextDecorations"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextDecorations<TView>(this TView view, Windows.UI.Text.TextDecorations value) where TView : RichTextBlock { view.UI.TextDecorations = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.TextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextAlignment<TView>(this TView view, Xaml.TextAlignment value) where TView : RichTextBlock { view.UI.TextAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.SelectionHighlightColor"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionHighlightColor<TView>(this TView view, Xaml.Media.SolidColorBrush value) where TView : RichTextBlock { view.UI.SelectionHighlightColor = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.SelectionFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionFlyout<TView>(this TView view, Xaml.Controls.Primitives.FlyoutBase value) where TView : RichTextBlock { view.UI.SelectionFlyout = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Padding<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : RichTextBlock { view.UI.Padding = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Padding<TView>(this TView view, double uniform) where TView : RichTextBlock { view.UI.Padding = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Padding<TView>(this TView view, double horizontal, double vertical) where TView : RichTextBlock { view.UI.Padding = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Padding<TView>(this TView view, double left, double top, double right, double bottom) where TView : RichTextBlock { view.UI.Padding = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Paddings<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : RichTextBlock { view.UI.Padding = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.OverflowContentTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OverflowContentTarget<TView>(this TView view, Xaml.Controls.RichTextBlockOverflow value) where TView : RichTextBlock { view.UI.OverflowContentTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.OpticalMarginAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OpticalMarginAlignment<TView>(this TView view, Xaml.OpticalMarginAlignment value) where TView : RichTextBlock { view.UI.OpticalMarginAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlock.MaxLines"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MaxLines<TView>(this TView view, int value) where TView : RichTextBlock { view.UI.MaxLines = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.CharacterSpacing"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> CharacterSpacing<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.RichTextBlock.CharacterSpacingProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.FontFamily"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.FontFamily> FontFamily<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.Media.FontFamily>.Get(target, Xaml.Controls.RichTextBlock.FontFamilyProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.FontSize"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> FontSize<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.RichTextBlock.FontSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.FontStretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.FontStretch> FontStretch<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Windows.UI.Text.FontStretch>.Get(target, Xaml.Controls.RichTextBlock.FontStretchProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.FontStyle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.FontStyle> FontStyle<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Windows.UI.Text.FontStyle>.Get(target, Xaml.Controls.RichTextBlock.FontStyleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.FontWeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.FontWeight> FontWeight<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Windows.UI.Text.FontWeight>.Get(target, Xaml.Controls.RichTextBlock.FontWeightProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.Foreground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> Foreground<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.RichTextBlock.ForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.HasOverflowContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> HasOverflowContent<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichTextBlock.HasOverflowContentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.HorizontalTextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextAlignment> HorizontalTextAlignment<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.TextAlignment>.Get(target, Xaml.Controls.RichTextBlock.HorizontalTextAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.IsColorFontEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsColorFontEnabled<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichTextBlock.IsColorFontEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextScaleFactorEnabled<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichTextBlock.IsTextScaleFactorEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.IsTextSelectionEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextSelectionEnabled<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichTextBlock.IsTextSelectionEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.IsTextTrimmed"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextTrimmed<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichTextBlock.IsTextTrimmedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.LineHeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> LineHeight<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.RichTextBlock.LineHeightProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.LineStackingStrategy"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.LineStackingStrategy> LineStackingStrategy<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.LineStackingStrategy>.Get(target, Xaml.Controls.RichTextBlock.LineStackingStrategyProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.MaxLines"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> MaxLines<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.RichTextBlock.MaxLinesProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.OpticalMarginAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> OpticalMarginAlignment<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.OpticalMarginAlignment>.Get(target, Xaml.Controls.RichTextBlock.OpticalMarginAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.OverflowContentTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.RichTextBlockOverflow> OverflowContentTarget<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.Controls.RichTextBlockOverflow>.Get(target, Xaml.Controls.RichTextBlock.OverflowContentTargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> Padding<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.RichTextBlock.PaddingProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.SelectedText"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> SelectedText<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.RichTextBlock.SelectedTextProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.SelectionFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase> SelectionFlyout<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase>.Get(target, Xaml.Controls.RichTextBlock.SelectionFlyoutProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.SelectionHighlightColor"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.SolidColorBrush> SelectionHighlightColor<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.Media.SolidColorBrush>.Get(target, Xaml.Controls.RichTextBlock.SelectionHighlightColorProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.TextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextAlignment> TextAlignment<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.TextAlignment>.Get(target, Xaml.Controls.RichTextBlock.TextAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.TextDecorations"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> TextDecorations<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Windows.UI.Text.TextDecorations>.Get(target, Xaml.Controls.RichTextBlock.TextDecorationsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.TextIndent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> TextIndent<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.RichTextBlock.TextIndentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.TextLineBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextLineBounds> TextLineBounds<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.TextLineBounds>.Get(target, Xaml.Controls.RichTextBlock.TextLineBoundsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.TextReadingOrder"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextReadingOrder> TextReadingOrder<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.TextReadingOrder>.Get(target, Xaml.Controls.RichTextBlock.TextReadingOrderProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.TextTrimming"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextTrimming> TextTrimming<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.TextTrimming>.Get(target, Xaml.Controls.RichTextBlock.TextTrimmingProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlock.TextWrapping"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextWrapping> TextWrapping<TTarget>(this TTarget target) where TTarget : RichTextBlock
         => DependencyProperty<TTarget, Xaml.TextWrapping>.Get(target, Xaml.Controls.RichTextBlock.TextWrappingProperty);
     }
@@ -20765,43 +21339,55 @@ namespace CSharpMarkup.WinUI // RichTextBlockOverflow
     public static partial class RichTextBlockOverflowExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlockOverflow.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Padding<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : RichTextBlockOverflow { view.UI.Padding = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlockOverflow.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Padding<TView>(this TView view, double uniform) where TView : RichTextBlockOverflow { view.UI.Padding = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlockOverflow.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Padding<TView>(this TView view, double horizontal, double vertical) where TView : RichTextBlockOverflow { view.UI.Padding = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlockOverflow.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Padding<TView>(this TView view, double left, double top, double right, double bottom) where TView : RichTextBlockOverflow { view.UI.Padding = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlockOverflow.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Paddings<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : RichTextBlockOverflow { view.UI.Padding = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlockOverflow.OverflowContentTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OverflowContentTarget<TView>(this TView view, Xaml.Controls.RichTextBlockOverflow value) where TView : RichTextBlockOverflow { view.UI.OverflowContentTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.RichTextBlockOverflow.MaxLines"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MaxLines<TView>(this TView view, int value) where TView : RichTextBlockOverflow { view.UI.MaxLines = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlockOverflow.HasOverflowContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> HasOverflowContent<TTarget>(this TTarget target) where TTarget : RichTextBlockOverflow
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichTextBlockOverflow.HasOverflowContentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlockOverflow.IsTextTrimmed"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextTrimmed<TTarget>(this TTarget target) where TTarget : RichTextBlockOverflow
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.RichTextBlockOverflow.IsTextTrimmedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlockOverflow.MaxLines"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> MaxLines<TTarget>(this TTarget target) where TTarget : RichTextBlockOverflow
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.RichTextBlockOverflow.MaxLinesProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlockOverflow.OverflowContentTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.RichTextBlockOverflow> OverflowContentTarget<TTarget>(this TTarget target) where TTarget : RichTextBlockOverflow
         => DependencyProperty<TTarget, Xaml.Controls.RichTextBlockOverflow>.Get(target, Xaml.Controls.RichTextBlockOverflow.OverflowContentTargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.RichTextBlockOverflow.Padding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> Padding<TTarget>(this TTarget target) where TTarget : RichTextBlockOverflow
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.RichTextBlockOverflow.PaddingProperty);
     }
@@ -20987,9 +21573,11 @@ namespace CSharpMarkup.WinUI // ScrollContentPresenter
     public static partial class ScrollContentPresenterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ScrollContentPresenter.SizesContentToTemplatedParent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SizesContentToTemplatedParent<TView>(this TView view, bool value) where TView : ScrollContentPresenter { view.UI.SizesContentToTemplatedParent = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollContentPresenter.CanContentRenderOutsideBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CanContentRenderOutsideBounds<TView>(this TView view, bool value) where TView : ScrollContentPresenter { view.UI.CanContentRenderOutsideBounds = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollContentPresenter.ScrollOwner"/></summary>
@@ -21014,10 +21602,12 @@ namespace CSharpMarkup.WinUI // ScrollContentPresenter
         public static TView ExtentWidth<TView>(this TView view, double value) where TView : ScrollContentPresenter { view.UI.ExtentWidth = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollContentPresenter.CanContentRenderOutsideBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> CanContentRenderOutsideBounds<TTarget>(this TTarget target) where TTarget : ScrollContentPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollContentPresenter.CanContentRenderOutsideBoundsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollContentPresenter.SizesContentToTemplatedParent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> SizesContentToTemplatedParent<TTarget>(this TTarget target) where TTarget : ScrollContentPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollContentPresenter.SizesContentToTemplatedParentProperty);
     }
@@ -21127,51 +21717,67 @@ namespace CSharpMarkup.WinUI // ScrollViewer
     public static partial class ScrollViewerExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsHorizontalScrollChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsHorizontalScrollChainingEnabled<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.IsHorizontalScrollChainingEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsHorizontalRailEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsHorizontalRailEnabled<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.IsHorizontalRailEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsDeferredScrollingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsDeferredScrollingEnabled<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.IsDeferredScrollingEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsZoomInertiaEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsZoomInertiaEnabled<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.IsZoomInertiaEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.HorizontalAnchorRatio"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalAnchorRatio<TView>(this TView view, double value) where TView : ScrollViewer { view.UI.HorizontalAnchorRatio = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsZoomChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsZoomChainingEnabled<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.IsZoomChainingEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsVerticalScrollChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsVerticalScrollChainingEnabled<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.IsVerticalScrollChainingEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsVerticalRailEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsVerticalRailEnabled<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.IsVerticalRailEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsScrollInertiaEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsScrollInertiaEnabled<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.IsScrollInertiaEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.CanContentRenderOutsideBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CanContentRenderOutsideBounds<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.CanContentRenderOutsideBounds = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.LeftHeader"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LeftHeader<TView>(this TView view, Xaml.UIElement value) where TView : ScrollViewer { view.UI.LeftHeader = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.ZoomSnapPointsType"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ZoomSnapPointsType<TView>(this TView view, Xaml.Controls.SnapPointsType value) where TView : ScrollViewer { view.UI.ZoomSnapPointsType = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.VerticalAnchorRatio"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView VerticalAnchorRatio<TView>(this TView view, double value) where TView : ScrollViewer { view.UI.VerticalAnchorRatio = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.TopLeftHeader"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopLeftHeader<TView>(this TView view, Xaml.UIElement value) where TView : ScrollViewer { view.UI.TopLeftHeader = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.TopHeader"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopHeader<TView>(this TView view, Xaml.UIElement value) where TView : ScrollViewer { view.UI.TopHeader = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.ReduceViewportForCoreInputViewOcclusions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ReduceViewportForCoreInputViewOcclusions<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.ReduceViewportForCoreInputViewOcclusions = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.HorizontalScrollBarVisibility"/></summary>
@@ -21187,6 +21793,7 @@ namespace CSharpMarkup.WinUI // ScrollViewer
         public static TView VerticalScrollMode<TView>(this TView view, Xaml.Controls.ScrollMode value) where TView : ScrollViewer { view.UI.VerticalScrollMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.BringIntoViewOnFocusChange"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BringIntoViewOnFocusChange<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.BringIntoViewOnFocusChange = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.ZoomMode"/></summary>
@@ -21214,70 +21821,87 @@ namespace CSharpMarkup.WinUI // ScrollViewer
         public static TView ShouldReportNegativeOffsets<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.ShouldReportNegativeOffsets = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.CanContentRenderOutsideBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> CanContentRenderOutsideBounds<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.CanContentRenderOutsideBoundsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.HorizontalAnchorRatio"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> HorizontalAnchorRatio<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ScrollViewer.HorizontalAnchorRatioProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsDeferredScrollingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsDeferredScrollingEnabled<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsDeferredScrollingEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsHorizontalRailEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsHorizontalRailEnabled<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsHorizontalRailEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsHorizontalScrollChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsHorizontalScrollChainingEnabled<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsHorizontalScrollChainingEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsScrollInertiaEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsScrollInertiaEnabled<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsScrollInertiaEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsVerticalRailEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsVerticalRailEnabled<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsVerticalRailEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsVerticalScrollChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsVerticalScrollChainingEnabled<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsVerticalScrollChainingEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsZoomChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsZoomChainingEnabled<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsZoomChainingEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsZoomInertiaEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsZoomInertiaEnabled<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsZoomInertiaEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.LeftHeader"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> LeftHeader<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.ScrollViewer.LeftHeaderProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.ReduceViewportForCoreInputViewOcclusions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ReduceViewportForCoreInputViewOcclusions<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.ReduceViewportForCoreInputViewOcclusionsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.TopHeader"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> TopHeader<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.ScrollViewer.TopHeaderProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.TopLeftHeader"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> TopLeftHeader<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.ScrollViewer.TopLeftHeaderProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.VerticalAnchorRatio"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> VerticalAnchorRatio<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ScrollViewer.VerticalAnchorRatioProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.ZoomSnapPoints"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, IList<float>> ZoomSnapPoints<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, IList<float>>.Get(target, Xaml.Controls.ScrollViewer.ZoomSnapPointsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.ZoomSnapPointsType"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.SnapPointsType> ZoomSnapPointsType<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, Xaml.Controls.SnapPointsType>.Get(target, Xaml.Controls.ScrollViewer.ZoomSnapPointsTypeProperty);
 
@@ -21298,6 +21922,7 @@ namespace CSharpMarkup.WinUI // ScrollViewer
         => DependencyProperty<TTarget, Xaml.Controls.ScrollMode>.Get(target, Xaml.Controls.ScrollViewer.VerticalScrollModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.BringIntoViewOnFocusChange"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> BringIntoViewOnFocusChange<TTarget>(this TTarget target) where TTarget : ScrollViewer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.BringIntoViewOnFocusChangeProperty);
 
@@ -21374,74 +21999,92 @@ namespace CSharpMarkup.WinUI // ScrollViewer
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ScrollViewer.HorizontalOffsetProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.CanContentRenderOutsideBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ScrollViewer_CanContentRenderOutsideBounds<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { Xaml.Controls.ScrollViewer.SetCanContentRenderOutsideBounds(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.CanContentRenderOutsideBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ScrollViewer_CanContentRenderOutsideBounds<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.CanContentRenderOutsideBoundsProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsDeferredScrollingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ScrollViewer_IsDeferredScrollingEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { Xaml.Controls.ScrollViewer.SetIsDeferredScrollingEnabled(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsDeferredScrollingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ScrollViewer_IsDeferredScrollingEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsDeferredScrollingEnabledProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsHorizontalRailEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ScrollViewer_IsHorizontalRailEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { Xaml.Controls.ScrollViewer.SetIsHorizontalRailEnabled(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsHorizontalRailEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ScrollViewer_IsHorizontalRailEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsHorizontalRailEnabledProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsHorizontalScrollChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ScrollViewer_IsHorizontalScrollChainingEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { Xaml.Controls.ScrollViewer.SetIsHorizontalScrollChainingEnabled(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsHorizontalScrollChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ScrollViewer_IsHorizontalScrollChainingEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsHorizontalScrollChainingEnabledProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsScrollInertiaEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ScrollViewer_IsScrollInertiaEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { Xaml.Controls.ScrollViewer.SetIsScrollInertiaEnabled(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsScrollInertiaEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ScrollViewer_IsScrollInertiaEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsScrollInertiaEnabledProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsVerticalRailEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ScrollViewer_IsVerticalRailEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { Xaml.Controls.ScrollViewer.SetIsVerticalRailEnabled(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsVerticalRailEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ScrollViewer_IsVerticalRailEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsVerticalRailEnabledProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsVerticalScrollChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ScrollViewer_IsVerticalScrollChainingEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { Xaml.Controls.ScrollViewer.SetIsVerticalScrollChainingEnabled(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsVerticalScrollChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ScrollViewer_IsVerticalScrollChainingEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsVerticalScrollChainingEnabledProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsZoomChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ScrollViewer_IsZoomChainingEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { Xaml.Controls.ScrollViewer.SetIsZoomChainingEnabled(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsZoomChainingEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ScrollViewer_IsZoomChainingEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsZoomChainingEnabledProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.IsZoomInertiaEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ScrollViewer_IsZoomInertiaEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { Xaml.Controls.ScrollViewer.SetIsZoomInertiaEnabled(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.IsZoomInertiaEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ScrollViewer_IsZoomInertiaEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.IsZoomInertiaEnabledProperty);
 
@@ -21478,10 +22121,12 @@ namespace CSharpMarkup.WinUI // ScrollViewer
         => DependencyProperty<TTarget, Xaml.Controls.ScrollMode>.Get(target, Xaml.Controls.ScrollViewer.VerticalScrollModeProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.BringIntoViewOnFocusChange"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ScrollViewer_BringIntoViewOnFocusChange<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { Xaml.Controls.ScrollViewer.SetBringIntoViewOnFocusChange(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollViewer.BringIntoViewOnFocusChange"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ScrollViewer_BringIntoViewOnFocusChange<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollViewer.BringIntoViewOnFocusChangeProperty);
 
@@ -21568,6 +22213,7 @@ namespace CSharpMarkup.WinUI // SemanticZoom
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.SemanticZoom"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SemanticZoom SemanticZoom(Xaml.Controls.ISemanticZoomInformation ZoomedOutView = default, Xaml.Controls.ISemanticZoomInformation ZoomedInView = default, bool? IsZoomedInViewActive = default, bool? IsZoomOutButtonEnabled = default, bool? CanChangeViews = default)
         {
             var ui = new Xaml.Controls.SemanticZoom();
@@ -21580,6 +22226,7 @@ namespace CSharpMarkup.WinUI // SemanticZoom
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SemanticZoom"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SemanticZoom SemanticZoom()
         {
             var ui = new Xaml.Controls.SemanticZoom();
@@ -21587,6 +22234,7 @@ namespace CSharpMarkup.WinUI // SemanticZoom
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SemanticZoom"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SemanticZoom SemanticZoom(nint handle)
         {
             var ui = new Xaml.Controls.SemanticZoom(handle);
@@ -21594,6 +22242,7 @@ namespace CSharpMarkup.WinUI // SemanticZoom
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SemanticZoom"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SemanticZoom SemanticZoom(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.SemanticZoom(handle);
@@ -21634,37 +22283,47 @@ namespace CSharpMarkup.WinUI // SemanticZoom
     public static partial class SemanticZoomExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.SemanticZoom.ZoomedOutView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ZoomedOutView<TView>(this TView view, Xaml.Controls.ISemanticZoomInformation value) where TView : SemanticZoom { view.UI.ZoomedOutView = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.SemanticZoom.ZoomedInView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ZoomedInView<TView>(this TView view, Xaml.Controls.ISemanticZoomInformation value) where TView : SemanticZoom { view.UI.ZoomedInView = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.SemanticZoom.IsZoomedInViewActive"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsZoomedInViewActive<TView>(this TView view, bool value) where TView : SemanticZoom { view.UI.IsZoomedInViewActive = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.SemanticZoom.IsZoomOutButtonEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsZoomOutButtonEnabled<TView>(this TView view, bool value) where TView : SemanticZoom { view.UI.IsZoomOutButtonEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.SemanticZoom.CanChangeViews"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CanChangeViews<TView>(this TView view, bool value) where TView : SemanticZoom { view.UI.CanChangeViews = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SemanticZoom.CanChangeViews"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> CanChangeViews<TTarget>(this TTarget target) where TTarget : SemanticZoom
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.SemanticZoom.CanChangeViewsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SemanticZoom.IsZoomOutButtonEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsZoomOutButtonEnabled<TTarget>(this TTarget target) where TTarget : SemanticZoom
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.SemanticZoom.IsZoomOutButtonEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SemanticZoom.IsZoomedInViewActive"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsZoomedInViewActive<TTarget>(this TTarget target) where TTarget : SemanticZoom
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.SemanticZoom.IsZoomedInViewActiveProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SemanticZoom.ZoomedInView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.ISemanticZoomInformation> ZoomedInView<TTarget>(this TTarget target) where TTarget : SemanticZoom
         => DependencyProperty<TTarget, Xaml.Controls.ISemanticZoomInformation>.Get(target, Xaml.Controls.SemanticZoom.ZoomedInViewProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SemanticZoom.ZoomedOutView"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.ISemanticZoomInformation> ZoomedOutView<TTarget>(this TTarget target) where TTarget : SemanticZoom
         => DependencyProperty<TTarget, Xaml.Controls.ISemanticZoomInformation>.Get(target, Xaml.Controls.SemanticZoom.ZoomedOutViewProperty);
     }
@@ -22019,6 +22678,7 @@ namespace CSharpMarkup.WinUI // SplitView
     public static partial class SplitViewExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.SplitView.LightDismissOverlayMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LightDismissOverlayMode<TView>(this TView view, Xaml.Controls.LightDismissOverlayMode value) where TView : SplitView { view.UI.LightDismissOverlayMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.SplitView.CompactPaneLength"/></summary>
@@ -22049,6 +22709,7 @@ namespace CSharpMarkup.WinUI // SplitView
         public static TView PanePlacement<TView>(this TView view, Xaml.Controls.SplitViewPanePlacement value) where TView : SplitView { view.UI.PanePlacement = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SplitView.LightDismissOverlayMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> LightDismissOverlayMode<TTarget>(this TTarget target) where TTarget : SplitView
         => DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode>.Get(target, Xaml.Controls.SplitView.LightDismissOverlayModeProperty);
 
@@ -22243,6 +22904,7 @@ namespace CSharpMarkup.WinUI // StackPanel
     public static partial class StackPanelExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.StackPanel.AreScrollSnapPointsRegular"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AreScrollSnapPointsRegular<TView>(this TView view, bool value) where TView : StackPanel { view.UI.AreScrollSnapPointsRegular = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.StackPanel.BackgroundSizing"/></summary>
@@ -22335,6 +22997,7 @@ namespace CSharpMarkup.WinUI // SwapChainBackgroundPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.SwapChainBackgroundPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwapChainBackgroundPanel SwapChainBackgroundPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.SwapChainBackgroundPanel();
@@ -22354,6 +23017,7 @@ namespace CSharpMarkup.WinUI // SwapChainBackgroundPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SwapChainBackgroundPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwapChainBackgroundPanel SwapChainBackgroundPanel()
         {
             var ui = new Xaml.Controls.SwapChainBackgroundPanel();
@@ -22361,6 +23025,7 @@ namespace CSharpMarkup.WinUI // SwapChainBackgroundPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SwapChainBackgroundPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwapChainBackgroundPanel SwapChainBackgroundPanel(nint handle)
         {
             var ui = new Xaml.Controls.SwapChainBackgroundPanel(handle);
@@ -22368,6 +23033,7 @@ namespace CSharpMarkup.WinUI // SwapChainBackgroundPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SwapChainBackgroundPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwapChainBackgroundPanel SwapChainBackgroundPanel(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.SwapChainBackgroundPanel(handle);
@@ -22411,6 +23077,7 @@ namespace CSharpMarkup.WinUI // SwapChainPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.SwapChainPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwapChainPanel SwapChainPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.SwapChainPanel();
@@ -22430,6 +23097,7 @@ namespace CSharpMarkup.WinUI // SwapChainPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SwapChainPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwapChainPanel SwapChainPanel()
         {
             var ui = new Xaml.Controls.SwapChainPanel();
@@ -22437,6 +23105,7 @@ namespace CSharpMarkup.WinUI // SwapChainPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SwapChainPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwapChainPanel SwapChainPanel(nint handle)
         {
             var ui = new Xaml.Controls.SwapChainPanel(handle);
@@ -22444,6 +23113,7 @@ namespace CSharpMarkup.WinUI // SwapChainPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SwapChainPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwapChainPanel SwapChainPanel(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.SwapChainPanel(handle);
@@ -22484,10 +23154,12 @@ namespace CSharpMarkup.WinUI // SwapChainPanel
     public static partial class SwapChainPanelExtensions
     {
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SwapChainPanel.CompositionScaleX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, float> CompositionScaleX<TTarget>(this TTarget target) where TTarget : SwapChainPanel
         => DependencyProperty<TTarget, float>.Get(target, Xaml.Controls.SwapChainPanel.CompositionScaleXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SwapChainPanel.CompositionScaleY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, float> CompositionScaleY<TTarget>(this TTarget target) where TTarget : SwapChainPanel
         => DependencyProperty<TTarget, float>.Get(target, Xaml.Controls.SwapChainPanel.CompositionScaleYProperty);
     }
@@ -23334,6 +24006,7 @@ namespace CSharpMarkup.WinUI // TabViewItemTemplateSettings
     public static partial class TabViewItemTemplateSettingsExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.TabViewItemTemplateSettings.TabGeometry"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TabGeometry<TView>(this TView view, CSharpMarkup.WinUI.to.Geometry value) where TView : TabViewItemTemplateSettings { view.UI.TabGeometry = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TabViewItemTemplateSettings.IconElement"/></summary>
@@ -23346,6 +24019,7 @@ namespace CSharpMarkup.WinUI // TabViewItemTemplateSettings
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : TabViewItemTemplateSettings { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabViewItemTemplateSettings.TabGeometry"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry> TabGeometry<TTarget>(this TTarget target) where TTarget : TabViewItemTemplateSettings
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry>.Get(target, Xaml.Controls.TabViewItemTemplateSettings.TabGeometryProperty);
 
@@ -23368,6 +24042,7 @@ namespace CSharpMarkup.WinUI // TeachingTip
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TeachingTip"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TeachingTip TeachingTip(UIObject Content)
         {
             var ui = new Xaml.Controls.TeachingTip();
@@ -23376,6 +24051,7 @@ namespace CSharpMarkup.WinUI // TeachingTip
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.TeachingTip"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TeachingTip TeachingTip(string Title = default, Xaml.FrameworkElement Target = default, Xaml.Controls.TeachingTipTailVisibility? TailVisibility = default, string Subtitle = default, bool? ShouldConstrainToRootBounds = default, Xaml.Controls.TeachingTipPlacementMode? PreferredPlacement = default, CSharpMarkup.WinUI.to.Thickness? PlacementMargin = default, bool? IsOpen = default, bool? IsLightDismissEnabled = default, Xaml.Controls.IconSource IconSource = default, Xaml.Controls.TeachingTipHeroContentPlacementMode? HeroContentPlacement = default, Xaml.UIElement HeroContent = default, Xaml.Style CloseButtonStyle = default, object CloseButtonContent = default, object CloseButtonCommandParameter = default, ICommand CloseButtonCommand = default, Xaml.Style ActionButtonStyle = default, object ActionButtonContent = default, object ActionButtonCommandParameter = default, ICommand ActionButtonCommand = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.TeachingTip();
@@ -23404,6 +24080,7 @@ namespace CSharpMarkup.WinUI // TeachingTip
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.TeachingTip"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TeachingTip TeachingTip()
         {
             var ui = new Xaml.Controls.TeachingTip();
@@ -23411,6 +24088,7 @@ namespace CSharpMarkup.WinUI // TeachingTip
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.TeachingTip"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TeachingTip TeachingTip(nint handle)
         {
             var ui = new Xaml.Controls.TeachingTip(handle);
@@ -23418,6 +24096,7 @@ namespace CSharpMarkup.WinUI // TeachingTip
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.TeachingTip"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TeachingTip TeachingTip(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.TeachingTip(handle);
@@ -23458,158 +24137,203 @@ namespace CSharpMarkup.WinUI // TeachingTip
     public static partial class TeachingTipExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.Title"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Title<TView>(this TView view, string value) where TView : TeachingTip { view.UI.Title = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.Target"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Target<TView>(this TView view, Xaml.FrameworkElement value) where TView : TeachingTip { view.UI.Target = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.TailVisibility"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TailVisibility<TView>(this TView view, Xaml.Controls.TeachingTipTailVisibility value) where TView : TeachingTip { view.UI.TailVisibility = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.Subtitle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Subtitle<TView>(this TView view, string value) where TView : TeachingTip { view.UI.Subtitle = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.ShouldConstrainToRootBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ShouldConstrainToRootBounds<TView>(this TView view, bool value) where TView : TeachingTip { view.UI.ShouldConstrainToRootBounds = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.PreferredPlacement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PreferredPlacement<TView>(this TView view, Xaml.Controls.TeachingTipPlacementMode value) where TView : TeachingTip { view.UI.PreferredPlacement = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.PlacementMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlacementMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : TeachingTip { view.UI.PlacementMargin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.PlacementMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlacementMargin<TView>(this TView view, double uniform) where TView : TeachingTip { view.UI.PlacementMargin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.PlacementMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlacementMargin<TView>(this TView view, double horizontal, double vertical) where TView : TeachingTip { view.UI.PlacementMargin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.PlacementMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlacementMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : TeachingTip { view.UI.PlacementMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.PlacementMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlacementMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : TeachingTip { view.UI.PlacementMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.IsOpen"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsOpen<TView>(this TView view, bool value) where TView : TeachingTip { view.UI.IsOpen = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.IsLightDismissEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsLightDismissEnabled<TView>(this TView view, bool value) where TView : TeachingTip { view.UI.IsLightDismissEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.IconSource"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IconSource<TView>(this TView view, Xaml.Controls.IconSource value) where TView : TeachingTip { view.UI.IconSource = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.HeroContentPlacement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HeroContentPlacement<TView>(this TView view, Xaml.Controls.TeachingTipHeroContentPlacementMode value) where TView : TeachingTip { view.UI.HeroContentPlacement = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.HeroContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HeroContent<TView>(this TView view, Xaml.UIElement value) where TView : TeachingTip { view.UI.HeroContent = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.CloseButtonStyle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CloseButtonStyle<TView>(this TView view, Xaml.Style value) where TView : TeachingTip { view.UI.CloseButtonStyle = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.CloseButtonContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CloseButtonContent<TView>(this TView view, object value) where TView : TeachingTip { view.UI.CloseButtonContent = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.CloseButtonCommandParameter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CloseButtonCommandParameter<TView>(this TView view, object value) where TView : TeachingTip { view.UI.CloseButtonCommandParameter = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.CloseButtonCommand"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CloseButtonCommand<TView>(this TView view, ICommand value) where TView : TeachingTip { view.UI.CloseButtonCommand = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.ActionButtonStyle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ActionButtonStyle<TView>(this TView view, Xaml.Style value) where TView : TeachingTip { view.UI.ActionButtonStyle = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.ActionButtonContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ActionButtonContent<TView>(this TView view, object value) where TView : TeachingTip { view.UI.ActionButtonContent = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.ActionButtonCommandParameter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ActionButtonCommandParameter<TView>(this TView view, object value) where TView : TeachingTip { view.UI.ActionButtonCommandParameter = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTip.ActionButtonCommand"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ActionButtonCommand<TView>(this TView view, ICommand value) where TView : TeachingTip { view.UI.ActionButtonCommand = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.ActionButtonCommandParameter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> ActionButtonCommandParameter<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.TeachingTip.ActionButtonCommandParameterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.ActionButtonCommand"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, ICommand> ActionButtonCommand<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, ICommand>.Get(target, Xaml.Controls.TeachingTip.ActionButtonCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.ActionButtonContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> ActionButtonContent<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.TeachingTip.ActionButtonContentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.ActionButtonStyle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Style> ActionButtonStyle<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.TeachingTip.ActionButtonStyleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.CloseButtonCommandParameter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> CloseButtonCommandParameter<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.TeachingTip.CloseButtonCommandParameterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.CloseButtonCommand"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, ICommand> CloseButtonCommand<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, ICommand>.Get(target, Xaml.Controls.TeachingTip.CloseButtonCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.CloseButtonContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> CloseButtonContent<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.TeachingTip.CloseButtonContentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.CloseButtonStyle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Style> CloseButtonStyle<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.TeachingTip.CloseButtonStyleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.HeroContentPlacement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.TeachingTipHeroContentPlacementMode> HeroContentPlacement<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, Xaml.Controls.TeachingTipHeroContentPlacementMode>.Get(target, Xaml.Controls.TeachingTip.HeroContentPlacementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.HeroContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> HeroContent<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.TeachingTip.HeroContentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.IconSource"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.IconSource> IconSource<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, Xaml.Controls.IconSource>.Get(target, Xaml.Controls.TeachingTip.IconSourceProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.IsLightDismissEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsLightDismissEnabled<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TeachingTip.IsLightDismissEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.IsOpen"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsOpen<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TeachingTip.IsOpenProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.PlacementMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> PlacementMargin<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.TeachingTip.PlacementMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.PreferredPlacement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.TeachingTipPlacementMode> PreferredPlacement<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, Xaml.Controls.TeachingTipPlacementMode>.Get(target, Xaml.Controls.TeachingTip.PreferredPlacementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.ShouldConstrainToRootBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ShouldConstrainToRootBounds<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TeachingTip.ShouldConstrainToRootBoundsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.Subtitle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> Subtitle<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.TeachingTip.SubtitleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.TailVisibility"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.TeachingTipTailVisibility> TailVisibility<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, Xaml.Controls.TeachingTipTailVisibility>.Get(target, Xaml.Controls.TeachingTip.TailVisibilityProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.Target"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.FrameworkElement> Target<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, Xaml.FrameworkElement>.Get(target, Xaml.Controls.TeachingTip.TargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.TemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.TeachingTipTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, Xaml.Controls.TeachingTipTemplateSettings>.Get(target, Xaml.Controls.TeachingTip.TemplateSettingsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTip.Title"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> Title<TTarget>(this TTarget target) where TTarget : TeachingTip
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.TeachingTip.TitleProperty);
     }
@@ -23620,6 +24344,7 @@ namespace CSharpMarkup.WinUI // TeachingTipTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TeachingTipTemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TeachingTipTemplateSettings TeachingTipTemplateSettings(CSharpMarkup.WinUI.to.Thickness? TopRightHighlightMargin = default, CSharpMarkup.WinUI.to.Thickness? TopLeftHighlightMargin = default, Xaml.Controls.IconElement IconElement = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.TeachingTipTemplateSettings();
@@ -23632,6 +24357,7 @@ namespace CSharpMarkup.WinUI // TeachingTipTemplateSettings
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.TeachingTipTemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TeachingTipTemplateSettings TeachingTipTemplateSettings()
         {
             var ui = new Xaml.Controls.TeachingTipTemplateSettings();
@@ -23670,36 +24396,47 @@ namespace CSharpMarkup.WinUI // TeachingTipTemplateSettings
     public static partial class TeachingTipTemplateSettingsExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopRightHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopRightHighlightMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : TeachingTipTemplateSettings { view.UI.TopRightHighlightMargin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopRightHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopRightHighlightMargin<TView>(this TView view, double uniform) where TView : TeachingTipTemplateSettings { view.UI.TopRightHighlightMargin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopRightHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopRightHighlightMargin<TView>(this TView view, double horizontal, double vertical) where TView : TeachingTipTemplateSettings { view.UI.TopRightHighlightMargin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopRightHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopRightHighlightMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : TeachingTipTemplateSettings { view.UI.TopRightHighlightMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopRightHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopRightHighlightMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : TeachingTipTemplateSettings { view.UI.TopRightHighlightMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopLeftHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopLeftHighlightMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : TeachingTipTemplateSettings { view.UI.TopLeftHighlightMargin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopLeftHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopLeftHighlightMargin<TView>(this TView view, double uniform) where TView : TeachingTipTemplateSettings { view.UI.TopLeftHighlightMargin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopLeftHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopLeftHighlightMargin<TView>(this TView view, double horizontal, double vertical) where TView : TeachingTipTemplateSettings { view.UI.TopLeftHighlightMargin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopLeftHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopLeftHighlightMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : TeachingTipTemplateSettings { view.UI.TopLeftHighlightMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopLeftHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TopLeftHighlightMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : TeachingTipTemplateSettings { view.UI.TopLeftHighlightMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.IconElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IconElement<TView>(this TView view, Xaml.Controls.IconElement value) where TView : TeachingTipTemplateSettings { view.UI.IconElement = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TeachingTipTemplateSettings.DataContext"/></summary>
@@ -23709,14 +24446,17 @@ namespace CSharpMarkup.WinUI // TeachingTipTemplateSettings
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : TeachingTipTemplateSettings { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTipTemplateSettings.IconElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.IconElement> IconElement<TTarget>(this TTarget target) where TTarget : TeachingTipTemplateSettings
         => DependencyProperty<TTarget, Xaml.Controls.IconElement>.Get(target, Xaml.Controls.TeachingTipTemplateSettings.IconElementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopLeftHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> TopLeftHighlightMargin<TTarget>(this TTarget target) where TTarget : TeachingTipTemplateSettings
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.TeachingTipTemplateSettings.TopLeftHighlightMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TeachingTipTemplateSettings.TopRightHighlightMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> TopRightHighlightMargin<TTarget>(this TTarget target) where TTarget : TeachingTipTemplateSettings
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.TeachingTipTemplateSettings.TopRightHighlightMarginProperty);
 
@@ -23837,27 +24577,35 @@ namespace CSharpMarkup.WinUI // TextBlock
     public static partial class TextBlockExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.IsColorFontEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsColorFontEnabled<TView>(this TView view, bool value) where TView : TextBlock { view.UI.IsColorFontEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.FontStretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FontStretch<TView>(this TView view, Windows.UI.Text.FontStretch value) where TView : TextBlock { view.UI.FontStretch = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextScaleFactorEnabled<TView>(this TView view, bool value) where TView : TextBlock { view.UI.IsTextScaleFactorEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.TextReadingOrder"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextReadingOrder<TView>(this TView view, Xaml.TextReadingOrder value) where TView : TextBlock { view.UI.TextReadingOrder = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.TextLineBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextLineBounds<TView>(this TView view, Xaml.TextLineBounds value) where TView : TextBlock { view.UI.TextLineBounds = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.SelectionHighlightColor"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionHighlightColor<TView>(this TView view, Xaml.Media.SolidColorBrush value) where TView : TextBlock { view.UI.SelectionHighlightColor = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.SelectionFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionFlyout<TView>(this TView view, Xaml.Controls.Primitives.FlyoutBase value) where TView : TextBlock { view.UI.SelectionFlyout = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.OpticalMarginAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OpticalMarginAlignment<TView>(this TView view, Xaml.OpticalMarginAlignment value) where TView : TextBlock { view.UI.OpticalMarginAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.FontStyle"/></summary>
@@ -23891,6 +24639,7 @@ namespace CSharpMarkup.WinUI // TextBlock
         public static TView Foreground<TView>(this TView view, string color) where TView : TextBlock { view.UI.Foreground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.IsTextSelectionEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextSelectionEnabled<TView>(this TView view, bool value) where TView : TextBlock { view.UI.IsTextSelectionEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.TextAlignment"/></summary>
@@ -23927,42 +24676,52 @@ namespace CSharpMarkup.WinUI // TextBlock
         public static TView TextDecorations<TView>(this TView view, Windows.UI.Text.TextDecorations value) where TView : TextBlock { view.UI.TextDecorations = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.FontStretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.FontStretch> FontStretch<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, Windows.UI.Text.FontStretch>.Get(target, Xaml.Controls.TextBlock.FontStretchProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.IsColorFontEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsColorFontEnabled<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBlock.IsColorFontEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextScaleFactorEnabled<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBlock.IsTextScaleFactorEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.IsTextTrimmed"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextTrimmed<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBlock.IsTextTrimmedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.OpticalMarginAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> OpticalMarginAlignment<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, Xaml.OpticalMarginAlignment>.Get(target, Xaml.Controls.TextBlock.OpticalMarginAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.SelectedText"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> SelectedText<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.TextBlock.SelectedTextProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.SelectionFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase> SelectionFlyout<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase>.Get(target, Xaml.Controls.TextBlock.SelectionFlyoutProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.SelectionHighlightColor"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.SolidColorBrush> SelectionHighlightColor<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, Xaml.Media.SolidColorBrush>.Get(target, Xaml.Controls.TextBlock.SelectionHighlightColorProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.TextLineBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextLineBounds> TextLineBounds<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, Xaml.TextLineBounds>.Get(target, Xaml.Controls.TextBlock.TextLineBoundsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.TextReadingOrder"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextReadingOrder> TextReadingOrder<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, Xaml.TextReadingOrder>.Get(target, Xaml.Controls.TextBlock.TextReadingOrderProperty);
 
@@ -24003,6 +24762,7 @@ namespace CSharpMarkup.WinUI // TextBlock
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.TextBlock.ForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.IsTextSelectionEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextSelectionEnabled<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBlock.IsTextSelectionEnabledProperty);
 
@@ -24137,24 +24897,31 @@ namespace CSharpMarkup.WinUI // TextBox
     public static partial class TextBoxExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.TextBox.IsColorFontEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsColorFontEnabled<TView>(this TView view, bool value) where TView : TextBox { view.UI.IsColorFontEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.HorizontalTextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalTextAlignment<TView>(this TView view, Xaml.TextAlignment value) where TView : TextBox { view.UI.HorizontalTextAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.DesiredCandidateWindowAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DesiredCandidateWindowAlignment<TView>(this TView view, Xaml.Controls.CandidateWindowAlignment value) where TView : TextBox { view.UI.DesiredCandidateWindowAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.PreventKeyboardDisplayOnProgrammaticFocus"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PreventKeyboardDisplayOnProgrammaticFocus<TView>(this TView view, bool value) where TView : TextBox { view.UI.PreventKeyboardDisplayOnProgrammaticFocus = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.TextReadingOrder"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextReadingOrder<TView>(this TView view, Xaml.TextReadingOrder value) where TView : TextBox { view.UI.TextReadingOrder = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.SelectionHighlightColorWhenNotFocused"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionHighlightColorWhenNotFocused<TView>(this TView view, Xaml.Media.SolidColorBrush value) where TView : TextBox { view.UI.SelectionHighlightColorWhenNotFocused = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.SelectionFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionFlyout<TView>(this TView view, Xaml.Controls.Primitives.FlyoutBase value) where TView : TextBox { view.UI.SelectionFlyout = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.Text"/></summary>
@@ -24191,6 +24958,7 @@ namespace CSharpMarkup.WinUI // TextBox
         public static TView TextWrapping<TView>(this TView view, Xaml.TextWrapping value) where TView : TextBox { view.UI.TextWrapping = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.CharacterCasing"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CharacterCasing<TView>(this TView view, Xaml.Controls.CharacterCasing value) where TView : TextBox { view.UI.CharacterCasing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.IsReadOnly"/></summary>
@@ -24206,6 +24974,7 @@ namespace CSharpMarkup.WinUI // TextBox
         public static TView IsSpellCheckEnabled<TView>(this TView view, bool value) where TView : TextBox { view.UI.IsSpellCheckEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.IsTextPredictionEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextPredictionEnabled<TView>(this TView view, bool value) where TView : TextBox { view.UI.IsTextPredictionEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.TextAlignment"/></summary>
@@ -24227,46 +24996,57 @@ namespace CSharpMarkup.WinUI // TextBox
         public static TView KeyboardAppearance<TView>(this TView view, UIKit.UIKeyboardAppearance value) where TView : TextBox { view.UI.KeyboardAppearance = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.CanPasteClipboardContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> CanPasteClipboardContent<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.CanPasteClipboardContentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.CanRedo"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> CanRedo<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.CanRedoProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.CanUndo"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> CanUndo<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.CanUndoProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.DesiredCandidateWindowAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> DesiredCandidateWindowAlignment<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment>.Get(target, Xaml.Controls.TextBox.DesiredCandidateWindowAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.HorizontalTextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextAlignment> HorizontalTextAlignment<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, Xaml.TextAlignment>.Get(target, Xaml.Controls.TextBox.HorizontalTextAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.IsColorFontEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsColorFontEnabled<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.IsColorFontEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.PreventKeyboardDisplayOnProgrammaticFocus"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> PreventKeyboardDisplayOnProgrammaticFocus<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.PreventKeyboardDisplayOnProgrammaticFocusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.ProofingMenuFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase> ProofingMenuFlyout<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase>.Get(target, Xaml.Controls.TextBox.ProofingMenuFlyoutProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.SelectionFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase> SelectionFlyout<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase>.Get(target, Xaml.Controls.TextBox.SelectionFlyoutProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.SelectionHighlightColorWhenNotFocused"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.SolidColorBrush> SelectionHighlightColorWhenNotFocused<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, Xaml.Media.SolidColorBrush>.Get(target, Xaml.Controls.TextBox.SelectionHighlightColorWhenNotFocusedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.TextReadingOrder"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextReadingOrder> TextReadingOrder<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, Xaml.TextReadingOrder>.Get(target, Xaml.Controls.TextBox.TextReadingOrderProperty);
 
@@ -24307,6 +25087,7 @@ namespace CSharpMarkup.WinUI // TextBox
         => DependencyProperty<TTarget, Xaml.TextWrapping>.Get(target, Xaml.Controls.TextBox.TextWrappingProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.CharacterCasing"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> CharacterCasing<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, Xaml.Controls.CharacterCasing>.Get(target, Xaml.Controls.TextBox.CharacterCasingProperty);
 
@@ -24327,6 +25108,7 @@ namespace CSharpMarkup.WinUI // TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.IsSpellCheckEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.IsTextPredictionEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextPredictionEnabled<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.IsTextPredictionEnabledProperty);
 
@@ -24349,6 +25131,7 @@ namespace CSharpMarkup.WinUI // TextCommandBarFlyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TextCommandBarFlyout"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TextCommandBarFlyout TextCommandBarFlyout()
         {
             var ui = new Xaml.Controls.TextCommandBarFlyout();
@@ -24769,9 +25552,11 @@ namespace CSharpMarkup.WinUI // TimePickerFlyoutPresenter
     public static partial class TimePickerFlyoutPresenterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.TimePickerFlyoutPresenter.IsDefaultShadowEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsDefaultShadowEnabled<TView>(this TView view, bool value) where TView : TimePickerFlyoutPresenter { view.UI.IsDefaultShadowEnabled = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerFlyoutPresenter.IsDefaultShadowEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsDefaultShadowEnabled<TTarget>(this TTarget target) where TTarget : TimePickerFlyoutPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TimePickerFlyoutPresenter.IsDefaultShadowEnabledProperty);
     }
@@ -25154,15 +25939,19 @@ namespace CSharpMarkup.WinUI // ToolTip
     public static partial class ToolTipExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ToolTip.VerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView VerticalOffset<TView>(this TView view, double value) where TView : ToolTip { view.UI.VerticalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ToolTip.PlacementTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlacementTarget<TView>(this TView view, Xaml.UIElement value) where TView : ToolTip { view.UI.PlacementTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ToolTip.PlacementRect"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlacementRect<TView>(this TView view, Windows.Foundation.Rect? value) where TView : ToolTip { view.UI.PlacementRect = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ToolTip.HorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalOffset<TView>(this TView view, double value) where TView : ToolTip { view.UI.HorizontalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ToolTip.Placement"/></summary>
@@ -25172,18 +25961,22 @@ namespace CSharpMarkup.WinUI // ToolTip
         public static TView IsOpen<TView>(this TView view, bool value) where TView : ToolTip { view.UI.IsOpen = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ToolTip.HorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> HorizontalOffset<TTarget>(this TTarget target) where TTarget : ToolTip
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ToolTip.HorizontalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ToolTip.PlacementRect"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.Foundation.Rect?> PlacementRect<TTarget>(this TTarget target) where TTarget : ToolTip
         => DependencyProperty<TTarget, Windows.Foundation.Rect?>.Get(target, Xaml.Controls.ToolTip.PlacementRectProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ToolTip.PlacementTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> PlacementTarget<TTarget>(this TTarget target) where TTarget : ToolTip
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.ToolTip.PlacementTargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ToolTip.VerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> VerticalOffset<TTarget>(this TTarget target) where TTarget : ToolTip
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ToolTip.VerticalOffsetProperty);
 
@@ -26104,6 +26897,7 @@ namespace CSharpMarkup.WinUI // VariableSizedWrapGrid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.VariableSizedWrapGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static VariableSizedWrapGrid VariableSizedWrapGrid(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.VariableSizedWrapGrid();
@@ -26123,6 +26917,7 @@ namespace CSharpMarkup.WinUI // VariableSizedWrapGrid
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.VariableSizedWrapGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static VariableSizedWrapGrid VariableSizedWrapGrid()
         {
             var ui = new Xaml.Controls.VariableSizedWrapGrid();
@@ -26130,6 +26925,7 @@ namespace CSharpMarkup.WinUI // VariableSizedWrapGrid
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.VariableSizedWrapGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static VariableSizedWrapGrid VariableSizedWrapGrid(nint handle)
         {
             var ui = new Xaml.Controls.VariableSizedWrapGrid(handle);
@@ -26137,6 +26933,7 @@ namespace CSharpMarkup.WinUI // VariableSizedWrapGrid
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.VariableSizedWrapGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static VariableSizedWrapGrid VariableSizedWrapGrid(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.VariableSizedWrapGrid(handle);
@@ -26177,60 +26974,76 @@ namespace CSharpMarkup.WinUI // VariableSizedWrapGrid
     public static partial class VariableSizedWrapGridExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.VariableSizedWrapGrid.VerticalChildrenAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView VerticalChildrenAlignment<TView>(this TView view, Xaml.VerticalAlignment value) where TView : VariableSizedWrapGrid { view.UI.VerticalChildrenAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.VariableSizedWrapGrid.Orientation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : VariableSizedWrapGrid { view.UI.Orientation = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.VariableSizedWrapGrid.MaximumRowsOrColumns"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MaximumRowsOrColumns<TView>(this TView view, int value) where TView : VariableSizedWrapGrid { view.UI.MaximumRowsOrColumns = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.VariableSizedWrapGrid.ItemWidth"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ItemWidth<TView>(this TView view, double value) where TView : VariableSizedWrapGrid { view.UI.ItemWidth = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.VariableSizedWrapGrid.ItemHeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ItemHeight<TView>(this TView view, double value) where TView : VariableSizedWrapGrid { view.UI.ItemHeight = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.VariableSizedWrapGrid.HorizontalChildrenAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalChildrenAlignment<TView>(this TView view, Xaml.HorizontalAlignment value) where TView : VariableSizedWrapGrid { view.UI.HorizontalChildrenAlignment = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VariableSizedWrapGrid.HorizontalChildrenAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.HorizontalAlignment> HorizontalChildrenAlignment<TTarget>(this TTarget target) where TTarget : VariableSizedWrapGrid
         => DependencyProperty<TTarget, Xaml.HorizontalAlignment>.Get(target, Xaml.Controls.VariableSizedWrapGrid.HorizontalChildrenAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VariableSizedWrapGrid.ItemHeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ItemHeight<TTarget>(this TTarget target) where TTarget : VariableSizedWrapGrid
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.VariableSizedWrapGrid.ItemHeightProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VariableSizedWrapGrid.ItemWidth"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ItemWidth<TTarget>(this TTarget target) where TTarget : VariableSizedWrapGrid
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.VariableSizedWrapGrid.ItemWidthProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VariableSizedWrapGrid.MaximumRowsOrColumns"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> MaximumRowsOrColumns<TTarget>(this TTarget target) where TTarget : VariableSizedWrapGrid
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.VariableSizedWrapGrid.MaximumRowsOrColumnsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VariableSizedWrapGrid.Orientation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : VariableSizedWrapGrid
         => DependencyProperty<TTarget, Xaml.Controls.Orientation>.Get(target, Xaml.Controls.VariableSizedWrapGrid.OrientationProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VariableSizedWrapGrid.VerticalChildrenAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.VerticalAlignment> VerticalChildrenAlignment<TTarget>(this TTarget target) where TTarget : VariableSizedWrapGrid
         => DependencyProperty<TTarget, Xaml.VerticalAlignment>.Get(target, Xaml.Controls.VariableSizedWrapGrid.VerticalChildrenAlignmentProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.VariableSizedWrapGrid.ColumnSpan"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget VariableSizedWrapGrid_ColumnSpan<TTarget>(this TTarget target, int value) where TTarget : UIElement
         { Xaml.Controls.VariableSizedWrapGrid.SetColumnSpan(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VariableSizedWrapGrid.ColumnSpan"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> VariableSizedWrapGrid_ColumnSpan<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.VariableSizedWrapGrid.ColumnSpanProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.VariableSizedWrapGrid.RowSpan"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget VariableSizedWrapGrid_RowSpan<TTarget>(this TTarget target, int value) where TTarget : UIElement
         { Xaml.Controls.VariableSizedWrapGrid.SetRowSpan(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VariableSizedWrapGrid.RowSpan"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> VariableSizedWrapGrid_RowSpan<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.VariableSizedWrapGrid.RowSpanProperty);
 
@@ -26522,6 +27335,7 @@ namespace CSharpMarkup.WinUI // VirtualizingStackPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.VirtualizingStackPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static VirtualizingStackPanel VirtualizingStackPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.VirtualizingStackPanel();
@@ -26541,6 +27355,7 @@ namespace CSharpMarkup.WinUI // VirtualizingStackPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.VirtualizingStackPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static VirtualizingStackPanel VirtualizingStackPanel()
         {
             var ui = new Xaml.Controls.VirtualizingStackPanel();
@@ -26548,6 +27363,7 @@ namespace CSharpMarkup.WinUI // VirtualizingStackPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.VirtualizingStackPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static VirtualizingStackPanel VirtualizingStackPanel(nint handle)
         {
             var ui = new Xaml.Controls.VirtualizingStackPanel(handle);
@@ -26555,6 +27371,7 @@ namespace CSharpMarkup.WinUI // VirtualizingStackPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.VirtualizingStackPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static VirtualizingStackPanel VirtualizingStackPanel(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.VirtualizingStackPanel(handle);
@@ -26595,24 +27412,30 @@ namespace CSharpMarkup.WinUI // VirtualizingStackPanel
     public static partial class VirtualizingStackPanelExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.VirtualizingStackPanel.Orientation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : VirtualizingStackPanel { view.UI.Orientation = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.VirtualizingStackPanel.AreScrollSnapPointsRegular"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AreScrollSnapPointsRegular<TView>(this TView view, bool value) where TView : VirtualizingStackPanel { view.UI.AreScrollSnapPointsRegular = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VirtualizingStackPanel.AreScrollSnapPointsRegular"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> AreScrollSnapPointsRegular<TTarget>(this TTarget target) where TTarget : VirtualizingStackPanel
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.VirtualizingStackPanel.AreScrollSnapPointsRegularProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VirtualizingStackPanel.Orientation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : VirtualizingStackPanel
         => DependencyProperty<TTarget, Xaml.Controls.Orientation>.Get(target, Xaml.Controls.VirtualizingStackPanel.OrientationProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.VirtualizingStackPanel.VirtualizationMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget VirtualizingStackPanel_VirtualizationMode<TTarget>(this TTarget target, Xaml.Controls.VirtualizationMode value) where TTarget : DependencyObject
         { Xaml.Controls.VirtualizingStackPanel.SetVirtualizationMode(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.VirtualizingStackPanel.VirtualizationMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.VirtualizationMode> VirtualizingStackPanel_VirtualizationMode<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, Xaml.Controls.VirtualizationMode>.Get(target, Xaml.Controls.VirtualizingStackPanel.VirtualizationModeProperty);
     }
@@ -26689,6 +27512,7 @@ namespace CSharpMarkup.WinUI // WebView2
     public static partial class WebView2Extensions
     {
         /// <summary>Set <see cref="Xaml.Controls.WebView2.DefaultBackgroundColor"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DefaultBackgroundColor<TView>(this TView view, Windows.UI.Color value) where TView : WebView2 { view.UI.DefaultBackgroundColor = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.WebView2.CanGoBack"/></summary>
@@ -26704,6 +27528,7 @@ namespace CSharpMarkup.WinUI // WebView2
         public static TView IsScrollEnabled<TView>(this TView view, bool value) where TView : WebView2 { view.UI.IsScrollEnabled = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.WebView2.DefaultBackgroundColor"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Color> DefaultBackgroundColor<TTarget>(this TTarget target) where TTarget : WebView2
         => DependencyProperty<TTarget, Windows.UI.Color>.Get(target, Xaml.Controls.WebView2.DefaultBackgroundColorProperty);
 
@@ -26730,6 +27555,7 @@ namespace CSharpMarkup.WinUI // WrapGrid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.WrapGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static WrapGrid WrapGrid(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.WrapGrid();
@@ -26749,6 +27575,7 @@ namespace CSharpMarkup.WinUI // WrapGrid
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.WrapGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static WrapGrid WrapGrid()
         {
             var ui = new Xaml.Controls.WrapGrid();
@@ -26756,6 +27583,7 @@ namespace CSharpMarkup.WinUI // WrapGrid
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.WrapGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static WrapGrid WrapGrid(nint handle)
         {
             var ui = new Xaml.Controls.WrapGrid(handle);
@@ -26763,6 +27591,7 @@ namespace CSharpMarkup.WinUI // WrapGrid
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.WrapGrid"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static WrapGrid WrapGrid(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.WrapGrid(handle);
@@ -26803,44 +27632,56 @@ namespace CSharpMarkup.WinUI // WrapGrid
     public static partial class WrapGridExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.WrapGrid.VerticalChildrenAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView VerticalChildrenAlignment<TView>(this TView view, Xaml.VerticalAlignment value) where TView : WrapGrid { view.UI.VerticalChildrenAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.WrapGrid.Orientation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Orientation<TView>(this TView view, Xaml.Controls.Orientation value) where TView : WrapGrid { view.UI.Orientation = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.WrapGrid.MaximumRowsOrColumns"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView MaximumRowsOrColumns<TView>(this TView view, int value) where TView : WrapGrid { view.UI.MaximumRowsOrColumns = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.WrapGrid.ItemWidth"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ItemWidth<TView>(this TView view, double value) where TView : WrapGrid { view.UI.ItemWidth = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.WrapGrid.ItemHeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ItemHeight<TView>(this TView view, double value) where TView : WrapGrid { view.UI.ItemHeight = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.WrapGrid.HorizontalChildrenAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalChildrenAlignment<TView>(this TView view, Xaml.HorizontalAlignment value) where TView : WrapGrid { view.UI.HorizontalChildrenAlignment = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.WrapGrid.HorizontalChildrenAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.HorizontalAlignment> HorizontalChildrenAlignment<TTarget>(this TTarget target) where TTarget : WrapGrid
         => DependencyProperty<TTarget, Xaml.HorizontalAlignment>.Get(target, Xaml.Controls.WrapGrid.HorizontalChildrenAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.WrapGrid.ItemHeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ItemHeight<TTarget>(this TTarget target) where TTarget : WrapGrid
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.WrapGrid.ItemHeightProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.WrapGrid.ItemWidth"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ItemWidth<TTarget>(this TTarget target) where TTarget : WrapGrid
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.WrapGrid.ItemWidthProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.WrapGrid.MaximumRowsOrColumns"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> MaximumRowsOrColumns<TTarget>(this TTarget target) where TTarget : WrapGrid
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.WrapGrid.MaximumRowsOrColumnsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.WrapGrid.Orientation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Orientation> Orientation<TTarget>(this TTarget target) where TTarget : WrapGrid
         => DependencyProperty<TTarget, Xaml.Controls.Orientation>.Get(target, Xaml.Controls.WrapGrid.OrientationProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.WrapGrid.VerticalChildrenAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.VerticalAlignment> VerticalChildrenAlignment<TTarget>(this TTarget target) where TTarget : WrapGrid
         => DependencyProperty<TTarget, Xaml.VerticalAlignment>.Get(target, Xaml.Controls.WrapGrid.VerticalChildrenAlignmentProperty);
     }
@@ -30492,12 +31333,15 @@ namespace CSharpMarkup.WinUI // CarouselPanel
     public static partial class CarouselPanelExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Primitives.CarouselPanel.ScrollOwner"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ScrollOwner<TView>(this TView view, object value) where TView : CarouselPanel { view.UI.ScrollOwner = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.CarouselPanel.CanVerticallyScroll"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CanVerticallyScroll<TView>(this TView view, bool value) where TView : CarouselPanel { view.UI.CanVerticallyScroll = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.CarouselPanel.CanHorizontallyScroll"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CanHorizontallyScroll<TView>(this TView view, bool value) where TView : CarouselPanel { view.UI.CanHorizontallyScroll = value; return view; }
     }
 }
@@ -30878,6 +31722,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static CommandBarFlyoutCommandBar CommandBarFlyoutCommandBar()
         {
             var ui = new Xaml.Controls.Primitives.CommandBarFlyoutCommandBar();
@@ -30885,6 +31730,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static CommandBarFlyoutCommandBar CommandBarFlyoutCommandBar(nint handle)
         {
             var ui = new Xaml.Controls.Primitives.CommandBarFlyoutCommandBar(handle);
@@ -30892,6 +31738,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static CommandBarFlyoutCommandBar CommandBarFlyoutCommandBar(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.Primitives.CommandBarFlyoutCommandBar(handle);
@@ -30935,6 +31782,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBarTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static CommandBarFlyoutCommandBarTemplateSettings CommandBarFlyoutCommandBarTemplateSettings(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings();
@@ -30944,6 +31792,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBarTemplateSettings
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static CommandBarFlyoutCommandBarTemplateSettings CommandBarFlyoutCommandBarTemplateSettings()
         {
             var ui = new Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings();
@@ -31218,18 +32067,23 @@ namespace CSharpMarkup.WinUI // FlyoutBase
     public static partial class FlyoutBaseExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Primitives.FlyoutBase.ShowMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ShowMode<TView>(this TView view, Xaml.Controls.Primitives.FlyoutShowMode value) where TView : FlyoutBase { view.UI.ShowMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.FlyoutBase.ShouldConstrainToRootBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ShouldConstrainToRootBounds<TView>(this TView view, bool value) where TView : FlyoutBase { view.UI.ShouldConstrainToRootBounds = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.FlyoutBase.OverlayInputPassThroughElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OverlayInputPassThroughElement<TView>(this TView view, Xaml.DependencyObject value) where TView : FlyoutBase { view.UI.OverlayInputPassThroughElement = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.FlyoutBase.ElementSoundMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ElementSoundMode<TView>(this TView view, Xaml.ElementSoundMode value) where TView : FlyoutBase { view.UI.ElementSoundMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.FlyoutBase.AreOpenCloseAnimationsEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AreOpenCloseAnimationsEnabled<TView>(this TView view, bool value) where TView : FlyoutBase { view.UI.AreOpenCloseAnimationsEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.FlyoutBase.UseNativePopup"/></summary>
@@ -31257,30 +32111,37 @@ namespace CSharpMarkup.WinUI // FlyoutBase
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : FlyoutBase { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.AreOpenCloseAnimationsEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> AreOpenCloseAnimationsEnabled<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.FlyoutBase.AreOpenCloseAnimationsEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.ElementSoundMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.ElementSoundMode> ElementSoundMode<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, Xaml.ElementSoundMode>.Get(target, Xaml.Controls.Primitives.FlyoutBase.ElementSoundModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.InputDevicePrefersPrimaryCommands"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> InputDevicePrefersPrimaryCommands<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.FlyoutBase.InputDevicePrefersPrimaryCommandsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.OverlayInputPassThroughElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> OverlayInputPassThroughElement<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.Primitives.FlyoutBase.OverlayInputPassThroughElementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.ShouldConstrainToRootBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ShouldConstrainToRootBounds<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.FlyoutBase.ShouldConstrainToRootBoundsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.ShowMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutShowMode> ShowMode<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutShowMode>.Get(target, Xaml.Controls.Primitives.FlyoutBase.ShowModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.Target"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.FrameworkElement> Target<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, Xaml.FrameworkElement>.Get(target, Xaml.Controls.Primitives.FlyoutBase.TargetProperty);
 
@@ -31419,276 +32280,360 @@ namespace CSharpMarkup.WinUI // GridViewItemPresenter
     public static partial class GridViewItemPresenterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectionCheckMarkVisualEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionCheckMarkVisualEnabled<TView>(this TView view, bool value) where TView : GridViewItemPresenter { view.UI.SelectionCheckMarkVisualEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBorderBrush<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedPointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.SelectedPointerOverBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedPointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBackground<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.SelectedPointerOverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedPointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBackground<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.SelectedPointerOverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.SelectedForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedForeground<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.SelectedForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedForeground<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.SelectedForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderThickness<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : GridViewItemPresenter { view.UI.SelectedBorderThickness = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderThickness<TView>(this TView view, double uniform) where TView : GridViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderThickness<TView>(this TView view, double horizontal, double vertical) where TView : GridViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderThickness<TView>(this TView view, double left, double top, double right, double bottom) where TView : GridViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : GridViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.SelectedBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBackground<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.SelectedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBackground<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.SelectedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.ReorderHintOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ReorderHintOffset<TView>(this TView view, double value) where TView : GridViewItemPresenter { view.UI.ReorderHintOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackgroundMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : GridViewItemPresenter { view.UI.PointerOverBackgroundMargin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackgroundMargin<TView>(this TView view, double uniform) where TView : GridViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackgroundMargin<TView>(this TView view, double horizontal, double vertical) where TView : GridViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackgroundMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : GridViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackgroundMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : GridViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.PointerOverBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackground<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.PointerOverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackground<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.PointerOverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PlaceholderBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.PlaceholderBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PlaceholderBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderBackground<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.PlaceholderBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PlaceholderBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderBackground<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.PlaceholderBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterVerticalContentAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GridViewItemPresenterVerticalContentAlignment<TView>(this TView view, Xaml.VerticalAlignment value) where TView : GridViewItemPresenter { view.UI.GridViewItemPresenterVerticalContentAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GridViewItemPresenterPadding<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : GridViewItemPresenter { view.UI.GridViewItemPresenterPadding = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GridViewItemPresenterPadding<TView>(this TView view, double uniform) where TView : GridViewItemPresenter { view.UI.GridViewItemPresenterPadding = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GridViewItemPresenterPadding<TView>(this TView view, double horizontal, double vertical) where TView : GridViewItemPresenter { view.UI.GridViewItemPresenterPadding = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GridViewItemPresenterPadding<TView>(this TView view, double left, double top, double right, double bottom) where TView : GridViewItemPresenter { view.UI.GridViewItemPresenterPadding = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GridViewItemPresenterPaddings<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : GridViewItemPresenter { view.UI.GridViewItemPresenterPadding = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterHorizontalContentAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GridViewItemPresenterHorizontalContentAlignment<TView>(this TView view, Xaml.HorizontalAlignment value) where TView : GridViewItemPresenter { view.UI.GridViewItemPresenterHorizontalContentAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.FocusBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FocusBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.FocusBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.FocusBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FocusBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.FocusBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.FocusBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FocusBorderBrush<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.FocusBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DragOpacity"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragOpacity<TView>(this TView view, double value) where TView : GridViewItemPresenter { view.UI.DragOpacity = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DragForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.DragForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DragForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragForeground<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.DragForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DragForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragForeground<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.DragForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DragBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.DragBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DragBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragBackground<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.DragBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DragBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragBackground<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.DragBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DisabledOpacity"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DisabledOpacity<TView>(this TView view, double value) where TView : GridViewItemPresenter { view.UI.DisabledOpacity = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : GridViewItemPresenter { view.UI.ContentMargin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentMargin<TView>(this TView view, double uniform) where TView : GridViewItemPresenter { view.UI.ContentMargin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentMargin<TView>(this TView view, double horizontal, double vertical) where TView : GridViewItemPresenter { view.UI.ContentMargin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : GridViewItemPresenter { view.UI.ContentMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : GridViewItemPresenter { view.UI.ContentMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckSelectingBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckSelectingBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.CheckSelectingBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckSelectingBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckSelectingBrush<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.CheckSelectingBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckSelectingBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckSelectingBrush<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.CheckSelectingBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckHintBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckHintBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.CheckHintBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckHintBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckHintBrush<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.CheckHintBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckHintBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckHintBrush<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.CheckHintBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : GridViewItemPresenter { view.UI.CheckBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBrush<TView>(this TView view, Windows.UI.Color value) where TView : GridViewItemPresenter { view.UI.CheckBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBrush<TView>(this TView view, string color) where TView : GridViewItemPresenter { view.UI.CheckBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBrush<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.CheckBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckHintBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckHintBrush<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.CheckHintBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.CheckSelectingBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckSelectingBrush<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.CheckSelectingBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> ContentMargin<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.ContentMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DisabledOpacity"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> DisabledOpacity<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.DisabledOpacityProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DragBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> DragBackground<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.DragBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DragForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> DragForeground<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.DragForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.DragOpacity"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> DragOpacity<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.DragOpacityProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.FocusBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> FocusBorderBrush<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.FocusBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterHorizontalContentAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.HorizontalAlignment> GridViewItemPresenterHorizontalContentAlignment<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, Xaml.HorizontalAlignment>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterHorizontalContentAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> GridViewItemPresenterPadding<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterPaddingProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterVerticalContentAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.VerticalAlignment> GridViewItemPresenterVerticalContentAlignment<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, Xaml.VerticalAlignment>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.GridViewItemPresenterVerticalContentAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PlaceholderBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PlaceholderBackground<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.PlaceholderBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> PointerOverBackgroundMargin<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackgroundMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PointerOverBackground<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.PointerOverBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.ReorderHintOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ReorderHintOffset<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.ReorderHintOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedBackground<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> SelectedBorderThickness<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.SelectedBorderThicknessProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedForeground<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.SelectedForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedPointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedPointerOverBackground<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.SelectedPointerOverBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedPointerOverBorderBrush<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.SelectedPointerOverBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.GridViewItemPresenter.SelectionCheckMarkVisualEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> SelectionCheckMarkVisualEnabled<TTarget>(this TTarget target) where TTarget : GridViewItemPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.GridViewItemPresenter.SelectionCheckMarkVisualEnabledProperty);
     }
@@ -31915,6 +32860,7 @@ namespace CSharpMarkup.WinUI // JumpListItemBackgroundConverter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static JumpListItemBackgroundConverter JumpListItemBackgroundConverter(CSharpMarkup.WinUI.to.Brush? Enabled = default, CSharpMarkup.WinUI.to.Brush? Disabled = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.Primitives.JumpListItemBackgroundConverter();
@@ -31926,6 +32872,7 @@ namespace CSharpMarkup.WinUI // JumpListItemBackgroundConverter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static JumpListItemBackgroundConverter JumpListItemBackgroundConverter()
         {
             var ui = new Xaml.Controls.Primitives.JumpListItemBackgroundConverter();
@@ -31964,21 +32911,27 @@ namespace CSharpMarkup.WinUI // JumpListItemBackgroundConverter
     public static partial class JumpListItemBackgroundConverterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter.Enabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Enabled<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : JumpListItemBackgroundConverter { view.UI.Enabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter.Enabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Enabled<TView>(this TView view, Windows.UI.Color value) where TView : JumpListItemBackgroundConverter { view.UI.Enabled = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter.Enabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Enabled<TView>(this TView view, string color) where TView : JumpListItemBackgroundConverter { view.UI.Enabled = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter.Disabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Disabled<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : JumpListItemBackgroundConverter { view.UI.Disabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter.Disabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Disabled<TView>(this TView view, Windows.UI.Color value) where TView : JumpListItemBackgroundConverter { view.UI.Disabled = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter.Disabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Disabled<TView>(this TView view, string color) where TView : JumpListItemBackgroundConverter { view.UI.Disabled = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter.DataContext"/></summary>
@@ -31988,10 +32941,12 @@ namespace CSharpMarkup.WinUI // JumpListItemBackgroundConverter
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : JumpListItemBackgroundConverter { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter.Disabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> Disabled<TTarget>(this TTarget target) where TTarget : JumpListItemBackgroundConverter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.JumpListItemBackgroundConverter.DisabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.JumpListItemBackgroundConverter.Enabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> Enabled<TTarget>(this TTarget target) where TTarget : JumpListItemBackgroundConverter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.JumpListItemBackgroundConverter.EnabledProperty);
 
@@ -32010,6 +32965,7 @@ namespace CSharpMarkup.WinUI // JumpListItemForegroundConverter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static JumpListItemForegroundConverter JumpListItemForegroundConverter(CSharpMarkup.WinUI.to.Brush? Enabled = default, CSharpMarkup.WinUI.to.Brush? Disabled = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.Primitives.JumpListItemForegroundConverter();
@@ -32021,6 +32977,7 @@ namespace CSharpMarkup.WinUI // JumpListItemForegroundConverter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static JumpListItemForegroundConverter JumpListItemForegroundConverter()
         {
             var ui = new Xaml.Controls.Primitives.JumpListItemForegroundConverter();
@@ -32059,21 +33016,27 @@ namespace CSharpMarkup.WinUI // JumpListItemForegroundConverter
     public static partial class JumpListItemForegroundConverterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter.Enabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Enabled<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : JumpListItemForegroundConverter { view.UI.Enabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter.Enabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Enabled<TView>(this TView view, Windows.UI.Color value) where TView : JumpListItemForegroundConverter { view.UI.Enabled = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter.Enabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Enabled<TView>(this TView view, string color) where TView : JumpListItemForegroundConverter { view.UI.Enabled = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter.Disabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Disabled<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : JumpListItemForegroundConverter { view.UI.Disabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter.Disabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Disabled<TView>(this TView view, Windows.UI.Color value) where TView : JumpListItemForegroundConverter { view.UI.Disabled = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter.Disabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Disabled<TView>(this TView view, string color) where TView : JumpListItemForegroundConverter { view.UI.Disabled = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter.DataContext"/></summary>
@@ -32083,10 +33046,12 @@ namespace CSharpMarkup.WinUI // JumpListItemForegroundConverter
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : JumpListItemForegroundConverter { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter.Disabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> Disabled<TTarget>(this TTarget target) where TTarget : JumpListItemForegroundConverter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.JumpListItemForegroundConverter.DisabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.JumpListItemForegroundConverter.Enabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> Enabled<TTarget>(this TTarget target) where TTarget : JumpListItemForegroundConverter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.JumpListItemForegroundConverter.EnabledProperty);
 
@@ -32234,727 +33199,949 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
     public static partial class ListViewItemPresenterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterVerticalContentAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ListViewItemPresenterVerticalContentAlignment<TView>(this TView view, Xaml.VerticalAlignment value) where TView : ListViewItemPresenter { view.UI.ListViewItemPresenterVerticalContentAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ListViewItemPresenterPadding<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ListViewItemPresenter { view.UI.ListViewItemPresenterPadding = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ListViewItemPresenterPadding<TView>(this TView view, double uniform) where TView : ListViewItemPresenter { view.UI.ListViewItemPresenterPadding = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ListViewItemPresenterPadding<TView>(this TView view, double horizontal, double vertical) where TView : ListViewItemPresenter { view.UI.ListViewItemPresenterPadding = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ListViewItemPresenterPadding<TView>(this TView view, double left, double top, double right, double bottom) where TView : ListViewItemPresenter { view.UI.ListViewItemPresenterPadding = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ListViewItemPresenterPaddings<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ListViewItemPresenter { view.UI.ListViewItemPresenterPadding = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterHorizontalContentAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ListViewItemPresenterHorizontalContentAlignment<TView>(this TView view, Xaml.HorizontalAlignment value) where TView : ListViewItemPresenter { view.UI.ListViewItemPresenterHorizontalContentAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.FocusSecondaryBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FocusSecondaryBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.FocusSecondaryBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.FocusSecondaryBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FocusSecondaryBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.FocusSecondaryBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.FocusSecondaryBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FocusSecondaryBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.FocusSecondaryBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.FocusBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FocusBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.FocusBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.FocusBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FocusBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.FocusBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.FocusBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FocusBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.FocusBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragOpacity"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragOpacity<TView>(this TView view, double value) where TView : ListViewItemPresenter { view.UI.DragOpacity = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.RevealBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.RevealBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.RevealBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.DragBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.DragBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.DragBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DisabledOpacity"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DisabledOpacity<TView>(this TView view, double value) where TView : ListViewItemPresenter { view.UI.DisabledOpacity = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ListViewItemPresenter { view.UI.ContentMargin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentMargin<TView>(this TView view, double uniform) where TView : ListViewItemPresenter { view.UI.ContentMargin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentMargin<TView>(this TView view, double horizontal, double vertical) where TView : ListViewItemPresenter { view.UI.ContentMargin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : ListViewItemPresenter { view.UI.ContentMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ListViewItemPresenter { view.UI.ContentMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckSelectingBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckSelectingBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckSelectingBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckSelectingBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckSelectingBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckSelectingBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckSelectingBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckSelectingBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckSelectingBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckPressedBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckPressedBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckPressedBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckPressedBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckPressedBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckPressedBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckMode<TView>(this TView view, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode value) where TView : ListViewItemPresenter { view.UI.CheckMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckHintBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckHintBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckHintBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckHintBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckHintBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckHintBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckHintBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckHintBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckHintBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedPressedBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPressedBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedPressedBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPressedBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedPressedBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPressedBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedPointerOverBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPointerOverBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedPointerOverBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPointerOverBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedPointerOverBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedPointerOverBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedDisabledBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedDisabledBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedDisabledBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedDisabledBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedDisabledBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedDisabledBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxSelectedBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxSelectedBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPressedBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPressedBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPressedBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionCheckMarkVisualEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionCheckMarkVisualEnabled<TView>(this TView view, bool value) where TView : ListViewItemPresenter { view.UI.SelectionCheckMarkVisualEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPointerOverBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPointerOverBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPointerOverBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPointerOverBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPointerOverBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPointerOverBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxDisabledBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxDisabledBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxDisabledBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxDisabledBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxDisabledBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxDisabledBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxDisabledBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxCornerRadius"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxCornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : ListViewItemPresenter { view.UI.CheckBoxCornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckDisabledBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckDisabledBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckDisabledBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckDisabledBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckDisabledBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckDisabledBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PlaceholderBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PlaceholderBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PlaceholderBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PlaceholderBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PlaceholderBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PlaceholderBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorPressedBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPressedBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorPressedBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPressedBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorPressedBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPressedBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorPointerOverBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPointerOverBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorPointerOverBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPointerOverBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorPointerOverBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorPointerOverBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorMode<TView>(this TView view, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorDisabledBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorDisabledBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorDisabledBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorDisabledBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorDisabledBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorDisabledBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorCornerRadius"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorCornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorCornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPressedBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPressedBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CheckBoxPressedBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.CheckBoxPressedBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPressedBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedPressedBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPressedBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedPressedBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPressedBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedPressedBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPressedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedPressedBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPressedBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedPressedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPressedBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedPressedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedPointerOverBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedPointerOverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedInnerBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedInnerBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedInnerBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedInnerBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedInnerBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedInnerBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedInnerBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedInnerBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedInnerBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedForeground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedForeground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorVisualEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionIndicatorVisualEnabled<TView>(this TView view, bool value) where TView : ListViewItemPresenter { view.UI.SelectionIndicatorVisualEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedDisabledBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedDisabledBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderThickness<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderThickness<TView>(this TView view, double uniform) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderThickness<TView>(this TView view, double horizontal, double vertical) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderThickness<TView>(this TView view, double left, double top, double right, double bottom) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ListViewItemPresenter { view.UI.SelectedBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.SelectedBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.SelectedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.SelectedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBorderThickness<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBorderThickness<TView>(this TView view, double uniform) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBorderThickness<TView>(this TView view, double horizontal, double vertical) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBorderThickness<TView>(this TView view, double left, double top, double right, double bottom) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ListViewItemPresenter { view.UI.RevealBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.RevealBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.RevealBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.RevealBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackgroundShowsAboveContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RevealBackgroundShowsAboveContent<TView>(this TView view, bool value) where TView : ListViewItemPresenter { view.UI.RevealBackgroundShowsAboveContent = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.DragForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragForeground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.DragForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DragForeground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.DragForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ReorderHintOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ReorderHintOffset<TView>(this TView view, double value) where TView : ListViewItemPresenter { view.UI.ReorderHintOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PressedBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PressedBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PressedBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PressedBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PressedBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PressedBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PointerOverForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverForeground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PointerOverForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverForeground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PointerOverForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PointerOverBorderBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PointerOverBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBorderBrush<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PointerOverBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackgroundMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackgroundMargin<TView>(this TView view, double uniform) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackgroundMargin<TView>(this TView view, double horizontal, double vertical) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackgroundMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackgroundMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ListViewItemPresenter { view.UI.PointerOverBackgroundMargin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ListViewItemPresenter { view.UI.PointerOverBackground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackground<TView>(this TView view, Windows.UI.Color value) where TView : ListViewItemPresenter { view.UI.PointerOverBackground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView PointerOverBackground<TView>(this TView view, string color) where TView : ListViewItemPresenter { view.UI.PointerOverBackground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxCornerRadius"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> CheckBoxCornerRadius<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxCornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxDisabledBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxDisabledBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxDisabledBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxPointerOverBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxPointerOverBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPointerOverBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxPressedBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxPressedBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxPressedBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxSelectedBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxSelectedDisabledBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedDisabledBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxSelectedPointerOverBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPointerOverBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBoxSelectedPressedBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBoxSelectedPressedBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckDisabledBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckDisabledBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckHintBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckHintBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckHintBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode> CheckMode<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckPressedBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckPressedBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.CheckSelectingBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> CheckSelectingBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.CheckSelectingBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ContentMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> ContentMargin<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.ContentMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DisabledOpacity"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> DisabledOpacity<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.DisabledOpacityProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> DragBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.DragBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> DragForeground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.DragForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.DragOpacity"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> DragOpacity<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.DragOpacityProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.FocusBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> FocusBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.FocusBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.FocusSecondaryBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> FocusSecondaryBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.FocusSecondaryBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterHorizontalContentAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.HorizontalAlignment> ListViewItemPresenterHorizontalContentAlignment<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, Xaml.HorizontalAlignment>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterHorizontalContentAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterPadding"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> ListViewItemPresenterPadding<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterPaddingProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterVerticalContentAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.VerticalAlignment> ListViewItemPresenterVerticalContentAlignment<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, Xaml.VerticalAlignment>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.ListViewItemPresenterVerticalContentAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PlaceholderBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PlaceholderBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.PlaceholderBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMargin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> PointerOverBackgroundMargin<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PointerOverBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PointerOverBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PointerOverForeground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.PointerOverForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.PressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PressedBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.PressedBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.ReorderHintOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ReorderHintOffset<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.ReorderHintOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> RevealBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackgroundShowsAboveContent"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> RevealBackgroundShowsAboveContent<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.RevealBackgroundShowsAboveContentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> RevealBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> RevealBorderThickness<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.RevealBorderThicknessProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThickness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> SelectedBorderThickness<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedBorderThicknessProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedDisabledBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedDisabledBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedDisabledBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForeground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedForeground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedForegroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedInnerBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedInnerBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedInnerBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedPointerOverBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedPointerOverBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPointerOverBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackground"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedPressedBackground<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBorderBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectedPressedBorderBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectedPressedBorderBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionCheckMarkVisualEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> SelectionCheckMarkVisualEnabled<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionCheckMarkVisualEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectionIndicatorBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorCornerRadius"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> SelectionIndicatorCornerRadius<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorCornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectionIndicatorDisabledBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorDisabledBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode> SelectionIndicatorMode<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPointerOverBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectionIndicatorPointerOverBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPointerOverBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPressedBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SelectionIndicatorPressedBrush<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorPressedBrushProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorVisualEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> SelectionIndicatorVisualEnabled<TTarget>(this TTarget target) where TTarget : ListViewItemPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.ListViewItemPresenter.SelectionIndicatorVisualEnabledProperty);
     }
@@ -33536,6 +34723,7 @@ namespace CSharpMarkup.WinUI // OrientedVirtualizingPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.OrientedVirtualizingPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static OrientedVirtualizingPanel OrientedVirtualizingPanel(params Microsoft.UI.Xaml.UIElement[] Children)
         {
             var ui = new Xaml.Controls.Primitives.OrientedVirtualizingPanel();
@@ -33555,6 +34743,7 @@ namespace CSharpMarkup.WinUI // OrientedVirtualizingPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.OrientedVirtualizingPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static OrientedVirtualizingPanel OrientedVirtualizingPanel()
         {
             var ui = new Xaml.Controls.Primitives.OrientedVirtualizingPanel();
@@ -33562,6 +34751,7 @@ namespace CSharpMarkup.WinUI // OrientedVirtualizingPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.OrientedVirtualizingPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static OrientedVirtualizingPanel OrientedVirtualizingPanel(nint handle)
         {
             var ui = new Xaml.Controls.Primitives.OrientedVirtualizingPanel(handle);
@@ -33569,6 +34759,7 @@ namespace CSharpMarkup.WinUI // OrientedVirtualizingPanel
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.OrientedVirtualizingPanel"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static OrientedVirtualizingPanel OrientedVirtualizingPanel(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.Primitives.OrientedVirtualizingPanel(handle);
@@ -33609,12 +34800,15 @@ namespace CSharpMarkup.WinUI // OrientedVirtualizingPanel
     public static partial class OrientedVirtualizingPanelExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Primitives.OrientedVirtualizingPanel.ScrollOwner"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ScrollOwner<TView>(this TView view, object value) where TView : OrientedVirtualizingPanel { view.UI.ScrollOwner = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.OrientedVirtualizingPanel.CanVerticallyScroll"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CanVerticallyScroll<TView>(this TView view, bool value) where TView : OrientedVirtualizingPanel { view.UI.CanVerticallyScroll = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.OrientedVirtualizingPanel.CanHorizontallyScroll"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CanHorizontallyScroll<TView>(this TView view, bool value) where TView : OrientedVirtualizingPanel { view.UI.CanHorizontallyScroll = value; return view; }
     }
 }
@@ -33966,9 +35160,11 @@ namespace CSharpMarkup.WinUI // Popup
     public static partial class PopupExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Primitives.Popup.ShouldConstrainToRootBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ShouldConstrainToRootBounds<TView>(this TView view, bool value) where TView : Popup { view.UI.ShouldConstrainToRootBounds = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.Popup.ChildTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ChildTransitions<TView>(this TView view, Xaml.Media.Animation.TransitionCollection value) where TView : Popup { view.UI.ChildTransitions = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.Popup.LightDismissOverlayMode"/></summary>
@@ -33996,10 +35192,12 @@ namespace CSharpMarkup.WinUI // Popup
         public static TView IsLightDismissEnabled<TView>(this TView view, bool value) where TView : Popup { view.UI.IsLightDismissEnabled = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.Popup.ChildTransitions"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection> ChildTransitions<TTarget>(this TTarget target) where TTarget : Popup
         => DependencyProperty<TTarget, Xaml.Media.Animation.TransitionCollection>.Get(target, Xaml.Controls.Primitives.Popup.ChildTransitionsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.Popup.ShouldConstrainToRootBounds"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ShouldConstrainToRootBounds<TTarget>(this TTarget target) where TTarget : Popup
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.Popup.ShouldConstrainToRootBoundsProperty);
 
@@ -34927,6 +36125,7 @@ namespace CSharpMarkup.WinUI // ToolTipTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ToolTipTemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ToolTipTemplateSettings ToolTipTemplateSettings(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.Primitives.ToolTipTemplateSettings();
@@ -34936,6 +36135,7 @@ namespace CSharpMarkup.WinUI // ToolTipTemplateSettings
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ToolTipTemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ToolTipTemplateSettings ToolTipTemplateSettings()
         {
             var ui = new Xaml.Controls.Primitives.ToolTipTemplateSettings();
@@ -35324,49 +36524,63 @@ namespace CSharpMarkup.WinUI // Block
     public static partial class BlockExtensions
     {
         /// <summary>Set <see cref="Xaml.Documents.Block.TextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TextAlignment<TView>(this TView view, Xaml.TextAlignment value) where TView : Block { view.UI.TextAlignment = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Block.Margin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Margin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : Block { view.UI.Margin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Block.Margin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Margin<TView>(this TView view, double uniform) where TView : Block { view.UI.Margin = Helpers.Thickness(uniform); return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Block.Margin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Margin<TView>(this TView view, double horizontal, double vertical) where TView : Block { view.UI.Margin = Helpers.Thickness(horizontal, vertical); return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Block.Margin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Margin<TView>(this TView view, double left, double top, double right, double bottom) where TView : Block { view.UI.Margin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Block.Margin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Margins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : Block { view.UI.Margin = Helpers.Thickness(left, top, right, bottom); return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Block.LineStackingStrategy"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LineStackingStrategy<TView>(this TView view, Xaml.LineStackingStrategy value) where TView : Block { view.UI.LineStackingStrategy = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Block.LineHeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LineHeight<TView>(this TView view, double value) where TView : Block { view.UI.LineHeight = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Block.HorizontalTextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalTextAlignment<TView>(this TView view, Xaml.TextAlignment value) where TView : Block { view.UI.HorizontalTextAlignment = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Block.HorizontalTextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextAlignment> HorizontalTextAlignment<TTarget>(this TTarget target) where TTarget : Block
         => DependencyProperty<TTarget, Xaml.TextAlignment>.Get(target, Xaml.Documents.Block.HorizontalTextAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Block.LineHeight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> LineHeight<TTarget>(this TTarget target) where TTarget : Block
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Documents.Block.LineHeightProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Block.LineStackingStrategy"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.LineStackingStrategy> LineStackingStrategy<TTarget>(this TTarget target) where TTarget : Block
         => DependencyProperty<TTarget, Xaml.LineStackingStrategy>.Get(target, Xaml.Documents.Block.LineStackingStrategyProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Block.Margin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> Margin<TTarget>(this TTarget target) where TTarget : Block
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Xaml.Documents.Block.MarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Block.TextAlignment"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.TextAlignment> TextAlignment<TTarget>(this TTarget target) where TTarget : Block
         => DependencyProperty<TTarget, Xaml.TextAlignment>.Get(target, Xaml.Documents.Block.TextAlignmentProperty);
     }
@@ -35480,6 +36694,7 @@ namespace CSharpMarkup.WinUI // Glyphs
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Documents.Glyphs"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static Glyphs Glyphs(string UnicodeString = default, Xaml.Media.StyleSimulations? StyleSimulations = default, double? OriginY = default, double? OriginX = default, bool? IsColorFontEnabled = default, string Indices = default, Uri FontUri = default, double? FontRenderingEmSize = default, CSharpMarkup.WinUI.to.Brush? Fill = default, int? ColorFontPaletteIndex = default)
         {
             var ui = new Xaml.Documents.Glyphs();
@@ -35497,6 +36712,7 @@ namespace CSharpMarkup.WinUI // Glyphs
         }
 
         /// <summary>Create a <see cref="Xaml.Documents.Glyphs"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static Glyphs Glyphs()
         {
             var ui = new Xaml.Documents.Glyphs();
@@ -35504,6 +36720,7 @@ namespace CSharpMarkup.WinUI // Glyphs
         }
 
         /// <summary>Create a <see cref="Xaml.Documents.Glyphs"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static Glyphs Glyphs(nint handle)
         {
             var ui = new Xaml.Documents.Glyphs(handle);
@@ -35511,6 +36728,7 @@ namespace CSharpMarkup.WinUI // Glyphs
         }
 
         /// <summary>Create a <see cref="Xaml.Documents.Glyphs"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static Glyphs Glyphs(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Documents.Glyphs(handle);
@@ -35551,78 +36769,100 @@ namespace CSharpMarkup.WinUI // Glyphs
     public static partial class GlyphsExtensions
     {
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.UnicodeString"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView UnicodeString<TView>(this TView view, string value) where TView : Glyphs { view.UI.UnicodeString = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.StyleSimulations"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView StyleSimulations<TView>(this TView view, Xaml.Media.StyleSimulations value) where TView : Glyphs { view.UI.StyleSimulations = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.OriginY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OriginY<TView>(this TView view, double value) where TView : Glyphs { view.UI.OriginY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.OriginX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OriginX<TView>(this TView view, double value) where TView : Glyphs { view.UI.OriginX = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.IsColorFontEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsColorFontEnabled<TView>(this TView view, bool value) where TView : Glyphs { view.UI.IsColorFontEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.Indices"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Indices<TView>(this TView view, string value) where TView : Glyphs { view.UI.Indices = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.FontUri"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FontUri<TView>(this TView view, Uri value) where TView : Glyphs { view.UI.FontUri = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.FontRenderingEmSize"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FontRenderingEmSize<TView>(this TView view, double value) where TView : Glyphs { view.UI.FontRenderingEmSize = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.Fill"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Fill<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : Glyphs { view.UI.Fill = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.Fill"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Fill<TView>(this TView view, Windows.UI.Color value) where TView : Glyphs { view.UI.Fill = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.Fill"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Fill<TView>(this TView view, string color) where TView : Glyphs { view.UI.Fill = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Glyphs.ColorFontPaletteIndex"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ColorFontPaletteIndex<TView>(this TView view, int value) where TView : Glyphs { view.UI.ColorFontPaletteIndex = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Glyphs.ColorFontPaletteIndex"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> ColorFontPaletteIndex<TTarget>(this TTarget target) where TTarget : Glyphs
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Documents.Glyphs.ColorFontPaletteIndexProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Glyphs.Fill"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> Fill<TTarget>(this TTarget target) where TTarget : Glyphs
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Documents.Glyphs.FillProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Glyphs.FontRenderingEmSize"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> FontRenderingEmSize<TTarget>(this TTarget target) where TTarget : Glyphs
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Documents.Glyphs.FontRenderingEmSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Glyphs.FontUri"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Uri> FontUri<TTarget>(this TTarget target) where TTarget : Glyphs
         => DependencyProperty<TTarget, Uri>.Get(target, Xaml.Documents.Glyphs.FontUriProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Glyphs.Indices"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> Indices<TTarget>(this TTarget target) where TTarget : Glyphs
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Documents.Glyphs.IndicesProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Glyphs.IsColorFontEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsColorFontEnabled<TTarget>(this TTarget target) where TTarget : Glyphs
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Documents.Glyphs.IsColorFontEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Glyphs.OriginX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> OriginX<TTarget>(this TTarget target) where TTarget : Glyphs
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Documents.Glyphs.OriginXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Glyphs.OriginY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> OriginY<TTarget>(this TTarget target) where TTarget : Glyphs
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Documents.Glyphs.OriginYProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Glyphs.StyleSimulations"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.StyleSimulations> StyleSimulations<TTarget>(this TTarget target) where TTarget : Glyphs
         => DependencyProperty<TTarget, Xaml.Media.StyleSimulations>.Get(target, Xaml.Documents.Glyphs.StyleSimulationsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Glyphs.UnicodeString"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> UnicodeString<TTarget>(this TTarget target) where TTarget : Glyphs
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Documents.Glyphs.UnicodeStringProperty);
     }
@@ -35692,6 +36932,7 @@ namespace CSharpMarkup.WinUI // Hyperlink
     public static partial class HyperlinkExtensions
     {
         /// <summary>Set <see cref="Xaml.Documents.Hyperlink.ElementSoundMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ElementSoundMode<TView>(this TView view, Xaml.ElementSoundMode value) where TView : Hyperlink { view.UI.ElementSoundMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.Hyperlink.NavigateUri"/></summary>
@@ -35734,6 +36975,7 @@ namespace CSharpMarkup.WinUI // Hyperlink
         public static TView XYFocusUpNavigationStrategy<TView>(this TView view, Xaml.Input.XYFocusNavigationStrategy value) where TView : Hyperlink { view.UI.XYFocusUpNavigationStrategy = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Hyperlink.ElementSoundMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.ElementSoundMode> ElementSoundMode<TTarget>(this TTarget target) where TTarget : Hyperlink
         => DependencyProperty<TTarget, Xaml.ElementSoundMode>.Get(target, Xaml.Documents.Hyperlink.ElementSoundModeProperty);
 
@@ -35810,6 +37052,7 @@ namespace CSharpMarkup.WinUI // InlineUIContainer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Documents.InlineUIContainer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static InlineUIContainer InlineUIContainer(Xaml.UIElement Child = default)
         {
             var ui = new Xaml.Documents.InlineUIContainer();
@@ -35818,6 +37061,7 @@ namespace CSharpMarkup.WinUI // InlineUIContainer
         }
 
         /// <summary>Create a <see cref="Xaml.Documents.InlineUIContainer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static InlineUIContainer InlineUIContainer()
         {
             var ui = new Xaml.Documents.InlineUIContainer();
@@ -35858,6 +37102,7 @@ namespace CSharpMarkup.WinUI // InlineUIContainer
     public static partial class InlineUIContainerExtensions
     {
         /// <summary>Set <see cref="Xaml.Documents.InlineUIContainer.Child"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Child<TView>(this TView view, Xaml.UIElement value) where TView : InlineUIContainer { view.UI.Child = value; return view; }
     }
 }
@@ -36099,9 +37344,11 @@ namespace CSharpMarkup.WinUI // Run
     public static partial class RunExtensions
     {
         /// <summary>Set <see cref="Xaml.Documents.Run.FlowDirection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FlowDirection<TView>(this TView view, Xaml.FlowDirection value) where TView : Run { view.UI.FlowDirection = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Run.FlowDirection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.FlowDirection> FlowDirection<TTarget>(this TTarget target) where TTarget : Run
         => DependencyProperty<TTarget, Xaml.FlowDirection>.Get(target, Xaml.Documents.Run.FlowDirectionProperty);
 
@@ -36193,33 +37440,43 @@ namespace CSharpMarkup.WinUI // TextElement
     public static partial class TextElementExtensions
     {
         /// <summary>Set <see cref="Xaml.Documents.TextElement.Language"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Language<TView>(this TView view, string value) where TView : TextElement { view.UI.Language = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.KeyTipVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeyTipVerticalOffset<TView>(this TView view, double value) where TView : TextElement { view.UI.KeyTipVerticalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.KeyTipPlacementMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeyTipPlacementMode<TView>(this TView view, Xaml.Input.KeyTipPlacementMode value) where TView : TextElement { view.UI.KeyTipPlacementMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.KeyTipHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeyTipHorizontalOffset<TView>(this TView view, double value) where TView : TextElement { view.UI.KeyTipHorizontalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextScaleFactorEnabled<TView>(this TView view, bool value) where TView : TextElement { view.UI.IsTextScaleFactorEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.IsAccessKeyScope"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsAccessKeyScope<TView>(this TView view, bool value) where TView : TextElement { view.UI.IsAccessKeyScope = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.FontStretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FontStretch<TView>(this TView view, Windows.UI.Text.FontStretch value) where TView : TextElement { view.UI.FontStretch = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.ExitDisplayModeOnAccessKeyInvoked"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ExitDisplayModeOnAccessKeyInvoked<TView>(this TView view, bool value) where TView : TextElement { view.UI.ExitDisplayModeOnAccessKeyInvoked = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.AccessKeyScopeOwner"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AccessKeyScopeOwner<TView>(this TView view, Xaml.DependencyObject value) where TView : TextElement { view.UI.AccessKeyScopeOwner = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.AccessKey"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AccessKey<TView>(this TView view, string value) where TView : TextElement { view.UI.AccessKey = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.FontFamily"/></summary>
@@ -36268,42 +37525,52 @@ namespace CSharpMarkup.WinUI // TextElement
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : TextElement { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.TextElement.AccessKey"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> AccessKey<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Documents.TextElement.AccessKeyProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.TextElement.AccessKeyScopeOwner"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> AccessKeyScopeOwner<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Documents.TextElement.AccessKeyScopeOwnerProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.TextElement.ExitDisplayModeOnAccessKeyInvoked"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ExitDisplayModeOnAccessKeyInvoked<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Documents.TextElement.ExitDisplayModeOnAccessKeyInvokedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.TextElement.FontStretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.FontStretch> FontStretch<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, Windows.UI.Text.FontStretch>.Get(target, Xaml.Documents.TextElement.FontStretchProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.TextElement.IsAccessKeyScope"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsAccessKeyScope<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Documents.TextElement.IsAccessKeyScopeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.TextElement.IsTextScaleFactorEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextScaleFactorEnabled<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Documents.TextElement.IsTextScaleFactorEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.TextElement.KeyTipHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> KeyTipHorizontalOffset<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Documents.TextElement.KeyTipHorizontalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.TextElement.KeyTipPlacementMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> KeyTipPlacementMode<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode>.Get(target, Xaml.Documents.TextElement.KeyTipPlacementModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.TextElement.KeyTipVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> KeyTipVerticalOffset<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Documents.TextElement.KeyTipVerticalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.TextElement.Language"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> Language<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Documents.TextElement.LanguageProperty);
 
@@ -36358,6 +37625,7 @@ namespace CSharpMarkup.WinUI // TextHighlighterBase
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Documents.TextHighlighterBase"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TextHighlighterBase TextHighlighterBase(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Documents.TextHighlighterBase();
@@ -36367,6 +37635,7 @@ namespace CSharpMarkup.WinUI // TextHighlighterBase
         }
 
         /// <summary>Create a <see cref="Xaml.Documents.TextHighlighterBase"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TextHighlighterBase TextHighlighterBase()
         {
             var ui = new Xaml.Documents.TextHighlighterBase();
@@ -36951,6 +38220,7 @@ namespace CSharpMarkup.WinUI // AcrylicBrush
     public static partial class AcrylicBrushExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.AcrylicBrush.TintTransitionDuration"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TintTransitionDuration<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : AcrylicBrush { view.UI.TintTransitionDuration = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.AcrylicBrush.TintColor"/></summary>
@@ -36969,6 +38239,7 @@ namespace CSharpMarkup.WinUI // AcrylicBrush
         public static TView AlwaysUseFallback<TView>(this TView view, bool value) where TView : AcrylicBrush { view.UI.AlwaysUseFallback = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.AcrylicBrush.TintTransitionDuration"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> TintTransitionDuration<TTarget>(this TTarget target) where TTarget : AcrylicBrush
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Media.AcrylicBrush.TintTransitionDurationProperty);
 
@@ -37165,6 +38436,7 @@ namespace CSharpMarkup.WinUI // BitmapCache
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.BitmapCache"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static BitmapCache BitmapCache()
         {
             var ui = new Xaml.Media.BitmapCache();
@@ -37224,6 +38496,7 @@ namespace CSharpMarkup.WinUI // Brush
         public static TView Opacity<TView>(this TView view, double value) where TView : Brush { view.UI.Opacity = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Brush.Transform"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Transform<TView>(this TView view, Xaml.Media.Transform value) where TView : Brush { view.UI.Transform = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Brush.RelativeTransform"/></summary>
@@ -37240,6 +38513,7 @@ namespace CSharpMarkup.WinUI // Brush
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Brush.OpacityProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Brush.Transform"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Transform> Transform<TTarget>(this TTarget target) where TTarget : Brush
         => DependencyProperty<TTarget, Xaml.Media.Transform>.Get(target, Xaml.Media.Brush.TransformProperty);
 
@@ -37420,6 +38694,7 @@ namespace CSharpMarkup.WinUI // EllipseGeometry
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.EllipseGeometry"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static EllipseGeometry EllipseGeometry(double? RadiusY = default, double? RadiusX = default, CSharpMarkup.WinUI.to.Point? Center = default)
         {
             var ui = new Xaml.Media.EllipseGeometry();
@@ -37430,6 +38705,7 @@ namespace CSharpMarkup.WinUI // EllipseGeometry
         }
 
         /// <summary>Create a <see cref="Xaml.Media.EllipseGeometry"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static EllipseGeometry EllipseGeometry()
         {
             var ui = new Xaml.Media.EllipseGeometry();
@@ -37468,23 +38744,29 @@ namespace CSharpMarkup.WinUI // EllipseGeometry
     public static partial class EllipseGeometryExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.EllipseGeometry.RadiusY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RadiusY<TView>(this TView view, double value) where TView : EllipseGeometry { view.UI.RadiusY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.EllipseGeometry.RadiusX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RadiusX<TView>(this TView view, double value) where TView : EllipseGeometry { view.UI.RadiusX = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.EllipseGeometry.Center"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Center<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : EllipseGeometry { view.UI.Center = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.EllipseGeometry.Center"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Center<TTarget>(this TTarget target) where TTarget : EllipseGeometry
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.EllipseGeometry.CenterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.EllipseGeometry.RadiusX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> RadiusX<TTarget>(this TTarget target) where TTarget : EllipseGeometry
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.EllipseGeometry.RadiusXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.EllipseGeometry.RadiusY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> RadiusY<TTarget>(this TTarget target) where TTarget : EllipseGeometry
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.EllipseGeometry.RadiusYProperty);
     }
@@ -37702,6 +38984,7 @@ namespace CSharpMarkup.WinUI // GradientBrush
     public static partial class GradientBrushExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.GradientBrush.ColorInterpolationMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ColorInterpolationMode<TView>(this TView view, Xaml.Media.ColorInterpolationMode value) where TView : GradientBrush { view.UI.ColorInterpolationMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.GradientBrush.FallbackColor"/></summary>
@@ -37714,6 +38997,7 @@ namespace CSharpMarkup.WinUI // GradientBrush
         public static TView SpreadMethod<TView>(this TView view, Xaml.Media.GradientSpreadMethod value) where TView : GradientBrush { view.UI.SpreadMethod = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.GradientBrush.ColorInterpolationMode"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.ColorInterpolationMode> ColorInterpolationMode<TTarget>(this TTarget target) where TTarget : GradientBrush
         => DependencyProperty<TTarget, Xaml.Media.ColorInterpolationMode>.Get(target, Xaml.Media.GradientBrush.ColorInterpolationModeProperty);
 
@@ -38074,6 +39358,7 @@ namespace CSharpMarkup.WinUI // LineGeometry
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.LineGeometry"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static LineGeometry LineGeometry(CSharpMarkup.WinUI.to.Point? StartPoint = default, CSharpMarkup.WinUI.to.Point? EndPoint = default)
         {
             var ui = new Xaml.Media.LineGeometry();
@@ -38083,6 +39368,7 @@ namespace CSharpMarkup.WinUI // LineGeometry
         }
 
         /// <summary>Create a <see cref="Xaml.Media.LineGeometry"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static LineGeometry LineGeometry()
         {
             var ui = new Xaml.Media.LineGeometry();
@@ -38121,16 +39407,20 @@ namespace CSharpMarkup.WinUI // LineGeometry
     public static partial class LineGeometryExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.LineGeometry.StartPoint"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView StartPoint<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : LineGeometry { view.UI.StartPoint = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.LineGeometry.EndPoint"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView EndPoint<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : LineGeometry { view.UI.EndPoint = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.LineGeometry.EndPoint"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> EndPoint<TTarget>(this TTarget target) where TTarget : LineGeometry
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.LineGeometry.EndPointProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.LineGeometry.StartPoint"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> StartPoint<TTarget>(this TTarget target) where TTarget : LineGeometry
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.LineGeometry.StartPointProperty);
     }
@@ -38200,6 +39490,7 @@ namespace CSharpMarkup.WinUI // Matrix3DProjection
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Matrix3DProjection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static Matrix3DProjection Matrix3DProjection(Xaml.Media.Media3D.Matrix3D? ProjectionMatrix = default)
         {
             var ui = new Xaml.Media.Matrix3DProjection();
@@ -38208,6 +39499,7 @@ namespace CSharpMarkup.WinUI // Matrix3DProjection
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Matrix3DProjection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static Matrix3DProjection Matrix3DProjection()
         {
             var ui = new Xaml.Media.Matrix3DProjection();
@@ -38246,9 +39538,11 @@ namespace CSharpMarkup.WinUI // Matrix3DProjection
     public static partial class Matrix3DProjectionExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Matrix3DProjection.ProjectionMatrix"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ProjectionMatrix<TView>(this TView view, Xaml.Media.Media3D.Matrix3D value) where TView : Matrix3DProjection { view.UI.ProjectionMatrix = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Matrix3DProjection.ProjectionMatrix"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Media3D.Matrix3D> ProjectionMatrix<TTarget>(this TTarget target) where TTarget : Matrix3DProjection
         => DependencyProperty<TTarget, Xaml.Media.Media3D.Matrix3D>.Get(target, Xaml.Media.Matrix3DProjection.ProjectionMatrixProperty);
     }
@@ -38643,6 +39937,7 @@ namespace CSharpMarkup.WinUI // PlaneProjection
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.PlaneProjection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PlaneProjection PlaneProjection(double? RotationZ = default, double? RotationY = default, double? RotationX = default, double? LocalOffsetZ = default, double? LocalOffsetY = default, double? LocalOffsetX = default, double? GlobalOffsetZ = default, double? GlobalOffsetY = default, double? GlobalOffsetX = default, double? CenterOfRotationZ = default, double? CenterOfRotationY = default, double? CenterOfRotationX = default)
         {
             var ui = new Xaml.Media.PlaneProjection();
@@ -38662,6 +39957,7 @@ namespace CSharpMarkup.WinUI // PlaneProjection
         }
 
         /// <summary>Create a <see cref="Xaml.Media.PlaneProjection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PlaneProjection PlaneProjection()
         {
             var ui = new Xaml.Media.PlaneProjection();
@@ -38700,90 +39996,115 @@ namespace CSharpMarkup.WinUI // PlaneProjection
     public static partial class PlaneProjectionExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.RotationZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RotationZ<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.RotationZ = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.RotationY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RotationY<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.RotationY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.RotationX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RotationX<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.RotationX = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.LocalOffsetZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LocalOffsetZ<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.LocalOffsetZ = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.LocalOffsetY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LocalOffsetY<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.LocalOffsetY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.LocalOffsetX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView LocalOffsetX<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.LocalOffsetX = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.GlobalOffsetZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GlobalOffsetZ<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.GlobalOffsetZ = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.GlobalOffsetY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GlobalOffsetY<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.GlobalOffsetY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.GlobalOffsetX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GlobalOffsetX<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.GlobalOffsetX = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.CenterOfRotationZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CenterOfRotationZ<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.CenterOfRotationZ = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.CenterOfRotationY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CenterOfRotationY<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.CenterOfRotationY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.PlaneProjection.CenterOfRotationX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CenterOfRotationX<TView>(this TView view, double value) where TView : PlaneProjection { view.UI.CenterOfRotationX = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.CenterOfRotationX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> CenterOfRotationX<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.CenterOfRotationXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.CenterOfRotationY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> CenterOfRotationY<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.CenterOfRotationYProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.CenterOfRotationZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> CenterOfRotationZ<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.CenterOfRotationZProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.GlobalOffsetX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> GlobalOffsetX<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.GlobalOffsetXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.GlobalOffsetY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> GlobalOffsetY<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.GlobalOffsetYProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.GlobalOffsetZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> GlobalOffsetZ<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.GlobalOffsetZProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.LocalOffsetX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> LocalOffsetX<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.LocalOffsetXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.LocalOffsetY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> LocalOffsetY<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.LocalOffsetYProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.LocalOffsetZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> LocalOffsetZ<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.LocalOffsetZProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.ProjectionMatrix"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Media3D.Matrix3D> ProjectionMatrix<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, Xaml.Media.Media3D.Matrix3D>.Get(target, Xaml.Media.PlaneProjection.ProjectionMatrixProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.RotationX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> RotationX<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.RotationXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.RotationY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> RotationY<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.RotationYProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.PlaneProjection.RotationZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> RotationZ<TTarget>(this TTarget target) where TTarget : PlaneProjection
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.PlaneProjection.RotationZProperty);
     }
@@ -39132,9 +40453,11 @@ namespace CSharpMarkup.WinUI // RadialGradientBrush
         public static TView RadiusY<TView>(this TView view, double value) where TView : RadialGradientBrush { view.UI.RadiusY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.RadialGradientBrush.GradientOrigin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GradientOrigin<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : RadialGradientBrush { view.UI.GradientOrigin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.RadialGradientBrush.InterpolationSpace"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView InterpolationSpace<TView>(this TView view, UI.Composition.CompositionColorSpace value) where TView : RadialGradientBrush { view.UI.InterpolationSpace = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RadialGradientBrush.Center"/></summary>
@@ -39650,23 +40973,29 @@ namespace CSharpMarkup.WinUI // TileBrush
     public static partial class TileBrushExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.TileBrush.Stretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Stretch<TView>(this TView view, Xaml.Media.Stretch value) where TView : TileBrush { view.UI.Stretch = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.TileBrush.AlignmentY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AlignmentY<TView>(this TView view, Xaml.Media.AlignmentY value) where TView : TileBrush { view.UI.AlignmentY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.TileBrush.AlignmentX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AlignmentX<TView>(this TView view, Xaml.Media.AlignmentX value) where TView : TileBrush { view.UI.AlignmentX = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.TileBrush.AlignmentX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.AlignmentX> AlignmentX<TTarget>(this TTarget target) where TTarget : TileBrush
         => DependencyProperty<TTarget, Xaml.Media.AlignmentX>.Get(target, Xaml.Media.TileBrush.AlignmentXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.TileBrush.AlignmentY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.AlignmentY> AlignmentY<TTarget>(this TTarget target) where TTarget : TileBrush
         => DependencyProperty<TTarget, Xaml.Media.AlignmentY>.Get(target, Xaml.Media.TileBrush.AlignmentYProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.TileBrush.Stretch"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Stretch> Stretch<TTarget>(this TTarget target) where TTarget : TileBrush
         => DependencyProperty<TTarget, Xaml.Media.Stretch>.Get(target, Xaml.Media.TileBrush.StretchProperty);
     }
@@ -39844,6 +41173,7 @@ namespace CSharpMarkup.WinUI // XamlCompositionBrushBase
     public static partial class XamlCompositionBrushBaseExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.XamlCompositionBrushBase.CompositionBrush"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CompositionBrush<TView>(this TView view, UI.Composition.CompositionBrush value) where TView : XamlCompositionBrushBase { view.UI.CompositionBrush = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.XamlCompositionBrushBase.FallbackColor"/></summary>
@@ -39860,6 +41190,7 @@ namespace CSharpMarkup.WinUI // XamlLight
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.XamlLight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static XamlLight XamlLight(UI.Composition.CompositionLight CompositionLight = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Media.XamlLight();
@@ -39870,6 +41201,7 @@ namespace CSharpMarkup.WinUI // XamlLight
         }
 
         /// <summary>Create a <see cref="Xaml.Media.XamlLight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static XamlLight XamlLight()
         {
             var ui = new Xaml.Media.XamlLight();
@@ -39908,6 +41240,7 @@ namespace CSharpMarkup.WinUI // XamlLight
     public static partial class XamlLightExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.XamlLight.CompositionLight"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CompositionLight<TView>(this TView view, UI.Composition.CompositionLight value) where TView : XamlLight { view.UI.CompositionLight = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.XamlLight.DataContext"/></summary>
@@ -40059,9 +41392,11 @@ namespace CSharpMarkup.WinUI // RevealBrush
     public static partial class RevealBrushExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.RevealBrush.Color"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Color<TView>(this TView view, Windows.UI.Color value) where TView : RevealBrush { view.UI.Color = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RevealBrush.Color"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Color> Color<TTarget>(this TTarget target) where TTarget : RevealBrush
         => DependencyProperty<TTarget, Windows.UI.Color>.Get(target, Xaml.Media.RevealBrush.ColorProperty);
     }
@@ -40072,6 +41407,7 @@ namespace CSharpMarkup.WinUI // AddDeleteThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.AddDeleteThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static AddDeleteThemeTransition AddDeleteThemeTransition()
         {
             var ui = new Xaml.Media.Animation.AddDeleteThemeTransition();
@@ -40172,6 +41508,7 @@ namespace CSharpMarkup.WinUI // BeginStoryboard
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.BeginStoryboard"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static BeginStoryboard BeginStoryboard(Xaml.Media.Animation.Storyboard Storyboard = default)
         {
             var ui = new Xaml.Media.Animation.BeginStoryboard();
@@ -40180,6 +41517,7 @@ namespace CSharpMarkup.WinUI // BeginStoryboard
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.BeginStoryboard"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static BeginStoryboard BeginStoryboard()
         {
             var ui = new Xaml.Media.Animation.BeginStoryboard();
@@ -40218,9 +41556,11 @@ namespace CSharpMarkup.WinUI // BeginStoryboard
     public static partial class BeginStoryboardExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.BeginStoryboard.Storyboard"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Storyboard<TView>(this TView view, Xaml.Media.Animation.Storyboard value) where TView : BeginStoryboard { view.UI.Storyboard = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.BeginStoryboard.Storyboard"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.Storyboard> Storyboard<TTarget>(this TTarget target) where TTarget : BeginStoryboard
         => DependencyProperty<TTarget, Xaml.Media.Animation.Storyboard>.Get(target, Xaml.Media.Animation.BeginStoryboard.StoryboardProperty);
     }
@@ -40278,16 +41618,20 @@ namespace CSharpMarkup.WinUI // BounceEase
     public static partial class BounceEaseExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.BounceEase.Bounciness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Bounciness<TView>(this TView view, double value) where TView : BounceEase { view.UI.Bounciness = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.BounceEase.Bounces"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Bounces<TView>(this TView view, int value) where TView : BounceEase { view.UI.Bounces = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.BounceEase.Bounces"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> Bounces<TTarget>(this TTarget target) where TTarget : BounceEase
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Media.Animation.BounceEase.BouncesProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.BounceEase.Bounciness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> Bounciness<TTarget>(this TTarget target) where TTarget : BounceEase
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.BounceEase.BouncinessProperty);
     }
@@ -40391,6 +41735,7 @@ namespace CSharpMarkup.WinUI // ColorAnimation
     public static partial class ColorAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.ColorAnimation.EasingFunction"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView EasingFunction<TView>(this TView view, Xaml.Media.Animation.EasingFunctionBase value) where TView : ColorAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.ColorAnimation.To"/></summary>
@@ -40406,6 +41751,7 @@ namespace CSharpMarkup.WinUI // ColorAnimation
         public static TView By<TView>(this TView view, Windows.UI.Color? value) where TView : ColorAnimation { view.UI.By = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ColorAnimation.EasingFunction"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.EasingFunctionBase> EasingFunction<TTarget>(this TTarget target) where TTarget : ColorAnimation
         => DependencyProperty<TTarget, Xaml.Media.Animation.EasingFunctionBase>.Get(target, Xaml.Media.Animation.ColorAnimation.EasingFunctionProperty);
 
@@ -40681,6 +42027,7 @@ namespace CSharpMarkup.WinUI // ContentThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.ContentThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ContentThemeTransition ContentThemeTransition(double? VerticalOffset = default, double? HorizontalOffset = default)
         {
             var ui = new Xaml.Media.Animation.ContentThemeTransition();
@@ -40690,6 +42037,7 @@ namespace CSharpMarkup.WinUI // ContentThemeTransition
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.ContentThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ContentThemeTransition ContentThemeTransition()
         {
             var ui = new Xaml.Media.Animation.ContentThemeTransition();
@@ -40728,16 +42076,20 @@ namespace CSharpMarkup.WinUI // ContentThemeTransition
     public static partial class ContentThemeTransitionExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.ContentThemeTransition.VerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView VerticalOffset<TView>(this TView view, double value) where TView : ContentThemeTransition { view.UI.VerticalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.ContentThemeTransition.HorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView HorizontalOffset<TView>(this TView view, double value) where TView : ContentThemeTransition { view.UI.HorizontalOffset = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ContentThemeTransition.HorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> HorizontalOffset<TTarget>(this TTarget target) where TTarget : ContentThemeTransition
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.ContentThemeTransition.HorizontalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ContentThemeTransition.VerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> VerticalOffset<TTarget>(this TTarget target) where TTarget : ContentThemeTransition
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.ContentThemeTransition.VerticalOffsetProperty);
     }
@@ -40748,6 +42100,7 @@ namespace CSharpMarkup.WinUI // ContinuumNavigationTransitionInfo
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ContinuumNavigationTransitionInfo ContinuumNavigationTransitionInfo(Xaml.UIElement ExitElement = default)
         {
             var ui = new Xaml.Media.Animation.ContinuumNavigationTransitionInfo();
@@ -40756,6 +42109,7 @@ namespace CSharpMarkup.WinUI // ContinuumNavigationTransitionInfo
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ContinuumNavigationTransitionInfo ContinuumNavigationTransitionInfo()
         {
             var ui = new Xaml.Media.Animation.ContinuumNavigationTransitionInfo();
@@ -40794,17 +42148,21 @@ namespace CSharpMarkup.WinUI // ContinuumNavigationTransitionInfo
     public static partial class ContinuumNavigationTransitionInfoExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo.ExitElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ExitElement<TView>(this TView view, Xaml.UIElement value) where TView : ContinuumNavigationTransitionInfo { view.UI.ExitElement = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo.ExitElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> ExitElement<TTarget>(this TTarget target) where TTarget : ContinuumNavigationTransitionInfo
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Media.Animation.ContinuumNavigationTransitionInfo.ExitElementProperty);
 
         /// <summary>Set <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo.ExitElementContainer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ContinuumNavigationTransitionInfo_ExitElementContainer<TTarget>(this TTarget target, bool value) where TTarget : ListViewBase
         { Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetExitElementContainer(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo.ExitElementContainer"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ContinuumNavigationTransitionInfo_ExitElementContainer<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.ContinuumNavigationTransitionInfo.ExitElementContainerProperty);
 
@@ -40829,18 +42187,22 @@ namespace CSharpMarkup.WinUI // ContinuumNavigationTransitionInfo
         }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo.IsEntranceElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ContinuumNavigationTransitionInfo_IsEntranceElement<TTarget>(this TTarget target, bool value) where TTarget : UIElement
         { Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetIsEntranceElement(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo.IsEntranceElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ContinuumNavigationTransitionInfo_IsEntranceElement<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.ContinuumNavigationTransitionInfo.IsEntranceElementProperty);
 
         /// <summary>Set <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo.IsExitElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget ContinuumNavigationTransitionInfo_IsExitElement<TTarget>(this TTarget target, bool value) where TTarget : UIElement
         { Xaml.Media.Animation.ContinuumNavigationTransitionInfo.SetIsExitElement(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ContinuumNavigationTransitionInfo.IsExitElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> ContinuumNavigationTransitionInfo_IsExitElement<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.ContinuumNavigationTransitionInfo.IsExitElementProperty);
 
@@ -41045,6 +42407,7 @@ namespace CSharpMarkup.WinUI // DiscretePointKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DiscretePointKeyFrame"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DiscretePointKeyFrame DiscretePointKeyFrame()
         {
             var ui = new Xaml.Media.Animation.DiscretePointKeyFrame();
@@ -41339,6 +42702,7 @@ namespace CSharpMarkup.WinUI // DragItemThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DragItemThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DragItemThemeAnimation DragItemThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.DragItemThemeAnimation();
@@ -41349,6 +42713,7 @@ namespace CSharpMarkup.WinUI // DragItemThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.DragItemThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DragItemThemeAnimation DragItemThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.DragItemThemeAnimation();
@@ -41387,9 +42752,11 @@ namespace CSharpMarkup.WinUI // DragItemThemeAnimation
     public static partial class DragItemThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.DragItemThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TargetName<TView>(this TView view, string value) where TView : DragItemThemeAnimation { view.UI.TargetName = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DragItemThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> TargetName<TTarget>(this TTarget target) where TTarget : DragItemThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.DragItemThemeAnimation.TargetNameProperty);
     }
@@ -41400,6 +42767,7 @@ namespace CSharpMarkup.WinUI // DragOverThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DragOverThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DragOverThemeAnimation DragOverThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? ToOffset = default, string TargetName = default, Xaml.Controls.Primitives.AnimationDirection? Direction = default)
         {
             var ui = new Xaml.Media.Animation.DragOverThemeAnimation();
@@ -41412,6 +42780,7 @@ namespace CSharpMarkup.WinUI // DragOverThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.DragOverThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DragOverThemeAnimation DragOverThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.DragOverThemeAnimation();
@@ -41450,23 +42819,29 @@ namespace CSharpMarkup.WinUI // DragOverThemeAnimation
     public static partial class DragOverThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.DragOverThemeAnimation.ToOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ToOffset<TView>(this TView view, double value) where TView : DragOverThemeAnimation { view.UI.ToOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.DragOverThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TargetName<TView>(this TView view, string value) where TView : DragOverThemeAnimation { view.UI.TargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.DragOverThemeAnimation.Direction"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Direction<TView>(this TView view, Xaml.Controls.Primitives.AnimationDirection value) where TView : DragOverThemeAnimation { view.UI.Direction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DragOverThemeAnimation.Direction"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.AnimationDirection> Direction<TTarget>(this TTarget target) where TTarget : DragOverThemeAnimation
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.AnimationDirection>.Get(target, Xaml.Media.Animation.DragOverThemeAnimation.DirectionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DragOverThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> TargetName<TTarget>(this TTarget target) where TTarget : DragOverThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.DragOverThemeAnimation.TargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DragOverThemeAnimation.ToOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ToOffset<TTarget>(this TTarget target) where TTarget : DragOverThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.DragOverThemeAnimation.ToOffsetProperty);
     }
@@ -41518,6 +42893,7 @@ namespace CSharpMarkup.WinUI // DrillInThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DrillInThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DrillInThemeAnimation DrillInThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string ExitTargetName = default, Xaml.DependencyObject ExitTarget = default, string EntranceTargetName = default, Xaml.DependencyObject EntranceTarget = default)
         {
             var ui = new Xaml.Media.Animation.DrillInThemeAnimation();
@@ -41531,6 +42907,7 @@ namespace CSharpMarkup.WinUI // DrillInThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.DrillInThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DrillInThemeAnimation DrillInThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.DrillInThemeAnimation();
@@ -41569,30 +42946,38 @@ namespace CSharpMarkup.WinUI // DrillInThemeAnimation
     public static partial class DrillInThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.DrillInThemeAnimation.ExitTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ExitTargetName<TView>(this TView view, string value) where TView : DrillInThemeAnimation { view.UI.ExitTargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.DrillInThemeAnimation.ExitTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ExitTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : DrillInThemeAnimation { view.UI.ExitTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.DrillInThemeAnimation.EntranceTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView EntranceTargetName<TView>(this TView view, string value) where TView : DrillInThemeAnimation { view.UI.EntranceTargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.DrillInThemeAnimation.EntranceTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView EntranceTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : DrillInThemeAnimation { view.UI.EntranceTarget = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DrillInThemeAnimation.EntranceTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> EntranceTargetName<TTarget>(this TTarget target) where TTarget : DrillInThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.DrillInThemeAnimation.EntranceTargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DrillInThemeAnimation.EntranceTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> EntranceTarget<TTarget>(this TTarget target) where TTarget : DrillInThemeAnimation
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Animation.DrillInThemeAnimation.EntranceTargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DrillInThemeAnimation.ExitTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> ExitTargetName<TTarget>(this TTarget target) where TTarget : DrillInThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.DrillInThemeAnimation.ExitTargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DrillInThemeAnimation.ExitTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> ExitTarget<TTarget>(this TTarget target) where TTarget : DrillInThemeAnimation
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Animation.DrillInThemeAnimation.ExitTargetProperty);
     }
@@ -41603,6 +42988,7 @@ namespace CSharpMarkup.WinUI // DrillOutThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DrillOutThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DrillOutThemeAnimation DrillOutThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string ExitTargetName = default, Xaml.DependencyObject ExitTarget = default, string EntranceTargetName = default, Xaml.DependencyObject EntranceTarget = default)
         {
             var ui = new Xaml.Media.Animation.DrillOutThemeAnimation();
@@ -41616,6 +43002,7 @@ namespace CSharpMarkup.WinUI // DrillOutThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.DrillOutThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DrillOutThemeAnimation DrillOutThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.DrillOutThemeAnimation();
@@ -41654,30 +43041,38 @@ namespace CSharpMarkup.WinUI // DrillOutThemeAnimation
     public static partial class DrillOutThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.DrillOutThemeAnimation.ExitTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ExitTargetName<TView>(this TView view, string value) where TView : DrillOutThemeAnimation { view.UI.ExitTargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.DrillOutThemeAnimation.ExitTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ExitTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : DrillOutThemeAnimation { view.UI.ExitTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.DrillOutThemeAnimation.EntranceTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView EntranceTargetName<TView>(this TView view, string value) where TView : DrillOutThemeAnimation { view.UI.EntranceTargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.DrillOutThemeAnimation.EntranceTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView EntranceTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : DrillOutThemeAnimation { view.UI.EntranceTarget = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DrillOutThemeAnimation.EntranceTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> EntranceTargetName<TTarget>(this TTarget target) where TTarget : DrillOutThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.DrillOutThemeAnimation.EntranceTargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DrillOutThemeAnimation.EntranceTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> EntranceTarget<TTarget>(this TTarget target) where TTarget : DrillOutThemeAnimation
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Animation.DrillOutThemeAnimation.EntranceTargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DrillOutThemeAnimation.ExitTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> ExitTargetName<TTarget>(this TTarget target) where TTarget : DrillOutThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.DrillOutThemeAnimation.ExitTargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DrillOutThemeAnimation.ExitTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> ExitTarget<TTarget>(this TTarget target) where TTarget : DrillOutThemeAnimation
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Animation.DrillOutThemeAnimation.ExitTargetProperty);
     }
@@ -41688,6 +43083,7 @@ namespace CSharpMarkup.WinUI // DropTargetItemThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.DropTargetItemThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DropTargetItemThemeAnimation DropTargetItemThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.DropTargetItemThemeAnimation();
@@ -41698,6 +43094,7 @@ namespace CSharpMarkup.WinUI // DropTargetItemThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.DropTargetItemThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DropTargetItemThemeAnimation DropTargetItemThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.DropTargetItemThemeAnimation();
@@ -41736,9 +43133,11 @@ namespace CSharpMarkup.WinUI // DropTargetItemThemeAnimation
     public static partial class DropTargetItemThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.DropTargetItemThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TargetName<TView>(this TView view, string value) where TView : DropTargetItemThemeAnimation { view.UI.TargetName = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.DropTargetItemThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> TargetName<TTarget>(this TTarget target) where TTarget : DropTargetItemThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.DropTargetItemThemeAnimation.TargetNameProperty);
     }
@@ -41963,6 +43362,7 @@ namespace CSharpMarkup.WinUI // EasingPointKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.EasingPointKeyFrame"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static EasingPointKeyFrame EasingPointKeyFrame(Xaml.Media.Animation.EasingFunctionBase EasingFunction = default)
         {
             var ui = new Xaml.Media.Animation.EasingPointKeyFrame();
@@ -41971,6 +43371,7 @@ namespace CSharpMarkup.WinUI // EasingPointKeyFrame
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.EasingPointKeyFrame"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static EasingPointKeyFrame EasingPointKeyFrame()
         {
             var ui = new Xaml.Media.Animation.EasingPointKeyFrame();
@@ -42009,9 +43410,11 @@ namespace CSharpMarkup.WinUI // EasingPointKeyFrame
     public static partial class EasingPointKeyFrameExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.EasingPointKeyFrame.EasingFunction"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView EasingFunction<TView>(this TView view, Xaml.Media.Animation.EasingFunctionBase value) where TView : EasingPointKeyFrame { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.EasingPointKeyFrame.EasingFunction"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.EasingFunctionBase> EasingFunction<TTarget>(this TTarget target) where TTarget : EasingPointKeyFrame
         => DependencyProperty<TTarget, Xaml.Media.Animation.EasingFunctionBase>.Get(target, Xaml.Media.Animation.EasingPointKeyFrame.EasingFunctionProperty);
     }
@@ -42022,6 +43425,7 @@ namespace CSharpMarkup.WinUI // EdgeUIThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.EdgeUIThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static EdgeUIThemeTransition EdgeUIThemeTransition(Xaml.Controls.Primitives.EdgeTransitionLocation? Edge = default)
         {
             var ui = new Xaml.Media.Animation.EdgeUIThemeTransition();
@@ -42030,6 +43434,7 @@ namespace CSharpMarkup.WinUI // EdgeUIThemeTransition
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.EdgeUIThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static EdgeUIThemeTransition EdgeUIThemeTransition()
         {
             var ui = new Xaml.Media.Animation.EdgeUIThemeTransition();
@@ -42068,9 +43473,11 @@ namespace CSharpMarkup.WinUI // EdgeUIThemeTransition
     public static partial class EdgeUIThemeTransitionExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.EdgeUIThemeTransition.Edge"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Edge<TView>(this TView view, Xaml.Controls.Primitives.EdgeTransitionLocation value) where TView : EdgeUIThemeTransition { view.UI.Edge = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.EdgeUIThemeTransition.Edge"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.EdgeTransitionLocation> Edge<TTarget>(this TTarget target) where TTarget : EdgeUIThemeTransition
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.EdgeTransitionLocation>.Get(target, Xaml.Media.Animation.EdgeUIThemeTransition.EdgeProperty);
     }
@@ -42128,16 +43535,20 @@ namespace CSharpMarkup.WinUI // ElasticEase
     public static partial class ElasticEaseExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.ElasticEase.Springiness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Springiness<TView>(this TView view, double value) where TView : ElasticEase { view.UI.Springiness = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.ElasticEase.Oscillations"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Oscillations<TView>(this TView view, int value) where TView : ElasticEase { view.UI.Oscillations = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ElasticEase.Oscillations"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> Oscillations<TTarget>(this TTarget target) where TTarget : ElasticEase
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Media.Animation.ElasticEase.OscillationsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ElasticEase.Springiness"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> Springiness<TTarget>(this TTarget target) where TTarget : ElasticEase
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.ElasticEase.SpringinessProperty);
     }
@@ -42641,6 +44052,7 @@ namespace CSharpMarkup.WinUI // LinearPointKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.LinearPointKeyFrame"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static LinearPointKeyFrame LinearPointKeyFrame()
         {
             var ui = new Xaml.Media.Animation.LinearPointKeyFrame();
@@ -42682,6 +44094,7 @@ namespace CSharpMarkup.WinUI // NavigationThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.NavigationThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static NavigationThemeTransition NavigationThemeTransition(Xaml.Media.Animation.NavigationTransitionInfo DefaultNavigationTransitionInfo = default)
         {
             var ui = new Xaml.Media.Animation.NavigationThemeTransition();
@@ -42690,6 +44103,7 @@ namespace CSharpMarkup.WinUI // NavigationThemeTransition
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.NavigationThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static NavigationThemeTransition NavigationThemeTransition()
         {
             var ui = new Xaml.Media.Animation.NavigationThemeTransition();
@@ -42728,9 +44142,11 @@ namespace CSharpMarkup.WinUI // NavigationThemeTransition
     public static partial class NavigationThemeTransitionExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.NavigationThemeTransition.DefaultNavigationTransitionInfo"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView DefaultNavigationTransitionInfo<TView>(this TView view, Xaml.Media.Animation.NavigationTransitionInfo value) where TView : NavigationThemeTransition { view.UI.DefaultNavigationTransitionInfo = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.NavigationThemeTransition.DefaultNavigationTransitionInfo"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.NavigationTransitionInfo> DefaultNavigationTransitionInfo<TTarget>(this TTarget target) where TTarget : NavigationThemeTransition
         => DependencyProperty<TTarget, Xaml.Media.Animation.NavigationTransitionInfo>.Get(target, Xaml.Media.Animation.NavigationThemeTransition.DefaultNavigationTransitionInfoProperty);
     }
@@ -42833,9 +44249,11 @@ namespace CSharpMarkup.WinUI // ObjectAnimationUsingKeyFrames
     public static partial class ObjectAnimationUsingKeyFramesExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.ObjectAnimationUsingKeyFrames.EnableDependentAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView EnableDependentAnimation<TView>(this TView view, bool value) where TView : ObjectAnimationUsingKeyFrames { view.UI.EnableDependentAnimation = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.ObjectAnimationUsingKeyFrames.EnableDependentAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> EnableDependentAnimation<TTarget>(this TTarget target) where TTarget : ObjectAnimationUsingKeyFrames
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.ObjectAnimationUsingKeyFrames.EnableDependentAnimationProperty);
     }
@@ -42947,6 +44365,7 @@ namespace CSharpMarkup.WinUI // PaneThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PaneThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PaneThemeTransition PaneThemeTransition(Xaml.Controls.Primitives.EdgeTransitionLocation? Edge = default)
         {
             var ui = new Xaml.Media.Animation.PaneThemeTransition();
@@ -42955,6 +44374,7 @@ namespace CSharpMarkup.WinUI // PaneThemeTransition
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.PaneThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PaneThemeTransition PaneThemeTransition()
         {
             var ui = new Xaml.Media.Animation.PaneThemeTransition();
@@ -42993,9 +44413,11 @@ namespace CSharpMarkup.WinUI // PaneThemeTransition
     public static partial class PaneThemeTransitionExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PaneThemeTransition.Edge"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Edge<TView>(this TView view, Xaml.Controls.Primitives.EdgeTransitionLocation value) where TView : PaneThemeTransition { view.UI.Edge = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PaneThemeTransition.Edge"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.EdgeTransitionLocation> Edge<TTarget>(this TTarget target) where TTarget : PaneThemeTransition
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.EdgeTransitionLocation>.Get(target, Xaml.Media.Animation.PaneThemeTransition.EdgeProperty);
     }
@@ -43006,6 +44428,7 @@ namespace CSharpMarkup.WinUI // PointAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PointAnimation PointAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, CSharpMarkup.WinUI.to.Point? To = default, CSharpMarkup.WinUI.to.Point? From = default, bool? EnableDependentAnimation = default, Xaml.Media.Animation.EasingFunctionBase EasingFunction = default, CSharpMarkup.WinUI.to.Point? By = default)
         {
             var ui = new Xaml.Media.Animation.PointAnimation();
@@ -43020,6 +44443,7 @@ namespace CSharpMarkup.WinUI // PointAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PointAnimation PointAnimation()
         {
             var ui = new Xaml.Media.Animation.PointAnimation();
@@ -43058,37 +44482,47 @@ namespace CSharpMarkup.WinUI // PointAnimation
     public static partial class PointAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.To"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView To<TView>(this TView view, CSharpMarkup.WinUI.to.Point? value) where TView : PointAnimation { view.UI.To = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.From"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView From<TView>(this TView view, CSharpMarkup.WinUI.to.Point? value) where TView : PointAnimation { view.UI.From = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.EnableDependentAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView EnableDependentAnimation<TView>(this TView view, bool value) where TView : PointAnimation { view.UI.EnableDependentAnimation = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.EasingFunction"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView EasingFunction<TView>(this TView view, Xaml.Media.Animation.EasingFunctionBase value) where TView : PointAnimation { view.UI.EasingFunction = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.By"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView By<TView>(this TView view, CSharpMarkup.WinUI.to.Point? value) where TView : PointAnimation { view.UI.By = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.By"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?> By<TTarget>(this TTarget target) where TTarget : PointAnimation
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.EasingFunction"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.EasingFunctionBase> EasingFunction<TTarget>(this TTarget target) where TTarget : PointAnimation
         => DependencyProperty<TTarget, Xaml.Media.Animation.EasingFunctionBase>.Get(target, Xaml.Media.Animation.PointAnimation.EasingFunctionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.EnableDependentAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> EnableDependentAnimation<TTarget>(this TTarget target) where TTarget : PointAnimation
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.PointAnimation.EnableDependentAnimationProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.From"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?> From<TTarget>(this TTarget target) where TTarget : PointAnimation
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.FromProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.To"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?> To<TTarget>(this TTarget target) where TTarget : PointAnimation
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.ToProperty);
     }
@@ -43099,6 +44533,7 @@ namespace CSharpMarkup.WinUI // PointAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointAnimationUsingKeyFrames"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PointAnimationUsingKeyFrames PointAnimationUsingKeyFrames(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, bool? EnableDependentAnimation = default)
         {
             var ui = new Xaml.Media.Animation.PointAnimationUsingKeyFrames();
@@ -43109,6 +44544,7 @@ namespace CSharpMarkup.WinUI // PointAnimationUsingKeyFrames
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointAnimationUsingKeyFrames"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PointAnimationUsingKeyFrames PointAnimationUsingKeyFrames()
         {
             var ui = new Xaml.Media.Animation.PointAnimationUsingKeyFrames();
@@ -43147,9 +44583,11 @@ namespace CSharpMarkup.WinUI // PointAnimationUsingKeyFrames
     public static partial class PointAnimationUsingKeyFramesExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimationUsingKeyFrames.EnableDependentAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView EnableDependentAnimation<TView>(this TView view, bool value) where TView : PointAnimationUsingKeyFrames { view.UI.EnableDependentAnimation = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimationUsingKeyFrames.EnableDependentAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> EnableDependentAnimation<TTarget>(this TTarget target) where TTarget : PointAnimationUsingKeyFrames
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.PointAnimationUsingKeyFrames.EnableDependentAnimationProperty);
     }
@@ -43160,6 +44598,7 @@ namespace CSharpMarkup.WinUI // PointerDownThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointerDownThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PointerDownThemeAnimation PointerDownThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.PointerDownThemeAnimation();
@@ -43170,6 +44609,7 @@ namespace CSharpMarkup.WinUI // PointerDownThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointerDownThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PointerDownThemeAnimation PointerDownThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.PointerDownThemeAnimation();
@@ -43208,9 +44648,11 @@ namespace CSharpMarkup.WinUI // PointerDownThemeAnimation
     public static partial class PointerDownThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PointerDownThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TargetName<TView>(this TView view, string value) where TView : PointerDownThemeAnimation { view.UI.TargetName = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointerDownThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> TargetName<TTarget>(this TTarget target) where TTarget : PointerDownThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.PointerDownThemeAnimation.TargetNameProperty);
     }
@@ -43221,6 +44663,7 @@ namespace CSharpMarkup.WinUI // PointerUpThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointerUpThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PointerUpThemeAnimation PointerUpThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.PointerUpThemeAnimation();
@@ -43231,6 +44674,7 @@ namespace CSharpMarkup.WinUI // PointerUpThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.PointerUpThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PointerUpThemeAnimation PointerUpThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.PointerUpThemeAnimation();
@@ -43269,9 +44713,11 @@ namespace CSharpMarkup.WinUI // PointerUpThemeAnimation
     public static partial class PointerUpThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PointerUpThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TargetName<TView>(this TView view, string value) where TView : PointerUpThemeAnimation { view.UI.TargetName = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointerUpThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> TargetName<TTarget>(this TTarget target) where TTarget : PointerUpThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.PointerUpThemeAnimation.TargetNameProperty);
     }
@@ -43297,9 +44743,11 @@ namespace CSharpMarkup.WinUI // PointKeyFrame
     public static partial class PointKeyFrameExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PointKeyFrame.Value"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Value<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : PointKeyFrame { view.UI.Value = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointKeyFrame.KeyTime"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeyTime<TView>(this TView view, CSharpMarkup.WinUI.to.KeyTime value) where TView : PointKeyFrame { view.UI.KeyTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointKeyFrame.DataContext"/></summary>
@@ -43309,10 +44757,12 @@ namespace CSharpMarkup.WinUI // PointKeyFrame
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : PointKeyFrame { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointKeyFrame.KeyTime"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.KeyTime> KeyTime<TTarget>(this TTarget target) where TTarget : PointKeyFrame
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.KeyTime>.Get(target, Xaml.Media.Animation.PointKeyFrame.KeyTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointKeyFrame.Value"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Value<TTarget>(this TTarget target) where TTarget : PointKeyFrame
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.Animation.PointKeyFrame.ValueProperty);
 
@@ -43331,6 +44781,7 @@ namespace CSharpMarkup.WinUI // PopInThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PopInThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PopInThemeAnimation PopInThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default, double? FromVerticalOffset = default, double? FromHorizontalOffset = default)
         {
             var ui = new Xaml.Media.Animation.PopInThemeAnimation();
@@ -43343,6 +44794,7 @@ namespace CSharpMarkup.WinUI // PopInThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.PopInThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PopInThemeAnimation PopInThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.PopInThemeAnimation();
@@ -43381,23 +44833,29 @@ namespace CSharpMarkup.WinUI // PopInThemeAnimation
     public static partial class PopInThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PopInThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TargetName<TView>(this TView view, string value) where TView : PopInThemeAnimation { view.UI.TargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PopInThemeAnimation.FromVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FromVerticalOffset<TView>(this TView view, double value) where TView : PopInThemeAnimation { view.UI.FromVerticalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PopInThemeAnimation.FromHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FromHorizontalOffset<TView>(this TView view, double value) where TView : PopInThemeAnimation { view.UI.FromHorizontalOffset = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PopInThemeAnimation.FromHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> FromHorizontalOffset<TTarget>(this TTarget target) where TTarget : PopInThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.PopInThemeAnimation.FromHorizontalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PopInThemeAnimation.FromVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> FromVerticalOffset<TTarget>(this TTarget target) where TTarget : PopInThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.PopInThemeAnimation.FromVerticalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PopInThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> TargetName<TTarget>(this TTarget target) where TTarget : PopInThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.PopInThemeAnimation.TargetNameProperty);
     }
@@ -43408,6 +44866,7 @@ namespace CSharpMarkup.WinUI // PopOutThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PopOutThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PopOutThemeAnimation PopOutThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.PopOutThemeAnimation();
@@ -43418,6 +44877,7 @@ namespace CSharpMarkup.WinUI // PopOutThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.PopOutThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PopOutThemeAnimation PopOutThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.PopOutThemeAnimation();
@@ -43456,9 +44916,11 @@ namespace CSharpMarkup.WinUI // PopOutThemeAnimation
     public static partial class PopOutThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PopOutThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TargetName<TView>(this TView view, string value) where TView : PopOutThemeAnimation { view.UI.TargetName = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PopOutThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> TargetName<TTarget>(this TTarget target) where TTarget : PopOutThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.PopOutThemeAnimation.TargetNameProperty);
     }
@@ -43469,6 +44931,7 @@ namespace CSharpMarkup.WinUI // PopupThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.PopupThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PopupThemeTransition PopupThemeTransition(double? FromVerticalOffset = default, double? FromHorizontalOffset = default)
         {
             var ui = new Xaml.Media.Animation.PopupThemeTransition();
@@ -43478,6 +44941,7 @@ namespace CSharpMarkup.WinUI // PopupThemeTransition
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.PopupThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PopupThemeTransition PopupThemeTransition()
         {
             var ui = new Xaml.Media.Animation.PopupThemeTransition();
@@ -43516,16 +44980,20 @@ namespace CSharpMarkup.WinUI // PopupThemeTransition
     public static partial class PopupThemeTransitionExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PopupThemeTransition.FromVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FromVerticalOffset<TView>(this TView view, double value) where TView : PopupThemeTransition { view.UI.FromVerticalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PopupThemeTransition.FromHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FromHorizontalOffset<TView>(this TView view, double value) where TView : PopupThemeTransition { view.UI.FromHorizontalOffset = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PopupThemeTransition.FromHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> FromHorizontalOffset<TTarget>(this TTarget target) where TTarget : PopupThemeTransition
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.PopupThemeTransition.FromHorizontalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PopupThemeTransition.FromVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> FromVerticalOffset<TTarget>(this TTarget target) where TTarget : PopupThemeTransition
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.PopupThemeTransition.FromVerticalOffsetProperty);
     }
@@ -43718,6 +45186,7 @@ namespace CSharpMarkup.WinUI // ReorderThemeTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.ReorderThemeTransition"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ReorderThemeTransition ReorderThemeTransition()
         {
             var ui = new Xaml.Media.Animation.ReorderThemeTransition();
@@ -43759,6 +45228,7 @@ namespace CSharpMarkup.WinUI // RepositionThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.RepositionThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static RepositionThemeAnimation RepositionThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default, double? FromVerticalOffset = default, double? FromHorizontalOffset = default)
         {
             var ui = new Xaml.Media.Animation.RepositionThemeAnimation();
@@ -43771,6 +45241,7 @@ namespace CSharpMarkup.WinUI // RepositionThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.RepositionThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static RepositionThemeAnimation RepositionThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.RepositionThemeAnimation();
@@ -43809,23 +45280,29 @@ namespace CSharpMarkup.WinUI // RepositionThemeAnimation
     public static partial class RepositionThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.RepositionThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TargetName<TView>(this TView view, string value) where TView : RepositionThemeAnimation { view.UI.TargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.RepositionThemeAnimation.FromVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FromVerticalOffset<TView>(this TView view, double value) where TView : RepositionThemeAnimation { view.UI.FromVerticalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.RepositionThemeAnimation.FromHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FromHorizontalOffset<TView>(this TView view, double value) where TView : RepositionThemeAnimation { view.UI.FromHorizontalOffset = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.RepositionThemeAnimation.FromHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> FromHorizontalOffset<TTarget>(this TTarget target) where TTarget : RepositionThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.RepositionThemeAnimation.FromHorizontalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.RepositionThemeAnimation.FromVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> FromVerticalOffset<TTarget>(this TTarget target) where TTarget : RepositionThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.RepositionThemeAnimation.FromVerticalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.RepositionThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> TargetName<TTarget>(this TTarget target) where TTarget : RepositionThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.RepositionThemeAnimation.TargetNameProperty);
     }
@@ -43882,9 +45359,11 @@ namespace CSharpMarkup.WinUI // RepositionThemeTransition
     public static partial class RepositionThemeTransitionExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.RepositionThemeTransition.IsStaggeringEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsStaggeringEnabled<TView>(this TView view, bool value) where TView : RepositionThemeTransition { view.UI.IsStaggeringEnabled = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.RepositionThemeTransition.IsStaggeringEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsStaggeringEnabled<TTarget>(this TTarget target) where TTarget : RepositionThemeTransition
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.RepositionThemeTransition.IsStaggeringEnabledProperty);
     }
@@ -43982,9 +45461,11 @@ namespace CSharpMarkup.WinUI // SlideNavigationTransitionInfo
     public static partial class SlideNavigationTransitionInfoExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.SlideNavigationTransitionInfo.Effect"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Effect<TView>(this TView view, Xaml.Media.Animation.SlideNavigationTransitionEffect value) where TView : SlideNavigationTransitionInfo { view.UI.Effect = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SlideNavigationTransitionInfo.Effect"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.SlideNavigationTransitionEffect> Effect<TTarget>(this TTarget target) where TTarget : SlideNavigationTransitionInfo
         => DependencyProperty<TTarget, Xaml.Media.Animation.SlideNavigationTransitionEffect>.Get(target, Xaml.Media.Animation.SlideNavigationTransitionInfo.EffectProperty);
     }
@@ -44041,9 +45522,11 @@ namespace CSharpMarkup.WinUI // SplineColorKeyFrame
     public static partial class SplineColorKeyFrameExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.SplineColorKeyFrame.KeySpline"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeySpline<TView>(this TView view, Xaml.Media.Animation.KeySpline value) where TView : SplineColorKeyFrame { view.UI.KeySpline = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplineColorKeyFrame.KeySpline"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.KeySpline> KeySpline<TTarget>(this TTarget target) where TTarget : SplineColorKeyFrame
         => DependencyProperty<TTarget, Xaml.Media.Animation.KeySpline>.Get(target, Xaml.Media.Animation.SplineColorKeyFrame.KeySplineProperty);
     }
@@ -44134,6 +45617,7 @@ namespace CSharpMarkup.WinUI // SplinePointKeyFrame
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SplinePointKeyFrame"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SplinePointKeyFrame SplinePointKeyFrame(Xaml.Media.Animation.KeySpline KeySpline = default)
         {
             var ui = new Xaml.Media.Animation.SplinePointKeyFrame();
@@ -44142,6 +45626,7 @@ namespace CSharpMarkup.WinUI // SplinePointKeyFrame
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.SplinePointKeyFrame"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SplinePointKeyFrame SplinePointKeyFrame()
         {
             var ui = new Xaml.Media.Animation.SplinePointKeyFrame();
@@ -44180,9 +45665,11 @@ namespace CSharpMarkup.WinUI // SplinePointKeyFrame
     public static partial class SplinePointKeyFrameExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.SplinePointKeyFrame.KeySpline"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView KeySpline<TView>(this TView view, Xaml.Media.Animation.KeySpline value) where TView : SplinePointKeyFrame { view.UI.KeySpline = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplinePointKeyFrame.KeySpline"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Animation.KeySpline> KeySpline<TTarget>(this TTarget target) where TTarget : SplinePointKeyFrame
         => DependencyProperty<TTarget, Xaml.Media.Animation.KeySpline>.Get(target, Xaml.Media.Animation.SplinePointKeyFrame.KeySplineProperty);
     }
@@ -44193,6 +45680,7 @@ namespace CSharpMarkup.WinUI // SplitCloseThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SplitCloseThemeAnimation SplitCloseThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string OpenedTargetName = default, Xaml.DependencyObject OpenedTarget = default, double? OpenedLength = default, double? OffsetFromCenter = default, double? ContentTranslationOffset = default, Xaml.Controls.Primitives.AnimationDirection? ContentTranslationDirection = default, string ContentTargetName = default, Xaml.DependencyObject ContentTarget = default, string ClosedTargetName = default, Xaml.DependencyObject ClosedTarget = default, double? ClosedLength = default)
         {
             var ui = new Xaml.Media.Animation.SplitCloseThemeAnimation();
@@ -44213,6 +45701,7 @@ namespace CSharpMarkup.WinUI // SplitCloseThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SplitCloseThemeAnimation SplitCloseThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.SplitCloseThemeAnimation();
@@ -44251,79 +45740,101 @@ namespace CSharpMarkup.WinUI // SplitCloseThemeAnimation
     public static partial class SplitCloseThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.OpenedTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OpenedTargetName<TView>(this TView view, string value) where TView : SplitCloseThemeAnimation { view.UI.OpenedTargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.OpenedTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OpenedTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : SplitCloseThemeAnimation { view.UI.OpenedTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.OpenedLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OpenedLength<TView>(this TView view, double value) where TView : SplitCloseThemeAnimation { view.UI.OpenedLength = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.OffsetFromCenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OffsetFromCenter<TView>(this TView view, double value) where TView : SplitCloseThemeAnimation { view.UI.OffsetFromCenter = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTranslationOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentTranslationOffset<TView>(this TView view, double value) where TView : SplitCloseThemeAnimation { view.UI.ContentTranslationOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTranslationDirection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentTranslationDirection<TView>(this TView view, Xaml.Controls.Primitives.AnimationDirection value) where TView : SplitCloseThemeAnimation { view.UI.ContentTranslationDirection = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentTargetName<TView>(this TView view, string value) where TView : SplitCloseThemeAnimation { view.UI.ContentTargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : SplitCloseThemeAnimation { view.UI.ContentTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ClosedTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ClosedTargetName<TView>(this TView view, string value) where TView : SplitCloseThemeAnimation { view.UI.ClosedTargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ClosedTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ClosedTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : SplitCloseThemeAnimation { view.UI.ClosedTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ClosedLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ClosedLength<TView>(this TView view, double value) where TView : SplitCloseThemeAnimation { view.UI.ClosedLength = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ClosedLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ClosedLength<TTarget>(this TTarget target) where TTarget : SplitCloseThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SplitCloseThemeAnimation.ClosedLengthProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ClosedTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> ClosedTargetName<TTarget>(this TTarget target) where TTarget : SplitCloseThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.SplitCloseThemeAnimation.ClosedTargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ClosedTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> ClosedTarget<TTarget>(this TTarget target) where TTarget : SplitCloseThemeAnimation
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Animation.SplitCloseThemeAnimation.ClosedTargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> ContentTargetName<TTarget>(this TTarget target) where TTarget : SplitCloseThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> ContentTarget<TTarget>(this TTarget target) where TTarget : SplitCloseThemeAnimation
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTranslationDirection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.AnimationDirection> ContentTranslationDirection<TTarget>(this TTarget target) where TTarget : SplitCloseThemeAnimation
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.AnimationDirection>.Get(target, Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTranslationDirectionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTranslationOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ContentTranslationOffset<TTarget>(this TTarget target) where TTarget : SplitCloseThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SplitCloseThemeAnimation.ContentTranslationOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.OffsetFromCenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> OffsetFromCenter<TTarget>(this TTarget target) where TTarget : SplitCloseThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SplitCloseThemeAnimation.OffsetFromCenterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.OpenedLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> OpenedLength<TTarget>(this TTarget target) where TTarget : SplitCloseThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SplitCloseThemeAnimation.OpenedLengthProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.OpenedTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> OpenedTargetName<TTarget>(this TTarget target) where TTarget : SplitCloseThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.SplitCloseThemeAnimation.OpenedTargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitCloseThemeAnimation.OpenedTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> OpenedTarget<TTarget>(this TTarget target) where TTarget : SplitCloseThemeAnimation
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Animation.SplitCloseThemeAnimation.OpenedTargetProperty);
     }
@@ -44334,6 +45845,7 @@ namespace CSharpMarkup.WinUI // SplitOpenThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SplitOpenThemeAnimation SplitOpenThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string OpenedTargetName = default, Xaml.DependencyObject OpenedTarget = default, double? OpenedLength = default, double? OffsetFromCenter = default, double? ContentTranslationOffset = default, Xaml.Controls.Primitives.AnimationDirection? ContentTranslationDirection = default, string ContentTargetName = default, Xaml.DependencyObject ContentTarget = default, string ClosedTargetName = default, Xaml.DependencyObject ClosedTarget = default, double? ClosedLength = default)
         {
             var ui = new Xaml.Media.Animation.SplitOpenThemeAnimation();
@@ -44354,6 +45866,7 @@ namespace CSharpMarkup.WinUI // SplitOpenThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SplitOpenThemeAnimation SplitOpenThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.SplitOpenThemeAnimation();
@@ -44392,79 +45905,101 @@ namespace CSharpMarkup.WinUI // SplitOpenThemeAnimation
     public static partial class SplitOpenThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.OpenedTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OpenedTargetName<TView>(this TView view, string value) where TView : SplitOpenThemeAnimation { view.UI.OpenedTargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.OpenedTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OpenedTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : SplitOpenThemeAnimation { view.UI.OpenedTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.OpenedLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OpenedLength<TView>(this TView view, double value) where TView : SplitOpenThemeAnimation { view.UI.OpenedLength = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.OffsetFromCenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OffsetFromCenter<TView>(this TView view, double value) where TView : SplitOpenThemeAnimation { view.UI.OffsetFromCenter = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTranslationOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentTranslationOffset<TView>(this TView view, double value) where TView : SplitOpenThemeAnimation { view.UI.ContentTranslationOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTranslationDirection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentTranslationDirection<TView>(this TView view, Xaml.Controls.Primitives.AnimationDirection value) where TView : SplitOpenThemeAnimation { view.UI.ContentTranslationDirection = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentTargetName<TView>(this TView view, string value) where TView : SplitOpenThemeAnimation { view.UI.ContentTargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ContentTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : SplitOpenThemeAnimation { view.UI.ContentTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ClosedTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ClosedTargetName<TView>(this TView view, string value) where TView : SplitOpenThemeAnimation { view.UI.ClosedTargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ClosedTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ClosedTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : SplitOpenThemeAnimation { view.UI.ClosedTarget = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ClosedLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ClosedLength<TView>(this TView view, double value) where TView : SplitOpenThemeAnimation { view.UI.ClosedLength = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ClosedLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ClosedLength<TTarget>(this TTarget target) where TTarget : SplitOpenThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SplitOpenThemeAnimation.ClosedLengthProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ClosedTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> ClosedTargetName<TTarget>(this TTarget target) where TTarget : SplitOpenThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.SplitOpenThemeAnimation.ClosedTargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ClosedTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> ClosedTarget<TTarget>(this TTarget target) where TTarget : SplitOpenThemeAnimation
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Animation.SplitOpenThemeAnimation.ClosedTargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> ContentTargetName<TTarget>(this TTarget target) where TTarget : SplitOpenThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> ContentTarget<TTarget>(this TTarget target) where TTarget : SplitOpenThemeAnimation
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTargetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTranslationDirection"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.AnimationDirection> ContentTranslationDirection<TTarget>(this TTarget target) where TTarget : SplitOpenThemeAnimation
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.AnimationDirection>.Get(target, Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTranslationDirectionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTranslationOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ContentTranslationOffset<TTarget>(this TTarget target) where TTarget : SplitOpenThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SplitOpenThemeAnimation.ContentTranslationOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.OffsetFromCenter"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> OffsetFromCenter<TTarget>(this TTarget target) where TTarget : SplitOpenThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SplitOpenThemeAnimation.OffsetFromCenterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.OpenedLength"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> OpenedLength<TTarget>(this TTarget target) where TTarget : SplitOpenThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SplitOpenThemeAnimation.OpenedLengthProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.OpenedTargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> OpenedTargetName<TTarget>(this TTarget target) where TTarget : SplitOpenThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.SplitOpenThemeAnimation.OpenedTargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SplitOpenThemeAnimation.OpenedTarget"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> OpenedTarget<TTarget>(this TTarget target) where TTarget : SplitOpenThemeAnimation
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Animation.SplitOpenThemeAnimation.OpenedTargetProperty);
     }
@@ -44611,6 +46146,7 @@ namespace CSharpMarkup.WinUI // SwipeBackThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SwipeBackThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwipeBackThemeAnimation SwipeBackThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default, double? FromVerticalOffset = default, double? FromHorizontalOffset = default)
         {
             var ui = new Xaml.Media.Animation.SwipeBackThemeAnimation();
@@ -44623,6 +46159,7 @@ namespace CSharpMarkup.WinUI // SwipeBackThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.SwipeBackThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwipeBackThemeAnimation SwipeBackThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.SwipeBackThemeAnimation();
@@ -44661,23 +46198,29 @@ namespace CSharpMarkup.WinUI // SwipeBackThemeAnimation
     public static partial class SwipeBackThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.SwipeBackThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TargetName<TView>(this TView view, string value) where TView : SwipeBackThemeAnimation { view.UI.TargetName = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SwipeBackThemeAnimation.FromVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FromVerticalOffset<TView>(this TView view, double value) where TView : SwipeBackThemeAnimation { view.UI.FromVerticalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SwipeBackThemeAnimation.FromHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FromHorizontalOffset<TView>(this TView view, double value) where TView : SwipeBackThemeAnimation { view.UI.FromHorizontalOffset = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SwipeBackThemeAnimation.FromHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> FromHorizontalOffset<TTarget>(this TTarget target) where TTarget : SwipeBackThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SwipeBackThemeAnimation.FromHorizontalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SwipeBackThemeAnimation.FromVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> FromVerticalOffset<TTarget>(this TTarget target) where TTarget : SwipeBackThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SwipeBackThemeAnimation.FromVerticalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SwipeBackThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> TargetName<TTarget>(this TTarget target) where TTarget : SwipeBackThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.SwipeBackThemeAnimation.TargetNameProperty);
     }
@@ -44688,6 +46231,7 @@ namespace CSharpMarkup.WinUI // SwipeHintThemeAnimation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Animation.SwipeHintThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwipeHintThemeAnimation SwipeHintThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? ToVerticalOffset = default, double? ToHorizontalOffset = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.SwipeHintThemeAnimation();
@@ -44700,6 +46244,7 @@ namespace CSharpMarkup.WinUI // SwipeHintThemeAnimation
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Animation.SwipeHintThemeAnimation"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SwipeHintThemeAnimation SwipeHintThemeAnimation()
         {
             var ui = new Xaml.Media.Animation.SwipeHintThemeAnimation();
@@ -44738,23 +46283,29 @@ namespace CSharpMarkup.WinUI // SwipeHintThemeAnimation
     public static partial class SwipeHintThemeAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.SwipeHintThemeAnimation.ToVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ToVerticalOffset<TView>(this TView view, double value) where TView : SwipeHintThemeAnimation { view.UI.ToVerticalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SwipeHintThemeAnimation.ToHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ToHorizontalOffset<TView>(this TView view, double value) where TView : SwipeHintThemeAnimation { view.UI.ToHorizontalOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.SwipeHintThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TargetName<TView>(this TView view, string value) where TView : SwipeHintThemeAnimation { view.UI.TargetName = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SwipeHintThemeAnimation.TargetName"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> TargetName<TTarget>(this TTarget target) where TTarget : SwipeHintThemeAnimation
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Media.Animation.SwipeHintThemeAnimation.TargetNameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SwipeHintThemeAnimation.ToHorizontalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ToHorizontalOffset<TTarget>(this TTarget target) where TTarget : SwipeHintThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SwipeHintThemeAnimation.ToHorizontalOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.SwipeHintThemeAnimation.ToVerticalOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ToVerticalOffset<TTarget>(this TTarget target) where TTarget : SwipeHintThemeAnimation
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.SwipeHintThemeAnimation.ToVerticalOffsetProperty);
     }
@@ -44818,9 +46369,11 @@ namespace CSharpMarkup.WinUI // Timeline
     public static partial class TimelineExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.Timeline.SpeedRatio"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView SpeedRatio<TView>(this TView view, double value) where TView : Timeline { view.UI.SpeedRatio = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.Timeline.AutoReverse"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AutoReverse<TView>(this TView view, bool value) where TView : Timeline { view.UI.AutoReverse = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.Timeline.BeginTime"/></summary>
@@ -44842,10 +46395,12 @@ namespace CSharpMarkup.WinUI // Timeline
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : Timeline { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.Timeline.AutoReverse"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> AutoReverse<TTarget>(this TTarget target) where TTarget : Timeline
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.Timeline.AutoReverseProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.Timeline.SpeedRatio"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> SpeedRatio<TTarget>(this TTarget target) where TTarget : Timeline
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Animation.Timeline.SpeedRatioProperty);
 
@@ -45046,6 +46601,7 @@ namespace CSharpMarkup.WinUI // BitmapImage
     public static partial class BitmapImageExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Imaging.BitmapImage.AutoPlay"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView AutoPlay<TView>(this TView view, bool value) where TView : BitmapImage { view.UI.AutoPlay = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Imaging.BitmapImage.UriSource"/></summary>
@@ -45064,14 +46620,17 @@ namespace CSharpMarkup.WinUI // BitmapImage
         public static TView CreateOptions<TView>(this TView view, Xaml.Media.Imaging.BitmapCreateOptions value) where TView : BitmapImage { view.UI.CreateOptions = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Imaging.BitmapImage.AutoPlay"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> AutoPlay<TTarget>(this TTarget target) where TTarget : BitmapImage
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Imaging.BitmapImage.AutoPlayProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Imaging.BitmapImage.IsAnimatedBitmap"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsAnimatedBitmap<TTarget>(this TTarget target) where TTarget : BitmapImage
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Imaging.BitmapImage.IsAnimatedBitmapProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Imaging.BitmapImage.IsPlaying"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsPlaying<TTarget>(this TTarget target) where TTarget : BitmapImage
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Imaging.BitmapImage.IsPlayingProperty);
 
@@ -45183,6 +46742,7 @@ namespace CSharpMarkup.WinUI // SoftwareBitmapSource
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Imaging.SoftwareBitmapSource"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static SoftwareBitmapSource SoftwareBitmapSource()
         {
             var ui = new Xaml.Media.Imaging.SoftwareBitmapSource();
@@ -45360,6 +46920,7 @@ namespace CSharpMarkup.WinUI // CompositeTransform3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Media3D.CompositeTransform3D"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static CompositeTransform3D CompositeTransform3D(double? TranslateZ = default, double? TranslateY = default, double? TranslateX = default, double? ScaleZ = default, double? ScaleY = default, double? ScaleX = default, double? RotationZ = default, double? RotationY = default, double? RotationX = default, double? CenterZ = default, double? CenterY = default, double? CenterX = default)
         {
             var ui = new Xaml.Media.Media3D.CompositeTransform3D();
@@ -45379,6 +46940,7 @@ namespace CSharpMarkup.WinUI // CompositeTransform3D
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Media3D.CompositeTransform3D"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static CompositeTransform3D CompositeTransform3D()
         {
             var ui = new Xaml.Media.Media3D.CompositeTransform3D();
@@ -45417,86 +46979,110 @@ namespace CSharpMarkup.WinUI // CompositeTransform3D
     public static partial class CompositeTransform3DExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.TranslateZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TranslateZ<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.TranslateZ = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.TranslateY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TranslateY<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.TranslateY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.TranslateX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView TranslateX<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.TranslateX = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.ScaleZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ScaleZ<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.ScaleZ = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.ScaleY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ScaleY<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.ScaleY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.ScaleX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView ScaleX<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.ScaleX = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.RotationZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RotationZ<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.RotationZ = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.RotationY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RotationY<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.RotationY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.RotationX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView RotationX<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.RotationX = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.CenterZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CenterZ<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.CenterZ = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.CenterY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CenterY<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.CenterY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.CompositeTransform3D.CenterX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CenterX<TView>(this TView view, double value) where TView : CompositeTransform3D { view.UI.CenterX = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.CenterX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> CenterX<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.CenterXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.CenterY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> CenterY<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.CenterYProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.CenterZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> CenterZ<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.CenterZProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.RotationX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> RotationX<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.RotationXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.RotationY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> RotationY<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.RotationYProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.RotationZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> RotationZ<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.RotationZProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.ScaleX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ScaleX<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.ScaleXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.ScaleY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ScaleY<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.ScaleYProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.ScaleZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> ScaleZ<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.ScaleZProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.TranslateX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> TranslateX<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.TranslateXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.TranslateY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> TranslateY<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.TranslateYProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.CompositeTransform3D.TranslateZ"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> TranslateZ<TTarget>(this TTarget target) where TTarget : CompositeTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.CompositeTransform3D.TranslateZProperty);
     }
@@ -45507,6 +47093,7 @@ namespace CSharpMarkup.WinUI // PerspectiveTransform3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Media3D.PerspectiveTransform3D"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PerspectiveTransform3D PerspectiveTransform3D(double? OffsetY = default, double? OffsetX = default, double? Depth = default)
         {
             var ui = new Xaml.Media.Media3D.PerspectiveTransform3D();
@@ -45517,6 +47104,7 @@ namespace CSharpMarkup.WinUI // PerspectiveTransform3D
         }
 
         /// <summary>Create a <see cref="Xaml.Media.Media3D.PerspectiveTransform3D"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PerspectiveTransform3D PerspectiveTransform3D()
         {
             var ui = new Xaml.Media.Media3D.PerspectiveTransform3D();
@@ -45555,23 +47143,29 @@ namespace CSharpMarkup.WinUI // PerspectiveTransform3D
     public static partial class PerspectiveTransform3DExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Media3D.PerspectiveTransform3D.OffsetY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OffsetY<TView>(this TView view, double value) where TView : PerspectiveTransform3D { view.UI.OffsetY = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.PerspectiveTransform3D.OffsetX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView OffsetX<TView>(this TView view, double value) where TView : PerspectiveTransform3D { view.UI.OffsetX = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Media3D.PerspectiveTransform3D.Depth"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Depth<TView>(this TView view, double value) where TView : PerspectiveTransform3D { view.UI.Depth = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.PerspectiveTransform3D.Depth"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> Depth<TTarget>(this TTarget target) where TTarget : PerspectiveTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.PerspectiveTransform3D.DepthProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.PerspectiveTransform3D.OffsetX"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> OffsetX<TTarget>(this TTarget target) where TTarget : PerspectiveTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.PerspectiveTransform3D.OffsetXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Media3D.PerspectiveTransform3D.OffsetY"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> OffsetY<TTarget>(this TTarget target) where TTarget : PerspectiveTransform3D
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.Media3D.PerspectiveTransform3D.OffsetYProperty);
     }
@@ -45659,6 +47253,7 @@ namespace CSharpMarkup.WinUI // PrintDocument
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Printing.PrintDocument"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PrintDocument PrintDocument(object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Printing.PrintDocument();
@@ -45668,6 +47263,7 @@ namespace CSharpMarkup.WinUI // PrintDocument
         }
 
         /// <summary>Create a <see cref="Xaml.Printing.PrintDocument"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static PrintDocument PrintDocument()
         {
             var ui = new Xaml.Printing.PrintDocument();
@@ -45712,6 +47308,7 @@ namespace CSharpMarkup.WinUI // PrintDocument
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : PrintDocument { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Printing.PrintDocument.DocumentSource"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.Graphics.Printing.IPrintDocumentSource> DocumentSource<TTarget>(this TTarget target) where TTarget : PrintDocument
         => DependencyProperty<TTarget, Windows.Graphics.Printing.IPrintDocumentSource>.Get(target, Xaml.Printing.PrintDocument.DocumentSourceProperty);
 
@@ -46024,12 +47621,14 @@ namespace CSharpMarkup.WinUI // Polygon
     public static partial class PolygonExtensions
     {
         /// <summary>Set <see cref="Xaml.Shapes.Polygon.FillRule"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FillRule<TView>(this TView view, Xaml.Media.FillRule value) where TView : Polygon { view.UI.FillRule = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Shapes.Polygon.Points"/></summary>
         public static TView Points<TView>(this TView view, Xaml.Media.PointCollection value) where TView : Polygon { view.UI.Points = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Shapes.Polygon.FillRule"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.FillRule> FillRule<TTarget>(this TTarget target) where TTarget : Polygon
         => DependencyProperty<TTarget, Xaml.Media.FillRule>.Get(target, Xaml.Shapes.Polygon.FillRuleProperty);
 
@@ -46107,12 +47706,14 @@ namespace CSharpMarkup.WinUI // Polyline
     public static partial class PolylineExtensions
     {
         /// <summary>Set <see cref="Xaml.Shapes.Polyline.FillRule"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FillRule<TView>(this TView view, Xaml.Media.FillRule value) where TView : Polyline { view.UI.FillRule = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Shapes.Polyline.Points"/></summary>
         public static TView Points<TView>(this TView view, Xaml.Media.PointCollection value) where TView : Polyline { view.UI.Points = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Shapes.Polyline.FillRule"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.FillRule> FillRule<TTarget>(this TTarget target) where TTarget : Polyline
         => DependencyProperty<TTarget, Xaml.Media.FillRule>.Get(target, Xaml.Shapes.Polyline.FillRuleProperty);
 
@@ -46225,21 +47826,27 @@ namespace CSharpMarkup.WinUI // Shape
     public static partial class ShapeExtensions
     {
         /// <summary>Set <see cref="Xaml.Shapes.Shape.StrokeStartLineCap"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView StrokeStartLineCap<TView>(this TView view, Xaml.Media.PenLineCap value) where TView : Shape { view.UI.StrokeStartLineCap = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Shapes.Shape.StrokeMiterLimit"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView StrokeMiterLimit<TView>(this TView view, double value) where TView : Shape { view.UI.StrokeMiterLimit = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Shapes.Shape.StrokeLineJoin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView StrokeLineJoin<TView>(this TView view, Xaml.Media.PenLineJoin value) where TView : Shape { view.UI.StrokeLineJoin = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Shapes.Shape.StrokeEndLineCap"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView StrokeEndLineCap<TView>(this TView view, Xaml.Media.PenLineCap value) where TView : Shape { view.UI.StrokeEndLineCap = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Shapes.Shape.StrokeDashOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView StrokeDashOffset<TView>(this TView view, double value) where TView : Shape { view.UI.StrokeDashOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Shapes.Shape.StrokeDashCap"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView StrokeDashCap<TView>(this TView view, Xaml.Media.PenLineCap value) where TView : Shape { view.UI.StrokeDashCap = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Shapes.Shape.Fill"/></summary>
@@ -46270,26 +47877,32 @@ namespace CSharpMarkup.WinUI // Shape
         public static TView StrokeDashArray<TView>(this TView view, Xaml.Media.DoubleCollection value) where TView : Shape { view.UI.StrokeDashArray = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Shapes.Shape.StrokeDashCap"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.PenLineCap> StrokeDashCap<TTarget>(this TTarget target) where TTarget : Shape
         => DependencyProperty<TTarget, Xaml.Media.PenLineCap>.Get(target, Xaml.Shapes.Shape.StrokeDashCapProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Shapes.Shape.StrokeDashOffset"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> StrokeDashOffset<TTarget>(this TTarget target) where TTarget : Shape
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Shapes.Shape.StrokeDashOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Shapes.Shape.StrokeEndLineCap"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.PenLineCap> StrokeEndLineCap<TTarget>(this TTarget target) where TTarget : Shape
         => DependencyProperty<TTarget, Xaml.Media.PenLineCap>.Get(target, Xaml.Shapes.Shape.StrokeEndLineCapProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Shapes.Shape.StrokeLineJoin"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.PenLineJoin> StrokeLineJoin<TTarget>(this TTarget target) where TTarget : Shape
         => DependencyProperty<TTarget, Xaml.Media.PenLineJoin>.Get(target, Xaml.Shapes.Shape.StrokeLineJoinProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Shapes.Shape.StrokeMiterLimit"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> StrokeMiterLimit<TTarget>(this TTarget target) where TTarget : Shape
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Shapes.Shape.StrokeMiterLimitProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Shapes.Shape.StrokeStartLineCap"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.PenLineCap> StrokeStartLineCap<TTarget>(this TTarget target) where TTarget : Shape
         => DependencyProperty<TTarget, Xaml.Media.PenLineCap>.Get(target, Xaml.Shapes.Shape.StrokeStartLineCapProperty);
 
