@@ -34,6 +34,11 @@
 		<GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
 		<GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
 
+		<!-- Enable Source Link -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
 		<DebugType>portable</DebugType>
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -46,6 +51,10 @@
 
 	<ItemGroup Condition=" '$(Configuration)' == 'Generate' ">
 		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/*/**/*.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 	</ItemGroup>
 	
 	<ItemGroup>
