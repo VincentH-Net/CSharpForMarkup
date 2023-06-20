@@ -113,6 +113,38 @@ namespace CSharpMarkup.WinUI
     // The language guarantuees that all parameter chains are completed before the parent chain is started, and that only a single parameter chain is evaluated at the same time.
     // So even if we e.g. put a StackPanel in a StackPanel with StackPanel(StackPanel()), this does not break a chain.
 
+    #region Support collection type ContentProperty
+    // Ensure that item types for collection content properties are defined at the start of codegen (see InitializeContentCollectionTypes() in code generator):
+    public partial class VisualState { }
+    public partial class MenuBarItem { }
+    public partial class MenuFlyoutItemBase { }
+    public partial class HubSection { }
+    public partial class GradientStop { }
+
+    public class CommandBarElement : Xaml.Controls.ICommandBarElement
+    {
+        readonly Xaml.Controls.ICommandBarElement element;
+
+        #region ICommandBarElement implementation
+        public int DynamicOverflowOrder { get => element.DynamicOverflowOrder; set => element.DynamicOverflowOrder = value; }
+        public bool IsCompact { get => element.IsCompact; set => element.IsCompact = value; }
+        public bool IsInOverflow => element.IsInOverflow;
+        #endregion
+
+        public static implicit operator CommandBarElement(AppBarButton e)           => new (e.UI);
+        public static implicit operator CommandBarElement(AppBarElementContainer e) => new (e.UI);
+        public static implicit operator CommandBarElement(AppBarSeparator e)        => new (e.UI);
+        public static implicit operator CommandBarElement(AppBarToggleButton e)     => new (e.UI);
+
+        public CommandBarElement(Xaml.Controls.ICommandBarElement element) => this.element = element;
+    }
+
+    public partial class MenuFlyoutItemBase
+    {
+        public static implicit operator Xaml.Controls.MenuFlyoutItemBase(MenuFlyoutItemBase item) => item.UI;
+    }
+    #endregion
+
     public static partial class DependencyObjectExtensions
     {
         const string bindingContextPath = ""; // TODO: Find framework static var for this
