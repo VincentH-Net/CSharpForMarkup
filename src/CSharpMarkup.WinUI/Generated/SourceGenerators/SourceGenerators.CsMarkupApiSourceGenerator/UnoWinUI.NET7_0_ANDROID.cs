@@ -1224,7 +1224,7 @@ namespace CSharpMarkup.WinUI // Style
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.SetterBase>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Setters.Add(subChildren[j]);
                 else
@@ -2083,7 +2083,7 @@ namespace CSharpMarkup.WinUI // VisualStateGroup
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.VisualState>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.States.Add(subChildren[j]);
                 else
@@ -5573,7 +5573,7 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -7802,7 +7802,7 @@ namespace CSharpMarkup.WinUI // Canvas
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -8298,7 +8298,7 @@ namespace CSharpMarkup.WinUI // ComboBox
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -8542,7 +8542,7 @@ namespace CSharpMarkup.WinUI // CommandBar
                 if (child == null) continue;
 
                 var subChildren = Spreader<CSharpMarkup.WinUI.CommandBarElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.PrimaryCommands.Add(subChildren[j]);
                 else
@@ -8715,7 +8715,7 @@ namespace CSharpMarkup.WinUI // CommandBarOverflowPresenter
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -10647,7 +10647,7 @@ namespace CSharpMarkup.WinUI // FlipView
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -11292,7 +11292,7 @@ namespace CSharpMarkup.WinUI // Grid
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -11483,7 +11483,7 @@ namespace CSharpMarkup.WinUI // GridView
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -12814,7 +12814,7 @@ namespace CSharpMarkup.WinUI // ItemsControl
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -13342,7 +13342,7 @@ namespace CSharpMarkup.WinUI // ItemsRepeaterScrollHost
                 if (child == null) continue;
 
                 var subChildren = Spreader<Android.Views.View>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.ScrollViewer.Add(subChildren[j]);
                 else
@@ -13411,7 +13411,7 @@ namespace CSharpMarkup.WinUI // ItemsStackPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -13534,7 +13534,7 @@ namespace CSharpMarkup.WinUI // ItemsWrapGrid
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -13813,7 +13813,7 @@ namespace CSharpMarkup.WinUI // ListBox
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -14154,7 +14154,7 @@ namespace CSharpMarkup.WinUI // ListView
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -15099,7 +15099,7 @@ namespace CSharpMarkup.WinUI // MenuBar
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Controls.MenuBarItem>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j]);
                 else
@@ -15175,7 +15175,7 @@ namespace CSharpMarkup.WinUI // MenuBarItem
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Controls.MenuFlyoutItemBase>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j]);
                 else
@@ -15258,7 +15258,7 @@ namespace CSharpMarkup.WinUI // MenuBarItemFlyout
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Controls.MenuFlyoutItemBase>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j]);
                 else
@@ -15318,7 +15318,7 @@ namespace CSharpMarkup.WinUI // MenuFlyout
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Controls.MenuFlyoutItemBase>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j]);
                 else
@@ -15510,7 +15510,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutPresenter
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -15641,7 +15641,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutSubItem
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Controls.MenuFlyoutItemBase>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j]);
                 else
@@ -16933,7 +16933,7 @@ namespace CSharpMarkup.WinUI // Panel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -18097,7 +18097,7 @@ namespace CSharpMarkup.WinUI // Pivot
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -18835,7 +18835,7 @@ namespace CSharpMarkup.WinUI // RadioButtons
                 if (child == null) continue;
 
                 var subChildren = Spreader<CSharpMarkup.WinUI.UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j]);
                 else
@@ -19606,7 +19606,7 @@ namespace CSharpMarkup.WinUI // RelativePanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -20300,7 +20300,7 @@ namespace CSharpMarkup.WinUI // RichTextBlock
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Documents.Block>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Blocks.Add(subChildren[j]);
                 else
@@ -22153,7 +22153,7 @@ namespace CSharpMarkup.WinUI // StackPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -22313,7 +22313,7 @@ namespace CSharpMarkup.WinUI // SwapChainBackgroundPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -22385,7 +22385,7 @@ namespace CSharpMarkup.WinUI // SwapChainPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -22922,7 +22922,7 @@ namespace CSharpMarkup.WinUI // TabView
                 if (child == null) continue;
 
                 var subChildren = Spreader<CSharpMarkup.WinUI.UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.TabItems.Add(subChildren[j]);
                 else
@@ -25562,7 +25562,7 @@ namespace CSharpMarkup.WinUI // TreeViewList
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -26041,7 +26041,7 @@ namespace CSharpMarkup.WinUI // VariableSizedWrapGrid
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -26386,7 +26386,7 @@ namespace CSharpMarkup.WinUI // VirtualizingPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -26456,7 +26456,7 @@ namespace CSharpMarkup.WinUI // VirtualizingStackPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -26661,7 +26661,7 @@ namespace CSharpMarkup.WinUI // WrapGrid
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -26790,7 +26790,7 @@ namespace CSharpMarkup.WinUI // LayoutPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -28592,7 +28592,7 @@ namespace CSharpMarkup.WinUI // NativePivotPresenter
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -28947,7 +28947,7 @@ namespace CSharpMarkup.WinUI // WrapPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -29380,7 +29380,7 @@ namespace CSharpMarkup.WinUI // CalendarPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -29516,7 +29516,7 @@ namespace CSharpMarkup.WinUI // CarouselPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -29957,7 +29957,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
                 if (child == null) continue;
 
                 var subChildren = Spreader<CSharpMarkup.WinUI.CommandBarElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.PrimaryCommands.Add(subChildren[j]);
                 else
@@ -30950,7 +30950,7 @@ namespace CSharpMarkup.WinUI // InfoBarPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -32684,7 +32684,7 @@ namespace CSharpMarkup.WinUI // MonochromaticOverlayPresenter
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -32935,7 +32935,7 @@ namespace CSharpMarkup.WinUI // OrientedVirtualizingPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -33131,7 +33131,7 @@ namespace CSharpMarkup.WinUI // PivotHeaderPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -33200,7 +33200,7 @@ namespace CSharpMarkup.WinUI // PivotPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -33650,7 +33650,7 @@ namespace CSharpMarkup.WinUI // Selector
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -33879,7 +33879,7 @@ namespace CSharpMarkup.WinUI // TabViewListView
                 if (child == null) continue;
 
                 var subChildren = Spreader<UIObject>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Items.Add(subChildren[j].UI);
                 else
@@ -34833,7 +34833,7 @@ namespace CSharpMarkup.WinUI // Bold
                 if (child == null) continue;
 
                 var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
                 else
@@ -35066,7 +35066,7 @@ namespace CSharpMarkup.WinUI // Hyperlink
                 if (child == null) continue;
 
                 var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
                 else
@@ -35305,7 +35305,7 @@ namespace CSharpMarkup.WinUI // Italic
                 if (child == null) continue;
 
                 var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
                 else
@@ -35410,7 +35410,7 @@ namespace CSharpMarkup.WinUI // Paragraph
                 if (child == null) continue;
 
                 var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
                 else
@@ -35556,7 +35556,7 @@ namespace CSharpMarkup.WinUI // Span
                 if (child == null) continue;
 
                 var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
                 else
@@ -35887,7 +35887,7 @@ namespace CSharpMarkup.WinUI // Underline
                 if (child == null) continue;
 
                 var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
                 else
@@ -37088,7 +37088,7 @@ namespace CSharpMarkup.WinUI // GeometryGroup
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Media.Geometry>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -37470,7 +37470,7 @@ namespace CSharpMarkup.WinUI // LinearGradientBrush
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Media.GradientStop>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.GradientStops.Add(subChildren[j]);
                 else
@@ -37808,7 +37808,7 @@ namespace CSharpMarkup.WinUI // PathFigure
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Media.PathSegment>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Segments.Add(subChildren[j]);
                 else
@@ -37951,7 +37951,7 @@ namespace CSharpMarkup.WinUI // PathGeometry
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Media.PathFigure>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Figures.Add(subChildren[j]);
                 else
@@ -38590,7 +38590,7 @@ namespace CSharpMarkup.WinUI // RadialGradientBrush
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Media.GradientStop>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.GradientStops.Add(subChildren[j]);
                 else
@@ -39227,7 +39227,7 @@ namespace CSharpMarkup.WinUI // TransformGroup
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Media.Transform>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -39981,7 +39981,7 @@ namespace CSharpMarkup.WinUI // ColorAnimationUsingKeyFrames
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Media.Animation.ColorKeyFrame>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
                 else
@@ -40745,7 +40745,7 @@ namespace CSharpMarkup.WinUI // DoubleAnimationUsingKeyFrames
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Media.Animation.DoubleKeyFrame>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
                 else
@@ -42364,7 +42364,7 @@ namespace CSharpMarkup.WinUI // ObjectAnimationUsingKeyFrames
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Media.Animation.ObjectKeyFrame>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
                 else
@@ -44182,7 +44182,7 @@ namespace CSharpMarkup.WinUI // Storyboard
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.Media.Animation.Timeline>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -47281,7 +47281,7 @@ namespace CSharpMarkup.WinUI // NativeFramePresenter
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else
@@ -47350,7 +47350,7 @@ namespace CSharpMarkup.WinUI // ManagedItemsStackPanel
                 if (child == null) continue;
 
                 var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
                 else

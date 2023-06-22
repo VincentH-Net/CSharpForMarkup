@@ -121,7 +121,7 @@ namespace _MarkupNamespace_
                 if (child == null) continue;
 
                 var subChildren = Spreader<_PropertyType_>.ExtractChildren(child);
-                if (subChildren != null)
+                if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui._PropertyName_.Add(subChildren[j]/*_AccessUI_*/);
                 else
