@@ -21,7 +21,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>2.2.5</Version>
+		<Version>2.2.8</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573;Uno0001</NoWarn>

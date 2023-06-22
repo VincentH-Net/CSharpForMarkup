@@ -13220,23 +13220,15 @@ namespace CSharpMarkup.WinUI // ItemsRepeater
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ItemsRepeater"/></summary>
-        public static ItemsRepeater ItemsRepeater(UIObject ItemTemplate)
-        {
-            var ui = new Xaml.Controls.ItemsRepeater();
-            if (ItemTemplate != null) ui.ItemTemplate = ItemTemplate.UI;
-            return CSharpMarkup.WinUI.ItemsRepeater.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.ItemsRepeater"/></summary>
-        public static ItemsRepeater ItemsRepeater(object ItemsSource = default, Xaml.Controls.Layout Layout = default, Xaml.Controls.ElementAnimator Animator = default, double? HorizontalCacheLength = default, double? VerticalCacheLength = default, UIObject ItemTemplate = default)
+        public static ItemsRepeater ItemsRepeater(object ItemsSource = default, Xaml.IElementFactory ItemTemplate = default, Xaml.Controls.Layout Layout = default, Xaml.Controls.ElementAnimator Animator = default, double? HorizontalCacheLength = default, double? VerticalCacheLength = default)
         {
             var ui = new Xaml.Controls.ItemsRepeater();
             if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
+            if (ItemTemplate is not null) ui.ItemTemplate = ItemTemplate;
             if (Layout is not null) ui.Layout = Layout;
             if (Animator is not null) ui.Animator = Animator;
             if (HorizontalCacheLength is not null) ui.HorizontalCacheLength = HorizontalCacheLength.Value;
             if (VerticalCacheLength is not null) ui.VerticalCacheLength = VerticalCacheLength.Value;
-            if (ItemTemplate != null) ui.ItemTemplate = ItemTemplate.UI;
             return CSharpMarkup.WinUI.ItemsRepeater.StartChain(ui);
         }
 
@@ -13290,6 +13282,9 @@ namespace CSharpMarkup.WinUI // ItemsRepeater
         /// <summary>Set <see cref="Xaml.Controls.ItemsRepeater.ItemsSource"/></summary>
         public static TView ItemsSource<TView>(this TView view, object value) where TView : ItemsRepeater { view.UI.ItemsSource = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.ItemsRepeater.ItemTemplate"/></summary>
+        public static TView ItemTemplate<TView>(this TView view, Xaml.IElementFactory value) where TView : ItemsRepeater { view.UI.ItemTemplate = value; return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.ItemsRepeater.Layout"/></summary>
         public static TView Layout<TView>(this TView view, Xaml.Controls.Layout value) where TView : ItemsRepeater { view.UI.Layout = value; return view; }
 
@@ -13307,8 +13302,8 @@ namespace CSharpMarkup.WinUI // ItemsRepeater
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ItemsRepeater.ItemsSourceProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsRepeater.ItemTemplate"/></summary>
-        public static DependencyProperty<TTarget, object> ItemTemplate<TTarget>(this TTarget target) where TTarget : ItemsRepeater
-        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ItemsRepeater.ItemTemplateProperty);
+        public static DependencyProperty<TTarget, Xaml.IElementFactory> ItemTemplate<TTarget>(this TTarget target) where TTarget : ItemsRepeater
+        => DependencyProperty<TTarget, Xaml.IElementFactory>.Get(target, Xaml.Controls.ItemsRepeater.ItemTemplateProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsRepeater.Layout"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.Layout> Layout<TTarget>(this TTarget target) where TTarget : ItemsRepeater
