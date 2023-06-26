@@ -7065,7 +7065,7 @@ namespace CSharpMarkup.WinUI // CommandBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CommandBar"/></summary>
-        public static CommandBar CommandBar(params CSharpMarkup.WinUI.CommandBarElement[] PrimaryCommands)
+        public static CommandBar CommandBar(params CommandBarElement[] PrimaryCommands)
         {
             var ui = new Xaml.Controls.CommandBar();
             for (int i = 0; i < PrimaryCommands.Length; i++)
@@ -7073,7 +7073,7 @@ namespace CSharpMarkup.WinUI // CommandBar
                 var child = PrimaryCommands[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.CommandBarElement>.ExtractChildren(child);
+                var subChildren = Spreader<CommandBarElement>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.PrimaryCommands.Add(subChildren[j]);
@@ -7166,7 +7166,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CommandBarFlyout"/></summary>
-        public static CommandBarFlyout CommandBarFlyout(params CSharpMarkup.WinUI.CommandBarElement[] PrimaryCommands)
+        public static CommandBarFlyout CommandBarFlyout(params CommandBarElement[] PrimaryCommands)
         {
             var ui = new Xaml.Controls.CommandBarFlyout();
             for (int i = 0; i < PrimaryCommands.Length; i++)
@@ -7174,7 +7174,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
                 var child = PrimaryCommands[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.CommandBarElement>.ExtractChildren(child);
+                var subChildren = Spreader<CommandBarElement>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.PrimaryCommands.Add(subChildren[j]);
@@ -15777,7 +15777,7 @@ namespace CSharpMarkup.WinUI // RadioButtons
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.RadioButtons"/></summary>
-        public static RadioButtons RadioButtons(params CSharpMarkup.WinUI.UIObject[] Items)
+        public static RadioButtons RadioButtons(params UIObject[] Items)
         {
             var ui = new Xaml.Controls.RadioButtons();
             for (int i = 0; i < Items.Length; i++)
@@ -15785,12 +15785,12 @@ namespace CSharpMarkup.WinUI // RadioButtons
                 var child = Items[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.UIObject>.ExtractChildren(child);
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
-                        ui.Items.Add(subChildren[j]);
+                        ui.Items.Add(subChildren[j].UI);
                 else
-                    ui.Items.Add(child);
+                    ui.Items.Add(child.UI);
             }
             return CSharpMarkup.WinUI.RadioButtons.StartChain(ui);
         }
@@ -19417,7 +19417,7 @@ namespace CSharpMarkup.WinUI // TabView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TabView"/></summary>
-        public static TabView TabView(params CSharpMarkup.WinUI.UIObject[] TabItems)
+        public static TabView TabView(params UIObject[] TabItems)
         {
             var ui = new Xaml.Controls.TabView();
             for (int i = 0; i < TabItems.Length; i++)
@@ -19425,12 +19425,12 @@ namespace CSharpMarkup.WinUI // TabView
                 var child = TabItems[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.UIObject>.ExtractChildren(child);
+                var subChildren = Spreader<UIObject>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
-                        ui.TabItems.Add(subChildren[j]);
+                        ui.TabItems.Add(subChildren[j].UI);
                 else
-                    ui.TabItems.Add(child);
+                    ui.TabItems.Add(child.UI);
             }
             return CSharpMarkup.WinUI.TabView.StartChain(ui);
         }
@@ -20108,7 +20108,7 @@ namespace CSharpMarkup.WinUI // TextBlock
     {
         /// <summary>Create a <see cref="Xaml.Controls.TextBlock"/></summary>
         /// <remarks>Remark: TextBlock().Bind() binds to <see cref="Xaml.Controls.TextBlock.TextProperty"/></remarks>
-        public static TextBlock TextBlock(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
+        public static TextBlock TextBlock(params InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Controls.TextBlock();
             for (int i = 0; i < Inlines.Length; i++)
@@ -20116,7 +20116,7 @@ namespace CSharpMarkup.WinUI // TextBlock
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -20663,7 +20663,7 @@ namespace CSharpMarkup.WinUI // TextCommandBarFlyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TextCommandBarFlyout"/></summary>
-        public static TextCommandBarFlyout TextCommandBarFlyout(params CSharpMarkup.WinUI.CommandBarElement[] PrimaryCommands)
+        public static TextCommandBarFlyout TextCommandBarFlyout(params CommandBarElement[] PrimaryCommands)
         {
             var ui = new Xaml.Controls.TextCommandBarFlyout();
             for (int i = 0; i < PrimaryCommands.Length; i++)
@@ -20671,7 +20671,7 @@ namespace CSharpMarkup.WinUI // TextCommandBarFlyout
                 var child = PrimaryCommands[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.CommandBarElement>.ExtractChildren(child);
+                var subChildren = Spreader<CommandBarElement>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.PrimaryCommands.Add(subChildren[j]);
@@ -23382,7 +23382,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBar"/></summary>
-        public static CommandBarFlyoutCommandBar CommandBarFlyoutCommandBar(params CSharpMarkup.WinUI.CommandBarElement[] PrimaryCommands)
+        public static CommandBarFlyoutCommandBar CommandBarFlyoutCommandBar(params CommandBarElement[] PrimaryCommands)
         {
             var ui = new Xaml.Controls.Primitives.CommandBarFlyoutCommandBar();
             for (int i = 0; i < PrimaryCommands.Length; i++)
@@ -23390,7 +23390,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
                 var child = PrimaryCommands[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.CommandBarElement>.ExtractChildren(child);
+                var subChildren = Spreader<CommandBarElement>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.PrimaryCommands.Add(subChildren[j]);
@@ -26969,7 +26969,7 @@ namespace CSharpMarkup.WinUI // Bold
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Documents.Bold"/></summary>
-        public static Bold Bold(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
+        public static Bold Bold(params InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Bold();
             for (int i = 0; i < Inlines.Length; i++)
@@ -26977,7 +26977,7 @@ namespace CSharpMarkup.WinUI // Bold
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -27170,7 +27170,7 @@ namespace CSharpMarkup.WinUI // Hyperlink
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Documents.Hyperlink"/></summary>
-        public static Hyperlink Hyperlink(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
+        public static Hyperlink Hyperlink(params InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Hyperlink();
             for (int i = 0; i < Inlines.Length; i++)
@@ -27178,7 +27178,7 @@ namespace CSharpMarkup.WinUI // Hyperlink
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -27399,7 +27399,7 @@ namespace CSharpMarkup.WinUI // Italic
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Documents.Italic"/></summary>
-        public static Italic Italic(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
+        public static Italic Italic(params InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Italic();
             for (int i = 0; i < Inlines.Length; i++)
@@ -27407,7 +27407,7 @@ namespace CSharpMarkup.WinUI // Italic
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -27504,7 +27504,7 @@ namespace CSharpMarkup.WinUI // Paragraph
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Documents.Paragraph"/></summary>
-        public static Paragraph Paragraph(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
+        public static Paragraph Paragraph(params InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Paragraph();
             for (int i = 0; i < Inlines.Length; i++)
@@ -27512,7 +27512,7 @@ namespace CSharpMarkup.WinUI // Paragraph
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -27644,7 +27644,7 @@ namespace CSharpMarkup.WinUI // Span
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Documents.Span"/></summary>
-        public static Span Span(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
+        public static Span Span(params InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Span();
             for (int i = 0; i < Inlines.Length; i++)
@@ -27652,7 +27652,7 @@ namespace CSharpMarkup.WinUI // Span
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -27880,7 +27880,7 @@ namespace CSharpMarkup.WinUI // Underline
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Documents.Underline"/></summary>
-        public static Underline Underline(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines)
+        public static Underline Underline(params InlineCollectionItem[] Inlines)
         {
             var ui = new Xaml.Documents.Underline();
             for (int i = 0; i < Inlines.Length; i++)
@@ -27888,7 +27888,7 @@ namespace CSharpMarkup.WinUI // Underline
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
