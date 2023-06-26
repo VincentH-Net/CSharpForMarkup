@@ -141,6 +141,11 @@ namespace CSharpMarkup.WinUI
             return global::CSharpMarkup.WinUI.TextBlock.StartChain(ui);
         }
 #endif
+
+#if !HAS_UNO // In WinUI, the generated helper has inconsistent parameter order with Uno; this extra overload allows specifying offset and color by value without ambiguity
+        public static GradientStop GradientStop(Windows.UI.Color Color, double? Offset) => GradientStop(Offset, Color);
+#endif
+
         /// <summary>This helper allows to configure an existing UI framework page object instance, i.e. when a page instance is created by the UI framework when specifying the page type in navigation</summary>
         public static Page Content(this Xaml.Controls.Page page, Xaml.UIElement content)
         {
