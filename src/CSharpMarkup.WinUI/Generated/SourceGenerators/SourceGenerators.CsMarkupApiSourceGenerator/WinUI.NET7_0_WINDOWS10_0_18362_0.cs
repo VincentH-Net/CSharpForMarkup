@@ -7076,9 +7076,9 @@ namespace CSharpMarkup.WinUI // CommandBar
                 var subChildren = Spreader<CommandBarElement>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
-                        ui.PrimaryCommands.Add(subChildren[j]);
+                        ui.PrimaryCommands.Add(subChildren[j].UI);
                 else
-                    ui.PrimaryCommands.Add(child);
+                    ui.PrimaryCommands.Add(child.UI);
             }
             return CSharpMarkup.WinUI.CommandBar.StartChain(ui);
         }
@@ -7177,9 +7177,9 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
                 var subChildren = Spreader<CommandBarElement>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
-                        ui.PrimaryCommands.Add(subChildren[j]);
+                        ui.PrimaryCommands.Add(subChildren[j].UI);
                 else
-                    ui.PrimaryCommands.Add(child);
+                    ui.PrimaryCommands.Add(child.UI);
             }
             return CSharpMarkup.WinUI.CommandBarFlyout.StartChain(ui);
         }
@@ -20674,9 +20674,9 @@ namespace CSharpMarkup.WinUI // TextCommandBarFlyout
                 var subChildren = Spreader<CommandBarElement>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
-                        ui.PrimaryCommands.Add(subChildren[j]);
+                        ui.PrimaryCommands.Add(subChildren[j].UI);
                 else
-                    ui.PrimaryCommands.Add(child);
+                    ui.PrimaryCommands.Add(child.UI);
             }
             return CSharpMarkup.WinUI.TextCommandBarFlyout.StartChain(ui);
         }
@@ -23393,9 +23393,9 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
                 var subChildren = Spreader<CommandBarElement>.ExtractChildren(child);
                 if (subChildren is not null)
                     for (int j = 0; j < subChildren.Length; j++)
-                        ui.PrimaryCommands.Add(subChildren[j]);
+                        ui.PrimaryCommands.Add(subChildren[j].UI);
                 else
-                    ui.PrimaryCommands.Add(child);
+                    ui.PrimaryCommands.Add(child.UI);
             }
             return CSharpMarkup.WinUI.CommandBarFlyoutCommandBar.StartChain(ui);
         }

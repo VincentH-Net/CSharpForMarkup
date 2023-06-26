@@ -134,21 +134,22 @@ namespace CSharpMarkup.Wpf
         }
     }
 
-    public interface IUI<TUI> where TUI : System.Windows.DependencyObject
+    public interface IUI<TUI> : IAnyUI<TUI> where TUI : System.Windows.DependencyObject { }
+
+    public interface IUI_Dispatcher<TUI> : IAnyUI<TUI> where TUI : System.Windows.Threading.DispatcherObject { }
+
+    public interface IAnyUI<TUI> : IAnyUI // Support non-DependencyObject/DispatcherObject UI types, e.g. an interface
     {
         TUI UI { get; }
     }
 
-    public interface IUI_Dispatcher<TUI> where TUI : System.Windows.Threading.DispatcherObject
-    {
-        TUI UI { get; }
-    }
+    public interface IAnyUI { }
 
     /// <summary>
     /// Allows to specify <see cref="CSharpMarkup.Wpf"/> types (e.g. <see cref="TextBlock"/>) as well as commonly used built-in C# / UI types (e.g. <see cref="string"/> or <see cref="System.Windows.Thickness"/>).
     /// </summary>
     /// <remarks>For types not supported by implicit conversion, use the <see cref="UIObject(object)"/> contructor, e.g.: <code>new (FontCapitals.Normal)</code></remarks>
-    public class UIObject
+    public class UIObject : IAnyUI<object>
     {
         public object UI { get; }
 

@@ -1818,7 +1818,7 @@ namespace CSharpMarkup.Wpf // DrawingGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.DrawingGroup"/></summary>
-        public static DrawingGroup DrawingGroup(params System.Windows.Media.Drawing[] Children)
+        public static DrawingGroup DrawingGroup(params Windows.Media.Drawing[] Children)
         {
             var ui = new Windows.Media.DrawingGroup();
             for (int i = 0; i < Children.Length; i++)
@@ -1826,7 +1826,7 @@ namespace CSharpMarkup.Wpf // DrawingGroup
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Drawing>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Drawing>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -2198,7 +2198,7 @@ namespace CSharpMarkup.Wpf // GeneralTransformGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.GeneralTransformGroup"/></summary>
-        public static GeneralTransformGroup GeneralTransformGroup(params System.Windows.Media.GeneralTransform[] Children)
+        public static GeneralTransformGroup GeneralTransformGroup(params Windows.Media.GeneralTransform[] Children)
         {
             var ui = new Windows.Media.GeneralTransformGroup();
             for (int i = 0; i < Children.Length; i++)
@@ -2206,7 +2206,7 @@ namespace CSharpMarkup.Wpf // GeneralTransformGroup
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.GeneralTransform>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.GeneralTransform>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -2436,7 +2436,7 @@ namespace CSharpMarkup.Wpf // GeometryGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.GeometryGroup"/></summary>
-        public static GeometryGroup GeometryGroup(params System.Windows.Media.Geometry[] Children)
+        public static GeometryGroup GeometryGroup(params Windows.Media.Geometry[] Children)
         {
             var ui = new Windows.Media.GeometryGroup();
             for (int i = 0; i < Children.Length; i++)
@@ -2444,7 +2444,7 @@ namespace CSharpMarkup.Wpf // GeometryGroup
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Geometry>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Geometry>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -3081,7 +3081,7 @@ namespace CSharpMarkup.Wpf // LinearGradientBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.LinearGradientBrush"/></summary>
-        public static LinearGradientBrush LinearGradientBrush(params System.Windows.Media.GradientStop[] GradientStops)
+        public static LinearGradientBrush LinearGradientBrush(params Windows.Media.GradientStop[] GradientStops)
         {
             var ui = new Windows.Media.LinearGradientBrush();
             for (int i = 0; i < GradientStops.Length; i++)
@@ -3089,7 +3089,7 @@ namespace CSharpMarkup.Wpf // LinearGradientBrush
                 var child = GradientStops[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.GradientStop>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.GradientStop>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.GradientStops.Add(subChildren[j]);
@@ -3582,7 +3582,7 @@ namespace CSharpMarkup.Wpf // PathFigure
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.PathFigure"/></summary>
-        public static PathFigure PathFigure(params System.Windows.Media.PathSegment[] Segments)
+        public static PathFigure PathFigure(params Windows.Media.PathSegment[] Segments)
         {
             var ui = new Windows.Media.PathFigure();
             for (int i = 0; i < Segments.Length; i++)
@@ -3590,7 +3590,7 @@ namespace CSharpMarkup.Wpf // PathFigure
                 var child = Segments[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.PathSegment>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.PathSegment>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Segments.Add(subChildren[j]);
@@ -3732,7 +3732,7 @@ namespace CSharpMarkup.Wpf // PathGeometry
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.PathGeometry"/></summary>
-        public static PathGeometry PathGeometry(params System.Windows.Media.PathFigure[] Figures)
+        public static PathGeometry PathGeometry(params Windows.Media.PathFigure[] Figures)
         {
             var ui = new Windows.Media.PathGeometry();
             for (int i = 0; i < Figures.Length; i++)
@@ -3740,7 +3740,7 @@ namespace CSharpMarkup.Wpf // PathGeometry
                 var child = Figures[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.PathFigure>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.PathFigure>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Figures.Add(subChildren[j]);
@@ -4365,7 +4365,7 @@ namespace CSharpMarkup.Wpf // RadialGradientBrush
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.RadialGradientBrush"/></summary>
-        public static RadialGradientBrush RadialGradientBrush(params System.Windows.Media.GradientStop[] GradientStops)
+        public static RadialGradientBrush RadialGradientBrush(params Windows.Media.GradientStop[] GradientStops)
         {
             var ui = new Windows.Media.RadialGradientBrush();
             for (int i = 0; i < GradientStops.Length; i++)
@@ -4373,7 +4373,7 @@ namespace CSharpMarkup.Wpf // RadialGradientBrush
                 var child = GradientStops[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.GradientStop>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.GradientStop>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.GradientStops.Add(subChildren[j]);
@@ -5266,7 +5266,7 @@ namespace CSharpMarkup.Wpf // TransformGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.TransformGroup"/></summary>
-        public static TransformGroup TransformGroup(params System.Windows.Media.Transform[] Children)
+        public static TransformGroup TransformGroup(params Windows.Media.Transform[] Children)
         {
             var ui = new Windows.Media.TransformGroup();
             for (int i = 0; i < Children.Length; i++)
@@ -5274,7 +5274,7 @@ namespace CSharpMarkup.Wpf // TransformGroup
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Transform>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Transform>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -5767,7 +5767,7 @@ namespace CSharpMarkup.Wpf // BooleanAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.BooleanAnimationUsingKeyFrames"/></summary>
-        public static BooleanAnimationUsingKeyFrames BooleanAnimationUsingKeyFrames(params System.Windows.Media.Animation.BooleanKeyFrame[] KeyFrames)
+        public static BooleanAnimationUsingKeyFrames BooleanAnimationUsingKeyFrames(params Windows.Media.Animation.BooleanKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.BooleanAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -5775,7 +5775,7 @@ namespace CSharpMarkup.Wpf // BooleanAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.BooleanKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.BooleanKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -6109,7 +6109,7 @@ namespace CSharpMarkup.Wpf // ByteAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ByteAnimationUsingKeyFrames"/></summary>
-        public static ByteAnimationUsingKeyFrames ByteAnimationUsingKeyFrames(params System.Windows.Media.Animation.ByteKeyFrame[] KeyFrames)
+        public static ByteAnimationUsingKeyFrames ByteAnimationUsingKeyFrames(params Windows.Media.Animation.ByteKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.ByteAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -6117,7 +6117,7 @@ namespace CSharpMarkup.Wpf // ByteAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.ByteKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.ByteKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -6272,7 +6272,7 @@ namespace CSharpMarkup.Wpf // CharAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.CharAnimationUsingKeyFrames"/></summary>
-        public static CharAnimationUsingKeyFrames CharAnimationUsingKeyFrames(params System.Windows.Media.Animation.CharKeyFrame[] KeyFrames)
+        public static CharAnimationUsingKeyFrames CharAnimationUsingKeyFrames(params Windows.Media.Animation.CharKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.CharAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -6280,7 +6280,7 @@ namespace CSharpMarkup.Wpf // CharAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.CharKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.CharKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -6648,7 +6648,7 @@ namespace CSharpMarkup.Wpf // ColorAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ColorAnimationUsingKeyFrames"/></summary>
-        public static ColorAnimationUsingKeyFrames ColorAnimationUsingKeyFrames(params System.Windows.Media.Animation.ColorKeyFrame[] KeyFrames)
+        public static ColorAnimationUsingKeyFrames ColorAnimationUsingKeyFrames(params Windows.Media.Animation.ColorKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.ColorAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -6656,7 +6656,7 @@ namespace CSharpMarkup.Wpf // ColorAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.ColorKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.ColorKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -6973,7 +6973,7 @@ namespace CSharpMarkup.Wpf // DecimalAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.DecimalAnimationUsingKeyFrames"/></summary>
-        public static DecimalAnimationUsingKeyFrames DecimalAnimationUsingKeyFrames(params System.Windows.Media.Animation.DecimalKeyFrame[] KeyFrames)
+        public static DecimalAnimationUsingKeyFrames DecimalAnimationUsingKeyFrames(params Windows.Media.Animation.DecimalKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.DecimalAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -6981,7 +6981,7 @@ namespace CSharpMarkup.Wpf // DecimalAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.DecimalKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.DecimalKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -8412,7 +8412,7 @@ namespace CSharpMarkup.Wpf // DoubleAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.DoubleAnimationUsingKeyFrames"/></summary>
-        public static DoubleAnimationUsingKeyFrames DoubleAnimationUsingKeyFrames(params System.Windows.Media.Animation.DoubleKeyFrame[] KeyFrames)
+        public static DoubleAnimationUsingKeyFrames DoubleAnimationUsingKeyFrames(params Windows.Media.Animation.DoubleKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.DoubleAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -8420,7 +8420,7 @@ namespace CSharpMarkup.Wpf // DoubleAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.DoubleKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.DoubleKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -10215,7 +10215,7 @@ namespace CSharpMarkup.Wpf // Int16AnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int16AnimationUsingKeyFrames"/></summary>
-        public static Int16AnimationUsingKeyFrames Int16AnimationUsingKeyFrames(params System.Windows.Media.Animation.Int16KeyFrame[] KeyFrames)
+        public static Int16AnimationUsingKeyFrames Int16AnimationUsingKeyFrames(params Windows.Media.Animation.Int16KeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Int16AnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -10223,7 +10223,7 @@ namespace CSharpMarkup.Wpf // Int16AnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.Int16KeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.Int16KeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -10499,7 +10499,7 @@ namespace CSharpMarkup.Wpf // Int32AnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int32AnimationUsingKeyFrames"/></summary>
-        public static Int32AnimationUsingKeyFrames Int32AnimationUsingKeyFrames(params System.Windows.Media.Animation.Int32KeyFrame[] KeyFrames)
+        public static Int32AnimationUsingKeyFrames Int32AnimationUsingKeyFrames(params Windows.Media.Animation.Int32KeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Int32AnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -10507,7 +10507,7 @@ namespace CSharpMarkup.Wpf // Int32AnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.Int32KeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.Int32KeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -10783,7 +10783,7 @@ namespace CSharpMarkup.Wpf // Int64AnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Int64AnimationUsingKeyFrames"/></summary>
-        public static Int64AnimationUsingKeyFrames Int64AnimationUsingKeyFrames(params System.Windows.Media.Animation.Int64KeyFrame[] KeyFrames)
+        public static Int64AnimationUsingKeyFrames Int64AnimationUsingKeyFrames(params Windows.Media.Animation.Int64KeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Int64AnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -10791,7 +10791,7 @@ namespace CSharpMarkup.Wpf // Int64AnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.Int64KeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.Int64KeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -11908,7 +11908,7 @@ namespace CSharpMarkup.Wpf // MatrixAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.MatrixAnimationUsingKeyFrames"/></summary>
-        public static MatrixAnimationUsingKeyFrames MatrixAnimationUsingKeyFrames(params System.Windows.Media.Animation.MatrixKeyFrame[] KeyFrames)
+        public static MatrixAnimationUsingKeyFrames MatrixAnimationUsingKeyFrames(params Windows.Media.Animation.MatrixKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.MatrixAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -11916,7 +11916,7 @@ namespace CSharpMarkup.Wpf // MatrixAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.MatrixKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.MatrixKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -12151,7 +12151,7 @@ namespace CSharpMarkup.Wpf // ObjectAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ObjectAnimationUsingKeyFrames"/></summary>
-        public static ObjectAnimationUsingKeyFrames ObjectAnimationUsingKeyFrames(params System.Windows.Media.Animation.ObjectKeyFrame[] KeyFrames)
+        public static ObjectAnimationUsingKeyFrames ObjectAnimationUsingKeyFrames(params Windows.Media.Animation.ObjectKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.ObjectAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -12159,7 +12159,7 @@ namespace CSharpMarkup.Wpf // ObjectAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.ObjectKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.ObjectKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -12287,7 +12287,7 @@ namespace CSharpMarkup.Wpf // ParallelTimeline
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ParallelTimeline"/></summary>
-        public static ParallelTimeline ParallelTimeline(params System.Windows.Media.Animation.Timeline[] Children)
+        public static ParallelTimeline ParallelTimeline(params Windows.Media.Animation.Timeline[] Children)
         {
             var ui = new Windows.Media.Animation.ParallelTimeline();
             for (int i = 0; i < Children.Length; i++)
@@ -12295,7 +12295,7 @@ namespace CSharpMarkup.Wpf // ParallelTimeline
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.Timeline>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.Timeline>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -12517,7 +12517,7 @@ namespace CSharpMarkup.Wpf // Point3DAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Point3DAnimationUsingKeyFrames"/></summary>
-        public static Point3DAnimationUsingKeyFrames Point3DAnimationUsingKeyFrames(params System.Windows.Media.Animation.Point3DKeyFrame[] KeyFrames)
+        public static Point3DAnimationUsingKeyFrames Point3DAnimationUsingKeyFrames(params Windows.Media.Animation.Point3DKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Point3DAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -12525,7 +12525,7 @@ namespace CSharpMarkup.Wpf // Point3DAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.Point3DKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.Point3DKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -12801,7 +12801,7 @@ namespace CSharpMarkup.Wpf // PointAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.PointAnimationUsingKeyFrames"/></summary>
-        public static PointAnimationUsingKeyFrames PointAnimationUsingKeyFrames(params System.Windows.Media.Animation.PointKeyFrame[] KeyFrames)
+        public static PointAnimationUsingKeyFrames PointAnimationUsingKeyFrames(params Windows.Media.Animation.PointKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.PointAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -12809,7 +12809,7 @@ namespace CSharpMarkup.Wpf // PointAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.PointKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.PointKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -13303,7 +13303,7 @@ namespace CSharpMarkup.Wpf // QuaternionAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.QuaternionAnimationUsingKeyFrames"/></summary>
-        public static QuaternionAnimationUsingKeyFrames QuaternionAnimationUsingKeyFrames(params System.Windows.Media.Animation.QuaternionKeyFrame[] KeyFrames)
+        public static QuaternionAnimationUsingKeyFrames QuaternionAnimationUsingKeyFrames(params Windows.Media.Animation.QuaternionKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.QuaternionAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -13311,7 +13311,7 @@ namespace CSharpMarkup.Wpf // QuaternionAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.QuaternionKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.QuaternionKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -13628,7 +13628,7 @@ namespace CSharpMarkup.Wpf // RectAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.RectAnimationUsingKeyFrames"/></summary>
-        public static RectAnimationUsingKeyFrames RectAnimationUsingKeyFrames(params System.Windows.Media.Animation.RectKeyFrame[] KeyFrames)
+        public static RectAnimationUsingKeyFrames RectAnimationUsingKeyFrames(params Windows.Media.Animation.RectKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.RectAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -13636,7 +13636,7 @@ namespace CSharpMarkup.Wpf // RectAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.RectKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.RectKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -13912,7 +13912,7 @@ namespace CSharpMarkup.Wpf // Rotation3DAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames"/></summary>
-        public static Rotation3DAnimationUsingKeyFrames Rotation3DAnimationUsingKeyFrames(params System.Windows.Media.Animation.Rotation3DKeyFrame[] KeyFrames)
+        public static Rotation3DAnimationUsingKeyFrames Rotation3DAnimationUsingKeyFrames(params Windows.Media.Animation.Rotation3DKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Rotation3DAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -13920,7 +13920,7 @@ namespace CSharpMarkup.Wpf // Rotation3DAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.Rotation3DKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.Rotation3DKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -14237,7 +14237,7 @@ namespace CSharpMarkup.Wpf // SingleAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.SingleAnimationUsingKeyFrames"/></summary>
-        public static SingleAnimationUsingKeyFrames SingleAnimationUsingKeyFrames(params System.Windows.Media.Animation.SingleKeyFrame[] KeyFrames)
+        public static SingleAnimationUsingKeyFrames SingleAnimationUsingKeyFrames(params Windows.Media.Animation.SingleKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.SingleAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -14245,7 +14245,7 @@ namespace CSharpMarkup.Wpf // SingleAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.SingleKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.SingleKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -14521,7 +14521,7 @@ namespace CSharpMarkup.Wpf // SizeAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.SizeAnimationUsingKeyFrames"/></summary>
-        public static SizeAnimationUsingKeyFrames SizeAnimationUsingKeyFrames(params System.Windows.Media.Animation.SizeKeyFrame[] KeyFrames)
+        public static SizeAnimationUsingKeyFrames SizeAnimationUsingKeyFrames(params Windows.Media.Animation.SizeKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.SizeAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -14529,7 +14529,7 @@ namespace CSharpMarkup.Wpf // SizeAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.SizeKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.SizeKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -15972,7 +15972,7 @@ namespace CSharpMarkup.Wpf // StringAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.StringAnimationUsingKeyFrames"/></summary>
-        public static StringAnimationUsingKeyFrames StringAnimationUsingKeyFrames(params System.Windows.Media.Animation.StringKeyFrame[] KeyFrames)
+        public static StringAnimationUsingKeyFrames StringAnimationUsingKeyFrames(params Windows.Media.Animation.StringKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.StringAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -15980,7 +15980,7 @@ namespace CSharpMarkup.Wpf // StringAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.StringKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.StringKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -16419,7 +16419,7 @@ namespace CSharpMarkup.Wpf // Vector3DAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Vector3DAnimationUsingKeyFrames"/></summary>
-        public static Vector3DAnimationUsingKeyFrames Vector3DAnimationUsingKeyFrames(params System.Windows.Media.Animation.Vector3DKeyFrame[] KeyFrames)
+        public static Vector3DAnimationUsingKeyFrames Vector3DAnimationUsingKeyFrames(params Windows.Media.Animation.Vector3DKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.Vector3DAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -16427,7 +16427,7 @@ namespace CSharpMarkup.Wpf // Vector3DAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.Vector3DKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.Vector3DKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -16703,7 +16703,7 @@ namespace CSharpMarkup.Wpf // VectorAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.VectorAnimationUsingKeyFrames"/></summary>
-        public static VectorAnimationUsingKeyFrames VectorAnimationUsingKeyFrames(params System.Windows.Media.Animation.VectorKeyFrame[] KeyFrames)
+        public static VectorAnimationUsingKeyFrames VectorAnimationUsingKeyFrames(params Windows.Media.Animation.VectorKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.VectorAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -16711,7 +16711,7 @@ namespace CSharpMarkup.Wpf // VectorAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.VectorKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.VectorKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -17012,7 +17012,7 @@ namespace CSharpMarkup.Wpf // BitmapEffectGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Effects.BitmapEffectGroup"/></summary>
-        public static BitmapEffectGroup BitmapEffectGroup(params System.Windows.Media.Effects.BitmapEffect[] Children)
+        public static BitmapEffectGroup BitmapEffectGroup(params Windows.Media.Effects.BitmapEffect[] Children)
         {
             var ui = new Windows.Media.Effects.BitmapEffectGroup();
             for (int i = 0; i < Children.Length; i++)
@@ -17020,7 +17020,7 @@ namespace CSharpMarkup.Wpf // BitmapEffectGroup
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Effects.BitmapEffect>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Effects.BitmapEffect>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -19142,7 +19142,7 @@ namespace CSharpMarkup.Wpf // ContainerUIElement3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.ContainerUIElement3D"/></summary>
-        public static ContainerUIElement3D ContainerUIElement3D(params System.Windows.Media.Media3D.Visual3D[] Children)
+        public static ContainerUIElement3D ContainerUIElement3D(params Windows.Media.Media3D.Visual3D[] Children)
         {
             var ui = new Windows.Media.Media3D.ContainerUIElement3D();
             for (int i = 0; i < Children.Length; i++)
@@ -19150,7 +19150,7 @@ namespace CSharpMarkup.Wpf // ContainerUIElement3D
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Media3D.Visual3D>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Media3D.Visual3D>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -19527,7 +19527,7 @@ namespace CSharpMarkup.Wpf // GeneralTransform3DGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.GeneralTransform3DGroup"/></summary>
-        public static GeneralTransform3DGroup GeneralTransform3DGroup(params System.Windows.Media.Media3D.GeneralTransform3D[] Children)
+        public static GeneralTransform3DGroup GeneralTransform3DGroup(params Windows.Media.Media3D.GeneralTransform3D[] Children)
         {
             var ui = new Windows.Media.Media3D.GeneralTransform3DGroup();
             for (int i = 0; i < Children.Length; i++)
@@ -19535,7 +19535,7 @@ namespace CSharpMarkup.Wpf // GeneralTransform3DGroup
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Media3D.GeneralTransform3D>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Media3D.GeneralTransform3D>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -19813,7 +19813,7 @@ namespace CSharpMarkup.Wpf // MaterialGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.MaterialGroup"/></summary>
-        public static MaterialGroup MaterialGroup(params System.Windows.Media.Media3D.Material[] Children)
+        public static MaterialGroup MaterialGroup(params Windows.Media.Media3D.Material[] Children)
         {
             var ui = new Windows.Media.Media3D.MaterialGroup();
             for (int i = 0; i < Children.Length; i++)
@@ -19821,7 +19821,7 @@ namespace CSharpMarkup.Wpf // MaterialGroup
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Media3D.Material>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Media3D.Material>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -20169,7 +20169,7 @@ namespace CSharpMarkup.Wpf // Model3DGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.Model3DGroup"/></summary>
-        public static Model3DGroup Model3DGroup(params System.Windows.Media.Media3D.Model3D[] Children)
+        public static Model3DGroup Model3DGroup(params Windows.Media.Media3D.Model3D[] Children)
         {
             var ui = new Windows.Media.Media3D.Model3DGroup();
             for (int i = 0; i < Children.Length; i++)
@@ -20177,7 +20177,7 @@ namespace CSharpMarkup.Wpf // Model3DGroup
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Media3D.Model3D>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Media3D.Model3D>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -20236,7 +20236,7 @@ namespace CSharpMarkup.Wpf // ModelUIElement3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.ModelUIElement3D"/></summary>
-        public static ModelUIElement3D ModelUIElement3D(System.Windows.Media.Media3D.Model3D Model)
+        public static ModelUIElement3D ModelUIElement3D(Windows.Media.Media3D.Model3D Model)
         {
             var ui = new Windows.Media.Media3D.ModelUIElement3D();
             if (Model is not null) ui.Model = Model;
@@ -20292,7 +20292,7 @@ namespace CSharpMarkup.Wpf // ModelVisual3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.ModelVisual3D"/></summary>
-        public static ModelVisual3D ModelVisual3D(params System.Windows.Media.Media3D.Visual3D[] Children)
+        public static ModelVisual3D ModelVisual3D(params Windows.Media.Media3D.Visual3D[] Children)
         {
             var ui = new Windows.Media.Media3D.ModelVisual3D();
             for (int i = 0; i < Children.Length; i++)
@@ -20300,7 +20300,7 @@ namespace CSharpMarkup.Wpf // ModelVisual3D
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Media3D.Visual3D>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Media3D.Visual3D>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -21253,7 +21253,7 @@ namespace CSharpMarkup.Wpf // Transform3DGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.Transform3DGroup"/></summary>
-        public static Transform3DGroup Transform3DGroup(params System.Windows.Media.Media3D.Transform3D[] Children)
+        public static Transform3DGroup Transform3DGroup(params Windows.Media.Media3D.Transform3D[] Children)
         {
             var ui = new Windows.Media.Media3D.Transform3DGroup();
             for (int i = 0; i < Children.Length; i++)
@@ -21261,7 +21261,7 @@ namespace CSharpMarkup.Wpf // Transform3DGroup
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Media3D.Transform3D>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Media3D.Transform3D>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -21454,7 +21454,7 @@ namespace CSharpMarkup.Wpf // Viewport2DVisual3D
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.Viewport2DVisual3D"/></summary>
-        public static Viewport2DVisual3D Viewport2DVisual3D(System.Windows.Media.Visual Visual)
+        public static Viewport2DVisual3D Viewport2DVisual3D(Windows.Media.Visual Visual)
         {
             var ui = new Windows.Media.Media3D.Viewport2DVisual3D();
             if (Visual is not null) ui.Visual = Visual;
@@ -21462,7 +21462,7 @@ namespace CSharpMarkup.Wpf // Viewport2DVisual3D
         }
 
         /// <summary>Create a <see cref="Windows.Media.Media3D.Viewport2DVisual3D"/></summary>
-        public static Viewport2DVisual3D Viewport2DVisual3D(CSharpMarkup.Wpf.to.CacheMode? CacheMode = default, Windows.Media.Media3D.Geometry3D Geometry = default, Windows.Media.Media3D.Material Material = default, System.Windows.Media.Visual Visual = default)
+        public static Viewport2DVisual3D Viewport2DVisual3D(CSharpMarkup.Wpf.to.CacheMode? CacheMode = default, Windows.Media.Media3D.Geometry3D Geometry = default, Windows.Media.Media3D.Material Material = default, Windows.Media.Visual Visual = default)
         {
             var ui = new Windows.Media.Media3D.Viewport2DVisual3D();
             if (CacheMode is not null) ui.CacheMode = CacheMode.Value;
@@ -21550,7 +21550,7 @@ namespace CSharpMarkup.Wpf // Viewport3DVisual
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Media3D.Viewport3DVisual"/></summary>
-        public static Viewport3DVisual Viewport3DVisual(params System.Windows.Media.Media3D.Visual3D[] Children)
+        public static Viewport3DVisual Viewport3DVisual(params Windows.Media.Media3D.Visual3D[] Children)
         {
             var ui = new Windows.Media.Media3D.Viewport3DVisual();
             for (int i = 0; i < Children.Length; i++)
@@ -21558,7 +21558,7 @@ namespace CSharpMarkup.Wpf // Viewport3DVisual
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Media3D.Visual3D>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Media3D.Visual3D>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -21749,7 +21749,7 @@ namespace CSharpMarkup.Wpf // DataTemplate
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.DataTemplate"/></summary>
-        public static DataTemplate DataTemplate(System.Windows.FrameworkElementFactory VisualTree)
+        public static DataTemplate DataTemplate(Windows.FrameworkElementFactory VisualTree)
         {
             var ui = new Windows.DataTemplate();
             if (VisualTree is not null) ui.VisualTree = VisualTree;
@@ -21811,7 +21811,7 @@ namespace CSharpMarkup.Wpf // DataTrigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.DataTrigger"/></summary>
-        public static DataTrigger DataTrigger(params System.Windows.SetterBase[] Setters)
+        public static DataTrigger DataTrigger(params Windows.SetterBase[] Setters)
         {
             var ui = new Windows.DataTrigger();
             for (int i = 0; i < Setters.Length; i++)
@@ -21819,7 +21819,7 @@ namespace CSharpMarkup.Wpf // DataTrigger
                 var child = Setters[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.SetterBase>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.SetterBase>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Setters.Add(subChildren[j]);
@@ -21880,7 +21880,7 @@ namespace CSharpMarkup.Wpf // EventTrigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.EventTrigger"/></summary>
-        public static EventTrigger EventTrigger(params System.Windows.TriggerAction[] Actions)
+        public static EventTrigger EventTrigger(params Windows.TriggerAction[] Actions)
         {
             var ui = new Windows.EventTrigger();
             for (int i = 0; i < Actions.Length; i++)
@@ -21888,7 +21888,7 @@ namespace CSharpMarkup.Wpf // EventTrigger
                 var child = Actions[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.TriggerAction>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.TriggerAction>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Actions.Add(subChildren[j]);
@@ -22427,7 +22427,7 @@ namespace CSharpMarkup.Wpf // HierarchicalDataTemplate
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.HierarchicalDataTemplate"/></summary>
-        public static HierarchicalDataTemplate HierarchicalDataTemplate(System.Windows.FrameworkElementFactory VisualTree)
+        public static HierarchicalDataTemplate HierarchicalDataTemplate(Windows.FrameworkElementFactory VisualTree)
         {
             var ui = new Windows.HierarchicalDataTemplate();
             if (VisualTree is not null) ui.VisualTree = VisualTree;
@@ -22435,7 +22435,7 @@ namespace CSharpMarkup.Wpf // HierarchicalDataTemplate
         }
 
         /// <summary>Create a <see cref="Windows.HierarchicalDataTemplate"/></summary>
-        public static HierarchicalDataTemplate HierarchicalDataTemplate(int? AlternationCount = default, Windows.Data.BindingGroup ItemBindingGroup = default, Windows.Style ItemContainerStyle = default, Windows.Controls.StyleSelector ItemContainerStyleSelector = default, Windows.Data.BindingBase ItemsSource = default, string ItemStringFormat = default, Windows.DataTemplate ItemTemplate = default, Windows.Controls.DataTemplateSelector ItemTemplateSelector = default, System.Windows.FrameworkElementFactory VisualTree = default)
+        public static HierarchicalDataTemplate HierarchicalDataTemplate(int? AlternationCount = default, Windows.Data.BindingGroup ItemBindingGroup = default, Windows.Style ItemContainerStyle = default, Windows.Controls.StyleSelector ItemContainerStyleSelector = default, Windows.Data.BindingBase ItemsSource = default, string ItemStringFormat = default, Windows.DataTemplate ItemTemplate = default, Windows.Controls.DataTemplateSelector ItemTemplateSelector = default, Windows.FrameworkElementFactory VisualTree = default)
         {
             var ui = new Windows.HierarchicalDataTemplate();
             if (AlternationCount is not null) ui.AlternationCount = AlternationCount.Value;
@@ -22544,7 +22544,7 @@ namespace CSharpMarkup.Wpf // MultiDataTrigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.MultiDataTrigger"/></summary>
-        public static MultiDataTrigger MultiDataTrigger(params System.Windows.SetterBase[] Setters)
+        public static MultiDataTrigger MultiDataTrigger(params Windows.SetterBase[] Setters)
         {
             var ui = new Windows.MultiDataTrigger();
             for (int i = 0; i < Setters.Length; i++)
@@ -22552,7 +22552,7 @@ namespace CSharpMarkup.Wpf // MultiDataTrigger
                 var child = Setters[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.SetterBase>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.SetterBase>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Setters.Add(subChildren[j]);
@@ -22604,7 +22604,7 @@ namespace CSharpMarkup.Wpf // MultiTrigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.MultiTrigger"/></summary>
-        public static MultiTrigger MultiTrigger(params System.Windows.SetterBase[] Setters)
+        public static MultiTrigger MultiTrigger(params Windows.SetterBase[] Setters)
         {
             var ui = new Windows.MultiTrigger();
             for (int i = 0; i < Setters.Length; i++)
@@ -22612,7 +22612,7 @@ namespace CSharpMarkup.Wpf // MultiTrigger
                 var child = Setters[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.SetterBase>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.SetterBase>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Setters.Add(subChildren[j]);
@@ -22664,7 +22664,7 @@ namespace CSharpMarkup.Wpf // Style
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Style"/></summary>
-        public static Style Style(params System.Windows.SetterBase[] Setters)
+        public static Style Style(params Windows.SetterBase[] Setters)
         {
             var ui = new Windows.Style();
             for (int i = 0; i < Setters.Length; i++)
@@ -22672,7 +22672,7 @@ namespace CSharpMarkup.Wpf // Style
                 var child = Setters[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.SetterBase>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.SetterBase>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Setters.Add(subChildren[j]);
@@ -22750,7 +22750,7 @@ namespace CSharpMarkup.Wpf // Trigger
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Trigger"/></summary>
-        public static Trigger Trigger(params System.Windows.SetterBase[] Setters)
+        public static Trigger Trigger(params Windows.SetterBase[] Setters)
         {
             var ui = new Windows.Trigger();
             for (int i = 0; i < Setters.Length; i++)
@@ -22758,7 +22758,7 @@ namespace CSharpMarkup.Wpf // Trigger
                 var child = Setters[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.SetterBase>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.SetterBase>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Setters.Add(subChildren[j]);
@@ -22858,7 +22858,7 @@ namespace CSharpMarkup.Wpf // VisualState
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.VisualState"/></summary>
-        public static VisualState VisualState(System.Windows.Media.Animation.Storyboard Storyboard)
+        public static VisualState VisualState(Windows.Media.Animation.Storyboard Storyboard)
         {
             var ui = new Windows.VisualState();
             if (Storyboard is not null) ui.Storyboard = Storyboard;
@@ -22866,7 +22866,7 @@ namespace CSharpMarkup.Wpf // VisualState
         }
 
         /// <summary>Create a <see cref="Windows.VisualState"/></summary>
-        public static VisualState VisualState(string Name = default, System.Windows.Media.Animation.Storyboard Storyboard = default)
+        public static VisualState VisualState(string Name = default, Windows.Media.Animation.Storyboard Storyboard = default)
         {
             var ui = new Windows.VisualState();
             if (Name is not null) ui.Name = Name;
@@ -23040,7 +23040,7 @@ namespace CSharpMarkup.Wpf // VisualTransition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.VisualTransition"/></summary>
-        public static VisualTransition VisualTransition(System.Windows.Media.Animation.Storyboard Storyboard)
+        public static VisualTransition VisualTransition(Windows.Media.Animation.Storyboard Storyboard)
         {
             var ui = new Windows.VisualTransition();
             if (Storyboard is not null) ui.Storyboard = Storyboard;
@@ -23048,7 +23048,7 @@ namespace CSharpMarkup.Wpf // VisualTransition
         }
 
         /// <summary>Create a <see cref="Windows.VisualTransition"/></summary>
-        public static VisualTransition VisualTransition(string From = default, CSharpMarkup.Wpf.to.Duration? GeneratedDuration = default, CSharpMarkup.Wpf.to.IEasingFunction? GeneratedEasingFunction = default, string To = default, System.Windows.Media.Animation.Storyboard Storyboard = default)
+        public static VisualTransition VisualTransition(string From = default, CSharpMarkup.Wpf.to.Duration? GeneratedDuration = default, CSharpMarkup.Wpf.to.IEasingFunction? GeneratedEasingFunction = default, string To = default, Windows.Media.Animation.Storyboard Storyboard = default)
         {
             var ui = new Windows.VisualTransition();
             if (From is not null) ui.From = From;
@@ -23514,7 +23514,7 @@ namespace CSharpMarkup.Wpf // AdornedElementPlaceholder
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.AdornedElementPlaceholder"/></summary>
-        public static AdornedElementPlaceholder AdornedElementPlaceholder(System.Windows.UIElement Child)
+        public static AdornedElementPlaceholder AdornedElementPlaceholder(Windows.UIElement Child)
         {
             var ui = new Windows.Controls.AdornedElementPlaceholder();
             if (Child is not null) ui.Child = Child;
@@ -23565,7 +23565,7 @@ namespace CSharpMarkup.Wpf // Border
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Border"/></summary>
-        public static Border Border(System.Windows.UIElement Child)
+        public static Border Border(Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Border();
             if (Child is not null) ui.Child = Child;
@@ -23573,7 +23573,7 @@ namespace CSharpMarkup.Wpf // Border
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Border"/></summary>
-        public static Border Border(CSharpMarkup.Wpf.to.Brush? Background = default, CSharpMarkup.Wpf.to.Brush? BorderBrush = default, CSharpMarkup.Wpf.to.Thickness? BorderThickness = default, CSharpMarkup.Wpf.to.CornerRadius? CornerRadius = default, CSharpMarkup.Wpf.to.Thickness? Padding = default, System.Windows.UIElement Child = default)
+        public static Border Border(CSharpMarkup.Wpf.to.Brush? Background = default, CSharpMarkup.Wpf.to.Brush? BorderBrush = default, CSharpMarkup.Wpf.to.Thickness? BorderThickness = default, CSharpMarkup.Wpf.to.CornerRadius? CornerRadius = default, CSharpMarkup.Wpf.to.Thickness? Padding = default, Windows.UIElement Child = default)
         {
             var ui = new Windows.Controls.Border();
             if (Background is not null) ui.Background = Background.Value;
@@ -23931,7 +23931,7 @@ namespace CSharpMarkup.Wpf // Canvas
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Canvas"/></summary>
-        public static Canvas Canvas(params System.Windows.UIElement[] Children)
+        public static Canvas Canvas(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Canvas();
             for (int i = 0; i < Children.Length; i++)
@@ -23939,7 +23939,7 @@ namespace CSharpMarkup.Wpf // Canvas
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -24908,7 +24908,7 @@ namespace CSharpMarkup.Wpf // ControlTemplate
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ControlTemplate"/></summary>
-        public static ControlTemplate ControlTemplate(System.Windows.FrameworkElementFactory VisualTree)
+        public static ControlTemplate ControlTemplate(Windows.FrameworkElementFactory VisualTree)
         {
             var ui = new Windows.Controls.ControlTemplate();
             if (VisualTree is not null) ui.VisualTree = VisualTree;
@@ -25524,7 +25524,7 @@ namespace CSharpMarkup.Wpf // DataGridCellsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.DataGridCellsPanel"/></summary>
-        public static DataGridCellsPanel DataGridCellsPanel(params System.Windows.UIElement[] Children)
+        public static DataGridCellsPanel DataGridCellsPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.DataGridCellsPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -25532,7 +25532,7 @@ namespace CSharpMarkup.Wpf // DataGridCellsPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -26448,7 +26448,7 @@ namespace CSharpMarkup.Wpf // Decorator
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Decorator"/></summary>
-        public static Decorator Decorator(System.Windows.UIElement Child)
+        public static Decorator Decorator(Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Decorator();
             if (Child is not null) ui.Child = Child;
@@ -26527,7 +26527,7 @@ namespace CSharpMarkup.Wpf // DockPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.DockPanel"/></summary>
-        public static DockPanel DockPanel(params System.Windows.UIElement[] Children)
+        public static DockPanel DockPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.DockPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -26535,7 +26535,7 @@ namespace CSharpMarkup.Wpf // DockPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -26607,7 +26607,7 @@ namespace CSharpMarkup.Wpf // DocumentViewer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.DocumentViewer"/></summary>
-        public static DocumentViewer DocumentViewer(System.Windows.Documents.IDocumentPaginatorSource Document)
+        public static DocumentViewer DocumentViewer(Windows.Documents.IDocumentPaginatorSource Document)
         {
             var ui = new Windows.Controls.DocumentViewer();
             if (Document is not null) ui.Document = Document;
@@ -26615,7 +26615,7 @@ namespace CSharpMarkup.Wpf // DocumentViewer
         }
 
         /// <summary>Create a <see cref="Windows.Controls.DocumentViewer"/></summary>
-        public static DocumentViewer DocumentViewer(double? HorizontalOffset = default, double? HorizontalPageSpacing = default, int? MaxPagesAcross = default, bool? ShowPageBorders = default, double? VerticalOffset = default, double? VerticalPageSpacing = default, double? Zoom = default, System.Windows.Documents.IDocumentPaginatorSource Document = default)
+        public static DocumentViewer DocumentViewer(double? HorizontalOffset = default, double? HorizontalPageSpacing = default, int? MaxPagesAcross = default, bool? ShowPageBorders = default, double? VerticalOffset = default, double? VerticalPageSpacing = default, double? Zoom = default, Windows.Documents.IDocumentPaginatorSource Document = default)
         {
             var ui = new Windows.Controls.DocumentViewer();
             if (HorizontalOffset is not null) ui.HorizontalOffset = HorizontalOffset.Value;
@@ -26849,7 +26849,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentPageViewer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentPageViewer"/></summary>
-        public static FlowDocumentPageViewer FlowDocumentPageViewer(System.Windows.Documents.IDocumentPaginatorSource Document)
+        public static FlowDocumentPageViewer FlowDocumentPageViewer(Windows.Documents.IDocumentPaginatorSource Document)
         {
             var ui = new Windows.Controls.FlowDocumentPageViewer();
             if (Document is not null) ui.Document = Document;
@@ -26857,7 +26857,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentPageViewer
         }
 
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentPageViewer"/></summary>
-        public static FlowDocumentPageViewer FlowDocumentPageViewer(bool? IsInactiveSelectionHighlightEnabled = default, double? MaxZoom = default, double? MinZoom = default, CSharpMarkup.Wpf.to.Brush? SelectionBrush = default, double? SelectionOpacity = default, double? Zoom = default, double? ZoomIncrement = default, System.Windows.Documents.IDocumentPaginatorSource Document = default)
+        public static FlowDocumentPageViewer FlowDocumentPageViewer(bool? IsInactiveSelectionHighlightEnabled = default, double? MaxZoom = default, double? MinZoom = default, CSharpMarkup.Wpf.to.Brush? SelectionBrush = default, double? SelectionOpacity = default, double? Zoom = default, double? ZoomIncrement = default, Windows.Documents.IDocumentPaginatorSource Document = default)
         {
             var ui = new Windows.Controls.FlowDocumentPageViewer();
             if (IsInactiveSelectionHighlightEnabled is not null) ui.IsInactiveSelectionHighlightEnabled = IsInactiveSelectionHighlightEnabled.Value;
@@ -26986,7 +26986,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentReader
     {
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentReader"/></summary>
         /// <remarks>Remark: FlowDocumentReader().Bind() binds to <see cref="Windows.Controls.FlowDocumentReader.DocumentProperty"/></remarks>
-        public static FlowDocumentReader FlowDocumentReader(System.Windows.Documents.FlowDocument Document)
+        public static FlowDocumentReader FlowDocumentReader(Windows.Documents.FlowDocument Document)
         {
             var ui = new Windows.Controls.FlowDocumentReader();
             if (Document is not null) ui.Document = Document;
@@ -26995,7 +26995,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentReader
 
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentReader"/></summary>
         /// <remarks>Remark: FlowDocumentReader().Bind() binds to <see cref="Windows.Controls.FlowDocumentReader.DocumentProperty"/></remarks>
-        public static FlowDocumentReader FlowDocumentReader(bool? IsFindEnabled = default, bool? IsInactiveSelectionHighlightEnabled = default, bool? IsPageViewEnabled = default, bool? IsPrintEnabled = default, bool? IsScrollViewEnabled = default, bool? IsTwoPageViewEnabled = default, double? MaxZoom = default, double? MinZoom = default, CSharpMarkup.Wpf.to.Brush? SelectionBrush = default, double? SelectionOpacity = default, Windows.Controls.FlowDocumentReaderViewingMode? ViewingMode = default, double? Zoom = default, double? ZoomIncrement = default, System.Windows.Documents.FlowDocument Document = default)
+        public static FlowDocumentReader FlowDocumentReader(bool? IsFindEnabled = default, bool? IsInactiveSelectionHighlightEnabled = default, bool? IsPageViewEnabled = default, bool? IsPrintEnabled = default, bool? IsScrollViewEnabled = default, bool? IsTwoPageViewEnabled = default, double? MaxZoom = default, double? MinZoom = default, CSharpMarkup.Wpf.to.Brush? SelectionBrush = default, double? SelectionOpacity = default, Windows.Controls.FlowDocumentReaderViewingMode? ViewingMode = default, double? Zoom = default, double? ZoomIncrement = default, Windows.Documents.FlowDocument Document = default)
         {
             var ui = new Windows.Controls.FlowDocumentReader();
             if (IsFindEnabled is not null) ui.IsFindEnabled = IsFindEnabled.Value;
@@ -27196,7 +27196,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentScrollViewer
     {
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentScrollViewer"/></summary>
         /// <remarks>Remark: FlowDocumentScrollViewer().Bind() binds to <see cref="Windows.Controls.FlowDocumentScrollViewer.DocumentProperty"/></remarks>
-        public static FlowDocumentScrollViewer FlowDocumentScrollViewer(System.Windows.Documents.FlowDocument Document)
+        public static FlowDocumentScrollViewer FlowDocumentScrollViewer(Windows.Documents.FlowDocument Document)
         {
             var ui = new Windows.Controls.FlowDocumentScrollViewer();
             if (Document is not null) ui.Document = Document;
@@ -27205,7 +27205,7 @@ namespace CSharpMarkup.Wpf // FlowDocumentScrollViewer
 
         /// <summary>Create a <see cref="Windows.Controls.FlowDocumentScrollViewer"/></summary>
         /// <remarks>Remark: FlowDocumentScrollViewer().Bind() binds to <see cref="Windows.Controls.FlowDocumentScrollViewer.DocumentProperty"/></remarks>
-        public static FlowDocumentScrollViewer FlowDocumentScrollViewer(Windows.Controls.ScrollBarVisibility? HorizontalScrollBarVisibility = default, bool? IsInactiveSelectionHighlightEnabled = default, bool? IsSelectionEnabled = default, bool? IsToolBarVisible = default, double? MaxZoom = default, double? MinZoom = default, CSharpMarkup.Wpf.to.Brush? SelectionBrush = default, double? SelectionOpacity = default, Windows.Controls.ScrollBarVisibility? VerticalScrollBarVisibility = default, double? Zoom = default, double? ZoomIncrement = default, System.Windows.Documents.FlowDocument Document = default)
+        public static FlowDocumentScrollViewer FlowDocumentScrollViewer(Windows.Controls.ScrollBarVisibility? HorizontalScrollBarVisibility = default, bool? IsInactiveSelectionHighlightEnabled = default, bool? IsSelectionEnabled = default, bool? IsToolBarVisible = default, double? MaxZoom = default, double? MinZoom = default, CSharpMarkup.Wpf.to.Brush? SelectionBrush = default, double? SelectionOpacity = default, Windows.Controls.ScrollBarVisibility? VerticalScrollBarVisibility = default, double? Zoom = default, double? ZoomIncrement = default, Windows.Documents.FlowDocument Document = default)
         {
             var ui = new Windows.Controls.FlowDocumentScrollViewer();
             if (HorizontalScrollBarVisibility is not null) ui.HorizontalScrollBarVisibility = HorizontalScrollBarVisibility.Value;
@@ -27474,7 +27474,7 @@ namespace CSharpMarkup.Wpf // Grid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Grid"/></summary>
-        public static Grid Grid(params System.Windows.UIElement[] Children)
+        public static Grid Grid(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Grid();
             for (int i = 0; i < Children.Length; i++)
@@ -27482,7 +27482,7 @@ namespace CSharpMarkup.Wpf // Grid
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -27715,7 +27715,7 @@ namespace CSharpMarkup.Wpf // GridView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.GridView"/></summary>
-        public static GridView GridView(params System.Windows.Controls.GridViewColumn[] Columns)
+        public static GridView GridView(params Windows.Controls.GridViewColumn[] Columns)
         {
             var ui = new Windows.Controls.GridView();
             for (int i = 0; i < Columns.Length; i++)
@@ -27723,7 +27723,7 @@ namespace CSharpMarkup.Wpf // GridView
                 var child = Columns[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Controls.GridViewColumn>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Controls.GridViewColumn>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Columns.Add(subChildren[j]);
@@ -28570,7 +28570,7 @@ namespace CSharpMarkup.Wpf // InkCanvas
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.InkCanvas"/></summary>
-        public static InkCanvas InkCanvas(params System.Windows.UIElement[] Children)
+        public static InkCanvas InkCanvas(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.InkCanvas();
             for (int i = 0; i < Children.Length; i++)
@@ -28578,7 +28578,7 @@ namespace CSharpMarkup.Wpf // InkCanvas
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -28755,7 +28755,7 @@ namespace CSharpMarkup.Wpf // InkPresenter
     {
         /// <summary>Create a <see cref="Windows.Controls.InkPresenter"/></summary>
         /// <remarks>Remark: InkPresenter().Bind() binds to <see cref="Windows.Controls.InkPresenter.StrokesProperty"/></remarks>
-        public static InkPresenter InkPresenter(System.Windows.UIElement Child)
+        public static InkPresenter InkPresenter(Windows.UIElement Child)
         {
             var ui = new Windows.Controls.InkPresenter();
             if (Child is not null) ui.Child = Child;
@@ -28764,7 +28764,7 @@ namespace CSharpMarkup.Wpf // InkPresenter
 
         /// <summary>Create a <see cref="Windows.Controls.InkPresenter"/></summary>
         /// <remarks>Remark: InkPresenter().Bind() binds to <see cref="Windows.Controls.InkPresenter.StrokesProperty"/></remarks>
-        public static InkPresenter InkPresenter(CSharpMarkup.Wpf.to.StrokeCollection? Strokes = default, System.Windows.UIElement Child = default)
+        public static InkPresenter InkPresenter(CSharpMarkup.Wpf.to.StrokeCollection? Strokes = default, Windows.UIElement Child = default)
         {
             var ui = new Windows.Controls.InkPresenter();
             if (Strokes is not null) ui.Strokes = Strokes.Value;
@@ -28863,7 +28863,7 @@ namespace CSharpMarkup.Wpf // ItemContainerTemplate
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ItemContainerTemplate"/></summary>
-        public static ItemContainerTemplate ItemContainerTemplate(System.Windows.FrameworkElementFactory VisualTree)
+        public static ItemContainerTemplate ItemContainerTemplate(Windows.FrameworkElementFactory VisualTree)
         {
             var ui = new Windows.Controls.ItemContainerTemplate();
             if (VisualTree is not null) ui.VisualTree = VisualTree;
@@ -30368,7 +30368,7 @@ namespace CSharpMarkup.Wpf // RichTextBox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.RichTextBox"/></summary>
-        public static RichTextBox RichTextBox(Windows.Documents.TextPointer CaretPosition = default, bool? IsDocumentEnabled = default, System.Windows.Documents.FlowDocument Document = default)
+        public static RichTextBox RichTextBox(Windows.Documents.TextPointer CaretPosition = default, bool? IsDocumentEnabled = default, Windows.Documents.FlowDocument Document = default)
         {
             var ui = new Windows.Controls.RichTextBox();
             if (CaretPosition is not null) ui.CaretPosition = CaretPosition;
@@ -31124,7 +31124,7 @@ namespace CSharpMarkup.Wpf // StackPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.StackPanel"/></summary>
-        public static StackPanel StackPanel(params System.Windows.UIElement[] Children)
+        public static StackPanel StackPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.StackPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -31132,7 +31132,7 @@ namespace CSharpMarkup.Wpf // StackPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -31475,7 +31475,7 @@ namespace CSharpMarkup.Wpf // TextBlock
     {
         /// <summary>Create a <see cref="Windows.Controls.TextBlock"/></summary>
         /// <remarks>Remark: TextBlock().Bind() binds to <see cref="Windows.Controls.TextBlock.TextProperty"/></remarks>
-        public static TextBlock TextBlock(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
+        public static TextBlock TextBlock(params InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Controls.TextBlock();
             for (int i = 0; i < Inlines.Length; i++)
@@ -31483,7 +31483,7 @@ namespace CSharpMarkup.Wpf // TextBlock
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.Wpf.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -32138,7 +32138,7 @@ namespace CSharpMarkup.Wpf // ToolBarTray
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.ToolBarTray"/></summary>
-        public static ToolBarTray ToolBarTray(params System.Windows.Controls.ToolBar[] ToolBars)
+        public static ToolBarTray ToolBarTray(params Windows.Controls.ToolBar[] ToolBars)
         {
             var ui = new Windows.Controls.ToolBarTray();
             for (int i = 0; i < ToolBars.Length; i++)
@@ -32146,7 +32146,7 @@ namespace CSharpMarkup.Wpf // ToolBarTray
                 var child = ToolBars[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Controls.ToolBar>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Controls.ToolBar>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.ToolBars.Add(subChildren[j]);
@@ -32612,7 +32612,7 @@ namespace CSharpMarkup.Wpf // Viewbox
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Viewbox"/></summary>
-        public static Viewbox Viewbox(System.Windows.UIElement Child)
+        public static Viewbox Viewbox(Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Viewbox();
             if (Child is not null) ui.Child = Child;
@@ -32620,7 +32620,7 @@ namespace CSharpMarkup.Wpf // Viewbox
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Viewbox"/></summary>
-        public static Viewbox Viewbox(Windows.Media.Stretch? Stretch = default, Windows.Controls.StretchDirection? StretchDirection = default, System.Windows.UIElement Child = default)
+        public static Viewbox Viewbox(Windows.Media.Stretch? Stretch = default, Windows.Controls.StretchDirection? StretchDirection = default, Windows.UIElement Child = default)
         {
             var ui = new Windows.Controls.Viewbox();
             if (Stretch is not null) ui.Stretch = Stretch.Value;
@@ -32691,7 +32691,7 @@ namespace CSharpMarkup.Wpf // Viewport3D
     {
         /// <summary>Create a <see cref="Windows.Controls.Viewport3D"/></summary>
         /// <remarks>Remark: Viewport3D().Bind() binds to <see cref="Windows.Controls.Viewport3D.ChildrenProperty"/></remarks>
-        public static Viewport3D Viewport3D(params System.Windows.Media.Media3D.Visual3D[] Children)
+        public static Viewport3D Viewport3D(params Windows.Media.Media3D.Visual3D[] Children)
         {
             var ui = new Windows.Controls.Viewport3D();
             for (int i = 0; i < Children.Length; i++)
@@ -32699,7 +32699,7 @@ namespace CSharpMarkup.Wpf // Viewport3D
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Media3D.Visual3D>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Media3D.Visual3D>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -32884,7 +32884,7 @@ namespace CSharpMarkup.Wpf // VirtualizingStackPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.VirtualizingStackPanel"/></summary>
-        public static VirtualizingStackPanel VirtualizingStackPanel(params System.Windows.UIElement[] Children)
+        public static VirtualizingStackPanel VirtualizingStackPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.VirtualizingStackPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -32892,7 +32892,7 @@ namespace CSharpMarkup.Wpf // VirtualizingStackPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -33026,7 +33026,7 @@ namespace CSharpMarkup.Wpf // WrapPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.WrapPanel"/></summary>
-        public static WrapPanel WrapPanel(params System.Windows.UIElement[] Children)
+        public static WrapPanel WrapPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.WrapPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -33034,7 +33034,7 @@ namespace CSharpMarkup.Wpf // WrapPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -33112,7 +33112,7 @@ namespace CSharpMarkup.Wpf // BulletDecorator
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.BulletDecorator"/></summary>
-        public static BulletDecorator BulletDecorator(System.Windows.UIElement Child)
+        public static BulletDecorator BulletDecorator(Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Primitives.BulletDecorator();
             if (Child is not null) ui.Child = Child;
@@ -33120,7 +33120,7 @@ namespace CSharpMarkup.Wpf // BulletDecorator
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.BulletDecorator"/></summary>
-        public static BulletDecorator BulletDecorator(CSharpMarkup.Wpf.to.Brush? Background = default, Windows.UIElement Bullet = default, System.Windows.UIElement Child = default)
+        public static BulletDecorator BulletDecorator(CSharpMarkup.Wpf.to.Brush? Background = default, Windows.UIElement Bullet = default, Windows.UIElement Child = default)
         {
             var ui = new Windows.Controls.Primitives.BulletDecorator();
             if (Background is not null) ui.Background = Background.Value;
@@ -33782,7 +33782,7 @@ namespace CSharpMarkup.Wpf // DataGridRowsPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.DataGridRowsPresenter"/></summary>
-        public static DataGridRowsPresenter DataGridRowsPresenter(params System.Windows.UIElement[] Children)
+        public static DataGridRowsPresenter DataGridRowsPresenter(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.DataGridRowsPresenter();
             for (int i = 0; i < Children.Length; i++)
@@ -33790,7 +33790,7 @@ namespace CSharpMarkup.Wpf // DataGridRowsPresenter
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -34112,7 +34112,7 @@ namespace CSharpMarkup.Wpf // Popup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.Popup"/></summary>
-        public static Popup Popup(System.Windows.UIElement Child)
+        public static Popup Popup(Windows.UIElement Child)
         {
             var ui = new Windows.Controls.Primitives.Popup();
             if (Child is not null) ui.Child = Child;
@@ -34120,7 +34120,7 @@ namespace CSharpMarkup.Wpf // Popup
         }
 
         /// <summary>Create a <see cref="Windows.Controls.Primitives.Popup"/></summary>
-        public static Popup Popup(bool? AllowsTransparency = default, Windows.Controls.Primitives.CustomPopupPlacementCallback CustomPopupPlacementCallback = default, double? HorizontalOffset = default, bool? IsOpen = default, Windows.Controls.Primitives.PlacementMode? Placement = default, CSharpMarkup.Wpf.to.Rect? PlacementRectangle = default, Windows.UIElement PlacementTarget = default, Windows.Controls.Primitives.PopupAnimation? PopupAnimation = default, bool? StaysOpen = default, double? VerticalOffset = default, System.Windows.UIElement Child = default)
+        public static Popup Popup(bool? AllowsTransparency = default, Windows.Controls.Primitives.CustomPopupPlacementCallback CustomPopupPlacementCallback = default, double? HorizontalOffset = default, bool? IsOpen = default, Windows.Controls.Primitives.PlacementMode? Placement = default, CSharpMarkup.Wpf.to.Rect? PlacementRectangle = default, Windows.UIElement PlacementTarget = default, Windows.Controls.Primitives.PopupAnimation? PopupAnimation = default, bool? StaysOpen = default, double? VerticalOffset = default, Windows.UIElement Child = default)
         {
             var ui = new Windows.Controls.Primitives.Popup();
             if (AllowsTransparency is not null) ui.AllowsTransparency = AllowsTransparency.Value;
@@ -34512,7 +34512,7 @@ namespace CSharpMarkup.Wpf // SelectiveScrollingGrid
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.SelectiveScrollingGrid"/></summary>
         /// <remarks>Remark: SelectiveScrollingGrid().Bind() binds to <see cref="Windows.Controls.Primitives.SelectiveScrollingGrid.SelectiveScrollingOrientationProperty"/></remarks>
-        public static SelectiveScrollingGrid SelectiveScrollingGrid(params System.Windows.UIElement[] Children)
+        public static SelectiveScrollingGrid SelectiveScrollingGrid(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.SelectiveScrollingGrid();
             for (int i = 0; i < Children.Length; i++)
@@ -34520,7 +34520,7 @@ namespace CSharpMarkup.Wpf // SelectiveScrollingGrid
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -34783,7 +34783,7 @@ namespace CSharpMarkup.Wpf // TabPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.TabPanel"/></summary>
-        public static TabPanel TabPanel(params System.Windows.UIElement[] Children)
+        public static TabPanel TabPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.TabPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -34791,7 +34791,7 @@ namespace CSharpMarkup.Wpf // TabPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -35267,7 +35267,7 @@ namespace CSharpMarkup.Wpf // ToolBarOverflowPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.ToolBarOverflowPanel"/></summary>
-        public static ToolBarOverflowPanel ToolBarOverflowPanel(params System.Windows.UIElement[] Children)
+        public static ToolBarOverflowPanel ToolBarOverflowPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.ToolBarOverflowPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -35275,7 +35275,7 @@ namespace CSharpMarkup.Wpf // ToolBarOverflowPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -35339,7 +35339,7 @@ namespace CSharpMarkup.Wpf // ToolBarPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.ToolBarPanel"/></summary>
-        public static ToolBarPanel ToolBarPanel(params System.Windows.UIElement[] Children)
+        public static ToolBarPanel ToolBarPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.ToolBarPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -35347,7 +35347,7 @@ namespace CSharpMarkup.Wpf // ToolBarPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -35519,7 +35519,7 @@ namespace CSharpMarkup.Wpf // UniformGrid
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Primitives.UniformGrid"/></summary>
-        public static UniformGrid UniformGrid(params System.Windows.UIElement[] Children)
+        public static UniformGrid UniformGrid(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Primitives.UniformGrid();
             for (int i = 0; i < Children.Length; i++)
@@ -35527,7 +35527,7 @@ namespace CSharpMarkup.Wpf // UniformGrid
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -36010,7 +36010,7 @@ namespace CSharpMarkup.Wpf // AdornerDecorator
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.AdornerDecorator"/></summary>
-        public static AdornerDecorator AdornerDecorator(System.Windows.UIElement Child)
+        public static AdornerDecorator AdornerDecorator(Windows.UIElement Child)
         {
             var ui = new Windows.Documents.AdornerDecorator();
             if (Child is not null) ui.Child = Child;
@@ -36442,7 +36442,7 @@ namespace CSharpMarkup.Wpf // Bold
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Bold"/></summary>
-        public static Bold Bold(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
+        public static Bold Bold(params InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Bold();
             for (int i = 0; i < Inlines.Length; i++)
@@ -36450,7 +36450,7 @@ namespace CSharpMarkup.Wpf // Bold
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.Wpf.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -36586,7 +36586,7 @@ namespace CSharpMarkup.Wpf // Figure
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Figure"/></summary>
-        public static Figure Figure(params System.Windows.Documents.Block[] Blocks)
+        public static Figure Figure(params Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.Figure();
             for (int i = 0; i < Blocks.Length; i++)
@@ -36594,7 +36594,7 @@ namespace CSharpMarkup.Wpf // Figure
                 var child = Blocks[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.Block>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.Block>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Blocks.Add(subChildren[j]);
@@ -36721,7 +36721,7 @@ namespace CSharpMarkup.Wpf // FixedDocument
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.FixedDocument"/></summary>
-        public static FixedDocument FixedDocument(params System.Windows.Documents.PageContent[] Pages)
+        public static FixedDocument FixedDocument(params Windows.Documents.PageContent[] Pages)
         {
             var ui = new Windows.Documents.FixedDocument();
             for (int i = 0; i < Pages.Length; i++)
@@ -36729,7 +36729,7 @@ namespace CSharpMarkup.Wpf // FixedDocument
                 var child = Pages[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.PageContent>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.PageContent>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Pages.Add(subChildren[j]);
@@ -36791,7 +36791,7 @@ namespace CSharpMarkup.Wpf // FixedDocumentSequence
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.FixedDocumentSequence"/></summary>
-        public static FixedDocumentSequence FixedDocumentSequence(params System.Windows.Documents.DocumentReference[] References)
+        public static FixedDocumentSequence FixedDocumentSequence(params Windows.Documents.DocumentReference[] References)
         {
             var ui = new Windows.Documents.FixedDocumentSequence();
             for (int i = 0; i < References.Length; i++)
@@ -36799,7 +36799,7 @@ namespace CSharpMarkup.Wpf // FixedDocumentSequence
                 var child = References[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.DocumentReference>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.DocumentReference>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.References.Add(subChildren[j]);
@@ -36861,7 +36861,7 @@ namespace CSharpMarkup.Wpf // FixedPage
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.FixedPage"/></summary>
-        public static FixedPage FixedPage(params System.Windows.UIElement[] Children)
+        public static FixedPage FixedPage(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Documents.FixedPage();
             for (int i = 0; i < Children.Length; i++)
@@ -36869,7 +36869,7 @@ namespace CSharpMarkup.Wpf // FixedPage
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -37028,7 +37028,7 @@ namespace CSharpMarkup.Wpf // Floater
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Floater"/></summary>
-        public static Floater Floater(params System.Windows.Documents.Block[] Blocks)
+        public static Floater Floater(params Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.Floater();
             for (int i = 0; i < Blocks.Length; i++)
@@ -37036,7 +37036,7 @@ namespace CSharpMarkup.Wpf // Floater
                 var child = Blocks[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.Block>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.Block>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Blocks.Add(subChildren[j]);
@@ -37121,7 +37121,7 @@ namespace CSharpMarkup.Wpf // FlowDocument
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.FlowDocument"/></summary>
-        public static FlowDocument FlowDocument(params System.Windows.Documents.Block[] Blocks)
+        public static FlowDocument FlowDocument(params Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.FlowDocument();
             for (int i = 0; i < Blocks.Length; i++)
@@ -37129,7 +37129,7 @@ namespace CSharpMarkup.Wpf // FlowDocument
                 var child = Blocks[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.Block>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.Block>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Blocks.Add(subChildren[j]);
@@ -37594,7 +37594,7 @@ namespace CSharpMarkup.Wpf // Hyperlink
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Hyperlink"/></summary>
-        public static Hyperlink Hyperlink(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
+        public static Hyperlink Hyperlink(params InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Hyperlink();
             for (int i = 0; i < Inlines.Length; i++)
@@ -37602,7 +37602,7 @@ namespace CSharpMarkup.Wpf // Hyperlink
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.Wpf.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -37814,7 +37814,7 @@ namespace CSharpMarkup.Wpf // Italic
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Italic"/></summary>
-        public static Italic Italic(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
+        public static Italic Italic(params InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Italic();
             for (int i = 0; i < Inlines.Length; i++)
@@ -37822,7 +37822,7 @@ namespace CSharpMarkup.Wpf // Italic
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.Wpf.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -37947,7 +37947,7 @@ namespace CSharpMarkup.Wpf // List
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.List"/></summary>
-        public static List List(params System.Windows.Documents.ListItem[] ListItems)
+        public static List List(params Windows.Documents.ListItem[] ListItems)
         {
             var ui = new Windows.Documents.List();
             for (int i = 0; i < ListItems.Length; i++)
@@ -37955,7 +37955,7 @@ namespace CSharpMarkup.Wpf // List
                 var child = ListItems[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.ListItem>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.ListItem>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.ListItems.Add(subChildren[j]);
@@ -38038,7 +38038,7 @@ namespace CSharpMarkup.Wpf // ListItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.ListItem"/></summary>
-        public static ListItem ListItem(params System.Windows.Documents.Block[] Blocks)
+        public static ListItem ListItem(params Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.ListItem();
             for (int i = 0; i < Blocks.Length; i++)
@@ -38046,7 +38046,7 @@ namespace CSharpMarkup.Wpf // ListItem
                 var child = Blocks[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.Block>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.Block>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Blocks.Add(subChildren[j]);
@@ -38206,7 +38206,7 @@ namespace CSharpMarkup.Wpf // PageContent
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.PageContent"/></summary>
-        public static PageContent PageContent(System.Windows.Documents.FixedPage Child)
+        public static PageContent PageContent(Windows.Documents.FixedPage Child)
         {
             var ui = new Windows.Documents.PageContent();
             if (Child is not null) ui.Child = Child;
@@ -38214,7 +38214,7 @@ namespace CSharpMarkup.Wpf // PageContent
         }
 
         /// <summary>Create a <see cref="Windows.Documents.PageContent"/></summary>
-        public static PageContent PageContent(Uri Source = default, System.Windows.Documents.FixedPage Child = default)
+        public static PageContent PageContent(Uri Source = default, Windows.Documents.FixedPage Child = default)
         {
             var ui = new Windows.Documents.PageContent();
             if (Source is not null) ui.Source = Source;
@@ -38276,7 +38276,7 @@ namespace CSharpMarkup.Wpf // Paragraph
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Paragraph"/></summary>
-        public static Paragraph Paragraph(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
+        public static Paragraph Paragraph(params InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Paragraph();
             for (int i = 0; i < Inlines.Length; i++)
@@ -38284,7 +38284,7 @@ namespace CSharpMarkup.Wpf // Paragraph
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.Wpf.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -38452,7 +38452,7 @@ namespace CSharpMarkup.Wpf // Section
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Section"/></summary>
-        public static Section Section(params System.Windows.Documents.Block[] Blocks)
+        public static Section Section(params Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.Section();
             for (int i = 0; i < Blocks.Length; i++)
@@ -38460,7 +38460,7 @@ namespace CSharpMarkup.Wpf // Section
                 var child = Blocks[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.Block>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.Block>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Blocks.Add(subChildren[j]);
@@ -38525,7 +38525,7 @@ namespace CSharpMarkup.Wpf // Span
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Span"/></summary>
-        public static Span Span(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
+        public static Span Span(params InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Span();
             for (int i = 0; i < Inlines.Length; i++)
@@ -38533,7 +38533,7 @@ namespace CSharpMarkup.Wpf // Span
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.Wpf.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -38608,7 +38608,7 @@ namespace CSharpMarkup.Wpf // Table
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Table"/></summary>
-        public static Table Table(params System.Windows.Documents.TableRowGroup[] RowGroups)
+        public static Table Table(params Windows.Documents.TableRowGroup[] RowGroups)
         {
             var ui = new Windows.Documents.Table();
             for (int i = 0; i < RowGroups.Length; i++)
@@ -38616,7 +38616,7 @@ namespace CSharpMarkup.Wpf // Table
                 var child = RowGroups[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.TableRowGroup>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.TableRowGroup>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.RowGroups.Add(subChildren[j]);
@@ -38678,7 +38678,7 @@ namespace CSharpMarkup.Wpf // TableCell
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.TableCell"/></summary>
-        public static TableCell TableCell(params System.Windows.Documents.Block[] Blocks)
+        public static TableCell TableCell(params Windows.Documents.Block[] Blocks)
         {
             var ui = new Windows.Documents.TableCell();
             for (int i = 0; i < Blocks.Length; i++)
@@ -38686,7 +38686,7 @@ namespace CSharpMarkup.Wpf // TableCell
                 var child = Blocks[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.Block>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.Block>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Blocks.Add(subChildren[j]);
@@ -38914,7 +38914,7 @@ namespace CSharpMarkup.Wpf // TableRow
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.TableRow"/></summary>
-        public static TableRow TableRow(params System.Windows.Documents.TableCell[] Cells)
+        public static TableRow TableRow(params Windows.Documents.TableCell[] Cells)
         {
             var ui = new Windows.Documents.TableRow();
             for (int i = 0; i < Cells.Length; i++)
@@ -38922,7 +38922,7 @@ namespace CSharpMarkup.Wpf // TableRow
                 var child = Cells[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.TableCell>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.TableCell>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Cells.Add(subChildren[j]);
@@ -38974,7 +38974,7 @@ namespace CSharpMarkup.Wpf // TableRowGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.TableRowGroup"/></summary>
-        public static TableRowGroup TableRowGroup(params System.Windows.Documents.TableRow[] Rows)
+        public static TableRowGroup TableRowGroup(params Windows.Documents.TableRow[] Rows)
         {
             var ui = new Windows.Documents.TableRowGroup();
             for (int i = 0; i < Rows.Length; i++)
@@ -38982,7 +38982,7 @@ namespace CSharpMarkup.Wpf // TableRowGroup
                 var child = Rows[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Documents.TableRow>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Documents.TableRow>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Rows.Add(subChildren[j]);
@@ -39203,7 +39203,7 @@ namespace CSharpMarkup.Wpf // Underline
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Documents.Underline"/></summary>
-        public static Underline Underline(params CSharpMarkup.Wpf.InlineCollectionItem[] Inlines)
+        public static Underline Underline(params InlineCollectionItem[] Inlines)
         {
             var ui = new Windows.Documents.Underline();
             for (int i = 0; i < Inlines.Length; i++)
@@ -39211,7 +39211,7 @@ namespace CSharpMarkup.Wpf // Underline
                 var child = Inlines[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<CSharpMarkup.Wpf.InlineCollectionItem>.ExtractChildren(child);
+                var subChildren = Spreader<InlineCollectionItem>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Inlines.Add(subChildren[j]);
@@ -39322,7 +39322,7 @@ namespace CSharpMarkup.Wpf // BeginStoryboard
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.BeginStoryboard"/></summary>
-        public static BeginStoryboard BeginStoryboard(System.Windows.Media.Animation.Storyboard Storyboard)
+        public static BeginStoryboard BeginStoryboard(Windows.Media.Animation.Storyboard Storyboard)
         {
             var ui = new Windows.Media.Animation.BeginStoryboard();
             if (Storyboard is not null) ui.Storyboard = Storyboard;
@@ -39330,7 +39330,7 @@ namespace CSharpMarkup.Wpf // BeginStoryboard
         }
 
         /// <summary>Create a <see cref="Windows.Media.Animation.BeginStoryboard"/></summary>
-        public static BeginStoryboard BeginStoryboard(Windows.Media.Animation.HandoffBehavior? HandoffBehavior = default, string Name = default, System.Windows.Media.Animation.Storyboard Storyboard = default)
+        public static BeginStoryboard BeginStoryboard(Windows.Media.Animation.HandoffBehavior? HandoffBehavior = default, string Name = default, Windows.Media.Animation.Storyboard Storyboard = default)
         {
             var ui = new Windows.Media.Animation.BeginStoryboard();
             if (HandoffBehavior is not null) ui.HandoffBehavior = HandoffBehavior.Value;
@@ -40007,7 +40007,7 @@ namespace CSharpMarkup.Wpf // Storyboard
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.Storyboard"/></summary>
-        public static Storyboard Storyboard(params System.Windows.Media.Animation.Timeline[] Children)
+        public static Storyboard Storyboard(params Windows.Media.Animation.Timeline[] Children)
         {
             var ui = new Windows.Media.Animation.Storyboard();
             for (int i = 0; i < Children.Length; i++)
@@ -40015,7 +40015,7 @@ namespace CSharpMarkup.Wpf // Storyboard
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.Timeline>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.Timeline>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -40253,7 +40253,7 @@ namespace CSharpMarkup.Wpf // ThicknessAnimationUsingKeyFrames
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Media.Animation.ThicknessAnimationUsingKeyFrames"/></summary>
-        public static ThicknessAnimationUsingKeyFrames ThicknessAnimationUsingKeyFrames(params System.Windows.Media.Animation.ThicknessKeyFrame[] KeyFrames)
+        public static ThicknessAnimationUsingKeyFrames ThicknessAnimationUsingKeyFrames(params Windows.Media.Animation.ThicknessKeyFrame[] KeyFrames)
         {
             var ui = new Windows.Media.Animation.ThicknessAnimationUsingKeyFrames();
             for (int i = 0; i < KeyFrames.Length; i++)
@@ -40261,7 +40261,7 @@ namespace CSharpMarkup.Wpf // ThicknessAnimationUsingKeyFrames
                 var child = KeyFrames[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Media.Animation.ThicknessKeyFrame>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Media.Animation.ThicknessKeyFrame>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.KeyFrames.Add(subChildren[j]);
@@ -44243,7 +44243,7 @@ namespace CSharpMarkup.Wpf // RibbonGroupSizeDefinition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGroupSizeDefinition"/></summary>
-        public static RibbonGroupSizeDefinition RibbonGroupSizeDefinition(params System.Windows.Controls.Ribbon.RibbonControlSizeDefinition[] ControlSizeDefinitions)
+        public static RibbonGroupSizeDefinition RibbonGroupSizeDefinition(params Windows.Controls.Ribbon.RibbonControlSizeDefinition[] ControlSizeDefinitions)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGroupSizeDefinition();
             for (int i = 0; i < ControlSizeDefinitions.Length; i++)
@@ -44251,7 +44251,7 @@ namespace CSharpMarkup.Wpf // RibbonGroupSizeDefinition
                 var child = ControlSizeDefinitions[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.Controls.Ribbon.RibbonControlSizeDefinition>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.Controls.Ribbon.RibbonControlSizeDefinition>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.ControlSizeDefinitions.Add(subChildren[j]);
@@ -44338,7 +44338,7 @@ namespace CSharpMarkup.Wpf // RibbonGroupTemplateSizeDefinition
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.RibbonGroupTemplateSizeDefinition"/></summary>
-        public static RibbonGroupTemplateSizeDefinition RibbonGroupTemplateSizeDefinition(System.Windows.DataTemplate ContentTemplate)
+        public static RibbonGroupTemplateSizeDefinition RibbonGroupTemplateSizeDefinition(Windows.DataTemplate ContentTemplate)
         {
             var ui = new Windows.Controls.Ribbon.RibbonGroupTemplateSizeDefinition();
             if (ContentTemplate is not null) ui.ContentTemplate = ContentTemplate;
@@ -47010,7 +47010,7 @@ namespace CSharpMarkup.Wpf // RibbonContextualTabGroupsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonContextualTabGroupsPanel"/></summary>
-        public static RibbonContextualTabGroupsPanel RibbonContextualTabGroupsPanel(params System.Windows.UIElement[] Children)
+        public static RibbonContextualTabGroupsPanel RibbonContextualTabGroupsPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonContextualTabGroupsPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -47018,7 +47018,7 @@ namespace CSharpMarkup.Wpf // RibbonContextualTabGroupsPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -47079,7 +47079,7 @@ namespace CSharpMarkup.Wpf // RibbonGalleryCategoriesPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGalleryCategoriesPanel"/></summary>
-        public static RibbonGalleryCategoriesPanel RibbonGalleryCategoriesPanel(params System.Windows.UIElement[] Children)
+        public static RibbonGalleryCategoriesPanel RibbonGalleryCategoriesPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonGalleryCategoriesPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -47087,7 +47087,7 @@ namespace CSharpMarkup.Wpf // RibbonGalleryCategoriesPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -47153,7 +47153,7 @@ namespace CSharpMarkup.Wpf // RibbonGalleryItemsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGalleryItemsPanel"/></summary>
-        public static RibbonGalleryItemsPanel RibbonGalleryItemsPanel(params System.Windows.UIElement[] Children)
+        public static RibbonGalleryItemsPanel RibbonGalleryItemsPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonGalleryItemsPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -47161,7 +47161,7 @@ namespace CSharpMarkup.Wpf // RibbonGalleryItemsPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -47215,7 +47215,7 @@ namespace CSharpMarkup.Wpf // RibbonGroupItemsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGroupItemsPanel"/></summary>
-        public static RibbonGroupItemsPanel RibbonGroupItemsPanel(params System.Windows.UIElement[] Children)
+        public static RibbonGroupItemsPanel RibbonGroupItemsPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonGroupItemsPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -47223,7 +47223,7 @@ namespace CSharpMarkup.Wpf // RibbonGroupItemsPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -47277,7 +47277,7 @@ namespace CSharpMarkup.Wpf // RibbonGroupsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonGroupsPanel"/></summary>
-        public static RibbonGroupsPanel RibbonGroupsPanel(params System.Windows.UIElement[] Children)
+        public static RibbonGroupsPanel RibbonGroupsPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonGroupsPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -47285,7 +47285,7 @@ namespace CSharpMarkup.Wpf // RibbonGroupsPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -47346,7 +47346,7 @@ namespace CSharpMarkup.Wpf // RibbonMenuItemsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonMenuItemsPanel"/></summary>
-        public static RibbonMenuItemsPanel RibbonMenuItemsPanel(params System.Windows.UIElement[] Children)
+        public static RibbonMenuItemsPanel RibbonMenuItemsPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonMenuItemsPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -47354,7 +47354,7 @@ namespace CSharpMarkup.Wpf // RibbonMenuItemsPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -47408,7 +47408,7 @@ namespace CSharpMarkup.Wpf // RibbonQuickAccessToolBarOverflowPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarOverflowPanel"/></summary>
-        public static RibbonQuickAccessToolBarOverflowPanel RibbonQuickAccessToolBarOverflowPanel(params System.Windows.UIElement[] Children)
+        public static RibbonQuickAccessToolBarOverflowPanel RibbonQuickAccessToolBarOverflowPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarOverflowPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -47416,7 +47416,7 @@ namespace CSharpMarkup.Wpf // RibbonQuickAccessToolBarOverflowPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -47470,7 +47470,7 @@ namespace CSharpMarkup.Wpf // RibbonQuickAccessToolBarPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarPanel"/></summary>
-        public static RibbonQuickAccessToolBarPanel RibbonQuickAccessToolBarPanel(params System.Windows.UIElement[] Children)
+        public static RibbonQuickAccessToolBarPanel RibbonQuickAccessToolBarPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonQuickAccessToolBarPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -47478,7 +47478,7 @@ namespace CSharpMarkup.Wpf // RibbonQuickAccessToolBarPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -47532,7 +47532,7 @@ namespace CSharpMarkup.Wpf // RibbonTabHeadersPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonTabHeadersPanel"/></summary>
-        public static RibbonTabHeadersPanel RibbonTabHeadersPanel(params System.Windows.UIElement[] Children)
+        public static RibbonTabHeadersPanel RibbonTabHeadersPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonTabHeadersPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -47540,7 +47540,7 @@ namespace CSharpMarkup.Wpf // RibbonTabHeadersPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -47610,7 +47610,7 @@ namespace CSharpMarkup.Wpf // RibbonTabsPanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonTabsPanel"/></summary>
-        public static RibbonTabsPanel RibbonTabsPanel(params System.Windows.UIElement[] Children)
+        public static RibbonTabsPanel RibbonTabsPanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonTabsPanel();
             for (int i = 0; i < Children.Length; i++)
@@ -47618,7 +47618,7 @@ namespace CSharpMarkup.Wpf // RibbonTabsPanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);
@@ -47684,7 +47684,7 @@ namespace CSharpMarkup.Wpf // RibbonTitlePanel
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Windows.Controls.Ribbon.Primitives.RibbonTitlePanel"/></summary>
-        public static RibbonTitlePanel RibbonTitlePanel(params System.Windows.UIElement[] Children)
+        public static RibbonTitlePanel RibbonTitlePanel(params Windows.UIElement[] Children)
         {
             var ui = new Windows.Controls.Ribbon.Primitives.RibbonTitlePanel();
             for (int i = 0; i < Children.Length; i++)
@@ -47692,7 +47692,7 @@ namespace CSharpMarkup.Wpf // RibbonTitlePanel
                 var child = Children[i];
                 if (child == null) continue;
 
-                var subChildren = Spreader<System.Windows.UIElement>.ExtractChildren(child);
+                var subChildren = Spreader<Windows.UIElement>.ExtractChildren(child);
                 if (subChildren != null)
                     for (int j = 0; j < subChildren.Length; j++)
                         ui.Children.Add(subChildren[j]);

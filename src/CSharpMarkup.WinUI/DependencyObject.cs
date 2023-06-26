@@ -30,10 +30,14 @@ namespace CSharpMarkup.WinUI
         }
     }
 
-    public interface IUI<TUI> where TUI : Xaml.DependencyObject
+    public interface IUI<TUI> : IAnyUI<TUI> where TUI : Xaml.DependencyObject { }
+
+    public interface IAnyUI<TUI> : IAnyUI // Support non-DependencyObject UI types, e.g. an interface
     {
         TUI UI { get; }
     }
+
+    public interface IAnyUI { }
 
 #if !WINUI
     public partial class DependencyObject : IUI<Xaml.DependencyObject>
@@ -48,7 +52,7 @@ namespace CSharpMarkup.WinUI
     /// Allows to specify <see cref="CSharpMarkup.WinUI"/> types (e.g. <see cref="TextBlock"/>) as well as commonly used built-in C# / UI types (e.g. <see cref="string"/> or <see cref="Xaml.Thickness"/>).
     /// </summary>
     /// <remarks>For types not supported by implicit conversion, use the <see cref="UIObject(object)"/> contructor, e.g.: <code>new (FontCapitals.Normal)</code></remarks>
-    public class UIObject
+    public class UIObject : IAnyUI<object>
     {
         public object UI { get; }
 

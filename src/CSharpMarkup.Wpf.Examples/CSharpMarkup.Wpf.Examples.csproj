@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CSharpMarkup.WPF" Version="2.1.14" />
+    <PackageReference Include="CSharpMarkup.WPF" Version="2.2.21" />
     <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" PrivateAssets="All" />
   </ItemGroup>
 
