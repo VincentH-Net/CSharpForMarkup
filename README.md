@@ -27,6 +27,12 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*June 27, 2023*
+> ## 2.2 Release & start of .NET MAUI support
+- [Release 2.2 is out](https://twitter.com/vincenth_net/status/1673330170441224192)! Enjoy this polished release for Windows App SDK, Uno Platform and WPF.
+- As the poll results indicated, C# Markup 2 support for **.NET MAUI** is most wanted.<br />
+  Implementation [has started](https://twitter.com/vincenth_net/status/1673383755023523857)!
+
 *March 25, 2023*
 > ## Poll results are in! And the winner is...
 The March 2023 poll results on what to build next for C# Markup 2 are in!
