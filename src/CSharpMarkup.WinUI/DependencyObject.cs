@@ -28,6 +28,14 @@ namespace CSharpMarkup.WinUI
                 .Replace("?", "")                    // Allow .Bind (tweet?.Title) where tweet is a null instance field used for binding only
                 .Trim('"', '@', ' ', '\t');          // Allow .Bind ("ILikeStringLiterals") => "ILikeStringLiterals"
         }
+
+        public static TUI AppResource<TUI>(string name) => (TUI)Xaml.Application.Current.Resources[name];
+
+        public static TUI XamlTo<TUI>(string xaml)
+        {
+            int endOfFirstTag = xaml.IndexOf('>');
+            return (TUI)Xaml.Markup.XamlReader.Load(endOfFirstTag < 0 ? xaml : xaml.Insert(endOfFirstTag, """ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" """));
+        }
     }
 
     public interface IUI<TUI> : IAnyUI<TUI> where TUI : Xaml.DependencyObject { }
@@ -478,5 +486,17 @@ namespace CSharpMarkup.WinUI
             return property.Target;
         }
 #endif
+    }
+
+    public static partial class DependencyObjectExtensions
+    {
+        public static TDependencyObject AppResource<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property,
+            string name
+        ) where TDependencyObject : DependencyObject
+        {
+            property.Target.UI.SetValue(property.UI, Xaml.Application.Current.Resources[name]);
+            return property.Target;
+        }
     }
 }
