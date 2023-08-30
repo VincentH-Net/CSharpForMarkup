@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
-    <NoWarn>NU1701</NoWarn>
+    <NoWarn>NU1701;EnableGenerateDocumentationFile</NoWarn> <!-- Remove EnableGenerateDocumentationFile to get a warning how to enable IDE0005 (Remove unnecessary usings/imports) on build; that warning describes a workaround for https://github.com/dotnet/roslyn/issues/41640 -->
 	</PropertyGroup>
   <PropertyGroup>
     <Nullable>enable</Nullable>
