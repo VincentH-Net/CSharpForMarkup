@@ -41,12 +41,17 @@ public static class ThemeResource
     public static Microsoft.UI.Xaml.Media.SolidColorBrush AccentTextFillColorSecondaryBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["AccentTextFillColorSecondaryBrush"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush AccentTextFillColorTertiaryBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["AccentTextFillColorTertiaryBrush"];
     public static Microsoft.UI.Xaml.Media.AcrylicBrush AcrylicBackgroundFillColorBaseBrush => (Microsoft.UI.Xaml.Media.AcrylicBrush)App.Current.Resources["AcrylicBackgroundFillColorBaseBrush"];
+    #if !HAS_UNO
+    public static Microsoft.UI.Xaml.Media.DesktopAcrylicBackdrop AcrylicBackgroundFillColorDefaultBackdrop => (Microsoft.UI.Xaml.Media.DesktopAcrylicBackdrop)App.Current.Resources["AcrylicBackgroundFillColorDefaultBackdrop"];
+    #endif
     public static Microsoft.UI.Xaml.Media.AcrylicBrush AcrylicBackgroundFillColorDefaultBrush => (Microsoft.UI.Xaml.Media.AcrylicBrush)App.Current.Resources["AcrylicBackgroundFillColorDefaultBrush"];
     public static Microsoft.UI.Xaml.Media.AcrylicBrush AcrylicBackgroundFillColorDefaultInverseBrush => (Microsoft.UI.Xaml.Media.AcrylicBrush)App.Current.Resources["AcrylicBackgroundFillColorDefaultInverseBrush"];
     public static Microsoft.UI.Xaml.Media.AcrylicBrush AcrylicInAppFillColorBaseBrush => (Microsoft.UI.Xaml.Media.AcrylicBrush)App.Current.Resources["AcrylicInAppFillColorBaseBrush"];
     public static Microsoft.UI.Xaml.Media.AcrylicBrush AcrylicInAppFillColorDefaultBrush => (Microsoft.UI.Xaml.Media.AcrylicBrush)App.Current.Resources["AcrylicInAppFillColorDefaultBrush"];
     public static Microsoft.UI.Xaml.Media.AcrylicBrush AcrylicInAppFillColorDefaultInverseBrush => (Microsoft.UI.Xaml.Media.AcrylicBrush)App.Current.Resources["AcrylicInAppFillColorDefaultInverseBrush"];
     public static Microsoft.UI.Xaml.Style AlternateCloseButtonStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["AlternateCloseButtonStyle"];
+    public static System.Double AnnotatedScrollBarTooltipMaxWidth => (System.Double)App.Current.Resources["AnnotatedScrollBarTooltipMaxWidth"];
+    public static System.Double AnnotatedScrollBarTooltipMinHeight => (System.Double)App.Current.Resources["AnnotatedScrollBarTooltipMinHeight"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush AppBarButtonBackground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["AppBarButtonBackground"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush AppBarButtonBackgroundDisabled => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["AppBarButtonBackgroundDisabled"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush AppBarButtonBackgroundPointerOver => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["AppBarButtonBackgroundPointerOver"];
@@ -726,7 +731,7 @@ public static class ThemeResource
     public static Microsoft.UI.Xaml.Thickness CommandBarFlyoutAppBarEllipsisButtonInnerBorderMargin => (Microsoft.UI.Xaml.Thickness)App.Current.Resources["CommandBarFlyoutAppBarEllipsisButtonInnerBorderMargin"];
     public static Microsoft.UI.Xaml.Style CommandBarFlyoutAppBarToggleButtonStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["CommandBarFlyoutAppBarToggleButtonStyle"];
     public static Microsoft.UI.Xaml.Style CommandBarFlyoutAppBarToggleButtonStyleBase => (Microsoft.UI.Xaml.Style)App.Current.Resources["CommandBarFlyoutAppBarToggleButtonStyleBase"];
-    public static Microsoft.UI.Xaml.Media.AcrylicBrush CommandBarFlyoutBackground => (Microsoft.UI.Xaml.Media.AcrylicBrush)App.Current.Resources["CommandBarFlyoutBackground"];
+    public static Microsoft.UI.Xaml.Media.SolidColorBrush CommandBarFlyoutBackground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["CommandBarFlyoutBackground"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush CommandBarFlyoutBorderBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["CommandBarFlyoutBorderBrush"];
     public static Microsoft.UI.Xaml.Thickness CommandBarFlyoutBorderDownThemeThickness => (Microsoft.UI.Xaml.Thickness)App.Current.Resources["CommandBarFlyoutBorderDownThemeThickness"];
     public static Microsoft.UI.Xaml.Thickness CommandBarFlyoutBorderThemeThickness => (Microsoft.UI.Xaml.Thickness)App.Current.Resources["CommandBarFlyoutBorderThemeThickness"];
@@ -736,6 +741,9 @@ public static class ThemeResource
     public static Microsoft.UI.Xaml.Style CommandBarFlyoutEllipsisButtonStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["CommandBarFlyoutEllipsisButtonStyle"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush CommandBarFlyoutForeground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["CommandBarFlyoutForeground"];
     public static Microsoft.UI.Xaml.Media.ThemeShadow CommandBarFlyoutOverflowShadow => (Microsoft.UI.Xaml.Media.ThemeShadow)App.Current.Resources["CommandBarFlyoutOverflowShadow"];
+    #if !HAS_UNO
+    public static Microsoft.UI.Xaml.Media.DesktopAcrylicBackdrop CommandBarFlyoutSystemBackdrop => (Microsoft.UI.Xaml.Media.DesktopAcrylicBackdrop)App.Current.Resources["CommandBarFlyoutSystemBackdrop"];
+    #endif
     public static Microsoft.UI.Xaml.Media.SolidColorBrush CommandBarForeground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["CommandBarForeground"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush CommandBarHighContrastBorder => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["CommandBarHighContrastBorder"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush CommandBarLightDismissOverlayBackground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["CommandBarLightDismissOverlayBackground"];
@@ -957,7 +965,6 @@ public static class ThemeResource
     public static Microsoft.UI.Xaml.Style DefaultRichEditBoxStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["DefaultRichEditBoxStyle"];
     public static Microsoft.UI.Xaml.Style DefaultScrollBarStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["DefaultScrollBarStyle"];
     public static Microsoft.UI.Xaml.Style DefaultScrollViewerStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["DefaultScrollViewerStyle"];
-    public static Microsoft.UI.Xaml.Style DefaultSelectionIndicatorItemContainerStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["DefaultSelectionIndicatorItemContainerStyle"];
     public static Microsoft.UI.Xaml.Style DefaultSliderStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["DefaultSliderStyle"];
     public static Microsoft.UI.Xaml.Style DefaultSplitViewStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["DefaultSplitViewStyle"];
     public static Microsoft.UI.Xaml.Style DefaultTextBoxStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["DefaultTextBoxStyle"];
@@ -966,6 +973,7 @@ public static class ThemeResource
     public static Microsoft.UI.Xaml.Style DefaultToggleMenuFlyoutItemStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["DefaultToggleMenuFlyoutItemStyle"];
     public static Microsoft.UI.Xaml.Style DefaultToggleSwitchStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["DefaultToggleSwitchStyle"];
     public static Microsoft.UI.Xaml.Style DefaultToolTipStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["DefaultToolTipStyle"];
+    public static Microsoft.UI.Xaml.Media.SolidColorBrush DesktopAcrylicTransparentBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["DesktopAcrylicTransparentBrush"];
     public static System.Double DisplayTextBlockFontSize => (System.Double)App.Current.Resources["DisplayTextBlockFontSize"];
     public static Microsoft.UI.Xaml.Style DisplayTextBlockStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["DisplayTextBlockStyle"];
     public static Windows.UI.Color DividerStrokeColorDefault => (Windows.UI.Color)App.Current.Resources["DividerStrokeColorDefault"];
@@ -1219,7 +1227,7 @@ public static class ThemeResource
     public static Microsoft.UI.Xaml.Media.SolidColorBrush ItemContainerSelectionVisualBackground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ItemContainerSelectionVisualBackground"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush ItemContainerSelectionVisualPointerOverBackground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ItemContainerSelectionVisualPointerOverBackground"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush ItemContainerSelectionVisualPressedBackground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ItemContainerSelectionVisualPressedBackground"];
-    public static System.Double LabelsCanvasWidth => (System.Double)App.Current.Resources["LabelsCanvasWidth"];
+    public static System.Double LabelsGridMinWidth => (System.Double)App.Current.Resources["LabelsGridMinWidth"];
     public static Windows.UI.Color LayerFillColorAlt => (Windows.UI.Color)App.Current.Resources["LayerFillColorAlt"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush LayerFillColorAltBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["LayerFillColorAltBrush"];
     public static Windows.UI.Color LayerFillColorDefault => (Windows.UI.Color)App.Current.Resources["LayerFillColorDefault"];
@@ -1442,7 +1450,7 @@ public static class ThemeResource
     public static Microsoft.UI.Xaml.Thickness MenuFlyoutItemThemePadding => (Microsoft.UI.Xaml.Thickness)App.Current.Resources["MenuFlyoutItemThemePadding"];
     public static Microsoft.UI.Xaml.Thickness MenuFlyoutItemThemePaddingNarrow => (Microsoft.UI.Xaml.Thickness)App.Current.Resources["MenuFlyoutItemThemePaddingNarrow"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush MenuFlyoutLightDismissOverlayBackground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["MenuFlyoutLightDismissOverlayBackground"];
-    public static Microsoft.UI.Xaml.Media.AcrylicBrush MenuFlyoutPresenterBackground => (Microsoft.UI.Xaml.Media.AcrylicBrush)App.Current.Resources["MenuFlyoutPresenterBackground"];
+    public static Microsoft.UI.Xaml.Media.SolidColorBrush MenuFlyoutPresenterBackground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["MenuFlyoutPresenterBackground"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush MenuFlyoutPresenterBorderBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["MenuFlyoutPresenterBorderBrush"];
     public static Microsoft.UI.Xaml.Thickness MenuFlyoutPresenterBorderThemeThickness => (Microsoft.UI.Xaml.Thickness)App.Current.Resources["MenuFlyoutPresenterBorderThemeThickness"];
     public static Microsoft.UI.Xaml.Thickness MenuFlyoutPresenterThemePadding => (Microsoft.UI.Xaml.Thickness)App.Current.Resources["MenuFlyoutPresenterThemePadding"];
@@ -1481,6 +1489,9 @@ public static class ThemeResource
     public static Microsoft.UI.Xaml.Media.SolidColorBrush MenuFlyoutSubItemRevealBorderBrushSubMenuOpened => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["MenuFlyoutSubItemRevealBorderBrushSubMenuOpened"];
     public static Microsoft.UI.Xaml.Thickness MenuFlyoutSubItemRevealBorderThickness => (Microsoft.UI.Xaml.Thickness)App.Current.Resources["MenuFlyoutSubItemRevealBorderThickness"];
     public static Microsoft.UI.Xaml.Style MenuFlyoutSubItemRevealStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["MenuFlyoutSubItemRevealStyle"];
+    #if !HAS_UNO
+    public static Microsoft.UI.Xaml.Media.DesktopAcrylicBackdrop MenuFlyoutSystemBackdrop => (Microsoft.UI.Xaml.Media.DesktopAcrylicBackdrop)App.Current.Resources["MenuFlyoutSystemBackdrop"];
+    #endif
     public static System.Double MenuFlyoutThemeMinHeight => (System.Double)App.Current.Resources["MenuFlyoutThemeMinHeight"];
     public static Microsoft.UI.Xaml.Style MUX_NavigationViewItemPresenterStyleWhenOnLeftPane => (Microsoft.UI.Xaml.Style)App.Current.Resources["MUX_NavigationViewItemPresenterStyleWhenOnLeftPane"];
     public static Microsoft.UI.Xaml.Style MUX_NavigationViewItemPresenterStyleWhenOnLeftPaneWithRevealFocus => (Microsoft.UI.Xaml.Style)App.Current.Resources["MUX_NavigationViewItemPresenterStyleWhenOnLeftPaneWithRevealFocus"];
@@ -2215,6 +2226,7 @@ public static class ThemeResource
     public static Microsoft.UI.Xaml.Media.AcrylicBrush SystemControlTransientBackgroundBrush => (Microsoft.UI.Xaml.Media.AcrylicBrush)App.Current.Resources["SystemControlTransientBackgroundBrush"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush SystemControlTransientBorderBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["SystemControlTransientBorderBrush"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush SystemControlTransparentBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["SystemControlTransparentBrush"];
+    public static Windows.UI.Color SystemControlTransparentColor => (Windows.UI.Color)App.Current.Resources["SystemControlTransparentColor"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush SystemControlTransparentRevealBackgroundBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["SystemControlTransparentRevealBackgroundBrush"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush SystemControlTransparentRevealBorderBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["SystemControlTransparentRevealBorderBrush"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush SystemControlTransparentRevealListLowBorderBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["SystemControlTransparentRevealListLowBorderBrush"];
@@ -2641,9 +2653,9 @@ public static class ThemeResource
     public static Microsoft.UI.Xaml.Thickness ToggleMenuFlyoutItemRevealBorderThickness => (Microsoft.UI.Xaml.Thickness)App.Current.Resources["ToggleMenuFlyoutItemRevealBorderThickness"];
     public static Microsoft.UI.Xaml.Style ToggleMenuFlyoutItemRevealStyle => (Microsoft.UI.Xaml.Style)App.Current.Resources["ToggleMenuFlyoutItemRevealStyle"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush ToggleSwitchContainerBackground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ToggleSwitchContainerBackground"];
-    public static Microsoft.UI.Xaml.Media.SolidColorBrush ToggleSwitchContainerBackgroundDisabled => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ToggleSwitchContainerBackgroundDisabled"];
-    public static Microsoft.UI.Xaml.Media.SolidColorBrush ToggleSwitchContainerBackgroundPointerOver => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ToggleSwitchContainerBackgroundPointerOver"];
-    public static Microsoft.UI.Xaml.Media.SolidColorBrush ToggleSwitchContainerBackgroundPressed => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ToggleSwitchContainerBackgroundPressed"];
+    public static Windows.UI.Color ToggleSwitchContainerBackgroundDisabled => (Windows.UI.Color)App.Current.Resources["ToggleSwitchContainerBackgroundDisabled"];
+    public static Windows.UI.Color ToggleSwitchContainerBackgroundPointerOver => (Windows.UI.Color)App.Current.Resources["ToggleSwitchContainerBackgroundPointerOver"];
+    public static Windows.UI.Color ToggleSwitchContainerBackgroundPressed => (Windows.UI.Color)App.Current.Resources["ToggleSwitchContainerBackgroundPressed"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush ToggleSwitchContentForeground => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ToggleSwitchContentForeground"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush ToggleSwitchContentForegroundDisabled => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ToggleSwitchContentForegroundDisabled"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush ToggleSwitchCurtainBackgroundThemeBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ToggleSwitchCurtainBackgroundThemeBrush"];
@@ -2715,7 +2727,6 @@ public static class ThemeResource
     public static Microsoft.UI.Xaml.Media.SolidColorBrush ToolTipForegroundBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ToolTipForegroundBrush"];
     public static Microsoft.UI.Xaml.Media.SolidColorBrush ToolTipForegroundThemeBrush => (Microsoft.UI.Xaml.Media.SolidColorBrush)App.Current.Resources["ToolTipForegroundThemeBrush"];
     public static System.Double ToolTipMaxWidth => (System.Double)App.Current.Resources["ToolTipMaxWidth"];
-    public static System.Double TooltipMinHeight => (System.Double)App.Current.Resources["TooltipMinHeight"];
     public static Microsoft.UI.Xaml.Controls.Primitives.CornerRadiusFilterConverter TopCornerRadiusFilterConverter => (Microsoft.UI.Xaml.Controls.Primitives.CornerRadiusFilterConverter)App.Current.Resources["TopCornerRadiusFilterConverter"];
     public static Microsoft.UI.Xaml.Controls.Primitives.CornerRadiusFilterConverter TopLeftCornerRadiusDoubleValueConverter => (Microsoft.UI.Xaml.Controls.Primitives.CornerRadiusFilterConverter)App.Current.Resources["TopLeftCornerRadiusDoubleValueConverter"];
     public static Microsoft.UI.Xaml.Controls.Primitives.CornerRadiusFilterConverter TopLeftCornerRadiusDoubleValueConverter2x => (Microsoft.UI.Xaml.Controls.Primitives.CornerRadiusFilterConverter)App.Current.Resources["TopLeftCornerRadiusDoubleValueConverter2x"];
