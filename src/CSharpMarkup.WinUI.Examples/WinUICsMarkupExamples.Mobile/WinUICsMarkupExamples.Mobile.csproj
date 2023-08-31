@@ -37,11 +37,11 @@
     <NoWarn>EnableGenerateDocumentationFile</NoWarn> <!-- Remove this to get a warning how to enable IDE0005 (Remove unnecessary usings/imports) on build; that warning describes a workaround for https://github.com/dotnet/roslyn/issues/41640 -->
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Uno.WinUI" Version="4.9.20" />
-    <PackageReference Include="Uno.WinUI.RemoteControl" Version="4.9.20" Condition="'$(Configuration)'=='Debug'" />
-    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.9.20" />
+    <PackageReference Include="Uno.WinUI" Version="4.9.45" />
+    <PackageReference Include="Uno.WinUI.RemoteControl" Version="4.9.45" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="4.9.45" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
-    <PackageReference Include="Uno.WinUI.Lottie" Version="4.9.20" />
+    <PackageReference Include="Uno.WinUI.Lottie" Version="4.9.45" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(TargetFramework)'=='net7.0-android'">
@@ -66,7 +66,7 @@
         <MtouchExtraArgs>$(MtouchExtraArgs) --marshal-objectivec-exceptions:disable</MtouchExtraArgs>
       </PropertyGroup>
       <ItemGroup>
-        <PackageReference Include="Uno.Extensions.Logging.OSLog" Version="1.4.0" />
+        <PackageReference Include="Uno.Extensions.Logging.OSLog" Version="1.6.0" />
       </ItemGroup>
     </When>
     <When Condition="'$(TargetFramework)'=='net7.0-maccatalyst'">
@@ -81,7 +81,7 @@
         <InvariantGlobalization>false</InvariantGlobalization>
       </PropertyGroup>
       <ItemGroup>
-        <PackageReference Include="Uno.Extensions.Logging.OSLog" Version="1.4.0" />
+        <PackageReference Include="Uno.Extensions.Logging.OSLog" Version="1.6.0" />
       </ItemGroup>
     </When>
 

@@ -16,7 +16,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Uno.Wasm.Bootstrap.Server" Version="7.0.24" />
+		<PackageReference Include="Uno.Wasm.Bootstrap.Server" Version="7.0.27" />
 	</ItemGroup>
 
 </Project>

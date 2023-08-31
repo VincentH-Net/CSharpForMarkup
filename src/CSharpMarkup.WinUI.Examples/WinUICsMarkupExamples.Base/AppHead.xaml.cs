@@ -89,9 +89,8 @@ public sealed partial class AppHead : App
 			// builder.AddFilter("Uno.Foundation.WebAssemblyRuntime", LogLevel.Debug );
 		});
 
-		global::Uno.Extensions.LogExtensionPoint.AmbientLoggerFactory = factory;
-
 #if HAS_UNO
+		global::Uno.Extensions.LogExtensionPoint.AmbientLoggerFactory = factory;
 		global::Uno.UI.Adapter.Microsoft.Extensions.Logging.LoggingAdapter.Initialize();
 #endif
 #endif
