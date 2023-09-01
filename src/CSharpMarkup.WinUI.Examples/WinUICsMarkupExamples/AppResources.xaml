@@ -11,5 +11,7 @@
 	</ResourceDictionary.MergedDictionaries>
 	
 	<!-- Add resources here -->
-	
+    <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="TextDecorations" Value="Underline" />
+    </Style>
 </ResourceDictionary>
