@@ -12,6 +12,6 @@
 	
 	<!-- Add resources here -->
     <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
-        <Setter Property="TextDecorations" Value="Underline" />
+        <Setter Property="Foreground"  Value="Green" />
     </Style>
 </ResourceDictionary>
