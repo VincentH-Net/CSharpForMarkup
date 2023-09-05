@@ -30,12 +30,6 @@ namespace CSharpMarkup.WinUI
         }
 
         public static TUI AppResource<TUI>(string name) => (TUI)Xaml.Application.Current.Resources[name];
-
-        public static TUI XamlTo<TUI>(string xaml)
-        {
-            int endOfFirstTag = xaml.IndexOf('>');
-            return (TUI)Xaml.Markup.XamlReader.Load(endOfFirstTag < 0 ? xaml : xaml.Insert(endOfFirstTag, """ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" """));
-        }
     }
 
     public interface IUI<TUI> : IAnyUI<TUI> where TUI : Xaml.DependencyObject { }
