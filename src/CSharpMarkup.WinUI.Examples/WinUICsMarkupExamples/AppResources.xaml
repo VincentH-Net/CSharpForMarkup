@@ -11,7 +11,31 @@
 	</ResourceDictionary.MergedDictionaries>
 	
 	<!-- Add resources here -->
-    <Style x:Key="MyTextBlockStyle" TargetType="TextBlock">
-        <Setter Property="Foreground"  Value="Green" />
+    <Style x:Key="AnimatedButtonStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates" >
+                                <VisualState x:Name="Normal" />
+
+                                <VisualState x:Name="PointerOver">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="ButtonBrush" Storyboard.TargetProperty="Color" To="Red" Duration="0:0:0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Grid.Background>
+                            <SolidColorBrush x:Name="ButtonBrush" Color="Blue" />
+                        </Grid.Background>
+
+                        <ContentPresenter />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

@@ -3,6 +3,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using WinUICsMarkupExamples.Views;
+using System.Diagnostics.CodeAnalysis;
 // IMPORTANT: do not use CSharpMarkup.WinUI objects in this UI logic file; only use them in C# markup files
 // See https://github.com/VincentH-Net/CSharpForMarkup#namespace-separation-of-markup-and-ui-logic
 
@@ -25,7 +26,14 @@ public partial class App : Application
     /// <remarks>
     /// This is the base class for AppHead, which is present in each platform head project (AppHead.xaml + AppHead.xaml.cs)
     /// </remarks>
-    public App() => SetCurrentApp();
+    [SuppressMessage("Build", "IDE0021", Justification = "False positive due to conditional compilation")]
+    public App()
+    {
+        SetCurrentApp();
+#if HAS_UNO 
+        Uno.UI.FeatureConfiguration.ContentPresenter.UseImplicitContentFromTemplatedParent = true; // Workaround for Uno issue - see https://github.com/unoplatform/uno/issues/857#issuecomment-536522828
+#endif
+    }
 
 #if DEBUG
     public virtual void BuildUI()

@@ -8,7 +8,7 @@ namespace WinUICsMarkupExamples.Views;
 
 partial class FlutterPage
 {
-    public void BuildUI() => this.Content(VStack (
+    public void BuildUI() => this.Content( VStack (
         HStack (
             Button ("\u1438") .Style (HeaderButton)
                .Width (50)
@@ -20,33 +20,7 @@ partial class FlutterPage
         ),
 
         Button ("Point here to see\nVisual State Manager in action!")
-           .Template (XamlTo<Controls.ControlTemplate>("""
-            <ControlTemplate TargetType="Button">
-              <Grid >
-                <VisualStateManager.VisualStateGroups>
-                  <VisualStateGroup x:Name="CommonStates">
-                    <VisualStateGroup.Transitions>
-                      <!--Take one half second to transition to the PointerOver state.-->
-                      <VisualTransition To="PointerOver" GeneratedDuration="0:0:0.5"/>
-                    </VisualStateGroup.Transitions>
-
-                    <VisualState x:Name="Normal" />
-
-                    <!--Change the SolidColorBrush, ButtonBrush, to red when the Pointer is over the button.-->
-                    <VisualState x:Name="PointerOver">
-                      <Storyboard>
-                        <ColorAnimation Storyboard.TargetName="ButtonBrush" Storyboard.TargetProperty="Color" To="Red" />
-                      </Storyboard>
-                    </VisualState>
-                  </VisualStateGroup>
-                </VisualStateManager.VisualStateGroups>
-                <Grid.Background>
-                  <SolidColorBrush x:Name="ButtonBrush" Color="Green"/>
-                </Grid.Background>
-                <ContentPresenter />
-              </Grid>
-            </ControlTemplate>
-            """)),
+           .Style().AppResource ("AnimatedButtonStyle"),
 
         Button () .Template (RoundButton)
            .Foreground (Black) .Background (Gold) .Size (75)
@@ -56,7 +30,6 @@ partial class FlutterPage
         vm.ShowMore ?
             Border (
                 TextBlock ("Demonstrate Flutter-like UI building features:\nConditional UI and the Spread() operator")
-                   .Style().AppResource ("MyTextBlockStyle")
             )  .Background (ThemeResource.InfoBarSuccessSeverityBackgroundBrush)
             : null,
 
@@ -73,14 +46,14 @@ partial class FlutterPage
     {
         for (int i = 1; i <= 5; i++)
         {
-            yield return TextBlock($"Field {i}:").Margins(top: 20);
-            yield return TextBox(PlaceholderText: $"Enter value for {i}");
+            yield return TextBlock ($"Field {i}:") .Margins (top: 20);
+            yield return TextBox (PlaceholderText: $"Enter value for {i}");
         }
     }
 
     static ControlTemplate RoundButton => ControlTemplate(typeof(Button), () =>
-        Grid(
-            Ellipse()
+        Grid (
+            Ellipse ()
                 .Fill().BindTemplate (b?.Background)
                 .Stroke().BindTemplate (b?.Foreground),
             ContentPresenter ()
