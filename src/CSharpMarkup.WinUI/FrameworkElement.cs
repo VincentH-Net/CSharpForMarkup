@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Versioning;
 using Xaml = Microsoft.UI.Xaml;
 
 namespace CSharpMarkup.WinUI
@@ -95,6 +96,11 @@ namespace CSharpMarkup.WinUI
             foreach (var group in groups) groupList.Add(group);
             return target;
         }
+#else
+        [UnsupportedOSPlatform("Windows", VisualStateManagerExtensions.UnsupportedErrorMessage)]
+        public static TTarget VisualStateGroups<TTarget>(this TTarget target, params Xaml.VisualStateGroup[] groups)
+            where TTarget : FrameworkElement
+        => throw new NotImplementedException();
 #endif
     }
 }
