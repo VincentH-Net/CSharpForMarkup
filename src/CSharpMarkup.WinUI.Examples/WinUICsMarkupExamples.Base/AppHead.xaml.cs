@@ -16,17 +16,7 @@ public sealed partial class AppHead : App
     /// Initializes the singleton application object. This is the first line of authored code
     /// executed, and as such is the logical equivalent of main() or WinMain().
     /// </summary>
-    public AppHead()
-#if DEBUG && WINDOWS && !HAS_UNO_SKIA_WPF
-    {
-        this.InitializeComponent();
-        // TODO: Replace with MetadataUpdateHandler attribute when MS has fixed that for .NET hot reload in WinUI 3
-        HotReloadKeyboardWatcher.Enable(true);
-        HotReloadKeyboardWatcher.CtrlUpAfterS += BuildUI;
-    }
-#else
-     => this.InitializeComponent();
-#endif
+    public AppHead() => InitializeComponent();
 
     /// <summary>
     /// Configures global Uno Platform logging

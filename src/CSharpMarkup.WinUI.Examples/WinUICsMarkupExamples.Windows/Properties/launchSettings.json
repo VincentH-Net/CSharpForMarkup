@@ -1,7 +1,10 @@
 {
   "profiles": {
-    "WinUICsMarkupExamples.Windows": {
+    "WinUICsMarkupExamples.Windows (Package)": {
       "commandName": "MsixPackage"
+    },
+    "WinUICsMarkupExamples.Windows (Unpackaged - Hot Reload)": {
+      "commandName": "Project"
     }
   }
 }

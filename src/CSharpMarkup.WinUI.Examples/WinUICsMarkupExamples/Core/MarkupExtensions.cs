@@ -26,8 +26,7 @@ static class MarkupExtensions
 
             HStack(
                 ComboBox() .MinWidth (150) .Invoke(Initialize),
-                Button("\U0001F525") .Command(new RelayCommand(() => (UI.Application.Current as IBuildUI)?.BuildUI()))
-                // TODO: Remove hot reload button after MS fixes MetadataUpdateHandler attribute for .NET hot reload in all target platforms
+                Button("\U0001F525") .Command(new RelayCommand(() => (UI.Application.Current as IBuildUI)?.BuildUI())) // Manual hot reload in case the HotReloadService does not work (reliably) on all platforms / IDE's
             )  .Top() .Right(),
 
             TextBlock("Built with C# Markup 2") .FontSize(16) .FontStyle().Italic() .Foreground(Gold)

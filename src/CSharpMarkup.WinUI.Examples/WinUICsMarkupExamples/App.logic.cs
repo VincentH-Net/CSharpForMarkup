@@ -36,19 +36,20 @@ public partial class App : Application
     }
 
 #if DEBUG
-    public virtual void BuildUI()
-    {
-        // Change below code as needed to match your application UI object hierarchy
-        if (rootFrame?.Content is not IBuildUI buildable)
-            return;
+    void UpdateUI(Type[]? _ = null) => BuildUI();
 
-        _ = rootFrame.DispatcherQueue.TryEnqueue(() => {
+    public virtual void BuildUI() =>
+        // Change below code as needed to match your application UI object hierarchy
+        _ = rootFrame?.DispatcherQueue.TryEnqueue(() =>
+        {
+            if (rootFrame?.Content is not IBuildUI buildable)
+                return;
+
             // You can add additional application-specific UI rebuild logic here
             ClearStyles();
             rootFrame.Resources = Implicit.Dictionary;
             buildable.BuildUI();
         });
-    }
 #endif
 
     /// <summary>
@@ -112,6 +113,10 @@ public partial class App : Application
             // Ensure the current window is active
             MainWindow.Activate();
         }
+
+#if DEBUG
+        HotReloadService.UpdateApplicationEvent += UpdateUI;
+#endif
     }
 
     /// <summary>
