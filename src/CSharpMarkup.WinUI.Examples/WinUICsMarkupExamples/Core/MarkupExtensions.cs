@@ -1,9 +1,9 @@
 ﻿#if DEBUG
 using System.Linq;
-#endif
 using CommunityToolkit.Mvvm.Input;
-using CSharpMarkup.WinUI;
 using static CSharpMarkup.WinUI.Helpers;
+#endif
+using CSharpMarkup.WinUI;
 
 namespace WinUICsMarkupExamples.Core;
 
@@ -13,10 +13,10 @@ static class MarkupExtensions
     => target.OnDataContextChanged<TextBlock, Controls.TextBlock, TContext>(onChanged);
 
     public static UIElement HotReloadOverlay(this Frame rootFrame)
-    {
 #if !DEBUG
-        return rootFrame;
+    => rootFrame;
 #else
+    {
         const string viewsNamespace = "WinUICsMarkupExamples.Views.";
         var frame = rootFrame.UI;
         System.Collections.Generic.Dictionary<string, Type> buildablePageTypes = new();
@@ -90,6 +90,6 @@ static class MarkupExtensions
 
             frame.Navigate(pageType);
         }
-#endif
     }
+#endif
 }

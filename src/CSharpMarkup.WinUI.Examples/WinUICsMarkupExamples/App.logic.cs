@@ -4,6 +4,9 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using WinUICsMarkupExamples.Views;
 using System.Diagnostics.CodeAnalysis;
+#if DEBUG
+using System.Linq;
+#endif
 // IMPORTANT: do not use CSharpMarkup.WinUI objects in this UI logic file; only use them in C# markup files
 // See https://github.com/VincentH-Net/CSharpForMarkup#namespace-separation-of-markup-and-ui-logic
 
@@ -36,20 +39,21 @@ public partial class App : Application
     }
 
 #if DEBUG
-    void UpdateUI(Type[]? _ = null) => BuildUI();
+    public virtual void BuildUI() => UpdateUI(true);
 
-    public virtual void BuildUI() =>
-        // Change below code as needed to match your application UI object hierarchy
-        _ = rootFrame?.DispatcherQueue.TryEnqueue(() =>
+    void UpdateUI(Type[]? types) => UpdateUI(types?.Contains(typeof(Styles)) == true);
+
+    // Change this method as needed to match your application UI object hierarchy
+    void UpdateUI(bool updateStyles) => _ = rootFrame?.DispatcherQueue.TryEnqueue(() =>
+    {
+        if (updateStyles)
         {
-            if (rootFrame?.Content is not IBuildUI buildable)
-                return;
-
-            // You can add additional application-specific UI rebuild logic here
             ClearStyles();
-            rootFrame.Resources = Implicit.Dictionary;
-            buildable.BuildUI();
-        });
+            rootFrame!.Resources = Implicit.Dictionary;
+        }
+
+        (rootFrame?.Content as IBuildUI)?.BuildUI();
+    });
 #endif
 
     /// <summary>

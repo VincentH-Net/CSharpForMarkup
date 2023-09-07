@@ -1,5 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
-
+﻿#if DEBUG
+using Microsoft.Extensions.Logging;
+#endif
 namespace WinUICsMarkupExamples;
 
 /// <summary>

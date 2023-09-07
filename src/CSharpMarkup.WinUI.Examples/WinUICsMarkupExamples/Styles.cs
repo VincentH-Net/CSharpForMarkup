@@ -13,7 +13,11 @@ public static class Styles
 
     static Style<Button>? headerButton;
 
-    public static void ClearStyles() => Implicit.ClearStyles();
+    public static void ClearStyles()
+    {
+        Implicit.ClearStyles();
+        headerButton = null;
+    }
 
 #pragma warning disable IDE0002 // Simplify Member Access. Justification: allow to repeat the target class of the style in every setter, for better readability and quicker writing
 
