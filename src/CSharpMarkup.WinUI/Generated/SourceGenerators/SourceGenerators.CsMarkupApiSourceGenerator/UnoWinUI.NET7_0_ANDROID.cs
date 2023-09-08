@@ -14223,10 +14223,6 @@ namespace CSharpMarkup.WinUI // ListViewBase
 
     public static partial class ListViewBaseExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.ListViewBase.SingleSelectionFollowsFocus"/></summary>
-        [UnsupportedOSPlatform("Android", "https://aka.platform.uno/notimplemented")]
-        public static TView SingleSelectionFollowsFocus<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.SingleSelectionFollowsFocus = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.ShowsScrollingPlaceholders"/></summary>
         [UnsupportedOSPlatform("Android", "https://aka.platform.uno/notimplemented")]
         public static TView ShowsScrollingPlaceholders<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.ShowsScrollingPlaceholders = value; return view; }
@@ -14277,6 +14273,9 @@ namespace CSharpMarkup.WinUI // ListViewBase
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.CanDragItems"/></summary>
         public static TView CanDragItems<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.CanDragItems = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.ListViewBase.SingleSelectionFollowsFocus"/></summary>
+        public static TView SingleSelectionFollowsFocus<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.SingleSelectionFollowsFocus = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.Header"/></summary>
         public static TView Header<TView>(this TView view, object value) where TView : ListViewBase { view.UI.Header = value; return view; }
@@ -14350,11 +14349,6 @@ namespace CSharpMarkup.WinUI // ListViewBase
         public static DependencyProperty<TTarget, bool> ShowsScrollingPlaceholders<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.ShowsScrollingPlaceholdersProperty);
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.SingleSelectionFollowsFocus"/></summary>
-        [UnsupportedOSPlatform("Android", "https://aka.platform.uno/notimplemented")]
-        public static DependencyProperty<TTarget, bool> SingleSelectionFollowsFocus<TTarget>(this TTarget target) where TTarget : ListViewBase
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.SingleSelectionFollowsFocusProperty);
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.CanReorderItems"/></summary>
         public static DependencyProperty<TTarget, bool> CanReorderItems<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.CanReorderItemsProperty);
@@ -14362,6 +14356,10 @@ namespace CSharpMarkup.WinUI // ListViewBase
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.CanDragItems"/></summary>
         public static DependencyProperty<TTarget, bool> CanDragItems<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.CanDragItemsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.SingleSelectionFollowsFocus"/></summary>
+        public static DependencyProperty<TTarget, bool> SingleSelectionFollowsFocus<TTarget>(this TTarget target) where TTarget : ListViewBase
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.SingleSelectionFollowsFocusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.Header"/></summary>
         public static DependencyProperty<TTarget, object> Header<TTarget>(this TTarget target) where TTarget : ListViewBase
@@ -37430,7 +37428,7 @@ namespace CSharpMarkup.WinUI // ImageSource
     public static partial class ImageSourceExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.ImageSource.ImageLoader"/></summary>
-        public static TView ImageLoader<TView>(this TView view, Xaml.Media.ImageSource.ImageLoaderHandler value) where TView : ImageSource { view.UI.ImageLoader = value; return view; }
+        public static TView ImageLoader<TView>(this TView view, Xaml.Media.ImageSource.ImageLoaderHandler? value) where TView : ImageSource { view.UI.ImageLoader = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.ImageSource.UseTargetSize"/></summary>
         public static TView UseTargetSize<TView>(this TView view, bool value) where TView : ImageSource { view.UI.UseTargetSize = value; return view; }
@@ -39448,6 +39446,67 @@ namespace CSharpMarkup.WinUI // XamlLight
     }
 }
 
+namespace CSharpMarkup.WinUI // RevealBrush
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Media.RevealBrush"/></summary>
+        public static RevealBrush RevealBrush(Windows.UI.Color? Color = default)
+        {
+            var ui = new Xaml.Media.RevealBrush();
+            if (Color is not null) ui.Color = Color.Value;
+            return CSharpMarkup.WinUI.RevealBrush.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Media.RevealBrush"/></summary>
+        public static RevealBrush RevealBrush()
+        {
+            var ui = new Xaml.Media.RevealBrush();
+            return CSharpMarkup.WinUI.RevealBrush.StartChain(ui);
+        }
+    }
+
+    public partial class RevealBrush : XamlCompositionBrushBase, IUI<Microsoft.UI.Xaml.Media.RevealBrush>
+    {
+        static RevealBrush instance;
+
+        internal static RevealBrush StartChain(Xaml.Media.RevealBrush ui)
+        {
+            if (instance == null) instance = new RevealBrush();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Media.RevealBrush ui;
+
+        public new Xaml.Media.RevealBrush UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Media.RevealBrush(RevealBrush view) => view?.UI;
+
+        public static implicit operator RevealBrush(Xaml.Media.RevealBrush ui) => RevealBrush.StartChain(ui);
+
+        public RevealBrush Invoke(Action<Xaml.Media.RevealBrush> action) { action?.Invoke(UI); return this; }
+
+        protected RevealBrush() { }
+    }
+
+    public static partial class RevealBrushExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Media.RevealBrush.Color"/></summary>
+        [UnsupportedOSPlatform("Android", "https://aka.platform.uno/notimplemented")]
+        public static TView Color<TView>(this TView view, Windows.UI.Color value) where TView : RevealBrush { view.UI.Color = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RevealBrush.Color"/></summary>
+        [UnsupportedOSPlatform("Android", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, Windows.UI.Color> Color<TTarget>(this TTarget target) where TTarget : RevealBrush
+        => DependencyProperty<TTarget, Windows.UI.Color>.Get(target, Xaml.Media.RevealBrush.ColorProperty);
+    }
+}
+
 namespace CSharpMarkup.WinUI // RevealBackgroundBrush
 {
     public static partial class Helpers
@@ -39527,67 +39586,6 @@ namespace CSharpMarkup.WinUI // RevealBorderBrush
         public RevealBorderBrush Invoke(Action<Xaml.Media.RevealBorderBrush> action) { action?.Invoke(UI); return this; }
 
         protected RevealBorderBrush() { }
-    }
-}
-
-namespace CSharpMarkup.WinUI // RevealBrush
-{
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Media.RevealBrush"/></summary>
-        public static RevealBrush RevealBrush(Windows.UI.Color? Color = default)
-        {
-            var ui = new Xaml.Media.RevealBrush();
-            if (Color is not null) ui.Color = Color.Value;
-            return CSharpMarkup.WinUI.RevealBrush.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Media.RevealBrush"/></summary>
-        public static RevealBrush RevealBrush()
-        {
-            var ui = new Xaml.Media.RevealBrush();
-            return CSharpMarkup.WinUI.RevealBrush.StartChain(ui);
-        }
-    }
-
-    public partial class RevealBrush : XamlCompositionBrushBase, IUI<Microsoft.UI.Xaml.Media.RevealBrush>
-    {
-        static RevealBrush instance;
-
-        internal static RevealBrush StartChain(Xaml.Media.RevealBrush ui)
-        {
-            if (instance == null) instance = new RevealBrush();
-            instance.UI = ui;
-            return instance;
-        }
-
-        Xaml.Media.RevealBrush ui;
-
-        public new Xaml.Media.RevealBrush UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public static implicit operator Xaml.Media.RevealBrush(RevealBrush view) => view?.UI;
-
-        public static implicit operator RevealBrush(Xaml.Media.RevealBrush ui) => RevealBrush.StartChain(ui);
-
-        public RevealBrush Invoke(Action<Xaml.Media.RevealBrush> action) { action?.Invoke(UI); return this; }
-
-        protected RevealBrush() { }
-    }
-
-    public static partial class RevealBrushExtensions
-    {
-        /// <summary>Set <see cref="Xaml.Media.RevealBrush.Color"/></summary>
-        [UnsupportedOSPlatform("Android", "https://aka.platform.uno/notimplemented")]
-        public static TView Color<TView>(this TView view, Windows.UI.Color value) where TView : RevealBrush { view.UI.Color = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RevealBrush.Color"/></summary>
-        [UnsupportedOSPlatform("Android", "https://aka.platform.uno/notimplemented")]
-        public static DependencyProperty<TTarget, Windows.UI.Color> Color<TTarget>(this TTarget target) where TTarget : RevealBrush
-        => DependencyProperty<TTarget, Windows.UI.Color>.Get(target, Xaml.Media.RevealBrush.ColorProperty);
     }
 }
 

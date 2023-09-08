@@ -14638,10 +14638,6 @@ namespace CSharpMarkup.WinUI // ListViewBase
 
     public static partial class ListViewBaseExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.ListViewBase.SingleSelectionFollowsFocus"/></summary>
-        [UnsupportedOSPlatform("MacOS", "https://aka.platform.uno/notimplemented")]
-        public static TView SingleSelectionFollowsFocus<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.SingleSelectionFollowsFocus = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.ShowsScrollingPlaceholders"/></summary>
         [UnsupportedOSPlatform("MacOS", "https://aka.platform.uno/notimplemented")]
         public static TView ShowsScrollingPlaceholders<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.ShowsScrollingPlaceholders = value; return view; }
@@ -14692,6 +14688,9 @@ namespace CSharpMarkup.WinUI // ListViewBase
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.CanDragItems"/></summary>
         public static TView CanDragItems<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.CanDragItems = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.ListViewBase.SingleSelectionFollowsFocus"/></summary>
+        public static TView SingleSelectionFollowsFocus<TView>(this TView view, bool value) where TView : ListViewBase { view.UI.SingleSelectionFollowsFocus = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ListViewBase.Header"/></summary>
         public static TView Header<TView>(this TView view, object value) where TView : ListViewBase { view.UI.Header = value; return view; }
@@ -14765,11 +14764,6 @@ namespace CSharpMarkup.WinUI // ListViewBase
         public static DependencyProperty<TTarget, bool> ShowsScrollingPlaceholders<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.ShowsScrollingPlaceholdersProperty);
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.SingleSelectionFollowsFocus"/></summary>
-        [UnsupportedOSPlatform("MacOS", "https://aka.platform.uno/notimplemented")]
-        public static DependencyProperty<TTarget, bool> SingleSelectionFollowsFocus<TTarget>(this TTarget target) where TTarget : ListViewBase
-        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.SingleSelectionFollowsFocusProperty);
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.CanReorderItems"/></summary>
         public static DependencyProperty<TTarget, bool> CanReorderItems<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.CanReorderItemsProperty);
@@ -14777,6 +14771,10 @@ namespace CSharpMarkup.WinUI // ListViewBase
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.CanDragItems"/></summary>
         public static DependencyProperty<TTarget, bool> CanDragItems<TTarget>(this TTarget target) where TTarget : ListViewBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.CanDragItemsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.SingleSelectionFollowsFocus"/></summary>
+        public static DependencyProperty<TTarget, bool> SingleSelectionFollowsFocus<TTarget>(this TTarget target) where TTarget : ListViewBase
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ListViewBase.SingleSelectionFollowsFocusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ListViewBase.Header"/></summary>
         public static DependencyProperty<TTarget, object> Header<TTarget>(this TTarget target) where TTarget : ListViewBase

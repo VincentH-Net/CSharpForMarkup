@@ -21,7 +21,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>2.3.7</Version>
+		<Version>2.3.8</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573;Uno0001</NoWarn>
@@ -76,7 +76,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)">
-		<PackageReference Include="Uno.WinUI" Version="4.9.45" />
+		<PackageReference Include="Uno.WinUI" Version="4.10.13" />
 	</ItemGroup>
 	
 	<ItemGroup>
