@@ -1,4 +1,5 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -27,9 +28,11 @@ public interface IUpdateUI
 
 public static class HotReloadService
 {
+    internal static event Action<Type[]?>? DefaultUpdateApplicationEvent;
+
     public static event Action<Type[]?>? UpdateApplicationEvent;
 
-    internal static void UpdateApplication(Type[]? types) => UpdateApplicationEvent?.Invoke(types);
+    internal static void UpdateApplication(Type[]? types) => (UpdateApplicationEvent ?? DefaultUpdateApplicationEvent)?.Invoke(types);
 }
 
 public static partial class Helpers
@@ -37,25 +40,24 @@ public static partial class Helpers
     public static UIElement DevToolsOverlay(
         this Frame rootFrame,
 
-        bool addInDebugBuildOnly = true,
-        Func<Xaml.Controls.Frame, IEnumerable<Type>> getPageTypes = null,
+        Func<Xaml.Controls.Frame, IEnumerable<Type>>? getPageTypes = null,
         Action<Xaml.Controls.Frame, Type>? navigateToPageType = null, 
-        Action<Xaml.Controls.Frame>? rebuildUI = null) 
+        Action<Xaml.Controls.Frame>? rebuildUI = null)
     {
-        var pagesAssembly = Assembly.GetCallingAssembly();
-        if (addInDebugBuildOnly && !IsDebugBuild(pagesAssembly))
-            return rootFrame;
-
-        getPageTypes ??= (Xaml.Controls.Frame _) => 
-            pagesAssembly.GetTypes().Where(t =>
-                t.IsAssignableTo(typeof(Xaml.Controls.Page)) &&
-                (t.IsAssignableTo(typeof(IBuildUI)) || t.IsAssignableTo(typeof(IUpdateUI))));
+        if (getPageTypes is null)
+        {
+            var pagesAssembly = Assembly.GetCallingAssembly();
+            getPageTypes = (Xaml.Controls.Frame _) =>
+                pagesAssembly.GetTypes().Where(t =>
+                    t.IsAssignableTo(typeof(Xaml.Controls.Page)) &&
+                    (t.IsAssignableTo(typeof(IBuildUI)) || t.IsAssignableTo(typeof(IUpdateUI))));
+        }
 
         navigateToPageType ??= (f, pageType) => f.Navigate(pageType);
 
         rebuildUI ??= f =>
         {
-            switch (f?.Content)
+            switch (f.Content)
             {
                 case IBuildUI buildable: buildable.BuildUI(); break;
                 case IUpdateUI updateable: updateable.UpdateUI(); break;
@@ -63,16 +65,17 @@ public static partial class Helpers
         };
 
         var frame = rootFrame.UI;
+        HotReloadService.DefaultUpdateApplicationEvent += t => _ = frame.DispatcherQueue.TryEnqueue(() => rebuildUI(frame));
+
         Dictionary<string, Type> buildablePageTypes = new();
-        Xaml.Controls.Button? hotReloadButton;
 
         return MonochromaticOverlayPresenter(
             rootFrame,
 
             HStack (
                 Button("\U0001F525")
-                   .BorderThickness(0) .Style(null) 
-                   .Assign(out hotReloadButton) .Invoke(b => b.Tapped += (s, e) => rebuildUI(frame)), // Manual hot reload in case the HotReloadService does not work (reliably) on all platforms / IDE's
+                   .BorderThickness(0) .Style(null)
+                   .Assign(out Xaml.Controls.Button hotReloadButton) .Invoke(b => b.Tapped += (s, e) => rebuildUI(frame)), // Manual hot reload in case the HotReloadService does not work (reliably) on all platforms / IDE's
 
                 ComboBox()
                    .MinWidth(150) .Style(null) 
@@ -87,15 +90,15 @@ public static partial class Helpers
         {
             var pageTypes = getPageTypes(frame);
 
-            string prefix = null;
-            foreach (var pageType in pageTypes) prefix = CommonPrefix(prefix, pageType.FullName);
+            string? prefix = null;
+            foreach (var pageType in pageTypes) prefix = CommonDotPrefix(prefix, pageType.FullName!);
             int prefixLength = prefix?.Length ?? 0;
 
             buildablePageTypes.Clear();
             pageSelector.Items.Clear();
             foreach (var pageType in pageTypes)
             {
-                string name = pageType.FullName[prefixLength..];
+                string name = pageType.FullName![prefixLength..];
                 buildablePageTypes.Add(name, pageType);
                 pageSelector.Items.Add(name);
                 if (frame?.CurrentSourcePageType == pageType)
@@ -104,22 +107,21 @@ public static partial class Helpers
 
             UpdateForFrameContent();
 
-            if (frame is not null)
-                frame.Navigated += (s, e) => UpdateForFrameContent();
+            frame.Navigated += (s, e) => UpdateForFrameContent();
 
             pageSelector.SelectionChanged += PageSelector_SelectionChanged;
 
             void UpdateForFrameContent()
             {
-                var pageType = frame?.CurrentSourcePageType;
-                pageSelector.SelectedItem = pageType?.FullName[prefixLength..];
-                hotReloadButton.Visibility = frame?.Content switch { IBuildUI or IUpdateUI => Xaml.Visibility.Visible, _ => Xaml.Visibility.Collapsed };
+                var pageType = frame.CurrentSourcePageType;
+                pageSelector.SelectedItem = pageType?.FullName![prefixLength..];
+                if (hotReloadButton is not null) hotReloadButton.Visibility = frame.Content switch { IBuildUI or IUpdateUI => Xaml.Visibility.Visible, _ => Xaml.Visibility.Collapsed };
             }
         }
 
-        string CommonPrefix(string? prefix, string text)
+        string CommonDotPrefix(string? prefix, string text)
         {
-            if (prefix is null) return text;
+            if (prefix is null) return text[..(text.LastIndexOf('.') + 1)];
             if (text.StartsWith(prefix, StringComparison.Ordinal)) return prefix;
 
             int i = 0;
@@ -152,7 +154,5 @@ public static partial class Helpers
 
             navigateToPageType(frame, pageType);
         }
-
-        static bool IsDebugBuild(Assembly assembly) => (assembly.GetCustomAttributes(typeof(DebuggableAttribute), false).FirstOrDefault() as DebuggableAttribute)?.IsJITTrackingEnabled ?? false;
     }
 }
