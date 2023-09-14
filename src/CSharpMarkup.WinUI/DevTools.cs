@@ -47,10 +47,7 @@ public static partial class Helpers
         if (getPageTypes is null)
         {
             var pagesAssembly = Assembly.GetCallingAssembly();
-            getPageTypes = (Xaml.Controls.Frame _) =>
-                pagesAssembly.GetTypes().Where(t =>
-                    t.IsAssignableTo(typeof(Xaml.Controls.Page)) &&
-                    (t.IsAssignableTo(typeof(IBuildUI)) || t.IsAssignableTo(typeof(IUpdateUI))));
+            getPageTypes = (Xaml.Controls.Frame _) => pagesAssembly.GetTypes().Where(t => t.IsAssignableTo(typeof(Xaml.Controls.Page)));
         }
 
         navigateToPageType ??= (f, pageType) => f.Navigate(pageType);
