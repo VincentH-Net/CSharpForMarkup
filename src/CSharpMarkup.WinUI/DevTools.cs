@@ -39,20 +39,34 @@ public static partial class Helpers
 {
     public static UIElement DevToolsOverlay(
         this Frame rootFrame,
+        params Xaml.UIElement[] children)
+    => DevToolsOverlay(rootFrame, Assembly.GetCallingAssembly(), null, null, null, children);
+
+    public static UIElement DevToolsOverlay(
+        this Frame rootFrame,
+
+        Func<Xaml.Controls.Frame, IEnumerable<Type>>? getPageTypes = null,
+        Action<Xaml.Controls.Frame, Type>? navigateToPageType = null,
+        Action<Xaml.Controls.Frame>? rebuildUI = null,
+
+        params Xaml.UIElement[] children)
+    => DevToolsOverlay(rootFrame, Assembly.GetCallingAssembly(), getPageTypes, navigateToPageType, rebuildUI, children);
+
+    static UIElement DevToolsOverlay(
+        Frame rootFrame,
+        Assembly pagesAssembly,
 
         Func<Xaml.Controls.Frame, IEnumerable<Type>>? getPageTypes = null,
         Action<Xaml.Controls.Frame, Type>? navigateToPageType = null, 
-        Action<Xaml.Controls.Frame>? rebuildUI = null)
+        Action<Xaml.Controls.Frame>? rebuildUI = null,
+
+        params Xaml.UIElement[] children)
     {
-        if (getPageTypes is null)
-        {
-            var pagesAssembly = Assembly.GetCallingAssembly();
-            getPageTypes = (Xaml.Controls.Frame _) => pagesAssembly.GetTypes().Where(t => t.IsAssignableTo(typeof(Xaml.Controls.Page)));
-        }
+        getPageTypes ??= (Xaml.Controls.Frame _) => pagesAssembly.GetTypes().Where(t => t.IsAssignableTo(typeof(Xaml.Controls.Page)));
 
         navigateToPageType ??= (f, pageType) => f.Navigate(pageType);
 
-        rebuildUI ??= f =>
+        rebuildUI ??= (Xaml.Controls.Frame f) =>
         {
             switch (f.Content)
             {
@@ -66,7 +80,8 @@ public static partial class Helpers
 
         Dictionary<string, Type> buildablePageTypes = new();
 
-        return MonochromaticOverlayPresenter(
+        var allChildren = children.ToList();
+        allChildren.AddRange(new Xaml.UIElement[] {
             rootFrame,
 
             HStack (
@@ -75,13 +90,11 @@ public static partial class Helpers
                    .Assign(out Xaml.Controls.Button hotReloadButton) .Invoke(b => b.Tapped += (s, e) => rebuildUI(frame)), // Manual hot reload in case the HotReloadService does not work (reliably) on all platforms / IDE's
 
                 ComboBox()
-                   .MinWidth(150) .Style(null) 
+                   .MinWidth(150) .Style(null)
                    .Invoke(Initialize)
             )  .Top() .Right(),
-
-            TextBlock("Built with C# Markup 2") .FontSize(16) .FontStyle().Italic() .Foreground(Microsoft.UI.Colors.Gold)
-               .Bottom() .HCenter()
-        );
+        });
+        return MonochromaticOverlayPresenter(allChildren.ToArray());
 
         void Initialize(Xaml.Controls.ComboBox pageSelector)
         {
