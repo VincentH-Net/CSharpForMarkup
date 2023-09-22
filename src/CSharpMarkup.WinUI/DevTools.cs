@@ -11,26 +11,22 @@ using Xaml = Microsoft.UI.Xaml;
 
 namespace CSharpMarkup.WinUI;
 
-/// <summary>(Re)build the UI completely</summary>
 public interface IBuildUI
 {
-    /// <summary>(Re)build the UI completely</summary>
     void BuildUI();
-}
-
-/// <summary>Update the UI for specific changed types</summary>
-public interface IUpdateUI
-{
-    /// <summary>(Re)build the UI for specific changed types</summary>
-    /// <param name="updatedTypes">if null, any type may have been updated</param>
-    void UpdateUI(Type[]? updatedTypes = null);
 }
 
 public static class HotReloadService
 {
     internal static event Action<Type[]?>? DefaultUpdateApplicationEvent;
 
+    /// <summary>See https://learn.microsoft.com/en-us/dotnet/api/system.reflection.metadata.metadataupdatehandlerattribute?#remarks</summary>
+    public static event Action<Type[]?>? ClearCacheEvent;
+
+    /// <summary>See https://learn.microsoft.com/en-us/dotnet/api/system.reflection.metadata.metadataupdatehandlerattribute?#remarks</summary>
     public static event Action<Type[]?>? UpdateApplicationEvent;
+
+    internal static void ClearCache(Type[]? updatedTypes) => ClearCacheEvent?.Invoke(updatedTypes);
 
     internal static void UpdateApplication(Type[]? types) => (UpdateApplicationEvent ?? DefaultUpdateApplicationEvent)?.Invoke(types);
 }
@@ -66,14 +62,7 @@ public static partial class Helpers
 
         navigateToPageType ??= (f, pageType) => f.Navigate(pageType);
 
-        rebuildUI ??= (Xaml.Controls.Frame f) =>
-        {
-            switch (f.Content)
-            {
-                case IBuildUI buildable: buildable.BuildUI(); break;
-                case IUpdateUI updateable: updateable.UpdateUI(); break;
-            }
-        };
+        rebuildUI ??= (Xaml.Controls.Frame f) => (f.Content as IBuildUI)?.BuildUI();
 
         var frame = rootFrame.UI;
         HotReloadService.DefaultUpdateApplicationEvent += t => _ = frame.DispatcherQueue.TryEnqueue(() => rebuildUI(frame));
@@ -125,7 +114,7 @@ public static partial class Helpers
             {
                 var pageType = frame.CurrentSourcePageType;
                 pageSelector.SelectedItem = pageType?.FullName![prefixLength..];
-                if (hotReloadButton is not null) hotReloadButton.Visibility = frame.Content switch { IBuildUI or IUpdateUI => Xaml.Visibility.Visible, _ => Xaml.Visibility.Collapsed };
+                if (hotReloadButton is not null) hotReloadButton.Visibility = frame.Content is IBuildUI ? Xaml.Visibility.Visible : Xaml.Visibility.Collapsed;
             }
         }
 
