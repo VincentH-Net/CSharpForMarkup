@@ -21,7 +21,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>2.3.26</Version>
+		<Version>2.3.28</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573;Uno0001</NoWarn>
@@ -51,6 +51,7 @@
 		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
 		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
 		<UseWinUI>true</UseWinUI>
+		<WindowsAppSDKWinUI>true</WindowsAppSDKWinUI> <!-- Workaround for https://github.com/unoplatform/uno/discussions/13569 -->
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(IsUno)">
@@ -80,7 +81,7 @@
 	
 	<ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-		<PackageReference Include="CSharpMarkup.WinUI" Version="2.3.26" />
+		<PackageReference Include="CSharpMarkup.WinUI" Version="2.3.28" />
 		<PackageReference Include="Uno.Extensions.Navigation.WinUI" Version="2.5.11" />
 	</ItemGroup>
 
