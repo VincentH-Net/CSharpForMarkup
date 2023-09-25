@@ -1,4 +1,4 @@
-﻿// Start of generated C# Markup API for the Uno.WinUI Object hierarchy
+﻿// Start of generated C# Markup API for Uno.WinUI
 #if NET7_0_IOS && HAS_UNO && !WINDOWS_UWP
 
 using System;
@@ -34,7 +34,7 @@ namespace CSharpMarkup.WinUI // AdaptiveTrigger
         }
     }
 
-    public partial class AdaptiveTrigger : StateTriggerBase, IUI<Microsoft.UI.Xaml.AdaptiveTrigger>
+    public partial class AdaptiveTrigger : StateTriggerBase, IUI<Xaml.AdaptiveTrigger>
     {
         static AdaptiveTrigger instance;
 
@@ -128,7 +128,7 @@ namespace CSharpMarkup.WinUI // ColorPaletteResources
         }
     }
 
-    public partial class ColorPaletteResources : ResourceDictionary, IUI<Microsoft.UI.Xaml.ColorPaletteResources>
+    public partial class ColorPaletteResources : ResourceDictionary, IUI<Xaml.ColorPaletteResources>
     {
         static ColorPaletteResources instance;
 
@@ -294,7 +294,7 @@ namespace CSharpMarkup.WinUI // DataTemplate
         }
     }
 
-    public partial class DataTemplate : FrameworkTemplate, IUI<Microsoft.UI.Xaml.DataTemplate>
+    public partial class DataTemplate : FrameworkTemplate, IUI<Xaml.DataTemplate>
     {
         static DataTemplate instance;
 
@@ -348,7 +348,7 @@ namespace CSharpMarkup.WinUI // DependencyObjectCollection
         }
     }
 
-    public partial class DependencyObjectCollection : DependencyObject, IUI<Microsoft.UI.Xaml.DependencyObjectCollection>
+    public partial class DependencyObjectCollection : DependencyObject, IUI<Xaml.DependencyObjectCollection>
     {
         static DependencyObjectCollection instance;
 
@@ -399,7 +399,7 @@ namespace CSharpMarkup.WinUI // EventTrigger
         }
     }
 
-    public partial class EventTrigger : TriggerBase, IUI<Microsoft.UI.Xaml.EventTrigger>
+    public partial class EventTrigger : TriggerBase, IUI<Xaml.EventTrigger>
     {
         static EventTrigger instance;
 
@@ -499,7 +499,7 @@ namespace CSharpMarkup.WinUI // FrameworkElement
         }
     }
 
-    public partial class FrameworkElement : UIElement, IUI<Microsoft.UI.Xaml.FrameworkElement>
+    public partial class FrameworkElement : UIElement, IUI<Xaml.FrameworkElement>
     {
         static FrameworkElement instance;
 
@@ -813,7 +813,7 @@ namespace CSharpMarkup.WinUI // FrameworkElement
 
 namespace CSharpMarkup.WinUI // FrameworkTemplate
 {
-    public partial class FrameworkTemplate : DependencyObject, IUI<Microsoft.UI.Xaml.FrameworkTemplate>
+    public partial class FrameworkTemplate : DependencyObject, IUI<Xaml.FrameworkTemplate>
     {
         Xaml.FrameworkTemplate ui;
 
@@ -848,7 +848,7 @@ namespace CSharpMarkup.WinUI // FrameworkTemplate
 
 namespace CSharpMarkup.WinUI // PropertyPath
 {
-    public partial class PropertyPath : DependencyObject, IUI<Microsoft.UI.Xaml.PropertyPath>
+    public partial class PropertyPath : DependencyObject, IUI<Xaml.PropertyPath>
     {
         Xaml.PropertyPath ui;
 
@@ -904,7 +904,7 @@ namespace CSharpMarkup.WinUI // ResourceDictionary
         }
     }
 
-    public partial class ResourceDictionary : DependencyObject, IUI<Microsoft.UI.Xaml.ResourceDictionary>
+    public partial class ResourceDictionary : DependencyObject, IUI<Xaml.ResourceDictionary>
     {
         static ResourceDictionary instance;
 
@@ -1006,7 +1006,7 @@ namespace CSharpMarkup.WinUI // Setter
         }
     }
 
-    public partial class Setter : SetterBase, IUI<Microsoft.UI.Xaml.Setter>
+    public partial class Setter : SetterBase, IUI<Xaml.Setter>
     {
         static Setter instance;
 
@@ -1049,7 +1049,7 @@ namespace CSharpMarkup.WinUI // Setter
 
 namespace CSharpMarkup.WinUI // SetterBase
 {
-    public partial class SetterBase : DependencyObject, IUI<Microsoft.UI.Xaml.SetterBase>
+    public partial class SetterBase : DependencyObject, IUI<Xaml.SetterBase>
     {
         Xaml.SetterBase ui;
 
@@ -1094,7 +1094,7 @@ namespace CSharpMarkup.WinUI // SetterBaseCollection
         }
     }
 
-    public partial class SetterBaseCollection : DependencyObject, IUI<Microsoft.UI.Xaml.SetterBaseCollection>
+    public partial class SetterBaseCollection : DependencyObject, IUI<Xaml.SetterBaseCollection>
     {
         static SetterBaseCollection instance;
 
@@ -1143,7 +1143,7 @@ namespace CSharpMarkup.WinUI // StateTrigger
         }
     }
 
-    public partial class StateTrigger : StateTriggerBase, IUI<Microsoft.UI.Xaml.StateTrigger>
+    public partial class StateTrigger : StateTriggerBase, IUI<Xaml.StateTrigger>
     {
         static StateTrigger instance;
 
@@ -1184,7 +1184,7 @@ namespace CSharpMarkup.WinUI // StateTrigger
 
 namespace CSharpMarkup.WinUI // StateTriggerBase
 {
-    public partial class StateTriggerBase : DependencyObject, IUI<Microsoft.UI.Xaml.StateTriggerBase>
+    public partial class StateTriggerBase : DependencyObject, IUI<Xaml.StateTriggerBase>
     {
         Xaml.StateTriggerBase ui;
 
@@ -1255,7 +1255,7 @@ namespace CSharpMarkup.WinUI // Style
         }
     }
 
-    public partial class Style : DependencyObject, IUI<Microsoft.UI.Xaml.Style>
+    public partial class Style : DependencyObject, IUI<Xaml.Style>
     {
         static Style instance;
 
@@ -1330,7 +1330,7 @@ namespace CSharpMarkup.WinUI // TriggerAction
         }
     }
 
-    public partial class TriggerAction : DependencyObject, IUI<Microsoft.UI.Xaml.TriggerAction>
+    public partial class TriggerAction : DependencyObject, IUI<Xaml.TriggerAction>
     {
         static TriggerAction instance;
 
@@ -1399,7 +1399,7 @@ namespace CSharpMarkup.WinUI // TriggerBase
         }
     }
 
-    public partial class TriggerBase : DependencyObject, IUI<Microsoft.UI.Xaml.TriggerBase>
+    public partial class TriggerBase : DependencyObject, IUI<Xaml.TriggerBase>
     {
         static TriggerBase instance;
 
@@ -1539,7 +1539,7 @@ namespace CSharpMarkup.WinUI // UIElement
         }
     }
 
-    public partial class UIElement : BindableUIView, IUI<Microsoft.UI.Xaml.UIElement>
+    public partial class UIElement : BindableUIView, IUI<Xaml.UIElement>
     {
         static UIElement instance;
 
@@ -2034,7 +2034,7 @@ namespace CSharpMarkup.WinUI // VisualState
         }
     }
 
-    public partial class VisualState : DependencyObject, IUI<Microsoft.UI.Xaml.VisualState>
+    public partial class VisualState : DependencyObject, IUI<Xaml.VisualState>
     {
         static VisualState instance;
 
@@ -2118,7 +2118,7 @@ namespace CSharpMarkup.WinUI // VisualStateGroup
         }
     }
 
-    public partial class VisualStateGroup : DependencyObject, IUI<Microsoft.UI.Xaml.VisualStateGroup>
+    public partial class VisualStateGroup : DependencyObject, IUI<Xaml.VisualStateGroup>
     {
         static VisualStateGroup instance;
 
@@ -2196,7 +2196,7 @@ namespace CSharpMarkup.WinUI // VisualStateManager
         }
     }
 
-    public partial class VisualStateManager : DependencyObject, IUI<Microsoft.UI.Xaml.VisualStateManager>
+    public partial class VisualStateManager : DependencyObject, IUI<Xaml.VisualStateManager>
     {
         static VisualStateManager instance;
 
@@ -2308,7 +2308,7 @@ namespace CSharpMarkup.WinUI // VisualTransition
         }
     }
 
-    public partial class VisualTransition : DependencyObject, IUI<Microsoft.UI.Xaml.VisualTransition>
+    public partial class VisualTransition : DependencyObject, IUI<Xaml.VisualTransition>
     {
         static VisualTransition instance;
 
@@ -2374,7 +2374,7 @@ namespace CSharpMarkup.WinUI // VisualTransition
 
 namespace CSharpMarkup.WinUI // AttachedDependencyObject
 {
-    public partial class AttachedDependencyObject : DependencyObject, IUI<Microsoft.UI.Xaml.AttachedDependencyObject>
+    public partial class AttachedDependencyObject : DependencyObject, IUI<Xaml.AttachedDependencyObject>
     {
         Xaml.AttachedDependencyObject ui;
 
@@ -2428,7 +2428,7 @@ namespace CSharpMarkup.WinUI // DependencyObjectCollectionBase
         }
     }
 
-    public partial class DependencyObjectCollectionBase : DependencyObject, IUI<Microsoft.UI.Xaml.DependencyObjectCollectionBase>
+    public partial class DependencyObjectCollectionBase : DependencyObject, IUI<Xaml.DependencyObjectCollectionBase>
     {
         static DependencyObjectCollectionBase instance;
 
@@ -2516,7 +2516,7 @@ namespace CSharpMarkup.WinUI // ElementStub
         }
     }
 
-    public partial class ElementStub : FrameworkElement, IUI<Microsoft.UI.Xaml.ElementStub>
+    public partial class ElementStub : FrameworkElement, IUI<Xaml.ElementStub>
     {
         static ElementStub instance;
 
@@ -2601,7 +2601,7 @@ namespace CSharpMarkup.WinUI // AutomationAnnotation
         }
     }
 
-    public partial class AutomationAnnotation : DependencyObject, IUI<Microsoft.UI.Xaml.Automation.AutomationAnnotation>
+    public partial class AutomationAnnotation : DependencyObject, IUI<Xaml.Automation.AutomationAnnotation>
     {
         static AutomationAnnotation instance;
 
@@ -2667,7 +2667,7 @@ namespace CSharpMarkup.WinUI // AutomationAnnotation
 
 namespace CSharpMarkup.WinUI // AnimatedVisualPlayerAutomationPeer
 {
-    public partial class AnimatedVisualPlayerAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.AnimatedVisualPlayerAutomationPeer>
+    public partial class AnimatedVisualPlayerAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.AnimatedVisualPlayerAutomationPeer>
     {
         Xaml.Automation.Peers.AnimatedVisualPlayerAutomationPeer ui;
 
@@ -2685,7 +2685,7 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayerAutomationPeer
 
 namespace CSharpMarkup.WinUI // AppBarAutomationPeer
 {
-    public partial class AppBarAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.AppBarAutomationPeer>
+    public partial class AppBarAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.AppBarAutomationPeer>
     {
         Xaml.Automation.Peers.AppBarAutomationPeer ui;
 
@@ -2703,7 +2703,7 @@ namespace CSharpMarkup.WinUI // AppBarAutomationPeer
 
 namespace CSharpMarkup.WinUI // AppBarButtonAutomationPeer
 {
-    public partial class AppBarButtonAutomationPeer : ButtonAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.AppBarButtonAutomationPeer>
+    public partial class AppBarButtonAutomationPeer : ButtonAutomationPeer, IUI<Xaml.Automation.Peers.AppBarButtonAutomationPeer>
     {
         Xaml.Automation.Peers.AppBarButtonAutomationPeer ui;
 
@@ -2721,7 +2721,7 @@ namespace CSharpMarkup.WinUI // AppBarButtonAutomationPeer
 
 namespace CSharpMarkup.WinUI // AppBarToggleButtonAutomationPeer
 {
-    public partial class AppBarToggleButtonAutomationPeer : ToggleButtonAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.AppBarToggleButtonAutomationPeer>
+    public partial class AppBarToggleButtonAutomationPeer : ToggleButtonAutomationPeer, IUI<Xaml.Automation.Peers.AppBarToggleButtonAutomationPeer>
     {
         Xaml.Automation.Peers.AppBarToggleButtonAutomationPeer ui;
 
@@ -2759,7 +2759,7 @@ namespace CSharpMarkup.WinUI // AutomationPeer
         }
     }
 
-    public partial class AutomationPeer : DependencyObject, IUI<Microsoft.UI.Xaml.Automation.Peers.AutomationPeer>
+    public partial class AutomationPeer : DependencyObject, IUI<Xaml.Automation.Peers.AutomationPeer>
     {
         static AutomationPeer instance;
 
@@ -2849,7 +2849,7 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
         }
     }
 
-    public partial class AutomationPeerAnnotation : DependencyObject, IUI<Microsoft.UI.Xaml.Automation.Peers.AutomationPeerAnnotation>
+    public partial class AutomationPeerAnnotation : DependencyObject, IUI<Xaml.Automation.Peers.AutomationPeerAnnotation>
     {
         static AutomationPeerAnnotation instance;
 
@@ -2915,7 +2915,7 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
 
 namespace CSharpMarkup.WinUI // AutoSuggestBoxAutomationPeer
 {
-    public partial class AutoSuggestBoxAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.AutoSuggestBoxAutomationPeer>
+    public partial class AutoSuggestBoxAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.AutoSuggestBoxAutomationPeer>
     {
         Xaml.Automation.Peers.AutoSuggestBoxAutomationPeer ui;
 
@@ -2933,7 +2933,7 @@ namespace CSharpMarkup.WinUI // AutoSuggestBoxAutomationPeer
 
 namespace CSharpMarkup.WinUI // BreadcrumbBarItemAutomationPeer
 {
-    public partial class BreadcrumbBarItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.BreadcrumbBarItemAutomationPeer>
+    public partial class BreadcrumbBarItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.BreadcrumbBarItemAutomationPeer>
     {
         Xaml.Automation.Peers.BreadcrumbBarItemAutomationPeer ui;
 
@@ -2951,7 +2951,7 @@ namespace CSharpMarkup.WinUI // BreadcrumbBarItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // ButtonAutomationPeer
 {
-    public partial class ButtonAutomationPeer : ButtonBaseAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ButtonAutomationPeer>
+    public partial class ButtonAutomationPeer : ButtonBaseAutomationPeer, IUI<Xaml.Automation.Peers.ButtonAutomationPeer>
     {
         Xaml.Automation.Peers.ButtonAutomationPeer ui;
 
@@ -2969,7 +2969,7 @@ namespace CSharpMarkup.WinUI // ButtonAutomationPeer
 
 namespace CSharpMarkup.WinUI // ButtonBaseAutomationPeer
 {
-    public partial class ButtonBaseAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ButtonBaseAutomationPeer>
+    public partial class ButtonBaseAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ButtonBaseAutomationPeer>
     {
         Xaml.Automation.Peers.ButtonBaseAutomationPeer ui;
 
@@ -2987,7 +2987,7 @@ namespace CSharpMarkup.WinUI // ButtonBaseAutomationPeer
 
 namespace CSharpMarkup.WinUI // CalendarDatePickerAutomationPeer
 {
-    public partial class CalendarDatePickerAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.CalendarDatePickerAutomationPeer>
+    public partial class CalendarDatePickerAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.CalendarDatePickerAutomationPeer>
     {
         Xaml.Automation.Peers.CalendarDatePickerAutomationPeer ui;
 
@@ -3005,7 +3005,7 @@ namespace CSharpMarkup.WinUI // CalendarDatePickerAutomationPeer
 
 namespace CSharpMarkup.WinUI // CheckBoxAutomationPeer
 {
-    public partial class CheckBoxAutomationPeer : ToggleButtonAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.CheckBoxAutomationPeer>
+    public partial class CheckBoxAutomationPeer : ToggleButtonAutomationPeer, IUI<Xaml.Automation.Peers.CheckBoxAutomationPeer>
     {
         Xaml.Automation.Peers.CheckBoxAutomationPeer ui;
 
@@ -3023,7 +3023,7 @@ namespace CSharpMarkup.WinUI // CheckBoxAutomationPeer
 
 namespace CSharpMarkup.WinUI // ComboBoxAutomationPeer
 {
-    public partial class ComboBoxAutomationPeer : SelectorAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ComboBoxAutomationPeer>
+    public partial class ComboBoxAutomationPeer : SelectorAutomationPeer, IUI<Xaml.Automation.Peers.ComboBoxAutomationPeer>
     {
         Xaml.Automation.Peers.ComboBoxAutomationPeer ui;
 
@@ -3041,7 +3041,7 @@ namespace CSharpMarkup.WinUI // ComboBoxAutomationPeer
 
 namespace CSharpMarkup.WinUI // ComboBoxItemAutomationPeer
 {
-    public partial class ComboBoxItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ComboBoxItemAutomationPeer>
+    public partial class ComboBoxItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ComboBoxItemAutomationPeer>
     {
         Xaml.Automation.Peers.ComboBoxItemAutomationPeer ui;
 
@@ -3059,7 +3059,7 @@ namespace CSharpMarkup.WinUI // ComboBoxItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // ComboBoxItemDataAutomationPeer
 {
-    public partial class ComboBoxItemDataAutomationPeer : SelectorItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ComboBoxItemDataAutomationPeer>
+    public partial class ComboBoxItemDataAutomationPeer : SelectorItemAutomationPeer, IUI<Xaml.Automation.Peers.ComboBoxItemDataAutomationPeer>
     {
         Xaml.Automation.Peers.ComboBoxItemDataAutomationPeer ui;
 
@@ -3077,7 +3077,7 @@ namespace CSharpMarkup.WinUI // ComboBoxItemDataAutomationPeer
 
 namespace CSharpMarkup.WinUI // DatePickerAutomationPeer
 {
-    public partial class DatePickerAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.DatePickerAutomationPeer>
+    public partial class DatePickerAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.DatePickerAutomationPeer>
     {
         Xaml.Automation.Peers.DatePickerAutomationPeer ui;
 
@@ -3105,7 +3105,7 @@ namespace CSharpMarkup.WinUI // DatePickerFlyoutPresenterAutomationPeer
         }
     }
 
-    public partial class DatePickerFlyoutPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.DatePickerFlyoutPresenterAutomationPeer>
+    public partial class DatePickerFlyoutPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.DatePickerFlyoutPresenterAutomationPeer>
     {
         static DatePickerFlyoutPresenterAutomationPeer instance;
 
@@ -3136,7 +3136,7 @@ namespace CSharpMarkup.WinUI // DatePickerFlyoutPresenterAutomationPeer
 
 namespace CSharpMarkup.WinUI // ExpanderAutomationPeer
 {
-    public partial class ExpanderAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ExpanderAutomationPeer>
+    public partial class ExpanderAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ExpanderAutomationPeer>
     {
         Xaml.Automation.Peers.ExpanderAutomationPeer ui;
 
@@ -3154,7 +3154,7 @@ namespace CSharpMarkup.WinUI // ExpanderAutomationPeer
 
 namespace CSharpMarkup.WinUI // FlipViewAutomationPeer
 {
-    public partial class FlipViewAutomationPeer : SelectorAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.FlipViewAutomationPeer>
+    public partial class FlipViewAutomationPeer : SelectorAutomationPeer, IUI<Xaml.Automation.Peers.FlipViewAutomationPeer>
     {
         Xaml.Automation.Peers.FlipViewAutomationPeer ui;
 
@@ -3172,7 +3172,7 @@ namespace CSharpMarkup.WinUI // FlipViewAutomationPeer
 
 namespace CSharpMarkup.WinUI // FlipViewItemAutomationPeer
 {
-    public partial class FlipViewItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.FlipViewItemAutomationPeer>
+    public partial class FlipViewItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.FlipViewItemAutomationPeer>
     {
         Xaml.Automation.Peers.FlipViewItemAutomationPeer ui;
 
@@ -3190,7 +3190,7 @@ namespace CSharpMarkup.WinUI // FlipViewItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // FlipViewItemDataAutomationPeer
 {
-    public partial class FlipViewItemDataAutomationPeer : SelectorItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.FlipViewItemDataAutomationPeer>
+    public partial class FlipViewItemDataAutomationPeer : SelectorItemAutomationPeer, IUI<Xaml.Automation.Peers.FlipViewItemDataAutomationPeer>
     {
         Xaml.Automation.Peers.FlipViewItemDataAutomationPeer ui;
 
@@ -3208,7 +3208,7 @@ namespace CSharpMarkup.WinUI // FlipViewItemDataAutomationPeer
 
 namespace CSharpMarkup.WinUI // FlyoutPresenterAutomationPeer
 {
-    public partial class FlyoutPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.FlyoutPresenterAutomationPeer>
+    public partial class FlyoutPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.FlyoutPresenterAutomationPeer>
     {
         Xaml.Automation.Peers.FlyoutPresenterAutomationPeer ui;
 
@@ -3250,7 +3250,7 @@ namespace CSharpMarkup.WinUI // FrameworkElementAutomationPeer
         }
     }
 
-    public partial class FrameworkElementAutomationPeer : AutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.FrameworkElementAutomationPeer>
+    public partial class FrameworkElementAutomationPeer : AutomationPeer, IUI<Xaml.Automation.Peers.FrameworkElementAutomationPeer>
     {
         static FrameworkElementAutomationPeer instance;
 
@@ -3281,7 +3281,7 @@ namespace CSharpMarkup.WinUI // FrameworkElementAutomationPeer
 
 namespace CSharpMarkup.WinUI // GridViewAutomationPeer
 {
-    public partial class GridViewAutomationPeer : ListViewBaseAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.GridViewAutomationPeer>
+    public partial class GridViewAutomationPeer : ListViewBaseAutomationPeer, IUI<Xaml.Automation.Peers.GridViewAutomationPeer>
     {
         Xaml.Automation.Peers.GridViewAutomationPeer ui;
 
@@ -3299,7 +3299,7 @@ namespace CSharpMarkup.WinUI // GridViewAutomationPeer
 
 namespace CSharpMarkup.WinUI // GridViewHeaderItemAutomationPeer
 {
-    public partial class GridViewHeaderItemAutomationPeer : ListViewBaseHeaderItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.GridViewHeaderItemAutomationPeer>
+    public partial class GridViewHeaderItemAutomationPeer : ListViewBaseHeaderItemAutomationPeer, IUI<Xaml.Automation.Peers.GridViewHeaderItemAutomationPeer>
     {
         Xaml.Automation.Peers.GridViewHeaderItemAutomationPeer ui;
 
@@ -3317,7 +3317,7 @@ namespace CSharpMarkup.WinUI // GridViewHeaderItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // GridViewItemAutomationPeer
 {
-    public partial class GridViewItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.GridViewItemAutomationPeer>
+    public partial class GridViewItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.GridViewItemAutomationPeer>
     {
         Xaml.Automation.Peers.GridViewItemAutomationPeer ui;
 
@@ -3335,7 +3335,7 @@ namespace CSharpMarkup.WinUI // GridViewItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // GridViewItemDataAutomationPeer
 {
-    public partial class GridViewItemDataAutomationPeer : SelectorItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.GridViewItemDataAutomationPeer>
+    public partial class GridViewItemDataAutomationPeer : SelectorItemAutomationPeer, IUI<Xaml.Automation.Peers.GridViewItemDataAutomationPeer>
     {
         Xaml.Automation.Peers.GridViewItemDataAutomationPeer ui;
 
@@ -3353,7 +3353,7 @@ namespace CSharpMarkup.WinUI // GridViewItemDataAutomationPeer
 
 namespace CSharpMarkup.WinUI // GroupItemAutomationPeer
 {
-    public partial class GroupItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.GroupItemAutomationPeer>
+    public partial class GroupItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.GroupItemAutomationPeer>
     {
         Xaml.Automation.Peers.GroupItemAutomationPeer ui;
 
@@ -3371,7 +3371,7 @@ namespace CSharpMarkup.WinUI // GroupItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // HubAutomationPeer
 {
-    public partial class HubAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.HubAutomationPeer>
+    public partial class HubAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.HubAutomationPeer>
     {
         Xaml.Automation.Peers.HubAutomationPeer ui;
 
@@ -3389,7 +3389,7 @@ namespace CSharpMarkup.WinUI // HubAutomationPeer
 
 namespace CSharpMarkup.WinUI // HubSectionAutomationPeer
 {
-    public partial class HubSectionAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.HubSectionAutomationPeer>
+    public partial class HubSectionAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.HubSectionAutomationPeer>
     {
         Xaml.Automation.Peers.HubSectionAutomationPeer ui;
 
@@ -3407,7 +3407,7 @@ namespace CSharpMarkup.WinUI // HubSectionAutomationPeer
 
 namespace CSharpMarkup.WinUI // HyperlinkButtonAutomationPeer
 {
-    public partial class HyperlinkButtonAutomationPeer : ButtonBaseAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.HyperlinkButtonAutomationPeer>
+    public partial class HyperlinkButtonAutomationPeer : ButtonBaseAutomationPeer, IUI<Xaml.Automation.Peers.HyperlinkButtonAutomationPeer>
     {
         Xaml.Automation.Peers.HyperlinkButtonAutomationPeer ui;
 
@@ -3425,7 +3425,7 @@ namespace CSharpMarkup.WinUI // HyperlinkButtonAutomationPeer
 
 namespace CSharpMarkup.WinUI // ImageAutomationPeer
 {
-    public partial class ImageAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ImageAutomationPeer>
+    public partial class ImageAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ImageAutomationPeer>
     {
         Xaml.Automation.Peers.ImageAutomationPeer ui;
 
@@ -3443,7 +3443,7 @@ namespace CSharpMarkup.WinUI // ImageAutomationPeer
 
 namespace CSharpMarkup.WinUI // InfoBarAutomationPeer
 {
-    public partial class InfoBarAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.InfoBarAutomationPeer>
+    public partial class InfoBarAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.InfoBarAutomationPeer>
     {
         Xaml.Automation.Peers.InfoBarAutomationPeer ui;
 
@@ -3461,7 +3461,7 @@ namespace CSharpMarkup.WinUI // InfoBarAutomationPeer
 
 namespace CSharpMarkup.WinUI // ItemAutomationPeer
 {
-    public partial class ItemAutomationPeer : AutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ItemAutomationPeer>
+    public partial class ItemAutomationPeer : AutomationPeer, IUI<Xaml.Automation.Peers.ItemAutomationPeer>
     {
         Xaml.Automation.Peers.ItemAutomationPeer ui;
 
@@ -3479,7 +3479,7 @@ namespace CSharpMarkup.WinUI // ItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // ItemsControlAutomationPeer
 {
-    public partial class ItemsControlAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ItemsControlAutomationPeer>
+    public partial class ItemsControlAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ItemsControlAutomationPeer>
     {
         Xaml.Automation.Peers.ItemsControlAutomationPeer ui;
 
@@ -3497,7 +3497,7 @@ namespace CSharpMarkup.WinUI // ItemsControlAutomationPeer
 
 namespace CSharpMarkup.WinUI // ListBoxAutomationPeer
 {
-    public partial class ListBoxAutomationPeer : SelectorAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ListBoxAutomationPeer>
+    public partial class ListBoxAutomationPeer : SelectorAutomationPeer, IUI<Xaml.Automation.Peers.ListBoxAutomationPeer>
     {
         Xaml.Automation.Peers.ListBoxAutomationPeer ui;
 
@@ -3515,7 +3515,7 @@ namespace CSharpMarkup.WinUI // ListBoxAutomationPeer
 
 namespace CSharpMarkup.WinUI // ListBoxItemAutomationPeer
 {
-    public partial class ListBoxItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ListBoxItemAutomationPeer>
+    public partial class ListBoxItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ListBoxItemAutomationPeer>
     {
         Xaml.Automation.Peers.ListBoxItemAutomationPeer ui;
 
@@ -3533,7 +3533,7 @@ namespace CSharpMarkup.WinUI // ListBoxItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // ListBoxItemDataAutomationPeer
 {
-    public partial class ListBoxItemDataAutomationPeer : SelectorItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ListBoxItemDataAutomationPeer>
+    public partial class ListBoxItemDataAutomationPeer : SelectorItemAutomationPeer, IUI<Xaml.Automation.Peers.ListBoxItemDataAutomationPeer>
     {
         Xaml.Automation.Peers.ListBoxItemDataAutomationPeer ui;
 
@@ -3562,7 +3562,7 @@ namespace CSharpMarkup.WinUI // ListPickerFlyoutPresenterAutomationPeer
         }
     }
 
-    public partial class ListPickerFlyoutPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ListPickerFlyoutPresenterAutomationPeer>
+    public partial class ListPickerFlyoutPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ListPickerFlyoutPresenterAutomationPeer>
     {
         static ListPickerFlyoutPresenterAutomationPeer instance;
 
@@ -3593,7 +3593,7 @@ namespace CSharpMarkup.WinUI // ListPickerFlyoutPresenterAutomationPeer
 
 namespace CSharpMarkup.WinUI // ListViewAutomationPeer
 {
-    public partial class ListViewAutomationPeer : ListViewBaseAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ListViewAutomationPeer>
+    public partial class ListViewAutomationPeer : ListViewBaseAutomationPeer, IUI<Xaml.Automation.Peers.ListViewAutomationPeer>
     {
         Xaml.Automation.Peers.ListViewAutomationPeer ui;
 
@@ -3611,7 +3611,7 @@ namespace CSharpMarkup.WinUI // ListViewAutomationPeer
 
 namespace CSharpMarkup.WinUI // ListViewBaseAutomationPeer
 {
-    public partial class ListViewBaseAutomationPeer : SelectorAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ListViewBaseAutomationPeer>
+    public partial class ListViewBaseAutomationPeer : SelectorAutomationPeer, IUI<Xaml.Automation.Peers.ListViewBaseAutomationPeer>
     {
         Xaml.Automation.Peers.ListViewBaseAutomationPeer ui;
 
@@ -3629,7 +3629,7 @@ namespace CSharpMarkup.WinUI // ListViewBaseAutomationPeer
 
 namespace CSharpMarkup.WinUI // ListViewBaseHeaderItemAutomationPeer
 {
-    public partial class ListViewBaseHeaderItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer>
+    public partial class ListViewBaseHeaderItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer>
     {
         Xaml.Automation.Peers.ListViewBaseHeaderItemAutomationPeer ui;
 
@@ -3647,7 +3647,7 @@ namespace CSharpMarkup.WinUI // ListViewBaseHeaderItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // ListViewHeaderItemAutomationPeer
 {
-    public partial class ListViewHeaderItemAutomationPeer : ListViewBaseHeaderItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ListViewHeaderItemAutomationPeer>
+    public partial class ListViewHeaderItemAutomationPeer : ListViewBaseHeaderItemAutomationPeer, IUI<Xaml.Automation.Peers.ListViewHeaderItemAutomationPeer>
     {
         Xaml.Automation.Peers.ListViewHeaderItemAutomationPeer ui;
 
@@ -3665,7 +3665,7 @@ namespace CSharpMarkup.WinUI // ListViewHeaderItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // ListViewItemAutomationPeer
 {
-    public partial class ListViewItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ListViewItemAutomationPeer>
+    public partial class ListViewItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ListViewItemAutomationPeer>
     {
         Xaml.Automation.Peers.ListViewItemAutomationPeer ui;
 
@@ -3683,7 +3683,7 @@ namespace CSharpMarkup.WinUI // ListViewItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // ListViewItemDataAutomationPeer
 {
-    public partial class ListViewItemDataAutomationPeer : SelectorItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ListViewItemDataAutomationPeer>
+    public partial class ListViewItemDataAutomationPeer : SelectorItemAutomationPeer, IUI<Xaml.Automation.Peers.ListViewItemDataAutomationPeer>
     {
         Xaml.Automation.Peers.ListViewItemDataAutomationPeer ui;
 
@@ -3701,7 +3701,7 @@ namespace CSharpMarkup.WinUI // ListViewItemDataAutomationPeer
 
 namespace CSharpMarkup.WinUI // LoopingSelectorAutomationPeer
 {
-    public partial class LoopingSelectorAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.LoopingSelectorAutomationPeer>
+    public partial class LoopingSelectorAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.LoopingSelectorAutomationPeer>
     {
         Xaml.Automation.Peers.LoopingSelectorAutomationPeer ui;
 
@@ -3719,7 +3719,7 @@ namespace CSharpMarkup.WinUI // LoopingSelectorAutomationPeer
 
 namespace CSharpMarkup.WinUI // LoopingSelectorItemAutomationPeer
 {
-    public partial class LoopingSelectorItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.LoopingSelectorItemAutomationPeer>
+    public partial class LoopingSelectorItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.LoopingSelectorItemAutomationPeer>
     {
         Xaml.Automation.Peers.LoopingSelectorItemAutomationPeer ui;
 
@@ -3737,7 +3737,7 @@ namespace CSharpMarkup.WinUI // LoopingSelectorItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // LoopingSelectorItemDataAutomationPeer
 {
-    public partial class LoopingSelectorItemDataAutomationPeer : AutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.LoopingSelectorItemDataAutomationPeer>
+    public partial class LoopingSelectorItemDataAutomationPeer : AutomationPeer, IUI<Xaml.Automation.Peers.LoopingSelectorItemDataAutomationPeer>
     {
         Xaml.Automation.Peers.LoopingSelectorItemDataAutomationPeer ui;
 
@@ -3755,7 +3755,7 @@ namespace CSharpMarkup.WinUI // LoopingSelectorItemDataAutomationPeer
 
 namespace CSharpMarkup.WinUI // MediaPlayerElementAutomationPeer
 {
-    public partial class MediaPlayerElementAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.MediaPlayerElementAutomationPeer>
+    public partial class MediaPlayerElementAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.MediaPlayerElementAutomationPeer>
     {
         Xaml.Automation.Peers.MediaPlayerElementAutomationPeer ui;
 
@@ -3773,7 +3773,7 @@ namespace CSharpMarkup.WinUI // MediaPlayerElementAutomationPeer
 
 namespace CSharpMarkup.WinUI // MediaTransportControlsAutomationPeer
 {
-    public partial class MediaTransportControlsAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.MediaTransportControlsAutomationPeer>
+    public partial class MediaTransportControlsAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.MediaTransportControlsAutomationPeer>
     {
         Xaml.Automation.Peers.MediaTransportControlsAutomationPeer ui;
 
@@ -3791,7 +3791,7 @@ namespace CSharpMarkup.WinUI // MediaTransportControlsAutomationPeer
 
 namespace CSharpMarkup.WinUI // MenuBarAutomationPeer
 {
-    public partial class MenuBarAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.MenuBarAutomationPeer>
+    public partial class MenuBarAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.MenuBarAutomationPeer>
     {
         Xaml.Automation.Peers.MenuBarAutomationPeer ui;
 
@@ -3809,7 +3809,7 @@ namespace CSharpMarkup.WinUI // MenuBarAutomationPeer
 
 namespace CSharpMarkup.WinUI // MenuBarItemAutomationPeer
 {
-    public partial class MenuBarItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.MenuBarItemAutomationPeer>
+    public partial class MenuBarItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.MenuBarItemAutomationPeer>
     {
         Xaml.Automation.Peers.MenuBarItemAutomationPeer ui;
 
@@ -3827,7 +3827,7 @@ namespace CSharpMarkup.WinUI // MenuBarItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // MenuFlyoutItemAutomationPeer
 {
-    public partial class MenuFlyoutItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.MenuFlyoutItemAutomationPeer>
+    public partial class MenuFlyoutItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.MenuFlyoutItemAutomationPeer>
     {
         Xaml.Automation.Peers.MenuFlyoutItemAutomationPeer ui;
 
@@ -3845,7 +3845,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // MenuFlyoutPresenterAutomationPeer
 {
-    public partial class MenuFlyoutPresenterAutomationPeer : ItemsControlAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.MenuFlyoutPresenterAutomationPeer>
+    public partial class MenuFlyoutPresenterAutomationPeer : ItemsControlAutomationPeer, IUI<Xaml.Automation.Peers.MenuFlyoutPresenterAutomationPeer>
     {
         Xaml.Automation.Peers.MenuFlyoutPresenterAutomationPeer ui;
 
@@ -3863,7 +3863,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutPresenterAutomationPeer
 
 namespace CSharpMarkup.WinUI // NavigationViewAutomationPeer
 {
-    public partial class NavigationViewAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.NavigationViewAutomationPeer>
+    public partial class NavigationViewAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.NavigationViewAutomationPeer>
     {
         Xaml.Automation.Peers.NavigationViewAutomationPeer ui;
 
@@ -3881,7 +3881,7 @@ namespace CSharpMarkup.WinUI // NavigationViewAutomationPeer
 
 namespace CSharpMarkup.WinUI // NavigationViewItemAutomationPeer
 {
-    public partial class NavigationViewItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.NavigationViewItemAutomationPeer>
+    public partial class NavigationViewItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.NavigationViewItemAutomationPeer>
     {
         Xaml.Automation.Peers.NavigationViewItemAutomationPeer ui;
 
@@ -3899,7 +3899,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // PasswordBoxAutomationPeer
 {
-    public partial class PasswordBoxAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PasswordBoxAutomationPeer>
+    public partial class PasswordBoxAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.PasswordBoxAutomationPeer>
     {
         Xaml.Automation.Peers.PasswordBoxAutomationPeer ui;
 
@@ -3917,7 +3917,7 @@ namespace CSharpMarkup.WinUI // PasswordBoxAutomationPeer
 
 namespace CSharpMarkup.WinUI // PersonPictureAutomationPeer
 {
-    public partial class PersonPictureAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PersonPictureAutomationPeer>
+    public partial class PersonPictureAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.PersonPictureAutomationPeer>
     {
         Xaml.Automation.Peers.PersonPictureAutomationPeer ui;
 
@@ -3946,7 +3946,7 @@ namespace CSharpMarkup.WinUI // PickerFlyoutPresenterAutomationPeer
         }
     }
 
-    public partial class PickerFlyoutPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PickerFlyoutPresenterAutomationPeer>
+    public partial class PickerFlyoutPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.PickerFlyoutPresenterAutomationPeer>
     {
         static PickerFlyoutPresenterAutomationPeer instance;
 
@@ -3977,7 +3977,7 @@ namespace CSharpMarkup.WinUI // PickerFlyoutPresenterAutomationPeer
 
 namespace CSharpMarkup.WinUI // PipsPagerAutomationPeer
 {
-    public partial class PipsPagerAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PipsPagerAutomationPeer>
+    public partial class PipsPagerAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.PipsPagerAutomationPeer>
     {
         Xaml.Automation.Peers.PipsPagerAutomationPeer ui;
 
@@ -3995,7 +3995,7 @@ namespace CSharpMarkup.WinUI // PipsPagerAutomationPeer
 
 namespace CSharpMarkup.WinUI // PivotAutomationPeer
 {
-    public partial class PivotAutomationPeer : ItemsControlAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PivotAutomationPeer>
+    public partial class PivotAutomationPeer : ItemsControlAutomationPeer, IUI<Xaml.Automation.Peers.PivotAutomationPeer>
     {
         Xaml.Automation.Peers.PivotAutomationPeer ui;
 
@@ -4013,7 +4013,7 @@ namespace CSharpMarkup.WinUI // PivotAutomationPeer
 
 namespace CSharpMarkup.WinUI // PivotItemAutomationPeer
 {
-    public partial class PivotItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PivotItemAutomationPeer>
+    public partial class PivotItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.PivotItemAutomationPeer>
     {
         Xaml.Automation.Peers.PivotItemAutomationPeer ui;
 
@@ -4031,7 +4031,7 @@ namespace CSharpMarkup.WinUI // PivotItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // PivotItemDataAutomationPeer
 {
-    public partial class PivotItemDataAutomationPeer : ItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PivotItemDataAutomationPeer>
+    public partial class PivotItemDataAutomationPeer : ItemAutomationPeer, IUI<Xaml.Automation.Peers.PivotItemDataAutomationPeer>
     {
         Xaml.Automation.Peers.PivotItemDataAutomationPeer ui;
 
@@ -4049,7 +4049,7 @@ namespace CSharpMarkup.WinUI // PivotItemDataAutomationPeer
 
 namespace CSharpMarkup.WinUI // RadioButtonAutomationPeer
 {
-    public partial class RadioButtonAutomationPeer : ToggleButtonAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.RadioButtonAutomationPeer>
+    public partial class RadioButtonAutomationPeer : ToggleButtonAutomationPeer, IUI<Xaml.Automation.Peers.RadioButtonAutomationPeer>
     {
         Xaml.Automation.Peers.RadioButtonAutomationPeer ui;
 
@@ -4067,7 +4067,7 @@ namespace CSharpMarkup.WinUI // RadioButtonAutomationPeer
 
 namespace CSharpMarkup.WinUI // RadioButtonsAutomationPeer
 {
-    public partial class RadioButtonsAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.RadioButtonsAutomationPeer>
+    public partial class RadioButtonsAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.RadioButtonsAutomationPeer>
     {
         Xaml.Automation.Peers.RadioButtonsAutomationPeer ui;
 
@@ -4085,7 +4085,7 @@ namespace CSharpMarkup.WinUI // RadioButtonsAutomationPeer
 
 namespace CSharpMarkup.WinUI // RangeBaseAutomationPeer
 {
-    public partial class RangeBaseAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer>
+    public partial class RangeBaseAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.RangeBaseAutomationPeer>
     {
         Xaml.Automation.Peers.RangeBaseAutomationPeer ui;
 
@@ -4103,7 +4103,7 @@ namespace CSharpMarkup.WinUI // RangeBaseAutomationPeer
 
 namespace CSharpMarkup.WinUI // RatingControlAutomationPeer
 {
-    public partial class RatingControlAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.RatingControlAutomationPeer>
+    public partial class RatingControlAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.RatingControlAutomationPeer>
     {
         Xaml.Automation.Peers.RatingControlAutomationPeer ui;
 
@@ -4121,7 +4121,7 @@ namespace CSharpMarkup.WinUI // RatingControlAutomationPeer
 
 namespace CSharpMarkup.WinUI // RepeatButtonAutomationPeer
 {
-    public partial class RepeatButtonAutomationPeer : ButtonBaseAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.RepeatButtonAutomationPeer>
+    public partial class RepeatButtonAutomationPeer : ButtonBaseAutomationPeer, IUI<Xaml.Automation.Peers.RepeatButtonAutomationPeer>
     {
         Xaml.Automation.Peers.RepeatButtonAutomationPeer ui;
 
@@ -4139,7 +4139,7 @@ namespace CSharpMarkup.WinUI // RepeatButtonAutomationPeer
 
 namespace CSharpMarkup.WinUI // RepeaterAutomationPeer
 {
-    public partial class RepeaterAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.RepeaterAutomationPeer>
+    public partial class RepeaterAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.RepeaterAutomationPeer>
     {
         Xaml.Automation.Peers.RepeaterAutomationPeer ui;
 
@@ -4157,7 +4157,7 @@ namespace CSharpMarkup.WinUI // RepeaterAutomationPeer
 
 namespace CSharpMarkup.WinUI // RichEditBoxAutomationPeer
 {
-    public partial class RichEditBoxAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.RichEditBoxAutomationPeer>
+    public partial class RichEditBoxAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.RichEditBoxAutomationPeer>
     {
         Xaml.Automation.Peers.RichEditBoxAutomationPeer ui;
 
@@ -4175,7 +4175,7 @@ namespace CSharpMarkup.WinUI // RichEditBoxAutomationPeer
 
 namespace CSharpMarkup.WinUI // RichTextBlockAutomationPeer
 {
-    public partial class RichTextBlockAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.RichTextBlockAutomationPeer>
+    public partial class RichTextBlockAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.RichTextBlockAutomationPeer>
     {
         Xaml.Automation.Peers.RichTextBlockAutomationPeer ui;
 
@@ -4193,7 +4193,7 @@ namespace CSharpMarkup.WinUI // RichTextBlockAutomationPeer
 
 namespace CSharpMarkup.WinUI // RichTextBlockOverflowAutomationPeer
 {
-    public partial class RichTextBlockOverflowAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.RichTextBlockOverflowAutomationPeer>
+    public partial class RichTextBlockOverflowAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.RichTextBlockOverflowAutomationPeer>
     {
         Xaml.Automation.Peers.RichTextBlockOverflowAutomationPeer ui;
 
@@ -4211,7 +4211,7 @@ namespace CSharpMarkup.WinUI // RichTextBlockOverflowAutomationPeer
 
 namespace CSharpMarkup.WinUI // ScrollBarAutomationPeer
 {
-    public partial class ScrollBarAutomationPeer : RangeBaseAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ScrollBarAutomationPeer>
+    public partial class ScrollBarAutomationPeer : RangeBaseAutomationPeer, IUI<Xaml.Automation.Peers.ScrollBarAutomationPeer>
     {
         Xaml.Automation.Peers.ScrollBarAutomationPeer ui;
 
@@ -4229,7 +4229,7 @@ namespace CSharpMarkup.WinUI // ScrollBarAutomationPeer
 
 namespace CSharpMarkup.WinUI // ScrollViewerAutomationPeer
 {
-    public partial class ScrollViewerAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ScrollViewerAutomationPeer>
+    public partial class ScrollViewerAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ScrollViewerAutomationPeer>
     {
         Xaml.Automation.Peers.ScrollViewerAutomationPeer ui;
 
@@ -4247,7 +4247,7 @@ namespace CSharpMarkup.WinUI // ScrollViewerAutomationPeer
 
 namespace CSharpMarkup.WinUI // SelectorAutomationPeer
 {
-    public partial class SelectorAutomationPeer : ItemsControlAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.SelectorAutomationPeer>
+    public partial class SelectorAutomationPeer : ItemsControlAutomationPeer, IUI<Xaml.Automation.Peers.SelectorAutomationPeer>
     {
         Xaml.Automation.Peers.SelectorAutomationPeer ui;
 
@@ -4265,7 +4265,7 @@ namespace CSharpMarkup.WinUI // SelectorAutomationPeer
 
 namespace CSharpMarkup.WinUI // SelectorItemAutomationPeer
 {
-    public partial class SelectorItemAutomationPeer : ItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.SelectorItemAutomationPeer>
+    public partial class SelectorItemAutomationPeer : ItemAutomationPeer, IUI<Xaml.Automation.Peers.SelectorItemAutomationPeer>
     {
         Xaml.Automation.Peers.SelectorItemAutomationPeer ui;
 
@@ -4283,7 +4283,7 @@ namespace CSharpMarkup.WinUI // SelectorItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // SemanticZoomAutomationPeer
 {
-    public partial class SemanticZoomAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.SemanticZoomAutomationPeer>
+    public partial class SemanticZoomAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.SemanticZoomAutomationPeer>
     {
         Xaml.Automation.Peers.SemanticZoomAutomationPeer ui;
 
@@ -4301,7 +4301,7 @@ namespace CSharpMarkup.WinUI // SemanticZoomAutomationPeer
 
 namespace CSharpMarkup.WinUI // SliderAutomationPeer
 {
-    public partial class SliderAutomationPeer : RangeBaseAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.SliderAutomationPeer>
+    public partial class SliderAutomationPeer : RangeBaseAutomationPeer, IUI<Xaml.Automation.Peers.SliderAutomationPeer>
     {
         Xaml.Automation.Peers.SliderAutomationPeer ui;
 
@@ -4319,7 +4319,7 @@ namespace CSharpMarkup.WinUI // SliderAutomationPeer
 
 namespace CSharpMarkup.WinUI // SplitButtonAutomationPeer
 {
-    public partial class SplitButtonAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.SplitButtonAutomationPeer>
+    public partial class SplitButtonAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.SplitButtonAutomationPeer>
     {
         Xaml.Automation.Peers.SplitButtonAutomationPeer ui;
 
@@ -4337,7 +4337,7 @@ namespace CSharpMarkup.WinUI // SplitButtonAutomationPeer
 
 namespace CSharpMarkup.WinUI // TabViewAutomationPeer
 {
-    public partial class TabViewAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.TabViewAutomationPeer>
+    public partial class TabViewAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.TabViewAutomationPeer>
     {
         Xaml.Automation.Peers.TabViewAutomationPeer ui;
 
@@ -4355,7 +4355,7 @@ namespace CSharpMarkup.WinUI // TabViewAutomationPeer
 
 namespace CSharpMarkup.WinUI // TabViewItemAutomationPeer
 {
-    public partial class TabViewItemAutomationPeer : ListViewItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.TabViewItemAutomationPeer>
+    public partial class TabViewItemAutomationPeer : ListViewItemAutomationPeer, IUI<Xaml.Automation.Peers.TabViewItemAutomationPeer>
     {
         Xaml.Automation.Peers.TabViewItemAutomationPeer ui;
 
@@ -4373,7 +4373,7 @@ namespace CSharpMarkup.WinUI // TabViewItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // TeachingTipAutomationPeer
 {
-    public partial class TeachingTipAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.TeachingTipAutomationPeer>
+    public partial class TeachingTipAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.TeachingTipAutomationPeer>
     {
         Xaml.Automation.Peers.TeachingTipAutomationPeer ui;
 
@@ -4391,7 +4391,7 @@ namespace CSharpMarkup.WinUI // TeachingTipAutomationPeer
 
 namespace CSharpMarkup.WinUI // TextBlockAutomationPeer
 {
-    public partial class TextBlockAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.TextBlockAutomationPeer>
+    public partial class TextBlockAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.TextBlockAutomationPeer>
     {
         Xaml.Automation.Peers.TextBlockAutomationPeer ui;
 
@@ -4409,7 +4409,7 @@ namespace CSharpMarkup.WinUI // TextBlockAutomationPeer
 
 namespace CSharpMarkup.WinUI // TextBoxAutomationPeer
 {
-    public partial class TextBoxAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.TextBoxAutomationPeer>
+    public partial class TextBoxAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.TextBoxAutomationPeer>
     {
         Xaml.Automation.Peers.TextBoxAutomationPeer ui;
 
@@ -4427,7 +4427,7 @@ namespace CSharpMarkup.WinUI // TextBoxAutomationPeer
 
 namespace CSharpMarkup.WinUI // ThumbAutomationPeer
 {
-    public partial class ThumbAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ThumbAutomationPeer>
+    public partial class ThumbAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ThumbAutomationPeer>
     {
         Xaml.Automation.Peers.ThumbAutomationPeer ui;
 
@@ -4445,7 +4445,7 @@ namespace CSharpMarkup.WinUI // ThumbAutomationPeer
 
 namespace CSharpMarkup.WinUI // TimePickerAutomationPeer
 {
-    public partial class TimePickerAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.TimePickerAutomationPeer>
+    public partial class TimePickerAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.TimePickerAutomationPeer>
     {
         Xaml.Automation.Peers.TimePickerAutomationPeer ui;
 
@@ -4474,7 +4474,7 @@ namespace CSharpMarkup.WinUI // TimePickerFlyoutPresenterAutomationPeer
         }
     }
 
-    public partial class TimePickerFlyoutPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.TimePickerFlyoutPresenterAutomationPeer>
+    public partial class TimePickerFlyoutPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.TimePickerFlyoutPresenterAutomationPeer>
     {
         static TimePickerFlyoutPresenterAutomationPeer instance;
 
@@ -4505,7 +4505,7 @@ namespace CSharpMarkup.WinUI // TimePickerFlyoutPresenterAutomationPeer
 
 namespace CSharpMarkup.WinUI // ToggleButtonAutomationPeer
 {
-    public partial class ToggleButtonAutomationPeer : ButtonBaseAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ToggleButtonAutomationPeer>
+    public partial class ToggleButtonAutomationPeer : ButtonBaseAutomationPeer, IUI<Xaml.Automation.Peers.ToggleButtonAutomationPeer>
     {
         Xaml.Automation.Peers.ToggleButtonAutomationPeer ui;
 
@@ -4523,7 +4523,7 @@ namespace CSharpMarkup.WinUI // ToggleButtonAutomationPeer
 
 namespace CSharpMarkup.WinUI // ToggleMenuFlyoutItemAutomationPeer
 {
-    public partial class ToggleMenuFlyoutItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ToggleMenuFlyoutItemAutomationPeer>
+    public partial class ToggleMenuFlyoutItemAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ToggleMenuFlyoutItemAutomationPeer>
     {
         Xaml.Automation.Peers.ToggleMenuFlyoutItemAutomationPeer ui;
 
@@ -4541,7 +4541,7 @@ namespace CSharpMarkup.WinUI // ToggleMenuFlyoutItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // ToggleSplitButtonAutomationPeer
 {
-    public partial class ToggleSplitButtonAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ToggleSplitButtonAutomationPeer>
+    public partial class ToggleSplitButtonAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ToggleSplitButtonAutomationPeer>
     {
         Xaml.Automation.Peers.ToggleSplitButtonAutomationPeer ui;
 
@@ -4559,7 +4559,7 @@ namespace CSharpMarkup.WinUI // ToggleSplitButtonAutomationPeer
 
 namespace CSharpMarkup.WinUI // ToggleSwitchAutomationPeer
 {
-    public partial class ToggleSwitchAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.ToggleSwitchAutomationPeer>
+    public partial class ToggleSwitchAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ToggleSwitchAutomationPeer>
     {
         Xaml.Automation.Peers.ToggleSwitchAutomationPeer ui;
 
@@ -4577,7 +4577,7 @@ namespace CSharpMarkup.WinUI // ToggleSwitchAutomationPeer
 
 namespace CSharpMarkup.WinUI // TreeViewItemAutomationPeer
 {
-    public partial class TreeViewItemAutomationPeer : ListViewItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.TreeViewItemAutomationPeer>
+    public partial class TreeViewItemAutomationPeer : ListViewItemAutomationPeer, IUI<Xaml.Automation.Peers.TreeViewItemAutomationPeer>
     {
         Xaml.Automation.Peers.TreeViewItemAutomationPeer ui;
 
@@ -4595,7 +4595,7 @@ namespace CSharpMarkup.WinUI // TreeViewItemAutomationPeer
 
 namespace CSharpMarkup.WinUI // TreeViewItemDataAutomationPeer
 {
-    public partial class TreeViewItemDataAutomationPeer : ItemAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.TreeViewItemDataAutomationPeer>
+    public partial class TreeViewItemDataAutomationPeer : ItemAutomationPeer, IUI<Xaml.Automation.Peers.TreeViewItemDataAutomationPeer>
     {
         Xaml.Automation.Peers.TreeViewItemDataAutomationPeer ui;
 
@@ -4613,7 +4613,7 @@ namespace CSharpMarkup.WinUI // TreeViewItemDataAutomationPeer
 
 namespace CSharpMarkup.WinUI // TreeViewListAutomationPeer
 {
-    public partial class TreeViewListAutomationPeer : ListViewAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.TreeViewListAutomationPeer>
+    public partial class TreeViewListAutomationPeer : ListViewAutomationPeer, IUI<Xaml.Automation.Peers.TreeViewListAutomationPeer>
     {
         Xaml.Automation.Peers.TreeViewListAutomationPeer ui;
 
@@ -4631,7 +4631,7 @@ namespace CSharpMarkup.WinUI // TreeViewListAutomationPeer
 
 namespace CSharpMarkup.WinUI // WebView2AutomationPeer
 {
-    public partial class WebView2AutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.WebView2AutomationPeer>
+    public partial class WebView2AutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.WebView2AutomationPeer>
     {
         Xaml.Automation.Peers.WebView2AutomationPeer ui;
 
@@ -4649,7 +4649,7 @@ namespace CSharpMarkup.WinUI // WebView2AutomationPeer
 
 namespace CSharpMarkup.WinUI // PagerControlAutomationPeer
 {
-    public partial class PagerControlAutomationPeer : FrameworkElementAutomationPeer, IUI<Microsoft.UI.Xaml.Automation.Peers.PagerControlAutomationPeer>
+    public partial class PagerControlAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.PagerControlAutomationPeer>
     {
         Xaml.Automation.Peers.PagerControlAutomationPeer ui;
 
@@ -4667,7 +4667,7 @@ namespace CSharpMarkup.WinUI // PagerControlAutomationPeer
 
 namespace CSharpMarkup.WinUI // IRawElementProviderSimple
 {
-    public partial class IRawElementProviderSimple : DependencyObject, IUI<Microsoft.UI.Xaml.Automation.Provider.IRawElementProviderSimple>
+    public partial class IRawElementProviderSimple : DependencyObject, IUI<Xaml.Automation.Provider.IRawElementProviderSimple>
     {
         Xaml.Automation.Provider.IRawElementProviderSimple ui;
 
@@ -4736,7 +4736,7 @@ namespace CSharpMarkup.WinUI // AnimatedIcon
         }
     }
 
-    public partial class AnimatedIcon : IconElement, IUI<Microsoft.UI.Xaml.Controls.AnimatedIcon>
+    public partial class AnimatedIcon : IconElement, IUI<Xaml.Controls.AnimatedIcon>
     {
         static AnimatedIcon instance;
 
@@ -4821,7 +4821,7 @@ namespace CSharpMarkup.WinUI // AnimatedIconSource
         }
     }
 
-    public partial class AnimatedIconSource : IconSource, IUI<Microsoft.UI.Xaml.Controls.AnimatedIconSource>
+    public partial class AnimatedIconSource : IconSource, IUI<Xaml.Controls.AnimatedIconSource>
     {
         static AnimatedIconSource instance;
 
@@ -4921,7 +4921,7 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
         }
     }
 
-    public partial class AnimatedVisualPlayer : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer>
+    public partial class AnimatedVisualPlayer : FrameworkElement, IUI<Xaml.Controls.AnimatedVisualPlayer>
     {
         static AnimatedVisualPlayer instance;
 
@@ -5060,7 +5060,7 @@ namespace CSharpMarkup.WinUI // AppBar
         }
     }
 
-    public partial class AppBar : ContentControl, IUI<Microsoft.UI.Xaml.Controls.AppBar>
+    public partial class AppBar : ContentControl, IUI<Xaml.Controls.AppBar>
     {
         static AppBar instance;
 
@@ -5178,7 +5178,7 @@ namespace CSharpMarkup.WinUI // AppBarButton
         }
     }
 
-    public partial class AppBarButton : Button, IUI<Microsoft.UI.Xaml.Controls.AppBarButton>
+    public partial class AppBarButton : Button, IUI<Xaml.Controls.AppBarButton>
     {
         static AppBarButton instance;
 
@@ -5309,7 +5309,7 @@ namespace CSharpMarkup.WinUI // AppBarElementContainer
         }
     }
 
-    public partial class AppBarElementContainer : ContentControl, IUI<Microsoft.UI.Xaml.Controls.AppBarElementContainer>
+    public partial class AppBarElementContainer : ContentControl, IUI<Xaml.Controls.AppBarElementContainer>
     {
         static AppBarElementContainer instance;
 
@@ -5396,7 +5396,7 @@ namespace CSharpMarkup.WinUI // AppBarSeparator
         }
     }
 
-    public partial class AppBarSeparator : Control, IUI<Microsoft.UI.Xaml.Controls.AppBarSeparator>
+    public partial class AppBarSeparator : Control, IUI<Xaml.Controls.AppBarSeparator>
     {
         static AppBarSeparator instance;
 
@@ -5497,7 +5497,7 @@ namespace CSharpMarkup.WinUI // AppBarToggleButton
         }
     }
 
-    public partial class AppBarToggleButton : ToggleButton, IUI<Microsoft.UI.Xaml.Controls.AppBarToggleButton>
+    public partial class AppBarToggleButton : ToggleButton, IUI<Xaml.Controls.AppBarToggleButton>
     {
         static AppBarToggleButton instance;
 
@@ -5633,7 +5633,7 @@ namespace CSharpMarkup.WinUI // AutoSuggestBox
         }
     }
 
-    public partial class AutoSuggestBox : ItemsControl, IUI<Microsoft.UI.Xaml.Controls.AutoSuggestBox>, IDefaultBindProperty
+    public partial class AutoSuggestBox : ItemsControl, IUI<Xaml.Controls.AutoSuggestBox>, IDefaultBindProperty
     {
         static AutoSuggestBox instance;
 
@@ -5777,7 +5777,7 @@ namespace CSharpMarkup.WinUI // AutoSuggestBoxQuerySubmittedEventArgs
         }
     }
 
-    public partial class AutoSuggestBoxQuerySubmittedEventArgs : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.AutoSuggestBoxQuerySubmittedEventArgs>
+    public partial class AutoSuggestBoxQuerySubmittedEventArgs : DependencyObject, IUI<Xaml.Controls.AutoSuggestBoxQuerySubmittedEventArgs>
     {
         static AutoSuggestBoxQuerySubmittedEventArgs instance;
 
@@ -5844,7 +5844,7 @@ namespace CSharpMarkup.WinUI // AutoSuggestBoxSuggestionChosenEventArgs
         }
     }
 
-    public partial class AutoSuggestBoxSuggestionChosenEventArgs : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.AutoSuggestBoxSuggestionChosenEventArgs>
+    public partial class AutoSuggestBoxSuggestionChosenEventArgs : DependencyObject, IUI<Xaml.Controls.AutoSuggestBoxSuggestionChosenEventArgs>
     {
         static AutoSuggestBoxSuggestionChosenEventArgs instance;
 
@@ -5912,7 +5912,7 @@ namespace CSharpMarkup.WinUI // AutoSuggestBoxTextChangedEventArgs
         }
     }
 
-    public partial class AutoSuggestBoxTextChangedEventArgs : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.AutoSuggestBoxTextChangedEventArgs>
+    public partial class AutoSuggestBoxTextChangedEventArgs : DependencyObject, IUI<Xaml.Controls.AutoSuggestBoxTextChangedEventArgs>
     {
         static AutoSuggestBoxTextChangedEventArgs instance;
 
@@ -6004,7 +6004,7 @@ namespace CSharpMarkup.WinUI // BitmapIcon
         }
     }
 
-    public partial class BitmapIcon : IconElement, IUI<Microsoft.UI.Xaml.Controls.BitmapIcon>, IDefaultBindProperty
+    public partial class BitmapIcon : IconElement, IUI<Xaml.Controls.BitmapIcon>, IDefaultBindProperty
     {
         static BitmapIcon instance;
 
@@ -6078,7 +6078,7 @@ namespace CSharpMarkup.WinUI // BitmapIconSource
         }
     }
 
-    public partial class BitmapIconSource : IconSource, IUI<Microsoft.UI.Xaml.Controls.BitmapIconSource>, IDefaultBindProperty
+    public partial class BitmapIconSource : IconSource, IUI<Xaml.Controls.BitmapIconSource>, IDefaultBindProperty
     {
         static BitmapIconSource instance;
 
@@ -6176,7 +6176,7 @@ namespace CSharpMarkup.WinUI // Border
         }
     }
 
-    public partial class Border : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.Border>
+    public partial class Border : FrameworkElement, IUI<Xaml.Controls.Border>
     {
         static Border instance;
 
@@ -6325,7 +6325,7 @@ namespace CSharpMarkup.WinUI // BreadcrumbBar
         }
     }
 
-    public partial class BreadcrumbBar : Control, IUI<Microsoft.UI.Xaml.Controls.BreadcrumbBar>
+    public partial class BreadcrumbBar : Control, IUI<Xaml.Controls.BreadcrumbBar>
     {
         static BreadcrumbBar instance;
 
@@ -6407,7 +6407,7 @@ namespace CSharpMarkup.WinUI // BreadcrumbBarItem
         }
     }
 
-    public partial class BreadcrumbBarItem : ContentControl, IUI<Microsoft.UI.Xaml.Controls.BreadcrumbBarItem>
+    public partial class BreadcrumbBarItem : ContentControl, IUI<Xaml.Controls.BreadcrumbBarItem>
     {
         static BreadcrumbBarItem instance;
 
@@ -6481,7 +6481,7 @@ namespace CSharpMarkup.WinUI // Button
         }
     }
 
-    public partial class Button : ButtonBase, IUI<Microsoft.UI.Xaml.Controls.Button>
+    public partial class Button : ButtonBase, IUI<Xaml.Controls.Button>
     {
         static Button instance;
 
@@ -6577,7 +6577,7 @@ namespace CSharpMarkup.WinUI // CalendarDatePicker
         }
     }
 
-    public partial class CalendarDatePicker : Control, IUI<Microsoft.UI.Xaml.Controls.CalendarDatePicker>, IDefaultBindProperty
+    public partial class CalendarDatePicker : Control, IUI<Xaml.Controls.CalendarDatePicker>, IDefaultBindProperty
     {
         static CalendarDatePicker instance;
 
@@ -6849,7 +6849,7 @@ namespace CSharpMarkup.WinUI // CalendarView
         }
     }
 
-    public partial class CalendarView : Control, IUI<Microsoft.UI.Xaml.Controls.CalendarView>
+    public partial class CalendarView : Control, IUI<Xaml.Controls.CalendarView>
     {
         static CalendarView instance;
 
@@ -7833,7 +7833,7 @@ namespace CSharpMarkup.WinUI // CalendarViewDayItem
         }
     }
 
-    public partial class CalendarViewDayItem : CalendarViewBaseItem, IUI<Microsoft.UI.Xaml.Controls.CalendarViewDayItem>, IDefaultBindProperty
+    public partial class CalendarViewDayItem : CalendarViewBaseItem, IUI<Xaml.Controls.CalendarViewDayItem>, IDefaultBindProperty
     {
         static CalendarViewDayItem instance;
 
@@ -7926,7 +7926,7 @@ namespace CSharpMarkup.WinUI // Canvas
         }
     }
 
-    public partial class Canvas : Panel, IUI<Microsoft.UI.Xaml.Controls.Canvas>
+    public partial class Canvas : Panel, IUI<Xaml.Controls.Canvas>
     {
         static Canvas instance;
 
@@ -8038,7 +8038,7 @@ namespace CSharpMarkup.WinUI // CheckBox
         }
     }
 
-    public partial class CheckBox : ToggleButton, IUI<Microsoft.UI.Xaml.Controls.CheckBox>
+    public partial class CheckBox : ToggleButton, IUI<Xaml.Controls.CheckBox>
     {
         static CheckBox instance;
 
@@ -8126,7 +8126,7 @@ namespace CSharpMarkup.WinUI // ColorPicker
         }
     }
 
-    public partial class ColorPicker : Control, IUI<Microsoft.UI.Xaml.Controls.ColorPicker>, IDefaultBindProperty
+    public partial class ColorPicker : Control, IUI<Xaml.Controls.ColorPicker>, IDefaultBindProperty
     {
         static ColorPicker instance;
 
@@ -8329,7 +8329,7 @@ namespace CSharpMarkup.WinUI // ColumnDefinition
         }
     }
 
-    public partial class ColumnDefinition : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.ColumnDefinition>, IDefaultBindProperty
+    public partial class ColumnDefinition : DependencyObject, IUI<Xaml.Controls.ColumnDefinition>, IDefaultBindProperty
     {
         static ColumnDefinition instance;
 
@@ -8444,7 +8444,7 @@ namespace CSharpMarkup.WinUI // ComboBox
         }
     }
 
-    public partial class ComboBox : Selector, IUI<Microsoft.UI.Xaml.Controls.ComboBox>
+    public partial class ComboBox : Selector, IUI<Xaml.Controls.ComboBox>
     {
         static ComboBox instance;
 
@@ -8626,7 +8626,7 @@ namespace CSharpMarkup.WinUI // ComboBoxItem
         }
     }
 
-    public partial class ComboBoxItem : SelectorItem, IUI<Microsoft.UI.Xaml.Controls.ComboBoxItem>
+    public partial class ComboBoxItem : SelectorItem, IUI<Xaml.Controls.ComboBoxItem>
     {
         static ComboBoxItem instance;
 
@@ -8702,7 +8702,7 @@ namespace CSharpMarkup.WinUI // CommandBar
         }
     }
 
-    public partial class CommandBar : AppBar, IUI<Microsoft.UI.Xaml.Controls.CommandBar>
+    public partial class CommandBar : AppBar, IUI<Xaml.Controls.CommandBar>
     {
         static CommandBar instance;
 
@@ -8801,7 +8801,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
         }
     }
 
-    public partial class CommandBarFlyout : FlyoutBase, IUI<Microsoft.UI.Xaml.Controls.CommandBarFlyout>
+    public partial class CommandBarFlyout : FlyoutBase, IUI<Xaml.Controls.CommandBarFlyout>
     {
         static CommandBarFlyout instance;
 
@@ -8882,7 +8882,7 @@ namespace CSharpMarkup.WinUI // CommandBarOverflowPresenter
         }
     }
 
-    public partial class CommandBarOverflowPresenter : ItemsControl, IUI<Microsoft.UI.Xaml.Controls.CommandBarOverflowPresenter>
+    public partial class CommandBarOverflowPresenter : ItemsControl, IUI<Xaml.Controls.CommandBarOverflowPresenter>
     {
         static CommandBarOverflowPresenter instance;
 
@@ -8963,7 +8963,7 @@ namespace CSharpMarkup.WinUI // ContentControl
         }
     }
 
-    public partial class ContentControl : Control, IUI<Microsoft.UI.Xaml.Controls.ContentControl>, IDefaultBindProperty
+    public partial class ContentControl : Control, IUI<Xaml.Controls.ContentControl>, IDefaultBindProperty
     {
         static ContentControl instance;
 
@@ -9085,7 +9085,7 @@ namespace CSharpMarkup.WinUI // ContentDialog
         }
     }
 
-    public partial class ContentDialog : ContentControl, IUI<Microsoft.UI.Xaml.Controls.ContentDialog>
+    public partial class ContentDialog : ContentControl, IUI<Xaml.Controls.ContentDialog>
     {
         static ContentDialog instance;
 
@@ -9311,7 +9311,7 @@ namespace CSharpMarkup.WinUI // ContentPresenter
         }
     }
 
-    public partial class ContentPresenter : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.ContentPresenter>, IDefaultBindProperty
+    public partial class ContentPresenter : FrameworkElement, IUI<Xaml.Controls.ContentPresenter>, IDefaultBindProperty
     {
         static ContentPresenter instance;
 
@@ -9651,7 +9651,7 @@ namespace CSharpMarkup.WinUI // Control
         }
     }
 
-    public partial class Control : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.Control>
+    public partial class Control : FrameworkElement, IUI<Xaml.Controls.Control>
     {
         static Control instance;
 
@@ -9995,7 +9995,7 @@ namespace CSharpMarkup.WinUI // ControlTemplate
         }
     }
 
-    public partial class ControlTemplate : FrameworkTemplate, IUI<Microsoft.UI.Xaml.Controls.ControlTemplate>
+    public partial class ControlTemplate : FrameworkTemplate, IUI<Xaml.Controls.ControlTemplate>
     {
         static ControlTemplate instance;
 
@@ -10051,7 +10051,7 @@ namespace CSharpMarkup.WinUI // DatePickedEventArgs
         }
     }
 
-    public partial class DatePickedEventArgs : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.DatePickedEventArgs>
+    public partial class DatePickedEventArgs : DependencyObject, IUI<Xaml.Controls.DatePickedEventArgs>
     {
         static DatePickedEventArgs instance;
 
@@ -10152,7 +10152,7 @@ namespace CSharpMarkup.WinUI // DatePicker
         }
     }
 
-    public partial class DatePicker : Control, IUI<Microsoft.UI.Xaml.Controls.DatePicker>, IDefaultBindProperty
+    public partial class DatePicker : Control, IUI<Xaml.Controls.DatePicker>, IDefaultBindProperty
     {
         static DatePicker instance;
 
@@ -10347,7 +10347,7 @@ namespace CSharpMarkup.WinUI // DatePickerFlyout
         }
     }
 
-    public partial class DatePickerFlyout : PickerFlyoutBase, IUI<Microsoft.UI.Xaml.Controls.DatePickerFlyout>, IDefaultBindProperty
+    public partial class DatePickerFlyout : PickerFlyoutBase, IUI<Xaml.Controls.DatePickerFlyout>, IDefaultBindProperty
     {
         static DatePickerFlyout instance;
 
@@ -10482,7 +10482,7 @@ namespace CSharpMarkup.WinUI // DatePickerFlyoutItem
         }
     }
 
-    public partial class DatePickerFlyoutItem : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.DatePickerFlyoutItem>
+    public partial class DatePickerFlyoutItem : DependencyObject, IUI<Xaml.Controls.DatePickerFlyoutItem>
     {
         static DatePickerFlyoutItem instance;
 
@@ -10576,7 +10576,7 @@ namespace CSharpMarkup.WinUI // DatePickerFlyoutPresenter
         }
     }
 
-    public partial class DatePickerFlyoutPresenter : Control, IUI<Microsoft.UI.Xaml.Controls.DatePickerFlyoutPresenter>
+    public partial class DatePickerFlyoutPresenter : Control, IUI<Xaml.Controls.DatePickerFlyoutPresenter>
     {
         static DatePickerFlyoutPresenter instance;
 
@@ -10653,7 +10653,7 @@ namespace CSharpMarkup.WinUI // DropDownButton
         }
     }
 
-    public partial class DropDownButton : Button, IUI<Microsoft.UI.Xaml.Controls.DropDownButton>
+    public partial class DropDownButton : Button, IUI<Xaml.Controls.DropDownButton>
     {
         static DropDownButton instance;
 
@@ -10731,7 +10731,7 @@ namespace CSharpMarkup.WinUI // Expander
         }
     }
 
-    public partial class Expander : ContentControl, IUI<Microsoft.UI.Xaml.Controls.Expander>
+    public partial class Expander : ContentControl, IUI<Xaml.Controls.Expander>
     {
         static Expander instance;
 
@@ -10802,7 +10802,7 @@ namespace CSharpMarkup.WinUI // Expander
 
 namespace CSharpMarkup.WinUI // ExpanderTemplateSettings
 {
-    public partial class ExpanderTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.ExpanderTemplateSettings>
+    public partial class ExpanderTemplateSettings : DependencyObject, IUI<Xaml.Controls.ExpanderTemplateSettings>
     {
         Xaml.Controls.ExpanderTemplateSettings ui;
 
@@ -10880,7 +10880,7 @@ namespace CSharpMarkup.WinUI // FlipView
         }
     }
 
-    public partial class FlipView : Selector, IUI<Microsoft.UI.Xaml.Controls.FlipView>
+    public partial class FlipView : Selector, IUI<Xaml.Controls.FlipView>
     {
         static FlipView instance;
 
@@ -10955,7 +10955,7 @@ namespace CSharpMarkup.WinUI // FlipViewItem
         }
     }
 
-    public partial class FlipViewItem : SelectorItem, IUI<Microsoft.UI.Xaml.Controls.FlipViewItem>
+    public partial class FlipViewItem : SelectorItem, IUI<Xaml.Controls.FlipViewItem>
     {
         static FlipViewItem instance;
 
@@ -11015,7 +11015,7 @@ namespace CSharpMarkup.WinUI // Flyout
         }
     }
 
-    public partial class Flyout : FlyoutBase, IUI<Microsoft.UI.Xaml.Controls.Flyout>
+    public partial class Flyout : FlyoutBase, IUI<Xaml.Controls.Flyout>
     {
         static Flyout instance;
 
@@ -11101,7 +11101,7 @@ namespace CSharpMarkup.WinUI // FlyoutPresenter
         }
     }
 
-    public partial class FlyoutPresenter : ContentControl, IUI<Microsoft.UI.Xaml.Controls.FlyoutPresenter>
+    public partial class FlyoutPresenter : ContentControl, IUI<Xaml.Controls.FlyoutPresenter>
     {
         static FlyoutPresenter instance;
 
@@ -11188,7 +11188,7 @@ namespace CSharpMarkup.WinUI // FontIcon
         }
     }
 
-    public partial class FontIcon : IconElement, IUI<Microsoft.UI.Xaml.Controls.FontIcon>, IDefaultBindProperty
+    public partial class FontIcon : IconElement, IUI<Xaml.Controls.FontIcon>, IDefaultBindProperty
     {
         static FontIcon instance;
 
@@ -11304,7 +11304,7 @@ namespace CSharpMarkup.WinUI // FontIconSource
         }
     }
 
-    public partial class FontIconSource : IconSource, IUI<Microsoft.UI.Xaml.Controls.FontIconSource>, IDefaultBindProperty
+    public partial class FontIconSource : IconSource, IUI<Xaml.Controls.FontIconSource>, IDefaultBindProperty
     {
         static FontIconSource instance;
 
@@ -11434,7 +11434,7 @@ namespace CSharpMarkup.WinUI // Frame
         }
     }
 
-    public partial class Frame : ContentControl, IUI<Microsoft.UI.Xaml.Controls.Frame>
+    public partial class Frame : ContentControl, IUI<Xaml.Controls.Frame>
     {
         static Frame instance;
 
@@ -11561,7 +11561,7 @@ namespace CSharpMarkup.WinUI // Grid
         }
     }
 
-    public partial class Grid : Panel, IUI<Microsoft.UI.Xaml.Controls.Grid>
+    public partial class Grid : Panel, IUI<Xaml.Controls.Grid>
     {
         static Grid instance;
 
@@ -11759,7 +11759,7 @@ namespace CSharpMarkup.WinUI // GridView
         }
     }
 
-    public partial class GridView : ListViewBase, IUI<Microsoft.UI.Xaml.Controls.GridView>
+    public partial class GridView : ListViewBase, IUI<Xaml.Controls.GridView>
     {
         static GridView instance;
 
@@ -11824,7 +11824,7 @@ namespace CSharpMarkup.WinUI // GridViewHeaderItem
         }
     }
 
-    public partial class GridViewHeaderItem : ListViewBaseHeaderItem, IUI<Microsoft.UI.Xaml.Controls.GridViewHeaderItem>
+    public partial class GridViewHeaderItem : ListViewBaseHeaderItem, IUI<Xaml.Controls.GridViewHeaderItem>
     {
         static GridViewHeaderItem instance;
 
@@ -11889,7 +11889,7 @@ namespace CSharpMarkup.WinUI // GridViewItem
         }
     }
 
-    public partial class GridViewItem : SelectorItem, IUI<Microsoft.UI.Xaml.Controls.GridViewItem>
+    public partial class GridViewItem : SelectorItem, IUI<Xaml.Controls.GridViewItem>
     {
         static GridViewItem instance;
 
@@ -11958,7 +11958,7 @@ namespace CSharpMarkup.WinUI // GroupItem
         }
     }
 
-    public partial class GroupItem : ContentControl, IUI<Microsoft.UI.Xaml.Controls.GroupItem>
+    public partial class GroupItem : ContentControl, IUI<Xaml.Controls.GroupItem>
     {
         static GroupItem instance;
 
@@ -12033,7 +12033,7 @@ namespace CSharpMarkup.WinUI // Hub
         }
     }
 
-    public partial class Hub : Control, IUI<Microsoft.UI.Xaml.Controls.Hub>
+    public partial class Hub : Control, IUI<Xaml.Controls.Hub>
     {
         static Hub instance;
 
@@ -12171,7 +12171,7 @@ namespace CSharpMarkup.WinUI // HubSection
         }
     }
 
-    public partial class HubSection : Control, IUI<Microsoft.UI.Xaml.Controls.HubSection>
+    public partial class HubSection : Control, IUI<Xaml.Controls.HubSection>
     {
         static HubSection instance;
 
@@ -12284,7 +12284,7 @@ namespace CSharpMarkup.WinUI // HyperlinkButton
         }
     }
 
-    public partial class HyperlinkButton : ButtonBase, IUI<Microsoft.UI.Xaml.Controls.HyperlinkButton>
+    public partial class HyperlinkButton : ButtonBase, IUI<Xaml.Controls.HyperlinkButton>
     {
         static HyperlinkButton instance;
 
@@ -12327,7 +12327,7 @@ namespace CSharpMarkup.WinUI // HyperlinkButton
 
 namespace CSharpMarkup.WinUI // IconSource
 {
-    public partial class IconSource : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.IconSource>
+    public partial class IconSource : DependencyObject, IUI<Xaml.Controls.IconSource>
     {
         Xaml.Controls.IconSource ui;
 
@@ -12407,7 +12407,7 @@ namespace CSharpMarkup.WinUI // IconSourceElement
         }
     }
 
-    public partial class IconSourceElement : IconElement, IUI<Microsoft.UI.Xaml.Controls.IconSourceElement>
+    public partial class IconSourceElement : IconElement, IUI<Xaml.Controls.IconSourceElement>
     {
         static IconSourceElement instance;
 
@@ -12487,7 +12487,7 @@ namespace CSharpMarkup.WinUI // Image
         }
     }
 
-    public partial class Image : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.Image>, IDefaultBindProperty
+    public partial class Image : FrameworkElement, IUI<Xaml.Controls.Image>, IDefaultBindProperty
     {
         static Image instance;
 
@@ -12603,7 +12603,7 @@ namespace CSharpMarkup.WinUI // ImageIcon
         }
     }
 
-    public partial class ImageIcon : IconElement, IUI<Microsoft.UI.Xaml.Controls.ImageIcon>
+    public partial class ImageIcon : IconElement, IUI<Xaml.Controls.ImageIcon>
     {
         static ImageIcon instance;
 
@@ -12664,7 +12664,7 @@ namespace CSharpMarkup.WinUI // ImageIconSource
         }
     }
 
-    public partial class ImageIconSource : IconSource, IUI<Microsoft.UI.Xaml.Controls.ImageIconSource>
+    public partial class ImageIconSource : IconSource, IUI<Xaml.Controls.ImageIconSource>
     {
         static ImageIconSource instance;
 
@@ -12739,7 +12739,7 @@ namespace CSharpMarkup.WinUI // InfoBadge
         }
     }
 
-    public partial class InfoBadge : Control, IUI<Microsoft.UI.Xaml.Controls.InfoBadge>
+    public partial class InfoBadge : Control, IUI<Xaml.Controls.InfoBadge>
     {
         static InfoBadge instance;
 
@@ -12817,7 +12817,7 @@ namespace CSharpMarkup.WinUI // InfoBadgeTemplateSettings
         }
     }
 
-    public partial class InfoBadgeTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.InfoBadgeTemplateSettings>
+    public partial class InfoBadgeTemplateSettings : DependencyObject, IUI<Xaml.Controls.InfoBadgeTemplateSettings>
     {
         static InfoBadgeTemplateSettings instance;
 
@@ -12931,7 +12931,7 @@ namespace CSharpMarkup.WinUI // InfoBar
         }
     }
 
-    public partial class InfoBar : Control, IUI<Microsoft.UI.Xaml.Controls.InfoBar>
+    public partial class InfoBar : Control, IUI<Xaml.Controls.InfoBar>
     {
         static InfoBar instance;
 
@@ -13079,7 +13079,7 @@ namespace CSharpMarkup.WinUI // InfoBarTemplateSettings
         }
     }
 
-    public partial class InfoBarTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.InfoBarTemplateSettings>
+    public partial class InfoBarTemplateSettings : DependencyObject, IUI<Xaml.Controls.InfoBarTemplateSettings>
     {
         static InfoBarTemplateSettings instance;
 
@@ -13181,7 +13181,7 @@ namespace CSharpMarkup.WinUI // ItemsControl
         }
     }
 
-    public partial class ItemsControl : Control, IUI<Microsoft.UI.Xaml.Controls.ItemsControl>, IDefaultBindProperty
+    public partial class ItemsControl : Control, IUI<Xaml.Controls.ItemsControl>, IDefaultBindProperty
     {
         static ItemsControl instance;
 
@@ -13318,7 +13318,7 @@ namespace CSharpMarkup.WinUI // ItemsPanelTemplate
         }
     }
 
-    public partial class ItemsPanelTemplate : FrameworkTemplate, IUI<Microsoft.UI.Xaml.Controls.ItemsPanelTemplate>
+    public partial class ItemsPanelTemplate : FrameworkTemplate, IUI<Xaml.Controls.ItemsPanelTemplate>
     {
         static ItemsPanelTemplate instance;
 
@@ -13370,7 +13370,7 @@ namespace CSharpMarkup.WinUI // ItemsPickedEventArgs
         }
     }
 
-    public partial class ItemsPickedEventArgs : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.ItemsPickedEventArgs>
+    public partial class ItemsPickedEventArgs : DependencyObject, IUI<Xaml.Controls.ItemsPickedEventArgs>
     {
         static ItemsPickedEventArgs instance;
 
@@ -13456,7 +13456,7 @@ namespace CSharpMarkup.WinUI // ItemsPresenter
         }
     }
 
-    public partial class ItemsPresenter : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.ItemsPresenter>
+    public partial class ItemsPresenter : FrameworkElement, IUI<Xaml.Controls.ItemsPresenter>
     {
         static ItemsPresenter instance;
 
@@ -13602,7 +13602,7 @@ namespace CSharpMarkup.WinUI // ItemsRepeater
         }
     }
 
-    public partial class ItemsRepeater : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.ItemsRepeater>
+    public partial class ItemsRepeater : FrameworkElement, IUI<Xaml.Controls.ItemsRepeater>
     {
         static ItemsRepeater instance;
 
@@ -13723,7 +13723,7 @@ namespace CSharpMarkup.WinUI // ItemsRepeaterScrollHost
         }
     }
 
-    public partial class ItemsRepeaterScrollHost : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.ItemsRepeaterScrollHost>
+    public partial class ItemsRepeaterScrollHost : FrameworkElement, IUI<Xaml.Controls.ItemsRepeaterScrollHost>
     {
         static ItemsRepeaterScrollHost instance;
 
@@ -13799,7 +13799,7 @@ namespace CSharpMarkup.WinUI // ItemsStackPanel
         }
     }
 
-    public partial class ItemsStackPanel : Panel, IUI<Microsoft.UI.Xaml.Controls.ItemsStackPanel>
+    public partial class ItemsStackPanel : Panel, IUI<Xaml.Controls.ItemsStackPanel>
     {
         static ItemsStackPanel instance;
 
@@ -13931,7 +13931,7 @@ namespace CSharpMarkup.WinUI // ItemsWrapGrid
         }
     }
 
-    public partial class ItemsWrapGrid : Panel, IUI<Microsoft.UI.Xaml.Controls.ItemsWrapGrid>
+    public partial class ItemsWrapGrid : Panel, IUI<Xaml.Controls.ItemsWrapGrid>
     {
         static ItemsWrapGrid instance;
 
@@ -14056,7 +14056,7 @@ namespace CSharpMarkup.WinUI // Layout
         }
     }
 
-    public partial class Layout : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Layout>
+    public partial class Layout : DependencyObject, IUI<Xaml.Controls.Layout>
     {
         static Layout instance;
 
@@ -14124,7 +14124,7 @@ namespace CSharpMarkup.WinUI // LayoutContext
         }
     }
 
-    public partial class LayoutContext : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.LayoutContext>
+    public partial class LayoutContext : DependencyObject, IUI<Xaml.Controls.LayoutContext>
     {
         static LayoutContext instance;
 
@@ -14222,7 +14222,7 @@ namespace CSharpMarkup.WinUI // ListBox
         }
     }
 
-    public partial class ListBox : Selector, IUI<Microsoft.UI.Xaml.Controls.ListBox>
+    public partial class ListBox : Selector, IUI<Xaml.Controls.ListBox>
     {
         static ListBox instance;
 
@@ -14312,7 +14312,7 @@ namespace CSharpMarkup.WinUI // ListBoxItem
         }
     }
 
-    public partial class ListBoxItem : SelectorItem, IUI<Microsoft.UI.Xaml.Controls.ListBoxItem>
+    public partial class ListBoxItem : SelectorItem, IUI<Xaml.Controls.ListBoxItem>
     {
         static ListBoxItem instance;
 
@@ -14372,7 +14372,7 @@ namespace CSharpMarkup.WinUI // ListPickerFlyout
         }
     }
 
-    public partial class ListPickerFlyout : PickerFlyoutBase, IUI<Microsoft.UI.Xaml.Controls.ListPickerFlyout>, IDefaultBindProperty
+    public partial class ListPickerFlyout : PickerFlyoutBase, IUI<Xaml.Controls.ListPickerFlyout>, IDefaultBindProperty
     {
         static ListPickerFlyout instance;
 
@@ -14508,7 +14508,7 @@ namespace CSharpMarkup.WinUI // ListPickerFlyoutPresenter
         }
     }
 
-    public partial class ListPickerFlyoutPresenter : Control, IUI<Microsoft.UI.Xaml.Controls.ListPickerFlyoutPresenter>
+    public partial class ListPickerFlyoutPresenter : Control, IUI<Xaml.Controls.ListPickerFlyoutPresenter>
     {
         static ListPickerFlyoutPresenter instance;
 
@@ -14584,7 +14584,7 @@ namespace CSharpMarkup.WinUI // ListView
         }
     }
 
-    public partial class ListView : ListViewBase, IUI<Microsoft.UI.Xaml.Controls.ListView>
+    public partial class ListView : ListViewBase, IUI<Xaml.Controls.ListView>
     {
         static ListView instance;
 
@@ -14617,7 +14617,7 @@ namespace CSharpMarkup.WinUI // ListView
 
 namespace CSharpMarkup.WinUI // ListViewBase
 {
-    public partial class ListViewBase : Selector, IUI<Microsoft.UI.Xaml.Controls.ListViewBase>
+    public partial class ListViewBase : Selector, IUI<Xaml.Controls.ListViewBase>
     {
         Xaml.Controls.ListViewBase ui;
 
@@ -14850,7 +14850,7 @@ namespace CSharpMarkup.WinUI // ListViewBaseHeaderItem
         }
     }
 
-    public partial class ListViewBaseHeaderItem : ContentControl, IUI<Microsoft.UI.Xaml.Controls.ListViewBaseHeaderItem>
+    public partial class ListViewBaseHeaderItem : ContentControl, IUI<Xaml.Controls.ListViewBaseHeaderItem>
     {
         static ListViewBaseHeaderItem instance;
 
@@ -14915,7 +14915,7 @@ namespace CSharpMarkup.WinUI // ListViewHeaderItem
         }
     }
 
-    public partial class ListViewHeaderItem : ListViewBaseHeaderItem, IUI<Microsoft.UI.Xaml.Controls.ListViewHeaderItem>
+    public partial class ListViewHeaderItem : ListViewBaseHeaderItem, IUI<Xaml.Controls.ListViewHeaderItem>
     {
         static ListViewHeaderItem instance;
 
@@ -14980,7 +14980,7 @@ namespace CSharpMarkup.WinUI // ListViewItem
         }
     }
 
-    public partial class ListViewItem : SelectorItem, IUI<Microsoft.UI.Xaml.Controls.ListViewItem>
+    public partial class ListViewItem : SelectorItem, IUI<Xaml.Controls.ListViewItem>
     {
         static ListViewItem instance;
 
@@ -15052,7 +15052,7 @@ namespace CSharpMarkup.WinUI // MediaPlayerElement
         }
     }
 
-    public partial class MediaPlayerElement : Control, IUI<Microsoft.UI.Xaml.Controls.MediaPlayerElement>
+    public partial class MediaPlayerElement : Control, IUI<Xaml.Controls.MediaPlayerElement>
     {
         static MediaPlayerElement instance;
 
@@ -15183,7 +15183,7 @@ namespace CSharpMarkup.WinUI // MediaPlayerPresenter
         }
     }
 
-    public partial class MediaPlayerPresenter : Border, IUI<Microsoft.UI.Xaml.Controls.MediaPlayerPresenter>
+    public partial class MediaPlayerPresenter : Border, IUI<Xaml.Controls.MediaPlayerPresenter>
     {
         static MediaPlayerPresenter instance;
 
@@ -15300,7 +15300,7 @@ namespace CSharpMarkup.WinUI // MediaTransportControls
         }
     }
 
-    public partial class MediaTransportControls : Control, IUI<Microsoft.UI.Xaml.Controls.MediaTransportControls>
+    public partial class MediaTransportControls : Control, IUI<Xaml.Controls.MediaTransportControls>
     {
         static MediaTransportControls instance;
 
@@ -15582,7 +15582,7 @@ namespace CSharpMarkup.WinUI // MenuBar
         }
     }
 
-    public partial class MenuBar : Control, IUI<Microsoft.UI.Xaml.Controls.MenuBar>
+    public partial class MenuBar : Control, IUI<Xaml.Controls.MenuBar>
     {
         static MenuBar instance;
 
@@ -15665,7 +15665,7 @@ namespace CSharpMarkup.WinUI // MenuBarItem
         }
     }
 
-    public partial class MenuBarItem : Control, IUI<Microsoft.UI.Xaml.Controls.MenuBarItem>
+    public partial class MenuBarItem : Control, IUI<Xaml.Controls.MenuBarItem>
     {
         static MenuBarItem instance;
 
@@ -15741,7 +15741,7 @@ namespace CSharpMarkup.WinUI // MenuBarItemFlyout
         }
     }
 
-    public partial class MenuBarItemFlyout : MenuFlyout, IUI<Microsoft.UI.Xaml.Controls.MenuBarItemFlyout>
+    public partial class MenuBarItemFlyout : MenuFlyout, IUI<Xaml.Controls.MenuBarItemFlyout>
     {
         static MenuBarItemFlyout instance;
 
@@ -15801,7 +15801,7 @@ namespace CSharpMarkup.WinUI // MenuFlyout
         }
     }
 
-    public partial class MenuFlyout : FlyoutBase, IUI<Microsoft.UI.Xaml.Controls.MenuFlyout>
+    public partial class MenuFlyout : FlyoutBase, IUI<Xaml.Controls.MenuFlyout>
     {
         static MenuFlyout instance;
 
@@ -15882,7 +15882,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutItem
         }
     }
 
-    public partial class MenuFlyoutItem : MenuFlyoutItemBase, IUI<Microsoft.UI.Xaml.Controls.MenuFlyoutItem>
+    public partial class MenuFlyoutItem : MenuFlyoutItemBase, IUI<Xaml.Controls.MenuFlyoutItem>
     {
         static MenuFlyoutItem instance;
 
@@ -15953,7 +15953,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutItem
 
 namespace CSharpMarkup.WinUI // MenuFlyoutItemBase
 {
-    public partial class MenuFlyoutItemBase : Control, IUI<Microsoft.UI.Xaml.Controls.MenuFlyoutItemBase>
+    public partial class MenuFlyoutItemBase : Control, IUI<Xaml.Controls.MenuFlyoutItemBase>
     {
         Xaml.Controls.MenuFlyoutItemBase ui;
 
@@ -16014,7 +16014,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutPresenter
         }
     }
 
-    public partial class MenuFlyoutPresenter : ItemsControl, IUI<Microsoft.UI.Xaml.Controls.MenuFlyoutPresenter>
+    public partial class MenuFlyoutPresenter : ItemsControl, IUI<Xaml.Controls.MenuFlyoutPresenter>
     {
         static MenuFlyoutPresenter instance;
 
@@ -16083,7 +16083,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutSeparator
         }
     }
 
-    public partial class MenuFlyoutSeparator : MenuFlyoutItemBase, IUI<Microsoft.UI.Xaml.Controls.MenuFlyoutSeparator>
+    public partial class MenuFlyoutSeparator : MenuFlyoutItemBase, IUI<Xaml.Controls.MenuFlyoutSeparator>
     {
         static MenuFlyoutSeparator instance;
 
@@ -16159,7 +16159,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutSubItem
         }
     }
 
-    public partial class MenuFlyoutSubItem : MenuFlyoutItemBase, IUI<Microsoft.UI.Xaml.Controls.MenuFlyoutSubItem>
+    public partial class MenuFlyoutSubItem : MenuFlyoutItemBase, IUI<Xaml.Controls.MenuFlyoutSubItem>
     {
         static MenuFlyoutSubItem instance;
 
@@ -16283,7 +16283,7 @@ namespace CSharpMarkup.WinUI // NavigationView
         }
     }
 
-    public partial class NavigationView : ContentControl, IUI<Microsoft.UI.Xaml.Controls.NavigationView>
+    public partial class NavigationView : ContentControl, IUI<Xaml.Controls.NavigationView>
     {
         static NavigationView instance;
 
@@ -16618,7 +16618,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItem
         }
     }
 
-    public partial class NavigationViewItem : NavigationViewItemBase, IUI<Microsoft.UI.Xaml.Controls.NavigationViewItem>
+    public partial class NavigationViewItem : NavigationViewItemBase, IUI<Xaml.Controls.NavigationViewItem>
     {
         static NavigationViewItem instance;
 
@@ -16758,7 +16758,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItemBase
         }
     }
 
-    public partial class NavigationViewItemBase : ContentControl, IUI<Microsoft.UI.Xaml.Controls.NavigationViewItemBase>
+    public partial class NavigationViewItemBase : ContentControl, IUI<Xaml.Controls.NavigationViewItemBase>
     {
         static NavigationViewItemBase instance;
 
@@ -16833,7 +16833,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItemHeader
         }
     }
 
-    public partial class NavigationViewItemHeader : NavigationViewItemBase, IUI<Microsoft.UI.Xaml.Controls.NavigationViewItemHeader>
+    public partial class NavigationViewItemHeader : NavigationViewItemBase, IUI<Xaml.Controls.NavigationViewItemHeader>
     {
         static NavigationViewItemHeader instance;
 
@@ -16898,7 +16898,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItemSeparator
         }
     }
 
-    public partial class NavigationViewItemSeparator : NavigationViewItemBase, IUI<Microsoft.UI.Xaml.Controls.NavigationViewItemSeparator>
+    public partial class NavigationViewItemSeparator : NavigationViewItemBase, IUI<Xaml.Controls.NavigationViewItemSeparator>
     {
         static NavigationViewItemSeparator instance;
 
@@ -16951,7 +16951,7 @@ namespace CSharpMarkup.WinUI // NavigationViewTemplateSettings
         }
     }
 
-    public partial class NavigationViewTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.NavigationViewTemplateSettings>
+    public partial class NavigationViewTemplateSettings : DependencyObject, IUI<Xaml.Controls.NavigationViewTemplateSettings>
     {
         static NavigationViewTemplateSettings instance;
 
@@ -17052,7 +17052,7 @@ namespace CSharpMarkup.WinUI // NonVirtualizingLayout
         }
     }
 
-    public partial class NonVirtualizingLayout : Layout, IUI<Microsoft.UI.Xaml.Controls.NonVirtualizingLayout>
+    public partial class NonVirtualizingLayout : Layout, IUI<Xaml.Controls.NonVirtualizingLayout>
     {
         static NonVirtualizingLayout instance;
 
@@ -17093,7 +17093,7 @@ namespace CSharpMarkup.WinUI // NonVirtualizingLayoutContext
         }
     }
 
-    public partial class NonVirtualizingLayoutContext : LayoutContext, IUI<Microsoft.UI.Xaml.Controls.NonVirtualizingLayoutContext>
+    public partial class NonVirtualizingLayoutContext : LayoutContext, IUI<Xaml.Controls.NonVirtualizingLayoutContext>
     {
         static NonVirtualizingLayoutContext instance;
 
@@ -17176,7 +17176,7 @@ namespace CSharpMarkup.WinUI // NumberBox
         }
     }
 
-    public partial class NumberBox : Control, IUI<Microsoft.UI.Xaml.Controls.NumberBox>
+    public partial class NumberBox : Control, IUI<Xaml.Controls.NumberBox>
     {
         static NumberBox instance;
 
@@ -17403,7 +17403,7 @@ namespace CSharpMarkup.WinUI // Page
         }
     }
 
-    public partial class Page : UserControl, IUI<Microsoft.UI.Xaml.Controls.Page>
+    public partial class Page : UserControl, IUI<Xaml.Controls.Page>
     {
         static Page instance;
 
@@ -17507,7 +17507,7 @@ namespace CSharpMarkup.WinUI // Panel
         }
     }
 
-    public partial class Panel : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.Panel>
+    public partial class Panel : FrameworkElement, IUI<Xaml.Controls.Panel>
     {
         static Panel instance;
 
@@ -17610,7 +17610,7 @@ namespace CSharpMarkup.WinUI // ParallaxView
         }
     }
 
-    public partial class ParallaxView : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.ParallaxView>
+    public partial class ParallaxView : FrameworkElement, IUI<Xaml.Controls.ParallaxView>
     {
         static ParallaxView instance;
 
@@ -17816,7 +17816,7 @@ namespace CSharpMarkup.WinUI // PasswordBox
         }
     }
 
-    public partial class PasswordBox : TextBox, IUI<Microsoft.UI.Xaml.Controls.PasswordBox>, IDefaultBindProperty
+    public partial class PasswordBox : TextBox, IUI<Xaml.Controls.PasswordBox>, IDefaultBindProperty
     {
         static PasswordBox instance;
 
@@ -17967,7 +17967,7 @@ namespace CSharpMarkup.WinUI // PathIcon
         }
     }
 
-    public partial class PathIcon : IconElement, IUI<Microsoft.UI.Xaml.Controls.PathIcon>, IDefaultBindProperty
+    public partial class PathIcon : IconElement, IUI<Xaml.Controls.PathIcon>, IDefaultBindProperty
     {
         static PathIcon instance;
 
@@ -18033,7 +18033,7 @@ namespace CSharpMarkup.WinUI // PathIconSource
         }
     }
 
-    public partial class PathIconSource : IconSource, IUI<Microsoft.UI.Xaml.Controls.PathIconSource>, IDefaultBindProperty
+    public partial class PathIconSource : IconSource, IUI<Xaml.Controls.PathIconSource>, IDefaultBindProperty
     {
         static PathIconSource instance;
 
@@ -18118,7 +18118,7 @@ namespace CSharpMarkup.WinUI // PersonPicture
         }
     }
 
-    public partial class PersonPicture : Control, IUI<Microsoft.UI.Xaml.Controls.PersonPicture>
+    public partial class PersonPicture : Control, IUI<Xaml.Controls.PersonPicture>
     {
         static PersonPicture instance;
 
@@ -18243,7 +18243,7 @@ namespace CSharpMarkup.WinUI // PersonPictureTemplateSettings
         }
     }
 
-    public partial class PersonPictureTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.PersonPictureTemplateSettings>
+    public partial class PersonPictureTemplateSettings : DependencyObject, IUI<Xaml.Controls.PersonPictureTemplateSettings>
     {
         static PersonPictureTemplateSettings instance;
 
@@ -18320,7 +18320,7 @@ namespace CSharpMarkup.WinUI // PickerConfirmedEventArgs
         }
     }
 
-    public partial class PickerConfirmedEventArgs : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.PickerConfirmedEventArgs>
+    public partial class PickerConfirmedEventArgs : DependencyObject, IUI<Xaml.Controls.PickerConfirmedEventArgs>
     {
         static PickerConfirmedEventArgs instance;
 
@@ -18368,7 +18368,7 @@ namespace CSharpMarkup.WinUI // PickerConfirmedEventArgs
 
 namespace CSharpMarkup.WinUI // PickerFlyout
 {
-    public partial class PickerFlyout : PickerFlyoutBase, IUI<Microsoft.UI.Xaml.Controls.PickerFlyout>
+    public partial class PickerFlyout : PickerFlyoutBase, IUI<Xaml.Controls.PickerFlyout>
     {
         Xaml.Controls.PickerFlyout ui;
 
@@ -18443,7 +18443,7 @@ namespace CSharpMarkup.WinUI // PickerFlyoutPresenter
         }
     }
 
-    public partial class PickerFlyoutPresenter : ContentControl, IUI<Microsoft.UI.Xaml.Controls.PickerFlyoutPresenter>
+    public partial class PickerFlyoutPresenter : ContentControl, IUI<Xaml.Controls.PickerFlyoutPresenter>
     {
         static PickerFlyoutPresenter instance;
 
@@ -18517,7 +18517,7 @@ namespace CSharpMarkup.WinUI // PipsPager
         }
     }
 
-    public partial class PipsPager : Control, IUI<Microsoft.UI.Xaml.Controls.PipsPager>
+    public partial class PipsPager : Control, IUI<Xaml.Controls.PipsPager>
     {
         static PipsPager instance;
 
@@ -18643,7 +18643,7 @@ namespace CSharpMarkup.WinUI // PipsPagerTemplateSettings
         }
     }
 
-    public partial class PipsPagerTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.PipsPagerTemplateSettings>
+    public partial class PipsPagerTemplateSettings : DependencyObject, IUI<Xaml.Controls.PipsPagerTemplateSettings>
     {
         static PipsPagerTemplateSettings instance;
 
@@ -18737,7 +18737,7 @@ namespace CSharpMarkup.WinUI // Pivot
         }
     }
 
-    public partial class Pivot : ItemsControl, IUI<Microsoft.UI.Xaml.Controls.Pivot>
+    public partial class Pivot : ItemsControl, IUI<Xaml.Controls.Pivot>
     {
         static Pivot instance;
 
@@ -18921,7 +18921,7 @@ namespace CSharpMarkup.WinUI // PivotItem
         }
     }
 
-    public partial class PivotItem : ContentControl, IUI<Microsoft.UI.Xaml.Controls.PivotItem>
+    public partial class PivotItem : ContentControl, IUI<Xaml.Controls.PivotItem>
     {
         static PivotItem instance;
 
@@ -19006,7 +19006,7 @@ namespace CSharpMarkup.WinUI // ProgressBar
         }
     }
 
-    public partial class ProgressBar : RangeBase, IUI<Microsoft.UI.Xaml.Controls.ProgressBar>
+    public partial class ProgressBar : RangeBase, IUI<Xaml.Controls.ProgressBar>
     {
         static ProgressBar instance;
 
@@ -19096,7 +19096,7 @@ namespace CSharpMarkup.WinUI // ProgressBarTemplateSettings
         }
     }
 
-    public partial class ProgressBarTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.ProgressBarTemplateSettings>
+    public partial class ProgressBarTemplateSettings : DependencyObject, IUI<Xaml.Controls.ProgressBarTemplateSettings>
     {
         static ProgressBarTemplateSettings instance;
 
@@ -19235,7 +19235,7 @@ namespace CSharpMarkup.WinUI // ProgressRing
         }
     }
 
-    public partial class ProgressRing : Control, IUI<Microsoft.UI.Xaml.Controls.ProgressRing>, IDefaultBindProperty
+    public partial class ProgressRing : Control, IUI<Xaml.Controls.ProgressRing>, IDefaultBindProperty
     {
         static ProgressRing instance;
 
@@ -19344,7 +19344,7 @@ namespace CSharpMarkup.WinUI // ProgressRingTemplateSettings
         }
     }
 
-    public partial class ProgressRingTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.ProgressRingTemplateSettings>
+    public partial class ProgressRingTemplateSettings : DependencyObject, IUI<Xaml.Controls.ProgressRingTemplateSettings>
     {
         static ProgressRingTemplateSettings instance;
 
@@ -19433,7 +19433,7 @@ namespace CSharpMarkup.WinUI // RadioButton
         }
     }
 
-    public partial class RadioButton : ToggleButton, IUI<Microsoft.UI.Xaml.Controls.RadioButton>
+    public partial class RadioButton : ToggleButton, IUI<Xaml.Controls.RadioButton>
     {
         static RadioButton instance;
 
@@ -19519,7 +19519,7 @@ namespace CSharpMarkup.WinUI // RadioButtons
         }
     }
 
-    public partial class RadioButtons : Control, IUI<Microsoft.UI.Xaml.Controls.RadioButtons>
+    public partial class RadioButtons : Control, IUI<Xaml.Controls.RadioButtons>
     {
         static RadioButtons instance;
 
@@ -19641,7 +19641,7 @@ namespace CSharpMarkup.WinUI // RadioMenuFlyoutItem
         }
     }
 
-    public partial class RadioMenuFlyoutItem : ToggleMenuFlyoutItem, IUI<Microsoft.UI.Xaml.Controls.RadioMenuFlyoutItem>
+    public partial class RadioMenuFlyoutItem : ToggleMenuFlyoutItem, IUI<Xaml.Controls.RadioMenuFlyoutItem>
     {
         static RadioMenuFlyoutItem instance;
 
@@ -19744,7 +19744,7 @@ namespace CSharpMarkup.WinUI // RatingControl
         }
     }
 
-    public partial class RatingControl : Control, IUI<Microsoft.UI.Xaml.Controls.RatingControl>, IDefaultBindProperty
+    public partial class RatingControl : Control, IUI<Xaml.Controls.RatingControl>, IDefaultBindProperty
     {
         static RatingControl instance;
 
@@ -19862,7 +19862,7 @@ namespace CSharpMarkup.WinUI // RatingItemFontInfo
         }
     }
 
-    public partial class RatingItemFontInfo : RatingItemInfo, IUI<Microsoft.UI.Xaml.Controls.RatingItemFontInfo>
+    public partial class RatingItemFontInfo : RatingItemInfo, IUI<Xaml.Controls.RatingItemFontInfo>
     {
         static RatingItemFontInfo instance;
 
@@ -19961,7 +19961,7 @@ namespace CSharpMarkup.WinUI // RatingItemImageInfo
         }
     }
 
-    public partial class RatingItemImageInfo : RatingItemInfo, IUI<Microsoft.UI.Xaml.Controls.RatingItemImageInfo>
+    public partial class RatingItemImageInfo : RatingItemInfo, IUI<Xaml.Controls.RatingItemImageInfo>
     {
         static RatingItemImageInfo instance;
 
@@ -20056,7 +20056,7 @@ namespace CSharpMarkup.WinUI // RatingItemInfo
         }
     }
 
-    public partial class RatingItemInfo : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.RatingItemInfo>
+    public partial class RatingItemInfo : DependencyObject, IUI<Xaml.Controls.RatingItemInfo>
     {
         static RatingItemInfo instance;
 
@@ -20146,7 +20146,7 @@ namespace CSharpMarkup.WinUI // RefreshContainer
         }
     }
 
-    public partial class RefreshContainer : ContentControl, IUI<Microsoft.UI.Xaml.Controls.RefreshContainer>
+    public partial class RefreshContainer : ContentControl, IUI<Xaml.Controls.RefreshContainer>
     {
         static RefreshContainer instance;
 
@@ -20229,7 +20229,7 @@ namespace CSharpMarkup.WinUI // RefreshVisualizer
         }
     }
 
-    public partial class RefreshVisualizer : Control, IUI<Microsoft.UI.Xaml.Controls.RefreshVisualizer>
+    public partial class RefreshVisualizer : Control, IUI<Xaml.Controls.RefreshVisualizer>
     {
         static RefreshVisualizer instance;
 
@@ -20326,7 +20326,7 @@ namespace CSharpMarkup.WinUI // RelativePanel
         }
     }
 
-    public partial class RelativePanel : Panel, IUI<Microsoft.UI.Xaml.Controls.RelativePanel>
+    public partial class RelativePanel : Panel, IUI<Xaml.Controls.RelativePanel>
     {
         static RelativePanel instance;
 
@@ -20663,7 +20663,7 @@ namespace CSharpMarkup.WinUI // RevealListViewItemPresenter
         }
     }
 
-    public partial class RevealListViewItemPresenter : ListViewItemPresenter, IUI<Microsoft.UI.Xaml.Controls.RevealListViewItemPresenter>
+    public partial class RevealListViewItemPresenter : ListViewItemPresenter, IUI<Xaml.Controls.RevealListViewItemPresenter>
     {
         static RevealListViewItemPresenter instance;
 
@@ -20750,7 +20750,7 @@ namespace CSharpMarkup.WinUI // RichEditBox
         }
     }
 
-    public partial class RichEditBox : Control, IUI<Microsoft.UI.Xaml.Controls.RichEditBox>
+    public partial class RichEditBox : Control, IUI<Xaml.Controls.RichEditBox>
     {
         static RichEditBox instance;
 
@@ -21045,7 +21045,7 @@ namespace CSharpMarkup.WinUI // RichTextBlock
         }
     }
 
-    public partial class RichTextBlock : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.RichTextBlock>
+    public partial class RichTextBlock : FrameworkElement, IUI<Xaml.Controls.RichTextBlock>
     {
         static RichTextBlock instance;
 
@@ -21388,7 +21388,7 @@ namespace CSharpMarkup.WinUI // RichTextBlockOverflow
         }
     }
 
-    public partial class RichTextBlockOverflow : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.RichTextBlockOverflow>
+    public partial class RichTextBlockOverflow : FrameworkElement, IUI<Xaml.Controls.RichTextBlockOverflow>
     {
         static RichTextBlockOverflow instance;
 
@@ -21501,7 +21501,7 @@ namespace CSharpMarkup.WinUI // RowDefinition
         }
     }
 
-    public partial class RowDefinition : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.RowDefinition>, IDefaultBindProperty
+    public partial class RowDefinition : DependencyObject, IUI<Xaml.Controls.RowDefinition>, IDefaultBindProperty
     {
         static RowDefinition instance;
 
@@ -21622,7 +21622,7 @@ namespace CSharpMarkup.WinUI // ScrollContentPresenter
         }
     }
 
-    public partial class ScrollContentPresenter : ContentPresenter, IUI<Microsoft.UI.Xaml.Controls.ScrollContentPresenter>
+    public partial class ScrollContentPresenter : ContentPresenter, IUI<Xaml.Controls.ScrollContentPresenter>
     {
         static ScrollContentPresenter instance;
 
@@ -21766,7 +21766,7 @@ namespace CSharpMarkup.WinUI // ScrollViewer
         }
     }
 
-    public partial class ScrollViewer : ContentControl, IUI<Microsoft.UI.Xaml.Controls.ScrollViewer>
+    public partial class ScrollViewer : ContentControl, IUI<Xaml.Controls.ScrollViewer>
     {
         static ScrollViewer instance;
 
@@ -22332,7 +22332,7 @@ namespace CSharpMarkup.WinUI // SemanticZoom
         }
     }
 
-    public partial class SemanticZoom : Control, IUI<Microsoft.UI.Xaml.Controls.SemanticZoom>
+    public partial class SemanticZoom : Control, IUI<Xaml.Controls.SemanticZoom>
     {
         static SemanticZoom instance;
 
@@ -22456,7 +22456,7 @@ namespace CSharpMarkup.WinUI // Slider
         }
     }
 
-    public partial class Slider : RangeBase, IUI<Microsoft.UI.Xaml.Controls.Slider>
+    public partial class Slider : RangeBase, IUI<Xaml.Controls.Slider>
     {
         static Slider instance;
 
@@ -22624,7 +22624,7 @@ namespace CSharpMarkup.WinUI // SplitButton
         }
     }
 
-    public partial class SplitButton : ContentControl, IUI<Microsoft.UI.Xaml.Controls.SplitButton>, IDefaultBindProperty
+    public partial class SplitButton : ContentControl, IUI<Xaml.Controls.SplitButton>, IDefaultBindProperty
     {
         static SplitButton instance;
 
@@ -22732,7 +22732,7 @@ namespace CSharpMarkup.WinUI // SplitView
         }
     }
 
-    public partial class SplitView : Control, IUI<Microsoft.UI.Xaml.Controls.SplitView>
+    public partial class SplitView : Control, IUI<Xaml.Controls.SplitView>
     {
         static SplitView instance;
 
@@ -22860,7 +22860,7 @@ namespace CSharpMarkup.WinUI // StackLayout
         }
     }
 
-    public partial class StackLayout : VirtualizingLayout, IUI<Microsoft.UI.Xaml.Controls.StackLayout>
+    public partial class StackLayout : VirtualizingLayout, IUI<Xaml.Controls.StackLayout>
     {
         static StackLayout instance;
 
@@ -22958,7 +22958,7 @@ namespace CSharpMarkup.WinUI // StackPanel
         }
     }
 
-    public partial class StackPanel : Panel, IUI<Microsoft.UI.Xaml.Controls.StackPanel>
+    public partial class StackPanel : Panel, IUI<Xaml.Controls.StackPanel>
     {
         static StackPanel instance;
 
@@ -23128,7 +23128,7 @@ namespace CSharpMarkup.WinUI // SwapChainBackgroundPanel
         }
     }
 
-    public partial class SwapChainBackgroundPanel : Grid, IUI<Microsoft.UI.Xaml.Controls.SwapChainBackgroundPanel>
+    public partial class SwapChainBackgroundPanel : Grid, IUI<Xaml.Controls.SwapChainBackgroundPanel>
     {
         static SwapChainBackgroundPanel instance;
 
@@ -23208,7 +23208,7 @@ namespace CSharpMarkup.WinUI // SwapChainPanel
         }
     }
 
-    public partial class SwapChainPanel : Grid, IUI<Microsoft.UI.Xaml.Controls.SwapChainPanel>
+    public partial class SwapChainPanel : Grid, IUI<Xaml.Controls.SwapChainPanel>
     {
         static SwapChainPanel instance;
 
@@ -23298,7 +23298,7 @@ namespace CSharpMarkup.WinUI // SwipeControl
         }
     }
 
-    public partial class SwipeControl : ContentControl, IUI<Microsoft.UI.Xaml.Controls.SwipeControl>
+    public partial class SwipeControl : ContentControl, IUI<Xaml.Controls.SwipeControl>
     {
         static SwipeControl instance;
 
@@ -23390,7 +23390,7 @@ namespace CSharpMarkup.WinUI // SwipeItem
         }
     }
 
-    public partial class SwipeItem : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.SwipeItem>, IDefaultBindProperty
+    public partial class SwipeItem : DependencyObject, IUI<Xaml.Controls.SwipeItem>, IDefaultBindProperty
     {
         static SwipeItem instance;
 
@@ -23522,7 +23522,7 @@ namespace CSharpMarkup.WinUI // SwipeItems
         }
     }
 
-    public partial class SwipeItems : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.SwipeItems>
+    public partial class SwipeItems : DependencyObject, IUI<Xaml.Controls.SwipeItems>
     {
         static SwipeItems instance;
 
@@ -23612,7 +23612,7 @@ namespace CSharpMarkup.WinUI // SymbolIcon
         }
     }
 
-    public partial class SymbolIcon : IconElement, IUI<Microsoft.UI.Xaml.Controls.SymbolIcon>, IDefaultBindProperty
+    public partial class SymbolIcon : IconElement, IUI<Xaml.Controls.SymbolIcon>, IDefaultBindProperty
     {
         static SymbolIcon instance;
 
@@ -23678,7 +23678,7 @@ namespace CSharpMarkup.WinUI // SymbolIconSource
         }
     }
 
-    public partial class SymbolIconSource : IconSource, IUI<Microsoft.UI.Xaml.Controls.SymbolIconSource>, IDefaultBindProperty
+    public partial class SymbolIconSource : IconSource, IUI<Xaml.Controls.SymbolIconSource>, IDefaultBindProperty
     {
         static SymbolIconSource instance;
 
@@ -23765,7 +23765,7 @@ namespace CSharpMarkup.WinUI // TabView
         }
     }
 
-    public partial class TabView : Control, IUI<Microsoft.UI.Xaml.Controls.TabView>
+    public partial class TabView : Control, IUI<Xaml.Controls.TabView>
     {
         static TabView instance;
 
@@ -23968,7 +23968,7 @@ namespace CSharpMarkup.WinUI // TabViewItem
         }
     }
 
-    public partial class TabViewItem : ListViewItem, IUI<Microsoft.UI.Xaml.Controls.TabViewItem>
+    public partial class TabViewItem : ListViewItem, IUI<Xaml.Controls.TabViewItem>
     {
         static TabViewItem instance;
 
@@ -24057,7 +24057,7 @@ namespace CSharpMarkup.WinUI // TabViewItemTemplateSettings
         }
     }
 
-    public partial class TabViewItemTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.TabViewItemTemplateSettings>
+    public partial class TabViewItemTemplateSettings : DependencyObject, IUI<Xaml.Controls.TabViewItemTemplateSettings>
     {
         static TabViewItemTemplateSettings instance;
 
@@ -24186,7 +24186,7 @@ namespace CSharpMarkup.WinUI // TeachingTip
         }
     }
 
-    public partial class TeachingTip : ContentControl, IUI<Microsoft.UI.Xaml.Controls.TeachingTip>
+    public partial class TeachingTip : ContentControl, IUI<Xaml.Controls.TeachingTip>
     {
         static TeachingTip instance;
 
@@ -24447,7 +24447,7 @@ namespace CSharpMarkup.WinUI // TeachingTipTemplateSettings
         }
     }
 
-    public partial class TeachingTipTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.TeachingTipTemplateSettings>
+    public partial class TeachingTipTemplateSettings : DependencyObject, IUI<Xaml.Controls.TeachingTipTemplateSettings>
     {
         static TeachingTipTemplateSettings instance;
 
@@ -24623,7 +24623,7 @@ namespace CSharpMarkup.WinUI // TextBlock
         }
     }
 
-    public partial class TextBlock : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.TextBlock>, IDefaultBindProperty
+    public partial class TextBlock : FrameworkElement, IUI<Xaml.Controls.TextBlock>, IDefaultBindProperty
     {
         static TextBlock instance;
 
@@ -24943,7 +24943,7 @@ namespace CSharpMarkup.WinUI // TextBox
         }
     }
 
-    public partial class TextBox : Control, IUI<Microsoft.UI.Xaml.Controls.TextBox>, IDefaultBindProperty
+    public partial class TextBox : Control, IUI<Xaml.Controls.TextBox>, IDefaultBindProperty
     {
         static TextBox instance;
 
@@ -25221,7 +25221,7 @@ namespace CSharpMarkup.WinUI // TextCommandBarFlyout
         }
     }
 
-    public partial class TextCommandBarFlyout : CommandBarFlyout, IUI<Microsoft.UI.Xaml.Controls.TextCommandBarFlyout>
+    public partial class TextCommandBarFlyout : CommandBarFlyout, IUI<Xaml.Controls.TextCommandBarFlyout>
     {
         static TextCommandBarFlyout instance;
 
@@ -25278,7 +25278,7 @@ namespace CSharpMarkup.WinUI // TimePickedEventArgs
         }
     }
 
-    public partial class TimePickedEventArgs : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.TimePickedEventArgs>
+    public partial class TimePickedEventArgs : DependencyObject, IUI<Xaml.Controls.TimePickedEventArgs>
     {
         static TimePickedEventArgs instance;
 
@@ -25370,7 +25370,7 @@ namespace CSharpMarkup.WinUI // TimePicker
         }
     }
 
-    public partial class TimePicker : Control, IUI<Microsoft.UI.Xaml.Controls.TimePicker>, IDefaultBindProperty
+    public partial class TimePicker : Control, IUI<Xaml.Controls.TimePicker>, IDefaultBindProperty
     {
         static TimePicker instance;
 
@@ -25495,7 +25495,7 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
         }
     }
 
-    public partial class TimePickerFlyout : PickerFlyoutBase, IUI<Microsoft.UI.Xaml.Controls.TimePickerFlyout>, IDefaultBindProperty
+    public partial class TimePickerFlyout : PickerFlyoutBase, IUI<Xaml.Controls.TimePickerFlyout>, IDefaultBindProperty
     {
         static TimePickerFlyout instance;
 
@@ -25601,7 +25601,7 @@ namespace CSharpMarkup.WinUI // TimePickerFlyoutPresenter
         }
     }
 
-    public partial class TimePickerFlyoutPresenter : FlyoutPresenter, IUI<Microsoft.UI.Xaml.Controls.TimePickerFlyoutPresenter>
+    public partial class TimePickerFlyoutPresenter : FlyoutPresenter, IUI<Xaml.Controls.TimePickerFlyoutPresenter>
     {
         static TimePickerFlyoutPresenter instance;
 
@@ -25682,7 +25682,7 @@ namespace CSharpMarkup.WinUI // ToggleMenuFlyoutItem
         }
     }
 
-    public partial class ToggleMenuFlyoutItem : MenuFlyoutItem, IUI<Microsoft.UI.Xaml.Controls.ToggleMenuFlyoutItem>, IDefaultBindProperty
+    public partial class ToggleMenuFlyoutItem : MenuFlyoutItem, IUI<Xaml.Controls.ToggleMenuFlyoutItem>, IDefaultBindProperty
     {
         static ToggleMenuFlyoutItem instance;
 
@@ -25769,7 +25769,7 @@ namespace CSharpMarkup.WinUI // ToggleSplitButton
         }
     }
 
-    public partial class ToggleSplitButton : SplitButton, IUI<Microsoft.UI.Xaml.Controls.ToggleSplitButton>
+    public partial class ToggleSplitButton : SplitButton, IUI<Xaml.Controls.ToggleSplitButton>
     {
         static ToggleSplitButton instance;
 
@@ -25854,7 +25854,7 @@ namespace CSharpMarkup.WinUI // ToggleSwitch
         }
     }
 
-    public partial class ToggleSwitch : Control, IUI<Microsoft.UI.Xaml.Controls.ToggleSwitch>, IDefaultBindProperty
+    public partial class ToggleSwitch : Control, IUI<Xaml.Controls.ToggleSwitch>, IDefaultBindProperty
     {
         static ToggleSwitch instance;
 
@@ -25988,7 +25988,7 @@ namespace CSharpMarkup.WinUI // ToolTip
         }
     }
 
-    public partial class ToolTip : ContentControl, IUI<Microsoft.UI.Xaml.Controls.ToolTip>
+    public partial class ToolTip : ContentControl, IUI<Xaml.Controls.ToolTip>
     {
         static ToolTip instance;
 
@@ -26120,7 +26120,7 @@ namespace CSharpMarkup.WinUI // TreeView
         }
     }
 
-    public partial class TreeView : Control, IUI<Microsoft.UI.Xaml.Controls.TreeView>, IDefaultBindProperty
+    public partial class TreeView : Control, IUI<Xaml.Controls.TreeView>, IDefaultBindProperty
     {
         static TreeView instance;
 
@@ -26286,7 +26286,7 @@ namespace CSharpMarkup.WinUI // TreeViewItem
         }
     }
 
-    public partial class TreeViewItem : ListViewItem, IUI<Microsoft.UI.Xaml.Controls.TreeViewItem>, IDefaultBindProperty
+    public partial class TreeViewItem : ListViewItem, IUI<Xaml.Controls.TreeViewItem>, IDefaultBindProperty
     {
         static TreeViewItem instance;
 
@@ -26413,7 +26413,7 @@ namespace CSharpMarkup.WinUI // TreeViewItemTemplateSettings
         }
     }
 
-    public partial class TreeViewItemTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.TreeViewItemTemplateSettings>
+    public partial class TreeViewItemTemplateSettings : DependencyObject, IUI<Xaml.Controls.TreeViewItemTemplateSettings>
     {
         static TreeViewItemTemplateSettings instance;
 
@@ -26520,7 +26520,7 @@ namespace CSharpMarkup.WinUI // TreeViewList
         }
     }
 
-    public partial class TreeViewList : ListView, IUI<Microsoft.UI.Xaml.Controls.TreeViewList>
+    public partial class TreeViewList : ListView, IUI<Xaml.Controls.TreeViewList>
     {
         static TreeViewList instance;
 
@@ -26577,7 +26577,7 @@ namespace CSharpMarkup.WinUI // TreeViewNode
         }
     }
 
-    public partial class TreeViewNode : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.TreeViewNode>, IDefaultBindProperty
+    public partial class TreeViewNode : DependencyObject, IUI<Xaml.Controls.TreeViewNode>, IDefaultBindProperty
     {
         static TreeViewNode instance;
 
@@ -26693,7 +26693,7 @@ namespace CSharpMarkup.WinUI // TwoPaneView
         }
     }
 
-    public partial class TwoPaneView : Control, IUI<Microsoft.UI.Xaml.Controls.TwoPaneView>
+    public partial class TwoPaneView : Control, IUI<Xaml.Controls.TwoPaneView>
     {
         static TwoPaneView instance;
 
@@ -26821,7 +26821,7 @@ namespace CSharpMarkup.WinUI // UniformGridLayout
         }
     }
 
-    public partial class UniformGridLayout : VirtualizingLayout, IUI<Microsoft.UI.Xaml.Controls.UniformGridLayout>
+    public partial class UniformGridLayout : VirtualizingLayout, IUI<Xaml.Controls.UniformGridLayout>
     {
         static UniformGridLayout instance;
 
@@ -26943,7 +26943,7 @@ namespace CSharpMarkup.WinUI // UserControl
         }
     }
 
-    public partial class UserControl : ContentControl, IUI<Microsoft.UI.Xaml.Controls.UserControl>
+    public partial class UserControl : ContentControl, IUI<Xaml.Controls.UserControl>
     {
         static UserControl instance;
 
@@ -27023,7 +27023,7 @@ namespace CSharpMarkup.WinUI // VariableSizedWrapGrid
         }
     }
 
-    public partial class VariableSizedWrapGrid : Panel, IUI<Microsoft.UI.Xaml.Controls.VariableSizedWrapGrid>
+    public partial class VariableSizedWrapGrid : Panel, IUI<Xaml.Controls.VariableSizedWrapGrid>
     {
         static VariableSizedWrapGrid instance;
 
@@ -27191,7 +27191,7 @@ namespace CSharpMarkup.WinUI // Viewbox
         }
     }
 
-    public partial class Viewbox : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.Viewbox>
+    public partial class Viewbox : FrameworkElement, IUI<Xaml.Controls.Viewbox>
     {
         static Viewbox instance;
 
@@ -27251,7 +27251,7 @@ namespace CSharpMarkup.WinUI // VirtualizingLayout
         }
     }
 
-    public partial class VirtualizingLayout : Layout, IUI<Microsoft.UI.Xaml.Controls.VirtualizingLayout>
+    public partial class VirtualizingLayout : Layout, IUI<Xaml.Controls.VirtualizingLayout>
     {
         static VirtualizingLayout instance;
 
@@ -27300,7 +27300,7 @@ namespace CSharpMarkup.WinUI // VirtualizingLayoutContext
         }
     }
 
-    public partial class VirtualizingLayoutContext : LayoutContext, IUI<Microsoft.UI.Xaml.Controls.VirtualizingLayoutContext>
+    public partial class VirtualizingLayoutContext : LayoutContext, IUI<Xaml.Controls.VirtualizingLayoutContext>
     {
         static VirtualizingLayoutContext instance;
 
@@ -27380,7 +27380,7 @@ namespace CSharpMarkup.WinUI // VirtualizingPanel
         }
     }
 
-    public partial class VirtualizingPanel : Panel, IUI<Microsoft.UI.Xaml.Controls.VirtualizingPanel>
+    public partial class VirtualizingPanel : Panel, IUI<Xaml.Controls.VirtualizingPanel>
     {
         static VirtualizingPanel instance;
 
@@ -27460,7 +27460,7 @@ namespace CSharpMarkup.WinUI // VirtualizingStackPanel
         }
     }
 
-    public partial class VirtualizingStackPanel : OrientedVirtualizingPanel, IUI<Microsoft.UI.Xaml.Controls.VirtualizingStackPanel>
+    public partial class VirtualizingStackPanel : OrientedVirtualizingPanel, IUI<Xaml.Controls.VirtualizingStackPanel>
     {
         static VirtualizingStackPanel instance;
 
@@ -27560,7 +27560,7 @@ namespace CSharpMarkup.WinUI // WebView2
         }
     }
 
-    public partial class WebView2 : Control, IUI<Microsoft.UI.Xaml.Controls.WebView2>
+    public partial class WebView2 : Control, IUI<Xaml.Controls.WebView2>
     {
         static WebView2 instance;
 
@@ -27680,7 +27680,7 @@ namespace CSharpMarkup.WinUI // WrapGrid
         }
     }
 
-    public partial class WrapGrid : OrientedVirtualizingPanel, IUI<Microsoft.UI.Xaml.Controls.WrapGrid>
+    public partial class WrapGrid : OrientedVirtualizingPanel, IUI<Xaml.Controls.WrapGrid>
     {
         static WrapGrid instance;
 
@@ -27814,7 +27814,7 @@ namespace CSharpMarkup.WinUI // LayoutPanel
         }
     }
 
-    public partial class LayoutPanel : Panel, IUI<Microsoft.UI.Xaml.Controls.LayoutPanel>
+    public partial class LayoutPanel : Panel, IUI<Xaml.Controls.LayoutPanel>
     {
         static LayoutPanel instance;
 
@@ -27918,7 +27918,7 @@ namespace CSharpMarkup.WinUI // LayoutPanel
 
 namespace CSharpMarkup.WinUI // NumberBoxAutomationPeer
 {
-    public partial class NumberBoxAutomationPeer : AutomationPeer, IUI<Microsoft.UI.Xaml.Controls.NumberBoxAutomationPeer>
+    public partial class NumberBoxAutomationPeer : AutomationPeer, IUI<Xaml.Controls.NumberBoxAutomationPeer>
     {
         Xaml.Controls.NumberBoxAutomationPeer ui;
 
@@ -27986,7 +27986,7 @@ namespace CSharpMarkup.WinUI // PagerControl
         }
     }
 
-    public partial class PagerControl : Control, IUI<Microsoft.UI.Xaml.Controls.PagerControl>
+    public partial class PagerControl : Control, IUI<Xaml.Controls.PagerControl>
     {
         static PagerControl instance;
 
@@ -28176,7 +28176,7 @@ namespace CSharpMarkup.WinUI // PagerControlTemplateSettings
         }
     }
 
-    public partial class PagerControlTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.PagerControlTemplateSettings>
+    public partial class PagerControlTemplateSettings : DependencyObject, IUI<Xaml.Controls.PagerControlTemplateSettings>
     {
         static PagerControlTemplateSettings instance;
 
@@ -28238,7 +28238,7 @@ namespace CSharpMarkup.WinUI // PagerControlTemplateSettings
 
 namespace CSharpMarkup.WinUI // ProgressBarAutomationPeer
 {
-    public partial class ProgressBarAutomationPeer : AutomationPeer, IUI<Microsoft.UI.Xaml.Controls.ProgressBarAutomationPeer>
+    public partial class ProgressBarAutomationPeer : AutomationPeer, IUI<Xaml.Controls.ProgressBarAutomationPeer>
     {
         Xaml.Controls.ProgressBarAutomationPeer ui;
 
@@ -28256,7 +28256,7 @@ namespace CSharpMarkup.WinUI // ProgressBarAutomationPeer
 
 namespace CSharpMarkup.WinUI // ProgressRingAutomationPeer
 {
-    public partial class ProgressRingAutomationPeer : AutomationPeer, IUI<Microsoft.UI.Xaml.Controls.ProgressRingAutomationPeer>
+    public partial class ProgressRingAutomationPeer : AutomationPeer, IUI<Xaml.Controls.ProgressRingAutomationPeer>
     {
         Xaml.Controls.ProgressRingAutomationPeer ui;
 
@@ -28295,7 +28295,7 @@ namespace CSharpMarkup.WinUI // FlowLayout
         }
     }
 
-    public partial class FlowLayout : VirtualizingLayout, IUI<Microsoft.UI.Xaml.Controls.FlowLayout>
+    public partial class FlowLayout : VirtualizingLayout, IUI<Xaml.Controls.FlowLayout>
     {
         static FlowLayout instance;
 
@@ -28389,7 +28389,7 @@ namespace CSharpMarkup.WinUI // BackButton
         }
     }
 
-    public partial class BackButton : AppBarButton, IUI<Microsoft.UI.Xaml.Controls.BackButton>
+    public partial class BackButton : AppBarButton, IUI<Xaml.Controls.BackButton>
     {
         static BackButton instance;
 
@@ -28422,7 +28422,7 @@ namespace CSharpMarkup.WinUI // BackButton
 
 namespace CSharpMarkup.WinUI // CalendarViewBaseItem
 {
-    public partial class CalendarViewBaseItem : Control, IUI<Microsoft.UI.Xaml.Controls.CalendarViewBaseItem>
+    public partial class CalendarViewBaseItem : Control, IUI<Xaml.Controls.CalendarViewBaseItem>
     {
         Xaml.Controls.CalendarViewBaseItem ui;
 
@@ -28479,7 +28479,7 @@ namespace CSharpMarkup.WinUI // ImplicitTextBlock
         }
     }
 
-    public partial class ImplicitTextBlock : TextBlock, IUI<Microsoft.UI.Xaml.Controls.ImplicitTextBlock>
+    public partial class ImplicitTextBlock : TextBlock, IUI<Xaml.Controls.ImplicitTextBlock>
     {
         static ImplicitTextBlock instance;
 
@@ -28559,7 +28559,7 @@ namespace CSharpMarkup.WinUI // DatePickerSelector
         }
     }
 
-    public partial class DatePickerSelector : ContentControl, IUI<Microsoft.UI.Xaml.Controls.DatePickerSelector>
+    public partial class DatePickerSelector : ContentControl, IUI<Xaml.Controls.DatePickerSelector>
     {
         static DatePickerSelector instance;
 
@@ -28662,7 +28662,7 @@ namespace CSharpMarkup.WinUI // NativeDatePickerFlyout
         }
     }
 
-    public partial class NativeDatePickerFlyout : DatePickerFlyout, IUI<Microsoft.UI.Xaml.Controls.NativeDatePickerFlyout>
+    public partial class NativeDatePickerFlyout : DatePickerFlyout, IUI<Xaml.Controls.NativeDatePickerFlyout>
     {
         static NativeDatePickerFlyout instance;
 
@@ -28703,7 +28703,7 @@ namespace CSharpMarkup.WinUI // NativeDatePickerFlyout
 
 namespace CSharpMarkup.WinUI // DropDownButtonAutomationPeer
 {
-    public partial class DropDownButtonAutomationPeer : ButtonAutomationPeer, IUI<Microsoft.UI.Xaml.Controls.DropDownButtonAutomationPeer>
+    public partial class DropDownButtonAutomationPeer : ButtonAutomationPeer, IUI<Xaml.Controls.DropDownButtonAutomationPeer>
     {
         Xaml.Controls.DropDownButtonAutomationPeer ui;
 
@@ -28753,7 +28753,7 @@ namespace CSharpMarkup.WinUI // IconElement
         }
     }
 
-    public partial class IconElement : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.IconElement>
+    public partial class IconElement : FrameworkElement, IUI<Xaml.Controls.IconElement>
     {
         static IconElement instance;
 
@@ -28843,7 +28843,7 @@ namespace CSharpMarkup.WinUI // ListViewBaseScrollContentPresenter
         }
     }
 
-    public partial class ListViewBaseScrollContentPresenter : ScrollContentPresenter, IUI<Microsoft.UI.Xaml.Controls.ListViewBaseScrollContentPresenter>
+    public partial class ListViewBaseScrollContentPresenter : ScrollContentPresenter, IUI<Xaml.Controls.ListViewBaseScrollContentPresenter>
     {
         static ListViewBaseScrollContentPresenter instance;
 
@@ -28944,7 +28944,7 @@ namespace CSharpMarkup.WinUI // NativeListViewBase
         }
     }
 
-    public partial class NativeListViewBase : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.NativeListViewBase>
+    public partial class NativeListViewBase : DependencyObject, IUI<Xaml.Controls.NativeListViewBase>
     {
         static NativeListViewBase instance;
 
@@ -29199,7 +29199,7 @@ namespace CSharpMarkup.WinUI // UnsetLayout
         }
     }
 
-    public partial class UnsetLayout : VirtualizingPanelLayout, IUI<Microsoft.UI.Xaml.Controls.UnsetLayout>
+    public partial class UnsetLayout : VirtualizingPanelLayout, IUI<Xaml.Controls.UnsetLayout>
     {
         static UnsetLayout instance;
 
@@ -29230,7 +29230,7 @@ namespace CSharpMarkup.WinUI // UnsetLayout
 
 namespace CSharpMarkup.WinUI // VirtualizingPanelLayout
 {
-    public partial class VirtualizingPanelLayout : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.VirtualizingPanelLayout>
+    public partial class VirtualizingPanelLayout : DependencyObject, IUI<Xaml.Controls.VirtualizingPanelLayout>
     {
         Xaml.Controls.VirtualizingPanelLayout ui;
 
@@ -29396,7 +29396,7 @@ namespace CSharpMarkup.WinUI // Picker
         }
     }
 
-    public partial class Picker : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Picker>
+    public partial class Picker : DependencyObject, IUI<Xaml.Controls.Picker>
     {
         static Picker instance;
 
@@ -29705,7 +29705,7 @@ namespace CSharpMarkup.WinUI // PickerItem
         }
     }
 
-    public partial class PickerItem : SelectorItem, IUI<Microsoft.UI.Xaml.Controls.PickerItem>
+    public partial class PickerItem : SelectorItem, IUI<Xaml.Controls.PickerItem>
     {
         static PickerItem instance;
 
@@ -29781,7 +29781,7 @@ namespace CSharpMarkup.WinUI // NativePivotPresenter
         }
     }
 
-    public partial class NativePivotPresenter : Control, IUI<Microsoft.UI.Xaml.Controls.NativePivotPresenter>
+    public partial class NativePivotPresenter : Control, IUI<Xaml.Controls.NativePivotPresenter>
     {
         static NativePivotPresenter instance;
 
@@ -29855,7 +29855,7 @@ namespace CSharpMarkup.WinUI // Popover
         }
     }
 
-    public partial class Popover : NativePopupBase, IUI<Microsoft.UI.Xaml.Controls.Popover>
+    public partial class Popover : NativePopupBase, IUI<Xaml.Controls.Popover>
     {
         static Popover instance;
 
@@ -29942,7 +29942,7 @@ namespace CSharpMarkup.WinUI // NativePopupBase
         }
     }
 
-    public partial class NativePopupBase : Popup, IUI<Microsoft.UI.Xaml.Controls.NativePopupBase>
+    public partial class NativePopupBase : Popup, IUI<Xaml.Controls.NativePopupBase>
     {
         static NativePopupBase instance;
 
@@ -30078,7 +30078,7 @@ namespace CSharpMarkup.WinUI // MultilineTextBoxView
         }
     }
 
-    public partial class MultilineTextBoxView : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.MultilineTextBoxView>
+    public partial class MultilineTextBoxView : DependencyObject, IUI<Xaml.Controls.MultilineTextBoxView>
     {
         static MultilineTextBoxView instance;
 
@@ -30386,7 +30386,7 @@ namespace CSharpMarkup.WinUI // SinglelineTextBoxView
         }
     }
 
-    public partial class SinglelineTextBoxView : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.SinglelineTextBoxView>
+    public partial class SinglelineTextBoxView : DependencyObject, IUI<Xaml.Controls.SinglelineTextBoxView>
     {
         static SinglelineTextBoxView instance;
 
@@ -30669,7 +30669,7 @@ namespace CSharpMarkup.WinUI // TimePickerSelector
         }
     }
 
-    public partial class TimePickerSelector : ContentControl, IUI<Microsoft.UI.Xaml.Controls.TimePickerSelector>
+    public partial class TimePickerSelector : ContentControl, IUI<Xaml.Controls.TimePickerSelector>
     {
         static TimePickerSelector instance;
 
@@ -30759,7 +30759,7 @@ namespace CSharpMarkup.WinUI // WebView
         }
     }
 
-    public partial class WebView : Control, IUI<Microsoft.UI.Xaml.Controls.WebView>
+    public partial class WebView : Control, IUI<Xaml.Controls.WebView>
     {
         static WebView instance;
 
@@ -30864,7 +30864,7 @@ namespace CSharpMarkup.WinUI // WrapPanel
         }
     }
 
-    public partial class WrapPanel : Panel, IUI<Microsoft.UI.Xaml.Controls.WrapPanel>
+    public partial class WrapPanel : Panel, IUI<Xaml.Controls.WrapPanel>
     {
         static WrapPanel instance;
 
@@ -30928,7 +30928,7 @@ namespace CSharpMarkup.WinUI // MapInputEventArgs
         }
     }
 
-    public partial class MapInputEventArgs : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Maps.MapInputEventArgs>
+    public partial class MapInputEventArgs : DependencyObject, IUI<Xaml.Controls.Maps.MapInputEventArgs>
     {
         static MapInputEventArgs instance;
 
@@ -30995,7 +30995,7 @@ namespace CSharpMarkup.WinUI // AppBarButtonTemplateSettings
         }
     }
 
-    public partial class AppBarButtonTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.AppBarButtonTemplateSettings>
+    public partial class AppBarButtonTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.AppBarButtonTemplateSettings>
     {
         static AppBarButtonTemplateSettings instance;
 
@@ -31043,7 +31043,7 @@ namespace CSharpMarkup.WinUI // AppBarButtonTemplateSettings
 
 namespace CSharpMarkup.WinUI // AppBarTemplateSettings
 {
-    public partial class AppBarTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.AppBarTemplateSettings>
+    public partial class AppBarTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.AppBarTemplateSettings>
     {
         Xaml.Controls.Primitives.AppBarTemplateSettings ui;
 
@@ -31101,7 +31101,7 @@ namespace CSharpMarkup.WinUI // AppBarToggleButtonTemplateSettings
         }
     }
 
-    public partial class AppBarToggleButtonTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings>
+    public partial class AppBarToggleButtonTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings>
     {
         static AppBarToggleButtonTemplateSettings instance;
 
@@ -31149,7 +31149,7 @@ namespace CSharpMarkup.WinUI // AppBarToggleButtonTemplateSettings
 
 namespace CSharpMarkup.WinUI // ButtonBase
 {
-    public partial class ButtonBase : ContentControl, IUI<Microsoft.UI.Xaml.Controls.Primitives.ButtonBase>, IDefaultBindProperty
+    public partial class ButtonBase : ContentControl, IUI<Xaml.Controls.Primitives.ButtonBase>, IDefaultBindProperty
     {
         Xaml.Controls.Primitives.ButtonBase ui;
 
@@ -31248,7 +31248,7 @@ namespace CSharpMarkup.WinUI // CalendarPanel
         }
     }
 
-    public partial class CalendarPanel : Panel, IUI<Microsoft.UI.Xaml.Controls.Primitives.CalendarPanel>
+    public partial class CalendarPanel : Panel, IUI<Xaml.Controls.Primitives.CalendarPanel>
     {
         static CalendarPanel instance;
 
@@ -31300,7 +31300,7 @@ namespace CSharpMarkup.WinUI // CalendarViewTemplateSettings
         }
     }
 
-    public partial class CalendarViewTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.CalendarViewTemplateSettings>
+    public partial class CalendarViewTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.CalendarViewTemplateSettings>
     {
         static CalendarViewTemplateSettings instance;
 
@@ -31391,7 +31391,7 @@ namespace CSharpMarkup.WinUI // CarouselPanel
         }
     }
 
-    public partial class CarouselPanel : StackPanel, IUI<Microsoft.UI.Xaml.Controls.Primitives.CarouselPanel>
+    public partial class CarouselPanel : StackPanel, IUI<Xaml.Controls.Primitives.CarouselPanel>
     {
         static CarouselPanel instance;
 
@@ -31471,7 +31471,7 @@ namespace CSharpMarkup.WinUI // ColorPickerSlider
         }
     }
 
-    public partial class ColorPickerSlider : Slider, IUI<Microsoft.UI.Xaml.Controls.Primitives.ColorPickerSlider>
+    public partial class ColorPickerSlider : Slider, IUI<Xaml.Controls.Primitives.ColorPickerSlider>
     {
         static ColorPickerSlider instance;
 
@@ -31559,7 +31559,7 @@ namespace CSharpMarkup.WinUI // ColorSpectrum
         }
     }
 
-    public partial class ColorSpectrum : Control, IUI<Microsoft.UI.Xaml.Controls.Primitives.ColorSpectrum>, IDefaultBindProperty
+    public partial class ColorSpectrum : Control, IUI<Xaml.Controls.Primitives.ColorSpectrum>, IDefaultBindProperty
     {
         static ColorSpectrum instance;
 
@@ -31688,7 +31688,7 @@ namespace CSharpMarkup.WinUI // ColumnMajorUniformToLargestGridLayout
         }
     }
 
-    public partial class ColumnMajorUniformToLargestGridLayout : NonVirtualizingLayout, IUI<Microsoft.UI.Xaml.Controls.Primitives.ColumnMajorUniformToLargestGridLayout>
+    public partial class ColumnMajorUniformToLargestGridLayout : NonVirtualizingLayout, IUI<Xaml.Controls.Primitives.ColumnMajorUniformToLargestGridLayout>
     {
         static ColumnMajorUniformToLargestGridLayout instance;
 
@@ -31762,7 +31762,7 @@ namespace CSharpMarkup.WinUI // ComboBoxTemplateSettings
         }
     }
 
-    public partial class ComboBoxTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.ComboBoxTemplateSettings>
+    public partial class ComboBoxTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.ComboBoxTemplateSettings>
     {
         static ComboBoxTemplateSettings instance;
 
@@ -31857,7 +31857,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
         }
     }
 
-    public partial class CommandBarFlyoutCommandBar : CommandBar, IUI<Microsoft.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBar>
+    public partial class CommandBarFlyoutCommandBar : CommandBar, IUI<Xaml.Controls.Primitives.CommandBarFlyoutCommandBar>
     {
         static CommandBarFlyoutCommandBar instance;
 
@@ -31911,7 +31911,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBarTemplateSettings
         }
     }
 
-    public partial class CommandBarFlyoutCommandBarTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings>
+    public partial class CommandBarFlyoutCommandBarTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings>
     {
         static CommandBarFlyoutCommandBarTemplateSettings instance;
 
@@ -31959,7 +31959,7 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBarTemplateSettings
 
 namespace CSharpMarkup.WinUI // CommandBarTemplateSettings
 {
-    public partial class CommandBarTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.CommandBarTemplateSettings>
+    public partial class CommandBarTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.CommandBarTemplateSettings>
     {
         Xaml.Controls.Primitives.CommandBarTemplateSettings ui;
 
@@ -32015,7 +32015,7 @@ namespace CSharpMarkup.WinUI // CornerRadiusFilterConverter
         }
     }
 
-    public partial class CornerRadiusFilterConverter : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.CornerRadiusFilterConverter>
+    public partial class CornerRadiusFilterConverter : DependencyObject, IUI<Xaml.Controls.Primitives.CornerRadiusFilterConverter>
     {
         static CornerRadiusFilterConverter instance;
 
@@ -32098,7 +32098,7 @@ namespace CSharpMarkup.WinUI // CornerRadiusToThicknessConverter
         }
     }
 
-    public partial class CornerRadiusToThicknessConverter : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.CornerRadiusToThicknessConverter>
+    public partial class CornerRadiusToThicknessConverter : DependencyObject, IUI<Xaml.Controls.Primitives.CornerRadiusToThicknessConverter>
     {
         static CornerRadiusToThicknessConverter instance;
 
@@ -32160,7 +32160,7 @@ namespace CSharpMarkup.WinUI // CornerRadiusToThicknessConverter
 
 namespace CSharpMarkup.WinUI // FlyoutBase
 {
-    public partial class FlyoutBase : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.FlyoutBase>
+    public partial class FlyoutBase : DependencyObject, IUI<Xaml.Controls.Primitives.FlyoutBase>
     {
         Xaml.Controls.Primitives.FlyoutBase ui;
 
@@ -32358,7 +32358,7 @@ namespace CSharpMarkup.WinUI // GridViewItemPresenter
         }
     }
 
-    public partial class GridViewItemPresenter : ContentPresenter, IUI<Microsoft.UI.Xaml.Controls.Primitives.GridViewItemPresenter>
+    public partial class GridViewItemPresenter : ContentPresenter, IUI<Xaml.Controls.Primitives.GridViewItemPresenter>
     {
         static GridViewItemPresenter instance;
 
@@ -32771,7 +32771,7 @@ namespace CSharpMarkup.WinUI // GridViewItemTemplateSettings
         }
     }
 
-    public partial class GridViewItemTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.GridViewItemTemplateSettings>
+    public partial class GridViewItemTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.GridViewItemTemplateSettings>
     {
         static GridViewItemTemplateSettings instance;
 
@@ -32862,7 +32862,7 @@ namespace CSharpMarkup.WinUI // InfoBarPanel
         }
     }
 
-    public partial class InfoBarPanel : Panel, IUI<Microsoft.UI.Xaml.Controls.Primitives.InfoBarPanel>
+    public partial class InfoBarPanel : Panel, IUI<Xaml.Controls.Primitives.InfoBarPanel>
     {
         static InfoBarPanel instance;
 
@@ -32991,7 +32991,7 @@ namespace CSharpMarkup.WinUI // JumpListItemBackgroundConverter
         }
     }
 
-    public partial class JumpListItemBackgroundConverter : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.JumpListItemBackgroundConverter>
+    public partial class JumpListItemBackgroundConverter : DependencyObject, IUI<Xaml.Controls.Primitives.JumpListItemBackgroundConverter>
     {
         static JumpListItemBackgroundConverter instance;
 
@@ -33096,7 +33096,7 @@ namespace CSharpMarkup.WinUI // JumpListItemForegroundConverter
         }
     }
 
-    public partial class JumpListItemForegroundConverter : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.JumpListItemForegroundConverter>
+    public partial class JumpListItemForegroundConverter : DependencyObject, IUI<Xaml.Controls.Primitives.JumpListItemForegroundConverter>
     {
         static JumpListItemForegroundConverter instance;
 
@@ -33277,7 +33277,7 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         }
     }
 
-    public partial class ListViewItemPresenter : ContentPresenter, IUI<Microsoft.UI.Xaml.Controls.Primitives.ListViewItemPresenter>
+    public partial class ListViewItemPresenter : ContentPresenter, IUI<Xaml.Controls.Primitives.ListViewItemPresenter>
     {
         static ListViewItemPresenter instance;
 
@@ -34279,7 +34279,7 @@ namespace CSharpMarkup.WinUI // ListViewItemTemplateSettings
         }
     }
 
-    public partial class ListViewItemTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.ListViewItemTemplateSettings>
+    public partial class ListViewItemTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.ListViewItemTemplateSettings>
     {
         static ListViewItemTemplateSettings instance;
 
@@ -34327,7 +34327,7 @@ namespace CSharpMarkup.WinUI // ListViewItemTemplateSettings
 
 namespace CSharpMarkup.WinUI // LoopingSelector
 {
-    public partial class LoopingSelector : Control, IUI<Microsoft.UI.Xaml.Controls.Primitives.LoopingSelector>
+    public partial class LoopingSelector : Control, IUI<Xaml.Controls.Primitives.LoopingSelector>
     {
         Xaml.Controls.Primitives.LoopingSelector ui;
 
@@ -34397,7 +34397,7 @@ namespace CSharpMarkup.WinUI // LoopingSelector
 
 namespace CSharpMarkup.WinUI // LoopingSelectorItem
 {
-    public partial class LoopingSelectorItem : ContentControl, IUI<Microsoft.UI.Xaml.Controls.Primitives.LoopingSelectorItem>
+    public partial class LoopingSelectorItem : ContentControl, IUI<Xaml.Controls.Primitives.LoopingSelectorItem>
     {
         Xaml.Controls.Primitives.LoopingSelectorItem ui;
 
@@ -34415,7 +34415,7 @@ namespace CSharpMarkup.WinUI // LoopingSelectorItem
 
 namespace CSharpMarkup.WinUI // LoopingSelectorPanel
 {
-    public partial class LoopingSelectorPanel : Canvas, IUI<Microsoft.UI.Xaml.Controls.Primitives.LoopingSelectorPanel>
+    public partial class LoopingSelectorPanel : Canvas, IUI<Xaml.Controls.Primitives.LoopingSelectorPanel>
     {
         Xaml.Controls.Primitives.LoopingSelectorPanel ui;
 
@@ -34452,7 +34452,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutItemTemplateSettings
         }
     }
 
-    public partial class MenuFlyoutItemTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.MenuFlyoutItemTemplateSettings>
+    public partial class MenuFlyoutItemTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.MenuFlyoutItemTemplateSettings>
     {
         static MenuFlyoutItemTemplateSettings instance;
 
@@ -34519,7 +34519,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutPresenterTemplateSettings
         }
     }
 
-    public partial class MenuFlyoutPresenterTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.MenuFlyoutPresenterTemplateSettings>
+    public partial class MenuFlyoutPresenterTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.MenuFlyoutPresenterTemplateSettings>
     {
         static MenuFlyoutPresenterTemplateSettings instance;
 
@@ -34610,7 +34610,7 @@ namespace CSharpMarkup.WinUI // MonochromaticOverlayPresenter
         }
     }
 
-    public partial class MonochromaticOverlayPresenter : Grid, IUI<Microsoft.UI.Xaml.Controls.Primitives.MonochromaticOverlayPresenter>
+    public partial class MonochromaticOverlayPresenter : Grid, IUI<Xaml.Controls.Primitives.MonochromaticOverlayPresenter>
     {
         static MonochromaticOverlayPresenter instance;
 
@@ -34702,7 +34702,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItemPresenter
         }
     }
 
-    public partial class NavigationViewItemPresenter : ContentControl, IUI<Microsoft.UI.Xaml.Controls.Primitives.NavigationViewItemPresenter>
+    public partial class NavigationViewItemPresenter : ContentControl, IUI<Xaml.Controls.Primitives.NavigationViewItemPresenter>
     {
         static NavigationViewItemPresenter instance;
 
@@ -34775,7 +34775,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItemPresenterTemplateSettings
         }
     }
 
-    public partial class NavigationViewItemPresenterTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings>
+    public partial class NavigationViewItemPresenterTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.NavigationViewItemPresenterTemplateSettings>
     {
         static NavigationViewItemPresenterTemplateSettings instance;
 
@@ -34878,7 +34878,7 @@ namespace CSharpMarkup.WinUI // OrientedVirtualizingPanel
         }
     }
 
-    public partial class OrientedVirtualizingPanel : VirtualizingPanel, IUI<Microsoft.UI.Xaml.Controls.Primitives.OrientedVirtualizingPanel>
+    public partial class OrientedVirtualizingPanel : VirtualizingPanel, IUI<Xaml.Controls.Primitives.OrientedVirtualizingPanel>
     {
         static OrientedVirtualizingPanel instance;
 
@@ -34936,7 +34936,7 @@ namespace CSharpMarkup.WinUI // PickerFlyoutBase
         }
     }
 
-    public partial class PickerFlyoutBase : FlyoutBase, IUI<Microsoft.UI.Xaml.Controls.Primitives.PickerFlyoutBase>
+    public partial class PickerFlyoutBase : FlyoutBase, IUI<Xaml.Controls.Primitives.PickerFlyoutBase>
     {
         static PickerFlyoutBase instance;
 
@@ -35010,7 +35010,7 @@ namespace CSharpMarkup.WinUI // PivotHeaderItem
         }
     }
 
-    public partial class PivotHeaderItem : ContentControl, IUI<Microsoft.UI.Xaml.Controls.Primitives.PivotHeaderItem>
+    public partial class PivotHeaderItem : ContentControl, IUI<Xaml.Controls.Primitives.PivotHeaderItem>
     {
         static PivotHeaderItem instance;
 
@@ -35086,7 +35086,7 @@ namespace CSharpMarkup.WinUI // PivotHeaderPanel
         }
     }
 
-    public partial class PivotHeaderPanel : Canvas, IUI<Microsoft.UI.Xaml.Controls.Primitives.PivotHeaderPanel>
+    public partial class PivotHeaderPanel : Canvas, IUI<Xaml.Controls.Primitives.PivotHeaderPanel>
     {
         static PivotHeaderPanel instance;
 
@@ -35162,7 +35162,7 @@ namespace CSharpMarkup.WinUI // PivotPanel
         }
     }
 
-    public partial class PivotPanel : Panel, IUI<Microsoft.UI.Xaml.Controls.Primitives.PivotPanel>
+    public partial class PivotPanel : Panel, IUI<Xaml.Controls.Primitives.PivotPanel>
     {
         static PivotPanel instance;
 
@@ -35245,7 +35245,7 @@ namespace CSharpMarkup.WinUI // Popup
         }
     }
 
-    public partial class Popup : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.Primitives.Popup>
+    public partial class Popup : FrameworkElement, IUI<Xaml.Controls.Primitives.Popup>
     {
         static Popup instance;
 
@@ -35355,7 +35355,7 @@ namespace CSharpMarkup.WinUI // Popup
 
 namespace CSharpMarkup.WinUI // RangeBase
 {
-    public partial class RangeBase : Control, IUI<Microsoft.UI.Xaml.Controls.Primitives.RangeBase>, IDefaultBindProperty
+    public partial class RangeBase : Control, IUI<Xaml.Controls.Primitives.RangeBase>, IDefaultBindProperty
     {
         Xaml.Controls.Primitives.RangeBase ui;
 
@@ -35456,7 +35456,7 @@ namespace CSharpMarkup.WinUI // RepeatButton
         }
     }
 
-    public partial class RepeatButton : ButtonBase, IUI<Microsoft.UI.Xaml.Controls.Primitives.RepeatButton>
+    public partial class RepeatButton : ButtonBase, IUI<Xaml.Controls.Primitives.RepeatButton>
     {
         static RepeatButton instance;
 
@@ -35540,7 +35540,7 @@ namespace CSharpMarkup.WinUI // ScrollBar
         }
     }
 
-    public partial class ScrollBar : RangeBase, IUI<Microsoft.UI.Xaml.Controls.Primitives.ScrollBar>
+    public partial class ScrollBar : RangeBase, IUI<Xaml.Controls.Primitives.ScrollBar>
     {
         static ScrollBar instance;
 
@@ -35640,7 +35640,7 @@ namespace CSharpMarkup.WinUI // Selector
         }
     }
 
-    public partial class Selector : ItemsControl, IUI<Microsoft.UI.Xaml.Controls.Primitives.Selector>
+    public partial class Selector : ItemsControl, IUI<Xaml.Controls.Primitives.Selector>
     {
         static Selector instance;
 
@@ -35760,7 +35760,7 @@ namespace CSharpMarkup.WinUI // SelectorItem
         }
     }
 
-    public partial class SelectorItem : ContentControl, IUI<Microsoft.UI.Xaml.Controls.Primitives.SelectorItem>, IDefaultBindProperty
+    public partial class SelectorItem : ContentControl, IUI<Xaml.Controls.Primitives.SelectorItem>, IDefaultBindProperty
     {
         static SelectorItem instance;
 
@@ -35806,7 +35806,7 @@ namespace CSharpMarkup.WinUI // SelectorItem
 
 namespace CSharpMarkup.WinUI // SplitViewTemplateSettings
 {
-    public partial class SplitViewTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.SplitViewTemplateSettings>
+    public partial class SplitViewTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.SplitViewTemplateSettings>
     {
         Xaml.Controls.Primitives.SplitViewTemplateSettings ui;
 
@@ -35884,7 +35884,7 @@ namespace CSharpMarkup.WinUI // TabViewListView
         }
     }
 
-    public partial class TabViewListView : ListView, IUI<Microsoft.UI.Xaml.Controls.Primitives.TabViewListView>
+    public partial class TabViewListView : ListView, IUI<Xaml.Controls.Primitives.TabViewListView>
     {
         static TabViewListView instance;
 
@@ -35949,7 +35949,7 @@ namespace CSharpMarkup.WinUI // Thumb
         }
     }
 
-    public partial class Thumb : Control, IUI<Microsoft.UI.Xaml.Controls.Primitives.Thumb>
+    public partial class Thumb : Control, IUI<Xaml.Controls.Primitives.Thumb>
     {
         static Thumb instance;
 
@@ -36024,7 +36024,7 @@ namespace CSharpMarkup.WinUI // TickBar
         }
     }
 
-    public partial class TickBar : FrameworkElement, IUI<Microsoft.UI.Xaml.Controls.Primitives.TickBar>
+    public partial class TickBar : FrameworkElement, IUI<Xaml.Controls.Primitives.TickBar>
     {
         static TickBar instance;
 
@@ -36120,7 +36120,7 @@ namespace CSharpMarkup.WinUI // ToggleButton
         }
     }
 
-    public partial class ToggleButton : ButtonBase, IUI<Microsoft.UI.Xaml.Controls.Primitives.ToggleButton>, IDefaultBindProperty
+    public partial class ToggleButton : ButtonBase, IUI<Xaml.Controls.Primitives.ToggleButton>, IDefaultBindProperty
     {
         static ToggleButton instance;
 
@@ -36192,7 +36192,7 @@ namespace CSharpMarkup.WinUI // ToggleSwitchTemplateSettings
         }
     }
 
-    public partial class ToggleSwitchTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.ToggleSwitchTemplateSettings>
+    public partial class ToggleSwitchTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.ToggleSwitchTemplateSettings>
     {
         static ToggleSwitchTemplateSettings instance;
 
@@ -36261,7 +36261,7 @@ namespace CSharpMarkup.WinUI // ToolTipTemplateSettings
         }
     }
 
-    public partial class ToolTipTemplateSettings : DependencyObject, IUI<Microsoft.UI.Xaml.Controls.Primitives.ToolTipTemplateSettings>
+    public partial class ToolTipTemplateSettings : DependencyObject, IUI<Xaml.Controls.Primitives.ToolTipTemplateSettings>
     {
         static ToolTipTemplateSettings instance;
 
@@ -36309,7 +36309,7 @@ namespace CSharpMarkup.WinUI // ToolTipTemplateSettings
 
 namespace CSharpMarkup.WinUI // ColorPickerSliderAutomationPeer
 {
-    public partial class ColorPickerSliderAutomationPeer : AutomationPeer, IUI<Microsoft.UI.Xaml.Controls.Primitives.ColorPickerSliderAutomationPeer>
+    public partial class ColorPickerSliderAutomationPeer : AutomationPeer, IUI<Xaml.Controls.Primitives.ColorPickerSliderAutomationPeer>
     {
         Xaml.Controls.Primitives.ColorPickerSliderAutomationPeer ui;
 
@@ -36327,7 +36327,7 @@ namespace CSharpMarkup.WinUI // ColorPickerSliderAutomationPeer
 
 namespace CSharpMarkup.WinUI // ColorSpectrumAutomationPeer
 {
-    public partial class ColorSpectrumAutomationPeer : AutomationPeer, IUI<Microsoft.UI.Xaml.Controls.Primitives.ColorSpectrumAutomationPeer>
+    public partial class ColorSpectrumAutomationPeer : AutomationPeer, IUI<Xaml.Controls.Primitives.ColorSpectrumAutomationPeer>
     {
         Xaml.Controls.Primitives.ColorSpectrumAutomationPeer ui;
 
@@ -36374,7 +36374,7 @@ namespace CSharpMarkup.WinUI // Binding
         }
     }
 
-    public partial class Binding : BindingBase, IUI<Microsoft.UI.Xaml.Data.Binding>
+    public partial class Binding : BindingBase, IUI<Xaml.Data.Binding>
     {
         static Binding instance;
 
@@ -36463,7 +36463,7 @@ namespace CSharpMarkup.WinUI // BindingBase
         }
     }
 
-    public partial class BindingBase : DependencyObject, IUI<Microsoft.UI.Xaml.Data.BindingBase>
+    public partial class BindingBase : DependencyObject, IUI<Xaml.Data.BindingBase>
     {
         static BindingBase instance;
 
@@ -36533,7 +36533,7 @@ namespace CSharpMarkup.WinUI // CollectionViewSource
         }
     }
 
-    public partial class CollectionViewSource : DependencyObject, IUI<Microsoft.UI.Xaml.Data.CollectionViewSource>
+    public partial class CollectionViewSource : DependencyObject, IUI<Xaml.Data.CollectionViewSource>
     {
         static CollectionViewSource instance;
 
@@ -36606,7 +36606,7 @@ namespace CSharpMarkup.WinUI // CollectionViewSource
 
 namespace CSharpMarkup.WinUI // TemplateBinding
 {
-    public partial class TemplateBinding : Binding, IUI<Microsoft.UI.Xaml.Data.TemplateBinding>
+    public partial class TemplateBinding : Binding, IUI<Xaml.Data.TemplateBinding>
     {
         Xaml.Data.TemplateBinding ui;
 
@@ -36624,7 +36624,7 @@ namespace CSharpMarkup.WinUI // TemplateBinding
 
 namespace CSharpMarkup.WinUI // Block
 {
-    public partial class Block : TextElement, IUI<Microsoft.UI.Xaml.Documents.Block>
+    public partial class Block : TextElement, IUI<Xaml.Documents.Block>
     {
         Xaml.Documents.Block ui;
 
@@ -36716,7 +36716,7 @@ namespace CSharpMarkup.WinUI // BlockCollection
         }
     }
 
-    public partial class BlockCollection : DependencyObject, IUI<Microsoft.UI.Xaml.Documents.BlockCollection>
+    public partial class BlockCollection : DependencyObject, IUI<Xaml.Documents.BlockCollection>
     {
         static BlockCollection instance;
 
@@ -36776,7 +36776,7 @@ namespace CSharpMarkup.WinUI // Bold
         }
     }
 
-    public partial class Bold : Span, IUI<Microsoft.UI.Xaml.Documents.Bold>
+    public partial class Bold : Span, IUI<Xaml.Documents.Bold>
     {
         static Bold instance;
 
@@ -36854,7 +36854,7 @@ namespace CSharpMarkup.WinUI // Glyphs
         }
     }
 
-    public partial class Glyphs : FrameworkElement, IUI<Microsoft.UI.Xaml.Documents.Glyphs>
+    public partial class Glyphs : FrameworkElement, IUI<Xaml.Documents.Glyphs>
     {
         static Glyphs instance;
 
@@ -37017,7 +37017,7 @@ namespace CSharpMarkup.WinUI // Hyperlink
         }
     }
 
-    public partial class Hyperlink : Span, IUI<Microsoft.UI.Xaml.Documents.Hyperlink>
+    public partial class Hyperlink : Span, IUI<Xaml.Documents.Hyperlink>
     {
         static Hyperlink instance;
 
@@ -37149,7 +37149,7 @@ namespace CSharpMarkup.WinUI // Hyperlink
 
 namespace CSharpMarkup.WinUI // Inline
 {
-    public partial class Inline : TextElement, IUI<Microsoft.UI.Xaml.Documents.Inline>
+    public partial class Inline : TextElement, IUI<Xaml.Documents.Inline>
     {
         Xaml.Documents.Inline ui;
 
@@ -37187,7 +37187,7 @@ namespace CSharpMarkup.WinUI // InlineUIContainer
         }
     }
 
-    public partial class InlineUIContainer : Inline, IUI<Microsoft.UI.Xaml.Documents.InlineUIContainer>
+    public partial class InlineUIContainer : Inline, IUI<Xaml.Documents.InlineUIContainer>
     {
         static InlineUIContainer instance;
 
@@ -37256,7 +37256,7 @@ namespace CSharpMarkup.WinUI // Italic
         }
     }
 
-    public partial class Italic : Span, IUI<Microsoft.UI.Xaml.Documents.Italic>
+    public partial class Italic : Span, IUI<Xaml.Documents.Italic>
     {
         static Italic instance;
 
@@ -37299,7 +37299,7 @@ namespace CSharpMarkup.WinUI // LineBreak
         }
     }
 
-    public partial class LineBreak : Inline, IUI<Microsoft.UI.Xaml.Documents.LineBreak>
+    public partial class LineBreak : Inline, IUI<Xaml.Documents.LineBreak>
     {
         static LineBreak instance;
 
@@ -37361,7 +37361,7 @@ namespace CSharpMarkup.WinUI // Paragraph
         }
     }
 
-    public partial class Paragraph : Block, IUI<Microsoft.UI.Xaml.Documents.Paragraph>
+    public partial class Paragraph : Block, IUI<Xaml.Documents.Paragraph>
     {
         static Paragraph instance;
 
@@ -37429,7 +37429,7 @@ namespace CSharpMarkup.WinUI // Run
         }
     }
 
-    public partial class Run : Inline, IUI<Microsoft.UI.Xaml.Documents.Run>
+    public partial class Run : Inline, IUI<Xaml.Documents.Run>
     {
         static Run instance;
 
@@ -37507,7 +37507,7 @@ namespace CSharpMarkup.WinUI // Span
         }
     }
 
-    public partial class Span : Inline, IUI<Microsoft.UI.Xaml.Documents.Span>
+    public partial class Span : Inline, IUI<Xaml.Documents.Span>
     {
         static Span instance;
 
@@ -37540,7 +37540,7 @@ namespace CSharpMarkup.WinUI // Span
 
 namespace CSharpMarkup.WinUI // TextElement
 {
-    public partial class TextElement : DependencyObject, IUI<Microsoft.UI.Xaml.Documents.TextElement>
+    public partial class TextElement : DependencyObject, IUI<Xaml.Documents.TextElement>
     {
         Xaml.Documents.TextElement ui;
 
@@ -37761,7 +37761,7 @@ namespace CSharpMarkup.WinUI // TextHighlighterBase
         }
     }
 
-    public partial class TextHighlighterBase : DependencyObject, IUI<Microsoft.UI.Xaml.Documents.TextHighlighterBase>
+    public partial class TextHighlighterBase : DependencyObject, IUI<Xaml.Documents.TextHighlighterBase>
     {
         static TextHighlighterBase instance;
 
@@ -37838,7 +37838,7 @@ namespace CSharpMarkup.WinUI // Underline
         }
     }
 
-    public partial class Underline : Span, IUI<Microsoft.UI.Xaml.Documents.Underline>
+    public partial class Underline : Span, IUI<Xaml.Documents.Underline>
     {
         static Underline instance;
 
@@ -37890,7 +37890,7 @@ namespace CSharpMarkup.WinUI // InputScope
         }
     }
 
-    public partial class InputScope : DependencyObject, IUI<Microsoft.UI.Xaml.Input.InputScope>
+    public partial class InputScope : DependencyObject, IUI<Xaml.Input.InputScope>
     {
         static InputScope instance;
 
@@ -37965,7 +37965,7 @@ namespace CSharpMarkup.WinUI // InputScopeName
         }
     }
 
-    public partial class InputScopeName : DependencyObject, IUI<Microsoft.UI.Xaml.Input.InputScopeName>
+    public partial class InputScopeName : DependencyObject, IUI<Xaml.Input.InputScopeName>
     {
         static InputScopeName instance;
 
@@ -38039,7 +38039,7 @@ namespace CSharpMarkup.WinUI // KeyboardAccelerator
         }
     }
 
-    public partial class KeyboardAccelerator : DependencyObject, IUI<Microsoft.UI.Xaml.Input.KeyboardAccelerator>
+    public partial class KeyboardAccelerator : DependencyObject, IUI<Xaml.Input.KeyboardAccelerator>
     {
         static KeyboardAccelerator instance;
 
@@ -38132,7 +38132,7 @@ namespace CSharpMarkup.WinUI // StandardUICommand
         }
     }
 
-    public partial class StandardUICommand : XamlUICommand, IUI<Microsoft.UI.Xaml.Input.StandardUICommand>
+    public partial class StandardUICommand : XamlUICommand, IUI<Xaml.Input.StandardUICommand>
     {
         static StandardUICommand instance;
 
@@ -38197,7 +38197,7 @@ namespace CSharpMarkup.WinUI // XamlUICommand
         }
     }
 
-    public partial class XamlUICommand : DependencyObject, IUI<Microsoft.UI.Xaml.Input.XamlUICommand>
+    public partial class XamlUICommand : DependencyObject, IUI<Xaml.Input.XamlUICommand>
     {
         static XamlUICommand instance;
 
@@ -38307,7 +38307,7 @@ namespace CSharpMarkup.WinUI // AcrylicBrush
         }
     }
 
-    public partial class AcrylicBrush : XamlCompositionBrushBase, IUI<Microsoft.UI.Xaml.Media.AcrylicBrush>
+    public partial class AcrylicBrush : XamlCompositionBrushBase, IUI<Xaml.Media.AcrylicBrush>
     {
         static AcrylicBrush instance;
 
@@ -38407,7 +38407,7 @@ namespace CSharpMarkup.WinUI // ArcSegment
         }
     }
 
-    public partial class ArcSegment : PathSegment, IUI<Microsoft.UI.Xaml.Media.ArcSegment>
+    public partial class ArcSegment : PathSegment, IUI<Xaml.Media.ArcSegment>
     {
         static ArcSegment instance;
 
@@ -38496,7 +38496,7 @@ namespace CSharpMarkup.WinUI // BezierSegment
         }
     }
 
-    public partial class BezierSegment : PathSegment, IUI<Microsoft.UI.Xaml.Media.BezierSegment>
+    public partial class BezierSegment : PathSegment, IUI<Xaml.Media.BezierSegment>
     {
         static BezierSegment instance;
 
@@ -38562,7 +38562,7 @@ namespace CSharpMarkup.WinUI // BitmapCache
         }
     }
 
-    public partial class BitmapCache : CacheMode, IUI<Microsoft.UI.Xaml.Media.BitmapCache>
+    public partial class BitmapCache : CacheMode, IUI<Xaml.Media.BitmapCache>
     {
         static BitmapCache instance;
 
@@ -38593,7 +38593,7 @@ namespace CSharpMarkup.WinUI // BitmapCache
 
 namespace CSharpMarkup.WinUI // Brush
 {
-    public partial class Brush : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Brush>
+    public partial class Brush : DependencyObject, IUI<Xaml.Media.Brush>
     {
         Xaml.Media.Brush ui;
 
@@ -38651,7 +38651,7 @@ namespace CSharpMarkup.WinUI // Brush
 
 namespace CSharpMarkup.WinUI // CacheMode
 {
-    public partial class CacheMode : DependencyObject, IUI<Microsoft.UI.Xaml.Media.CacheMode>
+    public partial class CacheMode : DependencyObject, IUI<Xaml.Media.CacheMode>
     {
         Xaml.Media.CacheMode ui;
 
@@ -38712,7 +38712,7 @@ namespace CSharpMarkup.WinUI // CompositeTransform
         }
     }
 
-    public partial class CompositeTransform : Transform, IUI<Microsoft.UI.Xaml.Media.CompositeTransform>
+    public partial class CompositeTransform : Transform, IUI<Xaml.Media.CompositeTransform>
     {
         static CompositeTransform instance;
 
@@ -38831,7 +38831,7 @@ namespace CSharpMarkup.WinUI // EllipseGeometry
         }
     }
 
-    public partial class EllipseGeometry : Geometry, IUI<Microsoft.UI.Xaml.Media.EllipseGeometry>
+    public partial class EllipseGeometry : Geometry, IUI<Xaml.Media.EllipseGeometry>
     {
         static EllipseGeometry instance;
 
@@ -38892,7 +38892,7 @@ namespace CSharpMarkup.WinUI // EllipseGeometry
 
 namespace CSharpMarkup.WinUI // GeneralTransform
 {
-    public partial class GeneralTransform : DependencyObject, IUI<Microsoft.UI.Xaml.Media.GeneralTransform>
+    public partial class GeneralTransform : DependencyObject, IUI<Xaml.Media.GeneralTransform>
     {
         Xaml.Media.GeneralTransform ui;
 
@@ -38927,7 +38927,7 @@ namespace CSharpMarkup.WinUI // GeneralTransform
 
 namespace CSharpMarkup.WinUI // Geometry
 {
-    public partial class Geometry : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Geometry>
+    public partial class Geometry : DependencyObject, IUI<Xaml.Media.Geometry>
     {
         Xaml.Media.Geometry ui;
 
@@ -38979,7 +38979,7 @@ namespace CSharpMarkup.WinUI // GeometryCollection
         }
     }
 
-    public partial class GeometryCollection : DependencyObject, IUI<Microsoft.UI.Xaml.Media.GeometryCollection>
+    public partial class GeometryCollection : DependencyObject, IUI<Xaml.Media.GeometryCollection>
     {
         static GeometryCollection instance;
 
@@ -39039,7 +39039,7 @@ namespace CSharpMarkup.WinUI // GeometryGroup
         }
     }
 
-    public partial class GeometryGroup : Geometry, IUI<Microsoft.UI.Xaml.Media.GeometryGroup>
+    public partial class GeometryGroup : Geometry, IUI<Xaml.Media.GeometryGroup>
     {
         static GeometryGroup instance;
 
@@ -39084,7 +39084,7 @@ namespace CSharpMarkup.WinUI // GeometryGroup
 
 namespace CSharpMarkup.WinUI // GradientBrush
 {
-    public partial class GradientBrush : Brush, IUI<Microsoft.UI.Xaml.Media.GradientBrush>
+    public partial class GradientBrush : Brush, IUI<Xaml.Media.GradientBrush>
     {
         Xaml.Media.GradientBrush ui;
 
@@ -39160,7 +39160,7 @@ namespace CSharpMarkup.WinUI // GradientStop
         }
     }
 
-    public partial class GradientStop : DependencyObject, IUI<Microsoft.UI.Xaml.Media.GradientStop>
+    public partial class GradientStop : DependencyObject, IUI<Xaml.Media.GradientStop>
     {
         static GradientStop instance;
 
@@ -39232,7 +39232,7 @@ namespace CSharpMarkup.WinUI // GradientStopCollection
         }
     }
 
-    public partial class GradientStopCollection : DependencyObject, IUI<Microsoft.UI.Xaml.Media.GradientStopCollection>
+    public partial class GradientStopCollection : DependencyObject, IUI<Xaml.Media.GradientStopCollection>
     {
         static GradientStopCollection instance;
 
@@ -39286,7 +39286,7 @@ namespace CSharpMarkup.WinUI // ImageBrush
         }
     }
 
-    public partial class ImageBrush : Brush, IUI<Microsoft.UI.Xaml.Media.ImageBrush>, IDefaultBindProperty
+    public partial class ImageBrush : Brush, IUI<Xaml.Media.ImageBrush>, IDefaultBindProperty
     {
         static ImageBrush instance;
 
@@ -39351,7 +39351,7 @@ namespace CSharpMarkup.WinUI // ImageBrush
 
 namespace CSharpMarkup.WinUI // ImageSource
 {
-    public partial class ImageSource : DependencyObject, IUI<Microsoft.UI.Xaml.Media.ImageSource>
+    public partial class ImageSource : DependencyObject, IUI<Xaml.Media.ImageSource>
     {
         Xaml.Media.ImageSource ui;
 
@@ -39425,7 +39425,7 @@ namespace CSharpMarkup.WinUI // LinearGradientBrush
         }
     }
 
-    public partial class LinearGradientBrush : GradientBrush, IUI<Microsoft.UI.Xaml.Media.LinearGradientBrush>
+    public partial class LinearGradientBrush : GradientBrush, IUI<Xaml.Media.LinearGradientBrush>
     {
         static LinearGradientBrush instance;
 
@@ -39494,7 +39494,7 @@ namespace CSharpMarkup.WinUI // LineGeometry
         }
     }
 
-    public partial class LineGeometry : Geometry, IUI<Microsoft.UI.Xaml.Media.LineGeometry>
+    public partial class LineGeometry : Geometry, IUI<Xaml.Media.LineGeometry>
     {
         static LineGeometry instance;
 
@@ -39564,7 +39564,7 @@ namespace CSharpMarkup.WinUI // LineSegment
         }
     }
 
-    public partial class LineSegment : PathSegment, IUI<Microsoft.UI.Xaml.Media.LineSegment>
+    public partial class LineSegment : PathSegment, IUI<Xaml.Media.LineSegment>
     {
         static LineSegment instance;
 
@@ -39625,7 +39625,7 @@ namespace CSharpMarkup.WinUI // Matrix3DProjection
         }
     }
 
-    public partial class Matrix3DProjection : Projection, IUI<Microsoft.UI.Xaml.Media.Matrix3DProjection>
+    public partial class Matrix3DProjection : Projection, IUI<Xaml.Media.Matrix3DProjection>
     {
         static Matrix3DProjection instance;
 
@@ -39686,7 +39686,7 @@ namespace CSharpMarkup.WinUI // MatrixTransform
         }
     }
 
-    public partial class MatrixTransform : Transform, IUI<Microsoft.UI.Xaml.Media.MatrixTransform>
+    public partial class MatrixTransform : Transform, IUI<Xaml.Media.MatrixTransform>
     {
         static MatrixTransform instance;
 
@@ -39756,7 +39756,7 @@ namespace CSharpMarkup.WinUI // PathFigure
         }
     }
 
-    public partial class PathFigure : DependencyObject, IUI<Microsoft.UI.Xaml.Media.PathFigure>
+    public partial class PathFigure : DependencyObject, IUI<Xaml.Media.PathFigure>
     {
         static PathFigure instance;
 
@@ -39839,7 +39839,7 @@ namespace CSharpMarkup.WinUI // PathFigureCollection
         }
     }
 
-    public partial class PathFigureCollection : DependencyObject, IUI<Microsoft.UI.Xaml.Media.PathFigureCollection>
+    public partial class PathFigureCollection : DependencyObject, IUI<Xaml.Media.PathFigureCollection>
     {
         static PathFigureCollection instance;
 
@@ -39899,7 +39899,7 @@ namespace CSharpMarkup.WinUI // PathGeometry
         }
     }
 
-    public partial class PathGeometry : Geometry, IUI<Microsoft.UI.Xaml.Media.PathGeometry>
+    public partial class PathGeometry : Geometry, IUI<Xaml.Media.PathGeometry>
     {
         static PathGeometry instance;
 
@@ -39963,7 +39963,7 @@ namespace CSharpMarkup.WinUI // PathSegment
         }
     }
 
-    public partial class PathSegment : DependencyObject, IUI<Microsoft.UI.Xaml.Media.PathSegment>
+    public partial class PathSegment : DependencyObject, IUI<Xaml.Media.PathSegment>
     {
         static PathSegment instance;
 
@@ -40021,7 +40021,7 @@ namespace CSharpMarkup.WinUI // PathSegmentCollection
         }
     }
 
-    public partial class PathSegmentCollection : DependencyObject, IUI<Microsoft.UI.Xaml.Media.PathSegmentCollection>
+    public partial class PathSegmentCollection : DependencyObject, IUI<Xaml.Media.PathSegmentCollection>
     {
         static PathSegmentCollection instance;
 
@@ -40083,7 +40083,7 @@ namespace CSharpMarkup.WinUI // PlaneProjection
         }
     }
 
-    public partial class PlaneProjection : Projection, IUI<Microsoft.UI.Xaml.Media.PlaneProjection>
+    public partial class PlaneProjection : Projection, IUI<Xaml.Media.PlaneProjection>
     {
         static PlaneProjection instance;
 
@@ -40248,7 +40248,7 @@ namespace CSharpMarkup.WinUI // PolyBezierSegment
         }
     }
 
-    public partial class PolyBezierSegment : PathSegment, IUI<Microsoft.UI.Xaml.Media.PolyBezierSegment>
+    public partial class PolyBezierSegment : PathSegment, IUI<Xaml.Media.PolyBezierSegment>
     {
         static PolyBezierSegment instance;
 
@@ -40307,7 +40307,7 @@ namespace CSharpMarkup.WinUI // PolyLineSegment
         }
     }
 
-    public partial class PolyLineSegment : PathSegment, IUI<Microsoft.UI.Xaml.Media.PolyLineSegment>
+    public partial class PolyLineSegment : PathSegment, IUI<Xaml.Media.PolyLineSegment>
     {
         static PolyLineSegment instance;
 
@@ -40366,7 +40366,7 @@ namespace CSharpMarkup.WinUI // PolyQuadraticBezierSegment
         }
     }
 
-    public partial class PolyQuadraticBezierSegment : PathSegment, IUI<Microsoft.UI.Xaml.Media.PolyQuadraticBezierSegment>
+    public partial class PolyQuadraticBezierSegment : PathSegment, IUI<Xaml.Media.PolyQuadraticBezierSegment>
     {
         static PolyQuadraticBezierSegment instance;
 
@@ -40407,7 +40407,7 @@ namespace CSharpMarkup.WinUI // PolyQuadraticBezierSegment
 
 namespace CSharpMarkup.WinUI // Projection
 {
-    public partial class Projection : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Projection>
+    public partial class Projection : DependencyObject, IUI<Xaml.Media.Projection>
     {
         Xaml.Media.Projection ui;
 
@@ -40461,7 +40461,7 @@ namespace CSharpMarkup.WinUI // QuadraticBezierSegment
         }
     }
 
-    public partial class QuadraticBezierSegment : PathSegment, IUI<Microsoft.UI.Xaml.Media.QuadraticBezierSegment>
+    public partial class QuadraticBezierSegment : PathSegment, IUI<Xaml.Media.QuadraticBezierSegment>
     {
         static QuadraticBezierSegment instance;
 
@@ -40538,7 +40538,7 @@ namespace CSharpMarkup.WinUI // RadialGradientBrush
         }
     }
 
-    public partial class RadialGradientBrush : GradientBrush, IUI<Microsoft.UI.Xaml.Media.RadialGradientBrush>
+    public partial class RadialGradientBrush : GradientBrush, IUI<Xaml.Media.RadialGradientBrush>
     {
         static RadialGradientBrush instance;
 
@@ -40627,7 +40627,7 @@ namespace CSharpMarkup.WinUI // RectangleGeometry
         }
     }
 
-    public partial class RectangleGeometry : Geometry, IUI<Microsoft.UI.Xaml.Media.RectangleGeometry>
+    public partial class RectangleGeometry : Geometry, IUI<Xaml.Media.RectangleGeometry>
     {
         static RectangleGeometry instance;
 
@@ -40688,7 +40688,7 @@ namespace CSharpMarkup.WinUI // RotateTransform
         }
     }
 
-    public partial class RotateTransform : Transform, IUI<Microsoft.UI.Xaml.Media.RotateTransform>
+    public partial class RotateTransform : Transform, IUI<Xaml.Media.RotateTransform>
     {
         static RotateTransform instance;
 
@@ -40764,7 +40764,7 @@ namespace CSharpMarkup.WinUI // ScaleTransform
         }
     }
 
-    public partial class ScaleTransform : Transform, IUI<Microsoft.UI.Xaml.Media.ScaleTransform>
+    public partial class ScaleTransform : Transform, IUI<Xaml.Media.ScaleTransform>
     {
         static ScaleTransform instance;
 
@@ -40845,7 +40845,7 @@ namespace CSharpMarkup.WinUI // Shadow
         }
     }
 
-    public partial class Shadow : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Shadow>
+    public partial class Shadow : DependencyObject, IUI<Xaml.Media.Shadow>
     {
         static Shadow instance;
 
@@ -40914,7 +40914,7 @@ namespace CSharpMarkup.WinUI // SkewTransform
         }
     }
 
-    public partial class SkewTransform : Transform, IUI<Microsoft.UI.Xaml.Media.SkewTransform>
+    public partial class SkewTransform : Transform, IUI<Xaml.Media.SkewTransform>
     {
         static SkewTransform instance;
 
@@ -40995,7 +40995,7 @@ namespace CSharpMarkup.WinUI // SolidColorBrush
         }
     }
 
-    public partial class SolidColorBrush : Brush, IUI<Microsoft.UI.Xaml.Media.SolidColorBrush>, IDefaultBindProperty
+    public partial class SolidColorBrush : Brush, IUI<Xaml.Media.SolidColorBrush>, IDefaultBindProperty
     {
         static SolidColorBrush instance;
 
@@ -41049,7 +41049,7 @@ namespace CSharpMarkup.WinUI // ThemeShadow
         }
     }
 
-    public partial class ThemeShadow : Shadow, IUI<Microsoft.UI.Xaml.Media.ThemeShadow>
+    public partial class ThemeShadow : Shadow, IUI<Xaml.Media.ThemeShadow>
     {
         static ThemeShadow instance;
 
@@ -41080,7 +41080,7 @@ namespace CSharpMarkup.WinUI // ThemeShadow
 
 namespace CSharpMarkup.WinUI // TileBrush
 {
-    public partial class TileBrush : Brush, IUI<Microsoft.UI.Xaml.Media.TileBrush>
+    public partial class TileBrush : Brush, IUI<Xaml.Media.TileBrush>
     {
         Xaml.Media.TileBrush ui;
 
@@ -41128,7 +41128,7 @@ namespace CSharpMarkup.WinUI // TileBrush
 
 namespace CSharpMarkup.WinUI // Transform
 {
-    public partial class Transform : GeneralTransform, IUI<Microsoft.UI.Xaml.Media.Transform>
+    public partial class Transform : GeneralTransform, IUI<Xaml.Media.Transform>
     {
         Xaml.Media.Transform ui;
 
@@ -41175,7 +41175,7 @@ namespace CSharpMarkup.WinUI // TransformGroup
         }
     }
 
-    public partial class TransformGroup : Transform, IUI<Microsoft.UI.Xaml.Media.TransformGroup>
+    public partial class TransformGroup : Transform, IUI<Xaml.Media.TransformGroup>
     {
         static TransformGroup instance;
 
@@ -41232,7 +41232,7 @@ namespace CSharpMarkup.WinUI // TranslateTransform
         }
     }
 
-    public partial class TranslateTransform : Transform, IUI<Microsoft.UI.Xaml.Media.TranslateTransform>
+    public partial class TranslateTransform : Transform, IUI<Xaml.Media.TranslateTransform>
     {
         static TranslateTransform instance;
 
@@ -41280,7 +41280,7 @@ namespace CSharpMarkup.WinUI // TranslateTransform
 
 namespace CSharpMarkup.WinUI // XamlCompositionBrushBase
 {
-    public partial class XamlCompositionBrushBase : Brush, IUI<Microsoft.UI.Xaml.Media.XamlCompositionBrushBase>
+    public partial class XamlCompositionBrushBase : Brush, IUI<Xaml.Media.XamlCompositionBrushBase>
     {
         Xaml.Media.XamlCompositionBrushBase ui;
 
@@ -41334,7 +41334,7 @@ namespace CSharpMarkup.WinUI // XamlLight
         }
     }
 
-    public partial class XamlLight : DependencyObject, IUI<Microsoft.UI.Xaml.Media.XamlLight>
+    public partial class XamlLight : DependencyObject, IUI<Xaml.Media.XamlLight>
     {
         static XamlLight instance;
 
@@ -41396,7 +41396,7 @@ namespace CSharpMarkup.WinUI // RevealBackgroundBrush
         }
     }
 
-    public partial class RevealBackgroundBrush : RevealBrush, IUI<Microsoft.UI.Xaml.Media.RevealBackgroundBrush>
+    public partial class RevealBackgroundBrush : RevealBrush, IUI<Xaml.Media.RevealBackgroundBrush>
     {
         static RevealBackgroundBrush instance;
 
@@ -41437,7 +41437,7 @@ namespace CSharpMarkup.WinUI // RevealBorderBrush
         }
     }
 
-    public partial class RevealBorderBrush : RevealBrush, IUI<Microsoft.UI.Xaml.Media.RevealBorderBrush>
+    public partial class RevealBorderBrush : RevealBrush, IUI<Xaml.Media.RevealBorderBrush>
     {
         static RevealBorderBrush instance;
 
@@ -41486,7 +41486,7 @@ namespace CSharpMarkup.WinUI // RevealBrush
         }
     }
 
-    public partial class RevealBrush : XamlCompositionBrushBase, IUI<Microsoft.UI.Xaml.Media.RevealBrush>
+    public partial class RevealBrush : XamlCompositionBrushBase, IUI<Xaml.Media.RevealBrush>
     {
         static RevealBrush instance;
 
@@ -41540,7 +41540,7 @@ namespace CSharpMarkup.WinUI // AddDeleteThemeTransition
         }
     }
 
-    public partial class AddDeleteThemeTransition : Transition, IUI<Microsoft.UI.Xaml.Media.Animation.AddDeleteThemeTransition>
+    public partial class AddDeleteThemeTransition : Transition, IUI<Xaml.Media.Animation.AddDeleteThemeTransition>
     {
         static AddDeleteThemeTransition instance;
 
@@ -41589,7 +41589,7 @@ namespace CSharpMarkup.WinUI // BackEase
         }
     }
 
-    public partial class BackEase : EasingFunctionBase, IUI<Microsoft.UI.Xaml.Media.Animation.BackEase>
+    public partial class BackEase : EasingFunctionBase, IUI<Xaml.Media.Animation.BackEase>
     {
         static BackEase instance;
 
@@ -41650,7 +41650,7 @@ namespace CSharpMarkup.WinUI // BeginStoryboard
         }
     }
 
-    public partial class BeginStoryboard : TriggerAction, IUI<Microsoft.UI.Xaml.Media.Animation.BeginStoryboard>
+    public partial class BeginStoryboard : TriggerAction, IUI<Xaml.Media.Animation.BeginStoryboard>
     {
         static BeginStoryboard instance;
 
@@ -41712,7 +41712,7 @@ namespace CSharpMarkup.WinUI // BounceEase
         }
     }
 
-    public partial class BounceEase : EasingFunctionBase, IUI<Microsoft.UI.Xaml.Media.Animation.BounceEase>
+    public partial class BounceEase : EasingFunctionBase, IUI<Xaml.Media.Animation.BounceEase>
     {
         static BounceEase instance;
 
@@ -41774,7 +41774,7 @@ namespace CSharpMarkup.WinUI // CircleEase
         }
     }
 
-    public partial class CircleEase : EasingFunctionBase, IUI<Microsoft.UI.Xaml.Media.Animation.CircleEase>
+    public partial class CircleEase : EasingFunctionBase, IUI<Xaml.Media.Animation.CircleEase>
     {
         static CircleEase instance;
 
@@ -41829,7 +41829,7 @@ namespace CSharpMarkup.WinUI // ColorAnimation
         }
     }
 
-    public partial class ColorAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.ColorAnimation>
+    public partial class ColorAnimation : Timeline, IUI<Xaml.Media.Animation.ColorAnimation>
     {
         static ColorAnimation instance;
 
@@ -41929,7 +41929,7 @@ namespace CSharpMarkup.WinUI // ColorAnimationUsingKeyFrames
         }
     }
 
-    public partial class ColorAnimationUsingKeyFrames : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.ColorAnimationUsingKeyFrames>
+    public partial class ColorAnimationUsingKeyFrames : Timeline, IUI<Xaml.Media.Animation.ColorAnimationUsingKeyFrames>
     {
         static ColorAnimationUsingKeyFrames instance;
 
@@ -41974,7 +41974,7 @@ namespace CSharpMarkup.WinUI // ColorAnimationUsingKeyFrames
 
 namespace CSharpMarkup.WinUI // ColorKeyFrame
 {
-    public partial class ColorKeyFrame : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.ColorKeyFrame>
+    public partial class ColorKeyFrame : DependencyObject, IUI<Xaml.Media.Animation.ColorKeyFrame>
     {
         Xaml.Media.Animation.ColorKeyFrame ui;
 
@@ -42042,7 +42042,7 @@ namespace CSharpMarkup.WinUI // ColorKeyFrameCollection
         }
     }
 
-    public partial class ColorKeyFrameCollection : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.ColorKeyFrameCollection>
+    public partial class ColorKeyFrameCollection : DependencyObject, IUI<Xaml.Media.Animation.ColorKeyFrameCollection>
     {
         static ColorKeyFrameCollection instance;
 
@@ -42100,7 +42100,7 @@ namespace CSharpMarkup.WinUI // CommonNavigationTransitionInfo
         }
     }
 
-    public partial class CommonNavigationTransitionInfo : NavigationTransitionInfo, IUI<Microsoft.UI.Xaml.Media.Animation.CommonNavigationTransitionInfo>
+    public partial class CommonNavigationTransitionInfo : NavigationTransitionInfo, IUI<Xaml.Media.Animation.CommonNavigationTransitionInfo>
     {
         static CommonNavigationTransitionInfo instance;
 
@@ -42170,7 +42170,7 @@ namespace CSharpMarkup.WinUI // ContentThemeTransition
         }
     }
 
-    public partial class ContentThemeTransition : Transition, IUI<Microsoft.UI.Xaml.Media.Animation.ContentThemeTransition>
+    public partial class ContentThemeTransition : Transition, IUI<Xaml.Media.Animation.ContentThemeTransition>
     {
         static ContentThemeTransition instance;
 
@@ -42242,7 +42242,7 @@ namespace CSharpMarkup.WinUI // ContinuumNavigationTransitionInfo
         }
     }
 
-    public partial class ContinuumNavigationTransitionInfo : NavigationTransitionInfo, IUI<Microsoft.UI.Xaml.Media.Animation.ContinuumNavigationTransitionInfo>
+    public partial class ContinuumNavigationTransitionInfo : NavigationTransitionInfo, IUI<Xaml.Media.Animation.ContinuumNavigationTransitionInfo>
     {
         static ContinuumNavigationTransitionInfo instance;
 
@@ -42361,7 +42361,7 @@ namespace CSharpMarkup.WinUI // CubicEase
         }
     }
 
-    public partial class CubicEase : EasingFunctionBase, IUI<Microsoft.UI.Xaml.Media.Animation.CubicEase>
+    public partial class CubicEase : EasingFunctionBase, IUI<Xaml.Media.Animation.CubicEase>
     {
         static CubicEase instance;
 
@@ -42402,7 +42402,7 @@ namespace CSharpMarkup.WinUI // DiscreteColorKeyFrame
         }
     }
 
-    public partial class DiscreteColorKeyFrame : ColorKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.DiscreteColorKeyFrame>
+    public partial class DiscreteColorKeyFrame : ColorKeyFrame, IUI<Xaml.Media.Animation.DiscreteColorKeyFrame>
     {
         static DiscreteColorKeyFrame instance;
 
@@ -42457,7 +42457,7 @@ namespace CSharpMarkup.WinUI // DiscreteDoubleKeyFrame
         }
     }
 
-    public partial class DiscreteDoubleKeyFrame : DoubleKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.DiscreteDoubleKeyFrame>
+    public partial class DiscreteDoubleKeyFrame : DoubleKeyFrame, IUI<Xaml.Media.Animation.DiscreteDoubleKeyFrame>
     {
         static DiscreteDoubleKeyFrame instance;
 
@@ -42498,7 +42498,7 @@ namespace CSharpMarkup.WinUI // DiscreteObjectKeyFrame
         }
     }
 
-    public partial class DiscreteObjectKeyFrame : ObjectKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.DiscreteObjectKeyFrame>
+    public partial class DiscreteObjectKeyFrame : ObjectKeyFrame, IUI<Xaml.Media.Animation.DiscreteObjectKeyFrame>
     {
         static DiscreteObjectKeyFrame instance;
 
@@ -42540,7 +42540,7 @@ namespace CSharpMarkup.WinUI // DiscretePointKeyFrame
         }
     }
 
-    public partial class DiscretePointKeyFrame : PointKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.DiscretePointKeyFrame>
+    public partial class DiscretePointKeyFrame : PointKeyFrame, IUI<Xaml.Media.Animation.DiscretePointKeyFrame>
     {
         static DiscretePointKeyFrame instance;
 
@@ -42595,7 +42595,7 @@ namespace CSharpMarkup.WinUI // DoubleAnimation
         }
     }
 
-    public partial class DoubleAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.DoubleAnimation>
+    public partial class DoubleAnimation : Timeline, IUI<Xaml.Media.Animation.DoubleAnimation>
     {
         static DoubleAnimation instance;
 
@@ -42693,7 +42693,7 @@ namespace CSharpMarkup.WinUI // DoubleAnimationUsingKeyFrames
         }
     }
 
-    public partial class DoubleAnimationUsingKeyFrames : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.DoubleAnimationUsingKeyFrames>
+    public partial class DoubleAnimationUsingKeyFrames : Timeline, IUI<Xaml.Media.Animation.DoubleAnimationUsingKeyFrames>
     {
         static DoubleAnimationUsingKeyFrames instance;
 
@@ -42734,7 +42734,7 @@ namespace CSharpMarkup.WinUI // DoubleAnimationUsingKeyFrames
 
 namespace CSharpMarkup.WinUI // DoubleKeyFrame
 {
-    public partial class DoubleKeyFrame : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.DoubleKeyFrame>
+    public partial class DoubleKeyFrame : DependencyObject, IUI<Xaml.Media.Animation.DoubleKeyFrame>
     {
         Xaml.Media.Animation.DoubleKeyFrame ui;
 
@@ -42793,7 +42793,7 @@ namespace CSharpMarkup.WinUI // DoubleKeyFrameCollection
         }
     }
 
-    public partial class DoubleKeyFrameCollection : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.DoubleKeyFrameCollection>
+    public partial class DoubleKeyFrameCollection : DependencyObject, IUI<Xaml.Media.Animation.DoubleKeyFrameCollection>
     {
         static DoubleKeyFrameCollection instance;
 
@@ -42846,7 +42846,7 @@ namespace CSharpMarkup.WinUI // DragItemThemeAnimation
         }
     }
 
-    public partial class DragItemThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.DragItemThemeAnimation>
+    public partial class DragItemThemeAnimation : Timeline, IUI<Xaml.Media.Animation.DragItemThemeAnimation>
     {
         static DragItemThemeAnimation instance;
 
@@ -42913,7 +42913,7 @@ namespace CSharpMarkup.WinUI // DragOverThemeAnimation
         }
     }
 
-    public partial class DragOverThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.DragOverThemeAnimation>
+    public partial class DragOverThemeAnimation : Timeline, IUI<Xaml.Media.Animation.DragOverThemeAnimation>
     {
         static DragOverThemeAnimation instance;
 
@@ -42984,7 +42984,7 @@ namespace CSharpMarkup.WinUI // DrillInNavigationTransitionInfo
         }
     }
 
-    public partial class DrillInNavigationTransitionInfo : NavigationTransitionInfo, IUI<Microsoft.UI.Xaml.Media.Animation.DrillInNavigationTransitionInfo>
+    public partial class DrillInNavigationTransitionInfo : NavigationTransitionInfo, IUI<Xaml.Media.Animation.DrillInNavigationTransitionInfo>
     {
         static DrillInNavigationTransitionInfo instance;
 
@@ -43040,7 +43040,7 @@ namespace CSharpMarkup.WinUI // DrillInThemeAnimation
         }
     }
 
-    public partial class DrillInThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.DrillInThemeAnimation>
+    public partial class DrillInThemeAnimation : Timeline, IUI<Xaml.Media.Animation.DrillInThemeAnimation>
     {
         static DrillInThemeAnimation instance;
 
@@ -43135,7 +43135,7 @@ namespace CSharpMarkup.WinUI // DrillOutThemeAnimation
         }
     }
 
-    public partial class DrillOutThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.DrillOutThemeAnimation>
+    public partial class DrillOutThemeAnimation : Timeline, IUI<Xaml.Media.Animation.DrillOutThemeAnimation>
     {
         static DrillOutThemeAnimation instance;
 
@@ -43227,7 +43227,7 @@ namespace CSharpMarkup.WinUI // DropTargetItemThemeAnimation
         }
     }
 
-    public partial class DropTargetItemThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.DropTargetItemThemeAnimation>
+    public partial class DropTargetItemThemeAnimation : Timeline, IUI<Xaml.Media.Animation.DropTargetItemThemeAnimation>
     {
         static DropTargetItemThemeAnimation instance;
 
@@ -43288,7 +43288,7 @@ namespace CSharpMarkup.WinUI // EasingColorKeyFrame
         }
     }
 
-    public partial class EasingColorKeyFrame : ColorKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.EasingColorKeyFrame>
+    public partial class EasingColorKeyFrame : ColorKeyFrame, IUI<Xaml.Media.Animation.EasingColorKeyFrame>
     {
         static EasingColorKeyFrame instance;
 
@@ -43368,7 +43368,7 @@ namespace CSharpMarkup.WinUI // EasingDoubleKeyFrame
         }
     }
 
-    public partial class EasingDoubleKeyFrame : DoubleKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.EasingDoubleKeyFrame>
+    public partial class EasingDoubleKeyFrame : DoubleKeyFrame, IUI<Xaml.Media.Animation.EasingDoubleKeyFrame>
     {
         static EasingDoubleKeyFrame instance;
 
@@ -43429,7 +43429,7 @@ namespace CSharpMarkup.WinUI // EasingFunctionBase
         }
     }
 
-    public partial class EasingFunctionBase : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.EasingFunctionBase>
+    public partial class EasingFunctionBase : DependencyObject, IUI<Xaml.Media.Animation.EasingFunctionBase>
     {
         static EasingFunctionBase instance;
 
@@ -43504,7 +43504,7 @@ namespace CSharpMarkup.WinUI // EasingPointKeyFrame
         }
     }
 
-    public partial class EasingPointKeyFrame : PointKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.EasingPointKeyFrame>
+    public partial class EasingPointKeyFrame : PointKeyFrame, IUI<Xaml.Media.Animation.EasingPointKeyFrame>
     {
         static EasingPointKeyFrame instance;
 
@@ -43567,7 +43567,7 @@ namespace CSharpMarkup.WinUI // EdgeUIThemeTransition
         }
     }
 
-    public partial class EdgeUIThemeTransition : Transition, IUI<Microsoft.UI.Xaml.Media.Animation.EdgeUIThemeTransition>
+    public partial class EdgeUIThemeTransition : Transition, IUI<Xaml.Media.Animation.EdgeUIThemeTransition>
     {
         static EdgeUIThemeTransition instance;
 
@@ -43629,7 +43629,7 @@ namespace CSharpMarkup.WinUI // ElasticEase
         }
     }
 
-    public partial class ElasticEase : EasingFunctionBase, IUI<Microsoft.UI.Xaml.Media.Animation.ElasticEase>
+    public partial class ElasticEase : EasingFunctionBase, IUI<Xaml.Media.Animation.ElasticEase>
     {
         static ElasticEase instance;
 
@@ -43691,7 +43691,7 @@ namespace CSharpMarkup.WinUI // EntranceNavigationTransitionInfo
         }
     }
 
-    public partial class EntranceNavigationTransitionInfo : NavigationTransitionInfo, IUI<Microsoft.UI.Xaml.Media.Animation.EntranceNavigationTransitionInfo>
+    public partial class EntranceNavigationTransitionInfo : NavigationTransitionInfo, IUI<Xaml.Media.Animation.EntranceNavigationTransitionInfo>
     {
         static EntranceNavigationTransitionInfo instance;
 
@@ -43753,7 +43753,7 @@ namespace CSharpMarkup.WinUI // EntranceThemeTransition
         }
     }
 
-    public partial class EntranceThemeTransition : Transition, IUI<Microsoft.UI.Xaml.Media.Animation.EntranceThemeTransition>
+    public partial class EntranceThemeTransition : Transition, IUI<Xaml.Media.Animation.EntranceThemeTransition>
     {
         static EntranceThemeTransition instance;
 
@@ -43826,7 +43826,7 @@ namespace CSharpMarkup.WinUI // ExponentialEase
         }
     }
 
-    public partial class ExponentialEase : EasingFunctionBase, IUI<Microsoft.UI.Xaml.Media.Animation.ExponentialEase>
+    public partial class ExponentialEase : EasingFunctionBase, IUI<Xaml.Media.Animation.ExponentialEase>
     {
         static ExponentialEase instance;
 
@@ -43887,7 +43887,7 @@ namespace CSharpMarkup.WinUI // FadeInThemeAnimation
         }
     }
 
-    public partial class FadeInThemeAnimation : DoubleAnimation, IUI<Microsoft.UI.Xaml.Media.Animation.FadeInThemeAnimation>
+    public partial class FadeInThemeAnimation : DoubleAnimation, IUI<Xaml.Media.Animation.FadeInThemeAnimation>
     {
         static FadeInThemeAnimation instance;
 
@@ -43948,7 +43948,7 @@ namespace CSharpMarkup.WinUI // FadeOutThemeAnimation
         }
     }
 
-    public partial class FadeOutThemeAnimation : DoubleAnimation, IUI<Microsoft.UI.Xaml.Media.Animation.FadeOutThemeAnimation>
+    public partial class FadeOutThemeAnimation : DoubleAnimation, IUI<Xaml.Media.Animation.FadeOutThemeAnimation>
     {
         static FadeOutThemeAnimation instance;
 
@@ -44024,7 +44024,7 @@ namespace CSharpMarkup.WinUI // KeySpline
         }
     }
 
-    public partial class KeySpline : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.KeySpline>
+    public partial class KeySpline : DependencyObject, IUI<Xaml.Media.Animation.KeySpline>
     {
         static KeySpline instance;
 
@@ -44088,7 +44088,7 @@ namespace CSharpMarkup.WinUI // LinearColorKeyFrame
         }
     }
 
-    public partial class LinearColorKeyFrame : ColorKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.LinearColorKeyFrame>
+    public partial class LinearColorKeyFrame : ColorKeyFrame, IUI<Xaml.Media.Animation.LinearColorKeyFrame>
     {
         static LinearColorKeyFrame instance;
 
@@ -44143,7 +44143,7 @@ namespace CSharpMarkup.WinUI // LinearDoubleKeyFrame
         }
     }
 
-    public partial class LinearDoubleKeyFrame : DoubleKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.LinearDoubleKeyFrame>
+    public partial class LinearDoubleKeyFrame : DoubleKeyFrame, IUI<Xaml.Media.Animation.LinearDoubleKeyFrame>
     {
         static LinearDoubleKeyFrame instance;
 
@@ -44185,7 +44185,7 @@ namespace CSharpMarkup.WinUI // LinearPointKeyFrame
         }
     }
 
-    public partial class LinearPointKeyFrame : PointKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.LinearPointKeyFrame>
+    public partial class LinearPointKeyFrame : PointKeyFrame, IUI<Xaml.Media.Animation.LinearPointKeyFrame>
     {
         static LinearPointKeyFrame instance;
 
@@ -44236,7 +44236,7 @@ namespace CSharpMarkup.WinUI // NavigationThemeTransition
         }
     }
 
-    public partial class NavigationThemeTransition : Transition, IUI<Microsoft.UI.Xaml.Media.Animation.NavigationThemeTransition>
+    public partial class NavigationThemeTransition : Transition, IUI<Xaml.Media.Animation.NavigationThemeTransition>
     {
         static NavigationThemeTransition instance;
 
@@ -44279,7 +44279,7 @@ namespace CSharpMarkup.WinUI // NavigationThemeTransition
 
 namespace CSharpMarkup.WinUI // NavigationTransitionInfo
 {
-    public partial class NavigationTransitionInfo : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.NavigationTransitionInfo>
+    public partial class NavigationTransitionInfo : DependencyObject, IUI<Xaml.Media.Animation.NavigationTransitionInfo>
     {
         Xaml.Media.Animation.NavigationTransitionInfo ui;
 
@@ -44343,7 +44343,7 @@ namespace CSharpMarkup.WinUI // ObjectAnimationUsingKeyFrames
         }
     }
 
-    public partial class ObjectAnimationUsingKeyFrames : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames>
+    public partial class ObjectAnimationUsingKeyFrames : Timeline, IUI<Xaml.Media.Animation.ObjectAnimationUsingKeyFrames>
     {
         static ObjectAnimationUsingKeyFrames instance;
 
@@ -44407,7 +44407,7 @@ namespace CSharpMarkup.WinUI // ObjectKeyFrame
         }
     }
 
-    public partial class ObjectKeyFrame : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.ObjectKeyFrame>
+    public partial class ObjectKeyFrame : DependencyObject, IUI<Xaml.Media.Animation.ObjectKeyFrame>
     {
         static ObjectKeyFrame instance;
 
@@ -44469,7 +44469,7 @@ namespace CSharpMarkup.WinUI // ObjectKeyFrame
 
 namespace CSharpMarkup.WinUI // ObjectKeyFrameCollection
 {
-    public partial class ObjectKeyFrameCollection : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.ObjectKeyFrameCollection>
+    public partial class ObjectKeyFrameCollection : DependencyObject, IUI<Xaml.Media.Animation.ObjectKeyFrameCollection>
     {
         Xaml.Media.Animation.ObjectKeyFrameCollection ui;
 
@@ -44507,7 +44507,7 @@ namespace CSharpMarkup.WinUI // PaneThemeTransition
         }
     }
 
-    public partial class PaneThemeTransition : Transition, IUI<Microsoft.UI.Xaml.Media.Animation.PaneThemeTransition>
+    public partial class PaneThemeTransition : Transition, IUI<Xaml.Media.Animation.PaneThemeTransition>
     {
         static PaneThemeTransition instance;
 
@@ -44576,7 +44576,7 @@ namespace CSharpMarkup.WinUI // PointAnimation
         }
     }
 
-    public partial class PointAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.PointAnimation>
+    public partial class PointAnimation : Timeline, IUI<Xaml.Media.Animation.PointAnimation>
     {
         static PointAnimation instance;
 
@@ -44677,7 +44677,7 @@ namespace CSharpMarkup.WinUI // PointAnimationUsingKeyFrames
         }
     }
 
-    public partial class PointAnimationUsingKeyFrames : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.PointAnimationUsingKeyFrames>
+    public partial class PointAnimationUsingKeyFrames : Timeline, IUI<Xaml.Media.Animation.PointAnimationUsingKeyFrames>
     {
         static PointAnimationUsingKeyFrames instance;
 
@@ -44742,7 +44742,7 @@ namespace CSharpMarkup.WinUI // PointerDownThemeAnimation
         }
     }
 
-    public partial class PointerDownThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.PointerDownThemeAnimation>
+    public partial class PointerDownThemeAnimation : Timeline, IUI<Xaml.Media.Animation.PointerDownThemeAnimation>
     {
         static PointerDownThemeAnimation instance;
 
@@ -44807,7 +44807,7 @@ namespace CSharpMarkup.WinUI // PointerUpThemeAnimation
         }
     }
 
-    public partial class PointerUpThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.PointerUpThemeAnimation>
+    public partial class PointerUpThemeAnimation : Timeline, IUI<Xaml.Media.Animation.PointerUpThemeAnimation>
     {
         static PointerUpThemeAnimation instance;
 
@@ -44850,7 +44850,7 @@ namespace CSharpMarkup.WinUI // PointerUpThemeAnimation
 
 namespace CSharpMarkup.WinUI // PointKeyFrame
 {
-    public partial class PointKeyFrame : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.PointKeyFrame>
+    public partial class PointKeyFrame : DependencyObject, IUI<Xaml.Media.Animation.PointKeyFrame>
     {
         Xaml.Media.Animation.PointKeyFrame ui;
 
@@ -44927,7 +44927,7 @@ namespace CSharpMarkup.WinUI // PopInThemeAnimation
         }
     }
 
-    public partial class PopInThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.PopInThemeAnimation>
+    public partial class PopInThemeAnimation : Timeline, IUI<Xaml.Media.Animation.PopInThemeAnimation>
     {
         static PopInThemeAnimation instance;
 
@@ -45010,7 +45010,7 @@ namespace CSharpMarkup.WinUI // PopOutThemeAnimation
         }
     }
 
-    public partial class PopOutThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.PopOutThemeAnimation>
+    public partial class PopOutThemeAnimation : Timeline, IUI<Xaml.Media.Animation.PopOutThemeAnimation>
     {
         static PopOutThemeAnimation instance;
 
@@ -45074,7 +45074,7 @@ namespace CSharpMarkup.WinUI // PopupThemeTransition
         }
     }
 
-    public partial class PopupThemeTransition : Transition, IUI<Microsoft.UI.Xaml.Media.Animation.PopupThemeTransition>
+    public partial class PopupThemeTransition : Transition, IUI<Xaml.Media.Animation.PopupThemeTransition>
     {
         static PopupThemeTransition instance;
 
@@ -45144,7 +45144,7 @@ namespace CSharpMarkup.WinUI // PowerEase
         }
     }
 
-    public partial class PowerEase : EasingFunctionBase, IUI<Microsoft.UI.Xaml.Media.Animation.PowerEase>
+    public partial class PowerEase : EasingFunctionBase, IUI<Xaml.Media.Animation.PowerEase>
     {
         static PowerEase instance;
 
@@ -45195,7 +45195,7 @@ namespace CSharpMarkup.WinUI // QuadraticEase
         }
     }
 
-    public partial class QuadraticEase : EasingFunctionBase, IUI<Microsoft.UI.Xaml.Media.Animation.QuadraticEase>
+    public partial class QuadraticEase : EasingFunctionBase, IUI<Xaml.Media.Animation.QuadraticEase>
     {
         static QuadraticEase instance;
 
@@ -45236,7 +45236,7 @@ namespace CSharpMarkup.WinUI // QuarticEase
         }
     }
 
-    public partial class QuarticEase : EasingFunctionBase, IUI<Microsoft.UI.Xaml.Media.Animation.QuarticEase>
+    public partial class QuarticEase : EasingFunctionBase, IUI<Xaml.Media.Animation.QuarticEase>
     {
         static QuarticEase instance;
 
@@ -45277,7 +45277,7 @@ namespace CSharpMarkup.WinUI // QuinticEase
         }
     }
 
-    public partial class QuinticEase : EasingFunctionBase, IUI<Microsoft.UI.Xaml.Media.Animation.QuinticEase>
+    public partial class QuinticEase : EasingFunctionBase, IUI<Xaml.Media.Animation.QuinticEase>
     {
         static QuinticEase instance;
 
@@ -45319,7 +45319,7 @@ namespace CSharpMarkup.WinUI // ReorderThemeTransition
         }
     }
 
-    public partial class ReorderThemeTransition : Transition, IUI<Microsoft.UI.Xaml.Media.Animation.ReorderThemeTransition>
+    public partial class ReorderThemeTransition : Transition, IUI<Xaml.Media.Animation.ReorderThemeTransition>
     {
         static ReorderThemeTransition instance;
 
@@ -45374,7 +45374,7 @@ namespace CSharpMarkup.WinUI // RepositionThemeAnimation
         }
     }
 
-    public partial class RepositionThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.RepositionThemeAnimation>
+    public partial class RepositionThemeAnimation : Timeline, IUI<Xaml.Media.Animation.RepositionThemeAnimation>
     {
         static RepositionThemeAnimation instance;
 
@@ -45453,7 +45453,7 @@ namespace CSharpMarkup.WinUI // RepositionThemeTransition
         }
     }
 
-    public partial class RepositionThemeTransition : Transition, IUI<Microsoft.UI.Xaml.Media.Animation.RepositionThemeTransition>
+    public partial class RepositionThemeTransition : Transition, IUI<Xaml.Media.Animation.RepositionThemeTransition>
     {
         static RepositionThemeTransition instance;
 
@@ -45506,7 +45506,7 @@ namespace CSharpMarkup.WinUI // SineEase
         }
     }
 
-    public partial class SineEase : EasingFunctionBase, IUI<Microsoft.UI.Xaml.Media.Animation.SineEase>
+    public partial class SineEase : EasingFunctionBase, IUI<Xaml.Media.Animation.SineEase>
     {
         static SineEase instance;
 
@@ -45555,7 +45555,7 @@ namespace CSharpMarkup.WinUI // SlideNavigationTransitionInfo
         }
     }
 
-    public partial class SlideNavigationTransitionInfo : NavigationTransitionInfo, IUI<Microsoft.UI.Xaml.Media.Animation.SlideNavigationTransitionInfo>
+    public partial class SlideNavigationTransitionInfo : NavigationTransitionInfo, IUI<Xaml.Media.Animation.SlideNavigationTransitionInfo>
     {
         static SlideNavigationTransitionInfo instance;
 
@@ -45616,7 +45616,7 @@ namespace CSharpMarkup.WinUI // SplineColorKeyFrame
         }
     }
 
-    public partial class SplineColorKeyFrame : ColorKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.SplineColorKeyFrame>
+    public partial class SplineColorKeyFrame : ColorKeyFrame, IUI<Xaml.Media.Animation.SplineColorKeyFrame>
     {
         static SplineColorKeyFrame instance;
 
@@ -45698,7 +45698,7 @@ namespace CSharpMarkup.WinUI // SplineDoubleKeyFrame
         }
     }
 
-    public partial class SplineDoubleKeyFrame : DoubleKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.SplineDoubleKeyFrame>
+    public partial class SplineDoubleKeyFrame : DoubleKeyFrame, IUI<Xaml.Media.Animation.SplineDoubleKeyFrame>
     {
         static SplineDoubleKeyFrame instance;
 
@@ -45759,7 +45759,7 @@ namespace CSharpMarkup.WinUI // SplinePointKeyFrame
         }
     }
 
-    public partial class SplinePointKeyFrame : PointKeyFrame, IUI<Microsoft.UI.Xaml.Media.Animation.SplinePointKeyFrame>
+    public partial class SplinePointKeyFrame : PointKeyFrame, IUI<Xaml.Media.Animation.SplinePointKeyFrame>
     {
         static SplinePointKeyFrame instance;
 
@@ -45834,7 +45834,7 @@ namespace CSharpMarkup.WinUI // SplitCloseThemeAnimation
         }
     }
 
-    public partial class SplitCloseThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.SplitCloseThemeAnimation>
+    public partial class SplitCloseThemeAnimation : Timeline, IUI<Xaml.Media.Animation.SplitCloseThemeAnimation>
     {
         static SplitCloseThemeAnimation instance;
 
@@ -45999,7 +45999,7 @@ namespace CSharpMarkup.WinUI // SplitOpenThemeAnimation
         }
     }
 
-    public partial class SplitOpenThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.SplitOpenThemeAnimation>
+    public partial class SplitOpenThemeAnimation : Timeline, IUI<Xaml.Media.Animation.SplitOpenThemeAnimation>
     {
         static SplitOpenThemeAnimation instance;
 
@@ -46161,7 +46161,7 @@ namespace CSharpMarkup.WinUI // Storyboard
         }
     }
 
-    public partial class Storyboard : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.Storyboard>
+    public partial class Storyboard : Timeline, IUI<Xaml.Media.Animation.Storyboard>
     {
         static Storyboard instance;
 
@@ -46237,7 +46237,7 @@ namespace CSharpMarkup.WinUI // SuppressNavigationTransitionInfo
         }
     }
 
-    public partial class SuppressNavigationTransitionInfo : NavigationTransitionInfo, IUI<Microsoft.UI.Xaml.Media.Animation.SuppressNavigationTransitionInfo>
+    public partial class SuppressNavigationTransitionInfo : NavigationTransitionInfo, IUI<Xaml.Media.Animation.SuppressNavigationTransitionInfo>
     {
         static SuppressNavigationTransitionInfo instance;
 
@@ -46292,7 +46292,7 @@ namespace CSharpMarkup.WinUI // SwipeBackThemeAnimation
         }
     }
 
-    public partial class SwipeBackThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.SwipeBackThemeAnimation>
+    public partial class SwipeBackThemeAnimation : Timeline, IUI<Xaml.Media.Animation.SwipeBackThemeAnimation>
     {
         static SwipeBackThemeAnimation instance;
 
@@ -46377,7 +46377,7 @@ namespace CSharpMarkup.WinUI // SwipeHintThemeAnimation
         }
     }
 
-    public partial class SwipeHintThemeAnimation : Timeline, IUI<Microsoft.UI.Xaml.Media.Animation.SwipeHintThemeAnimation>
+    public partial class SwipeHintThemeAnimation : Timeline, IUI<Xaml.Media.Animation.SwipeHintThemeAnimation>
     {
         static SwipeHintThemeAnimation instance;
 
@@ -46463,7 +46463,7 @@ namespace CSharpMarkup.WinUI // Timeline
         }
     }
 
-    public partial class Timeline : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.Timeline>
+    public partial class Timeline : DependencyObject, IUI<Xaml.Media.Animation.Timeline>
     {
         static Timeline instance;
 
@@ -46567,7 +46567,7 @@ namespace CSharpMarkup.WinUI // TimelineCollection
         }
     }
 
-    public partial class TimelineCollection : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.TimelineCollection>
+    public partial class TimelineCollection : DependencyObject, IUI<Xaml.Media.Animation.TimelineCollection>
     {
         static TimelineCollection instance;
 
@@ -46617,7 +46617,7 @@ namespace CSharpMarkup.WinUI // Transition
         }
     }
 
-    public partial class Transition : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Animation.Transition>
+    public partial class Transition : DependencyObject, IUI<Xaml.Media.Animation.Transition>
     {
         static Transition instance;
 
@@ -46695,7 +46695,7 @@ namespace CSharpMarkup.WinUI // BitmapImage
         }
     }
 
-    public partial class BitmapImage : BitmapSource, IUI<Microsoft.UI.Xaml.Media.Imaging.BitmapImage>
+    public partial class BitmapImage : BitmapSource, IUI<Xaml.Media.Imaging.BitmapImage>
     {
         static BitmapImage instance;
 
@@ -46783,7 +46783,7 @@ namespace CSharpMarkup.WinUI // BitmapImage
 
 namespace CSharpMarkup.WinUI // BitmapSource
 {
-    public partial class BitmapSource : ImageSource, IUI<Microsoft.UI.Xaml.Media.Imaging.BitmapSource>
+    public partial class BitmapSource : ImageSource, IUI<Xaml.Media.Imaging.BitmapSource>
     {
         Xaml.Media.Imaging.BitmapSource ui;
 
@@ -46822,7 +46822,7 @@ namespace CSharpMarkup.WinUI // RenderTargetBitmap
         }
     }
 
-    public partial class RenderTargetBitmap : ImageSource, IUI<Microsoft.UI.Xaml.Media.Imaging.RenderTargetBitmap>
+    public partial class RenderTargetBitmap : ImageSource, IUI<Xaml.Media.Imaging.RenderTargetBitmap>
     {
         static RenderTargetBitmap instance;
 
@@ -46875,7 +46875,7 @@ namespace CSharpMarkup.WinUI // SoftwareBitmapSource
         }
     }
 
-    public partial class SoftwareBitmapSource : ImageSource, IUI<Microsoft.UI.Xaml.Media.Imaging.SoftwareBitmapSource>
+    public partial class SoftwareBitmapSource : ImageSource, IUI<Xaml.Media.Imaging.SoftwareBitmapSource>
     {
         static SoftwareBitmapSource instance;
 
@@ -46906,7 +46906,7 @@ namespace CSharpMarkup.WinUI // SoftwareBitmapSource
 
 namespace CSharpMarkup.WinUI // SurfaceImageSource
 {
-    public partial class SurfaceImageSource : ImageSource, IUI<Microsoft.UI.Xaml.Media.Imaging.SurfaceImageSource>
+    public partial class SurfaceImageSource : ImageSource, IUI<Xaml.Media.Imaging.SurfaceImageSource>
     {
         Xaml.Media.Imaging.SurfaceImageSource ui;
 
@@ -46951,7 +46951,7 @@ namespace CSharpMarkup.WinUI // SvgImageSource
         }
     }
 
-    public partial class SvgImageSource : ImageSource, IUI<Microsoft.UI.Xaml.Media.Imaging.SvgImageSource>
+    public partial class SvgImageSource : ImageSource, IUI<Xaml.Media.Imaging.SvgImageSource>
     {
         static SvgImageSource instance;
 
@@ -47006,7 +47006,7 @@ namespace CSharpMarkup.WinUI // SvgImageSource
 
 namespace CSharpMarkup.WinUI // VirtualSurfaceImageSource
 {
-    public partial class VirtualSurfaceImageSource : SurfaceImageSource, IUI<Microsoft.UI.Xaml.Media.Imaging.VirtualSurfaceImageSource>
+    public partial class VirtualSurfaceImageSource : SurfaceImageSource, IUI<Xaml.Media.Imaging.VirtualSurfaceImageSource>
     {
         Xaml.Media.Imaging.VirtualSurfaceImageSource ui;
 
@@ -47024,7 +47024,7 @@ namespace CSharpMarkup.WinUI // VirtualSurfaceImageSource
 
 namespace CSharpMarkup.WinUI // WriteableBitmap
 {
-    public partial class WriteableBitmap : BitmapSource, IUI<Microsoft.UI.Xaml.Media.Imaging.WriteableBitmap>
+    public partial class WriteableBitmap : BitmapSource, IUI<Xaml.Media.Imaging.WriteableBitmap>
     {
         Xaml.Media.Imaging.WriteableBitmap ui;
 
@@ -47073,7 +47073,7 @@ namespace CSharpMarkup.WinUI // CompositeTransform3D
         }
     }
 
-    public partial class CompositeTransform3D : Transform3D, IUI<Microsoft.UI.Xaml.Media.Media3D.CompositeTransform3D>
+    public partial class CompositeTransform3D : Transform3D, IUI<Xaml.Media.Media3D.CompositeTransform3D>
     {
         static CompositeTransform3D instance;
 
@@ -47237,7 +47237,7 @@ namespace CSharpMarkup.WinUI // PerspectiveTransform3D
         }
     }
 
-    public partial class PerspectiveTransform3D : Transform3D, IUI<Microsoft.UI.Xaml.Media.Media3D.PerspectiveTransform3D>
+    public partial class PerspectiveTransform3D : Transform3D, IUI<Xaml.Media.Media3D.PerspectiveTransform3D>
     {
         static PerspectiveTransform3D instance;
 
@@ -47298,7 +47298,7 @@ namespace CSharpMarkup.WinUI // PerspectiveTransform3D
 
 namespace CSharpMarkup.WinUI // Transform3D
 {
-    public partial class Transform3D : DependencyObject, IUI<Microsoft.UI.Xaml.Media.Media3D.Transform3D>
+    public partial class Transform3D : DependencyObject, IUI<Xaml.Media.Media3D.Transform3D>
     {
         Xaml.Media.Media3D.Transform3D ui;
 
@@ -47333,7 +47333,7 @@ namespace CSharpMarkup.WinUI // Transform3D
 
 namespace CSharpMarkup.WinUI // PageStackEntry
 {
-    public partial class PageStackEntry : DependencyObject, IUI<Microsoft.UI.Xaml.Navigation.PageStackEntry>
+    public partial class PageStackEntry : DependencyObject, IUI<Xaml.Navigation.PageStackEntry>
     {
         Xaml.Navigation.PageStackEntry ui;
 
@@ -47396,7 +47396,7 @@ namespace CSharpMarkup.WinUI // PrintDocument
         }
     }
 
-    public partial class PrintDocument : DependencyObject, IUI<Microsoft.UI.Xaml.Printing.PrintDocument>
+    public partial class PrintDocument : DependencyObject, IUI<Xaml.Printing.PrintDocument>
     {
         static PrintDocument instance;
 
@@ -47473,7 +47473,7 @@ namespace CSharpMarkup.WinUI // Ellipse
         }
     }
 
-    public partial class Ellipse : Shape, IUI<Microsoft.UI.Xaml.Shapes.Ellipse>
+    public partial class Ellipse : Shape, IUI<Xaml.Shapes.Ellipse>
     {
         static Ellipse instance;
 
@@ -47541,7 +47541,7 @@ namespace CSharpMarkup.WinUI // Line
         }
     }
 
-    public partial class Line : Shape, IUI<Microsoft.UI.Xaml.Shapes.Line>
+    public partial class Line : Shape, IUI<Xaml.Shapes.Line>
     {
         static Line instance;
 
@@ -47637,7 +47637,7 @@ namespace CSharpMarkup.WinUI // Path
         }
     }
 
-    public partial class Path : Shape, IUI<Microsoft.UI.Xaml.Shapes.Path>
+    public partial class Path : Shape, IUI<Xaml.Shapes.Path>
     {
         static Path instance;
 
@@ -47713,7 +47713,7 @@ namespace CSharpMarkup.WinUI // Polygon
         }
     }
 
-    public partial class Polygon : Shape, IUI<Microsoft.UI.Xaml.Shapes.Polygon>
+    public partial class Polygon : Shape, IUI<Xaml.Shapes.Polygon>
     {
         static Polygon instance;
 
@@ -47798,7 +47798,7 @@ namespace CSharpMarkup.WinUI // Polyline
         }
     }
 
-    public partial class Polyline : Shape, IUI<Microsoft.UI.Xaml.Shapes.Polyline>
+    public partial class Polyline : Shape, IUI<Xaml.Shapes.Polyline>
     {
         static Polyline instance;
 
@@ -47883,7 +47883,7 @@ namespace CSharpMarkup.WinUI // Rectangle
         }
     }
 
-    public partial class Rectangle : Shape, IUI<Microsoft.UI.Xaml.Shapes.Rectangle>
+    public partial class Rectangle : Shape, IUI<Xaml.Shapes.Rectangle>
     {
         static Rectangle instance;
 
@@ -47933,7 +47933,7 @@ namespace CSharpMarkup.WinUI // Rectangle
 
 namespace CSharpMarkup.WinUI // Shape
 {
-    public partial class Shape : FrameworkElement, IUI<Microsoft.UI.Xaml.Shapes.Shape>
+    public partial class Shape : FrameworkElement, IUI<Xaml.Shapes.Shape>
     {
         Xaml.Shapes.Shape ui;
 
@@ -56580,4 +56580,4 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 }
 
 #endif
-// End of generated C# Markup API for the Uno.WinUI Object hierarchy
+// End of generated C# Markup API for Uno.WinUI
