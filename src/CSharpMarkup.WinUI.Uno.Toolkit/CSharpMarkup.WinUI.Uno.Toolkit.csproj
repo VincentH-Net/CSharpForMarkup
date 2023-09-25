@@ -21,7 +21,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>2.3.23</Version>
+		<Version>2.3.26</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573;Uno0001</NoWarn>
@@ -40,8 +40,7 @@
 	</PropertyGroup>
 		
 	<PropertyGroup>
-		<!--<TargetFrameworks>net7.0-windows10.0.18362.0;net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>-->
-		<TargetFrameworks>net7.0-android</TargetFrameworks>
+		<TargetFrameworks>net7.0-windows10.0.18362.0;net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>
 		<RootNamespace>CSharpMarkup.WinUI.Uno.Toolkit</RootNamespace>
 	</PropertyGroup>
 
@@ -82,7 +81,7 @@
 	<ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
 
-		<PackageReference Include="CSharpMarkup.WinUI" Version="2.3.25" />
+		<PackageReference Include="CSharpMarkup.WinUI" Version="2.3.26" />
 		<PackageReference Include="Uno.Toolkit.WinUI" Version="4.2.22" />
 		<PackageReference Include="Uno.Extensions.Navigation.WinUI" Version="2.5.11" />
 		<PackageReference Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="2.5.11" />

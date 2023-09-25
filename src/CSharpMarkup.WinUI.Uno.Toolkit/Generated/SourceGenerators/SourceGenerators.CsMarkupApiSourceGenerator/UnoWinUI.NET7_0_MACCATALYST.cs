@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET7_0_ANDROID && HAS_UNO && !WINDOWS_UWP
+#if NET7_0_MACCATALYST && HAS_UNO && !WINDOWS_UWP
 
 using System;
 using System.Collections.Generic;
@@ -47,9 +47,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // AutoLayout
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.AutoLayout"/></summary>
-        public static AutoLayout AutoLayout(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static AutoLayout AutoLayout(nint handle)
         {
-            var ui = new UnoToolkitUI.AutoLayout(javaReference, transfer);
+            var ui = new UnoToolkitUI.AutoLayout(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.AutoLayout.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.AutoLayout"/></summary>
+        public static AutoLayout AutoLayout(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.AutoLayout(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.AutoLayout.StartChain(ui);
         }
     }
@@ -222,9 +229,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // CardContentControl
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.CardContentControl"/></summary>
-        public static CardContentControl CardContentControl(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static CardContentControl CardContentControl(nint handle)
         {
-            var ui = new UnoToolkitUI.CardContentControl(javaReference, transfer);
+            var ui = new UnoToolkitUI.CardContentControl(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.CardContentControl.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.CardContentControl"/></summary>
+        public static CardContentControl CardContentControl(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.CardContentControl(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.CardContentControl.StartChain(ui);
         }
     }
@@ -318,9 +332,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // Card
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.Card"/></summary>
-        public static Card Card(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static Card Card(nint handle)
         {
-            var ui = new UnoToolkitUI.Card(javaReference, transfer);
+            var ui = new UnoToolkitUI.Card(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.Card.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.Card"/></summary>
+        public static Card Card(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.Card(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.Card.StartChain(ui);
         }
     }
@@ -498,9 +519,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // Chip
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.Chip"/></summary>
-        public static Chip Chip(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static Chip Chip(nint handle)
         {
-            var ui = new UnoToolkitUI.Chip(javaReference, transfer);
+            var ui = new UnoToolkitUI.Chip(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.Chip.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.Chip"/></summary>
+        public static Chip Chip(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.Chip(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.Chip.StartChain(ui);
         }
     }
@@ -612,9 +640,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ChipGroup
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.ChipGroup"/></summary>
-        public static ChipGroup ChipGroup(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static ChipGroup ChipGroup(nint handle)
         {
-            var ui = new UnoToolkitUI.ChipGroup(javaReference, transfer);
+            var ui = new UnoToolkitUI.ChipGroup(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.ChipGroup.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.ChipGroup"/></summary>
+        public static ChipGroup ChipGroup(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.ChipGroup(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.ChipGroup.StartChain(ui);
         }
     }
@@ -716,9 +751,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // Divider
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.Divider"/></summary>
-        public static Divider Divider(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static Divider Divider(nint handle)
         {
-            var ui = new UnoToolkitUI.Divider(javaReference, transfer);
+            var ui = new UnoToolkitUI.Divider(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.Divider.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.Divider"/></summary>
+        public static Divider Divider(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.Divider(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.Divider.StartChain(ui);
         }
     }
@@ -808,9 +850,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.DrawerControl"/></summary>
-        public static DrawerControl DrawerControl(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static DrawerControl DrawerControl(nint handle)
         {
-            var ui = new UnoToolkitUI.DrawerControl(javaReference, transfer);
+            var ui = new UnoToolkitUI.DrawerControl(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.DrawerControl.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.DrawerControl"/></summary>
+        public static DrawerControl DrawerControl(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.DrawerControl(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.DrawerControl.StartChain(ui);
         }
     }
@@ -943,9 +992,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.DrawerFlyoutPresenter"/></summary>
-        public static DrawerFlyoutPresenter DrawerFlyoutPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static DrawerFlyoutPresenter DrawerFlyoutPresenter(nint handle)
         {
-            var ui = new UnoToolkitUI.DrawerFlyoutPresenter(javaReference, transfer);
+            var ui = new UnoToolkitUI.DrawerFlyoutPresenter(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.DrawerFlyoutPresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.DrawerFlyoutPresenter"/></summary>
+        public static DrawerFlyoutPresenter DrawerFlyoutPresenter(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.DrawerFlyoutPresenter(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.DrawerFlyoutPresenter.StartChain(ui);
         }
     }
@@ -1080,9 +1136,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ExtendedSplashScreen
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.ExtendedSplashScreen"/></summary>
-        public static ExtendedSplashScreen ExtendedSplashScreen(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static ExtendedSplashScreen ExtendedSplashScreen(nint handle)
         {
-            var ui = new UnoToolkitUI.ExtendedSplashScreen(javaReference, transfer);
+            var ui = new UnoToolkitUI.ExtendedSplashScreen(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.ExtendedSplashScreen.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.ExtendedSplashScreen"/></summary>
+        public static ExtendedSplashScreen ExtendedSplashScreen(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.ExtendedSplashScreen(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.ExtendedSplashScreen.StartChain(ui);
         }
     }
@@ -1165,9 +1228,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // CompositeLoadableSource
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.CompositeLoadableSource"/></summary>
-        public static CompositeLoadableSource CompositeLoadableSource(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static CompositeLoadableSource CompositeLoadableSource(nint handle)
         {
-            var ui = new UnoToolkitUI.CompositeLoadableSource(javaReference, transfer);
+            var ui = new UnoToolkitUI.CompositeLoadableSource(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.CompositeLoadableSource.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.CompositeLoadableSource"/></summary>
+        public static CompositeLoadableSource CompositeLoadableSource(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.CompositeLoadableSource(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.CompositeLoadableSource.StartChain(ui);
         }
     }
@@ -1238,9 +1308,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // LoadableSource
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.LoadableSource"/></summary>
-        public static LoadableSource LoadableSource(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static LoadableSource LoadableSource(nint handle)
         {
-            var ui = new UnoToolkitUI.LoadableSource(javaReference, transfer);
+            var ui = new UnoToolkitUI.LoadableSource(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.LoadableSource.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.LoadableSource"/></summary>
+        public static LoadableSource LoadableSource(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.LoadableSource(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.LoadableSource.StartChain(ui);
         }
     }
@@ -1326,9 +1403,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // LoadingView
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.LoadingView"/></summary>
-        public static LoadingView LoadingView(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static LoadingView LoadingView(nint handle)
         {
-            var ui = new UnoToolkitUI.LoadingView(javaReference, transfer);
+            var ui = new UnoToolkitUI.LoadingView(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.LoadingView.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.LoadingView"/></summary>
+        public static LoadingView LoadingView(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.LoadingView(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.LoadingView.StartChain(ui);
         }
     }
@@ -1407,25 +1491,6 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NativeFramePresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoToolkitUI.NativeFramePresenter"/></summary>
-        public static NativeFramePresenter NativeFramePresenter(params Xaml.UIElement[] Children)
-        {
-            var ui = new UnoToolkitUI.NativeFramePresenter();
-            for (int i = 0; i < Children.Length; i++)
-            {
-                var child = Children[i];
-                if (child == null) continue;
-
-                var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
-                if (subChildren is not null)
-                    for (int j = 0; j < subChildren.Length; j++)
-                        ui.Children.Add(subChildren[j]);
-                else
-                    ui.Children.Add(child);
-            }
-            return CSharpMarkup.WinUI.Uno.Toolkit.NativeFramePresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.NativeFramePresenter"/></summary>
         public static NativeFramePresenter NativeFramePresenter()
         {
             var ui = new UnoToolkitUI.NativeFramePresenter();
@@ -1433,9 +1498,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NativeFramePresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.NativeFramePresenter"/></summary>
-        public static NativeFramePresenter NativeFramePresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static NativeFramePresenter NativeFramePresenter(nint handle)
         {
-            var ui = new UnoToolkitUI.NativeFramePresenter(javaReference, transfer);
+            var ui = new UnoToolkitUI.NativeFramePresenter(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.NativeFramePresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.NativeFramePresenter"/></summary>
+        public static NativeFramePresenter NativeFramePresenter(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.NativeFramePresenter(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.NativeFramePresenter.StartChain(ui);
         }
     }
@@ -1491,9 +1563,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NativeNavigationBarPresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.NativeNavigationBarPresenter"/></summary>
-        public static NativeNavigationBarPresenter NativeNavigationBarPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static NativeNavigationBarPresenter NativeNavigationBarPresenter(nint handle)
         {
-            var ui = new UnoToolkitUI.NativeNavigationBarPresenter(javaReference, transfer);
+            var ui = new UnoToolkitUI.NativeNavigationBarPresenter(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.NativeNavigationBarPresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.NativeNavigationBarPresenter"/></summary>
+        public static NativeNavigationBarPresenter NativeNavigationBarPresenter(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.NativeNavigationBarPresenter(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.NativeNavigationBarPresenter.StartChain(ui);
         }
     }
@@ -1560,9 +1639,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationBar
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.NavigationBar"/></summary>
-        public static NavigationBar NavigationBar(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static NavigationBar NavigationBar(nint handle)
         {
-            var ui = new UnoToolkitUI.NavigationBar(javaReference, transfer);
+            var ui = new UnoToolkitUI.NavigationBar(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.NavigationBar.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.NavigationBar"/></summary>
+        public static NavigationBar NavigationBar(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.NavigationBar(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.NavigationBar.StartChain(ui);
         }
     }
@@ -1706,9 +1792,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationBarPresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.NavigationBarPresenter"/></summary>
-        public static NavigationBarPresenter NavigationBarPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static NavigationBarPresenter NavigationBarPresenter(nint handle)
         {
-            var ui = new UnoToolkitUI.NavigationBarPresenter(javaReference, transfer);
+            var ui = new UnoToolkitUI.NavigationBarPresenter(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.NavigationBarPresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.NavigationBarPresenter"/></summary>
+        public static NavigationBarPresenter NavigationBarPresenter(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.NavigationBarPresenter(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.NavigationBarPresenter.StartChain(ui);
         }
     }
@@ -1820,9 +1913,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // SafeArea
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.SafeArea"/></summary>
-        public static SafeArea SafeArea(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static SafeArea SafeArea(nint handle)
         {
-            var ui = new UnoToolkitUI.SafeArea(javaReference, transfer);
+            var ui = new UnoToolkitUI.SafeArea(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.SafeArea.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.SafeArea"/></summary>
+        public static SafeArea SafeArea(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.SafeArea(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.SafeArea.StartChain(ui);
         }
     }
@@ -1924,9 +2024,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBar
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.TabBar"/></summary>
-        public static TabBar TabBar(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static TabBar TabBar(nint handle)
         {
-            var ui = new UnoToolkitUI.TabBar(javaReference, transfer);
+            var ui = new UnoToolkitUI.TabBar(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.TabBar.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.TabBar"/></summary>
+        public static TabBar TabBar(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.TabBar(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.TabBar.StartChain(ui);
         }
     }
@@ -2063,9 +2170,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarItem
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.TabBarItem"/></summary>
-        public static TabBarItem TabBarItem(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static TabBarItem TabBarItem(nint handle)
         {
-            var ui = new UnoToolkitUI.TabBarItem(javaReference, transfer);
+            var ui = new UnoToolkitUI.TabBarItem(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.TabBarItem.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.TabBarItem"/></summary>
+        public static TabBarItem TabBarItem(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.TabBarItem(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.TabBarItem.StartChain(ui);
         }
     }
@@ -2184,9 +2298,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarListPanel
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.TabBarListPanel"/></summary>
-        public static TabBarListPanel TabBarListPanel(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static TabBarListPanel TabBarListPanel(nint handle)
         {
-            var ui = new UnoToolkitUI.TabBarListPanel(javaReference, transfer);
+            var ui = new UnoToolkitUI.TabBarListPanel(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.TabBarListPanel.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.TabBarListPanel"/></summary>
+        public static TabBarListPanel TabBarListPanel(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.TabBarListPanel(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.TabBarListPanel.StartChain(ui);
         }
     }
@@ -2263,9 +2384,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarSelectionIndicatorPresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenter"/></summary>
-        public static TabBarSelectionIndicatorPresenter TabBarSelectionIndicatorPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        public static TabBarSelectionIndicatorPresenter TabBarSelectionIndicatorPresenter(nint handle)
         {
-            var ui = new UnoToolkitUI.TabBarSelectionIndicatorPresenter(javaReference, transfer);
+            var ui = new UnoToolkitUI.TabBarSelectionIndicatorPresenter(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.TabBarSelectionIndicatorPresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenter"/></summary>
+        public static TabBarSelectionIndicatorPresenter TabBarSelectionIndicatorPresenter(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.TabBarSelectionIndicatorPresenter(handle);
             return CSharpMarkup.WinUI.Uno.Toolkit.TabBarSelectionIndicatorPresenter.StartChain(ui);
         }
     }
