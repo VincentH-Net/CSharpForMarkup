@@ -5,8 +5,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<PackageId>CSharpMarkup.WinUI</PackageId>
-		<Title>CSharpMarkup.WinUI</Title>
+		<PackageId>CSharpMarkup.WinUI.Uno.Extensions.Navigation</PackageId>
+		<Title>CSharpMarkup.WinUI.Uno.Extensions.Navigation</Title>
 		<Summary>Build .NET browser / native UI in declarative C#</Summary>
 		<Description>Enjoy a Flutter-like UI development experience with .NET Hot Reload and WinUI 3, using Windows App SDK and/or Uno Platform. Build .NET applications fully in C#. Target browsers and native desktop / mobile. No XAML / HTML / JavaScript / CSS required</Description>
 		<PackageReadmeFile>Readme.md</PackageReadmeFile>
@@ -21,7 +21,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>2.3.27</Version>
+		<Version>2.3.26</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573;Uno0001</NoWarn>
@@ -40,9 +40,8 @@
 	</PropertyGroup>
 		
 	<PropertyGroup>
-		<!--<TargetFrameworks>net6.0-windows10.0.18362.0;net6.0-android31.0;net6.0-ios;net6.0-maccatalyst;net6.0-macos;net7.0;net7.0-android33.0;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>-->
 		<TargetFrameworks>net7.0-windows10.0.18362.0;net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>
-		<RootNamespace>CSharpMarkup.WinUI</RootNamespace>
+		<RootNamespace>CSharpMarkup.WinUI.Uno.Extensions.Navigation</RootNamespace>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('windows10.'))">
@@ -81,6 +80,8 @@
 	
 	<ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+		<PackageReference Include="CSharpMarkup.WinUI" Version="2.3.26" />
+		<PackageReference Include="Uno.Extensions.Navigation.WinUI" Version="2.5.11" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -89,20 +90,14 @@
 	    <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
 	  </ProjectReference>
 	</ItemGroup>
-	
+
 	<ItemGroup>
 		<None Include="Readme.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
-	
+
 	<ItemGroup>
 	  <Folder Include="Generated\SourceGenerators\" />
 	</ItemGroup>
 	
 	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
-
-	<ItemGroup>
-		<InternalsVisibleTo Include="$(AssemblyName).Uno.Toolkit"/>
-		<InternalsVisibleTo Include="$(AssemblyName).Uno.Extensions.Navigation"/>
-		<InternalsVisibleTo Include="$(AssemblyName).Uno.Extensions.Navigation.Toolkit"/>
-	</ItemGroup>
 </Project>
