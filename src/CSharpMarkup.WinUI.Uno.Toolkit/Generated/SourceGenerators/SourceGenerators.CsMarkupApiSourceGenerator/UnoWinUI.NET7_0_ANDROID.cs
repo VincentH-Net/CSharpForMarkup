@@ -1534,20 +1534,21 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoToolkitUI.NavigationBar"/></summary>
-        public static NavigationBar NavigationBar(bool? IsSticky = default, bool? IsOpen = default, UnoToolkitUI.NavigationBarClosedDisplayMode? ClosedDisplayMode = default, Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, UnoToolkitUI.NavigationBarOverflowButtonVisibility? OverflowButtonVisibility = default, bool? IsDynamicOverflowEnabled = default, UnoToolkitUI.NavigationBarDefaultLabelPosition? DefaultLabelPosition = default, Xaml.Controls.AppBarButton MainCommand = default, UnoToolkitUI.MainCommandMode? MainCommandMode = default, string? Subtitle = default, Xaml.Style MainCommandStyle = default)
+        public static NavigationBar NavigationBar(params CSharpMarkup.WinUI.CommandBarElement[] PrimaryCommands)
         {
             var ui = new UnoToolkitUI.NavigationBar();
-            if (IsSticky is not null) ui.IsSticky = IsSticky.Value;
-            if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
-            if (ClosedDisplayMode is not null) ui.ClosedDisplayMode = ClosedDisplayMode.Value;
-            if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
-            if (OverflowButtonVisibility is not null) ui.OverflowButtonVisibility = OverflowButtonVisibility.Value;
-            if (IsDynamicOverflowEnabled is not null) ui.IsDynamicOverflowEnabled = IsDynamicOverflowEnabled.Value;
-            if (DefaultLabelPosition is not null) ui.DefaultLabelPosition = DefaultLabelPosition.Value;
-            if (MainCommand is not null) ui.MainCommand = MainCommand;
-            if (MainCommandMode is not null) ui.MainCommandMode = MainCommandMode.Value;
-            if (Subtitle is not null) ui.Subtitle = Subtitle;
-            if (MainCommandStyle is not null) ui.MainCommandStyle = MainCommandStyle;
+            for (int i = 0; i < PrimaryCommands.Length; i++)
+            {
+                var child = PrimaryCommands[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<CSharpMarkup.WinUI.CommandBarElement>.ExtractChildren(child);
+                if (subChildren is not null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.PrimaryCommands.Add(subChildren[j].UI);
+                else
+                    ui.PrimaryCommands.Add(child.UI);
+            }
             return CSharpMarkup.WinUI.Uno.Toolkit.NavigationBar.StartChain(ui);
         }
 

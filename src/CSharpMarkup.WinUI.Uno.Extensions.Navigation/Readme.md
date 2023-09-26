@@ -13,4 +13,4 @@ Get started quickly with the [mcs-winui3-app and mcs-winui3-view dotnet new temp
 
 [Example application](https://github.com/VincentH-Net/CSharpForMarkup/tree/master/src/CSharpMarkup.WinUI.Examples)
 
-[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-2-3-26)
+[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-wpf-2-3-28)
