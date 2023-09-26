@@ -47056,6 +47056,58 @@ namespace CSharpMarkup.WinUI // ManagedItemsStackPanel
     }
 }
 
+namespace CSharpMarkup.WinUI // ScrollContentPresenter
+{
+    public static partial class ScrollContentPresenterExtensions
+    {
+        /// <summary>Set <see cref="Uno.UI.Xaml.Controls.ScrollContentPresenter.IsPointerWheelReversed"/></summary>
+        public static TTarget ScrollContentPresenter_IsPointerWheelReversed<TTarget>(this TTarget target, bool value) where TTarget : ScrollContentPresenter
+        { Uno.UI.Xaml.Controls.ScrollContentPresenter.SetIsPointerWheelReversed(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Uno.UI.Xaml.Controls.ScrollContentPresenter.IsPointerWheelReversed"/></summary>
+        public static DependencyProperty<TTarget, bool> ScrollContentPresenter_IsPointerWheelReversed<TTarget>(this TTarget target) where TTarget : ScrollContentPresenter
+        => DependencyProperty<TTarget, bool>.Get(target, Uno.UI.Xaml.Controls.ScrollContentPresenter.IsPointerWheelReversedProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // ScrollViewer
+{
+    public static partial class ScrollViewerExtensions
+    {
+        /// <summary>Set <see cref="Uno.UI.Xaml.Controls.ScrollViewer.UpdatesMode"/></summary>
+        public static TTarget ScrollViewer_UpdatesMode<TTarget>(this TTarget target, Uno.UI.Xaml.Controls.ScrollViewerUpdatesMode value) where TTarget : ScrollViewer
+        { Uno.UI.Xaml.Controls.ScrollViewer.SetUpdatesMode(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Uno.UI.Xaml.Controls.ScrollViewer.UpdatesMode"/></summary>
+        public static DependencyProperty<TTarget, Uno.UI.Xaml.Controls.ScrollViewerUpdatesMode> ScrollViewer_UpdatesMode<TTarget>(this TTarget target) where TTarget : ScrollViewer
+        => DependencyProperty<TTarget, Uno.UI.Xaml.Controls.ScrollViewerUpdatesMode>.Get(target, Uno.UI.Xaml.Controls.ScrollViewer.UpdatesModeProperty);
+
+        /// <summary>Set <see cref="Uno.UI.Xaml.Controls.ScrollViewer.ShouldFallBackToNativeScrollBars"/></summary>
+        public static TTarget ScrollViewer_ShouldFallBackToNativeScrollBars<TTarget>(this TTarget target, bool value) where TTarget : ScrollViewer
+        { Uno.UI.Xaml.Controls.ScrollViewer.SetShouldFallBackToNativeScrollBars(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Uno.UI.Xaml.Controls.ScrollViewer.ShouldFallBackToNativeScrollBars"/></summary>
+        public static DependencyProperty<TTarget, bool> ScrollViewer_ShouldFallBackToNativeScrollBars<TTarget>(this TTarget target) where TTarget : ScrollViewer
+        => DependencyProperty<TTarget, bool>.Get(target, Uno.UI.Xaml.Controls.ScrollViewer.ShouldFallBackToNativeScrollBarsProperty);
+
+        /// <summary>Set <see cref="Uno.UI.Xaml.Controls.ScrollViewer"/> attached properties</summary>
+        public static TTarget ScrollViewer<TTarget>(this TTarget target
+
+            , Uno.UI.Xaml.Controls.ScrollViewerUpdatesMode? UpdatesMode = default
+
+            , bool? ShouldFallBackToNativeScrollBars = default
+
+        ) where TTarget : ScrollViewer
+        {
+            if (UpdatesMode is not null) Uno.UI.Xaml.Controls.ScrollViewer.SetUpdatesMode(target.UI, UpdatesMode.Value);
+
+            if (ShouldFallBackToNativeScrollBars is not null) Uno.UI.Xaml.Controls.ScrollViewer.SetShouldFallBackToNativeScrollBars(target.UI, ShouldFallBackToNativeScrollBars.Value);
+
+            return target;
+        }
+    }
+}
+
 namespace CSharpMarkup.WinUI.to // Type convertors
 {
     partial struct CornerRadius
@@ -47222,18 +47274,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class AppBarExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.AppBarClosedDisplayMode.Compact"/></summary>
-        public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.AppBarClosedDisplayMode> property) where TTarget : AppBar
-        => property.Set(Xaml.Controls.AppBarClosedDisplayMode.Compact);
-
-        /// <summary>Set to <see cref="Xaml.Controls.AppBarClosedDisplayMode.Minimal"/></summary>
-        public static TTarget Minimal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.AppBarClosedDisplayMode> property) where TTarget : AppBar
-        => property.Set(Xaml.Controls.AppBarClosedDisplayMode.Minimal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.AppBarClosedDisplayMode.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.AppBarClosedDisplayMode> property) where TTarget : AppBar
-        => property.Set(Xaml.Controls.AppBarClosedDisplayMode.Hidden);
-
         /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : AppBar
         => property.Set(Xaml.Controls.LightDismissOverlayMode.Auto);
@@ -47245,6 +47285,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Off"/></summary>
         public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : AppBar
         => property.Set(Xaml.Controls.LightDismissOverlayMode.Off);
+
+        /// <summary>Set to <see cref="Xaml.Controls.AppBarClosedDisplayMode.Compact"/></summary>
+        public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.AppBarClosedDisplayMode> property) where TTarget : AppBar
+        => property.Set(Xaml.Controls.AppBarClosedDisplayMode.Compact);
+
+        /// <summary>Set to <see cref="Xaml.Controls.AppBarClosedDisplayMode.Minimal"/></summary>
+        public static TTarget Minimal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.AppBarClosedDisplayMode> property) where TTarget : AppBar
+        => property.Set(Xaml.Controls.AppBarClosedDisplayMode.Minimal);
+
+        /// <summary>Set to <see cref="Xaml.Controls.AppBarClosedDisplayMode.Hidden"/></summary>
+        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.AppBarClosedDisplayMode> property) where TTarget : AppBar
+        => property.Set(Xaml.Controls.AppBarClosedDisplayMode.Hidden);
     }
 
     public static partial class AppBarButtonExtensions
@@ -47590,30 +47642,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class CalendarDatePickerExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
-        => property.Set(Xaml.Controls.LightDismissOverlayMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.On"/></summary>
-        public static TTarget On<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
-        => property.Set(Xaml.Controls.LightDismissOverlayMode.On);
-
-        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Off"/></summary>
-        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
-        => property.Set(Xaml.Controls.LightDismissOverlayMode.Off);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Month"/></summary>
-        public static TTarget Month<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarDatePicker
-        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Month);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Year"/></summary>
-        public static TTarget Year<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarDatePicker
-        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Year);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Decade"/></summary>
-        public static TTarget Decade<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarDatePicker
-        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Decade);
-
         /// <summary>Set to <see cref="Windows.Globalization.DayOfWeek.Sunday"/></summary>
         public static TTarget Sunday<TTarget>(this DependencyProperty<TTarget, Windows.Globalization.DayOfWeek> property) where TTarget : CalendarDatePicker
         => property.Set(Windows.Globalization.DayOfWeek.Sunday);
@@ -47641,22 +47669,34 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.Globalization.DayOfWeek.Saturday"/></summary>
         public static TTarget Saturday<TTarget>(this DependencyProperty<TTarget, Windows.Globalization.DayOfWeek> property) where TTarget : CalendarDatePicker
         => property.Set(Windows.Globalization.DayOfWeek.Saturday);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Month"/></summary>
+        public static TTarget Month<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarDatePicker
+        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Month);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Year"/></summary>
+        public static TTarget Year<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarDatePicker
+        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Year);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Decade"/></summary>
+        public static TTarget Decade<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarDatePicker
+        => property.Set(Xaml.Controls.CalendarViewDisplayMode.Decade);
+
+        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
+        => property.Set(Xaml.Controls.LightDismissOverlayMode.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.On"/></summary>
+        public static TTarget On<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
+        => property.Set(Xaml.Controls.LightDismissOverlayMode.On);
+
+        /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Off"/></summary>
+        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : CalendarDatePicker
+        => property.Set(Xaml.Controls.LightDismissOverlayMode.Off);
     }
 
     public static partial class CalendarViewExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
-        => property.Set(Xaml.Controls.CalendarViewSelectionMode.None);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.Single"/></summary>
-        public static TTarget Single<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
-        => property.Set(Xaml.Controls.CalendarViewSelectionMode.Single);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.Multiple"/></summary>
-        public static TTarget Multiple<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
-        => property.Set(Xaml.Controls.CalendarViewSelectionMode.Multiple);
-
         /// <summary>Set to <see cref="Windows.Globalization.DayOfWeek.Sunday"/></summary>
         public static TTarget Sunday<TTarget>(this DependencyProperty<TTarget, Windows.Globalization.DayOfWeek> property) where TTarget : CalendarView
         => property.Set(Windows.Globalization.DayOfWeek.Sunday);
@@ -47696,18 +47736,22 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.CalendarViewDisplayMode.Decade"/></summary>
         public static TTarget Decade<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewDisplayMode> property) where TTarget : CalendarView
         => property.Set(Xaml.Controls.CalendarViewDisplayMode.Decade);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
+        => property.Set(Xaml.Controls.CalendarViewSelectionMode.None);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.Single"/></summary>
+        public static TTarget Single<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
+        => property.Set(Xaml.Controls.CalendarViewSelectionMode.Single);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CalendarViewSelectionMode.Multiple"/></summary>
+        public static TTarget Multiple<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CalendarViewSelectionMode> property) where TTarget : CalendarView
+        => property.Set(Xaml.Controls.CalendarViewSelectionMode.Multiple);
     }
 
     public static partial class ColorPickerExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ColorPicker
-        => property.Set(Xaml.Controls.Orientation.Vertical);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ColorPicker
-        => property.Set(Xaml.Controls.Orientation.Horizontal);
-
         /// <summary>Set to <see cref="Xaml.Controls.ColorSpectrumComponents.HueValue"/></summary>
         public static TTarget HueValue<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ColorSpectrumComponents> property) where TTarget : ColorPicker
         => property.Set(Xaml.Controls.ColorSpectrumComponents.HueValue);
@@ -47739,6 +47783,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.ColorSpectrumShape.Ring"/></summary>
         public static TTarget Ring<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ColorSpectrumShape> property) where TTarget : ColorPicker
         => property.Set(Xaml.Controls.ColorSpectrumShape.Ring);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
+        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ColorPicker
+        => property.Set(Xaml.Controls.Orientation.Vertical);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
+        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ColorPicker
+        => property.Set(Xaml.Controls.Orientation.Horizontal);
     }
 
     public static partial class ColorPickerSliderExtensions
@@ -47866,6 +47918,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class ContentPresenterExtensions
     {
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : ContentPresenter
+        => property.Set(Windows.UI.Text.FontStyle.Normal);
+
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Oblique"/></summary>
+        public static TTarget Oblique<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : ContentPresenter
+        => property.Set(Windows.UI.Text.FontStyle.Oblique);
+
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
+        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : ContentPresenter
+        => property.Set(Windows.UI.Text.FontStyle.Italic);
+
         /// <summary>Set to <see cref="Xaml.Controls.BackgroundSizing.InnerBorderEdge"/></summary>
         public static TTarget InnerBorderEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.BackgroundSizing> property) where TTarget : ContentPresenter
         => property.Set(Xaml.Controls.BackgroundSizing.InnerBorderEdge);
@@ -47873,6 +47937,54 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.BackgroundSizing.OuterBorderEdge"/></summary>
         public static TTarget OuterBorderEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.BackgroundSizing> property) where TTarget : ContentPresenter
         => property.Set(Xaml.Controls.BackgroundSizing.OuterBorderEdge);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.Full"/></summary>
+        public static TTarget Full<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextLineBounds.Full);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToCapHeight"/></summary>
+        public static TTarget TrimToCapHeight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextLineBounds.TrimToCapHeight);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToBaseline"/></summary>
+        public static TTarget TrimToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextLineBounds.TrimToBaseline);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.Tight"/></summary>
+        public static TTarget Tight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextLineBounds.Tight);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.OpticalMarginAlignment.None);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
+        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
+        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextWrapping.NoWrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
+        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextWrapping.Wrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
+        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.TextWrapping.WrapWholeWords);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.MaxHeight"/></summary>
+        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.LineStackingStrategy.MaxHeight);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BlockLineHeight"/></summary>
+        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.LineStackingStrategy.BlockLineHeight);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BaselineToBaseline"/></summary>
+        public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : ContentPresenter
+        => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
 
         /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
         public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
@@ -47902,18 +48014,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : ContentPresenter
         => property.Set(Xaml.TextAlignment.DetectFromContent);
 
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : ContentPresenter
-        => property.Set(Windows.UI.Text.FontStyle.Normal);
-
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Oblique"/></summary>
-        public static TTarget Oblique<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : ContentPresenter
-        => property.Set(Windows.UI.Text.FontStyle.Oblique);
-
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
-        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : ContentPresenter
-        => property.Set(Windows.UI.Text.FontStyle.Italic);
-
         /// <summary>Set to <see cref="Xaml.TextTrimming.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : ContentPresenter
         => property.Set(Xaml.TextTrimming.None);
@@ -47929,42 +48029,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.TextTrimming.Clip"/></summary>
         public static TTarget Clip<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : ContentPresenter
         => property.Set(Xaml.TextTrimming.Clip);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
-        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextWrapping.NoWrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
-        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextWrapping.Wrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
-        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextWrapping.WrapWholeWords);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.Full"/></summary>
-        public static TTarget Full<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextLineBounds.Full);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToCapHeight"/></summary>
-        public static TTarget TrimToCapHeight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextLineBounds.TrimToCapHeight);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToBaseline"/></summary>
-        public static TTarget TrimToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextLineBounds.TrimToBaseline);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.Tight"/></summary>
-        public static TTarget Tight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.TextLineBounds.Tight);
-
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.OpticalMarginAlignment.None);
-
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
-        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
 
         /// <summary>Set to <see cref="Windows.UI.Text.FontStretch.Undefined"/></summary>
         public static TTarget Undefined<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : ContentPresenter
@@ -48005,45 +48069,17 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.UI.Text.FontStretch.UltraExpanded"/></summary>
         public static TTarget UltraExpanded<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : ContentPresenter
         => property.Set(Windows.UI.Text.FontStretch.UltraExpanded);
-
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.LineStackingStrategy.MaxHeight);
-
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.LineStackingStrategy.BlockLineHeight);
-
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BaselineToBaseline"/></summary>
-        public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : ContentPresenter
-        => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
     }
 
     public static partial class ControlExtensions
     {
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
-        => property.Set(Xaml.ElementSoundMode.Default);
+        /// <summary>Set to <see cref="Xaml.Controls.BackgroundSizing.InnerBorderEdge"/></summary>
+        public static TTarget InnerBorderEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.BackgroundSizing> property) where TTarget : Control
+        => property.Set(Xaml.Controls.BackgroundSizing.InnerBorderEdge);
 
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.FocusOnly"/></summary>
-        public static TTarget FocusOnly<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
-        => property.Set(Xaml.ElementSoundMode.FocusOnly);
-
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Off"/></summary>
-        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
-        => property.Set(Xaml.ElementSoundMode.Off);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.Never"/></summary>
-        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
-        => property.Set(Xaml.Controls.RequiresPointer.Never);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.WhenEngaged"/></summary>
-        public static TTarget WhenEngaged<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
-        => property.Set(Xaml.Controls.RequiresPointer.WhenEngaged);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.WhenFocused"/></summary>
-        public static TTarget WhenFocused<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
-        => property.Set(Xaml.Controls.RequiresPointer.WhenFocused);
+        /// <summary>Set to <see cref="Xaml.Controls.BackgroundSizing.OuterBorderEdge"/></summary>
+        public static TTarget OuterBorderEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.BackgroundSizing> property) where TTarget : Control
+        => property.Set(Xaml.Controls.BackgroundSizing.OuterBorderEdge);
 
         /// <summary>Set to <see cref="Windows.UI.Text.FontStretch.Undefined"/></summary>
         public static TTarget Undefined<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : Control
@@ -48085,13 +48121,17 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget UltraExpanded<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : Control
         => property.Set(Windows.UI.Text.FontStretch.UltraExpanded);
 
-        /// <summary>Set to <see cref="Xaml.Controls.BackgroundSizing.InnerBorderEdge"/></summary>
-        public static TTarget InnerBorderEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.BackgroundSizing> property) where TTarget : Control
-        => property.Set(Xaml.Controls.BackgroundSizing.InnerBorderEdge);
+        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.Never"/></summary>
+        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
+        => property.Set(Xaml.Controls.RequiresPointer.Never);
 
-        /// <summary>Set to <see cref="Xaml.Controls.BackgroundSizing.OuterBorderEdge"/></summary>
-        public static TTarget OuterBorderEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.BackgroundSizing> property) where TTarget : Control
-        => property.Set(Xaml.Controls.BackgroundSizing.OuterBorderEdge);
+        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.WhenEngaged"/></summary>
+        public static TTarget WhenEngaged<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
+        => property.Set(Xaml.Controls.RequiresPointer.WhenEngaged);
+
+        /// <summary>Set to <see cref="Xaml.Controls.RequiresPointer.WhenFocused"/></summary>
+        public static TTarget WhenFocused<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RequiresPointer> property) where TTarget : Control
+        => property.Set(Xaml.Controls.RequiresPointer.WhenFocused);
 
         /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
         public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : Control
@@ -48104,6 +48144,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
         public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : Control
         => property.Set(Windows.UI.Text.FontStyle.Italic);
+
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
+        => property.Set(Xaml.ElementSoundMode.Default);
+
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.FocusOnly"/></summary>
+        public static TTarget FocusOnly<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
+        => property.Set(Xaml.ElementSoundMode.FocusOnly);
+
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Off"/></summary>
+        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Control
+        => property.Set(Xaml.ElementSoundMode.Off);
     }
 
     public static partial class CornerRadiusFilterConverterExtensions
@@ -48190,6 +48242,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class DatePickerExtensions
     {
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
+        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : DatePicker
+        => property.Set(Xaml.Controls.Orientation.Vertical);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
+        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : DatePicker
+        => property.Set(Xaml.Controls.Orientation.Horizontal);
+
         /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : DatePicker
         => property.Set(Xaml.Controls.LightDismissOverlayMode.Auto);
@@ -48201,18 +48261,38 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Off"/></summary>
         public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : DatePicker
         => property.Set(Xaml.Controls.LightDismissOverlayMode.Off);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : DatePicker
-        => property.Set(Xaml.Controls.Orientation.Vertical);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : DatePicker
-        => property.Set(Xaml.Controls.Orientation.Horizontal);
     }
 
     public static partial class DependencyObjectExtensions
     {
+        /// <summary>Set to <see cref="Xaml.Controls.ScrollMode.Disabled"/></summary>
+        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollMode> property) where TTarget : DependencyObject
+        => property.Set(Xaml.Controls.ScrollMode.Disabled);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ScrollMode.Enabled"/></summary>
+        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollMode> property) where TTarget : DependencyObject
+        => property.Set(Xaml.Controls.ScrollMode.Enabled);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ScrollMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollMode> property) where TTarget : DependencyObject
+        => property.Set(Xaml.Controls.ScrollMode.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Controls.VirtualizationMode.Standard"/></summary>
+        public static TTarget Standard<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.VirtualizationMode> property) where TTarget : DependencyObject
+        => property.Set(Xaml.Controls.VirtualizationMode.Standard);
+
+        /// <summary>Set to <see cref="Xaml.Controls.VirtualizationMode.Recycling"/></summary>
+        public static TTarget Recycling<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.VirtualizationMode> property) where TTarget : DependencyObject
+        => property.Set(Xaml.Controls.VirtualizationMode.Recycling);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ZoomMode.Disabled"/></summary>
+        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ZoomMode> property) where TTarget : DependencyObject
+        => property.Set(Xaml.Controls.ZoomMode.Disabled);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ZoomMode.Enabled"/></summary>
+        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ZoomMode> property) where TTarget : DependencyObject
+        => property.Set(Xaml.Controls.ZoomMode.Enabled);
+
         /// <summary>Set to <see cref="Xaml.Controls.ScrollBarVisibility.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollBarVisibility> property) where TTarget : DependencyObject
         => property.Set(Xaml.Controls.ScrollBarVisibility.Auto);
@@ -48228,34 +48308,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.ScrollBarVisibility.Visible"/></summary>
         public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollBarVisibility> property) where TTarget : DependencyObject
         => property.Set(Xaml.Controls.ScrollBarVisibility.Visible);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ZoomMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ZoomMode> property) where TTarget : DependencyObject
-        => property.Set(Xaml.Controls.ZoomMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ZoomMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ZoomMode> property) where TTarget : DependencyObject
-        => property.Set(Xaml.Controls.ZoomMode.Enabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.VirtualizationMode.Standard"/></summary>
-        public static TTarget Standard<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.VirtualizationMode> property) where TTarget : DependencyObject
-        => property.Set(Xaml.Controls.VirtualizationMode.Standard);
-
-        /// <summary>Set to <see cref="Xaml.Controls.VirtualizationMode.Recycling"/></summary>
-        public static TTarget Recycling<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.VirtualizationMode> property) where TTarget : DependencyObject
-        => property.Set(Xaml.Controls.VirtualizationMode.Recycling);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollMode> property) where TTarget : DependencyObject
-        => property.Set(Xaml.Controls.ScrollMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollMode> property) where TTarget : DependencyObject
-        => property.Set(Xaml.Controls.ScrollMode.Enabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ScrollMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ScrollMode> property) where TTarget : DependencyObject
-        => property.Set(Xaml.Controls.ScrollMode.Auto);
     }
 
     public static partial class DragOverThemeAnimationExtensions
@@ -48324,14 +48376,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class FlowLayoutExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : FlowLayout
-        => property.Set(Xaml.Controls.Orientation.Vertical);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : FlowLayout
-        => property.Set(Xaml.Controls.Orientation.Horizontal);
-
         /// <summary>Set to <see cref="Xaml.Controls.FlowLayoutLineAlignment.Start"/></summary>
         public static TTarget Start<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.FlowLayoutLineAlignment> property) where TTarget : FlowLayout
         => property.Set(Xaml.Controls.FlowLayoutLineAlignment.Start);
@@ -48355,10 +48399,30 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.FlowLayoutLineAlignment.SpaceEvenly"/></summary>
         public static TTarget SpaceEvenly<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.FlowLayoutLineAlignment> property) where TTarget : FlowLayout
         => property.Set(Xaml.Controls.FlowLayoutLineAlignment.SpaceEvenly);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
+        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : FlowLayout
+        => property.Set(Xaml.Controls.Orientation.Vertical);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
+        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : FlowLayout
+        => property.Set(Xaml.Controls.Orientation.Horizontal);
     }
 
     public static partial class FlyoutBaseExtensions
     {
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
+        => property.Set(Xaml.ElementSoundMode.Default);
+
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.FocusOnly"/></summary>
+        public static TTarget FocusOnly<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
+        => property.Set(Xaml.ElementSoundMode.FocusOnly);
+
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Off"/></summary>
+        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
+        => property.Set(Xaml.ElementSoundMode.Off);
+
         /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : FlyoutBase
         => property.Set(Xaml.Controls.LightDismissOverlayMode.Auto);
@@ -48426,18 +48490,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.FlyoutPlacementMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutPlacementMode> property) where TTarget : FlyoutBase
         => property.Set(Xaml.Controls.Primitives.FlyoutPlacementMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
-        => property.Set(Xaml.ElementSoundMode.Default);
-
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.FocusOnly"/></summary>
-        public static TTarget FocusOnly<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
-        => property.Set(Xaml.ElementSoundMode.FocusOnly);
-
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Off"/></summary>
-        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : FlyoutBase
-        => property.Set(Xaml.ElementSoundMode.Off);
 
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.FlyoutShowMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutShowMode> property) where TTarget : FlyoutBase
@@ -48520,22 +48572,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : FrameworkElement
         => property.Set(Xaml.VerticalAlignment.Stretch);
 
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : FrameworkElement
-        => property.Set(Xaml.HorizontalAlignment.Left);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : FrameworkElement
-        => property.Set(Xaml.HorizontalAlignment.Center);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : FrameworkElement
-        => property.Set(Xaml.HorizontalAlignment.Right);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Stretch"/></summary>
-        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : FrameworkElement
-        => property.Set(Xaml.HorizontalAlignment.Stretch);
-
         /// <summary>Set to <see cref="Xaml.FlowDirection.LeftToRight"/></summary>
         public static TTarget LeftToRight<TTarget>(this DependencyProperty<TTarget, Xaml.FlowDirection> property) where TTarget : FrameworkElement
         => property.Set(Xaml.FlowDirection.LeftToRight);
@@ -48555,6 +48591,22 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.ElementTheme.Dark"/></summary>
         public static TTarget Dark<TTarget>(this DependencyProperty<TTarget, Xaml.ElementTheme> property) where TTarget : FrameworkElement
         => property.Set(Xaml.ElementTheme.Dark);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : FrameworkElement
+        => property.Set(Xaml.HorizontalAlignment.Left);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : FrameworkElement
+        => property.Set(Xaml.HorizontalAlignment.Center);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : FrameworkElement
+        => property.Set(Xaml.HorizontalAlignment.Right);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Stretch"/></summary>
+        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : FrameworkElement
+        => property.Set(Xaml.HorizontalAlignment.Stretch);
     }
 
     public static partial class GeometryGroupExtensions
@@ -48642,18 +48694,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class HyperlinkExtensions
     {
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Hyperlink
-        => property.Set(Xaml.ElementSoundMode.Default);
-
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.FocusOnly"/></summary>
-        public static TTarget FocusOnly<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Hyperlink
-        => property.Set(Xaml.ElementSoundMode.FocusOnly);
-
-        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Off"/></summary>
-        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Hyperlink
-        => property.Set(Xaml.ElementSoundMode.Off);
-
         /// <summary>Set to <see cref="Xaml.FocusState.Unfocused"/></summary>
         public static TTarget Unfocused<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : Hyperlink
         => property.Set(Xaml.FocusState.Unfocused);
@@ -48669,6 +48709,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.FocusState.Programmatic"/></summary>
         public static TTarget Programmatic<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : Hyperlink
         => property.Set(Xaml.FocusState.Programmatic);
+
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Hyperlink
+        => property.Set(Xaml.ElementSoundMode.Default);
+
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.FocusOnly"/></summary>
+        public static TTarget FocusOnly<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Hyperlink
+        => property.Set(Xaml.ElementSoundMode.FocusOnly);
+
+        /// <summary>Set to <see cref="Xaml.ElementSoundMode.Off"/></summary>
+        public static TTarget Off<TTarget>(this DependencyProperty<TTarget, Xaml.ElementSoundMode> property) where TTarget : Hyperlink
+        => property.Set(Xaml.ElementSoundMode.Off);
 
         /// <summary>Set to <see cref="Xaml.Input.XYFocusNavigationStrategy.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusNavigationStrategy> property) where TTarget : Hyperlink
@@ -48720,18 +48772,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : ImageBrush
         => property.Set(Xaml.Media.AlignmentY.Bottom);
 
-        /// <summary>Set to <see cref="Xaml.Media.AlignmentX.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentX> property) where TTarget : ImageBrush
-        => property.Set(Xaml.Media.AlignmentX.Left);
-
-        /// <summary>Set to <see cref="Xaml.Media.AlignmentX.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentX> property) where TTarget : ImageBrush
-        => property.Set(Xaml.Media.AlignmentX.Center);
-
-        /// <summary>Set to <see cref="Xaml.Media.AlignmentX.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentX> property) where TTarget : ImageBrush
-        => property.Set(Xaml.Media.AlignmentX.Right);
-
         /// <summary>Set to <see cref="Xaml.Media.Stretch.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : ImageBrush
         => property.Set(Xaml.Media.Stretch.None);
@@ -48747,6 +48787,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Media.Stretch.UniformToFill"/></summary>
         public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : ImageBrush
         => property.Set(Xaml.Media.Stretch.UniformToFill);
+
+        /// <summary>Set to <see cref="Xaml.Media.AlignmentX.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentX> property) where TTarget : ImageBrush
+        => property.Set(Xaml.Media.AlignmentX.Left);
+
+        /// <summary>Set to <see cref="Xaml.Media.AlignmentX.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentX> property) where TTarget : ImageBrush
+        => property.Set(Xaml.Media.AlignmentX.Center);
+
+        /// <summary>Set to <see cref="Xaml.Media.AlignmentX.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentX> property) where TTarget : ImageBrush
+        => property.Set(Xaml.Media.AlignmentX.Right);
     }
 
     public static partial class InfoBarExtensions
@@ -48789,14 +48841,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class ItemsWrapGridExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ItemsWrapGrid
-        => property.Set(Xaml.Controls.Orientation.Vertical);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ItemsWrapGrid
-        => property.Set(Xaml.Controls.Orientation.Horizontal);
-
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.GroupHeaderPlacement.Top"/></summary>
         public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.GroupHeaderPlacement> property) where TTarget : ItemsWrapGrid
         => property.Set(Xaml.Controls.Primitives.GroupHeaderPlacement.Top);
@@ -48804,30 +48848,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.GroupHeaderPlacement.Left"/></summary>
         public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.GroupHeaderPlacement> property) where TTarget : ItemsWrapGrid
         => property.Set(Xaml.Controls.Primitives.GroupHeaderPlacement.Left);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
+        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ItemsWrapGrid
+        => property.Set(Xaml.Controls.Orientation.Vertical);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
+        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : ItemsWrapGrid
+        => property.Set(Xaml.Controls.Orientation.Horizontal);
     }
 
     public static partial class KeyboardAcceleratorExtensions
     {
-        /// <summary>Set to <see cref="VirtualKeyModifiers.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, VirtualKeyModifiers> property) where TTarget : KeyboardAccelerator
-        => property.Set(VirtualKeyModifiers.None);
-
-        /// <summary>Set to <see cref="VirtualKeyModifiers.Control"/></summary>
-        public static TTarget Control<TTarget>(this DependencyProperty<TTarget, VirtualKeyModifiers> property) where TTarget : KeyboardAccelerator
-        => property.Set(VirtualKeyModifiers.Control);
-
-        /// <summary>Set to <see cref="VirtualKeyModifiers.Menu"/></summary>
-        public static TTarget Menu<TTarget>(this DependencyProperty<TTarget, VirtualKeyModifiers> property) where TTarget : KeyboardAccelerator
-        => property.Set(VirtualKeyModifiers.Menu);
-
-        /// <summary>Set to <see cref="VirtualKeyModifiers.Shift"/></summary>
-        public static TTarget Shift<TTarget>(this DependencyProperty<TTarget, VirtualKeyModifiers> property) where TTarget : KeyboardAccelerator
-        => property.Set(VirtualKeyModifiers.Shift);
-
-        /// <summary>Set to <see cref="VirtualKeyModifiers.Windows"/></summary>
-        public static TTarget Windows<TTarget>(this DependencyProperty<TTarget, VirtualKeyModifiers> property) where TTarget : KeyboardAccelerator
-        => property.Set(VirtualKeyModifiers.Windows);
-
         /// <summary>Set to <see cref="VirtualKey.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, VirtualKey> property) where TTarget : KeyboardAccelerator
         => property.Set(VirtualKey.None);
@@ -49515,6 +49547,26 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="VirtualKey.GamepadRightThumbstickLeft"/></summary>
         public static TTarget GamepadRightThumbstickLeft<TTarget>(this DependencyProperty<TTarget, VirtualKey> property) where TTarget : KeyboardAccelerator
         => property.Set(VirtualKey.GamepadRightThumbstickLeft);
+
+        /// <summary>Set to <see cref="VirtualKeyModifiers.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, VirtualKeyModifiers> property) where TTarget : KeyboardAccelerator
+        => property.Set(VirtualKeyModifiers.None);
+
+        /// <summary>Set to <see cref="VirtualKeyModifiers.Control"/></summary>
+        public static TTarget Control<TTarget>(this DependencyProperty<TTarget, VirtualKeyModifiers> property) where TTarget : KeyboardAccelerator
+        => property.Set(VirtualKeyModifiers.Control);
+
+        /// <summary>Set to <see cref="VirtualKeyModifiers.Menu"/></summary>
+        public static TTarget Menu<TTarget>(this DependencyProperty<TTarget, VirtualKeyModifiers> property) where TTarget : KeyboardAccelerator
+        => property.Set(VirtualKeyModifiers.Menu);
+
+        /// <summary>Set to <see cref="VirtualKeyModifiers.Shift"/></summary>
+        public static TTarget Shift<TTarget>(this DependencyProperty<TTarget, VirtualKeyModifiers> property) where TTarget : KeyboardAccelerator
+        => property.Set(VirtualKeyModifiers.Shift);
+
+        /// <summary>Set to <see cref="VirtualKeyModifiers.Windows"/></summary>
+        public static TTarget Windows<TTarget>(this DependencyProperty<TTarget, VirtualKeyModifiers> property) where TTarget : KeyboardAccelerator
+        => property.Set(VirtualKeyModifiers.Windows);
     }
 
     public static partial class ListBoxExtensions
@@ -49545,22 +49597,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class ListViewBaseExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.IncrementalLoadingTrigger.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.IncrementalLoadingTrigger> property) where TTarget : ListViewBase
-        => property.Set(Xaml.Controls.IncrementalLoadingTrigger.None);
-
-        /// <summary>Set to <see cref="Xaml.Controls.IncrementalLoadingTrigger.Edge"/></summary>
-        public static TTarget Edge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.IncrementalLoadingTrigger> property) where TTarget : ListViewBase
-        => property.Set(Xaml.Controls.IncrementalLoadingTrigger.Edge);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ListViewReorderMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewReorderMode> property) where TTarget : ListViewBase
-        => property.Set(Xaml.Controls.ListViewReorderMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.ListViewReorderMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewReorderMode> property) where TTarget : ListViewBase
-        => property.Set(Xaml.Controls.ListViewReorderMode.Enabled);
-
         /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : ListViewBase
         => property.Set(Xaml.Controls.ListViewSelectionMode.None);
@@ -49576,18 +49612,26 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.ListViewSelectionMode.Extended"/></summary>
         public static TTarget Extended<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewSelectionMode> property) where TTarget : ListViewBase
         => property.Set(Xaml.Controls.ListViewSelectionMode.Extended);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ListViewReorderMode.Disabled"/></summary>
+        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewReorderMode> property) where TTarget : ListViewBase
+        => property.Set(Xaml.Controls.ListViewReorderMode.Disabled);
+
+        /// <summary>Set to <see cref="Xaml.Controls.ListViewReorderMode.Enabled"/></summary>
+        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.ListViewReorderMode> property) where TTarget : ListViewBase
+        => property.Set(Xaml.Controls.ListViewReorderMode.Enabled);
+
+        /// <summary>Set to <see cref="Xaml.Controls.IncrementalLoadingTrigger.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.IncrementalLoadingTrigger> property) where TTarget : ListViewBase
+        => property.Set(Xaml.Controls.IncrementalLoadingTrigger.None);
+
+        /// <summary>Set to <see cref="Xaml.Controls.IncrementalLoadingTrigger.Edge"/></summary>
+        public static TTarget Edge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.IncrementalLoadingTrigger> property) where TTarget : ListViewBase
+        => property.Set(Xaml.Controls.IncrementalLoadingTrigger.Edge);
     }
 
     public static partial class ListViewItemPresenterExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.ListViewItemPresenterCheckMode.Inline"/></summary>
-        public static TTarget Inline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode> property) where TTarget : ListViewItemPresenter
-        => property.Set(Xaml.Controls.Primitives.ListViewItemPresenterCheckMode.Inline);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.ListViewItemPresenterCheckMode.Overlay"/></summary>
-        public static TTarget Overlay<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode> property) where TTarget : ListViewItemPresenter
-        => property.Set(Xaml.Controls.Primitives.ListViewItemPresenterCheckMode.Overlay);
-
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode.Inline"/></summary>
         public static TTarget Inline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode> property) where TTarget : ListViewItemPresenter
         => property.Set(Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode.Inline);
@@ -49595,6 +49639,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode.Overlay"/></summary>
         public static TTarget Overlay<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode> property) where TTarget : ListViewItemPresenter
         => property.Set(Xaml.Controls.Primitives.ListViewItemPresenterSelectionIndicatorMode.Overlay);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.ListViewItemPresenterCheckMode.Inline"/></summary>
+        public static TTarget Inline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode> property) where TTarget : ListViewItemPresenter
+        => property.Set(Xaml.Controls.Primitives.ListViewItemPresenterCheckMode.Inline);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.ListViewItemPresenterCheckMode.Overlay"/></summary>
+        public static TTarget Overlay<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.ListViewItemPresenterCheckMode> property) where TTarget : ListViewItemPresenter
+        => property.Set(Xaml.Controls.Primitives.ListViewItemPresenterCheckMode.Overlay);
     }
 
     public static partial class MediaPlayerElementExtensions
@@ -49652,17 +49704,17 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class NavigationViewExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Minimal"/></summary>
-        public static TTarget Minimal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Minimal);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus"/></summary>
+        public static TTarget WhenSelectionFollowsFocus<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Compact"/></summary>
-        public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Compact);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always"/></summary>
+        public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Expanded"/></summary>
-        public static TTarget Expanded<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Expanded);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never"/></summary>
+        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never);
 
         /// <summary>Set to <see cref="Xaml.Controls.NavigationViewSelectionFollowsFocus.Disabled"/></summary>
         public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewSelectionFollowsFocus> property) where TTarget : NavigationView
@@ -49671,26 +49723,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.NavigationViewSelectionFollowsFocus.Enabled"/></summary>
         public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewSelectionFollowsFocus> property) where TTarget : NavigationView
         => property.Set(Xaml.Controls.NavigationViewSelectionFollowsFocus.Enabled);
-
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewBackButtonVisible.Collapsed"/></summary>
-        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewBackButtonVisible> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewBackButtonVisible.Collapsed);
-
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewBackButtonVisible.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewBackButtonVisible> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewBackButtonVisible.Visible);
-
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewBackButtonVisible.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewBackButtonVisible> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewBackButtonVisible.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel"/></summary>
-        public static TTarget MoreLabel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewOverflowLabelMode> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel);
-
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel"/></summary>
-        public static TTarget NoLabel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewOverflowLabelMode> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel);
 
         /// <summary>Set to <see cref="Xaml.Controls.NavigationViewPaneDisplayMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewPaneDisplayMode> property) where TTarget : NavigationView
@@ -49712,17 +49744,37 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget LeftMinimal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewPaneDisplayMode> property) where TTarget : NavigationView
         => property.Set(Xaml.Controls.NavigationViewPaneDisplayMode.LeftMinimal);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus"/></summary>
-        public static TTarget WhenSelectionFollowsFocus<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.WhenSelectionFollowsFocus);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel"/></summary>
+        public static TTarget MoreLabel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewOverflowLabelMode> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewOverflowLabelMode.MoreLabel);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always"/></summary>
-        public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.Always);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel"/></summary>
+        public static TTarget NoLabel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewOverflowLabelMode> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewOverflowLabelMode.NoLabel);
 
-        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never"/></summary>
-        public static TTarget Never<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewShoulderNavigationEnabled> property) where TTarget : NavigationView
-        => property.Set(Xaml.Controls.NavigationViewShoulderNavigationEnabled.Never);
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewBackButtonVisible.Collapsed"/></summary>
+        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewBackButtonVisible> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewBackButtonVisible.Collapsed);
+
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewBackButtonVisible.Visible"/></summary>
+        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewBackButtonVisible> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewBackButtonVisible.Visible);
+
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewBackButtonVisible.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewBackButtonVisible> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewBackButtonVisible.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Minimal"/></summary>
+        public static TTarget Minimal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Minimal);
+
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Compact"/></summary>
+        public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Compact);
+
+        /// <summary>Set to <see cref="Xaml.Controls.NavigationViewDisplayMode.Expanded"/></summary>
+        public static TTarget Expanded<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NavigationViewDisplayMode> property) where TTarget : NavigationView
+        => property.Set(Xaml.Controls.NavigationViewDisplayMode.Expanded);
     }
 
     public static partial class NavigationViewTemplateSettingsExtensions
@@ -49738,18 +49790,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class NumberBoxExtensions
     {
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
-        => property.Set(Xaml.TextReadingOrder.Default);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
-        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
-        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
-        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
-
         /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
         public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : NumberBox
         => property.Set(Xaml.TextAlignment.Center);
@@ -49790,6 +49830,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Inline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NumberBoxSpinButtonPlacementMode> property) where TTarget : NumberBox
         => property.Set(Xaml.Controls.NumberBoxSpinButtonPlacementMode.Inline);
 
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
+        => property.Set(Xaml.TextReadingOrder.Default);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
+        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
+        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : NumberBox
+        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
+
         /// <summary>Set to <see cref="Xaml.Controls.NumberBoxValidationMode.InvalidInputOverwritten"/></summary>
         public static TTarget InvalidInputOverwritten<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.NumberBoxValidationMode> property) where TTarget : NumberBox
         => property.Set(Xaml.Controls.NumberBoxValidationMode.InvalidInputOverwritten);
@@ -49801,18 +49853,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class PagerControlExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
-        => property.Set(Xaml.Controls.PagerControlButtonVisibility.Visible);
-
-        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.HiddenOnEdge"/></summary>
-        public static TTarget HiddenOnEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
-        => property.Set(Xaml.Controls.PagerControlButtonVisibility.HiddenOnEdge);
-
-        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
-        => property.Set(Xaml.Controls.PagerControlButtonVisibility.Hidden);
-
         /// <summary>Set to <see cref="Xaml.Controls.PagerControlDisplayMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlDisplayMode> property) where TTarget : PagerControl
         => property.Set(Xaml.Controls.PagerControlDisplayMode.Auto);
@@ -49828,6 +49868,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.PagerControlDisplayMode.ButtonPanel"/></summary>
         public static TTarget ButtonPanel<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlDisplayMode> property) where TTarget : PagerControl
         => property.Set(Xaml.Controls.PagerControlDisplayMode.ButtonPanel);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.Visible"/></summary>
+        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
+        => property.Set(Xaml.Controls.PagerControlButtonVisibility.Visible);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.HiddenOnEdge"/></summary>
+        public static TTarget HiddenOnEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
+        => property.Set(Xaml.Controls.PagerControlButtonVisibility.HiddenOnEdge);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PagerControlButtonVisibility.Hidden"/></summary>
+        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PagerControlButtonVisibility> property) where TTarget : PagerControl
+        => property.Set(Xaml.Controls.PagerControlButtonVisibility.Hidden);
     }
 
     public static partial class PaneThemeTransitionExtensions
@@ -50053,6 +50105,22 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class RefreshVisualizerExtensions
     {
+        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
+        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
+        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Normal);
+
+        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Rotate90DegreesCounterclockwise"/></summary>
+        public static TTarget Rotate90DegreesCounterclockwise<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
+        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Rotate90DegreesCounterclockwise);
+
+        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Rotate270DegreesCounterclockwise"/></summary>
+        public static TTarget Rotate270DegreesCounterclockwise<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
+        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Rotate270DegreesCounterclockwise);
+
         /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerState.Idle"/></summary>
         public static TTarget Idle<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerState> property) where TTarget : RefreshVisualizer
         => property.Set(Xaml.Controls.RefreshVisualizerState.Idle);
@@ -50072,22 +50140,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerState.Refreshing"/></summary>
         public static TTarget Refreshing<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerState> property) where TTarget : RefreshVisualizer
         => property.Set(Xaml.Controls.RefreshVisualizerState.Refreshing);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
-        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
-        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Normal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Rotate90DegreesCounterclockwise"/></summary>
-        public static TTarget Rotate90DegreesCounterclockwise<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
-        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Rotate90DegreesCounterclockwise);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RefreshVisualizerOrientation.Rotate270DegreesCounterclockwise"/></summary>
-        public static TTarget Rotate270DegreesCounterclockwise<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RefreshVisualizerOrientation> property) where TTarget : RefreshVisualizer
-        => property.Set(Xaml.Controls.RefreshVisualizerOrientation.Rotate270DegreesCounterclockwise);
     }
 
     public static partial class RelativePanelExtensions
@@ -50103,58 +50155,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class RichEditBoxExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.CharacterCasing.Normal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Lower"/></summary>
-        public static TTarget Lower<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.CharacterCasing.Lower);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Upper"/></summary>
-        public static TTarget Upper<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.CharacterCasing.Upper);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
-        => property.Set(Xaml.TextReadingOrder.Default);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
-        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
-        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
-        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
-
-        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.None);
-
-        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Bold"/></summary>
-        public static TTarget Bold<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Bold);
-
-        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Italic"/></summary>
-        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Italic);
-
-        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Underline"/></summary>
-        public static TTarget Underline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Underline);
-
-        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.All"/></summary>
-        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.All);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RichEditClipboardFormat.AllFormats"/></summary>
-        public static TTarget AllFormats<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RichEditClipboardFormat> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.RichEditClipboardFormat.AllFormats);
-
-        /// <summary>Set to <see cref="Xaml.Controls.RichEditClipboardFormat.PlainText"/></summary>
-        public static TTarget PlainText<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RichEditClipboardFormat> property) where TTarget : RichEditBox
-        => property.Set(Xaml.Controls.RichEditClipboardFormat.PlainText);
-
         /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
         public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichEditBox
         => property.Set(Xaml.TextWrapping.NoWrap);
@@ -50166,6 +50166,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
         public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichEditBox
         => property.Set(Xaml.TextWrapping.WrapWholeWords);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.CharacterCasing.Normal);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Lower"/></summary>
+        public static TTarget Lower<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.CharacterCasing.Lower);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Upper"/></summary>
+        public static TTarget Upper<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.CharacterCasing.Upper);
 
         /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
         public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichEditBox
@@ -50195,6 +50207,26 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichEditBox
         => property.Set(Xaml.TextAlignment.DetectFromContent);
 
+        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.None);
+
+        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Bold"/></summary>
+        public static TTarget Bold<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Bold);
+
+        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Italic"/></summary>
+        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Italic);
+
+        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.Underline"/></summary>
+        public static TTarget Underline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.Underline);
+
+        /// <summary>Set to <see cref="Xaml.Controls.DisabledFormattingAccelerators.All"/></summary>
+        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.DisabledFormattingAccelerators> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.DisabledFormattingAccelerators.All);
+
         /// <summary>Set to <see cref="Xaml.Controls.CandidateWindowAlignment.Default"/></summary>
         public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> property) where TTarget : RichEditBox
         => property.Set(Xaml.Controls.CandidateWindowAlignment.Default);
@@ -50202,10 +50234,118 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.CandidateWindowAlignment.BottomEdge"/></summary>
         public static TTarget BottomEdge<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> property) where TTarget : RichEditBox
         => property.Set(Xaml.Controls.CandidateWindowAlignment.BottomEdge);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
+        => property.Set(Xaml.TextReadingOrder.Default);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
+        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
+        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichEditBox
+        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
+
+        /// <summary>Set to <see cref="Xaml.Controls.RichEditClipboardFormat.AllFormats"/></summary>
+        public static TTarget AllFormats<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RichEditClipboardFormat> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.RichEditClipboardFormat.AllFormats);
+
+        /// <summary>Set to <see cref="Xaml.Controls.RichEditClipboardFormat.PlainText"/></summary>
+        public static TTarget PlainText<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.RichEditClipboardFormat> property) where TTarget : RichEditBox
+        => property.Set(Xaml.Controls.RichEditClipboardFormat.PlainText);
     }
 
     public static partial class RichTextBlockExtensions
     {
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextReadingOrder.Default);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
+        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.Center);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.Left);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Start"/></summary>
+        public static TTarget Start<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.Start);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.Right);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.End"/></summary>
+        public static TTarget End<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.End);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.Justify"/></summary>
+        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.Justify);
+
+        /// <summary>Set to <see cref="Xaml.TextAlignment.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextAlignment.DetectFromContent);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
+        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextWrapping.NoWrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
+        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextWrapping.Wrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
+        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextWrapping.WrapWholeWords);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.Full"/></summary>
+        public static TTarget Full<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextLineBounds.Full);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToCapHeight"/></summary>
+        public static TTarget TrimToCapHeight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextLineBounds.TrimToCapHeight);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToBaseline"/></summary>
+        public static TTarget TrimToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextLineBounds.TrimToBaseline);
+
+        /// <summary>Set to <see cref="Xaml.TextLineBounds.Tight"/></summary>
+        public static TTarget Tight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.TextLineBounds.Tight);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.OpticalMarginAlignment.None);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
+        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.MaxHeight"/></summary>
+        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.LineStackingStrategy.MaxHeight);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BlockLineHeight"/></summary>
+        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.LineStackingStrategy.BlockLineHeight);
+
+        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BaselineToBaseline"/></summary>
+        public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
+        => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
+
         /// <summary>Set to <see cref="Windows.UI.Text.FontStretch.Undefined"/></summary>
         public static TTarget Undefined<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : RichTextBlock
         => property.Set(Windows.UI.Text.FontStretch.Undefined);
@@ -50246,65 +50386,17 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget UltraExpanded<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : RichTextBlock
         => property.Set(Windows.UI.Text.FontStretch.UltraExpanded);
 
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.MaxHeight"/></summary>
-        public static TTarget MaxHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.LineStackingStrategy.MaxHeight);
+        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
+        => property.Set(Windows.UI.Text.TextDecorations.None);
 
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BlockLineHeight"/></summary>
-        public static TTarget BlockLineHeight<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.LineStackingStrategy.BlockLineHeight);
+        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.Underline"/></summary>
+        public static TTarget Underline<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
+        => property.Set(Windows.UI.Text.TextDecorations.Underline);
 
-        /// <summary>Set to <see cref="Xaml.LineStackingStrategy.BaselineToBaseline"/></summary>
-        public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
-
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.OpticalMarginAlignment.None);
-
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
-        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.Full"/></summary>
-        public static TTarget Full<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextLineBounds.Full);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToCapHeight"/></summary>
-        public static TTarget TrimToCapHeight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextLineBounds.TrimToCapHeight);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.TrimToBaseline"/></summary>
-        public static TTarget TrimToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextLineBounds.TrimToBaseline);
-
-        /// <summary>Set to <see cref="Xaml.TextLineBounds.Tight"/></summary>
-        public static TTarget Tight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextLineBounds.Tight);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextReadingOrder.Default);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
-        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
-        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextWrapping.NoWrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
-        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextWrapping.Wrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
-        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextWrapping.WrapWholeWords);
+        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.Strikethrough"/></summary>
+        public static TTarget Strikethrough<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
+        => property.Set(Windows.UI.Text.TextDecorations.Strikethrough);
 
         /// <summary>Set to <see cref="Xaml.TextTrimming.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : RichTextBlock
@@ -50322,34 +50414,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Clip<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : RichTextBlock
         => property.Set(Xaml.TextTrimming.Clip);
 
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.Center);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.Left);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Start"/></summary>
-        public static TTarget Start<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.Start);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.Right);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.End"/></summary>
-        public static TTarget End<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.End);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.Justify"/></summary>
-        public static TTarget Justify<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.Justify);
-
-        /// <summary>Set to <see cref="Xaml.TextAlignment.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : RichTextBlock
-        => property.Set(Xaml.TextAlignment.DetectFromContent);
-
         /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
         public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : RichTextBlock
         => property.Set(Windows.UI.Text.FontStyle.Normal);
@@ -50361,18 +50425,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
         public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : RichTextBlock
         => property.Set(Windows.UI.Text.FontStyle.Italic);
-
-        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
-        => property.Set(Windows.UI.Text.TextDecorations.None);
-
-        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.Underline"/></summary>
-        public static TTarget Underline<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
-        => property.Set(Windows.UI.Text.TextDecorations.Underline);
-
-        /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.Strikethrough"/></summary>
-        public static TTarget Strikethrough<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : RichTextBlock
-        => property.Set(Windows.UI.Text.TextDecorations.Strikethrough);
     }
 
     public static partial class RunExtensions
@@ -50411,18 +50463,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class ScrollViewerExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Near"/></summary>
-        public static TTarget Near<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
-        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Near);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
-        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Center);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Far"/></summary>
-        public static TTarget Far<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
-        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Far);
-
         /// <summary>Set to <see cref="Xaml.Controls.SnapPointsType.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.SnapPointsType> property) where TTarget : ScrollViewer
         => property.Set(Xaml.Controls.SnapPointsType.None);
@@ -50442,26 +50482,30 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.SnapPointsType.MandatorySingle"/></summary>
         public static TTarget MandatorySingle<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.SnapPointsType> property) where TTarget : ScrollViewer
         => property.Set(Xaml.Controls.SnapPointsType.MandatorySingle);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Near"/></summary>
+        public static TTarget Near<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
+        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Near);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
+        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Center);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SnapPointsAlignment.Far"/></summary>
+        public static TTarget Far<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SnapPointsAlignment> property) where TTarget : ScrollViewer
+        => property.Set(Xaml.Controls.Primitives.SnapPointsAlignment.Far);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.ScrollViewerUpdatesMode.Synchronous"/></summary>
+        public static TTarget Synchronous<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.ScrollViewerUpdatesMode> property) where TTarget : ScrollViewer
+        => property.Set(Uno.UI.Xaml.Controls.ScrollViewerUpdatesMode.Synchronous);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.ScrollViewerUpdatesMode.AsynchronousIdle"/></summary>
+        public static TTarget AsynchronousIdle<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.ScrollViewerUpdatesMode> property) where TTarget : ScrollViewer
+        => property.Set(Uno.UI.Xaml.Controls.ScrollViewerUpdatesMode.AsynchronousIdle);
     }
 
     public static partial class SecureTextBoxViewExtensions
     {
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : SecureTextBoxView
-        => property.Set(Xaml.HorizontalAlignment.Left);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : SecureTextBoxView
-        => property.Set(Xaml.HorizontalAlignment.Center);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : SecureTextBoxView
-        => property.Set(Xaml.HorizontalAlignment.Right);
-
-        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Stretch"/></summary>
-        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : SecureTextBoxView
-        => property.Set(Xaml.HorizontalAlignment.Stretch);
-
         /// <summary>Set to <see cref="Xaml.VerticalAlignment.Top"/></summary>
         public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.VerticalAlignment> property) where TTarget : SecureTextBoxView
         => property.Set(Xaml.VerticalAlignment.Top);
@@ -50485,22 +50529,26 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Visibility.Collapsed"/></summary>
         public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : SecureTextBoxView
         => property.Set(Xaml.Visibility.Collapsed);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : SecureTextBoxView
+        => property.Set(Xaml.HorizontalAlignment.Left);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : SecureTextBoxView
+        => property.Set(Xaml.HorizontalAlignment.Center);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : SecureTextBoxView
+        => property.Set(Xaml.HorizontalAlignment.Right);
+
+        /// <summary>Set to <see cref="Xaml.HorizontalAlignment.Stretch"/></summary>
+        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, Xaml.HorizontalAlignment> property) where TTarget : SecureTextBoxView
+        => property.Set(Xaml.HorizontalAlignment.Stretch);
     }
 
     public static partial class ShapeExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Media.PenLineJoin.Miter"/></summary>
-        public static TTarget Miter<TTarget>(this DependencyProperty<TTarget, Xaml.Media.PenLineJoin> property) where TTarget : Shape
-        => property.Set(Xaml.Media.PenLineJoin.Miter);
-
-        /// <summary>Set to <see cref="Xaml.Media.PenLineJoin.Bevel"/></summary>
-        public static TTarget Bevel<TTarget>(this DependencyProperty<TTarget, Xaml.Media.PenLineJoin> property) where TTarget : Shape
-        => property.Set(Xaml.Media.PenLineJoin.Bevel);
-
-        /// <summary>Set to <see cref="Xaml.Media.PenLineJoin.Round"/></summary>
-        public static TTarget Round<TTarget>(this DependencyProperty<TTarget, Xaml.Media.PenLineJoin> property) where TTarget : Shape
-        => property.Set(Xaml.Media.PenLineJoin.Round);
-
         /// <summary>Set to <see cref="Xaml.Media.PenLineCap.Flat"/></summary>
         public static TTarget Flat<TTarget>(this DependencyProperty<TTarget, Xaml.Media.PenLineCap> property) where TTarget : Shape
         => property.Set(Xaml.Media.PenLineCap.Flat);
@@ -50516,6 +50564,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Media.PenLineCap.Triangle"/></summary>
         public static TTarget Triangle<TTarget>(this DependencyProperty<TTarget, Xaml.Media.PenLineCap> property) where TTarget : Shape
         => property.Set(Xaml.Media.PenLineCap.Triangle);
+
+        /// <summary>Set to <see cref="Xaml.Media.PenLineJoin.Miter"/></summary>
+        public static TTarget Miter<TTarget>(this DependencyProperty<TTarget, Xaml.Media.PenLineJoin> property) where TTarget : Shape
+        => property.Set(Xaml.Media.PenLineJoin.Miter);
+
+        /// <summary>Set to <see cref="Xaml.Media.PenLineJoin.Bevel"/></summary>
+        public static TTarget Bevel<TTarget>(this DependencyProperty<TTarget, Xaml.Media.PenLineJoin> property) where TTarget : Shape
+        => property.Set(Xaml.Media.PenLineJoin.Bevel);
+
+        /// <summary>Set to <see cref="Xaml.Media.PenLineJoin.Round"/></summary>
+        public static TTarget Round<TTarget>(this DependencyProperty<TTarget, Xaml.Media.PenLineJoin> property) where TTarget : Shape
+        => property.Set(Xaml.Media.PenLineJoin.Round);
 
         /// <summary>Set to <see cref="Xaml.Media.Stretch.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Shape
@@ -50551,13 +50611,13 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class SliderExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SliderSnapsTo.StepValues"/></summary>
-        public static TTarget StepValues<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SliderSnapsTo> property) where TTarget : Slider
-        => property.Set(Xaml.Controls.Primitives.SliderSnapsTo.StepValues);
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
+        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : Slider
+        => property.Set(Xaml.Controls.Orientation.Vertical);
 
-        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SliderSnapsTo.Ticks"/></summary>
-        public static TTarget Ticks<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SliderSnapsTo> property) where TTarget : Slider
-        => property.Set(Xaml.Controls.Primitives.SliderSnapsTo.Ticks);
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
+        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : Slider
+        => property.Set(Xaml.Controls.Orientation.Horizontal);
 
         /// <summary>Set to <see cref="Xaml.Controls.Primitives.TickPlacement.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.TickPlacement> property) where TTarget : Slider
@@ -50579,13 +50639,13 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget Inline<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.TickPlacement> property) where TTarget : Slider
         => property.Set(Xaml.Controls.Primitives.TickPlacement.Inline);
 
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : Slider
-        => property.Set(Xaml.Controls.Orientation.Vertical);
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SliderSnapsTo.StepValues"/></summary>
+        public static TTarget StepValues<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SliderSnapsTo> property) where TTarget : Slider
+        => property.Set(Xaml.Controls.Primitives.SliderSnapsTo.StepValues);
 
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : Slider
-        => property.Set(Xaml.Controls.Orientation.Horizontal);
+        /// <summary>Set to <see cref="Xaml.Controls.Primitives.SliderSnapsTo.Ticks"/></summary>
+        public static TTarget Ticks<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Primitives.SliderSnapsTo> property) where TTarget : Slider
+        => property.Set(Xaml.Controls.Primitives.SliderSnapsTo.Ticks);
     }
 
     public static partial class SplitCloseThemeAnimationExtensions
@@ -52376,18 +52436,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class TabViewExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.TabViewWidthMode.Equal"/></summary>
-        public static TTarget Equal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewWidthMode> property) where TTarget : TabView
-        => property.Set(Xaml.Controls.TabViewWidthMode.Equal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.TabViewWidthMode.SizeToContent"/></summary>
-        public static TTarget SizeToContent<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewWidthMode> property) where TTarget : TabView
-        => property.Set(Xaml.Controls.TabViewWidthMode.SizeToContent);
-
-        /// <summary>Set to <see cref="Xaml.Controls.TabViewWidthMode.Compact"/></summary>
-        public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewWidthMode> property) where TTarget : TabView
-        => property.Set(Xaml.Controls.TabViewWidthMode.Compact);
-
         /// <summary>Set to <see cref="Xaml.Controls.TabViewCloseButtonOverlayMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewCloseButtonOverlayMode> property) where TTarget : TabView
         => property.Set(Xaml.Controls.TabViewCloseButtonOverlayMode.Auto);
@@ -52399,22 +52447,22 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.TabViewCloseButtonOverlayMode.Always"/></summary>
         public static TTarget Always<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewCloseButtonOverlayMode> property) where TTarget : TabView
         => property.Set(Xaml.Controls.TabViewCloseButtonOverlayMode.Always);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TabViewWidthMode.Equal"/></summary>
+        public static TTarget Equal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewWidthMode> property) where TTarget : TabView
+        => property.Set(Xaml.Controls.TabViewWidthMode.Equal);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TabViewWidthMode.SizeToContent"/></summary>
+        public static TTarget SizeToContent<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewWidthMode> property) where TTarget : TabView
+        => property.Set(Xaml.Controls.TabViewWidthMode.SizeToContent);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TabViewWidthMode.Compact"/></summary>
+        public static TTarget Compact<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TabViewWidthMode> property) where TTarget : TabView
+        => property.Set(Xaml.Controls.TabViewWidthMode.Compact);
     }
 
     public static partial class TeachingTipExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.TeachingTipTailVisibility.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TeachingTipTailVisibility> property) where TTarget : TeachingTip
-        => property.Set(Xaml.Controls.TeachingTipTailVisibility.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Controls.TeachingTipTailVisibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TeachingTipTailVisibility> property) where TTarget : TeachingTip
-        => property.Set(Xaml.Controls.TeachingTipTailVisibility.Visible);
-
-        /// <summary>Set to <see cref="Xaml.Controls.TeachingTipTailVisibility.Collapsed"/></summary>
-        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TeachingTipTailVisibility> property) where TTarget : TeachingTip
-        => property.Set(Xaml.Controls.TeachingTipTailVisibility.Collapsed);
-
         /// <summary>Set to <see cref="Xaml.Controls.TeachingTipPlacementMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TeachingTipPlacementMode> property) where TTarget : TeachingTip
         => property.Set(Xaml.Controls.TeachingTipPlacementMode.Auto);
@@ -52482,10 +52530,34 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.TeachingTipHeroContentPlacementMode.Bottom"/></summary>
         public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TeachingTipHeroContentPlacementMode> property) where TTarget : TeachingTip
         => property.Set(Xaml.Controls.TeachingTipHeroContentPlacementMode.Bottom);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TeachingTipTailVisibility.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TeachingTipTailVisibility> property) where TTarget : TeachingTip
+        => property.Set(Xaml.Controls.TeachingTipTailVisibility.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TeachingTipTailVisibility.Visible"/></summary>
+        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TeachingTipTailVisibility> property) where TTarget : TeachingTip
+        => property.Set(Xaml.Controls.TeachingTipTailVisibility.Visible);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TeachingTipTailVisibility.Collapsed"/></summary>
+        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TeachingTipTailVisibility> property) where TTarget : TeachingTip
+        => property.Set(Xaml.Controls.TeachingTipTailVisibility.Collapsed);
     }
 
     public static partial class TextBlockExtensions
     {
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextBlock
+        => property.Set(Windows.UI.Text.FontStyle.Normal);
+
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Oblique"/></summary>
+        public static TTarget Oblique<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextBlock
+        => property.Set(Windows.UI.Text.FontStyle.Oblique);
+
+        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
+        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextBlock
+        => property.Set(Windows.UI.Text.FontStyle.Italic);
+
         /// <summary>Set to <see cref="Xaml.TextAlignment.Center"/></summary>
         public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBlock
         => property.Set(Xaml.TextAlignment.Center);
@@ -52513,46 +52585,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.TextAlignment.DetectFromContent"/></summary>
         public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBlock
         => property.Set(Xaml.TextAlignment.DetectFromContent);
-
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextBlock
-        => property.Set(Windows.UI.Text.FontStyle.Normal);
-
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Oblique"/></summary>
-        public static TTarget Oblique<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextBlock
-        => property.Set(Windows.UI.Text.FontStyle.Oblique);
-
-        /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
-        public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextBlock
-        => property.Set(Windows.UI.Text.FontStyle.Italic);
-
-        /// <summary>Set to <see cref="Xaml.TextTrimming.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextTrimming.None);
-
-        /// <summary>Set to <see cref="Xaml.TextTrimming.CharacterEllipsis"/></summary>
-        public static TTarget CharacterEllipsis<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextTrimming.CharacterEllipsis);
-
-        /// <summary>Set to <see cref="Xaml.TextTrimming.WordEllipsis"/></summary>
-        public static TTarget WordEllipsis<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextTrimming.WordEllipsis);
-
-        /// <summary>Set to <see cref="Xaml.TextTrimming.Clip"/></summary>
-        public static TTarget Clip<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextTrimming.Clip);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
-        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextWrapping.NoWrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
-        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextWrapping.Wrap);
-
-        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
-        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextWrapping.WrapWholeWords);
 
         /// <summary>Set to <see cref="Windows.UI.Text.FontStretch.Undefined"/></summary>
         public static TTarget Undefined<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : TextBlock
@@ -52606,26 +52638,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget BaselineToBaseline<TTarget>(this DependencyProperty<TTarget, Xaml.LineStackingStrategy> property) where TTarget : TextBlock
         => property.Set(Xaml.LineStackingStrategy.BaselineToBaseline);
 
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : TextBlock
-        => property.Set(Xaml.OpticalMarginAlignment.None);
-
-        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
-        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : TextBlock
-        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextReadingOrder.Default);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
-        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
-        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
-
         /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : TextBlock
         => property.Set(Windows.UI.Text.TextDecorations.None);
@@ -52637,6 +52649,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.Strikethrough"/></summary>
         public static TTarget Strikethrough<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : TextBlock
         => property.Set(Windows.UI.Text.TextDecorations.Strikethrough);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : TextBlock
+        => property.Set(Xaml.OpticalMarginAlignment.None);
+
+        /// <summary>Set to <see cref="Xaml.OpticalMarginAlignment.TrimSideBearings"/></summary>
+        public static TTarget TrimSideBearings<TTarget>(this DependencyProperty<TTarget, Xaml.OpticalMarginAlignment> property) where TTarget : TextBlock
+        => property.Set(Xaml.OpticalMarginAlignment.TrimSideBearings);
 
         /// <summary>Set to <see cref="Xaml.TextLineBounds.Full"/></summary>
         public static TTarget Full<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : TextBlock
@@ -52653,34 +52673,50 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.TextLineBounds.Tight"/></summary>
         public static TTarget Tight<TTarget>(this DependencyProperty<TTarget, Xaml.TextLineBounds> property) where TTarget : TextBlock
         => property.Set(Xaml.TextLineBounds.Tight);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
+        public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextWrapping.NoWrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.Wrap"/></summary>
+        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextWrapping.Wrap);
+
+        /// <summary>Set to <see cref="Xaml.TextWrapping.WrapWholeWords"/></summary>
+        public static TTarget WrapWholeWords<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextWrapping.WrapWholeWords);
+
+        /// <summary>Set to <see cref="Xaml.TextTrimming.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextTrimming.None);
+
+        /// <summary>Set to <see cref="Xaml.TextTrimming.CharacterEllipsis"/></summary>
+        public static TTarget CharacterEllipsis<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextTrimming.CharacterEllipsis);
+
+        /// <summary>Set to <see cref="Xaml.TextTrimming.WordEllipsis"/></summary>
+        public static TTarget WordEllipsis<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextTrimming.WordEllipsis);
+
+        /// <summary>Set to <see cref="Xaml.TextTrimming.Clip"/></summary>
+        public static TTarget Clip<TTarget>(this DependencyProperty<TTarget, Xaml.TextTrimming> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextTrimming.Clip);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextReadingOrder.Default);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
+        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBlock
+        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
     }
 
     public static partial class TextBoxExtensions
     {
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
-        => property.Set(Xaml.TextReadingOrder.Default);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
-        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
-        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
-
-        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
-        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
-        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Normal"/></summary>
-        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.CharacterCasing.Normal);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Lower"/></summary>
-        public static TTarget Lower<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.CharacterCasing.Lower);
-
-        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Upper"/></summary>
-        public static TTarget Upper<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
-        => property.Set(Xaml.Controls.CharacterCasing.Upper);
-
         /// <summary>Set to <see cref="Xaml.TextWrapping.NoWrap"/></summary>
         public static TTarget NoWrap<TTarget>(this DependencyProperty<TTarget, Xaml.TextWrapping> property) where TTarget : TextBox
         => property.Set(Xaml.TextWrapping.NoWrap);
@@ -52721,6 +52757,30 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextAlignment> property) where TTarget : TextBox
         => property.Set(Xaml.TextAlignment.DetectFromContent);
 
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Normal"/></summary>
+        public static TTarget Normal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
+        => property.Set(Xaml.Controls.CharacterCasing.Normal);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Lower"/></summary>
+        public static TTarget Lower<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
+        => property.Set(Xaml.Controls.CharacterCasing.Lower);
+
+        /// <summary>Set to <see cref="Xaml.Controls.CharacterCasing.Upper"/></summary>
+        public static TTarget Upper<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> property) where TTarget : TextBox
+        => property.Set(Xaml.Controls.CharacterCasing.Upper);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
+        => property.Set(Xaml.TextReadingOrder.Default);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.UseFlowDirection"/></summary>
+        public static TTarget UseFlowDirection<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
+        => property.Set(Xaml.TextReadingOrder.UseFlowDirection);
+
+        /// <summary>Set to <see cref="Xaml.TextReadingOrder.DetectFromContent"/></summary>
+        public static TTarget DetectFromContent<TTarget>(this DependencyProperty<TTarget, Xaml.TextReadingOrder> property) where TTarget : TextBox
+        => property.Set(Xaml.TextReadingOrder.DetectFromContent);
+
         /// <summary>Set to <see cref="Xaml.Controls.CandidateWindowAlignment.Default"/></summary>
         public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.CandidateWindowAlignment> property) where TTarget : TextBox
         => property.Set(Xaml.Controls.CandidateWindowAlignment.Default);
@@ -52751,6 +52811,34 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Windows.UI.Text.FontStyle.Italic"/></summary>
         public static TTarget Italic<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStyle> property) where TTarget : TextElement
         => property.Set(Windows.UI.Text.FontStyle.Italic);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Bottom"/></summary>
+        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Bottom);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Top"/></summary>
+        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Top);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Left);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Right);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Center);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Hidden"/></summary>
+        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Hidden);
 
         /// <summary>Set to <see cref="Windows.UI.Text.FontStretch.Undefined"/></summary>
         public static TTarget Undefined<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : TextElement
@@ -52792,34 +52880,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget UltraExpanded<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.FontStretch> property) where TTarget : TextElement
         => property.Set(Windows.UI.Text.FontStretch.UltraExpanded);
 
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Bottom"/></summary>
-        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Bottom);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Top"/></summary>
-        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Top);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Left);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Right);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Center);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : TextElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Hidden);
-
         /// <summary>Set to <see cref="Windows.UI.Text.TextDecorations.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Windows.UI.Text.TextDecorations> property) where TTarget : TextElement
         => property.Set(Windows.UI.Text.TextDecorations.None);
@@ -52835,18 +52895,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class TileBrushExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Top"/></summary>
-        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : TileBrush
-        => property.Set(Xaml.Media.AlignmentY.Top);
-
-        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : TileBrush
-        => property.Set(Xaml.Media.AlignmentY.Center);
-
-        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Bottom"/></summary>
-        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : TileBrush
-        => property.Set(Xaml.Media.AlignmentY.Bottom);
-
         /// <summary>Set to <see cref="Xaml.Media.Stretch.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : TileBrush
         => property.Set(Xaml.Media.Stretch.None);
@@ -52874,6 +52922,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Media.AlignmentX.Right"/></summary>
         public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentX> property) where TTarget : TileBrush
         => property.Set(Xaml.Media.AlignmentX.Right);
+
+        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Top"/></summary>
+        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : TileBrush
+        => property.Set(Xaml.Media.AlignmentY.Top);
+
+        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : TileBrush
+        => property.Set(Xaml.Media.AlignmentY.Center);
+
+        /// <summary>Set to <see cref="Xaml.Media.AlignmentY.Bottom"/></summary>
+        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Media.AlignmentY> property) where TTarget : TileBrush
+        => property.Set(Xaml.Media.AlignmentY.Bottom);
     }
 
     public static partial class TimePickerExtensions
@@ -53009,14 +53069,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class TwoPaneViewExtensions
     {
-        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewPriority.Pane1"/></summary>
-        public static TTarget Pane1<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewPriority> property) where TTarget : TwoPaneView
-        => property.Set(Xaml.Controls.TwoPaneViewPriority.Pane1);
-
-        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewPriority.Pane2"/></summary>
-        public static TTarget Pane2<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewPriority> property) where TTarget : TwoPaneView
-        => property.Set(Xaml.Controls.TwoPaneViewPriority.Pane2);
-
         /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewMode.SinglePane"/></summary>
         public static TTarget SinglePane<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewMode> property) where TTarget : TwoPaneView
         => property.Set(Xaml.Controls.TwoPaneViewMode.SinglePane);
@@ -53028,6 +53080,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewMode.Tall"/></summary>
         public static TTarget Tall<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewMode> property) where TTarget : TwoPaneView
         => property.Set(Xaml.Controls.TwoPaneViewMode.Tall);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.SinglePane"/></summary>
+        public static TTarget SinglePane<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
+        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.SinglePane);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.LeftRight"/></summary>
+        public static TTarget LeftRight<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
+        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.LeftRight);
+
+        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.RightLeft"/></summary>
+        public static TTarget RightLeft<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
+        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.RightLeft);
 
         /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewTallModeConfiguration.SinglePane"/></summary>
         public static TTarget SinglePane<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewTallModeConfiguration> property) where TTarget : TwoPaneView
@@ -53041,21 +53105,121 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         public static TTarget BottomTop<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewTallModeConfiguration> property) where TTarget : TwoPaneView
         => property.Set(Xaml.Controls.TwoPaneViewTallModeConfiguration.BottomTop);
 
-        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.SinglePane"/></summary>
-        public static TTarget SinglePane<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
-        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.SinglePane);
+        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewPriority.Pane1"/></summary>
+        public static TTarget Pane1<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewPriority> property) where TTarget : TwoPaneView
+        => property.Set(Xaml.Controls.TwoPaneViewPriority.Pane1);
 
-        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.LeftRight"/></summary>
-        public static TTarget LeftRight<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
-        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.LeftRight);
-
-        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewWideModeConfiguration.RightLeft"/></summary>
-        public static TTarget RightLeft<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewWideModeConfiguration> property) where TTarget : TwoPaneView
-        => property.Set(Xaml.Controls.TwoPaneViewWideModeConfiguration.RightLeft);
+        /// <summary>Set to <see cref="Xaml.Controls.TwoPaneViewPriority.Pane2"/></summary>
+        public static TTarget Pane2<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.TwoPaneViewPriority> property) where TTarget : TwoPaneView
+        => property.Set(Xaml.Controls.TwoPaneViewPriority.Pane2);
     }
 
     public static partial class UIElementExtensions
     {
+        /// <summary>Set to <see cref="Xaml.FocusState.Unfocused"/></summary>
+        public static TTarget Unfocused<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : UIElement
+        => property.Set(Xaml.FocusState.Unfocused);
+
+        /// <summary>Set to <see cref="Xaml.FocusState.Pointer"/></summary>
+        public static TTarget Pointer<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : UIElement
+        => property.Set(Xaml.FocusState.Pointer);
+
+        /// <summary>Set to <see cref="Xaml.FocusState.Keyboard"/></summary>
+        public static TTarget Keyboard<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : UIElement
+        => property.Set(Xaml.FocusState.Keyboard);
+
+        /// <summary>Set to <see cref="Xaml.FocusState.Programmatic"/></summary>
+        public static TTarget Programmatic<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : UIElement
+        => property.Set(Xaml.FocusState.Programmatic);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.None);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateX"/></summary>
+        public static TTarget TranslateX<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.TranslateX);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateY"/></summary>
+        public static TTarget TranslateY<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.TranslateY);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateRailsX"/></summary>
+        public static TTarget TranslateRailsX<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.TranslateRailsX);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateRailsY"/></summary>
+        public static TTarget TranslateRailsY<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.TranslateRailsY);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.Rotate"/></summary>
+        public static TTarget Rotate<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.Rotate);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.Scale"/></summary>
+        public static TTarget Scale<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.Scale);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateInertia"/></summary>
+        public static TTarget TranslateInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.TranslateInertia);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.RotateInertia"/></summary>
+        public static TTarget RotateInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.RotateInertia);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.ScaleInertia"/></summary>
+        public static TTarget ScaleInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.ScaleInertia);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.All"/></summary>
+        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.All);
+
+        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.System"/></summary>
+        public static TTarget System<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.ManipulationModes.System);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyboardNavigationMode.Local"/></summary>
+        public static TTarget Local<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardNavigationMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyboardNavigationMode.Local);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyboardNavigationMode.Cycle"/></summary>
+        public static TTarget Cycle<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardNavigationMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyboardNavigationMode.Cycle);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyboardNavigationMode.Once"/></summary>
+        public static TTarget Once<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardNavigationMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyboardNavigationMode.Once);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Bottom"/></summary>
+        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Bottom);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Top"/></summary>
+        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Top);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Left"/></summary>
+        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Left);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Right"/></summary>
+        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Right);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Center);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Hidden"/></summary>
+        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyTipPlacementMode.Hidden);
+
         /// <summary>Set to <see cref="Xaml.Input.XYFocusNavigationStrategy.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusNavigationStrategy> property) where TTarget : UIElement
         => property.Set(Xaml.Input.XYFocusNavigationStrategy.Auto);
@@ -53071,6 +53235,58 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Input.XYFocusNavigationStrategy.RectilinearDistance"/></summary>
         public static TTarget RectilinearDistance<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusNavigationStrategy> property) where TTarget : UIElement
         => property.Set(Xaml.Input.XYFocusNavigationStrategy.RectilinearDistance);
+
+        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Enabled"/></summary>
+        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Enabled);
+
+        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Disabled"/></summary>
+        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Disabled);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyboardAcceleratorPlacementMode.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyboardAcceleratorPlacementMode.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Input.KeyboardAcceleratorPlacementMode.Hidden"/></summary>
+        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Input.KeyboardAcceleratorPlacementMode.Hidden);
+
+        /// <summary>Set to <see cref="Xaml.Visibility.Visible"/></summary>
+        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : UIElement
+        => property.Set(Xaml.Visibility.Visible);
+
+        /// <summary>Set to <see cref="Xaml.Visibility.Collapsed"/></summary>
+        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : UIElement
+        => property.Set(Xaml.Visibility.Collapsed);
+
+        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
+        => property.Set(Xaml.ElementHighContrastAdjustment.None);
+
+        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.Application"/></summary>
+        public static TTarget Application<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
+        => property.Set(Xaml.ElementHighContrastAdjustment.Application);
+
+        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
+        => property.Set(Xaml.ElementHighContrastAdjustment.Auto);
+
+        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.Inherit"/></summary>
+        public static TTarget Inherit<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Media.ElementCompositeMode.Inherit);
+
+        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.SourceOver"/></summary>
+        public static TTarget SourceOver<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Media.ElementCompositeMode.SourceOver);
+
+        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.MinBlend"/></summary>
+        public static TTarget MinBlend<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
+        => property.Set(Xaml.Media.ElementCompositeMode.MinBlend);
 
         /// <summary>Set to <see cref="Uno.UI.Xaml.RoutedEventFlag.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.RoutedEventFlag> property) where TTarget : UIElement
@@ -53199,162 +53415,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Uno.UI.Xaml.RoutedEventFlag.Holding"/></summary>
         public static TTarget Holding<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.RoutedEventFlag> property) where TTarget : UIElement
         => property.Set(Uno.UI.Xaml.RoutedEventFlag.Holding);
-
-        /// <summary>Set to <see cref="Xaml.Visibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : UIElement
-        => property.Set(Xaml.Visibility.Visible);
-
-        /// <summary>Set to <see cref="Xaml.Visibility.Collapsed"/></summary>
-        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : UIElement
-        => property.Set(Xaml.Visibility.Collapsed);
-
-        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.Inherit"/></summary>
-        public static TTarget Inherit<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Media.ElementCompositeMode.Inherit);
-
-        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.SourceOver"/></summary>
-        public static TTarget SourceOver<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Media.ElementCompositeMode.SourceOver);
-
-        /// <summary>Set to <see cref="Xaml.Media.ElementCompositeMode.MinBlend"/></summary>
-        public static TTarget MinBlend<TTarget>(this DependencyProperty<TTarget, Xaml.Media.ElementCompositeMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Media.ElementCompositeMode.MinBlend);
-
-        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
-        => property.Set(Xaml.ElementHighContrastAdjustment.None);
-
-        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.Application"/></summary>
-        public static TTarget Application<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
-        => property.Set(Xaml.ElementHighContrastAdjustment.Application);
-
-        /// <summary>Set to <see cref="Xaml.ElementHighContrastAdjustment.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.ElementHighContrastAdjustment> property) where TTarget : UIElement
-        => property.Set(Xaml.ElementHighContrastAdjustment.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Bottom"/></summary>
-        public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Bottom);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Top"/></summary>
-        public static TTarget Top<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Top);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Left"/></summary>
-        public static TTarget Left<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Left);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Right"/></summary>
-        public static TTarget Right<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Right);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Center);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyTipPlacementMode.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyTipPlacementMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyTipPlacementMode.Hidden);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyboardAcceleratorPlacementMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyboardAcceleratorPlacementMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyboardAcceleratorPlacementMode.Hidden"/></summary>
-        public static TTarget Hidden<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyboardAcceleratorPlacementMode.Hidden);
-
-        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Auto);
-
-        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Enabled"/></summary>
-        public static TTarget Enabled<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Enabled);
-
-        /// <summary>Set to <see cref="Xaml.Input.XYFocusKeyboardNavigationMode.Disabled"/></summary>
-        public static TTarget Disabled<TTarget>(this DependencyProperty<TTarget, Xaml.Input.XYFocusKeyboardNavigationMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.XYFocusKeyboardNavigationMode.Disabled);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyboardNavigationMode.Local"/></summary>
-        public static TTarget Local<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardNavigationMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyboardNavigationMode.Local);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyboardNavigationMode.Cycle"/></summary>
-        public static TTarget Cycle<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardNavigationMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyboardNavigationMode.Cycle);
-
-        /// <summary>Set to <see cref="Xaml.Input.KeyboardNavigationMode.Once"/></summary>
-        public static TTarget Once<TTarget>(this DependencyProperty<TTarget, Xaml.Input.KeyboardNavigationMode> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.KeyboardNavigationMode.Once);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.None"/></summary>
-        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.None);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateX"/></summary>
-        public static TTarget TranslateX<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.TranslateX);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateY"/></summary>
-        public static TTarget TranslateY<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.TranslateY);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateRailsX"/></summary>
-        public static TTarget TranslateRailsX<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.TranslateRailsX);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateRailsY"/></summary>
-        public static TTarget TranslateRailsY<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.TranslateRailsY);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.Rotate"/></summary>
-        public static TTarget Rotate<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.Rotate);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.Scale"/></summary>
-        public static TTarget Scale<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.Scale);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.TranslateInertia"/></summary>
-        public static TTarget TranslateInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.TranslateInertia);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.RotateInertia"/></summary>
-        public static TTarget RotateInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.RotateInertia);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.ScaleInertia"/></summary>
-        public static TTarget ScaleInertia<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.ScaleInertia);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.All"/></summary>
-        public static TTarget All<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.All);
-
-        /// <summary>Set to <see cref="Xaml.Input.ManipulationModes.System"/></summary>
-        public static TTarget System<TTarget>(this DependencyProperty<TTarget, Xaml.Input.ManipulationModes> property) where TTarget : UIElement
-        => property.Set(Xaml.Input.ManipulationModes.System);
-
-        /// <summary>Set to <see cref="Xaml.FocusState.Unfocused"/></summary>
-        public static TTarget Unfocused<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : UIElement
-        => property.Set(Xaml.FocusState.Unfocused);
-
-        /// <summary>Set to <see cref="Xaml.FocusState.Pointer"/></summary>
-        public static TTarget Pointer<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : UIElement
-        => property.Set(Xaml.FocusState.Pointer);
-
-        /// <summary>Set to <see cref="Xaml.FocusState.Keyboard"/></summary>
-        public static TTarget Keyboard<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : UIElement
-        => property.Set(Xaml.FocusState.Keyboard);
-
-        /// <summary>Set to <see cref="Xaml.FocusState.Programmatic"/></summary>
-        public static TTarget Programmatic<TTarget>(this DependencyProperty<TTarget, Xaml.FocusState> property) where TTarget : UIElement
-        => property.Set(Xaml.FocusState.Programmatic);
     }
 
     public static partial class UniformGridLayoutExtensions
@@ -53417,6 +53477,18 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
 
     public static partial class ViewboxExtensions
     {
+        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.UpOnly"/></summary>
+        public static TTarget UpOnly<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
+        => property.Set(Xaml.Controls.StretchDirection.UpOnly);
+
+        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.DownOnly"/></summary>
+        public static TTarget DownOnly<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
+        => property.Set(Xaml.Controls.StretchDirection.DownOnly);
+
+        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.Both"/></summary>
+        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
+        => property.Set(Xaml.Controls.StretchDirection.Both);
+
         /// <summary>Set to <see cref="Xaml.Media.Stretch.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Viewbox
         => property.Set(Xaml.Media.Stretch.None);
@@ -53432,18 +53504,6 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Media.Stretch.UniformToFill"/></summary>
         public static TTarget UniformToFill<TTarget>(this DependencyProperty<TTarget, Xaml.Media.Stretch> property) where TTarget : Viewbox
         => property.Set(Xaml.Media.Stretch.UniformToFill);
-
-        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.UpOnly"/></summary>
-        public static TTarget UpOnly<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
-        => property.Set(Xaml.Controls.StretchDirection.UpOnly);
-
-        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.DownOnly"/></summary>
-        public static TTarget DownOnly<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
-        => property.Set(Xaml.Controls.StretchDirection.DownOnly);
-
-        /// <summary>Set to <see cref="Xaml.Controls.StretchDirection.Both"/></summary>
-        public static TTarget Both<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.StretchDirection> property) where TTarget : Viewbox
-        => property.Set(Xaml.Controls.StretchDirection.Both);
     }
 
     public static partial class VirtualizingPanelLayoutExtensions
