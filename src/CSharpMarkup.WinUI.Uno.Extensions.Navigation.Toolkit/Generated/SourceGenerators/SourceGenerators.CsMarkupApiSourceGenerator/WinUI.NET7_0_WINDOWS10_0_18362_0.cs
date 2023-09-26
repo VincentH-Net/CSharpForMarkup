@@ -15,7 +15,7 @@ using VirtualKeyModifiers = Windows.System.VirtualKeyModifiers;
 using Drawing = System.Drawing;
 using UnoExtensionsNavigationToolkit = Uno.Extensions.Navigation.Toolkit;
 
-namespace CSharpMarkup.WinUI.Uno.Toolkit // ModalFlyout
+namespace CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit // ModalFlyout
 {
     public static partial class Helpers
     {
@@ -24,14 +24,14 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ModalFlyout
         {
             var ui = new UnoExtensionsNavigationToolkit.Controls.ModalFlyout();
             if (Content != null) ui.Content = Content;
-            return CSharpMarkup.WinUI.Uno.Toolkit.ModalFlyout.StartChain(ui);
+            return CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit.ModalFlyout.StartChain(ui);
         }
 
         /// <summary>Create a <see cref="UnoExtensionsNavigationToolkit.Controls.ModalFlyout"/></summary>
         public static ModalFlyout ModalFlyout()
         {
             var ui = new UnoExtensionsNavigationToolkit.Controls.ModalFlyout();
-            return CSharpMarkup.WinUI.Uno.Toolkit.ModalFlyout.StartChain(ui);
+            return CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit.ModalFlyout.StartChain(ui);
         }
     }
 
@@ -62,10 +62,6 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ModalFlyout
 
         protected ModalFlyout() { }
     }
-}
-
-namespace CSharpMarkup.WinUI.Uno.Toolkit.to // Type convertors
-{
 }
 
 

@@ -5,11 +5,11 @@ using CSharpMarkup.Generate.WinUI;
 using Controls = Microsoft.UI.Xaml.Controls;
 
 [assembly: MarkupHelpers(
-    markupHelpersType: typeof(CSharpMarkup.WinUI.Uno.Toolkit.Helpers)
+    markupHelpersType: typeof(CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit.Helpers)
 )]
 #endif
 
-namespace CSharpMarkup.WinUI.Uno.Toolkit
+namespace CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit
 {
     public static partial class Helpers
     {
@@ -29,8 +29,6 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit
         {
             typeof(global::Uno.Extensions.Navigation.Toolkit.Controls.ModalFlyout)
         };
-
-        public static Microsoft.UI.Xaml.DependencyObject dependencyObject;
 #endif
     }
 }

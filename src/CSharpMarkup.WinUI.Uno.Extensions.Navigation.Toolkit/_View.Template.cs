@@ -66,7 +66,7 @@ namespace _UIViewNamespace_
 namespace _MarkupNamespace_
 {
     using CSharpMarkup.WinUI;
-    using CSharpMarkup.WinUI.Uno.Toolkit;
+    using CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit;
 
     // Initialize computed template placeholders:
     using _UIViewType_ = _UIViewNamespace_._ViewTypeName_;

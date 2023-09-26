@@ -15,7 +15,7 @@ using VirtualKeyModifiers = Windows.System.VirtualKeyModifiers;
 using Drawing = System.Drawing;
 using UnoExtensionsNavigation = Uno.Extensions.Navigation;
 
-namespace CSharpMarkup.WinUI.Uno.Toolkit // FrameView
+namespace CSharpMarkup.WinUI.Uno.Extensions.Navigation // FrameView
 {
     public static partial class Helpers
     {
@@ -24,18 +24,18 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // FrameView
         {
             var ui = new UnoExtensionsNavigation.UI.Controls.FrameView();
             if (Content != null) ui.Content = Content.UI;
-            return CSharpMarkup.WinUI.Uno.Toolkit.FrameView.StartChain(ui);
+            return CSharpMarkup.WinUI.Uno.Extensions.Navigation.FrameView.StartChain(ui);
         }
 
         /// <summary>Create a <see cref="UnoExtensionsNavigation.UI.Controls.FrameView"/></summary>
         public static FrameView FrameView()
         {
             var ui = new UnoExtensionsNavigation.UI.Controls.FrameView();
-            return CSharpMarkup.WinUI.Uno.Toolkit.FrameView.StartChain(ui);
+            return CSharpMarkup.WinUI.Uno.Extensions.Navigation.FrameView.StartChain(ui);
         }
     }
 
-    public partial class FrameView : DependencyObject, IUI<UnoExtensionsNavigation.UI.Controls.FrameView>
+    public partial class FrameView : UserControl, IUI<UnoExtensionsNavigation.UI.Controls.FrameView>
     {
         static FrameView instance;
 
@@ -66,7 +66,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // FrameView
     }
 }
 
-namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationFlyout
+namespace CSharpMarkup.WinUI.Uno.Extensions.Navigation // NavigationFlyout
 {
     public static partial class Helpers
     {
@@ -75,18 +75,18 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationFlyout
         {
             var ui = new UnoExtensionsNavigation.UI.Controls.NavigationFlyout();
             if (Content != null) ui.Content = Content;
-            return CSharpMarkup.WinUI.Uno.Toolkit.NavigationFlyout.StartChain(ui);
+            return CSharpMarkup.WinUI.Uno.Extensions.Navigation.NavigationFlyout.StartChain(ui);
         }
 
         /// <summary>Create a <see cref="UnoExtensionsNavigation.UI.Controls.NavigationFlyout"/></summary>
         public static NavigationFlyout NavigationFlyout()
         {
             var ui = new UnoExtensionsNavigation.UI.Controls.NavigationFlyout();
-            return CSharpMarkup.WinUI.Uno.Toolkit.NavigationFlyout.StartChain(ui);
+            return CSharpMarkup.WinUI.Uno.Extensions.Navigation.NavigationFlyout.StartChain(ui);
         }
     }
 
-    public partial class NavigationFlyout : DependencyObject, IUI<UnoExtensionsNavigation.UI.Controls.NavigationFlyout>
+    public partial class NavigationFlyout : Flyout, IUI<UnoExtensionsNavigation.UI.Controls.NavigationFlyout>
     {
         static NavigationFlyout instance;
 
@@ -113,10 +113,6 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationFlyout
 
         protected NavigationFlyout() { }
     }
-}
-
-namespace CSharpMarkup.WinUI.Uno.Toolkit.to // Type convertors
-{
 }
 
 
