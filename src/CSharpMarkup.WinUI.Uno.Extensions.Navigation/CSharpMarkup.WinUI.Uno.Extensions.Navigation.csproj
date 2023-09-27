@@ -21,7 +21,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>2.3.28</Version>
+		<Version>2.3.43</Version>
 		<NeutralLanguage>en</NeutralLanguage>
     
 		<NoWarn>CS1591;CS1573;Uno0001</NoWarn>
@@ -75,14 +75,40 @@
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230822000" />
 	</ItemGroup>
 
+	<ItemGroup Condition="$(IsUno)==false"> <!-- Workaround for https://github.com/unoplatform/uno.extensions/discussions/1921 : use this instead of PackageReference Include="Uno.Extensions.Navigation.WinUI" Version="2.5.11" -->
+		<Reference Include="Uno.Extensions.Navigation.UI.NoAssets">
+			<HintPath>..\uno.extensions.navigation.winui-2.5.11-libnet6.0-windows10.0.18362\Uno.Extensions.Navigation.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="Uno.Extensions.Hosting.WinUI.NoAssets">
+			<HintPath>..\uno.extensions.hosting.winui-2.5.11-libnet6.0-windows10.0.18362\Uno.Extensions.Hosting.WinUI.dll</HintPath>
+		</Reference>
+		<!-- Dependencies for Uno.Extensions.Navigation.UI -->
+		<PackageReference Include="Uno.Extensions.Core.WinUI" Version="2.5.11" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Uno.Extensions.Navigation" Version="2.5.11" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Microsoft.Extensions.Localization.Abstractions" Version="6.0.4" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.5" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Uno.Core" Version="4.0.1" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Uno.WinUI" Version="4.9.20" ExcludeAssets="build;analyzers" />
+
+		<!-- Dependencies for Uno.Extensions.Hosting.WinUI -->
+		<PackageReference Include="Uno.Extensions.Core" Version="2.5.11" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Uno.Extensions.Hosting" Version="2.5.11" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Uno.Extensions.Storage.WinUI" Version="2.5.11" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Uno.Extensions.Storage" Version="2.5.11" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Uno.WinUI" Version="4.9.20" ExcludeAssets="build;analyzers" />
+	</ItemGroup>
+
 	<ItemGroup Condition="$(IsUno)">
 		<PackageReference Include="Uno.WinUI" Version="4.10.13" />
+		<PackageReference Include="Uno.Extensions.Navigation.WinUI" Version="2.5.11" />
 	</ItemGroup>
 	
 	<ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-		<PackageReference Include="CSharpMarkup.WinUI" Version="2.3.28" />
-		<PackageReference Include="Uno.Extensions.Navigation.WinUI" Version="2.5.11" />
+		<PackageReference Include="CSharpMarkup.WinUI" Version="2.3.43" />
 	</ItemGroup>
 
 	<ItemGroup>

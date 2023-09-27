@@ -1,0 +1,438 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uno.Extensions.Navigation.UI</name>
+    </assembly>
+    <members>
+        <member name="M:Uno.Extensions.ApplicationBuilderExtensions.NavigateAsync``1(Uno.Extensions.Hosting.IApplicationBuilder,System.Func{System.IServiceProvider,Uno.Extensions.Navigation.INavigator,System.Threading.Tasks.Task})">
+            <summary>
+            Creates the Application Shell and will initialize the Shell Content before creating
+            the <see cref="T:Microsoft.Extensions.Hosting.IHost" /> and initializing the app with the initial navigation.
+            </summary>
+            <typeparam name="TShell">The <see cref="T:Microsoft.UI.Xaml.UIElement" /> to use for the App Shell.</typeparam>
+            <param name="appBuilder">The <see cref="T:Uno.Extensions.Hosting.IApplicationBuilder" />.</param>
+            <param name="initialNavigate">An optional Navigation Delegate to conditionally control where the app should navigate on launch.</param>
+            <returns>The <see cref="T:Microsoft.Extensions.Hosting.IHost" />.</returns>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.ActionRequestHandlerBase`1">
+            <summary>
+            Base class for request handlers that bind to a specific control type with an callback actions that should be
+            called when subscribing and unsubscribing to a control specific event.
+            </summary>
+            <typeparam name="TView">The type of control to handle requests for</typeparam>
+            <param name="Logger">Logger for Logging</param>
+            <param name="Resolver">Resolver to be used in navigation</param>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.ActionRequestHandlerBase`1.#ctor(Microsoft.Extensions.Logging.ILogger,Uno.Extensions.Navigation.IRouteResolver)">
+            <summary>
+            Base class for request handlers that bind to a specific control type with an callback actions that should be
+            called when subscribing and unsubscribing to a control specific event.
+            </summary>
+            <typeparam name="TView">The type of control to handle requests for</typeparam>
+            <param name="Logger">Logger for Logging</param>
+            <param name="Resolver">Resolver to be used in navigation</param>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.ActionRequestHandlerBase`1.Resolver">
+            <summary>Resolver to be used in navigation</summary>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.ActionRequestHandlerBase`1.DefaultQualifier">
+            <summary>
+            Overridable default qualifier to use when navigating to a route without a qualifier.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.ActionRequestHandlerBase`1.BindAction``2(``0,System.Func{System.Action{Microsoft.UI.Xaml.FrameworkElement,Microsoft.UI.Xaml.RoutedEventArgs},``1},System.Action{``0,``1},System.Action{``0,``1})">
+            <summary>
+            Abstraction for creating a request binding that navigates based on an event
+            </summary>
+            <typeparam name="TElement">The type of control to create the binding for</typeparam>
+            <typeparam name="TEventHandler">The type of event handler to be bound</typeparam>
+            <param name="view">The view to bind to </param>
+            <param name="eventHandler">The function that returns an event handler for the action</param>
+            <param name="subscribe">Callback to subscribe the event handler</param>
+            <param name="unsubscribe">Callback to unsubscribe the event handler</param>
+            <returns></returns>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.ButtonBaseRequestHandler">
+            <summary>
+            Handler for navigation request for a ButtonBase.
+            </summary>
+            <param name="HandlerLogger">Logger for Logging</param>
+            <param name="Resolver">Resolve for navigation</param>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.ButtonBaseRequestHandler.#ctor(Microsoft.Extensions.Logging.ILogger{Uno.Extensions.Navigation.UI.ButtonBaseRequestHandler},Uno.Extensions.Navigation.IRouteResolver)">
+            <summary>
+            Handler for navigation request for a ButtonBase.
+            </summary>
+            <param name="HandlerLogger">Logger for Logging</param>
+            <param name="Resolver">Resolve for navigation</param>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.ButtonBaseRequestHandler.HandlerLogger">
+            <summary>Logger for Logging</summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.ButtonBaseRequestHandler.Bind(Microsoft.UI.Xaml.FrameworkElement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.ControlRequestHandlerBase`1">
+            <summary>
+            Base class for request handlers that bind to a specific control type.
+            </summary>
+            <typeparam name="TControl">The type of control to handle requests for</typeparam>
+            <param name="Logger">Logger for logging</param>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.ControlRequestHandlerBase`1.#ctor(Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Base class for request handlers that bind to a specific control type.
+            </summary>
+            <typeparam name="TControl">The type of control to handle requests for</typeparam>
+            <param name="Logger">Logger for logging</param>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.ControlRequestHandlerBase`1.Logger">
+            <summary>Logger for logging</summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.ControlRequestHandlerBase`1.Bind(Microsoft.UI.Xaml.FrameworkElement)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.ControlRequestHandlerBase`1.CanBind(Microsoft.UI.Xaml.FrameworkElement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.Controls.ForceUpdateAttribute">
+            <summary>
+            Flags the default constructor to use to create an instance of a record that is being de-normalized for bindings.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.Controls.ForceUpdateAttribute.IsEnabled">
+            <summary>
+            Gets a value indicating whether the method should be generated or not.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.Controls.ForceUpdateAttribute.#ctor(System.Boolean)">
+            <summary>
+            Configure generation the force update method.
+            </summary>
+            <param name="isEnabled">Indicates if the method should be generated or not.</param>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.Controls.FrameView">
+            <summary>
+            Wrapper for a <see cref="T:Microsoft.UI.Xaml.Controls.Frame"/> that can be used when navigating to a page to
+            make it easy to do subsequent forward/backward navigation.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.Controls.FrameView.#ctor">
+            <summary>
+            Constructor for the FrameView.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.Controls.FrameView.Navigator">
+            <summary>
+            Returns the Navigator for the Frame region
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.Controls.FrameView.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.Controls.FrameView.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.Controls.FrameView.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.Controls.NavigationFlyout">
+            <summary>
+            Full screen flyout that can be used for navigation.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.Controls.NavigationFlyout.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Uno.Extensions.Navigation.UI.Controls.NavigationFlyout"/> class.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.Controls.NavigationFlyout.InitializeComponent">
+            <summary>
+            InitializeComponent()
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.Controls.NavigationFlyout.Connect(System.Int32,System.Object)">
+            <summary>
+            Connect()
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.Controls.NavigationFlyout.GetBindingConnector(System.Int32,System.Object)">
+            <summary>
+            GetBindingConnector(int connectionId, object target)
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.IRequestBinding">
+            <summary>
+            Defines method for unbinding a request handler from a view.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.IRequestBinding.Unbind">
+            <summary>
+            Method to unbind the request handler.
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.IRequestHandler">
+            <summary>
+            Defines Bind and CanBind methods to bind a view to a navigation request.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.IRequestHandler.CanBind(Microsoft.UI.Xaml.FrameworkElement)">
+            <summary>
+            Indicates whether the handler can bind to the specified view.
+            </summary>
+            <param name="view">The view to test</param>
+            <returns>true if handler can be bound to a view</returns>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.IRequestHandler.Bind(Microsoft.UI.Xaml.FrameworkElement)">
+            <summary>
+            Binds the handler to the specified view.
+            </summary>
+            <param name="view">The view to bind to</param>
+            <returns>The binding that can be used to unbind from the view</returns>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.ItemsRepeaterRequestHandler">
+            <summary>
+            Navigation handler for the ItemsRepeater control.
+            </summary>
+            <param name="HandlerLogger">Logger for Logging</param>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.ItemsRepeaterRequestHandler.#ctor(Microsoft.Extensions.Logging.ILogger{Uno.Extensions.Navigation.UI.ItemsRepeaterRequestHandler})">
+            <summary>
+            Navigation handler for the ItemsRepeater control.
+            </summary>
+            <param name="HandlerLogger">Logger for Logging</param>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.ItemsRepeaterRequestHandler.HandlerLogger">
+            <summary>Logger for Logging</summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.ItemsRepeaterRequestHandler.Bind(Microsoft.UI.Xaml.FrameworkElement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.NavigationViewItemRequestHandler">
+            <summary>
+            Navigation request handler for <see cref="T:Microsoft.UI.Xaml.Controls.NavigationViewItem"/>.
+            </summary>
+            <param name="HandlerLogger">Logger for logging</param>
+            <param name="Resolver">Resolver for navigation</param>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.NavigationViewItemRequestHandler.#ctor(Microsoft.Extensions.Logging.ILogger{Uno.Extensions.Navigation.UI.NavigationViewItemRequestHandler},Uno.Extensions.Navigation.IRouteResolver)">
+            <summary>
+            Navigation request handler for <see cref="T:Microsoft.UI.Xaml.Controls.NavigationViewItem"/>.
+            </summary>
+            <param name="HandlerLogger">Logger for logging</param>
+            <param name="Resolver">Resolver for navigation</param>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.NavigationViewItemRequestHandler.HandlerLogger">
+            <summary>Logger for logging</summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.NavigationViewItemRequestHandler.Bind(Microsoft.UI.Xaml.FrameworkElement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.NavigationViewRequestHandler">
+            <summary>
+            Navigation request handler for <see cref="T:Microsoft.UI.Xaml.Controls.NavigationView"/>.
+            </summary>
+            <param name="HandlerLogger">Logger for logging</param>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.NavigationViewRequestHandler.#ctor(Microsoft.Extensions.Logging.ILogger{Uno.Extensions.Navigation.UI.NavigationViewRequestHandler})">
+            <summary>
+            Navigation request handler for <see cref="T:Microsoft.UI.Xaml.Controls.NavigationView"/>.
+            </summary>
+            <param name="HandlerLogger">Logger for logging</param>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.NavigationViewRequestHandler.HandlerLogger">
+            <summary>Logger for logging</summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.NavigationViewRequestHandler.Bind(Microsoft.UI.Xaml.FrameworkElement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.RequestBinding">
+            <summary>
+            Record that references callbacks to be invoked when a view is loaded and unloaded
+            </summary>
+            <param name="View">The view to attach/detach event handlers</param>
+            <param name="LoadedHandler">The loaded callback</param>
+            <param name="UnloadedHandler">The unloaded callback</param>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.RequestBinding.#ctor(Microsoft.UI.Xaml.FrameworkElement,Microsoft.UI.Xaml.RoutedEventHandler,Microsoft.UI.Xaml.RoutedEventHandler)">
+            <summary>
+            Record that references callbacks to be invoked when a view is loaded and unloaded
+            </summary>
+            <param name="View">The view to attach/detach event handlers</param>
+            <param name="LoadedHandler">The loaded callback</param>
+            <param name="UnloadedHandler">The unloaded callback</param>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.RequestBinding.View">
+            <summary>The view to attach/detach event handlers</summary>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.RequestBinding.LoadedHandler">
+            <summary>The loaded callback</summary>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.RequestBinding.UnloadedHandler">
+            <summary>The unloaded callback</summary>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.SelectorRequestHandler">
+            <summary>
+            Navigation request handler for <see cref="T:Microsoft.UI.Xaml.Controls.Primitives.Selector"/> controls.
+            </summary>
+            <param name="HandlerLogger">Logger for logging</param>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.SelectorRequestHandler.#ctor(Microsoft.Extensions.Logging.ILogger{Uno.Extensions.Navigation.UI.SelectorRequestHandler})">
+            <summary>
+            Navigation request handler for <see cref="T:Microsoft.UI.Xaml.Controls.Primitives.Selector"/> controls.
+            </summary>
+            <param name="HandlerLogger">Logger for logging</param>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.SelectorRequestHandler.HandlerLogger">
+            <summary>Logger for logging</summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.SelectorRequestHandler.Bind(Microsoft.UI.Xaml.FrameworkElement)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.UI.TapRequestHandler">
+            <summary>
+            Navigation request handler for tap event
+            </summary>
+            <param name="HandlerLogger">Logger for logging</param>
+            <param name="Resolver">Resolver for navigation</param>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.TapRequestHandler.#ctor(Microsoft.Extensions.Logging.ILogger{Uno.Extensions.Navigation.UI.TapRequestHandler},Uno.Extensions.Navigation.IRouteResolver)">
+            <summary>
+            Navigation request handler for tap event
+            </summary>
+            <param name="HandlerLogger">Logger for logging</param>
+            <param name="Resolver">Resolver for navigation</param>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.UI.TapRequestHandler.HandlerLogger">
+            <summary>Logger for logging</summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.UI.TapRequestHandler.Bind(Microsoft.UI.Xaml.FrameworkElement)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.FrameworkElementExtensions.AttachServiceProvider(Microsoft.UI.Xaml.UIElement,System.IServiceProvider)">
+            <summary>
+            Attaches the specified IServiceProvider instance to the <paramref name="element"/> using the
+            Region.ServiceProvider attached property. Any child element can access the IServiceProvider
+            instance by traversing up the ancestor hierarchy
+            </summary>
+            <param name="element">The UIElement to attach the IServiceProvider instance to</param>
+            <param name="services">The IServiceProvider instance</param>
+            <returns>The attached IServiceProvider instance - scoped for use in this visual hierarchy</returns>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.IRootViewInitializer.CreateDefaultView">
+            <summary>
+            Creates a default navigation root container
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.IRootViewInitializer.PreInitialize(Microsoft.UI.Xaml.FrameworkElement,Uno.Extensions.Hosting.IApplicationBuilder)">
+            <summary>
+            Perform any initialization required before the Window is Activated
+            </summary>
+            <param name="element"></param>
+            <param name="builder"></param>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.IRootViewInitializer.InitializeViewHost(Microsoft.UI.Xaml.Window,Microsoft.UI.Xaml.FrameworkElement,System.Threading.Tasks.Task)">
+            <summary>
+            Provide a startup delegate that can wait for the host startup
+            </summary>
+            <param name="window"></param>
+            <param name="element"></param>
+            <param name="loadingTask"></param>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.Navigator">
+            <summary>
+            Base navigator implementation (used explicitly as composite navigator)
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Navigation.Navigator.Route">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Navigation.Navigator.NavigateAsync(Uno.Extensions.Navigation.NavigationRequest)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Navigation.Navigator.CanNavigate(Uno.Extensions.Navigation.Route)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Navigation.Navigator.EnsureChildRegionsAreLoaded">
+            <summary>
+            This makes sure that the current view for the region
+            is loaded, which will ensure child regions are attached
+            Sub-classes can overide <see cref="M:Uno.Extensions.Navigation.Navigator.CheckLoadedAsync">CheckLoadedAsync</see> to customise
+            the waiting behaviour
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.Regions.RegionExtensions.Root(Uno.Extensions.Navigation.Regions.IRegion)">
+            <summary>
+            Returns the root region at the top of the region hierarchy
+            </summary>
+            <param name="region">The start point of the hierarchy search</param>
+            <returns>The root region</returns>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.Regions.RegionExtensions.Ancestors(Uno.Extensions.Navigation.Regions.IRegion,System.Boolean,System.Collections.Generic.IList{System.ValueTuple{Uno.Extensions.Navigation.Route,Uno.Extensions.Navigation.Regions.IRegion,Uno.Extensions.Navigation.INavigator}})">
+            <summary>
+            Returns all of the ancestor regions for the  specified region
+            </summary>
+            <param name="region">The start region</param>
+            <param name="includeRegion">Whether to include the start region</param>
+            <param name="regions">The list to add ancestor regions to</param>
+            <returns>The array of ancestor regions - first region is either the start region or the first parent</returns>
+        </member>
+        <member name="T:Uno.Extensions.Navigation.WinUI.Uno_Extensions_Navigation_WinUI_XamlTypeInfo.XamlMetaDataProvider">
+            <summary>
+            Main class for providing metadata for the app or library
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.WinUI.Uno_Extensions_Navigation_WinUI_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.Type)">
+            <summary>
+            GetXamlType(Type)
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.WinUI.Uno_Extensions_Navigation_WinUI_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.String)">
+            <summary>
+            GetXamlType(String)
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Navigation.WinUI.Uno_Extensions_Navigation_WinUI_XamlTypeInfo.XamlMetaDataProvider.GetXmlnsDefinitions">
+            <summary>
+            GetXmlnsDefinitions()
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.ServiceProviderExtensions.AttachServicesAsync(Microsoft.UI.Xaml.Window,System.IServiceProvider)">
+            <summary>
+            Attached the IServiceProvider instance to the <paramref name="window"/> and
+            registers the Window for use in Navigation
+            </summary>
+            <param name="window">The Window to attach the IServiceProvider to</param>
+            <param name="services">The IServiceProvider instance to attach</param>
+        </member>
+        <member name="M:Uno.Extensions.ServiceProviderExtensions.RegisterWindowAsync(System.IServiceProvider,Microsoft.UI.Xaml.Window)">
+            <summary>
+            Registers the Window with the specified IServiceProvider instance
+            </summary>
+            <param name="services">The IServiceProvider to register the Window with</param>
+            <param name="window">The Window to be registered with the IServiceProvider instance</param>
+            <returns>The IServiceProvider instance (for fluent calling of other methods)</returns>
+        </member>
+        <member name="M:Uno.Extensions.ServiceProviderExtensions.InitializeNavigationAsync(Microsoft.UI.Xaml.Window,System.Func{System.Threading.Tasks.Task{Microsoft.Extensions.Hosting.IHost}},Microsoft.UI.Xaml.Controls.ContentControl,System.String,System.Type,System.Type,System.Func{System.IServiceProvider,Uno.Extensions.Navigation.INavigator,System.Threading.Tasks.Task})">
+            <summary>
+            Initializes navigation for an application using a ContentControl
+            </summary>
+            <param name="window">The application Window to initialize navigation for</param>
+            <param name="buildHost">Function to create IHost</param>
+            <param name="navigationRoot">[optional] Where to host app navigation (only required for nesting navigation in an existing application)</param>
+            <param name="initialRoute">[optional] Initial navigation route</param>
+            <param name="initialView">[optional] Initial navigation view</param>
+            <param name="initialViewModel">[optional] Initial navigation viewmodel</param>
+            <param name="initialNavigate">[optional] Callback to drive initial navigation for app</param>
+            <returns>The created IHost</returns>
+        </member>
+    </members>
+</doc>
