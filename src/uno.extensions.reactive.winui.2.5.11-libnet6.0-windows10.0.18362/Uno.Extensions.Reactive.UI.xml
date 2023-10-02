@@ -1,0 +1,1898 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Uno.Extensions.Reactive.UI</name>
+    </assembly>
+    <members>
+        <member name="T:Uno.Extensions.Reactive.UI.ModuleInitializer">
+            <summary>
+            Initialize this module to register services provided by this UI module for the reactive framework.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.ModuleInitializer.Initialize">
+            <summary>
+            Register the <seealso cref="T:Uno.Extensions.Reactive.Dispatching.DispatcherQueueProvider"/> as provider of <see cref="T:Uno.Extensions.IDispatcher"/> for the reactive platform.
+            </summary>
+            <remarks>This method is flagged with ModuleInitializer attribute and should not be used by application.</remarks>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.ButtonExtensions">
+            <summary>
+            Extensions for <see cref="T:Microsoft.UI.Xaml.Controls.Primitives.ButtonBase"/>.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.ButtonExtensions.IsExecutionTrackingEnabledProperty">
+            <summary>
+            Backing property for the IsExecutionTrackingEnabled flag.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.ButtonExtensions.GetIsExecutionTrackingEnabled(Microsoft.UI.Xaml.Controls.Primitives.ButtonBase)">
+            <summary>
+            Gets a bool which indicates if the tracking of execution of AsyncCommand is enabled or not.
+            This will enable the extended visual states on the Button: Idle, Executing, Failed, Succeed.
+            It's also required to enable this to get the <see cref="F:Uno.Extensions.Reactive.UI.ButtonExtensions.LastExecutionErrorProperty"/> to be full-filled.
+            </summary>
+            <param name="button">The button to get the flag for.</param>
+            <returns>True if async command execution tracking is enabled, false otherwise.</returns>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.ButtonExtensions.SetIsExecutionTrackingEnabled(Microsoft.UI.Xaml.Controls.Primitives.ButtonBase,System.Boolean)">
+            <summary>
+            Sets a bool which indicates if the tracking of execution of AsyncCommand is enabled or not.
+            This will enable the extended visual states on the Button: Idle, Executing, Failed, Succeed.
+            It's also required to enable this to get the <see cref="F:Uno.Extensions.Reactive.UI.ButtonExtensions.LastExecutionErrorProperty"/> to be updated.
+            </summary>
+            <param name="button">The button to set the flag for.</param>
+            <param name="isEnabled">True to enable tracking of async command execution, false otherwise.</param>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.ButtonExtensions.LastExecutionErrorProperty">
+            <summary>
+            Backing property for the LastExecutionError.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.ButtonExtensions.GetLastExecutionError(Microsoft.UI.Xaml.Controls.Primitives.ButtonBase)">
+            <summary>
+            Gets the exception raised by last execution of the command.
+            The <see cref="F:Uno.Extensions.Reactive.UI.ButtonExtensions.IsExecutionTrackingEnabledProperty"/> as to be enabled to get this property updated.
+            </summary>
+            <param name="button">The button to get the error for.</param>
+            <returns>The error raised by the command on last execution.</returns>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.ButtonExtensions.AsyncCommandExecutionTracker.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.RefreshContainerExtensions">
+            <summary>
+            Extensions for the <see cref="T:Microsoft.UI.Xaml.Controls.RefreshContainer"/>.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.RefreshContainerExtensions.CommandProperty">
+            <summary>
+            The backing property for the Command
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.RefreshContainerExtensions.GetCommand(Microsoft.UI.Xaml.Controls.RefreshContainer)">
+            <summary>
+            Gets the command attached on a <paramref name="container" />
+            </summary>
+            <param name="container">The refresh container to get the command for.</param>
+            <returns>The attached command, if any.</returns>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.RefreshContainerExtensions.SetCommand(Microsoft.UI.Xaml.Controls.RefreshContainer,System.Windows.Input.ICommand)">
+            <summary>
+            Attach the <paramref name="command"/> on the given <paramref name="container"/>.
+            </summary>
+            <param name="container">The refresh container on which command should be set.</param>
+            <param name="command">The command to set.</param>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.RefreshContainerExtensions.CommandParameterProperty">
+            <summary>
+            The backing property for the CommandParameter
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.RefreshContainerExtensions.GetCommandParameter(Microsoft.UI.Xaml.Controls.RefreshContainer)">
+            <summary>
+            Gets the command parameter attached on a <paramref name="container" />
+            </summary>
+            <param name="container">The refresh container to get the command parameter for.</param>
+            <returns>The attached command parameter, if any.</returns>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.RefreshContainerExtensions.SetCommandParameter(Microsoft.UI.Xaml.Controls.RefreshContainer,System.Object)">
+            <summary>
+            Attach the <paramref name="parameter"/> on the given <paramref name="container"/>.
+            </summary>
+            <param name="container">The refresh container on which command should be set.</param>
+            <param name="parameter">The command parameter to set.</param>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.ISmoothVisualStateAware">
+            <summary>
+            Flags a <see cref="T:Microsoft.UI.Xaml.Controls.Control"/> that is aware of the <see cref="T:Uno.Extensions.Reactive.UI.SmoothVisualStateManager"/> and can provide additional information to it.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.ISmoothVisualStateAware.ShouldGoToStateSync">
+            <summary>
+            Flag that indicates that considering the state of the control, state should be applied without any delay.
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.SmoothStateRuleResult">
+            <summary>
+            The result of a <see cref="T:Uno.Extensions.Reactive.UI.SmoothVisualStateRule"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.SmoothStateRuleResult.Delay">
+            <summary>
+            The delay to wait before going to the next state.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.SmoothStateRuleResult.MinDuration">
+            <summary>
+            The minimal duration to stay in the state.
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.SmoothVisualStateManager">
+            <summary>
+            A <see cref="T:Microsoft.UI.Xaml.VisualStateManager"/> which can delay visual states according to some rules.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.SmoothVisualStateManager.RulesProperty">
+            <summary>
+            Backing property for <see cref="P:Uno.Extensions.Reactive.UI.SmoothVisualStateManager.Rules"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.SmoothVisualStateManager.Rules">
+            <summary>
+            Set of rules to consider when applying visual states.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.SmoothVisualStateManager.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.SmoothVisualStateManager.GoToStateCore(Microsoft.UI.Xaml.Controls.Control,Microsoft.UI.Xaml.FrameworkElement,System.String,Microsoft.UI.Xaml.VisualStateGroup,Microsoft.UI.Xaml.VisualState,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.SmoothVisualStateRule">
+            <summary>
+            A rule used by a <see cref="T:Uno.Extensions.Reactive.UI.SmoothVisualStateManager"/> to determine the delay to wait before going to the target state.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.SmoothVisualStateRule.Group">
+            <summary>
+            The name of the <see cref="T:Microsoft.UI.Xaml.VisualStateGroup"/> to which this rule applies to.
+            `null` to apply to any group.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.SmoothVisualStateRule.From">
+            <summary>
+            The name of the current <see cref="T:Microsoft.UI.Xaml.VisualState"/> for this rule to be considered.
+            `null` to apply to any visual state.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.SmoothVisualStateRule.To">
+            <summary>
+            The name of the target <see cref="T:Microsoft.UI.Xaml.VisualState"/> for this rule to be considered.
+            `null` to apply to any visual state.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.SmoothVisualStateRule.Delay">
+            <summary>
+            The delay to wait before going to the target state.
+            `null` to not apply any delay.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.SmoothVisualStateRule.MinDuration">
+            <summary>
+            The minimum duration to stay in the target state before moving to any next state.
+            `null` to not apply any minimum duration.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.SmoothVisualStateRule.Get(Microsoft.UI.Xaml.VisualStateGroup,Microsoft.UI.Xaml.VisualState,Microsoft.UI.Xaml.VisualState)">
+            <summary>
+            Gets the <see cref="T:Uno.Extensions.Reactive.UI.SmoothStateRuleResult"/> for the given <paramref name="group"/>, <paramref name="current"/> and <paramref name="target"/> states.
+            </summary>
+            <param name="group">The visual state group for which this rule should be applied.</param>
+            <param name="current">The current visual state, if any.</param>
+            <param name="target">The target visual state</param>
+            <returns>The delay and minimum duration that should be applied to go to the target visual state.</returns>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.SmoothVisualStateRuleCollection">
+            <summary>
+            A collection of <see cref="T:Uno.Extensions.Reactive.UI.SmoothVisualStateRule"/>.
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.Utils.SourceContextHelper">
+            <summary>
+            Set of helpers to deal with <see cref="T:Uno.Extensions.Reactive.Core.SourceContext"/> from the UI
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.FeedView">
+            <summary>
+            A control to render <see cref="T:Uno.Extensions.Reactive.IFeed`1"/>
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedView.SourceProperty">
+            <summary>
+            Backing dependency property for <see cref="P:Uno.Extensions.Reactive.UI.FeedView.Source"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.Source">
+            <summary>
+            Gets or sets the <see cref="T:Uno.Extensions.Reactive.IFeed`1"/> displayed by this control.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedView.VisualStateSelectorProperty">
+            <summary>
+            Backing dependency property for <see cref="P:Uno.Extensions.Reactive.UI.FeedView.VisualStateSelector"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.VisualStateSelector">
+            <summary>
+            The selector to use to select visual state.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedView.StateProperty">
+            <summary>
+            Backing dependency property for <see cref="P:Uno.Extensions.Reactive.UI.FeedView.State"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.State">
+            <summary>
+            The state object that expose the values to template bindings.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedView.ValueTemplateProperty">
+            <summary>
+            Backing dependency property for <see cref="P:Uno.Extensions.Reactive.UI.FeedView.ValueTemplate"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.ValueTemplate">
+            <summary>
+            The template to use to render the value of a feed.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedView.UndefinedProperty">
+            <summary>
+            Backing dependency property for <see cref="P:Uno.Extensions.Reactive.UI.FeedView.Undefined"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.Undefined">
+            <summary>
+            The content to display when feed has <see cref="M:Uno.Extensions.Option.Undefined``1"/> data.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedView.UndefinedTemplateProperty">
+            <summary>
+            Backing dependency property for <see cref="P:Uno.Extensions.Reactive.UI.FeedView.UndefinedTemplate"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.UndefinedTemplate">
+            <summary>
+            The template to use to render <see cref="P:Uno.Extensions.Reactive.UI.FeedView.Undefined"/> content.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedView.NoneProperty">
+            <summary>
+            Backing dependency property for <see cref="P:Uno.Extensions.Reactive.UI.FeedView.None"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.None">
+            <summary>
+            The content to display when feed has <see cref="M:Uno.Extensions.Option.None``1"/> data.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedView.NoneTemplateProperty">
+            <summary>
+            Backing dependency property for <see cref="P:Uno.Extensions.Reactive.UI.FeedView.ErrorTemplate"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.NoneTemplate">
+            <summary>
+            The template to use to render <see cref="P:Uno.Extensions.Reactive.UI.FeedView.None"/> content.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedView.ProgressTemplateProperty">
+            <summary>
+            Backing dependency property for <see cref="P:Uno.Extensions.Reactive.UI.FeedView.ProgressTemplate"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.ProgressTemplate">
+            <summary>
+            The template to use to render feed's progress.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedView.ErrorTemplateProperty">
+            <summary>
+            Backing dependency property for <see cref="P:Uno.Extensions.Reactive.UI.FeedView.ErrorTemplate"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.ErrorTemplate">
+            <summary>
+            The template to use to render feed's error.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedView.RefreshingStateProperty">
+            <summary>
+            Backing dependency property for <see cref="P:Uno.Extensions.Reactive.UI.FeedView.RefreshingState"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.RefreshingState">
+            <summary>
+            Defines the visual state that should be used for refresh.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.Refresh">
+            <summary>
+            Gets a command which request to refresh the source when executed.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.FeedView.#ctor">
+            <summary>
+            Creates a new instance.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.FeedView.OnApplyTemplate">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.UI.FeedView.Uno#Toolkit#ILoadable#IsExecutingChanged">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.Uno#Toolkit#ILoadable#IsExecuting">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.Uno#Extensions#Reactive#UI#ISmoothVisualStateAware#ShouldGoToStateSync">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.UI.FeedView.RefreshCommand.CanExecuteChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.UI.FeedView.RefreshCommand.IsExecutingChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.UI.FeedView.RefreshCommand.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedView.RefreshCommand.IsExecuting">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.FeedView.RefreshCommand.CanExecute(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.FeedView.RefreshCommand.Execute(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.FeedView.Subscription.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.FeedViewRefreshState">
+            <summary>
+            Defines the visual state that should be used for refresh.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedViewRefreshState.None">
+            <summary>
+            Do not use any visual state, this is usually use-full when you have an external refreshing visual state,
+            like a RefreshContainer (cf. Remarks about limitations).
+            </summary>
+            <remarks>
+            This will disable the refreshing state for refresh sources, no matter who as triggered the refresh.
+            This means that if you use this flag because you are using a RefreshContainer,
+            but your source is being refreshed due to another on canvas refresh button or just because a dependency is being refreshed,
+            you won't have any refresh template neither.
+            </remarks>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedViewRefreshState.Loading">
+            <summary>
+            Use the loading visual state while refreshing.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.UI.FeedViewRefreshState.Default">
+            <summary>
+            The default is to use the <see cref="F:Uno.Extensions.Reactive.UI.FeedViewRefreshState.Loading"/> for now.
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.FeedViewState">
+            <summary>
+            Expose the current state of a <see cref="T:Uno.Extensions.Reactive.UI.FeedView"/> for template's bindings.
+            </summary>
+        </member>
+        <member name="E:Uno.Extensions.Reactive.UI.FeedViewState.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedViewState.Parent">
+            <summary>
+            Gets the parent DataContext (i.e. The DataContext of the FeedView itself).
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedViewState.Data">
+            <summary>
+            The value reported by the last message received from the source feed.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedViewState.Error">
+            <summary>
+            The error reported by the last message received from the source feed.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedViewState.Progress">
+            <summary>
+            The progress reported by the last message received from the source feed.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedViewState.Refresh">
+            <summary>
+            Gets a command which request to refresh the source when executed.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.UI.FeedViewState.Item(System.String)">
+            <summary>
+            Gets the last metadata of a given axis identifier received from the source feed.
+            </summary>
+            <param name="axis">The <see cref="P:Uno.Extensions.Reactive.MessageAxis.Identifier"/> of the axis to get.</param>
+            <returns>The value of the metadata.</returns>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.UI.FeedViewVisualStateSelector">
+            <summary>
+            Selector to customize the visual states applied for each message received by <see cref="T:Uno.Extensions.Reactive.UI.FeedView"/>.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.FeedViewVisualStateSelector.GetVisualStates(Uno.Extensions.Reactive.UI.FeedView,Uno.Extensions.Reactive.IMessage)">
+            <summary>
+            Gets all visual states to apply for a given message.
+            </summary>
+            <param name="feedView">The feed view for which the states should be selected.</param>
+            <param name="message">The message to render.</param>
+            <returns>Visual states to apply.</returns>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.UI.FeedViewVisualStateSelector.GetVisualState(Uno.Extensions.Reactive.UI.FeedView,Uno.Extensions.Reactive.IMessage,Uno.Extensions.Reactive.MessageAxis,Uno.Extensions.Reactive.MessageAxisValue)">
+            <summary>
+            Gets the visual state to apply for a given axis regarding its current value.
+            </summary>
+            <param name="feedView">The feed view for which the state should be selected.</param>
+            <param name="message">The message to render.</param>
+            <param name="axis">The axis.</param>
+            <param name="value">The metadata raw value.</param>
+            <returns>The state to apply, or null if none.</returns>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.BindableFactory">
+            <summary>
+            The implementation of <see cref="T:Uno.Extensions.Reactive.Bindings.IBindableFactory"/> for the UWP and WinUI platform.
+            </summary>
+            <remarks>This is not intended to be used by application but instead be initialized by module initializer.</remarks>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableFactory.Instance">
+            <summary>
+            The singleton instance.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableFactory.CreateList``1(System.String,Uno.Extensions.Reactive.IListState{``0})">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.BindableListFeed`1">
+            <summary>
+            An helper class use to data-bind a <see cref="T:Uno.Extensions.Reactive.IListFeed`1"/>.
+            </summary>
+            <typeparam name="T">The type of the items.</typeparam>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.Add(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.Clear">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.Contains(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.CopyTo(System.Object[],System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.Remove(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.IndexOf(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.Insert(System.Int32,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.RemoveAt(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.Item(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.MoveCurrentTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.MoveCurrentToPosition(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.MoveCurrentToFirst">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.MoveCurrentToLast">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.MoveCurrentToNext">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.MoveCurrentToPrevious">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.LoadMoreItemsAsync(System.UInt32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.CollectionGroups">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.CurrentItem">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.CurrentPosition">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.HasMoreItems">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.IsCurrentAfterLast">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.IsCurrentBeforeFirst">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.VectorChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.CurrentChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.CurrentChanging">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.CollectionChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.SelectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.DeselectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.IsSelected(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.GetSelectedRanges">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.#ctor(System.String,Uno.Extensions.Reactive.IListFeed{`0},Uno.Extensions.Reactive.Core.SourceContext)">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="propertyName">The name of the property backed by the object.</param>
+            <param name="source">The source data stream.</param>
+            <param name="ctx">The context of the owner.</param>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.#ctor(System.String,Uno.Extensions.Reactive.IListState{`0})">
+            <summary>
+            Creates a new instance.
+            </summary>
+            <param name="propertyName">The name of the property backed by the object.</param>
+            <param name="source">The source data stream.</param>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.Uno#Extensions#Reactive#IState#Context">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.PropertyName">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.Uno#Extensions#Reactive#ISignal{Uno#Extensions#Reactive#IMessage}#GetSource(Uno.Extensions.Reactive.Core.SourceContext,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.GetSource(Uno.Extensions.Reactive.Core.SourceContext,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.Uno#Extensions#Reactive#IListState{T}#UpdateMessage(System.Action{Uno.Extensions.Reactive.MessageBuilder{System.Collections.Immutable.IImmutableList{`0}}},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.Uno#Extensions#Reactive#IState{System#Collections#Immutable#IImmutableList{T}}#UpdateMessage(System.Action{Uno.Extensions.Reactive.MessageBuilder{System.Collections.Immutable.IImmutableList{`0}}},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.BindableListFeed`1.DisposeAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection">
+            <summary>
+            A collection which is responsible to manage the items tracking.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.Create``1(Uno.Extensions.Collections.IObservableCollection{``0},Uno.Extensions.Reactive.Collections.ItemComparer{``0},Uno.Extensions.Reactive.Dispatching.FindDispatcher,System.IServiceProvider,System.Int32)">
+            <summary>
+            Creates a new instance of a <see cref="T:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection"/>.
+            </summary>
+            <param name="initial">The initial items in the collection.</param>
+            <param name="itemComparer">Comparer used to track items.</param>
+            <param name="schedulersProvider">Schedulers provider to use to handle concurrency.</param>
+            <param name="services">A set of services that the collection can use (cf. Remarks)</param>
+            <param name="resetThreshold">Threshold on which the a single reset is raised instead of multiple collection changes.</param>
+            <remarks>
+            Currently the BindableCollection can resolve <see cref="T:Uno.Extensions.Reactive.Bindings.Collections.Services.IPaginationService"/> on the <paramref name="services"/> provider. 
+            </remarks>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.CreateUntyped(Uno.Extensions.Collections.IObservableCollection,Uno.Extensions.Reactive.Collections.ItemComparer,Uno.Extensions.Reactive.Dispatching.FindDispatcher,System.Int32)">
+            <summary>
+            Creates a new instance of a <see cref="T:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection"/>, without needing to specify the element type.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.Switch(Uno.Extensions.Collections.IObservableCollection,Uno.Extensions.Collections.Tracking.CollectionChangeSet,Uno.Extensions.Reactive.Bindings.Collections.TrackingMode)">
+            <summary>
+            Reset the collection of items of the collection
+            </summary>
+            <param name="source">The new source to use</param>
+            <param name="changes">The changes that has been applied compared to teh previous version.</param>
+            <param name="mode">The tracking mode to use.</param>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.GetForCurrentThread">
+            <summary>
+            Get a direct access to the ICollectionView implementation for the current thread.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.GetFor(Uno.Extensions.IDispatcher)">
+            <summary>
+            Get a direct access to the ICollectionView implementation for the given UI thread.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.Add(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.Clear">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.Contains(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.CopyTo(System.Object[],System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.Remove(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.IndexOf(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.Insert(System.Int32,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.RemoveAt(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.Item(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.VectorChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.CollectionChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.MoveCurrentTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.MoveCurrentToPosition(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.MoveCurrentToFirst">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.MoveCurrentToLast">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.MoveCurrentToNext">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.MoveCurrentToPrevious">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.LoadMoreItemsAsync(System.UInt32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.CollectionGroups">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.CurrentItem">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.CurrentPosition">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.HasMoreItems">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.IsCurrentAfterLast">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.IsCurrentBeforeFirst">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.CurrentChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.CurrentChanging">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.SelectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.DeselectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.IsSelected(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.GetSelectedRanges">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.ExtendedProperties">
+            <summary>
+            Gets some extended properties for this collection
+            </summary>
+            <remarks>Conversely to the properties of this class, properties exposed by this bag are bindable</remarks>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.BindableCollectionGroup">
+            <summary>
+            A group of items of a bindable collection
+            </summary>
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.BindableCollectionGroup.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.BindableCollectionGroup.Holder">
+            <summary>
+            Gets the holder responsible to maintain the current version of the source
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.BindableCollectionGroup.Group">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.BindableCollectionGroup.GroupItems">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.BasicUpdateCounter.Type">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.BasicUpdateCounter.Mode">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.BasicUpdateCounter.HasReachedLimit">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.BranchStrategy">
+            <summary>
+            A holder of a branch in a tree of nested <see cref="T:Uno.Extensions.Collections.IObservableCollection"/>.
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayer">
+            <summary>
+            A holder of a data layer for a given scheduler context
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayer.View">
+            <summary>
+            The view of the <see cref="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayer.Items"/> that can be used for data bindings.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayer.Items">
+            <summary>
+            The source Items of the <see cref="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayer.View"/>.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayer.Create(Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionDataLayerStrategy,Uno.Extensions.Collections.IObservableCollection,System.IServiceProvider,Uno.Extensions.IDispatcher)">
+            <summary>
+            Creates a holder for the root layer of data
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayer.CreateSubLayer(Uno.Extensions.Collections.IObservableCollection,Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext)">
+            <summary>
+            Creates a holder for a sub data layer of this
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayer.Update(Uno.Extensions.Collections.IObservableCollection,Uno.Extensions.Collections.Tracking.CollectionChangeSet,Uno.Extensions.Reactive.Bindings.Collections.TrackingMode)">
+            <summary>
+            Updates the root data layer
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayer.PrepareUpdate(Uno.Extensions.Collections.IObservableCollection,Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext)">
+            <summary>
+            Updates a child data layer
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayer.GetService(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerChangesBuffer">
+            <summary>
+            Class responsible to:
+            	1. Detect changes compared to the previous collection (on bg thread)
+            	2. Buffer the changes that occurs on collection (on Context thread)
+            	3. Replay all the changes from delta (1.) and buffer (2.) (on Context thread)
+            	4. Forward future changes that occurs on collection (on Context thread) to the target CollectionChangedFacet
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerChangesBuffer.State.Initialized">
+            <summary>
+            The buffer is active: It has detected changes between the previous collection and the updated one,
+            and subscribe to collection changed on the new collection and append them to the buffer.
+            We are waiting to reach the UI thread to replay all those changes (diff + collection changed event).
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerChangesBuffer.State.Running">
+            <summary>
+            The diff changes has been forwarded to the _layer.Items.
+            Now as soon as we receive a collection changed, we request to go to the UI thread to apply it on the _layer.Items.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerChangesBuffer.State.Stopped">
+            <summary>
+            We have unsubscribed from the collection changed event (so the _layer.Items collection is no longer updated).
+            We can still un-buffer some changes TODO UNO
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerChangesBuffer.Collection">
+            <summary>
+            Gets the observe source collection handle by this changes manager
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerChangesBuffer.HasBeenEdited">
+            <summary>
+            Indicates if a collection change has been received for the current collection.
+            There are 2 source of updates: The  Collection.NotifyCollectionChanged itself, or an update from the View (e.g. Reorder)
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerChangesBuffer.Start">
+            <summary>
+            Flush the current buffer and enable auto flushing for sub-sequent collection changed events.
+            </summary>
+            <remarks>This has to be invoked on the context/UI thread</remarks>
+            <exception cref="T:System.InvalidOperationException">The buffer is in an invalid state.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerChangesBuffer.Stop">
+            <summary>
+            Disable collection changes tracking to freeze the collection in its current state.
+            </summary>
+            <remarks>This is expected to be invoked on a BG thread.</remarks>
+            <returns>A snapshot of the final collection.</returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerCollection">
+            <summary>
+            A collection responsible to maintain the holders for the children items of a branch 
+            (which can be either some other branches or some leafs)
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerTracker.GetChanges(Uno.Extensions.Collections.IObservableCollectionSnapshot,Uno.Extensions.Collections.IObservableCollectionSnapshot,Uno.Extensions.Collections.Tracking.CollectionChangeSet,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerTracker.GetChanges(Uno.Extensions.Collections.RichNotifyCollectionChangedEventArgs,System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerTracker.CounterVisitor.AddItem(System.Object,Uno.Extensions.Collections.Tracking.ICollectionUpdateCallbacks)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerTracker.CounterVisitor.SameItem(System.Object,System.Object,Uno.Extensions.Collections.Tracking.ICollectionUpdateCallbacks)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerTracker.CounterVisitor.ReplaceItem(System.Object,System.Object,Uno.Extensions.Collections.Tracking.ICollectionUpdateCallbacks)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerTracker.CounterVisitor.RemoveItem(System.Object,Uno.Extensions.Collections.Tracking.ICollectionUpdateCallbacks)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerTracker.CounterVisitor.Reset(System.Collections.IList,System.Collections.IList,Uno.Extensions.Collections.Tracking.ICollectionUpdateCallbacks)">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerUpdate.Result">
+            <summary>
+            A snapshot of the items once this initializer has been completed
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerUpdate.Prepend(Uno.Extensions.Collections.Tracking.BeforeCallback)">
+            <summary>
+            Prepend a callback that has to be executed before the completion of this initializer
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerUpdate.Append(Uno.Extensions.Collections.Tracking.AfterCallback)">
+            <summary>
+            Prepend a callback that has to be executed after the completion of this initializer
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayerUpdate.Complete">
+            <summary>
+            Completes the initialization of this data layer (for a root layer)
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataStructure.GetRoot">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.ILayerHolder">
+            <summary>
+            The state holder of a layer of data
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.ILayerHolder.Schedule(System.Action)">
+            <summary>
+            Schedule an action on threading context to which this holder is associated to.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.ILayerHolder.Items">
+            <summary>
+            Gets the reference collection of items of this layer
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.ILayerHolder.CreateSubLayer(Uno.Extensions.Collections.IObservableCollection,Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext)">
+            <summary>
+            Creates a holder for a sub layer of data
+            </summary>
+            <param name="subItems">Current source of Sub items</param>
+            <param name="context">The context of the update which drove to create a new holder for a sub layer</param>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.ILayerHolder.GetFacet``1">
+            <summary>
+            Gets a facet managed by this holder
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.ILayerTracker">
+            <summary>
+            The collection tracker to use to maintain a layer of data
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.ILayerTracker.GetChanges(Uno.Extensions.Collections.IObservableCollectionSnapshot,Uno.Extensions.Collections.IObservableCollectionSnapshot,Uno.Extensions.Collections.Tracking.CollectionChangeSet,System.Boolean)">
+            <summary>
+            Gets the changes when updating the source collection
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.ILayerTracker.GetChanges(Uno.Extensions.Collections.RichNotifyCollectionChangedEventArgs,System.Boolean)">
+            <summary>
+            Gets the effective changes when receiving a collection change from the source
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext">
+            <summary>
+            A counter that can be used to configure the tracking behavior
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext.Type">
+            <summary>
+            Gets the type of update
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext.Mode">
+            <summary>
+            Gets the mode use to track collection changes for this update
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext.HasReachedLimit">
+            <summary>
+            Indicates that the number of changes is now to high, and a <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset"/> should be raised instead of a properly tracking the changes.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext.NotifyAdd">
+            <summary>
+            Increase the add counter
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext.NotifySameItem">
+            <summary>
+            Increase the same item counter
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext.NotifyReplace">
+            <summary>
+            Increase the replace counter
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext.NotifyRemove">
+            <summary>
+            Increase the remove counter
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext.NotifyReset">
+            <summary>
+            Increase the reset counter
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.LeafStrategy">
+            <summary>
+            A holder of a leaf in a tree of nested <see cref="T:Uno.Extensions.Collections.IObservableCollection"/>, or the root collection in case on non grouped collections
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.SelectionVisitor.ReplaceItem(System.Object,System.Object,Uno.Extensions.Collections.Tracking.ICollectionUpdateCallbacks)">
+            <summary>
+            Ensure the current selection stays the same after a Replace by reapplying it if it has been changed by the UI. 
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.SingleAssignmentDisposable.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.VisitorType.InitializeCollection">
+            <summary>
+            Initializing the collection
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.VisitorType.UpdateCollection">
+            <summary>
+            A new version of the collection is being published
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.VisitorType.CollectionChanged">
+            <summary>
+            The current collection is raising a collection changed
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionChangedFacet">
+            <summary>
+            A facet for collection change management
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionChangedFacet.HasListener">
+            <summary>
+            Gets a boolean which indicates if there is some handlers currently subscribed to events or not.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionChangedFacet.Sender">
+            <summary>
+            Gets the sender that will be used to raise the events
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet">
+            <summary>
+            A collection which applies a differential logic to maintain its state
+            <remarks>This collection is NOT THREAD SAFE </remarks>
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.#ctor(Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionChangedFacet,Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.ObservableCollectionKind,System.Action)">
+            <summary>
+            Creates a new empty collection
+            </summary>
+            <param name="collectionChangedFacet">The collection changed facet to use to forward the changes</param>
+            <param name="convertResetToClearAndAdd">
+            Configure the collection to raise a clear (reset with empty new items) and then one or some add instead of a reset with some new items.
+            <remarks>
+            	Be aware that if you enable this behavior only for a kind of observabel collection, it means that at some points the state of the collection 
+            	won't be coherent between all the listeners of the collection depending to which event they are registered to.
+            </remarks>
+            </param>
+            <param name="onReseted">
+            An optional delegate which is invoked when the collection is reseted
+            <remarks>This is the way to get notified when the <paramref name="convertResetToClearAndAdd"/> is enabled.</remarks>
+            </param>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.#ctor(Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionChangedFacet,System.Collections.IList,Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.ObservableCollectionKind,System.Action)">
+            <summary>
+            Creates a new collection with some items
+            </summary>
+            <param name="collectionChangedFacet">The collection changed facet to use to forward the changes</param>
+            <param name="originalItems">The items that are in the collection</param>
+            <param name="convertResetToClearAndAdd">
+            Configure the collection to raise a clear (reset with empty new items) and then one or some add instead of a reset with some new items.
+            <remarks>
+            	Be aware that if you enable this behavior only for a kind of observabel collection, it means that at some points the state of the collection 
+            	won't be coherent between all the listeners of the collection depending to which event they are registered to.
+            </remarks>
+            </param>
+            <param name="onReseted">
+            An optional delegate which is invoked when the collection is reseted
+            <remarks>This is the way to get notified when the <paramref name="convertResetToClearAndAdd"/> is enabled.</remarks>
+            </param>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.HasListener">
+            <summary>
+            Gets a boolean which indicates if currently there is any collection changed listener
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Set(System.Collections.IList)">
+            <summary>
+            Resets the collection with a new set of items.
+            </summary>
+            <param name="updated">The final collection</param>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.SetSilently(System.Collections.IList)">
+            <summary>
+            Resets SILENTLY (i.e. does not raise any event for this change) the collection with a new set of items.
+            </summary>
+            <param name="updated">The final collection</param>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Update(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Applies a single update to the collection
+            </summary>
+            <param name="change">The change to apply to the collection</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If the change is a <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset"/>. 
+            You have either to use a <see cref="T:Uno.Extensions.Collections.RichNotifyCollectionChangedEventArgs"/> or to provide the new items using the <see cref="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Set(System.Collections.IList)"/>.
+            </exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Update(Uno.Extensions.Collections.Tracking.CollectionUpdater)">
+            <summary>
+            Applies a single update to the collection
+            </summary>
+            <param name="changes">The change to apply to the collection</param>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Update(System.Collections.Specialized.NotifyCollectionChangedEventArgs[])">
+            <summary>
+            Applies some updates to the collection
+            <remarks>This is equivalent to invoke multiple times the <see cref="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Update(System.Collections.Specialized.NotifyCollectionChangedEventArgs)"/>.</remarks>
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If a change is a <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset"/>. 
+            You have either to use a <see cref="T:Uno.Extensions.Collections.RichNotifyCollectionChangedEventArgs"/> or to provide the new items using the <see cref="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Set(System.Collections.IList)"/>.
+            </exception>
+            <param name="changes">The changes to apply</param>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.UpdateTo(Uno.Extensions.Collections.Tracking.CollectionUpdater,System.Collections.IList)">
+            <summary>
+            Applies a queue of changes before reseting the list to final collection.
+            </summary>
+            <remarks>This overload is designed to be used in conjunction with <see cref="T:Uno.Extensions.Collections.Tracking.CollectionAnalyzer"/>.</remarks>
+            <param name="changes">The changes to apply to current state in order to reach the final collection state</param>
+            <param name="finalCollection">The final collection</param>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.UpdateSilentlyTo(Uno.Extensions.Collections.Tracking.CollectionUpdater,System.Collections.IList)">
+            <summary>
+            Applies SILENTLY (i.e. does not raise any event for this queue) a queue of changes before reseting the list to final collection.
+            </summary>
+            <remarks>This overload is designed to be used in conjunction with <see cref="T:Uno.Extensions.Collections.Tracking.CollectionAnalyzer"/>.</remarks>
+            <param name="changes">The changes to apply to current state in order to reach the final collection state</param>
+            <param name="finalCollection">The final collection</param>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.BatchUpdateTo(System.Collections.IList)">
+            <summary>
+            Applies some updates before reseting the list to final collection.
+            </summary>
+            <remarks>This overload is designed to be used in conjunction with <see cref="T:Uno.Extensions.Collections.Tracking.CollectionAnalyzer"/>.</remarks>
+            <param name="finalCollection">The final collection</param>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Head">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Item(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Count">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.ElementAt(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.IndexOf(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Contains(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.CopyTo(System.Array,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.BatchUpdateOperation">
+            <summary>
+            An handler to apply multiple consecutive updates on the collection in order to reset it to a given version
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.BatchUpdateOperation.Update(System.Collections.Specialized.NotifyCollectionChangedEventArgs)">
+            <summary>
+            Apply a temporary update as a step toward the final collection
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If a change is a <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset"/>. 
+            You have either to use a <see cref="T:Uno.Extensions.Collections.RichNotifyCollectionChangedEventArgs"/> or to provide the new items using the <see cref="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.Set(System.Collections.IList)"/>.
+            </exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.BatchUpdateOperation.Update(Uno.Extensions.Collections.Tracking.CollectionUpdater)">
+            <summary>
+            Apply a temporary update as a step toward the final collection
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.CollectionFacet.BatchUpdateOperation.Dispose">
+            <summary>
+            Apply the final collection (won't raise any event)
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.FlatCollectionChangedFacet.NotifyReset">
+            <summary>
+            Be aware that this method only raise a reset event, you still have to invoke remove and add for items!
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.ObservableCollectionKind.None">
+            <summary>
+            Is not an observble collection
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.ObservableCollectionKind.Collection">
+            <summary>
+            A collection which implements <see cref="T:System.Collections.Specialized.INotifyCollectionChanged"/>.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.ObservableCollectionKind.Vector">
+            <summary>
+            A collection which implements <see cref="T:Windows.Foundation.Collections.IObservableVector`1"/>
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.ObservableCollectionKind.All">
+            <summary>
+            Implements all way to notify changes on a collection
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.PaginationFacet">
+            <summary>
+            The pagination facet of an ICollectionView
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.SelectionFacet">
+            <summary>
+            The selection facet of the ICollectionView
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.SelectionFacet.SelectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.SelectionFacet.DeselectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.SelectionFacet.IsSelected(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Facets.SelectionFacet.GetSelectedRanges">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionDataLayerStrategy">
+            <summary>
+            The strategy used by a <see cref="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.DataLayer"/> to maintain a layer of data.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionDataLayerStrategy.CreateView(Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionViewSource)">
+            <summary>
+            Creates the view
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionDataLayerStrategy.CreateUpdateContext(Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.VisitorType,Uno.Extensions.Reactive.Bindings.Collections.TrackingMode)">
+            <summary>
+            Creates a new context object for to update the collection
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionDataLayerStrategy.GetTracker(Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionViewSource,Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Data.IUpdateContext)">
+            <summary>
+            Gets the collection tracker to use for this layer
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionDataLayerStrategy.CreateSubLayer">
+            <summary>
+            Gets a strategy to use for a sub layer of data.
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionDataStructure">
+            <summary>
+            Represents the structure of the data which is handle by a <see cref="T:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection"/>
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionDataStructure.GetRoot">
+            <summary>
+            Gets the strategy to use for the first layer of data
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionViewSource.Parent">
+            <summary>
+            Gets the source of the parent data layer, if any.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionViewSource.Dispatcher">
+            <summary>
+            Gets the dispatcher to which this collection view source belongs.
+            </summary>
+            <remarks>This can be null if this collection belongs to background threads (uncommon).</remarks>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionViewSource.GetFacet``1">
+            <summary>
+            Get a specific facet of this collection.
+            </summary>
+            <typeparam name="TFacet">Type of the facet</typeparam>
+            <returns>The requested facet.</returns>
+            <exception cref="T:System.InvalidOperationException">If the requested facet is not available on this collection.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionViewSource.Update(Uno.Extensions.Collections.RichNotifyCollectionChangedEventArgs)">
+            <summary>
+            Update the source from the View
+            </summary>
+            <param name="args">The change args to apply.</param>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView">
+            <summary>
+            A basic view on a <see cref="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionViewSource"/>.
+            </summary>
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.CurrentChanging">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.CurrentChanged">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.CurrentItem">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.CurrentPosition">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.IsCurrentAfterLast">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.IsCurrentBeforeFirst">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.MoveCurrentTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.MoveCurrentToPosition(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.MoveCurrentToFirst">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.MoveCurrentToLast">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.MoveCurrentToNext">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.MoveCurrentToPrevious">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.SelectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.DeselectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.IsSelected(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.GetSelectedRanges">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.HasMoreItems">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.LoadMoreItemsAsync(System.UInt32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.BasicView.CollectionGroups">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView">
+            <summary>
+            A view which flatten the items of a <see cref="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionViewSource"/>
+            <remarks>This view assume that the items of the source <see cref="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionViewSource"/> are of type <see cref="T:Uno.Extensions.Collections.IObservableGroup"/>.</remarks>
+            </summary>
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.CurrentChanging">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.CurrentChanged">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.CurrentItem">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.CurrentPosition">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.IsCurrentAfterLast">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.IsCurrentBeforeFirst">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.MoveCurrentTo(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.MoveCurrentToPosition(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.MoveCurrentToFirst">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.MoveCurrentToLast">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.MoveCurrentToNext">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.MoveCurrentToPrevious">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.SelectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.DeselectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.IsSelected(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.GetSelectedRanges">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.HasMoreItems">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.LoadMoreItemsAsync(System.UInt32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.FlatView.CollectionGroups">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView">
+            <summary>
+            A view on a <see cref="T:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.IBindableCollectionViewSource"/> which map each item into another type.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.Item(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.Add(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.Insert(System.Int32,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.RemoveAt(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.Remove(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.Clear">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.Contains(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.IndexOf(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections._BindableCollection.Views.MapView.CopyTo(System.Object[],System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections.BindableCollectionExtendedProperties">
+            <summary>
+            A set of **BINDABLE** properties that are exposing some internal states of the <see cref="T:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection"/>.
+            </summary>
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections.BindableCollectionExtendedProperties.PropertyChanged">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollectionExtendedProperties.HasMoreItems">
+            <summary>
+            Gets a boolean which indicates if more items are expected for this collection
+            </summary>
+            <remarks>
+            Be aware that is only an indication, depending of the source of this collection, it may be `true`
+            but a request to <see cref="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection.LoadMoreItemsAsync(System.UInt32)"/> won't load any new items.
+            </remarks>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.BindableCollectionExtendedProperties.IsLoadingMoreItems">
+            <summary>
+            Gets a boolean which indicates if the collection is currently loading more items
+            </summary>
+            <remarks>
+            This will be `true` only for requests made by this collection. It won't reflect the loading state
+            of the source itself which may also decides to load more items based on some other external triggers.
+            </remarks>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.BindableCollectionExtendedProperties.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.LoadMoreItemsRequest.GetLoaded">
+            <summary>
+            Gets the count of loaded items.
+            </summary>
+            <returns>Number of items loaded, or 0 if the request was aborted or if the source failed to load more items.</returns>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.IsFixedSize">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.IsReadOnly">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.IsSynchronized">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.SyncRoot">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.Item(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.System#Collections#IList#Item(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.System#Collections#IList#Add(System.Object)">
+            <summary>Not supported on read only collection</summary>
+            <exception cref="T:System.NotSupportedException">This method is not supported on this collection, a <see cref="T:System.NotSupportedException"/> will be thrown.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.System#Collections#Generic#ICollection{T}#Add(`0)">
+            <summary>Not supported on read only collection</summary>
+            <exception cref="T:System.NotSupportedException">This method is not supported on this collection, a <see cref="T:System.NotSupportedException"/> will be thrown.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.Uno#Extensions#Collections#IObservableCollection{T}#AddRange(System.Collections.Generic.IReadOnlyList{`0})">
+            <summary>Not supported on read only collection</summary>
+            <exception cref="T:System.NotSupportedException">This method is not supported on this collection, a <see cref="T:System.NotSupportedException"/> will be thrown.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.Uno#Extensions#Collections#IObservableCollection{T}#ReplaceRange(System.Int32,System.Int32,System.Collections.Generic.IReadOnlyList{`0})">
+            <summary>Not supported on read only collection</summary>
+            <exception cref="T:System.NotSupportedException">This method is not supported on this collection, a <see cref="T:System.NotSupportedException"/> will be thrown.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.System#Collections#IList#Insert(System.Int32,System.Object)">
+            <summary>Not supported on read only collection</summary>
+            <exception cref="T:System.NotSupportedException">This method is not supported on this collection, a <see cref="T:System.NotSupportedException"/> will be thrown.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.IndexOf(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.System#Collections#Generic#IList{T}#Insert(System.Int32,`0)">
+            <summary>Not supported on read only collection</summary>
+            <exception cref="T:System.NotSupportedException">This method is not supported on this collection, a <see cref="T:System.NotSupportedException"/> will be thrown.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.System#Collections#IList#Remove(System.Object)">
+            <summary>Not supported on read only collection</summary>
+            <exception cref="T:System.NotSupportedException">This method is not supported on this collection, a <see cref="T:System.NotSupportedException"/> will be thrown.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.Uno#Extensions#Collections#IObservableCollection#Remove(System.Object)">
+            <summary>Not supported on read only collection</summary>
+            <exception cref="T:System.NotSupportedException">This method is not supported on this collection, a <see cref="T:System.NotSupportedException"/> will be thrown.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.System#Collections#Generic#ICollection{T}#Remove(`0)">
+            <summary>Not supported on read only collection</summary>
+            <exception cref="T:System.NotSupportedException">This method is not supported on this collection, a <see cref="T:System.NotSupportedException"/> will be thrown.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.RemoveAt(System.Int32)">
+            <summary>Not supported on read only collection</summary>
+            <exception cref="T:System.NotSupportedException">This method is not supported on this collection, a <see cref="T:System.NotSupportedException"/> will be thrown.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.Clear">
+            <summary>Not supported on read only collection</summary>
+            <exception cref="T:System.NotSupportedException">This method is not supported on this collection, a <see cref="T:System.NotSupportedException"/> will be thrown.</exception>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.CopyTo(System.Array,System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.CopyTo(`0[],System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.Contains(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.Contains(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.IndexOf(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.IndexOf(System.Object,System.Int32,System.Collections.IEqualityComparer)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.IndexOf(`0,System.Int32,System.Collections.Generic.IEqualityComparer{`0})">
+            <inheritdoc />
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.CollectionChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.AddCollectionChangedHandler(System.Action{Uno.Extensions.Collections.RichNotifyCollectionChangedEventArgs},Uno.Extensions.Collections.IObservableCollectionSnapshot@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.AddCollectionChangedHandler(System.Action{Uno.Extensions.Collections.RichNotifyCollectionChangedEventArgs},Uno.Extensions.Collections.IObservableCollectionSnapshot{`0}@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.RemoveCollectionChangedHandler(System.Action{Uno.Extensions.Collections.RichNotifyCollectionChangedEventArgs},Uno.Extensions.Collections.IObservableCollectionSnapshot@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.ImmutableObservableCollection`1.RemoveCollectionChangedHandler(System.Action{Uno.Extensions.Collections.RichNotifyCollectionChangedEventArgs},Uno.Extensions.Collections.IObservableCollectionSnapshot{`0}@)">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections.NullCollectionViewGroup">
+            <summary>
+            Null pattern implementation of <see cref="T:Microsoft.UI.Xaml.Data.ICollectionViewGroup"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.NullCollectionViewGroup.Group">
+            <inhertidoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.NullCollectionViewGroup.GroupItems">
+            <inhertidoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1">
+            <summary>
+            Null pattern implementation of <see cref="T:Windows.Foundation.Collections.IObservableVector`1"/>.
+            </summary>
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.VectorChanged">
+            <inhertidoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.Count">
+            <inhertidoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.IsReadOnly">
+            <inhertidoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.Item(System.Int32)">
+            <inhertidoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.GetEnumerator">
+            <inhertidoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.System#Collections#IEnumerable#GetEnumerator">
+            <inhertidoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.Add(`0)">
+            <inhertidoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.Clear">
+            <inhertidoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.Contains(`0)">
+            <inhertidoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.CopyTo(`0[],System.Int32)">
+            <inhertidoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.Remove(`0)">
+            <inhertidoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.IndexOf(`0)">
+            <inhertidoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.Insert(System.Int32,`0)">
+            <inhertidoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.NullObservableVector`1.RemoveAt(System.Int32)">
+            <inhertidoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.EditionService.Update(System.Func{Uno.Extensions.Collections.Facades.Differential.IDifferentialCollectionNode,Uno.Extensions.Collections.Facades.Differential.IDifferentialCollectionNode})">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.EditionService.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.IEditionService.Update(System.Func{Uno.Extensions.Collections.Facades.Differential.IDifferentialCollectionNode,Uno.Extensions.Collections.Facades.Differential.IDifferentialCollectionNode})">
+            <summary>
+            Apply a collection changed issued by the view
+            </summary>
+            <param name="args">The change args.</param>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections.Services.IPaginationService">
+            <summary>
+            A presentation service used by <see cref="T:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection"/> to request more items
+            (cf. <see cref="T:Microsoft.UI.Xaml.Data.ISupportIncrementalLoading"/>).
+            </summary>
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections.Services.IPaginationService.StateChanged">
+            <summary>
+            Event raise when any properties of the service has changed
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.Services.IPaginationService.HasMoreItems">
+            <summary>
+            Indicates that the source can load more items
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.Services.IPaginationService.IsLoadingMoreItems">
+            <summary>
+            Indicates that the source is currently loading more items.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.IPaginationService.LoadMoreItems(System.UInt32,System.Threading.CancellationToken)">
+            <summary>
+            Request to the source to load more items.
+            </summary>
+            <param name="desiredCount">The desired number of items to load.</param>
+            <param name="ct">A cancellation to cancel the async operation.</param>
+            <returns>An async operation that reflects the loading.</returns>
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections.Services.ISelectionService.StateChanged">
+            <summary>
+            Event raise when any properties of the service has changed
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections.Services.PaginationService">
+            <summary>
+            A simple pagination service which acts as a push-pull adapter between source and the <see cref="T:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection"/>.
+            </summary>
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections.Services.PaginationService.StateChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.PaginationService.#ctor(Uno.Extensions.AsyncFunc{System.UInt32,System.UInt32})">
+            <summary>
+            Creates a new instance
+            </summary>
+            <param name="loadMore">The delegate to invoke to load more items.</param>
+            <remarks>This service ensure that only one <paramref name="loadMore"/> will be active at once.</remarks>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.Services.PaginationService.HasMoreItems">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.Services.PaginationService.IsLoadingMoreItems">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.PaginationService.LoadMoreItems(System.UInt32,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.PaginationService.LoadRequest.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.PaginationService.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections.Services.SelectionService">
+            <summary>
+            A simple selection service which acts as a push-pull adapter between source and the <see cref="T:Uno.Extensions.Reactive.Bindings.Collections.BindableCollection"/>.
+            </summary>
+        </member>
+        <member name="E:Uno.Extensions.Reactive.Bindings.Collections.Services.SelectionService.StateChanged">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.SelectionService.IsSelected(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.SelectionService.GetSelectedRanges">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.SelectionService.SelectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.SelectionService.DeselectRange(Microsoft.UI.Xaml.Data.ItemIndexRange)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.SelectionService.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.SingletonServiceProvider.GetService(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Bindings.Collections.Services.SingletonServiceProvider.DisposeAsync">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections.TrackingMode">
+            <summary>
+            The modes that can be used to track changes between collections
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections.TrackingMode.Auto">
+            <summary>
+            The collection determines by itself if its use the <see cref="F:Uno.Extensions.Reactive.Bindings.Collections.TrackingMode.Smart"/> or the <see cref="F:Uno.Extensions.Reactive.Bindings.Collections.TrackingMode.Reset"/> mode.
+            <remarks>The collection will use reset if there is any handler of the <see cref="E:System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged"/> event.</remarks>
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections.TrackingMode.Smart">
+            <summary>
+            The collection determines the changes from the previous version and notifies changes item per item.
+            </summary>
+        </member>
+        <member name="F:Uno.Extensions.Reactive.Bindings.Collections.TrackingMode.Reset">
+            <summary>
+            The collection raise a unique <see cref="F:System.Collections.Specialized.NotifyCollectionChangedAction.Reset"/>.
+            </summary>
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Bindings.Collections.VectorChangedEventArgs">
+            <summary>
+            Default implementation of <see cref="T:Windows.Foundation.Collections.IVectorChangedEventArgs"/>.
+            </summary>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.VectorChangedEventArgs.CollectionChange">
+            <inheritdoc />
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Bindings.Collections.VectorChangedEventArgs.Index">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Dispatching.DispatcherQueueProvider">
+            <summary>
+            Provider of <see cref="T:Uno.Extensions.IDispatcher"/>.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Dispatching.DispatcherQueueProvider.GetForCurrentThread">
+            <summary>
+            Gets a dispatcher queue instance that will execute tasks serially on the current thread, or null if no such queue exists.
+            </summary>
+            <returns>The dispatcher associated to the current thread if the thread is a UI thread.</returns>
+        </member>
+        <member name="P:Uno.Extensions.Reactive.Dispatching.DispatcherQueueProvider.Dispatcher.HasThreadAccess">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Dispatching.DispatcherQueueProvider.Dispatcher.TryEnqueue(System.Action)">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Dispatching.DispatcherQueueProvider.Dispatcher.ExecuteAsync``1(Uno.Extensions.AsyncFunc{``0},System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.Utils.VisualStateHelper">
+            <summary>
+            An helper class that makes sure to not re-request the same visual state again and again.
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Utils.VisualStateHelper.CacheEqualityComparer.Equals(System.ValueTuple{System.String,Uno.Extensions.Reactive.Utils.VisualStateHelper.GroupInfo},System.ValueTuple{System.String,Uno.Extensions.Reactive.Utils.VisualStateHelper.GroupInfo})">
+            <inheritdoc />
+        </member>
+        <member name="M:Uno.Extensions.Reactive.Utils.VisualStateHelper.CacheEqualityComparer.GetHashCode(System.ValueTuple{System.String,Uno.Extensions.Reactive.Utils.VisualStateHelper.GroupInfo})">
+            <inheritdoc />
+        </member>
+        <member name="T:Uno.Extensions.Reactive.WinUI.Uno_Extensions_Reactive_WinUI_XamlTypeInfo.XamlMetaDataProvider">
+            <summary>
+            Main class for providing metadata for the app or library
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.WinUI.Uno_Extensions_Reactive_WinUI_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.Type)">
+            <summary>
+            GetXamlType(Type)
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.WinUI.Uno_Extensions_Reactive_WinUI_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.String)">
+            <summary>
+            GetXamlType(String)
+            </summary>
+        </member>
+        <member name="M:Uno.Extensions.Reactive.WinUI.Uno_Extensions_Reactive_WinUI_XamlTypeInfo.XamlMetaDataProvider.GetXmlnsDefinitions">
+            <summary>
+            GetXmlnsDefinitions()
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -5,8 +5,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<PackageId>CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit</PackageId>
-		<Title>CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit</Title>
+		<PackageId>CSharpMarkup.WinUI.Uno.Extensions.Reactive</PackageId>
+		<Title>CSharpMarkup.WinUI.Uno.Extensions.Reactive</Title>
 		<Summary>Build .NET browser / native UI in declarative C#</Summary>
 		<Description>Enjoy a Flutter-like UI development experience with .NET Hot Reload and WinUI 3, using Windows App SDK and/or Uno Platform. Build .NET applications fully in C#. Target browsers and native desktop / mobile. No XAML / HTML / JavaScript / CSS required</Description>
 		<PackageReadmeFile>Readme.md</PackageReadmeFile>
@@ -38,10 +38,10 @@
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 	</PropertyGroup>
-		
+
 	<PropertyGroup>
 		<TargetFrameworks>net7.0-windows10.0.18362.0;net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>
-		<RootNamespace>CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit</RootNamespace>
+		<RootNamespace>CSharpMarkup.WinUI.Uno.Extensions.Reactive</RootNamespace>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(TargetFramework.Contains('windows10.'))">
@@ -72,17 +72,17 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)==false">
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230822000" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230822000"  />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)">
 		<PackageReference Include="Uno.WinUI" Version="4.10.26" />
+		<PackageReference Include="Uno.Extensions.Reactive.WinUI" Version="2.5.11" />
 	</ItemGroup>
 	
 	<ItemGroup>
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-		<PackageReference Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" />
-		<PackageReference Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="2.5.11" />
+		<PackageReference Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" ExcludeAssets="build;analyzers" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -90,6 +90,31 @@
 	    <OutputItemType>Analyzer</OutputItemType>
 	    <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
 	  </ProjectReference>
+	</ItemGroup>
+
+	<ItemGroup Condition="$(IsUno)==false">
+		 <!--Workaround for https://github.com/unoplatform/uno.extensions/discussions/1921 : use this instead of PackageReference Include="Uno.Extensions.Reactive.WinUI" Version="2.5.11"--> 
+		<Reference Include="Uno.Extensions.Reactive.UI.NoAssets">
+			<HintPath>..\uno.extensions.reactive.winui.2.5.11-libnet6.0-windows10.0.18362\Uno.Extensions.Reactive.UI.dll</HintPath>
+		</Reference>
+		 <!--Dependencies for Uno.Extensions.Reactive.UI--> 
+		<PackageReference Include="Uno.Extensions.Reactive" Version="2.5.11" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all"  />
+		<PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="6.0.0" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all"  />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all"  />
+		<!--<PackageReference Include="Uno.Toolkit.WinUI" Version="3.0.4" ExcludeAssets="build;analyzers" /> replaced with next itemgroup - same workaround-->
+		<PackageReference Include="Uno.WinUI" Version="4.9.20" ExcludeAssets="build;analyzers" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(IsUno)==false">
+		<!--Workaround for https://github.com/unoplatform/uno.extensions/discussions/1921 : use this instead of PackageReference Include="Uno.Toolkit.WinUI" Version="4.2.22"-->
+		<Reference Include="Uno.Toolkit.WinUI.NoAssets">
+			<HintPath>..\uno.toolkit.winui-4.2.22-lib-net6.0-windows10.0.18362\Uno.Toolkit.WinUI.dll</HintPath>
+		</Reference>
+		<PackageReference Include="Uno.Toolkit" Version="4.2.22" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
+		<PackageReference Include="Uno.Core.Extensions.Collections" Version="4.0.1" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
+		<PackageReference Include="Uno.Core.Extensions.Logging" Version="4.0.1" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
+		<PackageReference Include="Uno.Core.Extensions.Logging.Singleton" Version="4.0.1" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
+		<PackageReference Include="Uno.WinUI" Version="4.7.37" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
 	</ItemGroup>
 
 	<ItemGroup>
