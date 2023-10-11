@@ -102,7 +102,7 @@
 		<PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="6.0.0" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all"  />
 		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all"  />
 		<!--<PackageReference Include="Uno.Toolkit.WinUI" Version="3.0.4" ExcludeAssets="build;analyzers" /> replaced with next itemgroup - same workaround-->
-		<PackageReference Include="Uno.WinUI" Version="4.9.20" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Uno.WinUI" Version="4.10.26" ExcludeAssets="build;analyzers" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)==false">

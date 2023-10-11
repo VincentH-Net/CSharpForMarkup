@@ -110,7 +110,7 @@
       <PackageReference Include="Uno.Core.Extensions.Collections" Version="4.0.1" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
       <PackageReference Include="Uno.Core.Extensions.Logging" Version="4.0.1" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
       <PackageReference Include="Uno.Core.Extensions.Logging.Singleton" Version="4.0.1" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
-      <PackageReference Include="Uno.WinUI" Version="4.7.37" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
+      <PackageReference Include="Uno.WinUI" Version="4.10.26" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
 	</ItemGroup>
 	
 	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
