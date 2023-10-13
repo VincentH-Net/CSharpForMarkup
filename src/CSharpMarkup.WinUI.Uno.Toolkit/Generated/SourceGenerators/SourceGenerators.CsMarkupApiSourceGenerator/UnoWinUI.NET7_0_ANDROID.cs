@@ -16,6 +16,426 @@ using VirtualKey = Windows.System.VirtualKey;
 using VirtualKeyModifiers = Windows.System.VirtualKeyModifiers;
 using Drawing = System.Drawing;
 
+namespace CSharpMarkup.WinUI.Uno.Toolkit // CommandExtensions
+{
+    public static partial class CommandExtensionsExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.CommandExtensions.Command"/></summary>
+        public static TTarget CommandExtensions_Command<TTarget>(this TTarget target, ICommand value) where TTarget : DependencyObject
+        { UnoToolkitUI.CommandExtensions.SetCommand(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.CommandExtensions.Command"/></summary>
+        public static DependencyProperty<TTarget, ICommand> CommandExtensions_Command<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, ICommand>.Get(target, UnoToolkitUI.CommandExtensions.CommandProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.CommandExtensions.CommandParameter"/></summary>
+        public static TTarget CommandExtensions_CommandParameter<TTarget>(this TTarget target, object? value) where TTarget : DependencyObject
+        { UnoToolkitUI.CommandExtensions.SetCommandParameter(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.CommandExtensions.CommandParameter"/></summary>
+        public static DependencyProperty<TTarget, object?> CommandExtensions_CommandParameter<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, object?>.Get(target, UnoToolkitUI.CommandExtensions.CommandParameterProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.CommandExtensions"/> attached properties</summary>
+        public static TTarget CommandExtensions<TTarget>(this TTarget target
+
+            , ICommand Command = default
+
+            , object? CommandParameter = default
+
+        ) where TTarget : DependencyObject
+        {
+            if (Command is not null) UnoToolkitUI.CommandExtensions.SetCommand(target.UI, Command);
+
+            if (CommandParameter is not null) UnoToolkitUI.CommandExtensions.SetCommandParameter(target.UI, CommandParameter);
+
+            return target;
+        }
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControlBehavior
+{
+    public static partial class DrawerControlBehaviorExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.DrawerBackground"/></summary>
+        public static TTarget DrawerControlBehavior_DrawerBackground<TTarget>(this TTarget target, Xaml.Media.Brush value) where TTarget : DrawerControl
+        { UnoToolkitUI.DrawerControlBehavior.SetDrawerBackground(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControlBehavior.DrawerBackground"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.Brush> DrawerControlBehavior_DrawerBackground<TTarget>(this TTarget target) where TTarget : DrawerControl
+        => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, UnoToolkitUI.DrawerControlBehavior.DrawerBackgroundProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.FitToDrawerContent"/></summary>
+        public static TTarget DrawerControlBehavior_FitToDrawerContent<TTarget>(this TTarget target, bool value) where TTarget : DrawerControl
+        { UnoToolkitUI.DrawerControlBehavior.SetFitToDrawerContent(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControlBehavior.FitToDrawerContent"/></summary>
+        public static DependencyProperty<TTarget, bool> DrawerControlBehavior_FitToDrawerContent<TTarget>(this TTarget target) where TTarget : DrawerControl
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.DrawerControlBehavior.FitToDrawerContentProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior"/> attached properties</summary>
+        public static TTarget DrawerControlBehavior<TTarget>(this TTarget target
+
+            , Xaml.Media.Brush DrawerBackground = default
+
+            , bool? FitToDrawerContent = default
+
+        ) where TTarget : DrawerControl
+        {
+            if (DrawerBackground is not null) UnoToolkitUI.DrawerControlBehavior.SetDrawerBackground(target.UI, DrawerBackground);
+
+            if (FitToDrawerContent is not null) UnoToolkitUI.DrawerControlBehavior.SetFitToDrawerContent(target.UI, FitToDrawerContent.Value);
+
+            return target;
+        }
+
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.OpenDirection"/></summary>
+        public static TTarget DrawerControlBehavior_OpenDirection<TTarget>(this TTarget target, UnoToolkitUI.DrawerOpenDirection value) where TTarget : DependencyObject
+        { UnoToolkitUI.DrawerControlBehavior.SetOpenDirection(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControlBehavior.OpenDirection"/></summary>
+        public static DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection> DrawerControlBehavior_OpenDirection<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection>.Get(target, UnoToolkitUI.DrawerControlBehavior.OpenDirectionProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.LightDismissOverlayBackground"/></summary>
+        public static TTarget DrawerControlBehavior_LightDismissOverlayBackground<TTarget>(this TTarget target, Xaml.Media.Brush value) where TTarget : DependencyObject
+        { UnoToolkitUI.DrawerControlBehavior.SetLightDismissOverlayBackground(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControlBehavior.LightDismissOverlayBackground"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.Brush> DrawerControlBehavior_LightDismissOverlayBackground<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, UnoToolkitUI.DrawerControlBehavior.LightDismissOverlayBackgroundProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.EdgeSwipeDetectionLength"/></summary>
+        public static TTarget DrawerControlBehavior_EdgeSwipeDetectionLength<TTarget>(this TTarget target, double? value) where TTarget : DependencyObject
+        { UnoToolkitUI.DrawerControlBehavior.SetEdgeSwipeDetectionLength(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControlBehavior.EdgeSwipeDetectionLength"/></summary>
+        public static DependencyProperty<TTarget, double?> DrawerControlBehavior_EdgeSwipeDetectionLength<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, double?>.Get(target, UnoToolkitUI.DrawerControlBehavior.EdgeSwipeDetectionLengthProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.IsGestureEnabled"/></summary>
+        public static TTarget DrawerControlBehavior_IsGestureEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
+        { UnoToolkitUI.DrawerControlBehavior.SetIsGestureEnabled(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControlBehavior.IsGestureEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> DrawerControlBehavior_IsGestureEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.DrawerControlBehavior.IsGestureEnabledProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior"/> attached properties</summary>
+        public static TTarget DrawerControlBehavior<TTarget>(this TTarget target
+
+            , UnoToolkitUI.DrawerOpenDirection? OpenDirection = default
+
+            , Xaml.Media.Brush LightDismissOverlayBackground = default
+
+            , double? EdgeSwipeDetectionLength = default
+
+            , bool? IsGestureEnabled = default
+
+        ) where TTarget : DependencyObject
+        {
+            if (OpenDirection is not null) UnoToolkitUI.DrawerControlBehavior.SetOpenDirection(target.UI, OpenDirection.Value);
+
+            if (LightDismissOverlayBackground is not null) UnoToolkitUI.DrawerControlBehavior.SetLightDismissOverlayBackground(target.UI, LightDismissOverlayBackground);
+
+            if (EdgeSwipeDetectionLength is not null) UnoToolkitUI.DrawerControlBehavior.SetEdgeSwipeDetectionLength(target.UI, EdgeSwipeDetectionLength);
+
+            if (IsGestureEnabled is not null) UnoToolkitUI.DrawerControlBehavior.SetIsGestureEnabled(target.UI, IsGestureEnabled.Value);
+
+            return target;
+        }
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // FlipViewExtensions
+{
+    public static partial class FlipViewExtensionsExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.FlipViewExtensions.Next"/></summary>
+        public static TTarget FlipViewExtensions_Next<TTarget>(this TTarget target, Xaml.Controls.FlipView value) where TTarget : Button
+        { UnoToolkitUI.FlipViewExtensions.SetNext(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.FlipViewExtensions.Next"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.FlipView> FlipViewExtensions_Next<TTarget>(this TTarget target) where TTarget : Button
+        => DependencyProperty<TTarget, Xaml.Controls.FlipView>.Get(target, UnoToolkitUI.FlipViewExtensions.NextProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.FlipViewExtensions.Previous"/></summary>
+        public static TTarget FlipViewExtensions_Previous<TTarget>(this TTarget target, Xaml.Controls.FlipView value) where TTarget : Button
+        { UnoToolkitUI.FlipViewExtensions.SetPrevious(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.FlipViewExtensions.Previous"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.FlipView> FlipViewExtensions_Previous<TTarget>(this TTarget target) where TTarget : Button
+        => DependencyProperty<TTarget, Xaml.Controls.FlipView>.Get(target, UnoToolkitUI.FlipViewExtensions.PreviousProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.FlipViewExtensions"/> attached properties</summary>
+        public static TTarget FlipViewExtensions<TTarget>(this TTarget target
+
+            , Xaml.Controls.FlipView Next = default
+
+            , Xaml.Controls.FlipView Previous = default
+
+        ) where TTarget : Button
+        {
+            if (Next is not null) UnoToolkitUI.FlipViewExtensions.SetNext(target.UI, Next);
+
+            if (Previous is not null) UnoToolkitUI.FlipViewExtensions.SetPrevious(target.UI, Previous);
+
+            return target;
+        }
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // InputExtensions
+{
+    public static partial class InputExtensionsExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.InputExtensions.AutoDismiss"/></summary>
+        public static TTarget InputExtensions_AutoDismiss<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
+        { UnoToolkitUI.InputExtensions.SetAutoDismiss(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.InputExtensions.AutoDismiss"/></summary>
+        public static DependencyProperty<TTarget, bool> InputExtensions_AutoDismiss<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.InputExtensions.AutoDismissProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.InputExtensions.AutoFocusNext"/></summary>
+        public static TTarget InputExtensions_AutoFocusNext<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
+        { UnoToolkitUI.InputExtensions.SetAutoFocusNext(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.InputExtensions.AutoFocusNext"/></summary>
+        public static DependencyProperty<TTarget, bool> InputExtensions_AutoFocusNext<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.InputExtensions.AutoFocusNextProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.InputExtensions.AutoFocusNextElement"/></summary>
+        public static TTarget InputExtensions_AutoFocusNextElement<TTarget>(this TTarget target, Xaml.Controls.Control value) where TTarget : DependencyObject
+        { UnoToolkitUI.InputExtensions.SetAutoFocusNextElement(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.InputExtensions.AutoFocusNextElement"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.Control> InputExtensions_AutoFocusNextElement<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Xaml.Controls.Control>.Get(target, UnoToolkitUI.InputExtensions.AutoFocusNextElementProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.InputExtensions"/> attached properties</summary>
+        public static TTarget InputExtensions<TTarget>(this TTarget target
+
+            , bool? AutoDismiss = default
+
+            , bool? AutoFocusNext = default
+
+            , Xaml.Controls.Control AutoFocusNextElement = default
+
+        ) where TTarget : DependencyObject
+        {
+            if (AutoDismiss is not null) UnoToolkitUI.InputExtensions.SetAutoDismiss(target.UI, AutoDismiss.Value);
+
+            if (AutoFocusNext is not null) UnoToolkitUI.InputExtensions.SetAutoFocusNext(target.UI, AutoFocusNext.Value);
+
+            if (AutoFocusNextElement is not null) UnoToolkitUI.InputExtensions.SetAutoFocusNextElement(target.UI, AutoFocusNextElement);
+
+            return target;
+        }
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // ItemsRepeaterExtensions
+{
+    public static partial class ItemsRepeaterExtensionsExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.ItemsRepeaterExtensions.SelectedItem"/></summary>
+        public static TTarget ItemsRepeaterExtensions_SelectedItem<TTarget>(this TTarget target, object? value) where TTarget : ItemsRepeater
+        { UnoToolkitUI.ItemsRepeaterExtensions.SetSelectedItem(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ItemsRepeaterExtensions.SelectedItem"/></summary>
+        public static DependencyProperty<TTarget, object?> ItemsRepeaterExtensions_SelectedItem<TTarget>(this TTarget target) where TTarget : ItemsRepeater
+        => DependencyProperty<TTarget, object?>.Get(target, UnoToolkitUI.ItemsRepeaterExtensions.SelectedItemProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.ItemsRepeaterExtensions.SelectedItems"/></summary>
+        public static TTarget ItemsRepeaterExtensions_SelectedItems<TTarget>(this TTarget target, IList<object> value) where TTarget : ItemsRepeater
+        { UnoToolkitUI.ItemsRepeaterExtensions.SetSelectedItems(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ItemsRepeaterExtensions.SelectedItems"/></summary>
+        public static DependencyProperty<TTarget, IList<object>> ItemsRepeaterExtensions_SelectedItems<TTarget>(this TTarget target) where TTarget : ItemsRepeater
+        => DependencyProperty<TTarget, IList<object>>.Get(target, UnoToolkitUI.ItemsRepeaterExtensions.SelectedItemsProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.ItemsRepeaterExtensions.SelectedIndex"/></summary>
+        public static TTarget ItemsRepeaterExtensions_SelectedIndex<TTarget>(this TTarget target, int value) where TTarget : ItemsRepeater
+        { UnoToolkitUI.ItemsRepeaterExtensions.SetSelectedIndex(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ItemsRepeaterExtensions.SelectedIndex"/></summary>
+        public static DependencyProperty<TTarget, int> ItemsRepeaterExtensions_SelectedIndex<TTarget>(this TTarget target) where TTarget : ItemsRepeater
+        => DependencyProperty<TTarget, int>.Get(target, UnoToolkitUI.ItemsRepeaterExtensions.SelectedIndexProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.ItemsRepeaterExtensions.SelectedIndexes"/></summary>
+        public static TTarget ItemsRepeaterExtensions_SelectedIndexes<TTarget>(this TTarget target, IList<int> value) where TTarget : ItemsRepeater
+        { UnoToolkitUI.ItemsRepeaterExtensions.SetSelectedIndexes(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ItemsRepeaterExtensions.SelectedIndexes"/></summary>
+        public static DependencyProperty<TTarget, IList<int>> ItemsRepeaterExtensions_SelectedIndexes<TTarget>(this TTarget target) where TTarget : ItemsRepeater
+        => DependencyProperty<TTarget, IList<int>>.Get(target, UnoToolkitUI.ItemsRepeaterExtensions.SelectedIndexesProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.ItemsRepeaterExtensions.SelectionMode"/></summary>
+        public static TTarget ItemsRepeaterExtensions_SelectionMode<TTarget>(this TTarget target, UnoToolkitUI.ItemsSelectionMode value) where TTarget : ItemsRepeater
+        { UnoToolkitUI.ItemsRepeaterExtensions.SetSelectionMode(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ItemsRepeaterExtensions.SelectionMode"/></summary>
+        public static DependencyProperty<TTarget, UnoToolkitUI.ItemsSelectionMode> ItemsRepeaterExtensions_SelectionMode<TTarget>(this TTarget target) where TTarget : ItemsRepeater
+        => DependencyProperty<TTarget, UnoToolkitUI.ItemsSelectionMode>.Get(target, UnoToolkitUI.ItemsRepeaterExtensions.SelectionModeProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.ItemsRepeaterExtensions"/> attached properties</summary>
+        public static TTarget ItemsRepeaterExtensions<TTarget>(this TTarget target
+
+            , object? SelectedItem = default
+
+            , IList<object> SelectedItems = default
+
+            , int? SelectedIndex = default
+
+            , IList<int> SelectedIndexes = default
+
+            , UnoToolkitUI.ItemsSelectionMode? SelectionMode = default
+
+        ) where TTarget : ItemsRepeater
+        {
+            if (SelectedItem is not null) UnoToolkitUI.ItemsRepeaterExtensions.SetSelectedItem(target.UI, SelectedItem);
+
+            if (SelectedItems is not null) UnoToolkitUI.ItemsRepeaterExtensions.SetSelectedItems(target.UI, SelectedItems);
+
+            if (SelectedIndex is not null) UnoToolkitUI.ItemsRepeaterExtensions.SetSelectedIndex(target.UI, SelectedIndex.Value);
+
+            if (SelectedIndexes is not null) UnoToolkitUI.ItemsRepeaterExtensions.SetSelectedIndexes(target.UI, SelectedIndexes);
+
+            if (SelectionMode is not null) UnoToolkitUI.ItemsRepeaterExtensions.SetSelectionMode(target.UI, SelectionMode.Value);
+
+            return target;
+        }
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // SelectorExtensions
+{
+    public static partial class SelectorExtensionsExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.SelectorExtensions.PipsPager"/></summary>
+        public static TTarget SelectorExtensions_PipsPager<TTarget>(this TTarget target, Xaml.Controls.PipsPager value) where TTarget : Selector
+        { UnoToolkitUI.SelectorExtensions.SetPipsPager(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.SelectorExtensions.PipsPager"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.PipsPager> SelectorExtensions_PipsPager<TTarget>(this TTarget target) where TTarget : Selector
+        => DependencyProperty<TTarget, Xaml.Controls.PipsPager>.Get(target, UnoToolkitUI.SelectorExtensions.PipsPagerProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.SelectorExtensions.SelectionOffset"/></summary>
+        public static TTarget SelectorExtensions_SelectionOffset<TTarget>(this TTarget target, double value) where TTarget : DependencyObject
+        { UnoToolkitUI.SelectorExtensions.SetSelectionOffset(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.SelectorExtensions.SelectionOffset"/></summary>
+        public static DependencyProperty<TTarget, double> SelectorExtensions_SelectionOffset<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.SelectorExtensions.SelectionOffsetProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // StatusBar
+{
+    public static partial class StatusBarExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.StatusBar.Foreground"/></summary>
+        public static TTarget StatusBar_Foreground<TTarget>(this TTarget target, UnoToolkitUI.StatusBarForegroundTheme value) where TTarget : Page
+        { UnoToolkitUI.StatusBar.SetForeground(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.StatusBar.Foreground"/></summary>
+        public static DependencyProperty<TTarget, UnoToolkitUI.StatusBarForegroundTheme> StatusBar_Foreground<TTarget>(this TTarget target) where TTarget : Page
+        => DependencyProperty<TTarget, UnoToolkitUI.StatusBarForegroundTheme>.Get(target, UnoToolkitUI.StatusBar.ForegroundProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.StatusBar.Background"/></summary>
+        public static TTarget StatusBar_Background<TTarget>(this TTarget target, Xaml.Media.Brush value) where TTarget : Page
+        { UnoToolkitUI.StatusBar.SetBackground(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.StatusBar.Background"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.Brush> StatusBar_Background<TTarget>(this TTarget target) where TTarget : Page
+        => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, UnoToolkitUI.StatusBar.BackgroundProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.StatusBar"/> attached properties</summary>
+        public static TTarget StatusBar<TTarget>(this TTarget target
+
+            , UnoToolkitUI.StatusBarForegroundTheme? Foreground = default
+
+            , Xaml.Media.Brush Background = default
+
+        ) where TTarget : Page
+        {
+            if (Foreground is not null) UnoToolkitUI.StatusBar.SetForeground(target.UI, Foreground.Value);
+
+            if (Background is not null) UnoToolkitUI.StatusBar.SetBackground(target.UI, Background);
+
+            return target;
+        }
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarItemExtensions
+{
+    public static partial class TabBarItemExtensionsExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.TabBarItemExtensions.OnClickBehaviors"/></summary>
+        public static TTarget TabBarItemExtensions_OnClickBehaviors<TTarget>(this TTarget target, UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors value) where TTarget : TabBarItem
+        { UnoToolkitUI.TabBarItemExtensions.SetOnClickBehaviors(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.TabBarItemExtensions.OnClickBehaviors"/></summary>
+        public static DependencyProperty<TTarget, UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors> TabBarItemExtensions_OnClickBehaviors<TTarget>(this TTarget target) where TTarget : TabBarItem
+        => DependencyProperty<TTarget, UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors>.Get(target, UnoToolkitUI.TabBarItemExtensions.OnClickBehaviorsProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.TabBarItemExtensions.OnClickBehaviorsTarget"/></summary>
+        public static TTarget TabBarItemExtensions_OnClickBehaviorsTarget<TTarget>(this TTarget target, Xaml.UIElement value) where TTarget : TabBarItem
+        { UnoToolkitUI.TabBarItemExtensions.SetOnClickBehaviorsTarget(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.TabBarItemExtensions.OnClickBehaviorsTarget"/></summary>
+        public static DependencyProperty<TTarget, Xaml.UIElement> TabBarItemExtensions_OnClickBehaviorsTarget<TTarget>(this TTarget target) where TTarget : TabBarItem
+        => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, UnoToolkitUI.TabBarItemExtensions.OnClickBehaviorsTargetProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.TabBarItemExtensions"/> attached properties</summary>
+        public static TTarget TabBarItemExtensions<TTarget>(this TTarget target
+
+            , UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors? OnClickBehaviors = default
+
+            , Xaml.UIElement OnClickBehaviorsTarget = default
+
+        ) where TTarget : TabBarItem
+        {
+            if (OnClickBehaviors is not null) UnoToolkitUI.TabBarItemExtensions.SetOnClickBehaviors(target.UI, OnClickBehaviors.Value);
+
+            if (OnClickBehaviorsTarget is not null) UnoToolkitUI.TabBarItemExtensions.SetOnClickBehaviorsTarget(target.UI, OnClickBehaviorsTarget);
+
+            return target;
+        }
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarSelectorBehavior
+{
+    public static partial class TabBarSelectorBehaviorExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.TabBarSelectorBehavior.Selector"/></summary>
+        public static TTarget TabBarSelectorBehavior_Selector<TTarget>(this TTarget target, Xaml.Controls.Primitives.Selector? value) where TTarget : DependencyObject
+        { UnoToolkitUI.TabBarSelectorBehavior.SetSelector(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.TabBarSelectorBehavior.Selector"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.Primitives.Selector?> TabBarSelectorBehavior_Selector<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Xaml.Controls.Primitives.Selector?>.Get(target, UnoToolkitUI.TabBarSelectorBehavior.SelectorProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // VisualStateManagerExtensions
+{
+    public static partial class VisualStateManagerExtensionsExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.VisualStateManagerExtensions.States"/></summary>
+        public static TTarget VisualStateManagerExtensions_States<TTarget>(this TTarget target, string value) where TTarget : Control
+        { UnoToolkitUI.VisualStateManagerExtensions.SetStates(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.VisualStateManagerExtensions.States"/></summary>
+        public static DependencyProperty<TTarget, string> VisualStateManagerExtensions_States<TTarget>(this TTarget target) where TTarget : Control
+        => DependencyProperty<TTarget, string>.Get(target, UnoToolkitUI.VisualStateManagerExtensions.StatesProperty);
+    }
+}
+
 namespace CSharpMarkup.WinUI.Uno.Toolkit // AutoLayout
 {
     public static partial class Helpers
@@ -1426,6 +1846,20 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // LoadingView
     }
 }
 
+namespace CSharpMarkup.WinUI.Uno.Toolkit // CommandBarExtensions
+{
+    public static partial class CommandBarExtensionsExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.CommandBarExtensions.MainCommand"/></summary>
+        public static TTarget CommandBarExtensions_MainCommand<TTarget>(this TTarget target, Xaml.Controls.AppBarButton? value) where TTarget : DependencyObject?
+        { UnoToolkitUI.CommandBarExtensions.SetMainCommand(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.CommandBarExtensions.MainCommand"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.AppBarButton?> CommandBarExtensions_MainCommand<TTarget>(this TTarget target) where TTarget : DependencyObject?
+        => DependencyProperty<TTarget, Xaml.Controls.AppBarButton?>.Get(target, UnoToolkitUI.CommandBarExtensions.MainCommandProperty);
+    }
+}
+
 namespace CSharpMarkup.WinUI.Uno.Toolkit // NativeFramePresenter
 {
     public static partial class Helpers
@@ -2544,6 +2978,22 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
 {
     public static partial class AutoLayoutExtensions
     {
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
+        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : AutoLayout
+        => property.Set(Xaml.Controls.Orientation.Vertical);
+
+        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
+        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : AutoLayout
+        => property.Set(Xaml.Controls.Orientation.Horizontal);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutJustify.Stack"/></summary>
+        public static TTarget Stack<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutJustify> property) where TTarget : AutoLayout
+        => property.Set(UnoToolkitUI.AutoLayoutJustify.Stack);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutJustify.SpaceBetween"/></summary>
+        public static TTarget SpaceBetween<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutJustify> property) where TTarget : AutoLayout
+        => property.Set(UnoToolkitUI.AutoLayoutJustify.SpaceBetween);
+
         /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutAlignment.Start"/></summary>
         public static TTarget Start<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment> property) where TTarget : AutoLayout
         => property.Set(UnoToolkitUI.AutoLayoutAlignment.Start);
@@ -2559,22 +3009,6 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutAlignment.Stretch"/></summary>
         public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment> property) where TTarget : AutoLayout
         => property.Set(UnoToolkitUI.AutoLayoutAlignment.Stretch);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutJustify.Stack"/></summary>
-        public static TTarget Stack<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutJustify> property) where TTarget : AutoLayout
-        => property.Set(UnoToolkitUI.AutoLayoutJustify.Stack);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutJustify.SpaceBetween"/></summary>
-        public static TTarget SpaceBetween<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutJustify> property) where TTarget : AutoLayout
-        => property.Set(UnoToolkitUI.AutoLayoutJustify.SpaceBetween);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
-        public static TTarget Vertical<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : AutoLayout
-        => property.Set(Xaml.Controls.Orientation.Vertical);
-
-        /// <summary>Set to <see cref="Xaml.Controls.Orientation.Horizontal"/></summary>
-        public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : AutoLayout
-        => property.Set(Xaml.Controls.Orientation.Horizontal);
     }
 
     public static partial class ChipGroupExtensions
@@ -2598,30 +3032,6 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
 
     public static partial class DependencyObjectExtensions
     {
-        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutAlignment.Start"/></summary>
-        public static TTarget Start<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.AutoLayoutAlignment.Start);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutAlignment.Center"/></summary>
-        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.AutoLayoutAlignment.Center);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutAlignment.End"/></summary>
-        public static TTarget End<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.AutoLayoutAlignment.End);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutAlignment.Stretch"/></summary>
-        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.AutoLayoutAlignment.Stretch);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutPrimaryAlignment.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutPrimaryAlignment> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.AutoLayoutPrimaryAlignment.Auto);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutPrimaryAlignment.Stretch"/></summary>
-        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutPrimaryAlignment> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.AutoLayoutPrimaryAlignment.Stretch);
-
         /// <summary>Set to <see cref="UnoToolkitUI.SafeArea.InsetMask.None"/></summary>
         public static TTarget None<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.SafeArea.InsetMask> property) where TTarget : DependencyObject
         => property.Set(UnoToolkitUI.SafeArea.InsetMask.None);
@@ -2662,6 +3072,14 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         public static TTarget Margin<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.SafeArea.InsetMode> property) where TTarget : DependencyObject
         => property.Set(UnoToolkitUI.SafeArea.InsetMode.Margin);
 
+        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutPrimaryAlignment.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutPrimaryAlignment> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.AutoLayoutPrimaryAlignment.Auto);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutPrimaryAlignment.Stretch"/></summary>
+        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutPrimaryAlignment> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.AutoLayoutPrimaryAlignment.Stretch);
+
         /// <summary>Set to <see cref="UnoToolkitUI.DrawerOpenDirection.Right"/></summary>
         public static TTarget Right<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection> property) where TTarget : DependencyObject
         => property.Set(UnoToolkitUI.DrawerOpenDirection.Right);
@@ -2677,6 +3095,22 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         /// <summary>Set to <see cref="UnoToolkitUI.DrawerOpenDirection.Up"/></summary>
         public static TTarget Up<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection> property) where TTarget : DependencyObject
         => property.Set(UnoToolkitUI.DrawerOpenDirection.Up);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutAlignment.Start"/></summary>
+        public static TTarget Start<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.AutoLayoutAlignment.Start);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutAlignment.Center"/></summary>
+        public static TTarget Center<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.AutoLayoutAlignment.Center);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutAlignment.End"/></summary>
+        public static TTarget End<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.AutoLayoutAlignment.End);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.AutoLayoutAlignment.Stretch"/></summary>
+        public static TTarget Stretch<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.AutoLayoutAlignment.Stretch);
     }
 
     public static partial class DrawerControlExtensions
@@ -2729,8 +3163,39 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         => property.Set(UnoToolkitUI.SplashScreenPlatform.All);
     }
 
+    public static partial class ItemsRepeaterExtensions
+    {
+        /// <summary>Set to <see cref="UnoToolkitUI.ItemsSelectionMode.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.ItemsSelectionMode> property) where TTarget : ItemsRepeater
+        => property.Set(UnoToolkitUI.ItemsSelectionMode.None);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.ItemsSelectionMode.SingleOrNone"/></summary>
+        public static TTarget SingleOrNone<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.ItemsSelectionMode> property) where TTarget : ItemsRepeater
+        => property.Set(UnoToolkitUI.ItemsSelectionMode.SingleOrNone);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.ItemsSelectionMode.Single"/></summary>
+        public static TTarget Single<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.ItemsSelectionMode> property) where TTarget : ItemsRepeater
+        => property.Set(UnoToolkitUI.ItemsSelectionMode.Single);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.ItemsSelectionMode.Multiple"/></summary>
+        public static TTarget Multiple<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.ItemsSelectionMode> property) where TTarget : ItemsRepeater
+        => property.Set(UnoToolkitUI.ItemsSelectionMode.Multiple);
+    }
+
     public static partial class NavigationBarExtensions
     {
+        /// <summary>Set to <see cref="UnoToolkitUI.NavigationBarOverflowButtonVisibility.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.NavigationBarOverflowButtonVisibility> property) where TTarget : NavigationBar
+        => property.Set(UnoToolkitUI.NavigationBarOverflowButtonVisibility.Auto);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.NavigationBarOverflowButtonVisibility.Visible"/></summary>
+        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.NavigationBarOverflowButtonVisibility> property) where TTarget : NavigationBar
+        => property.Set(UnoToolkitUI.NavigationBarOverflowButtonVisibility.Visible);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.NavigationBarOverflowButtonVisibility.Collapsed"/></summary>
+        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.NavigationBarOverflowButtonVisibility> property) where TTarget : NavigationBar
+        => property.Set(UnoToolkitUI.NavigationBarOverflowButtonVisibility.Collapsed);
+
         /// <summary>Set to <see cref="UnoToolkitUI.MainCommandMode.Back"/></summary>
         public static TTarget Back<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.MainCommandMode> property) where TTarget : NavigationBar
         => property.Set(UnoToolkitUI.MainCommandMode.Back);
@@ -2750,18 +3215,6 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         /// <summary>Set to <see cref="UnoToolkitUI.NavigationBarDefaultLabelPosition.Collapsed"/></summary>
         public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.NavigationBarDefaultLabelPosition> property) where TTarget : NavigationBar
         => property.Set(UnoToolkitUI.NavigationBarDefaultLabelPosition.Collapsed);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.NavigationBarOverflowButtonVisibility.Auto"/></summary>
-        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.NavigationBarOverflowButtonVisibility> property) where TTarget : NavigationBar
-        => property.Set(UnoToolkitUI.NavigationBarOverflowButtonVisibility.Auto);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.NavigationBarOverflowButtonVisibility.Visible"/></summary>
-        public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.NavigationBarOverflowButtonVisibility> property) where TTarget : NavigationBar
-        => property.Set(UnoToolkitUI.NavigationBarOverflowButtonVisibility.Visible);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.NavigationBarOverflowButtonVisibility.Collapsed"/></summary>
-        public static TTarget Collapsed<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.NavigationBarOverflowButtonVisibility> property) where TTarget : NavigationBar
-        => property.Set(UnoToolkitUI.NavigationBarOverflowButtonVisibility.Collapsed);
 
         /// <summary>Set to <see cref="Xaml.Controls.LightDismissOverlayMode.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode> property) where TTarget : NavigationBar
@@ -2788,6 +3241,29 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         => property.Set(UnoToolkitUI.NavigationBarClosedDisplayMode.Hidden);
     }
 
+    public static partial class PageExtensions
+    {
+        /// <summary>Set to <see cref="UnoToolkitUI.StatusBarForegroundTheme.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.StatusBarForegroundTheme> property) where TTarget : Page
+        => property.Set(UnoToolkitUI.StatusBarForegroundTheme.None);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.StatusBarForegroundTheme.Light"/></summary>
+        public static TTarget Light<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.StatusBarForegroundTheme> property) where TTarget : Page
+        => property.Set(UnoToolkitUI.StatusBarForegroundTheme.Light);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.StatusBarForegroundTheme.Dark"/></summary>
+        public static TTarget Dark<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.StatusBarForegroundTheme> property) where TTarget : Page
+        => property.Set(UnoToolkitUI.StatusBarForegroundTheme.Dark);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.StatusBarForegroundTheme.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.StatusBarForegroundTheme> property) where TTarget : Page
+        => property.Set(UnoToolkitUI.StatusBarForegroundTheme.Auto);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.StatusBarForegroundTheme.AutoInverse"/></summary>
+        public static TTarget AutoInverse<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.StatusBarForegroundTheme> property) where TTarget : Page
+        => property.Set(UnoToolkitUI.StatusBarForegroundTheme.AutoInverse);
+    }
+
     public static partial class TabBarExtensions
     {
         /// <summary>Set to <see cref="Xaml.Controls.Orientation.Vertical"/></summary>
@@ -2798,14 +3274,6 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         public static TTarget Horizontal<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.Orientation> property) where TTarget : TabBar
         => property.Set(Xaml.Controls.Orientation.Horizontal);
 
-        /// <summary>Set to <see cref="UnoToolkitUI.IndicatorPlacement.Above"/></summary>
-        public static TTarget Above<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.IndicatorPlacement> property) where TTarget : TabBar
-        => property.Set(UnoToolkitUI.IndicatorPlacement.Above);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.IndicatorPlacement.Below"/></summary>
-        public static TTarget Below<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.IndicatorPlacement> property) where TTarget : TabBar
-        => property.Set(UnoToolkitUI.IndicatorPlacement.Below);
-
         /// <summary>Set to <see cref="UnoToolkitUI.IndicatorTransitionMode.Snap"/></summary>
         public static TTarget Snap<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.IndicatorTransitionMode> property) where TTarget : TabBar
         => property.Set(UnoToolkitUI.IndicatorTransitionMode.Snap);
@@ -2813,10 +3281,34 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         /// <summary>Set to <see cref="UnoToolkitUI.IndicatorTransitionMode.Slide"/></summary>
         public static TTarget Slide<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.IndicatorTransitionMode> property) where TTarget : TabBar
         => property.Set(UnoToolkitUI.IndicatorTransitionMode.Slide);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.IndicatorPlacement.Above"/></summary>
+        public static TTarget Above<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.IndicatorPlacement> property) where TTarget : TabBar
+        => property.Set(UnoToolkitUI.IndicatorPlacement.Above);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.IndicatorPlacement.Below"/></summary>
+        public static TTarget Below<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.IndicatorPlacement> property) where TTarget : TabBar
+        => property.Set(UnoToolkitUI.IndicatorPlacement.Below);
     }
 
     public static partial class TabBarItemExtensions
     {
+        /// <summary>Set to <see cref="UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors> property) where TTarget : TabBarItem
+        => property.Set(UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors.None);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors.BackNavigation"/></summary>
+        public static TTarget BackNavigation<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors> property) where TTarget : TabBarItem
+        => property.Set(UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors.BackNavigation);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors.ScrollToTop"/></summary>
+        public static TTarget ScrollToTop<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors> property) where TTarget : TabBarItem
+        => property.Set(UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors.ScrollToTop);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors.Auto"/></summary>
+        public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors> property) where TTarget : TabBarItem
+        => property.Set(UnoToolkitUI.TabBarItemExtensions.TBIOnClickBehaviors.Auto);
+
         /// <summary>Set to <see cref="Xaml.Visibility.Visible"/></summary>
         public static TTarget Visible<TTarget>(this DependencyProperty<TTarget, Xaml.Visibility> property) where TTarget : TabBarItem
         => property.Set(Xaml.Visibility.Visible);

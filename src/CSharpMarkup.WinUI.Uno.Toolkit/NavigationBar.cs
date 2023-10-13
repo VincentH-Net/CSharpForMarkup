@@ -2,7 +2,8 @@
 
 namespace CSharpMarkup.WinUI.Uno.Toolkit
 {
-    public static partial class Helpers {
+    public static partial class Helpers
+    {
         /// <summary>Create a <see cref="UnoToolkitUI.NavigationBar"/> with <paramref name="Content"/> </summary>
         public static NavigationBar NavigationBar(UIObject Content, params CommandBarElement[] PrimaryCommands)
         {

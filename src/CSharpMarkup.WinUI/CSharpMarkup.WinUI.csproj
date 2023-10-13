@@ -77,7 +77,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)">
-		<PackageReference Include="Uno.WinUI" Version="4.10.26" />
+		<PackageReference Include="Uno.WinUI" Version="4.10.26" ExcludeAssets="build;analyzers" />
 	</ItemGroup>
 	
 	<ItemGroup>

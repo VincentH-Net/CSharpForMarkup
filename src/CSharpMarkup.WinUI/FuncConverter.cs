@@ -94,4 +94,14 @@ namespace CSharpMarkup.WinUI
 		public static NotConverter Instance => instance.Value;
 		public NotConverter() : base(t => !t, t => !t) { }
 	}
+
+    public class VisibilityConverter : FuncConverter<bool, Microsoft.UI.Xaml.Visibility>
+    {
+        static readonly Lazy<VisibilityConverter> instance = new Lazy<VisibilityConverter>(() => new VisibilityConverter());
+        public static VisibilityConverter Instance => instance.Value;
+        public VisibilityConverter() : base(
+			t => t ? Microsoft.UI.Xaml.Visibility.Visible : Microsoft.UI.Xaml.Visibility.Collapsed, 
+			t => t == Microsoft.UI.Xaml.Visibility.Visible
+        ) { }
+    }
 }
