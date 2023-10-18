@@ -7,6 +7,7 @@ using System.Numerics;
 using System.Windows.Input;
 using System.Runtime.Versioning;
 using Microsoft;
+using CSharpMarkup.WinUI.GeneratedCodeUtilities;
 using UI = Microsoft.UI;
 using Collections = System.Collections;
 using UnoToolkit = Uno.Toolkit;

@@ -100,11 +100,4 @@
 	</ItemGroup>
 	
 	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
-
-	<ItemGroup>
-		<InternalsVisibleTo Include="$(AssemblyName).Uno.Toolkit"/>
-		<InternalsVisibleTo Include="$(AssemblyName).Uno.Extensions.Navigation"/>
-		<InternalsVisibleTo Include="$(AssemblyName).Uno.Extensions.Navigation.Toolkit"/>
-		<InternalsVisibleTo Include="$(AssemblyName).Uno.Extensions.Reactive"/>
-	</ItemGroup>
 </Project>

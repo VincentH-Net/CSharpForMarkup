@@ -45,3 +45,19 @@ namespace CSharpMarkup.WinUI
         internal TDependencyObject SetBinding(Xaml.Data.BindingBase binding) { BindingOperations.SetBinding(Target.UI, UI, binding); return Target; }
     }
 }
+
+namespace CSharpMarkup.WinUI.GeneratedCodeUtilities // Include this in generated code outside of this assembly to get access to internal methods
+{
+    public static class DependencyPropertyExtensions
+    {
+        public static TDependencyObject Set<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property, TPropertyValue value
+        )   where TDependencyObject : DependencyObject
+            => property.Set(value);
+
+        public static TDependencyObject SetBinding<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property, Xaml.Data.BindingBase binding
+        ) where TDependencyObject : DependencyObject
+            => property.SetBinding(binding);
+    }
+}
