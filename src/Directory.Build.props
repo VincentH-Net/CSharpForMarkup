@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
 	<PackageOutputPath>$(MSBuildThisFileDirectory)NuGet</PackageOutputPath>
-	<CSharpMarkupVersion>2.3.61-dev.8</CSharpMarkupVersion>
+	<CSharpMarkupVersion>2.3.61-dev.9</CSharpMarkupVersion>
   </PropertyGroup>
 </Project>
