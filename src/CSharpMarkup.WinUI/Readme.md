@@ -11,4 +11,4 @@ When only targeting Windows, C# Markup 2 has no dependency on Uno - just the Win
 
 [Example application](https://github.com/VincentH-Net/CSharpForMarkup/tree/master/src/CSharpMarkup.WinUI.Examples)
 
-[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-2-3-60-dev-3)
+[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-2-3-61-dev-9)
