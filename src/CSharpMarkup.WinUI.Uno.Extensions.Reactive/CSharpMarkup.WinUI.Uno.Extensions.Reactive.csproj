@@ -71,6 +71,11 @@
 		<Compile Remove="Generated/Uno.UI.SourceGenerators/**/*.cs" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+		<PackageReference Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" ExcludeAssets="build;analyzers" />
+	</ItemGroup>
+
 	<ItemGroup Condition="$(IsUno)==false">
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230822000"  />
 	</ItemGroup>
@@ -78,11 +83,6 @@
 	<ItemGroup Condition="$(IsUno)">
 		<PackageReference Include="Uno.WinUI" Version="4.10.26" />
 		<PackageReference Include="Uno.Extensions.Reactive.WinUI" Version="2.5.11" ExcludeAssets="build;analyzers" />
-	</ItemGroup>
-	
-	<ItemGroup>
-        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-		<PackageReference Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" ExcludeAssets="build;analyzers" />
 	</ItemGroup>
 
 	<ItemGroup>
