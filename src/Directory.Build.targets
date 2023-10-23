@@ -1,0 +1,22 @@
+<Project>
+	<PropertyGroup>
+		<PackageOutputPath>$(MSBuildThisFileDirectory)NuGet</PackageOutputPath>
+		<UpdateReadmeOnBuild Condition="Exists('Readme.md') And ('$(GeneratePackageOnBuild)' == 'true')">true</UpdateReadmeOnBuild>
+		<IntermediateReadmeDir>$(BaseIntermediateOutputPath)ReadmeTransform</IntermediateReadmeDir>
+		<UpdatedReadme>$(IntermediateReadmeDir)\Readme.md</UpdatedReadme>
+	</PropertyGroup>
+	<Target Name="UpdateReadme" BeforeTargets="Build" Condition="'$(UpdateReadmeOnBuild)' == 'true'">
+		<MakeDir Directories="$(IntermediateReadmeDir)" />
+		<Copy SourceFiles="Readme.md" DestinationFolder="$(IntermediateReadmeDir)" />
+		<ReadLinesFromFile File="Readme.md">
+			<Output TaskParameter="Lines" ItemName="ReadmeLines"/>
+		</ReadLinesFromFile>
+		<ItemGroup>
+			<UpdatedReadmeLines Include="@(ReadmeLines -> Replace('__CSharpMarkupReleaseTag__', '$(CSharpMarkupReleaseTag)'))"/>
+		</ItemGroup>
+		<WriteLinesToFile File="$(UpdatedReadme)" Lines="@(UpdatedReadmeLines)" Overwrite="true" />
+	</Target>
+	<ItemGroup Condition="'$(UpdateReadmeOnBuild)' == 'true'">
+		<None Include="$(UpdatedReadme)" Pack="true" PackagePath="\" />
+	</ItemGroup>
+</Project>

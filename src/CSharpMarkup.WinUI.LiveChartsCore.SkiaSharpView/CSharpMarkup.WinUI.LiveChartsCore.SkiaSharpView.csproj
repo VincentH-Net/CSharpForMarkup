@@ -94,10 +94,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="Readme.md" Pack="true" PackagePath="\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <Folder Include="Generated\SourceGenerators\" />
 	</ItemGroup>
 	

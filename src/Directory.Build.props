@@ -1,6 +1,6 @@
 <Project>
-  <PropertyGroup>
-	<PackageOutputPath>$(MSBuildThisFileDirectory)NuGet</PackageOutputPath>
-	<CSharpMarkupVersion>2.3.61-dev.14</CSharpMarkupVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<CSharpMarkupVersion>2.3.61-dev.14</CSharpMarkupVersion>
+		<CSharpMarkupReleaseTag>csharpmarkup2-winui-2-3-61-dev-14</CSharpMarkupReleaseTag>
+	</PropertyGroup>
 </Project>

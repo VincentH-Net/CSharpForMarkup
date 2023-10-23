@@ -64,10 +64,6 @@
 		</ProjectReference>
 	</ItemGroup>
 
-	<ItemGroup>
-		<None Include="Readme.md" Pack="true" PackagePath="\" />
-	</ItemGroup>
-
 	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
 
 </Project>

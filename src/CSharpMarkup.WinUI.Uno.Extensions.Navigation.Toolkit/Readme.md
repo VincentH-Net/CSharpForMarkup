@@ -12,4 +12,4 @@ This release targets WinUI 3 (Windows App SDK) and Uno Platform - including brow
 
 [Example application](https://github.com/VincentH-Net/CSharpForMarkup/tree/master/src/CSharpMarkup.WinUI.Examples)
 
-[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpmarkup2-winui-2-3-61-dev-9)
+[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/__CSharpMarkupReleaseTag__)
