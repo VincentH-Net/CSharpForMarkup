@@ -71,18 +71,18 @@
 		<Compile Remove="Generated/Uno.UI.SourceGenerators/**/*.cs" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-		<PackageReference Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" />
-	</ItemGroup>
-
 	<ItemGroup Condition="$(IsUno)==false">
 		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230822000" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)">
 		<PackageReference Include="Uno.WinUI" Version="4.10.26" ExcludeAssets="build;analyzers" />
-		<PackageReference Include="Uno.Toolkit.WinUI" Version="4.2.22" ExcludeAssets="build;analyzers" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+		<PackageReference Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" />
+		<PackageReference Include="Uno.Toolkit.WinUI" Version="4.2.22" ExcludeAssets="build;analyzers;contentFiles" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -97,20 +97,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Generated\SourceGenerators\" />
+		<!-- Workaround for https://github.com/microsoft/WindowsAppSDK/issues/3546 -->
+		<None Include="DependenciesPackagesAssets\**" Pack="true" PackagePath="lib\net7.0-windows10.0.18362\;lib\net7.0-windows10.0.18362\CSharpMarkup.WinUI.Uno.Toolkit\DependenciesPackagesAssets\" />
 	</ItemGroup>
 
-	<ItemGroup Condition="$(IsUno)==false">  <!--Workaround for https://github.com/unoplatform/uno.extensions/discussions/1921 : use this instead of PackageReference Include="Uno.Toolkit.WinUI" Version="4.2.22"--> 
-	  <Reference Include="Uno.Toolkit.WinUI.NoAssets">
-	    <HintPath>..\uno.toolkit.winui-4.2.22-lib-net6.0-windows10.0.18362\Uno.Toolkit.WinUI.dll</HintPath>
-	  </Reference>
-      <PackageReference Include="Uno.Toolkit" Version="4.2.22" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
-      <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.755" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
-      <PackageReference Include="Uno.Core.Extensions.Collections" Version="4.0.1" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
-      <PackageReference Include="Uno.Core.Extensions.Logging" Version="4.0.1" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
-      <PackageReference Include="Uno.Core.Extensions.Logging.Singleton" Version="4.0.1" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
-      <PackageReference Include="Uno.WinUI" Version="4.10.26" ExcludeAssets="build;analyzers;contentFiles" PrivateAssets="all" />
-	</ItemGroup>
-	
 	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
 </Project>
