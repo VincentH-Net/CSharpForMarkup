@@ -34,10 +34,14 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 
 # News
 *Nov 1, 2023*
-> ## 2.3-dev.2 Preview Release adds many Uno libraries!
-> Preview NuGets are now available for many additional Uno libraries, and lots of other general C# Markup improvements.
-> Enjoy C# Markup 2 API's for 5 additional Uno libraries - see the NuGets listed at the top of this readme.
-> Documentation of the new features and a new getting started guide is coming with the next release - soon!
+> ## 2.3-dev.2 Preview Release adds 5 Uno Libraries!
+Enjoy general C# Markup 2 improvements, plus C# Markup 2 API's for 5 additional Uno libraries:
+- Uno's UI toolkit, Reactive and Navigation extensions
+- Plus the awesome [LiveCharts2](https://livecharts.dev/)
+
+See the NuGets listed above.
+
+Documentation of the new features plus a new getting started guide is coming with the **next release** - soon!
 
 *June 27, 2023*
 > ## 2.2 Release & start of .NET MAUI support
