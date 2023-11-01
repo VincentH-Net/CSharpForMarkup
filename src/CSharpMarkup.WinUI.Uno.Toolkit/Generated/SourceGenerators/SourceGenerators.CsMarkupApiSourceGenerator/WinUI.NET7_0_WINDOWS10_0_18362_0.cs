@@ -2547,7 +2547,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarSelectionIndicatorPresenterTem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenterTemplateSettings"/></summary>
-        public static TabBarSelectionIndicatorPresenterTemplateSettings TabBarSelectionIndicatorPresenterTemplateSettings(Windows.Foundation.Point? IndicatorTransitionFrom = default, Windows.Foundation.Point? IndicatorTransitionTo = default, Windows.Foundation.Size? IndicatorMaxSize = default)
+        public static TabBarSelectionIndicatorPresenterTemplateSettings TabBarSelectionIndicatorPresenterTemplateSettings(CSharpMarkup.WinUI.to.Point? IndicatorTransitionFrom = default, CSharpMarkup.WinUI.to.Point? IndicatorTransitionTo = default, CSharpMarkup.WinUI.to.Size? IndicatorMaxSize = default)
         {
             var ui = new UnoToolkitUI.TabBarSelectionIndicatorPresenterTemplateSettings();
             if (IndicatorTransitionFrom is not null) ui.IndicatorTransitionFrom = IndicatorTransitionFrom.Value;
@@ -2595,13 +2595,13 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarSelectionIndicatorPresenterTem
     public static partial class TabBarSelectionIndicatorPresenterTemplateSettingsExtensions
     {
         /// <summary>Set <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenterTemplateSettings.IndicatorTransitionFrom"/></summary>
-        public static TView IndicatorTransitionFrom<TView>(this TView view, Windows.Foundation.Point value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorTransitionFrom = value; return view; }
+        public static TView IndicatorTransitionFrom<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorTransitionFrom = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenterTemplateSettings.IndicatorTransitionTo"/></summary>
-        public static TView IndicatorTransitionTo<TView>(this TView view, Windows.Foundation.Point value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorTransitionTo = value; return view; }
+        public static TView IndicatorTransitionTo<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorTransitionTo = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenterTemplateSettings.IndicatorMaxSize"/></summary>
-        public static TView IndicatorMaxSize<TView>(this TView view, Windows.Foundation.Size value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorMaxSize = value; return view; }
+        public static TView IndicatorMaxSize<TView>(this TView view, CSharpMarkup.WinUI.to.Size value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorMaxSize = value; return view; }
     }
 }
 
@@ -2610,7 +2610,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoToolkitUI.TabBarTemplateSettings"/></summary>
-        public static TabBarTemplateSettings TabBarTemplateSettings(Windows.Foundation.Size? SelectionIndicatorMaxSize = default)
+        public static TabBarTemplateSettings TabBarTemplateSettings(CSharpMarkup.WinUI.to.Size? SelectionIndicatorMaxSize = default)
         {
             var ui = new UnoToolkitUI.TabBarTemplateSettings();
             if (SelectionIndicatorMaxSize is not null) ui.SelectionIndicatorMaxSize = SelectionIndicatorMaxSize.Value;
@@ -2656,7 +2656,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarTemplateSettings
     public static partial class TabBarTemplateSettingsExtensions
     {
         /// <summary>Set <see cref="UnoToolkitUI.TabBarTemplateSettings.SelectionIndicatorMaxSize"/></summary>
-        public static TView SelectionIndicatorMaxSize<TView>(this TView view, Windows.Foundation.Size value) where TView : TabBarTemplateSettings { view.UI.SelectionIndicatorMaxSize = value; return view; }
+        public static TView SelectionIndicatorMaxSize<TView>(this TView view, CSharpMarkup.WinUI.to.Size value) where TView : TabBarTemplateSettings { view.UI.SelectionIndicatorMaxSize = value; return view; }
     }
 }
 

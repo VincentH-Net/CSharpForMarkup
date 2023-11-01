@@ -60,12 +60,12 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControlBehavior
     public static partial class DrawerControlBehaviorExtensions
     {
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.DrawerBackground"/></summary>
-        public static TTarget DrawerControlBehavior_DrawerBackground<TTarget>(this TTarget target, Xaml.Media.Brush value) where TTarget : DrawerControl
+        public static TTarget DrawerControlBehavior_DrawerBackground<TTarget>(this TTarget target, CSharpMarkup.WinUI.to.Brush value) where TTarget : DrawerControl
         { UnoToolkitUI.DrawerControlBehavior.SetDrawerBackground(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControlBehavior.DrawerBackground"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Brush> DrawerControlBehavior_DrawerBackground<TTarget>(this TTarget target) where TTarget : DrawerControl
-        => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, UnoToolkitUI.DrawerControlBehavior.DrawerBackgroundProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> DrawerControlBehavior_DrawerBackground<TTarget>(this TTarget target) where TTarget : DrawerControl
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, UnoToolkitUI.DrawerControlBehavior.DrawerBackgroundProperty);
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.FitToDrawerContent"/></summary>
         public static TTarget DrawerControlBehavior_FitToDrawerContent<TTarget>(this TTarget target, bool value) where TTarget : DrawerControl
@@ -78,13 +78,13 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControlBehavior
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior"/> attached properties</summary>
         public static TTarget DrawerControlBehavior<TTarget>(this TTarget target
 
-            , Xaml.Media.Brush DrawerBackground = default
+            , CSharpMarkup.WinUI.to.Brush? DrawerBackground = default
 
             , bool? FitToDrawerContent = default
 
         ) where TTarget : DrawerControl
         {
-            if (DrawerBackground is not null) UnoToolkitUI.DrawerControlBehavior.SetDrawerBackground(target.UI, DrawerBackground);
+            if (DrawerBackground is not null) UnoToolkitUI.DrawerControlBehavior.SetDrawerBackground(target.UI, DrawerBackground.Value);
 
             if (FitToDrawerContent is not null) UnoToolkitUI.DrawerControlBehavior.SetFitToDrawerContent(target.UI, FitToDrawerContent.Value);
 
@@ -100,12 +100,12 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControlBehavior
         => DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection>.Get(target, UnoToolkitUI.DrawerControlBehavior.OpenDirectionProperty);
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.LightDismissOverlayBackground"/></summary>
-        public static TTarget DrawerControlBehavior_LightDismissOverlayBackground<TTarget>(this TTarget target, Xaml.Media.Brush value) where TTarget : DependencyObject
+        public static TTarget DrawerControlBehavior_LightDismissOverlayBackground<TTarget>(this TTarget target, CSharpMarkup.WinUI.to.Brush value) where TTarget : DependencyObject
         { UnoToolkitUI.DrawerControlBehavior.SetLightDismissOverlayBackground(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControlBehavior.LightDismissOverlayBackground"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Brush> DrawerControlBehavior_LightDismissOverlayBackground<TTarget>(this TTarget target) where TTarget : DependencyObject
-        => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, UnoToolkitUI.DrawerControlBehavior.LightDismissOverlayBackgroundProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> DrawerControlBehavior_LightDismissOverlayBackground<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, UnoToolkitUI.DrawerControlBehavior.LightDismissOverlayBackgroundProperty);
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.EdgeSwipeDetectionLength"/></summary>
         public static TTarget DrawerControlBehavior_EdgeSwipeDetectionLength<TTarget>(this TTarget target, double? value) where TTarget : DependencyObject
@@ -128,7 +128,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControlBehavior
 
             , UnoToolkitUI.DrawerOpenDirection? OpenDirection = default
 
-            , Xaml.Media.Brush LightDismissOverlayBackground = default
+            , CSharpMarkup.WinUI.to.Brush? LightDismissOverlayBackground = default
 
             , double? EdgeSwipeDetectionLength = default
 
@@ -138,7 +138,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControlBehavior
         {
             if (OpenDirection is not null) UnoToolkitUI.DrawerControlBehavior.SetOpenDirection(target.UI, OpenDirection.Value);
 
-            if (LightDismissOverlayBackground is not null) UnoToolkitUI.DrawerControlBehavior.SetLightDismissOverlayBackground(target.UI, LightDismissOverlayBackground);
+            if (LightDismissOverlayBackground is not null) UnoToolkitUI.DrawerControlBehavior.SetLightDismissOverlayBackground(target.UI, LightDismissOverlayBackground.Value);
 
             if (EdgeSwipeDetectionLength is not null) UnoToolkitUI.DrawerControlBehavior.SetEdgeSwipeDetectionLength(target.UI, EdgeSwipeDetectionLength);
 
@@ -346,25 +346,25 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // StatusBar
         => DependencyProperty<TTarget, UnoToolkitUI.StatusBarForegroundTheme>.Get(target, UnoToolkitUI.StatusBar.ForegroundProperty);
 
         /// <summary>Set <see cref="UnoToolkitUI.StatusBar.Background"/></summary>
-        public static TTarget StatusBar_Background<TTarget>(this TTarget target, Xaml.Media.Brush value) where TTarget : Page
+        public static TTarget StatusBar_Background<TTarget>(this TTarget target, CSharpMarkup.WinUI.to.Brush value) where TTarget : Page
         { UnoToolkitUI.StatusBar.SetBackground(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.StatusBar.Background"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Brush> StatusBar_Background<TTarget>(this TTarget target) where TTarget : Page
-        => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, UnoToolkitUI.StatusBar.BackgroundProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> StatusBar_Background<TTarget>(this TTarget target) where TTarget : Page
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, UnoToolkitUI.StatusBar.BackgroundProperty);
 
         /// <summary>Set <see cref="UnoToolkitUI.StatusBar"/> attached properties</summary>
         public static TTarget StatusBar<TTarget>(this TTarget target
 
             , UnoToolkitUI.StatusBarForegroundTheme? Foreground = default
 
-            , Xaml.Media.Brush Background = default
+            , CSharpMarkup.WinUI.to.Brush? Background = default
 
         ) where TTarget : Page
         {
             if (Foreground is not null) UnoToolkitUI.StatusBar.SetForeground(target.UI, Foreground.Value);
 
-            if (Background is not null) UnoToolkitUI.StatusBar.SetBackground(target.UI, Background);
+            if (Background is not null) UnoToolkitUI.StatusBar.SetBackground(target.UI, Background.Value);
 
             return target;
         }
@@ -1086,11 +1086,11 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // Divider
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoToolkitUI.Divider"/></summary>
-        public static Divider Divider(string SubHeader = default, Xaml.Media.Brush SubHeaderForeground = default)
+        public static Divider Divider(string SubHeader = default, CSharpMarkup.WinUI.to.Brush? SubHeaderForeground = default)
         {
             var ui = new UnoToolkitUI.Divider();
             if (SubHeader is not null) ui.SubHeader = SubHeader;
-            if (SubHeaderForeground is not null) ui.SubHeaderForeground = SubHeaderForeground;
+            if (SubHeaderForeground is not null) ui.SubHeaderForeground = SubHeaderForeground.Value;
             return CSharpMarkup.WinUI.Uno.Toolkit.Divider.StartChain(ui);
         }
 
@@ -1138,7 +1138,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // Divider
         public static TView SubHeader<TView>(this TView view, string value) where TView : Divider { view.UI.SubHeader = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.Divider.SubHeaderForeground"/></summary>
-        public static TView SubHeaderForeground<TView>(this TView view, Xaml.Media.Brush value) where TView : Divider { view.UI.SubHeaderForeground = value; return view; }
+        public static TView SubHeaderForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : Divider { view.UI.SubHeaderForeground = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.Divider.SubHeaderForeground"/></summary>
         public static TView SubHeaderForeground<TView>(this TView view, Windows.UI.Color value) where TView : Divider { view.UI.SubHeaderForeground = new Xaml.Media.SolidColorBrush(value); return view; }
@@ -1151,8 +1151,8 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // Divider
         => DependencyProperty<TTarget, string>.Get(target, UnoToolkitUI.Divider.SubHeaderProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.Divider.SubHeaderForeground"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Brush> SubHeaderForeground<TTarget>(this TTarget target) where TTarget : Divider
-        => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, UnoToolkitUI.Divider.SubHeaderForegroundProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> SubHeaderForeground<TTarget>(this TTarget target) where TTarget : Divider
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, UnoToolkitUI.Divider.SubHeaderForegroundProperty);
     }
 }
 
@@ -1169,16 +1169,16 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.DrawerControl"/></summary>
-        public static DrawerControl DrawerControl(object DrawerContent = default, double? DrawerDepth = default, Xaml.Media.Brush DrawerBackground = default, UnoToolkitUI.DrawerOpenDirection? OpenDirection = default, bool? IsOpen = default, bool? FitToDrawerContent = default, Xaml.Media.Brush LightDismissOverlayBackground = default, double? EdgeSwipeDetectionLength = default, bool? IsGestureEnabled = default, UIObject Content = default)
+        public static DrawerControl DrawerControl(object DrawerContent = default, double? DrawerDepth = default, CSharpMarkup.WinUI.to.Brush? DrawerBackground = default, UnoToolkitUI.DrawerOpenDirection? OpenDirection = default, bool? IsOpen = default, bool? FitToDrawerContent = default, CSharpMarkup.WinUI.to.Brush? LightDismissOverlayBackground = default, double? EdgeSwipeDetectionLength = default, bool? IsGestureEnabled = default, UIObject Content = default)
         {
             var ui = new UnoToolkitUI.DrawerControl();
             if (DrawerContent is not null) ui.DrawerContent = DrawerContent;
             if (DrawerDepth is not null) ui.DrawerDepth = DrawerDepth;
-            if (DrawerBackground is not null) ui.DrawerBackground = DrawerBackground;
+            if (DrawerBackground is not null) ui.DrawerBackground = DrawerBackground.Value;
             if (OpenDirection is not null) ui.OpenDirection = OpenDirection.Value;
             if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
             if (FitToDrawerContent is not null) ui.FitToDrawerContent = FitToDrawerContent.Value;
-            if (LightDismissOverlayBackground is not null) ui.LightDismissOverlayBackground = LightDismissOverlayBackground;
+            if (LightDismissOverlayBackground is not null) ui.LightDismissOverlayBackground = LightDismissOverlayBackground.Value;
             if (EdgeSwipeDetectionLength is not null) ui.EdgeSwipeDetectionLength = EdgeSwipeDetectionLength;
             if (IsGestureEnabled is not null) ui.IsGestureEnabled = IsGestureEnabled.Value;
             if (Content != null) ui.Content = Content.UI;
@@ -1232,7 +1232,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
         public static TView DrawerDepth<TView>(this TView view, double? value) where TView : DrawerControl { view.UI.DrawerDepth = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControl.DrawerBackground"/></summary>
-        public static TView DrawerBackground<TView>(this TView view, Xaml.Media.Brush value) where TView : DrawerControl { view.UI.DrawerBackground = value; return view; }
+        public static TView DrawerBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : DrawerControl { view.UI.DrawerBackground = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControl.DrawerBackground"/></summary>
         public static TView DrawerBackground<TView>(this TView view, Windows.UI.Color value) where TView : DrawerControl { view.UI.DrawerBackground = new Xaml.Media.SolidColorBrush(value); return view; }
@@ -1250,7 +1250,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
         public static TView FitToDrawerContent<TView>(this TView view, bool value) where TView : DrawerControl { view.UI.FitToDrawerContent = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControl.LightDismissOverlayBackground"/></summary>
-        public static TView LightDismissOverlayBackground<TView>(this TView view, Xaml.Media.Brush value) where TView : DrawerControl { view.UI.LightDismissOverlayBackground = value; return view; }
+        public static TView LightDismissOverlayBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : DrawerControl { view.UI.LightDismissOverlayBackground = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControl.LightDismissOverlayBackground"/></summary>
         public static TView LightDismissOverlayBackground<TView>(this TView view, Windows.UI.Color value) where TView : DrawerControl { view.UI.LightDismissOverlayBackground = new Xaml.Media.SolidColorBrush(value); return view; }
@@ -1273,8 +1273,8 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
         => DependencyProperty<TTarget, double?>.Get(target, UnoToolkitUI.DrawerControl.DrawerDepthProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControl.DrawerBackground"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Brush> DrawerBackground<TTarget>(this TTarget target) where TTarget : DrawerControl
-        => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, UnoToolkitUI.DrawerControl.DrawerBackgroundProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> DrawerBackground<TTarget>(this TTarget target) where TTarget : DrawerControl
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, UnoToolkitUI.DrawerControl.DrawerBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControl.OpenDirection"/></summary>
         public static DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection> OpenDirection<TTarget>(this TTarget target) where TTarget : DrawerControl
@@ -1289,8 +1289,8 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
         => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.DrawerControl.FitToDrawerContentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControl.LightDismissOverlayBackground"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Brush> LightDismissOverlayBackground<TTarget>(this TTarget target) where TTarget : DrawerControl
-        => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, UnoToolkitUI.DrawerControl.LightDismissOverlayBackgroundProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> LightDismissOverlayBackground<TTarget>(this TTarget target) where TTarget : DrawerControl
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, UnoToolkitUI.DrawerControl.LightDismissOverlayBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControl.EdgeSwipeDetectionLength"/></summary>
         public static DependencyProperty<TTarget, double?> EdgeSwipeDetectionLength<TTarget>(this TTarget target) where TTarget : DrawerControl
@@ -1315,11 +1315,11 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.DrawerFlyoutPresenter"/></summary>
-        public static DrawerFlyoutPresenter DrawerFlyoutPresenter(UnoToolkitUI.DrawerOpenDirection? OpenDirection = default, Xaml.Media.Brush LightDismissOverlayBackground = default, bool? IsGestureEnabled = default, UIObject Content = default)
+        public static DrawerFlyoutPresenter DrawerFlyoutPresenter(UnoToolkitUI.DrawerOpenDirection? OpenDirection = default, CSharpMarkup.WinUI.to.Brush? LightDismissOverlayBackground = default, bool? IsGestureEnabled = default, UIObject Content = default)
         {
             var ui = new UnoToolkitUI.DrawerFlyoutPresenter();
             if (OpenDirection is not null) ui.OpenDirection = OpenDirection.Value;
-            if (LightDismissOverlayBackground is not null) ui.LightDismissOverlayBackground = LightDismissOverlayBackground;
+            if (LightDismissOverlayBackground is not null) ui.LightDismissOverlayBackground = LightDismissOverlayBackground.Value;
             if (IsGestureEnabled is not null) ui.IsGestureEnabled = IsGestureEnabled.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Uno.Toolkit.DrawerFlyoutPresenter.StartChain(ui);
@@ -1369,7 +1369,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         public static TView OpenDirection<TView>(this TView view, UnoToolkitUI.DrawerOpenDirection value) where TView : DrawerFlyoutPresenter { view.UI.OpenDirection = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackground"/></summary>
-        public static TView LightDismissOverlayBackground<TView>(this TView view, Xaml.Media.Brush value) where TView : DrawerFlyoutPresenter { view.UI.LightDismissOverlayBackground = value; return view; }
+        public static TView LightDismissOverlayBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : DrawerFlyoutPresenter { view.UI.LightDismissOverlayBackground = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackground"/></summary>
         public static TView LightDismissOverlayBackground<TView>(this TView view, Windows.UI.Color value) where TView : DrawerFlyoutPresenter { view.UI.LightDismissOverlayBackground = new Xaml.Media.SolidColorBrush(value); return view; }
@@ -1385,8 +1385,8 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         => DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.OpenDirectionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackground"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Brush> LightDismissOverlayBackground<TTarget>(this TTarget target) where TTarget : DrawerFlyoutPresenter
-        => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackgroundProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> LightDismissOverlayBackground<TTarget>(this TTarget target) where TTarget : DrawerFlyoutPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerFlyoutPresenter.IsGestureEnabled"/></summary>
         public static DependencyProperty<TTarget, bool> IsGestureEnabled<TTarget>(this TTarget target) where TTarget : DrawerFlyoutPresenter
@@ -1401,12 +1401,12 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         => DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.OpenDirectionProperty);
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackground"/></summary>
-        public static TTarget DrawerFlyoutPresenter_LightDismissOverlayBackground<TTarget>(this TTarget target, Xaml.Media.Brush value) where TTarget : DependencyObject
+        public static TTarget DrawerFlyoutPresenter_LightDismissOverlayBackground<TTarget>(this TTarget target, CSharpMarkup.WinUI.to.Brush value) where TTarget : DependencyObject
         { UnoToolkitUI.DrawerFlyoutPresenter.SetLightDismissOverlayBackground(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackground"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Brush> DrawerFlyoutPresenter_LightDismissOverlayBackground<TTarget>(this TTarget target) where TTarget : DependencyObject
-        => DependencyProperty<TTarget, Xaml.Media.Brush>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackgroundProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> DrawerFlyoutPresenter_LightDismissOverlayBackground<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackgroundProperty);
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.IsGestureEnabled"/></summary>
         public static TTarget DrawerFlyoutPresenter_IsGestureEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
@@ -1421,7 +1421,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
 
             , UnoToolkitUI.DrawerOpenDirection? OpenDirection = default
 
-            , Xaml.Media.Brush LightDismissOverlayBackground = default
+            , CSharpMarkup.WinUI.to.Brush? LightDismissOverlayBackground = default
 
             , bool? IsGestureEnabled = default
 
@@ -1429,7 +1429,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         {
             if (OpenDirection is not null) UnoToolkitUI.DrawerFlyoutPresenter.SetOpenDirection(target.UI, OpenDirection.Value);
 
-            if (LightDismissOverlayBackground is not null) UnoToolkitUI.DrawerFlyoutPresenter.SetLightDismissOverlayBackground(target.UI, LightDismissOverlayBackground);
+            if (LightDismissOverlayBackground is not null) UnoToolkitUI.DrawerFlyoutPresenter.SetLightDismissOverlayBackground(target.UI, LightDismissOverlayBackground.Value);
 
             if (IsGestureEnabled is not null) UnoToolkitUI.DrawerFlyoutPresenter.SetIsGestureEnabled(target.UI, IsGestureEnabled.Value);
 
@@ -2017,8 +2017,8 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationBarTemplateSettings
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : NavigationBarTemplateSettings { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.NavigationBarTemplateSettings.HiddenRootMargin"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Thickness> HiddenRootMargin<TTarget>(this TTarget target) where TTarget : NavigationBarTemplateSettings
-        => DependencyProperty<TTarget, Xaml.Thickness>.Get(target, UnoToolkitUI.NavigationBarTemplateSettings.HiddenRootMarginProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> HiddenRootMargin<TTarget>(this TTarget target) where TTarget : NavigationBarTemplateSettings
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, UnoToolkitUI.NavigationBarTemplateSettings.HiddenRootMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.NavigationBarTemplateSettings.ContentHeight"/></summary>
         public static DependencyProperty<TTarget, double> ContentHeight<TTarget>(this TTarget target) where TTarget : NavigationBarTemplateSettings
@@ -2529,7 +2529,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarSelectionIndicatorPresenterTem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenterTemplateSettings"/></summary>
-        public static TabBarSelectionIndicatorPresenterTemplateSettings TabBarSelectionIndicatorPresenterTemplateSettings(Windows.Foundation.Point? IndicatorTransitionFrom = default, Windows.Foundation.Point? IndicatorTransitionTo = default, Windows.Foundation.Size? IndicatorMaxSize = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
+        public static TabBarSelectionIndicatorPresenterTemplateSettings TabBarSelectionIndicatorPresenterTemplateSettings(CSharpMarkup.WinUI.to.Point? IndicatorTransitionFrom = default, CSharpMarkup.WinUI.to.Point? IndicatorTransitionTo = default, CSharpMarkup.WinUI.to.Size? IndicatorMaxSize = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new UnoToolkitUI.TabBarSelectionIndicatorPresenterTemplateSettings();
             if (IndicatorTransitionFrom is not null) ui.IndicatorTransitionFrom = IndicatorTransitionFrom.Value;
@@ -2579,13 +2579,13 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarSelectionIndicatorPresenterTem
     public static partial class TabBarSelectionIndicatorPresenterTemplateSettingsExtensions
     {
         /// <summary>Set <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenterTemplateSettings.IndicatorTransitionFrom"/></summary>
-        public static TView IndicatorTransitionFrom<TView>(this TView view, Windows.Foundation.Point value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorTransitionFrom = value; return view; }
+        public static TView IndicatorTransitionFrom<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorTransitionFrom = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenterTemplateSettings.IndicatorTransitionTo"/></summary>
-        public static TView IndicatorTransitionTo<TView>(this TView view, Windows.Foundation.Point value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorTransitionTo = value; return view; }
+        public static TView IndicatorTransitionTo<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorTransitionTo = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenterTemplateSettings.IndicatorMaxSize"/></summary>
-        public static TView IndicatorMaxSize<TView>(this TView view, Windows.Foundation.Size value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorMaxSize = value; return view; }
+        public static TView IndicatorMaxSize<TView>(this TView view, CSharpMarkup.WinUI.to.Size value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.IndicatorMaxSize = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenterTemplateSettings.DataContext"/></summary>
         public static TView DataContext<TView>(this TView view, object value) where TView : TabBarSelectionIndicatorPresenterTemplateSettings { view.UI.DataContext = value; return view; }
@@ -2608,7 +2608,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoToolkitUI.TabBarTemplateSettings"/></summary>
-        public static TabBarTemplateSettings TabBarTemplateSettings(Windows.Foundation.Size? SelectionIndicatorMaxSize = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
+        public static TabBarTemplateSettings TabBarTemplateSettings(CSharpMarkup.WinUI.to.Size? SelectionIndicatorMaxSize = default, object DataContext = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new UnoToolkitUI.TabBarTemplateSettings();
             if (SelectionIndicatorMaxSize is not null) ui.SelectionIndicatorMaxSize = SelectionIndicatorMaxSize.Value;
@@ -2656,7 +2656,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarTemplateSettings
     public static partial class TabBarTemplateSettingsExtensions
     {
         /// <summary>Set <see cref="UnoToolkitUI.TabBarTemplateSettings.SelectionIndicatorMaxSize"/></summary>
-        public static TView SelectionIndicatorMaxSize<TView>(this TView view, Windows.Foundation.Size value) where TView : TabBarTemplateSettings { view.UI.SelectionIndicatorMaxSize = value; return view; }
+        public static TView SelectionIndicatorMaxSize<TView>(this TView view, CSharpMarkup.WinUI.to.Size value) where TView : TabBarTemplateSettings { view.UI.SelectionIndicatorMaxSize = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.TabBarTemplateSettings.DataContext"/></summary>
         public static TView DataContext<TView>(this TView view, object value) where TView : TabBarTemplateSettings { view.UI.DataContext = value; return view; }

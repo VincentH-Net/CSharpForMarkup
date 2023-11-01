@@ -1,6 +1,6 @@
 <Project>
 	<PropertyGroup>
-		<CSharpMarkupVersion>2.3.61-dev.14</CSharpMarkupVersion>
-		<CSharpMarkupReleaseTag>csharpmarkup2-winui-2-3-61-dev-14</CSharpMarkupReleaseTag>
+		<CSharpMarkupVersion>2.3.62-dev.1</CSharpMarkupVersion>
+		<CSharpMarkupReleaseTag>csharpmarkup2-winui-2-3-62-dev-1</CSharpMarkupReleaseTag>
 	</PropertyGroup>
 </Project>

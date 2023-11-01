@@ -1,4 +1,5 @@
-﻿using UnoToolkitUI = Uno.Toolkit.UI;
+﻿#if !GENERATE
+using UnoToolkitUI = Uno.Toolkit.UI;
 
 namespace CSharpMarkup.WinUI.Uno.Toolkit
 {
@@ -13,3 +14,4 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit
         }
     }
 }
+#endif

@@ -21830,7 +21830,7 @@ namespace CSharpMarkup.WinUI // TimePicker
             if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
             if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
             if (MinuteIncrement is not null) ui.MinuteIncrement = MinuteIncrement.Value;
-            if (SelectedTime is not null) ui.SelectedTime = SelectedTime;
+            if (SelectedTime is not null) ui.SelectedTime = SelectedTime.Value;
             if (Time is not null) ui.Time = Time.Value;
             if (Header != null) ui.Header = Header.UI;
             return CSharpMarkup.WinUI.TimePicker.StartChain(ui);
@@ -21893,7 +21893,7 @@ namespace CSharpMarkup.WinUI // TimePicker
         public static TView MinuteIncrement<TView>(this TView view, int value) where TView : TimePicker { view.UI.MinuteIncrement = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TimePicker.SelectedTime"/></summary>
-        public static TView SelectedTime<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan? value) where TView : TimePicker { view.UI.SelectedTime = value; return view; }
+        public static TView SelectedTime<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : TimePicker { view.UI.SelectedTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TimePicker.Time"/></summary>
         public static TView Time<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : TimePicker { view.UI.Time = value; return view; }
@@ -21919,8 +21919,8 @@ namespace CSharpMarkup.WinUI // TimePicker
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.TimePicker.MinuteIncrementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.SelectedTime"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?> SelectedTime<TTarget>(this TTarget target) where TTarget : TimePicker
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?>.Get(target, Xaml.Controls.TimePicker.SelectedTimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> SelectedTime<TTarget>(this TTarget target) where TTarget : TimePicker
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Controls.TimePicker.SelectedTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.Time"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePicker
@@ -33161,7 +33161,7 @@ namespace CSharpMarkup.WinUI // ColorAnimation
         public static ColorAnimation ColorAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, Windows.UI.Color? By = default, Xaml.Media.Animation.EasingFunctionBase EasingFunction = default, bool? EnableDependentAnimation = default, Windows.UI.Color? From = default, Windows.UI.Color? To = default)
         {
             var ui = new Xaml.Media.Animation.ColorAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
             if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
@@ -33817,7 +33817,7 @@ namespace CSharpMarkup.WinUI // DoubleAnimation
         public static DoubleAnimation DoubleAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? By = default, Xaml.Media.Animation.EasingFunctionBase EasingFunction = default, bool? EnableDependentAnimation = default, double? From = default, double? To = default)
         {
             var ui = new Xaml.Media.Animation.DoubleAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (By is not null) ui.By = By;
             if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
@@ -34015,7 +34015,7 @@ namespace CSharpMarkup.WinUI // DragItemThemeAnimation
         public static DragItemThemeAnimation DragItemThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.DragItemThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.DragItemThemeAnimation.StartChain(ui);
@@ -34076,7 +34076,7 @@ namespace CSharpMarkup.WinUI // DragOverThemeAnimation
         public static DragOverThemeAnimation DragOverThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, Xaml.Controls.Primitives.AnimationDirection? Direction = default, string TargetName = default, double? ToOffset = default)
         {
             var ui = new Xaml.Media.Animation.DragOverThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (Direction is not null) ui.Direction = Direction.Value;
             if (TargetName is not null) ui.TargetName = TargetName;
@@ -34194,7 +34194,7 @@ namespace CSharpMarkup.WinUI // DrillInThemeAnimation
         public static DrillInThemeAnimation DrillInThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, Xaml.DependencyObject EntranceTarget = default, string EntranceTargetName = default, Xaml.DependencyObject ExitTarget = default, string ExitTargetName = default)
         {
             var ui = new Xaml.Media.Animation.DrillInThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (EntranceTarget is not null) ui.EntranceTarget = EntranceTarget;
             if (EntranceTargetName is not null) ui.EntranceTargetName = EntranceTargetName;
@@ -34279,7 +34279,7 @@ namespace CSharpMarkup.WinUI // DrillOutThemeAnimation
         public static DrillOutThemeAnimation DrillOutThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, Xaml.DependencyObject EntranceTarget = default, string EntranceTargetName = default, Xaml.DependencyObject ExitTarget = default, string ExitTargetName = default)
         {
             var ui = new Xaml.Media.Animation.DrillOutThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (EntranceTarget is not null) ui.EntranceTarget = EntranceTarget;
             if (EntranceTargetName is not null) ui.EntranceTargetName = EntranceTargetName;
@@ -34364,7 +34364,7 @@ namespace CSharpMarkup.WinUI // DropTargetItemThemeAnimation
         public static DropTargetItemThemeAnimation DropTargetItemThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.DropTargetItemThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.DropTargetItemThemeAnimation.StartChain(ui);
@@ -34942,7 +34942,7 @@ namespace CSharpMarkup.WinUI // FadeInThemeAnimation
         public static FadeInThemeAnimation FadeInThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.FadeInThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.FadeInThemeAnimation.StartChain(ui);
@@ -35003,7 +35003,7 @@ namespace CSharpMarkup.WinUI // FadeOutThemeAnimation
         public static FadeOutThemeAnimation FadeOutThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.FadeOutThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.FadeOutThemeAnimation.StartChain(ui);
@@ -35484,13 +35484,13 @@ namespace CSharpMarkup.WinUI // PointAnimation
         public static PointAnimation PointAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, CSharpMarkup.WinUI.to.Point? By = default, Xaml.Media.Animation.EasingFunctionBase EasingFunction = default, bool? EnableDependentAnimation = default, CSharpMarkup.WinUI.to.Point? From = default, CSharpMarkup.WinUI.to.Point? To = default)
         {
             var ui = new Xaml.Media.Animation.PointAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
-            if (By is not null) ui.By = By;
+            if (By is not null) ui.By = By.Value;
             if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
             if (EnableDependentAnimation is not null) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            if (From is not null) ui.From = From;
-            if (To is not null) ui.To = To;
+            if (From is not null) ui.From = From.Value;
+            if (To is not null) ui.To = To.Value;
             return CSharpMarkup.WinUI.PointAnimation.StartChain(ui);
         }
 
@@ -35533,7 +35533,7 @@ namespace CSharpMarkup.WinUI // PointAnimation
     public static partial class PointAnimationExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.By"/></summary>
-        public static TView By<TView>(this TView view, CSharpMarkup.WinUI.to.Point? value) where TView : PointAnimation { view.UI.By = value; return view; }
+        public static TView By<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : PointAnimation { view.UI.By = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.EasingFunction"/></summary>
         public static TView EasingFunction<TView>(this TView view, Xaml.Media.Animation.EasingFunctionBase value) where TView : PointAnimation { view.UI.EasingFunction = value; return view; }
@@ -35542,14 +35542,14 @@ namespace CSharpMarkup.WinUI // PointAnimation
         public static TView EnableDependentAnimation<TView>(this TView view, bool value) where TView : PointAnimation { view.UI.EnableDependentAnimation = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.From"/></summary>
-        public static TView From<TView>(this TView view, CSharpMarkup.WinUI.to.Point? value) where TView : PointAnimation { view.UI.From = value; return view; }
+        public static TView From<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : PointAnimation { view.UI.From = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.PointAnimation.To"/></summary>
-        public static TView To<TView>(this TView view, CSharpMarkup.WinUI.to.Point? value) where TView : PointAnimation { view.UI.To = value; return view; }
+        public static TView To<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : PointAnimation { view.UI.To = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.By"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?> By<TTarget>(this TTarget target) where TTarget : PointAnimation
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.ByProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> By<TTarget>(this TTarget target) where TTarget : PointAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.Animation.PointAnimation.ByProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.EasingFunction"/></summary>
         public static DependencyProperty<TTarget, Xaml.Media.Animation.EasingFunctionBase> EasingFunction<TTarget>(this TTarget target) where TTarget : PointAnimation
@@ -35560,12 +35560,12 @@ namespace CSharpMarkup.WinUI // PointAnimation
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.PointAnimation.EnableDependentAnimationProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.From"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?> From<TTarget>(this TTarget target) where TTarget : PointAnimation
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.FromProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> From<TTarget>(this TTarget target) where TTarget : PointAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.Animation.PointAnimation.FromProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.PointAnimation.To"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?> To<TTarget>(this TTarget target) where TTarget : PointAnimation
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point?>.Get(target, Xaml.Media.Animation.PointAnimation.ToProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> To<TTarget>(this TTarget target) where TTarget : PointAnimation
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.Animation.PointAnimation.ToProperty);
     }
 }
 
@@ -35682,7 +35682,7 @@ namespace CSharpMarkup.WinUI // PointerDownThemeAnimation
         public static PointerDownThemeAnimation PointerDownThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.PointerDownThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.PointerDownThemeAnimation.StartChain(ui);
@@ -35743,7 +35743,7 @@ namespace CSharpMarkup.WinUI // PointerUpThemeAnimation
         public static PointerUpThemeAnimation PointerUpThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.PointerUpThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.PointerUpThemeAnimation.StartChain(ui);
@@ -35804,7 +35804,7 @@ namespace CSharpMarkup.WinUI // PopInThemeAnimation
         public static PopInThemeAnimation PopInThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? FromHorizontalOffset = default, double? FromVerticalOffset = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.PopInThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (FromHorizontalOffset is not null) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
             if (FromVerticalOffset is not null) ui.FromVerticalOffset = FromVerticalOffset.Value;
@@ -35881,7 +35881,7 @@ namespace CSharpMarkup.WinUI // PopOutThemeAnimation
         public static PopOutThemeAnimation PopOutThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.PopOutThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (TargetName is not null) ui.TargetName = TargetName;
             return CSharpMarkup.WinUI.PopOutThemeAnimation.StartChain(ui);
@@ -36232,7 +36232,7 @@ namespace CSharpMarkup.WinUI // RepositionThemeAnimation
         public static RepositionThemeAnimation RepositionThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? FromHorizontalOffset = default, double? FromVerticalOffset = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.RepositionThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (FromHorizontalOffset is not null) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
             if (FromVerticalOffset is not null) ui.FromVerticalOffset = FromVerticalOffset.Value;
@@ -36645,7 +36645,7 @@ namespace CSharpMarkup.WinUI // SplitCloseThemeAnimation
         public static SplitCloseThemeAnimation SplitCloseThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? ClosedLength = default, Xaml.DependencyObject ClosedTarget = default, string ClosedTargetName = default, Xaml.DependencyObject ContentTarget = default, string ContentTargetName = default, Xaml.Controls.Primitives.AnimationDirection? ContentTranslationDirection = default, double? ContentTranslationOffset = default, double? OffsetFromCenter = default, double? OpenedLength = default, Xaml.DependencyObject OpenedTarget = default, string OpenedTargetName = default)
         {
             var ui = new Xaml.Media.Animation.SplitCloseThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (ClosedLength is not null) ui.ClosedLength = ClosedLength.Value;
             if (ClosedTarget is not null) ui.ClosedTarget = ClosedTarget;
@@ -36786,7 +36786,7 @@ namespace CSharpMarkup.WinUI // SplitOpenThemeAnimation
         public static SplitOpenThemeAnimation SplitOpenThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? ClosedLength = default, Xaml.DependencyObject ClosedTarget = default, string ClosedTargetName = default, Xaml.DependencyObject ContentTarget = default, string ContentTargetName = default, Xaml.Controls.Primitives.AnimationDirection? ContentTranslationDirection = default, double? ContentTranslationOffset = default, double? OffsetFromCenter = default, double? OpenedLength = default, Xaml.DependencyObject OpenedTarget = default, string OpenedTargetName = default)
         {
             var ui = new Xaml.Media.Animation.SplitOpenThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (ClosedLength is not null) ui.ClosedLength = ClosedLength.Value;
             if (ClosedTarget is not null) ui.ClosedTarget = ClosedTarget;
@@ -37063,7 +37063,7 @@ namespace CSharpMarkup.WinUI // SwipeBackThemeAnimation
         public static SwipeBackThemeAnimation SwipeBackThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, double? FromHorizontalOffset = default, double? FromVerticalOffset = default, string TargetName = default)
         {
             var ui = new Xaml.Media.Animation.SwipeBackThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (FromHorizontalOffset is not null) ui.FromHorizontalOffset = FromHorizontalOffset.Value;
             if (FromVerticalOffset is not null) ui.FromVerticalOffset = FromVerticalOffset.Value;
@@ -37140,7 +37140,7 @@ namespace CSharpMarkup.WinUI // SwipeHintThemeAnimation
         public static SwipeHintThemeAnimation SwipeHintThemeAnimation(CSharpMarkup.WinUI.to.TimeSpan? BeginTime = default, CSharpMarkup.WinUI.to.Duration? Duration = default, string TargetName = default, double? ToHorizontalOffset = default, double? ToVerticalOffset = default)
         {
             var ui = new Xaml.Media.Animation.SwipeHintThemeAnimation();
-            if (BeginTime is not null) ui.BeginTime = BeginTime;
+            if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
             if (TargetName is not null) ui.TargetName = TargetName;
             if (ToHorizontalOffset is not null) ui.ToHorizontalOffset = ToHorizontalOffset.Value;
@@ -37232,7 +37232,7 @@ namespace CSharpMarkup.WinUI // Timeline
         public static TView AutoReverse<TView>(this TView view, bool value) where TView : Timeline { view.UI.AutoReverse = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.Timeline.BeginTime"/></summary>
-        public static TView BeginTime<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan? value) where TView : Timeline { view.UI.BeginTime = value; return view; }
+        public static TView BeginTime<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : Timeline { view.UI.BeginTime = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Animation.Timeline.Duration"/></summary>
         public static TView Duration<TView>(this TView view, CSharpMarkup.WinUI.to.Duration value) where TView : Timeline { view.UI.Duration = value; return view; }
@@ -37251,8 +37251,8 @@ namespace CSharpMarkup.WinUI // Timeline
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Media.Animation.Timeline.AutoReverseProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.Timeline.BeginTime"/></summary>
-        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?> BeginTime<TTarget>(this TTarget target) where TTarget : Timeline
-        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan?>.Get(target, Xaml.Media.Animation.Timeline.BeginTimeProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> BeginTime<TTarget>(this TTarget target) where TTarget : Timeline
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Media.Animation.Timeline.BeginTimeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Animation.Timeline.Duration"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Duration> Duration<TTarget>(this TTarget target) where TTarget : Timeline
@@ -38479,10 +38479,6 @@ namespace CSharpMarkup.WinUI // Shape
         public static DependencyProperty<TTarget, double> StrokeThickness<TTarget>(this TTarget target) where TTarget : Shape
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Shapes.Shape.StrokeThicknessProperty);
     }
-}
-
-namespace CSharpMarkup.WinUI.to // Type convertors
-{
 }
 
 namespace CSharpMarkup.WinUI // EnumPropertyValues
