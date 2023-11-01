@@ -248,3 +248,4 @@ ModelManifest.xml
 
 # Ignore Uno Platform generated code
 **/Uno.UI.SourceGenerators
+**/Uno.Extensions.Reactive.Generator

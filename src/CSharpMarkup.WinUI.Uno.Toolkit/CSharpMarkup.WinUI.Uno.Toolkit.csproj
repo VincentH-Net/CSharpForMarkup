@@ -68,7 +68,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Remove="Generated/Uno.UI.SourceGenerators/**/*.cs" />
+		<Compile Remove="Generated/Uno.*/**/*.cs" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)==false">
@@ -95,6 +95,10 @@
 	<ItemGroup>
 		<!-- Workaround for https://github.com/microsoft/WindowsAppSDK/issues/3546 -->
 		<None Include="DependenciesPackagesAssets\**" Pack="true" PackagePath="lib\net7.0-windows10.0.18362\;lib\net7.0-windows10.0.18362\CSharpMarkup.WinUI.Uno.Toolkit\DependenciesPackagesAssets\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Generated\SourceGenerators\" />
 	</ItemGroup>
 
 	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />

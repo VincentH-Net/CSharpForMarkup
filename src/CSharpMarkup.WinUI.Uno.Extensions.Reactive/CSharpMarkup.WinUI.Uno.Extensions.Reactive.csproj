@@ -68,7 +68,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Remove="Generated/Uno.UI.SourceGenerators/**/*.cs" />
+		<Compile Remove="Generated/Uno.*/**/*.cs" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)==false">
