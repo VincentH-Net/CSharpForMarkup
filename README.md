@@ -18,7 +18,7 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Reactive?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Reactive&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Reactive)<br />
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Navigation?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Navigation&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Navigation)<br />
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit)<br />
->[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView?color=gold&label=CSharpMarkup.WinU.LiveChartsCore.SkiaSharpView&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView)
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView?color=gold&label=CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView)
 >
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF)
 >
