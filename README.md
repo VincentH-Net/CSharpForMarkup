@@ -34,7 +34,7 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 
 # News
 *Nov 1, 2023*
-> ## 2.3-dev.2 Preview Release adds 5 Uno Libraries!
+> ## 2.3 Preview Release adds 5 Uno Libraries!
 Enjoy general C# Markup 2 improvements, plus C# Markup 2 API's for 5 additional Uno libraries:
 - Uno's UI toolkit, Reactive and Navigation extensions
 - Plus the awesome [LiveCharts2](https://livecharts.dev/)
