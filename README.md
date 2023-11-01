@@ -14,8 +14,19 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 
 > NuGet<br />
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI?color=gold&label=CSharpMarkup.WinUI&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI)
+>
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Toolkit?color=gold&label=CSharpMarkup.WinUI.Uno.Toolkit&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Toolkit)
+>
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Reactive?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Reactive&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Reactive)
+>
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Navigation?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Navigation&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Navigation)
+>
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit)
+>
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView?color=gold&label=CSharpMarkup.WinU.LiveChartsCore.SkiaSharpView&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView)
+>
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF)
-
+>
 > Chat (if needed, [join DotNetEvolution](https://aka.ms/dotnet-discord) first)<br />
 > [![Discord](https://img.shields.io/discord/732297728826277939?label=Discord%20%23csharp-markup%20on%20DotNetEvolution&style=plastic)](https://discord.com/channels/732297728826277939/931198774234189844)<br />
 > **The best place to ask questions or help!**
@@ -27,6 +38,12 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*Nov 1, 2023*
+> ## 2.3-dev.2 Preview Release adds many Uno libraries!
+> Preview NuGets are now available for many additional Uno libraries, and lots of other general C# Markup improvements.
+> Enjoy C# Markup 2 API's for 5 additional Uno libraries - see the NuGets listed at the top of this readme.
+> Documentation of the new features and a new getting started guide is coming with the next release - soon!
+
 *June 27, 2023*
 > ## 2.2 Release & start of .NET MAUI support
 - [Release 2.2 is out](https://twitter.com/vincenth_net/status/1673330170441224192)! Enjoy this polished release for Windows App SDK, Uno Platform and WPF.
