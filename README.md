@@ -1,15 +1,19 @@
 # C# Markup 2
-Enjoy a Flutter-like UI development experience with .NET Hot Reload and the main .NET UI frameworks
+Concise C# Markup for .NET UI frameworks
 
+Enjoy a Flutter-like UI development experience with C# Markup 2:
 - Build **.NET applications fully in C#**
+- Unclutter your markup - for reading *and* writing.<br />
+  - C# Markup **2** goes above and beyond gen 1 C# Markup approaches (e.g. [Maui](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup) or [Uno](https://aka.platform.uno/csharp-markup)) to eliminate a lot of verbosity: no more endless repetitions of `new `, `HorizontalAlignment = HorizontalAlignment.Center`, `() => ` or `nameof()`, no more specifying for each and every `TextBlock` that yes, you want to bind to the `Text` property...
+  - Separate markup namespaces eliminate intellisense pollution, allow quick discovery and encourage clean separation of markup and logic: no more intellisense lists where you have to search in a sea of irrelevant options for the few that you are interested in. See only Markup API's while editing `MyPage.cs`, see UI framework and other API's while editing `MyPage.logic.cs`.
 - Target browsers and native desktop / mobile
 - Use existing UI frameworks. Mature or bleeding edge is *your* choice: WPF, WinUI 3 for Windows App SDK and Uno Platform. Coming: AvaloniaUI, Maui, possibly Blazor.
-- Use the built-in MVVM support - or any other update model that supports your UI framework (e.g. [ReactiveUI](https://www.reactiveui.net/))
+- Use the built-in MVVM support - or any other update model that supports your UI framework (e.g. [Uno's MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Reactive/overview.html) or [ReactiveUI](https://www.reactiveui.net/))
 - Use for part or all of your application UI
 - Designed to handle large UI fast: practically allocation-free, no reflection, efficient C#
 
 No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your way.
-
+ 
 ![Markup Example Flutter Page](img/markup-example-flutter-page.png)
 
 > NuGet<br />
@@ -36,11 +40,13 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Nov 1, 2023*
 > ## 2.3 Preview Release adds 5 Uno Libraries!
 Enjoy general C# Markup 2 improvements, plus C# Markup 2 API's for 5 additional Uno libraries:
-- Uno's UI toolkit, Reactive and Navigation extensions
-- Plus the awesome [LiveCharts2](https://livecharts.dev/)
+- Support for Uno's UI toolkit, Reactive and Navigation extensions
+- Support for the awesome [LiveCharts2](https://livecharts.dev/)
+- All `ThemeResource`s searchable in C# intellisense, strongly typed
+- Automatic UI update on C# hot reload
+- A development tools overlay
 
-See the NuGets listed above.
-
+You can try this today - see the NuGets listed above.
 Documentation of the new features plus a new getting started guide is coming with the **next release** - soon!
 
 *June 27, 2023*
