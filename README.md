@@ -4,7 +4,7 @@ Concise C# Markup for .NET UI frameworks
 Enjoy a Flutter-like UI development experience with C# Markup 2:
 - Build **.NET applications fully in C#**
 - Unclutter your markup - for reading *and* writing.<br />
-  - C# Markup **2** goes above and beyond gen 1 C# Markup approaches (e.g. [Maui](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup) or [Uno](https://aka.platform.uno/csharp-markup)) to eliminate a lot of verbosity: no more endless repetitions of `new `, `HorizontalAlignment = HorizontalAlignment.Center`, `() => ` or `nameof()`, no more specifying for each and every `TextBlock` that yes, you want to bind to the `Text` property...
+  - C# Markup **2** goes above and beyond gen 1 C# Markup approaches (e.g. [Maui](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup) or [Uno](https://aka.platform.uno/csharp-markup)) to eliminate a lot of verbosity: no more endless repetitions of `new `, `HorizontalAlignment = HorizontalAlignment.Center`, `() => ` or `nameof()`, no more specifying for each and every `TextBlock` binding that yes, you want to bind to the `Text` property...
   - Separated markup namespaces eliminate intellisense pollution, allow quick discovery and encourage clean separation of markup and logic: no more intellisense lists where you have to search in a sea of irrelevant options for the few that you are interested in. See only Markup API's while editing `MyPage.cs`, see UI framework and other API's while editing `MyPage.logic.cs`.
 - Target browsers and native desktop / mobile
 - Use existing UI frameworks. Mature or bleeding edge is *your* choice: WPF, WinUI 3 for Windows App SDK and Uno Platform. Coming: AvaloniaUI, Maui, possibly Blazor.
