@@ -120,28 +120,6 @@ namespace CSharpMarkup.WinUI
         }
 #endif
 
-#if HAS_UNO && !WINDOWS_UWP
-        /// <summary>Create a <see cref="Xaml.Controls.TextBlock"/></summary>
-        /// <remarks>Remark: TextBlock().Bind() binds to <see cref="Xaml.Controls.TextBlock.TextProperty"/></remarks>
-        public static TextBlock TextBlock(params CSharpMarkup.WinUI.InlineCollectionItem[] Inlines) // In UnoWinUI this method is not generated automatically because there the TextBlock ContentProperty is Text, not Inlines as it is in WinUI
-        {
-            var ui = new Xaml.Controls.TextBlock();
-            for (int i = 0; i < Inlines.Length; i++)
-            {
-                var child = Inlines[i];
-                if (child == null) continue;
-
-                var subChildren = Spreader<CSharpMarkup.WinUI.InlineCollectionItem>.ExtractChildren(child);
-                if (subChildren != null)
-                    for (int j = 0; j < subChildren.Length; j++)
-                        ui.Inlines.Add(subChildren[j]);
-                else
-                    ui.Inlines.Add(child);
-            }
-            return global::CSharpMarkup.WinUI.TextBlock.StartChain(ui);
-        }
-#endif
-
 #if !HAS_UNO // In WinUI, the generated helper has inconsistent parameter order with Uno; this extra overload allows specifying offset and color by value without ambiguity
         public static GradientStop GradientStop(Windows.UI.Color Color, double? Offset) => GradientStop(Offset, Color);
 #endif
