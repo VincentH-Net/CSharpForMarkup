@@ -72,17 +72,17 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)==false">
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.231008000" ExcludeAssets="build;analyzers;buildTransitive" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" ExcludeAssets="build;analyzers;buildTransitive" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)">
-		<PackageReference Include="Uno.WinUI" Version="4.10.26" ExcludeAssets="build;analyzers" />
+		<PackageReference Include="Uno.WinUI" ExcludeAssets="build;analyzers" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
-		<PackageReference Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" />
-		<PackageReference Include="Uno.Toolkit.WinUI" Version="4.2.22" ExcludeAssets="build;analyzers;contentFiles" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+		<PackageReference Include="CSharpMarkup.WinUI" />
+		<PackageReference Include="Uno.Toolkit.WinUI" ExcludeAssets="build;analyzers;contentFiles" />
 	</ItemGroup>
 
 	<ItemGroup>
