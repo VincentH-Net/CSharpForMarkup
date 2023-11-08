@@ -73,10 +73,23 @@ namespace CSharpMarkup.WinUI
 #endif
 
 #if NET7_0_ANDROID
-        public static FrameworkElement Native(Android.Views.View view) => Microsoft.UI.Xaml.Media.VisualTreeHelper.AdaptNative(view);
+        public static FrameworkElement Native(Android.Views.View view) => FrameworkElementFromNative.StartChain(Microsoft.UI.Xaml.Media.VisualTreeHelper.AdaptNative(view));
 #endif
-
     }
+
+#if NET7_0_ANDROID
+    internal class FrameworkElementFromNative : FrameworkElement
+    {
+        static FrameworkElementFromNative instance;
+
+        internal static FrameworkElementFromNative StartChain(Xaml.FrameworkElement ui)
+        {
+            if (instance == null) instance = new FrameworkElementFromNative();
+            instance.UI = ui;
+            return instance;
+        }
+    }
+#endif
 
     public static partial class FrameworkElementExtensions
     {
@@ -91,7 +104,7 @@ namespace CSharpMarkup.WinUI
         public static TTarget VisualStateGroups<TTarget>(this TTarget target, params Xaml.VisualStateGroup[] groups)
             where TTarget : FrameworkElement
         {
-            var groupList = Xaml.VisualStateManager.GetVisualStateGroups(target);
+            var groupList = Xaml.VisualStateManager.GetVisualStateGroups(target?.UI);
             groupList.Clear();
             foreach (var group in groups) groupList.Add(group);
             return target;
