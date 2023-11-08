@@ -97,7 +97,7 @@ namespace _MarkupNamespace_
         {
             var ui = new _UIViewNamespace_.ContentView();
 #region _ContentViewHelperStatements_
-            if (_PropertyName_ != null) ui._PropertyName_ = _PropertyName_/*_AccessUI_*/;
+            /*_IfPropertyNotNull_*/ui._PropertyName_ = _PropertyName_/*_AccessUI_*/;
 #endregion
             return _MarkupNamespace_.ContentView.StartChain(ui);
         }
@@ -233,7 +233,7 @@ namespace _MarkupNamespace_
         ) where TTarget : _PropertyTarget_
         {
 #region _AttachedPropertiesAssignments_
-            if (_AttachedPropertyName_ is not null) _UIViewType_.Set_AttachedPropertyName_(target/*_AccessUI_*/, _AttachedPropertyName_/*_GetValue_*/);
+            /*_IfAttachedPropertyNotNull_*/_UIViewType_.Set_AttachedPropertyName_(target/*_AccessUI_*/, _AttachedPropertyName_/*_GetValue_*/);
 #endregion
             return target;
         }
