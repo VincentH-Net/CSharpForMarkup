@@ -29,21 +29,65 @@ namespace CSharpMarkup.WinUI
     /// <remarks>This class is used by <see cref="Helpers.Spread"/></remarks>
     public static class Spreader<TChild> where TChild : class
     {
-        static Dictionary<TChild, TChild[]> spreads = new();
+        static Dictionary<TChild, TChild[]>? spreads = null;
         static bool hasSpreads = false;
 
         public static TChild? Spread(TChild[] children)
         {
             var key = children.FirstOrDefault(item => item is not null);
-            if (key is not null) { spreads.Add(key, children); hasSpreads = true; }
+
+            if (key is not null) {
+                spreads ??= new();
+                spreads.Add(key, children);
+                hasSpreads = true; 
+            }
+
             return key;
         }
 
         public static TChild[]? ExtractChildren(TChild childOrSpread)
         {
             if (!hasSpreads) return null;
-            if (spreads.TryGetValue(childOrSpread, out var children)) { spreads.Remove(childOrSpread); hasSpreads = spreads.Count > 0; }
+
+            if (spreads!.TryGetValue(childOrSpread, out var children)) 
+            { 
+                spreads.Remove(childOrSpread); 
+                hasSpreads = spreads.Count > 0;
+            }
+
             return children;
         }
+    }
+
+    public struct NullableStructValueOrArray<T> where T : struct
+    {
+        // Arrays are rare (from SpreadS usage) and are not allocated on the stack,
+        // so make the array optional and keep a separate optional single Value
+        // to prevent a non-stack allocation for every single Value
+        public T? Value { get; init; }
+        public T[]? Array { get; init; }
+
+        public static implicit operator NullableStructValueOrArray<T>(T[] array) => new(array);
+        public static implicit operator NullableStructValueOrArray<T>(T?[] array) => new(array);
+        public static implicit operator NullableStructValueOrArray<T>(T? value) => new(value);
+
+        public NullableStructValueOrArray(T[] array) => Array = array;
+        public NullableStructValueOrArray(T?[] array) => Array = array.Where(element => element.HasValue).Select(element => element.Value).ToArray();
+        public NullableStructValueOrArray(T? value) => Value = value;
+    }
+
+    public struct NullableClassValueOrArray<T> where T : class
+    {
+        // Arrays are rare (from SpreadS usage) and are not allocated on the stack,
+        // so make the array optional and keep a separate optional single Value
+        // to prevent a non-stack allocation for every single Value
+        public T? Value { get; init; }
+        public T[]? Array { get; init; }
+
+        public static implicit operator NullableClassValueOrArray<T>(T?[] array) => new(array);
+        public static implicit operator NullableClassValueOrArray<T>(T? value) => new(value);
+
+        public NullableClassValueOrArray(T?[] array) => Array = array.Where(element => element is not null).Select(element => element).ToArray();
+        public NullableClassValueOrArray(T? value) => Value = value;
     }
 }

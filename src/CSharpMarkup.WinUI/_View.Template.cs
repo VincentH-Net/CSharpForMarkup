@@ -30,7 +30,7 @@ using Drawing = System.Drawing;
 // TODO: above aliases are workarounds for compile errors, investigate why and remove if possible
 
 // Initialize some template placeholders with example values
-using _PropertyType_ = System.Object;
+using _PropertyType_ = _UIViewNamespace_.RefOrValueProperty;
 using _AttachedPropertyType_ = System.Nullable<System.Double>;
 using AttachedPropertyTargetType = Microsoft.UI.Xaml.DependencyObject; // Attached properties can target Markup types as well as non-Markup types, which is why AttachedPropertyTargetType is used in both _UIViewNamespace_ and _MarkupNamespace_
 
@@ -44,6 +44,24 @@ namespace _UIViewNamespace_
     using _ViewBaseTypeName_ = Microsoft.UI.Xaml.FrameworkElement;
 
     public enum _EnumPropertyTypeName_ { _EnumPropertyValue_ }
+
+    // TODO: This class is too elaborate for a fake class in a template to get the code in LayoutViewStructHelperStatements compiling. Move the code that necessitates this class out of the template into runtime helpers and simplify
+    public class RefOrValueProperty
+    {
+        public class Convertor
+        {
+            public class ValuesType 
+            {
+                public string? Value => null;
+                public string[]? Array => null;
+            }
+            public string Value => null;
+            public ValuesType Values => null;
+        }
+        public bool HasValue => false;
+        public Convertor Value => null;
+        public static implicit operator RefOrValueProperty(string s) => new();
+    }
 
     public partial class _ViewTypeName_ : _ViewBaseTypeName_
     {
@@ -131,20 +149,34 @@ namespace _MarkupNamespace_
             return _MarkupNamespace_.LayoutView.StartChain(ui);
         }
 
-        public static LayoutView[] LayoutViewWithStructChildren(
+        public static LayoutView LayoutViewWithStructChildren(
 #region _LayoutViewStructHelperParameters_
-            params _PropertyType_[][] _PropertyName_
+            params _PropertyType_?[] _PropertyName_
 #endregion
         ) {
             var ui = new _UIViewNamespace_.LayoutView();
+// NOTE that for below code to work, _PropertyType_ must be a to. convertor struct that uses NullableStructValueOrArray<T>; see to.Point implementation for an example
 #region _LayoutViewStructHelperStatements_
-        for (int i = 0; i < _PropertyName_.Length; i++)
-        {
-            for (int j = 0; j < _PropertyName_[i].Length; j++)
-                ui._PropertyName_.Add(_PropertyName_[i][j]/*_AccessUI_*/);
-        }
+            for (int i = 0; i < _PropertyName_.Length; i++)
+            {
+                var item = _PropertyName_[i];
+                if (!item.HasValue) continue;
+
+                var child = item.Value;
+                if (child.Values.Value is not null)
+                {
+                    ui._PropertyName_.Add(child.Values.Value/*_GetValue_*//*_AccessUI_*/);
+                    continue;
+                }
+
+                if (child.Values.Array is not null)
+                {
+                    foreach (var subChild in child.Values.Array)
+                        ui._PropertyName_.Add(subChild/*_AccessUI_*/);
+                }
+            }
 #endregion
-            return new LayoutView[] { _MarkupNamespace_.LayoutView.StartChain(ui) };
+            return _MarkupNamespace_.LayoutView.StartChain(ui);
         }
     }
 
@@ -233,7 +265,7 @@ namespace _MarkupNamespace_
         ) where TTarget : _PropertyTarget_
         {
 #region _AttachedPropertiesAssignments_
-            /*_IfAttachedPropertyNotNull_*/_UIViewType_.Set_AttachedPropertyName_(target/*_AccessUI_*/, _AttachedPropertyName_/*_GetValue_*/);
+            if (_AttachedPropertyName_ is not null) _UIViewType_.Set_AttachedPropertyName_(target/*_AccessUI_*/, _AttachedPropertyName_/*_GetValue_*/);
 #endregion
             return target;
         }

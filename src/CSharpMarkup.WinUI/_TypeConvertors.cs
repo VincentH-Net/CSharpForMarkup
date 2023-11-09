@@ -51,20 +51,34 @@
         public static implicit operator Size((double width, double height) value) => new Windows.Foundation.Size(value.width, value.height);
     }
 
-    /// <summary>Set/convert to a <see cref="Windows.Foundation.Point"/></summary>
+    /// <summary>Set/convert to a <see cref="Windows.Foundation.Point"/>?</summary>
     /// <remarks>Converts from:
     /// <code>(1, 2) // doubles (x, y)</code>
+    /// When used as parameter in a layout helper, supports spreading collections by converting from <see cref="Windows.Foundation.Point"/>[] or <see cref="Windows.Foundation.Point"/>?[]
     /// </remarks>
     readonly public partial struct Point
     {
-        readonly Windows.Foundation.Point value;
+        public readonly NullableStructValueOrArray<Windows.Foundation.Point> Values { get; init; }
 
-        public Point(Windows.Foundation.Point value) => this.value = value;
+        public Point(NullableStructValueOrArray<Windows.Foundation.Point> values) => Values = values;
 
-        public static implicit operator Windows.Foundation.Point(Point value) => value.value;
-        public static implicit operator Point(Windows.Foundation.Point value) => new(value);
-
+        public static implicit operator Windows.Foundation.Point?(Point toPoint) => toPoint.Values.Value ?? (toPoint.Values.Array.Length > 0 ? toPoint.Values.Array[0] : null);
+        public static implicit operator Windows.Foundation.Point(Point toPoint) => toPoint.Values.Value ?? (toPoint.Values.Array.Length > 0 ? toPoint.Values.Array[0] : default);
+        public static implicit operator Point(Windows.Foundation.Point? uiPoint) => new(uiPoint);
+        public static implicit operator Point(Windows.Foundation.Point?[] uiPoints) => new(uiPoints);
+        public static implicit operator Point(Windows.Foundation.Point[] uiPoints) => new(uiPoints);
         public static implicit operator Point((double x, double y) value) => new Windows.Foundation.Point(value.x, value.y);
+    }
+
+    readonly public partial struct Geometry
+    {
+        public readonly NullableClassValueOrArray<Microsoft.UI.Xaml.Media.Geometry> Values { get; init; }
+
+        public Geometry(NullableClassValueOrArray<Microsoft.UI.Xaml.Media.Geometry> values) => Values = values;
+
+        public static implicit operator Microsoft.UI.Xaml.Media.Geometry?(Geometry toGeometry) => toGeometry.Values.Value ?? (toGeometry.Values.Array.Length > 0 ? toGeometry.Values.Array[0] : null);
+        public static implicit operator to.Geometry(Microsoft.UI.Xaml.Media.Geometry? value) => new(value);
+        public static implicit operator to.Geometry(Microsoft.UI.Xaml.Media.Geometry?[] uiPoints) => new(uiPoints);
     }
 
     /// <summary>Set/convert to a <see cref="Microsoft.UI.Xaml.Duration"/></summary>
