@@ -75,9 +75,12 @@ namespace CSharpMarkup.WinUI
         */
 
         // Helper signatures - codegen will generate the method body based on the parameter names and types
+        // Note that this allows full control over the generated overloads; codegen will not generate methods
+        // with the same set of parameter names (irrespective of order) as in a partial helper
         // Note that for now the signature must be in the _Helpers.cs file
 
         public static partial TextBlock TextBlock(string Text); // Specify parameter properties
+        public static partial GradientStop GradientStop(Windows.UI.Color Color, double Offset);
 
         static partial void Timeline_IncludeInDerived(System.TimeSpan? BeginTime, Microsoft.UI.Xaml.Duration Duration);
         // Specify parameter properties to include them in derived types

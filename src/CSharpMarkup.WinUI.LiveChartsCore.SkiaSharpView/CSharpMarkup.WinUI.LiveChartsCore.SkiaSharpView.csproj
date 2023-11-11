@@ -92,12 +92,8 @@
 	    <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
 	  </ProjectReference>
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Generated\SourceGenerators\" />
-	</ItemGroup>
 	
-	<ItemGroup Condition="$(IsUno)" > <!-- TODO: ***HERE see onenote for next steps -->
+	<ItemGroup Condition="$(IsUno)" >
 		<!-- Workaround for https://github.com/microsoft/WindowsAppSDK/issues/3546 -->
 		<None Include="DependenciesPackagesAssets\**" Pack="true" PackagePath="lib\net7.0-windows10.0.19041\" />
 	</ItemGroup>

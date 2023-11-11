@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Microsoft.WindowsAppSDK
-#if NET7_0_WINDOWS10_0_18362_0 && WINUI
+#if NET7_0_WINDOWS10_0_19041 && WINUI
 
 using System;
 using System.Collections.Generic;
@@ -143,19 +143,19 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Navigation // Navigation
         => DependencyProperty<TTarget, object?>.Get(target, UnoExtensionsNavigation.UI.Navigation.DataProperty);
 
         /// <summary>Set <see cref="UnoExtensionsNavigation.UI.Navigation.Request"/></summary>
-        public static TTarget Navigation_Request<TTarget>(this TTarget target, string value) where TTarget : FrameworkElement
+        public static TTarget Navigation_Request<TTarget>(this TTarget target, string? value) where TTarget : FrameworkElement
         { UnoExtensionsNavigation.UI.Navigation.SetRequest(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="UnoExtensionsNavigation.UI.Navigation.Request"/></summary>
-        public static DependencyProperty<TTarget, string> Navigation_Request<TTarget>(this TTarget target) where TTarget : FrameworkElement
-        => DependencyProperty<TTarget, string>.Get(target, UnoExtensionsNavigation.UI.Navigation.RequestProperty);
+        public static DependencyProperty<TTarget, string?> Navigation_Request<TTarget>(this TTarget target) where TTarget : FrameworkElement
+        => DependencyProperty<TTarget, string?>.Get(target, UnoExtensionsNavigation.UI.Navigation.RequestProperty);
 
         /// <summary>Set <see cref="UnoExtensionsNavigation.UI.Navigation"/> attached properties</summary>
         public static TTarget Navigation<TTarget>(this TTarget target
 
             , object? Data = default
 
-            , string Request = default
+            , string? Request = default
 
         ) where TTarget : FrameworkElement
         {

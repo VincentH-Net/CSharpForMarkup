@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Microsoft.WindowsAppSDK
-#if NET7_0_WINDOWS10_0_18362_0 && WINUI
+#if NET7_0_WINDOWS10_0_19041 && WINUI
 
 using System;
 using System.Collections.Generic;
@@ -882,8 +882,8 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
             var ui = new UnoToolkitUI.DrawerControl();
             if (DrawerBackground is not null) ui.DrawerBackground = DrawerBackground;
             if (DrawerContent is not null) ui.DrawerContent = DrawerContent;
-            if (DrawerDepth is not null) ui.DrawerDepth = DrawerDepth;
-            if (EdgeSwipeDetectionLength is not null) ui.EdgeSwipeDetectionLength = EdgeSwipeDetectionLength;
+            if (DrawerDepth is not null) ui.DrawerDepth = DrawerDepth.Value;
+            if (EdgeSwipeDetectionLength is not null) ui.EdgeSwipeDetectionLength = EdgeSwipeDetectionLength.Value;
             if (FitToDrawerContent is not null) ui.FitToDrawerContent = FitToDrawerContent.Value;
             if (IsGestureEnabled is not null) ui.IsGestureEnabled = IsGestureEnabled.Value;
             if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
@@ -1051,7 +1051,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControlBehavior
 
             if (FitToDrawerContent is not null) UnoToolkitUI.DrawerControlBehavior.SetFitToDrawerContent(target.UI, FitToDrawerContent.Value);
 
-            if (EdgeSwipeDetectionLength is not null) UnoToolkitUI.DrawerControlBehavior.SetEdgeSwipeDetectionLength(target.UI, EdgeSwipeDetectionLength);
+            if (EdgeSwipeDetectionLength is not null) UnoToolkitUI.DrawerControlBehavior.SetEdgeSwipeDetectionLength(target.UI, EdgeSwipeDetectionLength.Value);
 
             if (IsGestureEnabled is not null) UnoToolkitUI.DrawerControlBehavior.SetIsGestureEnabled(target.UI, IsGestureEnabled.Value);
 
@@ -1107,7 +1107,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControlBehavior
 
         ) where TTarget : DependencyObject
         {
-            if (EdgeSwipeDetectionLength is not null) UnoToolkitUI.DrawerControlBehavior.SetEdgeSwipeDetectionLength(target.UI, EdgeSwipeDetectionLength);
+            if (EdgeSwipeDetectionLength is not null) UnoToolkitUI.DrawerControlBehavior.SetEdgeSwipeDetectionLength(target.UI, EdgeSwipeDetectionLength.Value);
 
             if (IsGestureEnabled is not null) UnoToolkitUI.DrawerControlBehavior.SetIsGestureEnabled(target.UI, IsGestureEnabled.Value);
 
@@ -1907,6 +1907,20 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationBarTemplateSettings
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.NavigationBarTemplateSettings.HiddenRootMargin"/></summary>
         public static DependencyProperty<TTarget, Xaml.Thickness> HiddenRootMargin<TTarget>(this TTarget target) where TTarget : NavigationBarTemplateSettings
         => DependencyProperty<TTarget, Xaml.Thickness>.Get(target, UnoToolkitUI.NavigationBarTemplateSettings.HiddenRootMarginProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // ResourceExtensions
+{
+    public static partial class ResourceExtensionsExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.ResourceExtensions.Resources"/></summary>
+        public static TTarget ResourceExtensions_Resources<TTarget>(this TTarget target, Xaml.ResourceDictionary value) where TTarget : FrameworkElement
+        { UnoToolkitUI.ResourceExtensions.SetResources(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResourceExtensions.Resources"/></summary>
+        public static DependencyProperty<TTarget, Xaml.ResourceDictionary> ResourceExtensions_Resources<TTarget>(this TTarget target) where TTarget : FrameworkElement
+        => DependencyProperty<TTarget, Xaml.ResourceDictionary>.Get(target, UnoToolkitUI.ResourceExtensions.ResourcesProperty);
     }
 }
 

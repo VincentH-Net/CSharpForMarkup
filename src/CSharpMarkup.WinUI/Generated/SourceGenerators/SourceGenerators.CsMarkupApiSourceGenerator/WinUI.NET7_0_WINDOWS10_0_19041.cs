@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Microsoft.WindowsAppSDK
-#if NET7_0_WINDOWS10_0_18362_0 && WINUI
+#if NET7_0_WINDOWS10_0_19041 && WINUI
 
 using System;
 using System.Collections.Generic;
@@ -2512,33 +2512,33 @@ namespace CSharpMarkup.WinUI // ColorPaletteResources
         public static ColorPaletteResources ColorPaletteResources(Windows.UI.Color? Accent = default, Windows.UI.Color? AltHigh = default, Windows.UI.Color? AltLow = default, Windows.UI.Color? AltMedium = default, Windows.UI.Color? AltMediumHigh = default, Windows.UI.Color? AltMediumLow = default, Windows.UI.Color? BaseHigh = default, Windows.UI.Color? BaseLow = default, Windows.UI.Color? BaseMedium = default, Windows.UI.Color? BaseMediumHigh = default, Windows.UI.Color? BaseMediumLow = default, Windows.UI.Color? ChromeAltLow = default, Windows.UI.Color? ChromeBlackHigh = default, Windows.UI.Color? ChromeBlackLow = default, Windows.UI.Color? ChromeBlackMedium = default, Windows.UI.Color? ChromeBlackMediumLow = default, Windows.UI.Color? ChromeDisabledHigh = default, Windows.UI.Color? ChromeDisabledLow = default, Windows.UI.Color? ChromeGray = default, Windows.UI.Color? ChromeHigh = default, Windows.UI.Color? ChromeLow = default, Windows.UI.Color? ChromeMedium = default, Windows.UI.Color? ChromeMediumLow = default, Windows.UI.Color? ChromeWhite = default, Windows.UI.Color? ErrorText = default, Windows.UI.Color? ListLow = default, Windows.UI.Color? ListMedium = default)
         {
             var ui = new Xaml.ColorPaletteResources();
-            if (Accent is not null) ui.Accent = Accent;
-            if (AltHigh is not null) ui.AltHigh = AltHigh;
-            if (AltLow is not null) ui.AltLow = AltLow;
-            if (AltMedium is not null) ui.AltMedium = AltMedium;
-            if (AltMediumHigh is not null) ui.AltMediumHigh = AltMediumHigh;
-            if (AltMediumLow is not null) ui.AltMediumLow = AltMediumLow;
-            if (BaseHigh is not null) ui.BaseHigh = BaseHigh;
-            if (BaseLow is not null) ui.BaseLow = BaseLow;
-            if (BaseMedium is not null) ui.BaseMedium = BaseMedium;
-            if (BaseMediumHigh is not null) ui.BaseMediumHigh = BaseMediumHigh;
-            if (BaseMediumLow is not null) ui.BaseMediumLow = BaseMediumLow;
-            if (ChromeAltLow is not null) ui.ChromeAltLow = ChromeAltLow;
-            if (ChromeBlackHigh is not null) ui.ChromeBlackHigh = ChromeBlackHigh;
-            if (ChromeBlackLow is not null) ui.ChromeBlackLow = ChromeBlackLow;
-            if (ChromeBlackMedium is not null) ui.ChromeBlackMedium = ChromeBlackMedium;
-            if (ChromeBlackMediumLow is not null) ui.ChromeBlackMediumLow = ChromeBlackMediumLow;
-            if (ChromeDisabledHigh is not null) ui.ChromeDisabledHigh = ChromeDisabledHigh;
-            if (ChromeDisabledLow is not null) ui.ChromeDisabledLow = ChromeDisabledLow;
-            if (ChromeGray is not null) ui.ChromeGray = ChromeGray;
-            if (ChromeHigh is not null) ui.ChromeHigh = ChromeHigh;
-            if (ChromeLow is not null) ui.ChromeLow = ChromeLow;
-            if (ChromeMedium is not null) ui.ChromeMedium = ChromeMedium;
-            if (ChromeMediumLow is not null) ui.ChromeMediumLow = ChromeMediumLow;
-            if (ChromeWhite is not null) ui.ChromeWhite = ChromeWhite;
-            if (ErrorText is not null) ui.ErrorText = ErrorText;
-            if (ListLow is not null) ui.ListLow = ListLow;
-            if (ListMedium is not null) ui.ListMedium = ListMedium;
+            if (Accent is not null) ui.Accent = Accent.Value;
+            if (AltHigh is not null) ui.AltHigh = AltHigh.Value;
+            if (AltLow is not null) ui.AltLow = AltLow.Value;
+            if (AltMedium is not null) ui.AltMedium = AltMedium.Value;
+            if (AltMediumHigh is not null) ui.AltMediumHigh = AltMediumHigh.Value;
+            if (AltMediumLow is not null) ui.AltMediumLow = AltMediumLow.Value;
+            if (BaseHigh is not null) ui.BaseHigh = BaseHigh.Value;
+            if (BaseLow is not null) ui.BaseLow = BaseLow.Value;
+            if (BaseMedium is not null) ui.BaseMedium = BaseMedium.Value;
+            if (BaseMediumHigh is not null) ui.BaseMediumHigh = BaseMediumHigh.Value;
+            if (BaseMediumLow is not null) ui.BaseMediumLow = BaseMediumLow.Value;
+            if (ChromeAltLow is not null) ui.ChromeAltLow = ChromeAltLow.Value;
+            if (ChromeBlackHigh is not null) ui.ChromeBlackHigh = ChromeBlackHigh.Value;
+            if (ChromeBlackLow is not null) ui.ChromeBlackLow = ChromeBlackLow.Value;
+            if (ChromeBlackMedium is not null) ui.ChromeBlackMedium = ChromeBlackMedium.Value;
+            if (ChromeBlackMediumLow is not null) ui.ChromeBlackMediumLow = ChromeBlackMediumLow.Value;
+            if (ChromeDisabledHigh is not null) ui.ChromeDisabledHigh = ChromeDisabledHigh.Value;
+            if (ChromeDisabledLow is not null) ui.ChromeDisabledLow = ChromeDisabledLow.Value;
+            if (ChromeGray is not null) ui.ChromeGray = ChromeGray.Value;
+            if (ChromeHigh is not null) ui.ChromeHigh = ChromeHigh.Value;
+            if (ChromeLow is not null) ui.ChromeLow = ChromeLow.Value;
+            if (ChromeMedium is not null) ui.ChromeMedium = ChromeMedium.Value;
+            if (ChromeMediumLow is not null) ui.ChromeMediumLow = ChromeMediumLow.Value;
+            if (ChromeWhite is not null) ui.ChromeWhite = ChromeWhite.Value;
+            if (ErrorText is not null) ui.ErrorText = ErrorText.Value;
+            if (ListLow is not null) ui.ListLow = ListLow.Value;
+            if (ListMedium is not null) ui.ListMedium = ListMedium.Value;
             return CSharpMarkup.WinUI.ColorPaletteResources.StartChain(ui);
         }
 
@@ -2671,7 +2671,7 @@ namespace CSharpMarkup.WinUI // AnimatedIcon
         public static AnimatedIcon AnimatedIcon(Xaml.Controls.IAnimatedVisualSource2 Source)
         {
             var ui = new Xaml.Controls.AnimatedIcon();
-            if (Source != null) ui.Source = Source;
+            if (Source is not null) ui.Source = Source;
             return CSharpMarkup.WinUI.AnimatedIcon.StartChain(ui);
         }
 
@@ -2681,7 +2681,7 @@ namespace CSharpMarkup.WinUI // AnimatedIcon
             var ui = new Xaml.Controls.AnimatedIcon();
             if (FallbackIconSource is not null) ui.FallbackIconSource = FallbackIconSource;
             if (MirroredWhenRightToLeft is not null) ui.MirroredWhenRightToLeft = MirroredWhenRightToLeft.Value;
-            if (Source != null) ui.Source = Source;
+            if (Source is not null) ui.Source = Source;
             return CSharpMarkup.WinUI.AnimatedIcon.StartChain(ui);
         }
 
@@ -2836,7 +2836,7 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
         public static AnimatedVisualPlayer AnimatedVisualPlayer(Xaml.Controls.IAnimatedVisualSource Source)
         {
             var ui = new Xaml.Controls.AnimatedVisualPlayer();
-            if (Source != null) ui.Source = Source;
+            if (Source is not null) ui.Source = Source;
             return CSharpMarkup.WinUI.AnimatedVisualPlayer.StartChain(ui);
         }
 
@@ -2849,7 +2849,7 @@ namespace CSharpMarkup.WinUI // AnimatedVisualPlayer
             if (FallbackContent is not null) ui.FallbackContent = FallbackContent;
             if (PlaybackRate is not null) ui.PlaybackRate = PlaybackRate.Value;
             if (Stretch is not null) ui.Stretch = Stretch.Value;
-            if (Source != null) ui.Source = Source;
+            if (Source is not null) ui.Source = Source;
             return CSharpMarkup.WinUI.AnimatedVisualPlayer.StartChain(ui);
         }
 
@@ -3043,7 +3043,7 @@ namespace CSharpMarkup.WinUI // AppBar
         public static AppBar AppBar(UIObject Content)
         {
             var ui = new Xaml.Controls.AppBar();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBar.StartChain(ui);
         }
 
@@ -3055,7 +3055,7 @@ namespace CSharpMarkup.WinUI // AppBar
             if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
             if (IsSticky is not null) ui.IsSticky = IsSticky.Value;
             if (LightDismissOverlayMode is not null) ui.LightDismissOverlayMode = LightDismissOverlayMode.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBar.StartChain(ui);
         }
 
@@ -3137,7 +3137,7 @@ namespace CSharpMarkup.WinUI // AppBarButton
         public static AppBarButton AppBarButton(UIObject Content)
         {
             var ui = new Xaml.Controls.AppBarButton();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBarButton.StartChain(ui);
         }
 
@@ -3151,7 +3151,7 @@ namespace CSharpMarkup.WinUI // AppBarButton
             if (KeyboardAcceleratorTextOverride is not null) ui.KeyboardAcceleratorTextOverride = KeyboardAcceleratorTextOverride;
             if (Label is not null) ui.Label = Label;
             if (LabelPosition is not null) ui.LabelPosition = LabelPosition.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBarButton.StartChain(ui);
         }
 
@@ -3251,7 +3251,7 @@ namespace CSharpMarkup.WinUI // AppBarElementContainer
         public static AppBarElementContainer AppBarElementContainer(UIObject Content)
         {
             var ui = new Xaml.Controls.AppBarElementContainer();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBarElementContainer.StartChain(ui);
         }
 
@@ -3261,7 +3261,7 @@ namespace CSharpMarkup.WinUI // AppBarElementContainer
             var ui = new Xaml.Controls.AppBarElementContainer();
             if (DynamicOverflowOrder is not null) ui.DynamicOverflowOrder = DynamicOverflowOrder.Value;
             if (IsCompact is not null) ui.IsCompact = IsCompact.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBarElementContainer.StartChain(ui);
         }
 
@@ -3406,7 +3406,7 @@ namespace CSharpMarkup.WinUI // AppBarToggleButton
         public static AppBarToggleButton AppBarToggleButton(UIObject Content)
         {
             var ui = new Xaml.Controls.AppBarToggleButton();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBarToggleButton.StartChain(ui);
         }
 
@@ -3420,7 +3420,7 @@ namespace CSharpMarkup.WinUI // AppBarToggleButton
             if (KeyboardAcceleratorTextOverride is not null) ui.KeyboardAcceleratorTextOverride = KeyboardAcceleratorTextOverride;
             if (Label is not null) ui.Label = Label;
             if (LabelPosition is not null) ui.LabelPosition = LabelPosition.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBarToggleButton.StartChain(ui);
         }
 
@@ -3961,7 +3961,7 @@ namespace CSharpMarkup.WinUI // Border
         public static Border Border(Xaml.UIElement Child)
         {
             var ui = new Xaml.Controls.Border();
-            if (Child != null) ui.Child = Child;
+            if (Child is not null) ui.Child = Child;
             return CSharpMarkup.WinUI.Border.StartChain(ui);
         }
 
@@ -3977,7 +3977,7 @@ namespace CSharpMarkup.WinUI // Border
             if (ChildTransitions is not null) ui.ChildTransitions = ChildTransitions;
             if (CornerRadius is not null) ui.CornerRadius = CornerRadius.Value;
             if (Padding is not null) ui.Padding = Padding.Value;
-            if (Child != null) ui.Child = Child;
+            if (Child is not null) ui.Child = Child;
             return CSharpMarkup.WinUI.Border.StartChain(ui);
         }
 
@@ -4188,7 +4188,7 @@ namespace CSharpMarkup.WinUI // BreadcrumbBarItem
         public static BreadcrumbBarItem BreadcrumbBarItem(UIObject Content)
         {
             var ui = new Xaml.Controls.BreadcrumbBarItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.BreadcrumbBarItem.StartChain(ui);
         }
 
@@ -4239,7 +4239,7 @@ namespace CSharpMarkup.WinUI // Button
         public static Button Button(UIObject Content)
         {
             var ui = new Xaml.Controls.Button();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Button.StartChain(ui);
         }
 
@@ -4248,7 +4248,7 @@ namespace CSharpMarkup.WinUI // Button
         {
             var ui = new Xaml.Controls.Button();
             if (Flyout is not null) ui.Flyout = Flyout;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Button.StartChain(ui);
         }
 
@@ -4312,7 +4312,7 @@ namespace CSharpMarkup.WinUI // CalendarDatePicker
             var ui = new Xaml.Controls.CalendarDatePicker();
             if (CalendarIdentifier is not null) ui.CalendarIdentifier = CalendarIdentifier;
             if (CalendarViewStyle is not null) ui.CalendarViewStyle = CalendarViewStyle;
-            if (Date is not null) ui.Date = Date;
+            if (Date is not null) ui.Date = Date.Value;
             if (DateFormat is not null) ui.DateFormat = DateFormat;
             if (DayOfWeekFormat is not null) ui.DayOfWeekFormat = DayOfWeekFormat;
             if (Description is not null) ui.Description = Description;
@@ -5599,7 +5599,7 @@ namespace CSharpMarkup.WinUI // CheckBox
         public static CheckBox CheckBox(UIObject Content)
         {
             var ui = new Xaml.Controls.CheckBox();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.CheckBox.StartChain(ui);
         }
 
@@ -5670,7 +5670,7 @@ namespace CSharpMarkup.WinUI // ColorPicker
             if (MinSaturation is not null) ui.MinSaturation = MinSaturation.Value;
             if (MinValue is not null) ui.MinValue = MinValue.Value;
             if (Orientation is not null) ui.Orientation = Orientation.Value;
-            if (PreviousColor is not null) ui.PreviousColor = PreviousColor;
+            if (PreviousColor is not null) ui.PreviousColor = PreviousColor.Value;
             return CSharpMarkup.WinUI.ColorPicker.StartChain(ui);
         }
 
@@ -5869,18 +5869,18 @@ namespace CSharpMarkup.WinUI // ColumnDefinition
         public static ColumnDefinition ColumnDefinition(Xaml.GridLength Width)
         {
             var ui = new Xaml.Controls.ColumnDefinition();
-            if (Width != null) ui.Width = Width;
+            ui.Width = Width;
             return CSharpMarkup.WinUI.ColumnDefinition.StartChain(ui);
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ColumnDefinition"/></summary>
         /// <remarks>Remark: ColumnDefinition().Bind() binds to <see cref="Xaml.Controls.ColumnDefinition.WidthProperty"/></remarks>
-        public static ColumnDefinition ColumnDefinition(double? MaxWidth = default, double? MinWidth = default, Xaml.GridLength Width = default)
+        public static ColumnDefinition ColumnDefinition(double? MaxWidth = default, double? MinWidth = default, Xaml.GridLength? Width = default)
         {
             var ui = new Xaml.Controls.ColumnDefinition();
             if (MaxWidth is not null) ui.MaxWidth = MaxWidth.Value;
             if (MinWidth is not null) ui.MinWidth = MinWidth.Value;
-            if (Width != null) ui.Width = Width;
+            if (Width is not null) ui.Width = Width.Value;
             return CSharpMarkup.WinUI.ColumnDefinition.StartChain(ui);
         }
 
@@ -6116,7 +6116,7 @@ namespace CSharpMarkup.WinUI // ComboBoxItem
         public static ComboBoxItem ComboBoxItem(UIObject Content)
         {
             var ui = new Xaml.Controls.ComboBoxItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ComboBoxItem.StartChain(ui);
         }
 
@@ -6397,7 +6397,7 @@ namespace CSharpMarkup.WinUI // ContentControl
         public static ContentControl ContentControl(UIObject Content)
         {
             var ui = new Xaml.Controls.ContentControl();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ContentControl.StartChain(ui);
         }
 
@@ -6409,7 +6409,7 @@ namespace CSharpMarkup.WinUI // ContentControl
             if (ContentTemplate is not null) ui.ContentTemplate = ContentTemplate;
             if (ContentTemplateSelector is not null) ui.ContentTemplateSelector = ContentTemplateSelector;
             if (ContentTransitions is not null) ui.ContentTransitions = ContentTransitions;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ContentControl.StartChain(ui);
         }
 
@@ -6492,7 +6492,7 @@ namespace CSharpMarkup.WinUI // ContentDialog
         public static ContentDialog ContentDialog(UIObject Content)
         {
             var ui = new Xaml.Controls.ContentDialog();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ContentDialog.StartChain(ui);
         }
 
@@ -6518,7 +6518,7 @@ namespace CSharpMarkup.WinUI // ContentDialog
             if (SecondaryButtonText is not null) ui.SecondaryButtonText = SecondaryButtonText;
             if (Title is not null) ui.Title = Title;
             if (TitleTemplate is not null) ui.TitleTemplate = TitleTemplate;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ContentDialog.StartChain(ui);
         }
 
@@ -6699,7 +6699,7 @@ namespace CSharpMarkup.WinUI // ContentPresenter
         public static ContentPresenter ContentPresenter(UIObject Content)
         {
             var ui = new Xaml.Controls.ContentPresenter();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ContentPresenter.StartChain(ui);
         }
 
@@ -6734,7 +6734,7 @@ namespace CSharpMarkup.WinUI // ContentPresenter
             if (TextLineBounds is not null) ui.TextLineBounds = TextLineBounds.Value;
             if (TextWrapping is not null) ui.TextWrapping = TextWrapping.Value;
             if (VerticalContentAlignment is not null) ui.VerticalContentAlignment = VerticalContentAlignment.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ContentPresenter.StartChain(ui);
         }
     }
@@ -7368,7 +7368,7 @@ namespace CSharpMarkup.WinUI // DatePicker
         public static DatePicker DatePicker(UIObject Header)
         {
             var ui = new Xaml.Controls.DatePicker();
-            if (Header != null) ui.Header = Header.UI;
+            if (Header is not null) ui.Header = Header.UI;
             return CSharpMarkup.WinUI.DatePicker.StartChain(ui);
         }
 
@@ -7388,10 +7388,10 @@ namespace CSharpMarkup.WinUI // DatePicker
             if (MonthFormat is not null) ui.MonthFormat = MonthFormat;
             if (MonthVisible is not null) ui.MonthVisible = MonthVisible.Value;
             if (Orientation is not null) ui.Orientation = Orientation.Value;
-            if (SelectedDate is not null) ui.SelectedDate = SelectedDate;
+            if (SelectedDate is not null) ui.SelectedDate = SelectedDate.Value;
             if (YearFormat is not null) ui.YearFormat = YearFormat;
             if (YearVisible is not null) ui.YearVisible = YearVisible.Value;
-            if (Header != null) ui.Header = Header.UI;
+            if (Header is not null) ui.Header = Header.UI;
             return CSharpMarkup.WinUI.DatePicker.StartChain(ui);
         }
 
@@ -7750,7 +7750,7 @@ namespace CSharpMarkup.WinUI // DropDownButton
         public static DropDownButton DropDownButton(UIObject Content)
         {
             var ui = new Xaml.Controls.DropDownButton();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.DropDownButton.StartChain(ui);
         }
 
@@ -7801,7 +7801,7 @@ namespace CSharpMarkup.WinUI // Expander
         public static Expander Expander(UIObject Content)
         {
             var ui = new Xaml.Controls.Expander();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Expander.StartChain(ui);
         }
 
@@ -7814,7 +7814,7 @@ namespace CSharpMarkup.WinUI // Expander
             if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
             if (HeaderTemplateSelector is not null) ui.HeaderTemplateSelector = HeaderTemplateSelector;
             if (IsExpanded is not null) ui.IsExpanded = IsExpanded.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Expander.StartChain(ui);
         }
 
@@ -7993,7 +7993,7 @@ namespace CSharpMarkup.WinUI // FlipViewItem
         public static FlipViewItem FlipViewItem(UIObject Content)
         {
             var ui = new Xaml.Controls.FlipViewItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.FlipViewItem.StartChain(ui);
         }
 
@@ -8044,7 +8044,7 @@ namespace CSharpMarkup.WinUI // Flyout
         public static Flyout Flyout(Xaml.UIElement Content)
         {
             var ui = new Xaml.Controls.Flyout();
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.Flyout.StartChain(ui);
         }
 
@@ -8053,7 +8053,7 @@ namespace CSharpMarkup.WinUI // Flyout
         {
             var ui = new Xaml.Controls.Flyout();
             if (FlyoutPresenterStyle is not null) ui.FlyoutPresenterStyle = FlyoutPresenterStyle;
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.Flyout.StartChain(ui);
         }
 
@@ -8116,7 +8116,7 @@ namespace CSharpMarkup.WinUI // FlyoutPresenter
         public static FlyoutPresenter FlyoutPresenter(UIObject Content)
         {
             var ui = new Xaml.Controls.FlyoutPresenter();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.FlyoutPresenter.StartChain(ui);
         }
 
@@ -8125,7 +8125,7 @@ namespace CSharpMarkup.WinUI // FlyoutPresenter
         {
             var ui = new Xaml.Controls.FlyoutPresenter();
             if (IsDefaultShadowEnabled is not null) ui.IsDefaultShadowEnabled = IsDefaultShadowEnabled.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.FlyoutPresenter.StartChain(ui);
         }
 
@@ -8412,7 +8412,7 @@ namespace CSharpMarkup.WinUI // Frame
         public static Frame Frame(UIObject Content)
         {
             var ui = new Xaml.Controls.Frame();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Frame.StartChain(ui);
         }
 
@@ -8423,7 +8423,7 @@ namespace CSharpMarkup.WinUI // Frame
             if (CacheSize is not null) ui.CacheSize = CacheSize.Value;
             if (IsNavigationStackEnabled is not null) ui.IsNavigationStackEnabled = IsNavigationStackEnabled.Value;
             if (SourcePageType is not null) ui.SourcePageType = SourcePageType;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Frame.StartChain(ui);
         }
 
@@ -8784,7 +8784,7 @@ namespace CSharpMarkup.WinUI // GridViewHeaderItem
         public static GridViewHeaderItem GridViewHeaderItem(UIObject Content)
         {
             var ui = new Xaml.Controls.GridViewHeaderItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.GridViewHeaderItem.StartChain(ui);
         }
 
@@ -8835,7 +8835,7 @@ namespace CSharpMarkup.WinUI // GridViewItem
         public static GridViewItem GridViewItem(UIObject Content)
         {
             var ui = new Xaml.Controls.GridViewItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.GridViewItem.StartChain(ui);
         }
 
@@ -8886,7 +8886,7 @@ namespace CSharpMarkup.WinUI // GroupItem
         public static GroupItem GroupItem(UIObject Content)
         {
             var ui = new Xaml.Controls.GroupItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.GroupItem.StartChain(ui);
         }
 
@@ -9051,7 +9051,7 @@ namespace CSharpMarkup.WinUI // HubSection
         public static HubSection HubSection(Xaml.DataTemplate ContentTemplate)
         {
             var ui = new Xaml.Controls.HubSection();
-            if (ContentTemplate != null) ui.ContentTemplate = ContentTemplate;
+            if (ContentTemplate is not null) ui.ContentTemplate = ContentTemplate;
             return CSharpMarkup.WinUI.HubSection.StartChain(ui);
         }
 
@@ -9062,7 +9062,7 @@ namespace CSharpMarkup.WinUI // HubSection
             if (Header is not null) ui.Header = Header;
             if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
             if (IsHeaderInteractive is not null) ui.IsHeaderInteractive = IsHeaderInteractive.Value;
-            if (ContentTemplate != null) ui.ContentTemplate = ContentTemplate;
+            if (ContentTemplate is not null) ui.ContentTemplate = ContentTemplate;
             return CSharpMarkup.WinUI.HubSection.StartChain(ui);
         }
 
@@ -9141,7 +9141,7 @@ namespace CSharpMarkup.WinUI // HyperlinkButton
         public static HyperlinkButton HyperlinkButton(UIObject Content)
         {
             var ui = new Xaml.Controls.HyperlinkButton();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.HyperlinkButton.StartChain(ui);
         }
 
@@ -9150,7 +9150,7 @@ namespace CSharpMarkup.WinUI // HyperlinkButton
         {
             var ui = new Xaml.Controls.HyperlinkButton();
             if (NavigateUri is not null) ui.NavigateUri = NavigateUri;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.HyperlinkButton.StartChain(ui);
         }
 
@@ -9279,7 +9279,7 @@ namespace CSharpMarkup.WinUI // IconSourceElement
         public static IconSourceElement IconSourceElement(Xaml.Controls.IconSource IconSource)
         {
             var ui = new Xaml.Controls.IconSourceElement();
-            if (IconSource != null) ui.IconSource = IconSource;
+            if (IconSource is not null) ui.IconSource = IconSource;
             return CSharpMarkup.WinUI.IconSourceElement.StartChain(ui);
         }
 
@@ -9691,7 +9691,7 @@ namespace CSharpMarkup.WinUI // InfoBar
         public static InfoBar InfoBar(UIObject Content)
         {
             var ui = new Xaml.Controls.InfoBar();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.InfoBar.StartChain(ui);
         }
 
@@ -9711,7 +9711,7 @@ namespace CSharpMarkup.WinUI // InfoBar
             if (Message is not null) ui.Message = Message;
             if (Severity is not null) ui.Severity = Severity.Value;
             if (Title is not null) ui.Title = Title;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.InfoBar.StartChain(ui);
         }
 
@@ -9916,7 +9916,7 @@ namespace CSharpMarkup.WinUI // ItemContainer
         public static ItemContainer ItemContainer(Xaml.UIElement Child)
         {
             var ui = new Xaml.Controls.ItemContainer();
-            if (Child != null) ui.Child = Child;
+            if (Child is not null) ui.Child = Child;
             return CSharpMarkup.WinUI.ItemContainer.StartChain(ui);
         }
 
@@ -9925,7 +9925,7 @@ namespace CSharpMarkup.WinUI // ItemContainer
         {
             var ui = new Xaml.Controls.ItemContainer();
             if (IsSelected is not null) ui.IsSelected = IsSelected.Value;
-            if (Child != null) ui.Child = Child;
+            if (Child is not null) ui.Child = Child;
             return CSharpMarkup.WinUI.ItemContainer.StartChain(ui);
         }
 
@@ -10445,7 +10445,7 @@ namespace CSharpMarkup.WinUI // ItemsRepeaterScrollHost
         public static ItemsRepeaterScrollHost ItemsRepeaterScrollHost(Xaml.Controls.ScrollViewer ScrollViewer)
         {
             var ui = new Xaml.Controls.ItemsRepeaterScrollHost();
-            if (ScrollViewer != null) ui.ScrollViewer = ScrollViewer;
+            if (ScrollViewer is not null) ui.ScrollViewer = ScrollViewer;
             return CSharpMarkup.WinUI.ItemsRepeaterScrollHost.StartChain(ui);
         }
 
@@ -10455,7 +10455,7 @@ namespace CSharpMarkup.WinUI // ItemsRepeaterScrollHost
             var ui = new Xaml.Controls.ItemsRepeaterScrollHost();
             if (HorizontalAnchorRatio is not null) ui.HorizontalAnchorRatio = HorizontalAnchorRatio.Value;
             if (VerticalAnchorRatio is not null) ui.VerticalAnchorRatio = VerticalAnchorRatio.Value;
-            if (ScrollViewer != null) ui.ScrollViewer = ScrollViewer;
+            if (ScrollViewer is not null) ui.ScrollViewer = ScrollViewer;
             return CSharpMarkup.WinUI.ItemsRepeaterScrollHost.StartChain(ui);
         }
 
@@ -11100,7 +11100,7 @@ namespace CSharpMarkup.WinUI // ListBoxItem
         public static ListBoxItem ListBoxItem(UIObject Content)
         {
             var ui = new Xaml.Controls.ListBoxItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ListBoxItem.StartChain(ui);
         }
 
@@ -11537,7 +11537,7 @@ namespace CSharpMarkup.WinUI // ListViewHeaderItem
         public static ListViewHeaderItem ListViewHeaderItem(UIObject Content)
         {
             var ui = new Xaml.Controls.ListViewHeaderItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ListViewHeaderItem.StartChain(ui);
         }
 
@@ -11588,7 +11588,7 @@ namespace CSharpMarkup.WinUI // ListViewItem
         public static ListViewItem ListViewItem(UIObject Content)
         {
             var ui = new Xaml.Controls.ListViewItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ListViewItem.StartChain(ui);
         }
 
@@ -12367,7 +12367,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutItem
         public static MenuFlyoutItem MenuFlyoutItem(string Text)
         {
             var ui = new Xaml.Controls.MenuFlyoutItem();
-            if (Text != null) ui.Text = Text;
+            if (Text is not null) ui.Text = Text;
             return CSharpMarkup.WinUI.MenuFlyoutItem.StartChain(ui);
         }
 
@@ -12379,7 +12379,7 @@ namespace CSharpMarkup.WinUI // MenuFlyoutItem
             if (CommandParameter is not null) ui.CommandParameter = CommandParameter;
             if (Icon is not null) ui.Icon = Icon;
             if (KeyboardAcceleratorTextOverride is not null) ui.KeyboardAcceleratorTextOverride = KeyboardAcceleratorTextOverride;
-            if (Text != null) ui.Text = Text;
+            if (Text is not null) ui.Text = Text;
             return CSharpMarkup.WinUI.MenuFlyoutItem.StartChain(ui);
         }
 
@@ -12677,7 +12677,7 @@ namespace CSharpMarkup.WinUI // NavigationView
         public static NavigationView NavigationView(UIObject Content)
         {
             var ui = new Xaml.Controls.NavigationView();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.NavigationView.StartChain(ui);
         }
 
@@ -12717,7 +12717,7 @@ namespace CSharpMarkup.WinUI // NavigationView
             if (SelectedItem is not null) ui.SelectedItem = SelectedItem;
             if (SelectionFollowsFocus is not null) ui.SelectionFollowsFocus = SelectionFollowsFocus.Value;
             if (ShoulderNavigationEnabled is not null) ui.ShoulderNavigationEnabled = ShoulderNavigationEnabled.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.NavigationView.StartChain(ui);
         }
 
@@ -13015,7 +13015,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItem
         public static NavigationViewItem NavigationViewItem(UIObject Content)
         {
             var ui = new Xaml.Controls.NavigationViewItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.NavigationViewItem.StartChain(ui);
         }
 
@@ -13030,7 +13030,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItem
             if (IsExpanded is not null) ui.IsExpanded = IsExpanded.Value;
             if (MenuItemsSource is not null) ui.MenuItemsSource = MenuItemsSource;
             if (SelectsOnInvoked is not null) ui.SelectsOnInvoked = SelectsOnInvoked.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.NavigationViewItem.StartChain(ui);
         }
 
@@ -13169,7 +13169,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItemHeader
         public static NavigationViewItemHeader NavigationViewItemHeader(UIObject Content)
         {
             var ui = new Xaml.Controls.NavigationViewItemHeader();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.NavigationViewItemHeader.StartChain(ui);
         }
 
@@ -13220,7 +13220,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItemSeparator
         public static NavigationViewItemSeparator NavigationViewItemSeparator(UIObject Content)
         {
             var ui = new Xaml.Controls.NavigationViewItemSeparator();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.NavigationViewItemSeparator.StartChain(ui);
         }
 
@@ -13642,7 +13642,7 @@ namespace CSharpMarkup.WinUI // Page
         public static Page Page(Xaml.UIElement Content)
         {
             var ui = new Xaml.Controls.Page();
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.Page.StartChain(ui);
         }
 
@@ -13653,7 +13653,7 @@ namespace CSharpMarkup.WinUI // Page
             if (BottomAppBar is not null) ui.BottomAppBar = BottomAppBar;
             if (NavigationCacheMode is not null) ui.NavigationCacheMode = NavigationCacheMode.Value;
             if (TopAppBar is not null) ui.TopAppBar = TopAppBar;
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.Page.StartChain(ui);
         }
 
@@ -13776,7 +13776,7 @@ namespace CSharpMarkup.WinUI // ParallaxView
         public static ParallaxView ParallaxView(Xaml.UIElement Child)
         {
             var ui = new Xaml.Controls.ParallaxView();
-            if (Child != null) ui.Child = Child;
+            if (Child is not null) ui.Child = Child;
             return CSharpMarkup.WinUI.ParallaxView.StartChain(ui);
         }
 
@@ -13797,7 +13797,7 @@ namespace CSharpMarkup.WinUI // ParallaxView
             if (VerticalSourceEndOffset is not null) ui.VerticalSourceEndOffset = VerticalSourceEndOffset.Value;
             if (VerticalSourceOffsetKind is not null) ui.VerticalSourceOffsetKind = VerticalSourceOffsetKind.Value;
             if (VerticalSourceStartOffset is not null) ui.VerticalSourceStartOffset = VerticalSourceStartOffset.Value;
-            if (Child != null) ui.Child = Child;
+            if (Child is not null) ui.Child = Child;
             return CSharpMarkup.WinUI.ParallaxView.StartChain(ui);
         }
 
@@ -14118,10 +14118,10 @@ namespace CSharpMarkup.WinUI // PathIcon
     {
         /// <summary>Create a <see cref="Xaml.Controls.PathIcon"/></summary>
         /// <remarks>Remark: PathIcon().Bind() binds to <see cref="Xaml.Controls.PathIcon.DataProperty"/></remarks>
-        public static PathIcon PathIcon(Xaml.Media.Geometry Data = default)
+        public static PathIcon PathIcon(CSharpMarkup.WinUI.to.Geometry? Data = default)
         {
             var ui = new Xaml.Controls.PathIcon();
-            if (Data is not null) ui.Data = Data;
+            if (Data is not null) ui.Data = Data.Value;
             return CSharpMarkup.WinUI.PathIcon.StartChain(ui);
         }
 
@@ -14170,11 +14170,11 @@ namespace CSharpMarkup.WinUI // PathIcon
     public static partial class PathIconExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.PathIcon.Data"/></summary>
-        public static TView Data<TView>(this TView view, Xaml.Media.Geometry value) where TView : PathIcon { view.UI.Data = value; return view; }
+        public static TView Data<TView>(this TView view, CSharpMarkup.WinUI.to.Geometry value) where TView : PathIcon { view.UI.Data = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PathIcon.Data"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Geometry> Data<TTarget>(this TTarget target) where TTarget : PathIcon
-        => DependencyProperty<TTarget, Xaml.Media.Geometry>.Get(target, Xaml.Controls.PathIcon.DataProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry> Data<TTarget>(this TTarget target) where TTarget : PathIcon
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry>.Get(target, Xaml.Controls.PathIcon.DataProperty);
     }
 }
 
@@ -14184,10 +14184,10 @@ namespace CSharpMarkup.WinUI // PathIconSource
     {
         /// <summary>Create a <see cref="Xaml.Controls.PathIconSource"/></summary>
         /// <remarks>Remark: PathIconSource().Bind() binds to <see cref="Xaml.Controls.PathIconSource.DataProperty"/></remarks>
-        public static PathIconSource PathIconSource(Xaml.Media.Geometry Data = default)
+        public static PathIconSource PathIconSource(CSharpMarkup.WinUI.to.Geometry? Data = default)
         {
             var ui = new Xaml.Controls.PathIconSource();
-            if (Data is not null) ui.Data = Data;
+            if (Data is not null) ui.Data = Data.Value;
             return CSharpMarkup.WinUI.PathIconSource.StartChain(ui);
         }
 
@@ -14234,11 +14234,11 @@ namespace CSharpMarkup.WinUI // PathIconSource
     public static partial class PathIconSourceExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.PathIconSource.Data"/></summary>
-        public static TView Data<TView>(this TView view, Xaml.Media.Geometry value) where TView : PathIconSource { view.UI.Data = value; return view; }
+        public static TView Data<TView>(this TView view, CSharpMarkup.WinUI.to.Geometry value) where TView : PathIconSource { view.UI.Data = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PathIconSource.Data"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Geometry> Data<TTarget>(this TTarget target) where TTarget : PathIconSource
-        => DependencyProperty<TTarget, Xaml.Media.Geometry>.Get(target, Xaml.Controls.PathIconSource.DataProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry> Data<TTarget>(this TTarget target) where TTarget : PathIconSource
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry>.Get(target, Xaml.Controls.PathIconSource.DataProperty);
     }
 }
 
@@ -14442,7 +14442,7 @@ namespace CSharpMarkup.WinUI // PickerFlyout
         public static PickerFlyout PickerFlyout(Xaml.UIElement Content)
         {
             var ui = new Xaml.Controls.PickerFlyout();
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.PickerFlyout.StartChain(ui);
         }
 
@@ -14451,7 +14451,7 @@ namespace CSharpMarkup.WinUI // PickerFlyout
         {
             var ui = new Xaml.Controls.PickerFlyout();
             if (ConfirmationButtonsVisible is not null) ui.ConfirmationButtonsVisible = ConfirmationButtonsVisible.Value;
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.PickerFlyout.StartChain(ui);
         }
 
@@ -14840,7 +14840,7 @@ namespace CSharpMarkup.WinUI // PivotItem
         public static PivotItem PivotItem(UIObject Content)
         {
             var ui = new Xaml.Controls.PivotItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.PivotItem.StartChain(ui);
         }
 
@@ -14849,7 +14849,7 @@ namespace CSharpMarkup.WinUI // PivotItem
         {
             var ui = new Xaml.Controls.PivotItem();
             if (Header is not null) ui.Header = Header;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.PivotItem.StartChain(ui);
         }
 
@@ -15861,7 +15861,7 @@ namespace CSharpMarkup.WinUI // GridViewItemPresenter
         public static GridViewItemPresenter GridViewItemPresenter(UIObject Content)
         {
             var ui = new Xaml.Controls.Primitives.GridViewItemPresenter();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.GridViewItemPresenter.StartChain(ui);
         }
 
@@ -15891,7 +15891,7 @@ namespace CSharpMarkup.WinUI // GridViewItemPresenter
             if (SelectedPointerOverBackground is not null) ui.SelectedPointerOverBackground = SelectedPointerOverBackground;
             if (SelectedPointerOverBorderBrush is not null) ui.SelectedPointerOverBorderBrush = SelectedPointerOverBorderBrush;
             if (SelectionCheckMarkVisualEnabled is not null) ui.SelectionCheckMarkVisualEnabled = SelectionCheckMarkVisualEnabled.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.GridViewItemPresenter.StartChain(ui);
         }
 
@@ -16562,7 +16562,7 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
         public static ListViewItemPresenter ListViewItemPresenter(UIObject Content)
         {
             var ui = new Xaml.Controls.Primitives.ListViewItemPresenter();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ListViewItemPresenter.StartChain(ui);
         }
 
@@ -16629,7 +16629,7 @@ namespace CSharpMarkup.WinUI // ListViewItemPresenter
             if (SelectionIndicatorPointerOverBrush is not null) ui.SelectionIndicatorPointerOverBrush = SelectionIndicatorPointerOverBrush;
             if (SelectionIndicatorPressedBrush is not null) ui.SelectionIndicatorPressedBrush = SelectionIndicatorPressedBrush;
             if (SelectionIndicatorVisualEnabled is not null) ui.SelectionIndicatorVisualEnabled = SelectionIndicatorVisualEnabled.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ListViewItemPresenter.StartChain(ui);
         }
 
@@ -17647,7 +17647,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItemPresenter
         public static NavigationViewItemPresenter NavigationViewItemPresenter(UIObject Content)
         {
             var ui = new Xaml.Controls.Primitives.NavigationViewItemPresenter();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.NavigationViewItemPresenter.StartChain(ui);
         }
 
@@ -17657,7 +17657,7 @@ namespace CSharpMarkup.WinUI // NavigationViewItemPresenter
             var ui = new Xaml.Controls.Primitives.NavigationViewItemPresenter();
             if (Icon is not null) ui.Icon = Icon;
             if (InfoBadge is not null) ui.InfoBadge = InfoBadge;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.NavigationViewItemPresenter.StartChain(ui);
         }
 
@@ -17840,7 +17840,7 @@ namespace CSharpMarkup.WinUI // PivotHeaderItem
         public static PivotHeaderItem PivotHeaderItem(UIObject Content)
         {
             var ui = new Xaml.Controls.Primitives.PivotHeaderItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.PivotHeaderItem.StartChain(ui);
         }
 
@@ -18015,7 +18015,7 @@ namespace CSharpMarkup.WinUI // Popup
         public static Popup Popup(Xaml.UIElement Child)
         {
             var ui = new Xaml.Controls.Primitives.Popup();
-            if (Child != null) ui.Child = Child;
+            if (Child is not null) ui.Child = Child;
             return CSharpMarkup.WinUI.Popup.StartChain(ui);
         }
 
@@ -18033,7 +18033,7 @@ namespace CSharpMarkup.WinUI // Popup
             if (ShouldConstrainToRootBounds is not null) ui.ShouldConstrainToRootBounds = ShouldConstrainToRootBounds.Value;
             if (SystemBackdrop is not null) ui.SystemBackdrop = SystemBackdrop;
             if (VerticalOffset is not null) ui.VerticalOffset = VerticalOffset.Value;
-            if (Child != null) ui.Child = Child;
+            if (Child is not null) ui.Child = Child;
             return CSharpMarkup.WinUI.Popup.StartChain(ui);
         }
 
@@ -18220,7 +18220,7 @@ namespace CSharpMarkup.WinUI // RepeatButton
         public static RepeatButton RepeatButton(UIObject Content)
         {
             var ui = new Xaml.Controls.Primitives.RepeatButton();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.RepeatButton.StartChain(ui);
         }
 
@@ -18230,7 +18230,7 @@ namespace CSharpMarkup.WinUI // RepeatButton
             var ui = new Xaml.Controls.Primitives.RepeatButton();
             if (Delay is not null) ui.Delay = Delay.Value;
             if (Interval is not null) ui.Interval = Interval.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.RepeatButton.StartChain(ui);
         }
 
@@ -18375,7 +18375,7 @@ namespace CSharpMarkup.WinUI // ScrollPresenter
         public static ScrollPresenter ScrollPresenter(Xaml.UIElement Content)
         {
             var ui = new Xaml.Controls.Primitives.ScrollPresenter();
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.ScrollPresenter.StartChain(ui);
         }
 
@@ -18400,7 +18400,7 @@ namespace CSharpMarkup.WinUI // ScrollPresenter
             if (VerticalScrollRailMode is not null) ui.VerticalScrollRailMode = VerticalScrollRailMode.Value;
             if (ZoomChainMode is not null) ui.ZoomChainMode = ZoomChainMode.Value;
             if (ZoomMode is not null) ui.ZoomMode = ZoomMode.Value;
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.ScrollPresenter.StartChain(ui);
         }
 
@@ -18868,7 +18868,7 @@ namespace CSharpMarkup.WinUI // ToggleButton
         public static ToggleButton ToggleButton(UIObject Content)
         {
             var ui = new Xaml.Controls.Primitives.ToggleButton();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ToggleButton.StartChain(ui);
         }
 
@@ -18877,9 +18877,9 @@ namespace CSharpMarkup.WinUI // ToggleButton
         public static ToggleButton ToggleButton(bool? IsChecked = default, bool? IsThreeState = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.Primitives.ToggleButton();
-            if (IsChecked is not null) ui.IsChecked = IsChecked;
+            if (IsChecked is not null) ui.IsChecked = IsChecked.Value;
             if (IsThreeState is not null) ui.IsThreeState = IsThreeState.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ToggleButton.StartChain(ui);
         }
 
@@ -19198,7 +19198,7 @@ namespace CSharpMarkup.WinUI // RadioButton
         public static RadioButton RadioButton(UIObject Content)
         {
             var ui = new Xaml.Controls.RadioButton();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.RadioButton.StartChain(ui);
         }
 
@@ -19207,7 +19207,7 @@ namespace CSharpMarkup.WinUI // RadioButton
         {
             var ui = new Xaml.Controls.RadioButton();
             if (GroupName is not null) ui.GroupName = GroupName;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.RadioButton.StartChain(ui);
         }
 
@@ -19386,7 +19386,7 @@ namespace CSharpMarkup.WinUI // RadioMenuFlyoutItem
         public static RadioMenuFlyoutItem RadioMenuFlyoutItem(string Text)
         {
             var ui = new Xaml.Controls.RadioMenuFlyoutItem();
-            if (Text != null) ui.Text = Text;
+            if (Text is not null) ui.Text = Text;
             return CSharpMarkup.WinUI.RadioMenuFlyoutItem.StartChain(ui);
         }
 
@@ -19396,7 +19396,7 @@ namespace CSharpMarkup.WinUI // RadioMenuFlyoutItem
             var ui = new Xaml.Controls.RadioMenuFlyoutItem();
             if (GroupName is not null) ui.GroupName = GroupName;
             if (IsChecked is not null) ui.IsChecked = IsChecked.Value;
-            if (Text != null) ui.Text = Text;
+            if (Text is not null) ui.Text = Text;
             return CSharpMarkup.WinUI.RadioMenuFlyoutItem.StartChain(ui);
         }
 
@@ -19833,7 +19833,7 @@ namespace CSharpMarkup.WinUI // RefreshContainer
         public static RefreshContainer RefreshContainer(UIObject Content)
         {
             var ui = new Xaml.Controls.RefreshContainer();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.RefreshContainer.StartChain(ui);
         }
 
@@ -19843,7 +19843,7 @@ namespace CSharpMarkup.WinUI // RefreshContainer
             var ui = new Xaml.Controls.RefreshContainer();
             if (PullDirection is not null) ui.PullDirection = PullDirection.Value;
             if (Visualizer is not null) ui.Visualizer = Visualizer;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.RefreshContainer.StartChain(ui);
         }
 
@@ -20314,7 +20314,7 @@ namespace CSharpMarkup.WinUI // RevealListViewItemPresenter
         public static RevealListViewItemPresenter RevealListViewItemPresenter(UIObject Content)
         {
             var ui = new Xaml.Controls.RevealListViewItemPresenter();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.RevealListViewItemPresenter.StartChain(ui);
         }
 
@@ -20981,18 +20981,18 @@ namespace CSharpMarkup.WinUI // RowDefinition
         public static RowDefinition RowDefinition(Xaml.GridLength Height)
         {
             var ui = new Xaml.Controls.RowDefinition();
-            if (Height != null) ui.Height = Height;
+            ui.Height = Height;
             return CSharpMarkup.WinUI.RowDefinition.StartChain(ui);
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.RowDefinition"/></summary>
         /// <remarks>Remark: RowDefinition().Bind() binds to <see cref="Xaml.Controls.RowDefinition.HeightProperty"/></remarks>
-        public static RowDefinition RowDefinition(double? MaxHeight = default, double? MinHeight = default, Xaml.GridLength Height = default)
+        public static RowDefinition RowDefinition(double? MaxHeight = default, double? MinHeight = default, Xaml.GridLength? Height = default)
         {
             var ui = new Xaml.Controls.RowDefinition();
             if (MaxHeight is not null) ui.MaxHeight = MaxHeight.Value;
             if (MinHeight is not null) ui.MinHeight = MinHeight.Value;
-            if (Height != null) ui.Height = Height;
+            if (Height is not null) ui.Height = Height.Value;
             return CSharpMarkup.WinUI.RowDefinition.StartChain(ui);
         }
 
@@ -21066,7 +21066,7 @@ namespace CSharpMarkup.WinUI // ScrollContentPresenter
         public static ScrollContentPresenter ScrollContentPresenter(UIObject Content)
         {
             var ui = new Xaml.Controls.ScrollContentPresenter();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ScrollContentPresenter.StartChain(ui);
         }
 
@@ -21079,7 +21079,7 @@ namespace CSharpMarkup.WinUI // ScrollContentPresenter
             if (CanVerticallyScroll is not null) ui.CanVerticallyScroll = CanVerticallyScroll.Value;
             if (ScrollOwner is not null) ui.ScrollOwner = ScrollOwner;
             if (SizesContentToTemplatedParent is not null) ui.SizesContentToTemplatedParent = SizesContentToTemplatedParent.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ScrollContentPresenter.StartChain(ui);
         }
 
@@ -21156,7 +21156,7 @@ namespace CSharpMarkup.WinUI // ScrollView
         public static ScrollView ScrollView(Xaml.UIElement Content)
         {
             var ui = new Xaml.Controls.ScrollView();
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.ScrollView.StartChain(ui);
         }
 
@@ -21180,7 +21180,7 @@ namespace CSharpMarkup.WinUI // ScrollView
             if (VerticalScrollRailMode is not null) ui.VerticalScrollRailMode = VerticalScrollRailMode.Value;
             if (ZoomChainMode is not null) ui.ZoomChainMode = ZoomChainMode.Value;
             if (ZoomMode is not null) ui.ZoomMode = ZoomMode.Value;
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.ScrollView.StartChain(ui);
         }
 
@@ -21370,7 +21370,7 @@ namespace CSharpMarkup.WinUI // ScrollViewer
         public static ScrollViewer ScrollViewer(UIObject Content)
         {
             var ui = new Xaml.Controls.ScrollViewer();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ScrollViewer.StartChain(ui);
         }
 
@@ -21406,7 +21406,7 @@ namespace CSharpMarkup.WinUI // ScrollViewer
             if (VerticalSnapPointsType is not null) ui.VerticalSnapPointsType = VerticalSnapPointsType.Value;
             if (ZoomMode is not null) ui.ZoomMode = ZoomMode.Value;
             if (ZoomSnapPointsType is not null) ui.ZoomSnapPointsType = ZoomSnapPointsType.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ScrollViewer.StartChain(ui);
         }
 
@@ -21892,7 +21892,7 @@ namespace CSharpMarkup.WinUI // SemanticZoom
         public static SemanticZoom SemanticZoom(Xaml.Controls.ISemanticZoomInformation ZoomedInView)
         {
             var ui = new Xaml.Controls.SemanticZoom();
-            if (ZoomedInView != null) ui.ZoomedInView = ZoomedInView;
+            if (ZoomedInView is not null) ui.ZoomedInView = ZoomedInView;
             return CSharpMarkup.WinUI.SemanticZoom.StartChain(ui);
         }
 
@@ -21904,7 +21904,7 @@ namespace CSharpMarkup.WinUI // SemanticZoom
             if (IsZoomedInViewActive is not null) ui.IsZoomedInViewActive = IsZoomedInViewActive.Value;
             if (IsZoomOutButtonEnabled is not null) ui.IsZoomOutButtonEnabled = IsZoomOutButtonEnabled.Value;
             if (ZoomedOutView is not null) ui.ZoomedOutView = ZoomedOutView;
-            if (ZoomedInView != null) ui.ZoomedInView = ZoomedInView;
+            if (ZoomedInView is not null) ui.ZoomedInView = ZoomedInView;
             return CSharpMarkup.WinUI.SemanticZoom.StartChain(ui);
         }
 
@@ -22132,7 +22132,7 @@ namespace CSharpMarkup.WinUI // SplitButton
         public static SplitButton SplitButton(UIObject Content)
         {
             var ui = new Xaml.Controls.SplitButton();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.SplitButton.StartChain(ui);
         }
 
@@ -22144,7 +22144,7 @@ namespace CSharpMarkup.WinUI // SplitButton
             if (Command is not null) ui.Command = Command;
             if (CommandParameter is not null) ui.CommandParameter = CommandParameter;
             if (Flyout is not null) ui.Flyout = Flyout;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.SplitButton.StartChain(ui);
         }
 
@@ -22223,7 +22223,7 @@ namespace CSharpMarkup.WinUI // SplitView
         public static SplitView SplitView(Xaml.UIElement Content)
         {
             var ui = new Xaml.Controls.SplitView();
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.SplitView.StartChain(ui);
         }
 
@@ -22239,7 +22239,7 @@ namespace CSharpMarkup.WinUI // SplitView
             if (Pane is not null) ui.Pane = Pane;
             if (PaneBackground is not null) ui.PaneBackground = PaneBackground;
             if (PanePlacement is not null) ui.PanePlacement = PanePlacement.Value;
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.SplitView.StartChain(ui);
         }
 
@@ -22716,7 +22716,7 @@ namespace CSharpMarkup.WinUI // SwipeControl
         public static SwipeControl SwipeControl(UIObject Content)
         {
             var ui = new Xaml.Controls.SwipeControl();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.SwipeControl.StartChain(ui);
         }
 
@@ -22728,7 +22728,7 @@ namespace CSharpMarkup.WinUI // SwipeControl
             if (LeftItems is not null) ui.LeftItems = LeftItems;
             if (RightItems is not null) ui.RightItems = RightItems;
             if (TopItems is not null) ui.TopItems = TopItems;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.SwipeControl.StartChain(ui);
         }
 
@@ -22989,6 +22989,15 @@ namespace CSharpMarkup.WinUI // SymbolIcon
 {
     public static partial class Helpers
     {
+        /// <summary>Create a <see cref="Xaml.Controls.SymbolIcon"/></summary>
+        /// <remarks>Remark: SymbolIcon().Bind() binds to <see cref="Xaml.Controls.SymbolIcon.SymbolProperty"/></remarks>
+        public static SymbolIcon SymbolIcon(Xaml.Controls.Symbol? Symbol = default)
+        {
+            var ui = new Xaml.Controls.SymbolIcon();
+            if (Symbol is not null) ui.Symbol = Symbol.Value;
+            return CSharpMarkup.WinUI.SymbolIcon.StartChain(ui);
+        }
+
         /// <summary>Create a <see cref="Xaml.Controls.SymbolIcon"/></summary>
         /// <remarks>Remark: SymbolIcon().Bind() binds to <see cref="Xaml.Controls.SymbolIcon.SymbolProperty"/></remarks>
         public static SymbolIcon SymbolIcon()
@@ -23310,7 +23319,7 @@ namespace CSharpMarkup.WinUI // TabViewItem
         public static TabViewItem TabViewItem(UIObject Content)
         {
             var ui = new Xaml.Controls.TabViewItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.TabViewItem.StartChain(ui);
         }
 
@@ -23322,7 +23331,7 @@ namespace CSharpMarkup.WinUI // TabViewItem
             if (HeaderTemplate is not null) ui.HeaderTemplate = HeaderTemplate;
             if (IconSource is not null) ui.IconSource = IconSource;
             if (IsClosable is not null) ui.IsClosable = IsClosable.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.TabViewItem.StartChain(ui);
         }
 
@@ -23405,11 +23414,11 @@ namespace CSharpMarkup.WinUI // TabViewItemTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TabViewItemTemplateSettings"/></summary>
-        public static TabViewItemTemplateSettings TabViewItemTemplateSettings(Xaml.Controls.IconElement IconElement = default, Xaml.Media.Geometry TabGeometry = default)
+        public static TabViewItemTemplateSettings TabViewItemTemplateSettings(Xaml.Controls.IconElement IconElement = default, CSharpMarkup.WinUI.to.Geometry? TabGeometry = default)
         {
             var ui = new Xaml.Controls.TabViewItemTemplateSettings();
             if (IconElement is not null) ui.IconElement = IconElement;
-            if (TabGeometry is not null) ui.TabGeometry = TabGeometry;
+            if (TabGeometry is not null) ui.TabGeometry = TabGeometry.Value;
             return CSharpMarkup.WinUI.TabViewItemTemplateSettings.StartChain(ui);
         }
 
@@ -23455,15 +23464,15 @@ namespace CSharpMarkup.WinUI // TabViewItemTemplateSettings
         public static TView IconElement<TView>(this TView view, Xaml.Controls.IconElement value) where TView : TabViewItemTemplateSettings { view.UI.IconElement = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TabViewItemTemplateSettings.TabGeometry"/></summary>
-        public static TView TabGeometry<TView>(this TView view, Xaml.Media.Geometry value) where TView : TabViewItemTemplateSettings { view.UI.TabGeometry = value; return view; }
+        public static TView TabGeometry<TView>(this TView view, CSharpMarkup.WinUI.to.Geometry value) where TView : TabViewItemTemplateSettings { view.UI.TabGeometry = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabViewItemTemplateSettings.IconElement"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.IconElement> IconElement<TTarget>(this TTarget target) where TTarget : TabViewItemTemplateSettings
         => DependencyProperty<TTarget, Xaml.Controls.IconElement>.Get(target, Xaml.Controls.TabViewItemTemplateSettings.IconElementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabViewItemTemplateSettings.TabGeometry"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Geometry> TabGeometry<TTarget>(this TTarget target) where TTarget : TabViewItemTemplateSettings
-        => DependencyProperty<TTarget, Xaml.Media.Geometry>.Get(target, Xaml.Controls.TabViewItemTemplateSettings.TabGeometryProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry> TabGeometry<TTarget>(this TTarget target) where TTarget : TabViewItemTemplateSettings
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry>.Get(target, Xaml.Controls.TabViewItemTemplateSettings.TabGeometryProperty);
     }
 }
 
@@ -23475,7 +23484,7 @@ namespace CSharpMarkup.WinUI // TeachingTip
         public static TeachingTip TeachingTip(UIObject Content)
         {
             var ui = new Xaml.Controls.TeachingTip();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.TeachingTip.StartChain(ui);
         }
 
@@ -23503,7 +23512,7 @@ namespace CSharpMarkup.WinUI // TeachingTip
             if (TailVisibility is not null) ui.TailVisibility = TailVisibility.Value;
             if (Target is not null) ui.Target = Target;
             if (Title is not null) ui.Title = Title;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.TeachingTip.StartChain(ui);
         }
 
@@ -24470,7 +24479,7 @@ namespace CSharpMarkup.WinUI // TimePicker
         public static TimePicker TimePicker(UIObject Header)
         {
             var ui = new Xaml.Controls.TimePicker();
-            if (Header != null) ui.Header = Header.UI;
+            if (Header is not null) ui.Header = Header.UI;
             return CSharpMarkup.WinUI.TimePicker.StartChain(ui);
         }
 
@@ -24485,7 +24494,7 @@ namespace CSharpMarkup.WinUI // TimePicker
             if (MinuteIncrement is not null) ui.MinuteIncrement = MinuteIncrement.Value;
             if (SelectedTime is not null) ui.SelectedTime = SelectedTime.Value;
             if (Time is not null) ui.Time = Time.Value;
-            if (Header != null) ui.Header = Header.UI;
+            if (Header is not null) ui.Header = Header.UI;
             return CSharpMarkup.WinUI.TimePicker.StartChain(ui);
         }
 
@@ -24698,7 +24707,7 @@ namespace CSharpMarkup.WinUI // ToggleMenuFlyoutItem
         public static ToggleMenuFlyoutItem ToggleMenuFlyoutItem(string Text)
         {
             var ui = new Xaml.Controls.ToggleMenuFlyoutItem();
-            if (Text != null) ui.Text = Text;
+            if (Text is not null) ui.Text = Text;
             return CSharpMarkup.WinUI.ToggleMenuFlyoutItem.StartChain(ui);
         }
 
@@ -24708,7 +24717,7 @@ namespace CSharpMarkup.WinUI // ToggleMenuFlyoutItem
         {
             var ui = new Xaml.Controls.ToggleMenuFlyoutItem();
             if (IsChecked is not null) ui.IsChecked = IsChecked.Value;
-            if (Text != null) ui.Text = Text;
+            if (Text is not null) ui.Text = Text;
             return CSharpMarkup.WinUI.ToggleMenuFlyoutItem.StartChain(ui);
         }
 
@@ -24773,7 +24782,7 @@ namespace CSharpMarkup.WinUI // ToggleSplitButton
         public static ToggleSplitButton ToggleSplitButton(UIObject Content)
         {
             var ui = new Xaml.Controls.ToggleSplitButton();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ToggleSplitButton.StartChain(ui);
         }
 
@@ -24782,7 +24791,7 @@ namespace CSharpMarkup.WinUI // ToggleSplitButton
         {
             var ui = new Xaml.Controls.ToggleSplitButton();
             if (IsChecked is not null) ui.IsChecked = IsChecked.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ToggleSplitButton.StartChain(ui);
         }
 
@@ -24844,7 +24853,7 @@ namespace CSharpMarkup.WinUI // ToggleSwitch
         public static ToggleSwitch ToggleSwitch(UIObject Header)
         {
             var ui = new Xaml.Controls.ToggleSwitch();
-            if (Header != null) ui.Header = Header.UI;
+            if (Header is not null) ui.Header = Header.UI;
             return CSharpMarkup.WinUI.ToggleSwitch.StartChain(ui);
         }
 
@@ -24859,7 +24868,7 @@ namespace CSharpMarkup.WinUI // ToggleSwitch
             if (OffContentTemplate is not null) ui.OffContentTemplate = OffContentTemplate;
             if (OnContent is not null) ui.OnContent = OnContent;
             if (OnContentTemplate is not null) ui.OnContentTemplate = OnContentTemplate;
-            if (Header != null) ui.Header = Header.UI;
+            if (Header is not null) ui.Header = Header.UI;
             return CSharpMarkup.WinUI.ToggleSwitch.StartChain(ui);
         }
 
@@ -24963,7 +24972,7 @@ namespace CSharpMarkup.WinUI // ToolTip
         public static ToolTip ToolTip(UIObject Content)
         {
             var ui = new Xaml.Controls.ToolTip();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ToolTip.StartChain(ui);
         }
 
@@ -24974,10 +24983,10 @@ namespace CSharpMarkup.WinUI // ToolTip
             if (HorizontalOffset is not null) ui.HorizontalOffset = HorizontalOffset.Value;
             if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
             if (Placement is not null) ui.Placement = Placement.Value;
-            if (PlacementRect is not null) ui.PlacementRect = PlacementRect;
+            if (PlacementRect is not null) ui.PlacementRect = PlacementRect.Value;
             if (PlacementTarget is not null) ui.PlacementTarget = PlacementTarget;
             if (VerticalOffset is not null) ui.VerticalOffset = VerticalOffset.Value;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ToolTip.StartChain(ui);
         }
 
@@ -25266,7 +25275,7 @@ namespace CSharpMarkup.WinUI // TreeViewItem
         public static TreeViewItem TreeViewItem(UIObject Content)
         {
             var ui = new Xaml.Controls.TreeViewItem();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.TreeViewItem.StartChain(ui);
         }
 
@@ -25283,7 +25292,7 @@ namespace CSharpMarkup.WinUI // TreeViewItem
             if (HasUnrealizedChildren is not null) ui.HasUnrealizedChildren = HasUnrealizedChildren.Value;
             if (IsExpanded is not null) ui.IsExpanded = IsExpanded.Value;
             if (ItemsSource is not null) ui.ItemsSource = ItemsSource;
-            if (Content != null) ui.Content = Content.UI;
+            if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.TreeViewItem.StartChain(ui);
         }
 
@@ -25857,7 +25866,7 @@ namespace CSharpMarkup.WinUI // UserControl
         public static UserControl UserControl(Xaml.UIElement Content)
         {
             var ui = new Xaml.Controls.UserControl();
-            if (Content != null) ui.Content = Content;
+            if (Content is not null) ui.Content = Content;
             return CSharpMarkup.WinUI.UserControl.StartChain(ui);
         }
 
@@ -26054,7 +26063,7 @@ namespace CSharpMarkup.WinUI // Viewbox
         public static Viewbox Viewbox(Xaml.UIElement Child)
         {
             var ui = new Xaml.Controls.Viewbox();
-            if (Child != null) ui.Child = Child;
+            if (Child is not null) ui.Child = Child;
             return CSharpMarkup.WinUI.Viewbox.StartChain(ui);
         }
 
@@ -26064,7 +26073,7 @@ namespace CSharpMarkup.WinUI // Viewbox
             var ui = new Xaml.Controls.Viewbox();
             if (Stretch is not null) ui.Stretch = Stretch.Value;
             if (StretchDirection is not null) ui.StretchDirection = StretchDirection.Value;
-            if (Child != null) ui.Child = Child;
+            if (Child is not null) ui.Child = Child;
             return CSharpMarkup.WinUI.Viewbox.StartChain(ui);
         }
 
@@ -27406,7 +27415,7 @@ namespace CSharpMarkup.WinUI // InlineUIContainer
         public static InlineUIContainer InlineUIContainer(Xaml.UIElement Child)
         {
             var ui = new Xaml.Documents.InlineUIContainer();
-            if (Child != null) ui.Child = Child;
+            if (Child is not null) ui.Child = Child;
             return CSharpMarkup.WinUI.InlineUIContainer.StartChain(ui);
         }
 
@@ -27632,7 +27641,7 @@ namespace CSharpMarkup.WinUI // Run
         public static Run Run(string Text)
         {
             var ui = new Xaml.Documents.Run();
-            if (Text != null) ui.Text = Text;
+            if (Text is not null) ui.Text = Text;
             return CSharpMarkup.WinUI.Run.StartChain(ui);
         }
 
@@ -27641,7 +27650,7 @@ namespace CSharpMarkup.WinUI // Run
         {
             var ui = new Xaml.Documents.Run();
             if (FlowDirection is not null) ui.FlowDirection = FlowDirection.Value;
-            if (Text != null) ui.Text = Text;
+            if (Text is not null) ui.Text = Text;
             return CSharpMarkup.WinUI.Run.StartChain(ui);
         }
 
@@ -29040,6 +29049,14 @@ namespace CSharpMarkup.WinUI // StandardUICommand
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Input.StandardUICommand"/></summary>
+        public static StandardUICommand StandardUICommand(Xaml.Input.StandardUICommandKind? Kind = default)
+        {
+            var ui = new Xaml.Input.StandardUICommand();
+            if (Kind is not null) ui.Kind = Kind.Value;
+            return CSharpMarkup.WinUI.StandardUICommand.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Input.StandardUICommand"/></summary>
         public static StandardUICommand StandardUICommand()
         {
             var ui = new Xaml.Input.StandardUICommand();
@@ -29212,7 +29229,7 @@ namespace CSharpMarkup.WinUI // AcrylicBrush
             var ui = new Xaml.Media.AcrylicBrush();
             if (AlwaysUseFallback is not null) ui.AlwaysUseFallback = AlwaysUseFallback.Value;
             if (TintColor is not null) ui.TintColor = TintColor.Value;
-            if (TintLuminosityOpacity is not null) ui.TintLuminosityOpacity = TintLuminosityOpacity;
+            if (TintLuminosityOpacity is not null) ui.TintLuminosityOpacity = TintLuminosityOpacity.Value;
             if (TintOpacity is not null) ui.TintOpacity = TintOpacity.Value;
             if (TintTransitionDuration is not null) ui.TintTransitionDuration = TintTransitionDuration.Value;
             return CSharpMarkup.WinUI.AcrylicBrush.StartChain(ui);
@@ -29401,7 +29418,7 @@ namespace CSharpMarkup.WinUI // BeginStoryboard
         public static BeginStoryboard BeginStoryboard(Xaml.Media.Animation.Storyboard Storyboard)
         {
             var ui = new Xaml.Media.Animation.BeginStoryboard();
-            if (Storyboard != null) ui.Storyboard = Storyboard;
+            if (Storyboard is not null) ui.Storyboard = Storyboard;
             return CSharpMarkup.WinUI.BeginStoryboard.StartChain(ui);
         }
 
@@ -29567,11 +29584,11 @@ namespace CSharpMarkup.WinUI // ColorAnimation
             var ui = new Xaml.Media.Animation.ColorAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
-            if (By is not null) ui.By = By;
+            if (By is not null) ui.By = By.Value;
             if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
             if (EnableDependentAnimation is not null) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            if (From is not null) ui.From = From;
-            if (To is not null) ui.To = To;
+            if (From is not null) ui.From = From.Value;
+            if (To is not null) ui.To = To.Value;
             return CSharpMarkup.WinUI.ColorAnimation.StartChain(ui);
         }
 
@@ -30223,11 +30240,11 @@ namespace CSharpMarkup.WinUI // DoubleAnimation
             var ui = new Xaml.Media.Animation.DoubleAnimation();
             if (BeginTime is not null) ui.BeginTime = BeginTime.Value;
             if (Duration is not null) ui.Duration = Duration.Value;
-            if (By is not null) ui.By = By;
+            if (By is not null) ui.By = By.Value;
             if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
             if (EnableDependentAnimation is not null) ui.EnableDependentAnimation = EnableDependentAnimation.Value;
-            if (From is not null) ui.From = From;
-            if (To is not null) ui.To = To;
+            if (From is not null) ui.From = From.Value;
+            if (To is not null) ui.To = To.Value;
             return CSharpMarkup.WinUI.DoubleAnimation.StartChain(ui);
         }
 
@@ -31650,7 +31667,7 @@ namespace CSharpMarkup.WinUI // NavigationThemeTransition
         public static NavigationThemeTransition NavigationThemeTransition(Xaml.Media.Animation.NavigationTransitionInfo DefaultNavigationTransitionInfo)
         {
             var ui = new Xaml.Media.Animation.NavigationThemeTransition();
-            if (DefaultNavigationTransitionInfo != null) ui.DefaultNavigationTransitionInfo = DefaultNavigationTransitionInfo;
+            if (DefaultNavigationTransitionInfo is not null) ui.DefaultNavigationTransitionInfo = DefaultNavigationTransitionInfo;
             return CSharpMarkup.WinUI.NavigationThemeTransition.StartChain(ui);
         }
 
@@ -34251,20 +34268,26 @@ namespace CSharpMarkup.WinUI // GeometryGroup
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.GeometryGroup"/></summary>
-        public static GeometryGroup GeometryGroup(params Xaml.Media.Geometry[] Children)
+        public static GeometryGroup GeometryGroup(params CSharpMarkup.WinUI.to.Geometry?[] Children)
         {
             var ui = new Xaml.Media.GeometryGroup();
             for (int i = 0; i < Children.Length; i++)
             {
-                var child = Children[i];
-                if (child == null) continue;
+                var item = Children[i];
+                if (!item.HasValue) continue;
 
-                var subChildren = Spreader<Xaml.Media.Geometry>.ExtractChildren(child);
-                if (subChildren is not null)
-                    for (int j = 0; j < subChildren.Length; j++)
-                        ui.Children.Add(subChildren[j]);
-                else
-                    ui.Children.Add(child);
+                var child = item.Value;
+                if (child.Values.Value is not null)
+                {
+                    ui.Children.Add(child.Values.Value);
+                    continue;
+                }
+
+                if (child.Values.Array is not null)
+                {
+                    foreach (var subChild in child.Values.Array)
+                        ui.Children.Add(subChild);
+                }
             }
             return CSharpMarkup.WinUI.GeometryGroup.StartChain(ui);
         }
@@ -34374,16 +34397,7 @@ namespace CSharpMarkup.WinUI // GradientStop
         public static GradientStop GradientStop(Windows.UI.Color Color)
         {
             var ui = new Xaml.Media.GradientStop();
-            if (Color != null) ui.Color = Color;
-            return CSharpMarkup.WinUI.GradientStop.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Media.GradientStop"/></summary>
-        public static GradientStop GradientStop(double? Offset = default, Windows.UI.Color Color = default)
-        {
-            var ui = new Xaml.Media.GradientStop();
-            if (Offset is not null) ui.Offset = Offset.Value;
-            if (Color != null) ui.Color = Color;
+            ui.Color = Color;
             return CSharpMarkup.WinUI.GradientStop.StartChain(ui);
         }
 
@@ -34391,6 +34405,14 @@ namespace CSharpMarkup.WinUI // GradientStop
         public static GradientStop GradientStop()
         {
             var ui = new Xaml.Media.GradientStop();
+            return CSharpMarkup.WinUI.GradientStop.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Media.GradientStop"/></summary>
+        public static partial GradientStop GradientStop(Windows.UI.Color Color, double Offset)
+        {
+            var ui = new Xaml.Media.GradientStop();
+            ui.Color = Color; ui.Offset = Offset;
             return CSharpMarkup.WinUI.GradientStop.StartChain(ui);
         }
     }
@@ -35110,7 +35132,7 @@ namespace CSharpMarkup.WinUI // Matrix3DProjection
         public static Matrix3DProjection Matrix3DProjection(Xaml.Media.Media3D.Matrix3D ProjectionMatrix)
         {
             var ui = new Xaml.Media.Matrix3DProjection();
-            if (ProjectionMatrix != null) ui.ProjectionMatrix = ProjectionMatrix;
+            ui.ProjectionMatrix = ProjectionMatrix;
             return CSharpMarkup.WinUI.Matrix3DProjection.StartChain(ui);
         }
 
@@ -35852,14 +35874,27 @@ namespace CSharpMarkup.WinUI // PolyBezierSegment
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.PolyBezierSegment"/></summary>
-        public static PolyBezierSegment PolyBezierSegment(params Windows.Foundation.Point[][] Points)
+        public static PolyBezierSegment PolyBezierSegment(params CSharpMarkup.WinUI.to.Point?[] Points)
         {
             var ui = new Xaml.Media.PolyBezierSegment();
             for (int i = 0; i < Points.Length; i++)
-        {
-            for (int j = 0; j < Points[i].Length; j++)
-                ui.Points.Add(Points[i][j]);
-        }
+            {
+                var item = Points[i];
+                if (!item.HasValue) continue;
+
+                var child = item.Value;
+                if (child.Values.Value is not null)
+                {
+                    ui.Points.Add(child.Values.Value.Value);
+                    continue;
+                }
+
+                if (child.Values.Array is not null)
+                {
+                    foreach (var subChild in child.Values.Array)
+                        ui.Points.Add(subChild);
+                }
+            }
             return CSharpMarkup.WinUI.PolyBezierSegment.StartChain(ui);
         }
 
@@ -35912,14 +35947,27 @@ namespace CSharpMarkup.WinUI // PolyLineSegment
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.PolyLineSegment"/></summary>
-        public static PolyLineSegment PolyLineSegment(params Windows.Foundation.Point[][] Points)
+        public static PolyLineSegment PolyLineSegment(params CSharpMarkup.WinUI.to.Point?[] Points)
         {
             var ui = new Xaml.Media.PolyLineSegment();
             for (int i = 0; i < Points.Length; i++)
-        {
-            for (int j = 0; j < Points[i].Length; j++)
-                ui.Points.Add(Points[i][j]);
-        }
+            {
+                var item = Points[i];
+                if (!item.HasValue) continue;
+
+                var child = item.Value;
+                if (child.Values.Value is not null)
+                {
+                    ui.Points.Add(child.Values.Value.Value);
+                    continue;
+                }
+
+                if (child.Values.Array is not null)
+                {
+                    foreach (var subChild in child.Values.Array)
+                        ui.Points.Add(subChild);
+                }
+            }
             return CSharpMarkup.WinUI.PolyLineSegment.StartChain(ui);
         }
 
@@ -35972,14 +36020,27 @@ namespace CSharpMarkup.WinUI // PolyQuadraticBezierSegment
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.PolyQuadraticBezierSegment"/></summary>
-        public static PolyQuadraticBezierSegment PolyQuadraticBezierSegment(params Windows.Foundation.Point[][] Points)
+        public static PolyQuadraticBezierSegment PolyQuadraticBezierSegment(params CSharpMarkup.WinUI.to.Point?[] Points)
         {
             var ui = new Xaml.Media.PolyQuadraticBezierSegment();
             for (int i = 0; i < Points.Length; i++)
-        {
-            for (int j = 0; j < Points[i].Length; j++)
-                ui.Points.Add(Points[i][j]);
-        }
+            {
+                var item = Points[i];
+                if (!item.HasValue) continue;
+
+                var child = item.Value;
+                if (child.Values.Value is not null)
+                {
+                    ui.Points.Add(child.Values.Value.Value);
+                    continue;
+                }
+
+                if (child.Values.Array is not null)
+                {
+                    foreach (var subChild in child.Values.Array)
+                        ui.Points.Add(subChild);
+                }
+            }
             return CSharpMarkup.WinUI.PolyQuadraticBezierSegment.StartChain(ui);
         }
 
@@ -37291,10 +37352,10 @@ namespace CSharpMarkup.WinUI // Path
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Shapes.Path"/></summary>
-        public static Path Path(Xaml.Media.Geometry Data = default)
+        public static Path Path(CSharpMarkup.WinUI.to.Geometry? Data = default)
         {
             var ui = new Xaml.Shapes.Path();
-            if (Data is not null) ui.Data = Data;
+            if (Data is not null) ui.Data = Data.Value;
             return CSharpMarkup.WinUI.Path.StartChain(ui);
         }
 
@@ -37339,11 +37400,11 @@ namespace CSharpMarkup.WinUI // Path
     public static partial class PathExtensions
     {
         /// <summary>Set <see cref="Xaml.Shapes.Path.Data"/></summary>
-        public static TView Data<TView>(this TView view, Xaml.Media.Geometry value) where TView : Path { view.UI.Data = value; return view; }
+        public static TView Data<TView>(this TView view, CSharpMarkup.WinUI.to.Geometry value) where TView : Path { view.UI.Data = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Shapes.Path.Data"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Media.Geometry> Data<TTarget>(this TTarget target) where TTarget : Path
-        => DependencyProperty<TTarget, Xaml.Media.Geometry>.Get(target, Xaml.Shapes.Path.DataProperty);
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry> Data<TTarget>(this TTarget target) where TTarget : Path
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry>.Get(target, Xaml.Shapes.Path.DataProperty);
     }
 }
 
@@ -38252,7 +38313,7 @@ namespace CSharpMarkup.WinUI // VisualState
         public static VisualState VisualState(Xaml.Media.Animation.Storyboard Storyboard)
         {
             var ui = new Xaml.VisualState();
-            if (Storyboard != null) ui.Storyboard = Storyboard;
+            if (Storyboard is not null) ui.Storyboard = Storyboard;
             return CSharpMarkup.WinUI.VisualState.StartChain(ui);
         }
 
@@ -38413,7 +38474,7 @@ namespace CSharpMarkup.WinUI // VisualTransition
         public static VisualTransition VisualTransition(Xaml.Media.Animation.Storyboard Storyboard)
         {
             var ui = new Xaml.VisualTransition();
-            if (Storyboard != null) ui.Storyboard = Storyboard;
+            if (Storyboard is not null) ui.Storyboard = Storyboard;
             return CSharpMarkup.WinUI.VisualTransition.StartChain(ui);
         }
 
@@ -38425,7 +38486,7 @@ namespace CSharpMarkup.WinUI // VisualTransition
             if (GeneratedDuration is not null) ui.GeneratedDuration = GeneratedDuration.Value;
             if (GeneratedEasingFunction is not null) ui.GeneratedEasingFunction = GeneratedEasingFunction;
             if (To is not null) ui.To = To;
-            if (Storyboard != null) ui.Storyboard = Storyboard;
+            if (Storyboard is not null) ui.Storyboard = Storyboard;
             return CSharpMarkup.WinUI.VisualTransition.StartChain(ui);
         }
 
@@ -38478,6 +38539,14 @@ namespace CSharpMarkup.WinUI // VisualTransition
 
         /// <summary>Set <see cref="Xaml.VisualTransition.To"/></summary>
         public static TView To<TView>(this TView view, string value) where TView : VisualTransition { view.UI.To = value; return view; }
+    }
+}
+
+namespace CSharpMarkup.WinUI.to // Type convertors
+{
+    partial struct Geometry
+    {
+        public static implicit operator Geometry(CSharpMarkup.WinUI.Geometry value) => new(value.UI);
     }
 }
 

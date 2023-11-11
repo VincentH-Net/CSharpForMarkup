@@ -40,7 +40,7 @@
 	</PropertyGroup>
 		
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-windows10.0.18362.0;net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>
+		<TargetFrameworks>net7.0-windows10.0.19041;net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>
 		<RootNamespace>CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit</RootNamespace>
 	</PropertyGroup>
 
@@ -90,10 +90,6 @@
 	    <OutputItemType>Analyzer</OutputItemType>
 	    <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
 	  </ProjectReference>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Folder Include="Generated\SourceGenerators\" />
 	</ItemGroup>
 
 	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />

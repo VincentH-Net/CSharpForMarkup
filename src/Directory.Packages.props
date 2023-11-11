@@ -4,15 +4,13 @@
 	<PackageVersion Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" />
 	<PackageVersion Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" Version="2.0.0-rc1.2" />
 	<PackageVersion Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0-rc1.2" />
-	<PackageVersion Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.4" />
-    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.7.0" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1" />
-    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" />
+    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
     <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.4.231008000" />
-    <PackageVersion Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="2.5.11" />
-    <PackageVersion Include="Uno.Extensions.Navigation.WinUI" Version="2.5.11" />
-    <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="2.5.11" />
-    <PackageVersion Include="Uno.Toolkit.WinUI" Version="4.2.22" />
-    <PackageVersion Include="Uno.WinUI" Version="4.10.26" />
+    <PackageVersion Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="3.0.11" />
+    <PackageVersion Include="Uno.Extensions.Navigation.WinUI" Version="3.0.11" />
+    <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="3.0.11" />
+    <PackageVersion Include="Uno.Toolkit.WinUI" Version="5.0.17" />
+    <PackageVersion Include="Uno.WinUI" Version="5.0.41" />
   </ItemGroup>
 </Project>

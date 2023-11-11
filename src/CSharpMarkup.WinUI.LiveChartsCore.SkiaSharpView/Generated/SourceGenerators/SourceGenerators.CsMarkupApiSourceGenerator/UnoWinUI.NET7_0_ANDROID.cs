@@ -45,7 +45,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
             if (LegendBackgroundPaint is not null) ui.LegendBackgroundPaint = LegendBackgroundPaint;
             if (LegendPosition is not null) ui.LegendPosition = LegendPosition.Value;
             if (LegendTextPaint is not null) ui.LegendTextPaint = LegendTextPaint;
-            if (LegendTextSize is not null) ui.LegendTextSize = LegendTextSize;
+            if (LegendTextSize is not null) ui.LegendTextSize = LegendTextSize.Value;
             if (PointerMoveCommand is not null) ui.PointerMoveCommand = PointerMoveCommand;
             if (PointerPressedCommand is not null) ui.PointerPressedCommand = PointerPressedCommand;
             if (PointerReleasedCommand is not null) ui.PointerReleasedCommand = PointerReleasedCommand;
@@ -58,7 +58,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
             if (TooltipFindingStrategy is not null) ui.TooltipFindingStrategy = TooltipFindingStrategy.Value;
             if (TooltipPosition is not null) ui.TooltipPosition = TooltipPosition.Value;
             if (TooltipTextPaint is not null) ui.TooltipTextPaint = TooltipTextPaint;
-            if (TooltipTextSize is not null) ui.TooltipTextSize = TooltipTextSize;
+            if (TooltipTextSize is not null) ui.TooltipTextSize = TooltipTextSize.Value;
             if (UpdaterThrottler is not null) ui.UpdaterThrottler = UpdaterThrottler.Value;
             if (UpdateStartedCommand is not null) ui.UpdateStartedCommand = UpdateStartedCommand;
             if (VisualElements is not null) ui.VisualElements = VisualElements;
@@ -573,9 +573,9 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
             if (LegendBackgroundPaint is not null) ui.LegendBackgroundPaint = LegendBackgroundPaint;
             if (LegendPosition is not null) ui.LegendPosition = LegendPosition.Value;
             if (LegendTextPaint is not null) ui.LegendTextPaint = LegendTextPaint;
-            if (LegendTextSize is not null) ui.LegendTextSize = LegendTextSize;
+            if (LegendTextSize is not null) ui.LegendTextSize = LegendTextSize.Value;
             if (MaxAngle is not null) ui.MaxAngle = MaxAngle.Value;
-            if (MaxValue is not null) ui.MaxValue = MaxValue;
+            if (MaxValue is not null) ui.MaxValue = MaxValue.Value;
             if (MinValue is not null) ui.MinValue = MinValue.Value;
             if (PointerMoveCommand is not null) ui.PointerMoveCommand = PointerMoveCommand;
             if (PointerPressedCommand is not null) ui.PointerPressedCommand = PointerPressedCommand;
@@ -587,8 +587,8 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
             if (TooltipBackgroundPaint is not null) ui.TooltipBackgroundPaint = TooltipBackgroundPaint;
             if (TooltipPosition is not null) ui.TooltipPosition = TooltipPosition.Value;
             if (TooltipTextPaint is not null) ui.TooltipTextPaint = TooltipTextPaint;
-            if (TooltipTextSize is not null) ui.TooltipTextSize = TooltipTextSize;
-            if (Total is not null) ui.Total = Total;
+            if (TooltipTextSize is not null) ui.TooltipTextSize = TooltipTextSize.Value;
+            if (Total is not null) ui.Total = Total.Value;
             if (UpdaterThrottler is not null) ui.UpdaterThrottler = UpdaterThrottler.Value;
             if (UpdateStartedCommand is not null) ui.UpdateStartedCommand = UpdateStartedCommand;
             if (VisualElements is not null) ui.VisualElements = VisualElements;
@@ -880,7 +880,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
             if (LegendBackgroundPaint is not null) ui.LegendBackgroundPaint = LegendBackgroundPaint;
             if (LegendPosition is not null) ui.LegendPosition = LegendPosition.Value;
             if (LegendTextPaint is not null) ui.LegendTextPaint = LegendTextPaint;
-            if (LegendTextSize is not null) ui.LegendTextSize = LegendTextSize;
+            if (LegendTextSize is not null) ui.LegendTextSize = LegendTextSize.Value;
             if (PointerMoveCommand is not null) ui.PointerMoveCommand = PointerMoveCommand;
             if (PointerPressedCommand is not null) ui.PointerPressedCommand = PointerPressedCommand;
             if (PointerReleasedCommand is not null) ui.PointerReleasedCommand = PointerReleasedCommand;
@@ -892,7 +892,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
             if (TooltipBackgroundPaint is not null) ui.TooltipBackgroundPaint = TooltipBackgroundPaint;
             if (TooltipPosition is not null) ui.TooltipPosition = TooltipPosition.Value;
             if (TooltipTextPaint is not null) ui.TooltipTextPaint = TooltipTextPaint;
-            if (TooltipTextSize is not null) ui.TooltipTextSize = TooltipTextSize;
+            if (TooltipTextSize is not null) ui.TooltipTextSize = TooltipTextSize.Value;
             if (TotalAngle is not null) ui.TotalAngle = TotalAngle.Value;
             if (UpdaterThrottler is not null) ui.UpdaterThrottler = UpdaterThrottler.Value;
             if (UpdateStartedCommand is not null) ui.UpdateStartedCommand = UpdateStartedCommand;
