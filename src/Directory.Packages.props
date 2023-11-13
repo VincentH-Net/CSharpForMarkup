@@ -2,8 +2,8 @@
 <Project ToolsVersion="15.0">
   <ItemGroup>
 	<PackageVersion Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" />
-	<PackageVersion Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" Version="2.0.0-rc1.2" />
-	<PackageVersion Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0-rc1.2" />
+	<PackageVersion Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" Version="2.0.0-rc2" />
+	<PackageVersion Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0-rc2" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="1.1.1" />
     <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
     <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.4.231008000" />
