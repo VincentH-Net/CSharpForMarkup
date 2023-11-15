@@ -1,7 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
 	<PropertyGroup>
 		<Configurations>Debug;Release;Generate</Configurations>
-		<IsUno>true</IsUno>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -38,39 +37,19 @@
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 	</PropertyGroup>
-		
+
 	<PropertyGroup>
-		<!--<TargetFrameworks>net6.0-windows10.0.18362.0;net6.0-android31.0;net6.0-ios;net6.0-maccatalyst;net6.0-macos;net7.0;net7.0-android33.0;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>-->
-		<TargetFrameworks>net7.0-windows10.0.19041;net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst;net7.0-macos</TargetFrameworks>
 		<RootNamespace>CSharpMarkup.WinUI</RootNamespace>
+		<TargetFrameworks>$(CSharpMarkupWinUITargetFrameworks)</TargetFrameworks>
 	</PropertyGroup>
-
-	<PropertyGroup Condition="$(TargetFramework.Contains('windows10.'))">
-		<IsUno>false</IsUno>
-		
-		<DefineConstants>$(DefineConstants);WINUI</DefineConstants>
-		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+	
+	<PropertyGroup Condition="$(IsUno)==false">
 		<UseWinUI>true</UseWinUI>
-		<WindowsAppSDKWinUI>true</WindowsAppSDKWinUI> <!-- Workaround for https://github.com/unoplatform/uno/discussions/13569 -->
+
+		<!-- Workaround for PRI resource build errors and dotnet build support, from https://github.com/dotnet/maui/issues/5886#issuecomment-1123106200 -->
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<GenerateLibraryLayout>true</GenerateLibraryLayout>
 	</PropertyGroup>
-
-	<PropertyGroup Condition="$(IsUno)">
-		<DefineConstants>$(DefineConstants);HAS_UNO</DefineConstants>
-	</PropertyGroup>
-
-	<PropertyGroup Condition=" '$(Configuration)' == 'Generate' ">
-		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
-	</PropertyGroup>
-
-	<ItemGroup Condition=" '$(Configuration)' == 'Generate' ">
-		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/*/**/*.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Compile Remove="Generated/Uno.*/**/*.cs" />
-	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)==false">
 		<PackageReference Include="Microsoft.WindowsAppSDK" ExcludeAssets="build;analyzers;buildTransitive" />
@@ -90,6 +69,6 @@
 	    <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
 	  </ProjectReference>
 	</ItemGroup>
-	
+
 	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
 </Project>

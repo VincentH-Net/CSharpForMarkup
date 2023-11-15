@@ -20,4 +20,10 @@
 	<ItemGroup Condition="'$(UpdateReadmeOnBuild)' == 'true'">
 		<None Include="$(UpdatedReadme)" Pack="true" PackagePath="\" />
 	</ItemGroup>
+	<ItemGroup Condition=" '$(Configuration)' == 'Generate' ">
+		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/*/**/*.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Generated/Uno.**/**/*.cs" />
+	</ItemGroup>
 </Project>

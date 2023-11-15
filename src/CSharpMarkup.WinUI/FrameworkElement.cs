@@ -72,12 +72,12 @@ namespace CSharpMarkup.WinUI
         public static Xaml.VisualTransition[] VisualTransitions(params Xaml.VisualTransition[] transitions) => transitions;
 #endif
 
-#if NET7_0_ANDROID
+#if __ANDROID__
         public static FrameworkElement Native(Android.Views.View view) => FrameworkElementFromNative.StartChain(Microsoft.UI.Xaml.Media.VisualTreeHelper.AdaptNative(view));
 #endif
     }
 
-#if NET7_0_ANDROID
+#if __ANDROID__
     internal class FrameworkElementFromNative : FrameworkElement
     {
         static FrameworkElementFromNative instance;

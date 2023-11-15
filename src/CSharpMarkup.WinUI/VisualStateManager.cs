@@ -1,4 +1,4 @@
-﻿#if !HAS_UNO
+﻿#if WINUI
 using System;
 using System.Collections.Generic;
 using System.Runtime.Versioning;

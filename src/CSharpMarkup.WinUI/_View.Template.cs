@@ -319,7 +319,7 @@ namespace _MarkupNamespace_
     // Classes to get template compiling, not part of template
     public partial class _PropertyTarget_ : 
         _ViewTypeName_
-#if !WINUI
+#if HAS_UNO
         , AttachedPropertyTargetType 
 #endif
     { }

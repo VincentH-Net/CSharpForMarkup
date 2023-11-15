@@ -11,11 +11,11 @@ using _Length = CSharpMarkup.WinUI.ConvertedGridLength;
 using _Length = Microsoft.UI.Xaml.GridLength;
 #endif
 
-#if NET7_0_ANDROID
+#if __ANDROID__
 using _BaseMarkupViewType = CSharpMarkup.WinUI.UIElement;
-#elif NET7_0_IOS || NET7_0_MACCATALYST
+#elif __IOS__ || __MACCATALYST__
 using _BaseMarkupViewType = CSharpMarkup.WinUI.BindableUIView;
-#elif NET7_0_MACOS
+#elif __MACOS__
 using _BaseMarkupViewType = CSharpMarkup.WinUI.BindableNSView;
 #endif
 
@@ -73,19 +73,11 @@ namespace CSharpMarkup.WinUI
 
         public struct ColumnWidths { internal _Length[] Lengths; }
 
-#if WINDOWS_UWP
-        public static GridLength Auto => new GridLength { GridUnitType = GridUnitType.Auto };
-
-        public static GridLength Star = new GridLength { Value = 1, GridUnitType = GridUnitType.Star };
-
-        public static GridLength Stars(double value) => new GridLength { Value = value, GridUnitType = GridUnitType.Star };
-#else
         public static GridLength Auto => GridLength.Auto;
 
         public static GridLength Star = new GridLength(1, GridUnitType.Star);
 
         public static GridLength Stars(double value) => new GridLength(value, GridUnitType.Star);
-#endif
 
         public static int All<TEnum>() where TEnum : Enum
         {
@@ -118,17 +110,13 @@ namespace CSharpMarkup.WinUI
 
         public static implicit operator ConvertedGridLength(GridLength gridLength) => new ConvertedGridLength(gridLength);
         public static implicit operator ConvertedGridLength(double pixels) => new ConvertedGridLength(
-#if WINDOWS_UWP
-        new GridLength { Value = pixels, GridUnitType = GridUnitType.Pixel }
-#else
         new GridLength(pixels)
-#endif
         );
         public static implicit operator GridLength(ConvertedGridLength convertedGridLength) => convertedGridLength.length;
     }
 #endif
 
-#if NET7_0_ANDROID || NET7_0_IOS || NET7_0_MACCATALYST || NET7_0_MACOS
+#if __ANDROID__ || __IOS__ || __MACCATALYST__ || __MACOS__
     // In Android, IOS and MACCATALYST, UNO targets these API's at Android View / UIKit UIView / NSView. Since - unlike UNO views - markup views do not derive from native views,
     // we manually add overloads here targeting the base markup view type. The generated Android/iOS targeting API's are named with suffix 'N'
     // - e.g. Grid_RowN() - because C# does not support overloading generics on "where" constraints

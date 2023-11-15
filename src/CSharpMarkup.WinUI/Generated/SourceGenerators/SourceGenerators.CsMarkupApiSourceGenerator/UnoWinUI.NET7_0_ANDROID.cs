@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET7_0_ANDROID && HAS_UNO && !WINDOWS_UWP
+#if NET7_0_ANDROID && __ANDROID__
 
 using System;
 using System.Collections.Generic;

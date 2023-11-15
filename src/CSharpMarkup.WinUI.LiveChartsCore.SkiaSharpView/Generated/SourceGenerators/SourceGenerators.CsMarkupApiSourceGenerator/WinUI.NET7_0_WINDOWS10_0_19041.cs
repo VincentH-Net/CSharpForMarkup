@@ -31,7 +31,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         }
 
         /// <summary>Create a <see cref="LiveChartsSkiaWinUI.CartesianChart"/></summary>
-        public static CartesianChart CartesianChart(CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand? ChartPointPointerDownCommand = default, ICommand? DataPointerDownCommand = default, LiveCharts.Measure.Margin? DrawMargin = default, LiveCharts.DrawMarginFrame<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? DrawMarginFrame = default, Func<float, float> EasingFunction = default, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Legend = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendTextPaint = default, double? LegendTextSize = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.Section<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> Sections = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Tooltip = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipFindingStrategy? TooltipFindingStrategy = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipTextPaint = default, double? TooltipTextSize = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, IEnumerable<LiveCharts.Kernel.Sketches.ICartesianAxis> XAxes = default, IEnumerable<LiveCharts.Kernel.Sketches.ICartesianAxis> YAxes = default, double? ZoomingSpeed = default, LiveCharts.Measure.ZoomAndPanMode? ZoomMode = default, Xaml.UIElement Content = default)
+        public static CartesianChart CartesianChart(CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand ChartPointPointerDownCommand = default, ICommand DataPointerDownCommand = default, LiveCharts.Measure.Margin DrawMargin = default, LiveCharts.DrawMarginFrame<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? DrawMarginFrame = default, Func<float, float> EasingFunction = default, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Legend = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendTextPaint = default, double? LegendTextSize = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.Section<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> Sections = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Tooltip = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipFindingStrategy? TooltipFindingStrategy = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipTextPaint = default, double? TooltipTextSize = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, IEnumerable<LiveCharts.Kernel.Sketches.ICartesianAxis> XAxes = default, IEnumerable<LiveCharts.Kernel.Sketches.ICartesianAxis> YAxes = default, double? ZoomingSpeed = default, LiveCharts.Measure.ZoomAndPanMode? ZoomMode = default, Xaml.UIElement Content = default)
         {
             var ui = new LiveChartsSkiaWinUI.CartesianChart();
             if (AnimationsSpeed is not null) ui.AnimationsSpeed = AnimationsSpeed.Value;
@@ -118,13 +118,13 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         public static TView AutoUpdateEnabled<TView>(this TView view, bool value) where TView : CartesianChart { view.UI.AutoUpdateEnabled = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.ChartPointPointerDownCommand"/></summary>
-        public static TView ChartPointPointerDownCommand<TView>(this TView view, ICommand? value) where TView : CartesianChart { view.UI.ChartPointPointerDownCommand = value; return view; }
+        public static TView ChartPointPointerDownCommand<TView>(this TView view, ICommand value) where TView : CartesianChart { view.UI.ChartPointPointerDownCommand = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.DataPointerDownCommand"/></summary>
-        public static TView DataPointerDownCommand<TView>(this TView view, ICommand? value) where TView : CartesianChart { view.UI.DataPointerDownCommand = value; return view; }
+        public static TView DataPointerDownCommand<TView>(this TView view, ICommand value) where TView : CartesianChart { view.UI.DataPointerDownCommand = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.DrawMargin"/></summary>
-        public static TView DrawMargin<TView>(this TView view, LiveCharts.Measure.Margin? value) where TView : CartesianChart { view.UI.DrawMargin = value; return view; }
+        public static TView DrawMargin<TView>(this TView view, LiveCharts.Measure.Margin value) where TView : CartesianChart { view.UI.DrawMargin = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.DrawMarginFrame"/></summary>
         public static TView DrawMarginFrame<TView>(this TView view, LiveCharts.DrawMarginFrame<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : CartesianChart { view.UI.DrawMarginFrame = value; return view; }
@@ -215,20 +215,20 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, LiveChartsSkiaWinUI.CartesianChart.AnimationsSpeedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.ChartPointPointerDownCommand"/></summary>
-        public static DependencyProperty<TTarget, ICommand?> ChartPointPointerDownCommand<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.ChartPointPointerDownCommandProperty);
+        public static DependencyProperty<TTarget, ICommand> ChartPointPointerDownCommand<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, ICommand>.Get(target, LiveChartsSkiaWinUI.CartesianChart.ChartPointPointerDownCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.DataPointerDownCommand"/></summary>
-        public static DependencyProperty<TTarget, ICommand?> DataPointerDownCommand<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.DataPointerDownCommandProperty);
+        public static DependencyProperty<TTarget, ICommand> DataPointerDownCommand<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, ICommand>.Get(target, LiveChartsSkiaWinUI.CartesianChart.DataPointerDownCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.DrawMarginFrame"/></summary>
         public static DependencyProperty<TTarget, LiveCharts.DrawMarginFrame<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> DrawMarginFrame<TTarget>(this TTarget target) where TTarget : CartesianChart
         => DependencyProperty<TTarget, LiveCharts.DrawMarginFrame<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.DrawMarginFrameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.DrawMargin"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Measure.Margin?> DrawMargin<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, LiveCharts.Measure.Margin?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.DrawMarginProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Measure.Margin> DrawMargin<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, LiveCharts.Measure.Margin>.Get(target, LiveChartsSkiaWinUI.CartesianChart.DrawMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.EasingFunction"/></summary>
         public static DependencyProperty<TTarget, Func<float, float>> EasingFunction<TTarget>(this TTarget target) where TTarget : CartesianChart
@@ -537,7 +537,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         }
 
         /// <summary>Create a <see cref="LiveChartsSkiaWinUI.PieChart"/></summary>
-        public static PieChart PieChart(CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand? ChartPointPointerDownCommand = default, ICommand? DataPointerDownCommand = default, LiveCharts.Measure.Margin? DrawMargin = default, Func<float, float> EasingFunction = default, double? InitialRotation = default, bool? IsClockwise = default, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Legend = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendTextPaint = default, double? LegendTextSize = default, double? MaxAngle = default, double? MaxValue = default, double? MinValue = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Tooltip = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipTextPaint = default, double? TooltipTextSize = default, double? Total = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, Xaml.UIElement Content = default)
+        public static PieChart PieChart(CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand ChartPointPointerDownCommand = default, ICommand DataPointerDownCommand = default, LiveCharts.Measure.Margin DrawMargin = default, Func<float, float> EasingFunction = default, double? InitialRotation = default, bool? IsClockwise = default, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Legend = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendTextPaint = default, double? LegendTextSize = default, double? MaxAngle = default, double? MaxValue = default, double? MinValue = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Tooltip = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipTextPaint = default, double? TooltipTextSize = default, double? Total = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, Xaml.UIElement Content = default)
         {
             var ui = new LiveChartsSkiaWinUI.PieChart();
             if (AnimationsSpeed is not null) ui.AnimationsSpeed = AnimationsSpeed.Value;
@@ -623,13 +623,13 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         public static TView AutoUpdateEnabled<TView>(this TView view, bool value) where TView : PieChart { view.UI.AutoUpdateEnabled = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.ChartPointPointerDownCommand"/></summary>
-        public static TView ChartPointPointerDownCommand<TView>(this TView view, ICommand? value) where TView : PieChart { view.UI.ChartPointPointerDownCommand = value; return view; }
+        public static TView ChartPointPointerDownCommand<TView>(this TView view, ICommand value) where TView : PieChart { view.UI.ChartPointPointerDownCommand = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.DataPointerDownCommand"/></summary>
-        public static TView DataPointerDownCommand<TView>(this TView view, ICommand? value) where TView : PieChart { view.UI.DataPointerDownCommand = value; return view; }
+        public static TView DataPointerDownCommand<TView>(this TView view, ICommand value) where TView : PieChart { view.UI.DataPointerDownCommand = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.DrawMargin"/></summary>
-        public static TView DrawMargin<TView>(this TView view, LiveCharts.Measure.Margin? value) where TView : PieChart { view.UI.DrawMargin = value; return view; }
+        public static TView DrawMargin<TView>(this TView view, LiveCharts.Measure.Margin value) where TView : PieChart { view.UI.DrawMargin = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.EasingFunction"/></summary>
         public static TView EasingFunction<TView>(this TView view, Func<float, float> value) where TView : PieChart { view.UI.EasingFunction = value; return view; }
@@ -717,16 +717,16 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, LiveChartsSkiaWinUI.PieChart.AnimationsSpeedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.ChartPointPointerDownCommand"/></summary>
-        public static DependencyProperty<TTarget, ICommand?> ChartPointPointerDownCommand<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.PieChart.ChartPointPointerDownCommandProperty);
+        public static DependencyProperty<TTarget, ICommand> ChartPointPointerDownCommand<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, ICommand>.Get(target, LiveChartsSkiaWinUI.PieChart.ChartPointPointerDownCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.DataPointerDownCommand"/></summary>
-        public static DependencyProperty<TTarget, ICommand?> DataPointerDownCommand<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.PieChart.DataPointerDownCommandProperty);
+        public static DependencyProperty<TTarget, ICommand> DataPointerDownCommand<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, ICommand>.Get(target, LiveChartsSkiaWinUI.PieChart.DataPointerDownCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.DrawMargin"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Measure.Margin?> DrawMargin<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, LiveCharts.Measure.Margin?>.Get(target, LiveChartsSkiaWinUI.PieChart.DrawMarginProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Measure.Margin> DrawMargin<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, LiveCharts.Measure.Margin>.Get(target, LiveChartsSkiaWinUI.PieChart.DrawMarginProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.EasingFunction"/></summary>
         public static DependencyProperty<TTarget, Func<float, float>> EasingFunction<TTarget>(this TTarget target) where TTarget : PieChart
@@ -835,7 +835,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         }
 
         /// <summary>Create a <see cref="LiveChartsSkiaWinUI.PolarChart"/></summary>
-        public static PolarChart PolarChart(IEnumerable<LiveCharts.Kernel.Sketches.IPolarAxis> AngleAxes = default, CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand? ChartPointPointerDownCommand = default, ICommand? DataPointerDownCommand = default, LiveCharts.Measure.Margin? DrawMargin = default, Func<float, float> EasingFunction = default, bool? FitToBounds = default, double? InitialRotation = default, double? InnerRadius = default, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Legend = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendTextPaint = default, double? LegendTextSize = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.Kernel.Sketches.IPolarAxis> RadiusAxes = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Tooltip = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipTextPaint = default, double? TooltipTextSize = default, double? TotalAngle = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, Xaml.UIElement Content = default)
+        public static PolarChart PolarChart(IEnumerable<LiveCharts.Kernel.Sketches.IPolarAxis> AngleAxes = default, CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand ChartPointPointerDownCommand = default, ICommand DataPointerDownCommand = default, LiveCharts.Measure.Margin? DrawMargin = default, Func<float, float> EasingFunction = default, bool? FitToBounds = default, double? InitialRotation = default, double? InnerRadius = default, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Legend = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendTextPaint = default, double? LegendTextSize = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.Kernel.Sketches.IPolarAxis> RadiusAxes = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Tooltip = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipTextPaint = default, double? TooltipTextSize = default, double? TotalAngle = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, Xaml.UIElement Content = default)
         {
             var ui = new LiveChartsSkiaWinUI.PolarChart();
             if (AngleAxes is not null) ui.AngleAxes = AngleAxes;
@@ -924,10 +924,10 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         public static TView AutoUpdateEnabled<TView>(this TView view, bool value) where TView : PolarChart { view.UI.AutoUpdateEnabled = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.ChartPointPointerDownCommand"/></summary>
-        public static TView ChartPointPointerDownCommand<TView>(this TView view, ICommand? value) where TView : PolarChart { view.UI.ChartPointPointerDownCommand = value; return view; }
+        public static TView ChartPointPointerDownCommand<TView>(this TView view, ICommand value) where TView : PolarChart { view.UI.ChartPointPointerDownCommand = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.DataPointerDownCommand"/></summary>
-        public static TView DataPointerDownCommand<TView>(this TView view, ICommand? value) where TView : PolarChart { view.UI.DataPointerDownCommand = value; return view; }
+        public static TView DataPointerDownCommand<TView>(this TView view, ICommand value) where TView : PolarChart { view.UI.DataPointerDownCommand = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.DrawMargin"/></summary>
         public static TView DrawMargin<TView>(this TView view, LiveCharts.Measure.Margin? value) where TView : PolarChart { view.UI.DrawMargin = value; return view; }
@@ -1019,12 +1019,12 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, LiveChartsSkiaWinUI.PolarChart.AnimationsSpeedProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.ChartPointPointerDownCommand"/></summary>
-        public static DependencyProperty<TTarget, ICommand?> ChartPointPointerDownCommand<TTarget>(this TTarget target) where TTarget : PolarChart
-        => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.PolarChart.ChartPointPointerDownCommandProperty);
+        public static DependencyProperty<TTarget, ICommand> ChartPointPointerDownCommand<TTarget>(this TTarget target) where TTarget : PolarChart
+        => DependencyProperty<TTarget, ICommand>.Get(target, LiveChartsSkiaWinUI.PolarChart.ChartPointPointerDownCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.DataPointerDownCommand"/></summary>
-        public static DependencyProperty<TTarget, ICommand?> DataPointerDownCommand<TTarget>(this TTarget target) where TTarget : PolarChart
-        => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.PolarChart.DataPointerDownCommandProperty);
+        public static DependencyProperty<TTarget, ICommand> DataPointerDownCommand<TTarget>(this TTarget target) where TTarget : PolarChart
+        => DependencyProperty<TTarget, ICommand>.Get(target, LiveChartsSkiaWinUI.PolarChart.DataPointerDownCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.EasingFunction"/></summary>
         public static DependencyProperty<TTarget, Func<float, float>> EasingFunction<TTarget>(this TTarget target) where TTarget : PolarChart

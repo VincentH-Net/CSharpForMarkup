@@ -38,9 +38,7 @@ namespace CompileTests
             CheckBox("Check Me")
                .Bind(vm.IsOk),
 
-#if !WINUI // TODO: 2022 find out why this gives a compile error in Windows App SDK
             FrameworkElement(Background: SolidColorBrush(Blue)),
-#endif
 
             Button(
                 HStack(

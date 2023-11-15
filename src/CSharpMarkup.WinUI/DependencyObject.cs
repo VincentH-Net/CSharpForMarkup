@@ -41,7 +41,7 @@ namespace CSharpMarkup.WinUI
 
     public interface IAnyUI { }
 
-#if !WINUI
+#if HAS_UNO
     public partial class DependencyObject : IUI<Xaml.DependencyObject>
     {
         public Xaml.DependencyObject UI { get; protected set; }
