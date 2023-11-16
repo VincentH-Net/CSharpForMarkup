@@ -124,9 +124,17 @@ namespace CSharpMarkup.WinUI
 #endif
 
         /// <summary>This helper allows to configure an existing UI framework page object instance, i.e. when a page instance is created by the UI framework when specifying the page type in navigation</summary>
-        public static Page Content(this Xaml.Controls.Page page, Xaml.UIElement content)
+        /// <param name="overlayDevTools">Add am ovverlay woth developer tools - currently just a manual hot reload button for platforms that do not yet automatically update</param>
+        public static Page Content(this Xaml.Controls.Page page, Xaml.UIElement content, bool overlayDevTools = false)
         {
-            page.Content = content;
+            page.Content = overlayDevTools && (page is IBuildUI build)
+            ? MonochromaticOverlayPresenter(
+                content,
+                Button("🔥") .Style(ThemeResource.ButtonRevealStyle) .Bottom() .Right()
+                   .Invoke(b => b.Click += (_, _) => build.BuildUI())
+              )
+            : content;
+
             return page;
         }
     }
