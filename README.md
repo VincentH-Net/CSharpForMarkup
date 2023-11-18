@@ -33,7 +33,6 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 # Getting Started
 
 - **WinUI 3**: [Getting started with C# Markup 2 for WinUI 3 and Windows App SDK / Uno Platform](#getting-started-for-winui-3-and-windows-app-sdk--uno-platform)
-  > **Note**: beginning with 2.3, getting started lets you leverage the [Uno Solution template wizard](https://platform.uno/blog/the-new-uno-platform-solution-template-wizard/) instead of a dotnet new template. Updated getting started doc is ETA next release - soon!
 - **WPF**: [Getting started with C# Markup 2 for WPF](#getting-started-for-wpf)
 
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
