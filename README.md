@@ -8,7 +8,7 @@ Enjoy a Flutter-like UI development experience with C# Markup 2:
   - Separated markup namespaces eliminate intellisense pollution, allow quick discovery and encourage clean separation of markup and logic: no more intellisense lists where you have to search in a sea of irrelevant options for the few that you are interested in. See only Markup API's while editing `MyPage.cs`, see UI framework and other API's while editing `MyPage.logic.cs`.
 - Target browsers and native desktop / mobile
 - Use existing UI frameworks. Mature or bleeding edge is *your* choice: WPF, WinUI 3 for Windows App SDK and Uno Platform. Coming: AvaloniaUI, Maui, possibly Blazor.
-- Use the built-in MVVM support - or any other update model that supports your UI framework (e.g. [Uno's MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Reactive/overview.html) or [ReactiveUI](https://www.reactiveui.net/))
+- Use the built-in MVVM support - or any other update model that supports your UI framework (e.g. [Uno's MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) or [ReactiveUI](https://www.reactiveui.net/))
 - Use for part or all of your application UI
 - Designed to handle large UI fast: practically allocation-free, no reflection, efficient C#
 
@@ -39,6 +39,21 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*Nov 18, 2023*
+> ## 2.3 Release is out of preview! Adds support for Uno 5 plus 5 Uno Libraries!
+This release is fully updated to the awesome **Uno 5** release and .NET 8 GA. You can use the **Uno Solution Wizard for Visual Studio** and add a C# Markup 2 project to it at any time with one command. All Uno wizard customizations are supported: combine C# Markup 2 with MVUX or MVVM, XAML or Uno C# Markup, use Uno Navigation extensions, and target .NET 8 or .NET 7. All Uno target platforms are supported.
+
+A brand new dotnet new C# Markup 2 project template gets you going in no time - carefully optimized for an optimal developer experience: uncluttered solution explorer view, automatic file grouping of markup and logic files, uncluttered markup source, focused intellisense, clear starting points for markup extensions in your code, plus fast hot reload - both automatic and with a hot reload button overlay in debug mode, for the platforms that your IDE can hot reload but does not (yet) update the UI automatically.
+
+Enjoy general C# Markup 2 improvements, plus C# Markup 2 API's for 5 additional Uno libraries:
+- Support for Uno's [UI Toolkit](https://platform.uno/uno-toolkit/), [Reactive / MVUX extension](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) and [Navigation extension](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Navigation/NavigationOverview.html)
+- Support for the awesome [LiveCharts2](https://livecharts.dev/)
+- All `ThemeResource`s searchable in C# intellisense, strongly typed
+
+The [getting started](#getting-started-for-winui-3-and-windows-app-sdk--uno-platform) is fully up to date. Examples in this repo and this readme will be updated soon to show off the new features.
+
+NJoy *concise* C# Markup!
+
 *Nov 1, 2023*
 > ## 2.3 Preview Release adds 5 Uno Libraries!
 Enjoy general C# Markup 2 improvements, plus C# Markup 2 API's for 5 additional Uno libraries:
@@ -109,72 +124,38 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 5. To build your own app, reference [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF) from a .NET 6 WPF project and create the C# Markup UI windows, pages etc in that project. Note that for existing apps you can reference (WPF / class library) projects that target older .NET versions from the .NET 6 project, so you can add C# Markup UI to your app without having to migrate existing logic and/or WPF UI to .NET 6 and C# 10.
 
 ## Getting started for WinUI 3 and Windows App SDK / Uno Platform
-1) First check if your development environment is ready for WinUI 3:
-    - To target Windows desktop with Windows App SDK:<br />[Get started with the Windows App SDK](https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/#get-started-with-the-windows-app-sdk)
-    - To (also) target other OS-es with Uno Platform:<br />[with Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html) or [with other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
+1) First check if your development environment is ready:
+    - [Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html)
+    - [Other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
 
-2) Install the [Modern.CSharp.Templates](https://www.nuget.org/packages/Modern.CSharp.Templates) for `dotnet new` to get [these templates for Windows App SDK, Uno Platform and more](https://github.com/Applicita/Modern.CSharp.Templates#readme)
+2) If you have not already done so, create a new Uno Platform 5 solution with the [Uno Platform Template Wizard](https://platform.uno/docs/articles/getting-started/wizard/using-wizard.html)<br />
+   Choose the `Default` startup type. Feel free to select options under `Customize`; C# Markup 2 fully supports Uno 5 with .NET 8 or .NET 7, [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) or MVVM, XAML or Uno C# Markup, on all target platforms.
 
-3) Create a new solution with the `mcs-winui3-app` template, e.g.:
+3) Install the latest [Modern.CSharp.Templates](https://www.nuget.org/packages/Modern.CSharp.Templates) for `dotnet new` to get [these templates for Windows App SDK, Uno Platform and more](https://github.com/Applicita/Modern.CSharp.Templates#readme)
+    ```bat
+    dotnet new install Modern.CSharp.Templates
     ```
-    dotnet new mcs-winui3-app --name Modern.Shop --allow-scripts Yes
-    ```
-    This will create a ready to run solution (in a new folder) with just a Windows target. The `--allow-scripts Yes` parameter will run a `dotnet new mcs-editorconfig` and then will open the solution (omit this parameter to get prompted whether you want those actions to run):
-
-    ![Mcs Winui3 App Default Sln](img/mcs-winui3-app-default-sln.png)
-
-    You can use optional parameters to select more targets (Android, iOS, Mac Catalyst, WebAssembly, Skia/Tizen, Skia/WPF, and Skia/GTK for Linux). To see a list of all parameters for this template, run:
-    ```
-    dotnet new mcs-winui3-app -h
+    To see help about the template parameters:
+    ```bat
+    dotnet new mcs-uno-markup2 -h
     ```
 
-4) Set the Windows head as start project and run it
-
-5) To add a new view (plus optional viewmodel), use the `New-View.ps1` script; e.g. open Visual Studio's `View|Terminal` window, type `n` + `Tab` to expand to the script name, and supply a name:
+4) Add a C# Markup 2 project to the Uno Platform solution, e.g.:
+    ```bat
+    cd C:\Repos\UnoApp1
+    dotnet new mcs-uno-markup2  --AppProjectName UnoApp1 --AppRootNamespace InnoWvate.UnoApp1 --DotNetVersion 8.0 --allow-scripts Yes
     ```
-    .\New-View.ps1 Cart
-    ```
 
-    ![Mcs Winui3 New View](img/mcs-winui3-new-view.png)
+    This will:
+    - Add a new project `UnoApp1.Markup` to the solution, with an example page including an [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) model
+    - Add NuGet package references to the Markup project
+    - Add a reference to the Markup project in the `UnoApp1` project
 
-    This will create these files (intentionaly all in the same folder):
+5)  Open or reload the Uno solution and follow the steps in the `Readme.md` of the Markup project to get started.
 
-    ![Mcs Winui3 New View Output](img/mcs-winui3-new-view-output.png)
+To learn how to use C# Markup 2, read the [features description](#features) below.
 
-    The parameters are documented in the `New-View.ps1` script file
-
-    Note that you can use the C# Markup in-app debugging overlay to navigate to the new view(s). You can quickly add many views and flesh them out in hot reload. No need to implement navigation first.
-
-To learn how to use C# Markup 2, read the [features description](#features) below and inspect the [example app](src/CSharpMarkup.WinUI.Examples/)
-
-## Fast inner dev loop with .NET Hot Reload
-[Hot reload in Visual Studio for Windows](https://learn.microsoft.com/en-us/visualstudio/debugger/hot-reload?view=vs-2022) has been verified to work for editing existing C# Markup 2 views, viewmodels and styles in Windows, Android and Webassembly targets; other targets should work as well. If you have a Windows target, use that - currently it has the best update experience.
-
-Steps:
-
-1) Run an app head with debugging; you will see the main page with a debugging overlay for C# Hot Reload:
-
-    ![Mcs Winui3 App Mainpage Debug](img/mcs-winui3-app-mainpage-debug.png)
-
-2) Navigate to the page you want to edit using the debugging overlay:
-
-    ![Mcs Winui3 Hotreload In App Navigation](img/mcs-winui3-hotreload-in-app-navigation.png)
-
-3) Edit the `<name>Page.cs`, `<name>ViewModel.cs` or the `Styles.cs` and save it; after the VS status bar says ![Visual Studio Dotnet Hot Reload Statusbar](img/visual-studio-dotnet-hot-reload-statusbar.png), click ![In App Hot Reload Button](img/in-app-hot-reload-button.png) in the app to rebuild your UI. Note that you can also check for hot reload messages in the output window:
-
-    ![Mcs Winui3 Hotreload Output](img/mcs-winui3-hotreload-output.png)
-
-    For the Windows target the UI will update on save, no button click needed: the app listens to **`Ctrl+S`** (for the left Ctrl key). When you release those keys (S first, then Ctrl) it will rebuild the UI. So the flow is: Press and hold Ctrl+S until VS has applied the code changes, then release. After the first update this takes less than a second; after a few times it feels just as seamless as a proper automatic UI rebuild.
-        
-    ![Mcs Winui3 Hotreload Menu](img/mcs-winui3-hotreload-menu.png)
-
-    You can toggle the UI rebuild off and on by pressing and releasing S twice instead of once (before releasing Ctrl). This is displayed in the debug output:
-
-    ![Mcs Winui3 Hotreload Rebuild Enabled](img/mcs-winui3-hotreload-rebuild-enabled.png)
-
-    Note that above are workarounds for various defects in MS Hot Reload; once these are fixed, the UI can update without a button or keyboard listener.
-
-4) If you introduce other types (in addition to `Styles.cs`) that should update your UI when hot reloading, you can customize your `App.BuildUI()` method to rebuild their instances.
+(note that the [example app](src/CSharpMarkup.WinUI.Examples/) in this repo is somewhat outdated - this will updated shortly)
 
 # Features
 C# Markup 2 contains a full declarative, fluent API for existing UI frameworks. It surfaces virtually every layout, view and property, including attached properties, and includes **full inline documentation** that links each markup helper / parameter to the inline documentation for the underlying UI object / property.
@@ -336,9 +317,10 @@ public sealed partial class FlutterPage : Page, IBuild
 **IMPORTANT:**<br />
 - In **C# markup files** like **`<page>.cs`**:<br />
 Include `CSharpMarkup.*` namespace usings but **no UI objectmodel usings** such as `using Microsoft.UI.Xaml;`<br /><br />
-(by design the type names in the CSharpMarkup namespace are identical to the type names in the UI objectmodel,  so including both would not work)<br /><br />
+(by design the type names in the CSharpMarkup namespace are identical to the type names in the UI objectmodel, so including both would cause ambiguities)<br /><br />
 Try to limit using the UI object model to UI logic files. If you must, you *can* use the UI objectmodel safely in C# markup files; a good practice then is to
-define global namespace using aliases, e.g. `global using UI = Microsoft.UI.Xaml;`
+define global namespace using aliases, e.g. `global using UI = Microsoft.UI;`<br /><br />
+For more guidance, see the comments in the `GlobalUsings.cs` of a project created with `dotnet new mcs-uno-markup2`.
 
 - In **UI logic files** like **`<page>.logic.cs`**:<br />
 Do not use `CSharpMarkup` objects<br /><br />
