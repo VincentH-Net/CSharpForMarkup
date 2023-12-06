@@ -41,6 +41,11 @@ namespace CSharpMarkup.WinUI
         public static TFrameworkElement Center<TFrameworkElement>(this TFrameworkElement frameworkElement) where TFrameworkElement : FrameworkElement
         { frameworkElement.UI.HorizontalAlignment = Xaml.HorizontalAlignment.Center; frameworkElement.UI.VerticalAlignment = Xaml.VerticalAlignment.Center; return frameworkElement; }
 
+        ///<summary>Short for:<code>HorizontalAlignment().Center() .VerticalAlignment().Center()</code></summary>
+        [ShortFor("HorizontalAlignment().Stretch() .VerticalAlignment().Stretch()")]
+        public static TFrameworkElement Stretch<TFrameworkElement>(this TFrameworkElement frameworkElement) where TFrameworkElement : FrameworkElement
+        { frameworkElement.UI.HorizontalAlignment = Xaml.HorizontalAlignment.Stretch; frameworkElement.UI.VerticalAlignment = Xaml.VerticalAlignment.Stretch; return frameworkElement; }
+
         ///<summary>Short for:<code>Width(size).Height(size)</code></summary>
         [ShortFor("Width(size).Height(size)")]
         public static TFrameworkElement Size<TFrameworkElement>(this TFrameworkElement frameworkElement, double size) where TFrameworkElement : FrameworkElement
