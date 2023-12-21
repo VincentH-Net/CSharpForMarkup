@@ -17,6 +17,7 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 ![Markup Example Flutter Page](img/markup-example-flutter-page.png)
 
 > NuGet<br />
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/Modern.CSharp.Templates?color=gold&label=Modern.CSharp.Templates&style=plastic)](https://www.nuget.org/packages/Modern.CSharp.Templates)<br />
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI?color=gold&label=CSharpMarkup.WinUI&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI)<br />
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Toolkit?color=gold&label=CSharpMarkup.WinUI.Uno.Toolkit&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Toolkit)<br />
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Reactive?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Reactive&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Reactive)<br />
@@ -38,6 +39,15 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*Dec 21, 2023*
+> ## New C# Markup 2 templates for Uno Platform 5
+In addition to some new C# Markup 2 methods, today's release adds support for the new [C# Markup 2 templates for Uno Platform 5](https://github.com/Applicita/Modern.CSharp.Templates): an updated `mcs-uno-markup2` template, and a new `mcs-uno-view` template.
+
+- Enjoy improved frictionless startup for both existing and new Uno solutions - whether created with Uno's `dotnet new unoapp` template or with the Uno solution wizard for Visual Studio
+- Full support for .NET 8 / .NET 7, as well as model types MVUX / MVVM / none
+- The new `mcs-uno-view` template is used by the convenient `New-View.ps1` script, which is included in `mcs-uno-markup2`
+- Templates are now pre-structured in accordance with best practices for maintainability and code reuse of C# Markup 2 UI.
+
 *Nov 18, 2023*
 > ## 2.3 Release is GA - adds support for .NET 8, Uno 5 plus 5 Uno Libraries!
 This release is fully updated to the awesome **Uno 5** release and .NET 8 GA. You can use the **Uno Solution Wizard for Visual Studio** and add a C# Markup 2 project to it at any time with one command. All Uno wizard customizations are supported: combine C# Markup 2 with MVUX or MVVM, XAML or Uno C# Markup, use Uno Navigation extensions, and target .NET 8 or .NET 7. All Uno target platforms are supported.
