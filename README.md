@@ -33,7 +33,7 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 
 # Getting Started
 
-- **WinUI 3**: [Getting started with C# Markup 2 for WinUI 3 and Windows App SDK / Uno Platform](#getting-started-for-winui-3-and-windows-app-sdk--uno-platform)
+- **Uno Platform / WinUI 3**: [Getting started with C# Markup 2 for WinUI 3 and Windows App SDK / Uno Platform](#getting-started-for-winui-3-and-windows-app-sdk--uno-platform)
 - **WPF**: [Getting started with C# Markup 2 for WPF](#getting-started-for-wpf)
 
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
@@ -137,8 +137,7 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
     - [Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html)
     - [Other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
 
-2) If you have not already done so, create a new Uno Platform 5 solution with the [Uno Platform Template Wizard](https://platform.uno/docs/articles/getting-started/wizard/using-wizard.html) or the [dotnet new unoapp](https://www.nuget.org/packages/Uno.Templates) template<br />
-   Feel free to select any options; C# Markup 2 fully supports Uno 5 with .NET 8 or .NET 7, [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) or MVVM, XAML or Uno C# Markup, on all target platforms.
+2) Either choose an existing Uno Platform 5 solution, or create a one with the [Uno Platform Template Wizard](https://platform.uno/docs/articles/getting-started/wizard/using-wizard.html) or the [dotnet new unoapp](https://www.nuget.org/packages/Uno.Templates) template. Feel free to select any options; C# Markup 2 fully supports Uno 5 with .NET 8 or .NET 7, [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) or MVVM, XAML or Uno C# Markup, on all target platforms.
 
 3) Install the latest [Modern.CSharp.Templates](https://www.nuget.org/packages/Modern.CSharp.Templates) for `dotnet new` to get [these templates for Windows App SDK, Uno Platform and more](https://github.com/Applicita/Modern.CSharp.Templates#readme)
     ```bat
@@ -162,6 +161,8 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
       - Navigation
       - A `New-View.ps1` script to quickly add more pages and models
       - A `Readme.md` with instructions on how to get started quickly
+
+      The Presentation project is pre-structured for maintainability in accordance with best practices for C# Markup UI
     - Add NuGet package references to the Presentation project
     - Add a reference to the Presentation project in the `UnoApp1` project
 
