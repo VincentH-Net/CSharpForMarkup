@@ -123,14 +123,21 @@ namespace CSharpMarkup.WinUI
         }
 #endif
 
-        /// <summary>Configure an existing UI framework page object instance, i.e. when a page instance is created by the UI framework when specifying the page type in navigation</summary>
+        /// <summary>Configure an existing UI framework user control instance, i.e. when a user control instance is created by the UI framework when specifying the user control type in navigation</summary>
+        public static UserControl Content(this Xaml.Controls.UserControl userControl, Xaml.UIElement content)
+        {
+            userControl.Content = content;
+            return userControl;
+        }
+
+        /// <summary>Configure an existing UI framework page instance, i.e. when a page instance is created by the UI framework when specifying the page type in navigation</summary>
         public static Page Content(this Xaml.Controls.Page page, Xaml.UIElement content)
         {
             page.Content = content;
             return page;
         }
 
-        /// <summary>Configure an existing UI framework page object instance, i.e. when a page instance is created by the UI framework when specifying the page type in navigation</summary>
+        /// <summary>Configure an existing UI framework page instance, i.e. when a page instance is created by the UI framework when specifying the page type in navigation</summary>
         /// <param name="overlayDevTools">Add an overlay with developer tools - currently just a manual hot reload button for platforms that do not yet automatically update</param>
         public static Page Content(this Xaml.Controls.Page page, bool overlayDevTools, Xaml.UIElement content)
         => page.Content(overlayDevTools && (page is IBuildUI build)
