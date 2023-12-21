@@ -127,8 +127,8 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
     - [Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html)
     - [Other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
 
-2) If you have not already done so, create a new Uno Platform 5 solution with the [Uno Platform Template Wizard](https://platform.uno/docs/articles/getting-started/wizard/using-wizard.html)<br />
-   Choose the `Default` startup type. Feel free to select options under `Customize`; C# Markup 2 fully supports Uno 5 with .NET 8 or .NET 7, [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) or MVVM, XAML or Uno C# Markup, on all target platforms.
+2) If you have not already done so, create a new Uno Platform 5 solution with the [Uno Platform Template Wizard](https://platform.uno/docs/articles/getting-started/wizard/using-wizard.html) or the [dotnet new unoapp](https://www.nuget.org/packages/Uno.Templates) template<br />
+   Feel free to select any options; C# Markup 2 fully supports Uno 5 with .NET 8 or .NET 7, [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) or MVVM, XAML or Uno C# Markup, on all target platforms.
 
 3) Install the latest [Modern.CSharp.Templates](https://www.nuget.org/packages/Modern.CSharp.Templates) for `dotnet new` to get [these templates for Windows App SDK, Uno Platform and more](https://github.com/Applicita/Modern.CSharp.Templates#readme)
     ```bat
@@ -142,15 +142,22 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 4) Add a C# Markup 2 project to the Uno Platform solution, e.g.:
     ```bat
     cd C:\Repos\UnoApp1
-    dotnet new mcs-uno-markup2  --AppProjectName UnoApp1 --AppRootNamespace InnoWvate.UnoApp1 --DotNetVersion 8.0 --allow-scripts Yes
+    dotnet new mcs-uno-markup2 --appRootNamespace InnoWvate.UnoApp1 --presentation mvux --allow-scripts Yes
     ```
 
     This will:
-    - Add a new project `UnoApp1.Markup` to the solution, with an example page including an [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) model
-    - Add NuGet package references to the Markup project
-    - Add a reference to the Markup project in the `UnoApp1` project
+    - Add a new project `UnoApp1.Presentation` to the solution, with a working example:
+      - Pages
+      - Models of the specified type (in above example [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html))
+      - Navigation
+      - A `New-View.ps1` script to quickly add more pages and models
+      - A `Readme.md` with instructions on how to get started quickly
+    - Add NuGet package references to the Presentation project
+    - Add a reference to the Presentation project in the `UnoApp1` project
 
-5)  Open or reload the Uno solution and follow the steps in the `Readme.md` of the Markup project to get started.
+    Note that you can use the `--name` parameter of `dotnet new` to specify the name of your *existing* Uno project, if that differs from the solution folder name (in above example, `UnoApp1`). The specified name will be used with the `.Presentation` suffix for the new project as well.
+
+5)  Open or reload the Uno solution and follow the steps in the `Readme.md` of the Presentation project to get started.
 
 To learn how to use C# Markup 2, read the [features description](#features) below.
 
