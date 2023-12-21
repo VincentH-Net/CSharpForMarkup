@@ -137,7 +137,7 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
     - [Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html)
     - [Other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
 
-2) Either choose an existing Uno Platform 5 solution, or create a one with the [Uno Platform Template Wizard](https://platform.uno/docs/articles/getting-started/wizard/using-wizard.html) or the [dotnet new unoapp](https://www.nuget.org/packages/Uno.Templates) template. Feel free to select any options; C# Markup 2 fully supports Uno 5 with .NET 8 or .NET 7, [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) or MVVM, XAML or Uno C# Markup, on all target platforms.
+2) Either choose an existing Uno Platform 5 solution, or create a new one with the [Uno Platform Template Wizard](https://platform.uno/docs/articles/getting-started/wizard/using-wizard.html) or the [dotnet new unoapp](https://www.nuget.org/packages/Uno.Templates) template. Feel free to select any options; C# Markup 2 fully supports Uno 5 with .NET 8 or .NET 7, [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) or MVVM, XAML or Uno C# Markup, on all target platforms.
 
 3) Install the latest [Modern.CSharp.Templates](https://www.nuget.org/packages/Modern.CSharp.Templates) for `dotnet new` to get [these templates for Windows App SDK, Uno Platform and more](https://github.com/Applicita/Modern.CSharp.Templates#readme)
     ```bat
