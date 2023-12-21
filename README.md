@@ -39,13 +39,13 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 
 # News
 *Nov 18, 2023*
-> ## 2.3 Release is out of preview! Adds support for Uno 5 plus 5 Uno Libraries!
+> ## 2.3 Release is GA - adds support for .NET 8, Uno 5 plus 5 Uno Libraries!
 This release is fully updated to the awesome **Uno 5** release and .NET 8 GA. You can use the **Uno Solution Wizard for Visual Studio** and add a C# Markup 2 project to it at any time with one command. All Uno wizard customizations are supported: combine C# Markup 2 with MVUX or MVVM, XAML or Uno C# Markup, use Uno Navigation extensions, and target .NET 8 or .NET 7. All Uno target platforms are supported.
 
-A brand new dotnet new C# Markup 2 project template gets you going in no time - carefully optimized for an optimal developer experience: uncluttered solution explorer view, automatic file grouping of markup and logic files, uncluttered markup source, focused intellisense, clear starting points for markup extensions in your code, plus fast hot reload - both automatic and with a hot reload button overlay in debug mode, for the platforms that your IDE can hot reload but does not (yet) update the UI automatically.
+A brand new dotnet new C# Markup 2 project template gets you going in no time - carefully optimized for an optimal developer experience: uncluttered solution explorer view, automatic file grouping of markup and logic files, uncluttered markup source, focused intellisense, clear starting points for markup extensions in your code, plus fast hot reload - both automatic and with a hot reload button overlay in debug mode, for the platforms that your IDE can hot reload but cannot (yet) update the UI automatically.
 
 Enjoy general C# Markup 2 improvements, plus C# Markup 2 API's for 5 additional Uno libraries:
-- Support for Uno's [UI Toolkit](https://platform.uno/uno-toolkit/), [Reactive / MVUX extension](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) and [Navigation extension](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Navigation/NavigationOverview.html)
+- Support for Uno's [UI Toolkit](https://platform.uno/uno-toolkit/), [Reactive / MVUX extension](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) and [Navigation extensions](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Navigation/NavigationOverview.html)
 - Support for the awesome [LiveCharts2](https://livecharts.dev/)
 - All `ThemeResource`s searchable in C# intellisense, strongly typed
 
