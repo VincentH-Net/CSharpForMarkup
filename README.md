@@ -1,7 +1,11 @@
 # C# Markup 2
-*Concise* C# Markup for .NET UI frameworks
+*Concise* next-gen C# Markup for .NET UI frameworks
 
-Quick play around (for Uno Platform):
+## C# Markup 2 for Uno Platform
+C# Markup 2 supports multiple UI frameworks, including the **excellent** [Uno Platform](https://platform.uno/).
+
+If you don't know Uno, I recommend you check them out; Uno is one of the best and most mature .NET UI frameworks, it offers an impressive breadth of features that will have your back when you need to create real-world production apps end2end, *fast*.
+## Quick play-around
 ```bat
 dotnet new install Uno.Templates
 dotnet new install Modern.CSharp.Templates
@@ -13,6 +17,12 @@ dotnet new unoapp
 dotnet new mcs-uno-markup2 --presentation mvux
 
 ```
+
+## Markup options at a glance - good for everyone!
+Uno Platform supports XAML but recently has embraced C# UI as well with [Uno C# Markup](https://platform.uno/c-markup/). C# Markup 2 adds another option that goes above and beyond what gen-1 C# Markup variants offer. It's good to have options - everyone wins: devs get the experience that they like best, and the UI framework gains more adoption. Check it out and pick what you like!
+
+As a first impression, here's a quick side-by-side comparison:
+![XAML - C# Markup 2 - Uno C# Markup](img/CSharpMarkup2-UnoCSharpMarkup-XAML.png)
 
 Enjoy a Flutter-like UI development experience with C# Markup 2:
 - Build **.NET applications fully in C#**
