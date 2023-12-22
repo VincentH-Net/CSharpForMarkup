@@ -19,7 +19,9 @@ dotnet new mcs-uno-markup2 --presentation mvux
 ```
 
 ## Markup options at a glance - good for everyone!
-Uno Platform supports XAML but recently has embraced C# UI as well with [Uno C# Markup](https://platform.uno/c-markup/). C# Markup 2 adds another option that goes above and beyond what gen-1 C# Markup variants offer. It's good to have options - everyone wins: devs get the experience that they like best, and the UI framework gains more adoption. Check it out and pick what you like!
+Uno Platform supports XAML but recently has embraced C# UI as well with [Uno C# Markup](https://platform.uno/c-markup/). C# Markup 2 adds another option that goes above and beyond what gen-1 C# Markup variants offer.
+
+It's good to have options - everyone wins: devs get the experience that they like best, and the UI framework gains more adoption. Check it out and pick what you like!
 
 As a first impression, here's a quick side-by-side comparison:
 ![XAML - C# Markup 2 - Uno C# Markup](img/CSharpMarkup2-UnoCSharpMarkup-XAML.png)
