@@ -1,5 +1,17 @@
 # C# Markup 2
-Concise C# Markup for .NET UI frameworks
+*Concise* C# Markup for .NET UI frameworks
+
+Quick play around (for Uno Platform):
+```bat
+dotnet new install Uno.Templates
+dotnet new install Modern.CSharp.Templates
+
+md UnoCSharpMarkup2
+cd UnoCSharpMarkup2
+
+dotnet new unoapp
+dotnet new mcs-uno-markup2 --presentation mvux
+```
 
 Enjoy a Flutter-like UI development experience with C# Markup 2:
 - Build **.NET applications fully in C#**
