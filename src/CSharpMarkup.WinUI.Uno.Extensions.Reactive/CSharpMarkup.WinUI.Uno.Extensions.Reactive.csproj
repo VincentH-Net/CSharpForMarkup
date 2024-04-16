@@ -44,7 +44,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<TargetFrameworks>$(CSharpMarkupWinUINet7TargetFrameworks)</TargetFrameworks>
+		<TargetFrameworks>$(CSharpMarkupWinUINet8TargetFrameworks)</TargetFrameworks>
 		<RootNamespace>CSharpMarkup.WinUI.Uno.Extensions.Reactive</RootNamespace>
 	</PropertyGroup>
 

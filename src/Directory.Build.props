@@ -1,8 +1,8 @@
 <!-- For CSharpMarkup projects-->
 <Project>
 	<PropertyGroup>
-		<CSharpMarkupVersion>2.3.66</CSharpMarkupVersion>
-		<CSharpMarkupReleaseTag>csharpmarkup2-winui-2-3-66</CSharpMarkupReleaseTag>
+		<CSharpMarkupVersion>2.4.1</CSharpMarkupVersion>
+		<CSharpMarkupReleaseTag>csharpmarkup2-winui-2-4-1</CSharpMarkupReleaseTag>
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
 		<IsUno>true</IsUno>
@@ -97,4 +97,8 @@
 		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
 	</PropertyGroup>
+
+	<Target Name="DisplayCustomVariable" BeforeTargets="BeforeBuild">
+		<Message Text="CSharpMarkupWinUITargetFrameworks is: $(CSharpMarkupWinUITargetFrameworks)" Importance="high" />
+	</Target>
 </Project>
