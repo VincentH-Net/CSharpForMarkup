@@ -41,7 +41,7 @@ namespace CSharpMarkup.WinUI
         public static TFrameworkElement Center<TFrameworkElement>(this TFrameworkElement frameworkElement) where TFrameworkElement : FrameworkElement
         { frameworkElement.UI.HorizontalAlignment = Xaml.HorizontalAlignment.Center; frameworkElement.UI.VerticalAlignment = Xaml.VerticalAlignment.Center; return frameworkElement; }
 
-        ///<summary>Short for:<code>HorizontalAlignment().Center() .VerticalAlignment().Center()</code></summary>
+        ///<summary>Short for:<code>HorizontalAlignment().Stretch() .VerticalAlignment().Stretch()</code></summary>
         [ShortFor("HorizontalAlignment().Stretch() .VerticalAlignment().Stretch()")]
         public static TFrameworkElement HVStretch<TFrameworkElement>(this TFrameworkElement frameworkElement) where TFrameworkElement : FrameworkElement
             // Note this is named HVStretch instead of just Stretch to avoid ambiguity with the Image Stretch extension method
