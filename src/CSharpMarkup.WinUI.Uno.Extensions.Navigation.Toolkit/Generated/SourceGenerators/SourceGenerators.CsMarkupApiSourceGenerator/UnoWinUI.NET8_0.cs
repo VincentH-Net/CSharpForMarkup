@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET7_0_IOS && __IOS__ && !__MACCATALYST__
+#if NET8_0 && __WASM_OR_SKIA__
 
 using System;
 using System.Collections.Generic;

@@ -1,5 +1,5 @@
-﻿// Start of generated C# Markup API for Microsoft.WindowsAppSDK
-#if NET7_0_WINDOWS10_0_19041 && WINUI
+﻿// Start of generated C# Markup API for Uno.WinUI
+#if NET8_0_MACOS && __MACOS__
 
 using System;
 using System.Collections.Generic;
@@ -67,4 +67,4 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit // ModalFlyout
 
 
 #endif
-// End of generated C# Markup API for Microsoft.WindowsAppSDK
+// End of generated C# Markup API for Uno.WinUI

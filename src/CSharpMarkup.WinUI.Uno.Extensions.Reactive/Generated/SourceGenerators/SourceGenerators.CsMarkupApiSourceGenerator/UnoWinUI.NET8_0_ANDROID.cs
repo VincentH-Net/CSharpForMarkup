@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET7_0_MACCATALYST && __MACCATALYST__
+#if NET8_0_ANDROID && __ANDROID__
 
 using System;
 using System.Collections.Generic;
@@ -67,16 +67,9 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Reactive // FeedView
         }
 
         /// <summary>Create a <see cref="UnoExtensionsReactive.UI.FeedView"/></summary>
-        public static FeedView FeedView(nint handle)
+        public static FeedView FeedView(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoExtensionsReactive.UI.FeedView(handle);
-            return CSharpMarkup.WinUI.Uno.Extensions.Reactive.FeedView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoExtensionsReactive.UI.FeedView"/></summary>
-        public static FeedView FeedView(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoExtensionsReactive.UI.FeedView(handle);
+            var ui = new UnoExtensionsReactive.UI.FeedView(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Extensions.Reactive.FeedView.StartChain(ui);
         }
     }

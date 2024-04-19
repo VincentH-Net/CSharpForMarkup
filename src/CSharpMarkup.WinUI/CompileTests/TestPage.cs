@@ -38,7 +38,8 @@ namespace CompileTests
             CheckBox("Check Me")
                .Bind(vm.IsOk),
 
-            FrameworkElement(Background: SolidColorBrush(Blue)),
+            Rectangle()
+               .Fill(SolidColorBrush(Blue)),
 
             Button(
                 HStack(

@@ -6542,7 +6542,6 @@ namespace CSharpMarkup.WinUI // ComboBox
         public static TView IsPopupFullscreen<TView>(this TView view, bool value) where TView : ComboBox { view.UI.IsPopupFullscreen = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.IsTextSearchEnabled"/></summary>
-        [UnsupportedOSPlatform("MacOS", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextSearchEnabled<TView>(this TView view, bool value) where TView : ComboBox { view.UI.IsTextSearchEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.LightDismissOverlayMode"/></summary>
@@ -6600,7 +6599,6 @@ namespace CSharpMarkup.WinUI // ComboBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ComboBox.IsEditableProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.IsTextSearchEnabled"/></summary>
-        [UnsupportedOSPlatform("MacOS", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextSearchEnabled<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ComboBox.IsTextSearchEnabledProperty);
 
@@ -11115,11 +11113,10 @@ namespace CSharpMarkup.WinUI // InfoBadge
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.InfoBadge"/></summary>
-        public static InfoBadge InfoBadge(Xaml.Controls.IconSource IconSource = default, Xaml.Controls.InfoBadgeTemplateSettings TemplateSettings = default, int? Value = default)
+        public static InfoBadge InfoBadge(Xaml.Controls.IconSource IconSource = default, int? Value = default)
         {
             var ui = new Xaml.Controls.InfoBadge();
             if (IconSource is not null) ui.IconSource = IconSource;
-            if (TemplateSettings is not null) ui.TemplateSettings = TemplateSettings;
             if (Value is not null) ui.Value = Value.Value;
             return CSharpMarkup.WinUI.InfoBadge.StartChain(ui);
         }
@@ -11180,9 +11177,6 @@ namespace CSharpMarkup.WinUI // InfoBadge
     {
         /// <summary>Set <see cref="Xaml.Controls.InfoBadge.IconSource"/></summary>
         public static TView IconSource<TView>(this TView view, Xaml.Controls.IconSource value) where TView : InfoBadge { view.UI.IconSource = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.InfoBadge.TemplateSettings"/></summary>
-        public static TView TemplateSettings<TView>(this TView view, Xaml.Controls.InfoBadgeTemplateSettings value) where TView : InfoBadge { view.UI.TemplateSettings = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.InfoBadge.Value"/></summary>
         public static TView Value<TView>(this TView view, int value) where TView : InfoBadge { view.UI.Value = value; return view; }
@@ -26298,7 +26292,6 @@ namespace CSharpMarkup.WinUI // ScrollContentPresenter
         public static TView ScrollOwner<TView>(this TView view, object value) where TView : ScrollContentPresenter { view.UI.ScrollOwner = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ScrollContentPresenter.SizesContentToTemplatedParent"/></summary>
-        [UnsupportedOSPlatform("MacOS", "https://aka.platform.uno/notimplemented")]
         public static TView SizesContentToTemplatedParent<TView>(this TView view, bool value) where TView : ScrollContentPresenter { view.UI.SizesContentToTemplatedParent = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollContentPresenter.CanContentRenderOutsideBounds"/></summary>
@@ -26307,7 +26300,6 @@ namespace CSharpMarkup.WinUI // ScrollContentPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollContentPresenter.CanContentRenderOutsideBoundsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ScrollContentPresenter.SizesContentToTemplatedParent"/></summary>
-        [UnsupportedOSPlatform("MacOS", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> SizesContentToTemplatedParent<TTarget>(this TTarget target) where TTarget : ScrollContentPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ScrollContentPresenter.SizesContentToTemplatedParentProperty);
     }
@@ -26326,10 +26318,9 @@ namespace CSharpMarkup.WinUI // ScrollViewer
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ScrollViewer"/></summary>
-        public static ScrollViewer ScrollViewer(Windows.UI.Color? BackgroundColor = default, bool? BringIntoViewOnFocusChange = default, bool? CanContentRenderOutsideBounds = default, double? HorizontalAnchorRatio = default, Xaml.Controls.ScrollBarVisibility? HorizontalScrollBarVisibility = default, Xaml.Controls.ScrollMode? HorizontalScrollMode = default, Xaml.Controls.Primitives.SnapPointsAlignment? HorizontalSnapPointsAlignment = default, Xaml.Controls.SnapPointsType? HorizontalSnapPointsType = default, bool? IsDeferredScrollingEnabled = default, bool? IsHorizontalRailEnabled = default, bool? IsHorizontalScrollChainingEnabled = default, bool? IsScrollInertiaEnabled = default, bool? IsVerticalRailEnabled = default, bool? IsVerticalScrollChainingEnabled = default, bool? IsZoomChainingEnabled = default, bool? IsZoomInertiaEnabled = default, Xaml.UIElement LeftHeader = default, float? MaxZoomFactor = default, float? MinZoomFactor = default, bool? ReduceViewportForCoreInputViewOcclusions = default, bool? ShouldReportNegativeOffsets = default, Xaml.UIElement TopHeader = default, Xaml.UIElement TopLeftHeader = default, double? VerticalAnchorRatio = default, Xaml.Controls.ScrollBarVisibility? VerticalScrollBarVisibility = default, Xaml.Controls.ScrollMode? VerticalScrollMode = default, Xaml.Controls.Primitives.SnapPointsAlignment? VerticalSnapPointsAlignment = default, Xaml.Controls.SnapPointsType? VerticalSnapPointsType = default, Xaml.Controls.ZoomMode? ZoomMode = default, Xaml.Controls.SnapPointsType? ZoomSnapPointsType = default, UIObject Content = default)
+        public static ScrollViewer ScrollViewer(bool? BringIntoViewOnFocusChange = default, bool? CanContentRenderOutsideBounds = default, double? HorizontalAnchorRatio = default, Xaml.Controls.ScrollBarVisibility? HorizontalScrollBarVisibility = default, Xaml.Controls.ScrollMode? HorizontalScrollMode = default, Xaml.Controls.Primitives.SnapPointsAlignment? HorizontalSnapPointsAlignment = default, Xaml.Controls.SnapPointsType? HorizontalSnapPointsType = default, bool? IsDeferredScrollingEnabled = default, bool? IsHorizontalRailEnabled = default, bool? IsHorizontalScrollChainingEnabled = default, bool? IsScrollInertiaEnabled = default, bool? IsVerticalRailEnabled = default, bool? IsVerticalScrollChainingEnabled = default, bool? IsZoomChainingEnabled = default, bool? IsZoomInertiaEnabled = default, Xaml.UIElement LeftHeader = default, float? MaxZoomFactor = default, float? MinZoomFactor = default, bool? ReduceViewportForCoreInputViewOcclusions = default, bool? ShouldReportNegativeOffsets = default, Xaml.UIElement TopHeader = default, Xaml.UIElement TopLeftHeader = default, double? VerticalAnchorRatio = default, Xaml.Controls.ScrollBarVisibility? VerticalScrollBarVisibility = default, Xaml.Controls.ScrollMode? VerticalScrollMode = default, Xaml.Controls.Primitives.SnapPointsAlignment? VerticalSnapPointsAlignment = default, Xaml.Controls.SnapPointsType? VerticalSnapPointsType = default, Xaml.Controls.ZoomMode? ZoomMode = default, Xaml.Controls.SnapPointsType? ZoomSnapPointsType = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.ScrollViewer();
-            if (BackgroundColor is not null) ui.BackgroundColor = BackgroundColor.Value;
             if (BringIntoViewOnFocusChange is not null) ui.BringIntoViewOnFocusChange = BringIntoViewOnFocusChange.Value;
             if (CanContentRenderOutsideBounds is not null) ui.CanContentRenderOutsideBounds = CanContentRenderOutsideBounds.Value;
             if (HorizontalAnchorRatio is not null) ui.HorizontalAnchorRatio = HorizontalAnchorRatio.Value;
@@ -26417,10 +26408,6 @@ namespace CSharpMarkup.WinUI // ScrollViewer
 
     public static partial class ScrollViewerExtensions
     {
-        /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.BackgroundColor"/></summary>
-        [UnsupportedOSPlatform("MacOS", "https://aka.platform.uno/notimplemented")]
-        public static TView BackgroundColor<TView>(this TView view, Windows.UI.Color value) where TView : ScrollViewer { view.UI.BackgroundColor = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.ScrollViewer.BringIntoViewOnFocusChange"/></summary>
         public static TView BringIntoViewOnFocusChange<TView>(this TView view, bool value) where TView : ScrollViewer { view.UI.BringIntoViewOnFocusChange = value; return view; }
 
@@ -30200,13 +30187,6 @@ namespace CSharpMarkup.WinUI // TimePickedEventArgs
             var ui = new Xaml.Controls.TimePickedEventArgs();
             return CSharpMarkup.WinUI.TimePickedEventArgs.StartChain(ui);
         }
-
-        /// <summary>Create a <see cref="Xaml.Controls.TimePickedEventArgs"/></summary>
-        public static TimePickedEventArgs TimePickedEventArgs(CSharpMarkup.WinUI.to.TimeSpan oldTime, CSharpMarkup.WinUI.to.TimeSpan newTime)
-        {
-            var ui = new Xaml.Controls.TimePickedEventArgs(oldTime, newTime);
-            return CSharpMarkup.WinUI.TimePickedEventArgs.StartChain(ui);
-        }
     }
 
     public partial class TimePickedEventArgs : DependencyObject, IUI<Xaml.Controls.TimePickedEventArgs>
@@ -30270,7 +30250,7 @@ namespace CSharpMarkup.WinUI // TimePicker
 
         /// <summary>Create a <see cref="Xaml.Controls.TimePicker"/></summary>
         /// <remarks>Remark: TimePicker().Bind() binds to <see cref="Xaml.Controls.TimePicker.TimeProperty"/></remarks>
-        public static TimePicker TimePicker(string ClockIdentifier = default, Xaml.Controls.Primitives.FlyoutPlacementMode? FlyoutPlacement = default, Xaml.Style FlyoutPresenterStyle = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, int? MinuteIncrement = default, CSharpMarkup.WinUI.to.TimeSpan? SelectedTime = default, CSharpMarkup.WinUI.to.TimeSpan? Time = default, UIObject Header = default)
+        public static TimePicker TimePicker(string ClockIdentifier = default, Xaml.Controls.Primitives.FlyoutPlacementMode? FlyoutPlacement = default, Xaml.Style FlyoutPresenterStyle = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.Controls.LightDismissOverlayMode? LightDismissOverlayMode = default, int? MinuteIncrement = default, CSharpMarkup.WinUI.to.TimeSpan? SelectedTime = default, CSharpMarkup.WinUI.to.TimeSpan? Time = default, bool? UseNativeMinMaxDates = default, bool? UseNativeStyle = default, UIObject Header = default)
         {
             var ui = new Xaml.Controls.TimePicker();
             if (ClockIdentifier is not null) ui.ClockIdentifier = ClockIdentifier;
@@ -30281,6 +30261,8 @@ namespace CSharpMarkup.WinUI // TimePicker
             if (MinuteIncrement is not null) ui.MinuteIncrement = MinuteIncrement.Value;
             if (SelectedTime is not null) ui.SelectedTime = SelectedTime.Value;
             if (Time is not null) ui.Time = Time.Value;
+            if (UseNativeMinMaxDates is not null) ui.UseNativeMinMaxDates = UseNativeMinMaxDates.Value;
+            if (UseNativeStyle is not null) ui.UseNativeStyle = UseNativeStyle.Value;
             if (Header is not null) ui.Header = Header.UI;
             return CSharpMarkup.WinUI.TimePicker.StartChain(ui);
         }
@@ -30369,6 +30351,12 @@ namespace CSharpMarkup.WinUI // TimePicker
         /// <summary>Set <see cref="Xaml.Controls.TimePicker.Time"/></summary>
         public static TView Time<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : TimePicker { view.UI.Time = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.TimePicker.UseNativeMinMaxDates"/></summary>
+        public static TView UseNativeMinMaxDates<TView>(this TView view, bool value) where TView : TimePicker { view.UI.UseNativeMinMaxDates = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TimePicker.UseNativeStyle"/></summary>
+        public static TView UseNativeStyle<TView>(this TView view, bool value) where TView : TimePicker { view.UI.UseNativeStyle = value; return view; }
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.ClockIdentifier"/></summary>
         public static DependencyProperty<TTarget, string> ClockIdentifier<TTarget>(this TTarget target) where TTarget : TimePicker
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.TimePicker.ClockIdentifierProperty);
@@ -30404,6 +30392,14 @@ namespace CSharpMarkup.WinUI // TimePicker
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.Time"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePicker
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Controls.TimePicker.TimeProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.UseNativeMinMaxDates"/></summary>
+        public static DependencyProperty<TTarget, bool> UseNativeMinMaxDates<TTarget>(this TTarget target) where TTarget : TimePicker
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TimePicker.UseNativeMinMaxDatesProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePicker.UseNativeStyle"/></summary>
+        public static DependencyProperty<TTarget, bool> UseNativeStyle<TTarget>(this TTarget target) where TTarget : TimePicker
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TimePicker.UseNativeStyleProperty);
     }
 }
 
@@ -30413,12 +30409,13 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
     {
         /// <summary>Create a <see cref="Xaml.Controls.TimePickerFlyout"/></summary>
         /// <remarks>Remark: TimePickerFlyout().Bind() binds to <see cref="Xaml.Controls.TimePickerFlyout.TimeProperty"/></remarks>
-        public static TimePickerFlyout TimePickerFlyout(string ClockIdentifier = default, int? MinuteIncrement = default, CSharpMarkup.WinUI.to.TimeSpan? Time = default)
+        public static TimePickerFlyout TimePickerFlyout(string ClockIdentifier = default, int? MinuteIncrement = default, CSharpMarkup.WinUI.to.TimeSpan? Time = default, Xaml.Style TimePickerFlyoutPresenterStyle = default)
         {
             var ui = new Xaml.Controls.TimePickerFlyout();
             if (ClockIdentifier is not null) ui.ClockIdentifier = ClockIdentifier;
             if (MinuteIncrement is not null) ui.MinuteIncrement = MinuteIncrement.Value;
             if (Time is not null) ui.Time = Time.Value;
+            if (TimePickerFlyoutPresenterStyle is not null) ui.TimePickerFlyoutPresenterStyle = TimePickerFlyoutPresenterStyle;
             return CSharpMarkup.WinUI.TimePickerFlyout.StartChain(ui);
         }
 
@@ -30473,6 +30470,9 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
         /// <summary>Set <see cref="Xaml.Controls.TimePickerFlyout.Time"/></summary>
         public static TView Time<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : TimePickerFlyout { view.UI.Time = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.TimePickerFlyout.TimePickerFlyoutPresenterStyle"/></summary>
+        public static TView TimePickerFlyoutPresenterStyle<TView>(this TView view, Xaml.Style value) where TView : TimePickerFlyout { view.UI.TimePickerFlyoutPresenterStyle = value; return view; }
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerFlyout.ClockIdentifier"/></summary>
         public static DependencyProperty<TTarget, string> ClockIdentifier<TTarget>(this TTarget target) where TTarget : TimePickerFlyout
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.TimePickerFlyout.ClockIdentifierProperty);
@@ -30480,6 +30480,10 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerFlyout.MinuteIncrement"/></summary>
         public static DependencyProperty<TTarget, int> MinuteIncrement<TTarget>(this TTarget target) where TTarget : TimePickerFlyout
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.TimePickerFlyout.MinuteIncrementProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerFlyout.TimePickerFlyoutPresenterStyle"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Style> TimePickerFlyoutPresenterStyle<TTarget>(this TTarget target) where TTarget : TimePickerFlyout
+        => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.TimePickerFlyout.TimePickerFlyoutPresenterStyleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerFlyout.Time"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePickerFlyout
@@ -30489,58 +30493,8 @@ namespace CSharpMarkup.WinUI // TimePickerFlyout
 
 namespace CSharpMarkup.WinUI // TimePickerFlyoutPresenter
 {
-    public static partial class Helpers
-    {
-        /// <summary>Create a <see cref="Xaml.Controls.TimePickerFlyoutPresenter"/></summary>
-        public static TimePickerFlyoutPresenter TimePickerFlyoutPresenter(UIObject Content)
-        {
-            var ui = new Xaml.Controls.TimePickerFlyoutPresenter();
-            if (Content is not null) ui.Content = Content.UI;
-            return CSharpMarkup.WinUI.TimePickerFlyoutPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.TimePickerFlyoutPresenter"/></summary>
-        public static TimePickerFlyoutPresenter TimePickerFlyoutPresenter(bool? IsDefaultShadowEnabled = default, UIObject Content = default)
-        {
-            var ui = new Xaml.Controls.TimePickerFlyoutPresenter();
-            if (IsDefaultShadowEnabled is not null) ui.IsDefaultShadowEnabled = IsDefaultShadowEnabled.Value;
-            if (Content is not null) ui.Content = Content.UI;
-            return CSharpMarkup.WinUI.TimePickerFlyoutPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.TimePickerFlyoutPresenter"/></summary>
-        public static TimePickerFlyoutPresenter TimePickerFlyoutPresenter()
-        {
-            var ui = new Xaml.Controls.TimePickerFlyoutPresenter();
-            return CSharpMarkup.WinUI.TimePickerFlyoutPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.TimePickerFlyoutPresenter"/></summary>
-        public static TimePickerFlyoutPresenter TimePickerFlyoutPresenter(nint handle)
-        {
-            var ui = new Xaml.Controls.TimePickerFlyoutPresenter(handle);
-            return CSharpMarkup.WinUI.TimePickerFlyoutPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="Xaml.Controls.TimePickerFlyoutPresenter"/></summary>
-        public static TimePickerFlyoutPresenter TimePickerFlyoutPresenter(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new Xaml.Controls.TimePickerFlyoutPresenter(handle);
-            return CSharpMarkup.WinUI.TimePickerFlyoutPresenter.StartChain(ui);
-        }
-    }
-
     public partial class TimePickerFlyoutPresenter : FlyoutPresenter, IUI<Xaml.Controls.TimePickerFlyoutPresenter>
     {
-        static TimePickerFlyoutPresenter instance;
-
-        internal static TimePickerFlyoutPresenter StartChain(Xaml.Controls.TimePickerFlyoutPresenter ui)
-        {
-            if (instance == null) instance = new TimePickerFlyoutPresenter();
-            instance.UI = ui;
-            return instance;
-        }
-
         Xaml.Controls.TimePickerFlyoutPresenter ui;
 
         public new Xaml.Controls.TimePickerFlyoutPresenter UI
@@ -30548,12 +30502,6 @@ namespace CSharpMarkup.WinUI // TimePickerFlyoutPresenter
             get => ui;
             protected set => base.UI = ui = value;
         }
-
-        public static implicit operator Xaml.UIElement(TimePickerFlyoutPresenter view) => view?.UI;
-
-        public static implicit operator Xaml.Controls.TimePickerFlyoutPresenter(TimePickerFlyoutPresenter view) => view?.UI;
-
-        public static implicit operator TimePickerFlyoutPresenter(Xaml.Controls.TimePickerFlyoutPresenter ui) => TimePickerFlyoutPresenter.StartChain(ui);
 
         public TimePickerFlyoutPresenter Invoke(Action<Xaml.Controls.TimePickerFlyoutPresenter> action) { action?.Invoke(UI); return this; }
 
@@ -30563,11 +30511,9 @@ namespace CSharpMarkup.WinUI // TimePickerFlyoutPresenter
     public static partial class TimePickerFlyoutPresenterExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.TimePickerFlyoutPresenter.IsDefaultShadowEnabled"/></summary>
-        [UnsupportedOSPlatform("MacOS", "https://aka.platform.uno/notimplemented")]
         public static TView IsDefaultShadowEnabled<TView>(this TView view, bool value) where TView : TimePickerFlyoutPresenter { view.UI.IsDefaultShadowEnabled = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerFlyoutPresenter.IsDefaultShadowEnabled"/></summary>
-        [UnsupportedOSPlatform("MacOS", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsDefaultShadowEnabled<TTarget>(this TTarget target) where TTarget : TimePickerFlyoutPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TimePickerFlyoutPresenter.IsDefaultShadowEnabledProperty);
     }

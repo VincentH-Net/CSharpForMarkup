@@ -94,6 +94,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // AutoLayout
 
     public static partial class AutoLayoutExtensions
     {
+        /// <summary>Set <see cref="UnoToolkitUI.AutoLayout.CounterAxisAlignment"/></summary>
+        public static TView CounterAxisAlignment<TView>(this TView view, UnoToolkitUI.AutoLayoutAlignment value) where TView : AutoLayout { view.UI.CounterAxisAlignment = value; return view; }
+
         /// <summary>Set <see cref="UnoToolkitUI.AutoLayout.IsReverseZIndex"/></summary>
         public static TView IsReverseZIndex<TView>(this TView view, bool value) where TView : AutoLayout { view.UI.IsReverseZIndex = value; return view; }
 
@@ -108,6 +111,10 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // AutoLayout
 
         /// <summary>Set <see cref="UnoToolkitUI.AutoLayout.Spacing"/></summary>
         public static TView Spacing<TView>(this TView view, double value) where TView : AutoLayout { view.UI.Spacing = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.AutoLayout.CounterAxisAlignment"/></summary>
+        public static DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment> CounterAxisAlignment<TTarget>(this TTarget target) where TTarget : AutoLayout
+        => DependencyProperty<TTarget, UnoToolkitUI.AutoLayoutAlignment>.Get(target, UnoToolkitUI.AutoLayout.CounterAxisAlignmentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.AutoLayout.IsReverseZIndex"/></summary>
         public static DependencyProperty<TTarget, bool> IsReverseZIndex<TTarget>(this TTarget target) where TTarget : AutoLayout
@@ -975,7 +982,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.DrawerControl"/></summary>
-        public static DrawerControl DrawerControl(CSharpMarkup.WinUI.to.Brush? DrawerBackground = default, object DrawerContent = default, double? DrawerDepth = default, double? EdgeSwipeDetectionLength = default, bool? FitToDrawerContent = default, bool? IsGestureEnabled = default, bool? IsOpen = default, CSharpMarkup.WinUI.to.Brush? LightDismissOverlayBackground = default, UnoToolkitUI.DrawerOpenDirection? OpenDirection = default, UIObject Content = default)
+        public static DrawerControl DrawerControl(CSharpMarkup.WinUI.to.Brush? DrawerBackground = default, object DrawerContent = default, double? DrawerDepth = default, double? EdgeSwipeDetectionLength = default, bool? FitToDrawerContent = default, bool? IsGestureEnabled = default, bool? IsLightDismissEnabled = default, bool? IsOpen = default, CSharpMarkup.WinUI.to.Brush? LightDismissOverlayBackground = default, UnoToolkitUI.DrawerOpenDirection? OpenDirection = default, UIObject Content = default)
         {
             var ui = new UnoToolkitUI.DrawerControl();
             if (DrawerBackground is not null) ui.DrawerBackground = DrawerBackground.Value;
@@ -984,6 +991,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
             if (EdgeSwipeDetectionLength is not null) ui.EdgeSwipeDetectionLength = EdgeSwipeDetectionLength.Value;
             if (FitToDrawerContent is not null) ui.FitToDrawerContent = FitToDrawerContent.Value;
             if (IsGestureEnabled is not null) ui.IsGestureEnabled = IsGestureEnabled.Value;
+            if (IsLightDismissEnabled is not null) ui.IsLightDismissEnabled = IsLightDismissEnabled.Value;
             if (IsOpen is not null) ui.IsOpen = IsOpen.Value;
             if (LightDismissOverlayBackground is not null) ui.LightDismissOverlayBackground = LightDismissOverlayBackground.Value;
             if (OpenDirection is not null) ui.OpenDirection = OpenDirection.Value;
@@ -1069,6 +1077,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControl.IsGestureEnabled"/></summary>
         public static TView IsGestureEnabled<TView>(this TView view, bool value) where TView : DrawerControl { view.UI.IsGestureEnabled = value; return view; }
 
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerControl.IsLightDismissEnabled"/></summary>
+        public static TView IsLightDismissEnabled<TView>(this TView view, bool value) where TView : DrawerControl { view.UI.IsLightDismissEnabled = value; return view; }
+
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControl.IsOpen"/></summary>
         public static TView IsOpen<TView>(this TView view, bool value) where TView : DrawerControl { view.UI.IsOpen = value; return view; }
 
@@ -1107,6 +1118,10 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControl.IsGestureEnabled"/></summary>
         public static DependencyProperty<TTarget, bool> IsGestureEnabled<TTarget>(this TTarget target) where TTarget : DrawerControl
         => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.DrawerControl.IsGestureEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControl.IsLightDismissEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsLightDismissEnabled<TTarget>(this TTarget target) where TTarget : DrawerControl
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.DrawerControl.IsLightDismissEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControl.IsOpen"/></summary>
         public static DependencyProperty<TTarget, bool> IsOpen<TTarget>(this TTarget target) where TTarget : DrawerControl
@@ -1174,6 +1189,14 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControlBehavior
         public static DependencyProperty<TTarget, bool> DrawerControlBehavior_IsGestureEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.DrawerControlBehavior.IsGestureEnabledProperty);
 
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.IsLightDismissEnabled"/></summary>
+        public static TTarget DrawerControlBehavior_IsLightDismissEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
+        { UnoToolkitUI.DrawerControlBehavior.SetIsLightDismissEnabled(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerControlBehavior.IsLightDismissEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> DrawerControlBehavior_IsLightDismissEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.DrawerControlBehavior.IsLightDismissEnabledProperty);
+
         /// <summary>Set <see cref="UnoToolkitUI.DrawerControlBehavior.LightDismissOverlayBackground"/></summary>
         public static TTarget DrawerControlBehavior_LightDismissOverlayBackground<TTarget>(this TTarget target, CSharpMarkup.WinUI.to.Brush value) where TTarget : DependencyObject
         { UnoToolkitUI.DrawerControlBehavior.SetLightDismissOverlayBackground(target.UI, value); return target; }
@@ -1197,6 +1220,8 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControlBehavior
 
             , bool? IsGestureEnabled = default
 
+            , bool? IsLightDismissEnabled = default
+
             , CSharpMarkup.WinUI.to.Brush? LightDismissOverlayBackground = default
 
             , UnoToolkitUI.DrawerOpenDirection? OpenDirection = default
@@ -1206,6 +1231,8 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControlBehavior
             if (EdgeSwipeDetectionLength is not null) UnoToolkitUI.DrawerControlBehavior.SetEdgeSwipeDetectionLength(target.UI, EdgeSwipeDetectionLength.Value);
 
             if (IsGestureEnabled is not null) UnoToolkitUI.DrawerControlBehavior.SetIsGestureEnabled(target.UI, IsGestureEnabled.Value);
+
+            if (IsLightDismissEnabled is not null) UnoToolkitUI.DrawerControlBehavior.SetIsLightDismissEnabled(target.UI, IsLightDismissEnabled.Value);
 
             if (LightDismissOverlayBackground is not null) UnoToolkitUI.DrawerControlBehavior.SetLightDismissOverlayBackground(target.UI, LightDismissOverlayBackground.Value);
 
@@ -1229,10 +1256,12 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.DrawerFlyoutPresenter"/></summary>
-        public static DrawerFlyoutPresenter DrawerFlyoutPresenter(bool? IsGestureEnabled = default, CSharpMarkup.WinUI.to.Brush? LightDismissOverlayBackground = default, UnoToolkitUI.DrawerOpenDirection? OpenDirection = default, UIObject Content = default)
+        public static DrawerFlyoutPresenter DrawerFlyoutPresenter(CSharpMarkup.WinUI.to.GridLength? DrawerLength = default, bool? IsGestureEnabled = default, bool? IsLightDismissEnabled = default, CSharpMarkup.WinUI.to.Brush? LightDismissOverlayBackground = default, UnoToolkitUI.DrawerOpenDirection? OpenDirection = default, UIObject Content = default)
         {
             var ui = new UnoToolkitUI.DrawerFlyoutPresenter();
+            if (DrawerLength is not null) ui.DrawerLength = DrawerLength.Value;
             if (IsGestureEnabled is not null) ui.IsGestureEnabled = IsGestureEnabled.Value;
+            if (IsLightDismissEnabled is not null) ui.IsLightDismissEnabled = IsLightDismissEnabled.Value;
             if (LightDismissOverlayBackground is not null) ui.LightDismissOverlayBackground = LightDismissOverlayBackground.Value;
             if (OpenDirection is not null) ui.OpenDirection = OpenDirection.Value;
             if (Content != null) ui.Content = Content.UI;
@@ -1293,8 +1322,14 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
 
     public static partial class DrawerFlyoutPresenterExtensions
     {
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.DrawerLength"/></summary>
+        public static TView DrawerLength<TView>(this TView view, CSharpMarkup.WinUI.to.GridLength value) where TView : DrawerFlyoutPresenter { view.UI.DrawerLength = value; return view; }
+
         /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.IsGestureEnabled"/></summary>
         public static TView IsGestureEnabled<TView>(this TView view, bool value) where TView : DrawerFlyoutPresenter { view.UI.IsGestureEnabled = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.IsLightDismissEnabled"/></summary>
+        public static TView IsLightDismissEnabled<TView>(this TView view, bool value) where TView : DrawerFlyoutPresenter { view.UI.IsLightDismissEnabled = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackground"/></summary>
         public static TView LightDismissOverlayBackground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : DrawerFlyoutPresenter { view.UI.LightDismissOverlayBackground = value; return view; }
@@ -1308,9 +1343,17 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.OpenDirection"/></summary>
         public static TView OpenDirection<TView>(this TView view, UnoToolkitUI.DrawerOpenDirection value) where TView : DrawerFlyoutPresenter { view.UI.OpenDirection = value; return view; }
 
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerFlyoutPresenter.DrawerLength"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.GridLength> DrawerLength<TTarget>(this TTarget target) where TTarget : DrawerFlyoutPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.GridLength>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.DrawerLengthProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerFlyoutPresenter.IsGestureEnabled"/></summary>
         public static DependencyProperty<TTarget, bool> IsGestureEnabled<TTarget>(this TTarget target) where TTarget : DrawerFlyoutPresenter
         => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.IsGestureEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerFlyoutPresenter.IsLightDismissEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsLightDismissEnabled<TTarget>(this TTarget target) where TTarget : DrawerFlyoutPresenter
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.IsLightDismissEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackground"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> LightDismissOverlayBackground<TTarget>(this TTarget target) where TTarget : DrawerFlyoutPresenter
@@ -1320,6 +1363,14 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         public static DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection> OpenDirection<TTarget>(this TTarget target) where TTarget : DrawerFlyoutPresenter
         => DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.OpenDirectionProperty);
 
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.DrawerLength"/></summary>
+        public static TTarget DrawerFlyoutPresenter_DrawerLength<TTarget>(this TTarget target, CSharpMarkup.WinUI.to.GridLength value) where TTarget : DependencyObject
+        { UnoToolkitUI.DrawerFlyoutPresenter.SetDrawerLength(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerFlyoutPresenter.DrawerLength"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.GridLength> DrawerFlyoutPresenter_DrawerLength<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.GridLength>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.DrawerLengthProperty);
+
         /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.IsGestureEnabled"/></summary>
         public static TTarget DrawerFlyoutPresenter_IsGestureEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
         { UnoToolkitUI.DrawerFlyoutPresenter.SetIsGestureEnabled(target.UI, value); return target; }
@@ -1327,6 +1378,14 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerFlyoutPresenter.IsGestureEnabled"/></summary>
         public static DependencyProperty<TTarget, bool> DrawerFlyoutPresenter_IsGestureEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.IsGestureEnabledProperty);
+
+        /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.IsLightDismissEnabled"/></summary>
+        public static TTarget DrawerFlyoutPresenter_IsLightDismissEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
+        { UnoToolkitUI.DrawerFlyoutPresenter.SetIsLightDismissEnabled(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.DrawerFlyoutPresenter.IsLightDismissEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> DrawerFlyoutPresenter_IsLightDismissEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.DrawerFlyoutPresenter.IsLightDismissEnabledProperty);
 
         /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter.LightDismissOverlayBackground"/></summary>
         public static TTarget DrawerFlyoutPresenter_LightDismissOverlayBackground<TTarget>(this TTarget target, CSharpMarkup.WinUI.to.Brush value) where TTarget : DependencyObject
@@ -1347,7 +1406,11 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         /// <summary>Set <see cref="UnoToolkitUI.DrawerFlyoutPresenter"/> attached properties</summary>
         public static TTarget DrawerFlyoutPresenter<TTarget>(this TTarget target
 
+            , CSharpMarkup.WinUI.to.GridLength? DrawerLength = default
+
             , bool? IsGestureEnabled = default
+
+            , bool? IsLightDismissEnabled = default
 
             , CSharpMarkup.WinUI.to.Brush? LightDismissOverlayBackground = default
 
@@ -1355,7 +1418,11 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
 
         ) where TTarget : DependencyObject
         {
+            if (DrawerLength is not null) UnoToolkitUI.DrawerFlyoutPresenter.SetDrawerLength(target.UI, DrawerLength.Value);
+
             if (IsGestureEnabled is not null) UnoToolkitUI.DrawerFlyoutPresenter.SetIsGestureEnabled(target.UI, IsGestureEnabled.Value);
+
+            if (IsLightDismissEnabled is not null) UnoToolkitUI.DrawerFlyoutPresenter.SetIsLightDismissEnabled(target.UI, IsLightDismissEnabled.Value);
 
             if (LightDismissOverlayBackground is not null) UnoToolkitUI.DrawerFlyoutPresenter.SetLightDismissOverlayBackground(target.UI, LightDismissOverlayBackground.Value);
 
@@ -2226,6 +2293,20 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationBarTemplateSettings
     }
 }
 
+namespace CSharpMarkup.WinUI.Uno.Toolkit // ProgressExtensions
+{
+    public static partial class ProgressExtensionsExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.ProgressExtensions.IsActive"/></summary>
+        public static TTarget ProgressExtensions_IsActive<TTarget>(this TTarget target, bool value) where TTarget : FrameworkElement
+        { UnoToolkitUI.ProgressExtensions.SetIsActive(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ProgressExtensions.IsActive"/></summary>
+        public static DependencyProperty<TTarget, bool> ProgressExtensions_IsActive<TTarget>(this TTarget target) where TTarget : FrameworkElement
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.ProgressExtensions.IsActiveProperty);
+    }
+}
+
 namespace CSharpMarkup.WinUI.Uno.Toolkit // ResourceExtensions
 {
     public static partial class ResourceExtensionsExtensions
@@ -2237,6 +2318,237 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ResourceExtensions
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResourceExtensions.Resources"/></summary>
         public static DependencyProperty<TTarget, Xaml.ResourceDictionary> ResourceExtensions_Resources<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, Xaml.ResourceDictionary>.Get(target, UnoToolkitUI.ResourceExtensions.ResourcesProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // ResponsiveLayout
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="UnoToolkitUI.ResponsiveLayout"/></summary>
+        public static ResponsiveLayout ResponsiveLayout(object DataContext = default, double? Narrow = default, double? Narrowest = default, double? Normal = default, Xaml.DependencyObject TemplatedParent = default, double? Wide = default, double? Widest = default)
+        {
+            var ui = new UnoToolkitUI.ResponsiveLayout();
+            if (DataContext is not null) ui.DataContext = DataContext;
+            if (Narrow is not null) ui.Narrow = Narrow.Value;
+            if (Narrowest is not null) ui.Narrowest = Narrowest.Value;
+            if (Normal is not null) ui.Normal = Normal.Value;
+            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
+            if (Wide is not null) ui.Wide = Wide.Value;
+            if (Widest is not null) ui.Widest = Widest.Value;
+            return CSharpMarkup.WinUI.Uno.Toolkit.ResponsiveLayout.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.ResponsiveLayout"/></summary>
+        public static ResponsiveLayout ResponsiveLayout()
+        {
+            var ui = new UnoToolkitUI.ResponsiveLayout();
+            return CSharpMarkup.WinUI.Uno.Toolkit.ResponsiveLayout.StartChain(ui);
+        }
+    }
+
+    public partial class ResponsiveLayout : DependencyObject, IUI<UnoToolkitUI.ResponsiveLayout>
+    {
+        static ResponsiveLayout instance;
+
+        internal static ResponsiveLayout StartChain(UnoToolkitUI.ResponsiveLayout ui)
+        {
+            if (instance == null) instance = new ResponsiveLayout();
+            instance.UI = ui;
+            return instance;
+        }
+
+        UnoToolkitUI.ResponsiveLayout ui;
+
+        public new UnoToolkitUI.ResponsiveLayout UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator UnoToolkitUI.ResponsiveLayout(ResponsiveLayout view) => view?.UI;
+
+        public static implicit operator ResponsiveLayout(UnoToolkitUI.ResponsiveLayout ui) => ResponsiveLayout.StartChain(ui);
+
+        public ResponsiveLayout Invoke(Action<UnoToolkitUI.ResponsiveLayout> action) { action?.Invoke(UI); return this; }
+
+        protected ResponsiveLayout() { }
+    }
+
+    public static partial class ResponsiveLayoutExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveLayout.DataContext"/></summary>
+        public static TView DataContext<TView>(this TView view, object value) where TView : ResponsiveLayout { view.UI.DataContext = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveLayout.Narrow"/></summary>
+        public static TView Narrow<TView>(this TView view, double value) where TView : ResponsiveLayout { view.UI.Narrow = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveLayout.Narrowest"/></summary>
+        public static TView Narrowest<TView>(this TView view, double value) where TView : ResponsiveLayout { view.UI.Narrowest = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveLayout.Normal"/></summary>
+        public static TView Normal<TView>(this TView view, double value) where TView : ResponsiveLayout { view.UI.Normal = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveLayout.TemplatedParent"/></summary>
+        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : ResponsiveLayout { view.UI.TemplatedParent = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveLayout.Wide"/></summary>
+        public static TView Wide<TView>(this TView view, double value) where TView : ResponsiveLayout { view.UI.Wide = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveLayout.Widest"/></summary>
+        public static TView Widest<TView>(this TView view, double value) where TView : ResponsiveLayout { view.UI.Widest = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveLayout.DataContext"/></summary>
+        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : ResponsiveLayout
+        => DependencyProperty<TTarget, object>.Get(target, UnoToolkitUI.ResponsiveLayout.DataContextProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveLayout.Narrowest"/></summary>
+        public static DependencyProperty<TTarget, double> Narrowest<TTarget>(this TTarget target) where TTarget : ResponsiveLayout
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ResponsiveLayout.NarrowestProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveLayout.Narrow"/></summary>
+        public static DependencyProperty<TTarget, double> Narrow<TTarget>(this TTarget target) where TTarget : ResponsiveLayout
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ResponsiveLayout.NarrowProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveLayout.Normal"/></summary>
+        public static DependencyProperty<TTarget, double> Normal<TTarget>(this TTarget target) where TTarget : ResponsiveLayout
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ResponsiveLayout.NormalProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveLayout.TemplatedParent"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : ResponsiveLayout
+        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, UnoToolkitUI.ResponsiveLayout.TemplatedParentProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveLayout.Wide"/></summary>
+        public static DependencyProperty<TTarget, double> Wide<TTarget>(this TTarget target) where TTarget : ResponsiveLayout
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ResponsiveLayout.WideProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveLayout.Widest"/></summary>
+        public static DependencyProperty<TTarget, double> Widest<TTarget>(this TTarget target) where TTarget : ResponsiveLayout
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ResponsiveLayout.WidestProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // ResponsiveView
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="UnoToolkitUI.ResponsiveView"/></summary>
+        public static ResponsiveView ResponsiveView(UIObject Content)
+        {
+            var ui = new UnoToolkitUI.ResponsiveView();
+            if (Content != null) ui.Content = Content.UI;
+            return CSharpMarkup.WinUI.Uno.Toolkit.ResponsiveView.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.ResponsiveView"/></summary>
+        public static ResponsiveView ResponsiveView(Xaml.DataTemplate? NarrowestTemplate = default, Xaml.DataTemplate? NarrowTemplate = default, Xaml.DataTemplate? NormalTemplate = default, UnoToolkitUI.ResponsiveLayout ResponsiveLayout = default, Xaml.DataTemplate? WidestTemplate = default, Xaml.DataTemplate? WideTemplate = default, UIObject Content = default)
+        {
+            var ui = new UnoToolkitUI.ResponsiveView();
+            if (NarrowestTemplate is not null) ui.NarrowestTemplate = NarrowestTemplate;
+            if (NarrowTemplate is not null) ui.NarrowTemplate = NarrowTemplate;
+            if (NormalTemplate is not null) ui.NormalTemplate = NormalTemplate;
+            if (ResponsiveLayout is not null) ui.ResponsiveLayout = ResponsiveLayout;
+            if (WidestTemplate is not null) ui.WidestTemplate = WidestTemplate;
+            if (WideTemplate is not null) ui.WideTemplate = WideTemplate;
+            if (Content != null) ui.Content = Content.UI;
+            return CSharpMarkup.WinUI.Uno.Toolkit.ResponsiveView.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.ResponsiveView"/></summary>
+        public static ResponsiveView ResponsiveView()
+        {
+            var ui = new UnoToolkitUI.ResponsiveView();
+            return CSharpMarkup.WinUI.Uno.Toolkit.ResponsiveView.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.ResponsiveView"/></summary>
+        public static ResponsiveView ResponsiveView(nint handle)
+        {
+            var ui = new UnoToolkitUI.ResponsiveView(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.ResponsiveView.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.ResponsiveView"/></summary>
+        public static ResponsiveView ResponsiveView(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.ResponsiveView(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.ResponsiveView.StartChain(ui);
+        }
+    }
+
+    public partial class ResponsiveView : ContentControl, IUI<UnoToolkitUI.ResponsiveView>
+    {
+        static ResponsiveView instance;
+
+        internal static ResponsiveView StartChain(UnoToolkitUI.ResponsiveView ui)
+        {
+            if (instance == null) instance = new ResponsiveView();
+            instance.UI = ui;
+            return instance;
+        }
+
+        UnoToolkitUI.ResponsiveView ui;
+
+        public new UnoToolkitUI.ResponsiveView UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(ResponsiveView view) => view?.UI;
+
+        public static implicit operator UnoToolkitUI.ResponsiveView(ResponsiveView view) => view?.UI;
+
+        public static implicit operator ResponsiveView(UnoToolkitUI.ResponsiveView ui) => ResponsiveView.StartChain(ui);
+
+        public ResponsiveView Invoke(Action<UnoToolkitUI.ResponsiveView> action) { action?.Invoke(UI); return this; }
+
+        protected ResponsiveView() { }
+    }
+
+    public static partial class ResponsiveViewExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveView.NarrowestTemplate"/></summary>
+        public static TView NarrowestTemplate<TView>(this TView view, Xaml.DataTemplate? value) where TView : ResponsiveView { view.UI.NarrowestTemplate = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveView.NarrowTemplate"/></summary>
+        public static TView NarrowTemplate<TView>(this TView view, Xaml.DataTemplate? value) where TView : ResponsiveView { view.UI.NarrowTemplate = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveView.NormalTemplate"/></summary>
+        public static TView NormalTemplate<TView>(this TView view, Xaml.DataTemplate? value) where TView : ResponsiveView { view.UI.NormalTemplate = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveView.ResponsiveLayout"/></summary>
+        public static TView ResponsiveLayout<TView>(this TView view, UnoToolkitUI.ResponsiveLayout value) where TView : ResponsiveView { view.UI.ResponsiveLayout = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveView.WidestTemplate"/></summary>
+        public static TView WidestTemplate<TView>(this TView view, Xaml.DataTemplate? value) where TView : ResponsiveView { view.UI.WidestTemplate = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveView.WideTemplate"/></summary>
+        public static TView WideTemplate<TView>(this TView view, Xaml.DataTemplate? value) where TView : ResponsiveView { view.UI.WideTemplate = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveView.NarrowestTemplate"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DataTemplate?> NarrowestTemplate<TTarget>(this TTarget target) where TTarget : ResponsiveView
+        => DependencyProperty<TTarget, Xaml.DataTemplate?>.Get(target, UnoToolkitUI.ResponsiveView.NarrowestTemplateProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveView.NarrowTemplate"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DataTemplate?> NarrowTemplate<TTarget>(this TTarget target) where TTarget : ResponsiveView
+        => DependencyProperty<TTarget, Xaml.DataTemplate?>.Get(target, UnoToolkitUI.ResponsiveView.NarrowTemplateProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveView.NormalTemplate"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DataTemplate?> NormalTemplate<TTarget>(this TTarget target) where TTarget : ResponsiveView
+        => DependencyProperty<TTarget, Xaml.DataTemplate?>.Get(target, UnoToolkitUI.ResponsiveView.NormalTemplateProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveView.ResponsiveLayout"/></summary>
+        public static DependencyProperty<TTarget, UnoToolkitUI.ResponsiveLayout> ResponsiveLayout<TTarget>(this TTarget target) where TTarget : ResponsiveView
+        => DependencyProperty<TTarget, UnoToolkitUI.ResponsiveLayout>.Get(target, UnoToolkitUI.ResponsiveView.ResponsiveLayoutProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveView.WidestTemplate"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DataTemplate?> WidestTemplate<TTarget>(this TTarget target) where TTarget : ResponsiveView
+        => DependencyProperty<TTarget, Xaml.DataTemplate?>.Get(target, UnoToolkitUI.ResponsiveView.WidestTemplateProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveView.WideTemplate"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DataTemplate?> WideTemplate<TTarget>(this TTarget target) where TTarget : ResponsiveView
+        => DependencyProperty<TTarget, Xaml.DataTemplate?>.Get(target, UnoToolkitUI.ResponsiveView.WideTemplateProperty);
     }
 }
 

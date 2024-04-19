@@ -1,5 +1,5 @@
-﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET7_0 && __WASM_OR_SKIA__
+﻿// Start of generated C# Markup API for Microsoft.WindowsAppSDK
+#if NET8_0_WINDOWS10_0_19041 && WINUI
 
 using System;
 using System.Collections.Generic;
@@ -296,20 +296,6 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Reactive // ViewDebugger
 
     public static partial class ViewDebuggerExtensions
     {
-        /// <summary>Set <see cref="UnoExtensionsReactive.ViewDebugger.DataContext"/></summary>
-        public static TView DataContext<TView>(this TView view, object value) where TView : ViewDebugger { view.UI.DataContext = value; return view; }
-
-        /// <summary>Set <see cref="UnoExtensionsReactive.ViewDebugger.TemplatedParent"/></summary>
-        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : ViewDebugger { view.UI.TemplatedParent = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="UnoExtensionsReactive.ViewDebugger.DataContext"/></summary>
-        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : ViewDebugger
-        => DependencyProperty<TTarget, object>.Get(target, UnoExtensionsReactive.ViewDebugger.DataContextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="UnoExtensionsReactive.ViewDebugger.TemplatedParent"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : ViewDebugger
-        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, UnoExtensionsReactive.ViewDebugger.TemplatedParentProperty);
-
         /// <summary>Set <see cref="UnoExtensionsReactive.ViewDebugger.AvailableVisualStates"/></summary>
         public static TTarget ViewDebugger_AvailableVisualStates<TTarget>(this TTarget target, string? value) where TTarget : Control
         { UnoExtensionsReactive.ViewDebugger.SetAvailableVisualStates(target.UI, value); return target; }
@@ -375,4 +361,4 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Reactive // EnumPropertyValues
 }
 
 #endif
-// End of generated C# Markup API for Uno.WinUI
+// End of generated C# Markup API for Microsoft.WindowsAppSDK

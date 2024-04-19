@@ -1,5 +1,5 @@
-﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET7_0 && __WASM_OR_SKIA__
+﻿// Start of generated C# Markup API for Microsoft.WindowsAppSDK
+#if NET8_0_WINDOWS10_0_19041 && WINUI
 
 using System;
 using System.Collections.Generic;
@@ -35,10 +35,10 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Navigation // FrameView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoExtensionsNavigation.UI.Controls.FrameView"/></summary>
-        public static FrameView FrameView(UIObject Content)
+        public static FrameView FrameView(Xaml.UIElement Content)
         {
             var ui = new UnoExtensionsNavigation.UI.Controls.FrameView();
-            if (Content != null) ui.Content = Content.UI;
+            if (Content != null) ui.Content = Content;
             return CSharpMarkup.WinUI.Uno.Extensions.Navigation.FrameView.StartChain(ui);
         }
 
@@ -251,11 +251,27 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Navigation // Region
 
             , string Navigator = default
 
+            , bool? Attached = default
+
+            , UnoExtensionsNavigation.Regions.IRegion? Instance = default
+
+            , Xaml.FrameworkElement Parent = default
+
+            , IServiceProvider ServiceProvider = default
+
         ) where TTarget : FrameworkElement
         {
             if (Name is not null) UnoExtensionsNavigation.UI.Region.SetName(target.UI, Name);
 
             if (Navigator is not null) UnoExtensionsNavigation.UI.Region.SetNavigator(target.UI, Navigator);
+
+            if (Attached is not null) UnoExtensionsNavigation.UI.Region.SetAttached(target.UI, Attached.Value);
+
+            if (Instance is not null) UnoExtensionsNavigation.UI.Region.SetInstance(target.UI, Instance);
+
+            if (Parent is not null) UnoExtensionsNavigation.UI.Region.SetParent(target.UI, Parent);
+
+            if (ServiceProvider is not null) UnoExtensionsNavigation.UI.Region.SetServiceProvider(target.UI, ServiceProvider);
 
             return target;
         }
@@ -264,4 +280,4 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Navigation // Region
 
 
 #endif
-// End of generated C# Markup API for Uno.WinUI
+// End of generated C# Markup API for Microsoft.WindowsAppSDK

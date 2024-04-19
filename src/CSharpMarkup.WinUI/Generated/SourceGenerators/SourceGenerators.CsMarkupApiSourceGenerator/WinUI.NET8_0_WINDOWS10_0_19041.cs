@@ -2126,6 +2126,24 @@ namespace CSharpMarkup.WinUI // SelectorAutomationPeer
     }
 }
 
+namespace CSharpMarkup.WinUI // SelectorBarItemAutomationPeer
+{
+    public partial class SelectorBarItemAutomationPeer : ItemContainerAutomationPeer, IUI<Xaml.Automation.Peers.SelectorBarItemAutomationPeer>
+    {
+        Xaml.Automation.Peers.SelectorBarItemAutomationPeer ui;
+
+        public new Xaml.Automation.Peers.SelectorBarItemAutomationPeer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public SelectorBarItemAutomationPeer Invoke(Action<Xaml.Automation.Peers.SelectorBarItemAutomationPeer> action) { action?.Invoke(UI); return this; }
+
+        protected SelectorBarItemAutomationPeer() { }
+    }
+}
+
 namespace CSharpMarkup.WinUI // SelectorItemAutomationPeer
 {
     public partial class SelectorItemAutomationPeer : ItemAutomationPeer, IUI<Xaml.Automation.Peers.SelectorItemAutomationPeer>
@@ -11631,6 +11649,253 @@ namespace CSharpMarkup.WinUI // ListViewItem
     }
 }
 
+namespace CSharpMarkup.WinUI // MapControl
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.MapControl"/></summary>
+        public static MapControl MapControl(Windows.Devices.Geolocation.Geopoint Center = default, bool? InteractiveControlsVisible = default, IList<Xaml.Controls.MapLayer> Layers = default, string MapServiceToken = default, double? ZoomLevel = default)
+        {
+            var ui = new Xaml.Controls.MapControl();
+            if (Center is not null) ui.Center = Center;
+            if (InteractiveControlsVisible is not null) ui.InteractiveControlsVisible = InteractiveControlsVisible.Value;
+            if (Layers is not null) ui.Layers = Layers;
+            if (MapServiceToken is not null) ui.MapServiceToken = MapServiceToken;
+            if (ZoomLevel is not null) ui.ZoomLevel = ZoomLevel.Value;
+            return CSharpMarkup.WinUI.MapControl.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.MapControl"/></summary>
+        public static MapControl MapControl()
+        {
+            var ui = new Xaml.Controls.MapControl();
+            return CSharpMarkup.WinUI.MapControl.StartChain(ui);
+        }
+    }
+
+    public partial class MapControl : Control, IUI<Xaml.Controls.MapControl>
+    {
+        static MapControl instance;
+
+        internal static MapControl StartChain(Xaml.Controls.MapControl ui)
+        {
+            if (instance == null) instance = new MapControl();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.MapControl ui;
+
+        public new Xaml.Controls.MapControl UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(MapControl view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.MapControl(MapControl view) => view?.UI;
+
+        public static implicit operator MapControl(Xaml.Controls.MapControl ui) => MapControl.StartChain(ui);
+
+        public MapControl Invoke(Action<Xaml.Controls.MapControl> action) { action?.Invoke(UI); return this; }
+
+        protected MapControl() { }
+    }
+
+    public static partial class MapControlExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.MapControl.Center"/></summary>
+        public static TView Center<TView>(this TView view, Windows.Devices.Geolocation.Geopoint value) where TView : MapControl { view.UI.Center = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MapControl.InteractiveControlsVisible"/></summary>
+        public static TView InteractiveControlsVisible<TView>(this TView view, bool value) where TView : MapControl { view.UI.InteractiveControlsVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MapControl.Layers"/></summary>
+        public static TView Layers<TView>(this TView view, IList<Xaml.Controls.MapLayer> value) where TView : MapControl { view.UI.Layers = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MapControl.MapServiceToken"/></summary>
+        public static TView MapServiceToken<TView>(this TView view, string value) where TView : MapControl { view.UI.MapServiceToken = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.MapControl.ZoomLevel"/></summary>
+        public static TView ZoomLevel<TView>(this TView view, double value) where TView : MapControl { view.UI.ZoomLevel = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MapControl.Center"/></summary>
+        public static DependencyProperty<TTarget, Windows.Devices.Geolocation.Geopoint> Center<TTarget>(this TTarget target) where TTarget : MapControl
+        => DependencyProperty<TTarget, Windows.Devices.Geolocation.Geopoint>.Get(target, Xaml.Controls.MapControl.CenterProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MapControl.InteractiveControlsVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> InteractiveControlsVisible<TTarget>(this TTarget target) where TTarget : MapControl
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MapControl.InteractiveControlsVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MapControl.Layers"/></summary>
+        public static DependencyProperty<TTarget, IList<Xaml.Controls.MapLayer>> Layers<TTarget>(this TTarget target) where TTarget : MapControl
+        => DependencyProperty<TTarget, IList<Xaml.Controls.MapLayer>>.Get(target, Xaml.Controls.MapControl.LayersProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MapControl.MapServiceToken"/></summary>
+        public static DependencyProperty<TTarget, string> MapServiceToken<TTarget>(this TTarget target) where TTarget : MapControl
+        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.MapControl.MapServiceTokenProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MapControl.ZoomLevel"/></summary>
+        public static DependencyProperty<TTarget, double> ZoomLevel<TTarget>(this TTarget target) where TTarget : MapControl
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.MapControl.ZoomLevelProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // MapElement
+{
+    public partial class MapElement : DependencyObject, IUI<Xaml.Controls.MapElement>
+    {
+        Xaml.Controls.MapElement ui;
+
+        public new Xaml.Controls.MapElement UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public MapElement Invoke(Action<Xaml.Controls.MapElement> action) { action?.Invoke(UI); return this; }
+
+        protected MapElement() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // MapElementsLayer
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.MapElementsLayer"/></summary>
+        public static MapElementsLayer MapElementsLayer(IList<Xaml.Controls.MapElement> MapElements = default)
+        {
+            var ui = new Xaml.Controls.MapElementsLayer();
+            if (MapElements is not null) ui.MapElements = MapElements;
+            return CSharpMarkup.WinUI.MapElementsLayer.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.MapElementsLayer"/></summary>
+        public static MapElementsLayer MapElementsLayer()
+        {
+            var ui = new Xaml.Controls.MapElementsLayer();
+            return CSharpMarkup.WinUI.MapElementsLayer.StartChain(ui);
+        }
+    }
+
+    public partial class MapElementsLayer : MapLayer, IUI<Xaml.Controls.MapElementsLayer>
+    {
+        static MapElementsLayer instance;
+
+        internal static MapElementsLayer StartChain(Xaml.Controls.MapElementsLayer ui)
+        {
+            if (instance == null) instance = new MapElementsLayer();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.MapElementsLayer ui;
+
+        public new Xaml.Controls.MapElementsLayer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.MapElementsLayer(MapElementsLayer view) => view?.UI;
+
+        public static implicit operator MapElementsLayer(Xaml.Controls.MapElementsLayer ui) => MapElementsLayer.StartChain(ui);
+
+        public MapElementsLayer Invoke(Action<Xaml.Controls.MapElementsLayer> action) { action?.Invoke(UI); return this; }
+
+        protected MapElementsLayer() { }
+    }
+
+    public static partial class MapElementsLayerExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.MapElementsLayer.MapElements"/></summary>
+        public static TView MapElements<TView>(this TView view, IList<Xaml.Controls.MapElement> value) where TView : MapElementsLayer { view.UI.MapElements = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MapElementsLayer.MapElements"/></summary>
+        public static DependencyProperty<TTarget, IList<Xaml.Controls.MapElement>> MapElements<TTarget>(this TTarget target) where TTarget : MapElementsLayer
+        => DependencyProperty<TTarget, IList<Xaml.Controls.MapElement>>.Get(target, Xaml.Controls.MapElementsLayer.MapElementsProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // MapIcon
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.MapIcon"/></summary>
+        public static MapIcon MapIcon(Windows.Devices.Geolocation.Geopoint Location = default)
+        {
+            var ui = new Xaml.Controls.MapIcon();
+            if (Location is not null) ui.Location = Location;
+            return CSharpMarkup.WinUI.MapIcon.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.MapIcon"/></summary>
+        public static MapIcon MapIcon()
+        {
+            var ui = new Xaml.Controls.MapIcon();
+            return CSharpMarkup.WinUI.MapIcon.StartChain(ui);
+        }
+    }
+
+    public partial class MapIcon : MapElement, IUI<Xaml.Controls.MapIcon>
+    {
+        static MapIcon instance;
+
+        internal static MapIcon StartChain(Xaml.Controls.MapIcon ui)
+        {
+            if (instance == null) instance = new MapIcon();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.MapIcon ui;
+
+        public new Xaml.Controls.MapIcon UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.MapIcon(MapIcon view) => view?.UI;
+
+        public static implicit operator MapIcon(Xaml.Controls.MapIcon ui) => MapIcon.StartChain(ui);
+
+        public MapIcon Invoke(Action<Xaml.Controls.MapIcon> action) { action?.Invoke(UI); return this; }
+
+        protected MapIcon() { }
+    }
+
+    public static partial class MapIconExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.MapIcon.Location"/></summary>
+        public static TView Location<TView>(this TView view, Windows.Devices.Geolocation.Geopoint value) where TView : MapIcon { view.UI.Location = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MapIcon.Location"/></summary>
+        public static DependencyProperty<TTarget, Windows.Devices.Geolocation.Geopoint> Location<TTarget>(this TTarget target) where TTarget : MapIcon
+        => DependencyProperty<TTarget, Windows.Devices.Geolocation.Geopoint>.Get(target, Xaml.Controls.MapIcon.LocationProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // MapLayer
+{
+    public partial class MapLayer : DependencyObject, IUI<Xaml.Controls.MapLayer>
+    {
+        Xaml.Controls.MapLayer ui;
+
+        public new Xaml.Controls.MapLayer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public MapLayer Invoke(Action<Xaml.Controls.MapLayer> action) { action?.Invoke(UI); return this; }
+
+        protected MapLayer() { }
+    }
+}
+
 namespace CSharpMarkup.WinUI // MediaPlayerElement
 {
     public static partial class Helpers
@@ -12541,9 +12806,16 @@ namespace CSharpMarkup.WinUI // MenuFlyoutPresenter
         /// <summary>Set <see cref="Xaml.Controls.MenuFlyoutPresenter.IsDefaultShadowEnabled"/></summary>
         public static TView IsDefaultShadowEnabled<TView>(this TView view, bool value) where TView : MenuFlyoutPresenter { view.UI.IsDefaultShadowEnabled = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.MenuFlyoutPresenter.SystemBackdrop"/></summary>
+        public static TView SystemBackdrop<TView>(this TView view, Xaml.Media.SystemBackdrop value) where TView : MenuFlyoutPresenter { view.UI.SystemBackdrop = value; return view; }
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MenuFlyoutPresenter.IsDefaultShadowEnabled"/></summary>
         public static DependencyProperty<TTarget, bool> IsDefaultShadowEnabled<TTarget>(this TTarget target) where TTarget : MenuFlyoutPresenter
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.MenuFlyoutPresenter.IsDefaultShadowEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.MenuFlyoutPresenter.SystemBackdrop"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.SystemBackdrop> SystemBackdrop<TTarget>(this TTarget target) where TTarget : MenuFlyoutPresenter
+        => DependencyProperty<TTarget, Xaml.Media.SystemBackdrop>.Get(target, Xaml.Controls.MenuFlyoutPresenter.SystemBackdropProperty);
     }
 }
 
@@ -21881,6 +22153,149 @@ namespace CSharpMarkup.WinUI // ScrollViewer
 
             return target;
         }
+    }
+}
+
+namespace CSharpMarkup.WinUI // SelectorBar
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.SelectorBar"/></summary>
+        public static SelectorBar SelectorBar(Xaml.Controls.SelectorBarItem SelectedItem = default)
+        {
+            var ui = new Xaml.Controls.SelectorBar();
+            if (SelectedItem is not null) ui.SelectedItem = SelectedItem;
+            return CSharpMarkup.WinUI.SelectorBar.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.SelectorBar"/></summary>
+        public static SelectorBar SelectorBar()
+        {
+            var ui = new Xaml.Controls.SelectorBar();
+            return CSharpMarkup.WinUI.SelectorBar.StartChain(ui);
+        }
+    }
+
+    public partial class SelectorBar : Control, IUI<Xaml.Controls.SelectorBar>
+    {
+        static SelectorBar instance;
+
+        internal static SelectorBar StartChain(Xaml.Controls.SelectorBar ui)
+        {
+            if (instance == null) instance = new SelectorBar();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.SelectorBar ui;
+
+        public new Xaml.Controls.SelectorBar UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(SelectorBar view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.SelectorBar(SelectorBar view) => view?.UI;
+
+        public static implicit operator SelectorBar(Xaml.Controls.SelectorBar ui) => SelectorBar.StartChain(ui);
+
+        public SelectorBar Invoke(Action<Xaml.Controls.SelectorBar> action) { action?.Invoke(UI); return this; }
+
+        protected SelectorBar() { }
+    }
+
+    public static partial class SelectorBarExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.SelectorBar.SelectedItem"/></summary>
+        public static TView SelectedItem<TView>(this TView view, Xaml.Controls.SelectorBarItem value) where TView : SelectorBar { view.UI.SelectedItem = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SelectorBar.Items"/></summary>
+        public static DependencyProperty<TTarget, IList<Xaml.Controls.SelectorBarItem>> Items<TTarget>(this TTarget target) where TTarget : SelectorBar
+        => DependencyProperty<TTarget, IList<Xaml.Controls.SelectorBarItem>>.Get(target, Xaml.Controls.SelectorBar.ItemsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SelectorBar.SelectedItem"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.SelectorBarItem> SelectedItem<TTarget>(this TTarget target) where TTarget : SelectorBar
+        => DependencyProperty<TTarget, Xaml.Controls.SelectorBarItem>.Get(target, Xaml.Controls.SelectorBar.SelectedItemProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // SelectorBarItem
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.SelectorBarItem"/></summary>
+        public static SelectorBarItem SelectorBarItem(Xaml.UIElement Child)
+        {
+            var ui = new Xaml.Controls.SelectorBarItem();
+            if (Child is not null) ui.Child = Child;
+            return CSharpMarkup.WinUI.SelectorBarItem.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.SelectorBarItem"/></summary>
+        public static SelectorBarItem SelectorBarItem(Xaml.Controls.IconElement Icon = default, string Text = default, Xaml.UIElement Child = default)
+        {
+            var ui = new Xaml.Controls.SelectorBarItem();
+            if (Icon is not null) ui.Icon = Icon;
+            if (Text is not null) ui.Text = Text;
+            if (Child is not null) ui.Child = Child;
+            return CSharpMarkup.WinUI.SelectorBarItem.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.SelectorBarItem"/></summary>
+        public static SelectorBarItem SelectorBarItem()
+        {
+            var ui = new Xaml.Controls.SelectorBarItem();
+            return CSharpMarkup.WinUI.SelectorBarItem.StartChain(ui);
+        }
+    }
+
+    public partial class SelectorBarItem : ItemContainer, IUI<Xaml.Controls.SelectorBarItem>
+    {
+        static SelectorBarItem instance;
+
+        internal static SelectorBarItem StartChain(Xaml.Controls.SelectorBarItem ui)
+        {
+            if (instance == null) instance = new SelectorBarItem();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.SelectorBarItem ui;
+
+        public new Xaml.Controls.SelectorBarItem UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(SelectorBarItem view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.SelectorBarItem(SelectorBarItem view) => view?.UI;
+
+        public static implicit operator SelectorBarItem(Xaml.Controls.SelectorBarItem ui) => SelectorBarItem.StartChain(ui);
+
+        public SelectorBarItem Invoke(Action<Xaml.Controls.SelectorBarItem> action) { action?.Invoke(UI); return this; }
+
+        protected SelectorBarItem() { }
+    }
+
+    public static partial class SelectorBarItemExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.SelectorBarItem.Icon"/></summary>
+        public static TView Icon<TView>(this TView view, Xaml.Controls.IconElement value) where TView : SelectorBarItem { view.UI.Icon = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.SelectorBarItem.Text"/></summary>
+        public static TView Text<TView>(this TView view, string value) where TView : SelectorBarItem { view.UI.Text = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SelectorBarItem.Icon"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.IconElement> Icon<TTarget>(this TTarget target) where TTarget : SelectorBarItem
+        => DependencyProperty<TTarget, Xaml.Controls.IconElement>.Get(target, Xaml.Controls.SelectorBarItem.IconProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SelectorBarItem.Text"/></summary>
+        public static DependencyProperty<TTarget, string> Text<TTarget>(this TTarget target) where TTarget : SelectorBarItem
+        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.SelectorBarItem.TextProperty);
     }
 }
 
