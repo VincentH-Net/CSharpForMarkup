@@ -73,10 +73,5 @@
 	  </ProjectReference>
 	</ItemGroup>
 
-	<ItemGroup>
-		<!-- Workaround for https://github.com/microsoft/WindowsAppSDK/issues/3546 -->
-		<None Include="DependenciesPackagesAssets\**" Pack="true" PackagePath="lib\net7.0-windows10.0.18362\" />
-	</ItemGroup>
-
-		<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
+	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
 </Project>
