@@ -1,8 +1,8 @@
 <!-- For CSharpMarkup projects-->
 <Project>
 	<PropertyGroup>
-		<CSharpMarkupVersion>2.4.3</CSharpMarkupVersion>
-		<CSharpMarkupReleaseTag>csharpmarkup2-winui-2-4-3</CSharpMarkupReleaseTag>
+		<CSharpMarkupVersion>2.4.9</CSharpMarkupVersion>
+		<CSharpMarkupReleaseTag>csharpmarkup2-winui-2-4-9</CSharpMarkupReleaseTag>
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
 		<IsUno>true</IsUno>
@@ -64,7 +64,6 @@
 
 				<DefineConstants>$(DefineConstants);WINUI</DefineConstants>
 				<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-				<WindowsAppSDKWinUI>true</WindowsAppSDKWinUI> <!-- Workaround for https://github.com/unoplatform/uno/discussions/13569 -->
 			</PropertyGroup>
 			<Choose>
 				<When Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)', 1)) &lt; 8">
