@@ -5,12 +5,12 @@
     <PackageVersion Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" Version="2.0.0-rc2" />
     <PackageVersion Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0-rc2" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.2428" />
+    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.3233" />
     <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.5.240404000" />
-    <PackageVersion Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="4.0.0" />
-    <PackageVersion Include="Uno.Extensions.Navigation.WinUI" Version="4.0.0" />
-    <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="4.0.0" />
-    <PackageVersion Include="Uno.Toolkit.WinUI" Version="5.1.7" />
-    <PackageVersion Include="Uno.WinUI" Version="5.1.104" />
+    <PackageVersion Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="4.1.14" />
+    <PackageVersion Include="Uno.Extensions.Navigation.WinUI" Version="4.1.14" />
+    <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="4.1.14" />
+    <PackageVersion Include="Uno.Toolkit.WinUI" Version="6.0.18" />
+    <PackageVersion Include="Uno.WinUI" Version="5.2.80" />
   </ItemGroup>
 </Project>
