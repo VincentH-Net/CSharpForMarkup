@@ -1,0 +1,10 @@
+{
+  "background_color": "#ffffff",
+  "description": "WinUICsMarkupExamples",
+  "display": "standalone",
+  "name": "WinUICsMarkupExamples",
+  "short_name": "WinUICsMarkupExamples",
+  "start_url": "/index.html",
+  "theme_color": "#ffffff",
+  "scope": "/"
+}

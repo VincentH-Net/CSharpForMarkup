@@ -1,0 +1,37 @@
+<Project Sdk="Uno.Sdk">
+  <PropertyGroup>
+    <RootNamespace>WinUICsMarkupExamples.Presentation</RootNamespace>
+
+    <TargetFrameworks>
+      net8.0-android;
+      net8.0-ios;
+      net8.0-maccatalyst;
+      net8.0-windows10.0.19041;
+      net8.0;
+      net8.0-desktop;
+      net8.0-browserwasm;
+    </TargetFrameworks>
+
+    <UnoSingleProject>true</UnoSingleProject>
+    <OutputType>Library</OutputType>
+
+    <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
+
+    <!-- Disable implicit usings to avoid ambiguities between types in Uno and CSharpMarkup.WinUI.Uno -->
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".filenesting.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="CSharpMarkup.WinUI" />
+    <PackageReference Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation" />
+    <PackageReference Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit" />
+    <PackageReference Include="CSharpMarkup.WinUI.Uno.Toolkit" />
+  </ItemGroup>
+</Project>

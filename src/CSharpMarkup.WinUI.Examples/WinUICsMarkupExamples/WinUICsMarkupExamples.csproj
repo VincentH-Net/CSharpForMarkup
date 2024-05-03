@@ -1,52 +1,65 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Uno.Sdk">
+  <ItemGroup>
+    <None Remove="Assets\Images\forward.svg" />
+    <None Remove="Assets\Images\search.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WinUICsMarkupExamples.Presentation\WinUICsMarkupExamples.Presentation.csproj" />
+  </ItemGroup>
   <PropertyGroup>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('Windows')) or '$(EnableWindowsTargeting)' == 'true'">$(TargetFrameworks);net7.0-windows10.0.18362</TargetFrameworks>
-		<TargetFrameworks>$(TargetFrameworks);net7.0</TargetFrameworks><!-- 
-			This condition is used when building under Linux. If you're not building under
-			 Linux, you can remove this line and the conditions below.
-		--><_CanUseMobileTargets Condition="!$([MSBuild]::IsOSPlatform('Linux'))">true</_CanUseMobileTargets>
+    <TargetFrameworks>
+      net8.0-android;
+      net8.0-ios;
+      net8.0-maccatalyst;
+      net8.0-windows10.0.19041;
+      net8.0;
+      net8.0-desktop;
+      net8.0-browserwasm;
+    </TargetFrameworks>
 
-		<TargetFrameworks Condition="'$(_CanUseMobileTargets)'=='true'">$(TargetFrameworks);net7.0-android</TargetFrameworks>
-		<TargetFrameworks Condition="'$(_CanUseMobileTargets)'=='true'">$(TargetFrameworks);net7.0-ios</TargetFrameworks>
-		<TargetFrameworks Condition="'$(_CanUseMobileTargets)'=='true'">$(TargetFrameworks);net7.0-maccatalyst</TargetFrameworks>
-		
-		<DefaultLanguage>en</DefaultLanguage><SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion><SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion><SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion><SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.18362.0</SupportedOSPlatformVersion><TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.18362.0</TargetPlatformMinVersion></PropertyGroup>
-  <PropertyGroup>
-    <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
-    <GenerateLibraryLayout>true</GenerateLibraryLayout>
+    <OutputType>Exe</OutputType>
+    <UnoSingleProject>true</UnoSingleProject>
+
+    <!-- Display name -->
+    <ApplicationTitle>WinUICsMarkupExamples</ApplicationTitle>
+    <!-- App Identifier -->
+    <ApplicationId>com.companyname.winuicsmarkupexamples</ApplicationId>
+    <!-- Versions -->
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <!--
+      If you encounter this error message:
+
+        error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
+        Please update to a newer .NET SDK in order to reference this assembly.
+
+      This means that the two packages below must be aligned with the "build" version number of
+      the "Microsoft.Windows.SDK.BuildTools" package above, and the "revision" version number
+      must be the highest found in https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref.
+    -->
+    <!-- <WindowsSdkPackageVersion>10.0.22621.28</WindowsSdkPackageVersion> -->
+
+    <!--
+      UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
+      https://aka.platform.uno/singleproject-features
+    -->
+    <UnoFeatures>
+      Material;
+      Hosting;
+      Toolkit;
+      Logging;
+      LoggingSerilog;
+      Configuration;
+      Http;
+      Serialization;
+      Localization;
+      Navigation;
+    </UnoFeatures>
   </PropertyGroup>
-  <PropertyGroup>
-    <Nullable>enable</Nullable>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <AnalysisLevel>preview-All</AnalysisLevel>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <NoWarn>EnableGenerateDocumentationFile</NoWarn> <!-- Remove this to get a warning how to enable IDE0005 (Remove unnecessary usings/imports) on build; that warning describes a workaround for https://github.com/dotnet/roslyn/issues/41640 -->
+
+  <PropertyGroup Condition="'$(Configuration)'=='Debug' or '$(IsUiAutomationMappingEnabled)'=='True'">
+    <IsUiAutomationMappingEnabled>True</IsUiAutomationMappingEnabled>
+    <DefineConstants>$(DefineConstants);USE_UITESTS</DefineConstants>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0" />
-	<PackageReference Include="CSharpMarkup.WinUI" Version="2.3.8" />
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
-    <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" PrivateAssets="All" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)'=='net7.0-windows10.0.18362'">
-	<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230822000" />
-	<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.22621.28" />
-	<FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.22621.28" />
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)'!='net7.0-windows10.0.18362'">
-    <PackageReference Include="Uno.Core.Extensions.Logging.Singleton" Version="4.0.1" />
-    <PackageReference Include="Uno.WinUI" Version="4.10.13" />
-    <Content Include="Assets\**" />
-    <Page Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
-    <ApplicationDefinition Include="App.xaml" Condition="exists('App.xaml')" />
-    <Compile Update="**\*.xaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <UpToDateCheckInput Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
-    <Compile Update="**\*.logic.cs">
-      <DependentUpon>$([System.String]::Copy(%(Filename)).Replace('.logic', '.cs'))</DependentUpon>
-    </Compile>
-  </ItemGroup>
+
 </Project>

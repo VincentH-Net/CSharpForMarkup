@@ -1,0 +1,13 @@
+﻿global using System.Collections.Immutable;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.Hosting;
+global using Microsoft.Extensions.Localization;
+global using Microsoft.Extensions.Logging;
+global using Microsoft.Extensions.Options;
+global using WinUICsMarkupExamples.Models;
+global using WinUICsMarkupExamples.Presentation;
+global using WinUICsMarkupExamples.DataContracts;
+global using WinUICsMarkupExamples.DataContracts.Serialization;
+global using WinUICsMarkupExamples.Services.Caching;
+global using WinUICsMarkupExamples.Services.Endpoints;
+global using ApplicationExecutionState = Windows.ApplicationModel.Activation.ApplicationExecutionState;
