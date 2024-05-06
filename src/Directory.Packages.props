@@ -9,7 +9,7 @@
     <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.5.240404000" />
     <PackageVersion Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="4.1.14" />
     <PackageVersion Include="Uno.Extensions.Navigation.WinUI" Version="4.1.14" />
-    <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="4.1.21" />
+    <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="4.1.14" />
     <PackageVersion Include="Uno.Toolkit.WinUI" Version="6.0.18" />
     <PackageVersion Include="Uno.WinUI" Version="5.2.108" />
   </ItemGroup>
