@@ -39,7 +39,7 @@ namespace CSharpMarkup.WinUI
         public static TControl CenterContent<TControl>(this TControl control) where TControl : Control
         { control.UI.HorizontalContentAlignment = Xaml.HorizontalAlignment.Center; control.UI.VerticalContentAlignment = Xaml.VerticalAlignment.Center; return control; }
 
-        ///<summary>Short for:<code>HorizontalContentAlignment().Center() .VerticalContentAlignment().Center()</code></summary>
+        ///<summary>Short for:<code>HorizontalContentAlignment().Stretch() .VerticalContentAlignment().Stretch()</code></summary>
         [ShortFor("HorizontalContentAlignment().Stretch() .VerticalContentAlignment().Stretch()")]
         public static TControl StretchContent<TControl>(this TControl control) where TControl : Control
         { control.UI.HorizontalContentAlignment = Xaml.HorizontalAlignment.Stretch; control.UI.VerticalContentAlignment = Xaml.VerticalAlignment.Stretch; return control; }
