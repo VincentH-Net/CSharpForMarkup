@@ -25,7 +25,7 @@ namespace CSharpMarkup.WinUI
 
             return pathExpression
                 .Substring(endOfViewModelExpression) // Remove the viewmodel part from the binding string
-                .Replace("?", "")                    // Allow .Bind (tweet?.Title) where tweet is a null instance field used for binding only
+                .Replace("?", "").Replace("!", "")   // Allow .Bind to null(able) viewmodels, e.g. (tweet?.Title) where tweet is a null instance field used for binding only
                 .Trim('"', '@', ' ', '\t');          // Allow .Bind ("ILikeStringLiterals") => "ILikeStringLiterals"
         }
 
