@@ -65,7 +65,7 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 
 # News
 *May 7, 2024*
-> ## New C# Markup 2 for Uno Platform 5.2 incl .NET Single Project
+> ## New C# Markup 2.4 for Uno Platform 5.2 incl .NET Single Project
 Today's release is fully updated to Updated to Uno 5.2 including Uno's [.NET Single Project](https://platform.uno/blog/the-first-and-only-true-single-project-for-mobile-web-desktop-and-embedded-in-net/) and `uno.sdk`!
 
 Plus:
