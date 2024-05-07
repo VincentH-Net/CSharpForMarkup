@@ -13,8 +13,8 @@ dotnet new install Modern.CSharp.Templates
 md UnoCSharpMarkup2
 cd UnoCSharpMarkup2
 
-dotnet new unoapp
-dotnet new mcs-uno-markup2 --presentation mvux
+dotnet new unoapp -preset recommended
+dotnet new mcs-uno-markup2 --presentation mvux --allow-scripts yes
 
 ```
 
@@ -64,6 +64,15 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*May 7, 2024*
+> ## New C# Markup 2 templates for Uno Platform 5.2
+Today's release is fully updated to Updated to Uno 5.2 including Uno's [.NET Single Project](https://platform.uno/blog/the-first-and-only-true-single-project-for-mobile-web-desktop-and-embedded-in-net/) and `uno.sdk`!
+
+Plus:
+- Added support for latest `dotnet new unoapp` template
+- Updated to Uno.Extensions.* 4.1
+- Updated to Microsoft.WindowsAppSDK 1.5
+
 *Dec 21, 2023*
 > ## New C# Markup 2 templates for Uno Platform 5
 In addition to some new C# Markup 2 methods, today's release adds support for the new [C# Markup 2 templates for Uno Platform 5](https://github.com/Applicita/Modern.CSharp.Templates): an updated `mcs-uno-markup2` template, and a new `mcs-uno-view` template.
@@ -197,7 +206,7 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 
 To learn how to use C# Markup 2, read the [features description](#features) below.
 
-(note that the [example app](src/CSharpMarkup.WinUI.Examples/) in this repo is somewhat outdated - this will updated shortly)
+Fore a more complete example, see the [example app](src/CSharpMarkup.WinUI.Examples/) in this repo.
 
 # Features
 C# Markup 2 contains a full declarative, fluent API for existing UI frameworks. It surfaces virtually every layout, view and property, including attached properties, and includes **full inline documentation** that links each markup helper / parameter to the inline documentation for the underlying UI object / property.
