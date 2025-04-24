@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
 	<PropertyGroup>
 		<Configurations>Debug;Release;Generate</Configurations>
 		<IsUno>true</IsUno>
@@ -44,7 +44,7 @@
 	</PropertyGroup>
 		
 	<PropertyGroup>
-		<TargetFrameworks>$(CSharpMarkupWinUINet7TargetFrameworks)</TargetFrameworks>
+		<TargetFrameworks>net8.0-windows10.0.19041;net8.0;net8.0-android34.0;net8.0-ios18.0;net8.0-maccatalyst18.0</TargetFrameworks>
 		<RootNamespace>CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView</RootNamespace>
 	</PropertyGroup>
 

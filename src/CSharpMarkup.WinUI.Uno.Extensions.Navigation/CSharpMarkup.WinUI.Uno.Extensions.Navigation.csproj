@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
 	<PropertyGroup>
 		<Configurations>Debug;Release;Generate</Configurations>
 		<IsUno>true</IsUno>
@@ -44,7 +44,7 @@
 	</PropertyGroup>
 		
 	<PropertyGroup>
-		<TargetFrameworks>$(CSharpMarkupWinUINet8TargetFrameworks)</TargetFrameworks>
+		<TargetFrameworks>$(CSharpMarkupWinUIExtensionsTargetFrameworks)</TargetFrameworks>
 		<RootNamespace>CSharpMarkup.WinUI.Uno.Extensions.Navigation</RootNamespace>
 	</PropertyGroup>
 
