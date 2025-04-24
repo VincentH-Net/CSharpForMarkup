@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Microsoft.WindowsAppSDK
-#if NET8_0_WINDOWS10_0_19041 && WINUI
+#if NET8_0 && WINUI
 
 using System;
 using System.Collections.Generic;
