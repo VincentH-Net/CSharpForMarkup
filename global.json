@@ -1,4 +1,7 @@
 ﻿{
+  "msbuild-sdks": {
+    "Uno.Sdk": "5.6.54"
+  },
   "sdk": {
     "version": "9.0.200",
     "rollForward": "latestPatch"

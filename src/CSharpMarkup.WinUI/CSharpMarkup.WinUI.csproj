@@ -42,7 +42,7 @@
 		<RootNamespace>CSharpMarkup.WinUI</RootNamespace>
 		<TargetFrameworks>$(CSharpMarkupWinUITargetFrameworks)</TargetFrameworks>
 	</PropertyGroup>
-	
+
 	<PropertyGroup Condition="$(IsUno)==false">
 		<UseWinUI>true</UseWinUI>
 
