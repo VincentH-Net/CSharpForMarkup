@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET8_0 && __WASM_OR_SKIA__
+#if NET8_0 && __WASM_OR_SKIA__ && !DESKTOP && !BROWSERWASM
 
 using System;
 using System.Collections.Generic;
@@ -700,7 +700,6 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static AutomationPeerAnnotation AutomationPeerAnnotation(object DataContext = default, Xaml.Automation.Peers.AutomationPeer Peer = default, Xaml.DependencyObject TemplatedParent = default, Xaml.Automation.AnnotationType? Type = default)
         {
             var ui = new Xaml.Automation.Peers.AutomationPeerAnnotation();
@@ -712,7 +711,6 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
         }
 
         /// <summary>Create a <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static AutomationPeerAnnotation AutomationPeerAnnotation()
         {
             var ui = new Xaml.Automation.Peers.AutomationPeerAnnotation();
@@ -720,7 +718,6 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
         }
 
         /// <summary>Create a <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static AutomationPeerAnnotation AutomationPeerAnnotation(Xaml.Automation.AnnotationType type, Xaml.Automation.Peers.AutomationPeer peer)
         {
             var ui = new Xaml.Automation.Peers.AutomationPeerAnnotation(type, peer);
@@ -728,7 +725,6 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
         }
 
         /// <summary>Create a <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static AutomationPeerAnnotation AutomationPeerAnnotation(Xaml.Automation.AnnotationType type)
         {
             var ui = new Xaml.Automation.Peers.AutomationPeerAnnotation(type);
@@ -770,14 +766,12 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
         public static TView DataContext<TView>(this TView view, object value) where TView : AutomationPeerAnnotation { view.UI.DataContext = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation.Peer"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView Peer<TView>(this TView view, Xaml.Automation.Peers.AutomationPeer value) where TView : AutomationPeerAnnotation { view.UI.Peer = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation.TemplatedParent"/></summary>
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : AutomationPeerAnnotation { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation.Type"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView Type<TView>(this TView view, Xaml.Automation.AnnotationType value) where TView : AutomationPeerAnnotation { view.UI.Type = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation.DataContext"/></summary>
@@ -785,7 +779,6 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Automation.Peers.AutomationPeerAnnotation.DataContextProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation.Peer"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Automation.Peers.AutomationPeer> Peer<TTarget>(this TTarget target) where TTarget : AutomationPeerAnnotation
         => DependencyProperty<TTarget, Xaml.Automation.Peers.AutomationPeer>.Get(target, Xaml.Automation.Peers.AutomationPeerAnnotation.PeerProperty);
 
@@ -794,7 +787,6 @@ namespace CSharpMarkup.WinUI // AutomationPeerAnnotation
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Automation.Peers.AutomationPeerAnnotation.TemplatedParentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Automation.Peers.AutomationPeerAnnotation.Type"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Automation.AnnotationType> Type<TTarget>(this TTarget target) where TTarget : AutomationPeerAnnotation
         => DependencyProperty<TTarget, Xaml.Automation.AnnotationType>.Get(target, Xaml.Automation.Peers.AutomationPeerAnnotation.TypeProperty);
     }
@@ -2117,6 +2109,24 @@ namespace CSharpMarkup.WinUI // ScrollBarAutomationPeer
         public ScrollBarAutomationPeer Invoke(Action<Xaml.Automation.Peers.ScrollBarAutomationPeer> action) { action?.Invoke(UI); return this; }
 
         protected ScrollBarAutomationPeer() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // ScrollPresenterAutomationPeer
+{
+    public partial class ScrollPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ScrollPresenterAutomationPeer>
+    {
+        Xaml.Automation.Peers.ScrollPresenterAutomationPeer ui;
+
+        public new Xaml.Automation.Peers.ScrollPresenterAutomationPeer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public ScrollPresenterAutomationPeer Invoke(Action<Xaml.Automation.Peers.ScrollPresenterAutomationPeer> action) { action?.Invoke(UI); return this; }
+
+        protected ScrollPresenterAutomationPeer() { }
     }
 }
 
@@ -4239,7 +4249,6 @@ namespace CSharpMarkup.WinUI // Border
         public static TView BackgroundSizing<TView>(this TView view, Xaml.Controls.BackgroundSizing value) where TView : Border { view.UI.BackgroundSizing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Border.BackgroundTransition"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView BackgroundTransition<TView>(this TView view, Xaml.BrushTransition value) where TView : Border { view.UI.BackgroundTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Border.BorderBrush"/></summary>
@@ -6394,7 +6403,6 @@ namespace CSharpMarkup.WinUI // ComboBox
         public static TView IsDropDownOpen<TView>(this TView view, bool value) where TView : ComboBox { view.UI.IsDropDownOpen = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.IsEditable"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView IsEditable<TView>(this TView view, bool value) where TView : ComboBox { view.UI.IsEditable = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.IsPopupFullscreen"/></summary>
@@ -6410,30 +6418,24 @@ namespace CSharpMarkup.WinUI // ComboBox
         public static TView MaxDropDownHeight<TView>(this TView view, double value) where TView : ComboBox { view.UI.MaxDropDownHeight = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.PlaceholderForeground"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderForeground<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : ComboBox { view.UI.PlaceholderForeground = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.PlaceholderForeground"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderForeground<TView>(this TView view, Windows.UI.Color value) where TView : ComboBox { view.UI.PlaceholderForeground = new Xaml.Media.SolidColorBrush(value); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.PlaceholderForeground"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView PlaceholderForeground<TView>(this TView view, string color) where TView : ComboBox { view.UI.PlaceholderForeground = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.PlaceholderText"/></summary>
         public static TView PlaceholderText<TView>(this TView view, string value) where TView : ComboBox { view.UI.PlaceholderText = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.SelectionChangedTrigger"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionChangedTrigger<TView>(this TView view, Xaml.Controls.ComboBoxSelectionChangedTrigger value) where TView : ComboBox { view.UI.SelectionChangedTrigger = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.Text"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView Text<TView>(this TView view, string value) where TView : ComboBox { view.UI.Text = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ComboBox.TextBoxStyle"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView TextBoxStyle<TView>(this TView view, Xaml.Style value) where TView : ComboBox { view.UI.TextBoxStyle = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.Description"/></summary>
@@ -6453,7 +6455,6 @@ namespace CSharpMarkup.WinUI // ComboBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ComboBox.IsDropDownOpenProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.IsEditable"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsEditable<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ComboBox.IsEditableProperty);
 
@@ -6470,7 +6471,6 @@ namespace CSharpMarkup.WinUI // ComboBox
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ComboBox.MaxDropDownHeightProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.PlaceholderForeground"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> PlaceholderForeground<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.Controls.ComboBox.PlaceholderForegroundProperty);
 
@@ -6479,17 +6479,14 @@ namespace CSharpMarkup.WinUI // ComboBox
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.ComboBox.PlaceholderTextProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.SelectionChangedTrigger"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.ComboBoxSelectionChangedTrigger> SelectionChangedTrigger<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, Xaml.Controls.ComboBoxSelectionChangedTrigger>.Get(target, Xaml.Controls.ComboBox.SelectionChangedTriggerProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.TextBoxStyle"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Style> TextBoxStyle<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.ComboBox.TextBoxStyleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ComboBox.Text"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> Text<TTarget>(this TTarget target) where TTarget : ComboBox
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.ComboBox.TextProperty);
     }
@@ -7176,7 +7173,6 @@ namespace CSharpMarkup.WinUI // ContentPresenter
         public static TView BackgroundSizing<TView>(this TView view, Xaml.Controls.BackgroundSizing value) where TView : ContentPresenter { view.UI.BackgroundSizing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.BackgroundTransition"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView BackgroundTransition<TView>(this TView view, Xaml.BrushTransition value) where TView : ContentPresenter { view.UI.BackgroundTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.BorderBrush"/></summary>
@@ -7226,7 +7222,6 @@ namespace CSharpMarkup.WinUI // ContentPresenter
         public static TView FontSize<TView>(this TView view, double value) where TView : ContentPresenter { view.UI.FontSize = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.FontStretch"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView FontStretch<TView>(this TView view, Windows.UI.Text.FontStretch value) where TView : ContentPresenter { view.UI.FontStretch = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.FontStyle"/></summary>
@@ -7343,7 +7338,6 @@ namespace CSharpMarkup.WinUI // ContentPresenter
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ContentPresenter.FontSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ContentPresenter.FontStretch"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.FontStretch> FontStretch<TTarget>(this TTarget target) where TTarget : ContentPresenter
         => DependencyProperty<TTarget, Windows.UI.Text.FontStretch>.Get(target, Xaml.Controls.ContentPresenter.FontStretchProperty);
 
@@ -7537,7 +7531,6 @@ namespace CSharpMarkup.WinUI // Control
         public static TView FontSize<TView>(this TView view, double value) where TView : Control { view.UI.FontSize = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.FontStretch"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView FontStretch<TView>(this TView view, Windows.UI.Text.FontStretch value) where TView : Control { view.UI.FontStretch = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.FontStyle"/></summary>
@@ -7639,7 +7632,6 @@ namespace CSharpMarkup.WinUI // Control
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Control.FontSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Control.FontStretch"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.FontStretch> FontStretch<TTarget>(this TTarget target) where TTarget : Control
         => DependencyProperty<TTarget, Windows.UI.Text.FontStretch>.Get(target, Xaml.Controls.Control.FontStretchProperty);
 
@@ -7738,6 +7730,13 @@ namespace CSharpMarkup.WinUI // ControlTemplate
 
         /// <summary>Create a <see cref="Xaml.Controls.ControlTemplate"/></summary>
         public static ControlTemplate ControlTemplate(object? owner, Xaml.FrameworkTemplateBuilder? factory)
+        {
+            var ui = new Xaml.Controls.ControlTemplate(owner, factory);
+            return CSharpMarkup.WinUI.ControlTemplate.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.ControlTemplate"/></summary>
+        public static ControlTemplate ControlTemplate(object? owner, Xaml.NewFrameworkTemplateBuilder? factory)
         {
             var ui = new Xaml.Controls.ControlTemplate(owner, factory);
             return CSharpMarkup.WinUI.ControlTemplate.StartChain(ui);
@@ -10890,7 +10889,6 @@ namespace CSharpMarkup.WinUI // ItemContainer
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ItemContainer"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static ItemContainer ItemContainer(Xaml.UIElement Child)
         {
             var ui = new Xaml.Controls.ItemContainer();
@@ -10899,7 +10897,6 @@ namespace CSharpMarkup.WinUI // ItemContainer
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ItemContainer"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static ItemContainer ItemContainer(bool? IsSelected = default, Xaml.UIElement Child = default)
         {
             var ui = new Xaml.Controls.ItemContainer();
@@ -10909,7 +10906,6 @@ namespace CSharpMarkup.WinUI // ItemContainer
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ItemContainer"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static ItemContainer ItemContainer()
         {
             var ui = new Xaml.Controls.ItemContainer();
@@ -10950,16 +10946,13 @@ namespace CSharpMarkup.WinUI // ItemContainer
     public static partial class ItemContainerExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ItemContainer.IsSelected"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView IsSelected<TView>(this TView view, bool value) where TView : ItemContainer { view.UI.IsSelected = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemContainer.Child"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> Child<TTarget>(this TTarget target) where TTarget : ItemContainer
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.ItemContainer.ChildProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemContainer.IsSelected"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsSelected<TTarget>(this TTarget target) where TTarget : ItemContainer
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ItemContainer.IsSelectedProperty);
     }
@@ -11122,6 +11115,13 @@ namespace CSharpMarkup.WinUI // ItemsPanelTemplate
 
         /// <summary>Create a <see cref="Xaml.Controls.ItemsPanelTemplate"/></summary>
         public static ItemsPanelTemplate ItemsPanelTemplate(object? owner, Xaml.FrameworkTemplateBuilder? factory)
+        {
+            var ui = new Xaml.Controls.ItemsPanelTemplate(owner, factory);
+            return CSharpMarkup.WinUI.ItemsPanelTemplate.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.ItemsPanelTemplate"/></summary>
+        public static ItemsPanelTemplate ItemsPanelTemplate(object? owner, Xaml.NewFrameworkTemplateBuilder? factory)
         {
             var ui = new Xaml.Controls.ItemsPanelTemplate(owner, factory);
             return CSharpMarkup.WinUI.ItemsPanelTemplate.StartChain(ui);
@@ -11650,7 +11650,6 @@ namespace CSharpMarkup.WinUI // ItemsView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ItemsView"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static ItemsView ItemsView(bool? IsItemInvokedEnabled = default, object ItemsSource = default, Xaml.IElementFactory ItemTemplate = default, Xaml.Controls.ItemCollectionTransitionProvider ItemTransitionProvider = default, Xaml.Controls.Layout Layout = default, Xaml.Controls.ItemsViewSelectionMode? SelectionMode = default, Xaml.Controls.Primitives.IScrollController VerticalScrollController = default)
         {
             var ui = new Xaml.Controls.ItemsView();
@@ -11665,7 +11664,6 @@ namespace CSharpMarkup.WinUI // ItemsView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ItemsView"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static ItemsView ItemsView()
         {
             var ui = new Xaml.Controls.ItemsView();
@@ -11706,80 +11704,63 @@ namespace CSharpMarkup.WinUI // ItemsView
     public static partial class ItemsViewExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.ItemsView.IsItemInvokedEnabled"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView IsItemInvokedEnabled<TView>(this TView view, bool value) where TView : ItemsView { view.UI.IsItemInvokedEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsView.ItemsSource"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView ItemsSource<TView>(this TView view, object value) where TView : ItemsView { view.UI.ItemsSource = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsView.ItemTemplate"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView ItemTemplate<TView>(this TView view, Xaml.IElementFactory value) where TView : ItemsView { view.UI.ItemTemplate = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsView.ItemTransitionProvider"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView ItemTransitionProvider<TView>(this TView view, Xaml.Controls.ItemCollectionTransitionProvider value) where TView : ItemsView { view.UI.ItemTransitionProvider = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsView.Layout"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView Layout<TView>(this TView view, Xaml.Controls.Layout value) where TView : ItemsView { view.UI.Layout = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsView.SelectionMode"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionMode<TView>(this TView view, Xaml.Controls.ItemsViewSelectionMode value) where TView : ItemsView { view.UI.SelectionMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ItemsView.VerticalScrollController"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView VerticalScrollController<TView>(this TView view, Xaml.Controls.Primitives.IScrollController value) where TView : ItemsView { view.UI.VerticalScrollController = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsView.CurrentItemIndex"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> CurrentItemIndex<TTarget>(this TTarget target) where TTarget : ItemsView
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.ItemsView.CurrentItemIndexProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsView.IsItemInvokedEnabled"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsItemInvokedEnabled<TTarget>(this TTarget target) where TTarget : ItemsView
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.ItemsView.IsItemInvokedEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsView.ItemsSource"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> ItemsSource<TTarget>(this TTarget target) where TTarget : ItemsView
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ItemsView.ItemsSourceProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsView.ItemTemplate"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.IElementFactory> ItemTemplate<TTarget>(this TTarget target) where TTarget : ItemsView
         => DependencyProperty<TTarget, Xaml.IElementFactory>.Get(target, Xaml.Controls.ItemsView.ItemTemplateProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsView.ItemTransitionProvider"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.ItemCollectionTransitionProvider> ItemTransitionProvider<TTarget>(this TTarget target) where TTarget : ItemsView
         => DependencyProperty<TTarget, Xaml.Controls.ItemCollectionTransitionProvider>.Get(target, Xaml.Controls.ItemsView.ItemTransitionProviderProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsView.Layout"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Layout> Layout<TTarget>(this TTarget target) where TTarget : ItemsView
         => DependencyProperty<TTarget, Xaml.Controls.Layout>.Get(target, Xaml.Controls.ItemsView.LayoutProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsView.ScrollView"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.ScrollView> ScrollView<TTarget>(this TTarget target) where TTarget : ItemsView
         => DependencyProperty<TTarget, Xaml.Controls.ScrollView>.Get(target, Xaml.Controls.ItemsView.ScrollViewProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsView.SelectedItem"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, object> SelectedItem<TTarget>(this TTarget target) where TTarget : ItemsView
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ItemsView.SelectedItemProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsView.SelectionMode"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.ItemsViewSelectionMode> SelectionMode<TTarget>(this TTarget target) where TTarget : ItemsView
         => DependencyProperty<TTarget, Xaml.Controls.ItemsViewSelectionMode>.Get(target, Xaml.Controls.ItemsView.SelectionModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ItemsView.VerticalScrollController"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.IScrollController> VerticalScrollController<TTarget>(this TTarget target) where TTarget : ItemsView
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.IScrollController>.Get(target, Xaml.Controls.ItemsView.VerticalScrollControllerProperty);
     }
@@ -16195,7 +16176,6 @@ namespace CSharpMarkup.WinUI // Panel
     public static partial class PanelExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Panel.BackgroundTransition"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView BackgroundTransition<TView>(this TView view, Xaml.BrushTransition value) where TView : Panel { view.UI.BackgroundTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Panel.ChildrenTransitions"/></summary>
@@ -17019,7 +16999,7 @@ namespace CSharpMarkup.WinUI // PipsPager
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.PipsPager"/></summary>
-        public static PipsPager PipsPager(int? MaxVisiblePips = default, Xaml.Style NextButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? NextButtonVisibility = default, Xaml.Style NormalPipStyle = default, int? NumberOfPages = default, Xaml.Controls.Orientation? Orientation = default, Xaml.Style PreviousButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? PreviousButtonVisibility = default, int? SelectedPageIndex = default, Xaml.Style SelectedPipStyle = default)
+        public static PipsPager PipsPager(int? MaxVisiblePips = default, Xaml.Style NextButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? NextButtonVisibility = default, Xaml.Style NormalPipStyle = default, int? NumberOfPages = default, Xaml.Controls.Orientation? Orientation = default, Xaml.Style PreviousButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? PreviousButtonVisibility = default, int? SelectedPageIndex = default, Xaml.Style SelectedPipStyle = default, Xaml.Controls.PipsPagerWrapMode? WrapMode = default)
         {
             var ui = new Xaml.Controls.PipsPager();
             if (MaxVisiblePips is not null) ui.MaxVisiblePips = MaxVisiblePips.Value;
@@ -17032,6 +17012,7 @@ namespace CSharpMarkup.WinUI // PipsPager
             if (PreviousButtonVisibility is not null) ui.PreviousButtonVisibility = PreviousButtonVisibility.Value;
             if (SelectedPageIndex is not null) ui.SelectedPageIndex = SelectedPageIndex.Value;
             if (SelectedPipStyle is not null) ui.SelectedPipStyle = SelectedPipStyle;
+            if (WrapMode is not null) ui.WrapMode = WrapMode.Value;
             return CSharpMarkup.WinUI.PipsPager.StartChain(ui);
         }
 
@@ -17105,6 +17086,10 @@ namespace CSharpMarkup.WinUI // PipsPager
         /// <summary>Set <see cref="Xaml.Controls.PipsPager.SelectedPipStyle"/></summary>
         public static TView SelectedPipStyle<TView>(this TView view, Xaml.Style value) where TView : PipsPager { view.UI.SelectedPipStyle = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.WrapMode"/></summary>
+        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
+        public static TView WrapMode<TView>(this TView view, Xaml.Controls.PipsPagerWrapMode value) where TView : PipsPager { view.UI.WrapMode = value; return view; }
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.MaxVisiblePips"/></summary>
         public static DependencyProperty<TTarget, int> MaxVisiblePips<TTarget>(this TTarget target) where TTarget : PipsPager
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PipsPager.MaxVisiblePipsProperty);
@@ -17144,6 +17129,11 @@ namespace CSharpMarkup.WinUI // PipsPager
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.SelectedPipStyle"/></summary>
         public static DependencyProperty<TTarget, Xaml.Style> SelectedPipStyle<TTarget>(this TTarget target) where TTarget : PipsPager
         => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PipsPager.SelectedPipStyleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.WrapMode"/></summary>
+        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, Xaml.Controls.PipsPagerWrapMode> WrapMode<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, Xaml.Controls.PipsPagerWrapMode>.Get(target, Xaml.Controls.PipsPager.WrapModeProperty);
     }
 }
 
@@ -18719,7 +18709,6 @@ namespace CSharpMarkup.WinUI // FlyoutBase
         public static TView LightDismissOverlayMode<TView>(this TView view, Xaml.Controls.LightDismissOverlayMode value) where TView : FlyoutBase { view.UI.LightDismissOverlayMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.FlyoutBase.OverlayInputPassThroughElement"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView OverlayInputPassThroughElement<TView>(this TView view, Xaml.DependencyObject value) where TView : FlyoutBase { view.UI.OverlayInputPassThroughElement = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.FlyoutBase.Placement"/></summary>
@@ -18782,7 +18771,6 @@ namespace CSharpMarkup.WinUI // FlyoutBase
         => DependencyProperty<TTarget, Xaml.Controls.LightDismissOverlayMode>.Get(target, Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.OverlayInputPassThroughElement"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> OverlayInputPassThroughElement<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.Primitives.FlyoutBase.OverlayInputPassThroughElementProperty);
 
@@ -21976,7 +21964,6 @@ namespace CSharpMarkup.WinUI // ScrollPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollPresenter"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static ScrollPresenter ScrollPresenter(Xaml.UIElement Content)
         {
             var ui = new Xaml.Controls.Primitives.ScrollPresenter();
@@ -21985,7 +21972,6 @@ namespace CSharpMarkup.WinUI // ScrollPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollPresenter"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static ScrollPresenter ScrollPresenter(CSharpMarkup.WinUI.to.Brush? Background = default, Xaml.Controls.ScrollingScrollMode? ComputedHorizontalScrollMode = default, Xaml.Controls.ScrollingScrollMode? ComputedVerticalScrollMode = default, Xaml.Controls.ScrollingContentOrientation? ContentOrientation = default, double? HorizontalAnchorRatio = default, Xaml.Controls.ScrollingChainMode? HorizontalScrollChainMode = default, Xaml.Controls.Primitives.IScrollController HorizontalScrollController = default, Xaml.Controls.ScrollingScrollMode? HorizontalScrollMode = default, Xaml.Controls.ScrollingRailMode? HorizontalScrollRailMode = default, Xaml.Controls.ScrollingInputKinds? IgnoredInputKinds = default, double? MaxZoomFactor = default, double? MinZoomFactor = default, double? VerticalAnchorRatio = default, Xaml.Controls.ScrollingChainMode? VerticalScrollChainMode = default, Xaml.Controls.Primitives.IScrollController VerticalScrollController = default, Xaml.Controls.ScrollingScrollMode? VerticalScrollMode = default, Xaml.Controls.ScrollingRailMode? VerticalScrollRailMode = default, Xaml.Controls.ScrollingChainMode? ZoomChainMode = default, Xaml.Controls.ScrollingZoomMode? ZoomMode = default, Xaml.UIElement Content = default)
         {
             var ui = new Xaml.Controls.Primitives.ScrollPresenter();
@@ -22013,7 +21999,6 @@ namespace CSharpMarkup.WinUI // ScrollPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollPresenter"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static ScrollPresenter ScrollPresenter()
         {
             var ui = new Xaml.Controls.Primitives.ScrollPresenter();
@@ -25320,7 +25305,6 @@ namespace CSharpMarkup.WinUI // ScrollView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ScrollView"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static ScrollView ScrollView(Xaml.UIElement Content)
         {
             var ui = new Xaml.Controls.ScrollView();
@@ -25329,7 +25313,6 @@ namespace CSharpMarkup.WinUI // ScrollView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ScrollView"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static ScrollView ScrollView(Xaml.Visibility? ComputedHorizontalScrollBarVisibility = default, Xaml.Controls.ScrollingScrollMode? ComputedHorizontalScrollMode = default, Xaml.Visibility? ComputedVerticalScrollBarVisibility = default, Xaml.Controls.ScrollingScrollMode? ComputedVerticalScrollMode = default, Xaml.Controls.ScrollingContentOrientation? ContentOrientation = default, double? HorizontalAnchorRatio = default, Xaml.Controls.ScrollingScrollBarVisibility? HorizontalScrollBarVisibility = default, Xaml.Controls.ScrollingChainMode? HorizontalScrollChainMode = default, Xaml.Controls.ScrollingScrollMode? HorizontalScrollMode = default, Xaml.Controls.ScrollingRailMode? HorizontalScrollRailMode = default, Xaml.Controls.ScrollingInputKinds? IgnoredInputKinds = default, double? MaxZoomFactor = default, double? MinZoomFactor = default, double? VerticalAnchorRatio = default, Xaml.Controls.ScrollingScrollBarVisibility? VerticalScrollBarVisibility = default, Xaml.Controls.ScrollingChainMode? VerticalScrollChainMode = default, Xaml.Controls.ScrollingScrollMode? VerticalScrollMode = default, Xaml.Controls.ScrollingRailMode? VerticalScrollRailMode = default, Xaml.Controls.ScrollingChainMode? ZoomChainMode = default, Xaml.Controls.ScrollingZoomMode? ZoomMode = default, Xaml.UIElement Content = default)
         {
             var ui = new Xaml.Controls.ScrollView();
@@ -25358,7 +25341,6 @@ namespace CSharpMarkup.WinUI // ScrollView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ScrollView"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static ScrollView ScrollView()
         {
             var ui = new Xaml.Controls.ScrollView();
@@ -26130,7 +26112,6 @@ namespace CSharpMarkup.WinUI // SelectorBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.SelectorBar"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static SelectorBar SelectorBar(Xaml.Controls.SelectorBarItem SelectedItem = default)
         {
             var ui = new Xaml.Controls.SelectorBar();
@@ -26139,7 +26120,6 @@ namespace CSharpMarkup.WinUI // SelectorBar
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SelectorBar"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static SelectorBar SelectorBar()
         {
             var ui = new Xaml.Controls.SelectorBar();
@@ -26180,16 +26160,13 @@ namespace CSharpMarkup.WinUI // SelectorBar
     public static partial class SelectorBarExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.SelectorBar.SelectedItem"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView SelectedItem<TView>(this TView view, Xaml.Controls.SelectorBarItem value) where TView : SelectorBar { view.UI.SelectedItem = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SelectorBar.Items"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, IList<Xaml.Controls.SelectorBarItem>> Items<TTarget>(this TTarget target) where TTarget : SelectorBar
         => DependencyProperty<TTarget, IList<Xaml.Controls.SelectorBarItem>>.Get(target, Xaml.Controls.SelectorBar.ItemsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SelectorBar.SelectedItem"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.SelectorBarItem> SelectedItem<TTarget>(this TTarget target) where TTarget : SelectorBar
         => DependencyProperty<TTarget, Xaml.Controls.SelectorBarItem>.Get(target, Xaml.Controls.SelectorBar.SelectedItemProperty);
     }
@@ -26200,7 +26177,6 @@ namespace CSharpMarkup.WinUI // SelectorBarItem
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.SelectorBarItem"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static SelectorBarItem SelectorBarItem(Xaml.UIElement Child)
         {
             var ui = new Xaml.Controls.SelectorBarItem();
@@ -26209,7 +26185,6 @@ namespace CSharpMarkup.WinUI // SelectorBarItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SelectorBarItem"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static SelectorBarItem SelectorBarItem(Xaml.Controls.IconElement Icon = default, string Text = default, Xaml.UIElement Child = default)
         {
             var ui = new Xaml.Controls.SelectorBarItem();
@@ -26220,7 +26195,6 @@ namespace CSharpMarkup.WinUI // SelectorBarItem
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.SelectorBarItem"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static SelectorBarItem SelectorBarItem()
         {
             var ui = new Xaml.Controls.SelectorBarItem();
@@ -26261,20 +26235,16 @@ namespace CSharpMarkup.WinUI // SelectorBarItem
     public static partial class SelectorBarItemExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.SelectorBarItem.Icon"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView Icon<TView>(this TView view, Xaml.Controls.IconElement value) where TView : SelectorBarItem { view.UI.Icon = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.SelectorBarItem.Text"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView Text<TView>(this TView view, string value) where TView : SelectorBarItem { view.UI.Text = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SelectorBarItem.Icon"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.IconElement> Icon<TTarget>(this TTarget target) where TTarget : SelectorBarItem
         => DependencyProperty<TTarget, Xaml.Controls.IconElement>.Get(target, Xaml.Controls.SelectorBarItem.IconProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.SelectorBarItem.Text"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> Text<TTarget>(this TTarget target) where TTarget : SelectorBarItem
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.SelectorBarItem.TextProperty);
     }
@@ -27666,6 +27636,10 @@ namespace CSharpMarkup.WinUI // TabView
         /// <summary>Set <see cref="Xaml.Controls.TabView.CanReorderTabs"/></summary>
         public static TView CanReorderTabs<TView>(this TView view, bool value) where TView : TabView { view.UI.CanReorderTabs = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.TabView.CanTearOutTabs"/></summary>
+        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
+        public static TView CanTearOutTabs<TView>(this TView view, bool value) where TView : TabView { view.UI.CanTearOutTabs = value; return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.TabView.CloseButtonOverlayMode"/></summary>
         public static TView CloseButtonOverlayMode<TView>(this TView view, Xaml.Controls.TabViewCloseButtonOverlayMode value) where TView : TabView { view.UI.CloseButtonOverlayMode = value; return view; }
 
@@ -27721,6 +27695,11 @@ namespace CSharpMarkup.WinUI // TabView
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabView.CanReorderTabs"/></summary>
         public static DependencyProperty<TTarget, bool> CanReorderTabs<TTarget>(this TTarget target) where TTarget : TabView
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TabView.CanReorderTabsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabView.CanTearOutTabs"/></summary>
+        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, bool> CanTearOutTabs<TTarget>(this TTarget target) where TTarget : TabView
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TabView.CanTearOutTabsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabView.CloseButtonOverlayMode"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.TabViewCloseButtonOverlayMode> CloseButtonOverlayMode<TTarget>(this TTarget target) where TTarget : TabView
@@ -28399,7 +28378,6 @@ namespace CSharpMarkup.WinUI // TextBlock
         public static TView FontSize<TView>(this TView view, double value) where TView : TextBlock { view.UI.FontSize = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.FontStretch"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView FontStretch<TView>(this TView view, Windows.UI.Text.FontStretch value) where TView : TextBlock { view.UI.FontStretch = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.FontStyle"/></summary>
@@ -28464,7 +28442,6 @@ namespace CSharpMarkup.WinUI // TextBlock
         public static TView SelectionFlyout<TView>(this TView view, Xaml.Controls.Primitives.FlyoutBase value) where TView : TextBlock { view.UI.SelectionFlyout = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.SelectionHighlightColor"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView SelectionHighlightColor<TView>(this TView view, Xaml.Media.SolidColorBrush value) where TView : TextBlock { view.UI.SelectionHighlightColor = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.Text"/></summary>
@@ -28503,7 +28480,6 @@ namespace CSharpMarkup.WinUI // TextBlock
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.TextBlock.FontSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.FontStretch"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.FontStretch> FontStretch<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, Windows.UI.Text.FontStretch>.Get(target, Xaml.Controls.TextBlock.FontStretchProperty);
 
@@ -28573,7 +28549,6 @@ namespace CSharpMarkup.WinUI // TextBlock
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutBase>.Get(target, Xaml.Controls.TextBlock.SelectionFlyoutProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.SelectionHighlightColor"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.SolidColorBrush> SelectionHighlightColor<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, Xaml.Media.SolidColorBrush>.Get(target, Xaml.Controls.TextBlock.SelectionHighlightColorProperty);
 
@@ -28615,7 +28590,7 @@ namespace CSharpMarkup.WinUI // TextBox
     {
         /// <summary>Create a <see cref="Xaml.Controls.TextBox"/></summary>
         /// <remarks>Remark: TextBox().Bind() binds to <see cref="Xaml.Controls.TextBox.TextProperty"/></remarks>
-        public static TextBox TextBox(bool? AcceptsReturn = default, Xaml.Controls.CharacterCasing? CharacterCasing = default, object Description = default, Xaml.Controls.CandidateWindowAlignment? DesiredCandidateWindowAlignment = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.TextAlignment? HorizontalTextAlignment = default, Xaml.Input.InputScope InputScope = default, bool? IsColorFontEnabled = default, bool? IsReadOnly = default, bool? IsSpellCheckEnabled = default, bool? IsTextPredictionEnabled = default, int? MaxLength = default, CSharpMarkup.WinUI.to.Brush? PlaceholderForeground = default, string PlaceholderText = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, string SelectedText = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, Xaml.Media.SolidColorBrush SelectionHighlightColorWhenNotFocused = default, int? SelectionLength = default, int? SelectionStart = default, string Text = default, Xaml.TextAlignment? TextAlignment = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.TextWrapping? TextWrapping = default)
+        public static TextBox TextBox(bool? AcceptsReturn = default, Xaml.Controls.CharacterCasing? CharacterCasing = default, object Description = default, Xaml.Controls.CandidateWindowAlignment? DesiredCandidateWindowAlignment = default, object Header = default, Xaml.DataTemplate HeaderTemplate = default, Xaml.TextAlignment? HorizontalTextAlignment = default, Xaml.Input.InputScope InputScope = default, bool? IsColorFontEnabled = default, bool? IsPointerCaptureRequired = default, bool? IsReadOnly = default, bool? IsSpellCheckEnabled = default, bool? IsTextPredictionEnabled = default, int? MaxLength = default, CSharpMarkup.WinUI.to.Brush? PlaceholderForeground = default, string PlaceholderText = default, bool? PreventKeyboardDisplayOnProgrammaticFocus = default, string SelectedText = default, Xaml.Controls.Primitives.FlyoutBase SelectionFlyout = default, Xaml.Media.SolidColorBrush SelectionHighlightColor = default, Xaml.Media.SolidColorBrush SelectionHighlightColorWhenNotFocused = default, int? SelectionLength = default, int? SelectionStart = default, string Text = default, Xaml.TextAlignment? TextAlignment = default, Xaml.TextReadingOrder? TextReadingOrder = default, Xaml.TextWrapping? TextWrapping = default)
         {
             var ui = new Xaml.Controls.TextBox();
             if (AcceptsReturn is not null) ui.AcceptsReturn = AcceptsReturn.Value;
@@ -28627,6 +28602,7 @@ namespace CSharpMarkup.WinUI // TextBox
             if (HorizontalTextAlignment is not null) ui.HorizontalTextAlignment = HorizontalTextAlignment.Value;
             if (InputScope is not null) ui.InputScope = InputScope;
             if (IsColorFontEnabled is not null) ui.IsColorFontEnabled = IsColorFontEnabled.Value;
+            if (IsPointerCaptureRequired is not null) ui.IsPointerCaptureRequired = IsPointerCaptureRequired.Value;
             if (IsReadOnly is not null) ui.IsReadOnly = IsReadOnly.Value;
             if (IsSpellCheckEnabled is not null) ui.IsSpellCheckEnabled = IsSpellCheckEnabled.Value;
             if (IsTextPredictionEnabled is not null) ui.IsTextPredictionEnabled = IsTextPredictionEnabled.Value;
@@ -28722,6 +28698,9 @@ namespace CSharpMarkup.WinUI // TextBox
         [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView IsColorFontEnabled<TView>(this TView view, bool value) where TView : TextBox { view.UI.IsColorFontEnabled = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.TextBox.IsPointerCaptureRequired"/></summary>
+        public static TView IsPointerCaptureRequired<TView>(this TView view, bool value) where TView : TextBox { view.UI.IsPointerCaptureRequired = value; return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.TextBox.IsReadOnly"/></summary>
         public static TView IsReadOnly<TView>(this TView view, bool value) where TView : TextBox { view.UI.IsReadOnly = value; return view; }
 
@@ -28794,12 +28773,10 @@ namespace CSharpMarkup.WinUI // TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.CanPasteClipboardContentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.CanRedo"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> CanRedo<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.CanRedoProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.CanUndo"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> CanUndo<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.CanUndoProperty);
 
@@ -28838,6 +28815,10 @@ namespace CSharpMarkup.WinUI // TextBox
         [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsColorFontEnabled<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.IsColorFontEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.IsPointerCaptureRequired"/></summary>
+        public static DependencyProperty<TTarget, bool> IsPointerCaptureRequired<TTarget>(this TTarget target) where TTarget : TextBox
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.IsPointerCaptureRequiredProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.IsReadOnly"/></summary>
         public static DependencyProperty<TTarget, bool> IsReadOnly<TTarget>(this TTarget target) where TTarget : TextBox
@@ -29779,12 +29760,10 @@ namespace CSharpMarkup.WinUI // ToolTipService
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.PlacementMode>.Get(target, Xaml.Controls.ToolTipService.PlacementProperty);
 
         /// <summary>Set <see cref="Xaml.Controls.ToolTipService.PlacementTarget"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TTarget ToolTipService_PlacementTarget<TTarget>(this TTarget target, Xaml.UIElement value) where TTarget : DependencyObject
         { Xaml.Controls.ToolTipService.SetPlacementTarget(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ToolTipService.PlacementTarget"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.UIElement> ToolTipService_PlacementTarget<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.ToolTipService.PlacementTargetProperty);
 
@@ -31286,7 +31265,6 @@ namespace CSharpMarkup.WinUI // WebView2
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.WebView2"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static WebView2 WebView2(bool? CanGoBack = default, bool? CanGoForward = default, Windows.UI.Color? DefaultBackgroundColor = default, bool? IsScrollEnabled = default, Uri Source = default)
         {
             var ui = new Xaml.Controls.WebView2();
@@ -31299,7 +31277,6 @@ namespace CSharpMarkup.WinUI // WebView2
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.WebView2"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static WebView2 WebView2()
         {
             var ui = new Xaml.Controls.WebView2();
@@ -31863,6 +31840,13 @@ namespace CSharpMarkup.WinUI // DataTemplate
 
         /// <summary>Create a <see cref="Xaml.DataTemplate"/></summary>
         public static DataTemplate DataTemplate(object? owner, Xaml.FrameworkTemplateBuilder? factory)
+        {
+            var ui = new Xaml.DataTemplate(owner, factory);
+            return CSharpMarkup.WinUI.DataTemplate.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.DataTemplate"/></summary>
+        public static DataTemplate DataTemplate(object? owner, Xaml.NewFrameworkTemplateBuilder? factory)
         {
             var ui = new Xaml.DataTemplate(owner, factory);
             return CSharpMarkup.WinUI.DataTemplate.StartChain(ui);
@@ -32962,7 +32946,6 @@ namespace CSharpMarkup.WinUI // TextElement
         public static TView FontSize<TView>(this TView view, double value) where TView : TextElement { view.UI.FontSize = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.FontStretch"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView FontStretch<TView>(this TView view, Windows.UI.Text.FontStretch value) where TView : TextElement { view.UI.FontStretch = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Documents.TextElement.FontStyle"/></summary>
@@ -33056,7 +33039,6 @@ namespace CSharpMarkup.WinUI // TextElement
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Documents.TextElement.FontSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.TextElement.FontStretch"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Text.FontStretch> FontStretch<TTarget>(this TTarget target) where TTarget : TextElement
         => DependencyProperty<TTarget, Windows.UI.Text.FontStretch>.Get(target, Xaml.Documents.TextElement.FontStretchProperty);
 
@@ -34004,7 +33986,6 @@ namespace CSharpMarkup.WinUI // FrameworkElement
         public static TView Background<TView>(this TView view, string color) where TView : FrameworkElement { view.UI.Background = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.FrameworkElement.FlowDirection"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView FlowDirection<TView>(this TView view, Xaml.FlowDirection value) where TView : FrameworkElement { view.UI.FlowDirection = value; return view; }
 
         /// <summary>Set <see cref="Xaml.FrameworkElement.FocusVisualMargin"/></summary>
@@ -34165,7 +34146,6 @@ namespace CSharpMarkup.WinUI // FrameworkElement
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.FrameworkElement.BackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.FlowDirection"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.FlowDirection> FlowDirection<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, Xaml.FlowDirection>.Get(target, Xaml.FrameworkElement.FlowDirectionProperty);
 
@@ -34434,7 +34414,7 @@ namespace CSharpMarkup.WinUI // KeyboardAccelerator
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Input.KeyboardAccelerator"/></summary>
-        public static KeyboardAccelerator KeyboardAccelerator(object DataContext = default, bool? IsEnabled = default, VirtualKey? Key = default, VirtualKeyModifiers? Modifiers = default, Xaml.DependencyObject ScopeOwner = default, Xaml.DependencyObject TemplatedParent = default)
+        public static KeyboardAccelerator KeyboardAccelerator(object DataContext = default, bool? IsEnabled = default, VirtualKey? Key = default, VirtualKeyModifiers? Modifiers = default, Xaml.DependencyObject? ScopeOwner = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Input.KeyboardAccelerator();
             if (DataContext is not null) ui.DataContext = DataContext;
@@ -34497,7 +34477,7 @@ namespace CSharpMarkup.WinUI // KeyboardAccelerator
         public static TView Modifiers<TView>(this TView view, VirtualKeyModifiers value) where TView : KeyboardAccelerator { view.UI.Modifiers = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Input.KeyboardAccelerator.ScopeOwner"/></summary>
-        public static TView ScopeOwner<TView>(this TView view, Xaml.DependencyObject value) where TView : KeyboardAccelerator { view.UI.ScopeOwner = value; return view; }
+        public static TView ScopeOwner<TView>(this TView view, Xaml.DependencyObject? value) where TView : KeyboardAccelerator { view.UI.ScopeOwner = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Input.KeyboardAccelerator.TemplatedParent"/></summary>
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : KeyboardAccelerator { view.UI.TemplatedParent = value; return view; }
@@ -34519,8 +34499,8 @@ namespace CSharpMarkup.WinUI // KeyboardAccelerator
         => DependencyProperty<TTarget, VirtualKeyModifiers>.Get(target, Xaml.Input.KeyboardAccelerator.ModifiersProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Input.KeyboardAccelerator.ScopeOwner"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DependencyObject> ScopeOwner<TTarget>(this TTarget target) where TTarget : KeyboardAccelerator
-        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Input.KeyboardAccelerator.ScopeOwnerProperty);
+        public static DependencyProperty<TTarget, Xaml.DependencyObject?> ScopeOwner<TTarget>(this TTarget target) where TTarget : KeyboardAccelerator
+        => DependencyProperty<TTarget, Xaml.DependencyObject?>.Get(target, Xaml.Input.KeyboardAccelerator.ScopeOwnerProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Input.KeyboardAccelerator.TemplatedParent"/></summary>
         public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : KeyboardAccelerator
@@ -40154,7 +40134,6 @@ namespace CSharpMarkup.WinUI // Brush
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : Brush { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Brush.Transform"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView Transform<TView>(this TView view, Xaml.Media.Transform value) where TView : Brush { view.UI.Transform = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Brush.DataContext"/></summary>
@@ -40174,7 +40153,6 @@ namespace CSharpMarkup.WinUI // Brush
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Brush.TemplatedParentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Brush.Transform"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Transform> Transform<TTarget>(this TTarget target) where TTarget : Brush
         => DependencyProperty<TTarget, Xaml.Media.Transform>.Get(target, Xaml.Media.Brush.TransformProperty);
     }
@@ -40433,29 +40411,23 @@ namespace CSharpMarkup.WinUI // EllipseGeometry
     public static partial class EllipseGeometryExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.EllipseGeometry.Center"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView Center<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : EllipseGeometry { view.UI.Center = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.EllipseGeometry.RadiusX"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView RadiusX<TView>(this TView view, double value) where TView : EllipseGeometry { view.UI.RadiusX = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.EllipseGeometry.RadiusY"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView RadiusY<TView>(this TView view, double value) where TView : EllipseGeometry { view.UI.RadiusY = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.EllipseGeometry.Center"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> Center<TTarget>(this TTarget target) where TTarget : EllipseGeometry
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.EllipseGeometry.CenterProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.EllipseGeometry.RadiusX"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> RadiusX<TTarget>(this TTarget target) where TTarget : EllipseGeometry
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.EllipseGeometry.RadiusXProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.EllipseGeometry.RadiusY"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, double> RadiusY<TTarget>(this TTarget target) where TTarget : EllipseGeometry
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Media.EllipseGeometry.RadiusYProperty);
     }
@@ -41129,7 +41101,6 @@ namespace CSharpMarkup.WinUI // RenderTargetBitmap
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Media.Imaging.RenderTargetBitmap"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static RenderTargetBitmap RenderTargetBitmap()
         {
             var ui = new Xaml.Media.Imaging.RenderTargetBitmap();
@@ -41168,12 +41139,10 @@ namespace CSharpMarkup.WinUI // RenderTargetBitmap
     public static partial class RenderTargetBitmapExtensions
     {
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Imaging.RenderTargetBitmap.PixelHeight"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> PixelHeight<TTarget>(this TTarget target) where TTarget : RenderTargetBitmap
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Media.Imaging.RenderTargetBitmap.PixelHeightProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Imaging.RenderTargetBitmap.PixelWidth"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, int> PixelWidth<TTarget>(this TTarget target) where TTarget : RenderTargetBitmap
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Media.Imaging.RenderTargetBitmap.PixelWidthProperty);
     }
@@ -41493,20 +41462,16 @@ namespace CSharpMarkup.WinUI // LineGeometry
     public static partial class LineGeometryExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.LineGeometry.EndPoint"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView EndPoint<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : LineGeometry { view.UI.EndPoint = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.LineGeometry.StartPoint"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView StartPoint<TView>(this TView view, CSharpMarkup.WinUI.to.Point value) where TView : LineGeometry { view.UI.StartPoint = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.LineGeometry.EndPoint"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> EndPoint<TTarget>(this TTarget target) where TTarget : LineGeometry
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.LineGeometry.EndPointProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.LineGeometry.StartPoint"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point> StartPoint<TTarget>(this TTarget target) where TTarget : LineGeometry
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Point>.Get(target, Xaml.Media.LineGeometry.StartPointProperty);
     }
@@ -45120,7 +45085,7 @@ namespace CSharpMarkup.WinUI // UIElement
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.UIElement"/></summary>
-        public static UIElement UIElement(string AccessKey = default, Xaml.DependencyObject AccessKeyScopeOwner = default, bool? AllowDrop = default, Xaml.Media.CacheMode CacheMode = default, bool? CanBeScrollAnchor = default, bool? CanDrag = default, Vector3? CenterPoint = default, Xaml.Media.RectangleGeometry Clip = default, Xaml.Media.ElementCompositeMode? CompositeMode = default, Xaml.Controls.Primitives.FlyoutBase ContextFlyout = default, object DataContext = default, Uno.UI.Xaml.RoutedEventFlag? EventsBubblingInManagedCode = default, bool? ExitDisplayModeOnAccessKeyInvoked = default, Xaml.FocusState? FocusState = default, Xaml.ElementHighContrastAdjustment? HighContrastAdjustment = default, bool? IsAccessKeyScope = default, bool? IsDoubleTapEnabled = default, bool? IsHitTestVisible = default, bool? IsHoldingEnabled = default, bool? IsRightTapEnabled = default, bool? IsTabStop = default, bool? IsTapEnabled = default, Xaml.Input.KeyboardAcceleratorPlacementMode? KeyboardAcceleratorPlacementMode = default, Xaml.DependencyObject KeyboardAcceleratorPlacementTarget = default, IList<Xaml.Input.KeyboardAccelerator> KeyboardAccelerators = default, double? KeyTipHorizontalOffset = default, Xaml.Input.KeyTipPlacementMode? KeyTipPlacementMode = default, Xaml.DependencyObject KeyTipTarget = default, double? KeyTipVerticalOffset = default, Xaml.Input.ManipulationModes? ManipulationMode = default, double? Opacity = default, Xaml.ScalarTransition OpacityTransition = default, Xaml.Media.Projection Projection = default, double? RasterizationScale = default, Xaml.Media.Transform RenderTransform = default, CSharpMarkup.WinUI.to.Point? RenderTransformOrigin = default, float? Rotation = default, Vector3? RotationAxis = default, Xaml.ScalarTransition RotationTransition = default, Vector3? Scale = default, Xaml.Vector3Transition ScaleTransition = default, Xaml.Media.Shadow Shadow = default, Xaml.Input.KeyboardNavigationMode? TabFocusNavigation = default, int? TabIndex = default, Xaml.DependencyObject TemplatedParent = default, Xaml.Media.Media3D.Transform3D Transform3D = default, Matrix4x4? TransformMatrix = default, Vector3? Translation = default, Xaml.Vector3Transition TranslationTransition = default, bool? UseLayoutRounding = default, bool? UseSystemFocusVisuals = default, Xaml.Visibility? Visibility = default, Xaml.XamlRoot? XamlRoot = default, Xaml.DependencyObject XYFocusDown = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusDownNavigationStrategy = default, Xaml.Input.XYFocusKeyboardNavigationMode? XYFocusKeyboardNavigation = default, Xaml.DependencyObject XYFocusLeft = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusLeftNavigationStrategy = default, Xaml.DependencyObject XYFocusRight = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusRightNavigationStrategy = default, Xaml.DependencyObject XYFocusUp = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusUpNavigationStrategy = default)
+        public static UIElement UIElement(string AccessKey = default, Xaml.DependencyObject AccessKeyScopeOwner = default, bool? AllowDrop = default, Xaml.Media.CacheMode CacheMode = default, bool? CanBeScrollAnchor = default, bool? CanDrag = default, Vector3? CenterPoint = default, Xaml.Media.RectangleGeometry Clip = default, Xaml.Media.ElementCompositeMode? CompositeMode = default, Xaml.Controls.Primitives.FlyoutBase ContextFlyout = default, object DataContext = default, Uno.UI.Xaml.RoutedEventFlag? EventsBubblingInManagedCode = default, bool? ExitDisplayModeOnAccessKeyInvoked = default, Xaml.FocusState? FocusState = default, Xaml.ElementHighContrastAdjustment? HighContrastAdjustment = default, bool? IsAccessKeyScope = default, bool? IsDoubleTapEnabled = default, bool? IsHitTestVisible = default, bool? IsHoldingEnabled = default, bool? IsRightTapEnabled = default, bool? IsTabStop = default, bool? IsTapEnabled = default, Xaml.Input.KeyboardAcceleratorPlacementMode? KeyboardAcceleratorPlacementMode = default, Xaml.DependencyObject KeyboardAcceleratorPlacementTarget = default, double? KeyTipHorizontalOffset = default, Xaml.Input.KeyTipPlacementMode? KeyTipPlacementMode = default, Xaml.DependencyObject KeyTipTarget = default, double? KeyTipVerticalOffset = default, Xaml.Input.ManipulationModes? ManipulationMode = default, double? Opacity = default, Xaml.ScalarTransition OpacityTransition = default, Xaml.Media.Projection Projection = default, double? RasterizationScale = default, Xaml.Media.Transform RenderTransform = default, CSharpMarkup.WinUI.to.Point? RenderTransformOrigin = default, float? Rotation = default, Vector3? RotationAxis = default, Xaml.ScalarTransition RotationTransition = default, Vector3? Scale = default, Xaml.Vector3Transition ScaleTransition = default, Xaml.Media.Shadow Shadow = default, Xaml.Input.KeyboardNavigationMode? TabFocusNavigation = default, int? TabIndex = default, Xaml.DependencyObject TemplatedParent = default, Xaml.Media.Media3D.Transform3D Transform3D = default, Matrix4x4? TransformMatrix = default, Vector3? Translation = default, Xaml.Vector3Transition TranslationTransition = default, bool? UseLayoutRounding = default, bool? UseSystemFocusVisuals = default, Xaml.Visibility? Visibility = default, Xaml.XamlRoot? XamlRoot = default, Xaml.DependencyObject XYFocusDown = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusDownNavigationStrategy = default, Xaml.Input.XYFocusKeyboardNavigationMode? XYFocusKeyboardNavigation = default, Xaml.DependencyObject XYFocusLeft = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusLeftNavigationStrategy = default, Xaml.DependencyObject XYFocusRight = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusRightNavigationStrategy = default, Xaml.DependencyObject XYFocusUp = default, Xaml.Input.XYFocusNavigationStrategy? XYFocusUpNavigationStrategy = default)
         {
             var ui = new Xaml.UIElement();
             if (AccessKey is not null) ui.AccessKey = AccessKey;
@@ -45147,7 +45112,6 @@ namespace CSharpMarkup.WinUI // UIElement
             if (IsTapEnabled is not null) ui.IsTapEnabled = IsTapEnabled.Value;
             if (KeyboardAcceleratorPlacementMode is not null) ui.KeyboardAcceleratorPlacementMode = KeyboardAcceleratorPlacementMode.Value;
             if (KeyboardAcceleratorPlacementTarget is not null) ui.KeyboardAcceleratorPlacementTarget = KeyboardAcceleratorPlacementTarget;
-            if (KeyboardAccelerators is not null) ui.KeyboardAccelerators = KeyboardAccelerators;
             if (KeyTipHorizontalOffset is not null) ui.KeyTipHorizontalOffset = KeyTipHorizontalOffset.Value;
             if (KeyTipPlacementMode is not null) ui.KeyTipPlacementMode = KeyTipPlacementMode.Value;
             if (KeyTipTarget is not null) ui.KeyTipTarget = KeyTipTarget;
@@ -45306,15 +45270,10 @@ namespace CSharpMarkup.WinUI // UIElement
         public static TView IsTapEnabled<TView>(this TView view, bool value) where TView : UIElement { view.UI.IsTapEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.KeyboardAcceleratorPlacementMode"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView KeyboardAcceleratorPlacementMode<TView>(this TView view, Xaml.Input.KeyboardAcceleratorPlacementMode value) where TView : UIElement { view.UI.KeyboardAcceleratorPlacementMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.KeyboardAcceleratorPlacementTarget"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView KeyboardAcceleratorPlacementTarget<TView>(this TView view, Xaml.DependencyObject value) where TView : UIElement { view.UI.KeyboardAcceleratorPlacementTarget = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.UIElement.KeyboardAccelerators"/></summary>
-        public static TView KeyboardAccelerators<TView>(this TView view, IList<Xaml.Input.KeyboardAccelerator> value) where TView : UIElement { view.UI.KeyboardAccelerators = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.KeyTipHorizontalOffset"/></summary>
         [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
@@ -45404,7 +45363,6 @@ namespace CSharpMarkup.WinUI // UIElement
         public static TView TranslationTransition<TView>(this TView view, Xaml.Vector3Transition value) where TView : UIElement { view.UI.TranslationTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.UseLayoutRounding"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView UseLayoutRounding<TView>(this TView view, bool value) where TView : UIElement { view.UI.UseLayoutRounding = value; return view; }
 
         /// <summary>Set <see cref="Xaml.UIElement.UseSystemFocusVisuals"/></summary>
@@ -45540,12 +45498,10 @@ namespace CSharpMarkup.WinUI // UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.UIElement.IsTapEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.KeyboardAcceleratorPlacementMode"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode> KeyboardAcceleratorPlacementMode<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.Input.KeyboardAcceleratorPlacementMode>.Get(target, Xaml.UIElement.KeyboardAcceleratorPlacementModeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.KeyboardAcceleratorPlacementTarget"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.DependencyObject> KeyboardAcceleratorPlacementTarget<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.UIElement.KeyboardAcceleratorPlacementTargetProperty);
 
@@ -45621,7 +45577,6 @@ namespace CSharpMarkup.WinUI // UIElement
         => DependencyProperty<TTarget, Xaml.Media.Media3D.Transform3D>.Get(target, Xaml.UIElement.Transform3DProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.UIElement.UseLayoutRounding"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> UseLayoutRounding<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.UIElement.UseLayoutRoundingProperty);
 
@@ -46092,6 +46047,110 @@ namespace CSharpMarkup.WinUI // StreamGeometry
     {
         /// <summary>Set <see cref="Uno.Media.StreamGeometry.FillRule"/></summary>
         public static TView FillRule<TView>(this TView view, Xaml.Media.FillRule value) where TView : StreamGeometry { view.UI.FillRule = value; return view; }
+    }
+}
+
+namespace CSharpMarkup.WinUI // FauxGradientBorderPresenter
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Uno.UI.Controls.FauxGradientBorderPresenter"/></summary>
+        public static FauxGradientBorderPresenter FauxGradientBorderPresenter(UIObject Content)
+        {
+            var ui = new Uno.UI.Controls.FauxGradientBorderPresenter();
+            if (Content is not null) ui.Content = Content.UI;
+            return CSharpMarkup.WinUI.FauxGradientBorderPresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Uno.UI.Controls.FauxGradientBorderPresenter"/></summary>
+        public static FauxGradientBorderPresenter FauxGradientBorderPresenter(CSharpMarkup.WinUI.to.Brush? RequestedBorderBrush = default, CSharpMarkup.WinUI.to.Thickness? RequestedBorderThickness = default, CSharpMarkup.WinUI.to.CornerRadius? RequestedCornerRadius = default, UIObject Content = default)
+        {
+            var ui = new Uno.UI.Controls.FauxGradientBorderPresenter();
+            if (RequestedBorderBrush is not null) ui.RequestedBorderBrush = RequestedBorderBrush.Value;
+            if (RequestedBorderThickness is not null) ui.RequestedBorderThickness = RequestedBorderThickness.Value;
+            if (RequestedCornerRadius is not null) ui.RequestedCornerRadius = RequestedCornerRadius.Value;
+            if (Content is not null) ui.Content = Content.UI;
+            return CSharpMarkup.WinUI.FauxGradientBorderPresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Uno.UI.Controls.FauxGradientBorderPresenter"/></summary>
+        public static FauxGradientBorderPresenter FauxGradientBorderPresenter()
+        {
+            var ui = new Uno.UI.Controls.FauxGradientBorderPresenter();
+            return CSharpMarkup.WinUI.FauxGradientBorderPresenter.StartChain(ui);
+        }
+    }
+
+    public partial class FauxGradientBorderPresenter : ContentPresenter, IUI<Uno.UI.Controls.FauxGradientBorderPresenter>
+    {
+        static FauxGradientBorderPresenter instance;
+
+        internal static FauxGradientBorderPresenter StartChain(Uno.UI.Controls.FauxGradientBorderPresenter ui)
+        {
+            if (instance == null) instance = new FauxGradientBorderPresenter();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Uno.UI.Controls.FauxGradientBorderPresenter ui;
+
+        public new Uno.UI.Controls.FauxGradientBorderPresenter UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(FauxGradientBorderPresenter view) => view?.UI;
+
+        public static implicit operator Uno.UI.Controls.FauxGradientBorderPresenter(FauxGradientBorderPresenter view) => view?.UI;
+
+        public static implicit operator FauxGradientBorderPresenter(Uno.UI.Controls.FauxGradientBorderPresenter ui) => FauxGradientBorderPresenter.StartChain(ui);
+
+        public FauxGradientBorderPresenter Invoke(Action<Uno.UI.Controls.FauxGradientBorderPresenter> action) { action?.Invoke(UI); return this; }
+
+        protected FauxGradientBorderPresenter() { }
+    }
+
+    public static partial class FauxGradientBorderPresenterExtensions
+    {
+        /// <summary>Set <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderBrush"/></summary>
+        public static TView RequestedBorderBrush<TView>(this TView view, CSharpMarkup.WinUI.to.Brush value) where TView : FauxGradientBorderPresenter { view.UI.RequestedBorderBrush = value; return view; }
+
+        /// <summary>Set <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderBrush"/></summary>
+        public static TView RequestedBorderBrush<TView>(this TView view, Windows.UI.Color value) where TView : FauxGradientBorderPresenter { view.UI.RequestedBorderBrush = new Xaml.Media.SolidColorBrush(value); return view; }
+
+        /// <summary>Set <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderBrush"/></summary>
+        public static TView RequestedBorderBrush<TView>(this TView view, string color) where TView : FauxGradientBorderPresenter { view.UI.RequestedBorderBrush = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
+
+        /// <summary>Set <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderThickness"/></summary>
+        public static TView RequestedBorderThickness<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : FauxGradientBorderPresenter { view.UI.RequestedBorderThickness = value; return view; }
+
+        /// <summary>Set <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderThickness"/></summary>
+        public static TView RequestedBorderThickness<TView>(this TView view, double uniform) where TView : FauxGradientBorderPresenter { view.UI.RequestedBorderThickness = Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderThickness"/></summary>
+        public static TView RequestedBorderThickness<TView>(this TView view, double horizontal, double vertical) where TView : FauxGradientBorderPresenter { view.UI.RequestedBorderThickness = Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderThickness"/></summary>
+        public static TView RequestedBorderThickness<TView>(this TView view, double left, double top, double right, double bottom) where TView : FauxGradientBorderPresenter { view.UI.RequestedBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderThickness"/></summary>
+        public static TView RequestedBorderThicknesses<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : FauxGradientBorderPresenter { view.UI.RequestedBorderThickness = Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedCornerRadius"/></summary>
+        public static TView RequestedCornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : FauxGradientBorderPresenter { view.UI.RequestedCornerRadius = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderBrush"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush> RequestedBorderBrush<TTarget>(this TTarget target) where TTarget : FauxGradientBorderPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderBrushProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderThickness"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> RequestedBorderThickness<TTarget>(this TTarget target) where TTarget : FauxGradientBorderPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, Uno.UI.Controls.FauxGradientBorderPresenter.RequestedBorderThicknessProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Uno.UI.Controls.FauxGradientBorderPresenter.RequestedCornerRadius"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius> RequestedCornerRadius<TTarget>(this TTarget target) where TTarget : FauxGradientBorderPresenter
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Uno.UI.Controls.FauxGradientBorderPresenter.RequestedCornerRadiusProperty);
     }
 }
 
@@ -49411,6 +49470,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.PipsPagerButtonVisibility.VisibleOnPointerOver"/></summary>
         public static TTarget VisibleOnPointerOver<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PipsPagerButtonVisibility> property) where TTarget : PipsPager
         => property.Set(Xaml.Controls.PipsPagerButtonVisibility.VisibleOnPointerOver);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PipsPagerWrapMode.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PipsPagerWrapMode> property) where TTarget : PipsPager
+        => property.Set(Xaml.Controls.PipsPagerWrapMode.None);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PipsPagerWrapMode.Wrap"/></summary>
+        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PipsPagerWrapMode> property) where TTarget : PipsPager
+        => property.Set(Xaml.Controls.PipsPagerWrapMode.Wrap);
     }
 
     public static partial class PivotExtensions

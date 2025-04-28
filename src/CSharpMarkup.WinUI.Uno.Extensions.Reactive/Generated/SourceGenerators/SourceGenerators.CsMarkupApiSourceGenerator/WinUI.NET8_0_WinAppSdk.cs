@@ -1,5 +1,5 @@
-﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET8_0_MACOS && __MACOS__
+﻿// Start of generated C# Markup API for Microsoft.WindowsAppSDK
+#if NET8_0 && WINUI
 
 using System;
 using System.Collections.Generic;
@@ -63,20 +63,6 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Reactive // FeedView
         public static FeedView FeedView()
         {
             var ui = new UnoExtensionsReactive.UI.FeedView();
-            return CSharpMarkup.WinUI.Uno.Extensions.Reactive.FeedView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoExtensionsReactive.UI.FeedView"/></summary>
-        public static FeedView FeedView(nint handle)
-        {
-            var ui = new UnoExtensionsReactive.UI.FeedView(handle);
-            return CSharpMarkup.WinUI.Uno.Extensions.Reactive.FeedView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoExtensionsReactive.UI.FeedView"/></summary>
-        public static FeedView FeedView(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoExtensionsReactive.UI.FeedView(handle);
             return CSharpMarkup.WinUI.Uno.Extensions.Reactive.FeedView.StartChain(ui);
         }
     }
@@ -229,21 +215,10 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Reactive // SmoothVisualStateManager
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoExtensionsReactive.UI.SmoothVisualStateManager"/></summary>
-        public static SmoothVisualStateManager SmoothVisualStateManager(params UnoExtensionsReactive.UI.SmoothVisualStateRule[] Rules)
+        public static SmoothVisualStateManager SmoothVisualStateManager(UnoExtensionsReactive.UI.SmoothVisualStateRuleCollection Rules)
         {
             var ui = new UnoExtensionsReactive.UI.SmoothVisualStateManager();
-            for (int i = 0; i < Rules.Length; i++)
-            {
-                var child = Rules[i];
-                if (child == null) continue;
-
-                var subChildren = Spreader<UnoExtensionsReactive.UI.SmoothVisualStateRule>.ExtractChildren(child);
-                if (subChildren is not null)
-                    for (int j = 0; j < subChildren.Length; j++)
-                        ui.Rules.Add(subChildren[j]);
-                else
-                    ui.Rules.Add(child);
-            }
+            if (Rules != null) ui.Rules = Rules;
             return CSharpMarkup.WinUI.Uno.Extensions.Reactive.SmoothVisualStateManager.StartChain(ui);
         }
 
@@ -310,20 +285,6 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Reactive // ViewDebugger
 
     public static partial class ViewDebuggerExtensions
     {
-        /// <summary>Set <see cref="UnoExtensionsReactive.ViewDebugger.DataContext"/></summary>
-        public static TView DataContext<TView>(this TView view, object value) where TView : ViewDebugger { view.UI.DataContext = value; return view; }
-
-        /// <summary>Set <see cref="UnoExtensionsReactive.ViewDebugger.TemplatedParent"/></summary>
-        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : ViewDebugger { view.UI.TemplatedParent = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="UnoExtensionsReactive.ViewDebugger.DataContext"/></summary>
-        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : ViewDebugger
-        => DependencyProperty<TTarget, object>.Get(target, UnoExtensionsReactive.ViewDebugger.DataContextProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="UnoExtensionsReactive.ViewDebugger.TemplatedParent"/></summary>
-        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : ViewDebugger
-        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, UnoExtensionsReactive.ViewDebugger.TemplatedParentProperty);
-
         /// <summary>Set <see cref="UnoExtensionsReactive.ViewDebugger.AvailableVisualStates"/></summary>
         public static TTarget ViewDebugger_AvailableVisualStates<TTarget>(this TTarget target, string? value) where TTarget : Control
         { UnoExtensionsReactive.ViewDebugger.SetAvailableVisualStates(target.UI, value); return target; }
@@ -389,4 +350,4 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Reactive // EnumPropertyValues
 }
 
 #endif
-// End of generated C# Markup API for Uno.WinUI
+// End of generated C# Markup API for Microsoft.WindowsAppSDK

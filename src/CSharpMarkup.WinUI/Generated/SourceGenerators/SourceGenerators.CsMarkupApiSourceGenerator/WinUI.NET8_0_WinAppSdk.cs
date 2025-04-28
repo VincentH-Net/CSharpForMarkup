@@ -2090,6 +2090,24 @@ namespace CSharpMarkup.WinUI // ScrollBarAutomationPeer
     }
 }
 
+namespace CSharpMarkup.WinUI // ScrollPresenterAutomationPeer
+{
+    public partial class ScrollPresenterAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ScrollPresenterAutomationPeer>
+    {
+        Xaml.Automation.Peers.ScrollPresenterAutomationPeer ui;
+
+        public new Xaml.Automation.Peers.ScrollPresenterAutomationPeer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public ScrollPresenterAutomationPeer Invoke(Action<Xaml.Automation.Peers.ScrollPresenterAutomationPeer> action) { action?.Invoke(UI); return this; }
+
+        protected ScrollPresenterAutomationPeer() { }
+    }
+}
+
 namespace CSharpMarkup.WinUI // ScrollViewerAutomationPeer
 {
     public partial class ScrollViewerAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Automation.Peers.ScrollViewerAutomationPeer>
@@ -14801,7 +14819,7 @@ namespace CSharpMarkup.WinUI // PipsPager
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.PipsPager"/></summary>
-        public static PipsPager PipsPager(int? MaxVisiblePips = default, Xaml.Style NextButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? NextButtonVisibility = default, Xaml.Style NormalPipStyle = default, int? NumberOfPages = default, Xaml.Controls.Orientation? Orientation = default, Xaml.Style PreviousButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? PreviousButtonVisibility = default, int? SelectedPageIndex = default, Xaml.Style SelectedPipStyle = default)
+        public static PipsPager PipsPager(int? MaxVisiblePips = default, Xaml.Style NextButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? NextButtonVisibility = default, Xaml.Style NormalPipStyle = default, int? NumberOfPages = default, Xaml.Controls.Orientation? Orientation = default, Xaml.Style PreviousButtonStyle = default, Xaml.Controls.PipsPagerButtonVisibility? PreviousButtonVisibility = default, int? SelectedPageIndex = default, Xaml.Style SelectedPipStyle = default, Xaml.Controls.PipsPagerWrapMode? WrapMode = default)
         {
             var ui = new Xaml.Controls.PipsPager();
             if (MaxVisiblePips is not null) ui.MaxVisiblePips = MaxVisiblePips.Value;
@@ -14814,6 +14832,7 @@ namespace CSharpMarkup.WinUI // PipsPager
             if (PreviousButtonVisibility is not null) ui.PreviousButtonVisibility = PreviousButtonVisibility.Value;
             if (SelectedPageIndex is not null) ui.SelectedPageIndex = SelectedPageIndex.Value;
             if (SelectedPipStyle is not null) ui.SelectedPipStyle = SelectedPipStyle;
+            if (WrapMode is not null) ui.WrapMode = WrapMode.Value;
             return CSharpMarkup.WinUI.PipsPager.StartChain(ui);
         }
 
@@ -14887,6 +14906,9 @@ namespace CSharpMarkup.WinUI // PipsPager
         /// <summary>Set <see cref="Xaml.Controls.PipsPager.SelectedPipStyle"/></summary>
         public static TView SelectedPipStyle<TView>(this TView view, Xaml.Style value) where TView : PipsPager { view.UI.SelectedPipStyle = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.PipsPager.WrapMode"/></summary>
+        public static TView WrapMode<TView>(this TView view, Xaml.Controls.PipsPagerWrapMode value) where TView : PipsPager { view.UI.WrapMode = value; return view; }
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.MaxVisiblePips"/></summary>
         public static DependencyProperty<TTarget, int> MaxVisiblePips<TTarget>(this TTarget target) where TTarget : PipsPager
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.PipsPager.MaxVisiblePipsProperty);
@@ -14926,6 +14948,10 @@ namespace CSharpMarkup.WinUI // PipsPager
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.SelectedPipStyle"/></summary>
         public static DependencyProperty<TTarget, Xaml.Style> SelectedPipStyle<TTarget>(this TTarget target) where TTarget : PipsPager
         => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PipsPager.SelectedPipStyleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.WrapMode"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.PipsPagerWrapMode> WrapMode<TTarget>(this TTarget target) where TTarget : PipsPager
+        => DependencyProperty<TTarget, Xaml.Controls.PipsPagerWrapMode>.Get(target, Xaml.Controls.PipsPager.WrapModeProperty);
     }
 }
 
@@ -23616,6 +23642,9 @@ namespace CSharpMarkup.WinUI // TabView
         /// <summary>Set <see cref="Xaml.Controls.TabView.CanReorderTabs"/></summary>
         public static TView CanReorderTabs<TView>(this TView view, bool value) where TView : TabView { view.UI.CanReorderTabs = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.TabView.CanTearOutTabs"/></summary>
+        public static TView CanTearOutTabs<TView>(this TView view, bool value) where TView : TabView { view.UI.CanTearOutTabs = value; return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.TabView.CloseButtonOverlayMode"/></summary>
         public static TView CloseButtonOverlayMode<TView>(this TView view, Xaml.Controls.TabViewCloseButtonOverlayMode value) where TView : TabView { view.UI.CloseButtonOverlayMode = value; return view; }
 
@@ -23671,6 +23700,10 @@ namespace CSharpMarkup.WinUI // TabView
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabView.CanReorderTabs"/></summary>
         public static DependencyProperty<TTarget, bool> CanReorderTabs<TTarget>(this TTarget target) where TTarget : TabView
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TabView.CanReorderTabsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabView.CanTearOutTabs"/></summary>
+        public static DependencyProperty<TTarget, bool> CanTearOutTabs<TTarget>(this TTarget target) where TTarget : TabView
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TabView.CanTearOutTabsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabView.CloseButtonOverlayMode"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.TabViewCloseButtonOverlayMode> CloseButtonOverlayMode<TTarget>(this TTarget target) where TTarget : TabView
@@ -41837,6 +41870,14 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.Controls.PipsPagerButtonVisibility.VisibleOnPointerOver"/></summary>
         public static TTarget VisibleOnPointerOver<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PipsPagerButtonVisibility> property) where TTarget : PipsPager
         => property.Set(Xaml.Controls.PipsPagerButtonVisibility.VisibleOnPointerOver);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PipsPagerWrapMode.None"/></summary>
+        public static TTarget None<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PipsPagerWrapMode> property) where TTarget : PipsPager
+        => property.Set(Xaml.Controls.PipsPagerWrapMode.None);
+
+        /// <summary>Set to <see cref="Xaml.Controls.PipsPagerWrapMode.Wrap"/></summary>
+        public static TTarget Wrap<TTarget>(this DependencyProperty<TTarget, Xaml.Controls.PipsPagerWrapMode> property) where TTarget : PipsPager
+        => property.Set(Xaml.Controls.PipsPagerWrapMode.Wrap);
     }
 
     public static partial class PivotExtensions

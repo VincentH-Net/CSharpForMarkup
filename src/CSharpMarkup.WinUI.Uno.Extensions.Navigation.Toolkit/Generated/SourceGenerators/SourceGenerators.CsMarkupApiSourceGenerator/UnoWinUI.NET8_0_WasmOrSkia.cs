@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET8_0_MACOS && __MACOS__
+#if NET8_0 && __WASM_OR_SKIA__ && !DESKTOP && !BROWSERWASM
 
 using System;
 using System.Collections.Generic;

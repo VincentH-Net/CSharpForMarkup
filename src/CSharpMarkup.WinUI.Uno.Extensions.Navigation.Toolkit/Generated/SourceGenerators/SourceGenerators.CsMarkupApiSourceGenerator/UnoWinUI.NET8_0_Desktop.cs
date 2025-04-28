@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET8_0 && __ANDROID__
+#if NET8_0 && DESKTOP
 
 using System;
 using System.Collections.Generic;

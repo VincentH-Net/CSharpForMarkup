@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET7_0 && __WASM_OR_SKIA__
+#if NET8_0 && __MACCATALYST__
 
 using System;
 using System.Collections.Generic;
@@ -31,7 +31,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         }
 
         /// <summary>Create a <see cref="LiveChartsSkiaWinUI.CartesianChart"/></summary>
-        public static CartesianChart CartesianChart(CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand ChartPointPointerDownCommand = default, ICommand DataPointerDownCommand = default, LiveCharts.Measure.Margin DrawMargin = default, LiveCharts.DrawMarginFrame<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? DrawMarginFrame = default, Func<float, float> EasingFunction = default, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Legend = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendTextPaint = default, double? LegendTextSize = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.Section<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> Sections = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Tooltip = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipFindingStrategy? TooltipFindingStrategy = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipTextPaint = default, double? TooltipTextSize = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, IEnumerable<LiveCharts.Kernel.Sketches.ICartesianAxis> XAxes = default, IEnumerable<LiveCharts.Kernel.Sketches.ICartesianAxis> YAxes = default, double? ZoomingSpeed = default, LiveCharts.Measure.ZoomAndPanMode? ZoomMode = default, UIObject Content = default)
+        public static CartesianChart CartesianChart(CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand ChartPointPointerDownCommand = default, ICommand DataPointerDownCommand = default, LiveCharts.Measure.Margin DrawMargin = default, LiveCharts.CoreDrawMarginFrame? DrawMarginFrame = default, Func<float, float> EasingFunction = default, LiveCharts.Measure.FindingStrategy? FindingStrategy = default, ICommand? HoveredPointsChangedCommand = default, LiveCharts.Kernel.Sketches.IChartLegend? Legend = default, LiveCharts.Painting.Paint? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Painting.Paint? LegendTextPaint = default, double? LegendTextSize = default, bool? MatchAxesScreenDataRatio = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.CoreSection> Sections = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip? Tooltip = default, LiveCharts.Painting.Paint? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipFindingStrategy? TooltipFindingStrategy = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Painting.Paint? TooltipTextPaint = default, double? TooltipTextSize = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, IEnumerable<LiveCharts.Kernel.Sketches.ICartesianAxis> XAxes = default, IEnumerable<LiveCharts.Kernel.Sketches.ICartesianAxis> YAxes = default, double? ZoomingSpeed = default, LiveCharts.Measure.ZoomAndPanMode? ZoomMode = default, UIObject Content = default)
         {
             var ui = new LiveChartsSkiaWinUI.CartesianChart();
             if (AnimationsSpeed is not null) ui.AnimationsSpeed = AnimationsSpeed.Value;
@@ -41,11 +41,14 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
             if (DrawMargin is not null) ui.DrawMargin = DrawMargin;
             if (DrawMarginFrame is not null) ui.DrawMarginFrame = DrawMarginFrame;
             if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (FindingStrategy is not null) ui.FindingStrategy = FindingStrategy.Value;
+            if (HoveredPointsChangedCommand is not null) ui.HoveredPointsChangedCommand = HoveredPointsChangedCommand;
             if (Legend is not null) ui.Legend = Legend;
             if (LegendBackgroundPaint is not null) ui.LegendBackgroundPaint = LegendBackgroundPaint;
             if (LegendPosition is not null) ui.LegendPosition = LegendPosition.Value;
             if (LegendTextPaint is not null) ui.LegendTextPaint = LegendTextPaint;
             if (LegendTextSize is not null) ui.LegendTextSize = LegendTextSize.Value;
+            if (MatchAxesScreenDataRatio is not null) ui.MatchAxesScreenDataRatio = MatchAxesScreenDataRatio.Value;
             if (PointerMoveCommand is not null) ui.PointerMoveCommand = PointerMoveCommand;
             if (PointerPressedCommand is not null) ui.PointerPressedCommand = PointerPressedCommand;
             if (PointerReleasedCommand is not null) ui.PointerReleasedCommand = PointerReleasedCommand;
@@ -75,6 +78,20 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         public static CartesianChart CartesianChart()
         {
             var ui = new LiveChartsSkiaWinUI.CartesianChart();
+            return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.CartesianChart.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="LiveChartsSkiaWinUI.CartesianChart"/></summary>
+        public static CartesianChart CartesianChart(nint handle)
+        {
+            var ui = new LiveChartsSkiaWinUI.CartesianChart(handle);
+            return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.CartesianChart.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="LiveChartsSkiaWinUI.CartesianChart"/></summary>
+        public static CartesianChart CartesianChart(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new LiveChartsSkiaWinUI.CartesianChart(handle);
             return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.CartesianChart.StartChain(ui);
         }
     }
@@ -127,25 +144,34 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         public static TView DrawMargin<TView>(this TView view, LiveCharts.Measure.Margin value) where TView : CartesianChart { view.UI.DrawMargin = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.DrawMarginFrame"/></summary>
-        public static TView DrawMarginFrame<TView>(this TView view, LiveCharts.DrawMarginFrame<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : CartesianChart { view.UI.DrawMarginFrame = value; return view; }
+        public static TView DrawMarginFrame<TView>(this TView view, LiveCharts.CoreDrawMarginFrame? value) where TView : CartesianChart { view.UI.DrawMarginFrame = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.EasingFunction"/></summary>
         public static TView EasingFunction<TView>(this TView view, Func<float, float> value) where TView : CartesianChart { view.UI.EasingFunction = value; return view; }
 
+        /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.FindingStrategy"/></summary>
+        public static TView FindingStrategy<TView>(this TView view, LiveCharts.Measure.FindingStrategy value) where TView : CartesianChart { view.UI.FindingStrategy = value; return view; }
+
+        /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.HoveredPointsChangedCommand"/></summary>
+        public static TView HoveredPointsChangedCommand<TView>(this TView view, ICommand? value) where TView : CartesianChart { view.UI.HoveredPointsChangedCommand = value; return view; }
+
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.Legend"/></summary>
-        public static TView Legend<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : CartesianChart { view.UI.Legend = value; return view; }
+        public static TView Legend<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartLegend? value) where TView : CartesianChart { view.UI.Legend = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.LegendBackgroundPaint"/></summary>
-        public static TView LegendBackgroundPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : CartesianChart { view.UI.LegendBackgroundPaint = value; return view; }
+        public static TView LegendBackgroundPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : CartesianChart { view.UI.LegendBackgroundPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.LegendPosition"/></summary>
         public static TView LegendPosition<TView>(this TView view, LiveCharts.Measure.LegendPosition value) where TView : CartesianChart { view.UI.LegendPosition = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.LegendTextPaint"/></summary>
-        public static TView LegendTextPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : CartesianChart { view.UI.LegendTextPaint = value; return view; }
+        public static TView LegendTextPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : CartesianChart { view.UI.LegendTextPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.LegendTextSize"/></summary>
-        public static TView LegendTextSize<TView>(this TView view, double? value) where TView : CartesianChart { view.UI.LegendTextSize = value; return view; }
+        public static TView LegendTextSize<TView>(this TView view, double value) where TView : CartesianChart { view.UI.LegendTextSize = value; return view; }
+
+        /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.MatchAxesScreenDataRatio"/></summary>
+        public static TView MatchAxesScreenDataRatio<TView>(this TView view, bool value) where TView : CartesianChart { view.UI.MatchAxesScreenDataRatio = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.PointerMoveCommand"/></summary>
         public static TView PointerMoveCommand<TView>(this TView view, ICommand? value) where TView : CartesianChart { view.UI.PointerMoveCommand = value; return view; }
@@ -157,7 +183,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         public static TView PointerReleasedCommand<TView>(this TView view, ICommand? value) where TView : CartesianChart { view.UI.PointerReleasedCommand = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.Sections"/></summary>
-        public static TView Sections<TView>(this TView view, IEnumerable<LiveCharts.Section<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> value) where TView : CartesianChart { view.UI.Sections = value; return view; }
+        public static TView Sections<TView>(this TView view, IEnumerable<LiveCharts.CoreSection> value) where TView : CartesianChart { view.UI.Sections = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.Series"/></summary>
         public static TView Series<TView>(this TView view, IEnumerable<LiveCharts.ISeries> value) where TView : CartesianChart { view.UI.Series = value; return view; }
@@ -166,13 +192,13 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         public static TView SyncContext<TView>(this TView view, object value) where TView : CartesianChart { view.UI.SyncContext = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.Title"/></summary>
-        public static TView Title<TView>(this TView view, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : CartesianChart { view.UI.Title = value; return view; }
+        public static TView Title<TView>(this TView view, LiveCharts.VisualElements.VisualElement? value) where TView : CartesianChart { view.UI.Title = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.Tooltip"/></summary>
-        public static TView Tooltip<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : CartesianChart { view.UI.Tooltip = value; return view; }
+        public static TView Tooltip<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartTooltip? value) where TView : CartesianChart { view.UI.Tooltip = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.TooltipBackgroundPaint"/></summary>
-        public static TView TooltipBackgroundPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : CartesianChart { view.UI.TooltipBackgroundPaint = value; return view; }
+        public static TView TooltipBackgroundPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : CartesianChart { view.UI.TooltipBackgroundPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.TooltipFindingStrategy"/></summary>
         public static TView TooltipFindingStrategy<TView>(this TView view, LiveCharts.Measure.TooltipFindingStrategy value) where TView : CartesianChart { view.UI.TooltipFindingStrategy = value; return view; }
@@ -181,10 +207,10 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         public static TView TooltipPosition<TView>(this TView view, LiveCharts.Measure.TooltipPosition value) where TView : CartesianChart { view.UI.TooltipPosition = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.TooltipTextPaint"/></summary>
-        public static TView TooltipTextPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : CartesianChart { view.UI.TooltipTextPaint = value; return view; }
+        public static TView TooltipTextPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : CartesianChart { view.UI.TooltipTextPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.TooltipTextSize"/></summary>
-        public static TView TooltipTextSize<TView>(this TView view, double? value) where TView : CartesianChart { view.UI.TooltipTextSize = value; return view; }
+        public static TView TooltipTextSize<TView>(this TView view, double value) where TView : CartesianChart { view.UI.TooltipTextSize = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.UpdaterThrottler"/></summary>
         public static TView UpdaterThrottler<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : CartesianChart { view.UI.UpdaterThrottler = value; return view; }
@@ -193,7 +219,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         public static TView UpdateStartedCommand<TView>(this TView view, ICommand? value) where TView : CartesianChart { view.UI.UpdateStartedCommand = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.VisualElements"/></summary>
-        public static TView VisualElements<TView>(this TView view, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> value) where TView : CartesianChart { view.UI.VisualElements = value; return view; }
+        public static TView VisualElements<TView>(this TView view, IEnumerable<LiveCharts.Kernel.ChartElement> value) where TView : CartesianChart { view.UI.VisualElements = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.CartesianChart.VisualElementsPointerDownCommand"/></summary>
         public static TView VisualElementsPointerDownCommand<TView>(this TView view, ICommand? value) where TView : CartesianChart { view.UI.VisualElementsPointerDownCommand = value; return view; }
@@ -223,8 +249,8 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         => DependencyProperty<TTarget, ICommand>.Get(target, LiveChartsSkiaWinUI.CartesianChart.DataPointerDownCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.DrawMarginFrame"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.DrawMarginFrame<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> DrawMarginFrame<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, LiveCharts.DrawMarginFrame<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.DrawMarginFrameProperty);
+        public static DependencyProperty<TTarget, LiveCharts.CoreDrawMarginFrame?> DrawMarginFrame<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, LiveCharts.CoreDrawMarginFrame?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.DrawMarginFrameProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.DrawMargin"/></summary>
         public static DependencyProperty<TTarget, LiveCharts.Measure.Margin> DrawMargin<TTarget>(this TTarget target) where TTarget : CartesianChart
@@ -234,21 +260,29 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         public static DependencyProperty<TTarget, Func<float, float>> EasingFunction<TTarget>(this TTarget target) where TTarget : CartesianChart
         => DependencyProperty<TTarget, Func<float, float>>.Get(target, LiveChartsSkiaWinUI.CartesianChart.EasingFunctionProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.FindingStrategy"/></summary>
+        public static DependencyProperty<TTarget, LiveCharts.Measure.FindingStrategy> FindingStrategy<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, LiveCharts.Measure.FindingStrategy>.Get(target, LiveChartsSkiaWinUI.CartesianChart.FindingStrategyProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.HoveredPointsChangedCommand"/></summary>
+        public static DependencyProperty<TTarget, ICommand?> HoveredPointsChangedCommand<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.HoveredPointsChangedCommandProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.LegendBackgroundPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> LegendBackgroundPaint<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.LegendBackgroundPaintProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> LegendBackgroundPaint<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.LegendBackgroundPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.LegendPosition"/></summary>
         public static DependencyProperty<TTarget, LiveCharts.Measure.LegendPosition> LegendPosition<TTarget>(this TTarget target) where TTarget : CartesianChart
         => DependencyProperty<TTarget, LiveCharts.Measure.LegendPosition>.Get(target, LiveChartsSkiaWinUI.CartesianChart.LegendPositionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.LegendTextPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> LegendTextPaint<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.LegendTextPaintProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> LegendTextPaint<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.LegendTextPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.LegendTextSize"/></summary>
-        public static DependencyProperty<TTarget, double?> LegendTextSize<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, double?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.LegendTextSizeProperty);
+        public static DependencyProperty<TTarget, double> LegendTextSize<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, double>.Get(target, LiveChartsSkiaWinUI.CartesianChart.LegendTextSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.PointerMoveCommand"/></summary>
         public static DependencyProperty<TTarget, ICommand?> PointerMoveCommand<TTarget>(this TTarget target) where TTarget : CartesianChart
@@ -263,8 +297,8 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.PointerReleasedCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.Sections"/></summary>
-        public static DependencyProperty<TTarget, IEnumerable<LiveCharts.Section<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>>> Sections<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, IEnumerable<LiveCharts.Section<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>>>.Get(target, LiveChartsSkiaWinUI.CartesianChart.SectionsProperty);
+        public static DependencyProperty<TTarget, IEnumerable<LiveCharts.CoreSection>> Sections<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, IEnumerable<LiveCharts.CoreSection>>.Get(target, LiveChartsSkiaWinUI.CartesianChart.SectionsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.Series"/></summary>
         public static DependencyProperty<TTarget, IEnumerable<LiveCharts.ISeries>> Series<TTarget>(this TTarget target) where TTarget : CartesianChart
@@ -275,28 +309,24 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         => DependencyProperty<TTarget, object>.Get(target, LiveChartsSkiaWinUI.CartesianChart.SyncContextProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.Title"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> Title<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.TitleProperty);
+        public static DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement?> Title<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.TitleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.TooltipBackgroundPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> TooltipBackgroundPaint<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.TooltipBackgroundPaintProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.TooltipFindingStrategy"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Measure.TooltipFindingStrategy> TooltipFindingStrategy<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, LiveCharts.Measure.TooltipFindingStrategy>.Get(target, LiveChartsSkiaWinUI.CartesianChart.TooltipFindingStrategyProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> TooltipBackgroundPaint<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.TooltipBackgroundPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.TooltipPosition"/></summary>
         public static DependencyProperty<TTarget, LiveCharts.Measure.TooltipPosition> TooltipPosition<TTarget>(this TTarget target) where TTarget : CartesianChart
         => DependencyProperty<TTarget, LiveCharts.Measure.TooltipPosition>.Get(target, LiveChartsSkiaWinUI.CartesianChart.TooltipPositionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.TooltipTextPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> TooltipTextPaint<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.TooltipTextPaintProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> TooltipTextPaint<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.TooltipTextPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.TooltipTextSize"/></summary>
-        public static DependencyProperty<TTarget, double?> TooltipTextSize<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, double?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.TooltipTextSizeProperty);
+        public static DependencyProperty<TTarget, double> TooltipTextSize<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, double>.Get(target, LiveChartsSkiaWinUI.CartesianChart.TooltipTextSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.UpdateStartedCommand"/></summary>
         public static DependencyProperty<TTarget, ICommand?> UpdateStartedCommand<TTarget>(this TTarget target) where TTarget : CartesianChart
@@ -307,8 +337,8 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // CartesianChart
         => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.CartesianChart.VisualElementsPointerDownCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.VisualElements"/></summary>
-        public static DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>>> VisualElements<TTarget>(this TTarget target) where TTarget : CartesianChart
-        => DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>>>.Get(target, LiveChartsSkiaWinUI.CartesianChart.VisualElementsProperty);
+        public static DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement>> VisualElements<TTarget>(this TTarget target) where TTarget : CartesianChart
+        => DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement>>.Get(target, LiveChartsSkiaWinUI.CartesianChart.VisualElementsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.CartesianChart.XAxes"/></summary>
         public static DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.Sketches.ICartesianAxis>> XAxes<TTarget>(this TTarget target) where TTarget : CartesianChart
@@ -341,7 +371,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // GeoMap
         }
 
         /// <summary>Create a <see cref="LiveChartsSkiaWinUI.GeoMap"/></summary>
-        public static GeoMap GeoMap(LiveCharts.Geo.CoreMap<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext> ActiveMap = default, bool? AutoUpdateEnabled = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Fill = default, LiveCharts.Geo.MapProjection? MapProjection = default, IEnumerable<LiveCharts.Geo.IGeoSeries> Series = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Stroke = default, object SyncContext = default, object? ViewCommand = default, UIObject Content = default)
+        public static GeoMap GeoMap(LiveCharts.Geo.DrawnMap ActiveMap = default, bool? AutoUpdateEnabled = default, LiveCharts.Painting.Paint? Fill = default, LiveCharts.Geo.MapProjection? MapProjection = default, IEnumerable<LiveCharts.Geo.IGeoSeries> Series = default, LiveCharts.Painting.Paint? Stroke = default, object SyncContext = default, object? ViewCommand = default, UIObject Content = default)
         {
             var ui = new LiveChartsSkiaWinUI.GeoMap();
             if (ActiveMap is not null) ui.ActiveMap = ActiveMap;
@@ -360,6 +390,20 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // GeoMap
         public static GeoMap GeoMap()
         {
             var ui = new LiveChartsSkiaWinUI.GeoMap();
+            return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.GeoMap.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="LiveChartsSkiaWinUI.GeoMap"/></summary>
+        public static GeoMap GeoMap(nint handle)
+        {
+            var ui = new LiveChartsSkiaWinUI.GeoMap(handle);
+            return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.GeoMap.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="LiveChartsSkiaWinUI.GeoMap"/></summary>
+        public static GeoMap GeoMap(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new LiveChartsSkiaWinUI.GeoMap(handle);
             return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.GeoMap.StartChain(ui);
         }
     }
@@ -397,13 +441,13 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // GeoMap
     public static partial class GeoMapExtensions
     {
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.GeoMap.ActiveMap"/></summary>
-        public static TView ActiveMap<TView>(this TView view, LiveCharts.Geo.CoreMap<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext> value) where TView : GeoMap { view.UI.ActiveMap = value; return view; }
+        public static TView ActiveMap<TView>(this TView view, LiveCharts.Geo.DrawnMap value) where TView : GeoMap { view.UI.ActiveMap = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.GeoMap.AutoUpdateEnabled"/></summary>
         public static TView AutoUpdateEnabled<TView>(this TView view, bool value) where TView : GeoMap { view.UI.AutoUpdateEnabled = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.GeoMap.Fill"/></summary>
-        public static TView Fill<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : GeoMap { view.UI.Fill = value; return view; }
+        public static TView Fill<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : GeoMap { view.UI.Fill = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.GeoMap.MapProjection"/></summary>
         public static TView MapProjection<TView>(this TView view, LiveCharts.Geo.MapProjection value) where TView : GeoMap { view.UI.MapProjection = value; return view; }
@@ -412,7 +456,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // GeoMap
         public static TView Series<TView>(this TView view, IEnumerable<LiveCharts.Geo.IGeoSeries> value) where TView : GeoMap { view.UI.Series = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.GeoMap.Stroke"/></summary>
-        public static TView Stroke<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : GeoMap { view.UI.Stroke = value; return view; }
+        public static TView Stroke<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : GeoMap { view.UI.Stroke = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.GeoMap.SyncContext"/></summary>
         public static TView SyncContext<TView>(this TView view, object value) where TView : GeoMap { view.UI.SyncContext = value; return view; }
@@ -421,12 +465,12 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // GeoMap
         public static TView ViewCommand<TView>(this TView view, object? value) where TView : GeoMap { view.UI.ViewCommand = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.GeoMap.ActiveMap"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Geo.CoreMap<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> ActiveMap<TTarget>(this TTarget target) where TTarget : GeoMap
-        => DependencyProperty<TTarget, LiveCharts.Geo.CoreMap<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>>.Get(target, LiveChartsSkiaWinUI.GeoMap.ActiveMapProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Geo.DrawnMap> ActiveMap<TTarget>(this TTarget target) where TTarget : GeoMap
+        => DependencyProperty<TTarget, LiveCharts.Geo.DrawnMap>.Get(target, LiveChartsSkiaWinUI.GeoMap.ActiveMapProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.GeoMap.Fill"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> Fill<TTarget>(this TTarget target) where TTarget : GeoMap
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.GeoMap.FillProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> Fill<TTarget>(this TTarget target) where TTarget : GeoMap
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.GeoMap.FillProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.GeoMap.MapProjection"/></summary>
         public static DependencyProperty<TTarget, LiveCharts.Geo.MapProjection> MapProjection<TTarget>(this TTarget target) where TTarget : GeoMap
@@ -437,8 +481,8 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // GeoMap
         => DependencyProperty<TTarget, IEnumerable<LiveCharts.Geo.IGeoSeries>>.Get(target, LiveChartsSkiaWinUI.GeoMap.SeriesProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.GeoMap.Stroke"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> Stroke<TTarget>(this TTarget target) where TTarget : GeoMap
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.GeoMap.StrokeProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> Stroke<TTarget>(this TTarget target) where TTarget : GeoMap
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.GeoMap.StrokeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.GeoMap.SyncContext"/></summary>
         public static DependencyProperty<TTarget, object> SyncContext<TTarget>(this TTarget target) where TTarget : GeoMap
@@ -463,19 +507,23 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // MotionCanvas
         }
 
         /// <summary>Create a <see cref="LiveChartsSkiaWinUI.MotionCanvas"/></summary>
-        public static MotionCanvas MotionCanvas(double? MaxFps = default, List<LiveCharts.Kernel.PaintSchedule<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> PaintTasks = default, UIObject Content = default)
+        public static MotionCanvas MotionCanvas()
         {
             var ui = new LiveChartsSkiaWinUI.MotionCanvas();
-            if (MaxFps is not null) ui.MaxFps = MaxFps.Value;
-            if (PaintTasks is not null) ui.PaintTasks = PaintTasks;
-            if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.MotionCanvas.StartChain(ui);
         }
 
         /// <summary>Create a <see cref="LiveChartsSkiaWinUI.MotionCanvas"/></summary>
-        public static MotionCanvas MotionCanvas()
+        public static MotionCanvas MotionCanvas(nint handle)
         {
-            var ui = new LiveChartsSkiaWinUI.MotionCanvas();
+            var ui = new LiveChartsSkiaWinUI.MotionCanvas(handle);
+            return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.MotionCanvas.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="LiveChartsSkiaWinUI.MotionCanvas"/></summary>
+        public static MotionCanvas MotionCanvas(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new LiveChartsSkiaWinUI.MotionCanvas(handle);
             return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.MotionCanvas.StartChain(ui);
         }
     }
@@ -509,19 +557,6 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // MotionCanvas
 
         protected MotionCanvas() { }
     }
-
-    public static partial class MotionCanvasExtensions
-    {
-        /// <summary>Set <see cref="LiveChartsSkiaWinUI.MotionCanvas.MaxFps"/></summary>
-        public static TView MaxFps<TView>(this TView view, double value) where TView : MotionCanvas { view.UI.MaxFps = value; return view; }
-
-        /// <summary>Set <see cref="LiveChartsSkiaWinUI.MotionCanvas.PaintTasks"/></summary>
-        public static TView PaintTasks<TView>(this TView view, List<LiveCharts.Kernel.PaintSchedule<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> value) where TView : MotionCanvas { view.UI.PaintTasks = value; return view; }
-
-        /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.MotionCanvas.PaintTasks"/></summary>
-        public static DependencyProperty<TTarget, List<LiveCharts.Kernel.PaintSchedule<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>>> PaintTasks<TTarget>(this TTarget target) where TTarget : MotionCanvas
-        => DependencyProperty<TTarget, List<LiveCharts.Kernel.PaintSchedule<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>>>.Get(target, LiveChartsSkiaWinUI.MotionCanvas.PaintTasksProperty);
-    }
 }
 
 namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
@@ -537,7 +572,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         }
 
         /// <summary>Create a <see cref="LiveChartsSkiaWinUI.PieChart"/></summary>
-        public static PieChart PieChart(CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand ChartPointPointerDownCommand = default, ICommand DataPointerDownCommand = default, LiveCharts.Measure.Margin DrawMargin = default, Func<float, float> EasingFunction = default, double? InitialRotation = default, bool? IsClockwise = default, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Legend = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendTextPaint = default, double? LegendTextSize = default, double? MaxAngle = default, double? MaxValue = default, double? MinValue = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Tooltip = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipTextPaint = default, double? TooltipTextSize = default, double? Total = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, UIObject Content = default)
+        public static PieChart PieChart(CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand ChartPointPointerDownCommand = default, ICommand DataPointerDownCommand = default, LiveCharts.Measure.Margin DrawMargin = default, Func<float, float> EasingFunction = default, ICommand? HoveredPointsChangedCommand = default, double? InitialRotation = default, bool? IsClockwise = default, LiveCharts.Kernel.Sketches.IChartLegend? Legend = default, LiveCharts.Painting.Paint? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Painting.Paint? LegendTextPaint = default, double? LegendTextSize = default, double? MaxAngle = default, double? MaxValue = default, double? MinValue = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip? Tooltip = default, LiveCharts.Painting.Paint? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Painting.Paint? TooltipTextPaint = default, double? TooltipTextSize = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, UIObject Content = default)
         {
             var ui = new LiveChartsSkiaWinUI.PieChart();
             if (AnimationsSpeed is not null) ui.AnimationsSpeed = AnimationsSpeed.Value;
@@ -546,6 +581,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
             if (DataPointerDownCommand is not null) ui.DataPointerDownCommand = DataPointerDownCommand;
             if (DrawMargin is not null) ui.DrawMargin = DrawMargin;
             if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
+            if (HoveredPointsChangedCommand is not null) ui.HoveredPointsChangedCommand = HoveredPointsChangedCommand;
             if (InitialRotation is not null) ui.InitialRotation = InitialRotation.Value;
             if (IsClockwise is not null) ui.IsClockwise = IsClockwise.Value;
             if (Legend is not null) ui.Legend = Legend;
@@ -567,7 +603,6 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
             if (TooltipPosition is not null) ui.TooltipPosition = TooltipPosition.Value;
             if (TooltipTextPaint is not null) ui.TooltipTextPaint = TooltipTextPaint;
             if (TooltipTextSize is not null) ui.TooltipTextSize = TooltipTextSize.Value;
-            if (Total is not null) ui.Total = Total.Value;
             if (UpdaterThrottler is not null) ui.UpdaterThrottler = UpdaterThrottler.Value;
             if (UpdateStartedCommand is not null) ui.UpdateStartedCommand = UpdateStartedCommand;
             if (VisualElements is not null) ui.VisualElements = VisualElements;
@@ -580,6 +615,20 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         public static PieChart PieChart()
         {
             var ui = new LiveChartsSkiaWinUI.PieChart();
+            return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.PieChart.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="LiveChartsSkiaWinUI.PieChart"/></summary>
+        public static PieChart PieChart(nint handle)
+        {
+            var ui = new LiveChartsSkiaWinUI.PieChart(handle);
+            return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.PieChart.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="LiveChartsSkiaWinUI.PieChart"/></summary>
+        public static PieChart PieChart(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new LiveChartsSkiaWinUI.PieChart(handle);
             return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.PieChart.StartChain(ui);
         }
     }
@@ -634,6 +683,9 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.EasingFunction"/></summary>
         public static TView EasingFunction<TView>(this TView view, Func<float, float> value) where TView : PieChart { view.UI.EasingFunction = value; return view; }
 
+        /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.HoveredPointsChangedCommand"/></summary>
+        public static TView HoveredPointsChangedCommand<TView>(this TView view, ICommand? value) where TView : PieChart { view.UI.HoveredPointsChangedCommand = value; return view; }
+
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.InitialRotation"/></summary>
         public static TView InitialRotation<TView>(this TView view, double value) where TView : PieChart { view.UI.InitialRotation = value; return view; }
 
@@ -641,25 +693,25 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         public static TView IsClockwise<TView>(this TView view, bool value) where TView : PieChart { view.UI.IsClockwise = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.Legend"/></summary>
-        public static TView Legend<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PieChart { view.UI.Legend = value; return view; }
+        public static TView Legend<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartLegend? value) where TView : PieChart { view.UI.Legend = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.LegendBackgroundPaint"/></summary>
-        public static TView LegendBackgroundPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PieChart { view.UI.LegendBackgroundPaint = value; return view; }
+        public static TView LegendBackgroundPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : PieChart { view.UI.LegendBackgroundPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.LegendPosition"/></summary>
         public static TView LegendPosition<TView>(this TView view, LiveCharts.Measure.LegendPosition value) where TView : PieChart { view.UI.LegendPosition = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.LegendTextPaint"/></summary>
-        public static TView LegendTextPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PieChart { view.UI.LegendTextPaint = value; return view; }
+        public static TView LegendTextPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : PieChart { view.UI.LegendTextPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.LegendTextSize"/></summary>
-        public static TView LegendTextSize<TView>(this TView view, double? value) where TView : PieChart { view.UI.LegendTextSize = value; return view; }
+        public static TView LegendTextSize<TView>(this TView view, double value) where TView : PieChart { view.UI.LegendTextSize = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.MaxAngle"/></summary>
         public static TView MaxAngle<TView>(this TView view, double value) where TView : PieChart { view.UI.MaxAngle = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.MaxValue"/></summary>
-        public static TView MaxValue<TView>(this TView view, double? value) where TView : PieChart { view.UI.MaxValue = value; return view; }
+        public static TView MaxValue<TView>(this TView view, double value) where TView : PieChart { view.UI.MaxValue = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.MinValue"/></summary>
         public static TView MinValue<TView>(this TView view, double value) where TView : PieChart { view.UI.MinValue = value; return view; }
@@ -680,25 +732,22 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         public static TView SyncContext<TView>(this TView view, object value) where TView : PieChart { view.UI.SyncContext = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.Title"/></summary>
-        public static TView Title<TView>(this TView view, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PieChart { view.UI.Title = value; return view; }
+        public static TView Title<TView>(this TView view, LiveCharts.VisualElements.VisualElement? value) where TView : PieChart { view.UI.Title = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.Tooltip"/></summary>
-        public static TView Tooltip<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PieChart { view.UI.Tooltip = value; return view; }
+        public static TView Tooltip<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartTooltip? value) where TView : PieChart { view.UI.Tooltip = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.TooltipBackgroundPaint"/></summary>
-        public static TView TooltipBackgroundPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PieChart { view.UI.TooltipBackgroundPaint = value; return view; }
+        public static TView TooltipBackgroundPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : PieChart { view.UI.TooltipBackgroundPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.TooltipPosition"/></summary>
         public static TView TooltipPosition<TView>(this TView view, LiveCharts.Measure.TooltipPosition value) where TView : PieChart { view.UI.TooltipPosition = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.TooltipTextPaint"/></summary>
-        public static TView TooltipTextPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PieChart { view.UI.TooltipTextPaint = value; return view; }
+        public static TView TooltipTextPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : PieChart { view.UI.TooltipTextPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.TooltipTextSize"/></summary>
-        public static TView TooltipTextSize<TView>(this TView view, double? value) where TView : PieChart { view.UI.TooltipTextSize = value; return view; }
-
-        /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.Total"/></summary>
-        public static TView Total<TView>(this TView view, double? value) where TView : PieChart { view.UI.Total = value; return view; }
+        public static TView TooltipTextSize<TView>(this TView view, double value) where TView : PieChart { view.UI.TooltipTextSize = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.UpdaterThrottler"/></summary>
         public static TView UpdaterThrottler<TView>(this TView view, CSharpMarkup.WinUI.to.TimeSpan value) where TView : PieChart { view.UI.UpdaterThrottler = value; return view; }
@@ -707,7 +756,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         public static TView UpdateStartedCommand<TView>(this TView view, ICommand? value) where TView : PieChart { view.UI.UpdateStartedCommand = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.VisualElements"/></summary>
-        public static TView VisualElements<TView>(this TView view, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> value) where TView : PieChart { view.UI.VisualElements = value; return view; }
+        public static TView VisualElements<TView>(this TView view, IEnumerable<LiveCharts.Kernel.ChartElement> value) where TView : PieChart { view.UI.VisualElements = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PieChart.VisualElementsPointerDownCommand"/></summary>
         public static TView VisualElementsPointerDownCommand<TView>(this TView view, ICommand? value) where TView : PieChart { view.UI.VisualElementsPointerDownCommand = value; return view; }
@@ -732,6 +781,10 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         public static DependencyProperty<TTarget, Func<float, float>> EasingFunction<TTarget>(this TTarget target) where TTarget : PieChart
         => DependencyProperty<TTarget, Func<float, float>>.Get(target, LiveChartsSkiaWinUI.PieChart.EasingFunctionProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.HoveredPointsChangedCommand"/></summary>
+        public static DependencyProperty<TTarget, ICommand?> HoveredPointsChangedCommand<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.PieChart.HoveredPointsChangedCommandProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.InitialRotation"/></summary>
         public static DependencyProperty<TTarget, double> InitialRotation<TTarget>(this TTarget target) where TTarget : PieChart
         => DependencyProperty<TTarget, double>.Get(target, LiveChartsSkiaWinUI.PieChart.InitialRotationProperty);
@@ -741,28 +794,28 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         => DependencyProperty<TTarget, bool>.Get(target, LiveChartsSkiaWinUI.PieChart.IsClockwiseProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.LegendBackgroundPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> LegendBackgroundPaint<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.PieChart.LegendBackgroundPaintProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> LegendBackgroundPaint<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.PieChart.LegendBackgroundPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.LegendPosition"/></summary>
         public static DependencyProperty<TTarget, LiveCharts.Measure.LegendPosition> LegendPosition<TTarget>(this TTarget target) where TTarget : PieChart
         => DependencyProperty<TTarget, LiveCharts.Measure.LegendPosition>.Get(target, LiveChartsSkiaWinUI.PieChart.LegendPositionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.LegendTextPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> LegendTextPaint<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.PieChart.LegendTextPaintProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> LegendTextPaint<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.PieChart.LegendTextPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.LegendTextSize"/></summary>
-        public static DependencyProperty<TTarget, double?> LegendTextSize<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, double?>.Get(target, LiveChartsSkiaWinUI.PieChart.LegendTextSizeProperty);
+        public static DependencyProperty<TTarget, double> LegendTextSize<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, double>.Get(target, LiveChartsSkiaWinUI.PieChart.LegendTextSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.MaxAngle"/></summary>
         public static DependencyProperty<TTarget, double> MaxAngle<TTarget>(this TTarget target) where TTarget : PieChart
         => DependencyProperty<TTarget, double>.Get(target, LiveChartsSkiaWinUI.PieChart.MaxAngleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.MaxValue"/></summary>
-        public static DependencyProperty<TTarget, double?> MaxValue<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, double?>.Get(target, LiveChartsSkiaWinUI.PieChart.MaxValueProperty);
+        public static DependencyProperty<TTarget, double> MaxValue<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, double>.Get(target, LiveChartsSkiaWinUI.PieChart.MaxValueProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.MinValue"/></summary>
         public static DependencyProperty<TTarget, double> MinValue<TTarget>(this TTarget target) where TTarget : PieChart
@@ -789,24 +842,24 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         => DependencyProperty<TTarget, object>.Get(target, LiveChartsSkiaWinUI.PieChart.SyncContextProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.Title"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> Title<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.PieChart.TitleProperty);
+        public static DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement?> Title<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement?>.Get(target, LiveChartsSkiaWinUI.PieChart.TitleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.TooltipBackgroundPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> TooltipBackgroundPaint<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.PieChart.TooltipBackgroundPaintProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> TooltipBackgroundPaint<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.PieChart.TooltipBackgroundPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.TooltipPosition"/></summary>
         public static DependencyProperty<TTarget, LiveCharts.Measure.TooltipPosition> TooltipPosition<TTarget>(this TTarget target) where TTarget : PieChart
         => DependencyProperty<TTarget, LiveCharts.Measure.TooltipPosition>.Get(target, LiveChartsSkiaWinUI.PieChart.TooltipPositionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.TooltipTextPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> TooltipTextPaint<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.PieChart.TooltipTextPaintProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> TooltipTextPaint<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.PieChart.TooltipTextPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.TooltipTextSize"/></summary>
-        public static DependencyProperty<TTarget, double?> TooltipTextSize<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, double?>.Get(target, LiveChartsSkiaWinUI.PieChart.TooltipTextSizeProperty);
+        public static DependencyProperty<TTarget, double> TooltipTextSize<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, double>.Get(target, LiveChartsSkiaWinUI.PieChart.TooltipTextSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.UpdateStartedCommand"/></summary>
         public static DependencyProperty<TTarget, ICommand?> UpdateStartedCommand<TTarget>(this TTarget target) where TTarget : PieChart
@@ -817,8 +870,8 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PieChart
         => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.PieChart.VisualElementsPointerDownCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PieChart.VisualElements"/></summary>
-        public static DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>>> VisualElements<TTarget>(this TTarget target) where TTarget : PieChart
-        => DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>>>.Get(target, LiveChartsSkiaWinUI.PieChart.VisualElementsProperty);
+        public static DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement>> VisualElements<TTarget>(this TTarget target) where TTarget : PieChart
+        => DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement>>.Get(target, LiveChartsSkiaWinUI.PieChart.VisualElementsProperty);
     }
 }
 
@@ -835,7 +888,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         }
 
         /// <summary>Create a <see cref="LiveChartsSkiaWinUI.PolarChart"/></summary>
-        public static PolarChart PolarChart(IEnumerable<LiveCharts.Kernel.Sketches.IPolarAxis> AngleAxes = default, CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand ChartPointPointerDownCommand = default, ICommand DataPointerDownCommand = default, LiveCharts.Measure.Margin? DrawMargin = default, Func<float, float> EasingFunction = default, bool? FitToBounds = default, double? InitialRotation = default, double? InnerRadius = default, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Legend = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? LegendTextPaint = default, double? LegendTextSize = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.Kernel.Sketches.IPolarAxis> RadiusAxes = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? Tooltip = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? TooltipTextPaint = default, double? TooltipTextSize = default, double? TotalAngle = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, UIObject Content = default)
+        public static PolarChart PolarChart(IEnumerable<LiveCharts.Kernel.Sketches.IPolarAxis> AngleAxes = default, CSharpMarkup.WinUI.to.TimeSpan? AnimationsSpeed = default, bool? AutoUpdateEnabled = default, ICommand ChartPointPointerDownCommand = default, ICommand DataPointerDownCommand = default, LiveCharts.Measure.Margin? DrawMargin = default, Func<float, float> EasingFunction = default, bool? FitToBounds = default, ICommand? HoveredPointsChangedCommand = default, double? InitialRotation = default, double? InnerRadius = default, LiveCharts.Kernel.Sketches.IChartLegend? Legend = default, LiveCharts.Painting.Paint? LegendBackgroundPaint = default, LiveCharts.Measure.LegendPosition? LegendPosition = default, LiveCharts.Painting.Paint? LegendTextPaint = default, double? LegendTextSize = default, ICommand? PointerMoveCommand = default, ICommand? PointerPressedCommand = default, ICommand? PointerReleasedCommand = default, IEnumerable<LiveCharts.Kernel.Sketches.IPolarAxis> RadiusAxes = default, IEnumerable<LiveCharts.ISeries> Series = default, object SyncContext = default, LiveCharts.VisualElements.VisualElement? Title = default, LiveCharts.Kernel.Sketches.IChartTooltip? Tooltip = default, LiveCharts.Painting.Paint? TooltipBackgroundPaint = default, LiveCharts.Measure.TooltipPosition? TooltipPosition = default, LiveCharts.Painting.Paint? TooltipTextPaint = default, double? TooltipTextSize = default, double? TotalAngle = default, CSharpMarkup.WinUI.to.TimeSpan? UpdaterThrottler = default, ICommand? UpdateStartedCommand = default, IEnumerable<LiveCharts.Kernel.ChartElement> VisualElements = default, ICommand? VisualElementsPointerDownCommand = default, UIObject Content = default)
         {
             var ui = new LiveChartsSkiaWinUI.PolarChart();
             if (AngleAxes is not null) ui.AngleAxes = AngleAxes;
@@ -846,6 +899,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
             if (DrawMargin is not null) ui.DrawMargin = DrawMargin;
             if (EasingFunction is not null) ui.EasingFunction = EasingFunction;
             if (FitToBounds is not null) ui.FitToBounds = FitToBounds.Value;
+            if (HoveredPointsChangedCommand is not null) ui.HoveredPointsChangedCommand = HoveredPointsChangedCommand;
             if (InitialRotation is not null) ui.InitialRotation = InitialRotation.Value;
             if (InnerRadius is not null) ui.InnerRadius = InnerRadius.Value;
             if (Legend is not null) ui.Legend = Legend;
@@ -878,6 +932,20 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         public static PolarChart PolarChart()
         {
             var ui = new LiveChartsSkiaWinUI.PolarChart();
+            return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.PolarChart.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="LiveChartsSkiaWinUI.PolarChart"/></summary>
+        public static PolarChart PolarChart(nint handle)
+        {
+            var ui = new LiveChartsSkiaWinUI.PolarChart(handle);
+            return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.PolarChart.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="LiveChartsSkiaWinUI.PolarChart"/></summary>
+        public static PolarChart PolarChart(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new LiveChartsSkiaWinUI.PolarChart(handle);
             return CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView.PolarChart.StartChain(ui);
         }
     }
@@ -938,6 +1006,9 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.FitToBounds"/></summary>
         public static TView FitToBounds<TView>(this TView view, bool value) where TView : PolarChart { view.UI.FitToBounds = value; return view; }
 
+        /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.HoveredPointsChangedCommand"/></summary>
+        public static TView HoveredPointsChangedCommand<TView>(this TView view, ICommand? value) where TView : PolarChart { view.UI.HoveredPointsChangedCommand = value; return view; }
+
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.InitialRotation"/></summary>
         public static TView InitialRotation<TView>(this TView view, double value) where TView : PolarChart { view.UI.InitialRotation = value; return view; }
 
@@ -945,19 +1016,19 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         public static TView InnerRadius<TView>(this TView view, double value) where TView : PolarChart { view.UI.InnerRadius = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.Legend"/></summary>
-        public static TView Legend<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartLegend<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PolarChart { view.UI.Legend = value; return view; }
+        public static TView Legend<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartLegend? value) where TView : PolarChart { view.UI.Legend = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.LegendBackgroundPaint"/></summary>
-        public static TView LegendBackgroundPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PolarChart { view.UI.LegendBackgroundPaint = value; return view; }
+        public static TView LegendBackgroundPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : PolarChart { view.UI.LegendBackgroundPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.LegendPosition"/></summary>
         public static TView LegendPosition<TView>(this TView view, LiveCharts.Measure.LegendPosition value) where TView : PolarChart { view.UI.LegendPosition = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.LegendTextPaint"/></summary>
-        public static TView LegendTextPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PolarChart { view.UI.LegendTextPaint = value; return view; }
+        public static TView LegendTextPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : PolarChart { view.UI.LegendTextPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.LegendTextSize"/></summary>
-        public static TView LegendTextSize<TView>(this TView view, double? value) where TView : PolarChart { view.UI.LegendTextSize = value; return view; }
+        public static TView LegendTextSize<TView>(this TView view, double value) where TView : PolarChart { view.UI.LegendTextSize = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.PointerMoveCommand"/></summary>
         public static TView PointerMoveCommand<TView>(this TView view, ICommand? value) where TView : PolarChart { view.UI.PointerMoveCommand = value; return view; }
@@ -978,22 +1049,22 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         public static TView SyncContext<TView>(this TView view, object value) where TView : PolarChart { view.UI.SyncContext = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.Title"/></summary>
-        public static TView Title<TView>(this TView view, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PolarChart { view.UI.Title = value; return view; }
+        public static TView Title<TView>(this TView view, LiveCharts.VisualElements.VisualElement? value) where TView : PolarChart { view.UI.Title = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.Tooltip"/></summary>
-        public static TView Tooltip<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartTooltip<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PolarChart { view.UI.Tooltip = value; return view; }
+        public static TView Tooltip<TView>(this TView view, LiveCharts.Kernel.Sketches.IChartTooltip? value) where TView : PolarChart { view.UI.Tooltip = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.TooltipBackgroundPaint"/></summary>
-        public static TView TooltipBackgroundPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PolarChart { view.UI.TooltipBackgroundPaint = value; return view; }
+        public static TView TooltipBackgroundPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : PolarChart { view.UI.TooltipBackgroundPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.TooltipPosition"/></summary>
         public static TView TooltipPosition<TView>(this TView view, LiveCharts.Measure.TooltipPosition value) where TView : PolarChart { view.UI.TooltipPosition = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.TooltipTextPaint"/></summary>
-        public static TView TooltipTextPaint<TView>(this TView view, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>? value) where TView : PolarChart { view.UI.TooltipTextPaint = value; return view; }
+        public static TView TooltipTextPaint<TView>(this TView view, LiveCharts.Painting.Paint? value) where TView : PolarChart { view.UI.TooltipTextPaint = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.TooltipTextSize"/></summary>
-        public static TView TooltipTextSize<TView>(this TView view, double? value) where TView : PolarChart { view.UI.TooltipTextSize = value; return view; }
+        public static TView TooltipTextSize<TView>(this TView view, double value) where TView : PolarChart { view.UI.TooltipTextSize = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.TotalAngle"/></summary>
         public static TView TotalAngle<TView>(this TView view, double value) where TView : PolarChart { view.UI.TotalAngle = value; return view; }
@@ -1005,7 +1076,7 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         public static TView UpdateStartedCommand<TView>(this TView view, ICommand? value) where TView : PolarChart { view.UI.UpdateStartedCommand = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.VisualElements"/></summary>
-        public static TView VisualElements<TView>(this TView view, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>> value) where TView : PolarChart { view.UI.VisualElements = value; return view; }
+        public static TView VisualElements<TView>(this TView view, IEnumerable<LiveCharts.Kernel.ChartElement> value) where TView : PolarChart { view.UI.VisualElements = value; return view; }
 
         /// <summary>Set <see cref="LiveChartsSkiaWinUI.PolarChart.VisualElementsPointerDownCommand"/></summary>
         public static TView VisualElementsPointerDownCommand<TView>(this TView view, ICommand? value) where TView : PolarChart { view.UI.VisualElementsPointerDownCommand = value; return view; }
@@ -1034,6 +1105,10 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         public static DependencyProperty<TTarget, bool> FitToBounds<TTarget>(this TTarget target) where TTarget : PolarChart
         => DependencyProperty<TTarget, bool>.Get(target, LiveChartsSkiaWinUI.PolarChart.FitToBoundsProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.HoveredPointsChangedCommand"/></summary>
+        public static DependencyProperty<TTarget, ICommand?> HoveredPointsChangedCommand<TTarget>(this TTarget target) where TTarget : PolarChart
+        => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.PolarChart.HoveredPointsChangedCommandProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.InitialRotation"/></summary>
         public static DependencyProperty<TTarget, double> InitialRotation<TTarget>(this TTarget target) where TTarget : PolarChart
         => DependencyProperty<TTarget, double>.Get(target, LiveChartsSkiaWinUI.PolarChart.InitialRotationProperty);
@@ -1043,20 +1118,20 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         => DependencyProperty<TTarget, double>.Get(target, LiveChartsSkiaWinUI.PolarChart.InnerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.LegendBackgroundPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> LegendBackgroundPaint<TTarget>(this TTarget target) where TTarget : PolarChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.PolarChart.LegendBackgroundPaintProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> LegendBackgroundPaint<TTarget>(this TTarget target) where TTarget : PolarChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.PolarChart.LegendBackgroundPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.LegendPosition"/></summary>
         public static DependencyProperty<TTarget, LiveCharts.Measure.LegendPosition> LegendPosition<TTarget>(this TTarget target) where TTarget : PolarChart
         => DependencyProperty<TTarget, LiveCharts.Measure.LegendPosition>.Get(target, LiveChartsSkiaWinUI.PolarChart.LegendPositionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.LegendTextPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> LegendTextPaint<TTarget>(this TTarget target) where TTarget : PolarChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.PolarChart.LegendTextPaintProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> LegendTextPaint<TTarget>(this TTarget target) where TTarget : PolarChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.PolarChart.LegendTextPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.LegendTextSize"/></summary>
-        public static DependencyProperty<TTarget, double?> LegendTextSize<TTarget>(this TTarget target) where TTarget : PolarChart
-        => DependencyProperty<TTarget, double?>.Get(target, LiveChartsSkiaWinUI.PolarChart.LegendTextSizeProperty);
+        public static DependencyProperty<TTarget, double> LegendTextSize<TTarget>(this TTarget target) where TTarget : PolarChart
+        => DependencyProperty<TTarget, double>.Get(target, LiveChartsSkiaWinUI.PolarChart.LegendTextSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.PointerMoveCommand"/></summary>
         public static DependencyProperty<TTarget, ICommand?> PointerMoveCommand<TTarget>(this TTarget target) where TTarget : PolarChart
@@ -1083,24 +1158,24 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         => DependencyProperty<TTarget, object>.Get(target, LiveChartsSkiaWinUI.PolarChart.SyncContextProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.Title"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> Title<TTarget>(this TTarget target) where TTarget : PolarChart
-        => DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.PolarChart.TitleProperty);
+        public static DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement?> Title<TTarget>(this TTarget target) where TTarget : PolarChart
+        => DependencyProperty<TTarget, LiveCharts.VisualElements.VisualElement?>.Get(target, LiveChartsSkiaWinUI.PolarChart.TitleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.TooltipBackgroundPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> TooltipBackgroundPaint<TTarget>(this TTarget target) where TTarget : PolarChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.PolarChart.TooltipBackgroundPaintProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> TooltipBackgroundPaint<TTarget>(this TTarget target) where TTarget : PolarChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.PolarChart.TooltipBackgroundPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.TooltipPosition"/></summary>
         public static DependencyProperty<TTarget, LiveCharts.Measure.TooltipPosition> TooltipPosition<TTarget>(this TTarget target) where TTarget : PolarChart
         => DependencyProperty<TTarget, LiveCharts.Measure.TooltipPosition>.Get(target, LiveChartsSkiaWinUI.PolarChart.TooltipPositionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.TooltipTextPaint"/></summary>
-        public static DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?> TooltipTextPaint<TTarget>(this TTarget target) where TTarget : PolarChart
-        => DependencyProperty<TTarget, LiveCharts.Drawing.IPaint<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>?>.Get(target, LiveChartsSkiaWinUI.PolarChart.TooltipTextPaintProperty);
+        public static DependencyProperty<TTarget, LiveCharts.Painting.Paint?> TooltipTextPaint<TTarget>(this TTarget target) where TTarget : PolarChart
+        => DependencyProperty<TTarget, LiveCharts.Painting.Paint?>.Get(target, LiveChartsSkiaWinUI.PolarChart.TooltipTextPaintProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.TooltipTextSize"/></summary>
-        public static DependencyProperty<TTarget, double?> TooltipTextSize<TTarget>(this TTarget target) where TTarget : PolarChart
-        => DependencyProperty<TTarget, double?>.Get(target, LiveChartsSkiaWinUI.PolarChart.TooltipTextSizeProperty);
+        public static DependencyProperty<TTarget, double> TooltipTextSize<TTarget>(this TTarget target) where TTarget : PolarChart
+        => DependencyProperty<TTarget, double>.Get(target, LiveChartsSkiaWinUI.PolarChart.TooltipTextSizeProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.TotalAngle"/></summary>
         public static DependencyProperty<TTarget, double> TotalAngle<TTarget>(this TTarget target) where TTarget : PolarChart
@@ -1115,8 +1190,8 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // PolarChart
         => DependencyProperty<TTarget, ICommand?>.Get(target, LiveChartsSkiaWinUI.PolarChart.VisualElementsPointerDownCommandProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="LiveChartsSkiaWinUI.PolarChart.VisualElements"/></summary>
-        public static DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>>> VisualElements<TTarget>(this TTarget target) where TTarget : PolarChart
-        => DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement<LiveChartsSkiaSharpView.Drawing.SkiaSharpDrawingContext>>>.Get(target, LiveChartsSkiaWinUI.PolarChart.VisualElementsProperty);
+        public static DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement>> VisualElements<TTarget>(this TTarget target) where TTarget : PolarChart
+        => DependencyProperty<TTarget, IEnumerable<LiveCharts.Kernel.ChartElement>>.Get(target, LiveChartsSkiaWinUI.PolarChart.VisualElementsProperty);
     }
 }
 
@@ -1124,6 +1199,42 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // EnumPropertyValues
 {
     public static partial class CartesianChartExtensions
     {
+        /// <summary>Set to <see cref="LiveCharts.Measure.FindingStrategy.Automatic"/></summary>
+        public static TTarget Automatic<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.FindingStrategy> property) where TTarget : CartesianChart
+        => property.Set(LiveCharts.Measure.FindingStrategy.Automatic);
+
+        /// <summary>Set to <see cref="LiveCharts.Measure.FindingStrategy.CompareAll"/></summary>
+        public static TTarget CompareAll<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.FindingStrategy> property) where TTarget : CartesianChart
+        => property.Set(LiveCharts.Measure.FindingStrategy.CompareAll);
+
+        /// <summary>Set to <see cref="LiveCharts.Measure.FindingStrategy.CompareAllTakeClosest"/></summary>
+        public static TTarget CompareAllTakeClosest<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.FindingStrategy> property) where TTarget : CartesianChart
+        => property.Set(LiveCharts.Measure.FindingStrategy.CompareAllTakeClosest);
+
+        /// <summary>Set to <see cref="LiveCharts.Measure.FindingStrategy.CompareOnlyX"/></summary>
+        public static TTarget CompareOnlyX<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.FindingStrategy> property) where TTarget : CartesianChart
+        => property.Set(LiveCharts.Measure.FindingStrategy.CompareOnlyX);
+
+        /// <summary>Set to <see cref="LiveCharts.Measure.FindingStrategy.CompareOnlyXTakeClosest"/></summary>
+        public static TTarget CompareOnlyXTakeClosest<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.FindingStrategy> property) where TTarget : CartesianChart
+        => property.Set(LiveCharts.Measure.FindingStrategy.CompareOnlyXTakeClosest);
+
+        /// <summary>Set to <see cref="LiveCharts.Measure.FindingStrategy.CompareOnlyY"/></summary>
+        public static TTarget CompareOnlyY<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.FindingStrategy> property) where TTarget : CartesianChart
+        => property.Set(LiveCharts.Measure.FindingStrategy.CompareOnlyY);
+
+        /// <summary>Set to <see cref="LiveCharts.Measure.FindingStrategy.CompareOnlyYTakeClosest"/></summary>
+        public static TTarget CompareOnlyYTakeClosest<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.FindingStrategy> property) where TTarget : CartesianChart
+        => property.Set(LiveCharts.Measure.FindingStrategy.CompareOnlyYTakeClosest);
+
+        /// <summary>Set to <see cref="LiveCharts.Measure.FindingStrategy.ExactMatch"/></summary>
+        public static TTarget ExactMatch<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.FindingStrategy> property) where TTarget : CartesianChart
+        => property.Set(LiveCharts.Measure.FindingStrategy.ExactMatch);
+
+        /// <summary>Set to <see cref="LiveCharts.Measure.FindingStrategy.ExactMatchTakeClosest"/></summary>
+        public static TTarget ExactMatchTakeClosest<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.FindingStrategy> property) where TTarget : CartesianChart
+        => property.Set(LiveCharts.Measure.FindingStrategy.ExactMatchTakeClosest);
+
         /// <summary>Set to <see cref="LiveCharts.Measure.LegendPosition.Bottom"/></summary>
         public static TTarget Bottom<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.LegendPosition> property) where TTarget : CartesianChart
         => property.Set(LiveCharts.Measure.LegendPosition.Bottom);
@@ -1143,34 +1254,6 @@ namespace CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView // EnumPropertyValues
         /// <summary>Set to <see cref="LiveCharts.Measure.LegendPosition.Top"/></summary>
         public static TTarget Top<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.LegendPosition> property) where TTarget : CartesianChart
         => property.Set(LiveCharts.Measure.LegendPosition.Top);
-
-        /// <summary>Set to <see cref="LiveCharts.Measure.TooltipFindingStrategy.Automatic"/></summary>
-        public static TTarget Automatic<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.TooltipFindingStrategy> property) where TTarget : CartesianChart
-        => property.Set(LiveCharts.Measure.TooltipFindingStrategy.Automatic);
-
-        /// <summary>Set to <see cref="LiveCharts.Measure.TooltipFindingStrategy.CompareAll"/></summary>
-        public static TTarget CompareAll<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.TooltipFindingStrategy> property) where TTarget : CartesianChart
-        => property.Set(LiveCharts.Measure.TooltipFindingStrategy.CompareAll);
-
-        /// <summary>Set to <see cref="LiveCharts.Measure.TooltipFindingStrategy.CompareAllTakeClosest"/></summary>
-        public static TTarget CompareAllTakeClosest<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.TooltipFindingStrategy> property) where TTarget : CartesianChart
-        => property.Set(LiveCharts.Measure.TooltipFindingStrategy.CompareAllTakeClosest);
-
-        /// <summary>Set to <see cref="LiveCharts.Measure.TooltipFindingStrategy.CompareOnlyX"/></summary>
-        public static TTarget CompareOnlyX<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.TooltipFindingStrategy> property) where TTarget : CartesianChart
-        => property.Set(LiveCharts.Measure.TooltipFindingStrategy.CompareOnlyX);
-
-        /// <summary>Set to <see cref="LiveCharts.Measure.TooltipFindingStrategy.CompareOnlyXTakeClosest"/></summary>
-        public static TTarget CompareOnlyXTakeClosest<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.TooltipFindingStrategy> property) where TTarget : CartesianChart
-        => property.Set(LiveCharts.Measure.TooltipFindingStrategy.CompareOnlyXTakeClosest);
-
-        /// <summary>Set to <see cref="LiveCharts.Measure.TooltipFindingStrategy.CompareOnlyY"/></summary>
-        public static TTarget CompareOnlyY<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.TooltipFindingStrategy> property) where TTarget : CartesianChart
-        => property.Set(LiveCharts.Measure.TooltipFindingStrategy.CompareOnlyY);
-
-        /// <summary>Set to <see cref="LiveCharts.Measure.TooltipFindingStrategy.CompareOnlyYTakeClosest"/></summary>
-        public static TTarget CompareOnlyYTakeClosest<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.TooltipFindingStrategy> property) where TTarget : CartesianChart
-        => property.Set(LiveCharts.Measure.TooltipFindingStrategy.CompareOnlyYTakeClosest);
 
         /// <summary>Set to <see cref="LiveCharts.Measure.TooltipPosition.Auto"/></summary>
         public static TTarget Auto<TTarget>(this DependencyProperty<TTarget, LiveCharts.Measure.TooltipPosition> property) where TTarget : CartesianChart

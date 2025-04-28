@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET7_0_MACOS && __MACOS__
+#if NET8_0 && __MACOS__
 
 using System;
 using System.Collections.Generic;
@@ -1579,6 +1579,14 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // InputExtensions
         public static DependencyProperty<TTarget, bool> InputExtensions_AutoFocusNext<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.InputExtensions.AutoFocusNextProperty);
 
+        /// <summary>Set <see cref="UnoToolkitUI.InputExtensions.ReturnType"/></summary>
+        public static TTarget InputExtensions_ReturnType<TTarget>(this TTarget target, UnoToolkitUI.InputExtensions.ReturnType value) where TTarget : DependencyObject
+        { UnoToolkitUI.InputExtensions.SetReturnType(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.InputExtensions.ReturnType"/></summary>
+        public static DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> InputExtensions_ReturnType<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType>.Get(target, UnoToolkitUI.InputExtensions.ReturnTypeProperty);
+
         /// <summary>Set <see cref="UnoToolkitUI.InputExtensions"/> attached properties</summary>
         public static TTarget InputExtensions<TTarget>(this TTarget target
 
@@ -1588,6 +1596,8 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // InputExtensions
 
             , bool? AutoFocusNext = default
 
+            , UnoToolkitUI.InputExtensions.ReturnType? ReturnType = default
+
         ) where TTarget : DependencyObject
         {
             if (AutoDismiss is not null) UnoToolkitUI.InputExtensions.SetAutoDismiss(target.UI, AutoDismiss.Value);
@@ -1595,6 +1605,8 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // InputExtensions
             if (AutoFocusNextElement is not null) UnoToolkitUI.InputExtensions.SetAutoFocusNextElement(target.UI, AutoFocusNextElement);
 
             if (AutoFocusNext is not null) UnoToolkitUI.InputExtensions.SetAutoFocusNext(target.UI, AutoFocusNext.Value);
+
+            if (ReturnType is not null) UnoToolkitUI.InputExtensions.SetReturnType(target.UI, ReturnType.Value);
 
             return target;
         }
@@ -2232,20 +2244,6 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ResourceExtensions
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResourceExtensions.Resources"/></summary>
         public static DependencyProperty<TTarget, Xaml.ResourceDictionary> ResourceExtensions_Resources<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, Xaml.ResourceDictionary>.Get(target, UnoToolkitUI.ResourceExtensions.ResourcesProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI.Uno.Toolkit // ResponsiveBehavior
-{
-    public static partial class ResponsiveBehaviorExtensions
-    {
-        /// <summary>Set <see cref="UnoToolkitUI.ResponsiveBehavior.IsEnabled"/></summary>
-        public static TTarget ResponsiveBehavior_IsEnabled<TTarget>(this TTarget target, bool value) where TTarget : DependencyObject
-        { UnoToolkitUI.ResponsiveBehavior.SetIsEnabled(target.UI, value); return target; }
-
-        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ResponsiveBehavior.IsEnabled"/></summary>
-        public static DependencyProperty<TTarget, bool> ResponsiveBehavior_IsEnabled<TTarget>(this TTarget target) where TTarget : DependencyObject
-        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.ResponsiveBehavior.IsEnabledProperty);
     }
 }
 
@@ -3357,6 +3355,174 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // VisualStateManagerExtensions
     }
 }
 
+namespace CSharpMarkup.WinUI.Uno.Toolkit // ZoomContentControl
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="UnoToolkitUI.ZoomContentControl"/></summary>
+        public static ZoomContentControl ZoomContentControl(UIObject Content)
+        {
+            var ui = new UnoToolkitUI.ZoomContentControl();
+            if (Content != null) ui.Content = Content.UI;
+            return CSharpMarkup.WinUI.Uno.Toolkit.ZoomContentControl.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.ZoomContentControl"/></summary>
+        public static ZoomContentControl ZoomContentControl(CSharpMarkup.WinUI.to.Thickness? AdditionalMargin = default, bool? AutoFitToCanvas = default, bool? IsActive = default, bool? IsPanAllowed = default, bool? IsZoomAllowed = default, double? MaxZoomLevel = default, double? MinZoomLevel = default, double? PanWheelRatio = default, double? ScaleWheelRatio = default, double? ZoomLevel = default, UIObject Content = default)
+        {
+            var ui = new UnoToolkitUI.ZoomContentControl();
+            if (AdditionalMargin is not null) ui.AdditionalMargin = AdditionalMargin.Value;
+            if (AutoFitToCanvas is not null) ui.AutoFitToCanvas = AutoFitToCanvas.Value;
+            if (IsActive is not null) ui.IsActive = IsActive.Value;
+            if (IsPanAllowed is not null) ui.IsPanAllowed = IsPanAllowed.Value;
+            if (IsZoomAllowed is not null) ui.IsZoomAllowed = IsZoomAllowed.Value;
+            if (MaxZoomLevel is not null) ui.MaxZoomLevel = MaxZoomLevel.Value;
+            if (MinZoomLevel is not null) ui.MinZoomLevel = MinZoomLevel.Value;
+            if (PanWheelRatio is not null) ui.PanWheelRatio = PanWheelRatio.Value;
+            if (ScaleWheelRatio is not null) ui.ScaleWheelRatio = ScaleWheelRatio.Value;
+            if (ZoomLevel is not null) ui.ZoomLevel = ZoomLevel.Value;
+            if (Content != null) ui.Content = Content.UI;
+            return CSharpMarkup.WinUI.Uno.Toolkit.ZoomContentControl.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.ZoomContentControl"/></summary>
+        public static ZoomContentControl ZoomContentControl()
+        {
+            var ui = new UnoToolkitUI.ZoomContentControl();
+            return CSharpMarkup.WinUI.Uno.Toolkit.ZoomContentControl.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.ZoomContentControl"/></summary>
+        public static ZoomContentControl ZoomContentControl(nint handle)
+        {
+            var ui = new UnoToolkitUI.ZoomContentControl(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.ZoomContentControl.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.ZoomContentControl"/></summary>
+        public static ZoomContentControl ZoomContentControl(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new UnoToolkitUI.ZoomContentControl(handle);
+            return CSharpMarkup.WinUI.Uno.Toolkit.ZoomContentControl.StartChain(ui);
+        }
+    }
+
+    public partial class ZoomContentControl : ContentControl, IUI<UnoToolkitUI.ZoomContentControl>
+    {
+        static ZoomContentControl instance;
+
+        internal static ZoomContentControl StartChain(UnoToolkitUI.ZoomContentControl ui)
+        {
+            if (instance == null) instance = new ZoomContentControl();
+            instance.UI = ui;
+            return instance;
+        }
+
+        UnoToolkitUI.ZoomContentControl ui;
+
+        public new UnoToolkitUI.ZoomContentControl UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(ZoomContentControl view) => view?.UI;
+
+        public static implicit operator UnoToolkitUI.ZoomContentControl(ZoomContentControl view) => view?.UI;
+
+        public static implicit operator ZoomContentControl(UnoToolkitUI.ZoomContentControl ui) => ZoomContentControl.StartChain(ui);
+
+        public ZoomContentControl Invoke(Action<UnoToolkitUI.ZoomContentControl> action) { action?.Invoke(UI); return this; }
+
+        protected ZoomContentControl() { }
+    }
+
+    public static partial class ZoomContentControlExtensions
+    {
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.AdditionalMargin"/></summary>
+        public static TView AdditionalMargin<TView>(this TView view, CSharpMarkup.WinUI.to.Thickness value) where TView : ZoomContentControl { view.UI.AdditionalMargin = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.AdditionalMargin"/></summary>
+        public static TView AdditionalMargin<TView>(this TView view, double uniform) where TView : ZoomContentControl { view.UI.AdditionalMargin = CSharpMarkup.WinUI.Helpers.Thickness(uniform); return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.AdditionalMargin"/></summary>
+        public static TView AdditionalMargin<TView>(this TView view, double horizontal, double vertical) where TView : ZoomContentControl { view.UI.AdditionalMargin = CSharpMarkup.WinUI.Helpers.Thickness(horizontal, vertical); return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.AdditionalMargin"/></summary>
+        public static TView AdditionalMargin<TView>(this TView view, double left, double top, double right, double bottom) where TView : ZoomContentControl { view.UI.AdditionalMargin = CSharpMarkup.WinUI.Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.AdditionalMargin"/></summary>
+        public static TView AdditionalMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ZoomContentControl { view.UI.AdditionalMargin = CSharpMarkup.WinUI.Helpers.Thickness(left, top, right, bottom); return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.AutoFitToCanvas"/></summary>
+        public static TView AutoFitToCanvas<TView>(this TView view, bool value) where TView : ZoomContentControl { view.UI.AutoFitToCanvas = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.IsActive"/></summary>
+        public static TView IsActive<TView>(this TView view, bool value) where TView : ZoomContentControl { view.UI.IsActive = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.IsPanAllowed"/></summary>
+        public static TView IsPanAllowed<TView>(this TView view, bool value) where TView : ZoomContentControl { view.UI.IsPanAllowed = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.IsZoomAllowed"/></summary>
+        public static TView IsZoomAllowed<TView>(this TView view, bool value) where TView : ZoomContentControl { view.UI.IsZoomAllowed = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.MaxZoomLevel"/></summary>
+        public static TView MaxZoomLevel<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.MaxZoomLevel = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.MinZoomLevel"/></summary>
+        public static TView MinZoomLevel<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.MinZoomLevel = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.PanWheelRatio"/></summary>
+        public static TView PanWheelRatio<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.PanWheelRatio = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.ScaleWheelRatio"/></summary>
+        public static TView ScaleWheelRatio<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.ScaleWheelRatio = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.ZoomLevel"/></summary>
+        public static TView ZoomLevel<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.ZoomLevel = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.AdditionalMargin"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> AdditionalMargin<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, UnoToolkitUI.ZoomContentControl.AdditionalMarginProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.AutoFitToCanvas"/></summary>
+        public static DependencyProperty<TTarget, bool> AutoFitToCanvas<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.ZoomContentControl.AutoFitToCanvasProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.IsActive"/></summary>
+        public static DependencyProperty<TTarget, bool> IsActive<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.ZoomContentControl.IsActiveProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.IsPanAllowed"/></summary>
+        public static DependencyProperty<TTarget, bool> IsPanAllowed<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.ZoomContentControl.IsPanAllowedProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.IsZoomAllowed"/></summary>
+        public static DependencyProperty<TTarget, bool> IsZoomAllowed<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.ZoomContentControl.IsZoomAllowedProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.MaxZoomLevel"/></summary>
+        public static DependencyProperty<TTarget, double> MaxZoomLevel<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.MaxZoomLevelProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.MinZoomLevel"/></summary>
+        public static DependencyProperty<TTarget, double> MinZoomLevel<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.MinZoomLevelProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.PanWheelRatio"/></summary>
+        public static DependencyProperty<TTarget, double> PanWheelRatio<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.PanWheelRatioProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.ScaleWheelRatio"/></summary>
+        public static DependencyProperty<TTarget, double> ScaleWheelRatio<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.ScaleWheelRatioProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.ZoomLevel"/></summary>
+        public static DependencyProperty<TTarget, double> ZoomLevel<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.ZoomLevelProperty);
+    }
+}
+
 namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
 {
     public static partial class AutoLayoutExtensions
@@ -3454,6 +3620,30 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         /// <summary>Set to <see cref="UnoToolkitUI.DrawerOpenDirection.Up"/></summary>
         public static TTarget Up<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection> property) where TTarget : DependencyObject
         => property.Set(UnoToolkitUI.DrawerOpenDirection.Up);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Default);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Done"/></summary>
+        public static TTarget Done<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Done);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Go"/></summary>
+        public static TTarget Go<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Go);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Next"/></summary>
+        public static TTarget Next<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Next);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Search"/></summary>
+        public static TTarget Search<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Search);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Send"/></summary>
+        public static TTarget Send<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Send);
 
         /// <summary>Set to <see cref="UnoToolkitUI.SafeArea.InsetMask.All"/></summary>
         public static TTarget All<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.SafeArea.InsetMask> property) where TTarget : DependencyObject
