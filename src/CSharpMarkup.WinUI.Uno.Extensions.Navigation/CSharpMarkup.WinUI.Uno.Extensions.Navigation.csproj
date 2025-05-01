@@ -51,6 +51,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>$(CSharpMarkupWinUIExtensionsTargetFrameworks)</TargetFrameworks>
 		<RootNamespace>CSharpMarkup.WinUI.Uno.Extensions.Navigation</RootNamespace>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(IsUno)==false">

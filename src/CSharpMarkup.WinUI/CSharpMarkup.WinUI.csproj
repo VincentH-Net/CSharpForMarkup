@@ -41,6 +41,7 @@
 	<PropertyGroup>
 		<RootNamespace>CSharpMarkup.WinUI</RootNamespace>
 		<TargetFrameworks>$(CSharpMarkupWinUITargetFrameworks)</TargetFrameworks>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(IsUno)==false">
