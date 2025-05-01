@@ -6,10 +6,10 @@ public sealed partial class FlutterViewModel : BaseViewModel
     readonly List<string> subTitles = ["Subtitle 1", "Subtitle 2", "Subtitle 3"];
 
     [ObservableProperty]
-    string title = "Flutter-Like UI markup";
+    public partial string Title { get; set; } = "Flutter-Like UI markup";
     
     [ObservableProperty][NotifyPropertyChangedFor(nameof(ToggleMoreText))]
-    bool showMore = true;
+    public partial bool ShowMore { get; set; } = true;
     
     public string ToggleMoreText => ShowMore ? "Less" : "More";
     
