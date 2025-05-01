@@ -215,10 +215,21 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Reactive // SmoothVisualStateManager
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoExtensionsReactive.UI.SmoothVisualStateManager"/></summary>
-        public static SmoothVisualStateManager SmoothVisualStateManager(UnoExtensionsReactive.UI.SmoothVisualStateRuleCollection Rules)
+        public static SmoothVisualStateManager SmoothVisualStateManager(params UnoExtensionsReactive.UI.SmoothVisualStateRule[] Rules)
         {
             var ui = new UnoExtensionsReactive.UI.SmoothVisualStateManager();
-            if (Rules != null) ui.Rules = Rules;
+            for (int i = 0; i < Rules.Length; i++)
+            {
+                var child = Rules[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<UnoExtensionsReactive.UI.SmoothVisualStateRule>.ExtractChildren(child);
+                if (subChildren is not null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Rules.Add(subChildren[j]);
+                else
+                    ui.Rules.Add(child);
+            }
             return CSharpMarkup.WinUI.Uno.Extensions.Reactive.SmoothVisualStateManager.StartChain(ui);
         }
 
