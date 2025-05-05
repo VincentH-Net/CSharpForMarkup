@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
 	<PropertyGroup>
 		<Configurations>Debug;Release;Generate</Configurations>
 	</PropertyGroup>
@@ -41,8 +41,9 @@
 	<PropertyGroup>
 		<RootNamespace>CSharpMarkup.WinUI</RootNamespace>
 		<TargetFrameworks>$(CSharpMarkupWinUITargetFrameworks)</TargetFrameworks>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 	</PropertyGroup>
-	
+
 	<PropertyGroup Condition="$(IsUno)==false">
 		<UseWinUI>true</UseWinUI>
 

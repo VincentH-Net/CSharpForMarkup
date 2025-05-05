@@ -1,8 +1,8 @@
 <!-- For CSharpMarkup projects-->
 <Project>
 	<PropertyGroup>
-		<CSharpMarkupVersion>2.4.18</CSharpMarkupVersion>
-		<CSharpMarkupReleaseTag>csharpmarkup2-winui-2-4-18</CSharpMarkupReleaseTag>
+		<CSharpMarkupVersion>3.0.3</CSharpMarkupVersion>
+		<CSharpMarkupReleaseTag>csharpmarkup2-winui-3-0-3</CSharpMarkupReleaseTag>
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
 		<IsUno>true</IsUno>
@@ -14,24 +14,25 @@
 		<IsWinAppSdk>false</IsWinAppSdk>
 		<IsWasm>false</IsWasm>
 
-		<CSharpMarkupWinUINet7TargetFrameworks>net7.0-windows10.0.19041;net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst;net7.0-macos</CSharpMarkupWinUINet7TargetFrameworks>
-		<CSharpMarkupWinUINet8TargetFrameworks>net8.0-windows10.0.19041;net8.0;net8.0-android;net8.0-ios;net8.0-maccatalyst;net8.0-macos</CSharpMarkupWinUINet8TargetFrameworks>
+		<CSharpMarkupWinUINet8TargetFrameworks>net8.0-windows10.0.19041.0;net8.0;net8.0-android34.0;net8.0-ios17.0;net8.0-maccatalyst17.0;net8.0-macos14.0</CSharpMarkupWinUINet8TargetFrameworks>
+		<CSharpMarkupWinUINet9TargetFrameworks>net9.0-windows10.0.19041.0;net9.0;net9.0-android35.0;net9.0-ios18.0;net9.0-maccatalyst18.0;net9.0-macos15.0</CSharpMarkupWinUINet9TargetFrameworks>
+		<CSharpMarkupWinUIExtensionsTargetFrameworks>net8.0-windows10.0.19041.0;net8.0;net8.0-android34.0;net8-browserwasm1.0;net8-desktop1.0;net8.0-ios18.0;net8.0-maccatalyst18.0</CSharpMarkupWinUIExtensionsTargetFrameworks>
 	</PropertyGroup>
 
 	<Choose>
 		<When Condition=" '$(Configuration)' == 'Generate' And '$(DotNetPreviousMajor)' == 'true' ">
 			<PropertyGroup>
-				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet7TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
+				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet8TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
 			</PropertyGroup>
 		</When>
 		<When Condition=" '$(Configuration)' == 'Generate' And '$(DotNetPreviousMajor)' != 'true' ">
 			<PropertyGroup>
-				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet8TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
+				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet9TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
 			</PropertyGroup>
 		</When>
 		<Otherwise>
 			<PropertyGroup>
-				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet7TargetFrameworks);$(CSharpMarkupWinUINet8TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
+				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet8TargetFrameworks);$(CSharpMarkupWinUINet9TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
 			</PropertyGroup>
 		</Otherwise>
 	</Choose>
@@ -64,21 +65,10 @@
 
 				<DefineConstants>$(DefineConstants);WINUI</DefineConstants>
 				<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+
+				<!-- .NET 8+ Windows runtime identifiers -->
+				<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
 			</PropertyGroup>
-			<Choose>
-				<When Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)', 1)) &lt; 8">
-					<PropertyGroup>
-						<!-- Pre .NET 8 Windows runtime identifiers -->
-						<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
-					</PropertyGroup>
-				</When>
-				<Otherwise>
-					<PropertyGroup>
-						<!-- .NET 8+ Windows runtime identifiers -->
-						<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
-					</PropertyGroup>
-				</Otherwise>
-			</Choose>
 		</When>
 		<Otherwise>
 			<PropertyGroup>
@@ -98,6 +88,6 @@
 	</PropertyGroup>
 
 	<Target Name="DisplayCustomVariable" BeforeTargets="BeforeBuild">
-		<Message Text="CSharpMarkupWinUITargetFrameworks is: $(CSharpMarkupWinUITargetFrameworks)" Importance="high" />
+		<Message Text="CSharpMarkupWinUITargetFrameworks is: $(CSharpMarkupWinUITargetFrameworks), TargetPlatformIdentifier is: $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')), IsUno is: $(IsUno), DefineConstants is : $(DefineConstants)" Importance="high" />
 	</Target>
 </Project>

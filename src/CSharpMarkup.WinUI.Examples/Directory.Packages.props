@@ -5,12 +5,12 @@
     See https://aka.platform.uno/using-uno-sdk for more information.
   -->
   <ItemGroup>
-    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageVersion Include="coverlet.collector" Version="6.0.2" />
-    <PackageVersion Include="CSharpMarkup.WinUI" Version="2.4.16" />
-    <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation" Version="2.4.16" />
-    <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit" Version="2.4.16" />
-    <PackageVersion Include="CSharpMarkup.WinUI.Uno.Toolkit" Version="2.4.16" />
+    <PackageVersion Include="CSharpMarkup.WinUI" Version="3.0.3" />
+    <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation" Version="3.0.3" />
+    <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit" Version="3.0.3" />
+    <PackageVersion Include="CSharpMarkup.WinUI.Uno.Toolkit" Version="3.0.3" />
     <PackageVersion Include="FluentAssertions" Version="6.12.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
     <PackageVersion Include="NUnit" Version="4.1.0" />

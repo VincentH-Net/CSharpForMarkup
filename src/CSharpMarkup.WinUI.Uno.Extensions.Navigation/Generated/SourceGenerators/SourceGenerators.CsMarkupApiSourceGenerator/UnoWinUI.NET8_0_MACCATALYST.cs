@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET8_0_MACCATALYST && __MACCATALYST__
+#if NET8_0 && __MACCATALYST__
 
 using System;
 using System.Collections.Generic;

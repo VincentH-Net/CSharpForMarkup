@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.38">
+﻿<Project Sdk="Uno.Sdk">
 	<PropertyGroup>
 		<Configurations>Debug;Release;Generate</Configurations>
 		<IsUno>true</IsUno>
@@ -6,6 +6,11 @@
 		<!-- Workaround for PRI resource build errors and dotnet build support, from https://github.com/dotnet/maui/issues/5886#issuecomment-1123106200 -->
 		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 		<GenerateLibraryLayout>true</GenerateLibraryLayout>
+
+		<!-- Because we are using Uno.Sdk -->
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+		<UnoSingleProject>true</UnoSingleProject>
+		<OutputType>Library</OutputType>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -44,8 +49,9 @@
 	</PropertyGroup>
 		
 	<PropertyGroup>
-		<TargetFrameworks>$(CSharpMarkupWinUINet8TargetFrameworks)</TargetFrameworks>
+		<TargetFrameworks>$(CSharpMarkupWinUIExtensionsTargetFrameworks)</TargetFrameworks>
 		<RootNamespace>CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit</RootNamespace>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="$(IsUno)==false">

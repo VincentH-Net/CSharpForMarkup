@@ -3,9 +3,9 @@ namespace WinUICsMarkupExamples.Presentation.Example;
 [UIBindable]
 public sealed partial class SearchViewModel(INavigator navigator) : BaseViewModel
 {
-    [ObservableProperty] string searchText = "#CSharpForMarkup";
+    [ObservableProperty] public partial string SearchText { get; set; } = "#CSharpForMarkup";
 
-    [ObservableProperty] List<Tweet> searchResults = [
+    [ObservableProperty] public partial List<Tweet> SearchResults { get; set; } = [
         new() {
             AuthorImage = "https://pbs.twimg.com/profile_images/1382769074569154561/2ukpzO8E_400x400.jpg",
             Header = "Uno Platform @UnoPlatform · Nov 30",
@@ -122,10 +122,10 @@ public sealed partial class SearchViewModel(INavigator navigator) : BaseViewMode
 
     public sealed partial class Tweet : BaseViewModel
     {
-        [ObservableProperty] string? authorImage;
-        [ObservableProperty] string? header;
-        [ObservableProperty] List<TextFragment>? body;
-        [ObservableProperty] bool isLikedByMe;
+        [ObservableProperty] public partial string? AuthorImage { get; set; }
+        [ObservableProperty] public partial string? Header { get; set; }
+        [ObservableProperty] public partial List<TextFragment>? Body { get; set; }
+        [ObservableProperty] public partial bool IsLikedByMe { get; set; }
     }
 
     public sealed class TextFragment
