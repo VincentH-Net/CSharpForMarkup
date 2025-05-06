@@ -19,7 +19,7 @@ dotnet new mcs-uno-markup2 --presentation mvux --allow-scripts yes
 ```
 
 ## Markup options at a glance - good for everyone!
-Uno Platform supports XAML but recently has embraced C# UI as well with [Uno C# Markup](https://platform.uno/c-markup/). C# Markup 2 adds another option that goes above and beyond what gen-1 C# Markup variants offer.
+Uno Platform supports both XAML and C# UI with [Uno C# Markup](https://platform.uno/c-markup/). C# Markup 2 adds another option that goes above and beyond what gen-1 C# Markup variants offer.
 
 It's good to have options - everyone wins: devs get the experience that they like best, and the UI framework gains more adoption. Check it out and pick what you like!
 
@@ -64,6 +64,17 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*May 5, 2025*
+> ## New C# Markup 3.0 for Uno Platform 5.6 and .NET 9
+Today's release is adds full support of Uno SDK 5.6 / Windows App SDK 1.6 and .NET 9 / .NET 8 to all CSharpMarkup.WinUI NuGets.
+
+Includes support for all improvements in Uno SDK 5.6:
+- 80+ WinUI API's are no longer marked unsupported
+- new `ScrollPresenterAutomationPeer`, `FauxGradientBorderPresenter`
+- new `NewFrameworkTemplateBuilder` support
+
+The example app in the repo is also updated to .NET 9 plus Uno 5.6 / Windows App SDK 1.6 and demonstrates how to use C# partial properties with MVVM Community Toolkit to support AOT.
+
 *May 7, 2024*
 > ## New C# Markup 2.4 for Uno Platform 5.2 incl .NET Single Project
 Today's release is fully updated to Updated to Uno 5.2 including Uno's [.NET Single Project](https://platform.uno/blog/the-first-and-only-true-single-project-for-mobile-web-desktop-and-embedded-in-net/) and `uno.sdk`!
