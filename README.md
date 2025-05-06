@@ -66,7 +66,7 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 # News
 *May 5, 2025*
 > ## New C# Markup 3.0 for Uno Platform 5.6 and .NET 9
-Today's release is adds full support of Uno SDK 5.6 / Windows App SDK 1.6 and .NET 9 / .NET 8 to all CSharpMarkup.WinUI NuGets.
+Today's release adds full support of Uno SDK 5.6 / Windows App SDK 1.6 and .NET 9 / .NET 8 to all CSharpMarkup.WinUI NuGets.
 
 Includes support for all improvements in Uno SDK 5.6:
 - 80+ WinUI API's are no longer marked unsupported
