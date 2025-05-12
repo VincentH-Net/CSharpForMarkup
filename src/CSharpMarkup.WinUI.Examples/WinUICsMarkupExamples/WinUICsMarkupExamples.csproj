@@ -42,7 +42,7 @@
       Logging;
       LoggingSerilog;
       Configuration;
-      Http;
+      HttpRefit;
       Serialization;
       Localization;
       Navigation;
