@@ -64,6 +64,18 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*May 12, 2025*
+> ## New C# Markup 3.1 for Uno Platform 6.0
+Hot on the heels of the game-changing [Uno 6.0 release](https://platform.uno/blog/uno-platform-studio-6-0/), today's release adds full support for Uno SDK 6.0 / Windows App SDK 1.7 to all CSharpMarkup.WinUI NuGets.
+
+Includes support for all API improvements in Uno SDK 6.0:
+- 20+ WinUI API's are no longer marked unsupported
+- Add support for ellipse shape to `ProgressBarTemplateSettings`
+- New `TitleBar` support, including strongly-typed access to all new `Titlebar` resources in `ThemeResource`
+- New `TextBoxExtensions` allow to specify `InputReturnType`
+
+The example app in the repo is also updated to Uno 6.0 / Windows App SDK 1.7.
+
 *May 5, 2025*
 > ## New C# Markup 3.0 for Uno Platform 5.6 and .NET 9
 Today's release adds full support for Uno SDK 5.6 / Windows App SDK 1.6 and .NET 9 / .NET 8 to all CSharpMarkup.WinUI NuGets.
