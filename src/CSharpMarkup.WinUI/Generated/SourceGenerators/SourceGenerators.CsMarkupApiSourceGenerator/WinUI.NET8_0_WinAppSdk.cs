@@ -25146,6 +25146,217 @@ namespace CSharpMarkup.WinUI // TimePickerFlyoutPresenter
     }
 }
 
+namespace CSharpMarkup.WinUI // TitleBar
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBar"/></summary>
+        public static TitleBar TitleBar(Xaml.UIElement Content)
+        {
+            var ui = new Xaml.Controls.TitleBar();
+            if (Content is not null) ui.Content = Content;
+            return CSharpMarkup.WinUI.TitleBar.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBar"/></summary>
+        public static TitleBar TitleBar(Xaml.Controls.IconSource IconSource = default, bool? IsBackButtonEnabled = default, bool? IsBackButtonVisible = default, bool? IsPaneToggleButtonVisible = default, Xaml.UIElement LeftHeader = default, Xaml.UIElement RightHeader = default, string Subtitle = default, string Title = default, Xaml.UIElement Content = default)
+        {
+            var ui = new Xaml.Controls.TitleBar();
+            if (IconSource is not null) ui.IconSource = IconSource;
+            if (IsBackButtonEnabled is not null) ui.IsBackButtonEnabled = IsBackButtonEnabled.Value;
+            if (IsBackButtonVisible is not null) ui.IsBackButtonVisible = IsBackButtonVisible.Value;
+            if (IsPaneToggleButtonVisible is not null) ui.IsPaneToggleButtonVisible = IsPaneToggleButtonVisible.Value;
+            if (LeftHeader is not null) ui.LeftHeader = LeftHeader;
+            if (RightHeader is not null) ui.RightHeader = RightHeader;
+            if (Subtitle is not null) ui.Subtitle = Subtitle;
+            if (Title is not null) ui.Title = Title;
+            if (Content is not null) ui.Content = Content;
+            return CSharpMarkup.WinUI.TitleBar.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBar"/></summary>
+        public static TitleBar TitleBar()
+        {
+            var ui = new Xaml.Controls.TitleBar();
+            return CSharpMarkup.WinUI.TitleBar.StartChain(ui);
+        }
+    }
+
+    public partial class TitleBar : Control, IUI<Xaml.Controls.TitleBar>
+    {
+        static TitleBar instance;
+
+        internal static TitleBar StartChain(Xaml.Controls.TitleBar ui)
+        {
+            if (instance == null) instance = new TitleBar();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.TitleBar ui;
+
+        public new Xaml.Controls.TitleBar UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(TitleBar view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.TitleBar(TitleBar view) => view?.UI;
+
+        public static implicit operator TitleBar(Xaml.Controls.TitleBar ui) => TitleBar.StartChain(ui);
+
+        public TitleBar Invoke(Action<Xaml.Controls.TitleBar> action) { action?.Invoke(UI); return this; }
+
+        protected TitleBar() { }
+    }
+
+    public static partial class TitleBarExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.IconSource"/></summary>
+        public static TView IconSource<TView>(this TView view, Xaml.Controls.IconSource value) where TView : TitleBar { view.UI.IconSource = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.IsBackButtonEnabled"/></summary>
+        public static TView IsBackButtonEnabled<TView>(this TView view, bool value) where TView : TitleBar { view.UI.IsBackButtonEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.IsBackButtonVisible"/></summary>
+        public static TView IsBackButtonVisible<TView>(this TView view, bool value) where TView : TitleBar { view.UI.IsBackButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.IsPaneToggleButtonVisible"/></summary>
+        public static TView IsPaneToggleButtonVisible<TView>(this TView view, bool value) where TView : TitleBar { view.UI.IsPaneToggleButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.LeftHeader"/></summary>
+        public static TView LeftHeader<TView>(this TView view, Xaml.UIElement value) where TView : TitleBar { view.UI.LeftHeader = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.RightHeader"/></summary>
+        public static TView RightHeader<TView>(this TView view, Xaml.UIElement value) where TView : TitleBar { view.UI.RightHeader = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.Subtitle"/></summary>
+        public static TView Subtitle<TView>(this TView view, string value) where TView : TitleBar { view.UI.Subtitle = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.Title"/></summary>
+        public static TView Title<TView>(this TView view, string value) where TView : TitleBar { view.UI.Title = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.Content"/></summary>
+        public static DependencyProperty<TTarget, Xaml.UIElement> Content<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.TitleBar.ContentProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.IconSource"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.IconSource> IconSource<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, Xaml.Controls.IconSource>.Get(target, Xaml.Controls.TitleBar.IconSourceProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.IsBackButtonEnabled"/></summary>
+        public static DependencyProperty<TTarget, bool> IsBackButtonEnabled<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TitleBar.IsBackButtonEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.IsBackButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsBackButtonVisible<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TitleBar.IsBackButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.IsPaneToggleButtonVisible"/></summary>
+        public static DependencyProperty<TTarget, bool> IsPaneToggleButtonVisible<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TitleBar.IsPaneToggleButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.LeftHeader"/></summary>
+        public static DependencyProperty<TTarget, Xaml.UIElement> LeftHeader<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.TitleBar.LeftHeaderProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.RightHeader"/></summary>
+        public static DependencyProperty<TTarget, Xaml.UIElement> RightHeader<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.TitleBar.RightHeaderProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.Subtitle"/></summary>
+        public static DependencyProperty<TTarget, string> Subtitle<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.TitleBar.SubtitleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.TemplateSettings"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.TitleBarTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, Xaml.Controls.TitleBarTemplateSettings>.Get(target, Xaml.Controls.TitleBar.TemplateSettingsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.Title"/></summary>
+        public static DependencyProperty<TTarget, string> Title<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.TitleBar.TitleProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // TitleBarAutomationPeer
+{
+    public partial class TitleBarAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Controls.TitleBarAutomationPeer>
+    {
+        Xaml.Controls.TitleBarAutomationPeer ui;
+
+        public new Xaml.Controls.TitleBarAutomationPeer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public TitleBarAutomationPeer Invoke(Action<Xaml.Controls.TitleBarAutomationPeer> action) { action?.Invoke(UI); return this; }
+
+        protected TitleBarAutomationPeer() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // TitleBarTemplateSettings
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBarTemplateSettings"/></summary>
+        public static TitleBarTemplateSettings TitleBarTemplateSettings(Xaml.Controls.IconElement IconElement = default)
+        {
+            var ui = new Xaml.Controls.TitleBarTemplateSettings();
+            if (IconElement is not null) ui.IconElement = IconElement;
+            return CSharpMarkup.WinUI.TitleBarTemplateSettings.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBarTemplateSettings"/></summary>
+        public static TitleBarTemplateSettings TitleBarTemplateSettings()
+        {
+            var ui = new Xaml.Controls.TitleBarTemplateSettings();
+            return CSharpMarkup.WinUI.TitleBarTemplateSettings.StartChain(ui);
+        }
+    }
+
+    public partial class TitleBarTemplateSettings : DependencyObject, IUI<Xaml.Controls.TitleBarTemplateSettings>
+    {
+        static TitleBarTemplateSettings instance;
+
+        internal static TitleBarTemplateSettings StartChain(Xaml.Controls.TitleBarTemplateSettings ui)
+        {
+            if (instance == null) instance = new TitleBarTemplateSettings();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.TitleBarTemplateSettings ui;
+
+        public new Xaml.Controls.TitleBarTemplateSettings UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.TitleBarTemplateSettings(TitleBarTemplateSettings view) => view?.UI;
+
+        public static implicit operator TitleBarTemplateSettings(Xaml.Controls.TitleBarTemplateSettings ui) => TitleBarTemplateSettings.StartChain(ui);
+
+        public TitleBarTemplateSettings Invoke(Action<Xaml.Controls.TitleBarTemplateSettings> action) { action?.Invoke(UI); return this; }
+
+        protected TitleBarTemplateSettings() { }
+    }
+
+    public static partial class TitleBarTemplateSettingsExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.TitleBarTemplateSettings.IconElement"/></summary>
+        public static TView IconElement<TView>(this TView view, Xaml.Controls.IconElement value) where TView : TitleBarTemplateSettings { view.UI.IconElement = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBarTemplateSettings.IconElement"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Controls.IconElement> IconElement<TTarget>(this TTarget target) where TTarget : TitleBarTemplateSettings
+        => DependencyProperty<TTarget, Xaml.Controls.IconElement>.Get(target, Xaml.Controls.TitleBarTemplateSettings.IconElementProperty);
+    }
+}
+
 namespace CSharpMarkup.WinUI // ToggleMenuFlyoutItem
 {
     public static partial class Helpers

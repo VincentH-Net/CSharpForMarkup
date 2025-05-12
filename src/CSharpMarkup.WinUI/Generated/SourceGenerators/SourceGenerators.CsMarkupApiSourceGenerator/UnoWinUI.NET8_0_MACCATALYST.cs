@@ -235,12 +235,10 @@ namespace CSharpMarkup.WinUI // AutomationProperties
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Automation.AutomationProperties.AcceleratorKeyProperty);
 
         /// <summary>Set <see cref="Xaml.Automation.AutomationProperties.AccessibilityView"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TTarget AutomationProperties_AccessibilityView<TTarget>(this TTarget target, Xaml.Automation.Peers.AccessibilityView value) where TTarget : DependencyObject
         { Xaml.Automation.AutomationProperties.SetAccessibilityView(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Automation.AutomationProperties.AccessibilityView"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Automation.Peers.AccessibilityView> AutomationProperties_AccessibilityView<TTarget>(this TTarget target) where TTarget : DependencyObject
         => DependencyProperty<TTarget, Xaml.Automation.Peers.AccessibilityView>.Get(target, Xaml.Automation.AutomationProperties.AccessibilityViewProperty);
 
@@ -4409,7 +4407,6 @@ namespace CSharpMarkup.WinUI // Border
         public static TView BackgroundSizing<TView>(this TView view, Xaml.Controls.BackgroundSizing value) where TView : Border { view.UI.BackgroundSizing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Border.BackgroundTransition"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BackgroundTransition<TView>(this TView view, Xaml.BrushTransition value) where TView : Border { view.UI.BackgroundTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Border.BorderBrush"/></summary>
@@ -7568,7 +7565,6 @@ namespace CSharpMarkup.WinUI // ContentPresenter
         public static TView BackgroundSizing<TView>(this TView view, Xaml.Controls.BackgroundSizing value) where TView : ContentPresenter { view.UI.BackgroundSizing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.BackgroundTransition"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BackgroundTransition<TView>(this TView view, Xaml.BrushTransition value) where TView : ContentPresenter { view.UI.BackgroundTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ContentPresenter.BorderBrush"/></summary>
@@ -9644,7 +9640,6 @@ namespace CSharpMarkup.WinUI // FontIcon
         public static TView Glyph<TView>(this TView view, string value) where TView : FontIcon { view.UI.Glyph = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.FontIcon.IsTextScaleFactorEnabled"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextScaleFactorEnabled<TView>(this TView view, bool value) where TView : FontIcon { view.UI.IsTextScaleFactorEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.FontIcon.MirroredWhenRightToLeft"/></summary>
@@ -9671,7 +9666,6 @@ namespace CSharpMarkup.WinUI // FontIcon
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.FontIcon.GlyphProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.FontIcon.IsTextScaleFactorEnabled"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextScaleFactorEnabled<TTarget>(this TTarget target) where TTarget : FontIcon
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.FontIcon.IsTextScaleFactorEnabledProperty);
 
@@ -18228,7 +18222,6 @@ namespace CSharpMarkup.WinUI // Panel
     public static partial class PanelExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Panel.BackgroundTransition"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView BackgroundTransition<TView>(this TView view, Xaml.BrushTransition value) where TView : Panel { view.UI.BackgroundTransition = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Panel.ChildrenTransitions"/></summary>
@@ -20724,24 +20717,6 @@ namespace CSharpMarkup.WinUI // ColorPickerSlider
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.ColorPickerSlider.ColorChannel"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.ColorPickerHsvChannel> ColorChannel<TTarget>(this TTarget target) where TTarget : ColorPickerSlider
         => DependencyProperty<TTarget, Xaml.Controls.ColorPickerHsvChannel>.Get(target, Xaml.Controls.Primitives.ColorPickerSlider.ColorChannelProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // ColorPickerSliderAutomationPeer
-{
-    public partial class ColorPickerSliderAutomationPeer : AutomationPeer, IUI<Xaml.Controls.Primitives.ColorPickerSliderAutomationPeer>
-    {
-        Xaml.Controls.Primitives.ColorPickerSliderAutomationPeer ui;
-
-        public new Xaml.Controls.Primitives.ColorPickerSliderAutomationPeer UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public ColorPickerSliderAutomationPeer Invoke(Action<Xaml.Controls.Primitives.ColorPickerSliderAutomationPeer> action) { action?.Invoke(UI); return this; }
-
-        protected ColorPickerSliderAutomationPeer() { }
     }
 }
 
@@ -24878,7 +24853,6 @@ namespace CSharpMarkup.WinUI // ScrollPresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollPresenter"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ScrollPresenter ScrollPresenter(Xaml.UIElement Content)
         {
             var ui = new Xaml.Controls.Primitives.ScrollPresenter();
@@ -24887,7 +24861,6 @@ namespace CSharpMarkup.WinUI // ScrollPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollPresenter"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ScrollPresenter ScrollPresenter(CSharpMarkup.WinUI.to.Brush? Background = default, Xaml.Controls.ScrollingScrollMode? ComputedHorizontalScrollMode = default, Xaml.Controls.ScrollingScrollMode? ComputedVerticalScrollMode = default, Xaml.Controls.ScrollingContentOrientation? ContentOrientation = default, double? HorizontalAnchorRatio = default, Xaml.Controls.ScrollingChainMode? HorizontalScrollChainMode = default, Xaml.Controls.Primitives.IScrollController HorizontalScrollController = default, Xaml.Controls.ScrollingScrollMode? HorizontalScrollMode = default, Xaml.Controls.ScrollingRailMode? HorizontalScrollRailMode = default, Xaml.Controls.ScrollingInputKinds? IgnoredInputKinds = default, double? MaxZoomFactor = default, double? MinZoomFactor = default, double? VerticalAnchorRatio = default, Xaml.Controls.ScrollingChainMode? VerticalScrollChainMode = default, Xaml.Controls.Primitives.IScrollController VerticalScrollController = default, Xaml.Controls.ScrollingScrollMode? VerticalScrollMode = default, Xaml.Controls.ScrollingRailMode? VerticalScrollRailMode = default, Xaml.Controls.ScrollingChainMode? ZoomChainMode = default, Xaml.Controls.ScrollingZoomMode? ZoomMode = default, Xaml.UIElement Content = default)
         {
             var ui = new Xaml.Controls.Primitives.ScrollPresenter();
@@ -24915,7 +24888,6 @@ namespace CSharpMarkup.WinUI // ScrollPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollPresenter"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ScrollPresenter ScrollPresenter()
         {
             var ui = new Xaml.Controls.Primitives.ScrollPresenter();
@@ -24923,7 +24895,6 @@ namespace CSharpMarkup.WinUI // ScrollPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollPresenter"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ScrollPresenter ScrollPresenter(nint handle)
         {
             var ui = new Xaml.Controls.Primitives.ScrollPresenter(handle);
@@ -24931,7 +24902,6 @@ namespace CSharpMarkup.WinUI // ScrollPresenter
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.ScrollPresenter"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ScrollPresenter ScrollPresenter(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.Primitives.ScrollPresenter(handle);
@@ -25908,16 +25878,20 @@ namespace CSharpMarkup.WinUI // ProgressBarTemplateSettings
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ProgressBarTemplateSettings"/></summary>
-        public static ProgressBarTemplateSettings ProgressBarTemplateSettings(Xaml.Media.RectangleGeometry ClipRect = default, double? ContainerAnimationEndPosition = default, double? ContainerAnimationEndPosition2 = default, double? ContainerAnimationMidPosition = default, double? ContainerAnimationStartPosition = default, double? ContainerAnimationStartPosition2 = default, object DataContext = default, double? IndicatorLengthDelta = default, Xaml.DependencyObject TemplatedParent = default)
+        public static ProgressBarTemplateSettings ProgressBarTemplateSettings(Xaml.Media.RectangleGeometry ClipRect = default, double? Container2AnimationEndPosition = default, double? Container2AnimationStartPosition = default, double? ContainerAnimationEndPosition = default, double? ContainerAnimationMidPosition = default, double? ContainerAnimationStartPosition = default, object DataContext = default, double? EllipseAnimationEndPosition = default, double? EllipseAnimationWellPosition = default, double? EllipseDiameter = default, double? EllipseOffset = default, double? IndicatorLengthDelta = default, Xaml.DependencyObject TemplatedParent = default)
         {
             var ui = new Xaml.Controls.ProgressBarTemplateSettings();
             if (ClipRect is not null) ui.ClipRect = ClipRect;
+            if (Container2AnimationEndPosition is not null) ui.Container2AnimationEndPosition = Container2AnimationEndPosition.Value;
+            if (Container2AnimationStartPosition is not null) ui.Container2AnimationStartPosition = Container2AnimationStartPosition.Value;
             if (ContainerAnimationEndPosition is not null) ui.ContainerAnimationEndPosition = ContainerAnimationEndPosition.Value;
-            if (ContainerAnimationEndPosition2 is not null) ui.ContainerAnimationEndPosition2 = ContainerAnimationEndPosition2.Value;
             if (ContainerAnimationMidPosition is not null) ui.ContainerAnimationMidPosition = ContainerAnimationMidPosition.Value;
             if (ContainerAnimationStartPosition is not null) ui.ContainerAnimationStartPosition = ContainerAnimationStartPosition.Value;
-            if (ContainerAnimationStartPosition2 is not null) ui.ContainerAnimationStartPosition2 = ContainerAnimationStartPosition2.Value;
             if (DataContext is not null) ui.DataContext = DataContext;
+            if (EllipseAnimationEndPosition is not null) ui.EllipseAnimationEndPosition = EllipseAnimationEndPosition.Value;
+            if (EllipseAnimationWellPosition is not null) ui.EllipseAnimationWellPosition = EllipseAnimationWellPosition.Value;
+            if (EllipseDiameter is not null) ui.EllipseDiameter = EllipseDiameter.Value;
+            if (EllipseOffset is not null) ui.EllipseOffset = EllipseOffset.Value;
             if (IndicatorLengthDelta is not null) ui.IndicatorLengthDelta = IndicatorLengthDelta.Value;
             if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
             return CSharpMarkup.WinUI.ProgressBarTemplateSettings.StartChain(ui);
@@ -25964,11 +25938,14 @@ namespace CSharpMarkup.WinUI // ProgressBarTemplateSettings
         /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.ClipRect"/></summary>
         public static TView ClipRect<TView>(this TView view, Xaml.Media.RectangleGeometry value) where TView : ProgressBarTemplateSettings { view.UI.ClipRect = value; return view; }
 
+        /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.Container2AnimationEndPosition"/></summary>
+        public static TView Container2AnimationEndPosition<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.Container2AnimationEndPosition = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.Container2AnimationStartPosition"/></summary>
+        public static TView Container2AnimationStartPosition<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.Container2AnimationStartPosition = value; return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationEndPosition"/></summary>
         public static TView ContainerAnimationEndPosition<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.ContainerAnimationEndPosition = value; return view; }
-
-        /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationEndPosition2"/></summary>
-        public static TView ContainerAnimationEndPosition2<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.ContainerAnimationEndPosition2 = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationMidPosition"/></summary>
         public static TView ContainerAnimationMidPosition<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.ContainerAnimationMidPosition = value; return view; }
@@ -25976,11 +25953,20 @@ namespace CSharpMarkup.WinUI // ProgressBarTemplateSettings
         /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationStartPosition"/></summary>
         public static TView ContainerAnimationStartPosition<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.ContainerAnimationStartPosition = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationStartPosition2"/></summary>
-        public static TView ContainerAnimationStartPosition2<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.ContainerAnimationStartPosition2 = value; return view; }
-
         /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.DataContext"/></summary>
         public static TView DataContext<TView>(this TView view, object value) where TView : ProgressBarTemplateSettings { view.UI.DataContext = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.EllipseAnimationEndPosition"/></summary>
+        public static TView EllipseAnimationEndPosition<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.EllipseAnimationEndPosition = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.EllipseAnimationWellPosition"/></summary>
+        public static TView EllipseAnimationWellPosition<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.EllipseAnimationWellPosition = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.EllipseDiameter"/></summary>
+        public static TView EllipseDiameter<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.EllipseDiameter = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.EllipseOffset"/></summary>
+        public static TView EllipseOffset<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.EllipseOffset = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.ProgressBarTemplateSettings.IndicatorLengthDelta"/></summary>
         public static TView IndicatorLengthDelta<TView>(this TView view, double value) where TView : ProgressBarTemplateSettings { view.UI.IndicatorLengthDelta = value; return view; }
@@ -25992,9 +25978,13 @@ namespace CSharpMarkup.WinUI // ProgressBarTemplateSettings
         public static DependencyProperty<TTarget, Xaml.Media.RectangleGeometry> ClipRect<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
         => DependencyProperty<TTarget, Xaml.Media.RectangleGeometry>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.ClipRectProperty);
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationEndPosition2"/></summary>
-        public static DependencyProperty<TTarget, double> ContainerAnimationEndPosition2<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationEndPosition2Property);
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.Container2AnimationEndPosition"/></summary>
+        public static DependencyProperty<TTarget, double> Container2AnimationEndPosition<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.Container2AnimationEndPositionProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.Container2AnimationStartPosition"/></summary>
+        public static DependencyProperty<TTarget, double> Container2AnimationStartPosition<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.Container2AnimationStartPositionProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationEndPosition"/></summary>
         public static DependencyProperty<TTarget, double> ContainerAnimationEndPosition<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
@@ -26004,10 +25994,6 @@ namespace CSharpMarkup.WinUI // ProgressBarTemplateSettings
         public static DependencyProperty<TTarget, double> ContainerAnimationMidPosition<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationMidPositionProperty);
 
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationStartPosition2"/></summary>
-        public static DependencyProperty<TTarget, double> ContainerAnimationStartPosition2<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
-        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationStartPosition2Property);
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationStartPosition"/></summary>
         public static DependencyProperty<TTarget, double> ContainerAnimationStartPosition<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
         => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.ContainerAnimationStartPositionProperty);
@@ -26015,6 +26001,22 @@ namespace CSharpMarkup.WinUI // ProgressBarTemplateSettings
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.DataContext"/></summary>
         public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.DataContextProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.EllipseAnimationEndPosition"/></summary>
+        public static DependencyProperty<TTarget, double> EllipseAnimationEndPosition<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.EllipseAnimationEndPositionProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.EllipseAnimationWellPosition"/></summary>
+        public static DependencyProperty<TTarget, double> EllipseAnimationWellPosition<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.EllipseAnimationWellPositionProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.EllipseDiameter"/></summary>
+        public static DependencyProperty<TTarget, double> EllipseDiameter<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.EllipseDiameterProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.EllipseOffset"/></summary>
+        public static DependencyProperty<TTarget, double> EllipseOffset<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.ProgressBarTemplateSettings.EllipseOffsetProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBarTemplateSettings.IndicatorLengthDelta"/></summary>
         public static DependencyProperty<TTarget, double> IndicatorLengthDelta<TTarget>(this TTarget target) where TTarget : ProgressBarTemplateSettings
@@ -28548,7 +28550,6 @@ namespace CSharpMarkup.WinUI // ScrollView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.ScrollView"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ScrollView ScrollView(Xaml.UIElement Content)
         {
             var ui = new Xaml.Controls.ScrollView();
@@ -28557,7 +28558,6 @@ namespace CSharpMarkup.WinUI // ScrollView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ScrollView"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ScrollView ScrollView(Xaml.Visibility? ComputedHorizontalScrollBarVisibility = default, Xaml.Controls.ScrollingScrollMode? ComputedHorizontalScrollMode = default, Xaml.Visibility? ComputedVerticalScrollBarVisibility = default, Xaml.Controls.ScrollingScrollMode? ComputedVerticalScrollMode = default, Xaml.Controls.ScrollingContentOrientation? ContentOrientation = default, double? HorizontalAnchorRatio = default, Xaml.Controls.ScrollingScrollBarVisibility? HorizontalScrollBarVisibility = default, Xaml.Controls.ScrollingChainMode? HorizontalScrollChainMode = default, Xaml.Controls.ScrollingScrollMode? HorizontalScrollMode = default, Xaml.Controls.ScrollingRailMode? HorizontalScrollRailMode = default, Xaml.Controls.ScrollingInputKinds? IgnoredInputKinds = default, double? MaxZoomFactor = default, double? MinZoomFactor = default, double? VerticalAnchorRatio = default, Xaml.Controls.ScrollingScrollBarVisibility? VerticalScrollBarVisibility = default, Xaml.Controls.ScrollingChainMode? VerticalScrollChainMode = default, Xaml.Controls.ScrollingScrollMode? VerticalScrollMode = default, Xaml.Controls.ScrollingRailMode? VerticalScrollRailMode = default, Xaml.Controls.ScrollingChainMode? ZoomChainMode = default, Xaml.Controls.ScrollingZoomMode? ZoomMode = default, Xaml.UIElement Content = default)
         {
             var ui = new Xaml.Controls.ScrollView();
@@ -28586,7 +28586,6 @@ namespace CSharpMarkup.WinUI // ScrollView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ScrollView"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ScrollView ScrollView()
         {
             var ui = new Xaml.Controls.ScrollView();
@@ -28594,7 +28593,6 @@ namespace CSharpMarkup.WinUI // ScrollView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ScrollView"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ScrollView ScrollView(nint handle)
         {
             var ui = new Xaml.Controls.ScrollView(handle);
@@ -28602,7 +28600,6 @@ namespace CSharpMarkup.WinUI // ScrollView
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.ScrollView"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static ScrollView ScrollView(ObjCRuntime.NativeHandle handle)
         {
             var ui = new Xaml.Controls.ScrollView(handle);
@@ -32217,7 +32214,6 @@ namespace CSharpMarkup.WinUI // TextBlock
         public static TView IsTextScaleFactorEnabled<TView>(this TView view, bool value) where TView : TextBlock { view.UI.IsTextScaleFactorEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.IsTextSelectionEnabled"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView IsTextSelectionEnabled<TView>(this TView view, bool value) where TView : TextBlock { view.UI.IsTextSelectionEnabled = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBlock.LineHeight"/></summary>
@@ -32322,7 +32318,6 @@ namespace CSharpMarkup.WinUI // TextBlock
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBlock.IsTextScaleFactorEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBlock.IsTextSelectionEnabled"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> IsTextSelectionEnabled<TTarget>(this TTarget target) where TTarget : TextBlock
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBlock.IsTextSelectionEnabledProperty);
 
@@ -32502,7 +32497,6 @@ namespace CSharpMarkup.WinUI // TextBox
         public static TView AcceptsReturn<TView>(this TView view, bool value) where TView : TextBox { view.UI.AcceptsReturn = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.CharacterCasing"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView CharacterCasing<TView>(this TView view, Xaml.Controls.CharacterCasing value) where TView : TextBox { view.UI.CharacterCasing = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TextBox.Description"/></summary>
@@ -32617,7 +32611,6 @@ namespace CSharpMarkup.WinUI // TextBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TextBox.CanUndoProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TextBox.CharacterCasing"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.CharacterCasing> CharacterCasing<TTarget>(this TTarget target) where TTarget : TextBox
         => DependencyProperty<TTarget, Xaml.Controls.CharacterCasing>.Get(target, Xaml.Controls.TextBox.CharacterCasingProperty);
 
@@ -33238,6 +33231,274 @@ namespace CSharpMarkup.WinUI // TimePickerSelector
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TimePickerSelector.Time"/></summary>
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan> Time<TTarget>(this TTarget target) where TTarget : TimePickerSelector
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.TimeSpan>.Get(target, Xaml.Controls.TimePickerSelector.TimeProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // TitleBar
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TitleBar TitleBar(Xaml.UIElement Content)
+        {
+            var ui = new Xaml.Controls.TitleBar();
+            if (Content is not null) ui.Content = Content;
+            return CSharpMarkup.WinUI.TitleBar.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TitleBar TitleBar(Xaml.Controls.IconSource IconSource = default, bool? IsBackButtonEnabled = default, bool? IsBackButtonVisible = default, bool? IsPaneToggleButtonVisible = default, Xaml.UIElement LeftHeader = default, Xaml.UIElement RightHeader = default, string Subtitle = default, string Title = default, Xaml.UIElement Content = default)
+        {
+            var ui = new Xaml.Controls.TitleBar();
+            if (IconSource is not null) ui.IconSource = IconSource;
+            if (IsBackButtonEnabled is not null) ui.IsBackButtonEnabled = IsBackButtonEnabled.Value;
+            if (IsBackButtonVisible is not null) ui.IsBackButtonVisible = IsBackButtonVisible.Value;
+            if (IsPaneToggleButtonVisible is not null) ui.IsPaneToggleButtonVisible = IsPaneToggleButtonVisible.Value;
+            if (LeftHeader is not null) ui.LeftHeader = LeftHeader;
+            if (RightHeader is not null) ui.RightHeader = RightHeader;
+            if (Subtitle is not null) ui.Subtitle = Subtitle;
+            if (Title is not null) ui.Title = Title;
+            if (Content is not null) ui.Content = Content;
+            return CSharpMarkup.WinUI.TitleBar.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TitleBar TitleBar()
+        {
+            var ui = new Xaml.Controls.TitleBar();
+            return CSharpMarkup.WinUI.TitleBar.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TitleBar TitleBar(nint handle)
+        {
+            var ui = new Xaml.Controls.TitleBar(handle);
+            return CSharpMarkup.WinUI.TitleBar.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBar"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TitleBar TitleBar(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new Xaml.Controls.TitleBar(handle);
+            return CSharpMarkup.WinUI.TitleBar.StartChain(ui);
+        }
+    }
+
+    public partial class TitleBar : Control, IUI<Xaml.Controls.TitleBar>
+    {
+        static TitleBar instance;
+
+        internal static TitleBar StartChain(Xaml.Controls.TitleBar ui)
+        {
+            if (instance == null) instance = new TitleBar();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.TitleBar ui;
+
+        public new Xaml.Controls.TitleBar UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(TitleBar view) => view?.UI;
+
+        public static implicit operator Xaml.Controls.TitleBar(TitleBar view) => view?.UI;
+
+        public static implicit operator TitleBar(Xaml.Controls.TitleBar ui) => TitleBar.StartChain(ui);
+
+        public TitleBar Invoke(Action<Xaml.Controls.TitleBar> action) { action?.Invoke(UI); return this; }
+
+        protected TitleBar() { }
+    }
+
+    public static partial class TitleBarExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.IconSource"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TView IconSource<TView>(this TView view, Xaml.Controls.IconSource value) where TView : TitleBar { view.UI.IconSource = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.IsBackButtonEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TView IsBackButtonEnabled<TView>(this TView view, bool value) where TView : TitleBar { view.UI.IsBackButtonEnabled = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.IsBackButtonVisible"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TView IsBackButtonVisible<TView>(this TView view, bool value) where TView : TitleBar { view.UI.IsBackButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.IsPaneToggleButtonVisible"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TView IsPaneToggleButtonVisible<TView>(this TView view, bool value) where TView : TitleBar { view.UI.IsPaneToggleButtonVisible = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.LeftHeader"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TView LeftHeader<TView>(this TView view, Xaml.UIElement value) where TView : TitleBar { view.UI.LeftHeader = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.RightHeader"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TView RightHeader<TView>(this TView view, Xaml.UIElement value) where TView : TitleBar { view.UI.RightHeader = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.Subtitle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TView Subtitle<TView>(this TView view, string value) where TView : TitleBar { view.UI.Subtitle = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBar.Title"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TView Title<TView>(this TView view, string value) where TView : TitleBar { view.UI.Title = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.Content"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, Xaml.UIElement> Content<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.TitleBar.ContentProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.IconSource"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, Xaml.Controls.IconSource> IconSource<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, Xaml.Controls.IconSource>.Get(target, Xaml.Controls.TitleBar.IconSourceProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.IsBackButtonEnabled"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, bool> IsBackButtonEnabled<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TitleBar.IsBackButtonEnabledProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.IsBackButtonVisible"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, bool> IsBackButtonVisible<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TitleBar.IsBackButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.IsPaneToggleButtonVisible"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, bool> IsPaneToggleButtonVisible<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TitleBar.IsPaneToggleButtonVisibleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.LeftHeader"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, Xaml.UIElement> LeftHeader<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.TitleBar.LeftHeaderProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.RightHeader"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, Xaml.UIElement> RightHeader<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, Xaml.UIElement>.Get(target, Xaml.Controls.TitleBar.RightHeaderProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.Subtitle"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, string> Subtitle<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.TitleBar.SubtitleProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.TemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, Xaml.Controls.TitleBarTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, Xaml.Controls.TitleBarTemplateSettings>.Get(target, Xaml.Controls.TitleBar.TemplateSettingsProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBar.Title"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, string> Title<TTarget>(this TTarget target) where TTarget : TitleBar
+        => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.TitleBar.TitleProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI // TitleBarAutomationPeer
+{
+    public partial class TitleBarAutomationPeer : FrameworkElementAutomationPeer, IUI<Xaml.Controls.TitleBarAutomationPeer>
+    {
+        Xaml.Controls.TitleBarAutomationPeer ui;
+
+        public new Xaml.Controls.TitleBarAutomationPeer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public TitleBarAutomationPeer Invoke(Action<Xaml.Controls.TitleBarAutomationPeer> action) { action?.Invoke(UI); return this; }
+
+        protected TitleBarAutomationPeer() { }
+    }
+}
+
+namespace CSharpMarkup.WinUI // TitleBarTemplateSettings
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBarTemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TitleBarTemplateSettings TitleBarTemplateSettings(object DataContext = default, Xaml.Controls.IconElement IconElement = default, Xaml.DependencyObject TemplatedParent = default)
+        {
+            var ui = new Xaml.Controls.TitleBarTemplateSettings();
+            if (DataContext is not null) ui.DataContext = DataContext;
+            if (IconElement is not null) ui.IconElement = IconElement;
+            if (TemplatedParent is not null) ui.TemplatedParent = TemplatedParent;
+            return CSharpMarkup.WinUI.TitleBarTemplateSettings.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Xaml.Controls.TitleBarTemplateSettings"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TitleBarTemplateSettings TitleBarTemplateSettings()
+        {
+            var ui = new Xaml.Controls.TitleBarTemplateSettings();
+            return CSharpMarkup.WinUI.TitleBarTemplateSettings.StartChain(ui);
+        }
+    }
+
+    public partial class TitleBarTemplateSettings : DependencyObject, IUI<Xaml.Controls.TitleBarTemplateSettings>
+    {
+        static TitleBarTemplateSettings instance;
+
+        internal static TitleBarTemplateSettings StartChain(Xaml.Controls.TitleBarTemplateSettings ui)
+        {
+            if (instance == null) instance = new TitleBarTemplateSettings();
+            instance.UI = ui;
+            return instance;
+        }
+
+        Xaml.Controls.TitleBarTemplateSettings ui;
+
+        public new Xaml.Controls.TitleBarTemplateSettings UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.Controls.TitleBarTemplateSettings(TitleBarTemplateSettings view) => view?.UI;
+
+        public static implicit operator TitleBarTemplateSettings(Xaml.Controls.TitleBarTemplateSettings ui) => TitleBarTemplateSettings.StartChain(ui);
+
+        public TitleBarTemplateSettings Invoke(Action<Xaml.Controls.TitleBarTemplateSettings> action) { action?.Invoke(UI); return this; }
+
+        protected TitleBarTemplateSettings() { }
+    }
+
+    public static partial class TitleBarTemplateSettingsExtensions
+    {
+        /// <summary>Set <see cref="Xaml.Controls.TitleBarTemplateSettings.DataContext"/></summary>
+        public static TView DataContext<TView>(this TView view, object value) where TView : TitleBarTemplateSettings { view.UI.DataContext = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBarTemplateSettings.IconElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static TView IconElement<TView>(this TView view, Xaml.Controls.IconElement value) where TView : TitleBarTemplateSettings { view.UI.IconElement = value; return view; }
+
+        /// <summary>Set <see cref="Xaml.Controls.TitleBarTemplateSettings.TemplatedParent"/></summary>
+        public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : TitleBarTemplateSettings { view.UI.TemplatedParent = value; return view; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBarTemplateSettings.DataContext"/></summary>
+        public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : TitleBarTemplateSettings
+        => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.TitleBarTemplateSettings.DataContextProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBarTemplateSettings.IconElement"/></summary>
+        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
+        public static DependencyProperty<TTarget, Xaml.Controls.IconElement> IconElement<TTarget>(this TTarget target) where TTarget : TitleBarTemplateSettings
+        => DependencyProperty<TTarget, Xaml.Controls.IconElement>.Get(target, Xaml.Controls.TitleBarTemplateSettings.IconElementProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TitleBarTemplateSettings.TemplatedParent"/></summary>
+        public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : TitleBarTemplateSettings
+        => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.TitleBarTemplateSettings.TemplatedParentProperty);
     }
 }
 
@@ -38206,7 +38467,6 @@ namespace CSharpMarkup.WinUI // FrameworkElement
         public static TView Background<TView>(this TView view, string color) where TView : FrameworkElement { view.UI.Background = new Xaml.Media.SolidColorBrush(color.ToColor()); return view; }
 
         /// <summary>Set <see cref="Xaml.FrameworkElement.FlowDirection"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView FlowDirection<TView>(this TView view, Xaml.FlowDirection value) where TView : FrameworkElement { view.UI.FlowDirection = value; return view; }
 
         /// <summary>Set <see cref="Xaml.FrameworkElement.FocusVisualMargin"/></summary>
@@ -38373,7 +38633,6 @@ namespace CSharpMarkup.WinUI // FrameworkElement
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Brush>.Get(target, Xaml.FrameworkElement.BackgroundProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.FrameworkElement.FlowDirection"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.FlowDirection> FlowDirection<TTarget>(this TTarget target) where TTarget : FrameworkElement
         => DependencyProperty<TTarget, Xaml.FlowDirection>.Get(target, Xaml.FrameworkElement.FlowDirectionProperty);
 
@@ -44362,7 +44621,6 @@ namespace CSharpMarkup.WinUI // Brush
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : Brush { view.UI.TemplatedParent = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Media.Brush.Transform"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Transform<TView>(this TView view, Xaml.Media.Transform value) where TView : Brush { view.UI.Transform = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Brush.DataContext"/></summary>
@@ -44382,7 +44640,6 @@ namespace CSharpMarkup.WinUI // Brush
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Media.Brush.TemplatedParentProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.Brush.Transform"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.Transform> Transform<TTarget>(this TTarget target) where TTarget : Brush
         => DependencyProperty<TTarget, Xaml.Media.Transform>.Get(target, Xaml.Media.Brush.TransformProperty);
     }
@@ -47382,11 +47639,9 @@ namespace CSharpMarkup.WinUI // RevealBrush
     public static partial class RevealBrushExtensions
     {
         /// <summary>Set <see cref="Xaml.Media.RevealBrush.Color"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView Color<TView>(this TView view, Windows.UI.Color value) where TView : RevealBrush { view.UI.Color = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Media.RevealBrush.Color"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Windows.UI.Color> Color<TTarget>(this TTarget target) where TTarget : RevealBrush
         => DependencyProperty<TTarget, Windows.UI.Color>.Get(target, Xaml.Media.RevealBrush.ColorProperty);
     }
@@ -50300,7 +50555,6 @@ namespace CSharpMarkup.WinUI // VisualTransition
         public static TView From<TView>(this TView view, string value) where TView : VisualTransition { view.UI.From = value; return view; }
 
         /// <summary>Set <see cref="Xaml.VisualTransition.GeneratedDuration"/></summary>
-        [UnsupportedOSPlatform("MacCatalyst", "https://aka.platform.uno/notimplemented")]
         public static TView GeneratedDuration<TView>(this TView view, CSharpMarkup.WinUI.to.Duration value) where TView : VisualTransition { view.UI.GeneratedDuration = value; return view; }
 
         /// <summary>Set <see cref="Xaml.VisualTransition.GeneratedEasingFunction"/></summary>
@@ -52401,6 +52655,20 @@ namespace CSharpMarkup.WinUI // ScrollViewer
     }
 }
 
+namespace CSharpMarkup.WinUI // TextBoxExtensions
+{
+    public static partial class TextBoxExtensionsExtensions
+    {
+        /// <summary>Set <see cref="Uno.UI.Xaml.Controls.TextBoxExtensions.InputReturnType"/></summary>
+        public static TTarget TextBoxExtensions_InputReturnType<TTarget>(this TTarget target, Uno.UI.Xaml.Controls.InputReturnType value) where TTarget : DependencyObject
+        { Uno.UI.Xaml.Controls.TextBoxExtensions.SetInputReturnType(target.UI, value); return target; }
+
+        /// <summary>Bind (or set enum value of) <see cref="Uno.UI.Xaml.Controls.TextBoxExtensions.InputReturnType"/></summary>
+        public static DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> TextBoxExtensions_InputReturnType<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType>.Get(target, Uno.UI.Xaml.Controls.TextBoxExtensions.InputReturnTypeProperty);
+    }
+}
+
 namespace CSharpMarkup.WinUI // XamlInfo
 {
     public static partial class XamlInfoExtensions
@@ -53873,6 +54141,54 @@ namespace CSharpMarkup.WinUI // EnumPropertyValues
         /// <summary>Set to <see cref="Xaml.FontVariants.Superscript"/></summary>
         public static TTarget Superscript<TTarget>(this DependencyProperty<TTarget, Xaml.FontVariants> property) where TTarget : DependencyObject
         => property.Set(Xaml.FontVariants.Superscript);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.Continue"/></summary>
+        public static TTarget Continue<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.Continue);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.Default);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.Done"/></summary>
+        public static TTarget Done<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.Done);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.EmergencyCall"/></summary>
+        public static TTarget EmergencyCall<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.EmergencyCall);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.Enter"/></summary>
+        public static TTarget Enter<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.Enter);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.Go"/></summary>
+        public static TTarget Go<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.Go);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.Join"/></summary>
+        public static TTarget Join<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.Join);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.Next"/></summary>
+        public static TTarget Next<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.Next);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.Previous"/></summary>
+        public static TTarget Previous<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.Previous);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.Route"/></summary>
+        public static TTarget Route<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.Route);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.Search"/></summary>
+        public static TTarget Search<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.Search);
+
+        /// <summary>Set to <see cref="Uno.UI.Xaml.Controls.InputReturnType.Send"/></summary>
+        public static TTarget Send<TTarget>(this DependencyProperty<TTarget, Uno.UI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(Uno.UI.Xaml.Controls.InputReturnType.Send);
     }
 
     public static partial class DragOverThemeAnimationExtensions
