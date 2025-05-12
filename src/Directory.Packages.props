@@ -7,10 +7,10 @@
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
     <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.6.250228001" />
-    <PackageVersion Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="5.2.7" />
-    <PackageVersion Include="Uno.Extensions.Navigation.WinUI" Version="5.2.7" />
-    <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="5.2.7" />
-    <PackageVersion Include="Uno.Toolkit.WinUI" Version="6.4.6" />
-    <PackageVersion Include="Uno.WinUI" Version="5.6.99" />
+    <PackageVersion Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="5.3.8" />
+    <PackageVersion Include="Uno.Extensions.Navigation.WinUI" Version="5.3.8" />
+    <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="5.3.8" />
+    <PackageVersion Include="Uno.Toolkit.WinUI" Version="7.0.2" />
+    <PackageVersion Include="Uno.WinUI" Version="6.0.465" />
   </ItemGroup>
 </Project>
