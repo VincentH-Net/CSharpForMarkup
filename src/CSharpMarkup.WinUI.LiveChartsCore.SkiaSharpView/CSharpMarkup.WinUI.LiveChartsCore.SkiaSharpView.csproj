@@ -54,12 +54,10 @@
 	</PropertyGroup>
 
 	<ItemGroup Condition="$(IsUno)==false">
-		<PackageReference Include="Microsoft.WindowsAppSDK" ExcludeAssets="build;analyzers;buildTransitive" />
 		<PackageReference Include="LiveChartsCore.SkiaSharpView.WinUI" ExcludeAssets="build;analyzers" />
 	</ItemGroup>
 
 	<ItemGroup Condition="$(IsUno)">
-		<PackageReference Include="Uno.WinUI" ExcludeAssets="build;analyzers" />
 		<PackageReference Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" ExcludeAssets="build;analyzers" />
 	</ItemGroup>
 
