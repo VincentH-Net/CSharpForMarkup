@@ -1,8 +1,8 @@
 <!-- For CSharpMarkup projects-->
 <Project>
 	<PropertyGroup>
-		<CSharpMarkupVersion>3.1.0</CSharpMarkupVersion>
-		<CSharpMarkupReleaseTag>csharpmarkup2-winui-3-1-0</CSharpMarkupReleaseTag>
+		<CSharpMarkupVersion>3.1.2</CSharpMarkupVersion>
+		<CSharpMarkupReleaseTag>csharpmarkup2-winui-3-1-2</CSharpMarkupReleaseTag>
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
 		<IsUno>true</IsUno>
@@ -15,7 +15,7 @@
 
 		<CSharpMarkupWinUINet8TargetFrameworks>net8.0-windows10.0.19041.0;net8.0;net8.0-android34.0;net8.0-ios17.0;net8.0-maccatalyst17.0</CSharpMarkupWinUINet8TargetFrameworks>
 		<CSharpMarkupWinUINet9TargetFrameworks>net9.0-windows10.0.19041.0;net9.0;net9.0-android35.0;net9.0-ios18.0;net9.0-maccatalyst18.0</CSharpMarkupWinUINet9TargetFrameworks>
-		<CSharpMarkupWinUIExtensionsTargetFrameworks>net8.0-windows10.0.19041.0;net8.0;net8.0-android34.0;net8-browserwasm1.0;net8-desktop1.0;net8.0-ios18.0;net8.0-maccatalyst18.0</CSharpMarkupWinUIExtensionsTargetFrameworks>
+		<CSharpMarkupWinUIExtensionsTargetFrameworks>net8.0-windows10.0.19041.0;net8.0;net8.0-android34.0;net8.0-ios17.0;net8.0-maccatalyst17.0</CSharpMarkupWinUIExtensionsTargetFrameworks>
 	</PropertyGroup>
 
 	<Choose>
@@ -81,6 +81,23 @@
 		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
 	</PropertyGroup>
 
+	<Target Name="__MyRemoveUnoRuntimeWasm"
+			AfterTargets="UnoImplicitPackages;ResolvePackageDependencies">
+		<!--
+		See https://github.com/unoplatform/uno.extensions/blob/85e723d1f658dbf8335a7c68354de2518430fd2a/src/Directory.Build.props#L176
+		Disable explicit references to Uno.WinUI.Runtime.WebAssembly in order to avoid using JSInvoke directly
+		This change is done manually here to avoid 
+		-->
+		<Message Text="Running __RemoveUnoRuntimeWasm target..." Importance="high" />
+		<Message Text="Running __RemoveUnoRuntimeWasm target with condition ..." Importance="high" Condition="'$(IsUnoHead)' != 'true' AND $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'browserwasm'" />
+		<ItemGroup>
+			<PackageReference Remove="Uno.UI.Runtime.WebAssembly"
+							  Condition="'$(IsUnoHead)' != 'true' AND $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'browserwasm'" />
+			<PackageReference Remove="Uno.WinUI.Runtime.WebAssembly"
+							  Condition="'$(IsUnoHead)' != 'true' AND $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'browserwasm'" />
+		</ItemGroup>
+	</Target>
+	
 	<Target Name="DisplayCustomVariable" BeforeTargets="BeforeBuild">
 		<Message Text="CSharpMarkupWinUITargetFrameworks is: $(CSharpMarkupWinUITargetFrameworks), TargetPlatformIdentifier is: $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')), IsUno is: $(IsUno), DefineConstants is : $(DefineConstants)" Importance="high" />
 	</Target>

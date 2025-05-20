@@ -65,20 +65,6 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Reactive // FeedView
             var ui = new UnoExtensionsReactive.UI.FeedView();
             return CSharpMarkup.WinUI.Uno.Extensions.Reactive.FeedView.StartChain(ui);
         }
-
-        /// <summary>Create a <see cref="UnoExtensionsReactive.UI.FeedView"/></summary>
-        public static FeedView FeedView(nint handle)
-        {
-            var ui = new UnoExtensionsReactive.UI.FeedView(handle);
-            return CSharpMarkup.WinUI.Uno.Extensions.Reactive.FeedView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoExtensionsReactive.UI.FeedView"/></summary>
-        public static FeedView FeedView(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoExtensionsReactive.UI.FeedView(handle);
-            return CSharpMarkup.WinUI.Uno.Extensions.Reactive.FeedView.StartChain(ui);
-        }
     }
 
     public partial class FeedView : Control, IUI<UnoExtensionsReactive.UI.FeedView>
