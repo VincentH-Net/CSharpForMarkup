@@ -507,6 +507,30 @@ namespace CSharpMarkup.Wpf
             return target;
         }
 
+        public static TDependencyObject StaticResource<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property,
+            System.Windows.FrameworkElement element,
+            string key
+        ) where TDependencyObject : DependencyObject
+        => property.Set((TPropertyValue)element.FindResource(key));
+            // TODO: need to set e.g. page resources in C# from either XAML or C#, before Build() is invoked -
+            // but then why use a resource? we can use named static fields. Unless we want to reuse an app level xaml resource
+
+        public static TDependencyObject DynamicResource<TDependencyObject, TPropertyValue>(
+            this DependencyProperty<TDependencyObject, TPropertyValue> property,
+            System.Windows.FrameworkElement element,
+            string key
+        ) where TDependencyObject : DependencyObject
+        { element.SetResourceReference(property.UI, key); return property.Target; }
+            // TODO: verify this will work for resources added in the parents after reparenting and after updating the parent resources
+
+        // Correct order: do the resource lookups after OnInitalized is called on the page
+        // 1) Content attaches onitialised event handler.
+
+        // Purpose of resource dictionaries:
+        // - reuse of XAML resources in C# page => application resources => (cast)Application.Current.Resources["key"]
+        // ? reuse of C# in XAML page?
+
         public static TDependencyObject Assign<TDependencyObject, TUI>(this TDependencyObject bindable, out TUI ui)
             where TDependencyObject : DependencyObject, IUI<TUI>
             where TUI : System.Windows.DependencyObject

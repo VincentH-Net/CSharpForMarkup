@@ -44,15 +44,6 @@
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 	</PropertyGroup>
 
-	<PropertyGroup Condition=" '$(Configuration)' == 'Generate' ">
-		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
-	</PropertyGroup>
-
-	<ItemGroup Condition=" '$(Configuration)' == 'Generate' ">
-		<Compile Remove="$(CompilerGeneratedFilesOutputPath)/*/**/*.cs" />
-	</ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
 	</ItemGroup>

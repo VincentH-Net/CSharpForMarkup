@@ -20,8 +20,19 @@ internal sealed partial class SearchPage : BasePage, IBuild
 
     public SearchPage()
     {
+        this.Initialized += OnInitialized;
         DataContext = vm = App.Current!.SearchViewModel;
         Build();
+    }
+
+    protected override void OnInitialized(EventArgs e)
+    {
+        base.OnInitialized(e);
+    }
+
+    void OnInitialized(object? sender, EventArgs e)
+    {
+        
     }
 
     static BitmapImage UriImage(string uri)
