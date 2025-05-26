@@ -14,8 +14,7 @@ md UnoCSharpMarkup2
 cd UnoCSharpMarkup2
 
 dotnet new unoapp -preset recommended
-dotnet new mcs-uno-markup2 --presentation mvux --allow-scripts yes
-
+dotnet new mcs-uno-markup2 --presentation mvux --renderer skia --allow-scripts yes
 ```
 
 ## Markup options at a glance - good for everyone!
@@ -208,7 +207,7 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 4) Add a C# Markup 2 project to the Uno Platform solution, e.g.:
     ```bat
     cd C:\Repos\UnoApp1
-    dotnet new mcs-uno-markup2 --appRootNamespace InnoWvate.UnoApp1 --presentation mvux --allow-scripts Yes
+    dotnet new mcs-uno-markup2 --appRootNamespace InnoWvate.UnoApp1 --presentation mvux --renderer skia --allow-scripts Yes
     ```
 
     This will:
