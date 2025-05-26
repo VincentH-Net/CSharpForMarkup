@@ -31,40 +31,40 @@ indent_style = tab
 indent_size = 2
 
 [*.{csproj,proj,projitems,shproj}]
-indent_size = 2
+indent_size = 4
 
 [*.{json,slnf}]
 indent_size = 2
 end_of_line = lf
 
 [*.{props,targets}]
-indent_size = 2
+indent_size = 4
 
 [*.xaml]
-indent_size = 2
+indent_size = 4
 charset = utf-8-bom
 
 [*.xml]
-indent_size = 2
+indent_size = 4
 end_of_line = lf
 
 [*.plist]
-indent_size = 2
+indent_size = 4
 indent_style = tab
 end_of_line = lf
 
 [*.manifest]
-indent_size = 2
+indent_size = 4
 
 [*.appxmanifest]
-indent_size = 2
+indent_size = 4
 
 [*.{json,css,webmanifest}]
 indent_size = 2
 end_of_line = lf
 
 [web.config]
-indent_size = 2
+indent_size = 4
 end_of_line = lf
 
 [*.sh]

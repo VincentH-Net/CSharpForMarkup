@@ -1,12 +1,12 @@
 using Uno.UI.Hosting;
+using WinUICsMarkupExamples;
 
-namespace WinUICsMarkupExamples;
-
-public class Program
+internal class Program
 {
     [STAThread]
     public static void Main(string[] args)
     {
+
         var host = UnoPlatformHostBuilder.Create()
             .App(() => new App())
             .UseX11()

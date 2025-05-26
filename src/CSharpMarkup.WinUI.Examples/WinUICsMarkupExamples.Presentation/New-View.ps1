@@ -23,4 +23,4 @@ if ($lastDotPos -ge 0)
 }
 
 Invoke-Expression "dotnet new mcs-uno-view $OutputParameter -n $Name --namespace WinUICsMarkupExamples.Presentation$SubNamespace --presentation $Presentation"
-Write-Host "Note: for Windows, you may need to rebuild the main Uno project once before using the new view, to generate it's XamlTypeInfo"
+Write-Host "Note: if you target Windows native (WinAppSDK), you may need to rebuild the main Uno project once before using the new view, to generate it's XamlTypeInfo"

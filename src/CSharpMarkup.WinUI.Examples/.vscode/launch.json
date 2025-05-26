@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Uno Platform Mobile",
+      "name": "Uno Platform Mobile Debug",
       "type": "Uno",
       "request": "launch",
       // any Uno* task will do, this is simply to satisfy vscode requirement when a launch.json is present
@@ -15,7 +15,7 @@
       // Use IntelliSense to find out which attributes exist for C# debugging
       // Use hover for the description of the existing attributes
       // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-      "name": "Debug (Chrome, WebAssembly)",
+      "name": "Uno Platform WebAssembly Debug (Chrome)",
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:5000",
@@ -26,7 +26,7 @@
       "server": {
         "runtimeExecutable": "dotnet",
         "program": "run",
-        "args": ["--no-build","-f","net8.0-browserwasm","--launch-profile", "WinUICsMarkupExamples (WebAssembly)"],
+        "args": ["--no-build","-f","net9.0-browserwasm","--launch-profile", "WinUICsMarkupExamples (WebAssembly)"],
         "outputCapture": "std",
         "timeout": 30000,
         "cwd": "${workspaceFolder}/WinUICsMarkupExamples"
@@ -36,12 +36,33 @@
       // Use IntelliSense to find out which attributes exist for C# debugging
       // Use hover for the description of the existing attributes
       // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-      "name": "Uno Platform Desktop (Debug)",
+      "name": "Uno Platform WebAssembly Debug (Edge)",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:5000",
+      "webRoot": "${workspaceFolder}/WinUICsMarkupExamples",
+      "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
+      "timeout": 30000,
+      "preLaunchTask": "build-wasm",
+      "server": {
+        "runtimeExecutable": "dotnet",
+        "program": "run",
+        "args": ["--no-build","-f","net9.0-browserwasm","--launch-profile", "WinUICsMarkupExamples (WebAssembly)"],
+        "outputCapture": "std",
+        "timeout": 30000,
+        "cwd": "${workspaceFolder}/WinUICsMarkupExamples"
+      }
+    },
+    {
+      // Use IntelliSense to find out which attributes exist for C# debugging
+      // Use hover for the description of the existing attributes
+      // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+      "name": "Uno Platform Desktop Debug",
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "build-desktop",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/WinUICsMarkupExamples/bin/Debug/net8.0-desktop/WinUICsMarkupExamples.dll",
+      "program": "${workspaceFolder}/WinUICsMarkupExamples/bin/Debug/net9.0-desktop/WinUICsMarkupExamples.dll",
       "args": [],
       "launchSettingsProfile": "WinUICsMarkupExamples (Desktop)",
       "env": {

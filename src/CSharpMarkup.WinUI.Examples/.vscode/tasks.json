@@ -9,7 +9,7 @@
         "build",
         "${workspaceFolder}/WinUICsMarkupExamples/WinUICsMarkupExamples.csproj",
         "/property:GenerateFullPaths=true",
-        "/property:TargetFramework=net8.0-browserwasm",
+        "/property:TargetFramework=net9.0-browserwasm",
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"
@@ -22,7 +22,7 @@
         "publish",
         "${workspaceFolder}/WinUICsMarkupExamples/WinUICsMarkupExamples.csproj",
         "/property:GenerateFullPaths=true",
-        "/property:TargetFramework=net8.0-browserwasm",
+        "/property:TargetFramework=net9.0-browserwasm",
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"
@@ -35,7 +35,7 @@
         "build",
         "${workspaceFolder}/WinUICsMarkupExamples/WinUICsMarkupExamples.csproj",
         "/property:GenerateFullPaths=true",
-        "/property:TargetFramework=net8.0-desktop",
+        "/property:TargetFramework=net9.0-desktop",
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"
@@ -48,7 +48,7 @@
         "publish",
         "${workspaceFolder}/WinUICsMarkupExamples/WinUICsMarkupExamples.csproj",
         "/property:GenerateFullPaths=true",
-        "/property:TargetFramework=net8.0-desktop",
+        "/property:TargetFramework=net9.0-desktop",
         "/consoleloggerparameters:NoSummary"
       ],
       "problemMatcher": "$msCompile"

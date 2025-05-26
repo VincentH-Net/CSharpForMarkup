@@ -6,9 +6,6 @@ partial class FlutterPage
 
     public void BuildUI() => Content ( VStack (
         NavigationBar()
-            .MainCommand(
-                AppBarButton() .Icon(Icon("Images/back"))
-            )
             .Content().Bind(vm?.Title),
 
         Button("Button with default style"),

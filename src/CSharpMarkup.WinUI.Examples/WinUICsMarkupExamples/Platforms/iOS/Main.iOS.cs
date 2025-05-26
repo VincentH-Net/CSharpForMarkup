@@ -1,14 +1,10 @@
 using UIKit;
+using Uno.UI.Hosting;
+using WinUICsMarkupExamples;
 
-namespace WinUICsMarkupExamples.iOS;
+var host = UnoPlatformHostBuilder.Create()
+    .App(() => new App())
+    .UseAppleUIKit()
+    .Build();
 
-public class EntryPoint
-{
-    // This is the main entry point of the application.
-    public static void Main(string[] args)
-    {
-        // if you want to use a different Application Delegate class from "AppDelegate"
-        // you can specify it here.
-        UIApplication.Main(args, null, typeof(App));
-    }
-}
+host.Run();

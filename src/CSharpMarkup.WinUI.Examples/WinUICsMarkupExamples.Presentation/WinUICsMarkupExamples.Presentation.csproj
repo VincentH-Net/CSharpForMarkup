@@ -1,18 +1,19 @@
-<Project Sdk="Uno.Sdk">
+﻿<Project Sdk="Uno.Sdk">
   <PropertyGroup>
-    <RootNamespace>WinUICsMarkupExamples.Presentation</RootNamespace>
-    <LangVersion>preview</LangVersion>
-    <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst;net9.0-windows10.0.26100;net9.0-browserwasm;net9.0-desktop</TargetFrameworks>
+    <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-windows10.0.26100;net9.0-browserwasm;net9.0-desktop</TargetFrameworks>
+
+    <!-- Required for C# 13 to use partial properties with CommunityToolkit.Mvvm -->
+    <LangVersion>Preview</LangVersion>
 
     <UnoSingleProject>true</UnoSingleProject>
     <OutputType>Library</OutputType>
-
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
-
     <!-- Disable implicit usings to avoid ambiguities between types in Uno and CSharpMarkup.WinUI.Uno -->
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <UnoFeatures>Mvvm;</UnoFeatures>
+    <RootNamespace>WinUICsMarkupExamples.Presentation</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,7 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="CSharpMarkup.WinUI" />
     <PackageReference Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation" />
     <PackageReference Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit" />

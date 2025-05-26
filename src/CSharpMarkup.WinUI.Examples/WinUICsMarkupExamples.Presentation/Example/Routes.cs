@@ -14,7 +14,7 @@ public static class Routes
             new RouteMap("", View: views.FindByViewModel<ShellViewModel>(),
                 Nested: new RouteMap[]
                 {
-                    new RouteMap("Search", View: views.FindByViewModel<SearchViewModel>()),
+                    new RouteMap("Search", View: views.FindByViewModel<SearchViewModel>(), IsDefault:true),
                     new RouteMap("Flutter", View: views.FindByViewModel<FlutterViewModel>())
                 }
             )

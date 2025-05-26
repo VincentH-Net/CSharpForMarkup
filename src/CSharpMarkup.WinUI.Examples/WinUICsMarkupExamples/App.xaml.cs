@@ -1,5 +1,5 @@
-using CsMarkup2Example = WinUICsMarkupExamples.Presentation.Example;
 using Uno.Resizetizer;
+using CsMarkup2Example = WinUICsMarkupExamples.Presentation.Example;
 
 namespace WinUICsMarkupExamples;
 
@@ -16,7 +16,7 @@ public partial class App : Application
 #if HAS_UNO
         Uno.UI.ApplicationHelper.RequestedCustomTheme = nameof(ApplicationTheme.Dark);
 #else
-    this.RequestedTheme = ApplicationTheme.Dark;
+        this.RequestedTheme = ApplicationTheme.Dark;
 #endif    
     }
 
@@ -63,7 +63,6 @@ public partial class App : Application
                     //logBuilder.WebAssemblyLogLevel(LogLevel.Debug);
 
                 }, enableUnoLogging: true)
-                .UseSerilog(consoleLoggingEnabled: true, fileLoggingEnabled: true)
                 .UseConfiguration(configure: configBuilder =>
                     configBuilder
                         .EmbeddedSource<App>()
@@ -74,15 +73,8 @@ public partial class App : Application
                 // Register Json serializers (ISerializer and ISerializer)
                 .UseSerialization((context, services) => services
                     .AddContentSerializer(context)
-                    .AddJsonTypeInfo(WeatherForecastContext.Default.IImmutableListWeatherForecast))
-                .UseHttp((context, services) => services
-                    // Register HttpClient
-#if DEBUG
-                    // DelegatingHandler will be automatically injected into Refit Client
-                    .AddTransient<DelegatingHandler, DebugHttpHandler>()
-#endif
-                    .AddSingleton<IWeatherCache, WeatherCache>()
-                    .AddRefitClient<IApiClient>(context))
+                )
+                .UseHttp((context, services) => { })
                 .ConfigureServices((context, services) =>
                 {
                     // TODO: Register your services
@@ -92,10 +84,10 @@ public partial class App : Application
             );
         MainWindow = builder.Window;
 
-#if DEBUG
+        #if DEBUG
         MainWindow.UseStudio();
 #endif
-        MainWindow.SetWindowIcon();
+                MainWindow.SetWindowIcon();
 
         Host = await builder.NavigateAsync<CsMarkup2Example.Shell>();
     }

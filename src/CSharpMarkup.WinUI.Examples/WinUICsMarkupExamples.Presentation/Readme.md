@@ -1,6 +1,6 @@
 ﻿# Welcome to C# Markup 2 for Uno Platform
 
-This C# Markup 2 Presentation project was created with `dotnet new mcs-uno-markup2 --presentation mvvm` (template version [`Modern.CSharp.Templates 2.0.0`](https://www.nuget.org/packages/Modern.CSharp.Templates/1.5.0))
+This C# Markup 2 Presentation project was created with `dotnet new mcs-uno-markup2 --presentation mvvm --renderer skia` (template version [`Modern.CSharp.Templates 3.2.0`](https://www.nuget.org/packages/Modern.CSharp.Templates/3.2.0))
 
 ## Get Started
 
@@ -27,14 +27,16 @@ To start working with the C# Markup 2 project, follow these steps:
    Host = await builder.NavigateAsync<CsMarkup2Example.Shell>();
    ```
 
-3. **Rebuild** the `WinUICsMarkupExamples.Windows` project and run it
+3. If you target Windows native (WinAppSDK), **Rebuild** the `WinUICsMarkupExamples` project
    (the rebuild is to ensure that the Windows codegen for new pages has run; without that codegen you will get an exception on page display).
+
+4. Run the `WinUICsMarkupExamples` project
 
 ## Add views and (view)models
 You can use `New-View.ps1` (located in the `WinUICsMarkupExamples.Presentation` project folder) to quickly add new views - including (view)model, if applicable. See `New-View.ps1` for tips and parameters.
 
 ## C# Hot Reload - Automatic & Manual
-Enjoy the fastest and most stable C# Hot Reload, with automatic UI updates, by debugging the **Unpackaged** Windows target. This is a good reason to keep the Windows target even if you don't deploy it.
+Enjoy the fastest and most stable C# Hot Reload, with automatic UI updates, by debugging the **Desktop** target. This is a good reason to keep the Desktop target even if you don't deploy it.
 
 C# Hot Reload does work to some extent in more target platforms, however the UI does not yet update automatically in all platforms, due to issues in Visual Studio.
 

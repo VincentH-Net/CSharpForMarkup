@@ -1,13 +1,9 @@
 <Project Sdk="Uno.Sdk">
   <ItemGroup>
-    <None Remove="Assets\Images\forward.svg" />
-    <None Remove="Assets\Images\search.svg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\WinUICsMarkupExamples.Presentation\WinUICsMarkupExamples.Presentation.csproj" />
   </ItemGroup>
   <PropertyGroup>
-    <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-maccatalyst;net9.0-windows10.0.26100;net9.0-browserwasm;net9.0-desktop</TargetFrameworks>
+    <TargetFrameworks>net9.0-android;net9.0-ios;net9.0-windows10.0.26100;net9.0-browserwasm;net9.0-desktop</TargetFrameworks>
 
     <OutputType>Exe</OutputType>
     <UnoSingleProject>true</UnoSingleProject>
@@ -19,6 +15,10 @@
     <!-- Versions -->
     <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
     <ApplicationVersion>1</ApplicationVersion>
+    <!-- Package Publisher -->
+    <ApplicationPublisher>WinUICsMarkupExamples</ApplicationPublisher>
+    <!-- Package Description -->
+    <Description>WinUICsMarkupExamples powered by Uno Platform.</Description>
     <!--
       If you encounter this error message:
 
@@ -37,21 +37,18 @@
     -->
     <UnoFeatures>
       Material;
+      Dsp;
       Hosting;
       Toolkit;
       Logging;
-      LoggingSerilog;
+      Mvvm;
       Configuration;
-      HttpRefit;
+      HttpKiota;
       Serialization;
       Localization;
       Navigation;
+      ThemeService;
     </UnoFeatures>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Debug' or '$(IsUiAutomationMappingEnabled)'=='True'">
-    <IsUiAutomationMappingEnabled>True</IsUiAutomationMappingEnabled>
-    <DefineConstants>$(DefineConstants);USE_UITESTS</DefineConstants>
   </PropertyGroup>
 
 </Project>

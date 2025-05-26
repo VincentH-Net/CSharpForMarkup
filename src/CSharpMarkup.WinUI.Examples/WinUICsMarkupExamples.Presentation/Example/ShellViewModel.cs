@@ -1,6 +1,6 @@
 namespace WinUICsMarkupExamples.Presentation.Example;
 
-[UIBindable]
+// TODO: not needed? [UIBindable]
 public class ShellViewModel : BaseViewModel
 {
     readonly INavigator _navigator;
