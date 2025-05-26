@@ -1,6 +1,6 @@
-﻿# Welcome to C# Markup 2 for Uno Platform
+# Welcome to C# Markup 2 for Uno Platform
 
-This C# Markup 2 Presentation project was created with `dotnet new mcs-uno-markup2 --presentation mvvm --renderer skia` (template version [`Modern.CSharp.Templates 3.2.0`](https://www.nuget.org/packages/Modern.CSharp.Templates/3.2.0))
+This C# Markup 2 Presentation project was created with `dotnet new mcs-uno-markup2 --presentation mvvm --renderer native` (template version [`Modern.CSharp.Templates 3.2.0`](https://www.nuget.org/packages/Modern.CSharp.Templates/3.2.0))
 
 ## Get Started
 
