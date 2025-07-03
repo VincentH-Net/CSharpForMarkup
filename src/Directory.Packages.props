@@ -7,6 +7,7 @@
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.3916" />
     <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.250401001" />
+    <PackageVersion Include="ScottPlot.WinUI" Version="5.0.55" />
     <PackageVersion Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="5.3.8" />
     <PackageVersion Include="Uno.Extensions.Navigation.WinUI" Version="5.3.8" />
     <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="5.3.8" />
