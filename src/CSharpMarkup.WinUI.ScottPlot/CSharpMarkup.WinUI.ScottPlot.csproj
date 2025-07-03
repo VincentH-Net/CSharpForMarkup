@@ -44,7 +44,7 @@
 
 	<PropertyGroup>
 		<RootNamespace>CSharpMarkup.WinUI.ScottPlot</RootNamespace>
-		<TargetFrameworks>net8.0-windows10.0.19041;net8.0;net8.0-android34.0;net8.0-ios18.0;net8.0-maccatalyst18.0</TargetFrameworks> <!-- Identical to ScottPlot.WinUI NuGet target frameworks -->
+		<TargetFrameworks>net8.0-windows10.0.19041.0;net8.0;net8.0-android34.0;net8.0-ios18.0;net8.0-maccatalyst18.0</TargetFrameworks> <!-- Identical to ScottPlot.WinUI NuGet target frameworks -->
 		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 	</PropertyGroup>
 
@@ -57,4 +57,13 @@
 		<PackageReference Include="CSharpMarkup.WinUI" />
 		<PackageReference Include="ScottPlot.WinUI" />
 	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\CSharpMarkup.Generators\WinUI\SourceGenerators\SourceGenerators.csproj" Condition=" '$(Configuration)' == 'Generate' ">
+			<OutputItemType>Analyzer</OutputItemType>
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+		</ProjectReference>
+	</ItemGroup>
+
+	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
 </Project>

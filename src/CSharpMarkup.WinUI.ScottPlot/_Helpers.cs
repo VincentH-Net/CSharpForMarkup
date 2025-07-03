@@ -13,7 +13,7 @@ namespace CSharpMarkup.WinUI.ScottPlot
 {
     public static partial class Helpers
     {
-        
+
 #if GENERATE
         /// <summary>Used by codegen to generate a <see cref="IDefaultBindProperty"/> implementation on markup types. Not used at runtime.</summary>
         /// <remarks>Types must be fully specified for codegen to work</remarks>
@@ -28,7 +28,7 @@ namespace CSharpMarkup.WinUI.ScottPlot
         /// </summary>
         static Type[] UIAssemblies => new Type[] // Assemblies in UI NuGets that contain UI types
         {
-            // TODO: typeof(global::ScottPlot...)
+            typeof(global::ScottPlot.WinUI.WinUIPlot)
         };
 #endif
     }

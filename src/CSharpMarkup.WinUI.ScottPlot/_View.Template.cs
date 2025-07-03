@@ -16,18 +16,10 @@
 #region NamespaceUsings
 using System;
 using System.Collections.Generic;
-using System.Numerics;
-using System.Windows.Input;
-using System.Runtime.Versioning;
-using Microsoft;
 using CSharpMarkup.WinUI.GeneratedCodeUtilities;
-using UI = Microsoft.UI;
-using Collections = System.Collections;
 using Xaml = Microsoft.UI.Xaml;
-using VirtualKey = Windows.System.VirtualKey;
-using VirtualKeyModifiers = Windows.System.VirtualKeyModifiers;
-using Drawing = System.Drawing;
-// TODO: aliases to shorten namespaces in generated code, e.g. using ScottPlotThingy = ScottPlot...Thingy;
+using Sp = ScottPlot;
+using SpUI = ScottPlot.WinUI;
 #endregion
 
 // TODO: above aliases are workarounds for compile errors, investigate why and remove if possible
