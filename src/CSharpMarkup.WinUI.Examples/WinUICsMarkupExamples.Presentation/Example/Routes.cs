@@ -7,7 +7,8 @@ public static class Routes
         views.Register(
             new ViewMap(ViewModel: typeof(ShellViewModel)),
             new ViewMap<SearchPage, SearchViewModel>(),
-            new ViewMap<FlutterPage, FlutterViewModel>()
+            new ViewMap<FlutterPage, FlutterViewModel>(),
+            new ViewMap<ScottPlotPage, ScottPlotViewModel>()
         );
 
         routes.Register(
@@ -15,7 +16,8 @@ public static class Routes
                 Nested: new RouteMap[]
                 {
                     new RouteMap("Search", View: views.FindByViewModel<SearchViewModel>(), IsDefault:true),
-                    new RouteMap("Flutter", View: views.FindByViewModel<FlutterViewModel>())
+                    new RouteMap("Flutter", View: views.FindByViewModel<FlutterViewModel>()),
+                    new RouteMap("ScottPlot", View: views.FindByViewModel<ScottPlotViewModel>())
                 }
             )
         );

@@ -16,8 +16,8 @@ partial class SearchPage
 
     NavigationBar Header => NavigationBar(
         TextBox(PlaceholderText: "Search") .Style(ThemeResource.ComboBoxTextBoxStyle) .VerticalAlignment().Center() .Bind(vm?.SearchText, BindingMode.TwoWay),
-        AppBarButton() .Icon("Images/search" ) .OnClick(vm!.SearchCommand),
-        AppBarButton() .Icon("Images/forward") .OnClick(vm!.ForwardCommand)
+        AppBarButton() .Icon("Images/search" ) .Bind(vm?.SearchCommand),
+        AppBarButton() .Icon("Images/forward") .Bind(vm?.ForwardCommand)
     )  .HorizontalContentAlignment().Stretch()
        #if HAS_UNO
        .Style().AppResource("XamlDefaultNavigationBar")

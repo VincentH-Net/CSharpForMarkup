@@ -9,6 +9,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageVersion Include="CSharpMarkup.WinUI" Version="3.1.2" />
+    <PackageVersion Include="CSharpMarkup.WinUI.ScottPlot" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.Uno.Toolkit" Version="3.1.2" />
