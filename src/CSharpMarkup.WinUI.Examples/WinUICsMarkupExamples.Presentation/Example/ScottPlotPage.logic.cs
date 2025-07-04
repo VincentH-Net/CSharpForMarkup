@@ -7,7 +7,7 @@ public sealed partial class ScottPlotPage : BasePage<ScottPlotViewModel>, IBuild
 {
     public ScottPlotPage() => BuildUI();
 
-    void ExampleGraph(SpUI.WinUIPlot plot)
+    void ExampleGraph(UIScottPlot.WinUIPlot plot)
     {
         plot.Plot.Title("Example Graph");
         plot.Plot.Add.Signal(Generate.Sin(51));

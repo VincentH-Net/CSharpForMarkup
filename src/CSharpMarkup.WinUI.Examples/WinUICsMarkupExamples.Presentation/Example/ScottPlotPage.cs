@@ -16,7 +16,7 @@ partial class ScottPlotPage
             AppBarButton() .Icon("Images/forward") .Bind(vm?.ForwardCommand)
         )  .Grid_Row(Row.Header),
 
-        WinUIPlot() .Invoke(ExampleGraph) 
+        WinUIPlot() .Invoke(ExampleGraph)
            .Grid_Row(Row.Body) .HVStretch()
         )
     );

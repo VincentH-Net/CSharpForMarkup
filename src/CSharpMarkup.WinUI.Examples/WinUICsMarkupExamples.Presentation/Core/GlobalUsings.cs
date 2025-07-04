@@ -35,8 +35,7 @@ global using static WinUICsMarkupExamples.Presentation.Core.MarkupHelpers;
 global using UI = Microsoft.UI;
 global using UIBindable = Microsoft.UI.Xaml.Data.BindableAttribute;
 global using UIControls = Microsoft.UI.Xaml.Controls;
-global using SpLib = ScottPlot;
-global using SpUI = ScottPlot.WinUI;
+global using UIScottPlot = ScottPlot.WinUI;
 
 // - Non-view types, e.g. enums, don't need a UI prefix because they are not mirrored as types in the CSharpMarkup namespaces
 global using BindingMode = Microsoft.UI.Xaml.Data.BindingMode;
