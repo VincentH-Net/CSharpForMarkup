@@ -7,11 +7,12 @@ public sealed partial class ScottPlotPage : BasePage<ScottPlotViewModel>, IBuild
 {
     public ScottPlotPage() => BuildUI();
 
-    void ExampleGraph(UIScottPlot.WinUIPlot plot)
+    void ExampleGraph(UIScottPlot.WinUIPlot winUIPlot)
     {
-        plot.Plot.Title("Example Graph");
-        plot.Plot.Add.Signal(Generate.Sin(51));
-        plot.Plot.Add.Signal(Generate.Cos(51));
-        plot.Refresh();
+        var plot = winUIPlot.Plot;
+        plot.Title("Example Graph");
+        plot.Add.Signal(Generate.Sin(51));
+        plot.Add.Signal(Generate.Cos(51));
+        winUIPlot.Refresh();
     }
 }
