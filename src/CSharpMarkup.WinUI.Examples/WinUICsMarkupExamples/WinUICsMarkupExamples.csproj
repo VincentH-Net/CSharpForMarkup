@@ -1,4 +1,4 @@
-<Project Sdk="Uno.Sdk">
+﻿<Project Sdk="Uno.Sdk">
   <ItemGroup>
     <ProjectReference Include="..\WinUICsMarkupExamples.Presentation\WinUICsMarkupExamples.Presentation.csproj" />
   </ItemGroup>

@@ -113,7 +113,7 @@ public sealed partial class SearchViewModel(INavigator navigator) : BaseViewMode
 
     public static Uri LinkUri(string linkText) => new(linkText.StartsWith("#", StringComparison.Ordinal) ? TwitterSearchUri(linkText) : linkText);
 
-    [RelayCommand] public async Task Forward() => await navigator.NavigateViewModelAsync<FlutterViewModel>(this);
+    [RelayCommand] public async Task Forward() => await navigator.NavigateViewModelAsync<ScottPlotViewModel>(this);
     [RelayCommand] public async Task Search() => await LaunchUri(TwitterSearchUri(SearchText));
     [RelayCommand] public static void Like(Tweet tweet) => tweet.IsLikedByMe = !tweet.IsLikedByMe;
 

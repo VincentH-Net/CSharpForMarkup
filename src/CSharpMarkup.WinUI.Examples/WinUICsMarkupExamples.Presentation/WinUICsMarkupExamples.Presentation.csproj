@@ -25,5 +25,6 @@
     <PackageReference Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation" />
     <PackageReference Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit" />
     <PackageReference Include="CSharpMarkup.WinUI.Uno.Toolkit" />
+    <PackageReference Include="CSharpMarkup.WinUI.ScottPlot" />
   </ItemGroup>
 </Project>

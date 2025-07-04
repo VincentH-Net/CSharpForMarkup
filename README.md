@@ -47,7 +47,8 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Reactive?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Reactive&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Reactive)<br />
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Navigation?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Navigation&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Navigation)<br />
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit)<br />
->[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView?color=gold&label=CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView)
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView?color=gold&label=CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView)<br />
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.ScottPlot?color=gold&label=CSharpMarkup.WinUI.ScottPlot&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.ScottPlot)
 >
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF)
 >
@@ -63,6 +64,13 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*July 4, 2025*
+> ## ScottPlot 5 support added!
+[ScottPlot.NET](https://scottplot.net/) - one of the best OSS .NET libraries for graphs and charts - now has full support in C# Markup 3.1 for Uno Platform 6.0!
+
+An [example page using ScottPlot](/src/CSharpMarkup.WinUI.Examples/WinUICsMarkupExamples.Presentation/Example) is added to the example app in this repo, demonstrating how to use ScottPlot with C# Markup 2.
+Use the excellent [ScottPlot 5.0 Cookbook](https://scottplot.net/cookbook/5.0/) to create beautiful graphs!
+
 *May 12, 2025*
 > ## New C# Markup 3.1 for Uno Platform 6.0
 Hot on the heels of the game-changing [Uno 6.0 release](https://platform.uno/blog/uno-platform-studio-6-0/), today's release adds full support for Uno SDK 6.0 / Windows App SDK 1.7 to all CSharpMarkup.WinUI NuGets.
