@@ -7,7 +7,7 @@ public sealed partial class ScottPlotPage : BasePage<ScottPlotViewModel>, IBuild
 {
     public ScottPlotPage() => BuildUI();
 
-    void ExampleGraph(UIScottPlot.WinUIPlot winUIPlot)
+    void ExampleGraph(UISp.WinUIPlot winUIPlot)
     {
         var plot = winUIPlot.Plot;
         plot.Title("Example Graph");

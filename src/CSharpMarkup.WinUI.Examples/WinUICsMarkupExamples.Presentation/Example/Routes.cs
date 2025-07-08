@@ -8,6 +8,7 @@ public static class Routes
             new ViewMap(ViewModel: typeof(ShellViewModel)),
             new ViewMap<SearchPage, SearchViewModel>(),
             new ViewMap<FlutterPage, FlutterViewModel>(),
+            new ViewMap<LiveCharts2Page, LiveCharts2ViewModel>(),
             new ViewMap<ScottPlotPage, ScottPlotViewModel>()
         );
 
@@ -17,6 +18,7 @@ public static class Routes
                 {
                     new RouteMap("Search", View: views.FindByViewModel<SearchViewModel>(), IsDefault:true),
                     new RouteMap("Flutter", View: views.FindByViewModel<FlutterViewModel>()),
+                    new RouteMap("LiveCharts", View: views.FindByViewModel<LiveCharts2ViewModel>()),
                     new RouteMap("ScottPlot", View: views.FindByViewModel<ScottPlotViewModel>())
                 }
             )

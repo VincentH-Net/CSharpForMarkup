@@ -1,3 +1,5 @@
+using static CSharpMarkup.WinUI.ScottPlot.Helpers;
+
 namespace WinUICsMarkupExamples.Presentation.Example;
 
 partial class ScottPlotPage
