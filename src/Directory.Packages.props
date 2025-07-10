@@ -1,9 +1,13 @@
 <!-- For CSharpMarkup projects-->
 <Project ToolsVersion="15.0">
+  <PropertyGroup>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" />
     <PackageVersion Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" Version="2.0.0-rc5.3" />
     <PackageVersion Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0-rc5.3" />
+    <PackageVersion Include="Mapsui.Uno.WinUI" Version="5.0.0-beta.18" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.3916" />
     <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.250401001" />
@@ -13,5 +17,9 @@
     <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="5.3.8" />
     <PackageVersion Include="Uno.Toolkit.WinUI" Version="7.0.2" />
     <PackageVersion Include="Uno.WinUI" Version="6.0.465" />
+
+    <!-- Pinned for Mapsui; keep consistent with https://github.com/Mapsui/Mapsui/blob/main/Directory.Packages.props, TODO: remove when Uno SDK with SkiaRenderer feature depends on this or higher version -->
+    <PackageVersion Include="SkiaSharp.Views.Uno.WinUI" Version="3.119.0" />
+    <PackageVersion Include="SkiaSharp.Skottie" Version="3.119.0" />
   </ItemGroup>
 </Project>
