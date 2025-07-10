@@ -23,6 +23,7 @@
   <ItemGroup>
     <PackageReference Include="CSharpMarkup.WinUI" />
     <PackageReference Include="CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView" />
+    <PackageReference Include="CSharpMarkup.WinUI.Mapsui" />
     <PackageReference Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation" />
     <PackageReference Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit" />
     <PackageReference Include="CSharpMarkup.WinUI.Uno.Toolkit" />

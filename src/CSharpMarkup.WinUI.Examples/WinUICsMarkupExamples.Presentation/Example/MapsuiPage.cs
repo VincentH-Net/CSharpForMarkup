@@ -1,8 +1,8 @@
-using static CSharpMarkup.WinUI.ScottPlot.Helpers;
+using Mui = CSharpMarkup.WinUI.Mapsui.Helpers;
 
 namespace WinUICsMarkupExamples.Presentation.Example;
 
-partial class ScottPlotPage
+partial class MapsuiPage
 {
     enum Row { Header, Body }
 
@@ -13,12 +13,12 @@ partial class ScottPlotPage
                 (Row.Body  , Star)
             ),
 
-            NavigationBar (
-                TextBlock("ScottPlot"),
+            NavigationBar(
+                TextBlock("Mapsui"),
                 AppBarButton() .Icon("Images/forward") .Bind(vm?.ForwardCommand)
             )  .Grid_Row(Row.Header),
 
-            WinUIPlot() .Invoke(ExampleGraph)
+            Mui.MapControl() .Invoke(CenterOnLocation)
                .Grid_Row(Row.Body) .HVStretch()
         )
     );

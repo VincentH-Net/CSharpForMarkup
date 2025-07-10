@@ -5,14 +5,19 @@
     See https://aka.platform.uno/using-uno-sdk for more information.
     See https://aka.platform.uno/using-uno-sdk#implicit-packages for more information regarding the Implicit Packages.
   -->
-  <ItemGroup>
-  </ItemGroup>
+  <PropertyGroup>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="CSharpMarkup.WinUI" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView" Version="3.1.2" />
+    <PackageVersion Include="CSharpMarkup.WinUI.Mapsui" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.ScottPlot" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.Uno.Toolkit" Version="3.1.2" />
+    <!-- Pinned for Mapsui; keep consistent with https://github.com/Mapsui/Mapsui/blob/main/Directory.Packages.props, TODO: remove when Uno SDK with SkiaRenderer feature depends on this or higher version -->
+    <PackageVersion Include="SkiaSharp.Views.Uno.WinUI" Version="3.119.0" />
+    <PackageVersion Include="SkiaSharp.Skottie" Version="3.119.0" />
   </ItemGroup>
 </Project>
