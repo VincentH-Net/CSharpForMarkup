@@ -1,4 +1,4 @@
-﻿[C# Markup 2](https://github.com/VincentH-Net/CSharpForMarkup) API for [Mapsui.Uno.WinUI](https://www.nuget.org/packages/Mapsui.Uno.WinUI/5.0.0-beta.18) NuGet
+﻿[C# Markup 2](https://github.com/VincentH-Net/CSharpForMarkup) API for [Mapsui.Uno.WinUI](https://www.nuget.org/packages/Mapsui.Uno.WinUI/5.0.0-beta.17) NuGet
 
 Enjoy a Flutter-like UI development experience with .NET Hot Reload and the best .NET UI frameworks
 - Build .NET applications **fully in C#**<br />
