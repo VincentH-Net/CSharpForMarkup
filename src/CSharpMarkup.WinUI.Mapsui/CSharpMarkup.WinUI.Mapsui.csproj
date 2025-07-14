@@ -11,9 +11,6 @@
 		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 		<UnoSingleProject>true</UnoSingleProject>
 		<OutputType>Library</OutputType>
-		<UnoFeatures>
-			SkiaRenderer;
-		</UnoFeatures>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -33,7 +30,7 @@
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 		<RepositoryType>git</RepositoryType>
 		<Product>$(AssemblyName) ($(TargetFramework))</Product>
-		<Version>$(CSharpMarkupVersion)-beta.18</Version> <!-- Keep the beta version suffix equal to Mapsui 5.0.0-beta.<nr>, remove when out of beta -->
+		<Version>$(CSharpMarkupVersion)-beta.17.3</Version> <!-- Keep the beta version suffix equal to Mapsui 5.0.0-beta.<nr>, remove when out of beta -->
 		<NeutralLanguage>en</NeutralLanguage>
 
 		<NoWarn>CS1591;CS1573;Uno0001</NoWarn>
@@ -52,8 +49,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0;net8.0-ios;net8.0-maccatalyst;net8.0-android;net8.0-windows10.0.19041;net8.0-browserwasm;net8.0-desktop;net9.0;net9.0-ios;net9.0-maccatalyst;net9.0-android;net9.0-browserwasm;net9.0-windows10.0.19041;net9.0-desktop</TargetFrameworks>
-		<!-- Identical to Mapsui.Uno.WinUI 5 target frameworks, see https://github.com/Mapsui/Mapsui/blob/main/Mapsui.UI.Uno.WinUI/Mapsui.UI.Uno.WinUI.csproj -->
+		<TargetFrameworks>net8.0;net8.0-ios17.0;net8.0-maccatalyst17.0;net8.0-android34.0;net8.0-windows10.0.19041.0;net9.0;net9.0-ios18.4;net9.0-maccatalyst18.4;net9.0-android35.0;net9.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Derived from Mapsui.Uno.WinUI 5 target frameworks, adjusted to C#M targetframeworks. See https://github.com/Mapsui/Mapsui/blob/main/Mapsui.UI.Uno.WinUI/Mapsui.UI.Uno.WinUI.csproj -->
 		<RootNamespace>CSharpMarkup.WinUI.Mapsui</RootNamespace>
 		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 	</PropertyGroup>
@@ -66,8 +63,6 @@
 		<PackageReference Include="Mapsui.Uno.WinUI" />
 		<PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
 		<PackageReference Include="CSharpMarkup.WinUI" />
-		<PackageReference Include="SkiaSharp.Views.Uno.WinUI" />
-		<PackageReference Include="SkiaSharp.Skottie" />
 	</ItemGroup>
 
 	<ItemGroup>

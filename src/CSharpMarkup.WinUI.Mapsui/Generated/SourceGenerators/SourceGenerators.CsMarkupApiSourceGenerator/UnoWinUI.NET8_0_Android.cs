@@ -37,6 +37,13 @@ namespace CSharpMarkup.WinUI.Mapsui // MapControl
             var ui = new Mui.MapControl();
             return CSharpMarkup.WinUI.Mapsui.MapControl.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Mui.MapControl"/></summary>
+        public static MapControl MapControl(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new Mui.MapControl(javaReference, transfer);
+            return CSharpMarkup.WinUI.Mapsui.MapControl.StartChain(ui);
+        }
     }
 
     public partial class MapControl : Grid, IUI<Mui.MapControl>

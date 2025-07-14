@@ -37,6 +37,20 @@ namespace CSharpMarkup.WinUI.Mapsui // MapControl
             var ui = new Mui.MapControl();
             return CSharpMarkup.WinUI.Mapsui.MapControl.StartChain(ui);
         }
+
+        /// <summary>Create a <see cref="Mui.MapControl"/></summary>
+        public static MapControl MapControl(nint handle)
+        {
+            var ui = new Mui.MapControl(handle);
+            return CSharpMarkup.WinUI.Mapsui.MapControl.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="Mui.MapControl"/></summary>
+        public static MapControl MapControl(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new Mui.MapControl(handle);
+            return CSharpMarkup.WinUI.Mapsui.MapControl.StartChain(ui);
+        }
     }
 
     public partial class MapControl : Grid, IUI<Mui.MapControl>
