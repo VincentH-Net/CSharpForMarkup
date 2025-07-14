@@ -48,7 +48,8 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Navigation?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Navigation&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Navigation)<br />
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit?color=gold&label=CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit)<br />
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView?color=gold&label=CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView)<br />
->[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.ScottPlot?color=gold&label=CSharpMarkup.WinUI.ScottPlot&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.ScottPlot)
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.ScottPlot?color=gold&label=CSharpMarkup.WinUI.ScottPlot&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.ScottPlot)<br />
+>[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WinUI.Mapsui?color=gold&label=CSharpMarkup.WinUI.Mapsui&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WinUI.Mapsui)
 >
 >[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF)
 >
@@ -64,6 +65,13 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*July 14, 2025*
+> ## Mapsui 5 support added!
+[Mapsui 5](https://mapsui.com/v5/) - currently in beta, and one of the best OSS .NET libraries for maps - now has full support in C# Markup 3.1 for Uno Platform 6.0!
+
+An [example page using Mapsui](/src/CSharpMarkup.WinUI.Examples/WinUICsMarkupExamples.Presentation/Example) is added to the example app in this repo, demonstrating how to use Mapsui with C# Markup 2.
+Browse [Live Mapsui 5.0 samples](https://scottplot.net/cookbook/5.0/) to experience the possibilities; see the [samples source](https://github.com/Mapsui/Mapsui/tree/main/Samples/Mapsui.Samples.Common) for how.
+
 *July 4, 2025*
 > ## ScottPlot 5 support added!
 [ScottPlot.NET](https://scottplot.net/) - one of the best OSS .NET libraries for graphs and charts - now has full support in C# Markup 3.1 for Uno Platform 6.0!
