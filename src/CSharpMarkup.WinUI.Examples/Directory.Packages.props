@@ -5,14 +5,21 @@
     See https://aka.platform.uno/using-uno-sdk for more information.
     See https://aka.platform.uno/using-uno-sdk#implicit-packages for more information regarding the Implicit Packages.
   -->
-  <ItemGroup>
-  </ItemGroup>
+  <PropertyGroup>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="CSharpMarkup.WinUI" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView" Version="3.1.2" />
+    <PackageVersion Include="CSharpMarkup.WinUI.Mapsui" Version="3.1.2-beta.17.3" />
     <PackageVersion Include="CSharpMarkup.WinUI.ScottPlot" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit" Version="3.1.2" />
     <PackageVersion Include="CSharpMarkup.WinUI.Uno.Toolkit" Version="3.1.2" />
+
+    <!-- Pinned to the version that Uno SDK implicitly references, to prevent PRI errors when building the Windows target.
+         Update versions when updating Uno SDK. -->
+    <PackageVersion Include="Uno.Toolkit.WinUI" Version="7.0.7" />
+    <PackageVersion Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="6.0.12" />
   </ItemGroup>
 </Project>

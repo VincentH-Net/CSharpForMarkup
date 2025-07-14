@@ -1,0 +1,76 @@
+﻿<Project Sdk="Uno.Sdk">
+	<PropertyGroup>
+		<Configurations>Debug;Release;Generate</Configurations>
+		<IsUno>true</IsUno>
+
+		<!-- Workaround for PRI resource build errors and dotnet build support, from https://github.com/dotnet/maui/issues/5886#issuecomment-1123106200 -->
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<GenerateLibraryLayout>true</GenerateLibraryLayout>
+
+		<!-- Because we are using Uno.Sdk -->
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+		<UnoSingleProject>true</UnoSingleProject>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>CSharpMarkup.WinUI.Mapsui</PackageId>
+		<Title>CSharpMarkup.WinUI.Mapsui</Title>
+		<Summary>Build .NET browser / native UI in declarative C#</Summary>
+		<Description>Enjoy a Flutter-like UI development experience with .NET Hot Reload and WinUI 3, using Windows App SDK and/or Uno Platform. Build .NET applications fully in C#. Target browsers and native desktop / mobile. No XAML / HTML / JavaScript / CSS required</Description>
+		<PackageReadmeFile>Readme.md</PackageReadmeFile>
+		<PackageTags>csharpformarkup,csharpmarkup,markup,csharp,ui,winui,windowsappsdk,uno,webassembly,windows,desktop,flutter</PackageTags>
+		<Copyright>Copyright © VincentH.NET</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Authors>VincentH.NET</Authors>
+		<Owners>VincentH.NET</Owners>
+		<RepositoryUrl>https://github.com/VincentH-Net/CSharpForMarkup</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/VincentH-Net/CSharpForMarkup</PackageProjectUrl>
+		<PackageReleaseNotes>See source repository for release notes</PackageReleaseNotes>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<RepositoryType>git</RepositoryType>
+		<Product>$(AssemblyName) ($(TargetFramework))</Product>
+		<Version>$(CSharpMarkupVersion)-beta.17.3</Version> <!-- Keep the beta version suffix equal to Mapsui 5.0.0-beta.<nr>, remove when out of beta -->
+		<NeutralLanguage>en</NeutralLanguage>
+
+		<NoWarn>CS1591;CS1573;Uno0001</NoWarn>
+
+		<GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
+
+		<!-- Enable Source Link -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+		<DebugType>portable</DebugType>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net8.0-ios17.0;net8.0-maccatalyst17.0;net8.0-android34.0;net8.0-windows10.0.19041.0;net9.0;net9.0-ios18.4;net9.0-maccatalyst18.4;net9.0-android35.0;net9.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Derived from Mapsui.Uno.WinUI 5 target frameworks, adjusted to C#M targetframeworks. See https://github.com/Mapsui/Mapsui/blob/main/Mapsui.UI.Uno.WinUI/Mapsui.UI.Uno.WinUI.csproj -->
+		<RootNamespace>CSharpMarkup.WinUI.Mapsui</RootNamespace>
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$(IsUno)==false">
+		<UseWinUI>true</UseWinUI>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Mapsui.Uno.WinUI" />
+		<PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+		<PackageReference Include="CSharpMarkup.WinUI" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\CSharpMarkup.Generators\WinUI\SourceGenerators\SourceGenerators.csproj" Condition=" '$(Configuration)' == 'Generate' ">
+			<OutputItemType>Analyzer</OutputItemType>
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+		</ProjectReference>
+	</ItemGroup>
+
+	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
+</Project>

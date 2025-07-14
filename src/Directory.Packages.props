@@ -1,9 +1,13 @@
 <!-- For CSharpMarkup projects-->
 <Project ToolsVersion="15.0">
+  <PropertyGroup>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" />
     <PackageVersion Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" Version="2.0.0-rc5.3" />
     <PackageVersion Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0-rc5.3" />
+    <PackageVersion Include="Mapsui.Uno.WinUI" Version="5.0.0-beta.17" />
     <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
     <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.3916" />
     <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.250401001" />

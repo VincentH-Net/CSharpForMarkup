@@ -1,4 +1,4 @@
-﻿[C# Markup 2](https://github.com/VincentH-Net/CSharpForMarkup) API for [ScottPlot.WinUI](https://www.nuget.org/packages/ScottPlot.WinUI) NuGet
+﻿[C# Markup 2](https://github.com/VincentH-Net/CSharpForMarkup) API for [Mapsui.Uno.WinUI](https://www.nuget.org/packages/Mapsui.Uno.WinUI/5.0.0-beta.17) NuGet
 
 Enjoy a Flutter-like UI development experience with .NET Hot Reload and the best .NET UI frameworks
 - Build .NET applications **fully in C#**<br />
@@ -12,4 +12,4 @@ This release targets WinUI 3 (Windows App SDK) and Uno Platform - including brow
 
 [Example application](https://github.com/VincentH-Net/CSharpForMarkup/tree/master/src/CSharpMarkup.WinUI.Examples)
 
-[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/__CSharpMarkupReleaseTag__-scottplot)
+[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/__CSharpMarkupReleaseTag__-mapsui-beta-17)
