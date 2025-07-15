@@ -17,5 +17,6 @@
     <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="5.3.8" />
     <PackageVersion Include="Uno.Toolkit.WinUI" Version="7.0.2" />
     <PackageVersion Include="Uno.WinUI" Version="6.0.465" />
+    <PackageVersion Include="WinUI.TableView" Version="1.3.1" />
   </ItemGroup>
 </Project>

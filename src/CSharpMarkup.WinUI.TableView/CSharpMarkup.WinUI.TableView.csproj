@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Configurations>Debug;Release;Generate</Configurations>
+
+		<!-- Workaround for PRI resource build errors and dotnet build support, from https://github.com/dotnet/maui/issues/5886#issuecomment-1123106200 -->
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<GenerateLibraryLayout>true</GenerateLibraryLayout>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>CSharpMarkup.WinUI.TableView</PackageId>
+		<Title>CSharpMarkup.WinUI.TableView</Title>
+		<Summary>Build .NET browser / native UI in declarative C#</Summary>
+		<Description>Enjoy a Flutter-like UI development experience with .NET Hot Reload and WinUI 3, using Windows App SDK and/or Uno Platform. Build .NET applications fully in C#. Target browsers and native desktop / mobile. No XAML / HTML / JavaScript / CSS required</Description>
+		<PackageReadmeFile>Readme.md</PackageReadmeFile>
+		<PackageTags>csharpformarkup,csharpmarkup,markup,csharp,ui,winui,windowsappsdk,uno,webassembly,windows,desktop,flutter</PackageTags>
+		<Copyright>Copyright © VincentH.NET</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Authors>VincentH.NET</Authors>
+		<Owners>VincentH.NET</Owners>
+		<RepositoryUrl>https://github.com/VincentH-Net/CSharpForMarkup</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/VincentH-Net/CSharpForMarkup</PackageProjectUrl>
+		<PackageReleaseNotes>See source repository for release notes</PackageReleaseNotes>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<RepositoryType>git</RepositoryType>
+		<Product>$(AssemblyName) ($(TargetFramework))</Product>
+		<Version>$(CSharpMarkupVersion)</Version>
+		<NeutralLanguage>en</NeutralLanguage>
+
+		<NoWarn>CS1591;CS1573;Uno0001</NoWarn>
+
+		<GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
+		<GeneratePackageOnBuild Condition=" '$(Configuration)' == 'Release' ">true</GeneratePackageOnBuild>
+
+		<!-- Enable Source Link -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+		<DebugType>portable</DebugType>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb;.xml</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<RootNamespace>CSharpMarkup.WinUI.TableView</RootNamespace>
+		<TargetFrameworks>net8.0;net9.0;net8.0-windows10.0.19041.0;net9.0-windows10.0.19041.0;</TargetFrameworks>
+		<!-- Identical to WinUI.TableView NuGet target frameworks -->
+		<EnableDefaultPageItems>false</EnableDefaultPageItems>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$(IsUno)==false">
+		<UseWinUI>true</UseWinUI>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+		<PackageReference Include="CSharpMarkup.WinUI" />
+		<PackageReference Include="WinUI.TableView" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\CSharpMarkup.Generators\WinUI\SourceGenerators\SourceGenerators.csproj" Condition=" '$(Configuration)' == 'Generate' ">
+			<OutputItemType>Analyzer</OutputItemType>
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+		</ProjectReference>
+	</ItemGroup>
+
+	<Import Project="..\..\..\CSharpMarkup.Generators\WinUI\Attributes\Attributes.projitems" Label="Shared" Condition=" '$(Configuration)' == 'Generate' " />
+</Project>
