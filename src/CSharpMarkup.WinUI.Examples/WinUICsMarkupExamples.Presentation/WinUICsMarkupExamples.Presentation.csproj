@@ -24,6 +24,8 @@
     <PackageReference Include="CSharpMarkup.WinUI" />
     <PackageReference Include="CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView" />
     <PackageReference Include="CSharpMarkup.WinUI.Mapsui" />
+    <!-- TODO: remove below condition when this known issue of TableView with Windows App SDK is fixed:  https://github.com/w-ahmad/WinUI.TableView/issues/170 -->
+    <PackageReference Include="CSharpMarkup.WinUI.TableView" Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'windows'" />
     <PackageReference Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation" />
     <PackageReference Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit" />
     <PackageReference Include="CSharpMarkup.WinUI.Uno.Toolkit" />
