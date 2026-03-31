@@ -1,8 +1,8 @@
 <!-- For CSharpMarkup projects-->
 <Project>
 	<PropertyGroup>
-		<CSharpMarkupVersion>3.1.2</CSharpMarkupVersion>
-		<CSharpMarkupReleaseTag>csharpmarkup2-winui-3-1-2</CSharpMarkupReleaseTag>
+		<CSharpMarkupVersion>4.0.0</CSharpMarkupVersion>
+		<CSharpMarkupReleaseTag>csharpmarkup2-winui-4-0-0</CSharpMarkupReleaseTag>
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
 		<IsUno>true</IsUno>
@@ -13,25 +13,25 @@
 		<IsWinAppSdk>false</IsWinAppSdk>
 		<IsWasm>false</IsWasm>
 
-		<CSharpMarkupWinUINet8TargetFrameworks>net8.0-windows10.0.19041.0;net8.0;net8.0-android34.0;net8.0-ios17.0;net8.0-maccatalyst17.0</CSharpMarkupWinUINet8TargetFrameworks>
 		<CSharpMarkupWinUINet9TargetFrameworks>net9.0-windows10.0.19041.0;net9.0;net9.0-android35.0;net9.0-ios18.0;net9.0-maccatalyst18.0</CSharpMarkupWinUINet9TargetFrameworks>
-		<CSharpMarkupWinUIExtensionsTargetFrameworks>net8.0-windows10.0.19041.0;net8.0;net8.0-android34.0;net8.0-ios17.0;net8.0-maccatalyst17.0</CSharpMarkupWinUIExtensionsTargetFrameworks>
+		<CSharpMarkupWinUINet10TargetFrameworks>net10.0-windows10.0.19041.0;net10.0;net10.0-android36.0;net10.0-ios26.0;net10.0-maccatalyst26.0</CSharpMarkupWinUINet10TargetFrameworks>
+		<CSharpMarkupWinUIExtensionsTargetFrameworks>net9.0-windows10.0.19041.0;net9.0;net9.0-android35.0;net9-browserwasm1.0;net9-desktop1.0;net9.0-ios18.0;net9.0-maccatalyst18.0</CSharpMarkupWinUIExtensionsTargetFrameworks>
 	</PropertyGroup>
 
 	<Choose>
 		<When Condition=" '$(Configuration)' == 'Generate' And '$(DotNetPreviousMajor)' == 'true' ">
 			<PropertyGroup>
-				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet8TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
+				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet9TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
 			</PropertyGroup>
 		</When>
 		<When Condition=" '$(Configuration)' == 'Generate' And '$(DotNetPreviousMajor)' != 'true' ">
 			<PropertyGroup>
-				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet9TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
+				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet10TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
 			</PropertyGroup>
 		</When>
 		<Otherwise>
 			<PropertyGroup>
-				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet8TargetFrameworks);$(CSharpMarkupWinUINet9TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
+				<CSharpMarkupWinUITargetFrameworks>$(CSharpMarkupWinUINet9TargetFrameworks);$(CSharpMarkupWinUINet10TargetFrameworks)</CSharpMarkupWinUITargetFrameworks>
 			</PropertyGroup>
 		</Otherwise>
 	</Choose>
