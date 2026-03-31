@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET8_0 && __WASM_OR_SKIA__ && !DESKTOP && !BROWSERWASM
+#if NET10_0 && __ANDROID__
 
 using System;
 using System.Collections.Generic;
@@ -36,6 +36,13 @@ namespace CSharpMarkup.WinUI.ScottPlot // WinUIPlot
         public static WinUIPlot WinUIPlot()
         {
             var ui = new SpUI.WinUIPlot();
+            return CSharpMarkup.WinUI.ScottPlot.WinUIPlot.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="SpUI.WinUIPlot"/></summary>
+        public static WinUIPlot WinUIPlot(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new SpUI.WinUIPlot(javaReference, transfer);
             return CSharpMarkup.WinUI.ScottPlot.WinUIPlot.StartChain(ui);
         }
     }

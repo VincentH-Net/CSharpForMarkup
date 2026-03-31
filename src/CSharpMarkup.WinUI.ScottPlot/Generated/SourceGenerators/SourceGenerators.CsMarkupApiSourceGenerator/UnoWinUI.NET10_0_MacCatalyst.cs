@@ -1,5 +1,5 @@
-﻿// Start of generated C# Markup API for Microsoft.WindowsAppSDK
-#if NET8_0 && WINUI
+﻿// Start of generated C# Markup API for Uno.WinUI
+#if NET10_0 && __MACCATALYST__
 
 using System;
 using System.Collections.Generic;
@@ -13,22 +13,22 @@ namespace CSharpMarkup.WinUI.ScottPlot // WinUIPlot
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="SpUI.WinUIPlot"/></summary>
-        public static WinUIPlot WinUIPlot(Xaml.UIElement Content)
+        public static WinUIPlot WinUIPlot(UIObject Content)
         {
             var ui = new SpUI.WinUIPlot();
-            if (Content != null) ui.Content = Content;
+            if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ScottPlot.WinUIPlot.StartChain(ui);
         }
 
         /// <summary>Create a <see cref="SpUI.WinUIPlot"/></summary>
-        public static WinUIPlot WinUIPlot(Xaml.Window? AppWindow = default, float? DisplayScale = default, Sp.IPlotMenu? Menu = default, Sp.IMultiplot Multiplot = default, Xaml.UIElement Content = default)
+        public static WinUIPlot WinUIPlot(Xaml.Window? AppWindow = default, float? DisplayScale = default, Sp.IPlotMenu? Menu = default, Sp.IMultiplot Multiplot = default, UIObject Content = default)
         {
             var ui = new SpUI.WinUIPlot();
             if (AppWindow is not null) ui.AppWindow = AppWindow;
             if (DisplayScale is not null) ui.DisplayScale = DisplayScale.Value;
             if (Menu is not null) ui.Menu = Menu;
             if (Multiplot is not null) ui.Multiplot = Multiplot;
-            if (Content != null) ui.Content = Content;
+            if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.ScottPlot.WinUIPlot.StartChain(ui);
         }
 
@@ -36,6 +36,20 @@ namespace CSharpMarkup.WinUI.ScottPlot // WinUIPlot
         public static WinUIPlot WinUIPlot()
         {
             var ui = new SpUI.WinUIPlot();
+            return CSharpMarkup.WinUI.ScottPlot.WinUIPlot.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="SpUI.WinUIPlot"/></summary>
+        public static WinUIPlot WinUIPlot(nint handle)
+        {
+            var ui = new SpUI.WinUIPlot(handle);
+            return CSharpMarkup.WinUI.ScottPlot.WinUIPlot.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="SpUI.WinUIPlot"/></summary>
+        public static WinUIPlot WinUIPlot(ObjCRuntime.NativeHandle handle)
+        {
+            var ui = new SpUI.WinUIPlot(handle);
             return CSharpMarkup.WinUI.ScottPlot.WinUIPlot.StartChain(ui);
         }
     }
@@ -88,4 +102,4 @@ namespace CSharpMarkup.WinUI.ScottPlot // WinUIPlot
 
 
 #endif
-// End of generated C# Markup API for Microsoft.WindowsAppSDK
+// End of generated C# Markup API for Uno.WinUI
