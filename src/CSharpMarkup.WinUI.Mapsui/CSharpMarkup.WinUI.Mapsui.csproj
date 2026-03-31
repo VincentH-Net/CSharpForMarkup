@@ -49,7 +49,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0;net8.0-ios17.0;net8.0-maccatalyst17.0;net8.0-android34.0;net8.0-windows10.0.19041.0;net9.0;net9.0-ios18.4;net9.0-maccatalyst18.4;net9.0-android35.0;net9.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net9.0;net9.0-ios18.0;net9.0-maccatalyst18.0;net9.0-android35.0;net9.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Derived from Mapsui.Uno.WinUI 5 target frameworks, adjusted to C#M targetframeworks. See https://github.com/Mapsui/Mapsui/blob/main/Mapsui.UI.Uno.WinUI/Mapsui.UI.Uno.WinUI.csproj -->
 		<RootNamespace>CSharpMarkup.WinUI.Mapsui</RootNamespace>
 		<EnableDefaultPageItems>false</EnableDefaultPageItems>

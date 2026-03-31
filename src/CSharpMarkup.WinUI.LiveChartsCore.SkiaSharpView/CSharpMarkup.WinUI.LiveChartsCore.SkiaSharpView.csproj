@@ -44,7 +44,7 @@
 	</PropertyGroup>
 		
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-windows10.0.19041;net8.0;net8.0-android34.0;net8.0-ios18.0;net8.0-maccatalyst18.0</TargetFrameworks>
+		<TargetFrameworks>net10.0-windows10.0.19041.0;net10.0;net10.0-android36.0;net10.0-browserwasm1.0;net10.0-desktop1.0;net10.0-ios26.0</TargetFrameworks>
 		<RootNamespace>CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView</RootNamespace>
 		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 	</PropertyGroup>
