@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET8_0 && __IOS__ && !__MACCATALYST__
+#if NET9_0 && __ANDROID__
 
 using System;
 using System.Collections.Generic;
@@ -46,6 +46,13 @@ namespace CSharpMarkup.WinUI.Uno.Extensions.Navigation // FrameView
         public static FrameView FrameView()
         {
             var ui = new UnoExtensionsNavigation.UI.Controls.FrameView();
+            return CSharpMarkup.WinUI.Uno.Extensions.Navigation.FrameView.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoExtensionsNavigation.UI.Controls.FrameView"/></summary>
+        public static FrameView FrameView(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new UnoExtensionsNavigation.UI.Controls.FrameView(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Extensions.Navigation.FrameView.StartChain(ui);
         }
     }
