@@ -1,8 +1,8 @@
 <!-- For CSharpMarkup projects-->
 <Project>
 	<PropertyGroup>
-		<CSharpMarkupVersion>4.0.0</CSharpMarkupVersion>
-		<CSharpMarkupReleaseTag>csharpmarkup2-winui-4-0-0</CSharpMarkupReleaseTag>
+		<CSharpMarkupVersion>4.0.1</CSharpMarkupVersion>
+		<CSharpMarkupReleaseTag>csharpmarkup2-winui-4-0-1</CSharpMarkupReleaseTag>
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
 		<IsUno>true</IsUno>
@@ -15,7 +15,7 @@
 
 		<CSharpMarkupWinUINet9TargetFrameworks>net9.0-windows10.0.19041.0;net9.0;net9.0-android35.0;net9.0-ios18.0;net9.0-maccatalyst18.0</CSharpMarkupWinUINet9TargetFrameworks>
 		<CSharpMarkupWinUINet10TargetFrameworks>net10.0-windows10.0.19041.0;net10.0;net10.0-android36.0;net10.0-ios26.0;net10.0-maccatalyst26.0</CSharpMarkupWinUINet10TargetFrameworks>
-		<CSharpMarkupWinUIExtensionsTargetFrameworks>net9.0-windows10.0.19041.0;net9.0;net9.0-android35.0;net9-browserwasm1.0;net9-desktop1.0;net9.0-ios18.0;net9.0-maccatalyst18.0</CSharpMarkupWinUIExtensionsTargetFrameworks>
+		<CSharpMarkupWinUIExtensionsTargetFrameworks>net9.0-windows10.0.19041.0;net9.0;net9.0-android35.0;net9-browserwasm1.0;net9-desktop1.0;net9.0-ios18.4;net9.0-maccatalyst18.4</CSharpMarkupWinUIExtensionsTargetFrameworks>
 	</PropertyGroup>
 
 	<Choose>

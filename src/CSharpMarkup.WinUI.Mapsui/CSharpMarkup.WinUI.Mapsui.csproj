@@ -49,8 +49,8 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<TargetFrameworks>net9.0;net9.0-ios18.0;net9.0-maccatalyst18.0;net9.0-android35.0;net9.0-windows10.0.19041.0</TargetFrameworks>
-		<!-- Derived from Mapsui.Uno.WinUI 5 target frameworks, adjusted to C#M targetframeworks. See https://github.com/Mapsui/Mapsui/blob/main/Mapsui.UI.Uno.WinUI/Mapsui.UI.Uno.WinUI.csproj -->
+		<TargetFrameworks>net9.0;net9.0-ios26.0;net9.0-maccatalyst26.0;net9.0-android35.0;net9.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Same as the Mapsui.Uno.WinUI 5 target frameworks, but left out the .NET 8 targets -->
 		<RootNamespace>CSharpMarkup.WinUI.Mapsui</RootNamespace>
 		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 	</PropertyGroup>
