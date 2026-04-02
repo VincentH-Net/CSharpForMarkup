@@ -23,6 +23,7 @@ using Microsoft;
 using CSharpMarkup.WinUI.GeneratedCodeUtilities;
 using UI = Microsoft.UI;
 using Collections = System.Collections;
+using UnoUI = Uno.UI;
 using UnoToolkit = Uno.Toolkit;
 using UnoToolkitUI = Uno.Toolkit.UI;
 using Xaml = Microsoft.UI.Xaml;
