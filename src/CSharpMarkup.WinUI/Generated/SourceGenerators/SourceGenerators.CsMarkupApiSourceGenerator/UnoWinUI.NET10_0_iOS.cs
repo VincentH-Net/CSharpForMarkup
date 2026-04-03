@@ -36343,7 +36343,7 @@ namespace CSharpMarkup.WinUI // DependencyObjectCollection
         }
     }
 
-    public partial class DependencyObjectCollection : DependencyObject, IUI<Xaml.DependencyObjectCollection>
+    public partial class DependencyObjectCollection : DependencyObjectCollectionBase, IUI<Xaml.DependencyObjectCollection>
     {
         static DependencyObjectCollection instance;
 
@@ -36533,7 +36533,7 @@ namespace CSharpMarkup.WinUI // BlockCollection
         }
     }
 
-    public partial class BlockCollection : DependencyObject, IUI<Xaml.Documents.BlockCollection>
+    public partial class BlockCollection : DependencyObjectCollectionBase, IUI<Xaml.Documents.BlockCollection>
     {
         static BlockCollection instance;
 
@@ -39780,7 +39780,7 @@ namespace CSharpMarkup.WinUI // ColorKeyFrameCollection
         }
     }
 
-    public partial class ColorKeyFrameCollection : DependencyObject, IUI<Xaml.Media.Animation.ColorKeyFrameCollection>
+    public partial class ColorKeyFrameCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.Animation.ColorKeyFrameCollection>
     {
         static ColorKeyFrameCollection instance;
 
@@ -40529,7 +40529,7 @@ namespace CSharpMarkup.WinUI // DoubleKeyFrameCollection
         }
     }
 
-    public partial class DoubleKeyFrameCollection : DependencyObject, IUI<Xaml.Media.Animation.DoubleKeyFrameCollection>
+    public partial class DoubleKeyFrameCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.Animation.DoubleKeyFrameCollection>
     {
         static DoubleKeyFrameCollection instance;
 
@@ -42164,7 +42164,7 @@ namespace CSharpMarkup.WinUI // ObjectKeyFrame
 
 namespace CSharpMarkup.WinUI // ObjectKeyFrameCollection
 {
-    public partial class ObjectKeyFrameCollection : DependencyObject, IUI<Xaml.Media.Animation.ObjectKeyFrameCollection>
+    public partial class ObjectKeyFrameCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.Animation.ObjectKeyFrameCollection>
     {
         Xaml.Media.Animation.ObjectKeyFrameCollection ui;
 
@@ -44270,7 +44270,7 @@ namespace CSharpMarkup.WinUI // TimelineCollection
         }
     }
 
-    public partial class TimelineCollection : DependencyObject, IUI<Xaml.Media.Animation.TimelineCollection>
+    public partial class TimelineCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.Animation.TimelineCollection>
     {
         static TimelineCollection instance;
 
@@ -45002,7 +45002,7 @@ namespace CSharpMarkup.WinUI // GeometryCollection
         }
     }
 
-    public partial class GeometryCollection : DependencyObject, IUI<Xaml.Media.GeometryCollection>
+    public partial class GeometryCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.GeometryCollection>
     {
         static GeometryCollection instance;
 
@@ -45274,7 +45274,7 @@ namespace CSharpMarkup.WinUI // GradientStopCollection
         }
     }
 
-    public partial class GradientStopCollection : DependencyObject, IUI<Xaml.Media.GradientStopCollection>
+    public partial class GradientStopCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.GradientStopCollection>
     {
         static GradientStopCollection instance;
 
@@ -46608,7 +46608,7 @@ namespace CSharpMarkup.WinUI // PathFigureCollection
         }
     }
 
-    public partial class PathFigureCollection : DependencyObject, IUI<Xaml.Media.PathFigureCollection>
+    public partial class PathFigureCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.PathFigureCollection>
     {
         static PathFigureCollection instance;
 
@@ -46790,7 +46790,7 @@ namespace CSharpMarkup.WinUI // PathSegmentCollection
         }
     }
 
-    public partial class PathSegmentCollection : DependencyObject, IUI<Xaml.Media.PathSegmentCollection>
+    public partial class PathSegmentCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.PathSegmentCollection>
     {
         static PathSegmentCollection instance;
 
@@ -48759,7 +48759,7 @@ namespace CSharpMarkup.WinUI // SetterBaseCollection
         }
     }
 
-    public partial class SetterBaseCollection : DependencyObject, IUI<Xaml.SetterBaseCollection>
+    public partial class SetterBaseCollection : DependencyObjectCollectionBase, IUI<Xaml.SetterBaseCollection>
     {
         static SetterBaseCollection instance;
 
