@@ -1,8 +1,8 @@
 <!-- For CSharpMarkup projects-->
 <Project>
 	<PropertyGroup>
-		<CSharpMarkupVersion>4.0.1</CSharpMarkupVersion>
-		<CSharpMarkupReleaseTag>csharpmarkup2-winui-4-0-1</CSharpMarkupReleaseTag>
+		<CSharpMarkupVersion>4.0.5</CSharpMarkupVersion>
+		<CSharpMarkupReleaseTag>csharpmarkup2-winui-4-0-5</CSharpMarkupReleaseTag>
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
 		<IsUno>true</IsUno>
