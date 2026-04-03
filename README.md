@@ -69,7 +69,7 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 > ## C# Markup 4.0 is out! .NET 10, Uno Platform 6.5 and more
 This updates all C# Markup 2 libraries to C# 14, .NET 10 and/or .NET 9, and the latest stable technology versions:
 - All [Uno Platform](https://platform.uno/) libraries are updated to the latest .NET version supported by the corresponding Uno SDK 6.5 libraries (.NET 10 and/or .NET 9).
-- [LiveCharts2](https://livecharts.dev/) is updated to 2.0 stable and .NET 10
+- [LiveCharts2](https://livecharts.dev/) is now out of beta, and updated to 2.0 stable and .NET 10
 - [Mapsui 5](https://mapsui.com/v5/) is now out of beta, and updated to 5.0 stable and .NET 9.
 - [ScottPlot.NET](https://scottplot.net/) is updated to 5.1 and .NET 10
 
