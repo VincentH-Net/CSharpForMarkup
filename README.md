@@ -65,12 +65,19 @@ No XAML / HTML / JavaScript / CSS required. No engine or layers to get in your w
 *Looking for C# Markup 1? Find it [here](https://github.com/VincentH-Net/CSharpForMarkup/tree/csharpformarkup1-archive)*
 
 # News
+*March 31, 2026*
+> ## C# Markup 4.0 is out! .NET 10, Uno Platform 6.5 and more
+This updates all C# Markup 2 libraries to C# 14, .NET 10 and/or .NET 9, and the latest stable technology versions:
+- All [Uno Platform](https://platform.uno/) libraries are updated to the latest .NET version supported by the corresponding Uno SDK 6.5 libraries (.NET 10 and/or .NET 9).
+- [LiveCharts2](https://livecharts.dev/) is updated to 2.0 stable and .NET 10
+- [Mapsui 5](https://mapsui.com/v5/) is now out of beta, and updated to 5.0 stable and .NET 9.
+- [ScottPlot.NET](https://scottplot.net/) is updated to 5.1 and .NET 10
+
 *July 14, 2025*
 > ## Mapsui 5 support added!
 [Mapsui 5](https://mapsui.com/v5/) - currently in beta, and one of the best OSS .NET libraries for maps - now has full support in C# Markup 3.1 for Uno Platform 6.0!
 
-An [example page using Mapsui](/src/CSharpMarkup.WinUI.Examples/WinUICsMarkupExamples.Presentation/Example) is added to the example app in this repo, demonstrating how to use Mapsui with C# Markup 2.
-Browse [Live Mapsui 5.0 samples](https://scottplot.net/cookbook/5.0/) to experience the possibilities; see the [samples source](https://github.com/Mapsui/Mapsui/tree/main/Samples/Mapsui.Samples.Common) for how.
+See the [samples source](https://github.com/Mapsui/Mapsui/tree/main/Samples/Mapsui.Samples.Common) for what you can build with this.
 
 *July 4, 2025*
 > ## ScottPlot 5 support added!
