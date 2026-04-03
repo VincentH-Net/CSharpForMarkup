@@ -1,5 +1,5 @@
 ﻿// Start of generated C# Markup API for Uno.WinUI
-#if NET8_0 && __MACCATALYST__
+#if NET9_0 && __ANDROID__
 
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ using Microsoft;
 using CSharpMarkup.WinUI.GeneratedCodeUtilities;
 using UI = Microsoft.UI;
 using Collections = System.Collections;
+using UnoUI = Uno.UI;
 using UnoToolkit = Uno.Toolkit;
 using UnoToolkitUI = Uno.Toolkit.UI;
 using Xaml = Microsoft.UI.Xaml;
@@ -48,16 +49,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // AutoLayout
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.AutoLayout"/></summary>
-        public static AutoLayout AutoLayout(nint handle)
+        public static AutoLayout AutoLayout(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.AutoLayout(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.AutoLayout.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.AutoLayout"/></summary>
-        public static AutoLayout AutoLayout(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.AutoLayout(handle);
+            var ui = new UnoToolkitUI.AutoLayout(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.AutoLayout.StartChain(ui);
         }
     }
@@ -240,16 +234,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // Card
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.Card"/></summary>
-        public static Card Card(nint handle)
+        public static Card Card(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.Card(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.Card.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.Card"/></summary>
-        public static Card Card(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.Card(handle);
+            var ui = new UnoToolkitUI.Card(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.Card.StartChain(ui);
         }
     }
@@ -424,16 +411,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // CardContentControl
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.CardContentControl"/></summary>
-        public static CardContentControl CardContentControl(nint handle)
+        public static CardContentControl CardContentControl(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.CardContentControl(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.CardContentControl.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.CardContentControl"/></summary>
-        public static CardContentControl CardContentControl(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.CardContentControl(handle);
+            var ui = new UnoToolkitUI.CardContentControl(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.CardContentControl.StartChain(ui);
         }
     }
@@ -527,16 +507,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // Chip
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.Chip"/></summary>
-        public static Chip Chip(nint handle)
+        public static Chip Chip(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.Chip(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.Chip.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.Chip"/></summary>
-        public static Chip Chip(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.Chip(handle);
+            var ui = new UnoToolkitUI.Chip(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.Chip.StartChain(ui);
         }
     }
@@ -648,16 +621,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ChipGroup
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.ChipGroup"/></summary>
-        public static ChipGroup ChipGroup(nint handle)
+        public static ChipGroup ChipGroup(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.ChipGroup(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.ChipGroup.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.ChipGroup"/></summary>
-        public static ChipGroup ChipGroup(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.ChipGroup(handle);
+            var ui = new UnoToolkitUI.ChipGroup(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.ChipGroup.StartChain(ui);
         }
     }
@@ -821,16 +787,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // CompositeLoadableSource
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.CompositeLoadableSource"/></summary>
-        public static CompositeLoadableSource CompositeLoadableSource(nint handle)
+        public static CompositeLoadableSource CompositeLoadableSource(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.CompositeLoadableSource(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.CompositeLoadableSource.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.CompositeLoadableSource"/></summary>
-        public static CompositeLoadableSource CompositeLoadableSource(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.CompositeLoadableSource(handle);
+            var ui = new UnoToolkitUI.CompositeLoadableSource(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.CompositeLoadableSource.StartChain(ui);
         }
     }
@@ -901,16 +860,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // Divider
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.Divider"/></summary>
-        public static Divider Divider(nint handle)
+        public static Divider Divider(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.Divider(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.Divider.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.Divider"/></summary>
-        public static Divider Divider(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.Divider(handle);
+            var ui = new UnoToolkitUI.Divider(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.Divider.StartChain(ui);
         }
     }
@@ -1007,16 +959,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerControl
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.DrawerControl"/></summary>
-        public static DrawerControl DrawerControl(nint handle)
+        public static DrawerControl DrawerControl(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.DrawerControl(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.DrawerControl.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.DrawerControl"/></summary>
-        public static DrawerControl DrawerControl(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.DrawerControl(handle);
+            var ui = new UnoToolkitUI.DrawerControl(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.DrawerControl.StartChain(ui);
         }
     }
@@ -1268,16 +1213,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // DrawerFlyoutPresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.DrawerFlyoutPresenter"/></summary>
-        public static DrawerFlyoutPresenter DrawerFlyoutPresenter(nint handle)
+        public static DrawerFlyoutPresenter DrawerFlyoutPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.DrawerFlyoutPresenter(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.DrawerFlyoutPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.DrawerFlyoutPresenter"/></summary>
-        public static DrawerFlyoutPresenter DrawerFlyoutPresenter(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.DrawerFlyoutPresenter(handle);
+            var ui = new UnoToolkitUI.DrawerFlyoutPresenter(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.DrawerFlyoutPresenter.StartChain(ui);
         }
     }
@@ -1455,16 +1393,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ExtendedSplashScreen
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.ExtendedSplashScreen"/></summary>
-        public static ExtendedSplashScreen ExtendedSplashScreen(nint handle)
+        public static ExtendedSplashScreen ExtendedSplashScreen(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.ExtendedSplashScreen(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.ExtendedSplashScreen.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.ExtendedSplashScreen"/></summary>
-        public static ExtendedSplashScreen ExtendedSplashScreen(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.ExtendedSplashScreen(handle);
+            var ui = new UnoToolkitUI.ExtendedSplashScreen(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.ExtendedSplashScreen.StartChain(ui);
         }
     }
@@ -1580,12 +1511,12 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // InputExtensions
         => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.InputExtensions.AutoFocusNextProperty);
 
         /// <summary>Set <see cref="UnoToolkitUI.InputExtensions.ReturnType"/></summary>
-        public static TTarget InputExtensions_ReturnType<TTarget>(this TTarget target, UnoToolkitUI.InputExtensions.ReturnType value) where TTarget : DependencyObject
+        public static TTarget InputExtensions_ReturnType<TTarget>(this TTarget target, UnoUI.Xaml.Controls.InputReturnType value) where TTarget : DependencyObject
         { UnoToolkitUI.InputExtensions.SetReturnType(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.InputExtensions.ReturnType"/></summary>
-        public static DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> InputExtensions_ReturnType<TTarget>(this TTarget target) where TTarget : DependencyObject
-        => DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType>.Get(target, UnoToolkitUI.InputExtensions.ReturnTypeProperty);
+        public static DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> InputExtensions_ReturnType<TTarget>(this TTarget target) where TTarget : DependencyObject
+        => DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType>.Get(target, UnoToolkitUI.InputExtensions.ReturnTypeProperty);
 
         /// <summary>Set <see cref="UnoToolkitUI.InputExtensions"/> attached properties</summary>
         public static TTarget InputExtensions<TTarget>(this TTarget target
@@ -1596,7 +1527,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // InputExtensions
 
             , bool? AutoFocusNext = default
 
-            , UnoToolkitUI.InputExtensions.ReturnType? ReturnType = default
+            , UnoUI.Xaml.Controls.InputReturnType? ReturnType = default
 
         ) where TTarget : DependencyObject
         {
@@ -1756,16 +1687,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // LoadableSource
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.LoadableSource"/></summary>
-        public static LoadableSource LoadableSource(nint handle)
+        public static LoadableSource LoadableSource(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.LoadableSource(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.LoadableSource.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.LoadableSource"/></summary>
-        public static LoadableSource LoadableSource(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.LoadableSource(handle);
+            var ui = new UnoToolkitUI.LoadableSource(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.LoadableSource.StartChain(ui);
         }
     }
@@ -1851,16 +1775,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // LoadingView
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.LoadingView"/></summary>
-        public static LoadingView LoadingView(nint handle)
+        public static LoadingView LoadingView(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.LoadingView(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.LoadingView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.LoadingView"/></summary>
-        public static LoadingView LoadingView(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.LoadingView(handle);
+            var ui = new UnoToolkitUI.LoadingView(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.LoadingView.StartChain(ui);
         }
     }
@@ -1939,6 +1856,25 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NativeFramePresenter
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoToolkitUI.NativeFramePresenter"/></summary>
+        public static NativeFramePresenter NativeFramePresenter(params Xaml.UIElement[] Children)
+        {
+            var ui = new UnoToolkitUI.NativeFramePresenter();
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren is not null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
+            return CSharpMarkup.WinUI.Uno.Toolkit.NativeFramePresenter.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.NativeFramePresenter"/></summary>
         public static NativeFramePresenter NativeFramePresenter()
         {
             var ui = new UnoToolkitUI.NativeFramePresenter();
@@ -1946,21 +1882,14 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NativeFramePresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.NativeFramePresenter"/></summary>
-        public static NativeFramePresenter NativeFramePresenter(nint handle)
+        public static NativeFramePresenter NativeFramePresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.NativeFramePresenter(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.NativeFramePresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.NativeFramePresenter"/></summary>
-        public static NativeFramePresenter NativeFramePresenter(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.NativeFramePresenter(handle);
+            var ui = new UnoToolkitUI.NativeFramePresenter(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.NativeFramePresenter.StartChain(ui);
         }
     }
 
-    public partial class NativeFramePresenter : FrameworkElement, IUI<UnoToolkitUI.NativeFramePresenter>
+    public partial class NativeFramePresenter : Grid, IUI<UnoToolkitUI.NativeFramePresenter>
     {
         static NativeFramePresenter instance;
 
@@ -2011,16 +1940,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NativeNavigationBarPresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.NativeNavigationBarPresenter"/></summary>
-        public static NativeNavigationBarPresenter NativeNavigationBarPresenter(nint handle)
+        public static NativeNavigationBarPresenter NativeNavigationBarPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.NativeNavigationBarPresenter(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.NativeNavigationBarPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.NativeNavigationBarPresenter"/></summary>
-        public static NativeNavigationBarPresenter NativeNavigationBarPresenter(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.NativeNavigationBarPresenter(handle);
+            var ui = new UnoToolkitUI.NativeNavigationBarPresenter(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.NativeNavigationBarPresenter.StartChain(ui);
         }
     }
@@ -2087,16 +2009,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationBar
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.NavigationBar"/></summary>
-        public static NavigationBar NavigationBar(nint handle)
+        public static NavigationBar NavigationBar(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.NavigationBar(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.NavigationBar.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.NavigationBar"/></summary>
-        public static NavigationBar NavigationBar(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.NavigationBar(handle);
+            var ui = new UnoToolkitUI.NavigationBar(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.NavigationBar.StartChain(ui);
         }
     }
@@ -2240,16 +2155,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationBarPresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.NavigationBarPresenter"/></summary>
-        public static NavigationBarPresenter NavigationBarPresenter(nint handle)
+        public static NavigationBarPresenter NavigationBarPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.NavigationBarPresenter(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.NavigationBarPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.NavigationBarPresenter"/></summary>
-        public static NavigationBarPresenter NavigationBarPresenter(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.NavigationBarPresenter(handle);
+            var ui = new UnoToolkitUI.NavigationBarPresenter(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.NavigationBarPresenter.StartChain(ui);
         }
     }
@@ -2338,6 +2246,75 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // NavigationBarTemplateSettings
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.NavigationBarTemplateSettings.TemplatedParent"/></summary>
         public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : NavigationBarTemplateSettings
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, UnoToolkitUI.NavigationBarTemplateSettings.TemplatedParentProperty);
+    }
+}
+
+namespace CSharpMarkup.WinUI.Uno.Toolkit // OverflowContainer
+{
+    public static partial class Helpers
+    {
+        /// <summary>Create a <see cref="UnoToolkitUI.OverflowContainer"/></summary>
+        public static OverflowContainer OverflowContainer(params Xaml.UIElement[] Children)
+        {
+            var ui = new UnoToolkitUI.OverflowContainer();
+            for (int i = 0; i < Children.Length; i++)
+            {
+                var child = Children[i];
+                if (child == null) continue;
+
+                var subChildren = Spreader<Xaml.UIElement>.ExtractChildren(child);
+                if (subChildren is not null)
+                    for (int j = 0; j < subChildren.Length; j++)
+                        ui.Children.Add(subChildren[j]);
+                else
+                    ui.Children.Add(child);
+            }
+            return CSharpMarkup.WinUI.Uno.Toolkit.OverflowContainer.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.OverflowContainer"/></summary>
+        public static OverflowContainer OverflowContainer()
+        {
+            var ui = new UnoToolkitUI.OverflowContainer();
+            return CSharpMarkup.WinUI.Uno.Toolkit.OverflowContainer.StartChain(ui);
+        }
+
+        /// <summary>Create a <see cref="UnoToolkitUI.OverflowContainer"/></summary>
+        public static OverflowContainer OverflowContainer(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
+        {
+            var ui = new UnoToolkitUI.OverflowContainer(javaReference, transfer);
+            return CSharpMarkup.WinUI.Uno.Toolkit.OverflowContainer.StartChain(ui);
+        }
+    }
+
+    public partial class OverflowContainer : Grid, IUI<UnoToolkitUI.OverflowContainer>
+    {
+        static OverflowContainer instance;
+
+        internal static OverflowContainer StartChain(UnoToolkitUI.OverflowContainer ui)
+        {
+            if (instance == null) instance = new OverflowContainer();
+            instance.UI = ui;
+            return instance;
+        }
+
+        UnoToolkitUI.OverflowContainer ui;
+
+        public new UnoToolkitUI.OverflowContainer UI
+        {
+            get => ui;
+            protected set => base.UI = ui = value;
+        }
+
+        public static implicit operator Xaml.UIElement(OverflowContainer view) => view?.UI;
+
+        public static implicit operator UnoToolkitUI.OverflowContainer(OverflowContainer view) => view?.UI;
+
+        public static implicit operator OverflowContainer(UnoToolkitUI.OverflowContainer ui) => OverflowContainer.StartChain(ui);
+
+        public OverflowContainer Invoke(Action<UnoToolkitUI.OverflowContainer> action) { action?.Invoke(UI); return this; }
+
+        protected OverflowContainer() { }
     }
 }
 
@@ -2481,15 +2458,7 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ResponsiveView
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="UnoToolkitUI.ResponsiveView"/></summary>
-        public static ResponsiveView ResponsiveView(UIObject Content)
-        {
-            var ui = new UnoToolkitUI.ResponsiveView();
-            if (Content != null) ui.Content = Content.UI;
-            return CSharpMarkup.WinUI.Uno.Toolkit.ResponsiveView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.ResponsiveView"/></summary>
-        public static ResponsiveView ResponsiveView(Xaml.DataTemplate? NarrowestTemplate = default, Xaml.DataTemplate? NarrowTemplate = default, Xaml.DataTemplate? NormalTemplate = default, UnoToolkitUI.ResponsiveLayout ResponsiveLayout = default, Xaml.DataTemplate? WidestTemplate = default, Xaml.DataTemplate? WideTemplate = default, UIObject Content = default)
+        public static ResponsiveView ResponsiveView(Xaml.DataTemplate? NarrowestTemplate = default, Xaml.DataTemplate? NarrowTemplate = default, Xaml.DataTemplate? NormalTemplate = default, UnoToolkitUI.ResponsiveLayout ResponsiveLayout = default, Xaml.DataTemplate? WidestTemplate = default, Xaml.DataTemplate? WideTemplate = default)
         {
             var ui = new UnoToolkitUI.ResponsiveView();
             if (NarrowestTemplate is not null) ui.NarrowestTemplate = NarrowestTemplate;
@@ -2498,7 +2467,6 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ResponsiveView
             if (ResponsiveLayout is not null) ui.ResponsiveLayout = ResponsiveLayout;
             if (WidestTemplate is not null) ui.WidestTemplate = WidestTemplate;
             if (WideTemplate is not null) ui.WideTemplate = WideTemplate;
-            if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Uno.Toolkit.ResponsiveView.StartChain(ui);
         }
 
@@ -2510,21 +2478,14 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ResponsiveView
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.ResponsiveView"/></summary>
-        public static ResponsiveView ResponsiveView(nint handle)
+        public static ResponsiveView ResponsiveView(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.ResponsiveView(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.ResponsiveView.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.ResponsiveView"/></summary>
-        public static ResponsiveView ResponsiveView(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.ResponsiveView(handle);
+            var ui = new UnoToolkitUI.ResponsiveView(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.ResponsiveView.StartChain(ui);
         }
     }
 
-    public partial class ResponsiveView : ContentControl, IUI<UnoToolkitUI.ResponsiveView>
+    public partial class ResponsiveView : Control, IUI<UnoToolkitUI.ResponsiveView>
     {
         static ResponsiveView instance;
 
@@ -2620,16 +2581,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // SafeArea
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.SafeArea"/></summary>
-        public static SafeArea SafeArea(nint handle)
+        public static SafeArea SafeArea(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.SafeArea(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.SafeArea.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.SafeArea"/></summary>
-        public static SafeArea SafeArea(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.SafeArea(handle);
+            var ui = new UnoToolkitUI.SafeArea(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.SafeArea.StartChain(ui);
         }
     }
@@ -2791,16 +2745,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBar
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.TabBar"/></summary>
-        public static TabBar TabBar(nint handle)
+        public static TabBar TabBar(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.TabBar(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.TabBar.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.TabBar"/></summary>
-        public static TabBar TabBar(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.TabBar(handle);
+            var ui = new UnoToolkitUI.TabBar(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.TabBar.StartChain(ui);
         }
     }
@@ -2937,16 +2884,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarItem
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.TabBarItem"/></summary>
-        public static TabBarItem TabBarItem(nint handle)
+        public static TabBarItem TabBarItem(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.TabBarItem(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.TabBarItem.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.TabBarItem"/></summary>
-        public static TabBarItem TabBarItem(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.TabBarItem(handle);
+            var ui = new UnoToolkitUI.TabBarItem(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.TabBarItem.StartChain(ui);
         }
     }
@@ -3103,16 +3043,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarListPanel
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.TabBarListPanel"/></summary>
-        public static TabBarListPanel TabBarListPanel(nint handle)
+        public static TabBarListPanel TabBarListPanel(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.TabBarListPanel(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.TabBarListPanel.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.TabBarListPanel"/></summary>
-        public static TabBarListPanel TabBarListPanel(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.TabBarListPanel(handle);
+            var ui = new UnoToolkitUI.TabBarListPanel(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.TabBarListPanel.StartChain(ui);
         }
     }
@@ -3189,16 +3122,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // TabBarSelectionIndicatorPresenter
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenter"/></summary>
-        public static TabBarSelectionIndicatorPresenter TabBarSelectionIndicatorPresenter(nint handle)
+        public static TabBarSelectionIndicatorPresenter TabBarSelectionIndicatorPresenter(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.TabBarSelectionIndicatorPresenter(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.TabBarSelectionIndicatorPresenter.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.TabBarSelectionIndicatorPresenter"/></summary>
-        public static TabBarSelectionIndicatorPresenter TabBarSelectionIndicatorPresenter(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.TabBarSelectionIndicatorPresenter(handle);
+            var ui = new UnoToolkitUI.TabBarSelectionIndicatorPresenter(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.TabBarSelectionIndicatorPresenter.StartChain(ui);
         }
     }
@@ -3490,11 +3416,17 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ZoomContentControl
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.ZoomContentControl"/></summary>
-        public static ZoomContentControl ZoomContentControl(CSharpMarkup.WinUI.to.Thickness? AdditionalMargin = default, bool? AutoFitToCanvas = default, bool? IsActive = default, bool? IsPanAllowed = default, bool? IsZoomAllowed = default, double? MaxZoomLevel = default, double? MinZoomLevel = default, double? PanWheelRatio = default, double? ScaleWheelRatio = default, double? ZoomLevel = default, UIObject Content = default)
+        public static ZoomContentControl ZoomContentControl(CSharpMarkup.WinUI.to.Thickness? AdditionalMargin = default, bool? AllowFreePanning = default, bool? AutoCenterContent = default, bool? AutoFitToCanvas = default, Xaml.FrameworkElement? ElementOnFocus = default, double? HorizontalMaxScroll = default, double? HorizontalMinScroll = default, double? HorizontalScrollValue = default, bool? IsActive = default, bool? IsPanAllowed = default, bool? IsZoomAllowed = default, double? MaxZoomLevel = default, double? MinZoomLevel = default, double? PanWheelRatio = default, double? ScaleWheelRatio = default, UnoToolkitUI.ZoomContentControlScrollBarLayout? ScrollBarLayout = default, double? VerticalMaxScroll = default, double? VerticalMinScroll = default, double? VerticalScrollValue = default, double? ZoomLevel = default, UIObject Content = default)
         {
             var ui = new UnoToolkitUI.ZoomContentControl();
             if (AdditionalMargin is not null) ui.AdditionalMargin = AdditionalMargin.Value;
+            if (AllowFreePanning is not null) ui.AllowFreePanning = AllowFreePanning.Value;
+            if (AutoCenterContent is not null) ui.AutoCenterContent = AutoCenterContent.Value;
             if (AutoFitToCanvas is not null) ui.AutoFitToCanvas = AutoFitToCanvas.Value;
+            if (ElementOnFocus is not null) ui.ElementOnFocus = ElementOnFocus;
+            if (HorizontalMaxScroll is not null) ui.HorizontalMaxScroll = HorizontalMaxScroll.Value;
+            if (HorizontalMinScroll is not null) ui.HorizontalMinScroll = HorizontalMinScroll.Value;
+            if (HorizontalScrollValue is not null) ui.HorizontalScrollValue = HorizontalScrollValue.Value;
             if (IsActive is not null) ui.IsActive = IsActive.Value;
             if (IsPanAllowed is not null) ui.IsPanAllowed = IsPanAllowed.Value;
             if (IsZoomAllowed is not null) ui.IsZoomAllowed = IsZoomAllowed.Value;
@@ -3502,6 +3434,10 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ZoomContentControl
             if (MinZoomLevel is not null) ui.MinZoomLevel = MinZoomLevel.Value;
             if (PanWheelRatio is not null) ui.PanWheelRatio = PanWheelRatio.Value;
             if (ScaleWheelRatio is not null) ui.ScaleWheelRatio = ScaleWheelRatio.Value;
+            if (ScrollBarLayout is not null) ui.ScrollBarLayout = ScrollBarLayout.Value;
+            if (VerticalMaxScroll is not null) ui.VerticalMaxScroll = VerticalMaxScroll.Value;
+            if (VerticalMinScroll is not null) ui.VerticalMinScroll = VerticalMinScroll.Value;
+            if (VerticalScrollValue is not null) ui.VerticalScrollValue = VerticalScrollValue.Value;
             if (ZoomLevel is not null) ui.ZoomLevel = ZoomLevel.Value;
             if (Content != null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.Uno.Toolkit.ZoomContentControl.StartChain(ui);
@@ -3515,16 +3451,9 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ZoomContentControl
         }
 
         /// <summary>Create a <see cref="UnoToolkitUI.ZoomContentControl"/></summary>
-        public static ZoomContentControl ZoomContentControl(nint handle)
+        public static ZoomContentControl ZoomContentControl(nint javaReference, Android.Runtime.JniHandleOwnership transfer)
         {
-            var ui = new UnoToolkitUI.ZoomContentControl(handle);
-            return CSharpMarkup.WinUI.Uno.Toolkit.ZoomContentControl.StartChain(ui);
-        }
-
-        /// <summary>Create a <see cref="UnoToolkitUI.ZoomContentControl"/></summary>
-        public static ZoomContentControl ZoomContentControl(ObjCRuntime.NativeHandle handle)
-        {
-            var ui = new UnoToolkitUI.ZoomContentControl(handle);
+            var ui = new UnoToolkitUI.ZoomContentControl(javaReference, transfer);
             return CSharpMarkup.WinUI.Uno.Toolkit.ZoomContentControl.StartChain(ui);
         }
     }
@@ -3576,8 +3505,26 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ZoomContentControl
         /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.AdditionalMargin"/></summary>
         public static TView AdditionalMargins<TView>(this TView view, double left = 0, double top = 0, double right = 0, double bottom = 0) where TView : ZoomContentControl { view.UI.AdditionalMargin = CSharpMarkup.WinUI.Helpers.Thickness(left, top, right, bottom); return view; }
 
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.AllowFreePanning"/></summary>
+        public static TView AllowFreePanning<TView>(this TView view, bool value) where TView : ZoomContentControl { view.UI.AllowFreePanning = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.AutoCenterContent"/></summary>
+        public static TView AutoCenterContent<TView>(this TView view, bool value) where TView : ZoomContentControl { view.UI.AutoCenterContent = value; return view; }
+
         /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.AutoFitToCanvas"/></summary>
         public static TView AutoFitToCanvas<TView>(this TView view, bool value) where TView : ZoomContentControl { view.UI.AutoFitToCanvas = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.ElementOnFocus"/></summary>
+        public static TView ElementOnFocus<TView>(this TView view, Xaml.FrameworkElement? value) where TView : ZoomContentControl { view.UI.ElementOnFocus = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.HorizontalMaxScroll"/></summary>
+        public static TView HorizontalMaxScroll<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.HorizontalMaxScroll = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.HorizontalMinScroll"/></summary>
+        public static TView HorizontalMinScroll<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.HorizontalMinScroll = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.HorizontalScrollValue"/></summary>
+        public static TView HorizontalScrollValue<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.HorizontalScrollValue = value; return view; }
 
         /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.IsActive"/></summary>
         public static TView IsActive<TView>(this TView view, bool value) where TView : ZoomContentControl { view.UI.IsActive = value; return view; }
@@ -3600,6 +3547,18 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ZoomContentControl
         /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.ScaleWheelRatio"/></summary>
         public static TView ScaleWheelRatio<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.ScaleWheelRatio = value; return view; }
 
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.ScrollBarLayout"/></summary>
+        public static TView ScrollBarLayout<TView>(this TView view, UnoToolkitUI.ZoomContentControlScrollBarLayout value) where TView : ZoomContentControl { view.UI.ScrollBarLayout = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.VerticalMaxScroll"/></summary>
+        public static TView VerticalMaxScroll<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.VerticalMaxScroll = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.VerticalMinScroll"/></summary>
+        public static TView VerticalMinScroll<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.VerticalMinScroll = value; return view; }
+
+        /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.VerticalScrollValue"/></summary>
+        public static TView VerticalScrollValue<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.VerticalScrollValue = value; return view; }
+
         /// <summary>Set <see cref="UnoToolkitUI.ZoomContentControl.ZoomLevel"/></summary>
         public static TView ZoomLevel<TView>(this TView view, double value) where TView : ZoomContentControl { view.UI.ZoomLevel = value; return view; }
 
@@ -3607,9 +3566,33 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ZoomContentControl
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness> AdditionalMargin<TTarget>(this TTarget target) where TTarget : ZoomContentControl
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Thickness>.Get(target, UnoToolkitUI.ZoomContentControl.AdditionalMarginProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.AllowFreePanning"/></summary>
+        public static DependencyProperty<TTarget, bool> AllowFreePanning<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.ZoomContentControl.AllowFreePanningProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.AutoCenterContent"/></summary>
+        public static DependencyProperty<TTarget, bool> AutoCenterContent<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.ZoomContentControl.AutoCenterContentProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.AutoFitToCanvas"/></summary>
         public static DependencyProperty<TTarget, bool> AutoFitToCanvas<TTarget>(this TTarget target) where TTarget : ZoomContentControl
         => DependencyProperty<TTarget, bool>.Get(target, UnoToolkitUI.ZoomContentControl.AutoFitToCanvasProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.ElementOnFocus"/></summary>
+        public static DependencyProperty<TTarget, Xaml.FrameworkElement?> ElementOnFocus<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, Xaml.FrameworkElement?>.Get(target, UnoToolkitUI.ZoomContentControl.ElementOnFocusProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.HorizontalMaxScroll"/></summary>
+        public static DependencyProperty<TTarget, double> HorizontalMaxScroll<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.HorizontalMaxScrollProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.HorizontalMinScroll"/></summary>
+        public static DependencyProperty<TTarget, double> HorizontalMinScroll<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.HorizontalMinScrollProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.HorizontalScrollValue"/></summary>
+        public static DependencyProperty<TTarget, double> HorizontalScrollValue<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.HorizontalScrollValueProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.IsActive"/></summary>
         public static DependencyProperty<TTarget, bool> IsActive<TTarget>(this TTarget target) where TTarget : ZoomContentControl
@@ -3638,6 +3621,22 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // ZoomContentControl
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.ScaleWheelRatio"/></summary>
         public static DependencyProperty<TTarget, double> ScaleWheelRatio<TTarget>(this TTarget target) where TTarget : ZoomContentControl
         => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.ScaleWheelRatioProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.ScrollBarLayout"/></summary>
+        public static DependencyProperty<TTarget, UnoToolkitUI.ZoomContentControlScrollBarLayout> ScrollBarLayout<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, UnoToolkitUI.ZoomContentControlScrollBarLayout>.Get(target, UnoToolkitUI.ZoomContentControl.ScrollBarLayoutProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.VerticalMaxScroll"/></summary>
+        public static DependencyProperty<TTarget, double> VerticalMaxScroll<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.VerticalMaxScrollProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.VerticalMinScroll"/></summary>
+        public static DependencyProperty<TTarget, double> VerticalMinScroll<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.VerticalMinScrollProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.VerticalScrollValue"/></summary>
+        public static DependencyProperty<TTarget, double> VerticalScrollValue<TTarget>(this TTarget target) where TTarget : ZoomContentControl
+        => DependencyProperty<TTarget, double>.Get(target, UnoToolkitUI.ZoomContentControl.VerticalScrollValueProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="UnoToolkitUI.ZoomContentControl.ZoomLevel"/></summary>
         public static DependencyProperty<TTarget, double> ZoomLevel<TTarget>(this TTarget target) where TTarget : ZoomContentControl
@@ -3743,30 +3742,6 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         public static TTarget Up<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.DrawerOpenDirection> property) where TTarget : DependencyObject
         => property.Set(UnoToolkitUI.DrawerOpenDirection.Up);
 
-        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Default"/></summary>
-        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Default);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Done"/></summary>
-        public static TTarget Done<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Done);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Go"/></summary>
-        public static TTarget Go<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Go);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Next"/></summary>
-        public static TTarget Next<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Next);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Search"/></summary>
-        public static TTarget Search<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Search);
-
-        /// <summary>Set to <see cref="UnoToolkitUI.InputExtensions.ReturnType.Send"/></summary>
-        public static TTarget Send<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.InputExtensions.ReturnType> property) where TTarget : DependencyObject
-        => property.Set(UnoToolkitUI.InputExtensions.ReturnType.Send);
-
         /// <summary>Set to <see cref="UnoToolkitUI.SafeArea.InsetMask.All"/></summary>
         public static TTarget All<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.SafeArea.InsetMask> property) where TTarget : DependencyObject
         => property.Set(UnoToolkitUI.SafeArea.InsetMask.All);
@@ -3806,6 +3781,54 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         /// <summary>Set to <see cref="UnoToolkitUI.SafeArea.InsetMode.Padding"/></summary>
         public static TTarget Padding<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.SafeArea.InsetMode> property) where TTarget : DependencyObject
         => property.Set(UnoToolkitUI.SafeArea.InsetMode.Padding);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.Continue"/></summary>
+        public static TTarget Continue<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.Continue);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.Default"/></summary>
+        public static TTarget Default<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.Default);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.Done"/></summary>
+        public static TTarget Done<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.Done);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.EmergencyCall"/></summary>
+        public static TTarget EmergencyCall<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.EmergencyCall);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.Enter"/></summary>
+        public static TTarget Enter<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.Enter);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.Go"/></summary>
+        public static TTarget Go<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.Go);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.Join"/></summary>
+        public static TTarget Join<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.Join);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.Next"/></summary>
+        public static TTarget Next<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.Next);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.Previous"/></summary>
+        public static TTarget Previous<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.Previous);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.Route"/></summary>
+        public static TTarget Route<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.Route);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.Search"/></summary>
+        public static TTarget Search<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.Search);
+
+        /// <summary>Set to <see cref="UnoUI.Xaml.Controls.InputReturnType.Send"/></summary>
+        public static TTarget Send<TTarget>(this DependencyProperty<TTarget, UnoUI.Xaml.Controls.InputReturnType> property) where TTarget : DependencyObject
+        => property.Set(UnoUI.Xaml.Controls.InputReturnType.Send);
     }
 
     public static partial class DrawerControlExtensions
@@ -4033,6 +4056,21 @@ namespace CSharpMarkup.WinUI.Uno.Toolkit // EnumPropertyValues
         /// <summary>Set to <see cref="UnoToolkitUI.IndicatorTransitionMode.Snap"/></summary>
         public static TTarget Snap<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.IndicatorTransitionMode> property) where TTarget : TabBarSelectionIndicatorPresenter
         => property.Set(UnoToolkitUI.IndicatorTransitionMode.Snap);
+    }
+
+    public static partial class ZoomContentControlExtensions
+    {
+        /// <summary>Set to <see cref="UnoToolkitUI.ZoomContentControlScrollBarLayout.BottomRight"/></summary>
+        public static TTarget BottomRight<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.ZoomContentControlScrollBarLayout> property) where TTarget : ZoomContentControl
+        => property.Set(UnoToolkitUI.ZoomContentControlScrollBarLayout.BottomRight);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.ZoomContentControlScrollBarLayout.BottomRightWithMirrorSpacing"/></summary>
+        public static TTarget BottomRightWithMirrorSpacing<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.ZoomContentControlScrollBarLayout> property) where TTarget : ZoomContentControl
+        => property.Set(UnoToolkitUI.ZoomContentControlScrollBarLayout.BottomRightWithMirrorSpacing);
+
+        /// <summary>Set to <see cref="UnoToolkitUI.ZoomContentControlScrollBarLayout.Overlay"/></summary>
+        public static TTarget Overlay<TTarget>(this DependencyProperty<TTarget, UnoToolkitUI.ZoomContentControlScrollBarLayout> property) where TTarget : ZoomContentControl
+        => property.Set(UnoToolkitUI.ZoomContentControlScrollBarLayout.Overlay);
     }
 }
 
