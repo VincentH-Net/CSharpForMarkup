@@ -1,8 +1,8 @@
 <!-- For CSharpMarkup projects-->
 <Project>
 	<PropertyGroup>
-		<CSharpMarkupVersion>4.0.5</CSharpMarkupVersion>
-		<CSharpMarkupReleaseTag>csharpmarkup2-winui-4-0-5</CSharpMarkupReleaseTag>
+		<CSharpMarkupVersion>4.0.7</CSharpMarkupVersion>
+		<CSharpMarkupReleaseTag>csharpmarkup2-winui-4-0-7</CSharpMarkupReleaseTag>
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 
 		<IsUno>true</IsUno>
@@ -81,22 +81,12 @@
 		<CompilerGeneratedFilesOutputPath>Generated</CompilerGeneratedFilesOutputPath>
 	</PropertyGroup>
 
-	<Target Name="__MyRemoveUnoRuntimeWasm"
-			AfterTargets="UnoImplicitPackages;ResolvePackageDependencies">
-		<!--
-		See https://github.com/unoplatform/uno.extensions/blob/85e723d1f658dbf8335a7c68354de2518430fd2a/src/Directory.Build.props#L176
-		Disable explicit references to Uno.WinUI.Runtime.WebAssembly in order to avoid using JSInvoke directly
-		This change is done manually here to avoid 
-		-->
-		<Message Text="Running __RemoveUnoRuntimeWasm target..." Importance="high" />
-		<Message Text="Running __RemoveUnoRuntimeWasm target with condition ..." Importance="high" Condition="'$(IsUnoHead)' != 'true' AND $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'browserwasm'" />
-		<ItemGroup>
-			<PackageReference Remove="Uno.UI.Runtime.WebAssembly"
-							  Condition="'$(IsUnoHead)' != 'true' AND $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'browserwasm'" />
-			<PackageReference Remove="Uno.WinUI.Runtime.WebAssembly"
-							  Condition="'$(IsUnoHead)' != 'true' AND $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'browserwasm'" />
-		</ItemGroup>
-	</Target>
+	<PropertyGroup Condition="
+		'$(IsUno)' == 'true'
+		and $(MSBuildProjectName.StartsWith('CSharpMarkup.WinUI'))
+		and !$(MSBuildProjectName.Contains('Examples'))">
+	<DisableImplicitUnoPackages>true</DisableImplicitUnoPackages>
+	</PropertyGroup>	
 	
 	<Target Name="DisplayCustomVariable" BeforeTargets="BeforeBuild">
 		<Message Text="CSharpMarkupWinUITargetFrameworks is: $(CSharpMarkupWinUITargetFrameworks), TargetPlatformIdentifier is: $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')), IsUno is: $(IsUno), DefineConstants is : $(DefineConstants)" Importance="high" />
