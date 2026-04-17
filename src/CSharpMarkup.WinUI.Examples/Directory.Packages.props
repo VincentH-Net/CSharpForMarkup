@@ -11,7 +11,7 @@
   <ItemGroup>
     <PackageVersion Include="CSharpMarkup.WinUI" Version="4.0.7" />
     <PackageVersion Include="CSharpMarkup.WinUI.LiveChartsCore.SkiaSharpView" Version="4.0.7" />
-    <PackageVersion Include="CSharpMarkup.WinUI.Mapsui" Version="4.0.7-beta.17.3" />
+    <PackageVersion Include="CSharpMarkup.WinUI.Mapsui" Version="4.0.7" />
     <PackageVersion Include="CSharpMarkup.WinUI.ScottPlot" Version="4.0.7" />
     <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation" Version="4.0.7" />
     <PackageVersion Include="CSharpMarkup.WinUI.Uno.Extensions.Navigation.Toolkit" Version="4.0.7" />
