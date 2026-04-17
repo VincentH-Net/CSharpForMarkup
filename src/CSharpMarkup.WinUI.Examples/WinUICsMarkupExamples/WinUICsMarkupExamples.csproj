@@ -48,7 +48,13 @@
       Localization;
       Navigation;
       ThemeService;
+      SkiaRenderer;
     </UnoFeatures>
   </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0-desktop'">
+    <PackageReference Include="Tmds.DBus.Protocol" /> <!-- Pin to fix vulnerability warning-->
+    <PackageReference Include="System.Security.Cryptography.Xml" /> <!-- Pin to fix vulnerability warning-->
+  </ItemGroup>
 
 </Project>

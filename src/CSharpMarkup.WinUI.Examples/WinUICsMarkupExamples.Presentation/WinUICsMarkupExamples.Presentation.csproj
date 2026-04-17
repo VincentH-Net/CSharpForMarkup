@@ -12,7 +12,7 @@
     <!-- Disable implicit usings to avoid ambiguities between types in Uno and CSharpMarkup.WinUI.Uno -->
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <UnoFeatures>Mvvm;</UnoFeatures>
+    <UnoFeatures>Mvvm;SkiaRenderer;</UnoFeatures>
     <RootNamespace>WinUICsMarkupExamples.Presentation</RootNamespace>
   </PropertyGroup>
 

@@ -26,7 +26,7 @@
       "server": {
         "runtimeExecutable": "dotnet",
         "program": "run",
-        "args": ["--no-build","-f","net9.0-browserwasm","--launch-profile", "WinUICsMarkupExamples (WebAssembly)"],
+        "args": ["--no-build","-f","net10.0-browserwasm","--launch-profile", "WinUICsMarkupExamples (WebAssembly)"],
         "outputCapture": "std",
         "timeout": 30000,
         "cwd": "${workspaceFolder}/WinUICsMarkupExamples"
@@ -47,7 +47,7 @@
       "server": {
         "runtimeExecutable": "dotnet",
         "program": "run",
-        "args": ["--no-build","-f","net9.0-browserwasm","--launch-profile", "WinUICsMarkupExamples (WebAssembly)"],
+        "args": ["--no-build","-f","net10.0-browserwasm","--launch-profile", "WinUICsMarkupExamples (WebAssembly)"],
         "outputCapture": "std",
         "timeout": 30000,
         "cwd": "${workspaceFolder}/WinUICsMarkupExamples"
@@ -62,7 +62,7 @@
       "request": "launch",
       "preLaunchTask": "build-desktop",
       // If you have changed target frameworks, make sure to update the program path.
-      "program": "${workspaceFolder}/WinUICsMarkupExamples/bin/Debug/net9.0-desktop/WinUICsMarkupExamples.dll",
+      "program": "${workspaceFolder}/WinUICsMarkupExamples/bin/Debug/net10.0-desktop/WinUICsMarkupExamples.dll",
       "args": [],
       "launchSettingsProfile": "WinUICsMarkupExamples (Desktop)",
       "env": {
