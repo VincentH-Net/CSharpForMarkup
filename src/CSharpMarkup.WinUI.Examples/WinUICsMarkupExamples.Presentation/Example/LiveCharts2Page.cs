@@ -19,7 +19,8 @@ partial class LiveCharts2Page
                 AppBarButton() .Icon("Images/forward") .Bind(vm?.ForwardCommand)
             )  .Grid_Row(Row.Header),
 
-            CartesianChart(ZoomMode: LiveChartsCore.Measure.ZoomAndPanMode.X)
+            CartesianChart()
+               .ZoomMode(LiveChartsCore.Measure.ZoomAndPanMode.X)
                .Series().Bind(vm?.SeriesCollection)
                .Grid_Row(Row.Body) .HVStretch()
         )

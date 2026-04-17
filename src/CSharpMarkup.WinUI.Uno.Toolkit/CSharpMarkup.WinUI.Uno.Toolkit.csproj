@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<Configurations>Debug;Release;Generate</Configurations>
 		<IsUno>true</IsUno>
@@ -44,7 +44,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-windows10.0.19041.0;net8.0;net8.0-android34.0;net8.0-ios18.0;net8.0-maccatalyst18.0</TargetFrameworks>
+		<TargetFrameworks>net9.0-windows10.0.19041.0;net9.0;net9.0-android35.0;net9.0-ios18.4;net9.0-maccatalyst18.4</TargetFrameworks> <!-- Same as Uno NuGet but without macos -->
 		<RootNamespace>CSharpMarkup.WinUI.Uno.Toolkit</RootNamespace>
 		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 	</PropertyGroup>

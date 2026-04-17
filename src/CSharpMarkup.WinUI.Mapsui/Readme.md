@@ -6,10 +6,10 @@ Enjoy a Flutter-like UI development experience with .NET Hot Reload and the best
 
 No XAML / HTML / JavaScript / CSS required
 
-This release targets WinUI 3 (Windows App SDK) and Uno Platform - including browser webassembly - with C# 13 and .NET 8.
+This release targets WinUI 3 (Windows App SDK) and Uno Platform - including browser webassembly - with C# 14 and .NET 9.
 
 [Docs](https://github.com/VincentH-Net/CSharpForMarkup#readme)
 
 [Example application](https://github.com/VincentH-Net/CSharpForMarkup/tree/master/src/CSharpMarkup.WinUI.Examples)
 
-[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/__CSharpMarkupReleaseTag__-mapsui-beta-17)
+[Release Notes](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/__CSharpMarkupReleaseTag__)

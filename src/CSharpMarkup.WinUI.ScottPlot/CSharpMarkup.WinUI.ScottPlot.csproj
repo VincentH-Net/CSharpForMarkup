@@ -44,7 +44,7 @@
 
 	<PropertyGroup>
 		<RootNamespace>CSharpMarkup.WinUI.ScottPlot</RootNamespace>
-		<TargetFrameworks>net8.0-windows10.0.19041.0;net8.0;net8.0-android34.0;net8.0-ios18.0;net8.0-maccatalyst18.0</TargetFrameworks> <!-- Identical to ScottPlot.WinUI NuGet target frameworks -->
+		<TargetFrameworks>net10.0-windows10.0.19041.0;net10.0;net10.0-android36.0;net10.0-ios26.0;net10.0-maccatalyst26.0</TargetFrameworks> <!-- Identical to .NET 10 ScottPlot.WinUI NuGet target frameworks -->
 		<EnableDefaultPageItems>false</EnableDefaultPageItems>
 	</PropertyGroup>
 

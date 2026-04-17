@@ -5,17 +5,17 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="CSharpMarkup.WinUI" Version="$(CSharpMarkupVersion)" />
-    <PackageVersion Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" Version="2.0.0-rc5.3" />
-    <PackageVersion Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0-rc5.3" />
-    <PackageVersion Include="Mapsui.Uno.WinUI" Version="5.0.0-beta.17" />
-    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
-    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.3916" />
-    <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.250401001" />
-    <PackageVersion Include="ScottPlot.WinUI" Version="5.0.55" />
-    <PackageVersion Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="5.3.8" />
-    <PackageVersion Include="Uno.Extensions.Navigation.WinUI" Version="5.3.8" />
-    <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="5.3.8" />
-    <PackageVersion Include="Uno.Toolkit.WinUI" Version="7.0.2" />
-    <PackageVersion Include="Uno.WinUI" Version="6.0.465" />
+    <PackageVersion Include="LiveChartsCore.SkiaSharpView.Uno.WinUI" Version="2.0.0" />
+    <PackageVersion Include="LiveChartsCore.SkiaSharpView.WinUI" Version="2.0.0" />
+    <PackageVersion Include="Mapsui.Uno.WinUI" Version="5.0.2" />
+    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="10.0.201" />
+    <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7463" />
+    <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.7.250909003" />
+    <PackageVersion Include="ScottPlot.WinUI" Version="5.1.58" />
+    <PackageVersion Include="Uno.Extensions.Navigation.Toolkit.WinUI" Version="7.1.1" />
+    <PackageVersion Include="Uno.Extensions.Navigation.WinUI" Version="7.1.1" />
+    <PackageVersion Include="Uno.Extensions.Reactive.WinUI" Version="7.1.1" />
+    <PackageVersion Include="Uno.Toolkit.WinUI" Version="8.4.2" />
+    <PackageVersion Include="Uno.WinUI" Version="6.5.153" />
   </ItemGroup>
 </Project>

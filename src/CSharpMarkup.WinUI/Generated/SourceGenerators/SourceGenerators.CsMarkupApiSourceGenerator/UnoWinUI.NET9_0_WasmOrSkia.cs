@@ -3265,7 +3265,7 @@ namespace CSharpMarkup.WinUI // AppBarButton
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.AppBarButton"/></summary>
-        public static AppBarButton AppBarButton(int? DynamicOverflowOrder = default, Xaml.Controls.IconElement Icon = default, bool? IsCompact = default, string KeyboardAcceleratorTextOverride = default, string Label = default, Xaml.Controls.CommandBarLabelPosition? LabelPosition = default, Xaml.Controls.Primitives.AppBarButtonTemplateSettings TemplateSettings = default, UIObject Content = default)
+        public static AppBarButton AppBarButton(int? DynamicOverflowOrder = default, Xaml.Controls.IconElement Icon = default, bool? IsCompact = default, string KeyboardAcceleratorTextOverride = default, string Label = default, Xaml.Controls.CommandBarLabelPosition? LabelPosition = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.AppBarButton();
             if (DynamicOverflowOrder is not null) ui.DynamicOverflowOrder = DynamicOverflowOrder.Value;
@@ -3274,7 +3274,6 @@ namespace CSharpMarkup.WinUI // AppBarButton
             if (KeyboardAcceleratorTextOverride is not null) ui.KeyboardAcceleratorTextOverride = KeyboardAcceleratorTextOverride;
             if (Label is not null) ui.Label = Label;
             if (LabelPosition is not null) ui.LabelPosition = LabelPosition.Value;
-            if (TemplateSettings is not null) ui.TemplateSettings = TemplateSettings;
             if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBarButton.StartChain(ui);
         }
@@ -3337,9 +3336,6 @@ namespace CSharpMarkup.WinUI // AppBarButton
         /// <summary>Set <see cref="Xaml.Controls.AppBarButton.LabelPosition"/></summary>
         public static TView LabelPosition<TView>(this TView view, Xaml.Controls.CommandBarLabelPosition value) where TView : AppBarButton { view.UI.LabelPosition = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.AppBarButton.TemplateSettings"/></summary>
-        public static TView TemplateSettings<TView>(this TView view, Xaml.Controls.Primitives.AppBarButtonTemplateSettings value) where TView : AppBarButton { view.UI.TemplateSettings = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AppBarButton.DynamicOverflowOrder"/></summary>
         public static DependencyProperty<TTarget, int> DynamicOverflowOrder<TTarget>(this TTarget target) where TTarget : AppBarButton
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.AppBarButton.DynamicOverflowOrderProperty);
@@ -3367,10 +3363,6 @@ namespace CSharpMarkup.WinUI // AppBarButton
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AppBarButton.Label"/></summary>
         public static DependencyProperty<TTarget, string> Label<TTarget>(this TTarget target) where TTarget : AppBarButton
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.AppBarButton.LabelProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AppBarButton.TemplateSettings"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.Primitives.AppBarButtonTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : AppBarButton
-        => DependencyProperty<TTarget, Xaml.Controls.Primitives.AppBarButtonTemplateSettings>.Get(target, Xaml.Controls.AppBarButton.TemplateSettingsProperty);
     }
 }
 
@@ -3542,7 +3534,7 @@ namespace CSharpMarkup.WinUI // AppBarToggleButton
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.AppBarToggleButton"/></summary>
-        public static AppBarToggleButton AppBarToggleButton(int? DynamicOverflowOrder = default, Xaml.Controls.IconElement Icon = default, bool? IsCompact = default, string KeyboardAcceleratorTextOverride = default, string Label = default, Xaml.Controls.CommandBarLabelPosition? LabelPosition = default, Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings TemplateSettings = default, UIObject Content = default)
+        public static AppBarToggleButton AppBarToggleButton(int? DynamicOverflowOrder = default, Xaml.Controls.IconElement Icon = default, bool? IsCompact = default, string KeyboardAcceleratorTextOverride = default, string Label = default, Xaml.Controls.CommandBarLabelPosition? LabelPosition = default, UIObject Content = default)
         {
             var ui = new Xaml.Controls.AppBarToggleButton();
             if (DynamicOverflowOrder is not null) ui.DynamicOverflowOrder = DynamicOverflowOrder.Value;
@@ -3551,7 +3543,6 @@ namespace CSharpMarkup.WinUI // AppBarToggleButton
             if (KeyboardAcceleratorTextOverride is not null) ui.KeyboardAcceleratorTextOverride = KeyboardAcceleratorTextOverride;
             if (Label is not null) ui.Label = Label;
             if (LabelPosition is not null) ui.LabelPosition = LabelPosition.Value;
-            if (TemplateSettings is not null) ui.TemplateSettings = TemplateSettings;
             if (Content is not null) ui.Content = Content.UI;
             return CSharpMarkup.WinUI.AppBarToggleButton.StartChain(ui);
         }
@@ -3614,9 +3605,6 @@ namespace CSharpMarkup.WinUI // AppBarToggleButton
         /// <summary>Set <see cref="Xaml.Controls.AppBarToggleButton.LabelPosition"/></summary>
         public static TView LabelPosition<TView>(this TView view, Xaml.Controls.CommandBarLabelPosition value) where TView : AppBarToggleButton { view.UI.LabelPosition = value; return view; }
 
-        /// <summary>Set <see cref="Xaml.Controls.AppBarToggleButton.TemplateSettings"/></summary>
-        public static TView TemplateSettings<TView>(this TView view, Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings value) where TView : AppBarToggleButton { view.UI.TemplateSettings = value; return view; }
-
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AppBarToggleButton.DynamicOverflowOrder"/></summary>
         public static DependencyProperty<TTarget, int> DynamicOverflowOrder<TTarget>(this TTarget target) where TTarget : AppBarToggleButton
         => DependencyProperty<TTarget, int>.Get(target, Xaml.Controls.AppBarToggleButton.DynamicOverflowOrderProperty);
@@ -3644,10 +3632,6 @@ namespace CSharpMarkup.WinUI // AppBarToggleButton
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AppBarToggleButton.Label"/></summary>
         public static DependencyProperty<TTarget, string> Label<TTarget>(this TTarget target) where TTarget : AppBarToggleButton
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.AppBarToggleButton.LabelProperty);
-
-        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.AppBarToggleButton.TemplateSettings"/></summary>
-        public static DependencyProperty<TTarget, Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : AppBarToggleButton
-        => DependencyProperty<TTarget, Xaml.Controls.Primitives.AppBarToggleButtonTemplateSettings>.Get(target, Xaml.Controls.AppBarToggleButton.TemplateSettingsProperty);
     }
 }
 
@@ -6654,7 +6638,6 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.CommandBarFlyout"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static CommandBarFlyout CommandBarFlyout(params CommandBarElement[] PrimaryCommands)
         {
             var ui = new Xaml.Controls.CommandBarFlyout();
@@ -6674,7 +6657,6 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.CommandBarFlyout"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static CommandBarFlyout CommandBarFlyout()
         {
             var ui = new Xaml.Controls.CommandBarFlyout();
@@ -6713,7 +6695,6 @@ namespace CSharpMarkup.WinUI // CommandBarFlyout
     public static partial class CommandBarFlyoutExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.CommandBarFlyout.AlwaysExpanded"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView AlwaysExpanded<TView>(this TView view, bool value) where TView : CommandBarFlyout { view.UI.AlwaysExpanded = value; return view; }
     }
 }
@@ -7515,7 +7496,6 @@ namespace CSharpMarkup.WinUI // Control
         public static TView CornerRadius<TView>(this TView view, CSharpMarkup.WinUI.to.CornerRadius value) where TView : Control { view.UI.CornerRadius = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.DefaultStyleResourceUri"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView DefaultStyleResourceUri<TView>(this TView view, Uri value) where TView : Control { view.UI.DefaultStyleResourceUri = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Control.ElementSoundMode"/></summary>
@@ -7612,7 +7592,6 @@ namespace CSharpMarkup.WinUI // Control
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.CornerRadius>.Get(target, Xaml.Controls.Control.CornerRadiusProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Control.DefaultStyleResourceUri"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Uri> DefaultStyleResourceUri<TTarget>(this TTarget target) where TTarget : Control
         => DependencyProperty<TTarget, Uri>.Get(target, Xaml.Controls.Control.DefaultStyleResourceUriProperty);
 
@@ -16423,7 +16402,6 @@ namespace CSharpMarkup.WinUI // PasswordBox
         public static TView Password<TView>(this TView view, string value) where TView : PasswordBox { view.UI.Password = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.PasswordBox.PasswordChar"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView PasswordChar<TView>(this TView view, string value) where TView : PasswordBox { view.UI.PasswordChar = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.PasswordBox.PasswordRevealMode"/></summary>
@@ -16458,7 +16436,6 @@ namespace CSharpMarkup.WinUI // PasswordBox
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.PasswordBox.IsPasswordRevealButtonEnabledProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PasswordBox.PasswordChar"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, string> PasswordChar<TTarget>(this TTarget target) where TTarget : PasswordBox
         => DependencyProperty<TTarget, string>.Get(target, Xaml.Controls.PasswordBox.PasswordCharProperty);
 
@@ -17044,7 +17021,6 @@ namespace CSharpMarkup.WinUI // PipsPager
         public static TView SelectedPipStyle<TView>(this TView view, Xaml.Style value) where TView : PipsPager { view.UI.SelectedPipStyle = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.PipsPager.WrapMode"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView WrapMode<TView>(this TView view, Xaml.Controls.PipsPagerWrapMode value) where TView : PipsPager { view.UI.WrapMode = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.MaxVisiblePips"/></summary>
@@ -17088,7 +17064,6 @@ namespace CSharpMarkup.WinUI // PipsPager
         => DependencyProperty<TTarget, Xaml.Style>.Get(target, Xaml.Controls.PipsPager.SelectedPipStyleProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.PipsPager.WrapMode"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.PipsPagerWrapMode> WrapMode<TTarget>(this TTarget target) where TTarget : PipsPager
         => DependencyProperty<TTarget, Xaml.Controls.PipsPagerWrapMode>.Get(target, Xaml.Controls.PipsPager.WrapModeProperty);
     }
@@ -18285,7 +18260,6 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBar"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static CommandBarFlyoutCommandBar CommandBarFlyoutCommandBar(params CommandBarElement[] PrimaryCommands)
         {
             var ui = new Xaml.Controls.Primitives.CommandBarFlyoutCommandBar();
@@ -18305,7 +18279,6 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBar"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static CommandBarFlyoutCommandBar CommandBarFlyoutCommandBar()
         {
             var ui = new Xaml.Controls.Primitives.CommandBarFlyoutCommandBar();
@@ -18345,12 +18318,13 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBar
 
     public static partial class CommandBarFlyoutCommandBarExtensions
     {
+        /// <summary>Set <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBar.FlyoutTemplateSettings"/></summary>
+        public static TView FlyoutTemplateSettings<TView>(this TView view, Xaml.Controls.Primitives.CommandBarFlyoutCommandBarTemplateSettings value) where TView : CommandBarFlyoutCommandBar { view.UI.FlyoutTemplateSettings = value; return view; }
+
         /// <summary>Set <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBar.SystemBackdrop"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView SystemBackdrop<TView>(this TView view, Xaml.Media.SystemBackdrop value) where TView : CommandBarFlyoutCommandBar { view.UI.SystemBackdrop = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBar.SystemBackdrop"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Media.SystemBackdrop> SystemBackdrop<TTarget>(this TTarget target) where TTarget : CommandBarFlyoutCommandBar
         => DependencyProperty<TTarget, Xaml.Media.SystemBackdrop>.Get(target, Xaml.Controls.Primitives.CommandBarFlyoutCommandBar.SystemBackdropProperty);
     }
@@ -18361,12 +18335,10 @@ namespace CSharpMarkup.WinUI // CommandBarFlyoutCommandBarAutomationProperties
     public static partial class CommandBarFlyoutCommandBarAutomationPropertiesExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBarAutomationProperties.ControlType"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TTarget CommandBarFlyoutCommandBarAutomationProperties_ControlType<TTarget>(this TTarget target, Xaml.Automation.Peers.AutomationControlType value) where TTarget : UIElement
         { Xaml.Controls.Primitives.CommandBarFlyoutCommandBarAutomationProperties.SetControlType(target.UI, value); return target; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.CommandBarFlyoutCommandBarAutomationProperties.ControlType"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Automation.Peers.AutomationControlType> CommandBarFlyoutCommandBarAutomationProperties_ControlType<TTarget>(this TTarget target) where TTarget : UIElement
         => DependencyProperty<TTarget, Xaml.Automation.Peers.AutomationControlType>.Get(target, Xaml.Controls.Primitives.CommandBarFlyoutCommandBarAutomationProperties.ControlTypeProperty);
     }
@@ -18658,7 +18630,6 @@ namespace CSharpMarkup.WinUI // FlyoutBase
         public static TView ShouldConstrainToRootBounds<TView>(this TView view, bool value) where TView : FlyoutBase { view.UI.ShouldConstrainToRootBounds = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.FlyoutBase.ShowMode"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView ShowMode<TView>(this TView view, Xaml.Controls.Primitives.FlyoutShowMode value) where TView : FlyoutBase { view.UI.ShowMode = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.Primitives.FlyoutBase.SystemBackdrop"/></summary>
@@ -18723,7 +18694,6 @@ namespace CSharpMarkup.WinUI // FlyoutBase
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.Primitives.FlyoutBase.ShouldConstrainToRootBoundsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.FlyoutBase.ShowMode"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutShowMode> ShowMode<TTarget>(this TTarget target) where TTarget : FlyoutBase
         => DependencyProperty<TTarget, Xaml.Controls.Primitives.FlyoutShowMode>.Get(target, Xaml.Controls.Primitives.FlyoutBase.ShowModeProperty);
 
@@ -22318,13 +22288,53 @@ namespace CSharpMarkup.WinUI // SplitViewTemplateSettings
         /// <summary>Set <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.TemplatedParent"/></summary>
         public static TView TemplatedParent<TView>(this TView view, Xaml.DependencyObject value) where TView : SplitViewTemplateSettings { view.UI.TemplatedParent = value; return view; }
 
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.CompactPaneGridLength"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.GridLength> CompactPaneGridLength<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.GridLength>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.CompactPaneGridLengthProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.CompactPaneLength"/></summary>
+        public static DependencyProperty<TTarget, double> CompactPaneLength<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.CompactPaneLengthProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.DataContext"/></summary>
         public static DependencyProperty<TTarget, object> DataContext<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
         => DependencyProperty<TTarget, object>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.DataContextProperty);
 
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.LeftClip"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.RectangleGeometry> LeftClip<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
+        => DependencyProperty<TTarget, Xaml.Media.RectangleGeometry>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.LeftClipProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.NegativeOpenPaneLengthMinusCompactLength"/></summary>
+        public static DependencyProperty<TTarget, double> NegativeOpenPaneLengthMinusCompactLength<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.NegativeOpenPaneLengthMinusCompactLengthProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.NegativeOpenPaneLength"/></summary>
+        public static DependencyProperty<TTarget, double> NegativeOpenPaneLength<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.NegativeOpenPaneLengthProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.OpenPaneGridLength"/></summary>
+        public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.GridLength> OpenPaneGridLength<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
+        => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.GridLength>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.OpenPaneGridLengthProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.OpenPaneLengthMinusCompactLength"/></summary>
+        public static DependencyProperty<TTarget, double> OpenPaneLengthMinusCompactLength<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.OpenPaneLengthMinusCompactLengthProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.OpenPaneLength"/></summary>
+        public static DependencyProperty<TTarget, double> OpenPaneLength<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.OpenPaneLengthProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.RightClip"/></summary>
+        public static DependencyProperty<TTarget, Xaml.Media.RectangleGeometry> RightClip<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
+        => DependencyProperty<TTarget, Xaml.Media.RectangleGeometry>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.RightClipProperty);
+
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.TemplatedParent"/></summary>
         public static DependencyProperty<TTarget, Xaml.DependencyObject> TemplatedParent<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
         => DependencyProperty<TTarget, Xaml.DependencyObject>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.TemplatedParentProperty);
+
+        /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.Primitives.SplitViewTemplateSettings.ViewHeight"/></summary>
+        public static DependencyProperty<TTarget, double> ViewHeight<TTarget>(this TTarget target) where TTarget : SplitViewTemplateSettings
+        => DependencyProperty<TTarget, double>.Get(target, Xaml.Controls.Primitives.SplitViewTemplateSettings.ViewHeightProperty);
     }
 }
 
@@ -22786,24 +22796,6 @@ namespace CSharpMarkup.WinUI // ProgressBar
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.ProgressBar.TemplateSettings"/></summary>
         public static DependencyProperty<TTarget, Xaml.Controls.ProgressBarTemplateSettings> TemplateSettings<TTarget>(this TTarget target) where TTarget : ProgressBar
         => DependencyProperty<TTarget, Xaml.Controls.ProgressBarTemplateSettings>.Get(target, Xaml.Controls.ProgressBar.TemplateSettingsProperty);
-    }
-}
-
-namespace CSharpMarkup.WinUI // ProgressBarAutomationPeer
-{
-    public partial class ProgressBarAutomationPeer : AutomationPeer, IUI<Xaml.Controls.ProgressBarAutomationPeer>
-    {
-        Xaml.Controls.ProgressBarAutomationPeer ui;
-
-        public new Xaml.Controls.ProgressBarAutomationPeer UI
-        {
-            get => ui;
-            protected set => base.UI = ui = value;
-        }
-
-        public ProgressBarAutomationPeer Invoke(Action<Xaml.Controls.ProgressBarAutomationPeer> action) { action?.Invoke(UI); return this; }
-
-        protected ProgressBarAutomationPeer() { }
     }
 }
 
@@ -26833,7 +26825,6 @@ namespace CSharpMarkup.WinUI // StackPanel
     public static partial class StackPanelExtensions
     {
         /// <summary>Set <see cref="Xaml.Controls.StackPanel.AreScrollSnapPointsRegular"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView AreScrollSnapPointsRegular<TView>(this TView view, bool value) where TView : StackPanel { view.UI.AreScrollSnapPointsRegular = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.StackPanel.BackgroundSizing"/></summary>
@@ -27588,7 +27579,6 @@ namespace CSharpMarkup.WinUI // TabView
         public static TView CanReorderTabs<TView>(this TView view, bool value) where TView : TabView { view.UI.CanReorderTabs = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TabView.CanTearOutTabs"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView CanTearOutTabs<TView>(this TView view, bool value) where TView : TabView { view.UI.CanTearOutTabs = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TabView.CloseButtonOverlayMode"/></summary>
@@ -27648,7 +27638,6 @@ namespace CSharpMarkup.WinUI // TabView
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TabView.CanReorderTabsProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabView.CanTearOutTabs"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, bool> CanTearOutTabs<TTarget>(this TTarget target) where TTarget : TabView
         => DependencyProperty<TTarget, bool>.Get(target, Xaml.Controls.TabView.CanTearOutTabsProperty);
 
@@ -27864,7 +27853,6 @@ namespace CSharpMarkup.WinUI // TabViewItemTemplateSettings
         public static TView IconElement<TView>(this TView view, Xaml.Controls.IconElement value) where TView : TabViewItemTemplateSettings { view.UI.IconElement = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TabViewItemTemplateSettings.TabGeometry"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView TabGeometry<TView>(this TView view, CSharpMarkup.WinUI.to.Geometry value) where TView : TabViewItemTemplateSettings { view.UI.TabGeometry = value; return view; }
 
         /// <summary>Set <see cref="Xaml.Controls.TabViewItemTemplateSettings.TemplatedParent"/></summary>
@@ -27879,7 +27867,6 @@ namespace CSharpMarkup.WinUI // TabViewItemTemplateSettings
         => DependencyProperty<TTarget, Xaml.Controls.IconElement>.Get(target, Xaml.Controls.TabViewItemTemplateSettings.IconElementProperty);
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Controls.TabViewItemTemplateSettings.TabGeometry"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry> TabGeometry<TTarget>(this TTarget target) where TTarget : TabViewItemTemplateSettings
         => DependencyProperty<TTarget, CSharpMarkup.WinUI.to.Geometry>.Get(target, Xaml.Controls.TabViewItemTemplateSettings.TabGeometryProperty);
 
@@ -28843,7 +28830,6 @@ namespace CSharpMarkup.WinUI // TextCommandBarFlyout
     public static partial class Helpers
     {
         /// <summary>Create a <see cref="Xaml.Controls.TextCommandBarFlyout"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TextCommandBarFlyout TextCommandBarFlyout(params CommandBarElement[] PrimaryCommands)
         {
             var ui = new Xaml.Controls.TextCommandBarFlyout();
@@ -28863,7 +28849,6 @@ namespace CSharpMarkup.WinUI // TextCommandBarFlyout
         }
 
         /// <summary>Create a <see cref="Xaml.Controls.TextCommandBarFlyout"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TextCommandBarFlyout TextCommandBarFlyout()
         {
             var ui = new Xaml.Controls.TextCommandBarFlyout();
@@ -32109,7 +32094,7 @@ namespace CSharpMarkup.WinUI // DependencyObjectCollection
         }
     }
 
-    public partial class DependencyObjectCollection : DependencyObject, IUI<Xaml.DependencyObjectCollection>
+    public partial class DependencyObjectCollection : DependencyObjectCollectionBase, IUI<Xaml.DependencyObjectCollection>
     {
         static DependencyObjectCollection instance;
 
@@ -32299,7 +32284,7 @@ namespace CSharpMarkup.WinUI // BlockCollection
         }
     }
 
-    public partial class BlockCollection : DependencyObject, IUI<Xaml.Documents.BlockCollection>
+    public partial class BlockCollection : DependencyObjectCollectionBase, IUI<Xaml.Documents.BlockCollection>
     {
         static BlockCollection instance;
 
@@ -33022,11 +33007,9 @@ namespace CSharpMarkup.WinUI // Run
     public static partial class RunExtensions
     {
         /// <summary>Set <see cref="Xaml.Documents.Run.FlowDirection"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static TView FlowDirection<TView>(this TView view, Xaml.FlowDirection value) where TView : Run { view.UI.FlowDirection = value; return view; }
 
         /// <summary>Bind (or set enum value of) <see cref="Xaml.Documents.Run.FlowDirection"/></summary>
-        [UnsupportedOSPlatform("Browser", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Linux", "https://aka.platform.uno/notimplemented")][UnsupportedOSPlatform("Windows", "https://aka.platform.uno/notimplemented")]
         public static DependencyProperty<TTarget, Xaml.FlowDirection> FlowDirection<TTarget>(this TTarget target) where TTarget : Run
         => DependencyProperty<TTarget, Xaml.FlowDirection>.Get(target, Xaml.Documents.Run.FlowDirectionProperty);
 
@@ -35510,7 +35493,7 @@ namespace CSharpMarkup.WinUI // ColorKeyFrameCollection
         }
     }
 
-    public partial class ColorKeyFrameCollection : DependencyObject, IUI<Xaml.Media.Animation.ColorKeyFrameCollection>
+    public partial class ColorKeyFrameCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.Animation.ColorKeyFrameCollection>
     {
         static ColorKeyFrameCollection instance;
 
@@ -36259,7 +36242,7 @@ namespace CSharpMarkup.WinUI // DoubleKeyFrameCollection
         }
     }
 
-    public partial class DoubleKeyFrameCollection : DependencyObject, IUI<Xaml.Media.Animation.DoubleKeyFrameCollection>
+    public partial class DoubleKeyFrameCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.Animation.DoubleKeyFrameCollection>
     {
         static DoubleKeyFrameCollection instance;
 
@@ -37894,7 +37877,7 @@ namespace CSharpMarkup.WinUI // ObjectKeyFrame
 
 namespace CSharpMarkup.WinUI // ObjectKeyFrameCollection
 {
-    public partial class ObjectKeyFrameCollection : DependencyObject, IUI<Xaml.Media.Animation.ObjectKeyFrameCollection>
+    public partial class ObjectKeyFrameCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.Animation.ObjectKeyFrameCollection>
     {
         Xaml.Media.Animation.ObjectKeyFrameCollection ui;
 
@@ -40000,7 +39983,7 @@ namespace CSharpMarkup.WinUI // TimelineCollection
         }
     }
 
-    public partial class TimelineCollection : DependencyObject, IUI<Xaml.Media.Animation.TimelineCollection>
+    public partial class TimelineCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.Animation.TimelineCollection>
     {
         static TimelineCollection instance;
 
@@ -40724,7 +40707,7 @@ namespace CSharpMarkup.WinUI // GeometryCollection
         }
     }
 
-    public partial class GeometryCollection : DependencyObject, IUI<Xaml.Media.GeometryCollection>
+    public partial class GeometryCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.GeometryCollection>
     {
         static GeometryCollection instance;
 
@@ -40996,7 +40979,7 @@ namespace CSharpMarkup.WinUI // GradientStopCollection
         }
     }
 
-    public partial class GradientStopCollection : DependencyObject, IUI<Xaml.Media.GradientStopCollection>
+    public partial class GradientStopCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.GradientStopCollection>
     {
         static GradientStopCollection instance;
 
@@ -42324,7 +42307,7 @@ namespace CSharpMarkup.WinUI // PathFigureCollection
         }
     }
 
-    public partial class PathFigureCollection : DependencyObject, IUI<Xaml.Media.PathFigureCollection>
+    public partial class PathFigureCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.PathFigureCollection>
     {
         static PathFigureCollection instance;
 
@@ -42506,7 +42489,7 @@ namespace CSharpMarkup.WinUI // PathSegmentCollection
         }
     }
 
-    public partial class PathSegmentCollection : DependencyObject, IUI<Xaml.Media.PathSegmentCollection>
+    public partial class PathSegmentCollection : DependencyObjectCollectionBase, IUI<Xaml.Media.PathSegmentCollection>
     {
         static PathSegmentCollection instance;
 
@@ -44477,7 +44460,7 @@ namespace CSharpMarkup.WinUI // SetterBaseCollection
         }
     }
 
-    public partial class SetterBaseCollection : DependencyObject, IUI<Xaml.SetterBaseCollection>
+    public partial class SetterBaseCollection : DependencyObjectCollectionBase, IUI<Xaml.SetterBaseCollection>
     {
         static SetterBaseCollection instance;
 
