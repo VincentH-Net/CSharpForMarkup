@@ -6,16 +6,16 @@ C# Markup 2 supports multiple UI frameworks, including the **excellent** [Uno Pl
 
 If you don't know Uno, I recommend you check them out; Uno is one of the best and most mature .NET UI frameworks, it offers an impressive breadth of features that will have your back when you need to create real-world production apps end2end, *fast*.
 ## Quick play-around
-```bat
+```bash
 dotnet new install Uno.Templates
 dotnet new install Modern.CSharp.Templates
 
-md UnoCSharpMarkup2
-cd UnoCSharpMarkup2
+mkdir MyApp && cd MyApp
 
-dotnet new unoapp -preset recommended
-dotnet new mcs-uno-markup2 --presentation mvux --renderer skia --allow-scripts yes
+dotnet new unoapp -presentation mvvm -renderer skia -platforms desktop -preset recommended
+dotnet new mcs-uno-markup2 --presentation mvvm --renderer skia --allow-scripts yes
 ```
+You can use `dotnet new unoapp -h` or the online [Uno Platform Live Wizard](https://aka.platform.uno/app-wizard) to quickly discover and select parameters for `unoapp`; use the same `presentation` and `renderer` values for `unoapp` and `mcs-uno-markup2`.
 
 ## Markup options at a glance - good for everyone!
 Uno Platform supports both XAML and C# UI with [Uno C# Markup](https://platform.uno/c-markup/). C# Markup 2 adds another option that goes above and beyond what gen-1 C# Markup variants offer.
@@ -31,7 +31,7 @@ Enjoy a Flutter-like UI development experience with C# Markup 2:
   - C# Markup **2** goes above and beyond gen 1 C# Markup approaches (e.g. [Maui](https://learn.microsoft.com/en-us/dotnet/communitytoolkit/maui/markup/markup) or [Uno](https://aka.platform.uno/csharp-markup)) to eliminate a lot of verbosity: no more endless repetitions of `new `, `HorizontalAlignment = HorizontalAlignment.Center`, `() => ` or `nameof()`, no more specifying for each and every `TextBlock` binding that yes, you want to bind to the `Text` property...
   - Separated markup namespaces eliminate intellisense pollution, allow quick discovery and encourage clean separation of markup and logic: no more intellisense lists where you have to search in a sea of irrelevant options for the few that you are interested in. See only Markup API's while editing `MyPage.cs`, see UI framework and other API's while editing `MyPage.logic.cs`.
 - Target browsers and native desktop / mobile
-- Use existing UI frameworks. Mature or bleeding edge is *your* choice: WPF, WinUI 3 for Windows App SDK and Uno Platform. Coming: AvaloniaUI, Maui, possibly Blazor.
+- Use existing UI frameworks: WPF or WinUI for Windows App SDK and Uno Platform. Coming: AvaloniaUI, Maui, possibly Blazor.
 - Use the built-in MVVM support - or any other update model that supports your UI framework (e.g. [Uno's MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) or [ReactiveUI](https://www.reactiveui.net/))
 - Use for part or all of your application UI
 - Designed to handle large UI fast: practically allocation-free, no reflection, efficient C#
@@ -205,33 +205,34 @@ See [here](https://github.com/VincentH-Net/CSharpForMarkup/releases/tag/csharpma
 > [![UNOCONF Announces Csharp Markup 2](img/unoconf-announce-csharp-markup-2.png)](https://youtu.be/UJ7EzQeEQAg?t=2566)
 
 ## Getting started for WPF
+Note: C# Markup 2 WPF releases have not been updated since .NET 6, however WPF remains supported in .NET 10. Please raise an issue if you require newer version support.
 1. Clone this repo
 2. Open [CSharpMarkup.Wpf.Examples.sln](src/CSharpMarkup.Wpf.Examples/) and explore the source for the example pages. Note how page markup and page logic are separated in partial class files, and integrated with `Build()`, `Assign()` and `Invoke()`.
-3. **.NET Hot Reload** is supported; edit and save the page markup in VS 2022 while debugging to see instant updates
+3. **.NET Hot Reload** is supported; edit and save the page markup in VS while debugging to see instant updates
 4. To learn how to use C# Markup 2, read the [features description](#features) below and experiment in the example app
-5. To build your own app, reference [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF) from a .NET 6 WPF project and create the C# Markup UI windows, pages etc in that project. Note that for existing apps you can reference (WPF / class library) projects that target older .NET versions from the .NET 6 project, so you can add C# Markup UI to your app without having to migrate existing logic and/or WPF UI to .NET 6 and C# 10.
+5. To build your own app, reference [![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/CSharpMarkup.WPF?color=gold&label=CSharpMarkup.WPF&style=plastic)](https://www.nuget.org/packages/CSharpMarkup.WPF) from a .NET WPF project and create the C# Markup UI windows, pages etc in that project.
 
 ## Getting started for WinUI 3 and Windows App SDK / Uno Platform
-1) First check if your development environment is ready:
-    - [Visual Studio 2022 on Windows](https://platform.uno/docs/articles/get-started-vs-2022.html)
-    - [Other IDE's and OS-es](https://platform.uno/docs/articles/get-started.html)
+1) First check if your [Uno development environment is ready](https://platform.uno/docs/articles/get-started.html)
 
-2) Either choose an existing Uno Platform 5.2 solution, or create a new one with the [Uno Platform Template Wizard](https://platform.uno/docs/articles/getting-started/wizard/using-wizard.html) or the [dotnet new unoapp](https://www.nuget.org/packages/Uno.Templates) template. Feel free to select any options; C# Markup 2 fully supports Uno 5.2 with .NET 8 or .NET 7, [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) or MVVM, XAML or Uno C# Markup, on all target platforms.
+2) Either choose an existing Uno Platform solution, or create a new one with the [dotnet new unoapp](https://www.nuget.org/packages/Uno.Templates) template (use `dotnet new unoapp -h` or the online [Uno Platform Live Wizard](https://aka.platform.uno/app-wizard) to select parameters). Feel free to select any options; C# Markup 2 fully supports Uno with .NET 10 or .NET 9, [MVUX](https://platform.uno/docs/articles/external/uno.extensions/doc/Overview/Mvux/Overview.html) or MVVM, XAML or Uno C# Markup, on all target platforms.
 
 3) Install the latest [Modern.CSharp.Templates](https://www.nuget.org/packages/Modern.CSharp.Templates) for `dotnet new` to get [these templates for Windows App SDK, Uno Platform and more](https://github.com/Applicita/Modern.CSharp.Templates#readme)
-    ```bat
+    ```bash
     dotnet new install Modern.CSharp.Templates
     ```
     To see help about the template parameters:
-    ```bat
+    ```bash
     dotnet new mcs-uno-markup2 -h
     ```
 
 4) Add a C# Markup 2 project to the Uno Platform solution, e.g.:
-    ```bat
-    cd C:\Repos\UnoApp1
+    ```bash
+    mkdir UnoApp1 && cd UnoApp1
     dotnet new mcs-uno-markup2 --appRootNamespace InnoWvate.UnoApp1 --presentation mvux --renderer skia --allow-scripts Yes
     ```
+
+    Use the same `presentation` and `renderer` values for `unoapp` and `mcs-uno-markup2`.
 
     This will:
     - Add a new project `UnoApp1.Presentation` to the solution, with a working example:
@@ -259,7 +260,7 @@ C# Markup 2 contains a full declarative, fluent API for existing UI frameworks. 
 The rich UI frameworks that C# Markup 2 surfaces can contain as much as **500+ UI object types**. E.g. layouts, views and styles, but also brushes, rich text elements, drawing primitives, transformations, animations, visual states and more. In addition C# Markup offers powerful and concise **convenience API's** for layout, bindings, convertors, templates and more.
 
 - When targeting **Windows Desktop**, the WinUI API from the Windows App SDK is surfaced (without any dependency on Uno Platform).
-- When targeting **Uno Platform**, the Uno.WinUI API is surfaced (atm only webassembly is tested, but any Uno target platform that can support .NET 6 and C# 10 should work)
+- When targeting **Uno Platform**, the Uno.WinUI API is surfaced
 - When targeting **WPF**, the WPF API is surfaced.
 
 ## Basic markup anatomy
